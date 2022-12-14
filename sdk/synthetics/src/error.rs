@@ -30,7 +30,7 @@ impl std::error::Error for ValidationException {}
 pub mod validation_exception {
 
     /// A builder for [`ValidationException`](crate::error::ValidationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
 
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl std::error::Error for RequestEntityTooLargeException {}
 pub mod request_entity_too_large_exception {
 
     /// A builder for [`RequestEntityTooLargeException`](crate::error::RequestEntityTooLargeException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -210,7 +210,7 @@ impl std::error::Error for InternalServerException {}
 pub mod internal_server_exception {
 
     /// A builder for [`InternalServerException`](crate::error::InternalServerException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -270,7 +270,7 @@ impl std::error::Error for ConflictException {}
 pub mod conflict_exception {
 
     /// A builder for [`ConflictException`](crate::error::ConflictException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -330,7 +330,7 @@ impl std::error::Error for TooManyRequestsException {}
 pub mod too_many_requests_exception {
 
     /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -390,7 +390,7 @@ impl std::error::Error for NotFoundException {}
 pub mod not_found_exception {
 
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -450,7 +450,7 @@ impl std::error::Error for InternalFailureException {}
 pub mod internal_failure_exception {
 
     /// A builder for [`InternalFailureException`](crate::error::InternalFailureException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -510,7 +510,7 @@ impl std::error::Error for BadRequestException {}
 pub mod bad_request_exception {
 
     /// A builder for [`BadRequestException`](crate::error::BadRequestException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -570,7 +570,7 @@ impl std::error::Error for ServiceQuotaExceededException {}
 pub mod service_quota_exceeded_exception {
 
     /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

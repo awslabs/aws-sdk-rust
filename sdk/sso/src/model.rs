@@ -32,7 +32,7 @@ impl AccountInfo {
 pub mod account_info {
 
     /// A builder for [`AccountInfo`](crate::model::AccountInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) account_name: std::option::Option<std::string::String>,
@@ -114,7 +114,7 @@ impl RoleInfo {
 pub mod role_info {
 
     /// A builder for [`RoleInfo`](crate::model::RoleInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -205,7 +205,7 @@ impl std::fmt::Debug for RoleCredentials {
 pub mod role_credentials {
 
     /// A builder for [`RoleCredentials`](crate::model::RoleCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
         pub(crate) secret_access_key: std::option::Option<std::string::String>,

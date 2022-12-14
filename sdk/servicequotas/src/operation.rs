@@ -5,7 +5,7 @@
 /// [`associate_service_quota_template`](crate::client::Client::associate_service_quota_template).
 ///
 /// See [`crate::client::fluent_builders::AssociateServiceQuotaTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateServiceQuotaTemplate {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateServiceQuotaTem
 /// [`delete_service_quota_increase_request_from_template`](crate::client::Client::delete_service_quota_increase_request_from_template).
 ///
 /// See [`crate::client::fluent_builders::DeleteServiceQuotaIncreaseRequestFromTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteServiceQuotaIncreaseRequestFromTemplate {
     _private: (),
 }
@@ -78,7 +78,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`disassociate_service_quota_template`](crate::client::Client::disassociate_service_quota_template).
 ///
 /// See [`crate::client::fluent_builders::DisassociateServiceQuotaTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateServiceQuotaTemplate {
     _private: (),
 }
@@ -112,7 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateServiceQuota
 /// [`get_association_for_service_quota_template`](crate::client::Client::get_association_for_service_quota_template).
 ///
 /// See [`crate::client::fluent_builders::GetAssociationForServiceQuotaTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAssociationForServiceQuotaTemplate {
     _private: (),
 }
@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssociationForService
 /// [`get_aws_default_service_quota`](crate::client::Client::get_aws_default_service_quota).
 ///
 /// See [`crate::client::fluent_builders::GetAWSDefaultServiceQuota`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAWSDefaultServiceQuota {
     _private: (),
 }
@@ -182,7 +182,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAWSDefaultServiceQuot
 /// [`get_requested_service_quota_change`](crate::client::Client::get_requested_service_quota_change).
 ///
 /// See [`crate::client::fluent_builders::GetRequestedServiceQuotaChange`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRequestedServiceQuotaChange {
     _private: (),
 }
@@ -216,7 +216,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRequestedServiceQuota
 /// [`get_service_quota`](crate::client::Client::get_service_quota).
 ///
 /// See [`crate::client::fluent_builders::GetServiceQuota`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetServiceQuota {
     _private: (),
 }
@@ -250,7 +250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceQuota {
 /// [`get_service_quota_increase_request_from_template`](crate::client::Client::get_service_quota_increase_request_from_template).
 ///
 /// See [`crate::client::fluent_builders::GetServiceQuotaIncreaseRequestFromTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetServiceQuotaIncreaseRequestFromTemplate {
     _private: (),
 }
@@ -289,7 +289,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceQuotaIncreaseR
 /// [`list_aws_default_service_quotas`](crate::client::Client::list_aws_default_service_quotas).
 ///
 /// See [`crate::client::fluent_builders::ListAWSDefaultServiceQuotas`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAWSDefaultServiceQuotas {
     _private: (),
 }
@@ -323,7 +323,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAWSDefaultServiceQuo
 /// [`list_requested_service_quota_change_history`](crate::client::Client::list_requested_service_quota_change_history).
 ///
 /// See [`crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistory`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRequestedServiceQuotaChangeHistory {
     _private: (),
 }
@@ -361,7 +361,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRequestedServiceQuot
 /// [`list_requested_service_quota_change_history_by_quota`](crate::client::Client::list_requested_service_quota_change_history_by_quota).
 ///
 /// See [`crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistoryByQuota`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRequestedServiceQuotaChangeHistoryByQuota {
     _private: (),
 }
@@ -400,7 +400,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`list_service_quota_increase_requests_in_template`](crate::client::Client::list_service_quota_increase_requests_in_template).
 ///
 /// See [`crate::client::fluent_builders::ListServiceQuotaIncreaseRequestsInTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListServiceQuotaIncreaseRequestsInTemplate {
     _private: (),
 }
@@ -439,7 +439,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServiceQuotaIncrease
 /// [`list_service_quotas`](crate::client::Client::list_service_quotas).
 ///
 /// See [`crate::client::fluent_builders::ListServiceQuotas`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListServiceQuotas {
     _private: (),
 }
@@ -473,7 +473,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServiceQuotas {
 /// [`list_services`](crate::client::Client::list_services).
 ///
 /// See [`crate::client::fluent_builders::ListServices`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListServices {
     _private: (),
 }
@@ -505,7 +505,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServices {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -539,7 +539,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`put_service_quota_increase_request_into_template`](crate::client::Client::put_service_quota_increase_request_into_template).
 ///
 /// See [`crate::client::fluent_builders::PutServiceQuotaIncreaseRequestIntoTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutServiceQuotaIncreaseRequestIntoTemplate {
     _private: (),
 }
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutServiceQuotaIncreaseR
 /// [`request_service_quota_increase`](crate::client::Client::request_service_quota_increase).
 ///
 /// See [`crate::client::fluent_builders::RequestServiceQuotaIncrease`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RequestServiceQuotaIncrease {
     _private: (),
 }
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RequestServiceQuotaIncre
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }

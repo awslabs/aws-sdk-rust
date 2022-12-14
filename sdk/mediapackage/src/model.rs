@@ -129,7 +129,7 @@ impl MssPackage {
 pub mod mss_package {
 
     /// A builder for [`MssPackage`](crate::model::MssPackage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption: std::option::Option<crate::model::MssEncryption>,
         pub(crate) manifest_window_seconds: std::option::Option<i32>,
@@ -233,7 +233,7 @@ impl StreamSelection {
 pub mod stream_selection {
 
     /// A builder for [`StreamSelection`](crate::model::StreamSelection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_video_bits_per_second: std::option::Option<i32>,
         pub(crate) min_video_bits_per_second: std::option::Option<i32>,
@@ -407,7 +407,7 @@ impl MssEncryption {
 pub mod mss_encryption {
 
     /// A builder for [`MssEncryption`](crate::model::MssEncryption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
     }
@@ -496,7 +496,7 @@ impl SpekeKeyProvider {
 pub mod speke_key_provider {
 
     /// A builder for [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
         pub(crate) encryption_contract_configuration:
@@ -630,7 +630,7 @@ impl EncryptionContractConfiguration {
 pub mod encryption_contract_configuration {
 
     /// A builder for [`EncryptionContractConfiguration`](crate::model::EncryptionContractConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) preset_speke20_audio: std::option::Option<crate::model::PresetSpeke20Audio>,
         pub(crate) preset_speke20_video: std::option::Option<crate::model::PresetSpeke20Video>,
@@ -1031,7 +1031,7 @@ impl HlsPackage {
 pub mod hls_package {
 
     /// A builder for [`HlsPackage`](crate::model::HlsPackage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_markers: std::option::Option<crate::model::AdMarkers>,
         pub(crate) ad_triggers: std::option::Option<std::vec::Vec<crate::model::AdTriggersElement>>,
@@ -1367,7 +1367,7 @@ impl HlsEncryption {
 pub mod hls_encryption {
 
     /// A builder for [`HlsEncryption`](crate::model::HlsEncryption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) constant_initialization_vector: std::option::Option<std::string::String>,
         pub(crate) encryption_method: std::option::Option<crate::model::EncryptionMethod>,
@@ -2031,7 +2031,7 @@ impl DashPackage {
 pub mod dash_package {
 
     /// A builder for [`DashPackage`](crate::model::DashPackage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_triggers: std::option::Option<std::vec::Vec<crate::model::AdTriggersElement>>,
         pub(crate) ads_on_delivery_restrictions:
@@ -2797,7 +2797,7 @@ impl DashEncryption {
 pub mod dash_encryption {
 
     /// A builder for [`DashEncryption`](crate::model::DashEncryption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_rotation_interval_seconds: std::option::Option<i32>,
         pub(crate) speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
@@ -2893,7 +2893,7 @@ impl CmafPackage {
 pub mod cmaf_package {
 
     /// A builder for [`CmafPackage`](crate::model::CmafPackage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption: std::option::Option<crate::model::CmafEncryption>,
         pub(crate) hls_manifests: std::option::Option<std::vec::Vec<crate::model::HlsManifest>>,
@@ -3072,7 +3072,7 @@ impl HlsManifest {
 pub mod hls_manifest {
 
     /// A builder for [`HlsManifest`](crate::model::HlsManifest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_markers: std::option::Option<crate::model::AdMarkers>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3279,7 +3279,7 @@ impl CmafEncryption {
 pub mod cmaf_encryption {
 
     /// A builder for [`CmafEncryption`](crate::model::CmafEncryption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) constant_initialization_vector: std::option::Option<std::string::String>,
         pub(crate) encryption_method: std::option::Option<crate::model::CmafEncryptionMethod>,
@@ -3479,7 +3479,7 @@ impl Authorization {
 pub mod authorization {
 
     /// A builder for [`Authorization`](crate::model::Authorization).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cdn_identifier_secret: std::option::Option<std::string::String>,
         pub(crate) secrets_role_arn: std::option::Option<std::string::String>,
@@ -3576,7 +3576,7 @@ impl CmafPackageCreateOrUpdateParameters {
 pub mod cmaf_package_create_or_update_parameters {
 
     /// A builder for [`CmafPackageCreateOrUpdateParameters`](crate::model::CmafPackageCreateOrUpdateParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption: std::option::Option<crate::model::CmafEncryption>,
         pub(crate) hls_manifests:
@@ -3754,7 +3754,7 @@ impl HlsManifestCreateOrUpdateParameters {
 pub mod hls_manifest_create_or_update_parameters {
 
     /// A builder for [`HlsManifestCreateOrUpdateParameters`](crate::model::HlsManifestCreateOrUpdateParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_markers: std::option::Option<crate::model::AdMarkers>,
         pub(crate) ad_triggers: std::option::Option<std::vec::Vec<crate::model::AdTriggersElement>>,
@@ -3928,7 +3928,7 @@ impl IngressAccessLogs {
 pub mod ingress_access_logs {
 
     /// A builder for [`IngressAccessLogs`](crate::model::IngressAccessLogs).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
     }
@@ -3979,7 +3979,7 @@ impl HlsIngest {
 pub mod hls_ingest {
 
     /// A builder for [`HlsIngest`](crate::model::HlsIngest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ingest_endpoints:
             std::option::Option<std::vec::Vec<crate::model::IngestEndpoint>>,
@@ -4058,7 +4058,7 @@ impl IngestEndpoint {
 pub mod ingest_endpoint {
 
     /// A builder for [`IngestEndpoint`](crate::model::IngestEndpoint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
@@ -4142,7 +4142,7 @@ impl EgressAccessLogs {
 pub mod egress_access_logs {
 
     /// A builder for [`EgressAccessLogs`](crate::model::EgressAccessLogs).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
     }
@@ -4302,7 +4302,7 @@ impl OriginEndpoint {
 pub mod origin_endpoint {
 
     /// A builder for [`OriginEndpoint`](crate::model::OriginEndpoint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) authorization: std::option::Option<crate::model::Authorization>,
@@ -4633,7 +4633,7 @@ impl HarvestJob {
 pub mod harvest_job {
 
     /// A builder for [`HarvestJob`](crate::model::HarvestJob).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -4892,7 +4892,7 @@ impl S3Destination {
 pub mod s3_destination {
 
     /// A builder for [`S3Destination`](crate::model::S3Destination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) manifest_key: std::option::Option<std::string::String>,
@@ -5010,7 +5010,7 @@ impl Channel {
 pub mod channel {
 
     /// A builder for [`Channel`](crate::model::Channel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,

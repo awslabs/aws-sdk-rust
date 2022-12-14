@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_app_input {
 
     /// A builder for [`CreateAppInput`](crate::input::CreateAppInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -226,7 +226,7 @@ impl CreateAppInput {
 pub mod create_replication_job_input {
 
     /// A builder for [`CreateReplicationJobInput`](crate::input::CreateReplicationJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
         pub(crate) seed_replication_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -506,7 +506,7 @@ impl CreateReplicationJobInput {
 pub mod delete_app_input {
 
     /// A builder for [`DeleteAppInput`](crate::input::DeleteAppInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) force_stop_app_replication: std::option::Option<bool>,
@@ -673,7 +673,7 @@ impl DeleteAppInput {
 pub mod delete_app_launch_configuration_input {
 
     /// A builder for [`DeleteAppLaunchConfigurationInput`](crate::input::DeleteAppLaunchConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
     }
@@ -819,7 +819,7 @@ impl DeleteAppLaunchConfigurationInput {
 pub mod delete_app_replication_configuration_input {
 
     /// A builder for [`DeleteAppReplicationConfigurationInput`](crate::input::DeleteAppReplicationConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
     }
@@ -965,7 +965,7 @@ impl DeleteAppReplicationConfigurationInput {
 pub mod delete_app_validation_configuration_input {
 
     /// A builder for [`DeleteAppValidationConfigurationInput`](crate::input::DeleteAppValidationConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
     }
@@ -1111,7 +1111,7 @@ impl DeleteAppValidationConfigurationInput {
 pub mod delete_replication_job_input {
 
     /// A builder for [`DeleteReplicationJobInput`](crate::input::DeleteReplicationJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_job_id: std::option::Option<std::string::String>,
     }
@@ -1263,7 +1263,7 @@ impl DeleteReplicationJobInput {
 pub mod delete_server_catalog_input {
 
     /// A builder for [`DeleteServerCatalogInput`](crate::input::DeleteServerCatalogInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteServerCatalogInput`](crate::input::DeleteServerCatalogInput).
@@ -1389,7 +1389,7 @@ impl DeleteServerCatalogInput {
 pub mod disassociate_connector_input {
 
     /// A builder for [`DisassociateConnectorInput`](crate::input::DisassociateConnectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_id: std::option::Option<std::string::String>,
     }
@@ -1538,7 +1538,7 @@ impl DisassociateConnectorInput {
 pub mod generate_change_set_input {
 
     /// A builder for [`GenerateChangeSetInput`](crate::input::GenerateChangeSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) changeset_format: std::option::Option<crate::model::OutputFormat>,
@@ -1700,7 +1700,7 @@ impl GenerateChangeSetInput {
 pub mod generate_template_input {
 
     /// A builder for [`GenerateTemplateInput`](crate::input::GenerateTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) template_format: std::option::Option<crate::model::OutputFormat>,
@@ -1862,7 +1862,7 @@ impl GenerateTemplateInput {
 pub mod get_app_input {
 
     /// A builder for [`GetAppInput`](crate::input::GetAppInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
     }
@@ -2002,7 +2002,7 @@ impl GetAppInput {
 pub mod get_app_launch_configuration_input {
 
     /// A builder for [`GetAppLaunchConfigurationInput`](crate::input::GetAppLaunchConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
     }
@@ -2151,7 +2151,7 @@ impl GetAppLaunchConfigurationInput {
 pub mod get_app_replication_configuration_input {
 
     /// A builder for [`GetAppReplicationConfigurationInput`](crate::input::GetAppReplicationConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
     }
@@ -2297,7 +2297,7 @@ impl GetAppReplicationConfigurationInput {
 pub mod get_app_validation_configuration_input {
 
     /// A builder for [`GetAppValidationConfigurationInput`](crate::input::GetAppValidationConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
     }
@@ -2443,7 +2443,7 @@ impl GetAppValidationConfigurationInput {
 pub mod get_app_validation_output_input {
 
     /// A builder for [`GetAppValidationOutputInput`](crate::input::GetAppValidationOutputInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
     }
@@ -2592,7 +2592,7 @@ impl GetAppValidationOutputInput {
 pub mod get_connectors_input {
 
     /// A builder for [`GetConnectorsInput`](crate::input::GetConnectorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2749,7 +2749,7 @@ impl GetConnectorsInput {
 pub mod get_replication_jobs_input {
 
     /// A builder for [`GetReplicationJobsInput`](crate::input::GetReplicationJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_job_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2923,7 +2923,7 @@ impl GetReplicationJobsInput {
 pub mod get_replication_runs_input {
 
     /// A builder for [`GetReplicationRunsInput`](crate::input::GetReplicationRunsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_job_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3097,7 +3097,7 @@ impl GetReplicationRunsInput {
 pub mod get_servers_input {
 
     /// A builder for [`GetServersInput`](crate::input::GetServersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3276,7 +3276,7 @@ impl GetServersInput {
 pub mod import_app_catalog_input {
 
     /// A builder for [`ImportAppCatalogInput`](crate::input::ImportAppCatalogInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
     }
@@ -3423,7 +3423,7 @@ impl ImportAppCatalogInput {
 pub mod import_server_catalog_input {
 
     /// A builder for [`ImportServerCatalogInput`](crate::input::ImportServerCatalogInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ImportServerCatalogInput`](crate::input::ImportServerCatalogInput).
@@ -3549,7 +3549,7 @@ impl ImportServerCatalogInput {
 pub mod launch_app_input {
 
     /// A builder for [`LaunchAppInput`](crate::input::LaunchAppInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
     }
@@ -3692,7 +3692,7 @@ impl LaunchAppInput {
 pub mod list_apps_input {
 
     /// A builder for [`ListAppsInput`](crate::input::ListAppsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3865,7 +3865,7 @@ impl ListAppsInput {
 pub mod notify_app_validation_output_input {
 
     /// A builder for [`NotifyAppValidationOutputInput`](crate::input::NotifyAppValidationOutputInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) notification_context: std::option::Option<crate::model::NotificationContext>,
@@ -4029,7 +4029,7 @@ impl NotifyAppValidationOutputInput {
 pub mod put_app_launch_configuration_input {
 
     /// A builder for [`PutAppLaunchConfigurationInput`](crate::input::PutAppLaunchConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -4227,7 +4227,7 @@ impl PutAppLaunchConfigurationInput {
 pub mod put_app_replication_configuration_input {
 
     /// A builder for [`PutAppReplicationConfigurationInput`](crate::input::PutAppReplicationConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) server_group_replication_configurations:
@@ -4403,7 +4403,7 @@ impl PutAppReplicationConfigurationInput {
 pub mod put_app_validation_configuration_input {
 
     /// A builder for [`PutAppValidationConfigurationInput`](crate::input::PutAppValidationConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) app_validation_configurations:
@@ -4603,7 +4603,7 @@ impl PutAppValidationConfigurationInput {
 pub mod start_app_replication_input {
 
     /// A builder for [`StartAppReplicationInput`](crate::input::StartAppReplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
     }
@@ -4750,7 +4750,7 @@ impl StartAppReplicationInput {
 pub mod start_on_demand_app_replication_input {
 
     /// A builder for [`StartOnDemandAppReplicationInput`](crate::input::StartOnDemandAppReplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4908,7 +4908,7 @@ impl StartOnDemandAppReplicationInput {
 pub mod start_on_demand_replication_run_input {
 
     /// A builder for [`StartOnDemandReplicationRunInput`](crate::input::StartOnDemandReplicationRunInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_job_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5069,7 +5069,7 @@ impl StartOnDemandReplicationRunInput {
 pub mod stop_app_replication_input {
 
     /// A builder for [`StopAppReplicationInput`](crate::input::StopAppReplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
     }
@@ -5216,7 +5216,7 @@ impl StopAppReplicationInput {
 pub mod terminate_app_input {
 
     /// A builder for [`TerminateAppInput`](crate::input::TerminateAppInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
     }
@@ -5361,7 +5361,7 @@ impl TerminateAppInput {
 pub mod update_app_input {
 
     /// A builder for [`UpdateAppInput`](crate::input::UpdateAppInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5582,7 +5582,7 @@ impl UpdateAppInput {
 pub mod update_replication_job_input {
 
     /// A builder for [`UpdateReplicationJobInput`](crate::input::UpdateReplicationJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_job_id: std::option::Option<std::string::String>,
         pub(crate) frequency: std::option::Option<i32>,

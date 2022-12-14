@@ -27,7 +27,7 @@ impl InferenceOutputConfiguration {
 pub mod inference_output_configuration {
 
     /// A builder for [`InferenceOutputConfiguration`](crate::model::InferenceOutputConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_output_configuration:
             std::option::Option<crate::model::InferenceS3OutputConfiguration>,
@@ -101,7 +101,7 @@ impl InferenceS3OutputConfiguration {
 pub mod inference_s3_output_configuration {
 
     /// A builder for [`InferenceS3OutputConfiguration`](crate::model::InferenceS3OutputConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -180,7 +180,7 @@ impl InferenceInputConfiguration {
 pub mod inference_input_configuration {
 
     /// A builder for [`InferenceInputConfiguration`](crate::model::InferenceInputConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_input_configuration:
             std::option::Option<crate::model::InferenceS3InputConfiguration>,
@@ -276,7 +276,7 @@ impl InferenceInputNameConfiguration {
 pub mod inference_input_name_configuration {
 
     /// A builder for [`InferenceInputNameConfiguration`](crate::model::InferenceInputNameConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp_format: std::option::Option<std::string::String>,
         pub(crate) component_timestamp_delimiter: std::option::Option<std::string::String>,
@@ -352,7 +352,7 @@ impl InferenceS3InputConfiguration {
 pub mod inference_s3_input_configuration {
 
     /// A builder for [`InferenceS3InputConfiguration`](crate::model::InferenceS3InputConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -526,7 +526,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -787,7 +787,7 @@ impl IngestionInputConfiguration {
 pub mod ingestion_input_configuration {
 
     /// A builder for [`IngestionInputConfiguration`](crate::model::IngestionInputConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_input_configuration:
             std::option::Option<crate::model::IngestionS3InputConfiguration>,
@@ -856,7 +856,7 @@ impl IngestionS3InputConfiguration {
 pub mod ingestion_s3_input_configuration {
 
     /// A builder for [`IngestionS3InputConfiguration`](crate::model::IngestionS3InputConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -1014,7 +1014,7 @@ impl SensorStatisticsSummary {
 pub mod sensor_statistics_summary {
 
     /// A builder for [`SensorStatisticsSummary`](crate::model::SensorStatisticsSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_name: std::option::Option<std::string::String>,
         pub(crate) sensor_name: std::option::Option<std::string::String>,
@@ -1250,7 +1250,7 @@ impl MonotonicValues {
 pub mod monotonic_values {
 
     /// A builder for [`MonotonicValues`](crate::model::MonotonicValues).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatisticalIssueStatus>,
         pub(crate) monotonicity: std::option::Option<crate::model::Monotonicity>,
@@ -1517,7 +1517,7 @@ impl LargeTimestampGaps {
 pub mod large_timestamp_gaps {
 
     /// A builder for [`LargeTimestampGaps`](crate::model::LargeTimestampGaps).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatisticalIssueStatus>,
         pub(crate) number_of_large_timestamp_gaps: std::option::Option<i32>,
@@ -1595,7 +1595,7 @@ impl MultipleOperatingModes {
 pub mod multiple_operating_modes {
 
     /// A builder for [`MultipleOperatingModes`](crate::model::MultipleOperatingModes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatisticalIssueStatus>,
     }
@@ -1653,7 +1653,7 @@ impl CategoricalValues {
 pub mod categorical_values {
 
     /// A builder for [`CategoricalValues`](crate::model::CategoricalValues).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatisticalIssueStatus>,
         pub(crate) number_of_category: std::option::Option<i32>,
@@ -1723,7 +1723,7 @@ impl CountPercent {
 pub mod count_percent {
 
     /// A builder for [`CountPercent`](crate::model::CountPercent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
         pub(crate) percentage: std::option::Option<f32>,
@@ -1818,7 +1818,7 @@ impl ModelSummary {
 pub mod model_summary {
 
     /// A builder for [`ModelSummary`](crate::model::ModelSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_name: std::option::Option<std::string::String>,
         pub(crate) model_arn: std::option::Option<std::string::String>,
@@ -2082,7 +2082,7 @@ impl LabelSummary {
 pub mod label_summary {
 
     /// A builder for [`LabelSummary`](crate::model::LabelSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
         pub(crate) label_id: std::option::Option<std::string::String>,
@@ -2359,7 +2359,7 @@ impl LabelGroupSummary {
 pub mod label_group_summary {
 
     /// A builder for [`LabelGroupSummary`](crate::model::LabelGroupSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
         pub(crate) label_group_arn: std::option::Option<std::string::String>,
@@ -2506,7 +2506,7 @@ impl InferenceSchedulerSummary {
 pub mod inference_scheduler_summary {
 
     /// A builder for [`InferenceSchedulerSummary`](crate::model::InferenceSchedulerSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_name: std::option::Option<std::string::String>,
         pub(crate) model_arn: std::option::Option<std::string::String>,
@@ -2830,7 +2830,7 @@ impl InferenceExecutionSummary {
 pub mod inference_execution_summary {
 
     /// A builder for [`InferenceExecutionSummary`](crate::model::InferenceExecutionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_name: std::option::Option<std::string::String>,
         pub(crate) model_arn: std::option::Option<std::string::String>,
@@ -3152,7 +3152,7 @@ impl S3Object {
 pub mod s3_object {
 
     /// A builder for [`S3Object`](crate::model::S3Object).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -3247,7 +3247,7 @@ impl InferenceEventSummary {
 pub mod inference_event_summary {
 
     /// A builder for [`InferenceEventSummary`](crate::model::InferenceEventSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inference_scheduler_arn: std::option::Option<std::string::String>,
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
@@ -3388,7 +3388,7 @@ impl DatasetSummary {
 pub mod dataset_summary {
 
     /// A builder for [`DatasetSummary`](crate::model::DatasetSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
@@ -3604,7 +3604,7 @@ impl DataIngestionJobSummary {
 pub mod data_ingestion_job_summary {
 
     /// A builder for [`DataIngestionJobSummary`](crate::model::DataIngestionJobSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) dataset_name: std::option::Option<std::string::String>,
@@ -3713,7 +3713,7 @@ impl DataPreProcessingConfiguration {
 pub mod data_pre_processing_configuration {
 
     /// A builder for [`DataPreProcessingConfiguration`](crate::model::DataPreProcessingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_sampling_rate: std::option::Option<crate::model::TargetSamplingRate>,
     }
@@ -3915,7 +3915,7 @@ impl LabelsInputConfiguration {
 pub mod labels_input_configuration {
 
     /// A builder for [`LabelsInputConfiguration`](crate::model::LabelsInputConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_input_configuration:
             std::option::Option<crate::model::LabelsS3InputConfiguration>,
@@ -3992,7 +3992,7 @@ impl LabelsS3InputConfiguration {
 pub mod labels_s3_input_configuration {
 
     /// A builder for [`LabelsS3InputConfiguration`](crate::model::LabelsS3InputConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -4066,7 +4066,7 @@ impl IngestedFilesSummary {
 pub mod ingested_files_summary {
 
     /// A builder for [`IngestedFilesSummary`](crate::model::IngestedFilesSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total_number_of_files: std::option::Option<i32>,
         pub(crate) ingested_number_of_files: std::option::Option<i32>,
@@ -4179,7 +4179,7 @@ impl DataQualitySummary {
 pub mod data_quality_summary {
 
     /// A builder for [`DataQualitySummary`](crate::model::DataQualitySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insufficient_sensor_data:
             std::option::Option<crate::model::InsufficientSensorData>,
@@ -4297,7 +4297,7 @@ impl DuplicateTimestamps {
 pub mod duplicate_timestamps {
 
     /// A builder for [`DuplicateTimestamps`](crate::model::DuplicateTimestamps).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total_number_of_duplicate_timestamps: std::option::Option<i32>,
     }
@@ -4348,7 +4348,7 @@ impl UnsupportedTimestamps {
 pub mod unsupported_timestamps {
 
     /// A builder for [`UnsupportedTimestamps`](crate::model::UnsupportedTimestamps).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total_number_of_unsupported_timestamps: std::option::Option<i32>,
     }
@@ -4406,7 +4406,7 @@ impl InvalidSensorData {
 pub mod invalid_sensor_data {
 
     /// A builder for [`InvalidSensorData`](crate::model::InvalidSensorData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) affected_sensor_count: std::option::Option<i32>,
         pub(crate) total_number_of_invalid_values: std::option::Option<i32>,
@@ -4476,7 +4476,7 @@ impl MissingSensorData {
 pub mod missing_sensor_data {
 
     /// A builder for [`MissingSensorData`](crate::model::MissingSensorData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) affected_sensor_count: std::option::Option<i32>,
         pub(crate) total_number_of_missing_values: std::option::Option<i32>,
@@ -4550,7 +4550,7 @@ impl InsufficientSensorData {
 pub mod insufficient_sensor_data {
 
     /// A builder for [`InsufficientSensorData`](crate::model::InsufficientSensorData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) missing_complete_sensor_data:
             std::option::Option<crate::model::MissingCompleteSensorData>,
@@ -4624,7 +4624,7 @@ impl SensorsWithShortDateRange {
 pub mod sensors_with_short_date_range {
 
     /// A builder for [`SensorsWithShortDateRange`](crate::model::SensorsWithShortDateRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) affected_sensor_count: std::option::Option<i32>,
     }
@@ -4672,7 +4672,7 @@ impl MissingCompleteSensorData {
 pub mod missing_complete_sensor_data {
 
     /// A builder for [`MissingCompleteSensorData`](crate::model::MissingCompleteSensorData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) affected_sensor_count: std::option::Option<i32>,
     }
@@ -4720,7 +4720,7 @@ impl DatasetSchema {
 pub mod dataset_schema {
 
     /// A builder for [`DatasetSchema`](crate::model::DatasetSchema).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inline_data_schema: std::option::Option<std::string::String>,
     }

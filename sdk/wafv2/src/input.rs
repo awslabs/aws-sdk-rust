@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_web_acl_input {
 
     /// A builder for [`AssociateWebAclInput`](crate::input::AssociateWebAclInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) web_acl_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -176,7 +176,7 @@ impl AssociateWebAclInput {
 pub mod check_capacity_input {
 
     /// A builder for [`CheckCapacityInput`](crate::input::CheckCapacityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scope: std::option::Option<crate::model::Scope>,
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -352,7 +352,7 @@ impl CheckCapacityInput {
 pub mod create_ip_set_input {
 
     /// A builder for [`CreateIpSetInput`](crate::input::CreateIpSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -618,7 +618,7 @@ impl CreateIpSetInput {
 pub mod create_regex_pattern_set_input {
 
     /// A builder for [`CreateRegexPatternSetInput`](crate::input::CreateRegexPatternSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -843,7 +843,7 @@ impl CreateRegexPatternSetInput {
 pub mod create_rule_group_input {
 
     /// A builder for [`CreateRuleGroupInput`](crate::input::CreateRuleGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -1128,7 +1128,7 @@ impl CreateRuleGroupInput {
 pub mod create_web_acl_input {
 
     /// A builder for [`CreateWebAclInput`](crate::input::CreateWebAclInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -1427,7 +1427,7 @@ impl CreateWebAclInput {
 pub mod delete_firewall_manager_rule_groups_input {
 
     /// A builder for [`DeleteFirewallManagerRuleGroupsInput`](crate::input::DeleteFirewallManagerRuleGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) web_acl_arn: std::option::Option<std::string::String>,
         pub(crate) web_acl_lock_token: std::option::Option<std::string::String>,
@@ -1588,7 +1588,7 @@ impl DeleteFirewallManagerRuleGroupsInput {
 pub mod delete_ip_set_input {
 
     /// A builder for [`DeleteIpSetInput`](crate::input::DeleteIpSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -1779,7 +1779,7 @@ impl DeleteIpSetInput {
 pub mod delete_logging_configuration_input {
 
     /// A builder for [`DeleteLoggingConfigurationInput`](crate::input::DeleteLoggingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1928,7 +1928,7 @@ impl DeleteLoggingConfigurationInput {
 pub mod delete_permission_policy_input {
 
     /// A builder for [`DeletePermissionPolicyInput`](crate::input::DeletePermissionPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2079,7 +2079,7 @@ impl DeletePermissionPolicyInput {
 pub mod delete_regex_pattern_set_input {
 
     /// A builder for [`DeleteRegexPatternSetInput`](crate::input::DeleteRegexPatternSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -2274,7 +2274,7 @@ impl DeleteRegexPatternSetInput {
 pub mod delete_rule_group_input {
 
     /// A builder for [`DeleteRuleGroupInput`](crate::input::DeleteRuleGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -2465,7 +2465,7 @@ impl DeleteRuleGroupInput {
 pub mod delete_web_acl_input {
 
     /// A builder for [`DeleteWebAclInput`](crate::input::DeleteWebAclInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -2656,7 +2656,7 @@ impl DeleteWebAclInput {
 pub mod describe_managed_rule_group_input {
 
     /// A builder for [`DescribeManagedRuleGroupInput`](crate::input::DescribeManagedRuleGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vendor_name: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2851,7 +2851,7 @@ impl DescribeManagedRuleGroupInput {
 pub mod disassociate_web_acl_input {
 
     /// A builder for [`DisassociateWebAclInput`](crate::input::DisassociateWebAclInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3012,7 +3012,7 @@ impl DisassociateWebAclInput {
 pub mod generate_mobile_sdk_release_url_input {
 
     /// A builder for [`GenerateMobileSdkReleaseUrlInput`](crate::input::GenerateMobileSdkReleaseUrlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform: std::option::Option<crate::model::Platform>,
         pub(crate) release_version: std::option::Option<std::string::String>,
@@ -3173,7 +3173,7 @@ impl GenerateMobileSdkReleaseUrlInput {
 pub mod get_ip_set_input {
 
     /// A builder for [`GetIpSetInput`](crate::input::GetIpSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -3349,7 +3349,7 @@ impl GetIpSetInput {
 pub mod get_logging_configuration_input {
 
     /// A builder for [`GetLoggingConfigurationInput`](crate::input::GetLoggingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3498,7 +3498,7 @@ impl GetLoggingConfigurationInput {
 pub mod get_managed_rule_set_input {
 
     /// A builder for [`GetManagedRuleSetInput`](crate::input::GetManagedRuleSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -3681,7 +3681,7 @@ impl GetManagedRuleSetInput {
 pub mod get_mobile_sdk_release_input {
 
     /// A builder for [`GetMobileSdkReleaseInput`](crate::input::GetMobileSdkReleaseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform: std::option::Option<crate::model::Platform>,
         pub(crate) release_version: std::option::Option<std::string::String>,
@@ -3845,7 +3845,7 @@ impl GetMobileSdkReleaseInput {
 pub mod get_permission_policy_input {
 
     /// A builder for [`GetPermissionPolicyInput`](crate::input::GetPermissionPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3992,7 +3992,7 @@ impl GetPermissionPolicyInput {
 pub mod get_rate_based_statement_managed_keys_input {
 
     /// A builder for [`GetRateBasedStatementManagedKeysInput`](crate::input::GetRateBasedStatementManagedKeysInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scope: std::option::Option<crate::model::Scope>,
         pub(crate) web_acl_name: std::option::Option<std::string::String>,
@@ -4199,7 +4199,7 @@ impl GetRateBasedStatementManagedKeysInput {
 pub mod get_regex_pattern_set_input {
 
     /// A builder for [`GetRegexPatternSetInput`](crate::input::GetRegexPatternSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -4380,7 +4380,7 @@ impl GetRegexPatternSetInput {
 pub mod get_rule_group_input {
 
     /// A builder for [`GetRuleGroupInput`](crate::input::GetRuleGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -4571,7 +4571,7 @@ impl GetRuleGroupInput {
 pub mod get_sampled_requests_input {
 
     /// A builder for [`GetSampledRequestsInput`](crate::input::GetSampledRequestsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) web_acl_arn: std::option::Option<std::string::String>,
         pub(crate) rule_metric_name: std::option::Option<std::string::String>,
@@ -4782,7 +4782,7 @@ impl GetSampledRequestsInput {
 pub mod get_web_acl_input {
 
     /// A builder for [`GetWebAclInput`](crate::input::GetWebAclInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -4959,7 +4959,7 @@ impl GetWebAclInput {
 pub mod get_web_acl_for_resource_input {
 
     /// A builder for [`GetWebAclForResourceInput`](crate::input::GetWebAclForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -5122,7 +5122,7 @@ impl GetWebAclForResourceInput {
 pub mod list_available_managed_rule_groups_input {
 
     /// A builder for [`ListAvailableManagedRuleGroupsInput`](crate::input::ListAvailableManagedRuleGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scope: std::option::Option<crate::model::Scope>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -5302,7 +5302,7 @@ impl ListAvailableManagedRuleGroupsInput {
 pub mod list_available_managed_rule_group_versions_input {
 
     /// A builder for [`ListAvailableManagedRuleGroupVersionsInput`](crate::input::ListAvailableManagedRuleGroupVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vendor_name: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5506,7 +5506,7 @@ impl ListAvailableManagedRuleGroupVersionsInput {
 pub mod list_ip_sets_input {
 
     /// A builder for [`ListIpSetsInput`](crate::input::ListIpSetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scope: std::option::Option<crate::model::Scope>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -5685,7 +5685,7 @@ impl ListIpSetsInput {
 pub mod list_logging_configurations_input {
 
     /// A builder for [`ListLoggingConfigurationsInput`](crate::input::ListLoggingConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scope: std::option::Option<crate::model::Scope>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -5868,7 +5868,7 @@ impl ListLoggingConfigurationsInput {
 pub mod list_managed_rule_sets_input {
 
     /// A builder for [`ListManagedRuleSetsInput`](crate::input::ListManagedRuleSetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scope: std::option::Option<crate::model::Scope>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -6051,7 +6051,7 @@ impl ListManagedRuleSetsInput {
 pub mod list_mobile_sdk_releases_input {
 
     /// A builder for [`ListMobileSdkReleasesInput`](crate::input::ListMobileSdkReleasesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform: std::option::Option<crate::model::Platform>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -6224,7 +6224,7 @@ impl ListMobileSdkReleasesInput {
 pub mod list_regex_pattern_sets_input {
 
     /// A builder for [`ListRegexPatternSetsInput`](crate::input::ListRegexPatternSetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scope: std::option::Option<crate::model::Scope>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -6407,7 +6407,7 @@ impl ListRegexPatternSetsInput {
 pub mod list_resources_for_web_acl_input {
 
     /// A builder for [`ListResourcesForWebAclInput`](crate::input::ListResourcesForWebAclInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) web_acl_arn: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
@@ -6577,7 +6577,7 @@ impl ListResourcesForWebAclInput {
 pub mod list_rule_groups_input {
 
     /// A builder for [`ListRuleGroupsInput`](crate::input::ListRuleGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scope: std::option::Option<crate::model::Scope>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -6756,7 +6756,7 @@ impl ListRuleGroupsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -6929,7 +6929,7 @@ impl ListTagsForResourceInput {
 pub mod list_web_ac_ls_input {
 
     /// A builder for [`ListWebAcLsInput`](crate::input::ListWebAcLsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scope: std::option::Option<crate::model::Scope>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -7108,7 +7108,7 @@ impl ListWebAcLsInput {
 pub mod put_logging_configuration_input {
 
     /// A builder for [`PutLoggingConfigurationInput`](crate::input::PutLoggingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     }
@@ -7260,7 +7260,7 @@ impl PutLoggingConfigurationInput {
 pub mod put_managed_rule_set_versions_input {
 
     /// A builder for [`PutManagedRuleSetVersionsInput`](crate::input::PutManagedRuleSetVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -7498,7 +7498,7 @@ impl PutManagedRuleSetVersionsInput {
 pub mod put_permission_policy_input {
 
     /// A builder for [`PutPermissionPolicyInput`](crate::input::PutPermissionPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -7675,7 +7675,7 @@ impl PutPermissionPolicyInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7841,7 +7841,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8007,7 +8007,7 @@ impl UntagResourceInput {
 pub mod update_ip_set_input {
 
     /// A builder for [`UpdateIpSetInput`](crate::input::UpdateIpSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -8261,7 +8261,7 @@ impl UpdateIpSetInput {
 pub mod update_managed_rule_set_version_expiry_date_input {
 
     /// A builder for [`UpdateManagedRuleSetVersionExpiryDateInput`](crate::input::UpdateManagedRuleSetVersionExpiryDateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -8487,7 +8487,7 @@ impl UpdateManagedRuleSetVersionExpiryDateInput {
 pub mod update_regex_pattern_set_input {
 
     /// A builder for [`UpdateRegexPatternSetInput`](crate::input::UpdateRegexPatternSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -8715,7 +8715,7 @@ impl UpdateRegexPatternSetInput {
 pub mod update_rule_group_input {
 
     /// A builder for [`UpdateRuleGroupInput`](crate::input::UpdateRuleGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -8987,7 +8987,7 @@ impl UpdateRuleGroupInput {
 pub mod update_web_acl_input {
 
     /// A builder for [`UpdateWebAclInput`](crate::input::UpdateWebAclInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,

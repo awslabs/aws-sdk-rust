@@ -33,7 +33,7 @@ impl WorkflowType {
 pub mod workflow_type {
 
     /// A builder for [`WorkflowType`](crate::model::WorkflowType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -116,7 +116,7 @@ impl ActivityType {
 pub mod activity_type {
 
     /// A builder for [`ActivityType`](crate::model::ActivityType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -287,7 +287,7 @@ impl ResourceTag {
 pub mod resource_tag {
 
     /// A builder for [`ResourceTag`](crate::model::ResourceTag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -347,7 +347,7 @@ impl TaskList {
 pub mod task_list {
 
     /// A builder for [`TaskList`](crate::model::TaskList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -586,7 +586,7 @@ impl Decision {
 pub mod decision {
 
     /// A builder for [`Decision`](crate::model::Decision).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) decision_type: std::option::Option<crate::model::DecisionType>,
         pub(crate) schedule_activity_task_decision_attributes:
@@ -930,7 +930,7 @@ impl ScheduleLambdaFunctionDecisionAttributes {
 pub mod schedule_lambda_function_decision_attributes {
 
     /// A builder for [`ScheduleLambdaFunctionDecisionAttributes`](crate::model::ScheduleLambdaFunctionDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1151,7 +1151,7 @@ impl StartChildWorkflowExecutionDecisionAttributes {
 pub mod start_child_workflow_execution_decision_attributes {
 
     /// A builder for [`StartChildWorkflowExecutionDecisionAttributes`](crate::model::StartChildWorkflowExecutionDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -1409,7 +1409,7 @@ impl RequestCancelExternalWorkflowExecutionDecisionAttributes {
 pub mod request_cancel_external_workflow_execution_decision_attributes {
 
     /// A builder for [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) run_id: std::option::Option<std::string::String>,
@@ -1520,7 +1520,7 @@ impl SignalExternalWorkflowExecutionDecisionAttributes {
 pub mod signal_external_workflow_execution_decision_attributes {
 
     /// A builder for [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::model::SignalExternalWorkflowExecutionDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) run_id: std::option::Option<std::string::String>,
@@ -1625,7 +1625,7 @@ impl CancelTimerDecisionAttributes {
 pub mod cancel_timer_decision_attributes {
 
     /// A builder for [`CancelTimerDecisionAttributes`](crate::model::CancelTimerDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
     }
@@ -1699,7 +1699,7 @@ impl StartTimerDecisionAttributes {
 pub mod start_timer_decision_attributes {
 
     /// A builder for [`StartTimerDecisionAttributes`](crate::model::StartTimerDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
         pub(crate) control: std::option::Option<std::string::String>,
@@ -1793,7 +1793,7 @@ impl RecordMarkerDecisionAttributes {
 pub mod record_marker_decision_attributes {
 
     /// A builder for [`RecordMarkerDecisionAttributes`](crate::model::RecordMarkerDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker_name: std::option::Option<std::string::String>,
         pub(crate) details: std::option::Option<std::string::String>,
@@ -1952,7 +1952,7 @@ impl ContinueAsNewWorkflowExecutionDecisionAttributes {
 pub mod continue_as_new_workflow_execution_decision_attributes {
 
     /// A builder for [`ContinueAsNewWorkflowExecutionDecisionAttributes`](crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input: std::option::Option<std::string::String>,
         pub(crate) execution_start_to_close_timeout: std::option::Option<std::string::String>,
@@ -2165,7 +2165,7 @@ impl CancelWorkflowExecutionDecisionAttributes {
 pub mod cancel_workflow_execution_decision_attributes {
 
     /// A builder for [`CancelWorkflowExecutionDecisionAttributes`](crate::model::CancelWorkflowExecutionDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<std::string::String>,
     }
@@ -2228,7 +2228,7 @@ impl FailWorkflowExecutionDecisionAttributes {
 pub mod fail_workflow_execution_decision_attributes {
 
     /// A builder for [`FailWorkflowExecutionDecisionAttributes`](crate::model::FailWorkflowExecutionDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason: std::option::Option<std::string::String>,
         pub(crate) details: std::option::Option<std::string::String>,
@@ -2296,7 +2296,7 @@ impl CompleteWorkflowExecutionDecisionAttributes {
 pub mod complete_workflow_execution_decision_attributes {
 
     /// A builder for [`CompleteWorkflowExecutionDecisionAttributes`](crate::model::CompleteWorkflowExecutionDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<std::string::String>,
     }
@@ -2352,7 +2352,7 @@ impl RequestCancelActivityTaskDecisionAttributes {
 pub mod request_cancel_activity_task_decision_attributes {
 
     /// A builder for [`RequestCancelActivityTaskDecisionAttributes`](crate::model::RequestCancelActivityTaskDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_id: std::option::Option<std::string::String>,
     }
@@ -2506,7 +2506,7 @@ impl ScheduleActivityTaskDecisionAttributes {
 pub mod schedule_activity_task_decision_attributes {
 
     /// A builder for [`ScheduleActivityTaskDecisionAttributes`](crate::model::ScheduleActivityTaskDecisionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_type: std::option::Option<crate::model::ActivityType>,
         pub(crate) activity_id: std::option::Option<std::string::String>,
@@ -3510,7 +3510,7 @@ impl HistoryEvent {
 pub mod history_event {
 
     /// A builder for [`HistoryEvent`](crate::model::HistoryEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event_type: std::option::Option<crate::model::EventType>,
@@ -4715,7 +4715,7 @@ impl StartLambdaFunctionFailedEventAttributes {
 pub mod start_lambda_function_failed_event_attributes {
 
     /// A builder for [`StartLambdaFunctionFailedEventAttributes`](crate::model::StartLambdaFunctionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_event_id: std::option::Option<i64>,
         pub(crate) cause: std::option::Option<crate::model::StartLambdaFunctionFailedCause>,
@@ -4906,7 +4906,7 @@ impl ScheduleLambdaFunctionFailedEventAttributes {
 pub mod schedule_lambda_function_failed_event_attributes {
 
     /// A builder for [`ScheduleLambdaFunctionFailedEventAttributes`](crate::model::ScheduleLambdaFunctionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5135,7 +5135,7 @@ impl LambdaFunctionTimedOutEventAttributes {
 pub mod lambda_function_timed_out_event_attributes {
 
     /// A builder for [`LambdaFunctionTimedOutEventAttributes`](crate::model::LambdaFunctionTimedOutEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_event_id: std::option::Option<i64>,
         pub(crate) started_event_id: std::option::Option<i64>,
@@ -5318,7 +5318,7 @@ impl LambdaFunctionFailedEventAttributes {
 pub mod lambda_function_failed_event_attributes {
 
     /// A builder for [`LambdaFunctionFailedEventAttributes`](crate::model::LambdaFunctionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_event_id: std::option::Option<i64>,
         pub(crate) started_event_id: std::option::Option<i64>,
@@ -5416,7 +5416,7 @@ impl LambdaFunctionCompletedEventAttributes {
 pub mod lambda_function_completed_event_attributes {
 
     /// A builder for [`LambdaFunctionCompletedEventAttributes`](crate::model::LambdaFunctionCompletedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_event_id: std::option::Option<i64>,
         pub(crate) started_event_id: std::option::Option<i64>,
@@ -5488,7 +5488,7 @@ impl LambdaFunctionStartedEventAttributes {
 pub mod lambda_function_started_event_attributes {
 
     /// A builder for [`LambdaFunctionStartedEventAttributes`](crate::model::LambdaFunctionStartedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_event_id: std::option::Option<i64>,
     }
@@ -5571,7 +5571,7 @@ impl LambdaFunctionScheduledEventAttributes {
 pub mod lambda_function_scheduled_event_attributes {
 
     /// A builder for [`LambdaFunctionScheduledEventAttributes`](crate::model::LambdaFunctionScheduledEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5730,7 +5730,7 @@ impl StartChildWorkflowExecutionFailedEventAttributes {
 pub mod start_child_workflow_execution_failed_event_attributes {
 
     /// A builder for [`StartChildWorkflowExecutionFailedEventAttributes`](crate::model::StartChildWorkflowExecutionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
         pub(crate) cause: std::option::Option<crate::model::StartChildWorkflowExecutionFailedCause>,
@@ -6048,7 +6048,7 @@ impl CancelTimerFailedEventAttributes {
 pub mod cancel_timer_failed_event_attributes {
 
     /// A builder for [`CancelTimerFailedEventAttributes`](crate::model::CancelTimerFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<crate::model::CancelTimerFailedCause>,
@@ -6242,7 +6242,7 @@ impl StartTimerFailedEventAttributes {
 pub mod start_timer_failed_event_attributes {
 
     /// A builder for [`StartTimerFailedEventAttributes`](crate::model::StartTimerFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<crate::model::StartTimerFailedCause>,
@@ -6453,7 +6453,7 @@ impl RequestCancelActivityTaskFailedEventAttributes {
 pub mod request_cancel_activity_task_failed_event_attributes {
 
     /// A builder for [`RequestCancelActivityTaskFailedEventAttributes`](crate::model::RequestCancelActivityTaskFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_id: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<crate::model::RequestCancelActivityTaskFailedCause>,
@@ -6659,7 +6659,7 @@ impl ScheduleActivityTaskFailedEventAttributes {
 pub mod schedule_activity_task_failed_event_attributes {
 
     /// A builder for [`ScheduleActivityTaskFailedEventAttributes`](crate::model::ScheduleActivityTaskFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_type: std::option::Option<crate::model::ActivityType>,
         pub(crate) activity_id: std::option::Option<std::string::String>,
@@ -6980,7 +6980,7 @@ impl RequestCancelExternalWorkflowExecutionFailedEventAttributes {
 pub mod request_cancel_external_workflow_execution_failed_event_attributes {
 
     /// A builder for [`RequestCancelExternalWorkflowExecutionFailedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) run_id: std::option::Option<std::string::String>,
@@ -7230,7 +7230,7 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
 pub mod request_cancel_external_workflow_execution_initiated_event_attributes {
 
     /// A builder for [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) run_id: std::option::Option<std::string::String>,
@@ -7330,7 +7330,7 @@ impl ExternalWorkflowExecutionCancelRequestedEventAttributes {
 pub mod external_workflow_execution_cancel_requested_event_attributes {
 
     /// A builder for [`ExternalWorkflowExecutionCancelRequestedEventAttributes`](crate::model::ExternalWorkflowExecutionCancelRequestedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) initiated_event_id: std::option::Option<i64>,
@@ -7403,7 +7403,7 @@ impl WorkflowExecution {
 pub mod workflow_execution {
 
     /// A builder for [`WorkflowExecution`](crate::model::WorkflowExecution).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) run_id: std::option::Option<std::string::String>,
@@ -7504,7 +7504,7 @@ impl SignalExternalWorkflowExecutionFailedEventAttributes {
 pub mod signal_external_workflow_execution_failed_event_attributes {
 
     /// A builder for [`SignalExternalWorkflowExecutionFailedEventAttributes`](crate::model::SignalExternalWorkflowExecutionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) run_id: std::option::Option<std::string::String>,
@@ -7735,7 +7735,7 @@ impl ExternalWorkflowExecutionSignaledEventAttributes {
 pub mod external_workflow_execution_signaled_event_attributes {
 
     /// A builder for [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::model::ExternalWorkflowExecutionSignaledEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) initiated_event_id: std::option::Option<i64>,
@@ -7834,7 +7834,7 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributes {
 pub mod signal_external_workflow_execution_initiated_event_attributes {
 
     /// A builder for [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) run_id: std::option::Option<std::string::String>,
@@ -7971,7 +7971,7 @@ impl ChildWorkflowExecutionTerminatedEventAttributes {
 pub mod child_workflow_execution_terminated_event_attributes {
 
     /// A builder for [`ChildWorkflowExecutionTerminatedEventAttributes`](crate::model::ChildWorkflowExecutionTerminatedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -8090,7 +8090,7 @@ impl ChildWorkflowExecutionCanceledEventAttributes {
 pub mod child_workflow_execution_canceled_event_attributes {
 
     /// A builder for [`ChildWorkflowExecutionCanceledEventAttributes`](crate::model::ChildWorkflowExecutionCanceledEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -8220,7 +8220,7 @@ impl ChildWorkflowExecutionTimedOutEventAttributes {
 pub mod child_workflow_execution_timed_out_event_attributes {
 
     /// A builder for [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::model::ChildWorkflowExecutionTimedOutEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -8447,7 +8447,7 @@ impl ChildWorkflowExecutionFailedEventAttributes {
 pub mod child_workflow_execution_failed_event_attributes {
 
     /// A builder for [`ChildWorkflowExecutionFailedEventAttributes`](crate::model::ChildWorkflowExecutionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -8589,7 +8589,7 @@ impl ChildWorkflowExecutionCompletedEventAttributes {
 pub mod child_workflow_execution_completed_event_attributes {
 
     /// A builder for [`ChildWorkflowExecutionCompletedEventAttributes`](crate::model::ChildWorkflowExecutionCompletedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -8705,7 +8705,7 @@ impl ChildWorkflowExecutionStartedEventAttributes {
 pub mod child_workflow_execution_started_event_attributes {
 
     /// A builder for [`ChildWorkflowExecutionStartedEventAttributes`](crate::model::ChildWorkflowExecutionStartedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -8878,7 +8878,7 @@ impl StartChildWorkflowExecutionInitiatedEventAttributes {
 pub mod start_child_workflow_execution_initiated_event_attributes {
 
     /// A builder for [`StartChildWorkflowExecutionInitiatedEventAttributes`](crate::model::StartChildWorkflowExecutionInitiatedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -9126,7 +9126,7 @@ impl TimerCanceledEventAttributes {
 pub mod timer_canceled_event_attributes {
 
     /// A builder for [`TimerCanceledEventAttributes`](crate::model::TimerCanceledEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
         pub(crate) started_event_id: std::option::Option<i64>,
@@ -9210,7 +9210,7 @@ impl TimerFiredEventAttributes {
 pub mod timer_fired_event_attributes {
 
     /// A builder for [`TimerFiredEventAttributes`](crate::model::TimerFiredEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
         pub(crate) started_event_id: std::option::Option<i64>,
@@ -9293,7 +9293,7 @@ impl TimerStartedEventAttributes {
 pub mod timer_started_event_attributes {
 
     /// A builder for [`TimerStartedEventAttributes`](crate::model::TimerStartedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
         pub(crate) control: std::option::Option<std::string::String>,
@@ -9405,7 +9405,7 @@ impl RecordMarkerFailedEventAttributes {
 pub mod record_marker_failed_event_attributes {
 
     /// A builder for [`RecordMarkerFailedEventAttributes`](crate::model::RecordMarkerFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker_name: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<crate::model::RecordMarkerFailedCause>,
@@ -9590,7 +9590,7 @@ impl MarkerRecordedEventAttributes {
 pub mod marker_recorded_event_attributes {
 
     /// A builder for [`MarkerRecordedEventAttributes`](crate::model::MarkerRecordedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker_name: std::option::Option<std::string::String>,
         pub(crate) details: std::option::Option<std::string::String>,
@@ -9690,7 +9690,7 @@ impl WorkflowExecutionSignaledEventAttributes {
 pub mod workflow_execution_signaled_event_attributes {
 
     /// A builder for [`WorkflowExecutionSignaledEventAttributes`](crate::model::WorkflowExecutionSignaledEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) signal_name: std::option::Option<std::string::String>,
         pub(crate) input: std::option::Option<std::string::String>,
@@ -9788,7 +9788,7 @@ impl ActivityTaskCancelRequestedEventAttributes {
 pub mod activity_task_cancel_requested_event_attributes {
 
     /// A builder for [`ActivityTaskCancelRequestedEventAttributes`](crate::model::ActivityTaskCancelRequestedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) decision_task_completed_event_id: std::option::Option<i64>,
         pub(crate) activity_id: std::option::Option<std::string::String>,
@@ -9874,7 +9874,7 @@ impl ActivityTaskCanceledEventAttributes {
 pub mod activity_task_canceled_event_attributes {
 
     /// A builder for [`ActivityTaskCanceledEventAttributes`](crate::model::ActivityTaskCanceledEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<std::string::String>,
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -9984,7 +9984,7 @@ impl ActivityTaskTimedOutEventAttributes {
 pub mod activity_task_timed_out_event_attributes {
 
     /// A builder for [`ActivityTaskTimedOutEventAttributes`](crate::model::ActivityTaskTimedOutEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_type: std::option::Option<crate::model::ActivityTaskTimeoutType>,
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -10199,7 +10199,7 @@ impl ActivityTaskFailedEventAttributes {
 pub mod activity_task_failed_event_attributes {
 
     /// A builder for [`ActivityTaskFailedEventAttributes`](crate::model::ActivityTaskFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason: std::option::Option<std::string::String>,
         pub(crate) details: std::option::Option<std::string::String>,
@@ -10297,7 +10297,7 @@ impl ActivityTaskCompletedEventAttributes {
 pub mod activity_task_completed_event_attributes {
 
     /// A builder for [`ActivityTaskCompletedEventAttributes`](crate::model::ActivityTaskCompletedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<std::string::String>,
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -10376,7 +10376,7 @@ impl ActivityTaskStartedEventAttributes {
 pub mod activity_task_started_event_attributes {
 
     /// A builder for [`ActivityTaskStartedEventAttributes`](crate::model::ActivityTaskStartedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -10510,7 +10510,7 @@ impl ActivityTaskScheduledEventAttributes {
 pub mod activity_task_scheduled_event_attributes {
 
     /// A builder for [`ActivityTaskScheduledEventAttributes`](crate::model::ActivityTaskScheduledEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_type: std::option::Option<crate::model::ActivityType>,
         pub(crate) activity_id: std::option::Option<std::string::String>,
@@ -10719,7 +10719,7 @@ impl DecisionTaskTimedOutEventAttributes {
 pub mod decision_task_timed_out_event_attributes {
 
     /// A builder for [`DecisionTaskTimedOutEventAttributes`](crate::model::DecisionTaskTimedOutEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_type: std::option::Option<crate::model::DecisionTaskTimeoutType>,
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -10895,7 +10895,7 @@ impl DecisionTaskCompletedEventAttributes {
 pub mod decision_task_completed_event_attributes {
 
     /// A builder for [`DecisionTaskCompletedEventAttributes`](crate::model::DecisionTaskCompletedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_context: std::option::Option<std::string::String>,
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -10977,7 +10977,7 @@ impl DecisionTaskStartedEventAttributes {
 pub mod decision_task_started_event_attributes {
 
     /// A builder for [`DecisionTaskStartedEventAttributes`](crate::model::DecisionTaskStartedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -11055,7 +11055,7 @@ impl DecisionTaskScheduledEventAttributes {
 pub mod decision_task_scheduled_event_attributes {
 
     /// A builder for [`DecisionTaskScheduledEventAttributes`](crate::model::DecisionTaskScheduledEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_list: std::option::Option<crate::model::TaskList>,
         pub(crate) task_priority: std::option::Option<std::string::String>,
@@ -11155,7 +11155,7 @@ impl WorkflowExecutionCancelRequestedEventAttributes {
 pub mod workflow_execution_cancel_requested_event_attributes {
 
     /// A builder for [`WorkflowExecutionCancelRequestedEventAttributes`](crate::model::WorkflowExecutionCancelRequestedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) external_workflow_execution:
             std::option::Option<crate::model::WorkflowExecution>,
@@ -11358,7 +11358,7 @@ impl WorkflowExecutionTerminatedEventAttributes {
 pub mod workflow_execution_terminated_event_attributes {
 
     /// A builder for [`WorkflowExecutionTerminatedEventAttributes`](crate::model::WorkflowExecutionTerminatedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason: std::option::Option<std::string::String>,
         pub(crate) details: std::option::Option<std::string::String>,
@@ -11574,7 +11574,7 @@ impl ContinueAsNewWorkflowExecutionFailedEventAttributes {
 pub mod continue_as_new_workflow_execution_failed_event_attributes {
 
     /// A builder for [`ContinueAsNewWorkflowExecutionFailedEventAttributes`](crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cause:
             std::option::Option<crate::model::ContinueAsNewWorkflowExecutionFailedCause>,
@@ -11872,7 +11872,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributes {
 pub mod workflow_execution_continued_as_new_event_attributes {
 
     /// A builder for [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::model::WorkflowExecutionContinuedAsNewEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input: std::option::Option<std::string::String>,
         pub(crate) decision_task_completed_event_id: std::option::Option<i64>,
@@ -12106,7 +12106,7 @@ impl CancelWorkflowExecutionFailedEventAttributes {
 pub mod cancel_workflow_execution_failed_event_attributes {
 
     /// A builder for [`CancelWorkflowExecutionFailedEventAttributes`](crate::model::CancelWorkflowExecutionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cause: std::option::Option<crate::model::CancelWorkflowExecutionFailedCause>,
         pub(crate) decision_task_completed_event_id: std::option::Option<i64>,
@@ -12277,7 +12277,7 @@ impl WorkflowExecutionCanceledEventAttributes {
 pub mod workflow_execution_canceled_event_attributes {
 
     /// A builder for [`WorkflowExecutionCanceledEventAttributes`](crate::model::WorkflowExecutionCanceledEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<std::string::String>,
         pub(crate) decision_task_completed_event_id: std::option::Option<i64>,
@@ -12361,7 +12361,7 @@ impl WorkflowExecutionTimedOutEventAttributes {
 pub mod workflow_execution_timed_out_event_attributes {
 
     /// A builder for [`WorkflowExecutionTimedOutEventAttributes`](crate::model::WorkflowExecutionTimedOutEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_type: std::option::Option<crate::model::WorkflowExecutionTimeoutType>,
         pub(crate) child_policy: std::option::Option<crate::model::ChildPolicy>,
@@ -12450,7 +12450,7 @@ impl FailWorkflowExecutionFailedEventAttributes {
 pub mod fail_workflow_execution_failed_event_attributes {
 
     /// A builder for [`FailWorkflowExecutionFailedEventAttributes`](crate::model::FailWorkflowExecutionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cause: std::option::Option<crate::model::FailWorkflowExecutionFailedCause>,
         pub(crate) decision_task_completed_event_id: std::option::Option<i64>,
@@ -12628,7 +12628,7 @@ impl WorkflowExecutionFailedEventAttributes {
 pub mod workflow_execution_failed_event_attributes {
 
     /// A builder for [`WorkflowExecutionFailedEventAttributes`](crate::model::WorkflowExecutionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason: std::option::Option<std::string::String>,
         pub(crate) details: std::option::Option<std::string::String>,
@@ -12718,7 +12718,7 @@ impl CompleteWorkflowExecutionFailedEventAttributes {
 pub mod complete_workflow_execution_failed_event_attributes {
 
     /// A builder for [`CompleteWorkflowExecutionFailedEventAttributes`](crate::model::CompleteWorkflowExecutionFailedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cause: std::option::Option<crate::model::CompleteWorkflowExecutionFailedCause>,
         pub(crate) decision_task_completed_event_id: std::option::Option<i64>,
@@ -12893,7 +12893,7 @@ impl WorkflowExecutionCompletedEventAttributes {
 pub mod workflow_execution_completed_event_attributes {
 
     /// A builder for [`WorkflowExecutionCompletedEventAttributes`](crate::model::WorkflowExecutionCompletedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<std::string::String>,
         pub(crate) decision_task_completed_event_id: std::option::Option<i64>,
@@ -13053,7 +13053,7 @@ impl WorkflowExecutionStartedEventAttributes {
 pub mod workflow_execution_started_event_attributes {
 
     /// A builder for [`WorkflowExecutionStartedEventAttributes`](crate::model::WorkflowExecutionStartedEventAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input: std::option::Option<std::string::String>,
         pub(crate) execution_start_to_close_timeout: std::option::Option<std::string::String>,
@@ -13746,7 +13746,7 @@ impl WorkflowTypeInfo {
 pub mod workflow_type_info {
 
     /// A builder for [`WorkflowTypeInfo`](crate::model::WorkflowTypeInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
         pub(crate) status: std::option::Option<crate::model::RegistrationStatus>,
@@ -14018,7 +14018,7 @@ impl WorkflowExecutionInfo {
 pub mod workflow_execution_info {
 
     /// A builder for [`WorkflowExecutionInfo`](crate::model::WorkflowExecutionInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -14415,7 +14415,7 @@ impl WorkflowExecutionFilter {
 pub mod workflow_execution_filter {
 
     /// A builder for [`WorkflowExecutionFilter`](crate::model::WorkflowExecutionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
     }
@@ -14465,7 +14465,7 @@ impl TagFilter {
 pub mod tag_filter {
 
     /// A builder for [`TagFilter`](crate::model::TagFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag: std::option::Option<std::string::String>,
     }
@@ -14520,7 +14520,7 @@ impl WorkflowTypeFilter {
 pub mod workflow_type_filter {
 
     /// A builder for [`WorkflowTypeFilter`](crate::model::WorkflowTypeFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -14587,7 +14587,7 @@ impl ExecutionTimeFilter {
 pub mod execution_time_filter {
 
     /// A builder for [`ExecutionTimeFilter`](crate::model::ExecutionTimeFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) oldest_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) latest_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -14682,7 +14682,7 @@ impl DomainInfo {
 pub mod domain_info {
 
     /// A builder for [`DomainInfo`](crate::model::DomainInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RegistrationStatus>,
@@ -14777,7 +14777,7 @@ impl CloseStatusFilter {
 pub mod close_status_filter {
 
     /// A builder for [`CloseStatusFilter`](crate::model::CloseStatusFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::CloseStatus>,
     }
@@ -14853,7 +14853,7 @@ impl ActivityTypeInfo {
 pub mod activity_type_info {
 
     /// A builder for [`ActivityTypeInfo`](crate::model::ActivityTypeInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_type: std::option::Option<crate::model::ActivityType>,
         pub(crate) status: std::option::Option<crate::model::RegistrationStatus>,
@@ -15020,7 +15020,7 @@ impl WorkflowTypeConfiguration {
 pub mod workflow_type_configuration {
 
     /// A builder for [`WorkflowTypeConfiguration`](crate::model::WorkflowTypeConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_task_start_to_close_timeout: std::option::Option<std::string::String>,
         pub(crate) default_execution_start_to_close_timeout:
@@ -15206,7 +15206,7 @@ impl WorkflowExecutionOpenCounts {
 pub mod workflow_execution_open_counts {
 
     /// A builder for [`WorkflowExecutionOpenCounts`](crate::model::WorkflowExecutionOpenCounts).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_activity_tasks: std::option::Option<i32>,
         pub(crate) open_decision_tasks: std::option::Option<i32>,
@@ -15360,7 +15360,7 @@ impl WorkflowExecutionConfiguration {
 pub mod workflow_execution_configuration {
 
     /// A builder for [`WorkflowExecutionConfiguration`](crate::model::WorkflowExecutionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_start_to_close_timeout: std::option::Option<std::string::String>,
         pub(crate) execution_start_to_close_timeout: std::option::Option<std::string::String>,
@@ -15504,7 +15504,7 @@ impl DomainConfiguration {
 pub mod domain_configuration {
 
     /// A builder for [`DomainConfiguration`](crate::model::DomainConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution_retention_period_in_days:
             std::option::Option<std::string::String>,
@@ -15609,7 +15609,7 @@ impl ActivityTypeConfiguration {
 pub mod activity_type_configuration {
 
     /// A builder for [`ActivityTypeConfiguration`](crate::model::ActivityTypeConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_task_start_to_close_timeout: std::option::Option<std::string::String>,
         pub(crate) default_task_heartbeat_timeout: std::option::Option<std::string::String>,

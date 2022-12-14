@@ -30,7 +30,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
 
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
 
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl std::error::Error for InvalidStateException {}
 pub mod invalid_state_exception {
 
     /// A builder for [`InvalidStateException`](crate::error::InvalidStateException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -210,7 +210,7 @@ impl std::error::Error for InvalidArnException {}
 pub mod invalid_arn_exception {
 
     /// A builder for [`InvalidArnException`](crate::error::InvalidArnException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -270,7 +270,7 @@ impl std::error::Error for InvalidDomainValidationOptionsException {}
 pub mod invalid_domain_validation_options_exception {
 
     /// A builder for [`InvalidDomainValidationOptionsException`](crate::error::InvalidDomainValidationOptionsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -330,7 +330,7 @@ impl std::error::Error for TooManyTagsException {}
 pub mod too_many_tags_exception {
 
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -390,7 +390,7 @@ impl std::error::Error for TagPolicyException {}
 pub mod tag_policy_exception {
 
     /// A builder for [`TagPolicyException`](crate::error::TagPolicyException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -450,7 +450,7 @@ impl std::error::Error for InvalidTagException {}
 pub mod invalid_tag_exception {
 
     /// A builder for [`InvalidTagException`](crate::error::InvalidTagException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -510,7 +510,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
 
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -570,7 +570,7 @@ impl std::error::Error for ThrottlingException {}
 pub mod throttling_exception {
 
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -630,7 +630,7 @@ impl std::error::Error for ValidationException {}
 pub mod validation_exception {
 
     /// A builder for [`ValidationException`](crate::error::ValidationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -690,7 +690,7 @@ impl std::error::Error for ConflictException {}
 pub mod conflict_exception {
 
     /// A builder for [`ConflictException`](crate::error::ConflictException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -750,7 +750,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
 
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -810,7 +810,7 @@ impl std::error::Error for InvalidArgsException {}
 pub mod invalid_args_exception {
 
     /// A builder for [`InvalidArgsException`](crate::error::InvalidArgsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -870,7 +870,7 @@ impl std::error::Error for RequestInProgressException {}
 pub mod request_in_progress_exception {
 
     /// A builder for [`RequestInProgressException`](crate::error::RequestInProgressException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -930,7 +930,7 @@ impl std::error::Error for ResourceInUseException {}
 pub mod resource_in_use_exception {
 
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

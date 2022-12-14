@@ -131,7 +131,7 @@ impl std::fmt::Debug for Target {
 pub mod target {
 
     /// A builder for [`Target`](crate::model::Target).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) target_type: std::option::Option<std::string::String>,
         pub(crate) target_address: std::option::Option<std::string::String>,
@@ -333,7 +333,7 @@ impl std::fmt::Debug for TargetSummary {
 pub mod target_summary {
 
     /// A builder for [`TargetSummary`](crate::model::TargetSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) target_address: std::option::Option<std::string::String>,
         pub(crate) target_type: std::option::Option<std::string::String>,
@@ -546,7 +546,7 @@ impl ListTargetsFilter {
 pub mod list_targets_filter {
 
     /// A builder for [`ListTargetsFilter`](crate::model::ListTargetsFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ListTargetsFilterName>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -713,7 +713,7 @@ impl NotificationRuleSummary {
 pub mod notification_rule_summary {
 
     /// A builder for [`NotificationRuleSummary`](crate::model::NotificationRuleSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -780,7 +780,7 @@ impl ListNotificationRulesFilter {
 pub mod list_notification_rules_filter {
 
     /// A builder for [`ListNotificationRulesFilter`](crate::model::ListNotificationRulesFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ListNotificationRulesFilterName>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -966,7 +966,7 @@ impl EventTypeSummary {
 pub mod event_type_summary {
 
     /// A builder for [`EventTypeSummary`](crate::model::EventTypeSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_type_id: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -1066,7 +1066,7 @@ impl ListEventTypesFilter {
 pub mod list_event_types_filter {
 
     /// A builder for [`ListEventTypesFilter`](crate::model::ListEventTypesFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ListEventTypesFilterName>,
         pub(crate) value: std::option::Option<std::string::String>,

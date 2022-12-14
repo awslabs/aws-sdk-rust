@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod query_forecast_input {
 
     /// A builder for [`QueryForecastInput`](crate::input::QueryForecastInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forecast_arn: std::option::Option<std::string::String>,
         pub(crate) start_date: std::option::Option<std::string::String>,
@@ -219,7 +219,7 @@ impl QueryForecastInput {
 pub mod query_what_if_forecast_input {
 
     /// A builder for [`QueryWhatIfForecastInput`](crate::input::QueryWhatIfForecastInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) what_if_forecast_arn: std::option::Option<std::string::String>,
         pub(crate) start_date: std::option::Option<std::string::String>,

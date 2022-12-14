@@ -39,7 +39,7 @@ impl std::error::Error for TooManyRequestsException {}
 pub mod too_many_requests_exception {
 
     /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit_type: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -120,7 +120,7 @@ impl std::error::Error for NotFoundException {}
 pub mod not_found_exception {
 
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -195,7 +195,7 @@ impl std::error::Error for GatewayTimeoutException {}
 pub mod gateway_timeout_exception {
 
     /// A builder for [`GatewayTimeoutException`](crate::error::GatewayTimeoutException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -255,7 +255,7 @@ impl std::error::Error for BadRequestException {}
 pub mod bad_request_exception {
 
     /// A builder for [`BadRequestException`](crate::error::BadRequestException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

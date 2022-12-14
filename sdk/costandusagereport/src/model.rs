@@ -97,7 +97,7 @@ impl ReportDefinition {
 pub mod report_definition {
 
     /// A builder for [`ReportDefinition`](crate::model::ReportDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_name: std::option::Option<std::string::String>,
         pub(crate) time_unit: std::option::Option<crate::model::TimeUnit>,

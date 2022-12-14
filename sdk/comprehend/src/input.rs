@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod batch_detect_dominant_language_input {
 
     /// A builder for [`BatchDetectDominantLanguageInput`](crate::input::BatchDetectDominantLanguageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text_list: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -167,7 +167,7 @@ impl BatchDetectDominantLanguageInput {
 pub mod batch_detect_entities_input {
 
     /// A builder for [`BatchDetectEntitiesInput`](crate::input::BatchDetectEntitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -346,7 +346,7 @@ impl BatchDetectEntitiesInput {
 pub mod batch_detect_key_phrases_input {
 
     /// A builder for [`BatchDetectKeyPhrasesInput`](crate::input::BatchDetectKeyPhrasesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -527,7 +527,7 @@ impl BatchDetectKeyPhrasesInput {
 pub mod batch_detect_sentiment_input {
 
     /// A builder for [`BatchDetectSentimentInput`](crate::input::BatchDetectSentimentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -712,7 +712,7 @@ impl BatchDetectSentimentInput {
 pub mod batch_detect_syntax_input {
 
     /// A builder for [`BatchDetectSyntaxInput`](crate::input::BatchDetectSyntaxInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) language_code: std::option::Option<crate::model::SyntaxLanguageCode>,
@@ -891,7 +891,7 @@ impl BatchDetectSyntaxInput {
 pub mod batch_detect_targeted_sentiment_input {
 
     /// A builder for [`BatchDetectTargetedSentimentInput`](crate::input::BatchDetectTargetedSentimentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -1069,7 +1069,7 @@ impl BatchDetectTargetedSentimentInput {
 pub mod classify_document_input {
 
     /// A builder for [`ClassifyDocumentInput`](crate::input::ClassifyDocumentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
@@ -1236,7 +1236,7 @@ impl ClassifyDocumentInput {
 pub mod contains_pii_entities_input {
 
     /// A builder for [`ContainsPiiEntitiesInput`](crate::input::ContainsPiiEntitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -1398,7 +1398,7 @@ impl ContainsPiiEntitiesInput {
 pub mod create_document_classifier_input {
 
     /// A builder for [`CreateDocumentClassifierInput`](crate::input::CreateDocumentClassifierInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_classifier_name: std::option::Option<std::string::String>,
         pub(crate) version_name: std::option::Option<std::string::String>,
@@ -1765,7 +1765,7 @@ impl CreateDocumentClassifierInput {
 pub mod create_endpoint_input {
 
     /// A builder for [`CreateEndpointInput`](crate::input::CreateEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_name: std::option::Option<std::string::String>,
         pub(crate) model_arn: std::option::Option<std::string::String>,
@@ -1991,7 +1991,7 @@ impl CreateEndpointInput {
 pub mod create_entity_recognizer_input {
 
     /// A builder for [`CreateEntityRecognizerInput`](crate::input::CreateEntityRecognizerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recognizer_name: std::option::Option<std::string::String>,
         pub(crate) version_name: std::option::Option<std::string::String>,
@@ -2324,7 +2324,7 @@ impl CreateEntityRecognizerInput {
 pub mod delete_document_classifier_input {
 
     /// A builder for [`DeleteDocumentClassifierInput`](crate::input::DeleteDocumentClassifierInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_classifier_arn: std::option::Option<std::string::String>,
     }
@@ -2476,7 +2476,7 @@ impl DeleteDocumentClassifierInput {
 pub mod delete_endpoint_input {
 
     /// A builder for [`DeleteEndpointInput`](crate::input::DeleteEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
     }
@@ -2621,7 +2621,7 @@ impl DeleteEndpointInput {
 pub mod delete_entity_recognizer_input {
 
     /// A builder for [`DeleteEntityRecognizerInput`](crate::input::DeleteEntityRecognizerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_recognizer_arn: std::option::Option<std::string::String>,
     }
@@ -2773,7 +2773,7 @@ impl DeleteEntityRecognizerInput {
 pub mod delete_resource_policy_input {
 
     /// A builder for [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) policy_revision_id: std::option::Option<std::string::String>,
@@ -2937,7 +2937,7 @@ impl DeleteResourcePolicyInput {
 pub mod describe_document_classification_job_input {
 
     /// A builder for [`DescribeDocumentClassificationJobInput`](crate::input::DescribeDocumentClassificationJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -3083,7 +3083,7 @@ impl DescribeDocumentClassificationJobInput {
 pub mod describe_document_classifier_input {
 
     /// A builder for [`DescribeDocumentClassifierInput`](crate::input::DescribeDocumentClassifierInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_classifier_arn: std::option::Option<std::string::String>,
     }
@@ -3235,7 +3235,7 @@ impl DescribeDocumentClassifierInput {
 pub mod describe_dominant_language_detection_job_input {
 
     /// A builder for [`DescribeDominantLanguageDetectionJobInput`](crate::input::DescribeDominantLanguageDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -3381,7 +3381,7 @@ impl DescribeDominantLanguageDetectionJobInput {
 pub mod describe_endpoint_input {
 
     /// A builder for [`DescribeEndpointInput`](crate::input::DescribeEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
     }
@@ -3528,7 +3528,7 @@ impl DescribeEndpointInput {
 pub mod describe_entities_detection_job_input {
 
     /// A builder for [`DescribeEntitiesDetectionJobInput`](crate::input::DescribeEntitiesDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -3674,7 +3674,7 @@ impl DescribeEntitiesDetectionJobInput {
 pub mod describe_entity_recognizer_input {
 
     /// A builder for [`DescribeEntityRecognizerInput`](crate::input::DescribeEntityRecognizerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_recognizer_arn: std::option::Option<std::string::String>,
     }
@@ -3826,7 +3826,7 @@ impl DescribeEntityRecognizerInput {
 pub mod describe_events_detection_job_input {
 
     /// A builder for [`DescribeEventsDetectionJobInput`](crate::input::DescribeEventsDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -3972,7 +3972,7 @@ impl DescribeEventsDetectionJobInput {
 pub mod describe_key_phrases_detection_job_input {
 
     /// A builder for [`DescribeKeyPhrasesDetectionJobInput`](crate::input::DescribeKeyPhrasesDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -4118,7 +4118,7 @@ impl DescribeKeyPhrasesDetectionJobInput {
 pub mod describe_pii_entities_detection_job_input {
 
     /// A builder for [`DescribePiiEntitiesDetectionJobInput`](crate::input::DescribePiiEntitiesDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -4264,7 +4264,7 @@ impl DescribePiiEntitiesDetectionJobInput {
 pub mod describe_resource_policy_input {
 
     /// A builder for [`DescribeResourcePolicyInput`](crate::input::DescribeResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -4413,7 +4413,7 @@ impl DescribeResourcePolicyInput {
 pub mod describe_sentiment_detection_job_input {
 
     /// A builder for [`DescribeSentimentDetectionJobInput`](crate::input::DescribeSentimentDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -4559,7 +4559,7 @@ impl DescribeSentimentDetectionJobInput {
 pub mod describe_targeted_sentiment_detection_job_input {
 
     /// A builder for [`DescribeTargetedSentimentDetectionJobInput`](crate::input::DescribeTargetedSentimentDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -4705,7 +4705,7 @@ impl DescribeTargetedSentimentDetectionJobInput {
 pub mod describe_topics_detection_job_input {
 
     /// A builder for [`DescribeTopicsDetectionJobInput`](crate::input::DescribeTopicsDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -4851,7 +4851,7 @@ impl DescribeTopicsDetectionJobInput {
 pub mod detect_dominant_language_input {
 
     /// A builder for [`DetectDominantLanguageInput`](crate::input::DetectDominantLanguageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
     }
@@ -5005,7 +5005,7 @@ impl DetectDominantLanguageInput {
 pub mod detect_entities_input {
 
     /// A builder for [`DetectEntitiesInput`](crate::input::DetectEntitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -5192,7 +5192,7 @@ impl DetectEntitiesInput {
 pub mod detect_key_phrases_input {
 
     /// A builder for [`DetectKeyPhrasesInput`](crate::input::DetectKeyPhrasesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -5362,7 +5362,7 @@ impl DetectKeyPhrasesInput {
 pub mod detect_pii_entities_input {
 
     /// A builder for [`DetectPiiEntitiesInput`](crate::input::DetectPiiEntitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -5524,7 +5524,7 @@ impl DetectPiiEntitiesInput {
 pub mod detect_sentiment_input {
 
     /// A builder for [`DetectSentimentInput`](crate::input::DetectSentimentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -5696,7 +5696,7 @@ impl DetectSentimentInput {
 pub mod detect_syntax_input {
 
     /// A builder for [`DetectSyntaxInput`](crate::input::DetectSyntaxInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::SyntaxLanguageCode>,
@@ -5864,7 +5864,7 @@ impl DetectSyntaxInput {
 pub mod detect_targeted_sentiment_input {
 
     /// A builder for [`DetectTargetedSentimentInput`](crate::input::DetectTargetedSentimentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -6036,7 +6036,7 @@ impl DetectTargetedSentimentInput {
 pub mod import_model_input {
 
     /// A builder for [`ImportModelInput`](crate::input::ImportModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_model_arn: std::option::Option<std::string::String>,
         pub(crate) model_name: std::option::Option<std::string::String>,
@@ -6267,7 +6267,7 @@ impl ImportModelInput {
 pub mod list_document_classification_jobs_input {
 
     /// A builder for [`ListDocumentClassificationJobsInput`](crate::input::ListDocumentClassificationJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::DocumentClassificationJobFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6440,7 +6440,7 @@ impl ListDocumentClassificationJobsInput {
 pub mod list_document_classifiers_input {
 
     /// A builder for [`ListDocumentClassifiersInput`](crate::input::ListDocumentClassifiersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::DocumentClassifierFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6616,7 +6616,7 @@ impl ListDocumentClassifiersInput {
 pub mod list_document_classifier_summaries_input {
 
     /// A builder for [`ListDocumentClassifierSummariesInput`](crate::input::ListDocumentClassifierSummariesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -6774,7 +6774,7 @@ impl ListDocumentClassifierSummariesInput {
 pub mod list_dominant_language_detection_jobs_input {
 
     /// A builder for [`ListDominantLanguageDetectionJobsInput`](crate::input::ListDominantLanguageDetectionJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::DominantLanguageDetectionJobFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6947,7 +6947,7 @@ impl ListDominantLanguageDetectionJobsInput {
 pub mod list_endpoints_input {
 
     /// A builder for [`ListEndpointsInput`](crate::input::ListEndpointsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::EndpointFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7119,7 +7119,7 @@ impl ListEndpointsInput {
 pub mod list_entities_detection_jobs_input {
 
     /// A builder for [`ListEntitiesDetectionJobsInput`](crate::input::ListEntitiesDetectionJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::EntitiesDetectionJobFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7295,7 +7295,7 @@ impl ListEntitiesDetectionJobsInput {
 pub mod list_entity_recognizers_input {
 
     /// A builder for [`ListEntityRecognizersInput`](crate::input::ListEntityRecognizersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::EntityRecognizerFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7471,7 +7471,7 @@ impl ListEntityRecognizersInput {
 pub mod list_entity_recognizer_summaries_input {
 
     /// A builder for [`ListEntityRecognizerSummariesInput`](crate::input::ListEntityRecognizerSummariesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -7629,7 +7629,7 @@ impl ListEntityRecognizerSummariesInput {
 pub mod list_events_detection_jobs_input {
 
     /// A builder for [`ListEventsDetectionJobsInput`](crate::input::ListEventsDetectionJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::EventsDetectionJobFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7805,7 +7805,7 @@ impl ListEventsDetectionJobsInput {
 pub mod list_key_phrases_detection_jobs_input {
 
     /// A builder for [`ListKeyPhrasesDetectionJobsInput`](crate::input::ListKeyPhrasesDetectionJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::KeyPhrasesDetectionJobFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7978,7 +7978,7 @@ impl ListKeyPhrasesDetectionJobsInput {
 pub mod list_pii_entities_detection_jobs_input {
 
     /// A builder for [`ListPiiEntitiesDetectionJobsInput`](crate::input::ListPiiEntitiesDetectionJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::PiiEntitiesDetectionJobFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -8151,7 +8151,7 @@ impl ListPiiEntitiesDetectionJobsInput {
 pub mod list_sentiment_detection_jobs_input {
 
     /// A builder for [`ListSentimentDetectionJobsInput`](crate::input::ListSentimentDetectionJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::SentimentDetectionJobFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -8324,7 +8324,7 @@ impl ListSentimentDetectionJobsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -8473,7 +8473,7 @@ impl ListTagsForResourceInput {
 pub mod list_targeted_sentiment_detection_jobs_input {
 
     /// A builder for [`ListTargetedSentimentDetectionJobsInput`](crate::input::ListTargetedSentimentDetectionJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::TargetedSentimentDetectionJobFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -8646,7 +8646,7 @@ impl ListTargetedSentimentDetectionJobsInput {
 pub mod list_topics_detection_jobs_input {
 
     /// A builder for [`ListTopicsDetectionJobsInput`](crate::input::ListTopicsDetectionJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::TopicsDetectionJobFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -8822,7 +8822,7 @@ impl ListTopicsDetectionJobsInput {
 pub mod put_resource_policy_input {
 
     /// A builder for [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_policy: std::option::Option<std::string::String>,
@@ -9005,7 +9005,7 @@ impl PutResourcePolicyInput {
 pub mod start_document_classification_job_input {
 
     /// A builder for [`StartDocumentClassificationJobInput`](crate::input::StartDocumentClassificationJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) document_classifier_arn: std::option::Option<std::string::String>,
@@ -9288,7 +9288,7 @@ impl StartDocumentClassificationJobInput {
 pub mod start_dominant_language_detection_job_input {
 
     /// A builder for [`StartDominantLanguageDetectionJobInput`](crate::input::StartDominantLanguageDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -9556,7 +9556,7 @@ impl StartDominantLanguageDetectionJobInput {
 pub mod start_entities_detection_job_input {
 
     /// A builder for [`StartEntitiesDetectionJobInput`](crate::input::StartEntitiesDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -9857,7 +9857,7 @@ impl StartEntitiesDetectionJobInput {
 pub mod start_events_detection_job_input {
 
     /// A builder for [`StartEventsDetectionJobInput`](crate::input::StartEventsDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -10126,7 +10126,7 @@ impl StartEventsDetectionJobInput {
 pub mod start_key_phrases_detection_job_input {
 
     /// A builder for [`StartKeyPhrasesDetectionJobInput`](crate::input::StartKeyPhrasesDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -10409,7 +10409,7 @@ impl StartKeyPhrasesDetectionJobInput {
 pub mod start_pii_entities_detection_job_input {
 
     /// A builder for [`StartPiiEntitiesDetectionJobInput`](crate::input::StartPiiEntitiesDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -10686,7 +10686,7 @@ impl StartPiiEntitiesDetectionJobInput {
 pub mod start_sentiment_detection_job_input {
 
     /// A builder for [`StartSentimentDetectionJobInput`](crate::input::StartSentimentDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -10969,7 +10969,7 @@ impl StartSentimentDetectionJobInput {
 pub mod start_targeted_sentiment_detection_job_input {
 
     /// A builder for [`StartTargetedSentimentDetectionJobInput`](crate::input::StartTargetedSentimentDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -11252,7 +11252,7 @@ impl StartTargetedSentimentDetectionJobInput {
 pub mod start_topics_detection_job_input {
 
     /// A builder for [`StartTopicsDetectionJobInput`](crate::input::StartTopicsDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -11535,7 +11535,7 @@ impl StartTopicsDetectionJobInput {
 pub mod stop_dominant_language_detection_job_input {
 
     /// A builder for [`StopDominantLanguageDetectionJobInput`](crate::input::StopDominantLanguageDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -11681,7 +11681,7 @@ impl StopDominantLanguageDetectionJobInput {
 pub mod stop_entities_detection_job_input {
 
     /// A builder for [`StopEntitiesDetectionJobInput`](crate::input::StopEntitiesDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -11830,7 +11830,7 @@ impl StopEntitiesDetectionJobInput {
 pub mod stop_events_detection_job_input {
 
     /// A builder for [`StopEventsDetectionJobInput`](crate::input::StopEventsDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -11979,7 +11979,7 @@ impl StopEventsDetectionJobInput {
 pub mod stop_key_phrases_detection_job_input {
 
     /// A builder for [`StopKeyPhrasesDetectionJobInput`](crate::input::StopKeyPhrasesDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -12125,7 +12125,7 @@ impl StopKeyPhrasesDetectionJobInput {
 pub mod stop_pii_entities_detection_job_input {
 
     /// A builder for [`StopPiiEntitiesDetectionJobInput`](crate::input::StopPiiEntitiesDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -12271,7 +12271,7 @@ impl StopPiiEntitiesDetectionJobInput {
 pub mod stop_sentiment_detection_job_input {
 
     /// A builder for [`StopSentimentDetectionJobInput`](crate::input::StopSentimentDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -12420,7 +12420,7 @@ impl StopSentimentDetectionJobInput {
 pub mod stop_targeted_sentiment_detection_job_input {
 
     /// A builder for [`StopTargetedSentimentDetectionJobInput`](crate::input::StopTargetedSentimentDetectionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -12566,7 +12566,7 @@ impl StopTargetedSentimentDetectionJobInput {
 pub mod stop_training_document_classifier_input {
 
     /// A builder for [`StopTrainingDocumentClassifierInput`](crate::input::StopTrainingDocumentClassifierInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_classifier_arn: std::option::Option<std::string::String>,
     }
@@ -12715,7 +12715,7 @@ impl StopTrainingDocumentClassifierInput {
 pub mod stop_training_entity_recognizer_input {
 
     /// A builder for [`StopTrainingEntityRecognizerInput`](crate::input::StopTrainingEntityRecognizerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_recognizer_arn: std::option::Option<std::string::String>,
     }
@@ -12864,7 +12864,7 @@ impl StopTrainingEntityRecognizerInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -13030,7 +13030,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13196,7 +13196,7 @@ impl UntagResourceInput {
 pub mod update_endpoint_input {
 
     /// A builder for [`UpdateEndpointInput`](crate::input::UpdateEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
         pub(crate) desired_model_arn: std::option::Option<std::string::String>,

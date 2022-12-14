@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_group_input {
 
     /// A builder for [`CreateGroupInput`](crate::input::CreateGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -186,7 +186,7 @@ impl CreateGroupInput {
 pub mod create_group_membership_input {
 
     /// A builder for [`CreateGroupMembershipInput`](crate::input::CreateGroupMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -362,7 +362,7 @@ impl CreateGroupMembershipInput {
 pub mod create_user_input {
 
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -716,7 +716,7 @@ impl CreateUserInput {
 pub mod delete_group_input {
 
     /// A builder for [`DeleteGroupInput`](crate::input::DeleteGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -876,7 +876,7 @@ impl DeleteGroupInput {
 pub mod delete_group_membership_input {
 
     /// A builder for [`DeleteGroupMembershipInput`](crate::input::DeleteGroupMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) membership_id: std::option::Option<std::string::String>,
@@ -1043,7 +1043,7 @@ impl DeleteGroupMembershipInput {
 pub mod delete_user_input {
 
     /// A builder for [`DeleteUserInput`](crate::input::DeleteUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -1203,7 +1203,7 @@ impl DeleteUserInput {
 pub mod describe_group_input {
 
     /// A builder for [`DescribeGroupInput`](crate::input::DescribeGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -1363,7 +1363,7 @@ impl DescribeGroupInput {
 pub mod describe_group_membership_input {
 
     /// A builder for [`DescribeGroupMembershipInput`](crate::input::DescribeGroupMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) membership_id: std::option::Option<std::string::String>,
@@ -1530,7 +1530,7 @@ impl DescribeGroupMembershipInput {
 pub mod describe_user_input {
 
     /// A builder for [`DescribeUserInput`](crate::input::DescribeUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -1690,7 +1690,7 @@ impl DescribeUserInput {
 pub mod get_group_id_input {
 
     /// A builder for [`GetGroupIdInput`](crate::input::GetGroupIdInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) alternate_identifier: std::option::Option<crate::model::AlternateIdentifier>,
@@ -1853,7 +1853,7 @@ impl GetGroupIdInput {
 pub mod get_group_membership_id_input {
 
     /// A builder for [`GetGroupMembershipIdInput`](crate::input::GetGroupMembershipIdInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -2029,7 +2029,7 @@ impl GetGroupMembershipIdInput {
 pub mod get_user_id_input {
 
     /// A builder for [`GetUserIdInput`](crate::input::GetUserIdInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) alternate_identifier: std::option::Option<crate::model::AlternateIdentifier>,
@@ -2190,7 +2190,7 @@ impl GetUserIdInput {
 pub mod is_member_in_groups_input {
 
     /// A builder for [`IsMemberInGroupsInput`](crate::input::IsMemberInGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) member_id: std::option::Option<crate::model::MemberId>,
@@ -2373,7 +2373,7 @@ impl IsMemberInGroupsInput {
 pub mod list_group_memberships_input {
 
     /// A builder for [`ListGroupMembershipsInput`](crate::input::ListGroupMembershipsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -2561,7 +2561,7 @@ impl ListGroupMembershipsInput {
 pub mod list_group_memberships_for_member_input {
 
     /// A builder for [`ListGroupMembershipsForMemberInput`](crate::input::ListGroupMembershipsForMemberInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) member_id: std::option::Option<crate::model::MemberId>,
@@ -2746,7 +2746,7 @@ impl ListGroupMembershipsForMemberInput {
 pub mod list_groups_input {
 
     /// A builder for [`ListGroupsInput`](crate::input::ListGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2945,7 +2945,7 @@ impl ListGroupsInput {
 pub mod list_users_input {
 
     /// A builder for [`ListUsersInput`](crate::input::ListUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3142,7 +3142,7 @@ impl ListUsersInput {
 pub mod update_group_input {
 
     /// A builder for [`UpdateGroupInput`](crate::input::UpdateGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -3323,7 +3323,7 @@ impl UpdateGroupInput {
 pub mod update_user_input {
 
     /// A builder for [`UpdateUserInput`](crate::input::UpdateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,

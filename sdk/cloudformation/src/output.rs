@@ -48,7 +48,7 @@ impl ValidateTemplateOutput {
 pub mod validate_template_output {
 
     /// A builder for [`ValidateTemplateOutput`](crate::output::ValidateTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::TemplateParameter>>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -176,7 +176,7 @@ impl UpdateTerminationProtectionOutput {
 pub mod update_termination_protection_output {
 
     /// A builder for [`UpdateTerminationProtectionOutput`](crate::output::UpdateTerminationProtectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
     }
@@ -224,7 +224,7 @@ impl UpdateStackSetOutput {
 pub mod update_stack_set_output {
 
     /// A builder for [`UpdateStackSetOutput`](crate::output::UpdateStackSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
@@ -272,7 +272,7 @@ impl UpdateStackInstancesOutput {
 pub mod update_stack_instances_output {
 
     /// A builder for [`UpdateStackInstancesOutput`](crate::output::UpdateStackInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
@@ -320,7 +320,7 @@ impl UpdateStackOutput {
 pub mod update_stack_output {
 
     /// A builder for [`UpdateStackOutput`](crate::output::UpdateStackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
     }
@@ -368,7 +368,7 @@ impl TestTypeOutput {
 pub mod test_type_output {
 
     /// A builder for [`TestTypeOutput`](crate::output::TestTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_version_arn: std::option::Option<std::string::String>,
     }
@@ -409,7 +409,7 @@ pub struct StopStackSetOperationOutput {}
 pub mod stop_stack_set_operation_output {
 
     /// A builder for [`StopStackSetOperationOutput`](crate::output::StopStackSetOperationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StopStackSetOperationOutput`](crate::output::StopStackSetOperationOutput).
@@ -433,7 +433,7 @@ pub struct SignalResourceOutput {}
 pub mod signal_resource_output {
 
     /// A builder for [`SignalResourceOutput`](crate::output::SignalResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SignalResourceOutput`](crate::output::SignalResourceOutput).
@@ -457,7 +457,7 @@ pub struct SetTypeDefaultVersionOutput {}
 pub mod set_type_default_version_output {
 
     /// A builder for [`SetTypeDefaultVersionOutput`](crate::output::SetTypeDefaultVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetTypeDefaultVersionOutput`](crate::output::SetTypeDefaultVersionOutput).
@@ -493,7 +493,7 @@ impl SetTypeConfigurationOutput {
 pub mod set_type_configuration_output {
 
     /// A builder for [`SetTypeConfigurationOutput`](crate::output::SetTypeConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_arn: std::option::Option<std::string::String>,
     }
@@ -536,7 +536,7 @@ pub struct SetStackPolicyOutput {}
 pub mod set_stack_policy_output {
 
     /// A builder for [`SetStackPolicyOutput`](crate::output::SetStackPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetStackPolicyOutput`](crate::output::SetStackPolicyOutput).
@@ -570,7 +570,7 @@ impl RollbackStackOutput {
 pub mod rollback_stack_output {
 
     /// A builder for [`RollbackStackOutput`](crate::output::RollbackStackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
     }
@@ -620,7 +620,7 @@ impl RegisterTypeOutput {
 pub mod register_type_output {
 
     /// A builder for [`RegisterTypeOutput`](crate::output::RegisterTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registration_token: std::option::Option<std::string::String>,
     }
@@ -673,7 +673,7 @@ impl RegisterPublisherOutput {
 pub mod register_publisher_output {
 
     /// A builder for [`RegisterPublisherOutput`](crate::output::RegisterPublisherOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) publisher_id: std::option::Option<std::string::String>,
     }
@@ -711,7 +711,7 @@ pub struct RecordHandlerProgressOutput {}
 pub mod record_handler_progress_output {
 
     /// A builder for [`RecordHandlerProgressOutput`](crate::output::RecordHandlerProgressOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RecordHandlerProgressOutput`](crate::output::RecordHandlerProgressOutput).
@@ -745,7 +745,7 @@ impl PublishTypeOutput {
 pub mod publish_type_output {
 
     /// A builder for [`PublishTypeOutput`](crate::output::PublishTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) public_type_arn: std::option::Option<std::string::String>,
     }
@@ -806,7 +806,7 @@ impl ListTypeVersionsOutput {
 pub mod list_type_versions_output {
 
     /// A builder for [`ListTypeVersionsOutput`](crate::output::ListTypeVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_version_summaries:
             std::option::Option<std::vec::Vec<crate::model::TypeVersionSummary>>,
@@ -883,7 +883,7 @@ impl ListTypesOutput {
 pub mod list_types_output {
 
     /// A builder for [`ListTypesOutput`](crate::output::ListTypesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_summaries: std::option::Option<std::vec::Vec<crate::model::TypeSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -961,7 +961,7 @@ impl ListTypeRegistrationsOutput {
 pub mod list_type_registrations_output {
 
     /// A builder for [`ListTypeRegistrationsOutput`](crate::output::ListTypeRegistrationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registration_token_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1039,7 +1039,7 @@ impl ListStackSetsOutput {
 pub mod list_stack_sets_output {
 
     /// A builder for [`ListStackSetsOutput`](crate::output::ListStackSetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summaries: std::option::Option<std::vec::Vec<crate::model::StackSetSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1115,7 +1115,7 @@ impl ListStackSetOperationsOutput {
 pub mod list_stack_set_operations_output {
 
     /// A builder for [`ListStackSetOperationsOutput`](crate::output::ListStackSetOperationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summaries:
             std::option::Option<std::vec::Vec<crate::model::StackSetOperationSummary>>,
@@ -1194,7 +1194,7 @@ impl ListStackSetOperationResultsOutput {
 pub mod list_stack_set_operation_results_output {
 
     /// A builder for [`ListStackSetOperationResultsOutput`](crate::output::ListStackSetOperationResultsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summaries:
             std::option::Option<std::vec::Vec<crate::model::StackSetOperationResultSummary>>,
@@ -1271,7 +1271,7 @@ impl ListStacksOutput {
 pub mod list_stacks_output {
 
     /// A builder for [`ListStacksOutput`](crate::output::ListStacksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_summaries: std::option::Option<std::vec::Vec<crate::model::StackSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1350,7 +1350,7 @@ impl ListStackResourcesOutput {
 pub mod list_stack_resources_output {
 
     /// A builder for [`ListStackResourcesOutput`](crate::output::ListStackResourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_resource_summaries:
             std::option::Option<std::vec::Vec<crate::model::StackResourceSummary>>,
@@ -1430,7 +1430,7 @@ impl ListStackInstancesOutput {
 pub mod list_stack_instances_output {
 
     /// A builder for [`ListStackInstancesOutput`](crate::output::ListStackInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summaries:
             std::option::Option<std::vec::Vec<crate::model::StackInstanceSummary>>,
@@ -1507,7 +1507,7 @@ impl ListImportsOutput {
 pub mod list_imports_output {
 
     /// A builder for [`ListImportsOutput`](crate::output::ListImportsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) imports: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1583,7 +1583,7 @@ impl ListExportsOutput {
 pub mod list_exports_output {
 
     /// A builder for [`ListExportsOutput`](crate::output::ListExportsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exports: std::option::Option<std::vec::Vec<crate::model::Export>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1659,7 +1659,7 @@ impl ListChangeSetsOutput {
 pub mod list_change_sets_output {
 
     /// A builder for [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summaries: std::option::Option<std::vec::Vec<crate::model::ChangeSetSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1728,7 +1728,7 @@ impl ImportStacksToStackSetOutput {
 pub mod import_stacks_to_stack_set_output {
 
     /// A builder for [`ImportStacksToStackSetOutput`](crate::output::ImportStacksToStackSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
@@ -1837,7 +1837,7 @@ impl GetTemplateSummaryOutput {
 pub mod get_template_summary_output {
 
     /// A builder for [`GetTemplateSummaryOutput`](crate::output::GetTemplateSummaryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameters:
             std::option::Option<std::vec::Vec<crate::model::ParameterDeclaration>>,
@@ -2045,7 +2045,7 @@ impl GetTemplateOutput {
 pub mod get_template_output {
 
     /// A builder for [`GetTemplateOutput`](crate::output::GetTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_body: std::option::Option<std::string::String>,
         pub(crate) stages_available:
@@ -2120,7 +2120,7 @@ impl GetStackPolicyOutput {
 pub mod get_stack_policy_output {
 
     /// A builder for [`GetStackPolicyOutput`](crate::output::GetStackPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_policy_body: std::option::Option<std::string::String>,
     }
@@ -2161,7 +2161,7 @@ pub struct ExecuteChangeSetOutput {}
 pub mod execute_change_set_output {
 
     /// A builder for [`ExecuteChangeSetOutput`](crate::output::ExecuteChangeSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ExecuteChangeSetOutput`](crate::output::ExecuteChangeSetOutput).
@@ -2195,7 +2195,7 @@ impl EstimateTemplateCostOutput {
 pub mod estimate_template_cost_output {
 
     /// A builder for [`EstimateTemplateCostOutput`](crate::output::EstimateTemplateCostOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
     }
@@ -2243,7 +2243,7 @@ impl DetectStackSetDriftOutput {
 pub mod detect_stack_set_drift_output {
 
     /// A builder for [`DetectStackSetDriftOutput`](crate::output::DetectStackSetDriftOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
@@ -2293,7 +2293,7 @@ impl DetectStackResourceDriftOutput {
 pub mod detect_stack_resource_drift_output {
 
     /// A builder for [`DetectStackResourceDriftOutput`](crate::output::DetectStackResourceDriftOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_resource_drift: std::option::Option<crate::model::StackResourceDrift>,
     }
@@ -2346,7 +2346,7 @@ impl DetectStackDriftOutput {
 pub mod detect_stack_drift_output {
 
     /// A builder for [`DetectStackDriftOutput`](crate::output::DetectStackDriftOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_drift_detection_id: std::option::Option<std::string::String>,
     }
@@ -2424,7 +2424,7 @@ impl DescribeTypeRegistrationOutput {
 pub mod describe_type_registration_output {
 
     /// A builder for [`DescribeTypeRegistrationOutput`](crate::output::DescribeTypeRegistrationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_status: std::option::Option<crate::model::RegistrationStatus>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2795,7 +2795,7 @@ impl DescribeTypeOutput {
 pub mod describe_type_output {
 
     /// A builder for [`DescribeTypeOutput`](crate::output::DescribeTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::RegistryType>,
@@ -3311,7 +3311,7 @@ impl DescribeStackSetOperationOutput {
 pub mod describe_stack_set_operation_output {
 
     /// A builder for [`DescribeStackSetOperationOutput`](crate::output::DescribeStackSetOperationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_set_operation: std::option::Option<crate::model::StackSetOperation>,
     }
@@ -3362,7 +3362,7 @@ impl DescribeStackSetOutput {
 pub mod describe_stack_set_output {
 
     /// A builder for [`DescribeStackSetOutput`](crate::output::DescribeStackSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_set: std::option::Option<crate::model::StackSet>,
     }
@@ -3417,7 +3417,7 @@ impl DescribeStacksOutput {
 pub mod describe_stacks_output {
 
     /// A builder for [`DescribeStacksOutput`](crate::output::DescribeStacksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stacks: std::option::Option<std::vec::Vec<crate::model::Stack>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3486,7 +3486,7 @@ impl DescribeStackResourcesOutput {
 pub mod describe_stack_resources_output {
 
     /// A builder for [`DescribeStackResourcesOutput`](crate::output::DescribeStackResourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_resources: std::option::Option<std::vec::Vec<crate::model::StackResource>>,
     }
@@ -3554,7 +3554,7 @@ impl DescribeStackResourceDriftsOutput {
 pub mod describe_stack_resource_drifts_output {
 
     /// A builder for [`DescribeStackResourceDriftsOutput`](crate::output::DescribeStackResourceDriftsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_resource_drifts:
             std::option::Option<std::vec::Vec<crate::model::StackResourceDrift>>,
@@ -3626,7 +3626,7 @@ impl DescribeStackResourceOutput {
 pub mod describe_stack_resource_output {
 
     /// A builder for [`DescribeStackResourceOutput`](crate::output::DescribeStackResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_resource_detail: std::option::Option<crate::model::StackResourceDetail>,
     }
@@ -3677,7 +3677,7 @@ impl DescribeStackInstanceOutput {
 pub mod describe_stack_instance_output {
 
     /// A builder for [`DescribeStackInstanceOutput`](crate::output::DescribeStackInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_instance: std::option::Option<crate::model::StackInstance>,
     }
@@ -3735,7 +3735,7 @@ impl DescribeStackEventsOutput {
 pub mod describe_stack_events_output {
 
     /// A builder for [`DescribeStackEventsOutput`](crate::output::DescribeStackEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_events: std::option::Option<std::vec::Vec<crate::model::StackEvent>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3872,7 +3872,7 @@ impl DescribeStackDriftDetectionStatusOutput {
 pub mod describe_stack_drift_detection_status_output {
 
     /// A builder for [`DescribeStackDriftDetectionStatusOutput`](crate::output::DescribeStackDriftDetectionStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
         pub(crate) stack_drift_detection_id: std::option::Option<std::string::String>,
@@ -4052,7 +4052,7 @@ impl DescribePublisherOutput {
 pub mod describe_publisher_output {
 
     /// A builder for [`DescribePublisherOutput`](crate::output::DescribePublisherOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) publisher_id: std::option::Option<std::string::String>,
         pub(crate) publisher_status: std::option::Option<crate::model::PublisherStatus>,
@@ -4187,7 +4187,7 @@ impl DescribeChangeSetHooksOutput {
 pub mod describe_change_set_hooks_output {
 
     /// A builder for [`DescribeChangeSetHooksOutput`](crate::output::DescribeChangeSetHooksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_id: std::option::Option<std::string::String>,
         pub(crate) change_set_name: std::option::Option<std::string::String>,
@@ -4453,7 +4453,7 @@ impl DescribeChangeSetOutput {
 pub mod describe_change_set_output {
 
     /// A builder for [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_name: std::option::Option<std::string::String>,
         pub(crate) change_set_id: std::option::Option<std::string::String>,
@@ -4799,7 +4799,7 @@ impl DescribeAccountLimitsOutput {
 pub mod describe_account_limits_output {
 
     /// A builder for [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_limits: std::option::Option<std::vec::Vec<crate::model::AccountLimit>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4858,7 +4858,7 @@ pub struct DeregisterTypeOutput {}
 pub mod deregister_type_output {
 
     /// A builder for [`DeregisterTypeOutput`](crate::output::DeregisterTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterTypeOutput`](crate::output::DeregisterTypeOutput).
@@ -4882,7 +4882,7 @@ pub struct DeleteStackSetOutput {}
 pub mod delete_stack_set_output {
 
     /// A builder for [`DeleteStackSetOutput`](crate::output::DeleteStackSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteStackSetOutput`](crate::output::DeleteStackSetOutput).
@@ -4916,7 +4916,7 @@ impl DeleteStackInstancesOutput {
 pub mod delete_stack_instances_output {
 
     /// A builder for [`DeleteStackInstancesOutput`](crate::output::DeleteStackInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
@@ -4954,7 +4954,7 @@ pub struct DeleteStackOutput {}
 pub mod delete_stack_output {
 
     /// A builder for [`DeleteStackOutput`](crate::output::DeleteStackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteStackOutput`](crate::output::DeleteStackOutput).
@@ -4978,7 +4978,7 @@ pub struct DeleteChangeSetOutput {}
 pub mod delete_change_set_output {
 
     /// A builder for [`DeleteChangeSetOutput`](crate::output::DeleteChangeSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteChangeSetOutput`](crate::output::DeleteChangeSetOutput).
@@ -5002,7 +5002,7 @@ pub struct DeactivateTypeOutput {}
 pub mod deactivate_type_output {
 
     /// A builder for [`DeactivateTypeOutput`](crate::output::DeactivateTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeactivateTypeOutput`](crate::output::DeactivateTypeOutput).
@@ -5036,7 +5036,7 @@ impl CreateStackSetOutput {
 pub mod create_stack_set_output {
 
     /// A builder for [`CreateStackSetOutput`](crate::output::CreateStackSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_set_id: std::option::Option<std::string::String>,
     }
@@ -5084,7 +5084,7 @@ impl CreateStackInstancesOutput {
 pub mod create_stack_instances_output {
 
     /// A builder for [`CreateStackInstancesOutput`](crate::output::CreateStackInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
@@ -5132,7 +5132,7 @@ impl CreateStackOutput {
 pub mod create_stack_output {
 
     /// A builder for [`CreateStackOutput`](crate::output::CreateStackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
     }
@@ -5187,7 +5187,7 @@ impl CreateChangeSetOutput {
 pub mod create_change_set_output {
 
     /// A builder for [`CreateChangeSetOutput`](crate::output::CreateChangeSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -5237,7 +5237,7 @@ pub struct ContinueUpdateRollbackOutput {}
 pub mod continue_update_rollback_output {
 
     /// A builder for [`ContinueUpdateRollbackOutput`](crate::output::ContinueUpdateRollbackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ContinueUpdateRollbackOutput`](crate::output::ContinueUpdateRollbackOutput).
@@ -5261,7 +5261,7 @@ pub struct CancelUpdateStackOutput {}
 pub mod cancel_update_stack_output {
 
     /// A builder for [`CancelUpdateStackOutput`](crate::output::CancelUpdateStackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CancelUpdateStackOutput`](crate::output::CancelUpdateStackOutput).
@@ -5318,7 +5318,7 @@ impl BatchDescribeTypeConfigurationsOutput {
 pub mod batch_describe_type_configurations_output {
 
     /// A builder for [`BatchDescribeTypeConfigurationsOutput`](crate::output::BatchDescribeTypeConfigurationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors:
             std::option::Option<std::vec::Vec<crate::model::BatchDescribeTypeConfigurationsError>>,
@@ -5428,7 +5428,7 @@ impl ActivateTypeOutput {
 pub mod activate_type_output {
 
     /// A builder for [`ActivateTypeOutput`](crate::output::ActivateTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }

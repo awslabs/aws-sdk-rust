@@ -30,7 +30,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
 
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl std::error::Error for NotAuthorizedException {}
 pub mod not_authorized_exception {
 
     /// A builder for [`NotAuthorizedException`](crate::error::NotAuthorizedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl std::error::Error for InvalidArgumentException {}
 pub mod invalid_argument_exception {
 
     /// A builder for [`InvalidArgumentException`](crate::error::InvalidArgumentException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -210,7 +210,7 @@ impl std::error::Error for ClientLimitExceededException {}
 pub mod client_limit_exceeded_exception {
 
     /// A builder for [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -270,7 +270,7 @@ impl std::error::Error for SessionExpiredException {}
 pub mod session_expired_exception {
 
     /// A builder for [`SessionExpiredException`](crate::error::SessionExpiredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -330,7 +330,7 @@ impl std::error::Error for InvalidClientException {}
 pub mod invalid_client_exception {
 
     /// A builder for [`InvalidClientException`](crate::error::InvalidClientException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

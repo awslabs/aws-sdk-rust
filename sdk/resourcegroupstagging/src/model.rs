@@ -38,7 +38,7 @@ impl FailureInfo {
 pub mod failure_info {
 
     /// A builder for [`FailureInfo`](crate::model::FailureInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_code: std::option::Option<i32>,
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
@@ -220,7 +220,7 @@ impl ResourceTagMapping {
 pub mod resource_tag_mapping {
 
     /// A builder for [`ResourceTagMapping`](crate::model::ResourceTagMapping).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -318,7 +318,7 @@ impl ComplianceDetails {
 pub mod compliance_details {
 
     /// A builder for [`ComplianceDetails`](crate::model::ComplianceDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) noncompliant_keys: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) keys_with_noncompliant_values:
@@ -419,7 +419,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -486,7 +486,7 @@ impl TagFilter {
 pub mod tag_filter {
 
     /// A builder for [`TagFilter`](crate::model::TagFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -590,7 +590,7 @@ impl Summary {
 pub mod summary {
 
     /// A builder for [`Summary`](crate::model::Summary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_updated: std::option::Option<std::string::String>,
         pub(crate) target_id: std::option::Option<std::string::String>,

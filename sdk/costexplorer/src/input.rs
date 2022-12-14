@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_anomaly_monitor_input {
 
     /// A builder for [`CreateAnomalyMonitorInput`](crate::input::CreateAnomalyMonitorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_monitor: std::option::Option<crate::model::AnomalyMonitor>,
         pub(crate) resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -198,7 +198,7 @@ impl CreateAnomalyMonitorInput {
 pub mod create_anomaly_subscription_input {
 
     /// A builder for [`CreateAnomalySubscriptionInput`](crate::input::CreateAnomalySubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_subscription: std::option::Option<crate::model::AnomalySubscription>,
         pub(crate) resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -391,7 +391,7 @@ impl CreateAnomalySubscriptionInput {
 pub mod create_cost_category_definition_input {
 
     /// A builder for [`CreateCostCategoryDefinitionInput`](crate::input::CreateCostCategoryDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) effective_start: std::option::Option<std::string::String>,
@@ -669,7 +669,7 @@ impl CreateCostCategoryDefinitionInput {
 pub mod delete_anomaly_monitor_input {
 
     /// A builder for [`DeleteAnomalyMonitorInput`](crate::input::DeleteAnomalyMonitorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitor_arn: std::option::Option<std::string::String>,
     }
@@ -818,7 +818,7 @@ impl DeleteAnomalyMonitorInput {
 pub mod delete_anomaly_subscription_input {
 
     /// A builder for [`DeleteAnomalySubscriptionInput`](crate::input::DeleteAnomalySubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
     }
@@ -970,7 +970,7 @@ impl DeleteAnomalySubscriptionInput {
 pub mod delete_cost_category_definition_input {
 
     /// A builder for [`DeleteCostCategoryDefinitionInput`](crate::input::DeleteCostCategoryDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cost_category_arn: std::option::Option<std::string::String>,
     }
@@ -1119,7 +1119,7 @@ impl DeleteCostCategoryDefinitionInput {
 pub mod describe_cost_category_definition_input {
 
     /// A builder for [`DescribeCostCategoryDefinitionInput`](crate::input::DescribeCostCategoryDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cost_category_arn: std::option::Option<std::string::String>,
         pub(crate) effective_on: std::option::Option<std::string::String>,
@@ -1280,7 +1280,7 @@ impl DescribeCostCategoryDefinitionInput {
 pub mod get_anomalies_input {
 
     /// A builder for [`GetAnomaliesInput`](crate::input::GetAnomaliesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitor_arn: std::option::Option<std::string::String>,
         pub(crate) date_interval: std::option::Option<crate::model::AnomalyDateInterval>,
@@ -1497,7 +1497,7 @@ impl GetAnomaliesInput {
 pub mod get_anomaly_monitors_input {
 
     /// A builder for [`GetAnomalyMonitorsInput`](crate::input::GetAnomalyMonitorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitor_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
@@ -1680,7 +1680,7 @@ impl GetAnomalyMonitorsInput {
 pub mod get_anomaly_subscriptions_input {
 
     /// A builder for [`GetAnomalySubscriptionsInput`](crate::input::GetAnomalySubscriptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) monitor_arn: std::option::Option<std::string::String>,
@@ -1877,7 +1877,7 @@ impl GetAnomalySubscriptionsInput {
 pub mod get_cost_and_usage_input {
 
     /// A builder for [`GetCostAndUsageInput`](crate::input::GetCostAndUsageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
         pub(crate) granularity: std::option::Option<crate::model::Granularity>,
@@ -2125,7 +2125,7 @@ impl GetCostAndUsageInput {
 pub mod get_cost_and_usage_with_resources_input {
 
     /// A builder for [`GetCostAndUsageWithResourcesInput`](crate::input::GetCostAndUsageWithResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
         pub(crate) granularity: std::option::Option<crate::model::Granularity>,
@@ -2372,7 +2372,7 @@ impl GetCostAndUsageWithResourcesInput {
 pub mod get_cost_categories_input {
 
     /// A builder for [`GetCostCategoriesInput`](crate::input::GetCostCategoriesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) search_string: std::option::Option<std::string::String>,
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
@@ -2660,7 +2660,7 @@ impl GetCostCategoriesInput {
 pub mod get_cost_forecast_input {
 
     /// A builder for [`GetCostForecastInput`](crate::input::GetCostForecastInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
         pub(crate) metric: std::option::Option<crate::model::Metric>,
@@ -2927,7 +2927,7 @@ impl GetCostForecastInput {
 pub mod get_dimension_values_input {
 
     /// A builder for [`GetDimensionValuesInput`](crate::input::GetDimensionValuesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) search_string: std::option::Option<std::string::String>,
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
@@ -3321,7 +3321,7 @@ impl GetDimensionValuesInput {
 pub mod get_reservation_coverage_input {
 
     /// A builder for [`GetReservationCoverageInput`](crate::input::GetReservationCoverageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
         pub(crate) group_by: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
@@ -3678,7 +3678,7 @@ impl GetReservationCoverageInput {
 pub mod get_reservation_purchase_recommendation_input {
 
     /// A builder for [`GetReservationPurchaseRecommendationInput`](crate::input::GetReservationPurchaseRecommendationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) service: std::option::Option<std::string::String>,
@@ -3971,7 +3971,7 @@ impl GetReservationPurchaseRecommendationInput {
 pub mod get_reservation_utilization_input {
 
     /// A builder for [`GetReservationUtilizationInput`](crate::input::GetReservationUtilizationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
         pub(crate) group_by: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
@@ -4285,7 +4285,7 @@ impl GetReservationUtilizationInput {
 pub mod get_rightsizing_recommendation_input {
 
     /// A builder for [`GetRightsizingRecommendationInput`](crate::input::GetRightsizingRecommendationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::Expression>,
         pub(crate) configuration:
@@ -4507,7 +4507,7 @@ impl GetRightsizingRecommendationInput {
 pub mod get_savings_plans_coverage_input {
 
     /// A builder for [`GetSavingsPlansCoverageInput`](crate::input::GetSavingsPlansCoverageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
         pub(crate) group_by: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
@@ -4807,7 +4807,7 @@ impl GetSavingsPlansCoverageInput {
 pub mod get_savings_plans_purchase_recommendation_input {
 
     /// A builder for [`GetSavingsPlansPurchaseRecommendationInput`](crate::input::GetSavingsPlansPurchaseRecommendationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plans_type: std::option::Option<crate::model::SupportedSavingsPlansType>,
         pub(crate) term_in_years: std::option::Option<crate::model::TermInYears>,
@@ -5063,7 +5063,7 @@ impl GetSavingsPlansPurchaseRecommendationInput {
 pub mod get_savings_plans_utilization_input {
 
     /// A builder for [`GetSavingsPlansUtilizationInput`](crate::input::GetSavingsPlansUtilizationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
         pub(crate) granularity: std::option::Option<crate::model::Granularity>,
@@ -5292,7 +5292,7 @@ impl GetSavingsPlansUtilizationInput {
 pub mod get_savings_plans_utilization_details_input {
 
     /// A builder for [`GetSavingsPlansUtilizationDetailsInput`](crate::input::GetSavingsPlansUtilizationDetailsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
         pub(crate) filter: std::option::Option<crate::model::Expression>,
@@ -5552,7 +5552,7 @@ impl GetSavingsPlansUtilizationDetailsInput {
 pub mod get_tags_input {
 
     /// A builder for [`GetTagsInput`](crate::input::GetTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) search_string: std::option::Option<std::string::String>,
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
@@ -5829,7 +5829,7 @@ impl GetTagsInput {
 pub mod get_usage_forecast_input {
 
     /// A builder for [`GetUsageForecastInput`](crate::input::GetUsageForecastInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
         pub(crate) metric: std::option::Option<crate::model::Metric>,
@@ -6092,7 +6092,7 @@ impl GetUsageForecastInput {
 pub mod list_cost_allocation_tags_input {
 
     /// A builder for [`ListCostAllocationTagsInput`](crate::input::ListCostAllocationTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::CostAllocationTagStatus>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6304,7 +6304,7 @@ impl ListCostAllocationTagsInput {
 pub mod list_cost_category_definitions_input {
 
     /// A builder for [`ListCostCategoryDefinitionsInput`](crate::input::ListCostCategoryDefinitionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) effective_on: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6474,7 +6474,7 @@ impl ListCostCategoryDefinitionsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -6623,7 +6623,7 @@ impl ListTagsForResourceInput {
 pub mod provide_anomaly_feedback_input {
 
     /// A builder for [`ProvideAnomalyFeedbackInput`](crate::input::ProvideAnomalyFeedbackInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_id: std::option::Option<std::string::String>,
         pub(crate) feedback: std::option::Option<crate::model::AnomalyFeedbackType>,
@@ -6787,7 +6787,7 @@ impl ProvideAnomalyFeedbackInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -6973,7 +6973,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7139,7 +7139,7 @@ impl UntagResourceInput {
 pub mod update_anomaly_monitor_input {
 
     /// A builder for [`UpdateAnomalyMonitorInput`](crate::input::UpdateAnomalyMonitorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitor_arn: std::option::Option<std::string::String>,
         pub(crate) monitor_name: std::option::Option<std::string::String>,
@@ -7300,7 +7300,7 @@ impl UpdateAnomalyMonitorInput {
 pub mod update_anomaly_subscription_input {
 
     /// A builder for [`UpdateAnomalySubscriptionInput`](crate::input::UpdateAnomalySubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
         pub(crate) threshold: std::option::Option<f64>,
@@ -7536,7 +7536,7 @@ impl UpdateAnomalySubscriptionInput {
 pub mod update_cost_allocation_tags_status_input {
 
     /// A builder for [`UpdateCostAllocationTagsStatusInput`](crate::input::UpdateCostAllocationTagsStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cost_allocation_tags_status:
             std::option::Option<std::vec::Vec<crate::model::CostAllocationTagStatusEntry>>,
@@ -7695,7 +7695,7 @@ impl UpdateCostAllocationTagsStatusInput {
 pub mod update_cost_category_definition_input {
 
     /// A builder for [`UpdateCostCategoryDefinitionInput`](crate::input::UpdateCostCategoryDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cost_category_arn: std::option::Option<std::string::String>,
         pub(crate) effective_start: std::option::Option<std::string::String>,

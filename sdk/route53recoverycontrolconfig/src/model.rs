@@ -68,7 +68,7 @@ impl GatingRule {
 pub mod gating_rule {
 
     /// A builder for [`GatingRule`](crate::model::GatingRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
         pub(crate) gating_controls: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -336,7 +336,7 @@ impl RuleConfig {
 pub mod rule_config {
 
     /// A builder for [`RuleConfig`](crate::model::RuleConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inverted: std::option::Option<bool>,
         pub(crate) threshold: std::option::Option<i32>,
@@ -545,7 +545,7 @@ impl AssertionRule {
 pub mod assertion_rule {
 
     /// A builder for [`AssertionRule`](crate::model::AssertionRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asserted_controls: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
@@ -697,7 +697,7 @@ impl GatingRuleUpdate {
 pub mod gating_rule_update {
 
     /// A builder for [`GatingRuleUpdate`](crate::model::GatingRuleUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) safety_rule_arn: std::option::Option<std::string::String>,
@@ -786,7 +786,7 @@ impl AssertionRuleUpdate {
 pub mod assertion_rule_update {
 
     /// A builder for [`AssertionRuleUpdate`](crate::model::AssertionRuleUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) safety_rule_arn: std::option::Option<std::string::String>,
@@ -882,7 +882,7 @@ impl RoutingControl {
 pub mod routing_control {
 
     /// A builder for [`RoutingControl`](crate::model::RoutingControl).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1007,7 +1007,7 @@ impl ControlPanel {
 pub mod control_panel {
 
     /// A builder for [`ControlPanel`](crate::model::ControlPanel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
@@ -1127,7 +1127,7 @@ impl Rule {
 pub mod rule {
 
     /// A builder for [`Rule`](crate::model::Rule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assertion: std::option::Option<crate::model::AssertionRule>,
         pub(crate) gating: std::option::Option<crate::model::GatingRule>,
@@ -1215,7 +1215,7 @@ impl Cluster {
 pub mod cluster {
 
     /// A builder for [`Cluster`](crate::model::Cluster).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_endpoints:
@@ -1320,7 +1320,7 @@ impl ClusterEndpoint {
 pub mod cluster_endpoint {
 
     /// A builder for [`ClusterEndpoint`](crate::model::ClusterEndpoint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
         pub(crate) region: std::option::Option<std::string::String>,
@@ -1419,7 +1419,7 @@ impl NewGatingRule {
 pub mod new_gating_rule {
 
     /// A builder for [`NewGatingRule`](crate::model::NewGatingRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
         pub(crate) gating_controls: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1581,7 +1581,7 @@ impl NewAssertionRule {
 pub mod new_assertion_rule {
 
     /// A builder for [`NewAssertionRule`](crate::model::NewAssertionRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asserted_controls: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,

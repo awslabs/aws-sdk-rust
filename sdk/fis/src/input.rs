@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_experiment_template_input {
 
     /// A builder for [`CreateExperimentTemplateInput`](crate::input::CreateExperimentTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -322,7 +322,7 @@ impl CreateExperimentTemplateInput {
 pub mod delete_experiment_template_input {
 
     /// A builder for [`DeleteExperimentTemplateInput`](crate::input::DeleteExperimentTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -468,7 +468,7 @@ impl DeleteExperimentTemplateInput {
 pub mod get_action_input {
 
     /// A builder for [`GetActionInput`](crate::input::GetActionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -609,7 +609,7 @@ impl GetActionInput {
 pub mod get_experiment_input {
 
     /// A builder for [`GetExperimentInput`](crate::input::GetExperimentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -752,7 +752,7 @@ impl GetExperimentInput {
 pub mod get_experiment_template_input {
 
     /// A builder for [`GetExperimentTemplateInput`](crate::input::GetExperimentTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -898,7 +898,7 @@ impl GetExperimentTemplateInput {
 pub mod get_target_resource_type_input {
 
     /// A builder for [`GetTargetResourceTypeInput`](crate::input::GetTargetResourceTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
     }
@@ -1053,7 +1053,7 @@ impl GetTargetResourceTypeInput {
 pub mod list_actions_input {
 
     /// A builder for [`ListActionsInput`](crate::input::ListActionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1212,7 +1212,7 @@ impl ListActionsInput {
 pub mod list_experiments_input {
 
     /// A builder for [`ListExperimentsInput`](crate::input::ListExperimentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1371,7 +1371,7 @@ impl ListExperimentsInput {
 pub mod list_experiment_templates_input {
 
     /// A builder for [`ListExperimentTemplatesInput`](crate::input::ListExperimentTemplatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1532,7 +1532,7 @@ impl ListExperimentTemplatesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1680,7 +1680,7 @@ impl ListTagsForResourceInput {
 pub mod list_target_resource_types_input {
 
     /// A builder for [`ListTargetResourceTypesInput`](crate::input::ListTargetResourceTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1841,7 +1841,7 @@ impl ListTargetResourceTypesInput {
 pub mod start_experiment_input {
 
     /// A builder for [`StartExperimentInput`](crate::input::StartExperimentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) experiment_template_id: std::option::Option<std::string::String>,
@@ -2028,7 +2028,7 @@ impl StartExperimentInput {
 pub mod stop_experiment_input {
 
     /// A builder for [`StopExperimentInput`](crate::input::StopExperimentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -2171,7 +2171,7 @@ impl StopExperimentInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -2360,7 +2360,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2543,7 +2543,7 @@ impl UntagResourceInput {
 pub mod update_experiment_template_input {
 
     /// A builder for [`UpdateExperimentTemplateInput`](crate::input::UpdateExperimentTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,

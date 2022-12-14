@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_vehicle_fleet_input {
 
     /// A builder for [`AssociateVehicleFleetInput`](crate::input::AssociateVehicleFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vehicle_name: std::option::Option<std::string::String>,
         pub(crate) fleet_id: std::option::Option<std::string::String>,
@@ -166,7 +166,7 @@ impl AssociateVehicleFleetInput {
 pub mod batch_create_vehicle_input {
 
     /// A builder for [`BatchCreateVehicleInput`](crate::input::BatchCreateVehicleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vehicles:
             std::option::Option<std::vec::Vec<crate::model::CreateVehicleRequestItem>>,
@@ -323,7 +323,7 @@ impl BatchCreateVehicleInput {
 pub mod batch_update_vehicle_input {
 
     /// A builder for [`BatchUpdateVehicleInput`](crate::input::BatchUpdateVehicleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vehicles:
             std::option::Option<std::vec::Vec<crate::model::UpdateVehicleRequestItem>>,
@@ -480,7 +480,7 @@ impl BatchUpdateVehicleInput {
 pub mod create_campaign_input {
 
     /// A builder for [`CreateCampaignInput`](crate::input::CreateCampaignInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -861,7 +861,7 @@ impl CreateCampaignInput {
 pub mod create_decoder_manifest_input {
 
     /// A builder for [`CreateDecoderManifestInput`](crate::input::CreateDecoderManifestInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1101,7 +1101,7 @@ impl CreateDecoderManifestInput {
 pub mod create_fleet_input {
 
     /// A builder for [`CreateFleetInput`](crate::input::CreateFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1294,7 +1294,7 @@ impl CreateFleetInput {
 pub mod create_model_manifest_input {
 
     /// A builder for [`CreateModelManifestInput`](crate::input::CreateModelManifestInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1510,7 +1510,7 @@ impl CreateModelManifestInput {
 pub mod create_signal_catalog_input {
 
     /// A builder for [`CreateSignalCatalogInput`](crate::input::CreateSignalCatalogInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1711,7 +1711,7 @@ impl CreateSignalCatalogInput {
 pub mod create_vehicle_input {
 
     /// A builder for [`CreateVehicleInput`](crate::input::CreateVehicleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vehicle_name: std::option::Option<std::string::String>,
         pub(crate) model_manifest_arn: std::option::Option<std::string::String>,
@@ -1957,7 +1957,7 @@ impl CreateVehicleInput {
 pub mod delete_campaign_input {
 
     /// A builder for [`DeleteCampaignInput`](crate::input::DeleteCampaignInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -2100,7 +2100,7 @@ impl DeleteCampaignInput {
 pub mod delete_decoder_manifest_input {
 
     /// A builder for [`DeleteDecoderManifestInput`](crate::input::DeleteDecoderManifestInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -2247,7 +2247,7 @@ impl DeleteDecoderManifestInput {
 pub mod delete_fleet_input {
 
     /// A builder for [`DeleteFleetInput`](crate::input::DeleteFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
     }
@@ -2392,7 +2392,7 @@ impl DeleteFleetInput {
 pub mod delete_model_manifest_input {
 
     /// A builder for [`DeleteModelManifestInput`](crate::input::DeleteModelManifestInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -2537,7 +2537,7 @@ impl DeleteModelManifestInput {
 pub mod delete_signal_catalog_input {
 
     /// A builder for [`DeleteSignalCatalogInput`](crate::input::DeleteSignalCatalogInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -2682,7 +2682,7 @@ impl DeleteSignalCatalogInput {
 pub mod delete_vehicle_input {
 
     /// A builder for [`DeleteVehicleInput`](crate::input::DeleteVehicleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vehicle_name: std::option::Option<std::string::String>,
     }
@@ -2827,7 +2827,7 @@ impl DeleteVehicleInput {
 pub mod disassociate_vehicle_fleet_input {
 
     /// A builder for [`DisassociateVehicleFleetInput`](crate::input::DisassociateVehicleFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vehicle_name: std::option::Option<std::string::String>,
         pub(crate) fleet_id: std::option::Option<std::string::String>,
@@ -2988,7 +2988,7 @@ impl DisassociateVehicleFleetInput {
 pub mod get_campaign_input {
 
     /// A builder for [`GetCampaignInput`](crate::input::GetCampaignInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -3131,7 +3131,7 @@ impl GetCampaignInput {
 pub mod get_decoder_manifest_input {
 
     /// A builder for [`GetDecoderManifestInput`](crate::input::GetDecoderManifestInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -3276,7 +3276,7 @@ impl GetDecoderManifestInput {
 pub mod get_fleet_input {
 
     /// A builder for [`GetFleetInput`](crate::input::GetFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
     }
@@ -3419,7 +3419,7 @@ impl GetFleetInput {
 pub mod get_logging_options_input {
 
     /// A builder for [`GetLoggingOptionsInput`](crate::input::GetLoggingOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetLoggingOptionsInput`](crate::input::GetLoggingOptionsInput).
@@ -3545,7 +3545,7 @@ impl GetLoggingOptionsInput {
 pub mod get_model_manifest_input {
 
     /// A builder for [`GetModelManifestInput`](crate::input::GetModelManifestInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -3690,7 +3690,7 @@ impl GetModelManifestInput {
 pub mod get_register_account_status_input {
 
     /// A builder for [`GetRegisterAccountStatusInput`](crate::input::GetRegisterAccountStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetRegisterAccountStatusInput`](crate::input::GetRegisterAccountStatusInput).
@@ -3818,7 +3818,7 @@ impl GetRegisterAccountStatusInput {
 pub mod get_signal_catalog_input {
 
     /// A builder for [`GetSignalCatalogInput`](crate::input::GetSignalCatalogInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -3963,7 +3963,7 @@ impl GetSignalCatalogInput {
 pub mod get_vehicle_input {
 
     /// A builder for [`GetVehicleInput`](crate::input::GetVehicleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vehicle_name: std::option::Option<std::string::String>,
     }
@@ -4108,7 +4108,7 @@ impl GetVehicleInput {
 pub mod get_vehicle_status_input {
 
     /// A builder for [`GetVehicleStatusInput`](crate::input::GetVehicleStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4302,7 +4302,7 @@ impl GetVehicleStatusInput {
 pub mod import_decoder_manifest_input {
 
     /// A builder for [`ImportDecoderManifestInput`](crate::input::ImportDecoderManifestInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) network_file_definitions:
@@ -4476,7 +4476,7 @@ impl ImportDecoderManifestInput {
 pub mod import_signal_catalog_input {
 
     /// A builder for [`ImportSignalCatalogInput`](crate::input::ImportSignalCatalogInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4668,7 +4668,7 @@ impl ImportSignalCatalogInput {
 pub mod list_campaigns_input {
 
     /// A builder for [`ListCampaignsInput`](crate::input::ListCampaignsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4865,7 +4865,7 @@ impl ListCampaignsInput {
 pub mod list_decoder_manifest_network_interfaces_input {
 
     /// A builder for [`ListDecoderManifestNetworkInterfacesInput`](crate::input::ListDecoderManifestNetworkInterfacesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5058,7 +5058,7 @@ impl ListDecoderManifestNetworkInterfacesInput {
 pub mod list_decoder_manifests_input {
 
     /// A builder for [`ListDecoderManifestsInput`](crate::input::ListDecoderManifestsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_manifest_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5265,7 +5265,7 @@ impl ListDecoderManifestsInput {
 pub mod list_decoder_manifest_signals_input {
 
     /// A builder for [`ListDecoderManifestSignalsInput`](crate::input::ListDecoderManifestSignalsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5458,7 +5458,7 @@ impl ListDecoderManifestSignalsInput {
 pub mod list_fleets_input {
 
     /// A builder for [`ListFleetsInput`](crate::input::ListFleetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5638,7 +5638,7 @@ impl ListFleetsInput {
 pub mod list_fleets_for_vehicle_input {
 
     /// A builder for [`ListFleetsForVehicleInput`](crate::input::ListFleetsForVehicleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vehicle_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5834,7 +5834,7 @@ impl ListFleetsForVehicleInput {
 pub mod list_model_manifest_nodes_input {
 
     /// A builder for [`ListModelManifestNodesInput`](crate::input::ListModelManifestNodesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6030,7 +6030,7 @@ impl ListModelManifestNodesInput {
 pub mod list_model_manifests_input {
 
     /// A builder for [`ListModelManifestsInput`](crate::input::ListModelManifestsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) signal_catalog_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6235,7 +6235,7 @@ impl ListModelManifestsInput {
 pub mod list_signal_catalog_nodes_input {
 
     /// A builder for [`ListSignalCatalogNodesInput`](crate::input::ListSignalCatalogNodesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6431,7 +6431,7 @@ impl ListSignalCatalogNodesInput {
 pub mod list_signal_catalogs_input {
 
     /// A builder for [`ListSignalCatalogsInput`](crate::input::ListSignalCatalogsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -6613,7 +6613,7 @@ impl ListSignalCatalogsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -6789,7 +6789,7 @@ impl ListTagsForResourceInput {
 pub mod list_vehicles_input {
 
     /// A builder for [`ListVehiclesInput`](crate::input::ListVehiclesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_manifest_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6992,7 +6992,7 @@ impl ListVehiclesInput {
 pub mod list_vehicles_in_fleet_input {
 
     /// A builder for [`ListVehiclesInFleetInput`](crate::input::ListVehiclesInFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7188,7 +7188,7 @@ impl ListVehiclesInFleetInput {
 pub mod put_logging_options_input {
 
     /// A builder for [`PutLoggingOptionsInput`](crate::input::PutLoggingOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_log_delivery:
             std::option::Option<crate::model::CloudWatchLogDeliveryOptions>,
@@ -7342,7 +7342,7 @@ impl PutLoggingOptionsInput {
 pub mod register_account_input {
 
     /// A builder for [`RegisterAccountInput`](crate::input::RegisterAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestream_resources: std::option::Option<crate::model::TimestreamResources>,
         pub(crate) iam_resources: std::option::Option<crate::model::IamResources>,
@@ -7507,7 +7507,7 @@ impl RegisterAccountInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7700,7 +7700,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7903,7 +7903,7 @@ impl UntagResourceInput {
 pub mod update_campaign_input {
 
     /// A builder for [`UpdateCampaignInput`](crate::input::UpdateCampaignInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -8110,7 +8110,7 @@ impl UpdateCampaignInput {
 pub mod update_decoder_manifest_input {
 
     /// A builder for [`UpdateDecoderManifestInput`](crate::input::UpdateDecoderManifestInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -8424,7 +8424,7 @@ impl UpdateDecoderManifestInput {
 pub mod update_fleet_input {
 
     /// A builder for [`UpdateFleetInput`](crate::input::UpdateFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -8581,7 +8581,7 @@ impl UpdateFleetInput {
 pub mod update_model_manifest_input {
 
     /// A builder for [`UpdateModelManifestInput`](crate::input::UpdateModelManifestInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -8797,7 +8797,7 @@ impl UpdateModelManifestInput {
 pub mod update_signal_catalog_input {
 
     /// A builder for [`UpdateSignalCatalogInput`](crate::input::UpdateSignalCatalogInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -9019,7 +9019,7 @@ impl UpdateSignalCatalogInput {
 pub mod update_vehicle_input {
 
     /// A builder for [`UpdateVehicleInput`](crate::input::UpdateVehicleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vehicle_name: std::option::Option<std::string::String>,
         pub(crate) model_manifest_arn: std::option::Option<std::string::String>,

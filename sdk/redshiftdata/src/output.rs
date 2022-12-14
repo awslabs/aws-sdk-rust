@@ -24,7 +24,7 @@ impl ListTablesOutput {
 pub mod list_tables_output {
 
     /// A builder for [`ListTablesOutput`](crate::output::ListTablesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tables: std::option::Option<std::vec::Vec<crate::model::TableMember>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -100,7 +100,7 @@ impl ListStatementsOutput {
 pub mod list_statements_output {
 
     /// A builder for [`ListStatementsOutput`](crate::output::ListStatementsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statements: std::option::Option<std::vec::Vec<crate::model::StatementData>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -176,7 +176,7 @@ impl ListSchemasOutput {
 pub mod list_schemas_output {
 
     /// A builder for [`ListSchemasOutput`](crate::output::ListSchemasOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schemas: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -252,7 +252,7 @@ impl ListDatabasesOutput {
 pub mod list_databases_output {
 
     /// A builder for [`ListDatabasesOutput`](crate::output::ListDatabasesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) databases: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -342,7 +342,7 @@ impl GetStatementResultOutput {
 pub mod get_statement_result_output {
 
     /// A builder for [`GetStatementResultOutput`](crate::output::GetStatementResultOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Field>>>,
         pub(crate) column_metadata:
@@ -487,7 +487,7 @@ impl ExecuteStatementOutput {
 pub mod execute_statement_output {
 
     /// A builder for [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -630,7 +630,7 @@ impl DescribeTableOutput {
 pub mod describe_table_output {
 
     /// A builder for [`DescribeTableOutput`](crate::output::DescribeTableOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) column_list: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
@@ -855,7 +855,7 @@ impl DescribeStatementOutput {
 pub mod describe_statement_output {
 
     /// A builder for [`DescribeStatementOutput`](crate::output::DescribeStatementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
@@ -1171,7 +1171,7 @@ impl CancelStatementOutput {
 pub mod cancel_statement_output {
 
     /// A builder for [`CancelStatementOutput`](crate::output::CancelStatementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<bool>,
     }
@@ -1261,7 +1261,7 @@ impl BatchExecuteStatementOutput {
 pub mod batch_execute_statement_output {
 
     /// A builder for [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,

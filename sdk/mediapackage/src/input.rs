@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod configure_logs_input {
 
     /// A builder for [`ConfigureLogsInput`](crate::input::ConfigureLogsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -195,7 +195,7 @@ impl ConfigureLogsInput {
 pub mod create_channel_input {
 
     /// A builder for [`CreateChannelInput`](crate::input::CreateChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -376,7 +376,7 @@ impl CreateChannelInput {
 pub mod create_harvest_job_input {
 
     /// A builder for [`CreateHarvestJobInput`](crate::input::CreateHarvestJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) end_time: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -572,7 +572,7 @@ impl CreateHarvestJobInput {
 pub mod create_origin_endpoint_input {
 
     /// A builder for [`CreateOriginEndpointInput`](crate::input::CreateOriginEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization: std::option::Option<crate::model::Authorization>,
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -923,7 +923,7 @@ impl CreateOriginEndpointInput {
 pub mod delete_channel_input {
 
     /// A builder for [`DeleteChannelInput`](crate::input::DeleteChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1066,7 +1066,7 @@ impl DeleteChannelInput {
 pub mod delete_origin_endpoint_input {
 
     /// A builder for [`DeleteOriginEndpointInput`](crate::input::DeleteOriginEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1212,7 +1212,7 @@ impl DeleteOriginEndpointInput {
 pub mod describe_channel_input {
 
     /// A builder for [`DescribeChannelInput`](crate::input::DescribeChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1355,7 +1355,7 @@ impl DescribeChannelInput {
 pub mod describe_harvest_job_input {
 
     /// A builder for [`DescribeHarvestJobInput`](crate::input::DescribeHarvestJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1500,7 +1500,7 @@ impl DescribeHarvestJobInput {
 pub mod describe_origin_endpoint_input {
 
     /// A builder for [`DescribeOriginEndpointInput`](crate::input::DescribeOriginEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1646,7 +1646,7 @@ impl DescribeOriginEndpointInput {
 pub mod list_channels_input {
 
     /// A builder for [`ListChannelsInput`](crate::input::ListChannelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1803,7 +1803,7 @@ impl ListChannelsInput {
 pub mod list_harvest_jobs_input {
 
     /// A builder for [`ListHarvestJobsInput`](crate::input::ListHarvestJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) include_channel_id: std::option::Option<std::string::String>,
         pub(crate) include_status: std::option::Option<std::string::String>,
@@ -2006,7 +2006,7 @@ impl ListHarvestJobsInput {
 pub mod list_origin_endpoints_input {
 
     /// A builder for [`ListOriginEndpointsInput`](crate::input::ListOriginEndpointsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2182,7 +2182,7 @@ impl ListOriginEndpointsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2330,7 +2330,7 @@ impl ListTagsForResourceInput {
 pub mod rotate_channel_credentials_input {
 
     /// A builder for [`RotateChannelCredentialsInput`](crate::input::RotateChannelCredentialsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -2476,7 +2476,7 @@ impl RotateChannelCredentialsInput {
 pub mod rotate_ingest_endpoint_credentials_input {
 
     /// A builder for [`RotateIngestEndpointCredentialsInput`](crate::input::RotateIngestEndpointCredentialsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) ingest_endpoint_id: std::option::Option<std::string::String>,
@@ -2663,7 +2663,7 @@ impl RotateIngestEndpointCredentialsInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -2851,7 +2851,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3036,7 +3036,7 @@ impl UntagResourceInput {
 pub mod update_channel_input {
 
     /// A builder for [`UpdateChannelInput`](crate::input::UpdateChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3207,7 +3207,7 @@ impl UpdateChannelInput {
 pub mod update_origin_endpoint_input {
 
     /// A builder for [`UpdateOriginEndpointInput`](crate::input::UpdateOriginEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization: std::option::Option<crate::model::Authorization>,
         pub(crate) cmaf_package:

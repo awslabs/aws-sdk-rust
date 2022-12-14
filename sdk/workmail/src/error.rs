@@ -30,7 +30,7 @@ impl std::error::Error for OrganizationStateException {}
 pub mod organization_state_exception {
 
     /// A builder for [`OrganizationStateException`](crate::error::OrganizationStateException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl std::error::Error for OrganizationNotFoundException {}
 pub mod organization_not_found_exception {
 
     /// A builder for [`OrganizationNotFoundException`](crate::error::OrganizationNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl std::error::Error for NameAvailabilityException {}
 pub mod name_availability_exception {
 
     /// A builder for [`NameAvailabilityException`](crate::error::NameAvailabilityException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -210,7 +210,7 @@ impl std::error::Error for MailDomainStateException {}
 pub mod mail_domain_state_exception {
 
     /// A builder for [`MailDomainStateException`](crate::error::MailDomainStateException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -270,7 +270,7 @@ impl std::error::Error for MailDomainNotFoundException {}
 pub mod mail_domain_not_found_exception {
 
     /// A builder for [`MailDomainNotFoundException`](crate::error::MailDomainNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -330,7 +330,7 @@ impl std::error::Error for InvalidConfigurationException {}
 pub mod invalid_configuration_exception {
 
     /// A builder for [`InvalidConfigurationException`](crate::error::InvalidConfigurationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -390,7 +390,7 @@ impl std::error::Error for EntityStateException {}
 pub mod entity_state_exception {
 
     /// A builder for [`EntityStateException`](crate::error::EntityStateException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -450,7 +450,7 @@ impl std::error::Error for EntityNotFoundException {}
 pub mod entity_not_found_exception {
 
     /// A builder for [`EntityNotFoundException`](crate::error::EntityNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -510,7 +510,7 @@ impl std::error::Error for EmailAddressInUseException {}
 pub mod email_address_in_use_exception {
 
     /// A builder for [`EmailAddressInUseException`](crate::error::EmailAddressInUseException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -570,7 +570,7 @@ impl std::error::Error for DirectoryUnavailableException {}
 pub mod directory_unavailable_exception {
 
     /// A builder for [`DirectoryUnavailableException`](crate::error::DirectoryUnavailableException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -630,7 +630,7 @@ impl std::error::Error for UnsupportedOperationException {}
 pub mod unsupported_operation_exception {
 
     /// A builder for [`UnsupportedOperationException`](crate::error::UnsupportedOperationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -690,7 +690,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
 
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -750,7 +750,7 @@ impl std::error::Error for DirectoryServiceAuthenticationFailedException {}
 pub mod directory_service_authentication_failed_exception {
 
     /// A builder for [`DirectoryServiceAuthenticationFailedException`](crate::error::DirectoryServiceAuthenticationFailedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -810,7 +810,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
 
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -870,7 +870,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
 
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -930,7 +930,7 @@ impl std::error::Error for TooManyTagsException {}
 pub mod too_many_tags_exception {
 
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -990,7 +990,7 @@ impl std::error::Error for InvalidPasswordException {}
 pub mod invalid_password_exception {
 
     /// A builder for [`InvalidPasswordException`](crate::error::InvalidPasswordException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1050,7 +1050,7 @@ impl std::error::Error for EntityAlreadyRegisteredException {}
 pub mod entity_already_registered_exception {
 
     /// A builder for [`EntityAlreadyRegisteredException`](crate::error::EntityAlreadyRegisteredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1110,7 +1110,7 @@ impl std::error::Error for MailDomainInUseException {}
 pub mod mail_domain_in_use_exception {
 
     /// A builder for [`MailDomainInUseException`](crate::error::MailDomainInUseException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1170,7 +1170,7 @@ impl std::error::Error for InvalidCustomSesConfigurationException {}
 pub mod invalid_custom_ses_configuration_exception {
 
     /// A builder for [`InvalidCustomSesConfigurationException`](crate::error::InvalidCustomSesConfigurationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1230,7 +1230,7 @@ impl std::error::Error for ReservedNameException {}
 pub mod reserved_name_exception {
 
     /// A builder for [`ReservedNameException`](crate::error::ReservedNameException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1290,7 +1290,7 @@ impl std::error::Error for DirectoryInUseException {}
 pub mod directory_in_use_exception {
 
     /// A builder for [`DirectoryInUseException`](crate::error::DirectoryInUseException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

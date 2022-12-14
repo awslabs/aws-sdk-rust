@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_app_instance_input {
 
     /// A builder for [`CreateAppInstanceInput`](crate::input::CreateAppInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) metadata: std::option::Option<std::string::String>,
@@ -208,7 +208,7 @@ impl CreateAppInstanceInput {
 pub mod create_app_instance_admin_input {
 
     /// A builder for [`CreateAppInstanceAdminInput`](crate::input::CreateAppInstanceAdminInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_admin_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
@@ -394,7 +394,7 @@ impl CreateAppInstanceAdminInput {
 pub mod create_app_instance_user_input {
 
     /// A builder for [`CreateAppInstanceUserInput`](crate::input::CreateAppInstanceUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_user_id: std::option::Option<std::string::String>,
@@ -631,7 +631,7 @@ impl CreateAppInstanceUserInput {
 pub mod delete_app_instance_input {
 
     /// A builder for [`DeleteAppInstanceInput`](crate::input::DeleteAppInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
     }
@@ -786,7 +786,7 @@ impl DeleteAppInstanceInput {
 pub mod delete_app_instance_admin_input {
 
     /// A builder for [`DeleteAppInstanceAdminInput`](crate::input::DeleteAppInstanceAdminInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_admin_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
@@ -976,7 +976,7 @@ impl DeleteAppInstanceAdminInput {
 pub mod delete_app_instance_user_input {
 
     /// A builder for [`DeleteAppInstanceUserInput`](crate::input::DeleteAppInstanceUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
     }
@@ -1131,7 +1131,7 @@ impl DeleteAppInstanceUserInput {
 pub mod deregister_app_instance_user_endpoint_input {
 
     /// A builder for [`DeregisterAppInstanceUserEndpointInput`](crate::input::DeregisterAppInstanceUserEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
@@ -1326,7 +1326,7 @@ impl DeregisterAppInstanceUserEndpointInput {
 pub mod describe_app_instance_input {
 
     /// A builder for [`DescribeAppInstanceInput`](crate::input::DescribeAppInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
     }
@@ -1481,7 +1481,7 @@ impl DescribeAppInstanceInput {
 pub mod describe_app_instance_admin_input {
 
     /// A builder for [`DescribeAppInstanceAdminInput`](crate::input::DescribeAppInstanceAdminInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_admin_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
@@ -1671,7 +1671,7 @@ impl DescribeAppInstanceAdminInput {
 pub mod describe_app_instance_user_input {
 
     /// A builder for [`DescribeAppInstanceUserInput`](crate::input::DescribeAppInstanceUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
     }
@@ -1826,7 +1826,7 @@ impl DescribeAppInstanceUserInput {
 pub mod describe_app_instance_user_endpoint_input {
 
     /// A builder for [`DescribeAppInstanceUserEndpointInput`](crate::input::DescribeAppInstanceUserEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
@@ -2021,7 +2021,7 @@ impl DescribeAppInstanceUserEndpointInput {
 pub mod get_app_instance_retention_settings_input {
 
     /// A builder for [`GetAppInstanceRetentionSettingsInput`](crate::input::GetAppInstanceRetentionSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
     }
@@ -2176,7 +2176,7 @@ impl GetAppInstanceRetentionSettingsInput {
 pub mod list_app_instance_admins_input {
 
     /// A builder for [`ListAppInstanceAdminsInput`](crate::input::ListAppInstanceAdminsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2385,7 +2385,7 @@ impl ListAppInstanceAdminsInput {
 pub mod list_app_instances_input {
 
     /// A builder for [`ListAppInstancesInput`](crate::input::ListAppInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2554,7 +2554,7 @@ impl ListAppInstancesInput {
 pub mod list_app_instance_user_endpoints_input {
 
     /// A builder for [`ListAppInstanceUserEndpointsInput`](crate::input::ListAppInstanceUserEndpointsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2763,7 +2763,7 @@ impl ListAppInstanceUserEndpointsInput {
 pub mod list_app_instance_users_input {
 
     /// A builder for [`ListAppInstanceUsersInput`](crate::input::ListAppInstanceUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2967,7 +2967,7 @@ impl ListAppInstanceUsersInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3119,7 +3119,7 @@ impl ListTagsForResourceInput {
 pub mod put_app_instance_retention_settings_input {
 
     /// A builder for [`PutAppInstanceRetentionSettingsInput`](crate::input::PutAppInstanceRetentionSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_retention_settings:
@@ -3306,7 +3306,7 @@ impl PutAppInstanceRetentionSettingsInput {
 pub mod register_app_instance_user_endpoint_input {
 
     /// A builder for [`RegisterAppInstanceUserEndpointInput`](crate::input::RegisterAppInstanceUserEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3586,7 +3586,7 @@ impl RegisterAppInstanceUserEndpointInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3756,7 +3756,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3926,7 +3926,7 @@ impl UntagResourceInput {
 pub mod update_app_instance_input {
 
     /// A builder for [`UpdateAppInstanceInput`](crate::input::UpdateAppInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4128,7 +4128,7 @@ impl UpdateAppInstanceInput {
 pub mod update_app_instance_user_input {
 
     /// A builder for [`UpdateAppInstanceUserInput`](crate::input::UpdateAppInstanceUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4332,7 +4332,7 @@ impl UpdateAppInstanceUserInput {
 pub mod update_app_instance_user_endpoint_input {
 
     /// A builder for [`UpdateAppInstanceUserEndpointInput`](crate::input::UpdateAppInstanceUserEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_id: std::option::Option<std::string::String>,

@@ -24,7 +24,7 @@ impl ListTemplatesOutput {
 pub mod list_templates_output {
 
     /// A builder for [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) templates: std::option::Option<std::vec::Vec<crate::model::TemplateSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -100,7 +100,7 @@ impl CreateTemplateOutput {
 pub mod create_template_output {
 
     /// A builder for [`CreateTemplateOutput`](crate::output::CreateTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_id: std::option::Option<std::string::String>,
         pub(crate) template_arn: std::option::Option<std::string::String>,
@@ -150,7 +150,7 @@ pub struct UpdateTemplateOutput {}
 pub mod update_template_output {
 
     /// A builder for [`UpdateTemplateOutput`](crate::output::UpdateTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateTemplateOutput`](crate::output::UpdateTemplateOutput).
@@ -232,7 +232,7 @@ impl GetTemplateOutput {
 pub mod get_template_output {
 
     /// A builder for [`GetTemplateOutput`](crate::output::GetTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_id: std::option::Option<std::string::String>,
         pub(crate) template_arn: std::option::Option<std::string::String>,
@@ -394,7 +394,7 @@ impl ListLayoutsOutput {
 pub mod list_layouts_output {
 
     /// A builder for [`ListLayoutsOutput`](crate::output::ListLayoutsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layouts: std::option::Option<std::vec::Vec<crate::model::LayoutSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -470,7 +470,7 @@ impl CreateLayoutOutput {
 pub mod create_layout_output {
 
     /// A builder for [`CreateLayoutOutput`](crate::output::CreateLayoutOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layout_id: std::option::Option<std::string::String>,
         pub(crate) layout_arn: std::option::Option<std::string::String>,
@@ -520,7 +520,7 @@ pub struct UpdateLayoutOutput {}
 pub mod update_layout_output {
 
     /// A builder for [`UpdateLayoutOutput`](crate::output::UpdateLayoutOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateLayoutOutput`](crate::output::UpdateLayoutOutput).
@@ -588,7 +588,7 @@ impl GetLayoutOutput {
 pub mod get_layout_output {
 
     /// A builder for [`GetLayoutOutput`](crate::output::GetLayoutOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layout_id: std::option::Option<std::string::String>,
         pub(crate) layout_arn: std::option::Option<std::string::String>,
@@ -717,7 +717,7 @@ impl ListFieldOptionsOutput {
 pub mod list_field_options_output {
 
     /// A builder for [`ListFieldOptionsOutput`](crate::output::ListFieldOptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<std::vec::Vec<crate::model::FieldOption>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -786,7 +786,7 @@ impl BatchPutFieldOptionsOutput {
 pub mod batch_put_field_options_output {
 
     /// A builder for [`BatchPutFieldOptionsOutput`](crate::output::BatchPutFieldOptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::FieldOptionError>>,
     }
@@ -850,7 +850,7 @@ impl BatchGetFieldOutput {
 pub mod batch_get_field_output {
 
     /// A builder for [`BatchGetFieldOutput`](crate::output::BatchGetFieldOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fields: std::option::Option<std::vec::Vec<crate::model::GetFieldResponse>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::FieldError>>,
@@ -935,7 +935,7 @@ impl ListFieldsOutput {
 pub mod list_fields_output {
 
     /// A builder for [`ListFieldsOutput`](crate::output::ListFieldsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fields: std::option::Option<std::vec::Vec<crate::model::FieldSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1011,7 +1011,7 @@ impl CreateFieldOutput {
 pub mod create_field_output {
 
     /// A builder for [`CreateFieldOutput`](crate::output::CreateFieldOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_id: std::option::Option<std::string::String>,
         pub(crate) field_arn: std::option::Option<std::string::String>,
@@ -1061,7 +1061,7 @@ pub struct UpdateFieldOutput {}
 pub mod update_field_output {
 
     /// A builder for [`UpdateFieldOutput`](crate::output::UpdateFieldOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateFieldOutput`](crate::output::UpdateFieldOutput).
@@ -1085,7 +1085,7 @@ pub struct PutCaseEventConfigurationOutput {}
 pub mod put_case_event_configuration_output {
 
     /// A builder for [`PutCaseEventConfigurationOutput`](crate::output::PutCaseEventConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutCaseEventConfigurationOutput`](crate::output::PutCaseEventConfigurationOutput).
@@ -1119,7 +1119,7 @@ impl GetCaseEventConfigurationOutput {
 pub mod get_case_event_configuration_output {
 
     /// A builder for [`GetCaseEventConfigurationOutput`](crate::output::GetCaseEventConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_bridge: std::option::Option<crate::model::EventBridgeConfiguration>,
     }
@@ -1177,7 +1177,7 @@ impl ListDomainsOutput {
 pub mod list_domains_output {
 
     /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domains: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1260,7 +1260,7 @@ impl CreateDomainOutput {
 pub mod create_domain_output {
 
     /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
         pub(crate) domain_arn: std::option::Option<std::string::String>,
@@ -1376,7 +1376,7 @@ impl GetDomainOutput {
 pub mod get_domain_output {
 
     /// A builder for [`GetDomainOutput`](crate::output::GetDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
         pub(crate) domain_arn: std::option::Option<std::string::String>,
@@ -1524,7 +1524,7 @@ impl SearchCasesOutput {
 pub mod search_cases_output {
 
     /// A builder for [`SearchCasesOutput`](crate::output::SearchCasesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) cases: std::option::Option<
@@ -1607,7 +1607,7 @@ impl ListCasesForContactOutput {
 pub mod list_cases_for_contact_output {
 
     /// A builder for [`ListCasesForContactOutput`](crate::output::ListCasesForContactOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cases: std::option::Option<std::vec::Vec<crate::model::CaseSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1683,7 +1683,7 @@ impl CreateCaseOutput {
 pub mod create_case_output {
 
     /// A builder for [`CreateCaseOutput`](crate::output::CreateCaseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) case_id: std::option::Option<std::string::String>,
         pub(crate) case_arn: std::option::Option<std::string::String>,
@@ -1733,7 +1733,7 @@ pub struct UpdateCaseOutput {}
 pub mod update_case_output {
 
     /// A builder for [`UpdateCaseOutput`](crate::output::UpdateCaseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateCaseOutput`](crate::output::UpdateCaseOutput).
@@ -1794,7 +1794,7 @@ impl GetCaseOutput {
 pub mod get_case_output {
 
     /// A builder for [`GetCaseOutput`](crate::output::GetCaseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fields: std::option::Option<std::vec::Vec<crate::model::FieldValue>>,
         pub(crate) template_id: std::option::Option<std::string::String>,
@@ -1922,7 +1922,7 @@ impl SearchRelatedItemsOutput {
 pub mod search_related_items_output {
 
     /// A builder for [`SearchRelatedItemsOutput`](crate::output::SearchRelatedItemsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) related_items: std::option::Option<
@@ -2005,7 +2005,7 @@ impl CreateRelatedItemOutput {
 pub mod create_related_item_output {
 
     /// A builder for [`CreateRelatedItemOutput`](crate::output::CreateRelatedItemOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) related_item_id: std::option::Option<std::string::String>,
         pub(crate) related_item_arn: std::option::Option<std::string::String>,
@@ -2061,7 +2061,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -2085,7 +2085,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -2125,7 +2125,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<

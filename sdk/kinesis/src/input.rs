@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod add_tags_to_stream_input {
 
     /// A builder for [`AddTagsToStreamInput`](crate::input::AddTagsToStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -179,7 +179,7 @@ impl AddTagsToStreamInput {
 pub mod create_stream_input {
 
     /// A builder for [`CreateStreamInput`](crate::input::CreateStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) shard_count: std::option::Option<i32>,
@@ -351,7 +351,7 @@ impl CreateStreamInput {
 pub mod decrease_stream_retention_period_input {
 
     /// A builder for [`DecreaseStreamRetentionPeriodInput`](crate::input::DecreaseStreamRetentionPeriodInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) retention_period_hours: std::option::Option<i32>,
@@ -509,7 +509,7 @@ impl DecreaseStreamRetentionPeriodInput {
 pub mod delete_stream_input {
 
     /// A builder for [`DeleteStreamInput`](crate::input::DeleteStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) enforce_consumer_deletion: std::option::Option<bool>,
@@ -666,7 +666,7 @@ impl DeleteStreamInput {
 pub mod deregister_stream_consumer_input {
 
     /// A builder for [`DeregisterStreamConsumerInput`](crate::input::DeregisterStreamConsumerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
         pub(crate) consumer_name: std::option::Option<std::string::String>,
@@ -842,7 +842,7 @@ impl DeregisterStreamConsumerInput {
 pub mod describe_limits_input {
 
     /// A builder for [`DescribeLimitsInput`](crate::input::DescribeLimitsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeLimitsInput`](crate::input::DescribeLimitsInput).
@@ -966,7 +966,7 @@ impl DescribeLimitsInput {
 pub mod describe_stream_input {
 
     /// A builder for [`DescribeStreamInput`](crate::input::DescribeStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -1142,7 +1142,7 @@ impl DescribeStreamInput {
 pub mod describe_stream_consumer_input {
 
     /// A builder for [`DescribeStreamConsumerInput`](crate::input::DescribeStreamConsumerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
         pub(crate) consumer_name: std::option::Option<std::string::String>,
@@ -1318,7 +1318,7 @@ impl DescribeStreamConsumerInput {
 pub mod describe_stream_summary_input {
 
     /// A builder for [`DescribeStreamSummaryInput`](crate::input::DescribeStreamSummaryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
     }
@@ -1467,7 +1467,7 @@ impl DescribeStreamSummaryInput {
 pub mod disable_enhanced_monitoring_input {
 
     /// A builder for [`DisableEnhancedMonitoringInput`](crate::input::DisableEnhancedMonitoringInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) shard_level_metrics:
@@ -1662,7 +1662,7 @@ impl DisableEnhancedMonitoringInput {
 pub mod enable_enhanced_monitoring_input {
 
     /// A builder for [`EnableEnhancedMonitoringInput`](crate::input::EnableEnhancedMonitoringInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) shard_level_metrics:
@@ -1857,7 +1857,7 @@ impl EnableEnhancedMonitoringInput {
 pub mod get_records_input {
 
     /// A builder for [`GetRecordsInput`](crate::input::GetRecordsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shard_iterator: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -2017,7 +2017,7 @@ impl GetRecordsInput {
 pub mod get_shard_iterator_input {
 
     /// A builder for [`GetShardIteratorInput`](crate::input::GetShardIteratorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) shard_id: std::option::Option<std::string::String>,
@@ -2237,7 +2237,7 @@ impl GetShardIteratorInput {
 pub mod increase_stream_retention_period_input {
 
     /// A builder for [`IncreaseStreamRetentionPeriodInput`](crate::input::IncreaseStreamRetentionPeriodInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) retention_period_hours: std::option::Option<i32>,
@@ -2395,7 +2395,7 @@ impl IncreaseStreamRetentionPeriodInput {
 pub mod list_shards_input {
 
     /// A builder for [`ListShardsInput`](crate::input::ListShardsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2633,7 +2633,7 @@ impl ListShardsInput {
 pub mod list_stream_consumers_input {
 
     /// A builder for [`ListStreamConsumersInput`](crate::input::ListStreamConsumersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2829,7 +2829,7 @@ impl ListStreamConsumersInput {
 pub mod list_streams_input {
 
     /// A builder for [`ListStreamsInput`](crate::input::ListStreamsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
         pub(crate) exclusive_start_stream_name: std::option::Option<std::string::String>,
@@ -2992,7 +2992,7 @@ impl ListStreamsInput {
 pub mod list_tags_for_stream_input {
 
     /// A builder for [`ListTagsForStreamInput`](crate::input::ListTagsForStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) exclusive_start_tag_key: std::option::Option<std::string::String>,
@@ -3166,7 +3166,7 @@ impl ListTagsForStreamInput {
 pub mod merge_shards_input {
 
     /// A builder for [`MergeShardsInput`](crate::input::MergeShardsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) shard_to_merge: std::option::Option<std::string::String>,
@@ -3341,7 +3341,7 @@ impl MergeShardsInput {
 pub mod put_record_input {
 
     /// A builder for [`PutRecordInput`](crate::input::PutRecordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
@@ -3544,7 +3544,7 @@ impl PutRecordInput {
 pub mod put_records_input {
 
     /// A builder for [`PutRecordsInput`](crate::input::PutRecordsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records:
             std::option::Option<std::vec::Vec<crate::model::PutRecordsRequestEntry>>,
@@ -3711,7 +3711,7 @@ impl PutRecordsInput {
 pub mod register_stream_consumer_input {
 
     /// A builder for [`RegisterStreamConsumerInput`](crate::input::RegisterStreamConsumerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
         pub(crate) consumer_name: std::option::Option<std::string::String>,
@@ -3875,7 +3875,7 @@ impl RegisterStreamConsumerInput {
 pub mod remove_tags_from_stream_input {
 
     /// A builder for [`RemoveTagsFromStreamInput`](crate::input::RemoveTagsFromStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4045,7 +4045,7 @@ impl RemoveTagsFromStreamInput {
 pub mod split_shard_input {
 
     /// A builder for [`SplitShardInput`](crate::input::SplitShardInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) shard_to_split: std::option::Option<std::string::String>,
@@ -4220,7 +4220,7 @@ impl SplitShardInput {
 pub mod start_stream_encryption_input {
 
     /// A builder for [`StartStreamEncryptionInput`](crate::input::StartStreamEncryptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
@@ -4410,7 +4410,7 @@ impl StartStreamEncryptionInput {
 pub mod stop_stream_encryption_input {
 
     /// A builder for [`StopStreamEncryptionInput`](crate::input::StopStreamEncryptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
@@ -4600,7 +4600,7 @@ impl StopStreamEncryptionInput {
 pub mod update_shard_count_input {
 
     /// A builder for [`UpdateShardCountInput`](crate::input::UpdateShardCountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) target_shard_count: std::option::Option<i32>,
@@ -4786,7 +4786,7 @@ impl UpdateShardCountInput {
 pub mod update_stream_mode_input {
 
     /// A builder for [`UpdateStreamModeInput`](crate::input::UpdateStreamModeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
         pub(crate) stream_mode_details: std::option::Option<crate::model::StreamModeDetails>,

@@ -32,7 +32,7 @@ impl HttpPackageConfiguration {
 pub mod http_package_configuration {
 
     /// A builder for [`HttpPackageConfiguration`](crate::model::HttpPackageConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) source_group: std::option::Option<std::string::String>,
@@ -201,7 +201,7 @@ impl SegmentDeliveryConfiguration {
 pub mod segment_delivery_configuration {
 
     /// A builder for [`SegmentDeliveryConfiguration`](crate::model::SegmentDeliveryConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base_url: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -261,7 +261,7 @@ impl HttpConfiguration {
 pub mod http_configuration {
 
     /// A builder for [`HttpConfiguration`](crate::model::HttpConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base_url: std::option::Option<std::string::String>,
     }
@@ -309,7 +309,7 @@ impl DefaultSegmentDeliveryConfiguration {
 pub mod default_segment_delivery_configuration {
 
     /// A builder for [`DefaultSegmentDeliveryConfiguration`](crate::model::DefaultSegmentDeliveryConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base_url: std::option::Option<std::string::String>,
     }
@@ -377,7 +377,7 @@ impl AccessConfiguration {
 pub mod access_configuration {
 
     /// A builder for [`AccessConfiguration`](crate::model::AccessConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_type: std::option::Option<crate::model::AccessType>,
         pub(crate) secrets_manager_access_token_configuration:
@@ -472,7 +472,7 @@ impl SecretsManagerAccessTokenConfiguration {
 pub mod secrets_manager_access_token_configuration {
 
     /// A builder for [`SecretsManagerAccessTokenConfiguration`](crate::model::SecretsManagerAccessTokenConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) header_name: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
@@ -667,7 +667,7 @@ impl ResponseOutputItem {
 pub mod response_output_item {
 
     /// A builder for [`ResponseOutputItem`](crate::model::ResponseOutputItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dash_playlist_settings: std::option::Option<crate::model::DashPlaylistSettings>,
         pub(crate) hls_playlist_settings: std::option::Option<crate::model::HlsPlaylistSettings>,
@@ -772,7 +772,7 @@ impl HlsPlaylistSettings {
 pub mod hls_playlist_settings {
 
     /// A builder for [`HlsPlaylistSettings`](crate::model::HlsPlaylistSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) manifest_window_seconds: std::option::Option<i32>,
     }
@@ -841,7 +841,7 @@ impl DashPlaylistSettings {
 pub mod dash_playlist_settings {
 
     /// A builder for [`DashPlaylistSettings`](crate::model::DashPlaylistSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) manifest_window_seconds: std::option::Option<i32>,
         pub(crate) min_buffer_time_seconds: std::option::Option<i32>,
@@ -937,7 +937,7 @@ impl SlateSource {
 pub mod slate_source {
 
     /// A builder for [`SlateSource`](crate::model::SlateSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) vod_source_name: std::option::Option<std::string::String>,
@@ -1116,7 +1116,7 @@ impl RequestOutputItem {
 pub mod request_output_item {
 
     /// A builder for [`RequestOutputItem`](crate::model::RequestOutputItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dash_playlist_settings: std::option::Option<crate::model::DashPlaylistSettings>,
         pub(crate) hls_playlist_settings: std::option::Option<crate::model::HlsPlaylistSettings>,
@@ -1211,7 +1211,7 @@ impl ManifestProcessingRules {
 pub mod manifest_processing_rules {
 
     /// A builder for [`ManifestProcessingRules`](crate::model::ManifestProcessingRules).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_marker_passthrough: std::option::Option<crate::model::AdMarkerPassthrough>,
     }
@@ -1265,7 +1265,7 @@ impl AdMarkerPassthrough {
 pub mod ad_marker_passthrough {
 
     /// A builder for [`AdMarkerPassthrough`](crate::model::AdMarkerPassthrough).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
     }
@@ -1315,7 +1315,7 @@ impl LogConfiguration {
 pub mod log_configuration {
 
     /// A builder for [`LogConfiguration`](crate::model::LogConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) percent_enabled: std::option::Option<i32>,
     }
@@ -1372,7 +1372,7 @@ impl LivePreRollConfiguration {
 pub mod live_pre_roll_configuration {
 
     /// A builder for [`LivePreRollConfiguration`](crate::model::LivePreRollConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_decision_server_url: std::option::Option<std::string::String>,
         pub(crate) max_duration_seconds: std::option::Option<i32>,
@@ -1435,7 +1435,7 @@ impl HlsConfiguration {
 pub mod hls_configuration {
 
     /// A builder for [`HlsConfiguration`](crate::model::HlsConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) manifest_endpoint_prefix: std::option::Option<std::string::String>,
     }
@@ -1500,7 +1500,7 @@ impl DashConfiguration {
 pub mod dash_configuration {
 
     /// A builder for [`DashConfiguration`](crate::model::DashConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) manifest_endpoint_prefix: std::option::Option<std::string::String>,
         pub(crate) mpd_location: std::option::Option<std::string::String>,
@@ -1677,7 +1677,7 @@ impl CdnConfiguration {
 pub mod cdn_configuration {
 
     /// A builder for [`CdnConfiguration`](crate::model::CdnConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_segment_url_prefix: std::option::Option<std::string::String>,
         pub(crate) content_segment_url_prefix: std::option::Option<std::string::String>,
@@ -1750,7 +1750,7 @@ impl Bumper {
 pub mod bumper {
 
     /// A builder for [`Bumper`](crate::model::Bumper).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) end_url: std::option::Option<std::string::String>,
         pub(crate) start_url: std::option::Option<std::string::String>,
@@ -1817,7 +1817,7 @@ impl AvailSuppression {
 pub mod avail_suppression {
 
     /// A builder for [`AvailSuppression`](crate::model::AvailSuppression).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mode: std::option::Option<crate::model::Mode>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1974,7 +1974,7 @@ impl DashConfigurationForPut {
 pub mod dash_configuration_for_put {
 
     /// A builder for [`DashConfigurationForPut`](crate::model::DashConfigurationForPut).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mpd_location: std::option::Option<std::string::String>,
         pub(crate) origin_manifest_type: std::option::Option<crate::model::OriginManifestType>,
@@ -2086,7 +2086,7 @@ impl VodSource {
 pub mod vod_source {
 
     /// A builder for [`VodSource`](crate::model::VodSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2314,7 +2314,7 @@ impl SourceLocation {
 pub mod source_location {
 
     /// A builder for [`SourceLocation`](crate::model::SourceLocation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_configuration: std::option::Option<crate::model::AccessConfiguration>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2545,7 +2545,7 @@ impl PrefetchSchedule {
 pub mod prefetch_schedule {
 
     /// A builder for [`PrefetchSchedule`](crate::model::PrefetchSchedule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) consumption: std::option::Option<crate::model::PrefetchConsumption>,
@@ -2685,7 +2685,7 @@ impl PrefetchRetrieval {
 pub mod prefetch_retrieval {
 
     /// A builder for [`PrefetchRetrieval`](crate::model::PrefetchRetrieval).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dynamic_variables: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -2799,7 +2799,7 @@ impl PrefetchConsumption {
 pub mod prefetch_consumption {
 
     /// A builder for [`PrefetchConsumption`](crate::model::PrefetchConsumption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) avail_matching_criteria:
             std::option::Option<std::vec::Vec<crate::model::AvailMatchingCriteria>>,
@@ -2901,7 +2901,7 @@ impl AvailMatchingCriteria {
 pub mod avail_matching_criteria {
 
     /// A builder for [`AvailMatchingCriteria`](crate::model::AvailMatchingCriteria).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dynamic_variable: std::option::Option<std::string::String>,
         pub(crate) operator: std::option::Option<crate::model::Operator>,
@@ -3197,7 +3197,7 @@ impl PlaybackConfiguration {
 pub mod playback_configuration {
 
     /// A builder for [`PlaybackConfiguration`](crate::model::PlaybackConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_decision_server_url: std::option::Option<std::string::String>,
         pub(crate) avail_suppression: std::option::Option<crate::model::AvailSuppression>,
@@ -3605,7 +3605,7 @@ impl LiveSource {
 pub mod live_source {
 
     /// A builder for [`LiveSource`](crate::model::LiveSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -3838,7 +3838,7 @@ impl Channel {
 pub mod channel {
 
     /// A builder for [`Channel`](crate::model::Channel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_name: std::option::Option<std::string::String>,
@@ -4067,7 +4067,7 @@ impl Alert {
 pub mod alert {
 
     /// A builder for [`Alert`](crate::model::Alert).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alert_code: std::option::Option<std::string::String>,
         pub(crate) alert_message: std::option::Option<std::string::String>,
@@ -4243,7 +4243,7 @@ impl ScheduleEntry {
 pub mod schedule_entry {
 
     /// A builder for [`ScheduleEntry`](crate::model::ScheduleEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approximate_duration_seconds: std::option::Option<i64>,
         pub(crate) approximate_start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4539,7 +4539,7 @@ impl ScheduleAdBreak {
 pub mod schedule_ad_break {
 
     /// A builder for [`ScheduleAdBreak`](crate::model::ScheduleAdBreak).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approximate_duration_seconds: std::option::Option<i64>,
         pub(crate) approximate_start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4653,7 +4653,7 @@ impl AdBreak {
 pub mod ad_break {
 
     /// A builder for [`AdBreak`](crate::model::AdBreak).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_type: std::option::Option<crate::model::MessageType>,
         pub(crate) offset_millis: std::option::Option<i64>,
@@ -4764,7 +4764,7 @@ impl SpliceInsertMessage {
 pub mod splice_insert_message {
 
     /// A builder for [`SpliceInsertMessage`](crate::model::SpliceInsertMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) avail_num: std::option::Option<i32>,
         pub(crate) avails_expected: std::option::Option<i32>,
@@ -4933,7 +4933,7 @@ impl ScheduleConfiguration {
 pub mod schedule_configuration {
 
     /// A builder for [`ScheduleConfiguration`](crate::model::ScheduleConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transition: std::option::Option<crate::model::Transition>,
     }
@@ -5022,7 +5022,7 @@ impl Transition {
 pub mod transition {
 
     /// A builder for [`Transition`](crate::model::Transition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_millis: std::option::Option<i64>,
         pub(crate) relative_position: std::option::Option<crate::model::RelativePosition>,

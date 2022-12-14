@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod delete_report_definition_input {
 
     /// A builder for [`DeleteReportDefinitionInput`](crate::input::DeleteReportDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_name: std::option::Option<std::string::String>,
     }
@@ -154,7 +154,7 @@ impl DeleteReportDefinitionInput {
 pub mod describe_report_definitions_input {
 
     /// A builder for [`DescribeReportDefinitionsInput`](crate::input::DescribeReportDefinitionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -315,7 +315,7 @@ impl DescribeReportDefinitionsInput {
 pub mod modify_report_definition_input {
 
     /// A builder for [`ModifyReportDefinitionInput`](crate::input::ModifyReportDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_name: std::option::Option<std::string::String>,
         pub(crate) report_definition: std::option::Option<crate::model::ReportDefinition>,
@@ -479,7 +479,7 @@ impl ModifyReportDefinitionInput {
 pub mod put_report_definition_input {
 
     /// A builder for [`PutReportDefinitionInput`](crate::input::PutReportDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_definition: std::option::Option<crate::model::ReportDefinition>,
     }

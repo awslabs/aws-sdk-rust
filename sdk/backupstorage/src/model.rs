@@ -229,7 +229,7 @@ impl BackupObject {
 pub mod backup_object {
 
     /// A builder for [`BackupObject`](crate::model::BackupObject).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) chunks_count: std::option::Option<i64>,
@@ -378,7 +378,7 @@ impl Chunk {
 pub mod chunk {
 
     /// A builder for [`Chunk`](crate::model::Chunk).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index: std::option::Option<i64>,
         pub(crate) length: std::option::Option<i64>,

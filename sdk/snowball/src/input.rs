@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod cancel_cluster_input {
 
     /// A builder for [`CancelClusterInput`](crate::input::CancelClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl CancelClusterInput {
 pub mod cancel_job_input {
 
     /// A builder for [`CancelJobInput`](crate::input::CancelJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -293,7 +293,7 @@ impl CancelJobInput {
 pub mod create_address_input {
 
     /// A builder for [`CreateAddressInput`](crate::input::CreateAddressInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<crate::model::Address>,
     }
@@ -438,7 +438,7 @@ impl CreateAddressInput {
 pub mod create_cluster_input {
 
     /// A builder for [`CreateClusterInput`](crate::input::CreateClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_type: std::option::Option<crate::model::JobType>,
         pub(crate) resources: std::option::Option<crate::model::JobResource>,
@@ -787,7 +787,7 @@ impl CreateClusterInput {
 pub mod create_job_input {
 
     /// A builder for [`CreateJobInput`](crate::input::CreateJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_type: std::option::Option<crate::model::JobType>,
         pub(crate) resources: std::option::Option<crate::model::JobResource>,
@@ -1193,7 +1193,7 @@ impl CreateJobInput {
 pub mod create_long_term_pricing_input {
 
     /// A builder for [`CreateLongTermPricingInput`](crate::input::CreateLongTermPricingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) long_term_pricing_type: std::option::Option<crate::model::LongTermPricingType>,
         pub(crate) is_long_term_pricing_auto_renew: std::option::Option<bool>,
@@ -1377,7 +1377,7 @@ impl CreateLongTermPricingInput {
 pub mod create_return_shipping_label_input {
 
     /// A builder for [`CreateReturnShippingLabelInput`](crate::input::CreateReturnShippingLabelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) shipping_option: std::option::Option<crate::model::ShippingOption>,
@@ -1541,7 +1541,7 @@ impl CreateReturnShippingLabelInput {
 pub mod describe_address_input {
 
     /// A builder for [`DescribeAddressInput`](crate::input::DescribeAddressInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address_id: std::option::Option<std::string::String>,
     }
@@ -1686,7 +1686,7 @@ impl DescribeAddressInput {
 pub mod describe_addresses_input {
 
     /// A builder for [`DescribeAddressesInput`](crate::input::DescribeAddressesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1845,7 +1845,7 @@ impl DescribeAddressesInput {
 pub mod describe_cluster_input {
 
     /// A builder for [`DescribeClusterInput`](crate::input::DescribeClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
     }
@@ -1990,7 +1990,7 @@ impl DescribeClusterInput {
 pub mod describe_job_input {
 
     /// A builder for [`DescribeJobInput`](crate::input::DescribeJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -2135,7 +2135,7 @@ impl DescribeJobInput {
 pub mod describe_return_shipping_label_input {
 
     /// A builder for [`DescribeReturnShippingLabelInput`](crate::input::DescribeReturnShippingLabelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -2281,7 +2281,7 @@ impl DescribeReturnShippingLabelInput {
 pub mod get_job_manifest_input {
 
     /// A builder for [`GetJobManifestInput`](crate::input::GetJobManifestInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -2426,7 +2426,7 @@ impl GetJobManifestInput {
 pub mod get_job_unlock_code_input {
 
     /// A builder for [`GetJobUnlockCodeInput`](crate::input::GetJobUnlockCodeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -2573,7 +2573,7 @@ impl GetJobUnlockCodeInput {
 pub mod get_snowball_usage_input {
 
     /// A builder for [`GetSnowballUsageInput`](crate::input::GetSnowballUsageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetSnowballUsageInput`](crate::input::GetSnowballUsageInput).
@@ -2699,7 +2699,7 @@ impl GetSnowballUsageInput {
 pub mod get_software_updates_input {
 
     /// A builder for [`GetSoftwareUpdatesInput`](crate::input::GetSoftwareUpdatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -2846,7 +2846,7 @@ impl GetSoftwareUpdatesInput {
 pub mod list_cluster_jobs_input {
 
     /// A builder for [`ListClusterJobsInput`](crate::input::ListClusterJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3015,7 +3015,7 @@ impl ListClusterJobsInput {
 pub mod list_clusters_input {
 
     /// A builder for [`ListClustersInput`](crate::input::ListClustersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3172,7 +3172,7 @@ impl ListClustersInput {
 pub mod list_compatible_images_input {
 
     /// A builder for [`ListCompatibleImagesInput`](crate::input::ListCompatibleImagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3333,7 +3333,7 @@ impl ListCompatibleImagesInput {
 pub mod list_jobs_input {
 
     /// A builder for [`ListJobsInput`](crate::input::ListJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3487,7 +3487,7 @@ impl ListJobsInput {
 pub mod list_long_term_pricing_input {
 
     /// A builder for [`ListLongTermPricingInput`](crate::input::ListLongTermPricingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3648,7 +3648,7 @@ impl ListLongTermPricingInput {
 pub mod update_cluster_input {
 
     /// A builder for [`UpdateClusterInput`](crate::input::UpdateClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -3908,7 +3908,7 @@ impl UpdateClusterInput {
 pub mod update_job_input {
 
     /// A builder for [`UpdateJobInput`](crate::input::UpdateJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -4187,7 +4187,7 @@ impl UpdateJobInput {
 pub mod update_job_shipment_state_input {
 
     /// A builder for [`UpdateJobShipmentStateInput`](crate::input::UpdateJobShipmentStateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) shipment_state: std::option::Option<crate::model::ShipmentState>,
@@ -4355,7 +4355,7 @@ impl UpdateJobShipmentStateInput {
 pub mod update_long_term_pricing_input {
 
     /// A builder for [`UpdateLongTermPricingInput`](crate::input::UpdateLongTermPricingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) long_term_pricing_id: std::option::Option<std::string::String>,
         pub(crate) replacement_job: std::option::Option<std::string::String>,

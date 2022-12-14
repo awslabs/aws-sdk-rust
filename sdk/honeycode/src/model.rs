@@ -129,7 +129,7 @@ impl ImportOptions {
 pub mod import_options {
 
     /// A builder for [`ImportOptions`](crate::model::ImportOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_options: std::option::Option<crate::model::DestinationOptions>,
         pub(crate) delimited_text_options:
@@ -222,7 +222,7 @@ impl DelimitedTextImportOptions {
 pub mod delimited_text_import_options {
 
     /// A builder for [`DelimitedTextImportOptions`](crate::model::DelimitedTextImportOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delimiter: std::option::Option<std::string::String>,
         pub(crate) has_header_row: std::option::Option<bool>,
@@ -438,7 +438,7 @@ impl DestinationOptions {
 pub mod destination_options {
 
     /// A builder for [`DestinationOptions`](crate::model::DestinationOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_map: std::option::Option<
             std::collections::HashMap<
@@ -509,7 +509,7 @@ impl SourceDataColumnProperties {
 pub mod source_data_column_properties {
 
     /// A builder for [`SourceDataColumnProperties`](crate::model::SourceDataColumnProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_index: std::option::Option<i32>,
     }
@@ -644,7 +644,7 @@ impl ImportDataSource {
 pub mod import_data_source {
 
     /// A builder for [`ImportDataSource`](crate::model::ImportDataSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_config: std::option::Option<crate::model::ImportDataSourceConfig>,
     }
@@ -702,7 +702,7 @@ impl std::fmt::Debug for ImportDataSourceConfig {
 pub mod import_data_source_config {
 
     /// A builder for [`ImportDataSourceConfig`](crate::model::ImportDataSourceConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) data_source_url: std::option::Option<std::string::String>,
     }
@@ -767,7 +767,7 @@ impl TableRow {
 pub mod table_row {
 
     /// A builder for [`TableRow`](crate::model::TableRow).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) row_id: std::option::Option<std::string::String>,
         pub(crate) cells: std::option::Option<std::vec::Vec<crate::model::Cell>>,
@@ -893,7 +893,7 @@ impl std::fmt::Debug for Cell {
 pub mod cell {
 
     /// A builder for [`Cell`](crate::model::Cell).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) formula: std::option::Option<std::string::String>,
         pub(crate) format: std::option::Option<crate::model::Format>,
@@ -1198,7 +1198,7 @@ impl std::fmt::Debug for Filter {
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) formula: std::option::Option<std::string::String>,
         pub(crate) context_row_id: std::option::Option<std::string::String>,
@@ -1276,7 +1276,7 @@ impl Table {
 pub mod table {
 
     /// A builder for [`Table`](crate::model::Table).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_id: std::option::Option<std::string::String>,
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -1350,7 +1350,7 @@ impl TableColumn {
 pub mod table_column {
 
     /// A builder for [`TableColumn`](crate::model::TableColumn).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_column_id: std::option::Option<std::string::String>,
         pub(crate) table_column_name: std::option::Option<std::string::String>,
@@ -1435,7 +1435,7 @@ impl std::fmt::Debug for VariableValue {
 pub mod variable_value {
 
     /// A builder for [`VariableValue`](crate::model::VariableValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) raw_value: std::option::Option<std::string::String>,
     }
@@ -1499,7 +1499,7 @@ impl ResultSet {
 pub mod result_set {
 
     /// A builder for [`ResultSet`](crate::model::ResultSet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) headers: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
         pub(crate) rows: std::option::Option<std::vec::Vec<crate::model::ResultRow>>,
@@ -1586,7 +1586,7 @@ impl ResultRow {
 pub mod result_row {
 
     /// A builder for [`ResultRow`](crate::model::ResultRow).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) row_id: std::option::Option<std::string::String>,
         pub(crate) data_items: std::option::Option<std::vec::Vec<crate::model::DataItem>>,
@@ -1678,7 +1678,7 @@ impl std::fmt::Debug for DataItem {
 pub mod data_item {
 
     /// A builder for [`DataItem`](crate::model::DataItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) override_format: std::option::Option<crate::model::Format>,
         pub(crate) raw_value: std::option::Option<std::string::String>,
@@ -1780,7 +1780,7 @@ impl std::fmt::Debug for ColumnMetadata {
 pub mod column_metadata {
 
     /// A builder for [`ColumnMetadata`](crate::model::ColumnMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) format: std::option::Option<crate::model::Format>,
@@ -2034,7 +2034,7 @@ impl TableDataImportJobMetadata {
 pub mod table_data_import_job_metadata {
 
     /// A builder for [`TableDataImportJobMetadata`](crate::model::TableDataImportJobMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) submitter: std::option::Option<crate::model::ImportJobSubmitter>,
         pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2145,7 +2145,7 @@ impl std::fmt::Debug for ImportJobSubmitter {
 pub mod import_job_submitter {
 
     /// A builder for [`ImportJobSubmitter`](crate::model::ImportJobSubmitter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) email: std::option::Option<std::string::String>,
         pub(crate) user_arn: std::option::Option<std::string::String>,
@@ -2220,7 +2220,7 @@ impl FailedBatchItem {
 pub mod failed_batch_item {
 
     /// A builder for [`FailedBatchItem`](crate::model::FailedBatchItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
@@ -2290,7 +2290,7 @@ impl UpsertRowsResult {
 pub mod upsert_rows_result {
 
     /// A builder for [`UpsertRowsResult`](crate::model::UpsertRowsResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) row_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) upsert_action: std::option::Option<crate::model::UpsertAction>,
@@ -2473,7 +2473,7 @@ impl UpsertRowData {
 pub mod upsert_row_data {
 
     /// A builder for [`UpsertRowData`](crate::model::UpsertRowData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_item_id: std::option::Option<std::string::String>,
         pub(crate) filter: std::option::Option<crate::model::Filter>,
@@ -2584,7 +2584,7 @@ impl std::fmt::Debug for CellInput {
 pub mod cell_input {
 
     /// A builder for [`CellInput`](crate::model::CellInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) fact: std::option::Option<std::string::String>,
         pub(crate) facts: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2673,7 +2673,7 @@ impl UpdateRowData {
 pub mod update_row_data {
 
     /// A builder for [`UpdateRowData`](crate::model::UpdateRowData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) row_id: std::option::Option<std::string::String>,
         pub(crate) cells_to_update: std::option::Option<
@@ -2762,7 +2762,7 @@ impl CreateRowData {
 pub mod create_row_data {
 
     /// A builder for [`CreateRowData`](crate::model::CreateRowData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_item_id: std::option::Option<std::string::String>,
         pub(crate) cells_to_create: std::option::Option<

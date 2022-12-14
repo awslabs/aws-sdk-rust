@@ -38,7 +38,7 @@ impl UpdateBackendStorageOutput {
 pub mod update_backend_storage_output {
 
     /// A builder for [`UpdateBackendStorageOutput`](crate::output::UpdateBackendStorageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -174,7 +174,7 @@ impl UpdateBackendJobOutput {
 pub mod update_backend_job_output {
 
     /// A builder for [`UpdateBackendJobOutput`](crate::output::UpdateBackendJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -330,7 +330,7 @@ impl UpdateBackendConfigOutput {
 pub mod update_backend_config_output {
 
     /// A builder for [`UpdateBackendConfigOutput`](crate::output::UpdateBackendConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_manager_app_id: std::option::Option<std::string::String>,
@@ -455,7 +455,7 @@ impl UpdateBackendAuthOutput {
 pub mod update_backend_auth_output {
 
     /// A builder for [`UpdateBackendAuthOutput`](crate::output::UpdateBackendAuthOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -601,7 +601,7 @@ impl UpdateBackendApiOutput {
 pub mod update_backend_api_output {
 
     /// A builder for [`UpdateBackendApiOutput`](crate::output::UpdateBackendApiOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -712,7 +712,7 @@ impl RemoveBackendConfigOutput {
 pub mod remove_backend_config_output {
 
     /// A builder for [`RemoveBackendConfigOutput`](crate::output::RemoveBackendConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
     }
@@ -786,7 +786,7 @@ impl RemoveAllBackendsOutput {
 pub mod remove_all_backends_output {
 
     /// A builder for [`RemoveAllBackendsOutput`](crate::output::RemoveAllBackendsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<std::string::String>,
@@ -889,7 +889,7 @@ impl ListS3BucketsOutput {
 pub mod list_s3_buckets_output {
 
     /// A builder for [`ListS3BucketsOutput`](crate::output::ListS3BucketsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) buckets: std::option::Option<std::vec::Vec<crate::model::S3BucketInfo>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -965,7 +965,7 @@ impl ListBackendJobsOutput {
 pub mod list_backend_jobs_output {
 
     /// A builder for [`ListBackendJobsOutput`](crate::output::ListBackendJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::BackendJobRespObj>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1055,7 +1055,7 @@ impl ImportBackendStorageOutput {
 pub mod import_backend_storage_output {
 
     /// A builder for [`ImportBackendStorageOutput`](crate::output::ImportBackendStorageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -1177,7 +1177,7 @@ impl ImportBackendAuthOutput {
 pub mod import_backend_auth_output {
 
     /// A builder for [`ImportBackendAuthOutput`](crate::output::ImportBackendAuthOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -1309,7 +1309,7 @@ impl GetTokenOutput {
 pub mod get_token_output {
 
     /// A builder for [`GetTokenOutput`](crate::output::GetTokenOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) challenge_code: std::option::Option<std::string::String>,
@@ -1419,7 +1419,7 @@ impl GetBackendStorageOutput {
 pub mod get_backend_storage_output {
 
     /// A builder for [`GetBackendStorageOutput`](crate::output::GetBackendStorageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -1565,7 +1565,7 @@ impl GetBackendJobOutput {
 pub mod get_backend_job_output {
 
     /// A builder for [`GetBackendJobOutput`](crate::output::GetBackendJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -1730,7 +1730,7 @@ impl GetBackendAuthOutput {
 pub mod get_backend_auth_output {
 
     /// A builder for [`GetBackendAuthOutput`](crate::output::GetBackendAuthOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -1846,7 +1846,7 @@ impl GetBackendApiModelsOutput {
 pub mod get_backend_api_models_output {
 
     /// A builder for [`GetBackendApiModelsOutput`](crate::output::GetBackendApiModelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) models: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
@@ -1934,7 +1934,7 @@ impl GetBackendApiOutput {
 pub mod get_backend_api_output {
 
     /// A builder for [`GetBackendApiOutput`](crate::output::GetBackendApiOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -2081,7 +2081,7 @@ impl GetBackendOutput {
 pub mod get_backend_output {
 
     /// A builder for [`GetBackendOutput`](crate::output::GetBackendOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amplify_feature_flags: std::option::Option<std::string::String>,
         pub(crate) amplify_meta_config: std::option::Option<std::string::String>,
@@ -2255,7 +2255,7 @@ impl GenerateBackendApiModelsOutput {
 pub mod generate_backend_api_models_output {
 
     /// A builder for [`GenerateBackendApiModelsOutput`](crate::output::GenerateBackendApiModelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -2366,7 +2366,7 @@ impl DeleteTokenOutput {
 pub mod delete_token_output {
 
     /// A builder for [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_success: std::option::Option<bool>,
     }
@@ -2435,7 +2435,7 @@ impl DeleteBackendStorageOutput {
 pub mod delete_backend_storage_output {
 
     /// A builder for [`DeleteBackendStorageOutput`](crate::output::DeleteBackendStorageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -2557,7 +2557,7 @@ impl DeleteBackendAuthOutput {
 pub mod delete_backend_auth_output {
 
     /// A builder for [`DeleteBackendAuthOutput`](crate::output::DeleteBackendAuthOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -2703,7 +2703,7 @@ impl DeleteBackendApiOutput {
 pub mod delete_backend_api_output {
 
     /// A builder for [`DeleteBackendApiOutput`](crate::output::DeleteBackendApiOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -2849,7 +2849,7 @@ impl DeleteBackendOutput {
 pub mod delete_backend_output {
 
     /// A builder for [`DeleteBackendOutput`](crate::output::DeleteBackendOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -2981,7 +2981,7 @@ impl CreateTokenOutput {
 pub mod create_token_output {
 
     /// A builder for [`CreateTokenOutput`](crate::output::CreateTokenOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) challenge_code: std::option::Option<std::string::String>,
@@ -3089,7 +3089,7 @@ impl CreateBackendStorageOutput {
 pub mod create_backend_storage_output {
 
     /// A builder for [`CreateBackendStorageOutput`](crate::output::CreateBackendStorageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -3197,7 +3197,7 @@ impl CreateBackendConfigOutput {
 pub mod create_backend_config_output {
 
     /// A builder for [`CreateBackendConfigOutput`](crate::output::CreateBackendConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -3319,7 +3319,7 @@ impl CreateBackendAuthOutput {
 pub mod create_backend_auth_output {
 
     /// A builder for [`CreateBackendAuthOutput`](crate::output::CreateBackendAuthOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -3465,7 +3465,7 @@ impl CreateBackendApiOutput {
 pub mod create_backend_api_output {
 
     /// A builder for [`CreateBackendApiOutput`](crate::output::CreateBackendApiOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -3611,7 +3611,7 @@ impl CreateBackendOutput {
 pub mod create_backend_output {
 
     /// A builder for [`CreateBackendOutput`](crate::output::CreateBackendOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
@@ -3757,7 +3757,7 @@ impl CloneBackendOutput {
 pub mod clone_backend_output {
 
     /// A builder for [`CloneBackendOutput`](crate::output::CloneBackendOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,

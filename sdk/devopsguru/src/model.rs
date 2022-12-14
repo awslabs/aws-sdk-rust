@@ -25,7 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
 
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -222,7 +222,7 @@ impl UpdateServiceIntegrationConfig {
 pub mod update_service_integration_config {
 
     /// A builder for [`UpdateServiceIntegrationConfig`](crate::model::UpdateServiceIntegrationConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_center: std::option::Option<crate::model::OpsCenterIntegrationConfig>,
         pub(crate) logs_anomaly_detection:
@@ -292,7 +292,7 @@ impl LogsAnomalyDetectionIntegrationConfig {
 pub mod logs_anomaly_detection_integration_config {
 
     /// A builder for [`LogsAnomalyDetectionIntegrationConfig`](crate::model::LogsAnomalyDetectionIntegrationConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opt_in_status: std::option::Option<crate::model::OptInStatus>,
     }
@@ -434,7 +434,7 @@ impl OpsCenterIntegrationConfig {
 pub mod ops_center_integration_config {
 
     /// A builder for [`OpsCenterIntegrationConfig`](crate::model::OpsCenterIntegrationConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opt_in_status: std::option::Option<crate::model::OptInStatus>,
     }
@@ -512,7 +512,7 @@ impl UpdateResourceCollectionFilter {
 pub mod update_resource_collection_filter {
 
     /// A builder for [`UpdateResourceCollectionFilter`](crate::model::UpdateResourceCollectionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_formation:
             std::option::Option<crate::model::UpdateCloudFormationCollectionFilter>,
@@ -620,7 +620,7 @@ impl UpdateTagCollectionFilter {
 pub mod update_tag_collection_filter {
 
     /// A builder for [`UpdateTagCollectionFilter`](crate::model::UpdateTagCollectionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_boundary_key: std::option::Option<std::string::String>,
         pub(crate) tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -698,7 +698,7 @@ impl UpdateCloudFormationCollectionFilter {
 pub mod update_cloud_formation_collection_filter {
 
     /// A builder for [`UpdateCloudFormationCollectionFilter`](crate::model::UpdateCloudFormationCollectionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -850,7 +850,7 @@ impl EventSourcesConfig {
 pub mod event_sources_config {
 
     /// A builder for [`EventSourcesConfig`](crate::model::EventSourcesConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amazon_code_guru_profiler:
             std::option::Option<crate::model::AmazonCodeGuruProfilerIntegration>,
@@ -905,7 +905,7 @@ impl AmazonCodeGuruProfilerIntegration {
 pub mod amazon_code_guru_profiler_integration {
 
     /// A builder for [`AmazonCodeGuruProfilerIntegration`](crate::model::AmazonCodeGuruProfilerIntegration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::EventSourceOptInStatus>,
     }
@@ -1080,7 +1080,7 @@ impl CostEstimationResourceCollectionFilter {
 pub mod cost_estimation_resource_collection_filter {
 
     /// A builder for [`CostEstimationResourceCollectionFilter`](crate::model::CostEstimationResourceCollectionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_formation:
             std::option::Option<crate::model::CloudFormationCostEstimationResourceCollectionFilter>,
@@ -1196,7 +1196,7 @@ impl TagCostEstimationResourceCollectionFilter {
 pub mod tag_cost_estimation_resource_collection_filter {
 
     /// A builder for [`TagCostEstimationResourceCollectionFilter`](crate::model::TagCostEstimationResourceCollectionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_boundary_key: std::option::Option<std::string::String>,
         pub(crate) tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1274,7 +1274,7 @@ impl CloudFormationCostEstimationResourceCollectionFilter {
 pub mod cloud_formation_cost_estimation_resource_collection_filter {
 
     /// A builder for [`CloudFormationCostEstimationResourceCollectionFilter`](crate::model::CloudFormationCostEstimationResourceCollectionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1381,7 +1381,7 @@ impl ReactiveInsightSummary {
 pub mod reactive_insight_summary {
 
     /// A builder for [`ReactiveInsightSummary`](crate::model::ReactiveInsightSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1538,7 +1538,7 @@ impl ServiceCollection {
 pub mod service_collection {
 
     /// A builder for [`ServiceCollection`](crate::model::ServiceCollection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_names: std::option::Option<std::vec::Vec<crate::model::ServiceName>>,
     }
@@ -1851,7 +1851,7 @@ impl ResourceCollection {
 pub mod resource_collection {
 
     /// A builder for [`ResourceCollection`](crate::model::ResourceCollection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_formation: std::option::Option<crate::model::CloudFormationCollection>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagCollection>>,
@@ -1963,7 +1963,7 @@ impl TagCollection {
 pub mod tag_collection {
 
     /// A builder for [`TagCollection`](crate::model::TagCollection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_boundary_key: std::option::Option<std::string::String>,
         pub(crate) tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2041,7 +2041,7 @@ impl CloudFormationCollection {
 pub mod cloud_formation_collection {
 
     /// A builder for [`CloudFormationCollection`](crate::model::CloudFormationCollection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -2105,7 +2105,7 @@ impl InsightTimeRange {
 pub mod insight_time_range {
 
     /// A builder for [`InsightTimeRange`](crate::model::InsightTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2412,7 +2412,7 @@ impl ProactiveInsightSummary {
 pub mod proactive_insight_summary {
 
     /// A builder for [`ProactiveInsightSummary`](crate::model::ProactiveInsightSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2591,7 +2591,7 @@ impl PredictionTimeRange {
 pub mod prediction_time_range {
 
     /// A builder for [`PredictionTimeRange`](crate::model::PredictionTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2768,7 +2768,7 @@ impl SearchOrganizationInsightsFilters {
 pub mod search_organization_insights_filters {
 
     /// A builder for [`SearchOrganizationInsightsFilters`](crate::model::SearchOrganizationInsightsFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) severities: std::option::Option<std::vec::Vec<crate::model::InsightSeverity>>,
         pub(crate) statuses: std::option::Option<std::vec::Vec<crate::model::InsightStatus>>,
@@ -2883,7 +2883,7 @@ impl StartTimeRange {
 pub mod start_time_range {
 
     /// A builder for [`StartTimeRange`](crate::model::StartTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) to_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2970,7 +2970,7 @@ impl SearchInsightsFilters {
 pub mod search_insights_filters {
 
     /// A builder for [`SearchInsightsFilters`](crate::model::SearchInsightsFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) severities: std::option::Option<std::vec::Vec<crate::model::InsightSeverity>>,
         pub(crate) statuses: std::option::Option<std::vec::Vec<crate::model::InsightStatus>>,
@@ -3085,7 +3085,7 @@ impl InsightFeedback {
 pub mod insight_feedback {
 
     /// A builder for [`InsightFeedback`](crate::model::InsightFeedback).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) feedback: std::option::Option<crate::model::InsightFeedbackOption>,
@@ -3309,7 +3309,7 @@ impl Recommendation {
 pub mod recommendation {
 
     /// A builder for [`Recommendation`](crate::model::Recommendation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) link: std::option::Option<std::string::String>,
@@ -3472,7 +3472,7 @@ impl RecommendationRelatedAnomaly {
 pub mod recommendation_related_anomaly {
 
     /// A builder for [`RecommendationRelatedAnomaly`](crate::model::RecommendationRelatedAnomaly).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resources:
             std::option::Option<std::vec::Vec<crate::model::RecommendationRelatedAnomalyResource>>,
@@ -3580,7 +3580,7 @@ impl RecommendationRelatedAnomalySourceDetail {
 pub mod recommendation_related_anomaly_source_detail {
 
     /// A builder for [`RecommendationRelatedAnomalySourceDetail`](crate::model::RecommendationRelatedAnomalySourceDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_metrics: std::option::Option<
             std::vec::Vec<crate::model::RecommendationRelatedCloudWatchMetricsSourceDetail>,
@@ -3651,7 +3651,7 @@ impl RecommendationRelatedCloudWatchMetricsSourceDetail {
 pub mod recommendation_related_cloud_watch_metrics_source_detail {
 
     /// A builder for [`RecommendationRelatedCloudWatchMetricsSourceDetail`](crate::model::RecommendationRelatedCloudWatchMetricsSourceDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -3719,7 +3719,7 @@ impl RecommendationRelatedAnomalyResource {
 pub mod recommendation_related_anomaly_resource {
 
     /// A builder for [`RecommendationRelatedAnomalyResource`](crate::model::RecommendationRelatedAnomalyResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -3789,7 +3789,7 @@ impl RecommendationRelatedEvent {
 pub mod recommendation_related_event {
 
     /// A builder for [`RecommendationRelatedEvent`](crate::model::RecommendationRelatedEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) resources:
@@ -3871,7 +3871,7 @@ impl RecommendationRelatedEventResource {
 pub mod recommendation_related_event_resource {
 
     /// A builder for [`RecommendationRelatedEventResource`](crate::model::RecommendationRelatedEventResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -4125,7 +4125,7 @@ impl ReactiveOrganizationInsightSummary {
 pub mod reactive_organization_insight_summary {
 
     /// A builder for [`ReactiveOrganizationInsightSummary`](crate::model::ReactiveOrganizationInsightSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4350,7 +4350,7 @@ impl ProactiveOrganizationInsightSummary {
 pub mod proactive_organization_insight_summary {
 
     /// A builder for [`ProactiveOrganizationInsightSummary`](crate::model::ProactiveOrganizationInsightSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4541,7 +4541,7 @@ impl ListInsightsStatusFilter {
 pub mod list_insights_status_filter {
 
     /// A builder for [`ListInsightsStatusFilter`](crate::model::ListInsightsStatusFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ongoing: std::option::Option<crate::model::ListInsightsOngoingStatusFilter>,
         pub(crate) closed: std::option::Option<crate::model::ListInsightsClosedStatusFilter>,
@@ -4629,7 +4629,7 @@ impl ListInsightsAnyStatusFilter {
 pub mod list_insights_any_status_filter {
 
     /// A builder for [`ListInsightsAnyStatusFilter`](crate::model::ListInsightsAnyStatusFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::InsightType>,
         pub(crate) start_time_range: std::option::Option<crate::model::StartTimeRange>,
@@ -4699,7 +4699,7 @@ impl ListInsightsClosedStatusFilter {
 pub mod list_insights_closed_status_filter {
 
     /// A builder for [`ListInsightsClosedStatusFilter`](crate::model::ListInsightsClosedStatusFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::InsightType>,
         pub(crate) end_time_range: std::option::Option<crate::model::EndTimeRange>,
@@ -4769,7 +4769,7 @@ impl EndTimeRange {
 pub mod end_time_range {
 
     /// A builder for [`EndTimeRange`](crate::model::EndTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) to_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4835,7 +4835,7 @@ impl ListInsightsOngoingStatusFilter {
 pub mod list_insights_ongoing_status_filter {
 
     /// A builder for [`ListInsightsOngoingStatusFilter`](crate::model::ListInsightsOngoingStatusFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::InsightType>,
     }
@@ -4893,7 +4893,7 @@ impl NotificationChannel {
 pub mod notification_channel {
 
     /// A builder for [`NotificationChannel`](crate::model::NotificationChannel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) config: std::option::Option<crate::model::NotificationChannelConfig>,
@@ -4969,7 +4969,7 @@ impl NotificationChannelConfig {
 pub mod notification_channel_config {
 
     /// A builder for [`NotificationChannelConfig`](crate::model::NotificationChannelConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sns: std::option::Option<crate::model::SnsChannelConfig>,
         pub(crate) filters: std::option::Option<crate::model::NotificationFilterConfig>,
@@ -5048,7 +5048,7 @@ impl NotificationFilterConfig {
 pub mod notification_filter_config {
 
     /// A builder for [`NotificationFilterConfig`](crate::model::NotificationFilterConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) severities: std::option::Option<std::vec::Vec<crate::model::InsightSeverity>>,
         pub(crate) message_types:
@@ -5243,7 +5243,7 @@ impl SnsChannelConfig {
 pub mod sns_channel_config {
 
     /// A builder for [`SnsChannelConfig`](crate::model::SnsChannelConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
     }
@@ -5305,7 +5305,7 @@ impl MonitoredResourceIdentifier {
 pub mod monitored_resource_identifier {
 
     /// A builder for [`MonitoredResourceIdentifier`](crate::model::MonitoredResourceIdentifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitored_resource_name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -5484,7 +5484,7 @@ impl ListMonitoredResourcesFilters {
 pub mod list_monitored_resources_filters {
 
     /// A builder for [`ListMonitoredResourcesFilters`](crate::model::ListMonitoredResourcesFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_permission: std::option::Option<crate::model::ResourcePermission>,
         pub(crate) resource_type_filters:
@@ -5693,7 +5693,7 @@ impl Event {
 pub mod event {
 
     /// A builder for [`Event`](crate::model::Event).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_collection: std::option::Option<crate::model::ResourceCollection>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5857,7 +5857,7 @@ impl EventResource {
 pub mod event_resource {
 
     /// A builder for [`EventResource`](crate::model::EventResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6165,7 +6165,7 @@ impl ListEventsFilters {
 pub mod list_events_filters {
 
     /// A builder for [`ListEventsFilters`](crate::model::ListEventsFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_id: std::option::Option<std::string::String>,
         pub(crate) event_time_range: std::option::Option<crate::model::EventTimeRange>,
@@ -6292,7 +6292,7 @@ impl EventTimeRange {
 pub mod event_time_range {
 
     /// A builder for [`EventTimeRange`](crate::model::EventTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) to_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -6388,7 +6388,7 @@ impl AnomalousLogGroup {
 pub mod anomalous_log_group {
 
     /// A builder for [`AnomalousLogGroup`](crate::model::AnomalousLogGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) impact_start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -6503,7 +6503,7 @@ impl LogAnomalyShowcase {
 pub mod log_anomaly_showcase {
 
     /// A builder for [`LogAnomalyShowcase`](crate::model::LogAnomalyShowcase).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_anomaly_classes:
             std::option::Option<std::vec::Vec<crate::model::LogAnomalyClass>>,
@@ -6603,7 +6603,7 @@ impl LogAnomalyClass {
 pub mod log_anomaly_class {
 
     /// A builder for [`LogAnomalyClass`](crate::model::LogAnomalyClass).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_stream_name: std::option::Option<std::string::String>,
         pub(crate) log_anomaly_type: std::option::Option<crate::model::LogAnomalyType>,
@@ -6963,7 +6963,7 @@ impl ReactiveAnomalySummary {
 pub mod reactive_anomaly_summary {
 
     /// A builder for [`ReactiveAnomalySummary`](crate::model::ReactiveAnomalySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) severity: std::option::Option<crate::model::AnomalySeverity>,
@@ -7208,7 +7208,7 @@ impl AnomalyResource {
 pub mod anomaly_resource {
 
     /// A builder for [`AnomalyResource`](crate::model::AnomalyResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -7371,7 +7371,7 @@ impl AnomalySourceDetails {
 pub mod anomaly_source_details {
 
     /// A builder for [`AnomalySourceDetails`](crate::model::AnomalySourceDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_metrics:
             std::option::Option<std::vec::Vec<crate::model::CloudWatchMetricsDetail>>,
@@ -7506,7 +7506,7 @@ impl PerformanceInsightsMetricsDetail {
 pub mod performance_insights_metrics_detail {
 
     /// A builder for [`PerformanceInsightsMetricsDetail`](crate::model::PerformanceInsightsMetricsDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_display_name: std::option::Option<std::string::String>,
         pub(crate) unit: std::option::Option<std::string::String>,
@@ -7662,7 +7662,7 @@ impl PerformanceInsightsStat {
 pub mod performance_insights_stat {
 
     /// A builder for [`PerformanceInsightsStat`](crate::model::PerformanceInsightsStat).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<f64>,
@@ -7732,7 +7732,7 @@ impl PerformanceInsightsReferenceData {
 pub mod performance_insights_reference_data {
 
     /// A builder for [`PerformanceInsightsReferenceData`](crate::model::PerformanceInsightsReferenceData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) comparison_values:
@@ -7810,7 +7810,7 @@ impl PerformanceInsightsReferenceComparisonValues {
 pub mod performance_insights_reference_comparison_values {
 
     /// A builder for [`PerformanceInsightsReferenceComparisonValues`](crate::model::PerformanceInsightsReferenceComparisonValues).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference_scalar:
             std::option::Option<crate::model::PerformanceInsightsReferenceScalar>,
@@ -7886,7 +7886,7 @@ impl PerformanceInsightsReferenceMetric {
 pub mod performance_insights_reference_metric {
 
     /// A builder for [`PerformanceInsightsReferenceMetric`](crate::model::PerformanceInsightsReferenceMetric).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_query: std::option::Option<crate::model::PerformanceInsightsMetricQuery>,
     }
@@ -7982,7 +7982,7 @@ impl PerformanceInsightsMetricQuery {
 pub mod performance_insights_metric_query {
 
     /// A builder for [`PerformanceInsightsMetricQuery`](crate::model::PerformanceInsightsMetricQuery).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<std::string::String>,
         pub(crate) group_by:
@@ -8181,7 +8181,7 @@ impl PerformanceInsightsMetricDimensionGroup {
 pub mod performance_insights_metric_dimension_group {
 
     /// A builder for [`PerformanceInsightsMetricDimensionGroup`](crate::model::PerformanceInsightsMetricDimensionGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<std::string::String>,
         pub(crate) dimensions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8324,7 +8324,7 @@ impl PerformanceInsightsReferenceScalar {
 pub mod performance_insights_reference_scalar {
 
     /// A builder for [`PerformanceInsightsReferenceScalar`](crate::model::PerformanceInsightsReferenceScalar).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<f64>,
     }
@@ -8414,7 +8414,7 @@ impl CloudWatchMetricsDetail {
 pub mod cloud_watch_metrics_detail {
 
     /// A builder for [`CloudWatchMetricsDetail`](crate::model::CloudWatchMetricsDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -8566,7 +8566,7 @@ impl CloudWatchMetricsDataSummary {
 pub mod cloud_watch_metrics_data_summary {
 
     /// A builder for [`CloudWatchMetricsDataSummary`](crate::model::CloudWatchMetricsDataSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp_metric_value_pair_list:
             std::option::Option<std::vec::Vec<crate::model::TimestampMetricValuePair>>,
@@ -8746,7 +8746,7 @@ impl TimestampMetricValuePair {
 pub mod timestamp_metric_value_pair {
 
     /// A builder for [`TimestampMetricValuePair`](crate::model::TimestampMetricValuePair).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) metric_value: std::option::Option<f64>,
@@ -8947,7 +8947,7 @@ impl CloudWatchMetricsDimension {
 pub mod cloud_watch_metrics_dimension {
 
     /// A builder for [`CloudWatchMetricsDimension`](crate::model::CloudWatchMetricsDimension).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -9014,7 +9014,7 @@ impl AnomalyReportedTimeRange {
 pub mod anomaly_reported_time_range {
 
     /// A builder for [`AnomalyReportedTimeRange`](crate::model::AnomalyReportedTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) close_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -9087,7 +9087,7 @@ impl AnomalyTimeRange {
 pub mod anomaly_time_range {
 
     /// A builder for [`AnomalyTimeRange`](crate::model::AnomalyTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -9424,7 +9424,7 @@ impl ProactiveAnomalySummary {
 pub mod proactive_anomaly_summary {
 
     /// A builder for [`ProactiveAnomalySummary`](crate::model::ProactiveAnomalySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) severity: std::option::Option<crate::model::AnomalySeverity>,
@@ -9674,7 +9674,7 @@ impl AnomalySourceMetadata {
 pub mod anomaly_source_metadata {
 
     /// A builder for [`AnomalySourceMetadata`](crate::model::AnomalySourceMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
         pub(crate) source_resource_name: std::option::Option<std::string::String>,
@@ -9779,7 +9779,7 @@ impl ResourceCollectionFilter {
 pub mod resource_collection_filter {
 
     /// A builder for [`ResourceCollectionFilter`](crate::model::ResourceCollectionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_formation:
             std::option::Option<crate::model::CloudFormationCollectionFilter>,
@@ -9886,7 +9886,7 @@ impl TagCollectionFilter {
 pub mod tag_collection_filter {
 
     /// A builder for [`TagCollectionFilter`](crate::model::TagCollectionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_boundary_key: std::option::Option<std::string::String>,
         pub(crate) tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9964,7 +9964,7 @@ impl CloudFormationCollectionFilter {
 pub mod cloud_formation_collection_filter {
 
     /// A builder for [`CloudFormationCollectionFilter`](crate::model::CloudFormationCollectionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -10125,7 +10125,7 @@ impl CostEstimationTimeRange {
 pub mod cost_estimation_time_range {
 
     /// A builder for [`CostEstimationTimeRange`](crate::model::CostEstimationTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -10219,7 +10219,7 @@ impl ServiceResourceCost {
 pub mod service_resource_cost {
 
     /// A builder for [`ServiceResourceCost`](crate::model::ServiceResourceCost).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::CostEstimationServiceResourceState>,
@@ -10511,7 +10511,7 @@ impl ServiceIntegrationConfig {
 pub mod service_integration_config {
 
     /// A builder for [`ServiceIntegrationConfig`](crate::model::ServiceIntegrationConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ops_center: std::option::Option<crate::model::OpsCenterIntegration>,
         pub(crate) logs_anomaly_detection:
@@ -10581,7 +10581,7 @@ impl LogsAnomalyDetectionIntegration {
 pub mod logs_anomaly_detection_integration {
 
     /// A builder for [`LogsAnomalyDetectionIntegration`](crate::model::LogsAnomalyDetectionIntegration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opt_in_status: std::option::Option<crate::model::OptInStatus>,
     }
@@ -10632,7 +10632,7 @@ impl OpsCenterIntegration {
 pub mod ops_center_integration {
 
     /// A builder for [`OpsCenterIntegration`](crate::model::OpsCenterIntegration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opt_in_status: std::option::Option<crate::model::OptInStatus>,
     }
@@ -10703,7 +10703,7 @@ impl TagHealth {
 pub mod tag_health {
 
     /// A builder for [`TagHealth`](crate::model::TagHealth).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_boundary_key: std::option::Option<std::string::String>,
         pub(crate) tag_value: std::option::Option<std::string::String>,
@@ -10801,7 +10801,7 @@ impl InsightHealth {
 pub mod insight_health {
 
     /// A builder for [`InsightHealth`](crate::model::InsightHealth).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_proactive_insights: std::option::Option<i32>,
         pub(crate) open_reactive_insights: std::option::Option<i32>,
@@ -10883,7 +10883,7 @@ impl ServiceHealth {
 pub mod service_health {
 
     /// A builder for [`ServiceHealth`](crate::model::ServiceHealth).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<crate::model::ServiceName>,
         pub(crate) insight: std::option::Option<crate::model::ServiceInsightHealth>,
@@ -10956,7 +10956,7 @@ impl ServiceInsightHealth {
 pub mod service_insight_health {
 
     /// A builder for [`ServiceInsightHealth`](crate::model::ServiceInsightHealth).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_proactive_insights: std::option::Option<i32>,
         pub(crate) open_reactive_insights: std::option::Option<i32>,
@@ -11023,7 +11023,7 @@ impl CloudFormationHealth {
 pub mod cloud_formation_health {
 
     /// A builder for [`CloudFormationHealth`](crate::model::CloudFormationHealth).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
         pub(crate) insight: std::option::Option<crate::model::InsightHealth>,
@@ -11093,7 +11093,7 @@ impl AccountHealth {
 pub mod account_health {
 
     /// A builder for [`AccountHealth`](crate::model::AccountHealth).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) insight: std::option::Option<crate::model::AccountInsightHealth>,
@@ -11163,7 +11163,7 @@ impl AccountInsightHealth {
 pub mod account_insight_health {
 
     /// A builder for [`AccountInsightHealth`](crate::model::AccountInsightHealth).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_proactive_insights: std::option::Option<i32>,
         pub(crate) open_reactive_insights: std::option::Option<i32>,
@@ -11379,7 +11379,7 @@ impl ReactiveInsight {
 pub mod reactive_insight {
 
     /// A builder for [`ReactiveInsight`](crate::model::ReactiveInsight).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -11582,7 +11582,7 @@ impl ProactiveInsight {
 pub mod proactive_insight {
 
     /// A builder for [`ProactiveInsight`](crate::model::ProactiveInsight).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -11838,7 +11838,7 @@ impl ReactiveAnomaly {
 pub mod reactive_anomaly {
 
     /// A builder for [`ReactiveAnomaly`](crate::model::ReactiveAnomaly).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) severity: std::option::Option<crate::model::AnomalySeverity>,
@@ -12162,7 +12162,7 @@ impl ProactiveAnomaly {
 pub mod proactive_anomaly {
 
     /// A builder for [`ProactiveAnomaly`](crate::model::ProactiveAnomaly).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) severity: std::option::Option<crate::model::AnomalySeverity>,

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_domain_input {
 
     /// A builder for [`AssociateDomainInput`](crate::input::AssociateDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -184,7 +184,7 @@ impl AssociateDomainInput {
 pub mod associate_website_authorization_provider_input {
 
     /// A builder for [`AssociateWebsiteAuthorizationProviderInput`](crate::input::AssociateWebsiteAuthorizationProviderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) authorization_provider_type:
@@ -357,7 +357,7 @@ impl AssociateWebsiteAuthorizationProviderInput {
 pub mod associate_website_certificate_authority_input {
 
     /// A builder for [`AssociateWebsiteCertificateAuthorityInput`](crate::input::AssociateWebsiteCertificateAuthorityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) certificate: std::option::Option<std::string::String>,
@@ -523,7 +523,7 @@ impl AssociateWebsiteCertificateAuthorityInput {
 pub mod create_fleet_input {
 
     /// A builder for [`CreateFleetInput`](crate::input::CreateFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_name: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -719,7 +719,7 @@ impl CreateFleetInput {
 pub mod delete_fleet_input {
 
     /// A builder for [`DeleteFleetInput`](crate::input::DeleteFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
     }
@@ -859,7 +859,7 @@ impl DeleteFleetInput {
 pub mod describe_audit_stream_configuration_input {
 
     /// A builder for [`DescribeAuditStreamConfigurationInput`](crate::input::DescribeAuditStreamConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
     }
@@ -1001,7 +1001,7 @@ impl DescribeAuditStreamConfigurationInput {
 pub mod describe_company_network_configuration_input {
 
     /// A builder for [`DescribeCompanyNetworkConfigurationInput`](crate::input::DescribeCompanyNetworkConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
     }
@@ -1143,7 +1143,7 @@ impl DescribeCompanyNetworkConfigurationInput {
 pub mod describe_device_input {
 
     /// A builder for [`DescribeDeviceInput`](crate::input::DescribeDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -1295,7 +1295,7 @@ impl DescribeDeviceInput {
 pub mod describe_device_policy_configuration_input {
 
     /// A builder for [`DescribeDevicePolicyConfigurationInput`](crate::input::DescribeDevicePolicyConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
     }
@@ -1437,7 +1437,7 @@ impl DescribeDevicePolicyConfigurationInput {
 pub mod describe_domain_input {
 
     /// A builder for [`DescribeDomainInput`](crate::input::DescribeDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -1589,7 +1589,7 @@ impl DescribeDomainInput {
 pub mod describe_fleet_metadata_input {
 
     /// A builder for [`DescribeFleetMetadataInput`](crate::input::DescribeFleetMetadataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
     }
@@ -1733,7 +1733,7 @@ impl DescribeFleetMetadataInput {
 pub mod describe_identity_provider_configuration_input {
 
     /// A builder for [`DescribeIdentityProviderConfigurationInput`](crate::input::DescribeIdentityProviderConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
     }
@@ -1875,7 +1875,7 @@ impl DescribeIdentityProviderConfigurationInput {
 pub mod describe_website_certificate_authority_input {
 
     /// A builder for [`DescribeWebsiteCertificateAuthorityInput`](crate::input::DescribeWebsiteCertificateAuthorityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) website_ca_id: std::option::Option<std::string::String>,
@@ -2032,7 +2032,7 @@ impl DescribeWebsiteCertificateAuthorityInput {
 pub mod disassociate_domain_input {
 
     /// A builder for [`DisassociateDomainInput`](crate::input::DisassociateDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -2186,7 +2186,7 @@ impl DisassociateDomainInput {
 pub mod disassociate_website_authorization_provider_input {
 
     /// A builder for [`DisassociateWebsiteAuthorizationProviderInput`](crate::input::DisassociateWebsiteAuthorizationProviderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) authorization_provider_id: std::option::Option<std::string::String>,
@@ -2345,7 +2345,7 @@ impl DisassociateWebsiteAuthorizationProviderInput {
 pub mod disassociate_website_certificate_authority_input {
 
     /// A builder for [`DisassociateWebsiteCertificateAuthorityInput`](crate::input::DisassociateWebsiteCertificateAuthorityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) website_ca_id: std::option::Option<std::string::String>,
@@ -2502,7 +2502,7 @@ impl DisassociateWebsiteCertificateAuthorityInput {
 pub mod list_devices_input {
 
     /// A builder for [`ListDevicesInput`](crate::input::ListDevicesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2666,7 +2666,7 @@ impl ListDevicesInput {
 pub mod list_domains_input {
 
     /// A builder for [`ListDomainsInput`](crate::input::ListDomainsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2830,7 +2830,7 @@ impl ListDomainsInput {
 pub mod list_fleets_input {
 
     /// A builder for [`ListFleetsInput`](crate::input::ListFleetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2982,7 +2982,7 @@ impl ListFleetsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3130,7 +3130,7 @@ impl ListTagsForResourceInput {
 pub mod list_website_authorization_providers_input {
 
     /// A builder for [`ListWebsiteAuthorizationProvidersInput`](crate::input::ListWebsiteAuthorizationProvidersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3296,7 +3296,7 @@ impl ListWebsiteAuthorizationProvidersInput {
 pub mod list_website_certificate_authorities_input {
 
     /// A builder for [`ListWebsiteCertificateAuthoritiesInput`](crate::input::ListWebsiteCertificateAuthoritiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3462,7 +3462,7 @@ impl ListWebsiteCertificateAuthoritiesInput {
 pub mod restore_domain_access_input {
 
     /// A builder for [`RestoreDomainAccessInput`](crate::input::RestoreDomainAccessInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -3616,7 +3616,7 @@ impl RestoreDomainAccessInput {
 pub mod revoke_domain_access_input {
 
     /// A builder for [`RevokeDomainAccessInput`](crate::input::RevokeDomainAccessInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -3770,7 +3770,7 @@ impl RevokeDomainAccessInput {
 pub mod sign_out_user_input {
 
     /// A builder for [`SignOutUserInput`](crate::input::SignOutUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -3922,7 +3922,7 @@ impl SignOutUserInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -4111,7 +4111,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4296,7 +4296,7 @@ impl UntagResourceInput {
 pub mod update_audit_stream_configuration_input {
 
     /// A builder for [`UpdateAuditStreamConfigurationInput`](crate::input::UpdateAuditStreamConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) audit_stream_arn: std::option::Option<std::string::String>,
@@ -4453,7 +4453,7 @@ impl UpdateAuditStreamConfigurationInput {
 pub mod update_company_network_configuration_input {
 
     /// A builder for [`UpdateCompanyNetworkConfigurationInput`](crate::input::UpdateCompanyNetworkConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) vpc_id: std::option::Option<std::string::String>,
@@ -4649,7 +4649,7 @@ impl UpdateCompanyNetworkConfigurationInput {
 pub mod update_device_policy_configuration_input {
 
     /// A builder for [`UpdateDevicePolicyConfigurationInput`](crate::input::UpdateDevicePolicyConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) device_ca_certificate: std::option::Option<std::string::String>,
@@ -4806,7 +4806,7 @@ impl UpdateDevicePolicyConfigurationInput {
 pub mod update_domain_metadata_input {
 
     /// A builder for [`UpdateDomainMetadataInput`](crate::input::UpdateDomainMetadataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -4974,7 +4974,7 @@ impl UpdateDomainMetadataInput {
 pub mod update_fleet_metadata_input {
 
     /// A builder for [`UpdateFleetMetadataInput`](crate::input::UpdateFleetMetadataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -5143,7 +5143,7 @@ impl UpdateFleetMetadataInput {
 pub mod update_identity_provider_configuration_input {
 
     /// A builder for [`UpdateIdentityProviderConfigurationInput`](crate::input::UpdateIdentityProviderConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,

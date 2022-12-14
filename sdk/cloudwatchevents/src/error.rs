@@ -30,7 +30,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
 
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
 
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl std::error::Error for InternalException {}
 pub mod internal_exception {
 
     /// A builder for [`InternalException`](crate::error::InternalException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -210,7 +210,7 @@ impl std::error::Error for ConcurrentModificationException {}
 pub mod concurrent_modification_exception {
 
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -270,7 +270,7 @@ impl std::error::Error for InvalidEventPatternException {}
 pub mod invalid_event_pattern_exception {
 
     /// A builder for [`InvalidEventPatternException`](crate::error::InvalidEventPatternException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -330,7 +330,7 @@ impl std::error::Error for ManagedRuleException {}
 pub mod managed_rule_exception {
 
     /// A builder for [`ManagedRuleException`](crate::error::ManagedRuleException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -390,7 +390,7 @@ impl std::error::Error for ResourceAlreadyExistsException {}
 pub mod resource_already_exists_exception {
 
     /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -450,7 +450,7 @@ impl std::error::Error for OperationDisabledException {}
 pub mod operation_disabled_exception {
 
     /// A builder for [`OperationDisabledException`](crate::error::OperationDisabledException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -510,7 +510,7 @@ impl std::error::Error for PolicyLengthExceededException {}
 pub mod policy_length_exceeded_exception {
 
     /// A builder for [`PolicyLengthExceededException`](crate::error::PolicyLengthExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -570,7 +570,7 @@ impl std::error::Error for InvalidStateException {}
 pub mod invalid_state_exception {
 
     /// A builder for [`InvalidStateException`](crate::error::InvalidStateException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -630,7 +630,7 @@ impl std::error::Error for IllegalStatusException {}
 pub mod illegal_status_exception {
 
     /// A builder for [`IllegalStatusException`](crate::error::IllegalStatusException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

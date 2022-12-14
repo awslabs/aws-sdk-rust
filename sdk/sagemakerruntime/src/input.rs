@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod invoke_endpoint_input {
 
     /// A builder for [`InvokeEndpointInput`](crate::input::InvokeEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) endpoint_name: std::option::Option<std::string::String>,
         pub(crate) body: std::option::Option<aws_smithy_types::Blob>,
@@ -317,7 +317,7 @@ impl InvokeEndpointInput {
 pub mod invoke_endpoint_async_input {
 
     /// A builder for [`InvokeEndpointAsyncInput`](crate::input::InvokeEndpointAsyncInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) endpoint_name: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<std::string::String>,

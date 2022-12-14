@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod describe_accelerator_offerings_input {
 
     /// A builder for [`DescribeAcceleratorOfferingsInput`](crate::input::DescribeAcceleratorOfferingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_type: std::option::Option<crate::model::LocationType>,
         pub(crate) accelerator_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -171,7 +171,7 @@ impl DescribeAcceleratorOfferingsInput {
 pub mod describe_accelerators_input {
 
     /// A builder for [`DescribeAcceleratorsInput`](crate::input::DescribeAcceleratorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -367,7 +367,7 @@ impl DescribeAcceleratorsInput {
 pub mod describe_accelerator_types_input {
 
     /// A builder for [`DescribeAcceleratorTypesInput`](crate::input::DescribeAcceleratorTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeAcceleratorTypesInput`](crate::input::DescribeAcceleratorTypesInput).
@@ -481,7 +481,7 @@ impl DescribeAcceleratorTypesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -629,7 +629,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -818,7 +818,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,

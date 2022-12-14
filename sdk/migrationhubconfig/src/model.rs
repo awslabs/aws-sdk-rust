@@ -39,7 +39,7 @@ impl HomeRegionControl {
 pub mod home_region_control {
 
     /// A builder for [`HomeRegionControl`](crate::model::HomeRegionControl).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_id: std::option::Option<std::string::String>,
         pub(crate) home_region: std::option::Option<std::string::String>,
@@ -133,7 +133,7 @@ impl Target {
 pub mod target {
 
     /// A builder for [`Target`](crate::model::Target).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::TargetType>,
         pub(crate) id: std::option::Option<std::string::String>,

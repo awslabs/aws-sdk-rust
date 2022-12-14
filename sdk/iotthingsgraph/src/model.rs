@@ -25,7 +25,7 @@ impl DefinitionDocument {
 pub mod definition_document {
 
     /// A builder for [`DefinitionDocument`](crate::model::DefinitionDocument).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language: std::option::Option<crate::model::DefinitionLanguage>,
         pub(crate) text: std::option::Option<std::string::String>,
@@ -196,7 +196,7 @@ impl SystemTemplateSummary {
 pub mod system_template_summary {
 
     /// A builder for [`SystemTemplateSummary`](crate::model::SystemTemplateSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -304,7 +304,7 @@ impl FlowTemplateSummary {
 pub mod flow_template_summary {
 
     /// A builder for [`FlowTemplateSummary`](crate::model::FlowTemplateSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -447,7 +447,7 @@ impl SystemInstanceSummary {
 pub mod system_instance_summary {
 
     /// A builder for [`SystemInstanceSummary`](crate::model::SystemInstanceSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -843,7 +843,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -910,7 +910,7 @@ impl Thing {
 pub mod thing {
 
     /// A builder for [`Thing`](crate::model::Thing).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_arn: std::option::Option<std::string::String>,
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -977,7 +977,7 @@ impl SystemTemplateFilter {
 pub mod system_template_filter {
 
     /// A builder for [`SystemTemplateFilter`](crate::model::SystemTemplateFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SystemTemplateFilterName>,
         pub(crate) value: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1143,7 +1143,7 @@ impl SystemInstanceFilter {
 pub mod system_instance_filter {
 
     /// A builder for [`SystemInstanceFilter`](crate::model::SystemInstanceFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SystemInstanceFilterName>,
         pub(crate) value: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1319,7 +1319,7 @@ impl FlowTemplateFilter {
 pub mod flow_template_filter {
 
     /// A builder for [`FlowTemplateFilter`](crate::model::FlowTemplateFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::FlowTemplateFilterName>,
         pub(crate) value: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1513,7 +1513,7 @@ impl FlowExecutionSummary {
 pub mod flow_execution_summary {
 
     /// A builder for [`FlowExecutionSummary`](crate::model::FlowExecutionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_execution_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::FlowExecutionStatus>,
@@ -1769,7 +1769,7 @@ impl EntityDescription {
 pub mod entity_description {
 
     /// A builder for [`EntityDescription`](crate::model::EntityDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2019,7 +2019,7 @@ impl EntityFilter {
 pub mod entity_filter {
 
     /// A builder for [`EntityFilter`](crate::model::EntityFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::EntityFilterName>,
         pub(crate) value: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2217,7 +2217,7 @@ impl FlowExecutionMessage {
 pub mod flow_execution_message {
 
     /// A builder for [`FlowExecutionMessage`](crate::model::FlowExecutionMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) event_type: std::option::Option<crate::model::FlowExecutionEventType>,
@@ -2601,7 +2601,7 @@ impl SystemTemplateDescription {
 pub mod system_template_description {
 
     /// A builder for [`SystemTemplateDescription`](crate::model::SystemTemplateDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::SystemTemplateSummary>,
         pub(crate) definition: std::option::Option<crate::model::DefinitionDocument>,
@@ -2726,7 +2726,7 @@ impl SystemInstanceDescription {
 pub mod system_instance_description {
 
     /// A builder for [`SystemInstanceDescription`](crate::model::SystemInstanceDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::SystemInstanceSummary>,
         pub(crate) definition: std::option::Option<crate::model::DefinitionDocument>,
@@ -2881,7 +2881,7 @@ impl DependencyRevision {
 pub mod dependency_revision {
 
     /// A builder for [`DependencyRevision`](crate::model::DependencyRevision).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) revision_number: std::option::Option<i64>,
@@ -2948,7 +2948,7 @@ impl MetricsConfiguration {
 pub mod metrics_configuration {
 
     /// A builder for [`MetricsConfiguration`](crate::model::MetricsConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_metric_enabled: std::option::Option<bool>,
         pub(crate) metric_rule_role_arn: std::option::Option<std::string::String>,
@@ -3209,7 +3209,7 @@ impl FlowTemplateDescription {
 pub mod flow_template_description {
 
     /// A builder for [`FlowTemplateDescription`](crate::model::FlowTemplateDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::FlowTemplateSummary>,
         pub(crate) definition: std::option::Option<crate::model::DefinitionDocument>,

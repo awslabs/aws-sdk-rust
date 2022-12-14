@@ -51,7 +51,7 @@ impl UpdateResourceSetOutput {
 pub mod update_resource_set_output {
 
     /// A builder for [`UpdateResourceSetOutput`](crate::output::UpdateResourceSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_set_arn: std::option::Option<std::string::String>,
         pub(crate) resource_set_name: std::option::Option<std::string::String>,
@@ -209,7 +209,7 @@ impl UpdateRecoveryGroupOutput {
 pub mod update_recovery_group_output {
 
     /// A builder for [`UpdateRecoveryGroupOutput`](crate::output::UpdateRecoveryGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) recovery_group_arn: std::option::Option<std::string::String>,
@@ -350,7 +350,7 @@ impl UpdateReadinessCheckOutput {
 pub mod update_readiness_check_output {
 
     /// A builder for [`UpdateReadinessCheckOutput`](crate::output::UpdateReadinessCheckOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) readiness_check_arn: std::option::Option<std::string::String>,
         pub(crate) readiness_check_name: std::option::Option<std::string::String>,
@@ -489,7 +489,7 @@ impl UpdateCellOutput {
 pub mod update_cell_output {
 
     /// A builder for [`UpdateCellOutput`](crate::output::UpdateCellOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cell_arn: std::option::Option<std::string::String>,
         pub(crate) cell_name: std::option::Option<std::string::String>,
@@ -610,7 +610,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -634,7 +634,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -672,7 +672,7 @@ impl ListTagsForResourcesOutput {
 pub mod list_tags_for_resources_output {
 
     /// A builder for [`ListTagsForResourcesOutput`](crate::output::ListTagsForResourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -742,7 +742,7 @@ impl ListRulesOutput {
 pub mod list_rules_output {
 
     /// A builder for [`ListRulesOutput`](crate::output::ListRulesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::ListRulesOutput>>,
@@ -818,7 +818,7 @@ impl ListResourceSetsOutput {
 pub mod list_resource_sets_output {
 
     /// A builder for [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) resource_sets:
@@ -895,7 +895,7 @@ impl ListRecoveryGroupsOutput {
 pub mod list_recovery_groups_output {
 
     /// A builder for [`ListRecoveryGroupsOutput`](crate::output::ListRecoveryGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) recovery_groups:
@@ -972,7 +972,7 @@ impl ListReadinessChecksOutput {
 pub mod list_readiness_checks_output {
 
     /// A builder for [`ListReadinessChecksOutput`](crate::output::ListReadinessChecksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) readiness_checks:
@@ -1049,7 +1049,7 @@ impl ListCrossAccountAuthorizationsOutput {
 pub mod list_cross_account_authorizations_output {
 
     /// A builder for [`ListCrossAccountAuthorizationsOutput`](crate::output::ListCrossAccountAuthorizationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cross_account_authorizations:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1129,7 +1129,7 @@ impl ListCellsOutput {
 pub mod list_cells_output {
 
     /// A builder for [`ListCellsOutput`](crate::output::ListCellsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cells: std::option::Option<std::vec::Vec<crate::model::CellOutput>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1232,7 +1232,7 @@ impl GetResourceSetOutput {
 pub mod get_resource_set_output {
 
     /// A builder for [`GetResourceSetOutput`](crate::output::GetResourceSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_set_arn: std::option::Option<std::string::String>,
         pub(crate) resource_set_name: std::option::Option<std::string::String>,
@@ -1379,7 +1379,7 @@ impl GetRecoveryGroupReadinessSummaryOutput {
 pub mod get_recovery_group_readiness_summary_output {
 
     /// A builder for [`GetRecoveryGroupReadinessSummaryOutput`](crate::output::GetRecoveryGroupReadinessSummaryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) readiness: std::option::Option<crate::model::Readiness>,
@@ -1489,7 +1489,7 @@ impl GetRecoveryGroupOutput {
 pub mod get_recovery_group_output {
 
     /// A builder for [`GetRecoveryGroupOutput`](crate::output::GetRecoveryGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) recovery_group_arn: std::option::Option<std::string::String>,
@@ -1626,7 +1626,7 @@ impl GetReadinessCheckStatusOutput {
 pub mod get_readiness_check_status_output {
 
     /// A builder for [`GetReadinessCheckStatusOutput`](crate::output::GetReadinessCheckStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1745,7 +1745,7 @@ impl GetReadinessCheckResourceStatusOutput {
 pub mod get_readiness_check_resource_status_output {
 
     /// A builder for [`GetReadinessCheckResourceStatusOutput`](crate::output::GetReadinessCheckResourceStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) readiness: std::option::Option<crate::model::Readiness>,
@@ -1854,7 +1854,7 @@ impl GetReadinessCheckOutput {
 pub mod get_readiness_check_output {
 
     /// A builder for [`GetReadinessCheckOutput`](crate::output::GetReadinessCheckOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) readiness_check_arn: std::option::Option<std::string::String>,
         pub(crate) readiness_check_name: std::option::Option<std::string::String>,
@@ -1975,7 +1975,7 @@ impl GetCellReadinessSummaryOutput {
 pub mod get_cell_readiness_summary_output {
 
     /// A builder for [`GetCellReadinessSummaryOutput`](crate::output::GetCellReadinessSummaryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) readiness: std::option::Option<crate::model::Readiness>,
@@ -2092,7 +2092,7 @@ impl GetCellOutput {
 pub mod get_cell_output {
 
     /// A builder for [`GetCellOutput`](crate::output::GetCellOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cell_arn: std::option::Option<std::string::String>,
         pub(crate) cell_name: std::option::Option<std::string::String>,
@@ -2237,7 +2237,7 @@ impl GetArchitectureRecommendationsOutput {
 pub mod get_architecture_recommendations_output {
 
     /// A builder for [`GetArchitectureRecommendationsOutput`](crate::output::GetArchitectureRecommendationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_audit_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2312,7 +2312,7 @@ pub struct DeleteResourceSetOutput {}
 pub mod delete_resource_set_output {
 
     /// A builder for [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput).
@@ -2336,7 +2336,7 @@ pub struct DeleteRecoveryGroupOutput {}
 pub mod delete_recovery_group_output {
 
     /// A builder for [`DeleteRecoveryGroupOutput`](crate::output::DeleteRecoveryGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRecoveryGroupOutput`](crate::output::DeleteRecoveryGroupOutput).
@@ -2360,7 +2360,7 @@ pub struct DeleteReadinessCheckOutput {}
 pub mod delete_readiness_check_output {
 
     /// A builder for [`DeleteReadinessCheckOutput`](crate::output::DeleteReadinessCheckOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteReadinessCheckOutput`](crate::output::DeleteReadinessCheckOutput).
@@ -2384,7 +2384,7 @@ pub struct DeleteCrossAccountAuthorizationOutput {}
 pub mod delete_cross_account_authorization_output {
 
     /// A builder for [`DeleteCrossAccountAuthorizationOutput`](crate::output::DeleteCrossAccountAuthorizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCrossAccountAuthorizationOutput`](crate::output::DeleteCrossAccountAuthorizationOutput).
@@ -2408,7 +2408,7 @@ pub struct DeleteCellOutput {}
 pub mod delete_cell_output {
 
     /// A builder for [`DeleteCellOutput`](crate::output::DeleteCellOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCellOutput`](crate::output::DeleteCellOutput).
@@ -2476,7 +2476,7 @@ impl CreateResourceSetOutput {
 pub mod create_resource_set_output {
 
     /// A builder for [`CreateResourceSetOutput`](crate::output::CreateResourceSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_set_arn: std::option::Option<std::string::String>,
         pub(crate) resource_set_name: std::option::Option<std::string::String>,
@@ -2634,7 +2634,7 @@ impl CreateRecoveryGroupOutput {
 pub mod create_recovery_group_output {
 
     /// A builder for [`CreateRecoveryGroupOutput`](crate::output::CreateRecoveryGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) recovery_group_arn: std::option::Option<std::string::String>,
@@ -2775,7 +2775,7 @@ impl CreateReadinessCheckOutput {
 pub mod create_readiness_check_output {
 
     /// A builder for [`CreateReadinessCheckOutput`](crate::output::CreateReadinessCheckOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) readiness_check_arn: std::option::Option<std::string::String>,
         pub(crate) readiness_check_name: std::option::Option<std::string::String>,
@@ -2882,7 +2882,7 @@ impl CreateCrossAccountAuthorizationOutput {
 pub mod create_cross_account_authorization_output {
 
     /// A builder for [`CreateCrossAccountAuthorizationOutput`](crate::output::CreateCrossAccountAuthorizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cross_account_authorization: std::option::Option<std::string::String>,
     }
@@ -2968,7 +2968,7 @@ impl CreateCellOutput {
 pub mod create_cell_output {
 
     /// A builder for [`CreateCellOutput`](crate::output::CreateCellOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cell_arn: std::option::Option<std::string::String>,
         pub(crate) cell_name: std::option::Option<std::string::String>,

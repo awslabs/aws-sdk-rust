@@ -27,7 +27,7 @@ impl ListWorkflowStepGroupsOutput {
 pub mod list_workflow_step_groups_output {
 
     /// A builder for [`ListWorkflowStepGroupsOutput`](crate::output::ListWorkflowStepGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) workflow_step_groups_summary:
@@ -149,7 +149,7 @@ impl CreateWorkflowStepGroupOutput {
 pub mod create_workflow_step_group_output {
 
     /// A builder for [`CreateWorkflowStepGroupOutput`](crate::output::CreateWorkflowStepGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -301,7 +301,7 @@ pub struct DeleteWorkflowStepGroupOutput {}
 pub mod delete_workflow_step_group_output {
 
     /// A builder for [`DeleteWorkflowStepGroupOutput`](crate::output::DeleteWorkflowStepGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWorkflowStepGroupOutput`](crate::output::DeleteWorkflowStepGroupOutput).
@@ -384,7 +384,7 @@ impl UpdateWorkflowStepGroupOutput {
 pub mod update_workflow_step_group_output {
 
     /// A builder for [`UpdateWorkflowStepGroupOutput`](crate::output::UpdateWorkflowStepGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -623,7 +623,7 @@ impl GetWorkflowStepGroupOutput {
 pub mod get_workflow_step_group_output {
 
     /// A builder for [`GetWorkflowStepGroupOutput`](crate::output::GetWorkflowStepGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -863,7 +863,7 @@ impl RetryWorkflowStepOutput {
 pub mod retry_workflow_step_output {
 
     /// A builder for [`RetryWorkflowStepOutput`](crate::output::RetryWorkflowStepOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) step_group_id: std::option::Option<std::string::String>,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -960,7 +960,7 @@ impl ListWorkflowStepsOutput {
 pub mod list_workflow_steps_output {
 
     /// A builder for [`ListWorkflowStepsOutput`](crate::output::ListWorkflowStepsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) workflow_steps_summary:
@@ -1051,7 +1051,7 @@ impl CreateWorkflowStepOutput {
 pub mod create_workflow_step_output {
 
     /// A builder for [`CreateWorkflowStepOutput`](crate::output::CreateWorkflowStepOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) step_group_id: std::option::Option<std::string::String>,
@@ -1128,7 +1128,7 @@ pub struct DeleteWorkflowStepOutput {}
 pub mod delete_workflow_step_output {
 
     /// A builder for [`DeleteWorkflowStepOutput`](crate::output::DeleteWorkflowStepOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWorkflowStepOutput`](crate::output::DeleteWorkflowStepOutput).
@@ -1183,7 +1183,7 @@ impl UpdateWorkflowStepOutput {
 pub mod update_workflow_step_output {
 
     /// A builder for [`UpdateWorkflowStepOutput`](crate::output::UpdateWorkflowStepOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) step_group_id: std::option::Option<std::string::String>,
@@ -1413,7 +1413,7 @@ impl GetWorkflowStepOutput {
 pub mod get_workflow_step_output {
 
     /// A builder for [`GetWorkflowStepOutput`](crate::output::GetWorkflowStepOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) step_group_id: std::option::Option<std::string::String>,
@@ -1775,7 +1775,7 @@ impl ListTemplateStepGroupsOutput {
 pub mod list_template_step_groups_output {
 
     /// A builder for [`ListTemplateStepGroupsOutput`](crate::output::ListTemplateStepGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) template_step_group_summary:
@@ -1911,7 +1911,7 @@ impl GetTemplateStepGroupOutput {
 pub mod get_template_step_group_output {
 
     /// A builder for [`GetTemplateStepGroupOutput`](crate::output::GetTemplateStepGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_id: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2113,7 +2113,7 @@ impl ListTemplateStepsOutput {
 pub mod list_template_steps_output {
 
     /// A builder for [`ListTemplateStepsOutput`](crate::output::ListTemplateStepsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) template_step_summary_list:
@@ -2259,7 +2259,7 @@ impl GetTemplateStepOutput {
 pub mod get_template_step_output {
 
     /// A builder for [`GetTemplateStepOutput`](crate::output::GetTemplateStepOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) step_group_id: std::option::Option<std::string::String>,
@@ -2477,7 +2477,7 @@ impl ListPluginsOutput {
 pub mod list_plugins_output {
 
     /// A builder for [`ListPluginsOutput`](crate::output::ListPluginsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) plugins: std::option::Option<std::vec::Vec<crate::model::PluginSummary>>,
@@ -2553,7 +2553,7 @@ impl ListTemplatesOutput {
 pub mod list_templates_output {
 
     /// A builder for [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) template_summary:
@@ -2665,7 +2665,7 @@ impl GetTemplateOutput {
 pub mod get_template_output {
 
     /// A builder for [`GetTemplateOutput`](crate::output::GetTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2837,7 +2837,7 @@ impl StopWorkflowOutput {
 pub mod stop_workflow_output {
 
     /// A builder for [`StopWorkflowOutput`](crate::output::StopWorkflowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2970,7 +2970,7 @@ impl StartWorkflowOutput {
 pub mod start_workflow_output {
 
     /// A builder for [`StartWorkflowOutput`](crate::output::StartWorkflowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3085,7 +3085,7 @@ impl ListWorkflowsOutput {
 pub mod list_workflows_output {
 
     /// A builder for [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) migration_workflow_summary:
@@ -3257,7 +3257,7 @@ impl std::fmt::Debug for CreateWorkflowOutput {
 pub mod create_workflow_output {
 
     /// A builder for [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3514,7 +3514,7 @@ impl DeleteWorkflowOutput {
 pub mod delete_workflow_output {
 
     /// A builder for [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3696,7 +3696,7 @@ impl std::fmt::Debug for UpdateWorkflowOutput {
 pub mod update_workflow_output {
 
     /// A builder for [`UpdateWorkflowOutput`](crate::output::UpdateWorkflowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4126,7 +4126,7 @@ impl std::fmt::Debug for GetWorkflowOutput {
 pub mod get_workflow_output {
 
     /// A builder for [`GetWorkflowOutput`](crate::output::GetWorkflowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4497,7 +4497,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -4521,7 +4521,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -4559,7 +4559,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,

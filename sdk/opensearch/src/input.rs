@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod accept_inbound_connection_input {
 
     /// A builder for [`AcceptInboundConnectionInput`](crate::input::AcceptInboundConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
     }
@@ -160,7 +160,7 @@ impl AcceptInboundConnectionInput {
 pub mod add_tags_input {
 
     /// A builder for [`AddTagsInput`](crate::input::AddTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -319,7 +319,7 @@ impl AddTagsInput {
 pub mod associate_package_input {
 
     /// A builder for [`AssociatePackageInput`](crate::input::AssociatePackageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -503,7 +503,7 @@ impl AssociatePackageInput {
 pub mod cancel_service_software_update_input {
 
     /// A builder for [`CancelServiceSoftwareUpdateInput`](crate::input::CancelServiceSoftwareUpdateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -648,7 +648,7 @@ impl CancelServiceSoftwareUpdateInput {
 pub mod create_domain_input {
 
     /// A builder for [`CreateDomainInput`](crate::input::CreateDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
@@ -1063,7 +1063,7 @@ impl CreateDomainInput {
 pub mod create_outbound_connection_input {
 
     /// A builder for [`CreateOutboundConnectionInput`](crate::input::CreateOutboundConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) local_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
         pub(crate) remote_domain_info:
@@ -1248,7 +1248,7 @@ impl CreateOutboundConnectionInput {
 pub mod create_package_input {
 
     /// A builder for [`CreatePackageInput`](crate::input::CreatePackageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_name: std::option::Option<std::string::String>,
         pub(crate) package_type: std::option::Option<crate::model::PackageType>,
@@ -1433,7 +1433,7 @@ impl CreatePackageInput {
 pub mod delete_domain_input {
 
     /// A builder for [`DeleteDomainInput`](crate::input::DeleteDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -1583,7 +1583,7 @@ impl DeleteDomainInput {
 pub mod delete_inbound_connection_input {
 
     /// A builder for [`DeleteInboundConnectionInput`](crate::input::DeleteInboundConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
     }
@@ -1738,7 +1738,7 @@ impl DeleteInboundConnectionInput {
 pub mod delete_outbound_connection_input {
 
     /// A builder for [`DeleteOutboundConnectionInput`](crate::input::DeleteOutboundConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
     }
@@ -1893,7 +1893,7 @@ impl DeleteOutboundConnectionInput {
 pub mod delete_package_input {
 
     /// A builder for [`DeletePackageInput`](crate::input::DeletePackageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
     }
@@ -2043,7 +2043,7 @@ impl DeletePackageInput {
 pub mod describe_domain_input {
 
     /// A builder for [`DescribeDomainInput`](crate::input::DescribeDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -2193,7 +2193,7 @@ impl DescribeDomainInput {
 pub mod describe_domain_auto_tunes_input {
 
     /// A builder for [`DescribeDomainAutoTunesInput`](crate::input::DescribeDomainAutoTunesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2385,7 +2385,7 @@ impl DescribeDomainAutoTunesInput {
 pub mod describe_domain_change_progress_input {
 
     /// A builder for [`DescribeDomainChangeProgressInput`](crate::input::DescribeDomainChangeProgressInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) change_id: std::option::Option<std::string::String>,
@@ -2562,7 +2562,7 @@ impl DescribeDomainChangeProgressInput {
 pub mod describe_domain_config_input {
 
     /// A builder for [`DescribeDomainConfigInput`](crate::input::DescribeDomainConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -2714,7 +2714,7 @@ impl DescribeDomainConfigInput {
 pub mod describe_domains_input {
 
     /// A builder for [`DescribeDomainsInput`](crate::input::DescribeDomainsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -2864,7 +2864,7 @@ impl DescribeDomainsInput {
 pub mod describe_inbound_connections_input {
 
     /// A builder for [`DescribeInboundConnectionsInput`](crate::input::DescribeInboundConnectionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3058,7 +3058,7 @@ impl DescribeInboundConnectionsInput {
 pub mod describe_instance_type_limits_input {
 
     /// A builder for [`DescribeInstanceTypeLimitsInput`](crate::input::DescribeInstanceTypeLimitsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) instance_type:
@@ -3277,7 +3277,7 @@ impl DescribeInstanceTypeLimitsInput {
 pub mod describe_outbound_connections_input {
 
     /// A builder for [`DescribeOutboundConnectionsInput`](crate::input::DescribeOutboundConnectionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3471,7 +3471,7 @@ impl DescribeOutboundConnectionsInput {
 pub mod describe_packages_input {
 
     /// A builder for [`DescribePackagesInput`](crate::input::DescribePackagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters:
             std::option::Option<std::vec::Vec<crate::model::DescribePackagesFilter>>,
@@ -3647,7 +3647,7 @@ impl DescribePackagesInput {
 pub mod describe_reserved_instance_offerings_input {
 
     /// A builder for [`DescribeReservedInstanceOfferingsInput`](crate::input::DescribeReservedInstanceOfferingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_instance_offering_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3830,7 +3830,7 @@ impl DescribeReservedInstanceOfferingsInput {
 pub mod describe_reserved_instances_input {
 
     /// A builder for [`DescribeReservedInstancesInput`](crate::input::DescribeReservedInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_instance_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4013,7 +4013,7 @@ impl DescribeReservedInstancesInput {
 pub mod dissociate_package_input {
 
     /// A builder for [`DissociatePackageInput`](crate::input::DissociatePackageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -4197,7 +4197,7 @@ impl DissociatePackageInput {
 pub mod get_compatible_versions_input {
 
     /// A builder for [`GetCompatibleVersionsInput`](crate::input::GetCompatibleVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -4339,7 +4339,7 @@ impl GetCompatibleVersionsInput {
 pub mod get_package_version_history_input {
 
     /// A builder for [`GetPackageVersionHistoryInput`](crate::input::GetPackageVersionHistoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4534,7 +4534,7 @@ impl GetPackageVersionHistoryInput {
 pub mod get_upgrade_history_input {
 
     /// A builder for [`GetUpgradeHistoryInput`](crate::input::GetUpgradeHistoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4729,7 +4729,7 @@ impl GetUpgradeHistoryInput {
 pub mod get_upgrade_status_input {
 
     /// A builder for [`GetUpgradeStatusInput`](crate::input::GetUpgradeStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -4881,7 +4881,7 @@ impl GetUpgradeStatusInput {
 pub mod list_domain_names_input {
 
     /// A builder for [`ListDomainNamesInput`](crate::input::ListDomainNamesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_type: std::option::Option<crate::model::EngineType>,
     }
@@ -5023,7 +5023,7 @@ impl ListDomainNamesInput {
 pub mod list_domains_for_package_input {
 
     /// A builder for [`ListDomainsForPackageInput`](crate::input::ListDomainsForPackageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5218,7 +5218,7 @@ impl ListDomainsForPackageInput {
 pub mod list_instance_type_details_input {
 
     /// A builder for [`ListInstanceTypeDetailsInput`](crate::input::ListInstanceTypeDetailsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_version: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -5433,7 +5433,7 @@ impl ListInstanceTypeDetailsInput {
 pub mod list_packages_for_domain_input {
 
     /// A builder for [`ListPackagesForDomainInput`](crate::input::ListPackagesForDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5628,7 +5628,7 @@ impl ListPackagesForDomainInput {
 pub mod list_tags_input {
 
     /// A builder for [`ListTagsInput`](crate::input::ListTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -5774,7 +5774,7 @@ impl ListTagsInput {
 pub mod list_versions_input {
 
     /// A builder for [`ListVersionsInput`](crate::input::ListVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5932,7 +5932,7 @@ impl ListVersionsInput {
 pub mod purchase_reserved_instance_offering_input {
 
     /// A builder for [`PurchaseReservedInstanceOfferingInput`](crate::input::PurchaseReservedInstanceOfferingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_instance_offering_id: std::option::Option<std::string::String>,
         pub(crate) reservation_name: std::option::Option<std::string::String>,
@@ -6110,7 +6110,7 @@ impl PurchaseReservedInstanceOfferingInput {
 pub mod reject_inbound_connection_input {
 
     /// A builder for [`RejectInboundConnectionInput`](crate::input::RejectInboundConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
     }
@@ -6265,7 +6265,7 @@ impl RejectInboundConnectionInput {
 pub mod remove_tags_input {
 
     /// A builder for [`RemoveTagsInput`](crate::input::RemoveTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6426,7 +6426,7 @@ impl RemoveTagsInput {
 pub mod start_service_software_update_input {
 
     /// A builder for [`StartServiceSoftwareUpdateInput`](crate::input::StartServiceSoftwareUpdateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -6568,7 +6568,7 @@ impl StartServiceSoftwareUpdateInput {
 pub mod update_domain_config_input {
 
     /// A builder for [`UpdateDomainConfigInput`](crate::input::UpdateDomainConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) cluster_config: std::option::Option<crate::model::ClusterConfig>,
@@ -6985,7 +6985,7 @@ impl UpdateDomainConfigInput {
 pub mod update_package_input {
 
     /// A builder for [`UpdatePackageInput`](crate::input::UpdatePackageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
         pub(crate) package_source: std::option::Option<crate::model::PackageSource>,
@@ -7170,7 +7170,7 @@ impl UpdatePackageInput {
 pub mod upgrade_domain_input {
 
     /// A builder for [`UpgradeDomainInput`](crate::input::UpgradeDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) target_version: std::option::Option<std::string::String>,

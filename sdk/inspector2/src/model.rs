@@ -25,7 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
 
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -189,7 +189,7 @@ impl AutoEnable {
 pub mod auto_enable {
 
     /// A builder for [`AutoEnable`](crate::model::AutoEnable).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ec2: std::option::Option<bool>,
         pub(crate) ecr: std::option::Option<bool>,
@@ -466,7 +466,7 @@ impl FilterCriteria {
 pub mod filter_criteria {
 
     /// A builder for [`FilterCriteria`](crate::model::FilterCriteria).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_arn: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
         pub(crate) aws_account_id: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
@@ -1191,7 +1191,7 @@ impl StringFilter {
 pub mod string_filter {
 
     /// A builder for [`StringFilter`](crate::model::StringFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comparison: std::option::Option<crate::model::StringComparison>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1384,7 +1384,7 @@ impl PackageFilter {
 pub mod package_filter {
 
     /// A builder for [`PackageFilter`](crate::model::PackageFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::StringFilter>,
         pub(crate) version: std::option::Option<crate::model::StringFilter>,
@@ -1511,7 +1511,7 @@ impl NumberFilter {
 pub mod number_filter {
 
     /// A builder for [`NumberFilter`](crate::model::NumberFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upper_inclusive: std::option::Option<f64>,
         pub(crate) lower_inclusive: std::option::Option<f64>,
@@ -1578,7 +1578,7 @@ impl PortRangeFilter {
 pub mod port_range_filter {
 
     /// A builder for [`PortRangeFilter`](crate::model::PortRangeFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin_inclusive: std::option::Option<i32>,
         pub(crate) end_inclusive: std::option::Option<i32>,
@@ -1645,7 +1645,7 @@ impl DateFilter {
 pub mod date_filter {
 
     /// A builder for [`DateFilter`](crate::model::DateFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_inclusive: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_inclusive: std::option::Option<aws_smithy_types::DateTime>,
@@ -1725,7 +1725,7 @@ impl MapFilter {
 pub mod map_filter {
 
     /// A builder for [`MapFilter`](crate::model::MapFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comparison: std::option::Option<crate::model::MapComparison>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1975,7 +1975,7 @@ impl EcrConfiguration {
 pub mod ecr_configuration {
 
     /// A builder for [`EcrConfiguration`](crate::model::EcrConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rescan_duration: std::option::Option<crate::model::EcrRescanDuration>,
     }
@@ -2130,7 +2130,7 @@ impl UsageTotal {
 pub mod usage_total {
 
     /// A builder for [`UsageTotal`](crate::model::UsageTotal).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) usage: std::option::Option<std::vec::Vec<crate::model::Usage>>,
@@ -2220,7 +2220,7 @@ impl Usage {
 pub mod usage {
 
     /// A builder for [`Usage`](crate::model::Usage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::UsageType>,
         pub(crate) total: std::option::Option<f64>,
@@ -2505,7 +2505,7 @@ impl Member {
 pub mod member {
 
     /// A builder for [`Member`](crate::model::Member).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) relationship_status: std::option::Option<crate::model::RelationshipStatus>,
@@ -2876,7 +2876,7 @@ impl Finding {
 pub mod finding {
 
     /// A builder for [`Finding`](crate::model::Finding).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_arn: std::option::Option<std::string::String>,
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -3325,7 +3325,7 @@ impl PackageVulnerabilityDetails {
 pub mod package_vulnerability_details {
 
     /// A builder for [`PackageVulnerabilityDetails`](crate::model::PackageVulnerabilityDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vulnerability_id: std::option::Option<std::string::String>,
         pub(crate) vulnerable_packages:
@@ -3551,7 +3551,7 @@ impl CvssScore {
 pub mod cvss_score {
 
     /// A builder for [`CvssScore`](crate::model::CvssScore).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base_score: std::option::Option<f64>,
         pub(crate) scoring_vector: std::option::Option<std::string::String>,
@@ -3701,7 +3701,7 @@ impl VulnerablePackage {
 pub mod vulnerable_package {
 
     /// A builder for [`VulnerablePackage`](crate::model::VulnerablePackage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -4057,7 +4057,7 @@ impl NetworkReachabilityDetails {
 pub mod network_reachability_details {
 
     /// A builder for [`NetworkReachabilityDetails`](crate::model::NetworkReachabilityDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_port_range: std::option::Option<crate::model::PortRange>,
         pub(crate) protocol: std::option::Option<crate::model::NetworkProtocol>,
@@ -4138,7 +4138,7 @@ impl NetworkPath {
 pub mod network_path {
 
     /// A builder for [`NetworkPath`](crate::model::NetworkPath).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) steps: std::option::Option<std::vec::Vec<crate::model::Step>>,
     }
@@ -4200,7 +4200,7 @@ impl Step {
 pub mod step {
 
     /// A builder for [`Step`](crate::model::Step).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_id: std::option::Option<std::string::String>,
         pub(crate) component_type: std::option::Option<std::string::String>,
@@ -4360,7 +4360,7 @@ impl PortRange {
 pub mod port_range {
 
     /// A builder for [`PortRange`](crate::model::PortRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin: std::option::Option<i32>,
         pub(crate) end: std::option::Option<i32>,
@@ -4420,7 +4420,7 @@ impl InspectorScoreDetails {
 pub mod inspector_score_details {
 
     /// A builder for [`InspectorScoreDetails`](crate::model::InspectorScoreDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adjusted_cvss: std::option::Option<crate::model::CvssScoreDetails>,
     }
@@ -4506,7 +4506,7 @@ impl CvssScoreDetails {
 pub mod cvss_score_details {
 
     /// A builder for [`CvssScoreDetails`](crate::model::CvssScoreDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) score_source: std::option::Option<std::string::String>,
         pub(crate) cvss_source: std::option::Option<std::string::String>,
@@ -4634,7 +4634,7 @@ impl CvssScoreAdjustment {
 pub mod cvss_score_adjustment {
 
     /// A builder for [`CvssScoreAdjustment`](crate::model::CvssScoreAdjustment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<std::string::String>,
@@ -4733,7 +4733,7 @@ impl Resource {
 pub mod resource {
 
     /// A builder for [`Resource`](crate::model::Resource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ResourceType>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4870,7 +4870,7 @@ impl ResourceDetails {
 pub mod resource_details {
 
     /// A builder for [`ResourceDetails`](crate::model::ResourceDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_ec2_instance: std::option::Option<crate::model::AwsEc2InstanceDetails>,
         pub(crate) aws_ecr_container_image:
@@ -4989,7 +4989,7 @@ impl AwsEcrContainerImageDetails {
 pub mod aws_ecr_container_image_details {
 
     /// A builder for [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5199,7 +5199,7 @@ impl AwsEc2InstanceDetails {
 pub mod aws_ec2_instance_details {
 
     /// A builder for [`AwsEc2InstanceDetails`](crate::model::AwsEc2InstanceDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) image_id: std::option::Option<std::string::String>,
@@ -5690,7 +5690,7 @@ impl Remediation {
 pub mod remediation {
 
     /// A builder for [`Remediation`](crate::model::Remediation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation: std::option::Option<crate::model::Recommendation>,
     }
@@ -5748,7 +5748,7 @@ impl Recommendation {
 pub mod recommendation {
 
     /// A builder for [`Recommendation`](crate::model::Recommendation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) url: std::option::Option<std::string::String>,
@@ -5905,7 +5905,7 @@ impl SortCriteria {
 pub mod sort_criteria {
 
     /// A builder for [`SortCriteria`](crate::model::SortCriteria).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field: std::option::Option<crate::model::SortField>,
         pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
@@ -6430,7 +6430,7 @@ impl TitleAggregationResponse {
 pub mod title_aggregation_response {
 
     /// A builder for [`TitleAggregationResponse`](crate::model::TitleAggregationResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) title: std::option::Option<std::string::String>,
         pub(crate) vulnerability_id: std::option::Option<std::string::String>,
@@ -6541,7 +6541,7 @@ impl SeverityCounts {
 pub mod severity_counts {
 
     /// A builder for [`SeverityCounts`](crate::model::SeverityCounts).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) all: std::option::Option<i64>,
         pub(crate) medium: std::option::Option<i64>,
@@ -6646,7 +6646,7 @@ impl RepositoryAggregationResponse {
 pub mod repository_aggregation_response {
 
     /// A builder for [`RepositoryAggregationResponse`](crate::model::RepositoryAggregationResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -6747,7 +6747,7 @@ impl PackageAggregationResponse {
 pub mod package_aggregation_response {
 
     /// A builder for [`PackageAggregationResponse`](crate::model::PackageAggregationResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_name: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -6850,7 +6850,7 @@ impl ImageLayerAggregationResponse {
 pub mod image_layer_aggregation_response {
 
     /// A builder for [`ImageLayerAggregationResponse`](crate::model::ImageLayerAggregationResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -6956,7 +6956,7 @@ impl FindingTypeAggregationResponse {
 pub mod finding_type_aggregation_response {
 
     /// A builder for [`FindingTypeAggregationResponse`](crate::model::FindingTypeAggregationResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) severity_counts: std::option::Option<crate::model::SeverityCounts>,
@@ -7065,7 +7065,7 @@ impl Ec2InstanceAggregationResponse {
 pub mod ec2_instance_aggregation_response {
 
     /// A builder for [`Ec2InstanceAggregationResponse`](crate::model::Ec2InstanceAggregationResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
         pub(crate) ami: std::option::Option<std::string::String>,
@@ -7250,7 +7250,7 @@ impl AwsEcrContainerAggregationResponse {
 pub mod aws_ecr_container_aggregation_response {
 
     /// A builder for [`AwsEcrContainerAggregationResponse`](crate::model::AwsEcrContainerAggregationResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) image_sha: std::option::Option<std::string::String>,
@@ -7403,7 +7403,7 @@ impl AmiAggregationResponse {
 pub mod ami_aggregation_response {
 
     /// A builder for [`AmiAggregationResponse`](crate::model::AmiAggregationResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ami: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -7497,7 +7497,7 @@ impl AccountAggregationResponse {
 pub mod account_aggregation_response {
 
     /// A builder for [`AccountAggregationResponse`](crate::model::AccountAggregationResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) severity_counts: std::option::Option<crate::model::SeverityCounts>,
@@ -7895,7 +7895,7 @@ impl TitleAggregation {
 pub mod title_aggregation {
 
     /// A builder for [`TitleAggregation`](crate::model::TitleAggregation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) titles: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
         pub(crate) vulnerability_ids:
@@ -8220,7 +8220,7 @@ impl RepositoryAggregation {
 pub mod repository_aggregation {
 
     /// A builder for [`RepositoryAggregation`](crate::model::RepositoryAggregation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repositories: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
         pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
@@ -8421,7 +8421,7 @@ impl PackageAggregation {
 pub mod package_aggregation {
 
     /// A builder for [`PackageAggregation`](crate::model::PackageAggregation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_names: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
         pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
@@ -8631,7 +8631,7 @@ impl ImageLayerAggregation {
 pub mod image_layer_aggregation {
 
     /// A builder for [`ImageLayerAggregation`](crate::model::ImageLayerAggregation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repositories: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
         pub(crate) resource_ids: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
@@ -8876,7 +8876,7 @@ impl FindingTypeAggregation {
 pub mod finding_type_aggregation {
 
     /// A builder for [`FindingTypeAggregation`](crate::model::FindingTypeAggregation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_type: std::option::Option<crate::model::AggregationFindingType>,
         pub(crate) resource_type: std::option::Option<crate::model::AggregationResourceType>,
@@ -9196,7 +9196,7 @@ impl Ec2InstanceAggregation {
 pub mod ec2_instance_aggregation {
 
     /// A builder for [`Ec2InstanceAggregation`](crate::model::Ec2InstanceAggregation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amis: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
         pub(crate) operating_systems:
@@ -9491,7 +9491,7 @@ impl AwsEcrContainerAggregation {
 pub mod aws_ecr_container_aggregation {
 
     /// A builder for [`AwsEcrContainerAggregation`](crate::model::AwsEcrContainerAggregation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_ids: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
         pub(crate) image_shas: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
@@ -9773,7 +9773,7 @@ impl AmiAggregation {
 pub mod ami_aggregation {
 
     /// A builder for [`AmiAggregation`](crate::model::AmiAggregation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amis: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
         pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
@@ -9978,7 +9978,7 @@ impl AccountAggregation {
 pub mod account_aggregation {
 
     /// A builder for [`AccountAggregation`](crate::model::AccountAggregation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_type: std::option::Option<crate::model::AggregationFindingType>,
         pub(crate) resource_type: std::option::Option<crate::model::AggregationResourceType>,
@@ -10236,7 +10236,7 @@ impl Filter {
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) owner_id: std::option::Option<std::string::String>,
@@ -10428,7 +10428,7 @@ impl DelegatedAdminAccount {
 pub mod delegated_admin_account {
 
     /// A builder for [`DelegatedAdminAccount`](crate::model::DelegatedAdminAccount).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DelegatedAdminStatus>,
@@ -10590,7 +10590,7 @@ impl Counts {
 pub mod counts {
 
     /// A builder for [`Counts`](crate::model::Counts).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i64>,
         pub(crate) group_key: std::option::Option<crate::model::GroupKey>,
@@ -10819,7 +10819,7 @@ impl CoverageFilterCriteria {
 pub mod coverage_filter_criteria {
 
     /// A builder for [`CoverageFilterCriteria`](crate::model::CoverageFilterCriteria).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scan_status_code:
             std::option::Option<std::vec::Vec<crate::model::CoverageStringFilter>>,
@@ -11067,7 +11067,7 @@ impl CoverageMapFilter {
 pub mod coverage_map_filter {
 
     /// A builder for [`CoverageMapFilter`](crate::model::CoverageMapFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comparison: std::option::Option<crate::model::CoverageMapComparison>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -11236,7 +11236,7 @@ impl CoverageStringFilter {
 pub mod coverage_string_filter {
 
     /// A builder for [`CoverageStringFilter`](crate::model::CoverageStringFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comparison: std::option::Option<crate::model::CoverageStringComparison>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -11426,7 +11426,7 @@ impl CoveredResource {
 pub mod covered_resource {
 
     /// A builder for [`CoveredResource`](crate::model::CoveredResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::CoverageResourceType>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -11557,7 +11557,7 @@ impl ResourceScanMetadata {
 pub mod resource_scan_metadata {
 
     /// A builder for [`ResourceScanMetadata`](crate::model::ResourceScanMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ecr_repository: std::option::Option<crate::model::EcrRepositoryMetadata>,
         pub(crate) ecr_image: std::option::Option<crate::model::EcrContainerImageMetadata>,
@@ -11653,7 +11653,7 @@ impl Ec2Metadata {
 pub mod ec2_metadata {
 
     /// A builder for [`Ec2Metadata`](crate::model::Ec2Metadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -11840,7 +11840,7 @@ impl EcrContainerImageMetadata {
 pub mod ecr_container_image_metadata {
 
     /// A builder for [`EcrContainerImageMetadata`](crate::model::EcrContainerImageMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -11902,7 +11902,7 @@ impl EcrRepositoryMetadata {
 pub mod ecr_repository_metadata {
 
     /// A builder for [`EcrRepositoryMetadata`](crate::model::EcrRepositoryMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scan_frequency: std::option::Option<crate::model::EcrScanFrequency>,
@@ -12067,7 +12067,7 @@ impl ScanStatus {
 pub mod scan_status {
 
     /// A builder for [`ScanStatus`](crate::model::ScanStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_code: std::option::Option<crate::model::ScanStatusCode>,
         pub(crate) reason: std::option::Option<crate::model::ScanStatusReason>,
@@ -12598,7 +12598,7 @@ impl Permission {
 pub mod permission {
 
     /// A builder for [`Permission`](crate::model::Permission).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::Service>,
         pub(crate) operation: std::option::Option<crate::model::Operation>,
@@ -12870,7 +12870,7 @@ impl Destination {
 pub mod destination {
 
     /// A builder for [`Destination`](crate::model::Destination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) key_prefix: std::option::Option<std::string::String>,
@@ -13170,7 +13170,7 @@ impl DelegatedAdmin {
 pub mod delegated_admin {
 
     /// A builder for [`DelegatedAdmin`](crate::model::DelegatedAdmin).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) relationship_status: std::option::Option<crate::model::RelationshipStatus>,
@@ -13235,7 +13235,7 @@ impl EcrConfigurationState {
 pub mod ecr_configuration_state {
 
     /// A builder for [`EcrConfigurationState`](crate::model::EcrConfigurationState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rescan_duration_state: std::option::Option<crate::model::EcrRescanDurationState>,
     }
@@ -13303,7 +13303,7 @@ impl EcrRescanDurationState {
 pub mod ecr_rescan_duration_state {
 
     /// A builder for [`EcrRescanDurationState`](crate::model::EcrRescanDurationState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rescan_duration: std::option::Option<crate::model::EcrRescanDuration>,
         pub(crate) status: std::option::Option<crate::model::EcrRescanDurationStatus>,
@@ -13509,7 +13509,7 @@ impl FailedAccount {
 pub mod failed_account {
 
     /// A builder for [`FailedAccount`](crate::model::FailedAccount).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
@@ -13786,7 +13786,7 @@ impl ResourceStatus {
 pub mod resource_status {
 
     /// A builder for [`ResourceStatus`](crate::model::ResourceStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ec2: std::option::Option<crate::model::Status>,
         pub(crate) ecr: std::option::Option<crate::model::Status>,
@@ -13977,7 +13977,7 @@ impl Account {
 pub mod account {
 
     /// A builder for [`Account`](crate::model::Account).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
@@ -14246,7 +14246,7 @@ impl FreeTrialInfoError {
 pub mod free_trial_info_error {
 
     /// A builder for [`FreeTrialInfoError`](crate::model::FreeTrialInfoError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<crate::model::FreeTrialInfoErrorCode>,
@@ -14420,7 +14420,7 @@ impl FreeTrialAccountInfo {
 pub mod free_trial_account_info {
 
     /// A builder for [`FreeTrialAccountInfo`](crate::model::FreeTrialAccountInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) free_trial_info: std::option::Option<std::vec::Vec<crate::model::FreeTrialInfo>>,
@@ -14510,7 +14510,7 @@ impl FreeTrialInfo {
 pub mod free_trial_info {
 
     /// A builder for [`FreeTrialInfo`](crate::model::FreeTrialInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::FreeTrialType>,
         pub(crate) start: std::option::Option<aws_smithy_types::DateTime>,
@@ -14791,7 +14791,7 @@ impl AccountState {
 pub mod account_state {
 
     /// A builder for [`AccountState`](crate::model::AccountState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::State>,
@@ -14873,7 +14873,7 @@ impl ResourceState {
 pub mod resource_state {
 
     /// A builder for [`ResourceState`](crate::model::ResourceState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ec2: std::option::Option<crate::model::State>,
         pub(crate) ecr: std::option::Option<crate::model::State>,
@@ -14947,7 +14947,7 @@ impl State {
 pub mod state {
 
     /// A builder for [`State`](crate::model::State).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::Status>,
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,

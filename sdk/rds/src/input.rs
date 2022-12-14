@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod add_role_to_db_cluster_input {
 
     /// A builder for [`AddRoleToDbClusterInput`](crate::input::AddRoleToDbClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -176,7 +176,7 @@ impl AddRoleToDbClusterInput {
 pub mod add_role_to_db_instance_input {
 
     /// A builder for [`AddRoleToDbInstanceInput`](crate::input::AddRoleToDbInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -347,7 +347,7 @@ impl AddRoleToDbInstanceInput {
 pub mod add_source_identifier_to_subscription_input {
 
     /// A builder for [`AddSourceIdentifierToSubscriptionInput`](crate::input::AddSourceIdentifierToSubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_name: std::option::Option<std::string::String>,
         pub(crate) source_identifier: std::option::Option<std::string::String>,
@@ -526,7 +526,7 @@ impl AddSourceIdentifierToSubscriptionInput {
 pub mod add_tags_to_resource_input {
 
     /// A builder for [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -692,7 +692,7 @@ impl AddTagsToResourceInput {
 pub mod apply_pending_maintenance_action_input {
 
     /// A builder for [`ApplyPendingMaintenanceActionInput`](crate::input::ApplyPendingMaintenanceActionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) apply_action: std::option::Option<std::string::String>,
@@ -874,7 +874,7 @@ impl ApplyPendingMaintenanceActionInput {
 pub mod authorize_db_security_group_ingress_input {
 
     /// A builder for [`AuthorizeDbSecurityGroupIngressInput`](crate::input::AuthorizeDbSecurityGroupIngressInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_security_group_name: std::option::Option<std::string::String>,
         pub(crate) cidrip: std::option::Option<std::string::String>,
@@ -1078,7 +1078,7 @@ impl AuthorizeDbSecurityGroupIngressInput {
 pub mod backtrack_db_cluster_input {
 
     /// A builder for [`BacktrackDbClusterInput`](crate::input::BacktrackDbClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) backtrack_to: std::option::Option<aws_smithy_types::DateTime>,
@@ -1296,7 +1296,7 @@ impl BacktrackDbClusterInput {
 pub mod cancel_export_task_input {
 
     /// A builder for [`CancelExportTaskInput`](crate::input::CancelExportTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_task_identifier: std::option::Option<std::string::String>,
     }
@@ -1441,7 +1441,7 @@ impl CancelExportTaskInput {
 pub mod copy_db_cluster_parameter_group_input {
 
     /// A builder for [`CopyDbClusterParameterGroupInput`](crate::input::CopyDbClusterParameterGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_db_cluster_parameter_group_identifier:
             std::option::Option<std::string::String>,
@@ -1675,7 +1675,7 @@ impl CopyDbClusterParameterGroupInput {
 pub mod copy_db_cluster_snapshot_input {
 
     /// A builder for [`CopyDbClusterSnapshotInput`](crate::input::CopyDbClusterSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
         pub(crate) target_db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
@@ -1961,7 +1961,7 @@ impl CopyDbClusterSnapshotInput {
 pub mod copy_db_parameter_group_input {
 
     /// A builder for [`CopyDbParameterGroupInput`](crate::input::CopyDbParameterGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_db_parameter_group_identifier: std::option::Option<std::string::String>,
         pub(crate) target_db_parameter_group_identifier: std::option::Option<std::string::String>,
@@ -2192,7 +2192,7 @@ impl CopyDbParameterGroupInput {
 pub mod copy_db_snapshot_input {
 
     /// A builder for [`CopyDbSnapshotInput`](crate::input::CopyDbSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_db_snapshot_identifier: std::option::Option<std::string::String>,
         pub(crate) target_db_snapshot_identifier: std::option::Option<std::string::String>,
@@ -2519,7 +2519,7 @@ impl CopyDbSnapshotInput {
 pub mod copy_option_group_input {
 
     /// A builder for [`CopyOptionGroupInput`](crate::input::CopyOptionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_option_group_identifier: std::option::Option<std::string::String>,
         pub(crate) target_option_group_identifier: std::option::Option<std::string::String>,
@@ -2746,7 +2746,7 @@ impl CopyOptionGroupInput {
 pub mod create_custom_db_engine_version_input {
 
     /// A builder for [`CreateCustomDbEngineVersionInput`](crate::input::CreateCustomDbEngineVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
@@ -3069,7 +3069,7 @@ impl CreateCustomDbEngineVersionInput {
 pub mod create_db_cluster_input {
 
     /// A builder for [`CreateDbClusterInput`](crate::input::CreateDbClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) backup_retention_period: std::option::Option<i32>,
@@ -4310,7 +4310,7 @@ impl CreateDbClusterInput {
 pub mod create_db_cluster_endpoint_input {
 
     /// A builder for [`CreateDbClusterEndpointInput`](crate::input::CreateDbClusterEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
@@ -4553,7 +4553,7 @@ impl CreateDbClusterEndpointInput {
 pub mod create_db_cluster_parameter_group_input {
 
     /// A builder for [`CreateDbClusterParameterGroupInput`](crate::input::CreateDbClusterParameterGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) db_parameter_group_family: std::option::Option<std::string::String>,
@@ -4806,7 +4806,7 @@ impl CreateDbClusterParameterGroupInput {
 pub mod create_db_cluster_snapshot_input {
 
     /// A builder for [`CreateDbClusterSnapshotInput`](crate::input::CreateDbClusterSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
@@ -5016,7 +5016,7 @@ impl CreateDbClusterSnapshotInput {
 pub mod create_db_instance_input {
 
     /// A builder for [`CreateDbInstanceInput`](crate::input::CreateDbInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_name: std::option::Option<std::string::String>,
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
@@ -6645,7 +6645,7 @@ impl CreateDbInstanceInput {
 pub mod create_db_instance_read_replica_input {
 
     /// A builder for [`CreateDbInstanceReadReplicaInput`](crate::input::CreateDbInstanceReadReplicaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) source_db_instance_identifier: std::option::Option<std::string::String>,
@@ -7522,7 +7522,7 @@ impl CreateDbInstanceReadReplicaInput {
 pub mod create_db_parameter_group_input {
 
     /// A builder for [`CreateDbParameterGroupInput`](crate::input::CreateDbParameterGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) db_parameter_group_family: std::option::Option<std::string::String>,
@@ -7781,7 +7781,7 @@ impl CreateDbParameterGroupInput {
 pub mod create_db_proxy_input {
 
     /// A builder for [`CreateDbProxyInput`](crate::input::CreateDbProxyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_proxy_name: std::option::Option<std::string::String>,
         pub(crate) engine_family: std::option::Option<crate::model::EngineFamily>,
@@ -8071,7 +8071,7 @@ impl CreateDbProxyInput {
 pub mod create_db_proxy_endpoint_input {
 
     /// A builder for [`CreateDbProxyEndpointInput`](crate::input::CreateDbProxyEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_proxy_name: std::option::Option<std::string::String>,
         pub(crate) db_proxy_endpoint_name: std::option::Option<std::string::String>,
@@ -8311,7 +8311,7 @@ impl CreateDbProxyEndpointInput {
 pub mod create_db_security_group_input {
 
     /// A builder for [`CreateDbSecurityGroupInput`](crate::input::CreateDbSecurityGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_security_group_name: std::option::Option<std::string::String>,
         pub(crate) db_security_group_description: std::option::Option<std::string::String>,
@@ -8513,7 +8513,7 @@ impl CreateDbSecurityGroupInput {
 pub mod create_db_snapshot_input {
 
     /// A builder for [`CreateDbSnapshotInput`](crate::input::CreateDbSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_snapshot_identifier: std::option::Option<std::string::String>,
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
@@ -8718,7 +8718,7 @@ impl CreateDbSnapshotInput {
 pub mod create_db_subnet_group_input {
 
     /// A builder for [`CreateDbSubnetGroupInput`](crate::input::CreateDbSubnetGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_subnet_group_name: std::option::Option<std::string::String>,
         pub(crate) db_subnet_group_description: std::option::Option<std::string::String>,
@@ -8939,7 +8939,7 @@ impl CreateDbSubnetGroupInput {
 pub mod create_event_subscription_input {
 
     /// A builder for [`CreateEventSubscriptionInput`](crate::input::CreateEventSubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_name: std::option::Option<std::string::String>,
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
@@ -9214,7 +9214,7 @@ impl CreateEventSubscriptionInput {
 pub mod create_global_cluster_input {
 
     /// A builder for [`CreateGlobalClusterInput`](crate::input::CreateGlobalClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) source_db_cluster_identifier: std::option::Option<std::string::String>,
@@ -9443,7 +9443,7 @@ impl CreateGlobalClusterInput {
 pub mod create_option_group_input {
 
     /// A builder for [`CreateOptionGroupInput`](crate::input::CreateOptionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) option_group_name: std::option::Option<std::string::String>,
         pub(crate) engine_name: std::option::Option<std::string::String>,
@@ -9693,7 +9693,7 @@ impl CreateOptionGroupInput {
 pub mod delete_custom_db_engine_version_input {
 
     /// A builder for [`DeleteCustomDbEngineVersionInput`](crate::input::DeleteCustomDbEngineVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
@@ -9849,7 +9849,7 @@ impl DeleteCustomDbEngineVersionInput {
 pub mod delete_db_cluster_input {
 
     /// A builder for [`DeleteDbClusterInput`](crate::input::DeleteDbClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) skip_final_snapshot: std::option::Option<bool>,
@@ -10050,7 +10050,7 @@ impl DeleteDbClusterInput {
 pub mod delete_db_cluster_endpoint_input {
 
     /// A builder for [`DeleteDbClusterEndpointInput`](crate::input::DeleteDbClusterEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
     }
@@ -10200,7 +10200,7 @@ impl DeleteDbClusterEndpointInput {
 pub mod delete_db_cluster_parameter_group_input {
 
     /// A builder for [`DeleteDbClusterParameterGroupInput`](crate::input::DeleteDbClusterParameterGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     }
@@ -10359,7 +10359,7 @@ impl DeleteDbClusterParameterGroupInput {
 pub mod delete_db_cluster_snapshot_input {
 
     /// A builder for [`DeleteDbClusterSnapshotInput`](crate::input::DeleteDbClusterSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
     }
@@ -10511,7 +10511,7 @@ impl DeleteDbClusterSnapshotInput {
 pub mod delete_db_instance_input {
 
     /// A builder for [`DeleteDbInstanceInput`](crate::input::DeleteDbInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) skip_final_snapshot: std::option::Option<bool>,
@@ -10736,7 +10736,7 @@ impl DeleteDbInstanceInput {
 pub mod delete_db_instance_automated_backup_input {
 
     /// A builder for [`DeleteDbInstanceAutomatedBackupInput`](crate::input::DeleteDbInstanceAutomatedBackupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dbi_resource_id: std::option::Option<std::string::String>,
         pub(crate) db_instance_automated_backups_arn: std::option::Option<std::string::String>,
@@ -10900,7 +10900,7 @@ impl DeleteDbInstanceAutomatedBackupInput {
 pub mod delete_db_parameter_group_input {
 
     /// A builder for [`DeleteDbParameterGroupInput`](crate::input::DeleteDbParameterGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group_name: std::option::Option<std::string::String>,
     }
@@ -11059,7 +11059,7 @@ impl DeleteDbParameterGroupInput {
 pub mod delete_db_proxy_input {
 
     /// A builder for [`DeleteDbProxyInput`](crate::input::DeleteDbProxyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_proxy_name: std::option::Option<std::string::String>,
     }
@@ -11202,7 +11202,7 @@ impl DeleteDbProxyInput {
 pub mod delete_db_proxy_endpoint_input {
 
     /// A builder for [`DeleteDbProxyEndpointInput`](crate::input::DeleteDbProxyEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_proxy_endpoint_name: std::option::Option<std::string::String>,
     }
@@ -11349,7 +11349,7 @@ impl DeleteDbProxyEndpointInput {
 pub mod delete_db_security_group_input {
 
     /// A builder for [`DeleteDbSecurityGroupInput`](crate::input::DeleteDbSecurityGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_security_group_name: std::option::Option<std::string::String>,
     }
@@ -11514,7 +11514,7 @@ impl DeleteDbSecurityGroupInput {
 pub mod delete_db_snapshot_input {
 
     /// A builder for [`DeleteDbSnapshotInput`](crate::input::DeleteDbSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_snapshot_identifier: std::option::Option<std::string::String>,
     }
@@ -11661,7 +11661,7 @@ impl DeleteDbSnapshotInput {
 pub mod delete_db_subnet_group_input {
 
     /// A builder for [`DeleteDbSubnetGroupInput`](crate::input::DeleteDbSubnetGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_subnet_group_name: std::option::Option<std::string::String>,
     }
@@ -11816,7 +11816,7 @@ impl DeleteDbSubnetGroupInput {
 pub mod delete_event_subscription_input {
 
     /// A builder for [`DeleteEventSubscriptionInput`](crate::input::DeleteEventSubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_name: std::option::Option<std::string::String>,
     }
@@ -11963,7 +11963,7 @@ impl DeleteEventSubscriptionInput {
 pub mod delete_global_cluster_input {
 
     /// A builder for [`DeleteGlobalClusterInput`](crate::input::DeleteGlobalClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster_identifier: std::option::Option<std::string::String>,
     }
@@ -12108,7 +12108,7 @@ impl DeleteGlobalClusterInput {
 pub mod delete_option_group_input {
 
     /// A builder for [`DeleteOptionGroupInput`](crate::input::DeleteOptionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) option_group_name: std::option::Option<std::string::String>,
     }
@@ -12257,7 +12257,7 @@ impl DeleteOptionGroupInput {
 pub mod deregister_db_proxy_targets_input {
 
     /// A builder for [`DeregisterDbProxyTargetsInput`](crate::input::DeregisterDbProxyTargetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_proxy_name: std::option::Option<std::string::String>,
         pub(crate) target_group_name: std::option::Option<std::string::String>,
@@ -12461,7 +12461,7 @@ impl DeregisterDbProxyTargetsInput {
 pub mod describe_account_attributes_input {
 
     /// A builder for [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput).
@@ -12584,7 +12584,7 @@ impl DescribeAccountAttributesInput {
 pub mod describe_certificates_input {
 
     /// A builder for [`DescribeCertificatesInput`](crate::input::DescribeCertificatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_identifier: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -12786,7 +12786,7 @@ impl DescribeCertificatesInput {
 pub mod describe_db_cluster_backtracks_input {
 
     /// A builder for [`DescribeDbClusterBacktracksInput`](crate::input::DescribeDbClusterBacktracksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) backtrack_identifier: std::option::Option<std::string::String>,
@@ -13038,7 +13038,7 @@ impl DescribeDbClusterBacktracksInput {
 pub mod describe_db_cluster_endpoints_input {
 
     /// A builder for [`DescribeDbClusterEndpointsInput`](crate::input::DescribeDbClusterEndpointsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
@@ -13249,7 +13249,7 @@ impl DescribeDbClusterEndpointsInput {
 pub mod describe_db_cluster_parameter_groups_input {
 
     /// A builder for [`DescribeDbClusterParameterGroupsInput`](crate::input::DescribeDbClusterParameterGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -13453,7 +13453,7 @@ impl DescribeDbClusterParameterGroupsInput {
 pub mod describe_db_cluster_parameters_input {
 
     /// A builder for [`DescribeDbClusterParametersInput`](crate::input::DescribeDbClusterParametersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) source: std::option::Option<std::string::String>,
@@ -13669,7 +13669,7 @@ impl DescribeDbClusterParametersInput {
 pub mod describe_db_clusters_input {
 
     /// A builder for [`DescribeDbClustersInput`](crate::input::DescribeDbClustersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -13897,7 +13897,7 @@ impl DescribeDbClustersInput {
 pub mod describe_db_cluster_snapshot_attributes_input {
 
     /// A builder for [`DescribeDbClusterSnapshotAttributesInput`](crate::input::DescribeDbClusterSnapshotAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
     }
@@ -14044,7 +14044,7 @@ impl DescribeDbClusterSnapshotAttributesInput {
 pub mod describe_db_cluster_snapshots_input {
 
     /// A builder for [`DescribeDbClusterSnapshotsInput`](crate::input::DescribeDbClusterSnapshotsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
@@ -14346,7 +14346,7 @@ impl DescribeDbClusterSnapshotsInput {
 pub mod describe_db_engine_versions_input {
 
     /// A builder for [`DescribeDbEngineVersionsInput`](crate::input::DescribeDbEngineVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
@@ -14710,7 +14710,7 @@ impl DescribeDbEngineVersionsInput {
 pub mod describe_db_instance_automated_backups_input {
 
     /// A builder for [`DescribeDbInstanceAutomatedBackupsInput`](crate::input::DescribeDbInstanceAutomatedBackupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dbi_resource_id: std::option::Option<std::string::String>,
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
@@ -14958,7 +14958,7 @@ impl DescribeDbInstanceAutomatedBackupsInput {
 pub mod describe_db_instances_input {
 
     /// A builder for [`DescribeDbInstancesInput`](crate::input::DescribeDbInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -15176,7 +15176,7 @@ impl DescribeDbInstancesInput {
 pub mod describe_db_log_files_input {
 
     /// A builder for [`DescribeDbLogFilesInput`](crate::input::DescribeDbLogFilesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) filename_contains: std::option::Option<std::string::String>,
@@ -15413,7 +15413,7 @@ impl DescribeDbLogFilesInput {
 pub mod describe_db_parameter_groups_input {
 
     /// A builder for [`DescribeDbParameterGroupsInput`](crate::input::DescribeDbParameterGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -15617,7 +15617,7 @@ impl DescribeDbParameterGroupsInput {
 pub mod describe_db_parameters_input {
 
     /// A builder for [`DescribeDbParametersInput`](crate::input::DescribeDbParametersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) source: std::option::Option<std::string::String>,
@@ -15837,7 +15837,7 @@ impl DescribeDbParametersInput {
 pub mod describe_db_proxies_input {
 
     /// A builder for [`DescribeDbProxiesInput`](crate::input::DescribeDbProxiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_proxy_name: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -16031,7 +16031,7 @@ impl DescribeDbProxiesInput {
 pub mod describe_db_proxy_endpoints_input {
 
     /// A builder for [`DescribeDbProxyEndpointsInput`](crate::input::DescribeDbProxyEndpointsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_proxy_name: std::option::Option<std::string::String>,
         pub(crate) db_proxy_endpoint_name: std::option::Option<std::string::String>,
@@ -16242,7 +16242,7 @@ impl DescribeDbProxyEndpointsInput {
 pub mod describe_db_proxy_target_groups_input {
 
     /// A builder for [`DescribeDbProxyTargetGroupsInput`](crate::input::DescribeDbProxyTargetGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_proxy_name: std::option::Option<std::string::String>,
         pub(crate) target_group_name: std::option::Option<std::string::String>,
@@ -16450,7 +16450,7 @@ impl DescribeDbProxyTargetGroupsInput {
 pub mod describe_db_proxy_targets_input {
 
     /// A builder for [`DescribeDbProxyTargetsInput`](crate::input::DescribeDbProxyTargetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_proxy_name: std::option::Option<std::string::String>,
         pub(crate) target_group_name: std::option::Option<std::string::String>,
@@ -16661,7 +16661,7 @@ impl DescribeDbProxyTargetsInput {
 pub mod describe_db_security_groups_input {
 
     /// A builder for [`DescribeDbSecurityGroupsInput`](crate::input::DescribeDbSecurityGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_security_group_name: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -16857,7 +16857,7 @@ impl DescribeDbSecurityGroupsInput {
 pub mod describe_db_snapshot_attributes_input {
 
     /// A builder for [`DescribeDbSnapshotAttributesInput`](crate::input::DescribeDbSnapshotAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_snapshot_identifier: std::option::Option<std::string::String>,
     }
@@ -17001,7 +17001,7 @@ impl DescribeDbSnapshotAttributesInput {
 pub mod describe_db_snapshots_input {
 
     /// A builder for [`DescribeDbSnapshotsInput`](crate::input::DescribeDbSnapshotsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) db_snapshot_identifier: std::option::Option<std::string::String>,
@@ -17324,7 +17324,7 @@ impl DescribeDbSnapshotsInput {
 pub mod describe_db_subnet_groups_input {
 
     /// A builder for [`DescribeDbSubnetGroupsInput`](crate::input::DescribeDbSubnetGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_subnet_group_name: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -17520,7 +17520,7 @@ impl DescribeDbSubnetGroupsInput {
 pub mod describe_engine_default_cluster_parameters_input {
 
     /// A builder for [`DescribeEngineDefaultClusterParametersInput`](crate::input::DescribeEngineDefaultClusterParametersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group_family: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -17713,7 +17713,7 @@ impl DescribeEngineDefaultClusterParametersInput {
 pub mod describe_engine_default_parameters_input {
 
     /// A builder for [`DescribeEngineDefaultParametersInput`](crate::input::DescribeEngineDefaultParametersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group_family: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -17990,7 +17990,7 @@ impl DescribeEngineDefaultParametersInput {
 pub mod describe_event_categories_input {
 
     /// A builder for [`DescribeEventCategoriesInput`](crate::input::DescribeEventCategoriesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_type: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -18157,7 +18157,7 @@ impl DescribeEventCategoriesInput {
 pub mod describe_events_input {
 
     /// A builder for [`DescribeEventsInput`](crate::input::DescribeEventsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_identifier: std::option::Option<std::string::String>,
         pub(crate) source_type: std::option::Option<crate::model::SourceType>,
@@ -18457,7 +18457,7 @@ impl DescribeEventsInput {
 pub mod describe_event_subscriptions_input {
 
     /// A builder for [`DescribeEventSubscriptionsInput`](crate::input::DescribeEventSubscriptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_name: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -18653,7 +18653,7 @@ impl DescribeEventSubscriptionsInput {
 pub mod describe_export_tasks_input {
 
     /// A builder for [`DescribeExportTasksInput`](crate::input::DescribeExportTasksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_task_identifier: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
@@ -18889,7 +18889,7 @@ impl DescribeExportTasksInput {
 pub mod describe_global_clusters_input {
 
     /// A builder for [`DescribeGlobalClustersInput`](crate::input::DescribeGlobalClustersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -19093,7 +19093,7 @@ impl DescribeGlobalClustersInput {
 pub mod describe_option_group_options_input {
 
     /// A builder for [`DescribeOptionGroupOptionsInput`](crate::input::DescribeOptionGroupOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_name: std::option::Option<std::string::String>,
         pub(crate) major_engine_version: std::option::Option<std::string::String>,
@@ -19326,7 +19326,7 @@ impl DescribeOptionGroupOptionsInput {
 pub mod describe_option_groups_input {
 
     /// A builder for [`DescribeOptionGroupsInput`](crate::input::DescribeOptionGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) option_group_name: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -19577,7 +19577,7 @@ impl DescribeOptionGroupsInput {
 pub mod describe_orderable_db_instance_options_input {
 
     /// A builder for [`DescribeOrderableDbInstanceOptionsInput`](crate::input::DescribeOrderableDbInstanceOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
@@ -19881,7 +19881,7 @@ impl DescribeOrderableDbInstanceOptionsInput {
 pub mod describe_pending_maintenance_actions_input {
 
     /// A builder for [`DescribePendingMaintenanceActionsInput`](crate::input::DescribePendingMaintenanceActionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -20084,7 +20084,7 @@ impl DescribePendingMaintenanceActionsInput {
 pub mod describe_reserved_db_instances_input {
 
     /// A builder for [`DescribeReservedDbInstancesInput`](crate::input::DescribeReservedDbInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_db_instance_id: std::option::Option<std::string::String>,
         pub(crate) reserved_db_instances_offering_id: std::option::Option<std::string::String>,
@@ -20384,7 +20384,7 @@ impl DescribeReservedDbInstancesInput {
 pub mod describe_reserved_db_instances_offerings_input {
 
     /// A builder for [`DescribeReservedDbInstancesOfferingsInput`](crate::input::DescribeReservedDbInstancesOfferingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_db_instances_offering_id: std::option::Option<std::string::String>,
         pub(crate) db_instance_class: std::option::Option<std::string::String>,
@@ -20659,7 +20659,7 @@ impl DescribeReservedDbInstancesOfferingsInput {
 pub mod describe_source_regions_input {
 
     /// A builder for [`DescribeSourceRegionsInput`](crate::input::DescribeSourceRegionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_name: std::option::Option<std::string::String>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -20860,7 +20860,7 @@ impl DescribeSourceRegionsInput {
 pub mod describe_valid_db_instance_modifications_input {
 
     /// A builder for [`DescribeValidDbInstanceModificationsInput`](crate::input::DescribeValidDbInstanceModificationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
     }
@@ -21004,7 +21004,7 @@ impl DescribeValidDbInstanceModificationsInput {
 pub mod download_db_log_file_portion_input {
 
     /// A builder for [`DownloadDbLogFilePortionInput`](crate::input::DownloadDbLogFilePortionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) log_file_name: std::option::Option<std::string::String>,
@@ -21212,7 +21212,7 @@ impl DownloadDbLogFilePortionInput {
 pub mod failover_db_cluster_input {
 
     /// A builder for [`FailoverDbClusterInput`](crate::input::FailoverDbClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) target_db_instance_identifier: std::option::Option<std::string::String>,
@@ -21387,7 +21387,7 @@ impl FailoverDbClusterInput {
 pub mod failover_global_cluster_input {
 
     /// A builder for [`FailoverGlobalClusterInput`](crate::input::FailoverGlobalClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) target_db_cluster_identifier: std::option::Option<std::string::String>,
@@ -21560,7 +21560,7 @@ impl FailoverGlobalClusterInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_name: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -21728,7 +21728,7 @@ impl ListTagsForResourceInput {
 pub mod modify_activity_stream_input {
 
     /// A builder for [`ModifyActivityStreamInput`](crate::input::ModifyActivityStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) audit_policy_state: std::option::Option<crate::model::AuditPolicyState>,
@@ -21887,7 +21887,7 @@ impl ModifyActivityStreamInput {
 pub mod modify_certificates_input {
 
     /// A builder for [`ModifyCertificatesInput`](crate::input::ModifyCertificatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_identifier: std::option::Option<std::string::String>,
         pub(crate) remove_customer_override: std::option::Option<bool>,
@@ -22046,7 +22046,7 @@ impl ModifyCertificatesInput {
 pub mod modify_current_db_cluster_capacity_input {
 
     /// A builder for [`ModifyCurrentDbClusterCapacityInput`](crate::input::ModifyCurrentDbClusterCapacityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) capacity: std::option::Option<i32>,
@@ -22255,7 +22255,7 @@ impl ModifyCurrentDbClusterCapacityInput {
 pub mod modify_custom_db_engine_version_input {
 
     /// A builder for [`ModifyCustomDbEngineVersionInput`](crate::input::ModifyCustomDbEngineVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
@@ -22468,7 +22468,7 @@ impl ModifyCustomDbEngineVersionInput {
 pub mod modify_db_cluster_input {
 
     /// A builder for [`ModifyDbClusterInput`](crate::input::ModifyDbClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) new_db_cluster_identifier: std::option::Option<std::string::String>,
@@ -23390,7 +23390,7 @@ impl ModifyDbClusterInput {
 pub mod modify_db_cluster_endpoint_input {
 
     /// A builder for [`ModifyDbClusterEndpointInput`](crate::input::ModifyDbClusterEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
         pub(crate) endpoint_type: std::option::Option<std::string::String>,
@@ -23597,7 +23597,7 @@ impl ModifyDbClusterEndpointInput {
 pub mod modify_db_cluster_parameter_group_input {
 
     /// A builder for [`ModifyDbClusterParameterGroupInput`](crate::input::ModifyDbClusterParameterGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -23773,7 +23773,7 @@ impl ModifyDbClusterParameterGroupInput {
 pub mod modify_db_cluster_snapshot_attribute_input {
 
     /// A builder for [`ModifyDbClusterSnapshotAttributeInput`](crate::input::ModifyDbClusterSnapshotAttributeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
         pub(crate) attribute_name: std::option::Option<std::string::String>,
@@ -23987,7 +23987,7 @@ impl ModifyDbClusterSnapshotAttributeInput {
 pub mod modify_db_instance_input {
 
     /// A builder for [`ModifyDbInstanceInput`](crate::input::ModifyDbInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) allocated_storage: std::option::Option<i32>,
@@ -25216,7 +25216,7 @@ impl ModifyDbInstanceInput {
 pub mod modify_db_parameter_group_input {
 
     /// A builder for [`ModifyDbParameterGroupInput`](crate::input::ModifyDbParameterGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -25406,7 +25406,7 @@ impl ModifyDbParameterGroupInput {
 pub mod modify_db_proxy_input {
 
     /// A builder for [`ModifyDbProxyInput`](crate::input::ModifyDbProxyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_proxy_name: std::option::Option<std::string::String>,
         pub(crate) new_db_proxy_name: std::option::Option<std::string::String>,
@@ -25654,7 +25654,7 @@ impl ModifyDbProxyInput {
 pub mod modify_db_proxy_endpoint_input {
 
     /// A builder for [`ModifyDbProxyEndpointInput`](crate::input::ModifyDbProxyEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_proxy_endpoint_name: std::option::Option<std::string::String>,
         pub(crate) new_db_proxy_endpoint_name: std::option::Option<std::string::String>,
@@ -25837,7 +25837,7 @@ impl ModifyDbProxyEndpointInput {
 pub mod modify_db_proxy_target_group_input {
 
     /// A builder for [`ModifyDbProxyTargetGroupInput`](crate::input::ModifyDbProxyTargetGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_group_name: std::option::Option<std::string::String>,
         pub(crate) db_proxy_name: std::option::Option<std::string::String>,
@@ -26030,7 +26030,7 @@ impl ModifyDbProxyTargetGroupInput {
 pub mod modify_db_snapshot_input {
 
     /// A builder for [`ModifyDbSnapshotInput`](crate::input::ModifyDbSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_snapshot_identifier: std::option::Option<std::string::String>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
@@ -26233,7 +26233,7 @@ impl ModifyDbSnapshotInput {
 pub mod modify_db_snapshot_attribute_input {
 
     /// A builder for [`ModifyDbSnapshotAttributeInput`](crate::input::ModifyDbSnapshotAttributeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_snapshot_identifier: std::option::Option<std::string::String>,
         pub(crate) attribute_name: std::option::Option<std::string::String>,
@@ -26447,7 +26447,7 @@ impl ModifyDbSnapshotAttributeInput {
 pub mod modify_db_subnet_group_input {
 
     /// A builder for [`ModifyDbSubnetGroupInput`](crate::input::ModifyDbSubnetGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_subnet_group_name: std::option::Option<std::string::String>,
         pub(crate) db_subnet_group_description: std::option::Option<std::string::String>,
@@ -26637,7 +26637,7 @@ impl ModifyDbSubnetGroupInput {
 pub mod modify_event_subscription_input {
 
     /// A builder for [`ModifyEventSubscriptionInput`](crate::input::ModifyEventSubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_name: std::option::Option<std::string::String>,
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
@@ -26846,7 +26846,7 @@ impl ModifyEventSubscriptionInput {
 pub mod modify_global_cluster_input {
 
     /// A builder for [`ModifyGlobalClusterInput`](crate::input::ModifyGlobalClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) new_global_cluster_identifier: std::option::Option<std::string::String>,
@@ -27086,7 +27086,7 @@ impl ModifyGlobalClusterInput {
 pub mod modify_option_group_input {
 
     /// A builder for [`ModifyOptionGroupInput`](crate::input::ModifyOptionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) option_group_name: std::option::Option<std::string::String>,
         pub(crate) options_to_include:
@@ -27288,7 +27288,7 @@ impl ModifyOptionGroupInput {
 pub mod promote_read_replica_input {
 
     /// A builder for [`PromoteReadReplicaInput`](crate::input::PromoteReadReplicaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) backup_retention_period: std::option::Option<i32>,
@@ -27498,7 +27498,7 @@ impl PromoteReadReplicaInput {
 pub mod promote_read_replica_db_cluster_input {
 
     /// A builder for [`PromoteReadReplicaDbClusterInput`](crate::input::PromoteReadReplicaDbClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
     }
@@ -27652,7 +27652,7 @@ impl PromoteReadReplicaDbClusterInput {
 pub mod purchase_reserved_db_instances_offering_input {
 
     /// A builder for [`PurchaseReservedDbInstancesOfferingInput`](crate::input::PurchaseReservedDbInstancesOfferingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_db_instances_offering_id: std::option::Option<std::string::String>,
         pub(crate) reserved_db_instance_id: std::option::Option<std::string::String>,
@@ -27853,7 +27853,7 @@ impl PurchaseReservedDbInstancesOfferingInput {
 pub mod reboot_db_cluster_input {
 
     /// A builder for [`RebootDbClusterInput`](crate::input::RebootDbClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
     }
@@ -28004,7 +28004,7 @@ impl RebootDbClusterInput {
 pub mod reboot_db_instance_input {
 
     /// A builder for [`RebootDbInstanceInput`](crate::input::RebootDbInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) force_failover: std::option::Option<bool>,
@@ -28171,7 +28171,7 @@ impl RebootDbInstanceInput {
 pub mod register_db_proxy_targets_input {
 
     /// A builder for [`RegisterDbProxyTargetsInput`](crate::input::RegisterDbProxyTargetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_proxy_name: std::option::Option<std::string::String>,
         pub(crate) target_group_name: std::option::Option<std::string::String>,
@@ -28375,7 +28375,7 @@ impl RegisterDbProxyTargetsInput {
 pub mod remove_from_global_cluster_input {
 
     /// A builder for [`RemoveFromGlobalClusterInput`](crate::input::RemoveFromGlobalClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
@@ -28537,7 +28537,7 @@ impl RemoveFromGlobalClusterInput {
 pub mod remove_role_from_db_cluster_input {
 
     /// A builder for [`RemoveRoleFromDbClusterInput`](crate::input::RemoveRoleFromDbClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -28708,7 +28708,7 @@ impl RemoveRoleFromDbClusterInput {
 pub mod remove_role_from_db_instance_input {
 
     /// A builder for [`RemoveRoleFromDbInstanceInput`](crate::input::RemoveRoleFromDbInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -28879,7 +28879,7 @@ impl RemoveRoleFromDbInstanceInput {
 pub mod remove_source_identifier_from_subscription_input {
 
     /// A builder for [`RemoveSourceIdentifierFromSubscriptionInput`](crate::input::RemoveSourceIdentifierFromSubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_name: std::option::Option<std::string::String>,
         pub(crate) source_identifier: std::option::Option<std::string::String>,
@@ -29038,7 +29038,7 @@ impl RemoveSourceIdentifierFromSubscriptionInput {
 pub mod remove_tags_from_resource_input {
 
     /// A builder for [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_name: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -29206,7 +29206,7 @@ impl RemoveTagsFromResourceInput {
 pub mod reset_db_cluster_parameter_group_input {
 
     /// A builder for [`ResetDbClusterParameterGroupInput`](crate::input::ResetDbClusterParameterGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) reset_all_parameters: std::option::Option<bool>,
@@ -29386,7 +29386,7 @@ impl ResetDbClusterParameterGroupInput {
 pub mod reset_db_parameter_group_input {
 
     /// A builder for [`ResetDbParameterGroupInput`](crate::input::ResetDbParameterGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) reset_all_parameters: std::option::Option<bool>,
@@ -29590,7 +29590,7 @@ impl ResetDbParameterGroupInput {
 pub mod restore_db_cluster_from_s3_input {
 
     /// A builder for [`RestoreDbClusterFromS3Input`](crate::input::RestoreDbClusterFromS3Input).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) backup_retention_period: std::option::Option<i32>,
@@ -30368,7 +30368,7 @@ impl RestoreDbClusterFromS3Input {
 pub mod restore_db_cluster_from_snapshot_input {
 
     /// A builder for [`RestoreDbClusterFromSnapshotInput`](crate::input::RestoreDbClusterFromSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
@@ -31162,7 +31162,7 @@ impl RestoreDbClusterFromSnapshotInput {
 pub mod restore_db_cluster_to_point_in_time_input {
 
     /// A builder for [`RestoreDbClusterToPointInTimeInput`](crate::input::RestoreDbClusterToPointInTimeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) restore_type: std::option::Option<std::string::String>,
@@ -31917,7 +31917,7 @@ impl RestoreDbClusterToPointInTimeInput {
 pub mod restore_db_instance_from_db_snapshot_input {
 
     /// A builder for [`RestoreDbInstanceFromDbSnapshotInput`](crate::input::RestoreDbInstanceFromDbSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) db_snapshot_identifier: std::option::Option<std::string::String>,
@@ -32711,7 +32711,7 @@ impl RestoreDbInstanceFromDbSnapshotInput {
 pub mod restore_db_instance_from_s3_input {
 
     /// A builder for [`RestoreDbInstanceFromS3Input`](crate::input::RestoreDbInstanceFromS3Input).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_name: std::option::Option<std::string::String>,
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
@@ -33668,7 +33668,7 @@ impl RestoreDbInstanceFromS3Input {
 pub mod restore_db_instance_to_point_in_time_input {
 
     /// A builder for [`RestoreDbInstanceToPointInTimeInput`](crate::input::RestoreDbInstanceToPointInTimeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_db_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) target_db_instance_identifier: std::option::Option<std::string::String>,
@@ -34560,7 +34560,7 @@ impl RestoreDbInstanceToPointInTimeInput {
 pub mod revoke_db_security_group_ingress_input {
 
     /// A builder for [`RevokeDbSecurityGroupIngressInput`](crate::input::RevokeDbSecurityGroupIngressInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_security_group_name: std::option::Option<std::string::String>,
         pub(crate) cidrip: std::option::Option<std::string::String>,
@@ -34764,7 +34764,7 @@ impl RevokeDbSecurityGroupIngressInput {
 pub mod start_activity_stream_input {
 
     /// A builder for [`StartActivityStreamInput`](crate::input::StartActivityStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) mode: std::option::Option<crate::model::ActivityStreamMode>,
@@ -34960,7 +34960,7 @@ impl StartActivityStreamInput {
 pub mod start_db_cluster_input {
 
     /// A builder for [`StartDbClusterInput`](crate::input::StartDbClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
     }
@@ -35103,7 +35103,7 @@ impl StartDbClusterInput {
 pub mod start_db_instance_input {
 
     /// A builder for [`StartDbInstanceInput`](crate::input::StartDbInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
     }
@@ -35246,7 +35246,7 @@ impl StartDbInstanceInput {
 pub mod start_db_instance_automated_backups_replication_input {
 
     /// A builder for [`StartDbInstanceAutomatedBackupsReplicationInput`](crate::input::StartDbInstanceAutomatedBackupsReplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_db_instance_arn: std::option::Option<std::string::String>,
         pub(crate) backup_retention_period: std::option::Option<i32>,
@@ -35440,7 +35440,7 @@ impl StartDbInstanceAutomatedBackupsReplicationInput {
 pub mod start_export_task_input {
 
     /// A builder for [`StartExportTaskInput`](crate::input::StartExportTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_task_identifier: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
@@ -35701,7 +35701,7 @@ impl StartExportTaskInput {
 pub mod stop_activity_stream_input {
 
     /// A builder for [`StopActivityStreamInput`](crate::input::StopActivityStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) apply_immediately: std::option::Option<bool>,
@@ -35855,7 +35855,7 @@ impl StopActivityStreamInput {
 pub mod stop_db_cluster_input {
 
     /// A builder for [`StopDbClusterInput`](crate::input::StopDbClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
     }
@@ -35998,7 +35998,7 @@ impl StopDbClusterInput {
 pub mod stop_db_instance_input {
 
     /// A builder for [`StopDbInstanceInput`](crate::input::StopDbInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) db_snapshot_identifier: std::option::Option<std::string::String>,
@@ -36156,7 +36156,7 @@ impl StopDbInstanceInput {
 pub mod stop_db_instance_automated_backups_replication_input {
 
     /// A builder for [`StopDbInstanceAutomatedBackupsReplicationInput`](crate::input::StopDbInstanceAutomatedBackupsReplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_db_instance_arn: std::option::Option<std::string::String>,
     }
@@ -36303,7 +36303,7 @@ impl StopDbInstanceAutomatedBackupsReplicationInput {
 pub mod switchover_read_replica_input {
 
     /// A builder for [`SwitchoverReadReplicaInput`](crate::input::SwitchoverReadReplicaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
     }

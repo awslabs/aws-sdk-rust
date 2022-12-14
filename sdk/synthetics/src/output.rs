@@ -7,7 +7,7 @@ pub struct UpdateCanaryOutput {}
 pub mod update_canary_output {
 
     /// A builder for [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput).
@@ -31,7 +31,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -55,7 +55,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -79,7 +79,7 @@ pub struct StopCanaryOutput {}
 pub mod stop_canary_output {
 
     /// A builder for [`StopCanaryOutput`](crate::output::StopCanaryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StopCanaryOutput`](crate::output::StopCanaryOutput).
@@ -103,7 +103,7 @@ pub struct StartCanaryOutput {}
 pub mod start_canary_output {
 
     /// A builder for [`StartCanaryOutput`](crate::output::StartCanaryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StartCanaryOutput`](crate::output::StartCanaryOutput).
@@ -141,7 +141,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -211,7 +211,7 @@ impl ListGroupsOutput {
 pub mod list_groups_output {
 
     /// A builder for [`ListGroupsOutput`](crate::output::ListGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -287,7 +287,7 @@ impl ListGroupResourcesOutput {
 pub mod list_group_resources_output {
 
     /// A builder for [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -363,7 +363,7 @@ impl ListAssociatedGroupsOutput {
 pub mod list_associated_groups_output {
 
     /// A builder for [`ListAssociatedGroupsOutput`](crate::output::ListAssociatedGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -432,7 +432,7 @@ impl GetGroupOutput {
 pub mod get_group_output {
 
     /// A builder for [`GetGroupOutput`](crate::output::GetGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::Group>,
     }
@@ -485,7 +485,7 @@ impl GetCanaryRunsOutput {
 pub mod get_canary_runs_output {
 
     /// A builder for [`GetCanaryRunsOutput`](crate::output::GetCanaryRunsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canary_runs: std::option::Option<std::vec::Vec<crate::model::CanaryRun>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -554,7 +554,7 @@ impl GetCanaryOutput {
 pub mod get_canary_output {
 
     /// A builder for [`GetCanaryOutput`](crate::output::GetCanaryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canary: std::option::Option<crate::model::Canary>,
     }
@@ -592,7 +592,7 @@ pub struct DisassociateResourceOutput {}
 pub mod disassociate_resource_output {
 
     /// A builder for [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput).
@@ -633,7 +633,7 @@ impl DescribeRuntimeVersionsOutput {
 pub mod describe_runtime_versions_output {
 
     /// A builder for [`DescribeRuntimeVersionsOutput`](crate::output::DescribeRuntimeVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) runtime_versions:
             std::option::Option<std::vec::Vec<crate::model::RuntimeVersion>>,
@@ -710,7 +710,7 @@ impl DescribeCanariesLastRunOutput {
 pub mod describe_canaries_last_run_output {
 
     /// A builder for [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canaries_last_run:
             std::option::Option<std::vec::Vec<crate::model::CanaryLastRun>>,
@@ -787,7 +787,7 @@ impl DescribeCanariesOutput {
 pub mod describe_canaries_output {
 
     /// A builder for [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canaries: std::option::Option<std::vec::Vec<crate::model::Canary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -846,7 +846,7 @@ pub struct DeleteGroupOutput {}
 pub mod delete_group_output {
 
     /// A builder for [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
@@ -870,7 +870,7 @@ pub struct DeleteCanaryOutput {}
 pub mod delete_canary_output {
 
     /// A builder for [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput).
@@ -904,7 +904,7 @@ impl CreateGroupOutput {
 pub mod create_group_output {
 
     /// A builder for [`CreateGroupOutput`](crate::output::CreateGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::Group>,
     }
@@ -950,7 +950,7 @@ impl CreateCanaryOutput {
 pub mod create_canary_output {
 
     /// A builder for [`CreateCanaryOutput`](crate::output::CreateCanaryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canary: std::option::Option<crate::model::Canary>,
     }
@@ -988,7 +988,7 @@ pub struct AssociateResourceOutput {}
 pub mod associate_resource_output {
 
     /// A builder for [`AssociateResourceOutput`](crate::output::AssociateResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateResourceOutput`](crate::output::AssociateResourceOutput).

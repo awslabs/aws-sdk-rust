@@ -5,7 +5,7 @@
 /// [`associate_created_artifact`](crate::client::Client::associate_created_artifact).
 ///
 /// See [`crate::client::fluent_builders::AssociateCreatedArtifact`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateCreatedArtifact {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateCreatedArtifact
 /// [`associate_discovered_resource`](crate::client::Client::associate_discovered_resource).
 ///
 /// See [`crate::client::fluent_builders::AssociateDiscoveredResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateDiscoveredResource {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateDiscoveredResou
 /// [`create_progress_update_stream`](crate::client::Client::create_progress_update_stream).
 ///
 /// See [`crate::client::fluent_builders::CreateProgressUpdateStream`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateProgressUpdateStream {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProgressUpdateStre
 /// [`delete_progress_update_stream`](crate::client::Client::delete_progress_update_stream).
 ///
 /// See [`crate::client::fluent_builders::DeleteProgressUpdateStream`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteProgressUpdateStream {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProgressUpdateStre
 /// [`describe_application_state`](crate::client::Client::describe_application_state).
 ///
 /// See [`crate::client::fluent_builders::DescribeApplicationState`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeApplicationState {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeApplicationState
 /// [`describe_migration_task`](crate::client::Client::describe_migration_task).
 ///
 /// See [`crate::client::fluent_builders::DescribeMigrationTask`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMigrationTask {
     _private: (),
 }
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMigrationTask {
 /// [`disassociate_created_artifact`](crate::client::Client::disassociate_created_artifact).
 ///
 /// See [`crate::client::fluent_builders::DisassociateCreatedArtifact`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateCreatedArtifact {
     _private: (),
 }
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateCreatedArtif
 /// [`disassociate_discovered_resource`](crate::client::Client::disassociate_discovered_resource).
 ///
 /// See [`crate::client::fluent_builders::DisassociateDiscoveredResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateDiscoveredResource {
     _private: (),
 }
@@ -277,7 +277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateDiscoveredRe
 /// [`import_migration_task`](crate::client::Client::import_migration_task).
 ///
 /// See [`crate::client::fluent_builders::ImportMigrationTask`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ImportMigrationTask {
     _private: (),
 }
@@ -311,7 +311,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportMigrationTask {
 /// [`list_application_states`](crate::client::Client::list_application_states).
 ///
 /// See [`crate::client::fluent_builders::ListApplicationStates`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListApplicationStates {
     _private: (),
 }
@@ -345,7 +345,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApplicationStates {
 /// [`list_created_artifacts`](crate::client::Client::list_created_artifacts).
 ///
 /// See [`crate::client::fluent_builders::ListCreatedArtifacts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCreatedArtifacts {
     _private: (),
 }
@@ -379,7 +379,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCreatedArtifacts {
 /// [`list_discovered_resources`](crate::client::Client::list_discovered_resources).
 ///
 /// See [`crate::client::fluent_builders::ListDiscoveredResources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDiscoveredResources {
     _private: (),
 }
@@ -413,7 +413,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDiscoveredResources 
 /// [`list_migration_tasks`](crate::client::Client::list_migration_tasks).
 ///
 /// See [`crate::client::fluent_builders::ListMigrationTasks`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMigrationTasks {
     _private: (),
 }
@@ -447,7 +447,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMigrationTasks {
 /// [`list_progress_update_streams`](crate::client::Client::list_progress_update_streams).
 ///
 /// See [`crate::client::fluent_builders::ListProgressUpdateStreams`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListProgressUpdateStreams {
     _private: (),
 }
@@ -481,7 +481,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProgressUpdateStream
 /// [`notify_application_state`](crate::client::Client::notify_application_state).
 ///
 /// See [`crate::client::fluent_builders::NotifyApplicationState`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct NotifyApplicationState {
     _private: (),
 }
@@ -515,7 +515,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyApplicationState {
 /// [`notify_migration_task_state`](crate::client::Client::notify_migration_task_state).
 ///
 /// See [`crate::client::fluent_builders::NotifyMigrationTaskState`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct NotifyMigrationTaskState {
     _private: (),
 }
@@ -549,7 +549,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyMigrationTaskState
 /// [`put_resource_attributes`](crate::client::Client::put_resource_attributes).
 ///
 /// See [`crate::client::fluent_builders::PutResourceAttributes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutResourceAttributes {
     _private: (),
 }

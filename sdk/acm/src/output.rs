@@ -7,7 +7,7 @@ pub struct UpdateCertificateOptionsOutput {}
 pub mod update_certificate_options_output {
 
     /// A builder for [`UpdateCertificateOptionsOutput`](crate::output::UpdateCertificateOptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateCertificateOptionsOutput`](crate::output::UpdateCertificateOptionsOutput).
@@ -31,7 +31,7 @@ pub struct ResendValidationEmailOutput {}
 pub mod resend_validation_email_output {
 
     /// A builder for [`ResendValidationEmailOutput`](crate::output::ResendValidationEmailOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ResendValidationEmailOutput`](crate::output::ResendValidationEmailOutput).
@@ -67,7 +67,7 @@ impl RequestCertificateOutput {
 pub mod request_certificate_output {
 
     /// A builder for [`RequestCertificateOutput`](crate::output::RequestCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
@@ -110,7 +110,7 @@ pub struct RenewCertificateOutput {}
 pub mod renew_certificate_output {
 
     /// A builder for [`RenewCertificateOutput`](crate::output::RenewCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RenewCertificateOutput`](crate::output::RenewCertificateOutput).
@@ -134,7 +134,7 @@ pub struct RemoveTagsFromCertificateOutput {}
 pub mod remove_tags_from_certificate_output {
 
     /// A builder for [`RemoveTagsFromCertificateOutput`](crate::output::RemoveTagsFromCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsFromCertificateOutput`](crate::output::RemoveTagsFromCertificateOutput).
@@ -158,7 +158,7 @@ pub struct PutAccountConfigurationOutput {}
 pub mod put_account_configuration_output {
 
     /// A builder for [`PutAccountConfigurationOutput`](crate::output::PutAccountConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutAccountConfigurationOutput`](crate::output::PutAccountConfigurationOutput).
@@ -192,7 +192,7 @@ impl ListTagsForCertificateOutput {
 pub mod list_tags_for_certificate_output {
 
     /// A builder for [`ListTagsForCertificateOutput`](crate::output::ListTagsForCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -257,7 +257,7 @@ impl ListCertificatesOutput {
 pub mod list_certificates_output {
 
     /// A builder for [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) certificate_summary_list:
@@ -327,7 +327,7 @@ impl ImportCertificateOutput {
 pub mod import_certificate_output {
 
     /// A builder for [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
@@ -385,7 +385,7 @@ impl GetCertificateOutput {
 pub mod get_certificate_output {
 
     /// A builder for [`GetCertificateOutput`](crate::output::GetCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate: std::option::Option<std::string::String>,
         pub(crate) certificate_chain: std::option::Option<std::string::String>,
@@ -448,7 +448,7 @@ impl GetAccountConfigurationOutput {
 pub mod get_account_configuration_output {
 
     /// A builder for [`GetAccountConfigurationOutput`](crate::output::GetAccountConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expiry_events: std::option::Option<crate::model::ExpiryEventsConfiguration>,
     }
@@ -522,7 +522,7 @@ impl std::fmt::Debug for ExportCertificateOutput {
 pub mod export_certificate_output {
 
     /// A builder for [`ExportCertificateOutput`](crate::output::ExportCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) certificate: std::option::Option<std::string::String>,
         pub(crate) certificate_chain: std::option::Option<std::string::String>,
@@ -606,7 +606,7 @@ impl DescribeCertificateOutput {
 pub mod describe_certificate_output {
 
     /// A builder for [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate: std::option::Option<crate::model::CertificateDetail>,
     }
@@ -647,7 +647,7 @@ pub struct DeleteCertificateOutput {}
 pub mod delete_certificate_output {
 
     /// A builder for [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
@@ -671,7 +671,7 @@ pub struct AddTagsToCertificateOutput {}
 pub mod add_tags_to_certificate_output {
 
     /// A builder for [`AddTagsToCertificateOutput`](crate::output::AddTagsToCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsToCertificateOutput`](crate::output::AddTagsToCertificateOutput).

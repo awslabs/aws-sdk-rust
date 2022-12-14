@@ -17,7 +17,7 @@ impl UpdateStateMachineOutput {
 pub mod update_state_machine_output {
 
     /// A builder for [`UpdateStateMachineOutput`](crate::output::UpdateStateMachineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_date: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -58,7 +58,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -82,7 +82,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -116,7 +116,7 @@ impl StopExecutionOutput {
 pub mod stop_execution_output {
 
     /// A builder for [`StopExecutionOutput`](crate::output::StopExecutionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stop_date: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -286,7 +286,7 @@ impl std::fmt::Debug for StartSyncExecutionOutput {
 pub mod start_sync_execution_output {
 
     /// A builder for [`StartSyncExecutionOutput`](crate::output::StartSyncExecutionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) execution_arn: std::option::Option<std::string::String>,
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
@@ -553,7 +553,7 @@ impl StartExecutionOutput {
 pub mod start_execution_output {
 
     /// A builder for [`StartExecutionOutput`](crate::output::StartExecutionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_arn: std::option::Option<std::string::String>,
         pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -609,7 +609,7 @@ pub struct SendTaskSuccessOutput {}
 pub mod send_task_success_output {
 
     /// A builder for [`SendTaskSuccessOutput`](crate::output::SendTaskSuccessOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SendTaskSuccessOutput`](crate::output::SendTaskSuccessOutput).
@@ -633,7 +633,7 @@ pub struct SendTaskHeartbeatOutput {}
 pub mod send_task_heartbeat_output {
 
     /// A builder for [`SendTaskHeartbeatOutput`](crate::output::SendTaskHeartbeatOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SendTaskHeartbeatOutput`](crate::output::SendTaskHeartbeatOutput).
@@ -657,7 +657,7 @@ pub struct SendTaskFailureOutput {}
 pub mod send_task_failure_output {
 
     /// A builder for [`SendTaskFailureOutput`](crate::output::SendTaskFailureOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SendTaskFailureOutput`](crate::output::SendTaskFailureOutput).
@@ -691,7 +691,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -753,7 +753,7 @@ impl ListStateMachinesOutput {
 pub mod list_state_machines_output {
 
     /// A builder for [`ListStateMachinesOutput`](crate::output::ListStateMachinesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state_machines:
             std::option::Option<std::vec::Vec<crate::model::StateMachineListItem>>,
@@ -829,7 +829,7 @@ impl ListExecutionsOutput {
 pub mod list_executions_output {
 
     /// A builder for [`ListExecutionsOutput`](crate::output::ListExecutionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) executions: std::option::Option<std::vec::Vec<crate::model::ExecutionListItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -905,7 +905,7 @@ impl ListActivitiesOutput {
 pub mod list_activities_output {
 
     /// A builder for [`ListActivitiesOutput`](crate::output::ListActivitiesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activities: std::option::Option<std::vec::Vec<crate::model::ActivityListItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -981,7 +981,7 @@ impl GetExecutionHistoryOutput {
 pub mod get_execution_history_output {
 
     /// A builder for [`GetExecutionHistoryOutput`](crate::output::GetExecutionHistoryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::HistoryEvent>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1065,7 +1065,7 @@ impl std::fmt::Debug for GetActivityTaskOutput {
 pub mod get_activity_task_output {
 
     /// A builder for [`GetActivityTaskOutput`](crate::output::GetActivityTaskOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) task_token: std::option::Option<std::string::String>,
         pub(crate) input: std::option::Option<std::string::String>,
@@ -1192,7 +1192,7 @@ impl std::fmt::Debug for DescribeStateMachineForExecutionOutput {
 pub mod describe_state_machine_for_execution_output {
 
     /// A builder for [`DescribeStateMachineForExecutionOutput`](crate::output::DescribeStateMachineForExecutionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1430,7 +1430,7 @@ impl std::fmt::Debug for DescribeStateMachineOutput {
 pub mod describe_state_machine_output {
 
     /// A builder for [`DescribeStateMachineOutput`](crate::output::DescribeStateMachineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1738,7 +1738,7 @@ impl std::fmt::Debug for DescribeExecutionOutput {
 pub mod describe_execution_output {
 
     /// A builder for [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) execution_arn: std::option::Option<std::string::String>,
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
@@ -2006,7 +2006,7 @@ impl DescribeActivityOutput {
 pub mod describe_activity_output {
 
     /// A builder for [`DescribeActivityOutput`](crate::output::DescribeActivityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2089,7 +2089,7 @@ pub struct DeleteStateMachineOutput {}
 pub mod delete_state_machine_output {
 
     /// A builder for [`DeleteStateMachineOutput`](crate::output::DeleteStateMachineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteStateMachineOutput`](crate::output::DeleteStateMachineOutput).
@@ -2113,7 +2113,7 @@ pub struct DeleteActivityOutput {}
 pub mod delete_activity_output {
 
     /// A builder for [`DeleteActivityOutput`](crate::output::DeleteActivityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteActivityOutput`](crate::output::DeleteActivityOutput).
@@ -2154,7 +2154,7 @@ impl CreateStateMachineOutput {
 pub mod create_state_machine_output {
 
     /// A builder for [`CreateStateMachineOutput`](crate::output::CreateStateMachineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -2227,7 +2227,7 @@ impl CreateActivityOutput {
 pub mod create_activity_output {
 
     /// A builder for [`CreateActivityOutput`](crate::output::CreateActivityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_arn: std::option::Option<std::string::String>,
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,

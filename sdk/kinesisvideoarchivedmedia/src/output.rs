@@ -24,7 +24,7 @@ impl ListFragmentsOutput {
 pub mod list_fragments_output {
 
     /// A builder for [`ListFragmentsOutput`](crate::output::ListFragmentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fragments: std::option::Option<std::vec::Vec<crate::model::Fragment>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -213,7 +213,7 @@ impl GetImagesOutput {
 pub mod get_images_output {
 
     /// A builder for [`GetImagesOutput`](crate::output::GetImagesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) images: std::option::Option<std::vec::Vec<crate::model::Image>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -282,7 +282,7 @@ impl GetHlsStreamingSessionUrlOutput {
 pub mod get_hls_streaming_session_url_output {
 
     /// A builder for [`GetHlsStreamingSessionUrlOutput`](crate::output::GetHlsStreamingSessionUrlOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hls_streaming_session_url: std::option::Option<std::string::String>,
     }
@@ -333,7 +333,7 @@ impl GetDashStreamingSessionUrlOutput {
 pub mod get_dash_streaming_session_url_output {
 
     /// A builder for [`GetDashStreamingSessionUrlOutput`](crate::output::GetDashStreamingSessionUrlOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dash_streaming_session_url: std::option::Option<std::string::String>,
     }

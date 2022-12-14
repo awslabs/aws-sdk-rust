@@ -30,7 +30,7 @@ impl std::error::Error for NotFoundException {}
 pub mod not_found_exception {
 
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl std::error::Error for NameInUseException {}
 pub mod name_in_use_exception {
 
     /// A builder for [`NameInUseException`](crate::error::NameInUseException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl std::error::Error for ConcurrentModificationException {}
 pub mod concurrent_modification_exception {
 
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -210,7 +210,7 @@ impl std::error::Error for InvalidSecretsManagerResourceException {}
 pub mod invalid_secrets_manager_resource_exception {
 
     /// A builder for [`InvalidSecretsManagerResourceException`](crate::error::InvalidSecretsManagerResourceException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -270,7 +270,7 @@ impl std::error::Error for InvalidCertificateAuthorityException {}
 pub mod invalid_certificate_authority_exception {
 
     /// A builder for [`InvalidCertificateAuthorityException`](crate::error::InvalidCertificateAuthorityException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -330,7 +330,7 @@ impl std::error::Error for DeviceNotRegisteredException {}
 pub mod device_not_registered_exception {
 
     /// A builder for [`DeviceNotRegisteredException`](crate::error::DeviceNotRegisteredException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -390,7 +390,7 @@ impl std::error::Error for InvalidUserStatusException {}
 pub mod invalid_user_status_exception {
 
     /// A builder for [`InvalidUserStatusException`](crate::error::InvalidUserStatusException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -450,7 +450,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
 
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -510,7 +510,7 @@ impl std::error::Error for AlreadyExistsException {}
 pub mod already_exists_exception {
 
     /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -570,7 +570,7 @@ impl std::error::Error for InvalidDeviceException {}
 pub mod invalid_device_exception {
 
     /// A builder for [`InvalidDeviceException`](crate::error::InvalidDeviceException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -630,7 +630,7 @@ impl std::error::Error for UnauthorizedException {}
 pub mod unauthorized_exception {
 
     /// A builder for [`UnauthorizedException`](crate::error::UnauthorizedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -699,7 +699,7 @@ impl std::error::Error for ResourceInUseException {}
 pub mod resource_in_use_exception {
 
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -774,7 +774,7 @@ impl std::error::Error for ResourceAssociatedException {}
 pub mod resource_associated_exception {
 
     /// A builder for [`ResourceAssociatedException`](crate::error::ResourceAssociatedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -834,7 +834,7 @@ impl std::error::Error for InvalidServiceLinkedRoleStateException {}
 pub mod invalid_service_linked_role_state_exception {
 
     /// A builder for [`InvalidServiceLinkedRoleStateException`](crate::error::InvalidServiceLinkedRoleStateException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -894,7 +894,7 @@ impl std::error::Error for SkillNotLinkedException {}
 pub mod skill_not_linked_exception {
 
     /// A builder for [`SkillNotLinkedException`](crate::error::SkillNotLinkedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

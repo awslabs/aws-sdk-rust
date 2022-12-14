@@ -32,7 +32,7 @@ impl std::fmt::Debug for UpdateAppInstanceUserEndpointOutput {
 pub mod update_app_instance_user_endpoint_output {
 
     /// A builder for [`UpdateAppInstanceUserEndpointOutput`](crate::output::UpdateAppInstanceUserEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
@@ -103,7 +103,7 @@ impl UpdateAppInstanceUserOutput {
 pub mod update_app_instance_user_output {
 
     /// A builder for [`UpdateAppInstanceUserOutput`](crate::output::UpdateAppInstanceUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
     }
@@ -154,7 +154,7 @@ impl UpdateAppInstanceOutput {
 pub mod update_app_instance_output {
 
     /// A builder for [`UpdateAppInstanceOutput`](crate::output::UpdateAppInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
     }
@@ -195,7 +195,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -219,7 +219,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -268,7 +268,7 @@ impl std::fmt::Debug for RegisterAppInstanceUserEndpointOutput {
 pub mod register_app_instance_user_endpoint_output {
 
     /// A builder for [`RegisterAppInstanceUserEndpointOutput`](crate::output::RegisterAppInstanceUserEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
@@ -349,7 +349,7 @@ impl PutAppInstanceRetentionSettingsOutput {
 pub mod put_app_instance_retention_settings_output {
 
     /// A builder for [`PutAppInstanceRetentionSettingsOutput`](crate::output::PutAppInstanceRetentionSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_retention_settings:
             std::option::Option<crate::model::AppInstanceRetentionSettings>,
@@ -419,7 +419,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -500,7 +500,7 @@ impl std::fmt::Debug for ListAppInstanceUsersOutput {
 pub mod list_app_instance_users_output {
 
     /// A builder for [`ListAppInstanceUsersOutput`](crate::output::ListAppInstanceUsersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_users:
@@ -615,7 +615,7 @@ impl std::fmt::Debug for ListAppInstanceUserEndpointsOutput {
 pub mod list_app_instance_user_endpoints_output {
 
     /// A builder for [`ListAppInstanceUserEndpointsOutput`](crate::output::ListAppInstanceUserEndpointsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_user_endpoints:
             std::option::Option<std::vec::Vec<crate::model::AppInstanceUserEndpointSummary>>,
@@ -714,7 +714,7 @@ impl std::fmt::Debug for ListAppInstancesOutput {
 pub mod list_app_instances_output {
 
     /// A builder for [`ListAppInstancesOutput`](crate::output::ListAppInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instances:
             std::option::Option<std::vec::Vec<crate::model::AppInstanceSummary>>,
@@ -818,7 +818,7 @@ impl std::fmt::Debug for ListAppInstanceAdminsOutput {
 pub mod list_app_instance_admins_output {
 
     /// A builder for [`ListAppInstanceAdminsOutput`](crate::output::ListAppInstanceAdminsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_admins:
@@ -922,7 +922,7 @@ impl GetAppInstanceRetentionSettingsOutput {
 pub mod get_app_instance_retention_settings_output {
 
     /// A builder for [`GetAppInstanceRetentionSettingsOutput`](crate::output::GetAppInstanceRetentionSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_retention_settings:
             std::option::Option<crate::model::AppInstanceRetentionSettings>,
@@ -994,7 +994,7 @@ impl DescribeAppInstanceUserEndpointOutput {
 pub mod describe_app_instance_user_endpoint_output {
 
     /// A builder for [`DescribeAppInstanceUserEndpointOutput`](crate::output::DescribeAppInstanceUserEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_user_endpoint:
             std::option::Option<crate::model::AppInstanceUserEndpoint>,
@@ -1049,7 +1049,7 @@ impl DescribeAppInstanceUserOutput {
 pub mod describe_app_instance_user_output {
 
     /// A builder for [`DescribeAppInstanceUserOutput`](crate::output::DescribeAppInstanceUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_user: std::option::Option<crate::model::AppInstanceUser>,
     }
@@ -1100,7 +1100,7 @@ impl DescribeAppInstanceAdminOutput {
 pub mod describe_app_instance_admin_output {
 
     /// A builder for [`DescribeAppInstanceAdminOutput`](crate::output::DescribeAppInstanceAdminOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_admin: std::option::Option<crate::model::AppInstanceAdmin>,
     }
@@ -1151,7 +1151,7 @@ impl DescribeAppInstanceOutput {
 pub mod describe_app_instance_output {
 
     /// A builder for [`DescribeAppInstanceOutput`](crate::output::DescribeAppInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance: std::option::Option<crate::model::AppInstance>,
     }
@@ -1192,7 +1192,7 @@ pub struct DeregisterAppInstanceUserEndpointOutput {}
 pub mod deregister_app_instance_user_endpoint_output {
 
     /// A builder for [`DeregisterAppInstanceUserEndpointOutput`](crate::output::DeregisterAppInstanceUserEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterAppInstanceUserEndpointOutput`](crate::output::DeregisterAppInstanceUserEndpointOutput).
@@ -1216,7 +1216,7 @@ pub struct DeleteAppInstanceUserOutput {}
 pub mod delete_app_instance_user_output {
 
     /// A builder for [`DeleteAppInstanceUserOutput`](crate::output::DeleteAppInstanceUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAppInstanceUserOutput`](crate::output::DeleteAppInstanceUserOutput).
@@ -1240,7 +1240,7 @@ pub struct DeleteAppInstanceAdminOutput {}
 pub mod delete_app_instance_admin_output {
 
     /// A builder for [`DeleteAppInstanceAdminOutput`](crate::output::DeleteAppInstanceAdminOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAppInstanceAdminOutput`](crate::output::DeleteAppInstanceAdminOutput).
@@ -1264,7 +1264,7 @@ pub struct DeleteAppInstanceOutput {}
 pub mod delete_app_instance_output {
 
     /// A builder for [`DeleteAppInstanceOutput`](crate::output::DeleteAppInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAppInstanceOutput`](crate::output::DeleteAppInstanceOutput).
@@ -1298,7 +1298,7 @@ impl CreateAppInstanceUserOutput {
 pub mod create_app_instance_user_output {
 
     /// A builder for [`CreateAppInstanceUserOutput`](crate::output::CreateAppInstanceUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
     }
@@ -1356,7 +1356,7 @@ impl CreateAppInstanceAdminOutput {
 pub mod create_app_instance_admin_output {
 
     /// A builder for [`CreateAppInstanceAdminOutput`](crate::output::CreateAppInstanceAdminOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_admin: std::option::Option<crate::model::Identity>,
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
@@ -1422,7 +1422,7 @@ impl CreateAppInstanceOutput {
 pub mod create_app_instance_output {
 
     /// A builder for [`CreateAppInstanceOutput`](crate::output::CreateAppInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
     }

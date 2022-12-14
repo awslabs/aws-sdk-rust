@@ -5,7 +5,7 @@
 /// [`delete_lexicon`](crate::client::Client::delete_lexicon).
 ///
 /// See [`crate::client::fluent_builders::DeleteLexicon`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLexicon {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLexicon {
 /// [`describe_voices`](crate::client::Client::describe_voices).
 ///
 /// See [`crate::client::fluent_builders::DescribeVoices`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeVoices {
     _private: (),
 }
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVoices {
 /// [`get_lexicon`](crate::client::Client::get_lexicon).
 ///
 /// See [`crate::client::fluent_builders::GetLexicon`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLexicon {
     _private: (),
 }
@@ -101,7 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLexicon {
 /// [`get_speech_synthesis_task`](crate::client::Client::get_speech_synthesis_task).
 ///
 /// See [`crate::client::fluent_builders::GetSpeechSynthesisTask`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSpeechSynthesisTask {
     _private: (),
 }
@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSpeechSynthesisTask {
 /// [`list_lexicons`](crate::client::Client::list_lexicons).
 ///
 /// See [`crate::client::fluent_builders::ListLexicons`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLexicons {
     _private: (),
 }
@@ -167,7 +167,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLexicons {
 /// [`list_speech_synthesis_tasks`](crate::client::Client::list_speech_synthesis_tasks).
 ///
 /// See [`crate::client::fluent_builders::ListSpeechSynthesisTasks`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSpeechSynthesisTasks {
     _private: (),
 }
@@ -201,7 +201,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSpeechSynthesisTasks
 /// [`put_lexicon`](crate::client::Client::put_lexicon).
 ///
 /// See [`crate::client::fluent_builders::PutLexicon`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutLexicon {
     _private: (),
 }
@@ -233,7 +233,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLexicon {
 /// [`start_speech_synthesis_task`](crate::client::Client::start_speech_synthesis_task).
 ///
 /// See [`crate::client::fluent_builders::StartSpeechSynthesisTask`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartSpeechSynthesisTask {
     _private: (),
 }
@@ -267,7 +267,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSpeechSynthesisTask
 /// [`synthesize_speech`](crate::client::Client::synthesize_speech).
 ///
 /// See [`crate::client::fluent_builders::SynthesizeSpeech`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SynthesizeSpeech {
     _private: (),
 }

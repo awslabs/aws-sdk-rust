@@ -5,7 +5,7 @@
 /// [`convert_recovery_point_to_snapshot`](crate::client::Client::convert_recovery_point_to_snapshot).
 ///
 /// See [`crate::client::fluent_builders::ConvertRecoveryPointToSnapshot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ConvertRecoveryPointToSnapshot {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConvertRecoveryPointToSn
 /// [`create_endpoint_access`](crate::client::Client::create_endpoint_access).
 ///
 /// See [`crate::client::fluent_builders::CreateEndpointAccess`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateEndpointAccess {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEndpointAccess {
 /// [`create_namespace`](crate::client::Client::create_namespace).
 ///
 /// See [`crate::client::fluent_builders::CreateNamespace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateNamespace {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNamespace {
 /// [`create_snapshot`](crate::client::Client::create_snapshot).
 ///
 /// See [`crate::client::fluent_builders::CreateSnapshot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSnapshot {
     _private: (),
 }
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSnapshot {
 /// [`create_usage_limit`](crate::client::Client::create_usage_limit).
 ///
 /// See [`crate::client::fluent_builders::CreateUsageLimit`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateUsageLimit {
     _private: (),
 }
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUsageLimit {
 /// [`create_workgroup`](crate::client::Client::create_workgroup).
 ///
 /// See [`crate::client::fluent_builders::CreateWorkgroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWorkgroup {
     _private: (),
 }
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkgroup {
 /// [`delete_endpoint_access`](crate::client::Client::delete_endpoint_access).
 ///
 /// See [`crate::client::fluent_builders::DeleteEndpointAccess`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEndpointAccess {
     _private: (),
 }
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEndpointAccess {
 /// [`delete_namespace`](crate::client::Client::delete_namespace).
 ///
 /// See [`crate::client::fluent_builders::DeleteNamespace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteNamespace {
     _private: (),
 }
@@ -275,7 +275,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNamespace {
 /// [`delete_resource_policy`](crate::client::Client::delete_resource_policy).
 ///
 /// See [`crate::client::fluent_builders::DeleteResourcePolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteResourcePolicy {
     _private: (),
 }
@@ -309,7 +309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourcePolicy {
 /// [`delete_snapshot`](crate::client::Client::delete_snapshot).
 ///
 /// See [`crate::client::fluent_builders::DeleteSnapshot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSnapshot {
     _private: (),
 }
@@ -341,7 +341,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSnapshot {
 /// [`delete_usage_limit`](crate::client::Client::delete_usage_limit).
 ///
 /// See [`crate::client::fluent_builders::DeleteUsageLimit`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteUsageLimit {
     _private: (),
 }
@@ -375,7 +375,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUsageLimit {
 /// [`delete_workgroup`](crate::client::Client::delete_workgroup).
 ///
 /// See [`crate::client::fluent_builders::DeleteWorkgroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWorkgroup {
     _private: (),
 }
@@ -409,7 +409,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkgroup {
 /// [`get_credentials`](crate::client::Client::get_credentials).
 ///
 /// See [`crate::client::fluent_builders::GetCredentials`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCredentials {
     _private: (),
 }
@@ -441,7 +441,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCredentials {
 /// [`get_endpoint_access`](crate::client::Client::get_endpoint_access).
 ///
 /// See [`crate::client::fluent_builders::GetEndpointAccess`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEndpointAccess {
     _private: (),
 }
@@ -475,7 +475,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEndpointAccess {
 /// [`get_namespace`](crate::client::Client::get_namespace).
 ///
 /// See [`crate::client::fluent_builders::GetNamespace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetNamespace {
     _private: (),
 }
@@ -507,7 +507,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNamespace {
 /// [`get_recovery_point`](crate::client::Client::get_recovery_point).
 ///
 /// See [`crate::client::fluent_builders::GetRecoveryPoint`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRecoveryPoint {
     _private: (),
 }
@@ -541,7 +541,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecoveryPoint {
 /// [`get_resource_policy`](crate::client::Client::get_resource_policy).
 ///
 /// See [`crate::client::fluent_builders::GetResourcePolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResourcePolicy {
     _private: (),
 }
@@ -575,7 +575,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourcePolicy {
 /// [`get_snapshot`](crate::client::Client::get_snapshot).
 ///
 /// See [`crate::client::fluent_builders::GetSnapshot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSnapshot {
     _private: (),
 }
@@ -607,7 +607,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSnapshot {
 /// [`get_usage_limit`](crate::client::Client::get_usage_limit).
 ///
 /// See [`crate::client::fluent_builders::GetUsageLimit`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetUsageLimit {
     _private: (),
 }
@@ -639,7 +639,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUsageLimit {
 /// [`get_workgroup`](crate::client::Client::get_workgroup).
 ///
 /// See [`crate::client::fluent_builders::GetWorkgroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetWorkgroup {
     _private: (),
 }
@@ -671,7 +671,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkgroup {
 /// [`list_endpoint_access`](crate::client::Client::list_endpoint_access).
 ///
 /// See [`crate::client::fluent_builders::ListEndpointAccess`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEndpointAccess {
     _private: (),
 }
@@ -705,7 +705,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEndpointAccess {
 /// [`list_namespaces`](crate::client::Client::list_namespaces).
 ///
 /// See [`crate::client::fluent_builders::ListNamespaces`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListNamespaces {
     _private: (),
 }
@@ -737,7 +737,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNamespaces {
 /// [`list_recovery_points`](crate::client::Client::list_recovery_points).
 ///
 /// See [`crate::client::fluent_builders::ListRecoveryPoints`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRecoveryPoints {
     _private: (),
 }
@@ -771,7 +771,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecoveryPoints {
 /// [`list_snapshots`](crate::client::Client::list_snapshots).
 ///
 /// See [`crate::client::fluent_builders::ListSnapshots`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSnapshots {
     _private: (),
 }
@@ -803,7 +803,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSnapshots {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -837,7 +837,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_usage_limits`](crate::client::Client::list_usage_limits).
 ///
 /// See [`crate::client::fluent_builders::ListUsageLimits`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListUsageLimits {
     _private: (),
 }
@@ -871,7 +871,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUsageLimits {
 /// [`list_workgroups`](crate::client::Client::list_workgroups).
 ///
 /// See [`crate::client::fluent_builders::ListWorkgroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorkgroups {
     _private: (),
 }
@@ -903,7 +903,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkgroups {
 /// [`put_resource_policy`](crate::client::Client::put_resource_policy).
 ///
 /// See [`crate::client::fluent_builders::PutResourcePolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutResourcePolicy {
     _private: (),
 }
@@ -937,7 +937,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResourcePolicy {
 /// [`restore_from_recovery_point`](crate::client::Client::restore_from_recovery_point).
 ///
 /// See [`crate::client::fluent_builders::RestoreFromRecoveryPoint`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RestoreFromRecoveryPoint {
     _private: (),
 }
@@ -971,7 +971,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreFromRecoveryPoint
 /// [`restore_from_snapshot`](crate::client::Client::restore_from_snapshot).
 ///
 /// See [`crate::client::fluent_builders::RestoreFromSnapshot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RestoreFromSnapshot {
     _private: (),
 }
@@ -1005,7 +1005,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreFromSnapshot {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1037,7 +1037,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1069,7 +1069,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_endpoint_access`](crate::client::Client::update_endpoint_access).
 ///
 /// See [`crate::client::fluent_builders::UpdateEndpointAccess`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateEndpointAccess {
     _private: (),
 }
@@ -1103,7 +1103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEndpointAccess {
 /// [`update_namespace`](crate::client::Client::update_namespace).
 ///
 /// See [`crate::client::fluent_builders::UpdateNamespace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateNamespace {
     _private: (),
 }
@@ -1137,7 +1137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNamespace {
 /// [`update_snapshot`](crate::client::Client::update_snapshot).
 ///
 /// See [`crate::client::fluent_builders::UpdateSnapshot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSnapshot {
     _private: (),
 }
@@ -1169,7 +1169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSnapshot {
 /// [`update_usage_limit`](crate::client::Client::update_usage_limit).
 ///
 /// See [`crate::client::fluent_builders::UpdateUsageLimit`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateUsageLimit {
     _private: (),
 }
@@ -1203,7 +1203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUsageLimit {
 /// [`update_workgroup`](crate::client::Client::update_workgroup).
 ///
 /// See [`crate::client::fluent_builders::UpdateWorkgroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateWorkgroup {
     _private: (),
 }

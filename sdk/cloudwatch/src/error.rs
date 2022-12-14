@@ -46,7 +46,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
 
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -133,7 +133,7 @@ impl std::error::Error for InvalidParameterValueException {}
 pub mod invalid_parameter_value_exception {
 
     /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -193,7 +193,7 @@ impl std::error::Error for InternalServiceFault {}
 pub mod internal_service_fault {
 
     /// A builder for [`InternalServiceFault`](crate::error::InternalServiceFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -253,7 +253,7 @@ impl std::error::Error for ConcurrentModificationException {}
 pub mod concurrent_modification_exception {
 
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -313,7 +313,7 @@ impl std::error::Error for MissingRequiredParameterException {}
 pub mod missing_required_parameter_exception {
 
     /// A builder for [`MissingRequiredParameterException`](crate::error::MissingRequiredParameterException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -373,7 +373,7 @@ impl std::error::Error for ResourceNotFound {}
 pub mod resource_not_found {
 
     /// A builder for [`ResourceNotFound`](crate::error::ResourceNotFound).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -433,7 +433,7 @@ impl std::error::Error for InvalidFormatFault {}
 pub mod invalid_format_fault {
 
     /// A builder for [`InvalidFormatFault`](crate::error::InvalidFormatFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -493,7 +493,7 @@ impl std::error::Error for InvalidParameterCombinationException {}
 pub mod invalid_parameter_combination_exception {
 
     /// A builder for [`InvalidParameterCombinationException`](crate::error::InvalidParameterCombinationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -553,7 +553,7 @@ impl std::error::Error for LimitExceededFault {}
 pub mod limit_exceeded_fault {
 
     /// A builder for [`LimitExceededFault`](crate::error::LimitExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -613,7 +613,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
 
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -685,7 +685,7 @@ impl std::error::Error for DashboardInvalidInputError {}
 pub mod dashboard_invalid_input_error {
 
     /// A builder for [`DashboardInvalidInputError`](crate::error::DashboardInvalidInputError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) dashboard_validation_messages:
@@ -769,7 +769,7 @@ impl std::error::Error for InvalidNextToken {}
 pub mod invalid_next_token {
 
     /// A builder for [`InvalidNextToken`](crate::error::InvalidNextToken).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -829,7 +829,7 @@ impl std::error::Error for DashboardNotFoundError {}
 pub mod dashboard_not_found_error {
 
     /// A builder for [`DashboardNotFoundError`](crate::error::DashboardNotFoundError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

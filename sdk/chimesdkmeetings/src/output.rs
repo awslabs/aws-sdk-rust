@@ -17,7 +17,7 @@ impl UpdateAttendeeCapabilitiesOutput {
 pub mod update_attendee_capabilities_output {
 
     /// A builder for [`UpdateAttendeeCapabilitiesOutput`](crate::output::UpdateAttendeeCapabilitiesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendee: std::option::Option<crate::model::Attendee>,
     }
@@ -55,7 +55,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -79,7 +79,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -103,7 +103,7 @@ pub struct StopMeetingTranscriptionOutput {}
 pub mod stop_meeting_transcription_output {
 
     /// A builder for [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput).
@@ -127,7 +127,7 @@ pub struct StartMeetingTranscriptionOutput {}
 pub mod start_meeting_transcription_output {
 
     /// A builder for [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput).
@@ -161,7 +161,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -223,7 +223,7 @@ impl ListAttendeesOutput {
 pub mod list_attendees_output {
 
     /// A builder for [`ListAttendeesOutput`](crate::output::ListAttendeesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -292,7 +292,7 @@ impl GetMeetingOutput {
 pub mod get_meeting_output {
 
     /// A builder for [`GetMeetingOutput`](crate::output::GetMeetingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting: std::option::Option<crate::model::Meeting>,
     }
@@ -340,7 +340,7 @@ impl GetAttendeeOutput {
 pub mod get_attendee_output {
 
     /// A builder for [`GetAttendeeOutput`](crate::output::GetAttendeeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendee: std::option::Option<crate::model::Attendee>,
     }
@@ -378,7 +378,7 @@ pub struct DeleteMeetingOutput {}
 pub mod delete_meeting_output {
 
     /// A builder for [`DeleteMeetingOutput`](crate::output::DeleteMeetingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMeetingOutput`](crate::output::DeleteMeetingOutput).
@@ -402,7 +402,7 @@ pub struct DeleteAttendeeOutput {}
 pub mod delete_attendee_output {
 
     /// A builder for [`DeleteAttendeeOutput`](crate::output::DeleteAttendeeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAttendeeOutput`](crate::output::DeleteAttendeeOutput).
@@ -450,7 +450,7 @@ impl CreateMeetingWithAttendeesOutput {
 pub mod create_meeting_with_attendees_output {
 
     /// A builder for [`CreateMeetingWithAttendeesOutput`](crate::output::CreateMeetingWithAttendeesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting: std::option::Option<crate::model::Meeting>,
         pub(crate) attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
@@ -540,7 +540,7 @@ impl CreateMeetingOutput {
 pub mod create_meeting_output {
 
     /// A builder for [`CreateMeetingOutput`](crate::output::CreateMeetingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting: std::option::Option<crate::model::Meeting>,
     }
@@ -588,7 +588,7 @@ impl CreateAttendeeOutput {
 pub mod create_attendee_output {
 
     /// A builder for [`CreateAttendeeOutput`](crate::output::CreateAttendeeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendee: std::option::Option<crate::model::Attendee>,
     }
@@ -626,7 +626,7 @@ pub struct BatchUpdateAttendeeCapabilitiesExceptOutput {}
 pub mod batch_update_attendee_capabilities_except_output {
 
     /// A builder for [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput).
@@ -667,7 +667,7 @@ impl BatchCreateAttendeeOutput {
 pub mod batch_create_attendee_output {
 
     /// A builder for [`BatchCreateAttendeeOutput`](crate::output::BatchCreateAttendeeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeError>>,

@@ -7,7 +7,7 @@ pub struct PutContactInformationOutput {}
 pub mod put_contact_information_output {
 
     /// A builder for [`PutContactInformationOutput`](crate::output::PutContactInformationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutContactInformationOutput`](crate::output::PutContactInformationOutput).
@@ -41,7 +41,7 @@ impl GetContactInformationOutput {
 pub mod get_contact_information_output {
 
     /// A builder for [`GetContactInformationOutput`](crate::output::GetContactInformationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_information: std::option::Option<crate::model::ContactInformation>,
     }
@@ -82,7 +82,7 @@ pub struct PutAlternateContactOutput {}
 pub mod put_alternate_contact_output {
 
     /// A builder for [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput).
@@ -106,7 +106,7 @@ pub struct DeleteAlternateContactOutput {}
 pub mod delete_alternate_contact_output {
 
     /// A builder for [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput).
@@ -140,7 +140,7 @@ impl GetAlternateContactOutput {
 pub mod get_alternate_contact_output {
 
     /// A builder for [`GetAlternateContactOutput`](crate::output::GetAlternateContactOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alternate_contact: std::option::Option<crate::model::AlternateContact>,
     }

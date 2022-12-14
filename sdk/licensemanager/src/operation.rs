@@ -5,7 +5,7 @@
 /// [`accept_grant`](crate::client::Client::accept_grant).
 ///
 /// See [`crate::client::fluent_builders::AcceptGrant`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AcceptGrant {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptGrant {
 /// [`check_in_license`](crate::client::Client::check_in_license).
 ///
 /// See [`crate::client::fluent_builders::CheckInLicense`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CheckInLicense {
     _private: (),
 }
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckInLicense {
 /// [`checkout_borrow_license`](crate::client::Client::checkout_borrow_license).
 ///
 /// See [`crate::client::fluent_builders::CheckoutBorrowLicense`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CheckoutBorrowLicense {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckoutBorrowLicense {
 /// [`checkout_license`](crate::client::Client::checkout_license).
 ///
 /// See [`crate::client::fluent_builders::CheckoutLicense`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CheckoutLicense {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckoutLicense {
 /// [`create_grant`](crate::client::Client::create_grant).
 ///
 /// See [`crate::client::fluent_builders::CreateGrant`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateGrant {
     _private: (),
 }
@@ -169,7 +169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGrant {
 /// [`create_grant_version`](crate::client::Client::create_grant_version).
 ///
 /// See [`crate::client::fluent_builders::CreateGrantVersion`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateGrantVersion {
     _private: (),
 }
@@ -203,7 +203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGrantVersion {
 /// [`create_license`](crate::client::Client::create_license).
 ///
 /// See [`crate::client::fluent_builders::CreateLicense`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLicense {
     _private: (),
 }
@@ -235,7 +235,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLicense {
 /// [`create_license_configuration`](crate::client::Client::create_license_configuration).
 ///
 /// See [`crate::client::fluent_builders::CreateLicenseConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLicenseConfiguration {
     _private: (),
 }
@@ -269,7 +269,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLicenseConfigurati
 /// [`create_license_conversion_task_for_resource`](crate::client::Client::create_license_conversion_task_for_resource).
 ///
 /// See [`crate::client::fluent_builders::CreateLicenseConversionTaskForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLicenseConversionTaskForResource {
     _private: (),
 }
@@ -307,7 +307,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLicenseConversionT
 /// [`create_license_manager_report_generator`](crate::client::Client::create_license_manager_report_generator).
 ///
 /// See [`crate::client::fluent_builders::CreateLicenseManagerReportGenerator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLicenseManagerReportGenerator {
     _private: (),
 }
@@ -341,7 +341,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLicenseManagerRepo
 /// [`create_license_version`](crate::client::Client::create_license_version).
 ///
 /// See [`crate::client::fluent_builders::CreateLicenseVersion`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLicenseVersion {
     _private: (),
 }
@@ -375,7 +375,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLicenseVersion {
 /// [`create_token`](crate::client::Client::create_token).
 ///
 /// See [`crate::client::fluent_builders::CreateToken`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateToken {
     _private: (),
 }
@@ -407,7 +407,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateToken {
 /// [`delete_grant`](crate::client::Client::delete_grant).
 ///
 /// See [`crate::client::fluent_builders::DeleteGrant`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteGrant {
     _private: (),
 }
@@ -439,7 +439,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGrant {
 /// [`delete_license`](crate::client::Client::delete_license).
 ///
 /// See [`crate::client::fluent_builders::DeleteLicense`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLicense {
     _private: (),
 }
@@ -471,7 +471,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLicense {
 /// [`delete_license_configuration`](crate::client::Client::delete_license_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeleteLicenseConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLicenseConfiguration {
     _private: (),
 }
@@ -505,7 +505,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLicenseConfigurati
 /// [`delete_license_manager_report_generator`](crate::client::Client::delete_license_manager_report_generator).
 ///
 /// See [`crate::client::fluent_builders::DeleteLicenseManagerReportGenerator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLicenseManagerReportGenerator {
     _private: (),
 }
@@ -539,7 +539,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLicenseManagerRepo
 /// [`delete_token`](crate::client::Client::delete_token).
 ///
 /// See [`crate::client::fluent_builders::DeleteToken`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteToken {
     _private: (),
 }
@@ -571,7 +571,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteToken {
 /// [`extend_license_consumption`](crate::client::Client::extend_license_consumption).
 ///
 /// See [`crate::client::fluent_builders::ExtendLicenseConsumption`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExtendLicenseConsumption {
     _private: (),
 }
@@ -605,7 +605,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExtendLicenseConsumption
 /// [`get_access_token`](crate::client::Client::get_access_token).
 ///
 /// See [`crate::client::fluent_builders::GetAccessToken`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAccessToken {
     _private: (),
 }
@@ -637,7 +637,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessToken {
 /// [`get_grant`](crate::client::Client::get_grant).
 ///
 /// See [`crate::client::fluent_builders::GetGrant`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGrant {
     _private: (),
 }
@@ -668,7 +668,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGrant {
 /// [`get_license`](crate::client::Client::get_license).
 ///
 /// See [`crate::client::fluent_builders::GetLicense`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLicense {
     _private: (),
 }
@@ -700,7 +700,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLicense {
 /// [`get_license_configuration`](crate::client::Client::get_license_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetLicenseConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLicenseConfiguration {
     _private: (),
 }
@@ -734,7 +734,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLicenseConfiguration 
 /// [`get_license_conversion_task`](crate::client::Client::get_license_conversion_task).
 ///
 /// See [`crate::client::fluent_builders::GetLicenseConversionTask`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLicenseConversionTask {
     _private: (),
 }
@@ -768,7 +768,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLicenseConversionTask
 /// [`get_license_manager_report_generator`](crate::client::Client::get_license_manager_report_generator).
 ///
 /// See [`crate::client::fluent_builders::GetLicenseManagerReportGenerator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLicenseManagerReportGenerator {
     _private: (),
 }
@@ -802,7 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLicenseManagerReportG
 /// [`get_license_usage`](crate::client::Client::get_license_usage).
 ///
 /// See [`crate::client::fluent_builders::GetLicenseUsage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLicenseUsage {
     _private: (),
 }
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLicenseUsage {
 /// [`get_service_settings`](crate::client::Client::get_service_settings).
 ///
 /// See [`crate::client::fluent_builders::GetServiceSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetServiceSettings {
     _private: (),
 }
@@ -870,7 +870,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceSettings {
 /// [`list_associations_for_license_configuration`](crate::client::Client::list_associations_for_license_configuration).
 ///
 /// See [`crate::client::fluent_builders::ListAssociationsForLicenseConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAssociationsForLicenseConfiguration {
     _private: (),
 }
@@ -908,7 +908,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssociationsForLicen
 /// [`list_distributed_grants`](crate::client::Client::list_distributed_grants).
 ///
 /// See [`crate::client::fluent_builders::ListDistributedGrants`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDistributedGrants {
     _private: (),
 }
@@ -942,7 +942,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDistributedGrants {
 /// [`list_failures_for_license_configuration_operations`](crate::client::Client::list_failures_for_license_configuration_operations).
 ///
 /// See [`crate::client::fluent_builders::ListFailuresForLicenseConfigurationOperations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFailuresForLicenseConfigurationOperations {
     _private: (),
 }
@@ -981,7 +981,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`list_license_configurations`](crate::client::Client::list_license_configurations).
 ///
 /// See [`crate::client::fluent_builders::ListLicenseConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLicenseConfigurations {
     _private: (),
 }
@@ -1015,7 +1015,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLicenseConfiguration
 /// [`list_license_conversion_tasks`](crate::client::Client::list_license_conversion_tasks).
 ///
 /// See [`crate::client::fluent_builders::ListLicenseConversionTasks`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLicenseConversionTasks {
     _private: (),
 }
@@ -1049,7 +1049,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLicenseConversionTas
 /// [`list_license_manager_report_generators`](crate::client::Client::list_license_manager_report_generators).
 ///
 /// See [`crate::client::fluent_builders::ListLicenseManagerReportGenerators`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLicenseManagerReportGenerators {
     _private: (),
 }
@@ -1083,7 +1083,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLicenseManagerReport
 /// [`list_licenses`](crate::client::Client::list_licenses).
 ///
 /// See [`crate::client::fluent_builders::ListLicenses`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLicenses {
     _private: (),
 }
@@ -1115,7 +1115,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLicenses {
 /// [`list_license_specifications_for_resource`](crate::client::Client::list_license_specifications_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListLicenseSpecificationsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLicenseSpecificationsForResource {
     _private: (),
 }
@@ -1151,7 +1151,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLicenseSpecification
 /// [`list_license_versions`](crate::client::Client::list_license_versions).
 ///
 /// See [`crate::client::fluent_builders::ListLicenseVersions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLicenseVersions {
     _private: (),
 }
@@ -1185,7 +1185,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLicenseVersions {
 /// [`list_received_grants`](crate::client::Client::list_received_grants).
 ///
 /// See [`crate::client::fluent_builders::ListReceivedGrants`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListReceivedGrants {
     _private: (),
 }
@@ -1219,7 +1219,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReceivedGrants {
 /// [`list_received_licenses`](crate::client::Client::list_received_licenses).
 ///
 /// See [`crate::client::fluent_builders::ListReceivedLicenses`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListReceivedLicenses {
     _private: (),
 }
@@ -1253,7 +1253,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReceivedLicenses {
 /// [`list_resource_inventory`](crate::client::Client::list_resource_inventory).
 ///
 /// See [`crate::client::fluent_builders::ListResourceInventory`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResourceInventory {
     _private: (),
 }
@@ -1287,7 +1287,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceInventory {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -1321,7 +1321,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_tokens`](crate::client::Client::list_tokens).
 ///
 /// See [`crate::client::fluent_builders::ListTokens`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTokens {
     _private: (),
 }
@@ -1353,7 +1353,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTokens {
 /// [`list_usage_for_license_configuration`](crate::client::Client::list_usage_for_license_configuration).
 ///
 /// See [`crate::client::fluent_builders::ListUsageForLicenseConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListUsageForLicenseConfiguration {
     _private: (),
 }
@@ -1387,7 +1387,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUsageForLicenseConfi
 /// [`reject_grant`](crate::client::Client::reject_grant).
 ///
 /// See [`crate::client::fluent_builders::RejectGrant`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RejectGrant {
     _private: (),
 }
@@ -1419,7 +1419,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectGrant {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1451,7 +1451,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1483,7 +1483,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_license_configuration`](crate::client::Client::update_license_configuration).
 ///
 /// See [`crate::client::fluent_builders::UpdateLicenseConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLicenseConfiguration {
     _private: (),
 }
@@ -1517,7 +1517,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLicenseConfigurati
 /// [`update_license_manager_report_generator`](crate::client::Client::update_license_manager_report_generator).
 ///
 /// See [`crate::client::fluent_builders::UpdateLicenseManagerReportGenerator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLicenseManagerReportGenerator {
     _private: (),
 }
@@ -1551,7 +1551,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLicenseManagerRepo
 /// [`update_license_specifications_for_resource`](crate::client::Client::update_license_specifications_for_resource).
 ///
 /// See [`crate::client::fluent_builders::UpdateLicenseSpecificationsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLicenseSpecificationsForResource {
     _private: (),
 }
@@ -1587,7 +1587,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLicenseSpecificati
 /// [`update_service_settings`](crate::client::Client::update_service_settings).
 ///
 /// See [`crate::client::fluent_builders::UpdateServiceSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateServiceSettings {
     _private: (),
 }

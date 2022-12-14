@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod batch_put_message_input {
 
     /// A builder for [`BatchPutMessageInput`](crate::input::BatchPutMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -186,7 +186,7 @@ impl BatchPutMessageInput {
 pub mod cancel_pipeline_reprocessing_input {
 
     /// A builder for [`CancelPipelineReprocessingInput`](crate::input::CancelPipelineReprocessingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
         pub(crate) reprocessing_id: std::option::Option<std::string::String>,
@@ -376,7 +376,7 @@ impl CancelPipelineReprocessingInput {
 pub mod create_channel_input {
 
     /// A builder for [`CreateChannelInput`](crate::input::CreateChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) channel_storage: std::option::Option<crate::model::ChannelStorage>,
@@ -567,7 +567,7 @@ impl CreateChannelInput {
 pub mod create_dataset_input {
 
     /// A builder for [`CreateDatasetInput`](crate::input::CreateDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::DatasetAction>>,
@@ -850,7 +850,7 @@ impl CreateDatasetInput {
 pub mod create_dataset_content_input {
 
     /// A builder for [`CreateDatasetContentInput`](crate::input::CreateDatasetContentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) version_id: std::option::Option<std::string::String>,
@@ -1030,7 +1030,7 @@ impl CreateDatasetContentInput {
 pub mod create_datastore_input {
 
     /// A builder for [`CreateDatastoreInput`](crate::input::CreateDatastoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_name: std::option::Option<std::string::String>,
         pub(crate) datastore_storage: std::option::Option<crate::model::DatastoreStorage>,
@@ -1262,7 +1262,7 @@ impl CreateDatastoreInput {
 pub mod create_pipeline_input {
 
     /// A builder for [`CreatePipelineInput`](crate::input::CreatePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
         pub(crate) pipeline_activities:
@@ -1452,7 +1452,7 @@ impl CreatePipelineInput {
 pub mod delete_channel_input {
 
     /// A builder for [`DeleteChannelInput`](crate::input::DeleteChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
     }
@@ -1602,7 +1602,7 @@ impl DeleteChannelInput {
 pub mod delete_dataset_input {
 
     /// A builder for [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
     }
@@ -1752,7 +1752,7 @@ impl DeleteDatasetInput {
 pub mod delete_dataset_content_input {
 
     /// A builder for [`DeleteDatasetContentInput`](crate::input::DeleteDatasetContentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) version_id: std::option::Option<std::string::String>,
@@ -1929,7 +1929,7 @@ impl DeleteDatasetContentInput {
 pub mod delete_datastore_input {
 
     /// A builder for [`DeleteDatastoreInput`](crate::input::DeleteDatastoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_name: std::option::Option<std::string::String>,
     }
@@ -2082,7 +2082,7 @@ impl DeleteDatastoreInput {
 pub mod delete_pipeline_input {
 
     /// A builder for [`DeletePipelineInput`](crate::input::DeletePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
     }
@@ -2235,7 +2235,7 @@ impl DeletePipelineInput {
 pub mod describe_channel_input {
 
     /// A builder for [`DescribeChannelInput`](crate::input::DescribeChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) include_statistics: std::option::Option<bool>,
@@ -2412,7 +2412,7 @@ impl DescribeChannelInput {
 pub mod describe_dataset_input {
 
     /// A builder for [`DescribeDatasetInput`](crate::input::DescribeDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
     }
@@ -2562,7 +2562,7 @@ impl DescribeDatasetInput {
 pub mod describe_datastore_input {
 
     /// A builder for [`DescribeDatastoreInput`](crate::input::DescribeDatastoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_name: std::option::Option<std::string::String>,
         pub(crate) include_statistics: std::option::Option<bool>,
@@ -2744,7 +2744,7 @@ impl DescribeDatastoreInput {
 pub mod describe_logging_options_input {
 
     /// A builder for [`DescribeLoggingOptionsInput`](crate::input::DescribeLoggingOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeLoggingOptionsInput`](crate::input::DescribeLoggingOptionsInput).
@@ -2858,7 +2858,7 @@ impl DescribeLoggingOptionsInput {
 pub mod describe_pipeline_input {
 
     /// A builder for [`DescribePipelineInput`](crate::input::DescribePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
     }
@@ -3013,7 +3013,7 @@ impl DescribePipelineInput {
 pub mod get_dataset_content_input {
 
     /// A builder for [`GetDatasetContentInput`](crate::input::GetDatasetContentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) version_id: std::option::Option<std::string::String>,
@@ -3190,7 +3190,7 @@ impl GetDatasetContentInput {
 pub mod list_channels_input {
 
     /// A builder for [`ListChannelsInput`](crate::input::ListChannelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3351,7 +3351,7 @@ impl ListChannelsInput {
 pub mod list_dataset_contents_input {
 
     /// A builder for [`ListDatasetContentsInput`](crate::input::ListDatasetContentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3600,7 +3600,7 @@ impl ListDatasetContentsInput {
 pub mod list_datasets_input {
 
     /// A builder for [`ListDatasetsInput`](crate::input::ListDatasetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3761,7 +3761,7 @@ impl ListDatasetsInput {
 pub mod list_datastores_input {
 
     /// A builder for [`ListDatastoresInput`](crate::input::ListDatastoresInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3922,7 +3922,7 @@ impl ListDatastoresInput {
 pub mod list_pipelines_input {
 
     /// A builder for [`ListPipelinesInput`](crate::input::ListPipelinesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4083,7 +4083,7 @@ impl ListPipelinesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -4238,7 +4238,7 @@ impl ListTagsForResourceInput {
 pub mod put_logging_options_input {
 
     /// A builder for [`PutLoggingOptionsInput`](crate::input::PutLoggingOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_options: std::option::Option<crate::model::LoggingOptions>,
     }
@@ -4383,7 +4383,7 @@ impl PutLoggingOptionsInput {
 pub mod run_pipeline_activity_input {
 
     /// A builder for [`RunPipelineActivityInput`](crate::input::RunPipelineActivityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_activity: std::option::Option<crate::model::PipelineActivity>,
         pub(crate) payloads: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
@@ -4549,7 +4549,7 @@ impl RunPipelineActivityInput {
 pub mod sample_channel_data_input {
 
     /// A builder for [`SampleChannelDataInput`](crate::input::SampleChannelDataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) max_messages: std::option::Option<i32>,
@@ -4781,7 +4781,7 @@ impl SampleChannelDataInput {
 pub mod start_pipeline_reprocessing_input {
 
     /// A builder for [`StartPipelineReprocessingInput`](crate::input::StartPipelineReprocessingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -5003,7 +5003,7 @@ impl StartPipelineReprocessingInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5191,7 +5191,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5375,7 +5375,7 @@ impl UntagResourceInput {
 pub mod update_channel_input {
 
     /// A builder for [`UpdateChannelInput`](crate::input::UpdateChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) channel_storage: std::option::Option<crate::model::ChannelStorage>,
@@ -5569,7 +5569,7 @@ impl UpdateChannelInput {
 pub mod update_dataset_input {
 
     /// A builder for [`UpdateDatasetInput`](crate::input::UpdateDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::DatasetAction>>,
@@ -5855,7 +5855,7 @@ impl UpdateDatasetInput {
 pub mod update_datastore_input {
 
     /// A builder for [`UpdateDatastoreInput`](crate::input::UpdateDatastoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_name: std::option::Option<std::string::String>,
         pub(crate) retention_period: std::option::Option<crate::model::RetentionPeriod>,
@@ -6075,7 +6075,7 @@ impl UpdateDatastoreInput {
 pub mod update_pipeline_input {
 
     /// A builder for [`UpdatePipelineInput`](crate::input::UpdatePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
         pub(crate) pipeline_activities:

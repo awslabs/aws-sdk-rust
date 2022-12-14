@@ -5,7 +5,7 @@
 /// [`assume_role`](crate::client::Client::assume_role).
 ///
 /// See [`crate::client::fluent_builders::AssumeRole`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssumeRole {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssumeRole {
 /// [`assume_role_with_saml`](crate::client::Client::assume_role_with_saml).
 ///
 /// See [`crate::client::fluent_builders::AssumeRoleWithSAML`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssumeRoleWithSAML {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssumeRoleWithSAML {
 /// [`assume_role_with_web_identity`](crate::client::Client::assume_role_with_web_identity).
 ///
 /// See [`crate::client::fluent_builders::AssumeRoleWithWebIdentity`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssumeRoleWithWebIdentity {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssumeRoleWithWebIdentit
 /// [`decode_authorization_message`](crate::client::Client::decode_authorization_message).
 ///
 /// See [`crate::client::fluent_builders::DecodeAuthorizationMessage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DecodeAuthorizationMessage {
     _private: (),
 }
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DecodeAuthorizationMessa
 /// [`get_access_key_info`](crate::client::Client::get_access_key_info).
 ///
 /// See [`crate::client::fluent_builders::GetAccessKeyInfo`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAccessKeyInfo {
     _private: (),
 }
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessKeyInfo {
 /// [`get_caller_identity`](crate::client::Client::get_caller_identity).
 ///
 /// See [`crate::client::fluent_builders::GetCallerIdentity`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCallerIdentity {
     _private: (),
 }
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCallerIdentity {
 /// [`get_federation_token`](crate::client::Client::get_federation_token).
 ///
 /// See [`crate::client::fluent_builders::GetFederationToken`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFederationToken {
     _private: (),
 }
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFederationToken {
 /// [`get_session_token`](crate::client::Client::get_session_token).
 ///
 /// See [`crate::client::fluent_builders::GetSessionToken`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSessionToken {
     _private: (),
 }

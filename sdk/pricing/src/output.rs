@@ -31,7 +31,7 @@ impl GetProductsOutput {
 pub mod get_products_output {
 
     /// A builder for [`GetProductsOutput`](crate::output::GetProductsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format_version: std::option::Option<std::string::String>,
         pub(crate) price_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -122,7 +122,7 @@ impl GetAttributeValuesOutput {
 pub mod get_attribute_values_output {
 
     /// A builder for [`GetAttributeValuesOutput`](crate::output::GetAttributeValuesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_values:
             std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
@@ -206,7 +206,7 @@ impl DescribeServicesOutput {
 pub mod describe_services_output {
 
     /// A builder for [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) services: std::option::Option<std::vec::Vec<crate::model::Service>>,
         pub(crate) format_version: std::option::Option<std::string::String>,

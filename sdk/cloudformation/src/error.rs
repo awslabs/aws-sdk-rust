@@ -30,7 +30,7 @@ impl std::error::Error for StaleRequestException {}
 pub mod stale_request_exception {
 
     /// A builder for [`StaleRequestException`](crate::error::StaleRequestException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl std::error::Error for StackSetNotFoundException {}
 pub mod stack_set_not_found_exception {
 
     /// A builder for [`StackSetNotFoundException`](crate::error::StackSetNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl std::error::Error for StackInstanceNotFoundException {}
 pub mod stack_instance_not_found_exception {
 
     /// A builder for [`StackInstanceNotFoundException`](crate::error::StackInstanceNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -210,7 +210,7 @@ impl std::error::Error for OperationInProgressException {}
 pub mod operation_in_progress_exception {
 
     /// A builder for [`OperationInProgressException`](crate::error::OperationInProgressException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -270,7 +270,7 @@ impl std::error::Error for OperationIdAlreadyExistsException {}
 pub mod operation_id_already_exists_exception {
 
     /// A builder for [`OperationIdAlreadyExistsException`](crate::error::OperationIdAlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -330,7 +330,7 @@ impl std::error::Error for InvalidOperationException {}
 pub mod invalid_operation_exception {
 
     /// A builder for [`InvalidOperationException`](crate::error::InvalidOperationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -390,7 +390,7 @@ impl std::error::Error for TokenAlreadyExistsException {}
 pub mod token_already_exists_exception {
 
     /// A builder for [`TokenAlreadyExistsException`](crate::error::TokenAlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -450,7 +450,7 @@ impl std::error::Error for InsufficientCapabilitiesException {}
 pub mod insufficient_capabilities_exception {
 
     /// A builder for [`InsufficientCapabilitiesException`](crate::error::InsufficientCapabilitiesException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -510,7 +510,7 @@ impl std::error::Error for TypeNotFoundException {}
 pub mod type_not_found_exception {
 
     /// A builder for [`TypeNotFoundException`](crate::error::TypeNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -570,7 +570,7 @@ impl std::error::Error for CfnRegistryException {}
 pub mod cfn_registry_exception {
 
     /// A builder for [`CfnRegistryException`](crate::error::CfnRegistryException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -630,7 +630,7 @@ impl std::error::Error for OperationNotFoundException {}
 pub mod operation_not_found_exception {
 
     /// A builder for [`OperationNotFoundException`](crate::error::OperationNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -690,7 +690,7 @@ impl std::error::Error for OperationStatusCheckFailedException {}
 pub mod operation_status_check_failed_exception {
 
     /// A builder for [`OperationStatusCheckFailedException`](crate::error::OperationStatusCheckFailedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -750,7 +750,7 @@ impl std::error::Error for InvalidStateTransitionException {}
 pub mod invalid_state_transition_exception {
 
     /// A builder for [`InvalidStateTransitionException`](crate::error::InvalidStateTransitionException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -810,7 +810,7 @@ impl std::error::Error for StackNotFoundException {}
 pub mod stack_not_found_exception {
 
     /// A builder for [`StackNotFoundException`](crate::error::StackNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -871,7 +871,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
 
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -931,7 +931,7 @@ impl std::error::Error for ChangeSetNotFoundException {}
 pub mod change_set_not_found_exception {
 
     /// A builder for [`ChangeSetNotFoundException`](crate::error::ChangeSetNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -991,7 +991,7 @@ impl std::error::Error for InvalidChangeSetStatusException {}
 pub mod invalid_change_set_status_exception {
 
     /// A builder for [`InvalidChangeSetStatusException`](crate::error::InvalidChangeSetStatusException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1051,7 +1051,7 @@ impl std::error::Error for StackSetNotEmptyException {}
 pub mod stack_set_not_empty_exception {
 
     /// A builder for [`StackSetNotEmptyException`](crate::error::StackSetNotEmptyException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1111,7 +1111,7 @@ impl std::error::Error for NameAlreadyExistsException {}
 pub mod name_already_exists_exception {
 
     /// A builder for [`NameAlreadyExistsException`](crate::error::NameAlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1171,7 +1171,7 @@ impl std::error::Error for CreatedButModifiedException {}
 pub mod created_but_modified_exception {
 
     /// A builder for [`CreatedButModifiedException`](crate::error::CreatedButModifiedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1231,7 +1231,7 @@ impl std::error::Error for AlreadyExistsException {}
 pub mod already_exists_exception {
 
     /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1291,7 +1291,7 @@ impl std::error::Error for TypeConfigurationNotFoundException {}
 pub mod type_configuration_not_found_exception {
 
     /// A builder for [`TypeConfigurationNotFoundException`](crate::error::TypeConfigurationNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

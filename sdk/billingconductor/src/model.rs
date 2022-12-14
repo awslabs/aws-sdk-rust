@@ -25,7 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
 
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -538,7 +538,7 @@ impl std::fmt::Debug for PricingRuleListElement {
 pub mod pricing_rule_list_element {
 
     /// A builder for [`PricingRuleListElement`](crate::model::PricingRuleListElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -904,7 +904,7 @@ impl ListPricingRulesFilter {
 pub mod list_pricing_rules_filter {
 
     /// A builder for [`ListPricingRulesFilter`](crate::model::ListPricingRulesFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1006,7 +1006,7 @@ impl std::fmt::Debug for PricingPlanListElement {
 pub mod pricing_plan_list_element {
 
     /// A builder for [`PricingPlanListElement`](crate::model::PricingPlanListElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1126,7 +1126,7 @@ impl ListPricingPlansFilter {
 pub mod list_pricing_plans_filter {
 
     /// A builder for [`ListPricingPlansFilter`](crate::model::ListPricingPlansFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1188,7 +1188,7 @@ impl ListResourcesAssociatedToCustomLineItemResponseElement {
 pub mod list_resources_associated_to_custom_line_item_response_element {
 
     /// A builder for [`ListResourcesAssociatedToCustomLineItemResponseElement`](crate::model::ListResourcesAssociatedToCustomLineItemResponseElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) relationship: std::option::Option<crate::model::CustomLineItemRelationship>,
@@ -1344,7 +1344,7 @@ impl ListResourcesAssociatedToCustomLineItemFilter {
 pub mod list_resources_associated_to_custom_line_item_filter {
 
     /// A builder for [`ListResourcesAssociatedToCustomLineItemFilter`](crate::model::ListResourcesAssociatedToCustomLineItemFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relationship: std::option::Option<crate::model::CustomLineItemRelationship>,
     }
@@ -1403,7 +1403,7 @@ impl DisassociateResourceResponseElement {
 pub mod disassociate_resource_response_element {
 
     /// A builder for [`DisassociateResourceResponseElement`](crate::model::DisassociateResourceResponseElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<crate::model::AssociateResourceError>,
@@ -1473,7 +1473,7 @@ impl AssociateResourceError {
 pub mod associate_resource_error {
 
     /// A builder for [`AssociateResourceError`](crate::model::AssociateResourceError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<crate::model::AssociateResourceErrorReason>,
@@ -1650,7 +1650,7 @@ impl CustomLineItemBillingPeriodRange {
 pub mod custom_line_item_billing_period_range {
 
     /// A builder for [`CustomLineItemBillingPeriodRange`](crate::model::CustomLineItemBillingPeriodRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inclusive_start_billing_period: std::option::Option<std::string::String>,
         pub(crate) exclusive_end_billing_period: std::option::Option<std::string::String>,
@@ -1729,7 +1729,7 @@ impl AssociateResourceResponseElement {
 pub mod associate_resource_response_element {
 
     /// A builder for [`AssociateResourceResponseElement`](crate::model::AssociateResourceResponseElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<crate::model::AssociateResourceError>,
@@ -1873,7 +1873,7 @@ impl std::fmt::Debug for CustomLineItemListElement {
 pub mod custom_line_item_list_element {
 
     /// A builder for [`CustomLineItemListElement`](crate::model::CustomLineItemListElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2164,7 +2164,7 @@ impl ListCustomLineItemChargeDetails {
 pub mod list_custom_line_item_charge_details {
 
     /// A builder for [`ListCustomLineItemChargeDetails`](crate::model::ListCustomLineItemChargeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flat: std::option::Option<crate::model::ListCustomLineItemFlatChargeDetails>,
         pub(crate) percentage:
@@ -2341,7 +2341,7 @@ impl ListCustomLineItemPercentageChargeDetails {
 pub mod list_custom_line_item_percentage_charge_details {
 
     /// A builder for [`ListCustomLineItemPercentageChargeDetails`](crate::model::ListCustomLineItemPercentageChargeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) percentage_value: std::option::Option<f64>,
     }
@@ -2389,7 +2389,7 @@ impl ListCustomLineItemFlatChargeDetails {
 pub mod list_custom_line_item_flat_charge_details {
 
     /// A builder for [`ListCustomLineItemFlatChargeDetails`](crate::model::ListCustomLineItemFlatChargeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) charge_value: std::option::Option<f64>,
     }
@@ -2451,7 +2451,7 @@ impl ListCustomLineItemsFilter {
 pub mod list_custom_line_items_filter {
 
     /// A builder for [`ListCustomLineItemsFilter`](crate::model::ListCustomLineItemsFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) billing_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2566,7 +2566,7 @@ impl CustomLineItemChargeDetails {
 pub mod custom_line_item_charge_details {
 
     /// A builder for [`CustomLineItemChargeDetails`](crate::model::CustomLineItemChargeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flat: std::option::Option<crate::model::CustomLineItemFlatChargeDetails>,
         pub(crate) percentage:
@@ -2658,7 +2658,7 @@ impl CustomLineItemPercentageChargeDetails {
 pub mod custom_line_item_percentage_charge_details {
 
     /// A builder for [`CustomLineItemPercentageChargeDetails`](crate::model::CustomLineItemPercentageChargeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) percentage_value: std::option::Option<f64>,
         pub(crate) associated_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2727,7 +2727,7 @@ impl CustomLineItemFlatChargeDetails {
 pub mod custom_line_item_flat_charge_details {
 
     /// A builder for [`CustomLineItemFlatChargeDetails`](crate::model::CustomLineItemFlatChargeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) charge_value: std::option::Option<f64>,
     }
@@ -2786,7 +2786,7 @@ impl UpdateCustomLineItemChargeDetails {
 pub mod update_custom_line_item_charge_details {
 
     /// A builder for [`UpdateCustomLineItemChargeDetails`](crate::model::UpdateCustomLineItemChargeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flat: std::option::Option<crate::model::UpdateCustomLineItemFlatChargeDetails>,
         pub(crate) percentage:
@@ -2856,7 +2856,7 @@ impl UpdateCustomLineItemPercentageChargeDetails {
 pub mod update_custom_line_item_percentage_charge_details {
 
     /// A builder for [`UpdateCustomLineItemPercentageChargeDetails`](crate::model::UpdateCustomLineItemPercentageChargeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) percentage_value: std::option::Option<f64>,
     }
@@ -2904,7 +2904,7 @@ impl UpdateCustomLineItemFlatChargeDetails {
 pub mod update_custom_line_item_flat_charge_details {
 
     /// A builder for [`UpdateCustomLineItemFlatChargeDetails`](crate::model::UpdateCustomLineItemFlatChargeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) charge_value: std::option::Option<f64>,
     }
@@ -3033,7 +3033,7 @@ impl std::fmt::Debug for BillingGroupListElement {
 pub mod billing_group_list_element {
 
     /// A builder for [`BillingGroupListElement`](crate::model::BillingGroupListElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3312,7 +3312,7 @@ impl ComputationPreference {
 pub mod computation_preference {
 
     /// A builder for [`ComputationPreference`](crate::model::ComputationPreference).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pricing_plan_arn: std::option::Option<std::string::String>,
     }
@@ -3370,7 +3370,7 @@ impl ListBillingGroupsFilter {
 pub mod list_billing_groups_filter {
 
     /// A builder for [`ListBillingGroupsFilter`](crate::model::ListBillingGroupsFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) pricing_plan: std::option::Option<std::string::String>,
@@ -3439,7 +3439,7 @@ impl AccountGrouping {
 pub mod account_grouping {
 
     /// A builder for [`AccountGrouping`](crate::model::AccountGrouping).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) linked_account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -3531,7 +3531,7 @@ impl BillingGroupCostReportElement {
 pub mod billing_group_cost_report_element {
 
     /// A builder for [`BillingGroupCostReportElement`](crate::model::BillingGroupCostReportElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) aws_cost: std::option::Option<std::string::String>,
@@ -3645,7 +3645,7 @@ impl ListBillingGroupCostReportsFilter {
 pub mod list_billing_group_cost_reports_filter {
 
     /// A builder for [`ListBillingGroupCostReportsFilter`](crate::model::ListBillingGroupCostReportsFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -3734,7 +3734,7 @@ impl std::fmt::Debug for AccountAssociationsListElement {
 pub mod account_associations_list_element {
 
     /// A builder for [`AccountAssociationsListElement`](crate::model::AccountAssociationsListElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) billing_group_arn: std::option::Option<std::string::String>,
@@ -3848,7 +3848,7 @@ impl ListAccountAssociationsFilter {
 pub mod list_account_associations_filter {
 
     /// A builder for [`ListAccountAssociationsFilter`](crate::model::ListAccountAssociationsFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,

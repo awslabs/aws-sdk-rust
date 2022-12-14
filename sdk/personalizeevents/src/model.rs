@@ -27,7 +27,7 @@ impl User {
 pub mod user {
 
     /// A builder for [`User`](crate::model::User).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) properties: std::option::Option<std::string::String>,
@@ -98,7 +98,7 @@ impl Item {
 pub mod item {
 
     /// A builder for [`Item`](crate::model::Item).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item_id: std::option::Option<std::string::String>,
         pub(crate) properties: std::option::Option<std::string::String>,
@@ -215,7 +215,7 @@ impl Event {
 pub mod event {
 
     /// A builder for [`Event`](crate::model::Event).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_id: std::option::Option<std::string::String>,
         pub(crate) event_type: std::option::Option<std::string::String>,

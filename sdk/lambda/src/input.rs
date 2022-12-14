@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod add_layer_version_permission_input {
 
     /// A builder for [`AddLayerVersionPermissionInput`](crate::input::AddLayerVersionPermissionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_name: std::option::Option<std::string::String>,
         pub(crate) version_number: std::option::Option<i64>,
@@ -274,7 +274,7 @@ impl AddLayerVersionPermissionInput {
 pub mod add_permission_input {
 
     /// A builder for [`AddPermissionInput`](crate::input::AddPermissionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) statement_id: std::option::Option<std::string::String>,
@@ -602,7 +602,7 @@ impl AddPermissionInput {
 pub mod create_alias_input {
 
     /// A builder for [`CreateAliasInput`](crate::input::CreateAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -837,7 +837,7 @@ impl CreateAliasInput {
 pub mod create_code_signing_config_input {
 
     /// A builder for [`CreateCodeSigningConfigInput`](crate::input::CreateCodeSigningConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) allowed_publishers: std::option::Option<crate::model::AllowedPublishers>,
@@ -1012,7 +1012,7 @@ impl CreateCodeSigningConfigInput {
 pub mod create_event_source_mapping_input {
 
     /// A builder for [`CreateEventSourceMappingInput`](crate::input::CreateEventSourceMappingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_source_arn: std::option::Option<std::string::String>,
         pub(crate) function_name: std::option::Option<std::string::String>,
@@ -1540,7 +1540,7 @@ impl CreateEventSourceMappingInput {
 pub mod create_function_input {
 
     /// A builder for [`CreateFunctionInput`](crate::input::CreateFunctionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) runtime: std::option::Option<crate::model::Runtime>,
@@ -2018,7 +2018,7 @@ impl CreateFunctionInput {
 pub mod create_function_url_config_input {
 
     /// A builder for [`CreateFunctionUrlConfigInput`](crate::input::CreateFunctionUrlConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -2255,7 +2255,7 @@ impl CreateFunctionUrlConfigInput {
 pub mod delete_alias_input {
 
     /// A builder for [`DeleteAliasInput`](crate::input::DeleteAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2454,7 +2454,7 @@ impl DeleteAliasInput {
 pub mod delete_code_signing_config_input {
 
     /// A builder for [`DeleteCodeSigningConfigInput`](crate::input::DeleteCodeSigningConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_signing_config_arn: std::option::Option<std::string::String>,
     }
@@ -2609,7 +2609,7 @@ impl DeleteCodeSigningConfigInput {
 pub mod delete_event_source_mapping_input {
 
     /// A builder for [`DeleteEventSourceMappingInput`](crate::input::DeleteEventSourceMappingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uuid: std::option::Option<std::string::String>,
     }
@@ -2759,7 +2759,7 @@ impl DeleteEventSourceMappingInput {
 pub mod delete_function_input {
 
     /// A builder for [`DeleteFunctionInput`](crate::input::DeleteFunctionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -2951,7 +2951,7 @@ impl DeleteFunctionInput {
 pub mod delete_function_code_signing_config_input {
 
     /// A builder for [`DeleteFunctionCodeSigningConfigInput`](crate::input::DeleteFunctionCodeSigningConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
     }
@@ -3120,7 +3120,7 @@ impl DeleteFunctionCodeSigningConfigInput {
 pub mod delete_function_concurrency_input {
 
     /// A builder for [`DeleteFunctionConcurrencyInput`](crate::input::DeleteFunctionConcurrencyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
     }
@@ -3289,7 +3289,7 @@ impl DeleteFunctionConcurrencyInput {
 pub mod delete_function_event_invoke_config_input {
 
     /// A builder for [`DeleteFunctionEventInvokeConfigInput`](crate::input::DeleteFunctionEventInvokeConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -3483,7 +3483,7 @@ impl DeleteFunctionEventInvokeConfigInput {
 pub mod delete_function_url_config_input {
 
     /// A builder for [`DeleteFunctionUrlConfigInput`](crate::input::DeleteFunctionUrlConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -3677,7 +3677,7 @@ impl DeleteFunctionUrlConfigInput {
 pub mod delete_layer_version_input {
 
     /// A builder for [`DeleteLayerVersionInput`](crate::input::DeleteLayerVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_name: std::option::Option<std::string::String>,
         pub(crate) version_number: std::option::Option<i64>,
@@ -3854,7 +3854,7 @@ impl DeleteLayerVersionInput {
 pub mod delete_provisioned_concurrency_config_input {
 
     /// A builder for [`DeleteProvisionedConcurrencyConfigInput`](crate::input::DeleteProvisionedConcurrencyConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -4059,7 +4059,7 @@ impl DeleteProvisionedConcurrencyConfigInput {
 pub mod get_account_settings_input {
 
     /// A builder for [`GetAccountSettingsInput`](crate::input::GetAccountSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetAccountSettingsInput`](crate::input::GetAccountSettingsInput).
@@ -4173,7 +4173,7 @@ impl GetAccountSettingsInput {
 pub mod get_alias_input {
 
     /// A builder for [`GetAliasInput`](crate::input::GetAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4369,7 +4369,7 @@ impl GetAliasInput {
 pub mod get_code_signing_config_input {
 
     /// A builder for [`GetCodeSigningConfigInput`](crate::input::GetCodeSigningConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_signing_config_arn: std::option::Option<std::string::String>,
     }
@@ -4524,7 +4524,7 @@ impl GetCodeSigningConfigInput {
 pub mod get_event_source_mapping_input {
 
     /// A builder for [`GetEventSourceMappingInput`](crate::input::GetEventSourceMappingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uuid: std::option::Option<std::string::String>,
     }
@@ -4674,7 +4674,7 @@ impl GetEventSourceMappingInput {
 pub mod get_function_input {
 
     /// A builder for [`GetFunctionInput`](crate::input::GetFunctionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -4866,7 +4866,7 @@ impl GetFunctionInput {
 pub mod get_function_code_signing_config_input {
 
     /// A builder for [`GetFunctionCodeSigningConfigInput`](crate::input::GetFunctionCodeSigningConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
     }
@@ -5035,7 +5035,7 @@ impl GetFunctionCodeSigningConfigInput {
 pub mod get_function_concurrency_input {
 
     /// A builder for [`GetFunctionConcurrencyInput`](crate::input::GetFunctionConcurrencyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
     }
@@ -5204,7 +5204,7 @@ impl GetFunctionConcurrencyInput {
 pub mod get_function_configuration_input {
 
     /// A builder for [`GetFunctionConfigurationInput`](crate::input::GetFunctionConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -5398,7 +5398,7 @@ impl GetFunctionConfigurationInput {
 pub mod get_function_event_invoke_config_input {
 
     /// A builder for [`GetFunctionEventInvokeConfigInput`](crate::input::GetFunctionEventInvokeConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -5592,7 +5592,7 @@ impl GetFunctionEventInvokeConfigInput {
 pub mod get_function_url_config_input {
 
     /// A builder for [`GetFunctionUrlConfigInput`](crate::input::GetFunctionUrlConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -5786,7 +5786,7 @@ impl GetFunctionUrlConfigInput {
 pub mod get_layer_version_input {
 
     /// A builder for [`GetLayerVersionInput`](crate::input::GetLayerVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_name: std::option::Option<std::string::String>,
         pub(crate) version_number: std::option::Option<i64>,
@@ -5961,7 +5961,7 @@ impl GetLayerVersionInput {
 pub mod get_layer_version_by_arn_input {
 
     /// A builder for [`GetLayerVersionByArnInput`](crate::input::GetLayerVersionByArnInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -6112,7 +6112,7 @@ impl GetLayerVersionByArnInput {
 pub mod get_layer_version_policy_input {
 
     /// A builder for [`GetLayerVersionPolicyInput`](crate::input::GetLayerVersionPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_name: std::option::Option<std::string::String>,
         pub(crate) version_number: std::option::Option<i64>,
@@ -6289,7 +6289,7 @@ impl GetLayerVersionPolicyInput {
 pub mod get_policy_input {
 
     /// A builder for [`GetPolicyInput`](crate::input::GetPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -6479,7 +6479,7 @@ impl GetPolicyInput {
 pub mod get_provisioned_concurrency_config_input {
 
     /// A builder for [`GetProvisionedConcurrencyConfigInput`](crate::input::GetProvisionedConcurrencyConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -6684,7 +6684,7 @@ impl GetProvisionedConcurrencyConfigInput {
 pub mod invoke_input {
 
     /// A builder for [`InvokeInput`](crate::input::InvokeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) invocation_type: std::option::Option<crate::model::InvocationType>,
@@ -7163,7 +7163,7 @@ impl InvokeAsyncInput {
 pub mod list_aliases_input {
 
     /// A builder for [`ListAliasesInput`](crate::input::ListAliasesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) function_version: std::option::Option<std::string::String>,
@@ -7398,7 +7398,7 @@ impl ListAliasesInput {
 pub mod list_code_signing_configs_input {
 
     /// A builder for [`ListCodeSigningConfigsInput`](crate::input::ListCodeSigningConfigsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
@@ -7560,7 +7560,7 @@ impl ListCodeSigningConfigsInput {
 pub mod list_event_source_mappings_input {
 
     /// A builder for [`ListEventSourceMappingsInput`](crate::input::ListEventSourceMappingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_source_arn: std::option::Option<std::string::String>,
         pub(crate) function_name: std::option::Option<std::string::String>,
@@ -7796,7 +7796,7 @@ impl ListEventSourceMappingsInput {
 pub mod list_function_event_invoke_configs_input {
 
     /// A builder for [`ListFunctionEventInvokeConfigsInput`](crate::input::ListFunctionEventInvokeConfigsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -8010,7 +8010,7 @@ impl ListFunctionEventInvokeConfigsInput {
 pub mod list_functions_input {
 
     /// A builder for [`ListFunctionsInput`](crate::input::ListFunctionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) master_region: std::option::Option<std::string::String>,
         pub(crate) function_version: std::option::Option<crate::model::FunctionVersion>,
@@ -8215,7 +8215,7 @@ impl ListFunctionsInput {
 pub mod list_functions_by_code_signing_config_input {
 
     /// A builder for [`ListFunctionsByCodeSigningConfigInput`](crate::input::ListFunctionsByCodeSigningConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_signing_config_arn: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -8415,7 +8415,7 @@ impl ListFunctionsByCodeSigningConfigInput {
 pub mod list_function_url_configs_input {
 
     /// A builder for [`ListFunctionUrlConfigsInput`](crate::input::ListFunctionUrlConfigsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -8629,7 +8629,7 @@ impl ListFunctionUrlConfigsInput {
 pub mod list_layers_input {
 
     /// A builder for [`ListLayersInput`](crate::input::ListLayersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compatible_runtime: std::option::Option<crate::model::Runtime>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -8834,7 +8834,7 @@ impl ListLayersInput {
 pub mod list_layer_versions_input {
 
     /// A builder for [`ListLayerVersionsInput`](crate::input::ListLayerVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compatible_runtime: std::option::Option<crate::model::Runtime>,
         pub(crate) layer_name: std::option::Option<std::string::String>,
@@ -9077,7 +9077,7 @@ impl ListLayerVersionsInput {
 pub mod list_provisioned_concurrency_configs_input {
 
     /// A builder for [`ListProvisionedConcurrencyConfigsInput`](crate::input::ListProvisionedConcurrencyConfigsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -9292,7 +9292,7 @@ impl ListProvisionedConcurrencyConfigsInput {
 pub mod list_tags_input {
 
     /// A builder for [`ListTagsInput`](crate::input::ListTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
     }
@@ -9435,7 +9435,7 @@ impl ListTagsInput {
 pub mod list_versions_by_function_input {
 
     /// A builder for [`ListVersionsByFunctionInput`](crate::input::ListVersionsByFunctionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -9649,7 +9649,7 @@ impl ListVersionsByFunctionInput {
 pub mod publish_layer_version_input {
 
     /// A builder for [`PublishLayerVersionInput`](crate::input::PublishLayerVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -9907,7 +9907,7 @@ impl PublishLayerVersionInput {
 pub mod publish_version_input {
 
     /// A builder for [`PublishVersionInput`](crate::input::PublishVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) code_sha256: std::option::Option<std::string::String>,
@@ -10124,7 +10124,7 @@ impl PublishVersionInput {
 pub mod put_function_code_signing_config_input {
 
     /// A builder for [`PutFunctionCodeSigningConfigInput`](crate::input::PutFunctionCodeSigningConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_signing_config_arn: std::option::Option<std::string::String>,
         pub(crate) function_name: std::option::Option<std::string::String>,
@@ -10321,7 +10321,7 @@ impl PutFunctionCodeSigningConfigInput {
 pub mod put_function_concurrency_input {
 
     /// A builder for [`PutFunctionConcurrencyInput`](crate::input::PutFunctionConcurrencyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) reserved_concurrent_executions: std::option::Option<i32>,
@@ -10521,7 +10521,7 @@ impl PutFunctionConcurrencyInput {
 pub mod put_function_event_invoke_config_input {
 
     /// A builder for [`PutFunctionEventInvokeConfigInput`](crate::input::PutFunctionEventInvokeConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -10781,7 +10781,7 @@ impl PutFunctionEventInvokeConfigInput {
 pub mod put_provisioned_concurrency_config_input {
 
     /// A builder for [`PutProvisionedConcurrencyConfigInput`](crate::input::PutProvisionedConcurrencyConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -11014,7 +11014,7 @@ impl PutProvisionedConcurrencyConfigInput {
 pub mod remove_layer_version_permission_input {
 
     /// A builder for [`RemoveLayerVersionPermissionInput`](crate::input::RemoveLayerVersionPermissionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_name: std::option::Option<std::string::String>,
         pub(crate) version_number: std::option::Option<i64>,
@@ -11251,7 +11251,7 @@ impl RemoveLayerVersionPermissionInput {
 pub mod remove_permission_input {
 
     /// A builder for [`RemovePermissionInput`](crate::input::RemovePermissionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) statement_id: std::option::Option<std::string::String>,
@@ -11497,7 +11497,7 @@ impl RemovePermissionInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -11686,7 +11686,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11871,7 +11871,7 @@ impl UntagResourceInput {
 pub mod update_alias_input {
 
     /// A builder for [`UpdateAliasInput`](crate::input::UpdateAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -12138,7 +12138,7 @@ impl UpdateAliasInput {
 pub mod update_code_signing_config_input {
 
     /// A builder for [`UpdateCodeSigningConfigInput`](crate::input::UpdateCodeSigningConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_signing_config_arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -12351,7 +12351,7 @@ impl UpdateCodeSigningConfigInput {
 pub mod update_event_source_mapping_input {
 
     /// A builder for [`UpdateEventSourceMappingInput`](crate::input::UpdateEventSourceMappingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uuid: std::option::Option<std::string::String>,
         pub(crate) function_name: std::option::Option<std::string::String>,
@@ -12757,7 +12757,7 @@ impl UpdateEventSourceMappingInput {
 pub mod update_function_code_input {
 
     /// A builder for [`UpdateFunctionCodeInput`](crate::input::UpdateFunctionCodeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) zip_file: std::option::Option<aws_smithy_types::Blob>,
@@ -13076,7 +13076,7 @@ impl UpdateFunctionCodeInput {
 pub mod update_function_configuration_input {
 
     /// A builder for [`UpdateFunctionConfigurationInput`](crate::input::UpdateFunctionConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) role: std::option::Option<std::string::String>,
@@ -13487,7 +13487,7 @@ impl UpdateFunctionConfigurationInput {
 pub mod update_function_event_invoke_config_input {
 
     /// A builder for [`UpdateFunctionEventInvokeConfigInput`](crate::input::UpdateFunctionEventInvokeConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,
@@ -13747,7 +13747,7 @@ impl UpdateFunctionEventInvokeConfigInput {
 pub mod update_function_url_config_input {
 
     /// A builder for [`UpdateFunctionUrlConfigInput`](crate::input::UpdateFunctionUrlConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_name: std::option::Option<std::string::String>,
         pub(crate) qualifier: std::option::Option<std::string::String>,

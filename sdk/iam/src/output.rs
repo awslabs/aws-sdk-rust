@@ -18,7 +18,7 @@ impl UploadSshPublicKeyOutput {
 pub mod upload_ssh_public_key_output {
 
     /// A builder for [`UploadSshPublicKeyOutput`](crate::output::UploadSshPublicKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ssh_public_key: std::option::Option<crate::model::SshPublicKey>,
     }
@@ -69,7 +69,7 @@ impl UploadSigningCertificateOutput {
 pub mod upload_signing_certificate_output {
 
     /// A builder for [`UploadSigningCertificateOutput`](crate::output::UploadSigningCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate: std::option::Option<crate::model::SigningCertificate>,
     }
@@ -129,7 +129,7 @@ impl UploadServerCertificateOutput {
 pub mod upload_server_certificate_output {
 
     /// A builder for [`UploadServerCertificateOutput`](crate::output::UploadServerCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_certificate_metadata:
             std::option::Option<crate::model::ServerCertificateMetadata>,
@@ -195,7 +195,7 @@ pub struct UpdateUserOutput {}
 pub mod update_user_output {
 
     /// A builder for [`UpdateUserOutput`](crate::output::UpdateUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateUserOutput`](crate::output::UpdateUserOutput).
@@ -219,7 +219,7 @@ pub struct UpdateSshPublicKeyOutput {}
 pub mod update_ssh_public_key_output {
 
     /// A builder for [`UpdateSshPublicKeyOutput`](crate::output::UpdateSshPublicKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateSshPublicKeyOutput`](crate::output::UpdateSshPublicKeyOutput).
@@ -243,7 +243,7 @@ pub struct UpdateSigningCertificateOutput {}
 pub mod update_signing_certificate_output {
 
     /// A builder for [`UpdateSigningCertificateOutput`](crate::output::UpdateSigningCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateSigningCertificateOutput`](crate::output::UpdateSigningCertificateOutput).
@@ -267,7 +267,7 @@ pub struct UpdateServiceSpecificCredentialOutput {}
 pub mod update_service_specific_credential_output {
 
     /// A builder for [`UpdateServiceSpecificCredentialOutput`](crate::output::UpdateServiceSpecificCredentialOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateServiceSpecificCredentialOutput`](crate::output::UpdateServiceSpecificCredentialOutput).
@@ -291,7 +291,7 @@ pub struct UpdateServerCertificateOutput {}
 pub mod update_server_certificate_output {
 
     /// A builder for [`UpdateServerCertificateOutput`](crate::output::UpdateServerCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateServerCertificateOutput`](crate::output::UpdateServerCertificateOutput).
@@ -325,7 +325,7 @@ impl UpdateSamlProviderOutput {
 pub mod update_saml_provider_output {
 
     /// A builder for [`UpdateSamlProviderOutput`](crate::output::UpdateSamlProviderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_provider_arn: std::option::Option<std::string::String>,
     }
@@ -376,7 +376,7 @@ impl UpdateRoleDescriptionOutput {
 pub mod update_role_description_output {
 
     /// A builder for [`UpdateRoleDescriptionOutput`](crate::output::UpdateRoleDescriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role: std::option::Option<crate::model::Role>,
     }
@@ -412,7 +412,7 @@ pub struct UpdateRoleOutput {}
 pub mod update_role_output {
 
     /// A builder for [`UpdateRoleOutput`](crate::output::UpdateRoleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateRoleOutput`](crate::output::UpdateRoleOutput).
@@ -436,7 +436,7 @@ pub struct UpdateOpenIdConnectProviderThumbprintOutput {}
 pub mod update_open_id_connect_provider_thumbprint_output {
 
     /// A builder for [`UpdateOpenIdConnectProviderThumbprintOutput`](crate::output::UpdateOpenIdConnectProviderThumbprintOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateOpenIdConnectProviderThumbprintOutput`](crate::output::UpdateOpenIdConnectProviderThumbprintOutput).
@@ -460,7 +460,7 @@ pub struct UpdateLoginProfileOutput {}
 pub mod update_login_profile_output {
 
     /// A builder for [`UpdateLoginProfileOutput`](crate::output::UpdateLoginProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateLoginProfileOutput`](crate::output::UpdateLoginProfileOutput).
@@ -484,7 +484,7 @@ pub struct UpdateGroupOutput {}
 pub mod update_group_output {
 
     /// A builder for [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
@@ -508,7 +508,7 @@ pub struct UpdateAssumeRolePolicyOutput {}
 pub mod update_assume_role_policy_output {
 
     /// A builder for [`UpdateAssumeRolePolicyOutput`](crate::output::UpdateAssumeRolePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateAssumeRolePolicyOutput`](crate::output::UpdateAssumeRolePolicyOutput).
@@ -532,7 +532,7 @@ pub struct UpdateAccountPasswordPolicyOutput {}
 pub mod update_account_password_policy_output {
 
     /// A builder for [`UpdateAccountPasswordPolicyOutput`](crate::output::UpdateAccountPasswordPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateAccountPasswordPolicyOutput`](crate::output::UpdateAccountPasswordPolicyOutput).
@@ -556,7 +556,7 @@ pub struct UpdateAccessKeyOutput {}
 pub mod update_access_key_output {
 
     /// A builder for [`UpdateAccessKeyOutput`](crate::output::UpdateAccessKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateAccessKeyOutput`](crate::output::UpdateAccessKeyOutput).
@@ -580,7 +580,7 @@ pub struct UntagUserOutput {}
 pub mod untag_user_output {
 
     /// A builder for [`UntagUserOutput`](crate::output::UntagUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagUserOutput`](crate::output::UntagUserOutput).
@@ -604,7 +604,7 @@ pub struct UntagServerCertificateOutput {}
 pub mod untag_server_certificate_output {
 
     /// A builder for [`UntagServerCertificateOutput`](crate::output::UntagServerCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagServerCertificateOutput`](crate::output::UntagServerCertificateOutput).
@@ -628,7 +628,7 @@ pub struct UntagSamlProviderOutput {}
 pub mod untag_saml_provider_output {
 
     /// A builder for [`UntagSamlProviderOutput`](crate::output::UntagSamlProviderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagSamlProviderOutput`](crate::output::UntagSamlProviderOutput).
@@ -652,7 +652,7 @@ pub struct UntagRoleOutput {}
 pub mod untag_role_output {
 
     /// A builder for [`UntagRoleOutput`](crate::output::UntagRoleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagRoleOutput`](crate::output::UntagRoleOutput).
@@ -676,7 +676,7 @@ pub struct UntagPolicyOutput {}
 pub mod untag_policy_output {
 
     /// A builder for [`UntagPolicyOutput`](crate::output::UntagPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagPolicyOutput`](crate::output::UntagPolicyOutput).
@@ -700,7 +700,7 @@ pub struct UntagOpenIdConnectProviderOutput {}
 pub mod untag_open_id_connect_provider_output {
 
     /// A builder for [`UntagOpenIdConnectProviderOutput`](crate::output::UntagOpenIdConnectProviderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagOpenIdConnectProviderOutput`](crate::output::UntagOpenIdConnectProviderOutput).
@@ -724,7 +724,7 @@ pub struct UntagMfaDeviceOutput {}
 pub mod untag_mfa_device_output {
 
     /// A builder for [`UntagMfaDeviceOutput`](crate::output::UntagMfaDeviceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagMfaDeviceOutput`](crate::output::UntagMfaDeviceOutput).
@@ -748,7 +748,7 @@ pub struct UntagInstanceProfileOutput {}
 pub mod untag_instance_profile_output {
 
     /// A builder for [`UntagInstanceProfileOutput`](crate::output::UntagInstanceProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagInstanceProfileOutput`](crate::output::UntagInstanceProfileOutput).
@@ -772,7 +772,7 @@ pub struct TagUserOutput {}
 pub mod tag_user_output {
 
     /// A builder for [`TagUserOutput`](crate::output::TagUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagUserOutput`](crate::output::TagUserOutput).
@@ -796,7 +796,7 @@ pub struct TagServerCertificateOutput {}
 pub mod tag_server_certificate_output {
 
     /// A builder for [`TagServerCertificateOutput`](crate::output::TagServerCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagServerCertificateOutput`](crate::output::TagServerCertificateOutput).
@@ -820,7 +820,7 @@ pub struct TagSamlProviderOutput {}
 pub mod tag_saml_provider_output {
 
     /// A builder for [`TagSamlProviderOutput`](crate::output::TagSamlProviderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagSamlProviderOutput`](crate::output::TagSamlProviderOutput).
@@ -844,7 +844,7 @@ pub struct TagRoleOutput {}
 pub mod tag_role_output {
 
     /// A builder for [`TagRoleOutput`](crate::output::TagRoleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagRoleOutput`](crate::output::TagRoleOutput).
@@ -868,7 +868,7 @@ pub struct TagPolicyOutput {}
 pub mod tag_policy_output {
 
     /// A builder for [`TagPolicyOutput`](crate::output::TagPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagPolicyOutput`](crate::output::TagPolicyOutput).
@@ -892,7 +892,7 @@ pub struct TagOpenIdConnectProviderOutput {}
 pub mod tag_open_id_connect_provider_output {
 
     /// A builder for [`TagOpenIdConnectProviderOutput`](crate::output::TagOpenIdConnectProviderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagOpenIdConnectProviderOutput`](crate::output::TagOpenIdConnectProviderOutput).
@@ -916,7 +916,7 @@ pub struct TagMfaDeviceOutput {}
 pub mod tag_mfa_device_output {
 
     /// A builder for [`TagMfaDeviceOutput`](crate::output::TagMfaDeviceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagMfaDeviceOutput`](crate::output::TagMfaDeviceOutput).
@@ -940,7 +940,7 @@ pub struct TagInstanceProfileOutput {}
 pub mod tag_instance_profile_output {
 
     /// A builder for [`TagInstanceProfileOutput`](crate::output::TagInstanceProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagInstanceProfileOutput`](crate::output::TagInstanceProfileOutput).
@@ -988,7 +988,7 @@ impl SimulatePrincipalPolicyOutput {
 pub mod simulate_principal_policy_output {
 
     /// A builder for [`SimulatePrincipalPolicyOutput`](crate::output::SimulatePrincipalPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_results:
             std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
@@ -1084,7 +1084,7 @@ impl SimulateCustomPolicyOutput {
 pub mod simulate_custom_policy_output {
 
     /// A builder for [`SimulateCustomPolicyOutput`](crate::output::SimulateCustomPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_results:
             std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
@@ -1156,7 +1156,7 @@ pub struct SetSecurityTokenServicePreferencesOutput {}
 pub mod set_security_token_service_preferences_output {
 
     /// A builder for [`SetSecurityTokenServicePreferencesOutput`](crate::output::SetSecurityTokenServicePreferencesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetSecurityTokenServicePreferencesOutput`](crate::output::SetSecurityTokenServicePreferencesOutput).
@@ -1180,7 +1180,7 @@ pub struct SetDefaultPolicyVersionOutput {}
 pub mod set_default_policy_version_output {
 
     /// A builder for [`SetDefaultPolicyVersionOutput`](crate::output::SetDefaultPolicyVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetDefaultPolicyVersionOutput`](crate::output::SetDefaultPolicyVersionOutput).
@@ -1204,7 +1204,7 @@ pub struct ResyncMfaDeviceOutput {}
 pub mod resync_mfa_device_output {
 
     /// A builder for [`ResyncMfaDeviceOutput`](crate::output::ResyncMfaDeviceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ResyncMfaDeviceOutput`](crate::output::ResyncMfaDeviceOutput).
@@ -1244,7 +1244,7 @@ impl ResetServiceSpecificCredentialOutput {
 pub mod reset_service_specific_credential_output {
 
     /// A builder for [`ResetServiceSpecificCredentialOutput`](crate::output::ResetServiceSpecificCredentialOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_specific_credential:
             std::option::Option<crate::model::ServiceSpecificCredential>,
@@ -1293,7 +1293,7 @@ pub struct RemoveUserFromGroupOutput {}
 pub mod remove_user_from_group_output {
 
     /// A builder for [`RemoveUserFromGroupOutput`](crate::output::RemoveUserFromGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveUserFromGroupOutput`](crate::output::RemoveUserFromGroupOutput).
@@ -1317,7 +1317,7 @@ pub struct RemoveRoleFromInstanceProfileOutput {}
 pub mod remove_role_from_instance_profile_output {
 
     /// A builder for [`RemoveRoleFromInstanceProfileOutput`](crate::output::RemoveRoleFromInstanceProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveRoleFromInstanceProfileOutput`](crate::output::RemoveRoleFromInstanceProfileOutput).
@@ -1341,7 +1341,7 @@ pub struct RemoveClientIdFromOpenIdConnectProviderOutput {}
 pub mod remove_client_id_from_open_id_connect_provider_output {
 
     /// A builder for [`RemoveClientIdFromOpenIdConnectProviderOutput`](crate::output::RemoveClientIdFromOpenIdConnectProviderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveClientIdFromOpenIdConnectProviderOutput`](crate::output::RemoveClientIdFromOpenIdConnectProviderOutput).
@@ -1366,7 +1366,7 @@ pub struct PutUserPolicyOutput {}
 pub mod put_user_policy_output {
 
     /// A builder for [`PutUserPolicyOutput`](crate::output::PutUserPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutUserPolicyOutput`](crate::output::PutUserPolicyOutput).
@@ -1390,7 +1390,7 @@ pub struct PutUserPermissionsBoundaryOutput {}
 pub mod put_user_permissions_boundary_output {
 
     /// A builder for [`PutUserPermissionsBoundaryOutput`](crate::output::PutUserPermissionsBoundaryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutUserPermissionsBoundaryOutput`](crate::output::PutUserPermissionsBoundaryOutput).
@@ -1414,7 +1414,7 @@ pub struct PutRolePolicyOutput {}
 pub mod put_role_policy_output {
 
     /// A builder for [`PutRolePolicyOutput`](crate::output::PutRolePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutRolePolicyOutput`](crate::output::PutRolePolicyOutput).
@@ -1438,7 +1438,7 @@ pub struct PutRolePermissionsBoundaryOutput {}
 pub mod put_role_permissions_boundary_output {
 
     /// A builder for [`PutRolePermissionsBoundaryOutput`](crate::output::PutRolePermissionsBoundaryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutRolePermissionsBoundaryOutput`](crate::output::PutRolePermissionsBoundaryOutput).
@@ -1462,7 +1462,7 @@ pub struct PutGroupPolicyOutput {}
 pub mod put_group_policy_output {
 
     /// A builder for [`PutGroupPolicyOutput`](crate::output::PutGroupPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutGroupPolicyOutput`](crate::output::PutGroupPolicyOutput).
@@ -1510,7 +1510,7 @@ impl ListVirtualMfaDevicesOutput {
 pub mod list_virtual_mfa_devices_output {
 
     /// A builder for [`ListVirtualMfaDevicesOutput`](crate::output::ListVirtualMfaDevicesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_mfa_devices:
             std::option::Option<std::vec::Vec<crate::model::VirtualMfaDevice>>,
@@ -1606,7 +1606,7 @@ impl ListUserTagsOutput {
 pub mod list_user_tags_output {
 
     /// A builder for [`ListUserTagsOutput`](crate::output::ListUserTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -1701,7 +1701,7 @@ impl ListUsersOutput {
 pub mod list_users_output {
 
     /// A builder for [`ListUsersOutput`](crate::output::ListUsersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::User>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -1796,7 +1796,7 @@ impl ListUserPoliciesOutput {
 pub mod list_user_policies_output {
 
     /// A builder for [`ListUserPoliciesOutput`](crate::output::ListUserPoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -1891,7 +1891,7 @@ impl ListSshPublicKeysOutput {
 pub mod list_ssh_public_keys_output {
 
     /// A builder for [`ListSshPublicKeysOutput`](crate::output::ListSshPublicKeysOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ssh_public_keys:
             std::option::Option<std::vec::Vec<crate::model::SshPublicKeyMetadata>>,
@@ -1987,7 +1987,7 @@ impl ListSigningCertificatesOutput {
 pub mod list_signing_certificates_output {
 
     /// A builder for [`ListSigningCertificatesOutput`](crate::output::ListSigningCertificatesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificates:
             std::option::Option<std::vec::Vec<crate::model::SigningCertificate>>,
@@ -2072,7 +2072,7 @@ impl ListServiceSpecificCredentialsOutput {
 pub mod list_service_specific_credentials_output {
 
     /// A builder for [`ListServiceSpecificCredentialsOutput`](crate::output::ListServiceSpecificCredentialsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_specific_credentials:
             std::option::Option<std::vec::Vec<crate::model::ServiceSpecificCredentialMetadata>>,
@@ -2149,7 +2149,7 @@ impl ListServerCertificateTagsOutput {
 pub mod list_server_certificate_tags_output {
 
     /// A builder for [`ListServerCertificateTagsOutput`](crate::output::ListServerCertificateTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -2247,7 +2247,7 @@ impl ListServerCertificatesOutput {
 pub mod list_server_certificates_output {
 
     /// A builder for [`ListServerCertificatesOutput`](crate::output::ListServerCertificatesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_certificate_metadata_list:
             std::option::Option<std::vec::Vec<crate::model::ServerCertificateMetadata>>,
@@ -2346,7 +2346,7 @@ impl ListSamlProviderTagsOutput {
 pub mod list_saml_provider_tags_output {
 
     /// A builder for [`ListSamlProviderTagsOutput`](crate::output::ListSamlProviderTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -2429,7 +2429,7 @@ impl ListSamlProvidersOutput {
 pub mod list_saml_providers_output {
 
     /// A builder for [`ListSamlProvidersOutput`](crate::output::ListSamlProvidersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_provider_list:
             std::option::Option<std::vec::Vec<crate::model::SamlProviderListEntry>>,
@@ -2501,7 +2501,7 @@ impl ListRoleTagsOutput {
 pub mod list_role_tags_output {
 
     /// A builder for [`ListRoleTagsOutput`](crate::output::ListRoleTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -2596,7 +2596,7 @@ impl ListRolesOutput {
 pub mod list_roles_output {
 
     /// A builder for [`ListRolesOutput`](crate::output::ListRolesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) roles: std::option::Option<std::vec::Vec<crate::model::Role>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -2691,7 +2691,7 @@ impl ListRolePoliciesOutput {
 pub mod list_role_policies_output {
 
     /// A builder for [`ListRolePoliciesOutput`](crate::output::ListRolePoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -2788,7 +2788,7 @@ impl ListPolicyVersionsOutput {
 pub mod list_policy_versions_output {
 
     /// A builder for [`ListPolicyVersionsOutput`](crate::output::ListPolicyVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) versions: std::option::Option<std::vec::Vec<crate::model::PolicyVersion>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -2885,7 +2885,7 @@ impl ListPolicyTagsOutput {
 pub mod list_policy_tags_output {
 
     /// A builder for [`ListPolicyTagsOutput`](crate::output::ListPolicyTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -2983,7 +2983,7 @@ impl ListPoliciesGrantingServiceAccessOutput {
 pub mod list_policies_granting_service_access_output {
 
     /// A builder for [`ListPoliciesGrantingServiceAccessOutput`](crate::output::ListPoliciesGrantingServiceAccessOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policies_granting_service_access: std::option::Option<
             std::vec::Vec<crate::model::ListPoliciesGrantingServiceAccessEntry>,
@@ -3085,7 +3085,7 @@ impl ListPoliciesOutput {
 pub mod list_policies_output {
 
     /// A builder for [`ListPoliciesOutput`](crate::output::ListPoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policies: std::option::Option<std::vec::Vec<crate::model::Policy>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -3180,7 +3180,7 @@ impl ListOpenIdConnectProviderTagsOutput {
 pub mod list_open_id_connect_provider_tags_output {
 
     /// A builder for [`ListOpenIdConnectProviderTagsOutput`](crate::output::ListOpenIdConnectProviderTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -3264,7 +3264,7 @@ impl ListOpenIdConnectProvidersOutput {
 pub mod list_open_id_connect_providers_output {
 
     /// A builder for [`ListOpenIdConnectProvidersOutput`](crate::output::ListOpenIdConnectProvidersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_id_connect_provider_list:
             std::option::Option<std::vec::Vec<crate::model::OpenIdConnectProviderListEntry>>,
@@ -3339,7 +3339,7 @@ impl ListMfaDeviceTagsOutput {
 pub mod list_mfa_device_tags_output {
 
     /// A builder for [`ListMfaDeviceTagsOutput`](crate::output::ListMfaDeviceTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -3434,7 +3434,7 @@ impl ListMfaDevicesOutput {
 pub mod list_mfa_devices_output {
 
     /// A builder for [`ListMfaDevicesOutput`](crate::output::ListMfaDevicesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mfa_devices: std::option::Option<std::vec::Vec<crate::model::MfaDevice>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -3529,7 +3529,7 @@ impl ListInstanceProfileTagsOutput {
 pub mod list_instance_profile_tags_output {
 
     /// A builder for [`ListInstanceProfileTagsOutput`](crate::output::ListInstanceProfileTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -3624,7 +3624,7 @@ impl ListInstanceProfilesForRoleOutput {
 pub mod list_instance_profiles_for_role_output {
 
     /// A builder for [`ListInstanceProfilesForRoleOutput`](crate::output::ListInstanceProfilesForRoleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_profiles:
             std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
@@ -3720,7 +3720,7 @@ impl ListInstanceProfilesOutput {
 pub mod list_instance_profiles_output {
 
     /// A builder for [`ListInstanceProfilesOutput`](crate::output::ListInstanceProfilesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_profiles:
             std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
@@ -3816,7 +3816,7 @@ impl ListGroupsForUserOutput {
 pub mod list_groups_for_user_output {
 
     /// A builder for [`ListGroupsForUserOutput`](crate::output::ListGroupsForUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::Group>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -3911,7 +3911,7 @@ impl ListGroupsOutput {
 pub mod list_groups_output {
 
     /// A builder for [`ListGroupsOutput`](crate::output::ListGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::Group>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -4008,7 +4008,7 @@ impl ListGroupPoliciesOutput {
 pub mod list_group_policies_output {
 
     /// A builder for [`ListGroupPoliciesOutput`](crate::output::ListGroupPoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -4119,7 +4119,7 @@ impl ListEntitiesForPolicyOutput {
 pub mod list_entities_for_policy_output {
 
     /// A builder for [`ListEntitiesForPolicyOutput`](crate::output::ListEntitiesForPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_groups: std::option::Option<std::vec::Vec<crate::model::PolicyGroup>>,
         pub(crate) policy_users: std::option::Option<std::vec::Vec<crate::model::PolicyUser>>,
@@ -4256,7 +4256,7 @@ impl ListAttachedUserPoliciesOutput {
 pub mod list_attached_user_policies_output {
 
     /// A builder for [`ListAttachedUserPoliciesOutput`](crate::output::ListAttachedUserPoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_policies:
             std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
@@ -4352,7 +4352,7 @@ impl ListAttachedRolePoliciesOutput {
 pub mod list_attached_role_policies_output {
 
     /// A builder for [`ListAttachedRolePoliciesOutput`](crate::output::ListAttachedRolePoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_policies:
             std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
@@ -4448,7 +4448,7 @@ impl ListAttachedGroupPoliciesOutput {
 pub mod list_attached_group_policies_output {
 
     /// A builder for [`ListAttachedGroupPoliciesOutput`](crate::output::ListAttachedGroupPoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_policies:
             std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
@@ -4544,7 +4544,7 @@ impl ListAccountAliasesOutput {
 pub mod list_account_aliases_output {
 
     /// A builder for [`ListAccountAliasesOutput`](crate::output::ListAccountAliasesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_aliases: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -4639,7 +4639,7 @@ impl ListAccessKeysOutput {
 pub mod list_access_keys_output {
 
     /// A builder for [`ListAccessKeysOutput`](crate::output::ListAccessKeysOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_key_metadata:
             std::option::Option<std::vec::Vec<crate::model::AccessKeyMetadata>>,
@@ -4737,7 +4737,7 @@ impl GetUserPolicyOutput {
 pub mod get_user_policy_output {
 
     /// A builder for [`GetUserPolicyOutput`](crate::output::GetUserPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -4820,7 +4820,7 @@ impl GetUserOutput {
 pub mod get_user_output {
 
     /// A builder for [`GetUserOutput`](crate::output::GetUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user: std::option::Option<crate::model::User>,
     }
@@ -4872,7 +4872,7 @@ impl GetSshPublicKeyOutput {
 pub mod get_ssh_public_key_output {
 
     /// A builder for [`GetSshPublicKeyOutput`](crate::output::GetSshPublicKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ssh_public_key: std::option::Option<crate::model::SshPublicKey>,
     }
@@ -4930,7 +4930,7 @@ impl GetServiceLinkedRoleDeletionStatusOutput {
 pub mod get_service_linked_role_deletion_status_output {
 
     /// A builder for [`GetServiceLinkedRoleDeletionStatusOutput`](crate::output::GetServiceLinkedRoleDeletionStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::DeletionTaskStatusType>,
         pub(crate) reason: std::option::Option<crate::model::DeletionTaskFailureReasonType>,
@@ -5040,7 +5040,7 @@ impl GetServiceLastAccessedDetailsWithEntitiesOutput {
 pub mod get_service_last_accessed_details_with_entities_output {
 
     /// A builder for [`GetServiceLastAccessedDetailsWithEntitiesOutput`](crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_status: std::option::Option<crate::model::JobStatusType>,
         pub(crate) job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -5238,7 +5238,7 @@ impl GetServiceLastAccessedDetailsOutput {
 pub mod get_service_last_accessed_details_output {
 
     /// A builder for [`GetServiceLastAccessedDetailsOutput`](crate::output::GetServiceLastAccessedDetailsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_status: std::option::Option<crate::model::JobStatusType>,
         pub(crate) job_type: std::option::Option<crate::model::AccessAdvisorUsageGranularityType>,
@@ -5394,7 +5394,7 @@ impl GetServerCertificateOutput {
 pub mod get_server_certificate_output {
 
     /// A builder for [`GetServerCertificateOutput`](crate::output::GetServerCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_certificate: std::option::Option<crate::model::ServerCertificate>,
     }
@@ -5466,7 +5466,7 @@ impl GetSamlProviderOutput {
 pub mod get_saml_provider_output {
 
     /// A builder for [`GetSamlProviderOutput`](crate::output::GetSamlProviderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_metadata_document: std::option::Option<std::string::String>,
         pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -5584,7 +5584,7 @@ impl GetRolePolicyOutput {
 pub mod get_role_policy_output {
 
     /// A builder for [`GetRolePolicyOutput`](crate::output::GetRolePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -5661,7 +5661,7 @@ impl GetRoleOutput {
 pub mod get_role_output {
 
     /// A builder for [`GetRoleOutput`](crate::output::GetRoleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role: std::option::Option<crate::model::Role>,
     }
@@ -5707,7 +5707,7 @@ impl GetPolicyVersionOutput {
 pub mod get_policy_version_output {
 
     /// A builder for [`GetPolicyVersionOutput`](crate::output::GetPolicyVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_version: std::option::Option<crate::model::PolicyVersion>,
     }
@@ -5758,7 +5758,7 @@ impl GetPolicyOutput {
 pub mod get_policy_output {
 
     /// A builder for [`GetPolicyOutput`](crate::output::GetPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::Policy>,
     }
@@ -5866,7 +5866,7 @@ impl GetOrganizationsAccessReportOutput {
 pub mod get_organizations_access_report_output {
 
     /// A builder for [`GetOrganizationsAccessReportOutput`](crate::output::GetOrganizationsAccessReportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_status: std::option::Option<crate::model::JobStatusType>,
         pub(crate) job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -6069,7 +6069,7 @@ impl GetOpenIdConnectProviderOutput {
 pub mod get_open_id_connect_provider_output {
 
     /// A builder for [`GetOpenIdConnectProviderOutput`](crate::output::GetOpenIdConnectProviderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) client_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6195,7 +6195,7 @@ impl GetLoginProfileOutput {
 pub mod get_login_profile_output {
 
     /// A builder for [`GetLoginProfileOutput`](crate::output::GetLoginProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) login_profile: std::option::Option<crate::model::LoginProfile>,
     }
@@ -6246,7 +6246,7 @@ impl GetInstanceProfileOutput {
 pub mod get_instance_profile_output {
 
     /// A builder for [`GetInstanceProfileOutput`](crate::output::GetInstanceProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_profile: std::option::Option<crate::model::InstanceProfile>,
     }
@@ -6313,7 +6313,7 @@ impl GetGroupPolicyOutput {
 pub mod get_group_policy_output {
 
     /// A builder for [`GetGroupPolicyOutput`](crate::output::GetGroupPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -6411,7 +6411,7 @@ impl GetGroupOutput {
 pub mod get_group_output {
 
     /// A builder for [`GetGroupOutput`](crate::output::GetGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::Group>,
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::User>>,
@@ -6518,7 +6518,7 @@ impl GetCredentialReportOutput {
 pub mod get_credential_report_output {
 
     /// A builder for [`GetCredentialReportOutput`](crate::output::GetCredentialReportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) report_format: std::option::Option<crate::model::ReportFormatType>,
@@ -6596,7 +6596,7 @@ impl GetContextKeysForPrincipalPolicyOutput {
 pub mod get_context_keys_for_principal_policy_output {
 
     /// A builder for [`GetContextKeysForPrincipalPolicyOutput`](crate::output::GetContextKeysForPrincipalPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) context_key_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -6653,7 +6653,7 @@ impl GetContextKeysForCustomPolicyOutput {
 pub mod get_context_keys_for_custom_policy_output {
 
     /// A builder for [`GetContextKeysForCustomPolicyOutput`](crate::output::GetContextKeysForCustomPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) context_key_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -6713,7 +6713,7 @@ impl GetAccountSummaryOutput {
 pub mod get_account_summary_output {
 
     /// A builder for [`GetAccountSummaryOutput`](crate::output::GetAccountSummaryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary_map:
             std::option::Option<std::collections::HashMap<crate::model::SummaryKeyType, i32>>,
@@ -6773,7 +6773,7 @@ impl GetAccountPasswordPolicyOutput {
 pub mod get_account_password_policy_output {
 
     /// A builder for [`GetAccountPasswordPolicyOutput`](crate::output::GetAccountPasswordPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) password_policy: std::option::Option<crate::model::PasswordPolicy>,
     }
@@ -6859,7 +6859,7 @@ impl GetAccountAuthorizationDetailsOutput {
 pub mod get_account_authorization_details_output {
 
     /// A builder for [`GetAccountAuthorizationDetailsOutput`](crate::output::GetAccountAuthorizationDetailsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_detail_list: std::option::Option<std::vec::Vec<crate::model::UserDetail>>,
         pub(crate) group_detail_list: std::option::Option<std::vec::Vec<crate::model::GroupDetail>>,
@@ -7012,7 +7012,7 @@ impl GetAccessKeyLastUsedOutput {
 pub mod get_access_key_last_used_output {
 
     /// A builder for [`GetAccessKeyLastUsedOutput`](crate::output::GetAccessKeyLastUsedOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) access_key_last_used: std::option::Option<crate::model::AccessKeyLastUsed>,
@@ -7077,7 +7077,7 @@ impl GenerateServiceLastAccessedDetailsOutput {
 pub mod generate_service_last_accessed_details_output {
 
     /// A builder for [`GenerateServiceLastAccessedDetailsOutput`](crate::output::GenerateServiceLastAccessedDetailsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -7125,7 +7125,7 @@ impl GenerateOrganizationsAccessReportOutput {
 pub mod generate_organizations_access_report_output {
 
     /// A builder for [`GenerateOrganizationsAccessReportOutput`](crate::output::GenerateOrganizationsAccessReportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -7180,7 +7180,7 @@ impl GenerateCredentialReportOutput {
 pub mod generate_credential_report_output {
 
     /// A builder for [`GenerateCredentialReportOutput`](crate::output::GenerateCredentialReportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::ReportStateType>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -7233,7 +7233,7 @@ pub struct EnableMfaDeviceOutput {}
 pub mod enable_mfa_device_output {
 
     /// A builder for [`EnableMfaDeviceOutput`](crate::output::EnableMfaDeviceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`EnableMfaDeviceOutput`](crate::output::EnableMfaDeviceOutput).
@@ -7257,7 +7257,7 @@ pub struct DetachUserPolicyOutput {}
 pub mod detach_user_policy_output {
 
     /// A builder for [`DetachUserPolicyOutput`](crate::output::DetachUserPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DetachUserPolicyOutput`](crate::output::DetachUserPolicyOutput).
@@ -7281,7 +7281,7 @@ pub struct DetachRolePolicyOutput {}
 pub mod detach_role_policy_output {
 
     /// A builder for [`DetachRolePolicyOutput`](crate::output::DetachRolePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DetachRolePolicyOutput`](crate::output::DetachRolePolicyOutput).
@@ -7305,7 +7305,7 @@ pub struct DetachGroupPolicyOutput {}
 pub mod detach_group_policy_output {
 
     /// A builder for [`DetachGroupPolicyOutput`](crate::output::DetachGroupPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DetachGroupPolicyOutput`](crate::output::DetachGroupPolicyOutput).
@@ -7329,7 +7329,7 @@ pub struct DeleteVirtualMfaDeviceOutput {}
 pub mod delete_virtual_mfa_device_output {
 
     /// A builder for [`DeleteVirtualMfaDeviceOutput`](crate::output::DeleteVirtualMfaDeviceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVirtualMfaDeviceOutput`](crate::output::DeleteVirtualMfaDeviceOutput).
@@ -7353,7 +7353,7 @@ pub struct DeleteUserPolicyOutput {}
 pub mod delete_user_policy_output {
 
     /// A builder for [`DeleteUserPolicyOutput`](crate::output::DeleteUserPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUserPolicyOutput`](crate::output::DeleteUserPolicyOutput).
@@ -7377,7 +7377,7 @@ pub struct DeleteUserPermissionsBoundaryOutput {}
 pub mod delete_user_permissions_boundary_output {
 
     /// A builder for [`DeleteUserPermissionsBoundaryOutput`](crate::output::DeleteUserPermissionsBoundaryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUserPermissionsBoundaryOutput`](crate::output::DeleteUserPermissionsBoundaryOutput).
@@ -7401,7 +7401,7 @@ pub struct DeleteUserOutput {}
 pub mod delete_user_output {
 
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUserOutput`](crate::output::DeleteUserOutput).
@@ -7425,7 +7425,7 @@ pub struct DeleteSshPublicKeyOutput {}
 pub mod delete_ssh_public_key_output {
 
     /// A builder for [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput).
@@ -7449,7 +7449,7 @@ pub struct DeleteSigningCertificateOutput {}
 pub mod delete_signing_certificate_output {
 
     /// A builder for [`DeleteSigningCertificateOutput`](crate::output::DeleteSigningCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSigningCertificateOutput`](crate::output::DeleteSigningCertificateOutput).
@@ -7473,7 +7473,7 @@ pub struct DeleteServiceSpecificCredentialOutput {}
 pub mod delete_service_specific_credential_output {
 
     /// A builder for [`DeleteServiceSpecificCredentialOutput`](crate::output::DeleteServiceSpecificCredentialOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteServiceSpecificCredentialOutput`](crate::output::DeleteServiceSpecificCredentialOutput).
@@ -7521,7 +7521,7 @@ impl DeleteServiceLinkedRoleOutput {
 pub mod delete_service_linked_role_output {
 
     /// A builder for [`DeleteServiceLinkedRoleOutput`](crate::output::DeleteServiceLinkedRoleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deletion_task_id: std::option::Option<std::string::String>,
     }
@@ -7576,7 +7576,7 @@ pub struct DeleteServerCertificateOutput {}
 pub mod delete_server_certificate_output {
 
     /// A builder for [`DeleteServerCertificateOutput`](crate::output::DeleteServerCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteServerCertificateOutput`](crate::output::DeleteServerCertificateOutput).
@@ -7600,7 +7600,7 @@ pub struct DeleteSamlProviderOutput {}
 pub mod delete_saml_provider_output {
 
     /// A builder for [`DeleteSamlProviderOutput`](crate::output::DeleteSamlProviderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSamlProviderOutput`](crate::output::DeleteSamlProviderOutput).
@@ -7624,7 +7624,7 @@ pub struct DeleteRolePolicyOutput {}
 pub mod delete_role_policy_output {
 
     /// A builder for [`DeleteRolePolicyOutput`](crate::output::DeleteRolePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRolePolicyOutput`](crate::output::DeleteRolePolicyOutput).
@@ -7648,7 +7648,7 @@ pub struct DeleteRolePermissionsBoundaryOutput {}
 pub mod delete_role_permissions_boundary_output {
 
     /// A builder for [`DeleteRolePermissionsBoundaryOutput`](crate::output::DeleteRolePermissionsBoundaryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRolePermissionsBoundaryOutput`](crate::output::DeleteRolePermissionsBoundaryOutput).
@@ -7672,7 +7672,7 @@ pub struct DeleteRoleOutput {}
 pub mod delete_role_output {
 
     /// A builder for [`DeleteRoleOutput`](crate::output::DeleteRoleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRoleOutput`](crate::output::DeleteRoleOutput).
@@ -7696,7 +7696,7 @@ pub struct DeletePolicyVersionOutput {}
 pub mod delete_policy_version_output {
 
     /// A builder for [`DeletePolicyVersionOutput`](crate::output::DeletePolicyVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePolicyVersionOutput`](crate::output::DeletePolicyVersionOutput).
@@ -7720,7 +7720,7 @@ pub struct DeletePolicyOutput {}
 pub mod delete_policy_output {
 
     /// A builder for [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
@@ -7744,7 +7744,7 @@ pub struct DeleteOpenIdConnectProviderOutput {}
 pub mod delete_open_id_connect_provider_output {
 
     /// A builder for [`DeleteOpenIdConnectProviderOutput`](crate::output::DeleteOpenIdConnectProviderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteOpenIdConnectProviderOutput`](crate::output::DeleteOpenIdConnectProviderOutput).
@@ -7768,7 +7768,7 @@ pub struct DeleteLoginProfileOutput {}
 pub mod delete_login_profile_output {
 
     /// A builder for [`DeleteLoginProfileOutput`](crate::output::DeleteLoginProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLoginProfileOutput`](crate::output::DeleteLoginProfileOutput).
@@ -7792,7 +7792,7 @@ pub struct DeleteInstanceProfileOutput {}
 pub mod delete_instance_profile_output {
 
     /// A builder for [`DeleteInstanceProfileOutput`](crate::output::DeleteInstanceProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteInstanceProfileOutput`](crate::output::DeleteInstanceProfileOutput).
@@ -7816,7 +7816,7 @@ pub struct DeleteGroupPolicyOutput {}
 pub mod delete_group_policy_output {
 
     /// A builder for [`DeleteGroupPolicyOutput`](crate::output::DeleteGroupPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteGroupPolicyOutput`](crate::output::DeleteGroupPolicyOutput).
@@ -7840,7 +7840,7 @@ pub struct DeleteGroupOutput {}
 pub mod delete_group_output {
 
     /// A builder for [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
@@ -7864,7 +7864,7 @@ pub struct DeleteAccountPasswordPolicyOutput {}
 pub mod delete_account_password_policy_output {
 
     /// A builder for [`DeleteAccountPasswordPolicyOutput`](crate::output::DeleteAccountPasswordPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccountPasswordPolicyOutput`](crate::output::DeleteAccountPasswordPolicyOutput).
@@ -7888,7 +7888,7 @@ pub struct DeleteAccountAliasOutput {}
 pub mod delete_account_alias_output {
 
     /// A builder for [`DeleteAccountAliasOutput`](crate::output::DeleteAccountAliasOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccountAliasOutput`](crate::output::DeleteAccountAliasOutput).
@@ -7912,7 +7912,7 @@ pub struct DeleteAccessKeyOutput {}
 pub mod delete_access_key_output {
 
     /// A builder for [`DeleteAccessKeyOutput`](crate::output::DeleteAccessKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccessKeyOutput`](crate::output::DeleteAccessKeyOutput).
@@ -7936,7 +7936,7 @@ pub struct DeactivateMfaDeviceOutput {}
 pub mod deactivate_mfa_device_output {
 
     /// A builder for [`DeactivateMfaDeviceOutput`](crate::output::DeactivateMfaDeviceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeactivateMfaDeviceOutput`](crate::output::DeactivateMfaDeviceOutput).
@@ -7970,7 +7970,7 @@ impl CreateVirtualMfaDeviceOutput {
 pub mod create_virtual_mfa_device_output {
 
     /// A builder for [`CreateVirtualMfaDeviceOutput`](crate::output::CreateVirtualMfaDeviceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_mfa_device: std::option::Option<crate::model::VirtualMfaDevice>,
     }
@@ -8021,7 +8021,7 @@ impl CreateUserOutput {
 pub mod create_user_output {
 
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user: std::option::Option<crate::model::User>,
     }
@@ -8073,7 +8073,7 @@ impl CreateServiceSpecificCredentialOutput {
 pub mod create_service_specific_credential_output {
 
     /// A builder for [`CreateServiceSpecificCredentialOutput`](crate::output::CreateServiceSpecificCredentialOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_specific_credential:
             std::option::Option<crate::model::ServiceSpecificCredential>,
@@ -8132,7 +8132,7 @@ impl CreateServiceLinkedRoleOutput {
 pub mod create_service_linked_role_output {
 
     /// A builder for [`CreateServiceLinkedRoleOutput`](crate::output::CreateServiceLinkedRoleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role: std::option::Option<crate::model::Role>,
     }
@@ -8185,7 +8185,7 @@ impl CreateSamlProviderOutput {
 pub mod create_saml_provider_output {
 
     /// A builder for [`CreateSamlProviderOutput`](crate::output::CreateSamlProviderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_provider_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8257,7 +8257,7 @@ impl CreateRoleOutput {
 pub mod create_role_output {
 
     /// A builder for [`CreateRoleOutput`](crate::output::CreateRoleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role: std::option::Option<crate::model::Role>,
     }
@@ -8303,7 +8303,7 @@ impl CreatePolicyVersionOutput {
 pub mod create_policy_version_output {
 
     /// A builder for [`CreatePolicyVersionOutput`](crate::output::CreatePolicyVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_version: std::option::Option<crate::model::PolicyVersion>,
     }
@@ -8354,7 +8354,7 @@ impl CreatePolicyOutput {
 pub mod create_policy_output {
 
     /// A builder for [`CreatePolicyOutput`](crate::output::CreatePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::Policy>,
     }
@@ -8409,7 +8409,7 @@ impl CreateOpenIdConnectProviderOutput {
 pub mod create_open_id_connect_provider_output {
 
     /// A builder for [`CreateOpenIdConnectProviderOutput`](crate::output::CreateOpenIdConnectProviderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_id_connect_provider_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8484,7 +8484,7 @@ impl CreateLoginProfileOutput {
 pub mod create_login_profile_output {
 
     /// A builder for [`CreateLoginProfileOutput`](crate::output::CreateLoginProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) login_profile: std::option::Option<crate::model::LoginProfile>,
     }
@@ -8535,7 +8535,7 @@ impl CreateInstanceProfileOutput {
 pub mod create_instance_profile_output {
 
     /// A builder for [`CreateInstanceProfileOutput`](crate::output::CreateInstanceProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_profile: std::option::Option<crate::model::InstanceProfile>,
     }
@@ -8586,7 +8586,7 @@ impl CreateGroupOutput {
 pub mod create_group_output {
 
     /// A builder for [`CreateGroupOutput`](crate::output::CreateGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::Group>,
     }
@@ -8622,7 +8622,7 @@ pub struct CreateAccountAliasOutput {}
 pub mod create_account_alias_output {
 
     /// A builder for [`CreateAccountAliasOutput`](crate::output::CreateAccountAliasOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateAccountAliasOutput`](crate::output::CreateAccountAliasOutput).
@@ -8656,7 +8656,7 @@ impl CreateAccessKeyOutput {
 pub mod create_access_key_output {
 
     /// A builder for [`CreateAccessKeyOutput`](crate::output::CreateAccessKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_key: std::option::Option<crate::model::AccessKey>,
     }
@@ -8697,7 +8697,7 @@ pub struct ChangePasswordOutput {}
 pub mod change_password_output {
 
     /// A builder for [`ChangePasswordOutput`](crate::output::ChangePasswordOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ChangePasswordOutput`](crate::output::ChangePasswordOutput).
@@ -8721,7 +8721,7 @@ pub struct AttachUserPolicyOutput {}
 pub mod attach_user_policy_output {
 
     /// A builder for [`AttachUserPolicyOutput`](crate::output::AttachUserPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AttachUserPolicyOutput`](crate::output::AttachUserPolicyOutput).
@@ -8745,7 +8745,7 @@ pub struct AttachRolePolicyOutput {}
 pub mod attach_role_policy_output {
 
     /// A builder for [`AttachRolePolicyOutput`](crate::output::AttachRolePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AttachRolePolicyOutput`](crate::output::AttachRolePolicyOutput).
@@ -8769,7 +8769,7 @@ pub struct AttachGroupPolicyOutput {}
 pub mod attach_group_policy_output {
 
     /// A builder for [`AttachGroupPolicyOutput`](crate::output::AttachGroupPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AttachGroupPolicyOutput`](crate::output::AttachGroupPolicyOutput).
@@ -8793,7 +8793,7 @@ pub struct AddUserToGroupOutput {}
 pub mod add_user_to_group_output {
 
     /// A builder for [`AddUserToGroupOutput`](crate::output::AddUserToGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AddUserToGroupOutput`](crate::output::AddUserToGroupOutput).
@@ -8817,7 +8817,7 @@ pub struct AddRoleToInstanceProfileOutput {}
 pub mod add_role_to_instance_profile_output {
 
     /// A builder for [`AddRoleToInstanceProfileOutput`](crate::output::AddRoleToInstanceProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AddRoleToInstanceProfileOutput`](crate::output::AddRoleToInstanceProfileOutput).
@@ -8841,7 +8841,7 @@ pub struct AddClientIdToOpenIdConnectProviderOutput {}
 pub mod add_client_id_to_open_id_connect_provider_output {
 
     /// A builder for [`AddClientIdToOpenIdConnectProviderOutput`](crate::output::AddClientIdToOpenIdConnectProviderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AddClientIdToOpenIdConnectProviderOutput`](crate::output::AddClientIdToOpenIdConnectProviderOutput).

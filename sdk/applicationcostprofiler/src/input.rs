@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod delete_report_definition_input {
 
     /// A builder for [`DeleteReportDefinitionInput`](crate::input::DeleteReportDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
     }
@@ -153,7 +153,7 @@ impl DeleteReportDefinitionInput {
 pub mod get_report_definition_input {
 
     /// A builder for [`GetReportDefinitionInput`](crate::input::GetReportDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
     }
@@ -301,7 +301,7 @@ impl GetReportDefinitionInput {
 pub mod import_application_usage_input {
 
     /// A builder for [`ImportApplicationUsageInput`](crate::input::ImportApplicationUsageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_s3_location: std::option::Option<crate::model::SourceS3Location>,
     }
@@ -448,7 +448,7 @@ impl ImportApplicationUsageInput {
 pub mod list_report_definitions_input {
 
     /// A builder for [`ListReportDefinitionsInput`](crate::input::ListReportDefinitionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -609,7 +609,7 @@ impl ListReportDefinitionsInput {
 pub mod put_report_definition_input {
 
     /// A builder for [`PutReportDefinitionInput`](crate::input::PutReportDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
         pub(crate) report_description: std::option::Option<std::string::String>,
@@ -808,7 +808,7 @@ impl PutReportDefinitionInput {
 pub mod update_report_definition_input {
 
     /// A builder for [`UpdateReportDefinitionInput`](crate::input::UpdateReportDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
         pub(crate) report_description: std::option::Option<std::string::String>,

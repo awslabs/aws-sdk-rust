@@ -24,7 +24,7 @@ impl ListDetectorsOutput {
 pub mod list_detectors_output {
 
     /// A builder for [`ListDetectorsOutput`](crate::output::ListDetectorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_summaries:
             std::option::Option<std::vec::Vec<crate::model::DetectorSummary>>,
@@ -101,7 +101,7 @@ impl ListAlarmsOutput {
 pub mod list_alarms_output {
 
     /// A builder for [`ListAlarmsOutput`](crate::output::ListAlarmsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_summaries: std::option::Option<std::vec::Vec<crate::model::AlarmSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -170,7 +170,7 @@ impl DescribeDetectorOutput {
 pub mod describe_detector_output {
 
     /// A builder for [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector: std::option::Option<crate::model::Detector>,
     }
@@ -218,7 +218,7 @@ impl DescribeAlarmOutput {
 pub mod describe_alarm_output {
 
     /// A builder for [`DescribeAlarmOutput`](crate::output::DescribeAlarmOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm: std::option::Option<crate::model::Alarm>,
     }
@@ -267,7 +267,7 @@ impl BatchUpdateDetectorOutput {
 pub mod batch_update_detector_output {
 
     /// A builder for [`BatchUpdateDetectorOutput`](crate::output::BatchUpdateDetectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_update_detector_error_entries:
             std::option::Option<std::vec::Vec<crate::model::BatchUpdateDetectorErrorEntry>>,
@@ -330,7 +330,7 @@ impl BatchSnoozeAlarmOutput {
 pub mod batch_snooze_alarm_output {
 
     /// A builder for [`BatchSnoozeAlarmOutput`](crate::output::BatchSnoozeAlarmOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_entries:
             std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
@@ -390,7 +390,7 @@ impl BatchResetAlarmOutput {
 pub mod batch_reset_alarm_output {
 
     /// A builder for [`BatchResetAlarmOutput`](crate::output::BatchResetAlarmOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_entries:
             std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
@@ -451,7 +451,7 @@ impl BatchPutMessageOutput {
 pub mod batch_put_message_output {
 
     /// A builder for [`BatchPutMessageOutput`](crate::output::BatchPutMessageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_put_message_error_entries:
             std::option::Option<std::vec::Vec<crate::model::BatchPutMessageErrorEntry>>,
@@ -514,7 +514,7 @@ impl BatchEnableAlarmOutput {
 pub mod batch_enable_alarm_output {
 
     /// A builder for [`BatchEnableAlarmOutput`](crate::output::BatchEnableAlarmOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_entries:
             std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
@@ -574,7 +574,7 @@ impl BatchDisableAlarmOutput {
 pub mod batch_disable_alarm_output {
 
     /// A builder for [`BatchDisableAlarmOutput`](crate::output::BatchDisableAlarmOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_entries:
             std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
@@ -635,7 +635,7 @@ impl BatchDeleteDetectorOutput {
 pub mod batch_delete_detector_output {
 
     /// A builder for [`BatchDeleteDetectorOutput`](crate::output::BatchDeleteDetectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_delete_detector_error_entries:
             std::option::Option<std::vec::Vec<crate::model::BatchDeleteDetectorErrorEntry>>,
@@ -698,7 +698,7 @@ impl BatchAcknowledgeAlarmOutput {
 pub mod batch_acknowledge_alarm_output {
 
     /// A builder for [`BatchAcknowledgeAlarmOutput`](crate::output::BatchAcknowledgeAlarmOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_entries:
             std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,

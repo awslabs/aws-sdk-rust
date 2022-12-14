@@ -199,7 +199,7 @@ impl Server {
 pub mod server {
 
     /// A builder for [`Server`](crate::model::Server).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associate_public_ip_address: std::option::Option<bool>,
         pub(crate) backup_retention_count: std::option::Option<i32>,
@@ -876,7 +876,7 @@ impl std::fmt::Debug for EngineAttribute {
 pub mod engine_attribute {
 
     /// A builder for [`EngineAttribute`](crate::model::EngineAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -951,7 +951,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1150,7 +1150,7 @@ impl ServerEvent {
 pub mod server_event {
 
     /// A builder for [`ServerEvent`](crate::model::ServerEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) server_name: std::option::Option<std::string::String>,
@@ -1402,7 +1402,7 @@ impl Backup {
 pub mod backup {
 
     /// A builder for [`Backup`](crate::model::Backup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_arn: std::option::Option<std::string::String>,
         pub(crate) backup_id: std::option::Option<std::string::String>,
@@ -1996,7 +1996,7 @@ impl AccountAttribute {
 pub mod account_attribute {
 
     /// A builder for [`AccountAttribute`](crate::model::AccountAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) maximum: std::option::Option<i32>,

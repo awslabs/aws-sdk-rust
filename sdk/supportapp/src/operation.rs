@@ -5,7 +5,7 @@
 /// [`create_slack_channel_configuration`](crate::client::Client::create_slack_channel_configuration).
 ///
 /// See [`crate::client::fluent_builders::CreateSlackChannelConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSlackChannelConfiguration {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSlackChannelConfig
 /// [`delete_account_alias`](crate::client::Client::delete_account_alias).
 ///
 /// See [`crate::client::fluent_builders::DeleteAccountAlias`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAccountAlias {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccountAlias {
 /// [`delete_slack_channel_configuration`](crate::client::Client::delete_slack_channel_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeleteSlackChannelConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSlackChannelConfiguration {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSlackChannelConfig
 /// [`delete_slack_workspace_configuration`](crate::client::Client::delete_slack_workspace_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeleteSlackWorkspaceConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSlackWorkspaceConfiguration {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSlackWorkspaceConf
 /// [`get_account_alias`](crate::client::Client::get_account_alias).
 ///
 /// See [`crate::client::fluent_builders::GetAccountAlias`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAccountAlias {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountAlias {
 /// [`list_slack_channel_configurations`](crate::client::Client::list_slack_channel_configurations).
 ///
 /// See [`crate::client::fluent_builders::ListSlackChannelConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSlackChannelConfigurations {
     _private: (),
 }
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSlackChannelConfigur
 /// [`list_slack_workspace_configurations`](crate::client::Client::list_slack_workspace_configurations).
 ///
 /// See [`crate::client::fluent_builders::ListSlackWorkspaceConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSlackWorkspaceConfigurations {
     _private: (),
 }
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSlackWorkspaceConfig
 /// [`put_account_alias`](crate::client::Client::put_account_alias).
 ///
 /// See [`crate::client::fluent_builders::PutAccountAlias`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutAccountAlias {
     _private: (),
 }
@@ -277,7 +277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccountAlias {
 /// [`update_slack_channel_configuration`](crate::client::Client::update_slack_channel_configuration).
 ///
 /// See [`crate::client::fluent_builders::UpdateSlackChannelConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSlackChannelConfiguration {
     _private: (),
 }

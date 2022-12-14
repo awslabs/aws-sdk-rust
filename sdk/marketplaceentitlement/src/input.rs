@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod get_entitlements_input {
 
     /// A builder for [`GetEntitlementsInput`](crate::input::GetEntitlementsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_code: std::option::Option<std::string::String>,
         pub(crate) filter: std::option::Option<

@@ -30,7 +30,7 @@ impl std::error::Error for ServiceQuotaExceededException {}
 pub mod service_quota_exceeded_exception {
 
     /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -99,7 +99,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
 
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) resource_name: std::option::Option<std::string::String>,
@@ -174,7 +174,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
 
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -234,7 +234,7 @@ impl std::error::Error for UnknownSubscriptionException {}
 pub mod unknown_subscription_exception {
 
     /// A builder for [`UnknownSubscriptionException`](crate::error::UnknownSubscriptionException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -294,7 +294,7 @@ impl std::error::Error for UnknownMonitorException {}
 pub mod unknown_monitor_exception {
 
     /// A builder for [`UnknownMonitorException`](crate::error::UnknownMonitorException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -363,7 +363,7 @@ impl std::error::Error for TooManyTagsException {}
 pub mod too_many_tags_exception {
 
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) resource_name: std::option::Option<std::string::String>,
@@ -438,7 +438,7 @@ impl std::error::Error for InvalidNextTokenException {}
 pub mod invalid_next_token_exception {
 
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -498,7 +498,7 @@ impl std::error::Error for UnresolvableUsageUnitException {}
 pub mod unresolvable_usage_unit_exception {
 
     /// A builder for [`UnresolvableUsageUnitException`](crate::error::UnresolvableUsageUnitException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -558,7 +558,7 @@ impl std::error::Error for DataUnavailableException {}
 pub mod data_unavailable_exception {
 
     /// A builder for [`DataUnavailableException`](crate::error::DataUnavailableException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -618,7 +618,7 @@ impl std::error::Error for RequestChangedException {}
 pub mod request_changed_exception {
 
     /// A builder for [`RequestChangedException`](crate::error::RequestChangedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -678,7 +678,7 @@ impl std::error::Error for BillExpirationException {}
 pub mod bill_expiration_exception {
 
     /// A builder for [`BillExpirationException`](crate::error::BillExpirationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

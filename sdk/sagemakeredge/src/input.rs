@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod get_deployments_input {
 
     /// A builder for [`GetDeploymentsInput`](crate::input::GetDeploymentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_name: std::option::Option<std::string::String>,
         pub(crate) device_fleet_name: std::option::Option<std::string::String>,
@@ -160,7 +160,7 @@ impl GetDeploymentsInput {
 pub mod get_device_registration_input {
 
     /// A builder for [`GetDeviceRegistrationInput`](crate::input::GetDeviceRegistrationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_name: std::option::Option<std::string::String>,
         pub(crate) device_fleet_name: std::option::Option<std::string::String>,
@@ -319,7 +319,7 @@ impl GetDeviceRegistrationInput {
 pub mod send_heartbeat_input {
 
     /// A builder for [`SendHeartbeatInput`](crate::input::SendHeartbeatInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_metrics: std::option::Option<std::vec::Vec<crate::model::EdgeMetric>>,
         pub(crate) models: std::option::Option<std::vec::Vec<crate::model::Model>>,

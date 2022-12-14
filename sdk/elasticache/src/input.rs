@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod add_tags_to_resource_input {
 
     /// A builder for [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -173,7 +173,7 @@ impl AddTagsToResourceInput {
 pub mod authorize_cache_security_group_ingress_input {
 
     /// A builder for [`AuthorizeCacheSecurityGroupIngressInput`](crate::input::AuthorizeCacheSecurityGroupIngressInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_security_group_name: std::option::Option<std::string::String>,
         pub(crate) ec2_security_group_name: std::option::Option<std::string::String>,
@@ -350,7 +350,7 @@ impl AuthorizeCacheSecurityGroupIngressInput {
 pub mod batch_apply_update_action_input {
 
     /// A builder for [`BatchApplyUpdateActionInput`](crate::input::BatchApplyUpdateActionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) cache_cluster_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -539,7 +539,7 @@ impl BatchApplyUpdateActionInput {
 pub mod batch_stop_update_action_input {
 
     /// A builder for [`BatchStopUpdateActionInput`](crate::input::BatchStopUpdateActionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) cache_cluster_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -728,7 +728,7 @@ impl BatchStopUpdateActionInput {
 pub mod complete_migration_input {
 
     /// A builder for [`CompleteMigrationInput`](crate::input::CompleteMigrationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_group_id: std::option::Option<std::string::String>,
         pub(crate) force: std::option::Option<bool>,
@@ -885,7 +885,7 @@ impl CompleteMigrationInput {
 pub mod copy_snapshot_input {
 
     /// A builder for [`CopySnapshotInput`](crate::input::CopySnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_snapshot_name: std::option::Option<std::string::String>,
         pub(crate) target_snapshot_name: std::option::Option<std::string::String>,
@@ -1095,7 +1095,7 @@ impl CopySnapshotInput {
 pub mod create_cache_cluster_input {
 
     /// A builder for [`CreateCacheClusterInput`](crate::input::CreateCacheClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_cluster_id: std::option::Option<std::string::String>,
         pub(crate) replication_group_id: std::option::Option<std::string::String>,
@@ -1836,7 +1836,7 @@ impl CreateCacheClusterInput {
 pub mod create_cache_parameter_group_input {
 
     /// A builder for [`CreateCacheParameterGroupInput`](crate::input::CreateCacheParameterGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) cache_parameter_group_family: std::option::Option<std::string::String>,
@@ -2036,7 +2036,7 @@ impl CreateCacheParameterGroupInput {
 pub mod create_cache_security_group_input {
 
     /// A builder for [`CreateCacheSecurityGroupInput`](crate::input::CreateCacheSecurityGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_security_group_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2220,7 +2220,7 @@ impl CreateCacheSecurityGroupInput {
 pub mod create_cache_subnet_group_input {
 
     /// A builder for [`CreateCacheSubnetGroupInput`](crate::input::CreateCacheSubnetGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_subnet_group_name: std::option::Option<std::string::String>,
         pub(crate) cache_subnet_group_description: std::option::Option<std::string::String>,
@@ -2431,7 +2431,7 @@ impl CreateCacheSubnetGroupInput {
 pub mod create_global_replication_group_input {
 
     /// A builder for [`CreateGlobalReplicationGroupInput`](crate::input::CreateGlobalReplicationGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_replication_group_id_suffix: std::option::Option<std::string::String>,
         pub(crate) global_replication_group_description: std::option::Option<std::string::String>,
@@ -2616,7 +2616,7 @@ impl CreateGlobalReplicationGroupInput {
 pub mod create_replication_group_input {
 
     /// A builder for [`CreateReplicationGroupInput`](crate::input::CreateReplicationGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_group_id: std::option::Option<std::string::String>,
         pub(crate) replication_group_description: std::option::Option<std::string::String>,
@@ -3484,7 +3484,7 @@ impl CreateReplicationGroupInput {
 pub mod create_snapshot_input {
 
     /// A builder for [`CreateSnapshotInput`](crate::input::CreateSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_group_id: std::option::Option<std::string::String>,
         pub(crate) cache_cluster_id: std::option::Option<std::string::String>,
@@ -3690,7 +3690,7 @@ impl CreateSnapshotInput {
 pub mod create_user_input {
 
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -3923,7 +3923,7 @@ impl CreateUserInput {
 pub mod create_user_group_input {
 
     /// A builder for [`CreateUserGroupInput`](crate::input::CreateUserGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_group_id: std::option::Option<std::string::String>,
         pub(crate) engine: std::option::Option<std::string::String>,
@@ -4120,7 +4120,7 @@ impl CreateUserGroupInput {
 pub mod decrease_node_groups_in_global_replication_group_input {
 
     /// A builder for [`DecreaseNodeGroupsInGlobalReplicationGroupInput`](crate::input::DecreaseNodeGroupsInGlobalReplicationGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_replication_group_id: std::option::Option<std::string::String>,
         pub(crate) node_group_count: std::option::Option<i32>,
@@ -4344,7 +4344,7 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
 pub mod decrease_replica_count_input {
 
     /// A builder for [`DecreaseReplicaCountInput`](crate::input::DecreaseReplicaCountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_group_id: std::option::Option<std::string::String>,
         pub(crate) new_replica_count: std::option::Option<i32>,
@@ -4576,7 +4576,7 @@ impl DecreaseReplicaCountInput {
 pub mod delete_cache_cluster_input {
 
     /// A builder for [`DeleteCacheClusterInput`](crate::input::DeleteCacheClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_cluster_id: std::option::Option<std::string::String>,
         pub(crate) final_snapshot_identifier: std::option::Option<std::string::String>,
@@ -4736,7 +4736,7 @@ impl DeleteCacheClusterInput {
 pub mod delete_cache_parameter_group_input {
 
     /// A builder for [`DeleteCacheParameterGroupInput`](crate::input::DeleteCacheParameterGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_parameter_group_name: std::option::Option<std::string::String>,
     }
@@ -4887,7 +4887,7 @@ impl DeleteCacheParameterGroupInput {
 pub mod delete_cache_security_group_input {
 
     /// A builder for [`DeleteCacheSecurityGroupInput`](crate::input::DeleteCacheSecurityGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_security_group_name: std::option::Option<std::string::String>,
     }
@@ -5038,7 +5038,7 @@ impl DeleteCacheSecurityGroupInput {
 pub mod delete_cache_subnet_group_input {
 
     /// A builder for [`DeleteCacheSubnetGroupInput`](crate::input::DeleteCacheSubnetGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_subnet_group_name: std::option::Option<std::string::String>,
     }
@@ -5187,7 +5187,7 @@ impl DeleteCacheSubnetGroupInput {
 pub mod delete_global_replication_group_input {
 
     /// A builder for [`DeleteGlobalReplicationGroupInput`](crate::input::DeleteGlobalReplicationGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_replication_group_id: std::option::Option<std::string::String>,
         pub(crate) retain_primary_replication_group: std::option::Option<bool>,
@@ -5351,7 +5351,7 @@ impl DeleteGlobalReplicationGroupInput {
 pub mod delete_replication_group_input {
 
     /// A builder for [`DeleteReplicationGroupInput`](crate::input::DeleteReplicationGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_group_id: std::option::Option<std::string::String>,
         pub(crate) retain_primary_cluster: std::option::Option<bool>,
@@ -5525,7 +5525,7 @@ impl DeleteReplicationGroupInput {
 pub mod delete_snapshot_input {
 
     /// A builder for [`DeleteSnapshotInput`](crate::input::DeleteSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_name: std::option::Option<std::string::String>,
     }
@@ -5668,7 +5668,7 @@ impl DeleteSnapshotInput {
 pub mod delete_user_input {
 
     /// A builder for [`DeleteUserInput`](crate::input::DeleteUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
     }
@@ -5808,7 +5808,7 @@ impl DeleteUserInput {
 pub mod delete_user_group_input {
 
     /// A builder for [`DeleteUserGroupInput`](crate::input::DeleteUserGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_group_id: std::option::Option<std::string::String>,
     }
@@ -5951,7 +5951,7 @@ impl DeleteUserGroupInput {
 pub mod describe_cache_clusters_input {
 
     /// A builder for [`DescribeCacheClustersInput`](crate::input::DescribeCacheClustersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_cluster_id: std::option::Option<std::string::String>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -6154,7 +6154,7 @@ impl DescribeCacheClustersInput {
 pub mod describe_cache_engine_versions_input {
 
     /// A builder for [`DescribeCacheEngineVersionsInput`](crate::input::DescribeCacheEngineVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
@@ -6384,7 +6384,7 @@ impl DescribeCacheEngineVersionsInput {
 pub mod describe_cache_parameter_groups_input {
 
     /// A builder for [`DescribeCacheParameterGroupsInput`](crate::input::DescribeCacheParameterGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -6556,7 +6556,7 @@ impl DescribeCacheParameterGroupsInput {
 pub mod describe_cache_parameters_input {
 
     /// A builder for [`DescribeCacheParametersInput`](crate::input::DescribeCacheParametersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) source: std::option::Option<std::string::String>,
@@ -6745,7 +6745,7 @@ impl DescribeCacheParametersInput {
 pub mod describe_cache_security_groups_input {
 
     /// A builder for [`DescribeCacheSecurityGroupsInput`](crate::input::DescribeCacheSecurityGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_security_group_name: std::option::Option<std::string::String>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -6917,7 +6917,7 @@ impl DescribeCacheSecurityGroupsInput {
 pub mod describe_cache_subnet_groups_input {
 
     /// A builder for [`DescribeCacheSubnetGroupsInput`](crate::input::DescribeCacheSubnetGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_subnet_group_name: std::option::Option<std::string::String>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -7092,7 +7092,7 @@ impl DescribeCacheSubnetGroupsInput {
 pub mod describe_engine_default_parameters_input {
 
     /// A builder for [`DescribeEngineDefaultParametersInput`](crate::input::DescribeEngineDefaultParametersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_parameter_group_family: std::option::Option<std::string::String>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -7269,7 +7269,7 @@ impl DescribeEngineDefaultParametersInput {
 pub mod describe_events_input {
 
     /// A builder for [`DescribeEventsInput`](crate::input::DescribeEventsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_identifier: std::option::Option<std::string::String>,
         pub(crate) source_type: std::option::Option<crate::model::SourceType>,
@@ -7501,7 +7501,7 @@ impl DescribeEventsInput {
 pub mod describe_global_replication_groups_input {
 
     /// A builder for [`DescribeGlobalReplicationGroupsInput`](crate::input::DescribeGlobalReplicationGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_replication_group_id: std::option::Option<std::string::String>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -7684,7 +7684,7 @@ impl DescribeGlobalReplicationGroupsInput {
 pub mod describe_replication_groups_input {
 
     /// A builder for [`DescribeReplicationGroupsInput`](crate::input::DescribeReplicationGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_group_id: std::option::Option<std::string::String>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -7861,7 +7861,7 @@ impl DescribeReplicationGroupsInput {
 pub mod describe_reserved_cache_nodes_input {
 
     /// A builder for [`DescribeReservedCacheNodesInput`](crate::input::DescribeReservedCacheNodesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_cache_node_id: std::option::Option<std::string::String>,
         pub(crate) reserved_cache_nodes_offering_id: std::option::Option<std::string::String>,
@@ -8176,7 +8176,7 @@ impl DescribeReservedCacheNodesInput {
 pub mod describe_reserved_cache_nodes_offerings_input {
 
     /// A builder for [`DescribeReservedCacheNodesOfferingsInput`](crate::input::DescribeReservedCacheNodesOfferingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_cache_nodes_offering_id: std::option::Option<std::string::String>,
         pub(crate) cache_node_type: std::option::Option<std::string::String>,
@@ -8478,7 +8478,7 @@ impl DescribeReservedCacheNodesOfferingsInput {
 pub mod describe_service_updates_input {
 
     /// A builder for [`DescribeServiceUpdatesInput`](crate::input::DescribeServiceUpdatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_update_name: std::option::Option<std::string::String>,
         pub(crate) service_update_status:
@@ -8671,7 +8671,7 @@ impl DescribeServiceUpdatesInput {
 pub mod describe_snapshots_input {
 
     /// A builder for [`DescribeSnapshotsInput`](crate::input::DescribeSnapshotsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_group_id: std::option::Option<std::string::String>,
         pub(crate) cache_cluster_id: std::option::Option<std::string::String>,
@@ -8901,7 +8901,7 @@ impl DescribeSnapshotsInput {
 pub mod describe_update_actions_input {
 
     /// A builder for [`DescribeUpdateActionsInput`](crate::input::DescribeUpdateActionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_update_name: std::option::Option<std::string::String>,
         pub(crate) replication_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9200,7 +9200,7 @@ impl DescribeUpdateActionsInput {
 pub mod describe_user_groups_input {
 
     /// A builder for [`DescribeUserGroupsInput`](crate::input::DescribeUserGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_group_id: std::option::Option<std::string::String>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -9369,7 +9369,7 @@ impl DescribeUserGroupsInput {
 pub mod describe_users_input {
 
     /// A builder for [`DescribeUsersInput`](crate::input::DescribeUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -9566,7 +9566,7 @@ impl DescribeUsersInput {
 pub mod disassociate_global_replication_group_input {
 
     /// A builder for [`DisassociateGlobalReplicationGroupInput`](crate::input::DisassociateGlobalReplicationGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_replication_group_id: std::option::Option<std::string::String>,
         pub(crate) replication_group_id: std::option::Option<std::string::String>,
@@ -9743,7 +9743,7 @@ impl DisassociateGlobalReplicationGroupInput {
 pub mod failover_global_replication_group_input {
 
     /// A builder for [`FailoverGlobalReplicationGroupInput`](crate::input::FailoverGlobalReplicationGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_replication_group_id: std::option::Option<std::string::String>,
         pub(crate) primary_region: std::option::Option<std::string::String>,
@@ -9923,7 +9923,7 @@ impl FailoverGlobalReplicationGroupInput {
 pub mod increase_node_groups_in_global_replication_group_input {
 
     /// A builder for [`IncreaseNodeGroupsInGlobalReplicationGroupInput`](crate::input::IncreaseNodeGroupsInGlobalReplicationGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_replication_group_id: std::option::Option<std::string::String>,
         pub(crate) node_group_count: std::option::Option<i32>,
@@ -10122,7 +10122,7 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
 pub mod increase_replica_count_input {
 
     /// A builder for [`IncreaseReplicaCountInput`](crate::input::IncreaseReplicaCountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_group_id: std::option::Option<std::string::String>,
         pub(crate) new_replica_count: std::option::Option<i32>,
@@ -10315,7 +10315,7 @@ impl IncreaseReplicaCountInput {
 pub mod list_allowed_node_type_modifications_input {
 
     /// A builder for [`ListAllowedNodeTypeModificationsInput`](crate::input::ListAllowedNodeTypeModificationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_cluster_id: std::option::Option<std::string::String>,
         pub(crate) replication_group_id: std::option::Option<std::string::String>,
@@ -10482,7 +10482,7 @@ impl ListAllowedNodeTypeModificationsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_name: std::option::Option<std::string::String>,
     }
@@ -10631,7 +10631,7 @@ impl ListTagsForResourceInput {
 pub mod modify_cache_cluster_input {
 
     /// A builder for [`ModifyCacheClusterInput`](crate::input::ModifyCacheClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_cluster_id: std::option::Option<std::string::String>,
         pub(crate) num_cache_nodes: std::option::Option<i32>,
@@ -11264,7 +11264,7 @@ impl ModifyCacheClusterInput {
 pub mod modify_cache_parameter_group_input {
 
     /// A builder for [`ModifyCacheParameterGroupInput`](crate::input::ModifyCacheParameterGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) parameter_name_values:
@@ -11433,7 +11433,7 @@ impl ModifyCacheParameterGroupInput {
 pub mod modify_cache_subnet_group_input {
 
     /// A builder for [`ModifyCacheSubnetGroupInput`](crate::input::ModifyCacheSubnetGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_subnet_group_name: std::option::Option<std::string::String>,
         pub(crate) cache_subnet_group_description: std::option::Option<std::string::String>,
@@ -11623,7 +11623,7 @@ impl ModifyCacheSubnetGroupInput {
 pub mod modify_global_replication_group_input {
 
     /// A builder for [`ModifyGlobalReplicationGroupInput`](crate::input::ModifyGlobalReplicationGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_replication_group_id: std::option::Option<std::string::String>,
         pub(crate) apply_immediately: std::option::Option<bool>,
@@ -11857,7 +11857,7 @@ impl ModifyGlobalReplicationGroupInput {
 pub mod modify_replication_group_input {
 
     /// A builder for [`ModifyReplicationGroupInput`](crate::input::ModifyReplicationGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_group_id: std::option::Option<std::string::String>,
         pub(crate) replication_group_description: std::option::Option<std::string::String>,
@@ -12465,7 +12465,7 @@ impl ModifyReplicationGroupInput {
 pub mod modify_replication_group_shard_configuration_input {
 
     /// A builder for [`ModifyReplicationGroupShardConfigurationInput`](crate::input::ModifyReplicationGroupShardConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_group_id: std::option::Option<std::string::String>,
         pub(crate) node_group_count: std::option::Option<i32>,
@@ -12710,7 +12710,7 @@ impl ModifyReplicationGroupShardConfigurationInput {
 pub mod modify_user_input {
 
     /// A builder for [`ModifyUserInput`](crate::input::ModifyUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) access_string: std::option::Option<std::string::String>,
@@ -12913,7 +12913,7 @@ impl ModifyUserInput {
 pub mod modify_user_group_input {
 
     /// A builder for [`ModifyUserGroupInput`](crate::input::ModifyUserGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_group_id: std::option::Option<std::string::String>,
         pub(crate) user_ids_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13098,7 +13098,7 @@ impl ModifyUserGroupInput {
 pub mod purchase_reserved_cache_nodes_offering_input {
 
     /// A builder for [`PurchaseReservedCacheNodesOfferingInput`](crate::input::PurchaseReservedCacheNodesOfferingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_cache_nodes_offering_id: std::option::Option<std::string::String>,
         pub(crate) reserved_cache_node_id: std::option::Option<std::string::String>,
@@ -13303,7 +13303,7 @@ impl PurchaseReservedCacheNodesOfferingInput {
 pub mod rebalance_slots_in_global_replication_group_input {
 
     /// A builder for [`RebalanceSlotsInGlobalReplicationGroupInput`](crate::input::RebalanceSlotsInGlobalReplicationGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_replication_group_id: std::option::Option<std::string::String>,
         pub(crate) apply_immediately: std::option::Option<bool>,
@@ -13462,7 +13462,7 @@ impl RebalanceSlotsInGlobalReplicationGroupInput {
 pub mod reboot_cache_cluster_input {
 
     /// A builder for [`RebootCacheClusterInput`](crate::input::RebootCacheClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_cluster_id: std::option::Option<std::string::String>,
         pub(crate) cache_node_ids_to_reboot:
@@ -13629,7 +13629,7 @@ impl RebootCacheClusterInput {
 pub mod remove_tags_from_resource_input {
 
     /// A builder for [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_name: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13799,7 +13799,7 @@ impl RemoveTagsFromResourceInput {
 pub mod reset_cache_parameter_group_input {
 
     /// A builder for [`ResetCacheParameterGroupInput`](crate::input::ResetCacheParameterGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) reset_all_parameters: std::option::Option<bool>,
@@ -13982,7 +13982,7 @@ impl ResetCacheParameterGroupInput {
 pub mod revoke_cache_security_group_ingress_input {
 
     /// A builder for [`RevokeCacheSecurityGroupIngressInput`](crate::input::RevokeCacheSecurityGroupIngressInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_security_group_name: std::option::Option<std::string::String>,
         pub(crate) ec2_security_group_name: std::option::Option<std::string::String>,
@@ -14159,7 +14159,7 @@ impl RevokeCacheSecurityGroupIngressInput {
 pub mod start_migration_input {
 
     /// A builder for [`StartMigrationInput`](crate::input::StartMigrationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_group_id: std::option::Option<std::string::String>,
         pub(crate) customer_node_endpoint_list:
@@ -14327,7 +14327,7 @@ impl StartMigrationInput {
 pub mod test_failover_input {
 
     /// A builder for [`TestFailoverInput`](crate::input::TestFailoverInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_group_id: std::option::Option<std::string::String>,
         pub(crate) node_group_id: std::option::Option<std::string::String>,

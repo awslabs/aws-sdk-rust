@@ -39,7 +39,7 @@ impl std::error::Error for TooManyRequestsException {}
 pub mod too_many_requests_exception {
 
     /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -120,7 +120,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
 
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -201,7 +201,7 @@ impl std::error::Error for InvalidRequestException {}
 pub mod invalid_request_exception {
 
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -282,7 +282,7 @@ impl std::error::Error for InternalFailureException {}
 pub mod internal_failure_exception {
 
     /// A builder for [`InternalFailureException`](crate::error::InternalFailureException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -363,7 +363,7 @@ impl std::error::Error for ResourceConflictException {}
 pub mod resource_conflict_exception {
 
     /// A builder for [`ResourceConflictException`](crate::error::ResourceConflictException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,

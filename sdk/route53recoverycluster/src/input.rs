@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod get_routing_control_state_input {
 
     /// A builder for [`GetRoutingControlStateInput`](crate::input::GetRoutingControlStateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
     }
@@ -157,7 +157,7 @@ impl GetRoutingControlStateInput {
 pub mod list_routing_controls_input {
 
     /// A builder for [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -331,7 +331,7 @@ impl ListRoutingControlsInput {
 pub mod update_routing_control_state_input {
 
     /// A builder for [`UpdateRoutingControlStateInput`](crate::input::UpdateRoutingControlStateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
         pub(crate) routing_control_state: std::option::Option<crate::model::RoutingControlState>,
@@ -522,7 +522,7 @@ impl UpdateRoutingControlStateInput {
 pub mod update_routing_control_states_input {
 
     /// A builder for [`UpdateRoutingControlStatesInput`](crate::input::UpdateRoutingControlStatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_routing_control_state_entries:
             std::option::Option<std::vec::Vec<crate::model::UpdateRoutingControlStateEntry>>,

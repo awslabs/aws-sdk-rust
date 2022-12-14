@@ -44,7 +44,7 @@ impl Stream {
 pub mod stream {
 
     /// A builder for [`Stream`](crate::model::Stream).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -297,7 +297,7 @@ impl Record {
 pub mod record {
 
     /// A builder for [`Record`](crate::model::Record).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_id: std::option::Option<std::string::String>,
         pub(crate) event_name: std::option::Option<crate::model::OperationType>,
@@ -456,7 +456,7 @@ impl Identity {
 pub mod identity {
 
     /// A builder for [`Identity`](crate::model::Identity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) principal_id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -590,7 +590,7 @@ impl StreamRecord {
 pub mod stream_record {
 
     /// A builder for [`StreamRecord`](crate::model::StreamRecord).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approximate_creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) keys: std::option::Option<
@@ -1263,7 +1263,7 @@ impl StreamDescription {
 pub mod stream_description {
 
     /// A builder for [`StreamDescription`](crate::model::StreamDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
         pub(crate) stream_label: std::option::Option<std::string::String>,
@@ -1491,7 +1491,7 @@ impl Shard {
 pub mod shard {
 
     /// A builder for [`Shard`](crate::model::Shard).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shard_id: std::option::Option<std::string::String>,
         pub(crate) sequence_number_range: std::option::Option<crate::model::SequenceNumberRange>,
@@ -1576,7 +1576,7 @@ impl SequenceNumberRange {
 pub mod sequence_number_range {
 
     /// A builder for [`SequenceNumberRange`](crate::model::SequenceNumberRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) starting_sequence_number: std::option::Option<std::string::String>,
         pub(crate) ending_sequence_number: std::option::Option<std::string::String>,
@@ -1665,7 +1665,7 @@ impl KeySchemaElement {
 pub mod key_schema_element {
 
     /// A builder for [`KeySchemaElement`](crate::model::KeySchemaElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
         pub(crate) key_type: std::option::Option<crate::model::KeyType>,

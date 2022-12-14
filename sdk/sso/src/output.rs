@@ -7,7 +7,7 @@ pub struct LogoutOutput {}
 pub mod logout_output {
 
     /// A builder for [`LogoutOutput`](crate::output::LogoutOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`LogoutOutput`](crate::output::LogoutOutput).
@@ -48,7 +48,7 @@ impl ListAccountsOutput {
 pub mod list_accounts_output {
 
     /// A builder for [`ListAccountsOutput`](crate::output::ListAccountsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) account_list: std::option::Option<std::vec::Vec<crate::model::AccountInfo>>,
@@ -124,7 +124,7 @@ impl ListAccountRolesOutput {
 pub mod list_account_roles_output {
 
     /// A builder for [`ListAccountRolesOutput`](crate::output::ListAccountRolesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) role_list: std::option::Option<std::vec::Vec<crate::model::RoleInfo>>,
@@ -193,7 +193,7 @@ impl GetRoleCredentialsOutput {
 pub mod get_role_credentials_output {
 
     /// A builder for [`GetRoleCredentialsOutput`](crate::output::GetRoleCredentialsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_credentials: std::option::Option<crate::model::RoleCredentials>,
     }

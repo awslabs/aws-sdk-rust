@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod add_attachments_to_set_input {
 
     /// A builder for [`AddAttachmentsToSetInput`](crate::input::AddAttachmentsToSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_set_id: std::option::Option<std::string::String>,
         pub(crate) attachments: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
@@ -180,7 +180,7 @@ impl AddAttachmentsToSetInput {
 pub mod add_communication_to_case_input {
 
     /// A builder for [`AddCommunicationToCaseInput`](crate::input::AddCommunicationToCaseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) case_id: std::option::Option<std::string::String>,
         pub(crate) communication_body: std::option::Option<std::string::String>,
@@ -380,7 +380,7 @@ impl AddCommunicationToCaseInput {
 pub mod create_case_input {
 
     /// A builder for [`CreateCaseInput`](crate::input::CreateCaseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subject: std::option::Option<std::string::String>,
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -648,7 +648,7 @@ impl CreateCaseInput {
 pub mod describe_attachment_input {
 
     /// A builder for [`DescribeAttachmentInput`](crate::input::DescribeAttachmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_id: std::option::Option<std::string::String>,
     }
@@ -798,7 +798,7 @@ impl DescribeAttachmentInput {
 pub mod describe_cases_input {
 
     /// A builder for [`DescribeCasesInput`](crate::input::DescribeCasesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) case_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) display_id: std::option::Option<std::string::String>,
@@ -1048,7 +1048,7 @@ impl DescribeCasesInput {
 pub mod describe_communications_input {
 
     /// A builder for [`DescribeCommunicationsInput`](crate::input::DescribeCommunicationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) case_id: std::option::Option<std::string::String>,
         pub(crate) before_time: std::option::Option<std::string::String>,
@@ -1245,7 +1245,7 @@ impl DescribeCommunicationsInput {
 pub mod describe_services_input {
 
     /// A builder for [`DescribeServicesInput`](crate::input::DescribeServicesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) language: std::option::Option<std::string::String>,
@@ -1413,7 +1413,7 @@ impl DescribeServicesInput {
 pub mod describe_severity_levels_input {
 
     /// A builder for [`DescribeSeverityLevelsInput`](crate::input::DescribeSeverityLevelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language: std::option::Option<std::string::String>,
     }
@@ -1562,7 +1562,7 @@ impl DescribeSeverityLevelsInput {
 pub mod describe_trusted_advisor_check_refresh_statuses_input {
 
     /// A builder for [`DescribeTrustedAdvisorCheckRefreshStatusesInput`](crate::input::DescribeTrustedAdvisorCheckRefreshStatusesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1724,7 +1724,7 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
 pub mod describe_trusted_advisor_check_result_input {
 
     /// A builder for [`DescribeTrustedAdvisorCheckResultInput`](crate::input::DescribeTrustedAdvisorCheckResultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) check_id: std::option::Option<std::string::String>,
         pub(crate) language: std::option::Option<std::string::String>,
@@ -1882,7 +1882,7 @@ impl DescribeTrustedAdvisorCheckResultInput {
 pub mod describe_trusted_advisor_checks_input {
 
     /// A builder for [`DescribeTrustedAdvisorChecksInput`](crate::input::DescribeTrustedAdvisorChecksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language: std::option::Option<std::string::String>,
     }
@@ -2028,7 +2028,7 @@ impl DescribeTrustedAdvisorChecksInput {
 pub mod describe_trusted_advisor_check_summaries_input {
 
     /// A builder for [`DescribeTrustedAdvisorCheckSummariesInput`](crate::input::DescribeTrustedAdvisorCheckSummariesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -2183,7 +2183,7 @@ impl DescribeTrustedAdvisorCheckSummariesInput {
 pub mod refresh_trusted_advisor_check_input {
 
     /// A builder for [`RefreshTrustedAdvisorCheckInput`](crate::input::RefreshTrustedAdvisorCheckInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) check_id: std::option::Option<std::string::String>,
     }
@@ -2333,7 +2333,7 @@ impl RefreshTrustedAdvisorCheckInput {
 pub mod resolve_case_input {
 
     /// A builder for [`ResolveCaseInput`](crate::input::ResolveCaseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) case_id: std::option::Option<std::string::String>,
     }

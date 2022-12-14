@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod batch_create_attendee_input {
 
     /// A builder for [`BatchCreateAttendeeInput`](crate::input::BatchCreateAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) attendees:
@@ -202,7 +202,7 @@ impl BatchCreateAttendeeInput {
 pub mod batch_update_attendee_capabilities_except_input {
 
     /// A builder for [`BatchUpdateAttendeeCapabilitiesExceptInput`](crate::input::BatchUpdateAttendeeCapabilitiesExceptInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) excluded_attendee_ids:
@@ -413,7 +413,7 @@ impl BatchUpdateAttendeeCapabilitiesExceptInput {
 pub mod create_attendee_input {
 
     /// A builder for [`CreateAttendeeInput`](crate::input::CreateAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) external_user_id: std::option::Option<std::string::String>,
@@ -632,7 +632,7 @@ impl CreateAttendeeInput {
 pub mod create_meeting_input {
 
     /// A builder for [`CreateMeetingInput`](crate::input::CreateMeetingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) media_region: std::option::Option<std::string::String>,
@@ -965,7 +965,7 @@ impl CreateMeetingInput {
 pub mod create_meeting_with_attendees_input {
 
     /// A builder for [`CreateMeetingWithAttendeesInput`](crate::input::CreateMeetingWithAttendeesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) media_region: std::option::Option<std::string::String>,
@@ -1303,7 +1303,7 @@ impl CreateMeetingWithAttendeesInput {
 pub mod delete_attendee_input {
 
     /// A builder for [`DeleteAttendeeInput`](crate::input::DeleteAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) attendee_id: std::option::Option<std::string::String>,
@@ -1485,7 +1485,7 @@ impl DeleteAttendeeInput {
 pub mod delete_meeting_input {
 
     /// A builder for [`DeleteMeetingInput`](crate::input::DeleteMeetingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
     }
@@ -1631,7 +1631,7 @@ impl DeleteMeetingInput {
 pub mod get_attendee_input {
 
     /// A builder for [`GetAttendeeInput`](crate::input::GetAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) attendee_id: std::option::Option<std::string::String>,
@@ -1813,7 +1813,7 @@ impl GetAttendeeInput {
 pub mod get_meeting_input {
 
     /// A builder for [`GetMeetingInput`](crate::input::GetMeetingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
     }
@@ -1959,7 +1959,7 @@ impl GetMeetingInput {
 pub mod list_attendees_input {
 
     /// A builder for [`ListAttendeesInput`](crate::input::ListAttendeesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2154,7 +2154,7 @@ impl ListAttendeesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2306,7 +2306,7 @@ impl ListTagsForResourceInput {
 pub mod start_meeting_transcription_input {
 
     /// A builder for [`StartMeetingTranscriptionInput`](crate::input::StartMeetingTranscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) transcription_configuration:
@@ -2502,7 +2502,7 @@ impl StartMeetingTranscriptionInput {
 pub mod stop_meeting_transcription_input {
 
     /// A builder for [`StopMeetingTranscriptionInput`](crate::input::StopMeetingTranscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
     }
@@ -2663,7 +2663,7 @@ impl StopMeetingTranscriptionInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2833,7 +2833,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3003,7 +3003,7 @@ impl UntagResourceInput {
 pub mod update_attendee_capabilities_input {
 
     /// A builder for [`UpdateAttendeeCapabilitiesInput`](crate::input::UpdateAttendeeCapabilitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) attendee_id: std::option::Option<std::string::String>,

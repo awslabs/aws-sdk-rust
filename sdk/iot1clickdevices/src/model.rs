@@ -67,7 +67,7 @@ impl DeviceDescription {
 pub mod device_description {
 
     /// A builder for [`DeviceDescription`](crate::model::DeviceDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) attributes: std::option::Option<
@@ -228,7 +228,7 @@ impl DeviceEvent {
 pub mod device_event {
 
     /// A builder for [`DeviceEvent`](crate::model::DeviceEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device: std::option::Option<crate::model::Device>,
         pub(crate) std_event: std::option::Option<std::string::String>,
@@ -302,7 +302,7 @@ impl Device {
 pub mod device {
 
     /// A builder for [`Device`](crate::model::Device).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<crate::model::Attributes>,
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -367,7 +367,7 @@ pub struct Attributes {}
 pub mod attributes {
 
     /// A builder for [`Attributes`](crate::model::Attributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`Attributes`](crate::model::Attributes).
@@ -408,7 +408,7 @@ impl DeviceMethod {
 pub mod device_method {
 
     /// A builder for [`DeviceMethod`](crate::model::DeviceMethod).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_type: std::option::Option<std::string::String>,
         pub(crate) method_name: std::option::Option<std::string::String>,

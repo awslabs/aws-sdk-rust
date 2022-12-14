@@ -97,7 +97,7 @@ impl Environment {
 pub mod environment {
 
     /// A builder for [`Environment`](crate::model::Environment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -349,7 +349,7 @@ impl FederationParameters {
 pub mod federation_parameters {
 
     /// A builder for [`FederationParameters`](crate::model::FederationParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_metadata_document: std::option::Option<std::string::String>,
         pub(crate) saml_metadata_url: std::option::Option<std::string::String>,
@@ -745,7 +745,7 @@ impl std::fmt::Debug for SuperuserParameters {
 pub mod superuser_parameters {
 
     /// A builder for [`SuperuserParameters`](crate::model::SuperuserParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
         pub(crate) first_name: std::option::Option<std::string::String>,

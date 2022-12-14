@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod analyze_document_input {
 
     /// A builder for [`AnalyzeDocumentInput`](crate::input::AnalyzeDocumentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document: std::option::Option<crate::model::Document>,
         pub(crate) feature_types: std::option::Option<std::vec::Vec<crate::model::FeatureType>>,
@@ -203,7 +203,7 @@ impl AnalyzeDocumentInput {
 pub mod analyze_expense_input {
 
     /// A builder for [`AnalyzeExpenseInput`](crate::input::AnalyzeExpenseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document: std::option::Option<crate::model::Document>,
     }
@@ -358,7 +358,7 @@ impl AnalyzeExpenseInput {
 pub mod analyze_id_input {
 
     /// A builder for [`AnalyzeIdInput`](crate::input::AnalyzeIdInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_pages: std::option::Option<std::vec::Vec<crate::model::Document>>,
     }
@@ -510,7 +510,7 @@ impl AnalyzeIdInput {
 pub mod detect_document_text_input {
 
     /// A builder for [`DetectDocumentTextInput`](crate::input::DetectDocumentTextInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document: std::option::Option<crate::model::Document>,
     }
@@ -659,7 +659,7 @@ impl DetectDocumentTextInput {
 pub mod get_document_analysis_input {
 
     /// A builder for [`GetDocumentAnalysisInput`](crate::input::GetDocumentAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -830,7 +830,7 @@ impl GetDocumentAnalysisInput {
 pub mod get_document_text_detection_input {
 
     /// A builder for [`GetDocumentTextDetectionInput`](crate::input::GetDocumentTextDetectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1003,7 +1003,7 @@ impl GetDocumentTextDetectionInput {
 pub mod get_expense_analysis_input {
 
     /// A builder for [`GetExpenseAnalysisInput`](crate::input::GetExpenseAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1174,7 +1174,7 @@ impl GetExpenseAnalysisInput {
 pub mod start_document_analysis_input {
 
     /// A builder for [`StartDocumentAnalysisInput`](crate::input::StartDocumentAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_location: std::option::Option<crate::model::DocumentLocation>,
         pub(crate) feature_types: std::option::Option<std::vec::Vec<crate::model::FeatureType>>,
@@ -1431,7 +1431,7 @@ impl StartDocumentAnalysisInput {
 pub mod start_document_text_detection_input {
 
     /// A builder for [`StartDocumentTextDetectionInput`](crate::input::StartDocumentTextDetectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_location: std::option::Option<crate::model::DocumentLocation>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -1649,7 +1649,7 @@ impl StartDocumentTextDetectionInput {
 pub mod start_expense_analysis_input {
 
     /// A builder for [`StartExpenseAnalysisInput`](crate::input::StartExpenseAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_location: std::option::Option<crate::model::DocumentLocation>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,

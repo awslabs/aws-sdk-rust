@@ -7,7 +7,7 @@ pub struct UpdateWorkGroupOutput {}
 pub mod update_work_group_output {
 
     /// A builder for [`UpdateWorkGroupOutput`](crate::output::UpdateWorkGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateWorkGroupOutput`](crate::output::UpdateWorkGroupOutput).
@@ -31,7 +31,7 @@ pub struct UpdatePreparedStatementOutput {}
 pub mod update_prepared_statement_output {
 
     /// A builder for [`UpdatePreparedStatementOutput`](crate::output::UpdatePreparedStatementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdatePreparedStatementOutput`](crate::output::UpdatePreparedStatementOutput).
@@ -55,7 +55,7 @@ pub struct UpdateNamedQueryOutput {}
 pub mod update_named_query_output {
 
     /// A builder for [`UpdateNamedQueryOutput`](crate::output::UpdateNamedQueryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateNamedQueryOutput`](crate::output::UpdateNamedQueryOutput).
@@ -79,7 +79,7 @@ pub struct UpdateDataCatalogOutput {}
 pub mod update_data_catalog_output {
 
     /// A builder for [`UpdateDataCatalogOutput`](crate::output::UpdateDataCatalogOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDataCatalogOutput`](crate::output::UpdateDataCatalogOutput).
@@ -103,7 +103,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -127,7 +127,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -151,7 +151,7 @@ pub struct StopQueryExecutionOutput {}
 pub mod stop_query_execution_output {
 
     /// A builder for [`StopQueryExecutionOutput`](crate::output::StopQueryExecutionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StopQueryExecutionOutput`](crate::output::StopQueryExecutionOutput).
@@ -185,7 +185,7 @@ impl StartQueryExecutionOutput {
 pub mod start_query_execution_output {
 
     /// A builder for [`StartQueryExecutionOutput`](crate::output::StartQueryExecutionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_execution_id: std::option::Option<std::string::String>,
     }
@@ -243,7 +243,7 @@ impl ListWorkGroupsOutput {
 pub mod list_work_groups_output {
 
     /// A builder for [`ListWorkGroupsOutput`](crate::output::ListWorkGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) work_groups: std::option::Option<std::vec::Vec<crate::model::WorkGroupSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -319,7 +319,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -395,7 +395,7 @@ impl ListTableMetadataOutput {
 pub mod list_table_metadata_output {
 
     /// A builder for [`ListTableMetadataOutput`](crate::output::ListTableMetadataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_metadata_list:
             std::option::Option<std::vec::Vec<crate::model::TableMetadata>>,
@@ -472,7 +472,7 @@ impl ListQueryExecutionsOutput {
 pub mod list_query_executions_output {
 
     /// A builder for [`ListQueryExecutionsOutput`](crate::output::ListQueryExecutionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_execution_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -551,7 +551,7 @@ impl ListPreparedStatementsOutput {
 pub mod list_prepared_statements_output {
 
     /// A builder for [`ListPreparedStatementsOutput`](crate::output::ListPreparedStatementsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prepared_statements:
             std::option::Option<std::vec::Vec<crate::model::PreparedStatementSummary>>,
@@ -631,7 +631,7 @@ impl ListNamedQueriesOutput {
 pub mod list_named_queries_output {
 
     /// A builder for [`ListNamedQueriesOutput`](crate::output::ListNamedQueriesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) named_query_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -707,7 +707,7 @@ impl ListEngineVersionsOutput {
 pub mod list_engine_versions_output {
 
     /// A builder for [`ListEngineVersionsOutput`](crate::output::ListEngineVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_versions: std::option::Option<std::vec::Vec<crate::model::EngineVersion>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -785,7 +785,7 @@ impl ListDataCatalogsOutput {
 pub mod list_data_catalogs_output {
 
     /// A builder for [`ListDataCatalogsOutput`](crate::output::ListDataCatalogsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_catalogs_summary:
             std::option::Option<std::vec::Vec<crate::model::DataCatalogSummary>>,
@@ -862,7 +862,7 @@ impl ListDatabasesOutput {
 pub mod list_databases_output {
 
     /// A builder for [`ListDatabasesOutput`](crate::output::ListDatabasesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) database_list: std::option::Option<std::vec::Vec<crate::model::Database>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -931,7 +931,7 @@ impl GetWorkGroupOutput {
 pub mod get_work_group_output {
 
     /// A builder for [`GetWorkGroupOutput`](crate::output::GetWorkGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) work_group: std::option::Option<crate::model::WorkGroup>,
     }
@@ -982,7 +982,7 @@ impl GetTableMetadataOutput {
 pub mod get_table_metadata_output {
 
     /// A builder for [`GetTableMetadataOutput`](crate::output::GetTableMetadataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_metadata: std::option::Option<crate::model::TableMetadata>,
     }
@@ -1035,7 +1035,7 @@ impl GetQueryRuntimeStatisticsOutput {
 pub mod get_query_runtime_statistics_output {
 
     /// A builder for [`GetQueryRuntimeStatisticsOutput`](crate::output::GetQueryRuntimeStatisticsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_runtime_statistics:
             std::option::Option<crate::model::QueryRuntimeStatistics>,
@@ -1104,7 +1104,7 @@ impl GetQueryResultsOutput {
 pub mod get_query_results_output {
 
     /// A builder for [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_count: std::option::Option<i64>,
         pub(crate) result_set: std::option::Option<crate::model::ResultSet>,
@@ -1179,7 +1179,7 @@ impl GetQueryExecutionOutput {
 pub mod get_query_execution_output {
 
     /// A builder for [`GetQueryExecutionOutput`](crate::output::GetQueryExecutionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_execution: std::option::Option<crate::model::QueryExecution>,
     }
@@ -1230,7 +1230,7 @@ impl GetPreparedStatementOutput {
 pub mod get_prepared_statement_output {
 
     /// A builder for [`GetPreparedStatementOutput`](crate::output::GetPreparedStatementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prepared_statement: std::option::Option<crate::model::PreparedStatement>,
     }
@@ -1281,7 +1281,7 @@ impl GetNamedQueryOutput {
 pub mod get_named_query_output {
 
     /// A builder for [`GetNamedQueryOutput`](crate::output::GetNamedQueryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) named_query: std::option::Option<crate::model::NamedQuery>,
     }
@@ -1332,7 +1332,7 @@ impl GetDataCatalogOutput {
 pub mod get_data_catalog_output {
 
     /// A builder for [`GetDataCatalogOutput`](crate::output::GetDataCatalogOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_catalog: std::option::Option<crate::model::DataCatalog>,
     }
@@ -1383,7 +1383,7 @@ impl GetDatabaseOutput {
 pub mod get_database_output {
 
     /// A builder for [`GetDatabaseOutput`](crate::output::GetDatabaseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) database: std::option::Option<crate::model::Database>,
     }
@@ -1421,7 +1421,7 @@ pub struct DeleteWorkGroupOutput {}
 pub mod delete_work_group_output {
 
     /// A builder for [`DeleteWorkGroupOutput`](crate::output::DeleteWorkGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWorkGroupOutput`](crate::output::DeleteWorkGroupOutput).
@@ -1445,7 +1445,7 @@ pub struct DeletePreparedStatementOutput {}
 pub mod delete_prepared_statement_output {
 
     /// A builder for [`DeletePreparedStatementOutput`](crate::output::DeletePreparedStatementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePreparedStatementOutput`](crate::output::DeletePreparedStatementOutput).
@@ -1469,7 +1469,7 @@ pub struct DeleteNamedQueryOutput {}
 pub mod delete_named_query_output {
 
     /// A builder for [`DeleteNamedQueryOutput`](crate::output::DeleteNamedQueryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteNamedQueryOutput`](crate::output::DeleteNamedQueryOutput).
@@ -1493,7 +1493,7 @@ pub struct DeleteDataCatalogOutput {}
 pub mod delete_data_catalog_output {
 
     /// A builder for [`DeleteDataCatalogOutput`](crate::output::DeleteDataCatalogOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDataCatalogOutput`](crate::output::DeleteDataCatalogOutput).
@@ -1517,7 +1517,7 @@ pub struct CreateWorkGroupOutput {}
 pub mod create_work_group_output {
 
     /// A builder for [`CreateWorkGroupOutput`](crate::output::CreateWorkGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateWorkGroupOutput`](crate::output::CreateWorkGroupOutput).
@@ -1541,7 +1541,7 @@ pub struct CreatePreparedStatementOutput {}
 pub mod create_prepared_statement_output {
 
     /// A builder for [`CreatePreparedStatementOutput`](crate::output::CreatePreparedStatementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreatePreparedStatementOutput`](crate::output::CreatePreparedStatementOutput).
@@ -1575,7 +1575,7 @@ impl CreateNamedQueryOutput {
 pub mod create_named_query_output {
 
     /// A builder for [`CreateNamedQueryOutput`](crate::output::CreateNamedQueryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) named_query_id: std::option::Option<std::string::String>,
     }
@@ -1616,7 +1616,7 @@ pub struct CreateDataCatalogOutput {}
 pub mod create_data_catalog_output {
 
     /// A builder for [`CreateDataCatalogOutput`](crate::output::CreateDataCatalogOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateDataCatalogOutput`](crate::output::CreateDataCatalogOutput).
@@ -1660,7 +1660,7 @@ impl BatchGetQueryExecutionOutput {
 pub mod batch_get_query_execution_output {
 
     /// A builder for [`BatchGetQueryExecutionOutput`](crate::output::BatchGetQueryExecutionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_executions:
             std::option::Option<std::vec::Vec<crate::model::QueryExecution>>,
@@ -1753,7 +1753,7 @@ impl BatchGetPreparedStatementOutput {
 pub mod batch_get_prepared_statement_output {
 
     /// A builder for [`BatchGetPreparedStatementOutput`](crate::output::BatchGetPreparedStatementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prepared_statements:
             std::option::Option<std::vec::Vec<crate::model::PreparedStatement>>,
@@ -1850,7 +1850,7 @@ impl BatchGetNamedQueryOutput {
 pub mod batch_get_named_query_output {
 
     /// A builder for [`BatchGetNamedQueryOutput`](crate::output::BatchGetNamedQueryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) named_queries: std::option::Option<std::vec::Vec<crate::model::NamedQuery>>,
         pub(crate) unprocessed_named_query_ids:

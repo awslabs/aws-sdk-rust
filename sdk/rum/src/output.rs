@@ -24,7 +24,7 @@ impl GetAppMonitorDataOutput {
 pub mod get_app_monitor_data_output {
 
     /// A builder for [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -93,7 +93,7 @@ impl CreateAppMonitorOutput {
 pub mod create_app_monitor_output {
 
     /// A builder for [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -146,7 +146,7 @@ impl ListAppMonitorsOutput {
 pub mod list_app_monitors_output {
 
     /// A builder for [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) app_monitor_summaries:
@@ -206,7 +206,7 @@ pub struct DeleteAppMonitorOutput {}
 pub mod delete_app_monitor_output {
 
     /// A builder for [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput).
@@ -230,7 +230,7 @@ pub struct UpdateAppMonitorOutput {}
 pub mod update_app_monitor_output {
 
     /// A builder for [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput).
@@ -264,7 +264,7 @@ impl GetAppMonitorOutput {
 pub mod get_app_monitor_output {
 
     /// A builder for [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_monitor: std::option::Option<crate::model::AppMonitor>,
     }
@@ -305,7 +305,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -329,7 +329,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -353,7 +353,7 @@ pub struct PutRumEventsOutput {}
 pub mod put_rum_events_output {
 
     /// A builder for [`PutRumEventsOutput`](crate::output::PutRumEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutRumEventsOutput`](crate::output::PutRumEventsOutput).
@@ -398,7 +398,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<

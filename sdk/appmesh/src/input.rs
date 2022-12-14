@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_gateway_route_input {
 
     /// A builder for [`CreateGatewayRouteInput`](crate::input::CreateGatewayRouteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_route_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -291,7 +291,7 @@ impl CreateGatewayRouteInput {
 pub mod create_mesh_input {
 
     /// A builder for [`CreateMeshInput`](crate::input::CreateMeshInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) spec: std::option::Option<crate::model::MeshSpec>,
@@ -479,7 +479,7 @@ impl CreateMeshInput {
 pub mod create_route_input {
 
     /// A builder for [`CreateRouteInput`](crate::input::CreateRouteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -763,7 +763,7 @@ impl CreateRouteInput {
 pub mod create_virtual_gateway_input {
 
     /// A builder for [`CreateVirtualGatewayInput`](crate::input::CreateVirtualGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateway_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -1022,7 +1022,7 @@ impl CreateVirtualGatewayInput {
 pub mod create_virtual_node_input {
 
     /// A builder for [`CreateVirtualNodeInput`](crate::input::CreateVirtualNodeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -1279,7 +1279,7 @@ impl CreateVirtualNodeInput {
 pub mod create_virtual_router_input {
 
     /// A builder for [`CreateVirtualRouterInput`](crate::input::CreateVirtualRouterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_router_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -1536,7 +1536,7 @@ impl CreateVirtualRouterInput {
 pub mod create_virtual_service_input {
 
     /// A builder for [`CreateVirtualServiceInput`](crate::input::CreateVirtualServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -1795,7 +1795,7 @@ impl CreateVirtualServiceInput {
 pub mod delete_gateway_route_input {
 
     /// A builder for [`DeleteGatewayRouteInput`](crate::input::DeleteGatewayRouteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_route_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -2035,7 +2035,7 @@ impl DeleteGatewayRouteInput {
 pub mod delete_mesh_input {
 
     /// A builder for [`DeleteMeshInput`](crate::input::DeleteMeshInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
     }
@@ -2181,7 +2181,7 @@ impl DeleteMeshInput {
 pub mod delete_route_input {
 
     /// A builder for [`DeleteRouteInput`](crate::input::DeleteRouteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -2416,7 +2416,7 @@ impl DeleteRouteInput {
 pub mod delete_virtual_gateway_input {
 
     /// A builder for [`DeleteVirtualGatewayInput`](crate::input::DeleteVirtualGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateway_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -2628,7 +2628,7 @@ impl DeleteVirtualGatewayInput {
 pub mod delete_virtual_node_input {
 
     /// A builder for [`DeleteVirtualNodeInput`](crate::input::DeleteVirtualNodeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -2840,7 +2840,7 @@ impl DeleteVirtualNodeInput {
 pub mod delete_virtual_router_input {
 
     /// A builder for [`DeleteVirtualRouterInput`](crate::input::DeleteVirtualRouterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_router_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -3052,7 +3052,7 @@ impl DeleteVirtualRouterInput {
 pub mod delete_virtual_service_input {
 
     /// A builder for [`DeleteVirtualServiceInput`](crate::input::DeleteVirtualServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -3264,7 +3264,7 @@ impl DeleteVirtualServiceInput {
 pub mod describe_gateway_route_input {
 
     /// A builder for [`DescribeGatewayRouteInput`](crate::input::DescribeGatewayRouteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_route_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -3504,7 +3504,7 @@ impl DescribeGatewayRouteInput {
 pub mod describe_mesh_input {
 
     /// A builder for [`DescribeMeshInput`](crate::input::DescribeMeshInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) mesh_owner: std::option::Option<std::string::String>,
@@ -3675,7 +3675,7 @@ impl DescribeMeshInput {
 pub mod describe_route_input {
 
     /// A builder for [`DescribeRouteInput`](crate::input::DescribeRouteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -3910,7 +3910,7 @@ impl DescribeRouteInput {
 pub mod describe_virtual_gateway_input {
 
     /// A builder for [`DescribeVirtualGatewayInput`](crate::input::DescribeVirtualGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateway_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -4122,7 +4122,7 @@ impl DescribeVirtualGatewayInput {
 pub mod describe_virtual_node_input {
 
     /// A builder for [`DescribeVirtualNodeInput`](crate::input::DescribeVirtualNodeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -4334,7 +4334,7 @@ impl DescribeVirtualNodeInput {
 pub mod describe_virtual_router_input {
 
     /// A builder for [`DescribeVirtualRouterInput`](crate::input::DescribeVirtualRouterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_router_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -4546,7 +4546,7 @@ impl DescribeVirtualRouterInput {
 pub mod describe_virtual_service_input {
 
     /// A builder for [`DescribeVirtualServiceInput`](crate::input::DescribeVirtualServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -4758,7 +4758,7 @@ impl DescribeVirtualServiceInput {
 pub mod list_gateway_routes_input {
 
     /// A builder for [`ListGatewayRoutesInput`](crate::input::ListGatewayRoutesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_gateway_name: std::option::Option<std::string::String>,
@@ -5001,7 +5001,7 @@ impl ListGatewayRoutesInput {
 pub mod list_meshes_input {
 
     /// A builder for [`ListMeshesInput`](crate::input::ListMeshesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -5164,7 +5164,7 @@ impl ListMeshesInput {
 pub mod list_routes_input {
 
     /// A builder for [`ListRoutesInput`](crate::input::ListRoutesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_router_name: std::option::Option<std::string::String>,
@@ -5411,7 +5411,7 @@ impl ListRoutesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5603,7 +5603,7 @@ impl ListTagsForResourceInput {
 pub mod list_virtual_gateways_input {
 
     /// A builder for [`ListVirtualGatewaysInput`](crate::input::ListVirtualGatewaysInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5817,7 +5817,7 @@ impl ListVirtualGatewaysInput {
 pub mod list_virtual_nodes_input {
 
     /// A builder for [`ListVirtualNodesInput`](crate::input::ListVirtualNodesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6031,7 +6031,7 @@ impl ListVirtualNodesInput {
 pub mod list_virtual_routers_input {
 
     /// A builder for [`ListVirtualRoutersInput`](crate::input::ListVirtualRoutersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6245,7 +6245,7 @@ impl ListVirtualRoutersInput {
 pub mod list_virtual_services_input {
 
     /// A builder for [`ListVirtualServicesInput`](crate::input::ListVirtualServicesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6459,7 +6459,7 @@ impl ListVirtualServicesInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -6647,7 +6647,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6835,7 +6835,7 @@ impl UntagResourceInput {
 pub mod update_gateway_route_input {
 
     /// A builder for [`UpdateGatewayRouteInput`](crate::input::UpdateGatewayRouteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_route_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -7119,7 +7119,7 @@ impl UpdateGatewayRouteInput {
 pub mod update_mesh_input {
 
     /// A builder for [`UpdateMeshInput`](crate::input::UpdateMeshInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) spec: std::option::Option<crate::model::MeshSpec>,
@@ -7306,7 +7306,7 @@ impl UpdateMeshInput {
 pub mod update_route_input {
 
     /// A builder for [`UpdateRouteInput`](crate::input::UpdateRouteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -7582,7 +7582,7 @@ impl UpdateRouteInput {
 pub mod update_virtual_gateway_input {
 
     /// A builder for [`UpdateVirtualGatewayInput`](crate::input::UpdateVirtualGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateway_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -7840,7 +7840,7 @@ impl UpdateVirtualGatewayInput {
 pub mod update_virtual_node_input {
 
     /// A builder for [`UpdateVirtualNodeInput`](crate::input::UpdateVirtualNodeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -8096,7 +8096,7 @@ impl UpdateVirtualNodeInput {
 pub mod update_virtual_router_input {
 
     /// A builder for [`UpdateVirtualRouterInput`](crate::input::UpdateVirtualRouterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_router_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,
@@ -8352,7 +8352,7 @@ impl UpdateVirtualRouterInput {
 pub mod update_virtual_service_input {
 
     /// A builder for [`UpdateVirtualServiceInput`](crate::input::UpdateVirtualServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service_name: std::option::Option<std::string::String>,
         pub(crate) mesh_name: std::option::Option<std::string::String>,

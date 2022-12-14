@@ -122,7 +122,7 @@ impl Volume {
 pub mod volume {
 
     /// A builder for [`Volume`](crate::model::Volume).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -458,7 +458,7 @@ impl OpenZfsVolumeConfiguration {
 pub mod open_zfs_volume_configuration {
 
     /// A builder for [`OpenZfsVolumeConfiguration`](crate::model::OpenZfsVolumeConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parent_volume_id: std::option::Option<std::string::String>,
         pub(crate) volume_path: std::option::Option<std::string::String>,
@@ -692,7 +692,7 @@ impl OpenZfsUserOrGroupQuota {
 pub mod open_zfs_user_or_group_quota {
 
     /// A builder for [`OpenZfsUserOrGroupQuota`](crate::model::OpenZfsUserOrGroupQuota).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::OpenZfsQuotaType>,
         pub(crate) id: std::option::Option<i32>,
@@ -860,7 +860,7 @@ impl OpenZfsNfsExport {
 pub mod open_zfs_nfs_export {
 
     /// A builder for [`OpenZfsNfsExport`](crate::model::OpenZfsNfsExport).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_configurations:
             std::option::Option<std::vec::Vec<crate::model::OpenZfsClientConfiguration>>,
@@ -936,7 +936,7 @@ impl OpenZfsClientConfiguration {
 pub mod open_zfs_client_configuration {
 
     /// A builder for [`OpenZfsClientConfiguration`](crate::model::OpenZfsClientConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) clients: std::option::Option<std::string::String>,
         pub(crate) options: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1028,7 +1028,7 @@ impl OpenZfsOriginSnapshotConfiguration {
 pub mod open_zfs_origin_snapshot_configuration {
 
     /// A builder for [`OpenZfsOriginSnapshotConfiguration`](crate::model::OpenZfsOriginSnapshotConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_arn: std::option::Option<std::string::String>,
         pub(crate) copy_strategy: std::option::Option<crate::model::OpenZfsCopyStrategy>,
@@ -1381,7 +1381,7 @@ impl AdministrativeAction {
 pub mod administrative_action {
 
     /// A builder for [`AdministrativeAction`](crate::model::AdministrativeAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) administrative_action_type:
             std::option::Option<crate::model::AdministrativeActionType>,
@@ -1652,7 +1652,7 @@ impl Snapshot {
 pub mod snapshot {
 
     /// A builder for [`Snapshot`](crate::model::Snapshot).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
@@ -1847,7 +1847,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1907,7 +1907,7 @@ impl LifecycleTransitionReason {
 pub mod lifecycle_transition_reason {
 
     /// A builder for [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2057,7 +2057,7 @@ impl AdministrativeActionFailureDetails {
 pub mod administrative_action_failure_details {
 
     /// A builder for [`AdministrativeActionFailureDetails`](crate::model::AdministrativeActionFailureDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2290,7 +2290,7 @@ impl FileSystem {
 pub mod file_system {
 
     /// A builder for [`FileSystem`](crate::model::FileSystem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_id: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2762,7 +2762,7 @@ impl OpenZfsFileSystemConfiguration {
 pub mod open_zfs_file_system_configuration {
 
     /// A builder for [`OpenZfsFileSystemConfiguration`](crate::model::OpenZfsFileSystemConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatic_backup_retention_days: std::option::Option<i32>,
         pub(crate) copy_tags_to_backups: std::option::Option<bool>,
@@ -2947,7 +2947,7 @@ impl DiskIopsConfiguration {
 pub mod disk_iops_configuration {
 
     /// A builder for [`DiskIopsConfiguration`](crate::model::DiskIopsConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mode: std::option::Option<crate::model::DiskIopsConfigurationMode>,
         pub(crate) iops: std::option::Option<i64>,
@@ -3274,7 +3274,7 @@ impl OntapFileSystemConfiguration {
 pub mod ontap_file_system_configuration {
 
     /// A builder for [`OntapFileSystemConfiguration`](crate::model::OntapFileSystemConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatic_backup_retention_days: std::option::Option<i32>,
         pub(crate) daily_automatic_backup_start_time: std::option::Option<std::string::String>,
@@ -3500,7 +3500,7 @@ impl FileSystemEndpoints {
 pub mod file_system_endpoints {
 
     /// A builder for [`FileSystemEndpoints`](crate::model::FileSystemEndpoints).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) intercluster: std::option::Option<crate::model::FileSystemEndpoint>,
         pub(crate) management: std::option::Option<crate::model::FileSystemEndpoint>,
@@ -3573,7 +3573,7 @@ impl FileSystemEndpoint {
 pub mod file_system_endpoint {
 
     /// A builder for [`FileSystemEndpoint`](crate::model::FileSystemEndpoint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_name: std::option::Option<std::string::String>,
         pub(crate) ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3850,7 +3850,7 @@ impl LustreFileSystemConfiguration {
 pub mod lustre_file_system_configuration {
 
     /// A builder for [`LustreFileSystemConfiguration`](crate::model::LustreFileSystemConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) weekly_maintenance_start_time: std::option::Option<std::string::String>,
         pub(crate) data_repository_configuration:
@@ -4131,7 +4131,7 @@ impl LustreRootSquashConfiguration {
 pub mod lustre_root_squash_configuration {
 
     /// A builder for [`LustreRootSquashConfiguration`](crate::model::LustreRootSquashConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) root_squash: std::option::Option<std::string::String>,
         pub(crate) no_squash_nids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4239,7 +4239,7 @@ impl LustreLogConfiguration {
 pub mod lustre_log_configuration {
 
     /// A builder for [`LustreLogConfiguration`](crate::model::LustreLogConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) level: std::option::Option<crate::model::LustreAccessAuditLogLevel>,
         pub(crate) destination: std::option::Option<std::string::String>,
@@ -4768,7 +4768,7 @@ impl DataRepositoryConfiguration {
 pub mod data_repository_configuration {
 
     /// A builder for [`DataRepositoryConfiguration`](crate::model::DataRepositoryConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle: std::option::Option<crate::model::DataRepositoryLifecycle>,
         pub(crate) import_path: std::option::Option<std::string::String>,
@@ -4916,7 +4916,7 @@ impl DataRepositoryFailureDetails {
 pub mod data_repository_failure_details {
 
     /// A builder for [`DataRepositoryFailureDetails`](crate::model::DataRepositoryFailureDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -5304,7 +5304,7 @@ impl WindowsFileSystemConfiguration {
 pub mod windows_file_system_configuration {
 
     /// A builder for [`WindowsFileSystemConfiguration`](crate::model::WindowsFileSystemConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_directory_id: std::option::Option<std::string::String>,
         pub(crate) self_managed_active_directory_configuration:
@@ -5645,7 +5645,7 @@ impl WindowsAuditLogConfiguration {
 pub mod windows_audit_log_configuration {
 
     /// A builder for [`WindowsAuditLogConfiguration`](crate::model::WindowsAuditLogConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_access_audit_log_level:
             std::option::Option<crate::model::WindowsAccessAuditLogLevel>,
@@ -5904,7 +5904,7 @@ impl Alias {
 pub mod alias {
 
     /// A builder for [`Alias`](crate::model::Alias).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::AliasLifecycle>,
@@ -6323,7 +6323,7 @@ impl SelfManagedActiveDirectoryAttributes {
 pub mod self_managed_active_directory_attributes {
 
     /// A builder for [`SelfManagedActiveDirectoryAttributes`](crate::model::SelfManagedActiveDirectoryAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) organizational_unit_distinguished_name: std::option::Option<std::string::String>,
@@ -6530,7 +6530,7 @@ impl FileSystemFailureDetails {
 pub mod file_system_failure_details {
 
     /// A builder for [`FileSystemFailureDetails`](crate::model::FileSystemFailureDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -7285,7 +7285,7 @@ impl OntapVolumeConfiguration {
 pub mod ontap_volume_configuration {
 
     /// A builder for [`OntapVolumeConfiguration`](crate::model::OntapVolumeConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flex_cache_endpoint_type:
             std::option::Option<crate::model::FlexCacheEndpointType>,
@@ -7615,7 +7615,7 @@ impl TieringPolicy {
 pub mod tiering_policy {
 
     /// A builder for [`TieringPolicy`](crate::model::TieringPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cooling_period: std::option::Option<i32>,
         pub(crate) name: std::option::Option<crate::model::TieringPolicyName>,
@@ -8164,7 +8164,7 @@ impl UpdateOpenZfsVolumeConfiguration {
 pub mod update_open_zfs_volume_configuration {
 
     /// A builder for [`UpdateOpenZfsVolumeConfiguration`](crate::model::UpdateOpenZfsVolumeConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_capacity_reservation_gi_b: std::option::Option<i32>,
         pub(crate) storage_capacity_quota_gi_b: std::option::Option<i32>,
@@ -8354,7 +8354,7 @@ impl UpdateOntapVolumeConfiguration {
 pub mod update_ontap_volume_configuration {
 
     /// A builder for [`UpdateOntapVolumeConfiguration`](crate::model::UpdateOntapVolumeConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) junction_path: std::option::Option<std::string::String>,
         pub(crate) security_style: std::option::Option<crate::model::SecurityStyle>,
@@ -8567,7 +8567,7 @@ impl StorageVirtualMachine {
 pub mod storage_virtual_machine {
 
     /// A builder for [`StorageVirtualMachine`](crate::model::StorageVirtualMachine).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_directory_configuration:
             std::option::Option<crate::model::SvmActiveDirectoryConfiguration>,
@@ -9167,7 +9167,7 @@ impl SvmEndpoints {
 pub mod svm_endpoints {
 
     /// A builder for [`SvmEndpoints`](crate::model::SvmEndpoints).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iscsi: std::option::Option<crate::model::SvmEndpoint>,
         pub(crate) management: std::option::Option<crate::model::SvmEndpoint>,
@@ -9261,7 +9261,7 @@ impl SvmEndpoint {
 pub mod svm_endpoint {
 
     /// A builder for [`SvmEndpoint`](crate::model::SvmEndpoint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_name: std::option::Option<std::string::String>,
         pub(crate) ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9340,7 +9340,7 @@ impl SvmActiveDirectoryConfiguration {
 pub mod svm_active_directory_configuration {
 
     /// A builder for [`SvmActiveDirectoryConfiguration`](crate::model::SvmActiveDirectoryConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) net_bios_name: std::option::Option<std::string::String>,
         pub(crate) self_managed_active_directory_configuration:
@@ -9414,7 +9414,7 @@ impl UpdateSvmActiveDirectoryConfiguration {
 pub mod update_svm_active_directory_configuration {
 
     /// A builder for [`UpdateSvmActiveDirectoryConfiguration`](crate::model::UpdateSvmActiveDirectoryConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) self_managed_active_directory_configuration:
             std::option::Option<crate::model::SelfManagedActiveDirectoryConfigurationUpdates>,
@@ -9495,7 +9495,7 @@ impl std::fmt::Debug for SelfManagedActiveDirectoryConfigurationUpdates {
 pub mod self_managed_active_directory_configuration_updates {
 
     /// A builder for [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::model::SelfManagedActiveDirectoryConfigurationUpdates).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
@@ -9783,7 +9783,7 @@ impl UpdateFileSystemOpenZfsConfiguration {
 pub mod update_file_system_open_zfs_configuration {
 
     /// A builder for [`UpdateFileSystemOpenZfsConfiguration`](crate::model::UpdateFileSystemOpenZfsConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatic_backup_retention_days: std::option::Option<i32>,
         pub(crate) copy_tags_to_backups: std::option::Option<bool>,
@@ -9995,7 +9995,7 @@ impl std::fmt::Debug for UpdateFileSystemOntapConfiguration {
 pub mod update_file_system_ontap_configuration {
 
     /// A builder for [`UpdateFileSystemOntapConfiguration`](crate::model::UpdateFileSystemOntapConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) automatic_backup_retention_days: std::option::Option<i32>,
         pub(crate) daily_automatic_backup_start_time: std::option::Option<std::string::String>,
@@ -10227,7 +10227,7 @@ impl UpdateFileSystemLustreConfiguration {
 pub mod update_file_system_lustre_configuration {
 
     /// A builder for [`UpdateFileSystemLustreConfiguration`](crate::model::UpdateFileSystemLustreConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) weekly_maintenance_start_time: std::option::Option<std::string::String>,
         pub(crate) daily_automatic_backup_start_time: std::option::Option<std::string::String>,
@@ -10444,7 +10444,7 @@ impl LustreLogCreateConfiguration {
 pub mod lustre_log_create_configuration {
 
     /// A builder for [`LustreLogCreateConfiguration`](crate::model::LustreLogCreateConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) level: std::option::Option<crate::model::LustreAccessAuditLogLevel>,
         pub(crate) destination: std::option::Option<std::string::String>,
@@ -10576,7 +10576,7 @@ impl UpdateFileSystemWindowsConfiguration {
 pub mod update_file_system_windows_configuration {
 
     /// A builder for [`UpdateFileSystemWindowsConfiguration`](crate::model::UpdateFileSystemWindowsConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) weekly_maintenance_start_time: std::option::Option<std::string::String>,
         pub(crate) daily_automatic_backup_start_time: std::option::Option<std::string::String>,
@@ -10775,7 +10775,7 @@ impl WindowsAuditLogCreateConfiguration {
 pub mod windows_audit_log_create_configuration {
 
     /// A builder for [`WindowsAuditLogCreateConfiguration`](crate::model::WindowsAuditLogCreateConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_access_audit_log_level:
             std::option::Option<crate::model::WindowsAccessAuditLogLevel>,
@@ -11025,7 +11025,7 @@ impl FileCache {
 pub mod file_cache {
 
     /// A builder for [`FileCache`](crate::model::FileCache).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_id: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -11369,7 +11369,7 @@ impl FileCacheLustreConfiguration {
 pub mod file_cache_lustre_configuration {
 
     /// A builder for [`FileCacheLustreConfiguration`](crate::model::FileCacheLustreConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) per_unit_storage_throughput: std::option::Option<i32>,
         pub(crate) deployment_type:
@@ -11506,7 +11506,7 @@ impl FileCacheLustreMetadataConfiguration {
 pub mod file_cache_lustre_metadata_configuration {
 
     /// A builder for [`FileCacheLustreMetadataConfiguration`](crate::model::FileCacheLustreMetadataConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_capacity: std::option::Option<i32>,
     }
@@ -11641,7 +11641,7 @@ impl FileCacheFailureDetails {
 pub mod file_cache_failure_details {
 
     /// A builder for [`FileCacheFailureDetails`](crate::model::FileCacheFailureDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -11887,7 +11887,7 @@ impl UpdateFileCacheLustreConfiguration {
 pub mod update_file_cache_lustre_configuration {
 
     /// A builder for [`UpdateFileCacheLustreConfiguration`](crate::model::UpdateFileCacheLustreConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) weekly_maintenance_start_time: std::option::Option<std::string::String>,
     }
@@ -12114,7 +12114,7 @@ impl DataRepositoryAssociation {
 pub mod data_repository_association {
 
     /// A builder for [`DataRepositoryAssociation`](crate::model::DataRepositoryAssociation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -12471,7 +12471,7 @@ impl NfsDataRepositoryConfiguration {
 pub mod nfs_data_repository_configuration {
 
     /// A builder for [`NfsDataRepositoryConfiguration`](crate::model::NfsDataRepositoryConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<crate::model::NfsVersion>,
         pub(crate) dns_ips: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12568,7 +12568,7 @@ impl AutoExportPolicy {
 pub mod auto_export_policy {
 
     /// A builder for [`AutoExportPolicy`](crate::model::AutoExportPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::EventType>>,
     }
@@ -12826,7 +12826,7 @@ impl S3DataRepositoryConfiguration {
 pub mod s3_data_repository_configuration {
 
     /// A builder for [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_import_policy: std::option::Option<crate::model::AutoImportPolicy>,
         pub(crate) auto_export_policy: std::option::Option<crate::model::AutoExportPolicy>,
@@ -12905,7 +12905,7 @@ impl AutoImportPolicy {
 pub mod auto_import_policy {
 
     /// A builder for [`AutoImportPolicy`](crate::model::AutoImportPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::EventType>>,
     }
@@ -13077,7 +13077,7 @@ impl VolumeFilter {
 pub mod volume_filter {
 
     /// A builder for [`VolumeFilter`](crate::model::VolumeFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::VolumeFilterName>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13246,7 +13246,7 @@ impl StorageVirtualMachineFilter {
 pub mod storage_virtual_machine_filter {
 
     /// A builder for [`StorageVirtualMachineFilter`](crate::model::StorageVirtualMachineFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::StorageVirtualMachineFilterName>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13412,7 +13412,7 @@ impl SnapshotFilter {
 pub mod snapshot_filter {
 
     /// A builder for [`SnapshotFilter`](crate::model::SnapshotFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SnapshotFilterName>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13708,7 +13708,7 @@ impl DataRepositoryTask {
 pub mod data_repository_task {
 
     /// A builder for [`DataRepositoryTask`](crate::model::DataRepositoryTask).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::DataRepositoryTaskLifecycle>,
@@ -14029,7 +14029,7 @@ impl CompletionReport {
 pub mod completion_report {
 
     /// A builder for [`CompletionReport`](crate::model::CompletionReport).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) path: std::option::Option<std::string::String>,
@@ -14314,7 +14314,7 @@ impl DataRepositoryTaskStatus {
 pub mod data_repository_task_status {
 
     /// A builder for [`DataRepositoryTaskStatus`](crate::model::DataRepositoryTaskStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total_count: std::option::Option<i64>,
         pub(crate) succeeded_count: std::option::Option<i64>,
@@ -14413,7 +14413,7 @@ impl DataRepositoryTaskFailureDetails {
 pub mod data_repository_task_failure_details {
 
     /// A builder for [`DataRepositoryTaskFailureDetails`](crate::model::DataRepositoryTaskFailureDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -14702,7 +14702,7 @@ impl DataRepositoryTaskFilter {
 pub mod data_repository_task_filter {
 
     /// A builder for [`DataRepositoryTaskFilter`](crate::model::DataRepositoryTaskFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::DataRepositoryTaskFilterName>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14896,7 +14896,7 @@ impl Filter {
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::FilterName>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15213,7 +15213,7 @@ impl Backup {
 pub mod backup {
 
     /// A builder for [`Backup`](crate::model::Backup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::BackupLifecycle>,
@@ -15600,7 +15600,7 @@ impl ActiveDirectoryBackupAttributes {
 pub mod active_directory_backup_attributes {
 
     /// A builder for [`ActiveDirectoryBackupAttributes`](crate::model::ActiveDirectoryBackupAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) active_directory_id: std::option::Option<std::string::String>,
@@ -15770,7 +15770,7 @@ impl BackupFailureDetails {
 pub mod backup_failure_details {
 
     /// A builder for [`BackupFailureDetails`](crate::model::BackupFailureDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -15980,7 +15980,7 @@ impl DeleteVolumeOntapResponse {
 pub mod delete_volume_ontap_response {
 
     /// A builder for [`DeleteVolumeOntapResponse`](crate::model::DeleteVolumeOntapResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) final_backup_id: std::option::Option<std::string::String>,
         pub(crate) final_backup_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -16052,7 +16052,7 @@ impl DeleteVolumeOpenZfsConfiguration {
 pub mod delete_volume_open_zfs_configuration {
 
     /// A builder for [`DeleteVolumeOpenZfsConfiguration`](crate::model::DeleteVolumeOpenZfsConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options:
             std::option::Option<std::vec::Vec<crate::model::DeleteOpenZfsVolumeOption>>,
@@ -16208,7 +16208,7 @@ impl DeleteVolumeOntapConfiguration {
 pub mod delete_volume_ontap_configuration {
 
     /// A builder for [`DeleteVolumeOntapConfiguration`](crate::model::DeleteVolumeOntapConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skip_final_backup: std::option::Option<bool>,
         pub(crate) final_backup_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -16284,7 +16284,7 @@ impl DeleteFileSystemOpenZfsResponse {
 pub mod delete_file_system_open_zfs_response {
 
     /// A builder for [`DeleteFileSystemOpenZfsResponse`](crate::model::DeleteFileSystemOpenZfsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) final_backup_id: std::option::Option<std::string::String>,
         pub(crate) final_backup_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -16363,7 +16363,7 @@ impl DeleteFileSystemLustreResponse {
 pub mod delete_file_system_lustre_response {
 
     /// A builder for [`DeleteFileSystemLustreResponse`](crate::model::DeleteFileSystemLustreResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) final_backup_id: std::option::Option<std::string::String>,
         pub(crate) final_backup_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -16442,7 +16442,7 @@ impl DeleteFileSystemWindowsResponse {
 pub mod delete_file_system_windows_response {
 
     /// A builder for [`DeleteFileSystemWindowsResponse`](crate::model::DeleteFileSystemWindowsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) final_backup_id: std::option::Option<std::string::String>,
         pub(crate) final_backup_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -16528,7 +16528,7 @@ impl DeleteFileSystemOpenZfsConfiguration {
 pub mod delete_file_system_open_zfs_configuration {
 
     /// A builder for [`DeleteFileSystemOpenZfsConfiguration`](crate::model::DeleteFileSystemOpenZfsConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skip_final_backup: std::option::Option<bool>,
         pub(crate) final_backup_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -16721,7 +16721,7 @@ impl DeleteFileSystemLustreConfiguration {
 pub mod delete_file_system_lustre_configuration {
 
     /// A builder for [`DeleteFileSystemLustreConfiguration`](crate::model::DeleteFileSystemLustreConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skip_final_backup: std::option::Option<bool>,
         pub(crate) final_backup_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -16801,7 +16801,7 @@ impl DeleteFileSystemWindowsConfiguration {
 pub mod delete_file_system_windows_configuration {
 
     /// A builder for [`DeleteFileSystemWindowsConfiguration`](crate::model::DeleteFileSystemWindowsConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skip_final_backup: std::option::Option<bool>,
         pub(crate) final_backup_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -16941,7 +16941,7 @@ impl CreateOntapVolumeConfiguration {
 pub mod create_ontap_volume_configuration {
 
     /// A builder for [`CreateOntapVolumeConfiguration`](crate::model::CreateOntapVolumeConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) junction_path: std::option::Option<std::string::String>,
         pub(crate) security_style: std::option::Option<crate::model::SecurityStyle>,
@@ -17182,7 +17182,7 @@ impl CreateOpenZfsVolumeConfiguration {
 pub mod create_open_zfs_volume_configuration {
 
     /// A builder for [`CreateOpenZfsVolumeConfiguration`](crate::model::CreateOpenZfsVolumeConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parent_volume_id: std::option::Option<std::string::String>,
         pub(crate) storage_capacity_reservation_gi_b: std::option::Option<i32>,
@@ -17409,7 +17409,7 @@ impl CreateOpenZfsOriginSnapshotConfiguration {
 pub mod create_open_zfs_origin_snapshot_configuration {
 
     /// A builder for [`CreateOpenZfsOriginSnapshotConfiguration`](crate::model::CreateOpenZfsOriginSnapshotConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_arn: std::option::Option<std::string::String>,
         pub(crate) copy_strategy: std::option::Option<crate::model::OpenZfsCopyStrategy>,
@@ -17601,7 +17601,7 @@ impl CreateSvmActiveDirectoryConfiguration {
 pub mod create_svm_active_directory_configuration {
 
     /// A builder for [`CreateSvmActiveDirectoryConfiguration`](crate::model::CreateSvmActiveDirectoryConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) net_bios_name: std::option::Option<std::string::String>,
         pub(crate) self_managed_active_directory_configuration:
@@ -17729,7 +17729,7 @@ impl std::fmt::Debug for SelfManagedActiveDirectoryConfiguration {
 pub mod self_managed_active_directory_configuration {
 
     /// A builder for [`SelfManagedActiveDirectoryConfiguration`](crate::model::SelfManagedActiveDirectoryConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) organizational_unit_distinguished_name: std::option::Option<std::string::String>,
@@ -17947,7 +17947,7 @@ impl CreateFileSystemOpenZfsConfiguration {
 pub mod create_file_system_open_zfs_configuration {
 
     /// A builder for [`CreateFileSystemOpenZfsConfiguration`](crate::model::CreateFileSystemOpenZfsConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatic_backup_retention_days: std::option::Option<i32>,
         pub(crate) copy_tags_to_backups: std::option::Option<bool>,
@@ -18179,7 +18179,7 @@ impl OpenZfsCreateRootVolumeConfiguration {
 pub mod open_zfs_create_root_volume_configuration {
 
     /// A builder for [`OpenZfsCreateRootVolumeConfiguration`](crate::model::OpenZfsCreateRootVolumeConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_size_ki_b: std::option::Option<i32>,
         pub(crate) data_compression_type:
@@ -18501,7 +18501,7 @@ impl CreateFileSystemLustreConfiguration {
 pub mod create_file_system_lustre_configuration {
 
     /// A builder for [`CreateFileSystemLustreConfiguration`](crate::model::CreateFileSystemLustreConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) weekly_maintenance_start_time: std::option::Option<std::string::String>,
         pub(crate) import_path: std::option::Option<std::string::String>,
@@ -18924,7 +18924,7 @@ impl CreateFileSystemWindowsConfiguration {
 pub mod create_file_system_windows_configuration {
 
     /// A builder for [`CreateFileSystemWindowsConfiguration`](crate::model::CreateFileSystemWindowsConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_directory_id: std::option::Option<std::string::String>,
         pub(crate) self_managed_active_directory_configuration:
@@ -19280,7 +19280,7 @@ impl std::fmt::Debug for CreateFileSystemOntapConfiguration {
 pub mod create_file_system_ontap_configuration {
 
     /// A builder for [`CreateFileSystemOntapConfiguration`](crate::model::CreateFileSystemOntapConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) automatic_backup_retention_days: std::option::Option<i32>,
         pub(crate) daily_automatic_backup_start_time: std::option::Option<std::string::String>,
@@ -19659,7 +19659,7 @@ impl FileCacheCreating {
 pub mod file_cache_creating {
 
     /// A builder for [`FileCacheCreating`](crate::model::FileCacheCreating).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_id: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -20040,7 +20040,7 @@ impl FileCacheDataRepositoryAssociation {
 pub mod file_cache_data_repository_association {
 
     /// A builder for [`FileCacheDataRepositoryAssociation`](crate::model::FileCacheDataRepositoryAssociation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_cache_path: std::option::Option<std::string::String>,
         pub(crate) data_repository_path: std::option::Option<std::string::String>,
@@ -20177,7 +20177,7 @@ impl FileCacheNfsConfiguration {
 pub mod file_cache_nfs_configuration {
 
     /// A builder for [`FileCacheNfsConfiguration`](crate::model::FileCacheNfsConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<crate::model::NfsVersion>,
         pub(crate) dns_ips: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20278,7 +20278,7 @@ impl CreateFileCacheLustreConfiguration {
 pub mod create_file_cache_lustre_configuration {
 
     /// A builder for [`CreateFileCacheLustreConfiguration`](crate::model::CreateFileCacheLustreConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) per_unit_storage_throughput: std::option::Option<i32>,
         pub(crate) deployment_type:

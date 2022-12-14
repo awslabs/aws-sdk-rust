@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod get_application_component_details_input {
 
     /// A builder for [`GetApplicationComponentDetailsInput`](crate::input::GetApplicationComponentDetailsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_component_id: std::option::Option<std::string::String>,
     }
@@ -160,7 +160,7 @@ impl GetApplicationComponentDetailsInput {
 pub mod get_application_component_strategies_input {
 
     /// A builder for [`GetApplicationComponentStrategiesInput`](crate::input::GetApplicationComponentStrategiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_component_id: std::option::Option<std::string::String>,
     }
@@ -315,7 +315,7 @@ impl GetApplicationComponentStrategiesInput {
 pub mod get_assessment_input {
 
     /// A builder for [`GetAssessmentInput`](crate::input::GetAssessmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -458,7 +458,7 @@ impl GetAssessmentInput {
 pub mod get_import_file_task_input {
 
     /// A builder for [`GetImportFileTaskInput`](crate::input::GetImportFileTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -604,7 +604,7 @@ impl GetImportFileTaskInput {
 pub mod get_portfolio_preferences_input {
 
     /// A builder for [`GetPortfolioPreferencesInput`](crate::input::GetPortfolioPreferencesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetPortfolioPreferencesInput`](crate::input::GetPortfolioPreferencesInput).
@@ -718,7 +718,7 @@ impl GetPortfolioPreferencesInput {
 pub mod get_portfolio_summary_input {
 
     /// A builder for [`GetPortfolioSummaryInput`](crate::input::GetPortfolioSummaryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetPortfolioSummaryInput`](crate::input::GetPortfolioSummaryInput).
@@ -832,7 +832,7 @@ impl GetPortfolioSummaryInput {
 pub mod get_recommendation_report_details_input {
 
     /// A builder for [`GetRecommendationReportDetailsInput`](crate::input::GetRecommendationReportDetailsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -978,7 +978,7 @@ impl GetRecommendationReportDetailsInput {
 pub mod get_server_details_input {
 
     /// A builder for [`GetServerDetailsInput`](crate::input::GetServerDetailsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1175,7 +1175,7 @@ impl GetServerDetailsInput {
 pub mod get_server_strategies_input {
 
     /// A builder for [`GetServerStrategiesInput`](crate::input::GetServerStrategiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
     }
@@ -1327,7 +1327,7 @@ impl GetServerStrategiesInput {
 pub mod list_application_components_input {
 
     /// A builder for [`ListApplicationComponentsInput`](crate::input::ListApplicationComponentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_component_criteria:
             std::option::Option<crate::model::ApplicationComponentCriteria>,
@@ -1547,7 +1547,7 @@ impl ListApplicationComponentsInput {
 pub mod list_collectors_input {
 
     /// A builder for [`ListCollectorsInput`](crate::input::ListCollectorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1706,7 +1706,7 @@ impl ListCollectorsInput {
 pub mod list_import_file_task_input {
 
     /// A builder for [`ListImportFileTaskInput`](crate::input::ListImportFileTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1867,7 +1867,7 @@ impl ListImportFileTaskInput {
 pub mod list_servers_input {
 
     /// A builder for [`ListServersInput`](crate::input::ListServersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_criteria: std::option::Option<crate::model::ServerCriteria>,
         pub(crate) filter_value: std::option::Option<std::string::String>,
@@ -2079,7 +2079,7 @@ impl ListServersInput {
 pub mod put_portfolio_preferences_input {
 
     /// A builder for [`PutPortfolioPreferencesInput`](crate::input::PutPortfolioPreferencesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prioritize_business_goals:
             std::option::Option<crate::model::PrioritizeBusinessGoals>,
@@ -2264,7 +2264,7 @@ impl PutPortfolioPreferencesInput {
 pub mod start_assessment_input {
 
     /// A builder for [`StartAssessmentInput`](crate::input::StartAssessmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3bucket_for_analysis_data: std::option::Option<std::string::String>,
         pub(crate) s3bucket_for_report_data: std::option::Option<std::string::String>,
@@ -2422,7 +2422,7 @@ impl StartAssessmentInput {
 pub mod start_import_file_task_input {
 
     /// A builder for [`StartImportFileTaskInput`](crate::input::StartImportFileTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
@@ -2641,7 +2641,7 @@ impl StartImportFileTaskInput {
 pub mod start_recommendation_report_generation_input {
 
     /// A builder for [`StartRecommendationReportGenerationInput`](crate::input::StartRecommendationReportGenerationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_format: std::option::Option<crate::model::OutputFormat>,
         pub(crate) group_id_filter: std::option::Option<std::vec::Vec<crate::model::Group>>,
@@ -2807,7 +2807,7 @@ impl StartRecommendationReportGenerationInput {
 pub mod stop_assessment_input {
 
     /// A builder for [`StopAssessmentInput`](crate::input::StopAssessmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
     }
@@ -2950,7 +2950,7 @@ impl StopAssessmentInput {
 pub mod update_application_component_config_input {
 
     /// A builder for [`UpdateApplicationComponentConfigInput`](crate::input::UpdateApplicationComponentConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) application_component_id: std::option::Option<std::string::String>,
         pub(crate) inclusion_status: std::option::Option<crate::model::InclusionStatus>,
@@ -3172,7 +3172,7 @@ impl UpdateApplicationComponentConfigInput {
 pub mod update_server_config_input {
 
     /// A builder for [`UpdateServerConfigInput`](crate::input::UpdateServerConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
         pub(crate) strategy_option: std::option::Option<crate::model::StrategyOption>,

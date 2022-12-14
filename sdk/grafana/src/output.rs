@@ -24,7 +24,7 @@ impl ListWorkspacesOutput {
 pub mod list_workspaces_output {
 
     /// A builder for [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspaces: std::option::Option<std::vec::Vec<crate::model::WorkspaceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -93,7 +93,7 @@ impl CreateWorkspaceOutput {
 pub mod create_workspace_output {
 
     /// A builder for [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace: std::option::Option<crate::model::WorkspaceDescription>,
     }
@@ -144,7 +144,7 @@ impl DeleteWorkspaceOutput {
 pub mod delete_workspace_output {
 
     /// A builder for [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace: std::option::Option<crate::model::WorkspaceDescription>,
     }
@@ -195,7 +195,7 @@ impl UpdateWorkspaceOutput {
 pub mod update_workspace_output {
 
     /// A builder for [`UpdateWorkspaceOutput`](crate::output::UpdateWorkspaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace: std::option::Option<crate::model::WorkspaceDescription>,
     }
@@ -246,7 +246,7 @@ impl DescribeWorkspaceOutput {
 pub mod describe_workspace_output {
 
     /// A builder for [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace: std::option::Option<crate::model::WorkspaceDescription>,
     }
@@ -297,7 +297,7 @@ impl UpdatePermissionsOutput {
 pub mod update_permissions_output {
 
     /// A builder for [`UpdatePermissionsOutput`](crate::output::UpdatePermissionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::UpdateError>>,
     }
@@ -361,7 +361,7 @@ impl ListPermissionsOutput {
 pub mod list_permissions_output {
 
     /// A builder for [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::PermissionEntry>>,
@@ -430,7 +430,7 @@ impl DisassociateLicenseOutput {
 pub mod disassociate_license_output {
 
     /// A builder for [`DisassociateLicenseOutput`](crate::output::DisassociateLicenseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace: std::option::Option<crate::model::WorkspaceDescription>,
     }
@@ -481,7 +481,7 @@ impl AssociateLicenseOutput {
 pub mod associate_license_output {
 
     /// A builder for [`AssociateLicenseOutput`](crate::output::AssociateLicenseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace: std::option::Option<crate::model::WorkspaceDescription>,
     }
@@ -532,7 +532,7 @@ impl UpdateWorkspaceAuthenticationOutput {
 pub mod update_workspace_authentication_output {
 
     /// A builder for [`UpdateWorkspaceAuthenticationOutput`](crate::output::UpdateWorkspaceAuthenticationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authentication: std::option::Option<crate::model::AuthenticationDescription>,
     }
@@ -583,7 +583,7 @@ impl DescribeWorkspaceAuthenticationOutput {
 pub mod describe_workspace_authentication_output {
 
     /// A builder for [`DescribeWorkspaceAuthenticationOutput`](crate::output::DescribeWorkspaceAuthenticationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authentication: std::option::Option<crate::model::AuthenticationDescription>,
     }
@@ -641,7 +641,7 @@ impl DeleteWorkspaceApiKeyOutput {
 pub mod delete_workspace_api_key_output {
 
     /// A builder for [`DeleteWorkspaceApiKeyOutput`](crate::output::DeleteWorkspaceApiKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_name: std::option::Option<std::string::String>,
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -724,7 +724,7 @@ impl std::fmt::Debug for CreateWorkspaceApiKeyOutput {
 pub mod create_workspace_api_key_output {
 
     /// A builder for [`CreateWorkspaceApiKeyOutput`](crate::output::CreateWorkspaceApiKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key_name: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -795,7 +795,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -819,7 +819,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -857,7 +857,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,

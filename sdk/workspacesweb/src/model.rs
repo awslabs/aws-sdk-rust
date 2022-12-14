@@ -25,7 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
 
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -248,7 +248,7 @@ impl UserSettings {
 pub mod user_settings {
 
     /// A builder for [`UserSettings`](crate::model::UserSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_settings_arn: std::option::Option<std::string::String>,
         pub(crate) associated_portal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -610,7 +610,7 @@ impl std::fmt::Debug for Portal {
 pub mod portal {
 
     /// A builder for [`Portal`](crate::model::Portal).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
         pub(crate) renderer_type: std::option::Option<crate::model::RendererType>,
@@ -1131,7 +1131,7 @@ impl NetworkSettings {
 pub mod network_settings {
 
     /// A builder for [`NetworkSettings`](crate::model::NetworkSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_settings_arn: std::option::Option<std::string::String>,
         pub(crate) associated_portal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1377,7 +1377,7 @@ impl std::fmt::Debug for IdentityProvider {
 pub mod identity_provider {
 
     /// A builder for [`IdentityProvider`](crate::model::IdentityProvider).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) identity_provider_arn: std::option::Option<std::string::String>,
         pub(crate) identity_provider_name: std::option::Option<std::string::String>,
@@ -1722,7 +1722,7 @@ impl std::fmt::Debug for BrowserSettings {
 pub mod browser_settings {
 
     /// A builder for [`BrowserSettings`](crate::model::BrowserSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) browser_settings_arn: std::option::Option<std::string::String>,
         pub(crate) associated_portal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1833,7 +1833,7 @@ impl std::fmt::Debug for Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1950,7 +1950,7 @@ impl UserSettingsSummary {
 pub mod user_settings_summary {
 
     /// A builder for [`UserSettingsSummary`](crate::model::UserSettingsSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_settings_arn: std::option::Option<std::string::String>,
         pub(crate) copy_allowed: std::option::Option<crate::model::EnabledType>,
@@ -2106,7 +2106,7 @@ impl TrustStoreSummary {
 pub mod trust_store_summary {
 
     /// A builder for [`TrustStoreSummary`](crate::model::TrustStoreSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_store_arn: std::option::Option<std::string::String>,
     }
@@ -2185,7 +2185,7 @@ impl CertificateSummary {
 pub mod certificate_summary {
 
     /// A builder for [`CertificateSummary`](crate::model::CertificateSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thumbprint: std::option::Option<std::string::String>,
         pub(crate) subject: std::option::Option<std::string::String>,
@@ -2374,7 +2374,7 @@ impl std::fmt::Debug for PortalSummary {
 pub mod portal_summary {
 
     /// A builder for [`PortalSummary`](crate::model::PortalSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
         pub(crate) renderer_type: std::option::Option<crate::model::RendererType>,
@@ -2593,7 +2593,7 @@ impl NetworkSettingsSummary {
 pub mod network_settings_summary {
 
     /// A builder for [`NetworkSettingsSummary`](crate::model::NetworkSettingsSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_settings_arn: std::option::Option<std::string::String>,
         pub(crate) vpc_id: std::option::Option<std::string::String>,
@@ -2681,7 +2681,7 @@ impl std::fmt::Debug for IdentityProviderSummary {
 pub mod identity_provider_summary {
 
     /// A builder for [`IdentityProviderSummary`](crate::model::IdentityProviderSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) identity_provider_arn: std::option::Option<std::string::String>,
         pub(crate) identity_provider_name: std::option::Option<std::string::String>,
@@ -2771,7 +2771,7 @@ impl BrowserSettingsSummary {
 pub mod browser_settings_summary {
 
     /// A builder for [`BrowserSettingsSummary`](crate::model::BrowserSettingsSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) browser_settings_arn: std::option::Option<std::string::String>,
     }
@@ -2857,7 +2857,7 @@ impl Certificate {
 pub mod certificate {
 
     /// A builder for [`Certificate`](crate::model::Certificate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thumbprint: std::option::Option<std::string::String>,
         pub(crate) subject: std::option::Option<std::string::String>,
@@ -2978,7 +2978,7 @@ impl TrustStore {
 pub mod trust_store {
 
     /// A builder for [`TrustStore`](crate::model::TrustStore).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associated_portal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) trust_store_arn: std::option::Option<std::string::String>,

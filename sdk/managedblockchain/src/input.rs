@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_member_input {
 
     /// A builder for [`CreateMemberInput`](crate::input::CreateMemberInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) invitation_id: std::option::Option<std::string::String>,
@@ -217,7 +217,7 @@ impl CreateMemberInput {
 pub mod create_network_input {
 
     /// A builder for [`CreateNetworkInput`](crate::input::CreateNetworkInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -499,7 +499,7 @@ impl CreateNetworkInput {
 pub mod create_node_input {
 
     /// A builder for [`CreateNodeInput`](crate::input::CreateNodeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) network_id: std::option::Option<std::string::String>,
@@ -755,7 +755,7 @@ impl CreateNodeInput {
 pub mod create_proposal_input {
 
     /// A builder for [`CreateProposalInput`](crate::input::CreateProposalInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) network_id: std::option::Option<std::string::String>,
@@ -1009,7 +1009,7 @@ impl CreateProposalInput {
 pub mod delete_member_input {
 
     /// A builder for [`DeleteMemberInput`](crate::input::DeleteMemberInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_id: std::option::Option<std::string::String>,
         pub(crate) member_id: std::option::Option<std::string::String>,
@@ -1191,7 +1191,7 @@ impl DeleteMemberInput {
 pub mod delete_node_input {
 
     /// A builder for [`DeleteNodeInput`](crate::input::DeleteNodeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_id: std::option::Option<std::string::String>,
         pub(crate) member_id: std::option::Option<std::string::String>,
@@ -1412,7 +1412,7 @@ impl DeleteNodeInput {
 pub mod get_member_input {
 
     /// A builder for [`GetMemberInput`](crate::input::GetMemberInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_id: std::option::Option<std::string::String>,
         pub(crate) member_id: std::option::Option<std::string::String>,
@@ -1592,7 +1592,7 @@ impl GetMemberInput {
 pub mod get_network_input {
 
     /// A builder for [`GetNetworkInput`](crate::input::GetNetworkInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_id: std::option::Option<std::string::String>,
     }
@@ -1738,7 +1738,7 @@ impl GetNetworkInput {
 pub mod get_node_input {
 
     /// A builder for [`GetNodeInput`](crate::input::GetNodeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_id: std::option::Option<std::string::String>,
         pub(crate) member_id: std::option::Option<std::string::String>,
@@ -1945,7 +1945,7 @@ impl GetNodeInput {
 pub mod get_proposal_input {
 
     /// A builder for [`GetProposalInput`](crate::input::GetProposalInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_id: std::option::Option<std::string::String>,
         pub(crate) proposal_id: std::option::Option<std::string::String>,
@@ -2127,7 +2127,7 @@ impl GetProposalInput {
 pub mod list_invitations_input {
 
     /// A builder for [`ListInvitationsInput`](crate::input::ListInvitationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2286,7 +2286,7 @@ impl ListInvitationsInput {
 pub mod list_members_input {
 
     /// A builder for [`ListMembersInput`](crate::input::ListMembersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2538,7 +2538,7 @@ impl ListMembersInput {
 pub mod list_networks_input {
 
     /// A builder for [`ListNetworksInput`](crate::input::ListNetworksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) framework: std::option::Option<crate::model::Framework>,
@@ -2756,7 +2756,7 @@ impl ListNetworksInput {
 pub mod list_nodes_input {
 
     /// A builder for [`ListNodesInput`](crate::input::ListNodesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_id: std::option::Option<std::string::String>,
         pub(crate) member_id: std::option::Option<std::string::String>,
@@ -2985,7 +2985,7 @@ impl ListNodesInput {
 pub mod list_proposals_input {
 
     /// A builder for [`ListProposalsInput`](crate::input::ListProposalsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3180,7 +3180,7 @@ impl ListProposalsInput {
 pub mod list_proposal_votes_input {
 
     /// A builder for [`ListProposalVotesInput`](crate::input::ListProposalVotesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_id: std::option::Option<std::string::String>,
         pub(crate) proposal_id: std::option::Option<std::string::String>,
@@ -3409,7 +3409,7 @@ impl ListProposalVotesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3557,7 +3557,7 @@ impl ListTagsForResourceInput {
 pub mod reject_invitation_input {
 
     /// A builder for [`RejectInvitationInput`](crate::input::RejectInvitationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) invitation_id: std::option::Option<std::string::String>,
     }
@@ -3712,7 +3712,7 @@ impl RejectInvitationInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -3901,7 +3901,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4086,7 +4086,7 @@ impl UntagResourceInput {
 pub mod update_member_input {
 
     /// A builder for [`UpdateMemberInput`](crate::input::UpdateMemberInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_id: std::option::Option<std::string::String>,
         pub(crate) member_id: std::option::Option<std::string::String>,
@@ -4301,7 +4301,7 @@ impl UpdateMemberInput {
 pub mod update_node_input {
 
     /// A builder for [`UpdateNodeInput`](crate::input::UpdateNodeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_id: std::option::Option<std::string::String>,
         pub(crate) member_id: std::option::Option<std::string::String>,
@@ -4530,7 +4530,7 @@ impl UpdateNodeInput {
 pub mod vote_on_proposal_input {
 
     /// A builder for [`VoteOnProposalInput`](crate::input::VoteOnProposalInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_id: std::option::Option<std::string::String>,
         pub(crate) proposal_id: std::option::Option<std::string::String>,

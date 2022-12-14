@@ -173,7 +173,7 @@ impl InvalidParameterDetail {
 pub mod invalid_parameter_detail {
 
     /// A builder for [`InvalidParameterDetail`](crate::model::InvalidParameterDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) problem: std::option::Option<crate::model::InvalidParameterProblem>,
     }

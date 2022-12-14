@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod describe_job_execution_input {
 
     /// A builder for [`DescribeJobExecutionInput`](crate::input::DescribeJobExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -237,7 +237,7 @@ impl DescribeJobExecutionInput {
 pub mod get_pending_job_executions_input {
 
     /// A builder for [`GetPendingJobExecutionsInput`](crate::input::GetPendingJobExecutionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
     }
@@ -385,7 +385,7 @@ impl GetPendingJobExecutionsInput {
 pub mod start_next_pending_job_execution_input {
 
     /// A builder for [`StartNextPendingJobExecutionInput`](crate::input::StartNextPendingJobExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
         pub(crate) status_details: std::option::Option<
@@ -591,7 +591,7 @@ impl StartNextPendingJobExecutionInput {
 pub mod update_job_execution_input {
 
     /// A builder for [`UpdateJobExecutionInput`](crate::input::UpdateJobExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) thing_name: std::option::Option<std::string::String>,

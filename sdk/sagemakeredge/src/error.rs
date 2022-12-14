@@ -30,7 +30,7 @@ impl std::error::Error for InternalServiceException {}
 pub mod internal_service_exception {
 
     /// A builder for [`InternalServiceException`](crate::error::InternalServiceException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

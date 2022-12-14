@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_gateway_to_server_input {
 
     /// A builder for [`AssociateGatewayToServerInput`](crate::input::AssociateGatewayToServerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) server_arn: std::option::Option<std::string::String>,
@@ -166,7 +166,7 @@ impl AssociateGatewayToServerInput {
 pub mod create_gateway_input {
 
     /// A builder for [`CreateGatewayInput`](crate::input::CreateGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activation_key: std::option::Option<std::string::String>,
         pub(crate) gateway_display_name: std::option::Option<std::string::String>,
@@ -365,7 +365,7 @@ impl CreateGatewayInput {
 pub mod delete_gateway_input {
 
     /// A builder for [`DeleteGatewayInput`](crate::input::DeleteGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -510,7 +510,7 @@ impl DeleteGatewayInput {
 pub mod delete_hypervisor_input {
 
     /// A builder for [`DeleteHypervisorInput`](crate::input::DeleteHypervisorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
     }
@@ -660,7 +660,7 @@ impl DeleteHypervisorInput {
 pub mod disassociate_gateway_from_server_input {
 
     /// A builder for [`DisassociateGatewayFromServerInput`](crate::input::DisassociateGatewayFromServerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -806,7 +806,7 @@ impl DisassociateGatewayFromServerInput {
 pub mod get_gateway_input {
 
     /// A builder for [`GetGatewayInput`](crate::input::GetGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -951,7 +951,7 @@ impl GetGatewayInput {
 pub mod get_virtual_machine_input {
 
     /// A builder for [`GetVirtualMachineInput`](crate::input::GetVirtualMachineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1098,7 +1098,7 @@ impl GetVirtualMachineInput {
 pub mod import_hypervisor_configuration_input {
 
     /// A builder for [`ImportHypervisorConfigurationInput`](crate::input::ImportHypervisorConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) host: std::option::Option<std::string::String>,
@@ -1325,7 +1325,7 @@ impl ImportHypervisorConfigurationInput {
 pub mod list_gateways_input {
 
     /// A builder for [`ListGatewaysInput`](crate::input::ListGatewaysInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1482,7 +1482,7 @@ impl ListGatewaysInput {
 pub mod list_hypervisors_input {
 
     /// A builder for [`ListHypervisorsInput`](crate::input::ListHypervisorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1639,7 +1639,7 @@ impl ListHypervisorsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1788,7 +1788,7 @@ impl ListTagsForResourceInput {
 pub mod list_virtual_machines_input {
 
     /// A builder for [`ListVirtualMachinesInput`](crate::input::ListVirtualMachinesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1962,7 +1962,7 @@ impl ListVirtualMachinesInput {
 pub mod put_maintenance_start_time_input {
 
     /// A builder for [`PutMaintenanceStartTimeInput`](crate::input::PutMaintenanceStartTimeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) hour_of_day: std::option::Option<i32>,
@@ -2161,7 +2161,7 @@ impl PutMaintenanceStartTimeInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2327,7 +2327,7 @@ impl TagResourceInput {
 pub mod test_hypervisor_configuration_input {
 
     /// A builder for [`TestHypervisorConfigurationInput`](crate::input::TestHypervisorConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) host: std::option::Option<std::string::String>,
@@ -2519,7 +2519,7 @@ impl TestHypervisorConfigurationInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2685,7 +2685,7 @@ impl UntagResourceInput {
 pub mod update_gateway_information_input {
 
     /// A builder for [`UpdateGatewayInformationInput`](crate::input::UpdateGatewayInformationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) gateway_display_name: std::option::Option<std::string::String>,
@@ -2849,7 +2849,7 @@ impl UpdateGatewayInformationInput {
 pub mod update_gateway_software_now_input {
 
     /// A builder for [`UpdateGatewaySoftwareNowInput`](crate::input::UpdateGatewaySoftwareNowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -2998,7 +2998,7 @@ impl UpdateGatewaySoftwareNowInput {
 pub mod update_hypervisor_input {
 
     /// A builder for [`UpdateHypervisorInput`](crate::input::UpdateHypervisorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
         pub(crate) host: std::option::Option<std::string::String>,

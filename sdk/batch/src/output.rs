@@ -7,7 +7,7 @@ pub struct UpdateSchedulingPolicyOutput {}
 pub mod update_scheduling_policy_output {
 
     /// A builder for [`UpdateSchedulingPolicyOutput`](crate::output::UpdateSchedulingPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateSchedulingPolicyOutput`](crate::output::UpdateSchedulingPolicyOutput).
@@ -48,7 +48,7 @@ impl UpdateJobQueueOutput {
 pub mod update_job_queue_output {
 
     /// A builder for [`UpdateJobQueueOutput`](crate::output::UpdateJobQueueOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_queue_name: std::option::Option<std::string::String>,
         pub(crate) job_queue_arn: std::option::Option<std::string::String>,
@@ -121,7 +121,7 @@ impl UpdateComputeEnvironmentOutput {
 pub mod update_compute_environment_output {
 
     /// A builder for [`UpdateComputeEnvironmentOutput`](crate::output::UpdateComputeEnvironmentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compute_environment_name: std::option::Option<std::string::String>,
         pub(crate) compute_environment_arn: std::option::Option<std::string::String>,
@@ -177,7 +177,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -201,7 +201,7 @@ pub struct TerminateJobOutput {}
 pub mod terminate_job_output {
 
     /// A builder for [`TerminateJobOutput`](crate::output::TerminateJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TerminateJobOutput`](crate::output::TerminateJobOutput).
@@ -225,7 +225,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -273,7 +273,7 @@ impl SubmitJobOutput {
 pub mod submit_job_output {
 
     /// A builder for [`SubmitJobOutput`](crate::output::SubmitJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -359,7 +359,7 @@ impl RegisterJobDefinitionOutput {
 pub mod register_job_definition_output {
 
     /// A builder for [`RegisterJobDefinitionOutput`](crate::output::RegisterJobDefinitionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_definition_name: std::option::Option<std::string::String>,
         pub(crate) job_definition_arn: std::option::Option<std::string::String>,
@@ -441,7 +441,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -514,7 +514,7 @@ impl ListSchedulingPoliciesOutput {
 pub mod list_scheduling_policies_output {
 
     /// A builder for [`ListSchedulingPoliciesOutput`](crate::output::ListSchedulingPoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduling_policies:
             std::option::Option<std::vec::Vec<crate::model::SchedulingPolicyListingDetail>>,
@@ -594,7 +594,7 @@ impl ListJobsOutput {
 pub mod list_jobs_output {
 
     /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_summary_list: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -666,7 +666,7 @@ impl DescribeSchedulingPoliciesOutput {
 pub mod describe_scheduling_policies_output {
 
     /// A builder for [`DescribeSchedulingPoliciesOutput`](crate::output::DescribeSchedulingPoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduling_policies:
             std::option::Option<std::vec::Vec<crate::model::SchedulingPolicyDetail>>,
@@ -724,7 +724,7 @@ impl DescribeJobsOutput {
 pub mod describe_jobs_output {
 
     /// A builder for [`DescribeJobsOutput`](crate::output::DescribeJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::JobDetail>>,
     }
@@ -786,7 +786,7 @@ impl DescribeJobQueuesOutput {
 pub mod describe_job_queues_output {
 
     /// A builder for [`DescribeJobQueuesOutput`](crate::output::DescribeJobQueuesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_queues: std::option::Option<std::vec::Vec<crate::model::JobQueueDetail>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -862,7 +862,7 @@ impl DescribeJobDefinitionsOutput {
 pub mod describe_job_definitions_output {
 
     /// A builder for [`DescribeJobDefinitionsOutput`](crate::output::DescribeJobDefinitionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_definitions: std::option::Option<std::vec::Vec<crate::model::JobDefinition>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -941,7 +941,7 @@ impl DescribeComputeEnvironmentsOutput {
 pub mod describe_compute_environments_output {
 
     /// A builder for [`DescribeComputeEnvironmentsOutput`](crate::output::DescribeComputeEnvironmentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compute_environments:
             std::option::Option<std::vec::Vec<crate::model::ComputeEnvironmentDetail>>,
@@ -1004,7 +1004,7 @@ pub struct DeregisterJobDefinitionOutput {}
 pub mod deregister_job_definition_output {
 
     /// A builder for [`DeregisterJobDefinitionOutput`](crate::output::DeregisterJobDefinitionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterJobDefinitionOutput`](crate::output::DeregisterJobDefinitionOutput).
@@ -1028,7 +1028,7 @@ pub struct DeleteSchedulingPolicyOutput {}
 pub mod delete_scheduling_policy_output {
 
     /// A builder for [`DeleteSchedulingPolicyOutput`](crate::output::DeleteSchedulingPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSchedulingPolicyOutput`](crate::output::DeleteSchedulingPolicyOutput).
@@ -1052,7 +1052,7 @@ pub struct DeleteJobQueueOutput {}
 pub mod delete_job_queue_output {
 
     /// A builder for [`DeleteJobQueueOutput`](crate::output::DeleteJobQueueOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteJobQueueOutput`](crate::output::DeleteJobQueueOutput).
@@ -1076,7 +1076,7 @@ pub struct DeleteComputeEnvironmentOutput {}
 pub mod delete_compute_environment_output {
 
     /// A builder for [`DeleteComputeEnvironmentOutput`](crate::output::DeleteComputeEnvironmentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteComputeEnvironmentOutput`](crate::output::DeleteComputeEnvironmentOutput).
@@ -1117,7 +1117,7 @@ impl CreateSchedulingPolicyOutput {
 pub mod create_scheduling_policy_output {
 
     /// A builder for [`CreateSchedulingPolicyOutput`](crate::output::CreateSchedulingPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1184,7 +1184,7 @@ impl CreateJobQueueOutput {
 pub mod create_job_queue_output {
 
     /// A builder for [`CreateJobQueueOutput`](crate::output::CreateJobQueueOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_queue_name: std::option::Option<std::string::String>,
         pub(crate) job_queue_arn: std::option::Option<std::string::String>,
@@ -1257,7 +1257,7 @@ impl CreateComputeEnvironmentOutput {
 pub mod create_compute_environment_output {
 
     /// A builder for [`CreateComputeEnvironmentOutput`](crate::output::CreateComputeEnvironmentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compute_environment_name: std::option::Option<std::string::String>,
         pub(crate) compute_environment_arn: std::option::Option<std::string::String>,
@@ -1313,7 +1313,7 @@ pub struct CancelJobOutput {}
 pub mod cancel_job_output {
 
     /// A builder for [`CancelJobOutput`](crate::output::CancelJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CancelJobOutput`](crate::output::CancelJobOutput).

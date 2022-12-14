@@ -7,7 +7,7 @@ pub struct UpdateScalingPlanOutput {}
 pub mod update_scaling_plan_output {
 
     /// A builder for [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput).
@@ -41,7 +41,7 @@ impl GetScalingPlanResourceForecastDataOutput {
 pub mod get_scaling_plan_resource_forecast_data_output {
 
     /// A builder for [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datapoints: std::option::Option<std::vec::Vec<crate::model::Datapoint>>,
     }
@@ -105,7 +105,7 @@ impl DescribeScalingPlansOutput {
 pub mod describe_scaling_plans_output {
 
     /// A builder for [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plans: std::option::Option<std::vec::Vec<crate::model::ScalingPlan>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -184,7 +184,7 @@ impl DescribeScalingPlanResourcesOutput {
 pub mod describe_scaling_plan_resources_output {
 
     /// A builder for [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_resources:
             std::option::Option<std::vec::Vec<crate::model::ScalingPlanResource>>,
@@ -244,7 +244,7 @@ pub struct DeleteScalingPlanOutput {}
 pub mod delete_scaling_plan_output {
 
     /// A builder for [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput).
@@ -278,7 +278,7 @@ impl CreateScalingPlanOutput {
 pub mod create_scaling_plan_output {
 
     /// A builder for [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_version: std::option::Option<i64>,
     }

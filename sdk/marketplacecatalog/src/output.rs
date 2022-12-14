@@ -24,7 +24,7 @@ impl StartChangeSetOutput {
 pub mod start_change_set_output {
 
     /// A builder for [`StartChangeSetOutput`](crate::output::StartChangeSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_id: std::option::Option<std::string::String>,
         pub(crate) change_set_arn: std::option::Option<std::string::String>,
@@ -97,7 +97,7 @@ impl ListEntitiesOutput {
 pub mod list_entities_output {
 
     /// A builder for [`ListEntitiesOutput`](crate::output::ListEntitiesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_summary_list:
             std::option::Option<std::vec::Vec<crate::model::EntitySummary>>,
@@ -177,7 +177,7 @@ impl ListChangeSetsOutput {
 pub mod list_change_sets_output {
 
     /// A builder for [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_summary_list:
             std::option::Option<std::vec::Vec<crate::model::ChangeSetSummaryListItem>>,
@@ -278,7 +278,7 @@ impl DescribeEntityOutput {
 pub mod describe_entity_output {
 
     /// A builder for [`DescribeEntityOutput`](crate::output::DescribeEntityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_type: std::option::Option<std::string::String>,
         pub(crate) entity_identifier: std::option::Option<std::string::String>,
@@ -436,7 +436,7 @@ impl DescribeChangeSetOutput {
 pub mod describe_change_set_output {
 
     /// A builder for [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_id: std::option::Option<std::string::String>,
         pub(crate) change_set_arn: std::option::Option<std::string::String>,
@@ -614,7 +614,7 @@ impl CancelChangeSetOutput {
 pub mod cancel_change_set_output {
 
     /// A builder for [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_id: std::option::Option<std::string::String>,
         pub(crate) change_set_arn: std::option::Option<std::string::String>,

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod cancel_batch_job_execution_input {
 
     /// A builder for [`CancelBatchJobExecutionInput`](crate::input::CancelBatchJobExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) execution_id: std::option::Option<std::string::String>,
@@ -192,7 +192,7 @@ impl CancelBatchJobExecutionInput {
 pub mod create_application_input {
 
     /// A builder for [`CreateApplicationInput`](crate::input::CreateApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -420,7 +420,7 @@ impl CreateApplicationInput {
 pub mod create_data_set_import_task_input {
 
     /// A builder for [`CreateDataSetImportTaskInput`](crate::input::CreateDataSetImportTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) import_config: std::option::Option<crate::model::DataSetImportConfig>,
@@ -621,7 +621,7 @@ impl CreateDataSetImportTaskInput {
 pub mod create_deployment_input {
 
     /// A builder for [`CreateDeploymentInput`](crate::input::CreateDeploymentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -832,7 +832,7 @@ impl CreateDeploymentInput {
 pub mod create_environment_input {
 
     /// A builder for [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) instance_type: std::option::Option<std::string::String>,
@@ -1188,7 +1188,7 @@ impl CreateEnvironmentInput {
 pub mod delete_application_input {
 
     /// A builder for [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
     }
@@ -1343,7 +1343,7 @@ impl DeleteApplicationInput {
 pub mod delete_application_from_environment_input {
 
     /// A builder for [`DeleteApplicationFromEnvironmentInput`](crate::input::DeleteApplicationFromEnvironmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -1533,7 +1533,7 @@ impl DeleteApplicationFromEnvironmentInput {
 pub mod delete_environment_input {
 
     /// A builder for [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
     }
@@ -1688,7 +1688,7 @@ impl DeleteEnvironmentInput {
 pub mod get_application_input {
 
     /// A builder for [`GetApplicationInput`](crate::input::GetApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
     }
@@ -1841,7 +1841,7 @@ impl GetApplicationInput {
 pub mod get_application_version_input {
 
     /// A builder for [`GetApplicationVersionInput`](crate::input::GetApplicationVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) application_version: std::option::Option<i32>,
@@ -2027,7 +2027,7 @@ impl GetApplicationVersionInput {
 pub mod get_batch_job_execution_input {
 
     /// A builder for [`GetBatchJobExecutionInput`](crate::input::GetBatchJobExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) execution_id: std::option::Option<std::string::String>,
@@ -2214,7 +2214,7 @@ impl GetBatchJobExecutionInput {
 pub mod get_data_set_details_input {
 
     /// A builder for [`GetDataSetDetailsInput`](crate::input::GetDataSetDetailsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) data_set_name: std::option::Option<std::string::String>,
@@ -2404,7 +2404,7 @@ impl GetDataSetDetailsInput {
 pub mod get_data_set_import_task_input {
 
     /// A builder for [`GetDataSetImportTaskInput`](crate::input::GetDataSetImportTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) task_id: std::option::Option<std::string::String>,
@@ -2591,7 +2591,7 @@ impl GetDataSetImportTaskInput {
 pub mod get_deployment_input {
 
     /// A builder for [`GetDeploymentInput`](crate::input::GetDeploymentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -2779,7 +2779,7 @@ impl GetDeploymentInput {
 pub mod get_environment_input {
 
     /// A builder for [`GetEnvironmentInput`](crate::input::GetEnvironmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
     }
@@ -2932,7 +2932,7 @@ impl GetEnvironmentInput {
 pub mod list_applications_input {
 
     /// A builder for [`ListApplicationsInput`](crate::input::ListApplicationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3144,7 +3144,7 @@ impl ListApplicationsInput {
 pub mod list_application_versions_input {
 
     /// A builder for [`ListApplicationVersionsInput`](crate::input::ListApplicationVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3344,7 +3344,7 @@ impl ListApplicationVersionsInput {
 pub mod list_batch_job_definitions_input {
 
     /// A builder for [`ListBatchJobDefinitionsInput`](crate::input::ListBatchJobDefinitionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3561,7 +3561,7 @@ impl ListBatchJobDefinitionsInput {
 pub mod list_batch_job_executions_input {
 
     /// A builder for [`ListBatchJobExecutionsInput`](crate::input::ListBatchJobExecutionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3881,7 +3881,7 @@ impl ListBatchJobExecutionsInput {
 pub mod list_data_set_import_history_input {
 
     /// A builder for [`ListDataSetImportHistoryInput`](crate::input::ListDataSetImportHistoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4081,7 +4081,7 @@ impl ListDataSetImportHistoryInput {
 pub mod list_data_sets_input {
 
     /// A builder for [`ListDataSetsInput`](crate::input::ListDataSetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4296,7 +4296,7 @@ impl ListDataSetsInput {
 pub mod list_deployments_input {
 
     /// A builder for [`ListDeploymentsInput`](crate::input::ListDeploymentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4494,7 +4494,7 @@ impl ListDeploymentsInput {
 pub mod list_engine_versions_input {
 
     /// A builder for [`ListEngineVersionsInput`](crate::input::ListEngineVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_type: std::option::Option<crate::model::EngineType>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4675,7 +4675,7 @@ impl ListEngineVersionsInput {
 pub mod list_environments_input {
 
     /// A builder for [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4884,7 +4884,7 @@ impl ListEnvironmentsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -5032,7 +5032,7 @@ impl ListTagsForResourceInput {
 pub mod start_application_input {
 
     /// A builder for [`StartApplicationInput`](crate::input::StartApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
     }
@@ -5187,7 +5187,7 @@ impl StartApplicationInput {
 pub mod start_batch_job_input {
 
     /// A builder for [`StartBatchJobInput`](crate::input::StartBatchJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) batch_job_identifier: std::option::Option<crate::model::BatchJobIdentifier>,
@@ -5398,7 +5398,7 @@ impl StartBatchJobInput {
 pub mod stop_application_input {
 
     /// A builder for [`StopApplicationInput`](crate::input::StopApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) force_stop: std::option::Option<bool>,
@@ -5577,7 +5577,7 @@ impl StopApplicationInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -5766,7 +5766,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5951,7 +5951,7 @@ impl UntagResourceInput {
 pub mod update_application_input {
 
     /// A builder for [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -6159,7 +6159,7 @@ impl UpdateApplicationInput {
 pub mod update_environment_input {
 
     /// A builder for [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
         pub(crate) desired_capacity: std::option::Option<i32>,

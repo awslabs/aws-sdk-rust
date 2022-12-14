@@ -7,7 +7,7 @@ pub struct UpdateRoutingControlStatesOutput {}
 pub mod update_routing_control_states_output {
 
     /// A builder for [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput).
@@ -31,7 +31,7 @@ pub struct UpdateRoutingControlStateOutput {}
 pub mod update_routing_control_state_output {
 
     /// A builder for [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput).
@@ -72,7 +72,7 @@ impl ListRoutingControlsOutput {
 pub mod list_routing_controls_output {
 
     /// A builder for [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_controls:
             std::option::Option<std::vec::Vec<crate::model::RoutingControl>>,
@@ -156,7 +156,7 @@ impl GetRoutingControlStateOutput {
 pub mod get_routing_control_state_output {
 
     /// A builder for [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
         pub(crate) routing_control_state: std::option::Option<crate::model::RoutingControlState>,

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod acknowledge_order_receipt_input {
 
     /// A builder for [`AcknowledgeOrderReceiptInput`](crate::input::AcknowledgeOrderReceiptInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) order_arn: std::option::Option<std::string::String>,
     }
@@ -149,7 +149,7 @@ impl AcknowledgeOrderReceiptInput {
 pub mod activate_device_identifier_input {
 
     /// A builder for [`ActivateDeviceIdentifierInput`](crate::input::ActivateDeviceIdentifierInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_identifier_arn: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -309,7 +309,7 @@ impl ActivateDeviceIdentifierInput {
 pub mod activate_network_site_input {
 
     /// A builder for [`ActivateNetworkSiteInput`](crate::input::ActivateNetworkSiteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_site_arn: std::option::Option<std::string::String>,
         pub(crate) shipping_address: std::option::Option<crate::model::Address>,
@@ -481,7 +481,7 @@ impl ActivateNetworkSiteInput {
 pub mod configure_access_point_input {
 
     /// A builder for [`ConfigureAccessPointInput`](crate::input::ConfigureAccessPointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_point_arn: std::option::Option<std::string::String>,
         pub(crate) position: std::option::Option<crate::model::Position>,
@@ -707,7 +707,7 @@ impl ConfigureAccessPointInput {
 pub mod create_network_input {
 
     /// A builder for [`CreateNetworkInput`](crate::input::CreateNetworkInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -910,7 +910,7 @@ impl CreateNetworkInput {
 pub mod create_network_site_input {
 
     /// A builder for [`CreateNetworkSiteInput`](crate::input::CreateNetworkSiteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network_site_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1179,7 +1179,7 @@ impl CreateNetworkSiteInput {
 pub mod deactivate_device_identifier_input {
 
     /// A builder for [`DeactivateDeviceIdentifierInput`](crate::input::DeactivateDeviceIdentifierInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_identifier_arn: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1339,7 +1339,7 @@ impl DeactivateDeviceIdentifierInput {
 pub mod delete_network_input {
 
     /// A builder for [`DeleteNetworkInput`](crate::input::DeleteNetworkInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_arn: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1514,7 +1514,7 @@ impl DeleteNetworkInput {
 pub mod delete_network_site_input {
 
     /// A builder for [`DeleteNetworkSiteInput`](crate::input::DeleteNetworkSiteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_site_arn: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1694,7 +1694,7 @@ impl DeleteNetworkSiteInput {
 pub mod get_device_identifier_input {
 
     /// A builder for [`GetDeviceIdentifierInput`](crate::input::GetDeviceIdentifierInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_identifier_arn: std::option::Option<std::string::String>,
     }
@@ -1849,7 +1849,7 @@ impl GetDeviceIdentifierInput {
 pub mod get_network_input {
 
     /// A builder for [`GetNetworkInput`](crate::input::GetNetworkInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_arn: std::option::Option<std::string::String>,
     }
@@ -1999,7 +1999,7 @@ impl GetNetworkInput {
 pub mod get_network_resource_input {
 
     /// A builder for [`GetNetworkResourceInput`](crate::input::GetNetworkResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_resource_arn: std::option::Option<std::string::String>,
     }
@@ -2154,7 +2154,7 @@ impl GetNetworkResourceInput {
 pub mod get_network_site_input {
 
     /// A builder for [`GetNetworkSiteInput`](crate::input::GetNetworkSiteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_site_arn: std::option::Option<std::string::String>,
     }
@@ -2307,7 +2307,7 @@ impl GetNetworkSiteInput {
 pub mod get_order_input {
 
     /// A builder for [`GetOrderInput`](crate::input::GetOrderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) order_arn: std::option::Option<std::string::String>,
     }
@@ -2451,7 +2451,7 @@ impl GetOrderInput {
 pub mod list_device_identifiers_input {
 
     /// A builder for [`ListDeviceIdentifiersInput`](crate::input::ListDeviceIdentifiersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<
             std::collections::HashMap<
@@ -2666,7 +2666,7 @@ impl ListDeviceIdentifiersInput {
 pub mod list_network_resources_input {
 
     /// A builder for [`ListNetworkResourcesInput`](crate::input::ListNetworkResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<
             std::collections::HashMap<
@@ -2879,7 +2879,7 @@ impl ListNetworkResourcesInput {
 pub mod list_networks_input {
 
     /// A builder for [`ListNetworksInput`](crate::input::ListNetworksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<
             std::collections::HashMap<
@@ -3074,7 +3074,7 @@ impl ListNetworksInput {
 pub mod list_network_sites_input {
 
     /// A builder for [`ListNetworkSitesInput`](crate::input::ListNetworkSitesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<
             std::collections::HashMap<
@@ -3283,7 +3283,7 @@ impl ListNetworkSitesInput {
 pub mod list_orders_input {
 
     /// A builder for [`ListOrdersInput`](crate::input::ListOrdersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_arn: std::option::Option<std::string::String>,
         pub(crate) start_token: std::option::Option<std::string::String>,
@@ -3492,7 +3492,7 @@ impl ListOrdersInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3640,7 +3640,7 @@ impl ListTagsForResourceInput {
 pub mod ping_input {
 
     /// A builder for [`PingInput`](crate::input::PingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PingInput`](crate::input::PingInput).
@@ -3749,7 +3749,7 @@ impl PingInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -3946,7 +3946,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4139,7 +4139,7 @@ impl UntagResourceInput {
 pub mod update_network_site_input {
 
     /// A builder for [`UpdateNetworkSiteInput`](crate::input::UpdateNetworkSiteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_site_arn: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -4308,7 +4308,7 @@ impl UpdateNetworkSiteInput {
 pub mod update_network_site_plan_input {
 
     /// A builder for [`UpdateNetworkSitePlanInput`](crate::input::UpdateNetworkSitePlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_site_arn: std::option::Option<std::string::String>,
         pub(crate) pending_plan: std::option::Option<crate::model::SitePlan>,

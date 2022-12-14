@@ -7,7 +7,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -31,7 +31,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -65,7 +65,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -127,7 +127,7 @@ impl ListMediaPipelinesOutput {
 pub mod list_media_pipelines_output {
 
     /// A builder for [`ListMediaPipelinesOutput`](crate::output::ListMediaPipelinesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_pipelines:
             std::option::Option<std::vec::Vec<crate::model::MediaPipelineSummary>>,
@@ -207,7 +207,7 @@ impl ListMediaCapturePipelinesOutput {
 pub mod list_media_capture_pipelines_output {
 
     /// A builder for [`ListMediaCapturePipelinesOutput`](crate::output::ListMediaCapturePipelinesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_capture_pipelines:
             std::option::Option<std::vec::Vec<crate::model::MediaCapturePipelineSummary>>,
@@ -280,7 +280,7 @@ impl GetMediaPipelineOutput {
 pub mod get_media_pipeline_output {
 
     /// A builder for [`GetMediaPipelineOutput`](crate::output::GetMediaPipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_pipeline: std::option::Option<crate::model::MediaPipeline>,
     }
@@ -333,7 +333,7 @@ impl GetMediaCapturePipelineOutput {
 pub mod get_media_capture_pipeline_output {
 
     /// A builder for [`GetMediaCapturePipelineOutput`](crate::output::GetMediaCapturePipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
     }
@@ -374,7 +374,7 @@ pub struct DeleteMediaPipelineOutput {}
 pub mod delete_media_pipeline_output {
 
     /// A builder for [`DeleteMediaPipelineOutput`](crate::output::DeleteMediaPipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMediaPipelineOutput`](crate::output::DeleteMediaPipelineOutput).
@@ -398,7 +398,7 @@ pub struct DeleteMediaCapturePipelineOutput {}
 pub mod delete_media_capture_pipeline_output {
 
     /// A builder for [`DeleteMediaCapturePipelineOutput`](crate::output::DeleteMediaCapturePipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMediaCapturePipelineOutput`](crate::output::DeleteMediaCapturePipelineOutput).
@@ -435,7 +435,7 @@ impl CreateMediaLiveConnectorPipelineOutput {
 pub mod create_media_live_connector_pipeline_output {
 
     /// A builder for [`CreateMediaLiveConnectorPipelineOutput`](crate::output::CreateMediaLiveConnectorPipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_live_connector_pipeline:
             std::option::Option<crate::model::MediaLiveConnectorPipeline>,
@@ -492,7 +492,7 @@ impl CreateMediaConcatenationPipelineOutput {
 pub mod create_media_concatenation_pipeline_output {
 
     /// A builder for [`CreateMediaConcatenationPipelineOutput`](crate::output::CreateMediaConcatenationPipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_concatenation_pipeline:
             std::option::Option<crate::model::MediaConcatenationPipeline>,
@@ -549,7 +549,7 @@ impl CreateMediaCapturePipelineOutput {
 pub mod create_media_capture_pipeline_output {
 
     /// A builder for [`CreateMediaCapturePipelineOutput`](crate::output::CreateMediaCapturePipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
     }

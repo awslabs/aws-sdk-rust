@@ -185,7 +185,7 @@ impl RepositoryAssociationSummary {
 pub mod repository_association_summary {
 
     /// A builder for [`RepositoryAssociationSummary`](crate::model::RepositoryAssociationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_arn: std::option::Option<std::string::String>,
         pub(crate) connection_arn: std::option::Option<std::string::String>,
@@ -638,7 +638,7 @@ impl RecommendationSummary {
 pub mod recommendation_summary {
 
     /// A builder for [`RecommendationSummary`](crate::model::RecommendationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
@@ -916,7 +916,7 @@ impl RuleMetadata {
 pub mod rule_metadata {
 
     /// A builder for [`RuleMetadata`](crate::model::RuleMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_id: std::option::Option<std::string::String>,
         pub(crate) rule_name: std::option::Option<std::string::String>,
@@ -1192,7 +1192,7 @@ impl RecommendationFeedbackSummary {
 pub mod recommendation_feedback_summary {
 
     /// A builder for [`RecommendationFeedbackSummary`](crate::model::RecommendationFeedbackSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
         pub(crate) reactions: std::option::Option<std::vec::Vec<crate::model::Reaction>>,
@@ -1369,7 +1369,7 @@ impl CodeReviewSummary {
 pub mod code_review_summary {
 
     /// A builder for [`CodeReviewSummary`](crate::model::CodeReviewSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) code_review_arn: std::option::Option<std::string::String>,
@@ -1617,7 +1617,7 @@ impl SourceCodeType {
 pub mod source_code_type {
 
     /// A builder for [`SourceCodeType`](crate::model::SourceCodeType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commit_diff: std::option::Option<crate::model::CommitDiffSourceCodeType>,
         pub(crate) repository_head: std::option::Option<crate::model::RepositoryHeadSourceCodeType>,
@@ -1752,7 +1752,7 @@ impl RequestMetadata {
 pub mod request_metadata {
 
     /// A builder for [`RequestMetadata`](crate::model::RequestMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) requester: std::option::Option<std::string::String>,
@@ -1944,7 +1944,7 @@ impl EventInfo {
 pub mod event_info {
 
     /// A builder for [`EventInfo`](crate::model::EventInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<std::string::String>,
@@ -2011,7 +2011,7 @@ impl S3BucketRepository {
 pub mod s3_bucket_repository {
 
     /// A builder for [`S3BucketRepository`](crate::model::S3BucketRepository).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) details: std::option::Option<crate::model::S3RepositoryDetails>,
@@ -2081,7 +2081,7 @@ impl S3RepositoryDetails {
 pub mod s3_repository_details {
 
     /// A builder for [`S3RepositoryDetails`](crate::model::S3RepositoryDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) code_artifacts: std::option::Option<crate::model::CodeArtifacts>,
@@ -2155,7 +2155,7 @@ impl CodeArtifacts {
 pub mod code_artifacts {
 
     /// A builder for [`CodeArtifacts`](crate::model::CodeArtifacts).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_code_artifacts_object_key: std::option::Option<std::string::String>,
         pub(crate) build_artifacts_object_key: std::option::Option<std::string::String>,
@@ -2231,7 +2231,7 @@ impl BranchDiffSourceCodeType {
 pub mod branch_diff_source_code_type {
 
     /// A builder for [`BranchDiffSourceCodeType`](crate::model::BranchDiffSourceCodeType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_branch_name: std::option::Option<std::string::String>,
         pub(crate) destination_branch_name: std::option::Option<std::string::String>,
@@ -2297,7 +2297,7 @@ impl RepositoryHeadSourceCodeType {
 pub mod repository_head_source_code_type {
 
     /// A builder for [`RepositoryHeadSourceCodeType`](crate::model::RepositoryHeadSourceCodeType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) branch_name: std::option::Option<std::string::String>,
     }
@@ -2359,7 +2359,7 @@ impl CommitDiffSourceCodeType {
 pub mod commit_diff_source_code_type {
 
     /// A builder for [`CommitDiffSourceCodeType`](crate::model::CommitDiffSourceCodeType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_commit: std::option::Option<std::string::String>,
         pub(crate) destination_commit: std::option::Option<std::string::String>,
@@ -2454,7 +2454,7 @@ impl MetricsSummary {
 pub mod metrics_summary {
 
     /// A builder for [`MetricsSummary`](crate::model::MetricsSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metered_lines_of_code_count: std::option::Option<i64>,
         pub(crate) suppressed_lines_of_code_count: std::option::Option<i64>,
@@ -2832,7 +2832,7 @@ impl RepositoryAssociation {
 pub mod repository_association {
 
     /// A builder for [`RepositoryAssociation`](crate::model::RepositoryAssociation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
         pub(crate) association_arn: std::option::Option<std::string::String>,
@@ -3086,7 +3086,7 @@ impl KmsKeyDetails {
 pub mod kms_key_details {
 
     /// A builder for [`KmsKeyDetails`](crate::model::KmsKeyDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) encryption_option: std::option::Option<crate::model::EncryptionOption>,
@@ -3276,7 +3276,7 @@ impl RecommendationFeedback {
 pub mod recommendation_feedback {
 
     /// A builder for [`RecommendationFeedback`](crate::model::RecommendationFeedback).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_review_arn: std::option::Option<std::string::String>,
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
@@ -3524,7 +3524,7 @@ impl CodeReview {
 pub mod code_review {
 
     /// A builder for [`CodeReview`](crate::model::CodeReview).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) code_review_arn: std::option::Option<std::string::String>,
@@ -3999,7 +3999,7 @@ impl Metrics {
 pub mod metrics {
 
     /// A builder for [`Metrics`](crate::model::Metrics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metered_lines_of_code_count: std::option::Option<i64>,
         pub(crate) suppressed_lines_of_code_count: std::option::Option<i64>,
@@ -4085,7 +4085,7 @@ impl CodeReviewType {
 pub mod code_review_type {
 
     /// A builder for [`CodeReviewType`](crate::model::CodeReviewType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_analysis: std::option::Option<crate::model::RepositoryAnalysis>,
         pub(crate) analysis_types: std::option::Option<std::vec::Vec<crate::model::AnalysisType>>,
@@ -4166,7 +4166,7 @@ impl RepositoryAnalysis {
 pub mod repository_analysis {
 
     /// A builder for [`RepositoryAnalysis`](crate::model::RepositoryAnalysis).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_head: std::option::Option<crate::model::RepositoryHeadSourceCodeType>,
         pub(crate) source_code_type: std::option::Option<crate::model::SourceCodeType>,
@@ -4258,7 +4258,7 @@ impl Repository {
 pub mod repository {
 
     /// A builder for [`Repository`](crate::model::Repository).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_commit: std::option::Option<crate::model::CodeCommitRepository>,
         pub(crate) bitbucket: std::option::Option<crate::model::ThirdPartySourceRepository>,
@@ -4365,7 +4365,7 @@ impl S3Repository {
 pub mod s3_repository {
 
     /// A builder for [`S3Repository`](crate::model::S3Repository).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -4439,7 +4439,7 @@ impl ThirdPartySourceRepository {
 pub mod third_party_source_repository {
 
     /// A builder for [`ThirdPartySourceRepository`](crate::model::ThirdPartySourceRepository).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) connection_arn: std::option::Option<std::string::String>,
@@ -4514,7 +4514,7 @@ impl CodeCommitRepository {
 pub mod code_commit_repository {
 
     /// A builder for [`CodeCommitRepository`](crate::model::CodeCommitRepository).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }

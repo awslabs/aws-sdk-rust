@@ -130,7 +130,7 @@ impl ParentEntityUpdateRequest {
 pub mod parent_entity_update_request {
 
     /// A builder for [`ParentEntityUpdateRequest`](crate::model::ParentEntityUpdateRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_type: std::option::Option<crate::model::ParentEntityUpdateType>,
         pub(crate) parent_entity_id: std::option::Option<std::string::String>,
@@ -315,7 +315,7 @@ impl ComponentUpdateRequest {
 pub mod component_update_request {
 
     /// A builder for [`ComponentUpdateRequest`](crate::model::ComponentUpdateRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_type: std::option::Option<crate::model::ComponentUpdateType>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -436,7 +436,7 @@ impl PropertyRequest {
 pub mod property_request {
 
     /// A builder for [`PropertyRequest`](crate::model::PropertyRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definition: std::option::Option<crate::model::PropertyDefinitionRequest>,
         pub(crate) value: std::option::Option<crate::model::DataValue>,
@@ -672,7 +672,7 @@ impl DataValue {
 pub mod data_value {
 
     /// A builder for [`DataValue`](crate::model::DataValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) boolean_value: std::option::Option<bool>,
         pub(crate) double_value: std::option::Option<f64>,
@@ -852,7 +852,7 @@ impl RelationshipValue {
 pub mod relationship_value {
 
     /// A builder for [`RelationshipValue`](crate::model::RelationshipValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_entity_id: std::option::Option<std::string::String>,
         pub(crate) target_component_name: std::option::Option<std::string::String>,
@@ -964,7 +964,7 @@ impl PropertyDefinitionRequest {
 pub mod property_definition_request {
 
     /// A builder for [`PropertyDefinitionRequest`](crate::model::PropertyDefinitionRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_type: std::option::Option<crate::model::DataType>,
         pub(crate) is_required_in_entity: std::option::Option<bool>,
@@ -1132,7 +1132,7 @@ impl DataType {
 pub mod data_type {
 
     /// A builder for [`DataType`](crate::model::DataType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::Type>,
         pub(crate) nested_type: std::option::Option<std::boxed::Box<crate::model::DataType>>,
@@ -1256,7 +1256,7 @@ impl Relationship {
 pub mod relationship {
 
     /// A builder for [`Relationship`](crate::model::Relationship).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_component_type_id: std::option::Option<std::string::String>,
         pub(crate) relationship_type: std::option::Option<std::string::String>,
@@ -1562,7 +1562,7 @@ impl FunctionRequest {
 pub mod function_request {
 
     /// A builder for [`FunctionRequest`](crate::model::FunctionRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) required_properties: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -1647,7 +1647,7 @@ impl DataConnector {
 pub mod data_connector {
 
     /// A builder for [`DataConnector`](crate::model::DataConnector).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lambda: std::option::Option<crate::model::LambdaFunction>,
         pub(crate) is_native: std::option::Option<bool>,
@@ -1710,7 +1710,7 @@ impl LambdaFunction {
 pub mod lambda_function {
 
     /// A builder for [`LambdaFunction`](crate::model::LambdaFunction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -1874,7 +1874,7 @@ impl WorkspaceSummary {
 pub mod workspace_summary {
 
     /// A builder for [`WorkspaceSummary`](crate::model::WorkspaceSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2011,7 +2011,7 @@ impl SceneSummary {
 pub mod scene_summary {
 
     /// A builder for [`SceneSummary`](crate::model::SceneSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scene_id: std::option::Option<std::string::String>,
         pub(crate) content_location: std::option::Option<std::string::String>,
@@ -2184,7 +2184,7 @@ impl EntitySummary {
 pub mod entity_summary {
 
     /// A builder for [`EntitySummary`](crate::model::EntitySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_id: std::option::Option<std::string::String>,
         pub(crate) entity_name: std::option::Option<std::string::String>,
@@ -2344,7 +2344,7 @@ impl Status {
 pub mod status {
 
     /// A builder for [`Status`](crate::model::Status).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::State>,
         pub(crate) error: std::option::Option<crate::model::ErrorDetails>,
@@ -2411,7 +2411,7 @@ impl ErrorDetails {
 pub mod error_details {
 
     /// A builder for [`ErrorDetails`](crate::model::ErrorDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::ErrorCode>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2662,7 +2662,7 @@ impl ComponentTypeSummary {
 pub mod component_type_summary {
 
     /// A builder for [`ComponentTypeSummary`](crate::model::ComponentTypeSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) component_type_id: std::option::Option<std::string::String>,
@@ -2856,7 +2856,7 @@ impl PropertyValueHistory {
 pub mod property_value_history {
 
     /// A builder for [`PropertyValueHistory`](crate::model::PropertyValueHistory).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_property_reference:
             std::option::Option<crate::model::EntityPropertyReference>,
@@ -2978,7 +2978,7 @@ impl PropertyValue {
 pub mod property_value {
 
     /// A builder for [`PropertyValue`](crate::model::PropertyValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) value: std::option::Option<crate::model::DataValue>,
@@ -3110,7 +3110,7 @@ impl EntityPropertyReference {
 pub mod entity_property_reference {
 
     /// A builder for [`EntityPropertyReference`](crate::model::EntityPropertyReference).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_name: std::option::Option<std::string::String>,
         pub(crate) external_id_property: std::option::Option<
@@ -3314,7 +3314,7 @@ impl InterpolationParameters {
 pub mod interpolation_parameters {
 
     /// A builder for [`InterpolationParameters`](crate::model::InterpolationParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interpolation_type: std::option::Option<crate::model::InterpolationType>,
         pub(crate) interval_in_seconds: std::option::Option<i64>,
@@ -3478,7 +3478,7 @@ impl PropertyFilter {
 pub mod property_filter {
 
     /// A builder for [`PropertyFilter`](crate::model::PropertyFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) property_name: std::option::Option<std::string::String>,
         pub(crate) operator: std::option::Option<std::string::String>,
@@ -3562,7 +3562,7 @@ impl PropertyLatestValue {
 pub mod property_latest_value {
 
     /// A builder for [`PropertyLatestValue`](crate::model::PropertyLatestValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) property_reference: std::option::Option<crate::model::EntityPropertyReference>,
         pub(crate) property_value: std::option::Option<crate::model::DataValue>,
@@ -3669,7 +3669,7 @@ impl ComponentResponse {
 pub mod component_response {
 
     /// A builder for [`ComponentResponse`](crate::model::ComponentResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -3807,7 +3807,7 @@ impl PropertyResponse {
 pub mod property_response {
 
     /// A builder for [`PropertyResponse`](crate::model::PropertyResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definition: std::option::Option<crate::model::PropertyDefinitionResponse>,
         pub(crate) value: std::option::Option<crate::model::DataValue>,
@@ -3937,7 +3937,7 @@ impl PropertyDefinitionResponse {
 pub mod property_definition_response {
 
     /// A builder for [`PropertyDefinitionResponse`](crate::model::PropertyDefinitionResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_type: std::option::Option<crate::model::DataType>,
         pub(crate) is_time_series: std::option::Option<bool>,
@@ -4134,7 +4134,7 @@ impl FunctionResponse {
 pub mod function_response {
 
     /// A builder for [`FunctionResponse`](crate::model::FunctionResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) required_properties: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
@@ -4244,7 +4244,7 @@ impl ComponentRequest {
 pub mod component_request {
 
     /// A builder for [`ComponentRequest`](crate::model::ComponentRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) component_type_id: std::option::Option<std::string::String>,
@@ -4336,7 +4336,7 @@ impl BatchPutPropertyErrorEntry {
 pub mod batch_put_property_error_entry {
 
     /// A builder for [`BatchPutPropertyErrorEntry`](crate::model::BatchPutPropertyErrorEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchPutPropertyError>>,
     }
@@ -4407,7 +4407,7 @@ impl BatchPutPropertyError {
 pub mod batch_put_property_error {
 
     /// A builder for [`BatchPutPropertyError`](crate::model::BatchPutPropertyError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
@@ -4494,7 +4494,7 @@ impl PropertyValueEntry {
 pub mod property_value_entry {
 
     /// A builder for [`PropertyValueEntry`](crate::model::PropertyValueEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_property_reference:
             std::option::Option<crate::model::EntityPropertyReference>,

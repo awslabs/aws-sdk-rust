@@ -30,7 +30,7 @@ impl std::error::Error for ThrottlingException {}
 pub mod throttling_exception {
 
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
 
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl std::error::Error for InternalServiceErrorException {}
 pub mod internal_service_error_exception {
 
     /// A builder for [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

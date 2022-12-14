@@ -7,7 +7,7 @@ pub struct PutRecordOutput {}
 pub mod put_record_output {
 
     /// A builder for [`PutRecordOutput`](crate::output::PutRecordOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutRecordOutput`](crate::output::PutRecordOutput).
@@ -41,7 +41,7 @@ impl GetRecordOutput {
 pub mod get_record_output {
 
     /// A builder for [`GetRecordOutput`](crate::output::GetRecordOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
     }
@@ -88,7 +88,7 @@ pub struct DeleteRecordOutput {}
 pub mod delete_record_output {
 
     /// A builder for [`DeleteRecordOutput`](crate::output::DeleteRecordOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRecordOutput`](crate::output::DeleteRecordOutput).
@@ -139,7 +139,7 @@ impl BatchGetRecordOutput {
 pub mod batch_get_record_output {
 
     /// A builder for [`BatchGetRecordOutput`](crate::output::BatchGetRecordOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records:
             std::option::Option<std::vec::Vec<crate::model::BatchGetRecordResultDetail>>,

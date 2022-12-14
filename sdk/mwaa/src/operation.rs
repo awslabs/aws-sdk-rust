@@ -5,7 +5,7 @@
 /// [`create_cli_token`](crate::client::Client::create_cli_token).
 ///
 /// See [`crate::client::fluent_builders::CreateCliToken`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCliToken {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCliToken {
 /// [`create_environment`](crate::client::Client::create_environment).
 ///
 /// See [`crate::client::fluent_builders::CreateEnvironment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateEnvironment {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEnvironment {
 /// [`create_web_login_token`](crate::client::Client::create_web_login_token).
 ///
 /// See [`crate::client::fluent_builders::CreateWebLoginToken`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWebLoginToken {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWebLoginToken {
 /// [`delete_environment`](crate::client::Client::delete_environment).
 ///
 /// See [`crate::client::fluent_builders::DeleteEnvironment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEnvironment {
     _private: (),
 }
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEnvironment {
 /// [`get_environment`](crate::client::Client::get_environment).
 ///
 /// See [`crate::client::fluent_builders::GetEnvironment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEnvironment {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEnvironment {
 /// [`list_environments`](crate::client::Client::list_environments).
 ///
 /// See [`crate::client::fluent_builders::ListEnvironments`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEnvironments {
     _private: (),
 }
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEnvironments {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`publish_metrics`](crate::client::Client::publish_metrics).
 ///
 /// See [`crate::client::fluent_builders::PublishMetrics`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PublishMetrics {
     _private: (),
 }
@@ -271,7 +271,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PublishMetrics {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -303,7 +303,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -335,7 +335,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_environment`](crate::client::Client::update_environment).
 ///
 /// See [`crate::client::fluent_builders::UpdateEnvironment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateEnvironment {
     _private: (),
 }

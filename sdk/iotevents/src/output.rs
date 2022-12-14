@@ -17,7 +17,7 @@ impl UpdateInputOutput {
 pub mod update_input_output {
 
     /// A builder for [`UpdateInputOutput`](crate::output::UpdateInputOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_configuration: std::option::Option<crate::model::InputConfiguration>,
     }
@@ -70,7 +70,7 @@ impl UpdateDetectorModelOutput {
 pub mod update_detector_model_output {
 
     /// A builder for [`UpdateDetectorModelOutput`](crate::output::UpdateDetectorModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_configuration:
             std::option::Option<crate::model::DetectorModelConfiguration>,
@@ -165,7 +165,7 @@ impl UpdateAlarmModelOutput {
 pub mod update_alarm_model_output {
 
     /// A builder for [`UpdateAlarmModelOutput`](crate::output::UpdateAlarmModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) alarm_model_arn: std::option::Option<std::string::String>,
@@ -278,7 +278,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -302,7 +302,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -336,7 +336,7 @@ impl StartDetectorModelAnalysisOutput {
 pub mod start_detector_model_analysis_output {
 
     /// A builder for [`StartDetectorModelAnalysisOutput`](crate::output::StartDetectorModelAnalysisOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_id: std::option::Option<std::string::String>,
     }
@@ -374,7 +374,7 @@ pub struct PutLoggingOptionsOutput {}
 pub mod put_logging_options_output {
 
     /// A builder for [`PutLoggingOptionsOutput`](crate::output::PutLoggingOptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutLoggingOptionsOutput`](crate::output::PutLoggingOptionsOutput).
@@ -408,7 +408,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -470,7 +470,7 @@ impl ListInputsOutput {
 pub mod list_inputs_output {
 
     /// A builder for [`ListInputsOutput`](crate::output::ListInputsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_summaries: std::option::Option<std::vec::Vec<crate::model::InputSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -546,7 +546,7 @@ impl ListInputRoutingsOutput {
 pub mod list_input_routings_output {
 
     /// A builder for [`ListInputRoutingsOutput`](crate::output::ListInputRoutingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routed_resources:
             std::option::Option<std::vec::Vec<crate::model::RoutedResource>>,
@@ -626,7 +626,7 @@ impl ListDetectorModelVersionsOutput {
 pub mod list_detector_model_versions_output {
 
     /// A builder for [`ListDetectorModelVersionsOutput`](crate::output::ListDetectorModelVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_version_summaries:
             std::option::Option<std::vec::Vec<crate::model::DetectorModelVersionSummary>>,
@@ -709,7 +709,7 @@ impl ListDetectorModelsOutput {
 pub mod list_detector_models_output {
 
     /// A builder for [`ListDetectorModelsOutput`](crate::output::ListDetectorModelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_summaries:
             std::option::Option<std::vec::Vec<crate::model::DetectorModelSummary>>,
@@ -792,7 +792,7 @@ impl ListAlarmModelVersionsOutput {
 pub mod list_alarm_model_versions_output {
 
     /// A builder for [`ListAlarmModelVersionsOutput`](crate::output::ListAlarmModelVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_version_summaries:
             std::option::Option<std::vec::Vec<crate::model::AlarmModelVersionSummary>>,
@@ -872,7 +872,7 @@ impl ListAlarmModelsOutput {
 pub mod list_alarm_models_output {
 
     /// A builder for [`ListAlarmModelsOutput`](crate::output::ListAlarmModelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_summaries:
             std::option::Option<std::vec::Vec<crate::model::AlarmModelSummary>>,
@@ -949,7 +949,7 @@ impl GetDetectorModelAnalysisResultsOutput {
 pub mod get_detector_model_analysis_results_output {
 
     /// A builder for [`GetDetectorModelAnalysisResultsOutput`](crate::output::GetDetectorModelAnalysisResultsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_results:
             std::option::Option<std::vec::Vec<crate::model::AnalysisResult>>,
@@ -1019,7 +1019,7 @@ impl DescribeLoggingOptionsOutput {
 pub mod describe_logging_options_output {
 
     /// A builder for [`DescribeLoggingOptionsOutput`](crate::output::DescribeLoggingOptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_options: std::option::Option<crate::model::LoggingOptions>,
     }
@@ -1070,7 +1070,7 @@ impl DescribeInputOutput {
 pub mod describe_input_output {
 
     /// A builder for [`DescribeInputOutput`](crate::output::DescribeInputOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input: std::option::Option<crate::model::Input>,
     }
@@ -1126,7 +1126,7 @@ impl DescribeDetectorModelAnalysisOutput {
 pub mod describe_detector_model_analysis_output {
 
     /// A builder for [`DescribeDetectorModelAnalysisOutput`](crate::output::DescribeDetectorModelAnalysisOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::AnalysisStatus>,
     }
@@ -1187,7 +1187,7 @@ impl DescribeDetectorModelOutput {
 pub mod describe_detector_model_output {
 
     /// A builder for [`DescribeDetectorModelOutput`](crate::output::DescribeDetectorModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model: std::option::Option<crate::model::DetectorModel>,
     }
@@ -1348,7 +1348,7 @@ impl DescribeAlarmModelOutput {
 pub mod describe_alarm_model_output {
 
     /// A builder for [`DescribeAlarmModelOutput`](crate::output::DescribeAlarmModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) alarm_model_arn: std::option::Option<std::string::String>,
@@ -1602,7 +1602,7 @@ pub struct DeleteInputOutput {}
 pub mod delete_input_output {
 
     /// A builder for [`DeleteInputOutput`](crate::output::DeleteInputOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteInputOutput`](crate::output::DeleteInputOutput).
@@ -1626,7 +1626,7 @@ pub struct DeleteDetectorModelOutput {}
 pub mod delete_detector_model_output {
 
     /// A builder for [`DeleteDetectorModelOutput`](crate::output::DeleteDetectorModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDetectorModelOutput`](crate::output::DeleteDetectorModelOutput).
@@ -1650,7 +1650,7 @@ pub struct DeleteAlarmModelOutput {}
 pub mod delete_alarm_model_output {
 
     /// A builder for [`DeleteAlarmModelOutput`](crate::output::DeleteAlarmModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAlarmModelOutput`](crate::output::DeleteAlarmModelOutput).
@@ -1684,7 +1684,7 @@ impl CreateInputOutput {
 pub mod create_input_output {
 
     /// A builder for [`CreateInputOutput`](crate::output::CreateInputOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_configuration: std::option::Option<crate::model::InputConfiguration>,
     }
@@ -1737,7 +1737,7 @@ impl CreateDetectorModelOutput {
 pub mod create_detector_model_output {
 
     /// A builder for [`CreateDetectorModelOutput`](crate::output::CreateDetectorModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_configuration:
             std::option::Option<crate::model::DetectorModelConfiguration>,
@@ -1832,7 +1832,7 @@ impl CreateAlarmModelOutput {
 pub mod create_alarm_model_output {
 
     /// A builder for [`CreateAlarmModelOutput`](crate::output::CreateAlarmModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) alarm_model_arn: std::option::Option<std::string::String>,

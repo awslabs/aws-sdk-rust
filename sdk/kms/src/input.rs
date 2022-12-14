@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod cancel_key_deletion_input {
 
     /// A builder for [`CancelKeyDeletionInput`](crate::input::CancelKeyDeletionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
@@ -166,7 +166,7 @@ impl CancelKeyDeletionInput {
 pub mod connect_custom_key_store_input {
 
     /// A builder for [`ConnectCustomKeyStoreInput`](crate::input::ConnectCustomKeyStoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
     }
@@ -318,7 +318,7 @@ impl ConnectCustomKeyStoreInput {
 pub mod create_alias_input {
 
     /// A builder for [`CreateAliasInput`](crate::input::CreateAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_name: std::option::Option<std::string::String>,
         pub(crate) target_key_id: std::option::Option<std::string::String>,
@@ -498,7 +498,7 @@ impl CreateAliasInput {
 pub mod create_custom_key_store_input {
 
     /// A builder for [`CreateCustomKeyStoreInput`](crate::input::CreateCustomKeyStoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) custom_key_store_name: std::option::Option<std::string::String>,
         pub(crate) cloud_hsm_cluster_id: std::option::Option<std::string::String>,
@@ -709,7 +709,7 @@ impl CreateCustomKeyStoreInput {
 pub mod create_grant_input {
 
     /// A builder for [`CreateGrantInput`](crate::input::CreateGrantInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) grantee_principal: std::option::Option<std::string::String>,
@@ -991,7 +991,7 @@ impl CreateGrantInput {
 pub mod create_key_input {
 
     /// A builder for [`CreateKeyInput`](crate::input::CreateKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1435,7 +1435,7 @@ impl CreateKeyInput {
 pub mod decrypt_input {
 
     /// A builder for [`DecryptInput`](crate::input::DecryptInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) encryption_context: std::option::Option<
@@ -1688,7 +1688,7 @@ impl DecryptInput {
 pub mod delete_alias_input {
 
     /// A builder for [`DeleteAliasInput`](crate::input::DeleteAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_name: std::option::Option<std::string::String>,
     }
@@ -1833,7 +1833,7 @@ impl DeleteAliasInput {
 pub mod delete_custom_key_store_input {
 
     /// A builder for [`DeleteCustomKeyStoreInput`](crate::input::DeleteCustomKeyStoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
     }
@@ -1985,7 +1985,7 @@ impl DeleteCustomKeyStoreInput {
 pub mod delete_imported_key_material_input {
 
     /// A builder for [`DeleteImportedKeyMaterialInput`](crate::input::DeleteImportedKeyMaterialInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
@@ -2148,7 +2148,7 @@ impl DeleteImportedKeyMaterialInput {
 pub mod describe_custom_key_stores_input {
 
     /// A builder for [`DescribeCustomKeyStoresInput`](crate::input::DescribeCustomKeyStoresInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
         pub(crate) custom_key_store_name: std::option::Option<std::string::String>,
@@ -2343,7 +2343,7 @@ impl DescribeCustomKeyStoresInput {
 pub mod describe_key_input {
 
     /// A builder for [`DescribeKeyInput`](crate::input::DescribeKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2531,7 +2531,7 @@ impl DescribeKeyInput {
 pub mod disable_key_input {
 
     /// A builder for [`DisableKeyInput`](crate::input::DisableKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
@@ -2690,7 +2690,7 @@ impl DisableKeyInput {
 pub mod disable_key_rotation_input {
 
     /// A builder for [`DisableKeyRotationInput`](crate::input::DisableKeyRotationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
@@ -2851,7 +2851,7 @@ impl DisableKeyRotationInput {
 pub mod disconnect_custom_key_store_input {
 
     /// A builder for [`DisconnectCustomKeyStoreInput`](crate::input::DisconnectCustomKeyStoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
     }
@@ -3003,7 +3003,7 @@ impl DisconnectCustomKeyStoreInput {
 pub mod enable_key_input {
 
     /// A builder for [`EnableKeyInput`](crate::input::EnableKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
@@ -3160,7 +3160,7 @@ impl EnableKeyInput {
 pub mod enable_key_rotation_input {
 
     /// A builder for [`EnableKeyRotationInput`](crate::input::EnableKeyRotationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
@@ -3321,7 +3321,7 @@ impl EnableKeyRotationInput {
 pub mod encrypt_input {
 
     /// A builder for [`EncryptInput`](crate::input::EncryptInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) plaintext: std::option::Option<aws_smithy_types::Blob>,
@@ -3578,7 +3578,7 @@ impl EncryptInput {
 pub mod generate_data_key_input {
 
     /// A builder for [`GenerateDataKeyInput`](crate::input::GenerateDataKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) encryption_context: std::option::Option<
@@ -3828,7 +3828,7 @@ impl GenerateDataKeyInput {
 pub mod generate_data_key_pair_input {
 
     /// A builder for [`GenerateDataKeyPairInput`](crate::input::GenerateDataKeyPairInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_context: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -4068,7 +4068,7 @@ impl GenerateDataKeyPairInput {
 pub mod generate_data_key_pair_without_plaintext_input {
 
     /// A builder for [`GenerateDataKeyPairWithoutPlaintextInput`](crate::input::GenerateDataKeyPairWithoutPlaintextInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_context: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -4305,7 +4305,7 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
 pub mod generate_data_key_without_plaintext_input {
 
     /// A builder for [`GenerateDataKeyWithoutPlaintextInput`](crate::input::GenerateDataKeyWithoutPlaintextInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) encryption_context: std::option::Option<
@@ -4552,7 +4552,7 @@ impl GenerateDataKeyWithoutPlaintextInput {
 pub mod generate_mac_input {
 
     /// A builder for [`GenerateMacInput`](crate::input::GenerateMacInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) message: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -4763,7 +4763,7 @@ impl GenerateMacInput {
 pub mod generate_random_input {
 
     /// A builder for [`GenerateRandomInput`](crate::input::GenerateRandomInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) number_of_bytes: std::option::Option<i32>,
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
@@ -4923,7 +4923,7 @@ impl GenerateRandomInput {
 pub mod get_key_policy_input {
 
     /// A builder for [`GetKeyPolicyInput`](crate::input::GetKeyPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -5094,7 +5094,7 @@ impl GetKeyPolicyInput {
 pub mod get_key_rotation_status_input {
 
     /// A builder for [`GetKeyRotationStatusInput`](crate::input::GetKeyRotationStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
@@ -5257,7 +5257,7 @@ impl GetKeyRotationStatusInput {
 pub mod get_parameters_for_import_input {
 
     /// A builder for [`GetParametersForImportInput`](crate::input::GetParametersForImportInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) wrapping_algorithm: std::option::Option<crate::model::AlgorithmSpec>,
@@ -5450,7 +5450,7 @@ impl GetParametersForImportInput {
 pub mod get_public_key_input {
 
     /// A builder for [`GetPublicKeyInput`](crate::input::GetPublicKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5636,7 +5636,7 @@ impl GetPublicKeyInput {
 pub mod import_key_material_input {
 
     /// A builder for [`ImportKeyMaterialInput`](crate::input::ImportKeyMaterialInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) import_token: std::option::Option<aws_smithy_types::Blob>,
@@ -5857,7 +5857,7 @@ impl ImportKeyMaterialInput {
 pub mod list_aliases_input {
 
     /// A builder for [`ListAliasesInput`](crate::input::ListAliasesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -6044,7 +6044,7 @@ impl ListAliasesInput {
 pub mod list_grants_input {
 
     /// A builder for [`ListGrantsInput`](crate::input::ListGrantsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -6256,7 +6256,7 @@ impl ListGrantsInput {
 pub mod list_key_policies_input {
 
     /// A builder for [`ListKeyPoliciesInput`](crate::input::ListKeyPoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -6443,7 +6443,7 @@ impl ListKeyPoliciesInput {
 pub mod list_keys_input {
 
     /// A builder for [`ListKeysInput`](crate::input::ListKeysInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -6597,7 +6597,7 @@ impl ListKeysInput {
 pub mod list_resource_tags_input {
 
     /// A builder for [`ListResourceTagsInput`](crate::input::ListResourceTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -6786,7 +6786,7 @@ impl ListResourceTagsInput {
 pub mod list_retirable_grants_input {
 
     /// A builder for [`ListRetirableGrantsInput`](crate::input::ListRetirableGrantsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -6964,7 +6964,7 @@ impl ListRetirableGrantsInput {
 pub mod put_key_policy_input {
 
     /// A builder for [`PutKeyPolicyInput`](crate::input::PutKeyPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -7198,7 +7198,7 @@ impl PutKeyPolicyInput {
 pub mod re_encrypt_input {
 
     /// A builder for [`ReEncryptInput`](crate::input::ReEncryptInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) source_encryption_context: std::option::Option<
@@ -7549,7 +7549,7 @@ impl ReEncryptInput {
 pub mod replicate_key_input {
 
     /// A builder for [`ReplicateKeyInput`](crate::input::ReplicateKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) replica_region: std::option::Option<std::string::String>,
@@ -7843,7 +7843,7 @@ impl ReplicateKeyInput {
 pub mod retire_grant_input {
 
     /// A builder for [`RetireGrantInput`](crate::input::RetireGrantInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant_token: std::option::Option<std::string::String>,
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -8022,7 +8022,7 @@ impl RetireGrantInput {
 pub mod revoke_grant_input {
 
     /// A builder for [`RevokeGrantInput`](crate::input::RevokeGrantInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) grant_id: std::option::Option<std::string::String>,
@@ -8193,7 +8193,7 @@ impl RevokeGrantInput {
 pub mod schedule_key_deletion_input {
 
     /// A builder for [`ScheduleKeyDeletionInput`](crate::input::ScheduleKeyDeletionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) pending_window_in_days: std::option::Option<i32>,
@@ -8370,7 +8370,7 @@ impl ScheduleKeyDeletionInput {
 pub mod sign_input {
 
     /// A builder for [`SignInput`](crate::input::SignInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<aws_smithy_types::Blob>,
@@ -8607,7 +8607,7 @@ impl SignInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8791,7 +8791,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8971,7 +8971,7 @@ impl UntagResourceInput {
 pub mod update_alias_input {
 
     /// A builder for [`UpdateAliasInput`](crate::input::UpdateAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_name: std::option::Option<std::string::String>,
         pub(crate) target_key_id: std::option::Option<std::string::String>,
@@ -9149,7 +9149,7 @@ impl UpdateAliasInput {
 pub mod update_custom_key_store_input {
 
     /// A builder for [`UpdateCustomKeyStoreInput`](crate::input::UpdateCustomKeyStoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
         pub(crate) new_custom_key_store_name: std::option::Option<std::string::String>,
@@ -9360,7 +9360,7 @@ impl UpdateCustomKeyStoreInput {
 pub mod update_key_description_input {
 
     /// A builder for [`UpdateKeyDescriptionInput`](crate::input::UpdateKeyDescriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -9535,7 +9535,7 @@ impl UpdateKeyDescriptionInput {
 pub mod update_primary_region_input {
 
     /// A builder for [`UpdatePrimaryRegionInput`](crate::input::UpdatePrimaryRegionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) primary_region: std::option::Option<std::string::String>,
@@ -9713,7 +9713,7 @@ impl UpdatePrimaryRegionInput {
 pub mod verify_input {
 
     /// A builder for [`VerifyInput`](crate::input::VerifyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<aws_smithy_types::Blob>,
@@ -9966,7 +9966,7 @@ impl VerifyInput {
 pub mod verify_mac_input {
 
     /// A builder for [`VerifyMacInput`](crate::input::VerifyMacInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) message: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) key_id: std::option::Option<std::string::String>,

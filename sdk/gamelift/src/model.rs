@@ -62,7 +62,7 @@ impl Script {
 pub mod script {
 
     /// A builder for [`Script`](crate::model::Script).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) script_id: std::option::Option<std::string::String>,
         pub(crate) script_arn: std::option::Option<std::string::String>,
@@ -213,7 +213,7 @@ impl S3Location {
 pub mod s3_location {
 
     /// A builder for [`S3Location`](crate::model::S3Location).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -321,7 +321,7 @@ impl RuntimeConfiguration {
 pub mod runtime_configuration {
 
     /// A builder for [`RuntimeConfiguration`](crate::model::RuntimeConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_processes:
             std::option::Option<std::vec::Vec<crate::model::ServerProcess>>,
@@ -433,7 +433,7 @@ impl ServerProcess {
 pub mod server_process {
 
     /// A builder for [`ServerProcess`](crate::model::ServerProcess).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_path: std::option::Option<std::string::String>,
         pub(crate) parameters: std::option::Option<std::string::String>,
@@ -649,7 +649,7 @@ impl MatchmakingConfiguration {
 pub mod matchmaking_configuration {
 
     /// A builder for [`MatchmakingConfiguration`](crate::model::MatchmakingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) configuration_arn: std::option::Option<std::string::String>,
@@ -1142,7 +1142,7 @@ impl GameProperty {
 pub mod game_property {
 
     /// A builder for [`GameProperty`](crate::model::GameProperty).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1275,7 +1275,7 @@ impl GameSessionQueue {
 pub mod game_session_queue {
 
     /// A builder for [`GameSessionQueue`](crate::model::GameSessionQueue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) game_session_queue_arn: std::option::Option<std::string::String>,
@@ -1490,7 +1490,7 @@ impl PriorityConfiguration {
 pub mod priority_configuration {
 
     /// A builder for [`PriorityConfiguration`](crate::model::PriorityConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) priority_order: std::option::Option<std::vec::Vec<crate::model::PriorityType>>,
         pub(crate) location_order: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1681,7 +1681,7 @@ impl FilterConfiguration {
 pub mod filter_configuration {
 
     /// A builder for [`FilterConfiguration`](crate::model::FilterConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allowed_locations: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1739,7 +1739,7 @@ impl GameSessionQueueDestination {
 pub mod game_session_queue_destination {
 
     /// A builder for [`GameSessionQueueDestination`](crate::model::GameSessionQueueDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_arn: std::option::Option<std::string::String>,
     }
@@ -1798,7 +1798,7 @@ impl PlayerLatencyPolicy {
 pub mod player_latency_policy {
 
     /// A builder for [`PlayerLatencyPolicy`](crate::model::PlayerLatencyPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) maximum_individual_player_latency_milliseconds: std::option::Option<i32>,
         pub(crate) policy_duration_seconds: std::option::Option<i32>,
@@ -2037,7 +2037,7 @@ impl GameSession {
 pub mod game_session {
 
     /// A builder for [`GameSession`](crate::model::GameSession).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_session_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2868,7 +2868,7 @@ impl GameServerGroup {
 pub mod game_server_group {
 
     /// A builder for [`GameServerGroup`](crate::model::GameServerGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_server_group_name: std::option::Option<std::string::String>,
         pub(crate) game_server_group_arn: std::option::Option<std::string::String>,
@@ -3536,7 +3536,7 @@ impl InstanceDefinition {
 pub mod instance_definition {
 
     /// A builder for [`InstanceDefinition`](crate::model::InstanceDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_type: std::option::Option<crate::model::GameServerGroupInstanceType>,
         pub(crate) weighted_capacity: std::option::Option<std::string::String>,
@@ -4297,7 +4297,7 @@ impl GameServer {
 pub mod game_server {
 
     /// A builder for [`GameServer`](crate::model::GameServer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_server_group_name: std::option::Option<std::string::String>,
         pub(crate) game_server_group_arn: std::option::Option<std::string::String>,
@@ -4800,7 +4800,7 @@ impl IpPermission {
 pub mod ip_permission {
 
     /// A builder for [`IpPermission`](crate::model::IpPermission).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_port: std::option::Option<i32>,
         pub(crate) to_port: std::option::Option<i32>,
@@ -4990,7 +4990,7 @@ impl ResourceCreationLimitPolicy {
 pub mod resource_creation_limit_policy {
 
     /// A builder for [`ResourceCreationLimitPolicy`](crate::model::ResourceCreationLimitPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) new_game_sessions_per_creator: std::option::Option<i32>,
         pub(crate) policy_period_in_minutes: std::option::Option<i32>,
@@ -5122,7 +5122,7 @@ impl Build {
 pub mod build {
 
     /// A builder for [`Build`](crate::model::Build).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) build_id: std::option::Option<std::string::String>,
         pub(crate) build_arn: std::option::Option<std::string::String>,
@@ -5518,7 +5518,7 @@ impl Alias {
 pub mod alias {
 
     /// A builder for [`Alias`](crate::model::Alias).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5679,7 +5679,7 @@ impl RoutingStrategy {
 pub mod routing_strategy {
 
     /// A builder for [`RoutingStrategy`](crate::model::RoutingStrategy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::RoutingStrategyType>,
         pub(crate) fleet_id: std::option::Option<std::string::String>,
@@ -5868,7 +5868,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -6098,7 +6098,7 @@ impl GameSessionPlacement {
 pub mod game_session_placement {
 
     /// A builder for [`GameSessionPlacement`](crate::model::GameSessionPlacement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) placement_id: std::option::Option<std::string::String>,
         pub(crate) game_session_queue_name: std::option::Option<std::string::String>,
@@ -6460,7 +6460,7 @@ impl PlacedPlayerSession {
 pub mod placed_player_session {
 
     /// A builder for [`PlacedPlayerSession`](crate::model::PlacedPlayerSession).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) player_id: std::option::Option<std::string::String>,
         pub(crate) player_session_id: std::option::Option<std::string::String>,
@@ -6537,7 +6537,7 @@ impl PlayerLatency {
 pub mod player_latency {
 
     /// A builder for [`PlayerLatency`](crate::model::PlayerLatency).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) player_id: std::option::Option<std::string::String>,
         pub(crate) region_identifier: std::option::Option<std::string::String>,
@@ -6900,7 +6900,7 @@ impl MatchmakingTicket {
 pub mod matchmaking_ticket {
 
     /// A builder for [`MatchmakingTicket`](crate::model::MatchmakingTicket).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ticket_id: std::option::Option<std::string::String>,
         pub(crate) configuration_name: std::option::Option<std::string::String>,
@@ -7188,7 +7188,7 @@ impl GameSessionConnectionInfo {
 pub mod game_session_connection_info {
 
     /// A builder for [`GameSessionConnectionInfo`](crate::model::GameSessionConnectionInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_session_arn: std::option::Option<std::string::String>,
         pub(crate) ip_address: std::option::Option<std::string::String>,
@@ -7336,7 +7336,7 @@ impl MatchedPlayerSession {
 pub mod matched_player_session {
 
     /// A builder for [`MatchedPlayerSession`](crate::model::MatchedPlayerSession).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) player_id: std::option::Option<std::string::String>,
         pub(crate) player_session_id: std::option::Option<std::string::String>,
@@ -7430,7 +7430,7 @@ impl Player {
 pub mod player {
 
     /// A builder for [`Player`](crate::model::Player).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) player_id: std::option::Option<std::string::String>,
         pub(crate) player_attributes: std::option::Option<
@@ -7564,7 +7564,7 @@ impl AttributeValue {
 pub mod attribute_value {
 
     /// A builder for [`AttributeValue`](crate::model::AttributeValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s: std::option::Option<std::string::String>,
         pub(crate) n: std::option::Option<f64>,
@@ -7804,7 +7804,7 @@ impl DesiredPlayerSession {
 pub mod desired_player_session {
 
     /// A builder for [`DesiredPlayerSession`](crate::model::DesiredPlayerSession).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) player_id: std::option::Option<std::string::String>,
         pub(crate) player_data: std::option::Option<std::string::String>,
@@ -7887,7 +7887,7 @@ impl std::fmt::Debug for AwsCredentials {
 pub mod aws_credentials {
 
     /// A builder for [`AwsCredentials`](crate::model::AwsCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
         pub(crate) secret_access_key: std::option::Option<std::string::String>,
@@ -7979,7 +7979,7 @@ impl TargetConfiguration {
 pub mod target_configuration {
 
     /// A builder for [`TargetConfiguration`](crate::model::TargetConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_value: std::option::Option<f64>,
     }
@@ -8605,7 +8605,7 @@ impl std::fmt::Debug for InstanceAccess {
 pub mod instance_access {
 
     /// A builder for [`InstanceAccess`](crate::model::InstanceAccess).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -8733,7 +8733,7 @@ impl std::fmt::Debug for InstanceCredentials {
 pub mod instance_credentials {
 
     /// A builder for [`InstanceCredentials`](crate::model::InstanceCredentials).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) secret: std::option::Option<std::string::String>,
@@ -8845,7 +8845,7 @@ impl VpcPeeringConnection {
 pub mod vpc_peering_connection {
 
     /// A builder for [`VpcPeeringConnection`](crate::model::VpcPeeringConnection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
@@ -8984,7 +8984,7 @@ impl VpcPeeringConnectionStatus {
 pub mod vpc_peering_connection_status {
 
     /// A builder for [`VpcPeeringConnectionStatus`](crate::model::VpcPeeringConnectionStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9074,7 +9074,7 @@ impl VpcPeeringAuthorization {
 pub mod vpc_peering_authorization {
 
     /// A builder for [`VpcPeeringAuthorization`](crate::model::VpcPeeringAuthorization).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_lift_aws_account_id: std::option::Option<std::string::String>,
         pub(crate) peer_vpc_aws_account_id: std::option::Option<std::string::String>,
@@ -9339,7 +9339,7 @@ impl ScalingPolicy {
 pub mod scaling_policy {
 
     /// A builder for [`ScalingPolicy`](crate::model::ScalingPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
@@ -9961,7 +9961,7 @@ impl PlayerSession {
 pub mod player_session {
 
     /// A builder for [`PlayerSession`](crate::model::PlayerSession).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) player_session_id: std::option::Option<std::string::String>,
         pub(crate) player_id: std::option::Option<std::string::String>,
@@ -10336,7 +10336,7 @@ impl MatchmakingRuleSet {
 pub mod matchmaking_rule_set {
 
     /// A builder for [`MatchmakingRuleSet`](crate::model::MatchmakingRuleSet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
         pub(crate) rule_set_arn: std::option::Option<std::string::String>,
@@ -10546,7 +10546,7 @@ impl Instance {
 pub mod instance {
 
     /// A builder for [`Instance`](crate::model::Instance).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
@@ -11633,7 +11633,7 @@ impl GameSessionDetail {
 pub mod game_session_detail {
 
     /// A builder for [`GameSessionDetail`](crate::model::GameSessionDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_session: std::option::Option<crate::model::GameSession>,
         pub(crate) protection_policy: std::option::Option<crate::model::ProtectionPolicy>,
@@ -11742,7 +11742,7 @@ impl GameServerInstance {
 pub mod game_server_instance {
 
     /// A builder for [`GameServerInstance`](crate::model::GameServerInstance).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) game_server_group_name: std::option::Option<std::string::String>,
         pub(crate) game_server_group_arn: std::option::Option<std::string::String>,
@@ -11992,7 +11992,7 @@ impl FleetUtilization {
 pub mod fleet_utilization {
 
     /// A builder for [`FleetUtilization`](crate::model::FleetUtilization).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
@@ -12154,7 +12154,7 @@ impl FleetCapacity {
 pub mod fleet_capacity {
 
     /// A builder for [`FleetCapacity`](crate::model::FleetCapacity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
@@ -12305,7 +12305,7 @@ impl Ec2InstanceCounts {
 pub mod ec2_instance_counts {
 
     /// A builder for [`Ec2InstanceCounts`](crate::model::Ec2InstanceCounts).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) desired: std::option::Option<i32>,
         pub(crate) minimum: std::option::Option<i32>,
@@ -12441,7 +12441,7 @@ impl LocationAttributes {
 pub mod location_attributes {
 
     /// A builder for [`LocationAttributes`](crate::model::LocationAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_state: std::option::Option<crate::model::LocationState>,
         pub(crate) stopped_actions: std::option::Option<std::vec::Vec<crate::model::FleetAction>>,
@@ -12537,7 +12537,7 @@ impl LocationState {
 pub mod location_state {
 
     /// A builder for [`LocationState`](crate::model::LocationState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::FleetStatus>,
@@ -12877,7 +12877,7 @@ impl Event {
 pub mod event {
 
     /// A builder for [`Event`](crate::model::Event).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_id: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -13594,7 +13594,7 @@ impl FleetAttributes {
 pub mod fleet_attributes {
 
     /// A builder for [`FleetAttributes`](crate::model::FleetAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
@@ -14019,7 +14019,7 @@ impl CertificateConfiguration {
 pub mod certificate_configuration {
 
     /// A builder for [`CertificateConfiguration`](crate::model::CertificateConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_type: std::option::Option<crate::model::CertificateType>,
     }
@@ -14283,7 +14283,7 @@ impl Ec2InstanceLimit {
 pub mod ec2_instance_limit {
 
     /// A builder for [`Ec2InstanceLimit`](crate::model::Ec2InstanceLimit).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ec2_instance_type: std::option::Option<crate::model::Ec2InstanceType>,
         pub(crate) current_instances: std::option::Option<i32>,
@@ -14478,7 +14478,7 @@ impl GameServerGroupAutoScalingPolicy {
 pub mod game_server_group_auto_scaling_policy {
 
     /// A builder for [`GameServerGroupAutoScalingPolicy`](crate::model::GameServerGroupAutoScalingPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) estimated_instance_warmup: std::option::Option<i32>,
         pub(crate) target_tracking_configuration:
@@ -14546,7 +14546,7 @@ impl TargetTrackingConfiguration {
 pub mod target_tracking_configuration {
 
     /// A builder for [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_value: std::option::Option<f64>,
     }
@@ -14609,7 +14609,7 @@ impl LaunchTemplateSpecification {
 pub mod launch_template_specification {
 
     /// A builder for [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_template_id: std::option::Option<std::string::String>,
         pub(crate) launch_template_name: std::option::Option<std::string::String>,
@@ -14689,7 +14689,7 @@ impl LocationConfiguration {
 pub mod location_configuration {
 
     /// A builder for [`LocationConfiguration`](crate::model::LocationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
     }

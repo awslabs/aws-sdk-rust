@@ -223,7 +223,7 @@ impl Administrator {
 pub mod administrator {
 
     /// A builder for [`Administrator`](crate::model::Administrator).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) graph_arn: std::option::Option<std::string::String>,
@@ -481,7 +481,7 @@ impl MemberDetail {
 pub mod member_detail {
 
     /// A builder for [`MemberDetail`](crate::model::MemberDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) email_address: std::option::Option<std::string::String>,
@@ -951,7 +951,7 @@ impl DatasourcePackageUsageInfo {
 pub mod datasource_package_usage_info {
 
     /// A builder for [`DatasourcePackageUsageInfo`](crate::model::DatasourcePackageUsageInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_usage_in_bytes: std::option::Option<i64>,
         pub(crate) volume_usage_update_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1314,7 +1314,7 @@ impl Graph {
 pub mod graph {
 
     /// A builder for [`Graph`](crate::model::Graph).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1399,7 +1399,7 @@ impl DatasourcePackageIngestDetail {
 pub mod datasource_package_ingest_detail {
 
     /// A builder for [`DatasourcePackageIngestDetail`](crate::model::DatasourcePackageIngestDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datasource_package_ingest_state:
             std::option::Option<crate::model::DatasourcePackageIngestState>,
@@ -1489,7 +1489,7 @@ impl TimestampForCollection {
 pub mod timestamp_for_collection {
 
     /// A builder for [`TimestampForCollection`](crate::model::TimestampForCollection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -1547,7 +1547,7 @@ impl UnprocessedAccount {
 pub mod unprocessed_account {
 
     /// A builder for [`UnprocessedAccount`](crate::model::UnprocessedAccount).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<std::string::String>,
@@ -1614,7 +1614,7 @@ impl Account {
 pub mod account {
 
     /// A builder for [`Account`](crate::model::Account).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) email_address: std::option::Option<std::string::String>,
@@ -1684,7 +1684,7 @@ impl UnprocessedGraph {
 pub mod unprocessed_graph {
 
     /// A builder for [`UnprocessedGraph`](crate::model::UnprocessedGraph).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) graph_arn: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<std::string::String>,
@@ -1776,7 +1776,7 @@ impl MembershipDatasources {
 pub mod membership_datasources {
 
     /// A builder for [`MembershipDatasources`](crate::model::MembershipDatasources).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) graph_arn: std::option::Option<std::string::String>,

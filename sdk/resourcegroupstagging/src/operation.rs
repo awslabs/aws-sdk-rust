@@ -5,7 +5,7 @@
 /// [`describe_report_creation`](crate::client::Client::describe_report_creation).
 ///
 /// See [`crate::client::fluent_builders::DescribeReportCreation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeReportCreation {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReportCreation {
 /// [`get_compliance_summary`](crate::client::Client::get_compliance_summary).
 ///
 /// See [`crate::client::fluent_builders::GetComplianceSummary`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetComplianceSummary {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComplianceSummary {
 /// [`get_resources`](crate::client::Client::get_resources).
 ///
 /// See [`crate::client::fluent_builders::GetResources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResources {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResources {
 /// [`get_tag_keys`](crate::client::Client::get_tag_keys).
 ///
 /// See [`crate::client::fluent_builders::GetTagKeys`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTagKeys {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTagKeys {
 /// [`get_tag_values`](crate::client::Client::get_tag_values).
 ///
 /// See [`crate::client::fluent_builders::GetTagValues`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTagValues {
     _private: (),
 }
@@ -169,7 +169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTagValues {
 /// [`start_report_creation`](crate::client::Client::start_report_creation).
 ///
 /// See [`crate::client::fluent_builders::StartReportCreation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartReportCreation {
     _private: (),
 }
@@ -203,7 +203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartReportCreation {
 /// [`tag_resources`](crate::client::Client::tag_resources).
 ///
 /// See [`crate::client::fluent_builders::TagResources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResources {
     _private: (),
 }
@@ -235,7 +235,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResources {
 /// [`untag_resources`](crate::client::Client::untag_resources).
 ///
 /// See [`crate::client::fluent_builders::UntagResources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResources {
     _private: (),
 }

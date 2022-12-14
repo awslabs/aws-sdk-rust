@@ -21,7 +21,7 @@ impl CertificateOptions {
 pub mod certificate_options {
 
     /// A builder for [`CertificateOptions`](crate::model::CertificateOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_transparency_logging_preference:
             std::option::Option<crate::model::CertificateTransparencyLoggingPreference>,
@@ -176,7 +176,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -257,7 +257,7 @@ impl DomainValidationOption {
 pub mod domain_validation_option {
 
     /// A builder for [`DomainValidationOption`](crate::model::DomainValidationOption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) validation_domain: std::option::Option<std::string::String>,
@@ -424,7 +424,7 @@ impl ExpiryEventsConfiguration {
 pub mod expiry_events_configuration {
 
     /// A builder for [`ExpiryEventsConfiguration`](crate::model::ExpiryEventsConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) days_before_expiry: std::option::Option<i32>,
     }
@@ -603,7 +603,7 @@ impl CertificateSummary {
 pub mod certificate_summary {
 
     /// A builder for [`CertificateSummary`](crate::model::CertificateSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -1860,7 +1860,7 @@ impl Filters {
 pub mod filters {
 
     /// A builder for [`Filters`](crate::model::Filters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) extended_key_usage:
             std::option::Option<std::vec::Vec<crate::model::ExtendedKeyUsageName>>,
@@ -2144,7 +2144,7 @@ impl CertificateDetail {
 pub mod certificate_detail {
 
     /// A builder for [`CertificateDetail`](crate::model::CertificateDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -2624,7 +2624,7 @@ impl ExtendedKeyUsage {
 pub mod extended_key_usage {
 
     /// A builder for [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ExtendedKeyUsageName>,
         pub(crate) oid: std::option::Option<std::string::String>,
@@ -2709,7 +2709,7 @@ impl KeyUsage {
 pub mod key_usage {
 
     /// A builder for [`KeyUsage`](crate::model::KeyUsage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::KeyUsageName>,
     }
@@ -2779,7 +2779,7 @@ impl RenewalSummary {
 pub mod renewal_summary {
 
     /// A builder for [`RenewalSummary`](crate::model::RenewalSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) renewal_status: std::option::Option<crate::model::RenewalStatus>,
         pub(crate) domain_validation_options:
@@ -3112,7 +3112,7 @@ impl DomainValidation {
 pub mod domain_validation {
 
     /// A builder for [`DomainValidation`](crate::model::DomainValidation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) validation_emails: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3267,7 +3267,7 @@ impl ResourceRecord {
 pub mod resource_record {
 
     /// A builder for [`ResourceRecord`](crate::model::ResourceRecord).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::RecordType>,

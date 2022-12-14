@@ -38,7 +38,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
 
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -119,7 +119,7 @@ impl std::error::Error for InvalidRequestException {}
 pub mod invalid_request_exception {
 
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -200,7 +200,7 @@ impl std::error::Error for InternalFailureException {}
 pub mod internal_failure_exception {
 
     /// A builder for [`InternalFailureException`](crate::error::InternalFailureException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -281,7 +281,7 @@ impl std::error::Error for RangeNotSatisfiableException {}
 pub mod range_not_satisfiable_exception {
 
     /// A builder for [`RangeNotSatisfiableException`](crate::error::RangeNotSatisfiableException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -362,7 +362,7 @@ impl std::error::Error for ResourceConflictException {}
 pub mod resource_conflict_exception {
 
     /// A builder for [`ResourceConflictException`](crate::error::ResourceConflictException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -443,7 +443,7 @@ impl std::error::Error for PreconditionFailedException {}
 pub mod precondition_failed_exception {
 
     /// A builder for [`PreconditionFailedException`](crate::error::PreconditionFailedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -524,7 +524,7 @@ impl std::error::Error for ForbiddenException {}
 pub mod forbidden_exception {
 
     /// A builder for [`ForbiddenException`](crate::error::ForbiddenException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,

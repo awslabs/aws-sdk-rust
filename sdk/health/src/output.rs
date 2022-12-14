@@ -7,7 +7,7 @@ pub struct EnableHealthServiceAccessForOrganizationOutput {}
 pub mod enable_health_service_access_for_organization_output {
 
     /// A builder for [`EnableHealthServiceAccessForOrganizationOutput`](crate::output::EnableHealthServiceAccessForOrganizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`EnableHealthServiceAccessForOrganizationOutput`](crate::output::EnableHealthServiceAccessForOrganizationOutput).
@@ -32,7 +32,7 @@ pub struct DisableHealthServiceAccessForOrganizationOutput {}
 pub mod disable_health_service_access_for_organization_output {
 
     /// A builder for [`DisableHealthServiceAccessForOrganizationOutput`](crate::output::DisableHealthServiceAccessForOrganizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisableHealthServiceAccessForOrganizationOutput`](crate::output::DisableHealthServiceAccessForOrganizationOutput).
@@ -70,7 +70,7 @@ impl DescribeHealthServiceStatusForOrganizationOutput {
 pub mod describe_health_service_status_for_organization_output {
 
     /// A builder for [`DescribeHealthServiceStatusForOrganizationOutput`](crate::output::DescribeHealthServiceStatusForOrganizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_service_access_status_for_organization:
             std::option::Option<std::string::String>,
@@ -136,7 +136,7 @@ impl DescribeEventTypesOutput {
 pub mod describe_event_types_output {
 
     /// A builder for [`DescribeEventTypesOutput`](crate::output::DescribeEventTypesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -212,7 +212,7 @@ impl DescribeEventsForOrganizationOutput {
 pub mod describe_events_for_organization_output {
 
     /// A builder for [`DescribeEventsForOrganizationOutput`](crate::output::DescribeEventsForOrganizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::OrganizationEvent>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -288,7 +288,7 @@ impl DescribeEventsOutput {
 pub mod describe_events_output {
 
     /// A builder for [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -367,7 +367,7 @@ impl DescribeEventDetailsForOrganizationOutput {
 pub mod describe_event_details_for_organization_output {
 
     /// A builder for [`DescribeEventDetailsForOrganizationOutput`](crate::output::DescribeEventDetailsForOrganizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successful_set:
             std::option::Option<std::vec::Vec<crate::model::OrganizationEventDetails>>,
@@ -459,7 +459,7 @@ impl DescribeEventDetailsOutput {
 pub mod describe_event_details_output {
 
     /// A builder for [`DescribeEventDetailsOutput`](crate::output::DescribeEventDetailsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successful_set: std::option::Option<std::vec::Vec<crate::model::EventDetails>>,
         pub(crate) failed_set:
@@ -545,7 +545,7 @@ impl DescribeEventAggregatesOutput {
 pub mod describe_event_aggregates_output {
 
     /// A builder for [`DescribeEventAggregatesOutput`](crate::output::DescribeEventAggregatesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_aggregates:
             std::option::Option<std::vec::Vec<crate::model::EventAggregate>>,
@@ -615,7 +615,7 @@ impl DescribeEntityAggregatesOutput {
 pub mod describe_entity_aggregates_output {
 
     /// A builder for [`DescribeEntityAggregatesOutput`](crate::output::DescribeEntityAggregatesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_aggregates:
             std::option::Option<std::vec::Vec<crate::model::EntityAggregate>>,
@@ -690,7 +690,7 @@ impl DescribeAffectedEntitiesForOrganizationOutput {
 pub mod describe_affected_entities_for_organization_output {
 
     /// A builder for [`DescribeAffectedEntitiesForOrganizationOutput`](crate::output::DescribeAffectedEntitiesForOrganizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::AffectedEntity>>,
         pub(crate) failed_set:
@@ -793,7 +793,7 @@ impl DescribeAffectedEntitiesOutput {
 pub mod describe_affected_entities_output {
 
     /// A builder for [`DescribeAffectedEntitiesOutput`](crate::output::DescribeAffectedEntitiesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::AffectedEntity>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -886,7 +886,7 @@ impl DescribeAffectedAccountsForOrganizationOutput {
 pub mod describe_affected_accounts_for_organization_output {
 
     /// A builder for [`DescribeAffectedAccountsForOrganizationOutput`](crate::output::DescribeAffectedAccountsForOrganizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) affected_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) event_scope_code: std::option::Option<crate::model::EventScopeCode>,

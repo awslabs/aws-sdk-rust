@@ -30,7 +30,7 @@ impl std::error::Error for BadRequestException {}
 pub mod bad_request_exception {
 
     /// A builder for [`BadRequestException`](crate::error::BadRequestException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

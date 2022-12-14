@@ -25,7 +25,7 @@ impl GroupQuery {
 pub mod group_query {
 
     /// A builder for [`GroupQuery`](crate::model::GroupQuery).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
         pub(crate) resource_query: std::option::Option<crate::model::ResourceQuery>,
@@ -139,7 +139,7 @@ impl ResourceQuery {
 pub mod resource_query {
 
     /// A builder for [`ResourceQuery`](crate::model::ResourceQuery).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::QueryType>,
         pub(crate) query: std::option::Option<std::string::String>,
@@ -331,7 +331,7 @@ impl Group {
 pub mod group {
 
     /// A builder for [`Group`](crate::model::Group).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -403,7 +403,7 @@ impl PendingResource {
 pub mod pending_resource {
 
     /// A builder for [`PendingResource`](crate::model::PendingResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -465,7 +465,7 @@ impl FailedResource {
 pub mod failed_resource {
 
     /// A builder for [`FailedResource`](crate::model::FailedResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
@@ -547,7 +547,7 @@ impl QueryError {
 pub mod query_error {
 
     /// A builder for [`QueryError`](crate::model::QueryError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<crate::model::QueryErrorCode>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -710,7 +710,7 @@ impl ResourceIdentifier {
 pub mod resource_identifier {
 
     /// A builder for [`ResourceIdentifier`](crate::model::ResourceIdentifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -780,7 +780,7 @@ impl GroupConfigurationItem {
 pub mod group_configuration_item {
 
     /// A builder for [`GroupConfigurationItem`](crate::model::GroupConfigurationItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) parameters:
@@ -857,7 +857,7 @@ impl GroupConfigurationParameter {
 pub mod group_configuration_parameter {
 
     /// A builder for [`GroupConfigurationParameter`](crate::model::GroupConfigurationParameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -933,7 +933,7 @@ impl GroupIdentifier {
 pub mod group_identifier {
 
     /// A builder for [`GroupIdentifier`](crate::model::GroupIdentifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
         pub(crate) group_arn: std::option::Option<std::string::String>,
@@ -1000,7 +1000,7 @@ impl GroupFilter {
 pub mod group_filter {
 
     /// A builder for [`GroupFilter`](crate::model::GroupFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::GroupFilterName>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1173,7 +1173,7 @@ impl ListGroupResourcesItem {
 pub mod list_group_resources_item {
 
     /// A builder for [`ListGroupResourcesItem`](crate::model::ListGroupResourcesItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<crate::model::ResourceIdentifier>,
         pub(crate) status: std::option::Option<crate::model::ResourceStatus>,
@@ -1243,7 +1243,7 @@ impl ResourceStatus {
 pub mod resource_status {
 
     /// A builder for [`ResourceStatus`](crate::model::ResourceStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ResourceStatusValue>,
     }
@@ -1386,7 +1386,7 @@ impl ResourceFilter {
 pub mod resource_filter {
 
     /// A builder for [`ResourceFilter`](crate::model::ResourceFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ResourceFilterName>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1569,7 +1569,7 @@ impl GroupConfiguration {
 pub mod group_configuration {
 
     /// A builder for [`GroupConfiguration`](crate::model::GroupConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration:
             std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>,

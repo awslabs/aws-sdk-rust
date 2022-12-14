@@ -24,7 +24,7 @@ impl UpdateSecurityOutput {
 pub mod update_security_output {
 
     /// A builder for [`UpdateSecurityOutput`](crate::output::UpdateSecurityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_operation_arn: std::option::Option<std::string::String>,
@@ -94,7 +94,7 @@ impl UpdateMonitoringOutput {
 pub mod update_monitoring_output {
 
     /// A builder for [`UpdateMonitoringOutput`](crate::output::UpdateMonitoringOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_operation_arn: std::option::Option<std::string::String>,
@@ -164,7 +164,7 @@ impl UpdateConnectivityOutput {
 pub mod update_connectivity_output {
 
     /// A builder for [`UpdateConnectivityOutput`](crate::output::UpdateConnectivityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_operation_arn: std::option::Option<std::string::String>,
@@ -234,7 +234,7 @@ impl UpdateConfigurationOutput {
 pub mod update_configuration_output {
 
     /// A builder for [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
@@ -304,7 +304,7 @@ impl UpdateClusterKafkaVersionOutput {
 pub mod update_cluster_kafka_version_output {
 
     /// A builder for [`UpdateClusterKafkaVersionOutput`](crate::output::UpdateClusterKafkaVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_operation_arn: std::option::Option<std::string::String>,
@@ -374,7 +374,7 @@ impl UpdateClusterConfigurationOutput {
 pub mod update_cluster_configuration_output {
 
     /// A builder for [`UpdateClusterConfigurationOutput`](crate::output::UpdateClusterConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_operation_arn: std::option::Option<std::string::String>,
@@ -444,7 +444,7 @@ impl UpdateBrokerTypeOutput {
 pub mod update_broker_type_output {
 
     /// A builder for [`UpdateBrokerTypeOutput`](crate::output::UpdateBrokerTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_operation_arn: std::option::Option<std::string::String>,
@@ -514,7 +514,7 @@ impl UpdateBrokerStorageOutput {
 pub mod update_broker_storage_output {
 
     /// A builder for [`UpdateBrokerStorageOutput`](crate::output::UpdateBrokerStorageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_operation_arn: std::option::Option<std::string::String>,
@@ -584,7 +584,7 @@ impl UpdateBrokerCountOutput {
 pub mod update_broker_count_output {
 
     /// A builder for [`UpdateBrokerCountOutput`](crate::output::UpdateBrokerCountOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_operation_arn: std::option::Option<std::string::String>,
@@ -637,7 +637,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -661,7 +661,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -702,7 +702,7 @@ impl RebootBrokerOutput {
 pub mod reboot_broker_output {
 
     /// A builder for [`RebootBrokerOutput`](crate::output::RebootBrokerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_operation_arn: std::option::Option<std::string::String>,
@@ -769,7 +769,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -839,7 +839,7 @@ impl ListScramSecretsOutput {
 pub mod list_scram_secrets_output {
 
     /// A builder for [`ListScramSecretsOutput`](crate::output::ListScramSecretsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) secret_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -915,7 +915,7 @@ impl ListNodesOutput {
 pub mod list_nodes_output {
 
     /// A builder for [`ListNodesOutput`](crate::output::ListNodesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) node_info_list: std::option::Option<std::vec::Vec<crate::model::NodeInfo>>,
@@ -991,7 +991,7 @@ impl ListKafkaVersionsOutput {
 pub mod list_kafka_versions_output {
 
     /// A builder for [`ListKafkaVersionsOutput`](crate::output::ListKafkaVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kafka_versions: std::option::Option<std::vec::Vec<crate::model::KafkaVersion>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1066,7 +1066,7 @@ impl ListConfigurationsOutput {
 pub mod list_configurations_output {
 
     /// A builder for [`ListConfigurationsOutput`](crate::output::ListConfigurationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1142,7 +1142,7 @@ impl ListConfigurationRevisionsOutput {
 pub mod list_configuration_revisions_output {
 
     /// A builder for [`ListConfigurationRevisionsOutput`](crate::output::ListConfigurationRevisionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) revisions:
@@ -1219,7 +1219,7 @@ impl ListClustersV2Output {
 pub mod list_clusters_v2_output {
 
     /// A builder for [`ListClustersV2Output`](crate::output::ListClustersV2Output).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_info_list: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1295,7 +1295,7 @@ impl ListClustersOutput {
 pub mod list_clusters_output {
 
     /// A builder for [`ListClustersOutput`](crate::output::ListClustersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_info_list: std::option::Option<std::vec::Vec<crate::model::ClusterInfo>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1374,7 +1374,7 @@ impl ListClusterOperationsOutput {
 pub mod list_cluster_operations_output {
 
     /// A builder for [`ListClusterOperationsOutput`](crate::output::ListClusterOperationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_operation_info_list:
             std::option::Option<std::vec::Vec<crate::model::ClusterOperationInfo>>,
@@ -1450,7 +1450,7 @@ impl GetCompatibleKafkaVersionsOutput {
 pub mod get_compatible_kafka_versions_output {
 
     /// A builder for [`GetCompatibleKafkaVersionsOutput`](crate::output::GetCompatibleKafkaVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compatible_kafka_versions:
             std::option::Option<std::vec::Vec<crate::model::CompatibleKafkaVersion>>,
@@ -1553,7 +1553,7 @@ impl GetBootstrapBrokersOutput {
 pub mod get_bootstrap_brokers_output {
 
     /// A builder for [`GetBootstrapBrokersOutput`](crate::output::GetBootstrapBrokersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bootstrap_broker_string: std::option::Option<std::string::String>,
         pub(crate) bootstrap_broker_string_tls: std::option::Option<std::string::String>,
@@ -1752,7 +1752,7 @@ impl DescribeConfigurationRevisionOutput {
 pub mod describe_configuration_revision_output {
 
     /// A builder for [`DescribeConfigurationRevisionOutput`](crate::output::DescribeConfigurationRevisionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1904,7 +1904,7 @@ impl DescribeConfigurationOutput {
 pub mod describe_configuration_output {
 
     /// A builder for [`DescribeConfigurationOutput`](crate::output::DescribeConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2042,7 +2042,7 @@ impl DescribeClusterV2Output {
 pub mod describe_cluster_v2_output {
 
     /// A builder for [`DescribeClusterV2Output`](crate::output::DescribeClusterV2Output).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_info: std::option::Option<crate::model::Cluster>,
     }
@@ -2095,7 +2095,7 @@ impl DescribeClusterOperationOutput {
 pub mod describe_cluster_operation_output {
 
     /// A builder for [`DescribeClusterOperationOutput`](crate::output::DescribeClusterOperationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_operation_info: std::option::Option<crate::model::ClusterOperationInfo>,
     }
@@ -2146,7 +2146,7 @@ impl DescribeClusterOutput {
 pub mod describe_cluster_output {
 
     /// A builder for [`DescribeClusterOutput`](crate::output::DescribeClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_info: std::option::Option<crate::model::ClusterInfo>,
     }
@@ -2204,7 +2204,7 @@ impl DeleteConfigurationOutput {
 pub mod delete_configuration_output {
 
     /// A builder for [`DeleteConfigurationOutput`](crate::output::DeleteConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ConfigurationState>,
@@ -2274,7 +2274,7 @@ impl DeleteClusterOutput {
 pub mod delete_cluster_output {
 
     /// A builder for [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ClusterState>,
@@ -2362,7 +2362,7 @@ impl CreateConfigurationOutput {
 pub mod create_configuration_output {
 
     /// A builder for [`CreateConfigurationOutput`](crate::output::CreateConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2488,7 +2488,7 @@ impl CreateClusterV2Output {
 pub mod create_cluster_v2_output {
 
     /// A builder for [`CreateClusterV2Output`](crate::output::CreateClusterV2Output).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -2589,7 +2589,7 @@ impl CreateClusterOutput {
 pub mod create_cluster_output {
 
     /// A builder for [`CreateClusterOutput`](crate::output::CreateClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_name: std::option::Option<std::string::String>,
@@ -2671,7 +2671,7 @@ impl BatchDisassociateScramSecretOutput {
 pub mod batch_disassociate_scram_secret_output {
 
     /// A builder for [`BatchDisassociateScramSecretOutput`](crate::output::BatchDisassociateScramSecretOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) unprocessed_scram_secrets:
@@ -2754,7 +2754,7 @@ impl BatchAssociateScramSecretOutput {
 pub mod batch_associate_scram_secret_output {
 
     /// A builder for [`BatchAssociateScramSecretOutput`](crate::output::BatchAssociateScramSecretOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) unprocessed_scram_secrets:

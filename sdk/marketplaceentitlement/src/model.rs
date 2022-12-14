@@ -46,7 +46,7 @@ impl Entitlement {
 pub mod entitlement {
 
     /// A builder for [`Entitlement`](crate::model::Entitlement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_code: std::option::Option<std::string::String>,
         pub(crate) dimension: std::option::Option<std::string::String>,

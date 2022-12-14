@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_broker_input {
 
     /// A builder for [`CreateBrokerInput`](crate::input::CreateBrokerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authentication_strategy:
             std::option::Option<crate::model::AuthenticationStrategy>,
@@ -462,7 +462,7 @@ impl CreateBrokerInput {
 pub mod create_configuration_input {
 
     /// A builder for [`CreateConfigurationInput`](crate::input::CreateConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authentication_strategy:
             std::option::Option<crate::model::AuthenticationStrategy>,
@@ -682,7 +682,7 @@ impl CreateConfigurationInput {
 pub mod create_tags_input {
 
     /// A builder for [`CreateTagsInput`](crate::input::CreateTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -871,7 +871,7 @@ impl CreateTagsInput {
 pub mod create_user_input {
 
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_id: std::option::Option<std::string::String>,
         pub(crate) console_access: std::option::Option<bool>,
@@ -1112,7 +1112,7 @@ impl CreateUserInput {
 pub mod delete_broker_input {
 
     /// A builder for [`DeleteBrokerInput`](crate::input::DeleteBrokerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_id: std::option::Option<std::string::String>,
     }
@@ -1258,7 +1258,7 @@ impl DeleteBrokerInput {
 pub mod delete_tags_input {
 
     /// A builder for [`DeleteTagsInput`](crate::input::DeleteTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1443,7 +1443,7 @@ impl DeleteTagsInput {
 pub mod delete_user_input {
 
     /// A builder for [`DeleteUserInput`](crate::input::DeleteUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -1625,7 +1625,7 @@ impl DeleteUserInput {
 pub mod describe_broker_input {
 
     /// A builder for [`DescribeBrokerInput`](crate::input::DescribeBrokerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_id: std::option::Option<std::string::String>,
     }
@@ -1771,7 +1771,7 @@ impl DescribeBrokerInput {
 pub mod describe_broker_engine_types_input {
 
     /// A builder for [`DescribeBrokerEngineTypesInput`](crate::input::DescribeBrokerEngineTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_type: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1947,7 +1947,7 @@ impl DescribeBrokerEngineTypesInput {
 pub mod describe_broker_instance_options_input {
 
     /// A builder for [`DescribeBrokerInstanceOptionsInput`](crate::input::DescribeBrokerInstanceOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_type: std::option::Option<std::string::String>,
         pub(crate) host_instance_type: std::option::Option<std::string::String>,
@@ -2166,7 +2166,7 @@ impl DescribeBrokerInstanceOptionsInput {
 pub mod describe_configuration_input {
 
     /// A builder for [`DescribeConfigurationInput`](crate::input::DescribeConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_id: std::option::Option<std::string::String>,
     }
@@ -2321,7 +2321,7 @@ impl DescribeConfigurationInput {
 pub mod describe_configuration_revision_input {
 
     /// A builder for [`DescribeConfigurationRevisionInput`](crate::input::DescribeConfigurationRevisionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_id: std::option::Option<std::string::String>,
         pub(crate) configuration_revision: std::option::Option<std::string::String>,
@@ -2511,7 +2511,7 @@ impl DescribeConfigurationRevisionInput {
 pub mod describe_user_input {
 
     /// A builder for [`DescribeUserInput`](crate::input::DescribeUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -2693,7 +2693,7 @@ impl DescribeUserInput {
 pub mod list_brokers_input {
 
     /// A builder for [`ListBrokersInput`](crate::input::ListBrokersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2850,7 +2850,7 @@ impl ListBrokersInput {
 pub mod list_configuration_revisions_input {
 
     /// A builder for [`ListConfigurationRevisionsInput`](crate::input::ListConfigurationRevisionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3048,7 +3048,7 @@ impl ListConfigurationRevisionsInput {
 pub mod list_configurations_input {
 
     /// A builder for [`ListConfigurationsInput`](crate::input::ListConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3207,7 +3207,7 @@ impl ListConfigurationsInput {
 pub mod list_tags_input {
 
     /// A builder for [`ListTagsInput`](crate::input::ListTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3348,7 +3348,7 @@ impl ListTagsInput {
 pub mod list_users_input {
 
     /// A builder for [`ListUsersInput`](crate::input::ListUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3532,7 +3532,7 @@ impl ListUsersInput {
 pub mod reboot_broker_input {
 
     /// A builder for [`RebootBrokerInput`](crate::input::RebootBrokerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_id: std::option::Option<std::string::String>,
     }
@@ -3682,7 +3682,7 @@ impl RebootBrokerInput {
 pub mod update_broker_input {
 
     /// A builder for [`UpdateBrokerInput`](crate::input::UpdateBrokerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authentication_strategy:
             std::option::Option<crate::model::AuthenticationStrategy>,
@@ -3988,7 +3988,7 @@ impl UpdateBrokerInput {
 pub mod update_configuration_input {
 
     /// A builder for [`UpdateConfigurationInput`](crate::input::UpdateConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_id: std::option::Option<std::string::String>,
         pub(crate) data: std::option::Option<std::string::String>,
@@ -4181,7 +4181,7 @@ impl UpdateConfigurationInput {
 pub mod update_user_input {
 
     /// A builder for [`UpdateUserInput`](crate::input::UpdateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_id: std::option::Option<std::string::String>,
         pub(crate) console_access: std::option::Option<bool>,

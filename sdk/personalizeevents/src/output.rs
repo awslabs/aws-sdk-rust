@@ -7,7 +7,7 @@ pub struct PutUsersOutput {}
 pub mod put_users_output {
 
     /// A builder for [`PutUsersOutput`](crate::output::PutUsersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutUsersOutput`](crate::output::PutUsersOutput).
@@ -31,7 +31,7 @@ pub struct PutItemsOutput {}
 pub mod put_items_output {
 
     /// A builder for [`PutItemsOutput`](crate::output::PutItemsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutItemsOutput`](crate::output::PutItemsOutput).
@@ -55,7 +55,7 @@ pub struct PutEventsOutput {}
 pub mod put_events_output {
 
     /// A builder for [`PutEventsOutput`](crate::output::PutEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutEventsOutput`](crate::output::PutEventsOutput).

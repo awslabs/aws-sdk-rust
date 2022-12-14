@@ -17,7 +17,7 @@ impl UpdateMetricSetOutput {
 pub mod update_metric_set_output {
 
     /// A builder for [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_set_arn: std::option::Option<std::string::String>,
     }
@@ -68,7 +68,7 @@ impl UpdateAnomalyDetectorOutput {
 pub mod update_anomaly_detector_output {
 
     /// A builder for [`UpdateAnomalyDetectorOutput`](crate::output::UpdateAnomalyDetectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
     }
@@ -119,7 +119,7 @@ impl UpdateAlertOutput {
 pub mod update_alert_output {
 
     /// A builder for [`UpdateAlertOutput`](crate::output::UpdateAlertOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alert_arn: std::option::Option<std::string::String>,
     }
@@ -157,7 +157,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -181,7 +181,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -205,7 +205,7 @@ pub struct PutFeedbackOutput {}
 pub mod put_feedback_output {
 
     /// A builder for [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
@@ -243,7 +243,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -315,7 +315,7 @@ impl ListMetricSetsOutput {
 pub mod list_metric_sets_output {
 
     /// A builder for [`ListMetricSetsOutput`](crate::output::ListMetricSetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_set_summary_list:
             std::option::Option<std::vec::Vec<crate::model::MetricSetSummary>>,
@@ -413,7 +413,7 @@ impl ListAnomalyGroupTimeSeriesOutput {
 pub mod list_anomaly_group_time_series_output {
 
     /// A builder for [`ListAnomalyGroupTimeSeriesOutput`](crate::output::ListAnomalyGroupTimeSeriesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_group_id: std::option::Option<std::string::String>,
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -549,7 +549,7 @@ impl ListAnomalyGroupSummariesOutput {
 pub mod list_anomaly_group_summaries_output {
 
     /// A builder for [`ListAnomalyGroupSummariesOutput`](crate::output::ListAnomalyGroupSummariesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_group_summary_list:
             std::option::Option<std::vec::Vec<crate::model::AnomalyGroupSummary>>,
@@ -651,7 +651,7 @@ impl ListAnomalyGroupRelatedMetricsOutput {
 pub mod list_anomaly_group_related_metrics_output {
 
     /// A builder for [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inter_metric_impact_list:
             std::option::Option<std::vec::Vec<crate::model::InterMetricImpactDetails>>,
@@ -734,7 +734,7 @@ impl ListAnomalyDetectorsOutput {
 pub mod list_anomaly_detectors_output {
 
     /// A builder for [`ListAnomalyDetectorsOutput`](crate::output::ListAnomalyDetectorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_summary_list:
             std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorSummary>>,
@@ -814,7 +814,7 @@ impl ListAlertsOutput {
 pub mod list_alerts_output {
 
     /// A builder for [`ListAlertsOutput`](crate::output::ListAlertsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alert_summary_list:
             std::option::Option<std::vec::Vec<crate::model::AlertSummary>>,
@@ -891,7 +891,7 @@ impl GetSampleDataOutput {
 pub mod get_sample_data_output {
 
     /// A builder for [`GetSampleDataOutput`](crate::output::GetSampleDataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) header_values: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) sample_rows:
@@ -980,7 +980,7 @@ impl GetFeedbackOutput {
 pub mod get_feedback_output {
 
     /// A builder for [`GetFeedbackOutput`](crate::output::GetFeedbackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_group_time_series_feedback:
             std::option::Option<std::vec::Vec<crate::model::TimeSeriesFeedback>>,
@@ -1056,7 +1056,7 @@ impl GetDataQualityMetricsOutput {
 pub mod get_data_quality_metrics_output {
 
     /// A builder for [`GetDataQualityMetricsOutput`](crate::output::GetDataQualityMetricsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_data_quality_metric_list:
             std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorDataQualityMetric>>,
@@ -1122,7 +1122,7 @@ impl GetAnomalyGroupOutput {
 pub mod get_anomaly_group_output {
 
     /// A builder for [`GetAnomalyGroupOutput`](crate::output::GetAnomalyGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_group: std::option::Option<crate::model::AnomalyGroup>,
     }
@@ -1175,7 +1175,7 @@ impl DetectMetricSetConfigOutput {
 pub mod detect_metric_set_config_output {
 
     /// A builder for [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detected_metric_set_config:
             std::option::Option<crate::model::DetectedMetricSetConfig>,
@@ -1324,7 +1324,7 @@ impl DescribeMetricSetOutput {
 pub mod describe_metric_set_output {
 
     /// A builder for [`DescribeMetricSetOutput`](crate::output::DescribeMetricSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_set_arn: std::option::Option<std::string::String>,
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -1651,7 +1651,7 @@ impl DescribeAnomalyDetectorOutput {
 pub mod describe_anomaly_detector_output {
 
     /// A builder for [`DescribeAnomalyDetectorOutput`](crate::output::DescribeAnomalyDetectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
         pub(crate) anomaly_detector_name: std::option::Option<std::string::String>,
@@ -1848,7 +1848,7 @@ impl DescribeAnomalyDetectionExecutionsOutput {
 pub mod describe_anomaly_detection_executions_output {
 
     /// A builder for [`DescribeAnomalyDetectionExecutionsOutput`](crate::output::DescribeAnomalyDetectionExecutionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_list:
             std::option::Option<std::vec::Vec<crate::model::ExecutionStatus>>,
@@ -1918,7 +1918,7 @@ impl DescribeAlertOutput {
 pub mod describe_alert_output {
 
     /// A builder for [`DescribeAlertOutput`](crate::output::DescribeAlertOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alert: std::option::Option<crate::model::Alert>,
     }
@@ -1954,7 +1954,7 @@ pub struct DeleteAnomalyDetectorOutput {}
 pub mod delete_anomaly_detector_output {
 
     /// A builder for [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput).
@@ -1978,7 +1978,7 @@ pub struct DeleteAlertOutput {}
 pub mod delete_alert_output {
 
     /// A builder for [`DeleteAlertOutput`](crate::output::DeleteAlertOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAlertOutput`](crate::output::DeleteAlertOutput).
@@ -2002,7 +2002,7 @@ pub struct DeactivateAnomalyDetectorOutput {}
 pub mod deactivate_anomaly_detector_output {
 
     /// A builder for [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput).
@@ -2036,7 +2036,7 @@ impl CreateMetricSetOutput {
 pub mod create_metric_set_output {
 
     /// A builder for [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_set_arn: std::option::Option<std::string::String>,
     }
@@ -2087,7 +2087,7 @@ impl CreateAnomalyDetectorOutput {
 pub mod create_anomaly_detector_output {
 
     /// A builder for [`CreateAnomalyDetectorOutput`](crate::output::CreateAnomalyDetectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
     }
@@ -2138,7 +2138,7 @@ impl CreateAlertOutput {
 pub mod create_alert_output {
 
     /// A builder for [`CreateAlertOutput`](crate::output::CreateAlertOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alert_arn: std::option::Option<std::string::String>,
     }
@@ -2176,7 +2176,7 @@ pub struct BackTestAnomalyDetectorOutput {}
 pub mod back_test_anomaly_detector_output {
 
     /// A builder for [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput).
@@ -2200,7 +2200,7 @@ pub struct ActivateAnomalyDetectorOutput {}
 pub mod activate_anomaly_detector_output {
 
     /// A builder for [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput).

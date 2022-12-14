@@ -25,7 +25,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -242,7 +242,7 @@ impl S3Configuration {
 pub mod s3_configuration {
 
     /// A builder for [`S3Configuration`](crate::model::S3Configuration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -402,7 +402,7 @@ impl ImportJobProperties {
 pub mod import_job_properties {
 
     /// A builder for [`ImportJobProperties`](crate::model::ImportJobProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -632,7 +632,7 @@ impl ExportJobProperties {
 pub mod export_job_properties {
 
     /// A builder for [`ExportJobProperties`](crate::model::ExportJobProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -847,7 +847,7 @@ impl DatastoreProperties {
 pub mod datastore_properties {
 
     /// A builder for [`DatastoreProperties`](crate::model::DatastoreProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_id: std::option::Option<std::string::String>,
         pub(crate) datastore_arn: std::option::Option<std::string::String>,
@@ -1015,7 +1015,7 @@ impl PreloadDataConfig {
 pub mod preload_data_config {
 
     /// A builder for [`PreloadDataConfig`](crate::model::PreloadDataConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) preload_data_type: std::option::Option<crate::model::PreloadDataType>,
     }
@@ -1151,7 +1151,7 @@ impl SseConfiguration {
 pub mod sse_configuration {
 
     /// A builder for [`SseConfiguration`](crate::model::SseConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_encryption_config: std::option::Option<crate::model::KmsEncryptionConfig>,
     }
@@ -1209,7 +1209,7 @@ impl KmsEncryptionConfig {
 pub mod kms_encryption_config {
 
     /// A builder for [`KmsEncryptionConfig`](crate::model::KmsEncryptionConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cmk_type: std::option::Option<crate::model::CmkType>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -1565,7 +1565,7 @@ impl DatastoreFilter {
 pub mod datastore_filter {
 
     /// A builder for [`DatastoreFilter`](crate::model::DatastoreFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_name: std::option::Option<std::string::String>,
         pub(crate) datastore_status: std::option::Option<crate::model::DatastoreStatus>,

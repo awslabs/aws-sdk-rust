@@ -25,7 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
 
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -241,7 +241,7 @@ impl EnvironmentSummary {
 pub mod environment_summary {
 
     /// A builder for [`EnvironmentSummary`](crate::model::EnvironmentSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) environment_arn: std::option::Option<std::string::String>,
@@ -586,7 +586,7 @@ impl HighAvailabilityConfig {
 pub mod high_availability_config {
 
     /// A builder for [`HighAvailabilityConfig`](crate::model::HighAvailabilityConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) desired_capacity: std::option::Option<i32>,
     }
@@ -692,7 +692,7 @@ impl FsxStorageConfiguration {
 pub mod fsx_storage_configuration {
 
     /// A builder for [`FsxStorageConfiguration`](crate::model::FsxStorageConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) mount_point: std::option::Option<std::string::String>,
@@ -762,7 +762,7 @@ impl EfsStorageConfiguration {
 pub mod efs_storage_configuration {
 
     /// A builder for [`EfsStorageConfiguration`](crate::model::EfsStorageConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) mount_point: std::option::Option<std::string::String>,
@@ -832,7 +832,7 @@ impl PendingMaintenance {
 pub mod pending_maintenance {
 
     /// A builder for [`PendingMaintenance`](crate::model::PendingMaintenance).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule: std::option::Option<crate::model::MaintenanceSchedule>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
@@ -905,7 +905,7 @@ impl MaintenanceSchedule {
 pub mod maintenance_schedule {
 
     /// A builder for [`MaintenanceSchedule`](crate::model::MaintenanceSchedule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1026,7 +1026,7 @@ impl ScriptBatchJobIdentifier {
 pub mod script_batch_job_identifier {
 
     /// A builder for [`ScriptBatchJobIdentifier`](crate::model::ScriptBatchJobIdentifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) script_name: std::option::Option<std::string::String>,
     }
@@ -1081,7 +1081,7 @@ impl FileBatchJobIdentifier {
 pub mod file_batch_job_identifier {
 
     /// A builder for [`FileBatchJobIdentifier`](crate::model::FileBatchJobIdentifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_name: std::option::Option<std::string::String>,
         pub(crate) folder_path: std::option::Option<std::string::String>,
@@ -1183,7 +1183,7 @@ impl DeploymentSummary {
 pub mod deployment_summary {
 
     /// A builder for [`DeploymentSummary`](crate::model::DeploymentSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -1453,7 +1453,7 @@ impl DataSetSummary {
 pub mod data_set_summary {
 
     /// A builder for [`DataSetSummary`](crate::model::DataSetSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_name: std::option::Option<std::string::String>,
         pub(crate) data_set_org: std::option::Option<std::string::String>,
@@ -1587,7 +1587,7 @@ impl DataSetImportTask {
 pub mod data_set_import_task {
 
     /// A builder for [`DataSetImportTask`](crate::model::DataSetImportTask).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DataSetTaskLifecycle>,
@@ -1693,7 +1693,7 @@ impl DataSetImportSummary {
 pub mod data_set_import_summary {
 
     /// A builder for [`DataSetImportSummary`](crate::model::DataSetImportSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total: std::option::Option<i32>,
         pub(crate) succeeded: std::option::Option<i32>,
@@ -1935,7 +1935,7 @@ impl BatchJobExecutionSummary {
 pub mod batch_job_execution_summary {
 
     /// A builder for [`BatchJobExecutionSummary`](crate::model::BatchJobExecutionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_id: std::option::Option<std::string::String>,
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -2369,7 +2369,7 @@ impl ScriptBatchJobDefinition {
 pub mod script_batch_job_definition {
 
     /// A builder for [`ScriptBatchJobDefinition`](crate::model::ScriptBatchJobDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) script_name: std::option::Option<std::string::String>,
     }
@@ -2424,7 +2424,7 @@ impl FileBatchJobDefinition {
 pub mod file_batch_job_definition {
 
     /// A builder for [`FileBatchJobDefinition`](crate::model::FileBatchJobDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_name: std::option::Option<std::string::String>,
         pub(crate) folder_path: std::option::Option<std::string::String>,
@@ -2505,7 +2505,7 @@ impl ApplicationVersionSummary {
 pub mod application_version_summary {
 
     /// A builder for [`ApplicationVersionSummary`](crate::model::ApplicationVersionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_version: std::option::Option<i32>,
         pub(crate) status: std::option::Option<crate::model::ApplicationVersionLifecycle>,
@@ -2753,7 +2753,7 @@ impl GdgDetailAttributes {
 pub mod gdg_detail_attributes {
 
     /// A builder for [`GdgDetailAttributes`](crate::model::GdgDetailAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
         pub(crate) roll_disposition: std::option::Option<std::string::String>,
@@ -2851,7 +2851,7 @@ impl VsamDetailAttributes {
 pub mod vsam_detail_attributes {
 
     /// A builder for [`VsamDetailAttributes`](crate::model::VsamDetailAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encoding: std::option::Option<std::string::String>,
         pub(crate) record_format: std::option::Option<std::string::String>,
@@ -2995,7 +2995,7 @@ impl AlternateKey {
 pub mod alternate_key {
 
     /// A builder for [`AlternateKey`](crate::model::AlternateKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) offset: std::option::Option<i32>,
@@ -3093,7 +3093,7 @@ impl PrimaryKey {
 pub mod primary_key {
 
     /// A builder for [`PrimaryKey`](crate::model::PrimaryKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) offset: std::option::Option<i32>,
@@ -3225,7 +3225,7 @@ impl DataSetImportItem {
 pub mod data_set_import_item {
 
     /// A builder for [`DataSetImportItem`](crate::model::DataSetImportItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set: std::option::Option<crate::model::DataSet>,
         pub(crate) external_location: std::option::Option<crate::model::ExternalLocation>,
@@ -3353,7 +3353,7 @@ impl DataSet {
 pub mod data_set {
 
     /// A builder for [`DataSet`](crate::model::DataSet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_type: std::option::Option<std::string::String>,
         pub(crate) dataset_name: std::option::Option<std::string::String>,
@@ -3465,7 +3465,7 @@ impl RecordLength {
 pub mod record_length {
 
     /// A builder for [`RecordLength`](crate::model::RecordLength).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min: std::option::Option<i32>,
         pub(crate) max: std::option::Option<i32>,
@@ -3583,7 +3583,7 @@ impl GdgAttributes {
 pub mod gdg_attributes {
 
     /// A builder for [`GdgAttributes`](crate::model::GdgAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limit: std::option::Option<i32>,
         pub(crate) roll_disposition: std::option::Option<std::string::String>,
@@ -3674,7 +3674,7 @@ impl VsamAttributes {
 pub mod vsam_attributes {
 
     /// A builder for [`VsamAttributes`](crate::model::VsamAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<std::string::String>,
         pub(crate) encoding: std::option::Option<std::string::String>,
@@ -3863,7 +3863,7 @@ impl ApplicationSummary {
 pub mod application_summary {
 
     /// A builder for [`ApplicationSummary`](crate::model::ApplicationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4367,7 +4367,7 @@ impl LogGroupSummary {
 pub mod log_group_summary {
 
     /// A builder for [`LogGroupSummary`](crate::model::LogGroupSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_type: std::option::Option<std::string::String>,
         pub(crate) log_group_name: std::option::Option<std::string::String>,
@@ -4444,7 +4444,7 @@ impl DeployedVersionSummary {
 pub mod deployed_version_summary {
 
     /// A builder for [`DeployedVersionSummary`](crate::model::DeployedVersionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_version: std::option::Option<i32>,
         pub(crate) status: std::option::Option<crate::model::DeploymentLifecycle>,
@@ -4529,7 +4529,7 @@ impl EngineVersionsSummary {
 pub mod engine_versions_summary {
 
     /// A builder for [`EngineVersionsSummary`](crate::model::EngineVersionsSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_type: std::option::Option<std::string::String>,
         pub(crate) engine_version: std::option::Option<std::string::String>,

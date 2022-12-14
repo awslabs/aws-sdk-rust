@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod batch_create_table_rows_input {
 
     /// A builder for [`BatchCreateTableRowsInput`](crate::input::BatchCreateTableRowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) table_id: std::option::Option<std::string::String>,
@@ -249,7 +249,7 @@ impl BatchCreateTableRowsInput {
 pub mod batch_delete_table_rows_input {
 
     /// A builder for [`BatchDeleteTableRowsInput`](crate::input::BatchDeleteTableRowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) table_id: std::option::Option<std::string::String>,
@@ -493,7 +493,7 @@ impl BatchDeleteTableRowsInput {
 pub mod batch_update_table_rows_input {
 
     /// A builder for [`BatchUpdateTableRowsInput`](crate::input::BatchUpdateTableRowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) table_id: std::option::Option<std::string::String>,
@@ -737,7 +737,7 @@ impl BatchUpdateTableRowsInput {
 pub mod batch_upsert_table_rows_input {
 
     /// A builder for [`BatchUpsertTableRowsInput`](crate::input::BatchUpsertTableRowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) table_id: std::option::Option<std::string::String>,
@@ -981,7 +981,7 @@ impl BatchUpsertTableRowsInput {
 pub mod describe_table_data_import_job_input {
 
     /// A builder for [`DescribeTableDataImportJobInput`](crate::input::DescribeTableDataImportJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) table_id: std::option::Option<std::string::String>,
@@ -1203,7 +1203,7 @@ impl DescribeTableDataImportJobInput {
 pub mod get_screen_data_input {
 
     /// A builder for [`GetScreenDataInput`](crate::input::GetScreenDataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1436,7 +1436,7 @@ impl GetScreenDataInput {
 pub mod invoke_screen_automation_input {
 
     /// A builder for [`InvokeScreenAutomationInput`](crate::input::InvokeScreenAutomationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1766,7 +1766,7 @@ impl InvokeScreenAutomationInput {
 pub mod list_table_columns_input {
 
     /// A builder for [`ListTableColumnsInput`](crate::input::ListTableColumnsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) table_id: std::option::Option<std::string::String>,
@@ -1981,7 +1981,7 @@ impl ListTableColumnsInput {
 pub mod list_table_rows_input {
 
     /// A builder for [`ListTableRowsInput`](crate::input::ListTableRowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) table_id: std::option::Option<std::string::String>,
@@ -2228,7 +2228,7 @@ impl ListTableRowsInput {
 pub mod list_tables_input {
 
     /// A builder for [`ListTablesInput`](crate::input::ListTablesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2427,7 +2427,7 @@ impl ListTablesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2575,7 +2575,7 @@ impl ListTagsForResourceInput {
 pub mod query_table_rows_input {
 
     /// A builder for [`QueryTableRowsInput`](crate::input::QueryTableRowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) table_id: std::option::Option<std::string::String>,
@@ -2816,7 +2816,7 @@ impl QueryTableRowsInput {
 pub mod start_table_data_import_job_input {
 
     /// A builder for [`StartTableDataImportJobInput`](crate::input::StartTableDataImportJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_id: std::option::Option<std::string::String>,
         pub(crate) data_source: std::option::Option<crate::model::ImportDataSource>,
@@ -3085,7 +3085,7 @@ impl StartTableDataImportJobInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -3274,7 +3274,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,

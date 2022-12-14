@@ -18,7 +18,7 @@ impl StartSupportDataExportOutput {
 pub mod start_support_data_export_output {
 
     /// A builder for [`StartSupportDataExportOutput`](crate::output::StartSupportDataExportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_request_id: std::option::Option<std::string::String>,
     }
@@ -69,7 +69,7 @@ impl GenerateDataSetOutput {
 pub mod generate_data_set_output {
 
     /// A builder for [`GenerateDataSetOutput`](crate::output::GenerateDataSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_request_id: std::option::Option<std::string::String>,
     }

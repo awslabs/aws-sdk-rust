@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod activate_key_signing_key_input {
 
     /// A builder for [`ActivateKeySigningKeyInput`](crate::input::ActivateKeySigningKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -193,7 +193,7 @@ impl ActivateKeySigningKeyInput {
 pub mod associate_vpc_with_hosted_zone_input {
 
     /// A builder for [`AssociateVpcWithHostedZoneInput`](crate::input::AssociateVpcWithHostedZoneInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) vpc: std::option::Option<crate::model::Vpc>,
@@ -388,7 +388,7 @@ impl AssociateVpcWithHostedZoneInput {
 pub mod change_cidr_collection_input {
 
     /// A builder for [`ChangeCidrCollectionInput`](crate::input::ChangeCidrCollectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) collection_version: std::option::Option<i64>,
@@ -595,7 +595,7 @@ impl ChangeCidrCollectionInput {
 pub mod change_resource_record_sets_input {
 
     /// A builder for [`ChangeResourceRecordSetsInput`](crate::input::ChangeResourceRecordSetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) change_batch: std::option::Option<crate::model::ChangeBatch>,
@@ -782,7 +782,7 @@ impl ChangeResourceRecordSetsInput {
 pub mod change_tags_for_resource_input {
 
     /// A builder for [`ChangeTagsForResourceInput`](crate::input::ChangeTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::TagResourceType>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -1037,7 +1037,7 @@ impl ChangeTagsForResourceInput {
 pub mod create_cidr_collection_input {
 
     /// A builder for [`CreateCidrCollectionInput`](crate::input::CreateCidrCollectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) caller_reference: std::option::Option<std::string::String>,
@@ -1196,7 +1196,7 @@ impl CreateCidrCollectionInput {
 pub mod create_health_check_input {
 
     /// A builder for [`CreateHealthCheckInput`](crate::input::CreateHealthCheckInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) caller_reference: std::option::Option<std::string::String>,
         pub(crate) health_check_config: std::option::Option<crate::model::HealthCheckConfig>,
@@ -1368,7 +1368,7 @@ impl CreateHealthCheckInput {
 pub mod create_hosted_zone_input {
 
     /// A builder for [`CreateHostedZoneInput`](crate::input::CreateHostedZoneInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) vpc: std::option::Option<crate::model::Vpc>,
@@ -1583,7 +1583,7 @@ impl CreateHostedZoneInput {
 pub mod create_key_signing_key_input {
 
     /// A builder for [`CreateKeySigningKeyInput`](crate::input::CreateKeySigningKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) caller_reference: std::option::Option<std::string::String>,
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
@@ -1858,7 +1858,7 @@ impl CreateKeySigningKeyInput {
 pub mod create_query_logging_config_input {
 
     /// A builder for [`CreateQueryLoggingConfigInput`](crate::input::CreateQueryLoggingConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
@@ -2028,7 +2028,7 @@ impl CreateQueryLoggingConfigInput {
 pub mod create_reusable_delegation_set_input {
 
     /// A builder for [`CreateReusableDelegationSetInput`](crate::input::CreateReusableDelegationSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) caller_reference: std::option::Option<std::string::String>,
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
@@ -2187,7 +2187,7 @@ impl CreateReusableDelegationSetInput {
 pub mod create_traffic_policy_input {
 
     /// A builder for [`CreateTrafficPolicyInput`](crate::input::CreateTrafficPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) document: std::option::Option<std::string::String>,
@@ -2353,7 +2353,7 @@ impl CreateTrafficPolicyInput {
 pub mod create_traffic_policy_instance_input {
 
     /// A builder for [`CreateTrafficPolicyInstanceInput`](crate::input::CreateTrafficPolicyInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2549,7 +2549,7 @@ impl CreateTrafficPolicyInstanceInput {
 pub mod create_traffic_policy_version_input {
 
     /// A builder for [`CreateTrafficPolicyVersionInput`](crate::input::CreateTrafficPolicyVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) document: std::option::Option<std::string::String>,
@@ -2734,7 +2734,7 @@ impl CreateTrafficPolicyVersionInput {
 pub mod create_vpc_association_authorization_input {
 
     /// A builder for [`CreateVpcAssociationAuthorizationInput`](crate::input::CreateVpcAssociationAuthorizationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) vpc: std::option::Option<crate::model::Vpc>,
@@ -2915,7 +2915,7 @@ impl CreateVpcAssociationAuthorizationInput {
 pub mod deactivate_key_signing_key_input {
 
     /// A builder for [`DeactivateKeySigningKeyInput`](crate::input::DeactivateKeySigningKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3103,7 +3103,7 @@ impl DeactivateKeySigningKeyInput {
 pub mod delete_cidr_collection_input {
 
     /// A builder for [`DeleteCidrCollectionInput`](crate::input::DeleteCidrCollectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -3249,7 +3249,7 @@ impl DeleteCidrCollectionInput {
 pub mod delete_health_check_input {
 
     /// A builder for [`DeleteHealthCheckInput`](crate::input::DeleteHealthCheckInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_check_id: std::option::Option<std::string::String>,
     }
@@ -3404,7 +3404,7 @@ impl DeleteHealthCheckInput {
 pub mod delete_hosted_zone_input {
 
     /// A builder for [`DeleteHostedZoneInput`](crate::input::DeleteHostedZoneInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -3551,7 +3551,7 @@ impl DeleteHostedZoneInput {
 pub mod delete_key_signing_key_input {
 
     /// A builder for [`DeleteKeySigningKeyInput`](crate::input::DeleteKeySigningKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3739,7 +3739,7 @@ impl DeleteKeySigningKeyInput {
 pub mod delete_query_logging_config_input {
 
     /// A builder for [`DeleteQueryLoggingConfigInput`](crate::input::DeleteQueryLoggingConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -3885,7 +3885,7 @@ impl DeleteQueryLoggingConfigInput {
 pub mod delete_reusable_delegation_set_input {
 
     /// A builder for [`DeleteReusableDelegationSetInput`](crate::input::DeleteReusableDelegationSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -4032,7 +4032,7 @@ impl DeleteReusableDelegationSetInput {
 pub mod delete_traffic_policy_input {
 
     /// A builder for [`DeleteTrafficPolicyInput`](crate::input::DeleteTrafficPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i32>,
@@ -4214,7 +4214,7 @@ impl DeleteTrafficPolicyInput {
 pub mod delete_traffic_policy_instance_input {
 
     /// A builder for [`DeleteTrafficPolicyInstanceInput`](crate::input::DeleteTrafficPolicyInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -4364,7 +4364,7 @@ impl DeleteTrafficPolicyInstanceInput {
 pub mod delete_vpc_association_authorization_input {
 
     /// A builder for [`DeleteVpcAssociationAuthorizationInput`](crate::input::DeleteVpcAssociationAuthorizationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) vpc: std::option::Option<crate::model::Vpc>,
@@ -4545,7 +4545,7 @@ impl DeleteVpcAssociationAuthorizationInput {
 pub mod disable_hosted_zone_dnssec_input {
 
     /// A builder for [`DisableHostedZoneDnssecInput`](crate::input::DisableHostedZoneDnssecInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
     }
@@ -4701,7 +4701,7 @@ impl DisableHostedZoneDnssecInput {
 pub mod disassociate_vpc_from_hosted_zone_input {
 
     /// A builder for [`DisassociateVpcFromHostedZoneInput`](crate::input::DisassociateVpcFromHostedZoneInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) vpc: std::option::Option<crate::model::Vpc>,
@@ -4894,7 +4894,7 @@ impl DisassociateVpcFromHostedZoneInput {
 pub mod enable_hosted_zone_dnssec_input {
 
     /// A builder for [`EnableHostedZoneDnssecInput`](crate::input::EnableHostedZoneDnssecInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
     }
@@ -5050,7 +5050,7 @@ impl EnableHostedZoneDnssecInput {
 pub mod get_account_limit_input {
 
     /// A builder for [`GetAccountLimitInput`](crate::input::GetAccountLimitInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::AccountLimitType>,
     }
@@ -5213,7 +5213,7 @@ impl GetAccountLimitInput {
 pub mod get_change_input {
 
     /// A builder for [`GetChangeInput`](crate::input::GetChangeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -5356,7 +5356,7 @@ impl GetChangeInput {
 pub mod get_checker_ip_ranges_input {
 
     /// A builder for [`GetCheckerIpRangesInput`](crate::input::GetCheckerIpRangesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetCheckerIpRangesInput`](crate::input::GetCheckerIpRangesInput).
@@ -5470,7 +5470,7 @@ impl GetCheckerIpRangesInput {
 pub mod get_dnssec_input {
 
     /// A builder for [`GetDnssecInput`](crate::input::GetDnssecInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
     }
@@ -5622,7 +5622,7 @@ impl GetDnssecInput {
 pub mod get_geo_location_input {
 
     /// A builder for [`GetGeoLocationInput`](crate::input::GetGeoLocationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) continent_code: std::option::Option<std::string::String>,
         pub(crate) country_code: std::option::Option<std::string::String>,
@@ -5828,7 +5828,7 @@ impl GetGeoLocationInput {
 pub mod get_health_check_input {
 
     /// A builder for [`GetHealthCheckInput`](crate::input::GetHealthCheckInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_check_id: std::option::Option<std::string::String>,
     }
@@ -5981,7 +5981,7 @@ impl GetHealthCheckInput {
 pub mod get_health_check_count_input {
 
     /// A builder for [`GetHealthCheckCountInput`](crate::input::GetHealthCheckCountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetHealthCheckCountInput`](crate::input::GetHealthCheckCountInput).
@@ -6095,7 +6095,7 @@ impl GetHealthCheckCountInput {
 pub mod get_health_check_last_failure_reason_input {
 
     /// A builder for [`GetHealthCheckLastFailureReasonInput`](crate::input::GetHealthCheckLastFailureReasonInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_check_id: std::option::Option<std::string::String>,
     }
@@ -6254,7 +6254,7 @@ impl GetHealthCheckLastFailureReasonInput {
 pub mod get_health_check_status_input {
 
     /// A builder for [`GetHealthCheckStatusInput`](crate::input::GetHealthCheckStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_check_id: std::option::Option<std::string::String>,
     }
@@ -6413,7 +6413,7 @@ impl GetHealthCheckStatusInput {
 pub mod get_hosted_zone_input {
 
     /// A builder for [`GetHostedZoneInput`](crate::input::GetHostedZoneInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -6558,7 +6558,7 @@ impl GetHostedZoneInput {
 pub mod get_hosted_zone_count_input {
 
     /// A builder for [`GetHostedZoneCountInput`](crate::input::GetHostedZoneCountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetHostedZoneCountInput`](crate::input::GetHostedZoneCountInput).
@@ -6672,7 +6672,7 @@ impl GetHostedZoneCountInput {
 pub mod get_hosted_zone_limit_input {
 
     /// A builder for [`GetHostedZoneLimitInput`](crate::input::GetHostedZoneLimitInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::HostedZoneLimitType>,
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
@@ -6871,7 +6871,7 @@ impl GetHostedZoneLimitInput {
 pub mod get_query_logging_config_input {
 
     /// A builder for [`GetQueryLoggingConfigInput`](crate::input::GetQueryLoggingConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -7017,7 +7017,7 @@ impl GetQueryLoggingConfigInput {
 pub mod get_reusable_delegation_set_input {
 
     /// A builder for [`GetReusableDelegationSetInput`](crate::input::GetReusableDelegationSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -7164,7 +7164,7 @@ impl GetReusableDelegationSetInput {
 pub mod get_reusable_delegation_set_limit_input {
 
     /// A builder for [`GetReusableDelegationSetLimitInput`](crate::input::GetReusableDelegationSetLimitInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ReusableDelegationSetLimitType>,
         pub(crate) delegation_set_id: std::option::Option<std::string::String>,
@@ -7355,7 +7355,7 @@ impl GetReusableDelegationSetLimitInput {
 pub mod get_traffic_policy_input {
 
     /// A builder for [`GetTrafficPolicyInput`](crate::input::GetTrafficPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i32>,
@@ -7537,7 +7537,7 @@ impl GetTrafficPolicyInput {
 pub mod get_traffic_policy_instance_input {
 
     /// A builder for [`GetTrafficPolicyInstanceInput`](crate::input::GetTrafficPolicyInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -7683,7 +7683,7 @@ impl GetTrafficPolicyInstanceInput {
 pub mod get_traffic_policy_instance_count_input {
 
     /// A builder for [`GetTrafficPolicyInstanceCountInput`](crate::input::GetTrafficPolicyInstanceCountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetTrafficPolicyInstanceCountInput`](crate::input::GetTrafficPolicyInstanceCountInput).
@@ -7798,7 +7798,7 @@ impl GetTrafficPolicyInstanceCountInput {
 pub mod list_cidr_blocks_input {
 
     /// A builder for [`ListCidrBlocksInput`](crate::input::ListCidrBlocksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_id: std::option::Option<std::string::String>,
         pub(crate) location_name: std::option::Option<std::string::String>,
@@ -8016,7 +8016,7 @@ impl ListCidrBlocksInput {
 pub mod list_cidr_collections_input {
 
     /// A builder for [`ListCidrCollectionsInput`](crate::input::ListCidrCollectionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -8179,7 +8179,7 @@ impl ListCidrCollectionsInput {
 pub mod list_cidr_locations_input {
 
     /// A builder for [`ListCidrLocationsInput`](crate::input::ListCidrLocationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -8381,7 +8381,7 @@ impl ListCidrLocationsInput {
 pub mod list_geo_locations_input {
 
     /// A builder for [`ListGeoLocationsInput`](crate::input::ListGeoLocationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_continent_code: std::option::Option<std::string::String>,
         pub(crate) start_country_code: std::option::Option<std::string::String>,
@@ -8598,7 +8598,7 @@ impl ListGeoLocationsInput {
 pub mod list_health_checks_input {
 
     /// A builder for [`ListHealthChecksInput`](crate::input::ListHealthChecksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
@@ -8763,7 +8763,7 @@ impl ListHealthChecksInput {
 pub mod list_hosted_zones_input {
 
     /// A builder for [`ListHostedZonesInput`](crate::input::ListHostedZonesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
@@ -8949,7 +8949,7 @@ impl ListHostedZonesInput {
 pub mod list_hosted_zones_by_name_input {
 
     /// A builder for [`ListHostedZonesByNameInput`](crate::input::ListHostedZonesByNameInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_name: std::option::Option<std::string::String>,
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
@@ -9135,7 +9135,7 @@ impl ListHostedZonesByNameInput {
 pub mod list_hosted_zones_by_vpc_input {
 
     /// A builder for [`ListHostedZonesByVpcInput`](crate::input::ListHostedZonesByVpcInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) vpc_region: std::option::Option<crate::model::VpcRegion>,
@@ -9351,7 +9351,7 @@ impl ListHostedZonesByVpcInput {
 pub mod list_query_logging_configs_input {
 
     /// A builder for [`ListQueryLoggingConfigsInput`](crate::input::ListQueryLoggingConfigsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -9544,7 +9544,7 @@ impl ListQueryLoggingConfigsInput {
 pub mod list_resource_record_sets_input {
 
     /// A builder for [`ListResourceRecordSetsInput`](crate::input::ListResourceRecordSetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) start_record_name: std::option::Option<std::string::String>,
@@ -9814,7 +9814,7 @@ impl ListResourceRecordSetsInput {
 pub mod list_reusable_delegation_sets_input {
 
     /// A builder for [`ListReusableDelegationSetsInput`](crate::input::ListReusableDelegationSetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
@@ -9979,7 +9979,7 @@ impl ListReusableDelegationSetsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::TagResourceType>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -10174,7 +10174,7 @@ impl ListTagsForResourceInput {
 pub mod list_tags_for_resources_input {
 
     /// A builder for [`ListTagsForResourcesInput`](crate::input::ListTagsForResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::TagResourceType>,
         pub(crate) resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10374,7 +10374,7 @@ impl ListTagsForResourcesInput {
 pub mod list_traffic_policies_input {
 
     /// A builder for [`ListTrafficPoliciesInput`](crate::input::ListTrafficPoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traffic_policy_id_marker: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
@@ -10543,7 +10543,7 @@ impl ListTrafficPoliciesInput {
 pub mod list_traffic_policy_instances_input {
 
     /// A builder for [`ListTrafficPolicyInstancesInput`](crate::input::ListTrafficPolicyInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id_marker: std::option::Option<std::string::String>,
         pub(crate) traffic_policy_instance_name_marker: std::option::Option<std::string::String>,
@@ -10766,7 +10766,7 @@ impl ListTrafficPolicyInstancesInput {
 pub mod list_traffic_policy_instances_by_hosted_zone_input {
 
     /// A builder for [`ListTrafficPolicyInstancesByHostedZoneInput`](crate::input::ListTrafficPolicyInstancesByHostedZoneInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) traffic_policy_instance_name_marker: std::option::Option<std::string::String>,
@@ -10995,7 +10995,7 @@ impl ListTrafficPolicyInstancesByHostedZoneInput {
 pub mod list_traffic_policy_instances_by_policy_input {
 
     /// A builder for [`ListTrafficPolicyInstancesByPolicyInput`](crate::input::ListTrafficPolicyInstancesByPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) traffic_policy_id: std::option::Option<std::string::String>,
         pub(crate) traffic_policy_version: std::option::Option<i32>,
@@ -11278,7 +11278,7 @@ impl ListTrafficPolicyInstancesByPolicyInput {
 pub mod list_traffic_policy_versions_input {
 
     /// A builder for [`ListTrafficPolicyVersionsInput`](crate::input::ListTrafficPolicyVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) traffic_policy_version_marker: std::option::Option<std::string::String>,
@@ -11482,7 +11482,7 @@ impl ListTrafficPolicyVersionsInput {
 pub mod list_vpc_association_authorizations_input {
 
     /// A builder for [`ListVpcAssociationAuthorizationsInput`](crate::input::ListVpcAssociationAuthorizationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -11683,7 +11683,7 @@ impl ListVpcAssociationAuthorizationsInput {
 pub mod test_dns_answer_input {
 
     /// A builder for [`TestDnsAnswerInput`](crate::input::TestDnsAnswerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) record_name: std::option::Option<std::string::String>,
@@ -11969,7 +11969,7 @@ impl TestDnsAnswerInput {
 pub mod update_health_check_input {
 
     /// A builder for [`UpdateHealthCheckInput`](crate::input::UpdateHealthCheckInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_check_id: std::option::Option<std::string::String>,
         pub(crate) health_check_version: std::option::Option<i64>,
@@ -12524,7 +12524,7 @@ impl UpdateHealthCheckInput {
 pub mod update_hosted_zone_comment_input {
 
     /// A builder for [`UpdateHostedZoneCommentInput`](crate::input::UpdateHostedZoneCommentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) comment: std::option::Option<std::string::String>,
@@ -12701,7 +12701,7 @@ impl UpdateHostedZoneCommentInput {
 pub mod update_traffic_policy_comment_input {
 
     /// A builder for [`UpdateTrafficPolicyCommentInput`](crate::input::UpdateTrafficPolicyCommentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i32>,
@@ -12908,7 +12908,7 @@ impl UpdateTrafficPolicyCommentInput {
 pub mod update_traffic_policy_instance_input {
 
     /// A builder for [`UpdateTrafficPolicyInstanceInput`](crate::input::UpdateTrafficPolicyInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) ttl: std::option::Option<i64>,

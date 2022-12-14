@@ -7,7 +7,7 @@ pub struct UpdateOrganizationConfigurationOutput {}
 pub mod update_organization_configuration_output {
 
     /// A builder for [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput).
@@ -31,7 +31,7 @@ pub struct UpdateDatasourcePackagesOutput {}
 pub mod update_datasource_packages_output {
 
     /// A builder for [`UpdateDatasourcePackagesOutput`](crate::output::UpdateDatasourcePackagesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDatasourcePackagesOutput`](crate::output::UpdateDatasourcePackagesOutput).
@@ -55,7 +55,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -79,7 +79,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -103,7 +103,7 @@ pub struct StartMonitoringMemberOutput {}
 pub mod start_monitoring_member_output {
 
     /// A builder for [`StartMonitoringMemberOutput`](crate::output::StartMonitoringMemberOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StartMonitoringMemberOutput`](crate::output::StartMonitoringMemberOutput).
@@ -127,7 +127,7 @@ pub struct RejectInvitationOutput {}
 pub mod reject_invitation_output {
 
     /// A builder for [`RejectInvitationOutput`](crate::output::RejectInvitationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RejectInvitationOutput`](crate::output::RejectInvitationOutput).
@@ -165,7 +165,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -235,7 +235,7 @@ impl ListOrganizationAdminAccountsOutput {
 pub mod list_organization_admin_accounts_output {
 
     /// A builder for [`ListOrganizationAdminAccountsOutput`](crate::output::ListOrganizationAdminAccountsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) administrators: std::option::Option<std::vec::Vec<crate::model::Administrator>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -315,7 +315,7 @@ impl ListMembersOutput {
 pub mod list_members_output {
 
     /// A builder for [`ListMembersOutput`](crate::output::ListMembersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_details: std::option::Option<std::vec::Vec<crate::model::MemberDetail>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -395,7 +395,7 @@ impl ListInvitationsOutput {
 pub mod list_invitations_output {
 
     /// A builder for [`ListInvitationsOutput`](crate::output::ListInvitationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) invitations: std::option::Option<std::vec::Vec<crate::model::MemberDetail>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -471,7 +471,7 @@ impl ListGraphsOutput {
 pub mod list_graphs_output {
 
     /// A builder for [`ListGraphsOutput`](crate::output::ListGraphsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) graph_list: std::option::Option<std::vec::Vec<crate::model::Graph>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -559,7 +559,7 @@ impl ListDatasourcePackagesOutput {
 pub mod list_datasource_packages_output {
 
     /// A builder for [`ListDatasourcePackagesOutput`](crate::output::ListDatasourcePackagesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datasource_packages: std::option::Option<
             std::collections::HashMap<
@@ -651,7 +651,7 @@ impl GetMembersOutput {
 pub mod get_members_output {
 
     /// A builder for [`GetMembersOutput`](crate::output::GetMembersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_details: std::option::Option<std::vec::Vec<crate::model::MemberDetail>>,
         pub(crate) unprocessed_accounts:
@@ -722,7 +722,7 @@ pub struct EnableOrganizationAdminAccountOutput {}
 pub mod enable_organization_admin_account_output {
 
     /// A builder for [`EnableOrganizationAdminAccountOutput`](crate::output::EnableOrganizationAdminAccountOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`EnableOrganizationAdminAccountOutput`](crate::output::EnableOrganizationAdminAccountOutput).
@@ -746,7 +746,7 @@ pub struct DisassociateMembershipOutput {}
 pub mod disassociate_membership_output {
 
     /// A builder for [`DisassociateMembershipOutput`](crate::output::DisassociateMembershipOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateMembershipOutput`](crate::output::DisassociateMembershipOutput).
@@ -770,7 +770,7 @@ pub struct DisableOrganizationAdminAccountOutput {}
 pub mod disable_organization_admin_account_output {
 
     /// A builder for [`DisableOrganizationAdminAccountOutput`](crate::output::DisableOrganizationAdminAccountOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisableOrganizationAdminAccountOutput`](crate::output::DisableOrganizationAdminAccountOutput).
@@ -804,7 +804,7 @@ impl DescribeOrganizationConfigurationOutput {
 pub mod describe_organization_configuration_output {
 
     /// A builder for [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_enable: std::option::Option<bool>,
     }
@@ -859,7 +859,7 @@ impl DeleteMembersOutput {
 pub mod delete_members_output {
 
     /// A builder for [`DeleteMembersOutput`](crate::output::DeleteMembersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) unprocessed_accounts:
@@ -928,7 +928,7 @@ pub struct DeleteGraphOutput {}
 pub mod delete_graph_output {
 
     /// A builder for [`DeleteGraphOutput`](crate::output::DeleteGraphOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteGraphOutput`](crate::output::DeleteGraphOutput).
@@ -969,7 +969,7 @@ impl CreateMembersOutput {
 pub mod create_members_output {
 
     /// A builder for [`CreateMembersOutput`](crate::output::CreateMembersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) members: std::option::Option<std::vec::Vec<crate::model::MemberDetail>>,
         pub(crate) unprocessed_accounts:
@@ -1048,7 +1048,7 @@ impl CreateGraphOutput {
 pub mod create_graph_output {
 
     /// A builder for [`CreateGraphOutput`](crate::output::CreateGraphOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) graph_arn: std::option::Option<std::string::String>,
     }
@@ -1106,7 +1106,7 @@ impl BatchGetMembershipDatasourcesOutput {
 pub mod batch_get_membership_datasources_output {
 
     /// A builder for [`BatchGetMembershipDatasourcesOutput`](crate::output::BatchGetMembershipDatasourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) membership_datasources:
             std::option::Option<std::vec::Vec<crate::model::MembershipDatasources>>,
@@ -1198,7 +1198,7 @@ impl BatchGetGraphMemberDatasourcesOutput {
 pub mod batch_get_graph_member_datasources_output {
 
     /// A builder for [`BatchGetGraphMemberDatasourcesOutput`](crate::output::BatchGetGraphMemberDatasourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_datasources:
             std::option::Option<std::vec::Vec<crate::model::MembershipDatasources>>,
@@ -1268,7 +1268,7 @@ pub struct AcceptInvitationOutput {}
 pub mod accept_invitation_output {
 
     /// A builder for [`AcceptInvitationOutput`](crate::output::AcceptInvitationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AcceptInvitationOutput`](crate::output::AcceptInvitationOutput).

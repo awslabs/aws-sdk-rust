@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_browser_settings_input {
 
     /// A builder for [`AssociateBrowserSettingsInput`](crate::input::AssociateBrowserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
         pub(crate) browser_settings_arn: std::option::Option<std::string::String>,
@@ -199,7 +199,7 @@ impl AssociateBrowserSettingsInput {
 pub mod associate_network_settings_input {
 
     /// A builder for [`AssociateNetworkSettingsInput`](crate::input::AssociateNetworkSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
         pub(crate) network_settings_arn: std::option::Option<std::string::String>,
@@ -393,7 +393,7 @@ impl AssociateNetworkSettingsInput {
 pub mod associate_trust_store_input {
 
     /// A builder for [`AssociateTrustStoreInput`](crate::input::AssociateTrustStoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
         pub(crate) trust_store_arn: std::option::Option<std::string::String>,
@@ -587,7 +587,7 @@ impl AssociateTrustStoreInput {
 pub mod associate_user_settings_input {
 
     /// A builder for [`AssociateUserSettingsInput`](crate::input::AssociateUserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
         pub(crate) user_settings_arn: std::option::Option<std::string::String>,
@@ -781,7 +781,7 @@ impl AssociateUserSettingsInput {
 pub mod create_browser_settings_input {
 
     /// A builder for [`CreateBrowserSettingsInput`](crate::input::CreateBrowserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) customer_managed_key: std::option::Option<std::string::String>,
@@ -1024,7 +1024,7 @@ impl CreateBrowserSettingsInput {
 pub mod create_identity_provider_input {
 
     /// A builder for [`CreateIdentityProviderInput`](crate::input::CreateIdentityProviderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
         pub(crate) identity_provider_name: std::option::Option<std::string::String>,
@@ -1338,7 +1338,7 @@ impl CreateIdentityProviderInput {
 pub mod create_network_settings_input {
 
     /// A builder for [`CreateNetworkSettingsInput`](crate::input::CreateNetworkSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1562,7 +1562,7 @@ impl CreateNetworkSettingsInput {
 pub mod create_portal_input {
 
     /// A builder for [`CreatePortalInput`](crate::input::CreatePortalInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1798,7 +1798,7 @@ impl CreatePortalInput {
 pub mod create_trust_store_input {
 
     /// A builder for [`CreateTrustStoreInput`](crate::input::CreateTrustStoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_list: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1987,7 +1987,7 @@ impl CreateTrustStoreInput {
 pub mod create_user_settings_input {
 
     /// A builder for [`CreateUserSettingsInput`](crate::input::CreateUserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) copy_allowed: std::option::Option<crate::model::EnabledType>,
         pub(crate) paste_allowed: std::option::Option<crate::model::EnabledType>,
@@ -2260,7 +2260,7 @@ impl CreateUserSettingsInput {
 pub mod delete_browser_settings_input {
 
     /// A builder for [`DeleteBrowserSettingsInput`](crate::input::DeleteBrowserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) browser_settings_arn: std::option::Option<std::string::String>,
     }
@@ -2415,7 +2415,7 @@ impl DeleteBrowserSettingsInput {
 pub mod delete_identity_provider_input {
 
     /// A builder for [`DeleteIdentityProviderInput`](crate::input::DeleteIdentityProviderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider_arn: std::option::Option<std::string::String>,
     }
@@ -2570,7 +2570,7 @@ impl DeleteIdentityProviderInput {
 pub mod delete_network_settings_input {
 
     /// A builder for [`DeleteNetworkSettingsInput`](crate::input::DeleteNetworkSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_settings_arn: std::option::Option<std::string::String>,
     }
@@ -2725,7 +2725,7 @@ impl DeleteNetworkSettingsInput {
 pub mod delete_portal_input {
 
     /// A builder for [`DeletePortalInput`](crate::input::DeletePortalInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
     }
@@ -2871,7 +2871,7 @@ impl DeletePortalInput {
 pub mod delete_trust_store_input {
 
     /// A builder for [`DeleteTrustStoreInput`](crate::input::DeleteTrustStoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_store_arn: std::option::Option<std::string::String>,
     }
@@ -3026,7 +3026,7 @@ impl DeleteTrustStoreInput {
 pub mod delete_user_settings_input {
 
     /// A builder for [`DeleteUserSettingsInput`](crate::input::DeleteUserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_settings_arn: std::option::Option<std::string::String>,
     }
@@ -3181,7 +3181,7 @@ impl DeleteUserSettingsInput {
 pub mod disassociate_browser_settings_input {
 
     /// A builder for [`DisassociateBrowserSettingsInput`](crate::input::DisassociateBrowserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
     }
@@ -3333,7 +3333,7 @@ impl DisassociateBrowserSettingsInput {
 pub mod disassociate_network_settings_input {
 
     /// A builder for [`DisassociateNetworkSettingsInput`](crate::input::DisassociateNetworkSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
     }
@@ -3485,7 +3485,7 @@ impl DisassociateNetworkSettingsInput {
 pub mod disassociate_trust_store_input {
 
     /// A builder for [`DisassociateTrustStoreInput`](crate::input::DisassociateTrustStoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
     }
@@ -3637,7 +3637,7 @@ impl DisassociateTrustStoreInput {
 pub mod disassociate_user_settings_input {
 
     /// A builder for [`DisassociateUserSettingsInput`](crate::input::DisassociateUserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
     }
@@ -3789,7 +3789,7 @@ impl DisassociateUserSettingsInput {
 pub mod get_browser_settings_input {
 
     /// A builder for [`GetBrowserSettingsInput`](crate::input::GetBrowserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) browser_settings_arn: std::option::Option<std::string::String>,
     }
@@ -3944,7 +3944,7 @@ impl GetBrowserSettingsInput {
 pub mod get_identity_provider_input {
 
     /// A builder for [`GetIdentityProviderInput`](crate::input::GetIdentityProviderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_provider_arn: std::option::Option<std::string::String>,
     }
@@ -4099,7 +4099,7 @@ impl GetIdentityProviderInput {
 pub mod get_network_settings_input {
 
     /// A builder for [`GetNetworkSettingsInput`](crate::input::GetNetworkSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_settings_arn: std::option::Option<std::string::String>,
     }
@@ -4254,7 +4254,7 @@ impl GetNetworkSettingsInput {
 pub mod get_portal_input {
 
     /// A builder for [`GetPortalInput`](crate::input::GetPortalInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
     }
@@ -4398,7 +4398,7 @@ impl GetPortalInput {
 pub mod get_portal_service_provider_metadata_input {
 
     /// A builder for [`GetPortalServiceProviderMetadataInput`](crate::input::GetPortalServiceProviderMetadataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
     }
@@ -4546,7 +4546,7 @@ impl GetPortalServiceProviderMetadataInput {
 pub mod get_trust_store_input {
 
     /// A builder for [`GetTrustStoreInput`](crate::input::GetTrustStoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_store_arn: std::option::Option<std::string::String>,
     }
@@ -4699,7 +4699,7 @@ impl GetTrustStoreInput {
 pub mod get_trust_store_certificate_input {
 
     /// A builder for [`GetTrustStoreCertificateInput`](crate::input::GetTrustStoreCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_store_arn: std::option::Option<std::string::String>,
         pub(crate) thumbprint: std::option::Option<std::string::String>,
@@ -4890,7 +4890,7 @@ impl GetTrustStoreCertificateInput {
 pub mod get_user_settings_input {
 
     /// A builder for [`GetUserSettingsInput`](crate::input::GetUserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_settings_arn: std::option::Option<std::string::String>,
     }
@@ -5043,7 +5043,7 @@ impl GetUserSettingsInput {
 pub mod list_browser_settings_input {
 
     /// A builder for [`ListBrowserSettingsInput`](crate::input::ListBrowserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5204,7 +5204,7 @@ impl ListBrowserSettingsInput {
 pub mod list_identity_providers_input {
 
     /// A builder for [`ListIdentityProvidersInput`](crate::input::ListIdentityProvidersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5401,7 +5401,7 @@ impl ListIdentityProvidersInput {
 pub mod list_network_settings_input {
 
     /// A builder for [`ListNetworkSettingsInput`](crate::input::ListNetworkSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5562,7 +5562,7 @@ impl ListNetworkSettingsInput {
 pub mod list_portals_input {
 
     /// A builder for [`ListPortalsInput`](crate::input::ListPortalsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5721,7 +5721,7 @@ impl ListPortalsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -5869,7 +5869,7 @@ impl ListTagsForResourceInput {
 pub mod list_trust_store_certificates_input {
 
     /// A builder for [`ListTrustStoreCertificatesInput`](crate::input::ListTrustStoreCertificatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_store_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6069,7 +6069,7 @@ impl ListTrustStoreCertificatesInput {
 pub mod list_trust_stores_input {
 
     /// A builder for [`ListTrustStoresInput`](crate::input::ListTrustStoresInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -6228,7 +6228,7 @@ impl ListTrustStoresInput {
 pub mod list_user_settings_input {
 
     /// A builder for [`ListUserSettingsInput`](crate::input::ListUserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -6389,7 +6389,7 @@ impl ListUserSettingsInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6587,7 +6587,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6772,7 +6772,7 @@ impl UntagResourceInput {
 pub mod update_browser_settings_input {
 
     /// A builder for [`UpdateBrowserSettingsInput`](crate::input::UpdateBrowserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) browser_settings_arn: std::option::Option<std::string::String>,
         pub(crate) browser_policy: std::option::Option<std::string::String>,
@@ -6984,7 +6984,7 @@ impl UpdateBrowserSettingsInput {
 pub mod update_identity_provider_input {
 
     /// A builder for [`UpdateIdentityProviderInput`](crate::input::UpdateIdentityProviderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) identity_provider_arn: std::option::Option<std::string::String>,
         pub(crate) identity_provider_name: std::option::Option<std::string::String>,
@@ -7325,7 +7325,7 @@ impl UpdateIdentityProviderInput {
 pub mod update_network_settings_input {
 
     /// A builder for [`UpdateNetworkSettingsInput`](crate::input::UpdateNetworkSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_settings_arn: std::option::Option<std::string::String>,
         pub(crate) vpc_id: std::option::Option<std::string::String>,
@@ -7567,7 +7567,7 @@ impl UpdateNetworkSettingsInput {
 pub mod update_portal_input {
 
     /// A builder for [`UpdatePortalInput`](crate::input::UpdatePortalInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) portal_arn: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -7747,7 +7747,7 @@ impl UpdatePortalInput {
 pub mod update_trust_store_input {
 
     /// A builder for [`UpdateTrustStoreInput`](crate::input::UpdateTrustStoreInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_store_arn: std::option::Option<std::string::String>,
         pub(crate) certificates_to_add: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
@@ -7975,7 +7975,7 @@ impl UpdateTrustStoreInput {
 pub mod update_user_settings_input {
 
     /// A builder for [`UpdateUserSettingsInput`](crate::input::UpdateUserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_settings_arn: std::option::Option<std::string::String>,
         pub(crate) copy_allowed: std::option::Option<crate::model::EnabledType>,

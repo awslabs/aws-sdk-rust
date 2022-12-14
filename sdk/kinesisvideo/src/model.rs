@@ -18,7 +18,7 @@ impl SingleMasterConfiguration {
 pub mod single_master_configuration {
 
     /// A builder for [`SingleMasterConfiguration`](crate::model::SingleMasterConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_ttl_seconds: std::option::Option<i32>,
     }
@@ -75,7 +75,7 @@ impl NotificationConfiguration {
 pub mod notification_configuration {
 
     /// A builder for [`NotificationConfiguration`](crate::model::NotificationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ConfigurationStatus>,
         pub(crate) destination_config:
@@ -145,7 +145,7 @@ impl NotificationDestinationConfig {
 pub mod notification_destination_config {
 
     /// A builder for [`NotificationDestinationConfig`](crate::model::NotificationDestinationConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uri: std::option::Option<std::string::String>,
     }
@@ -340,7 +340,7 @@ impl ImageGenerationConfiguration {
 pub mod image_generation_configuration {
 
     /// A builder for [`ImageGenerationConfiguration`](crate::model::ImageGenerationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ConfigurationStatus>,
         pub(crate) image_selector_type: std::option::Option<crate::model::ImageSelectorType>,
@@ -684,7 +684,7 @@ impl ImageGenerationDestinationConfig {
 pub mod image_generation_destination_config {
 
     /// A builder for [`ImageGenerationDestinationConfig`](crate::model::ImageGenerationDestinationConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uri: std::option::Option<std::string::String>,
         pub(crate) destination_region: std::option::Option<std::string::String>,
@@ -938,7 +938,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1054,7 +1054,7 @@ impl StreamInfo {
 pub mod stream_info {
 
     /// A builder for [`StreamInfo`](crate::model::StreamInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_name: std::option::Option<std::string::String>,
         pub(crate) stream_name: std::option::Option<std::string::String>,
@@ -1308,7 +1308,7 @@ impl StreamNameCondition {
 pub mod stream_name_condition {
 
     /// A builder for [`StreamNameCondition`](crate::model::StreamNameCondition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
         pub(crate) comparison_value: std::option::Option<std::string::String>,
@@ -1505,7 +1505,7 @@ impl ChannelInfo {
 pub mod channel_info {
 
     /// A builder for [`ChannelInfo`](crate::model::ChannelInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -1738,7 +1738,7 @@ impl ChannelNameCondition {
 pub mod channel_name_condition {
 
     /// A builder for [`ChannelNameCondition`](crate::model::ChannelNameCondition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
         pub(crate) comparison_value: std::option::Option<std::string::String>,
@@ -1811,7 +1811,7 @@ impl ResourceEndpointListItem {
 pub mod resource_endpoint_list_item {
 
     /// A builder for [`ResourceEndpointListItem`](crate::model::ResourceEndpointListItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocol: std::option::Option<crate::model::ChannelProtocol>,
         pub(crate) resource_endpoint: std::option::Option<std::string::String>,
@@ -1974,7 +1974,7 @@ impl SingleMasterChannelEndpointConfiguration {
 pub mod single_master_channel_endpoint_configuration {
 
     /// A builder for [`SingleMasterChannelEndpointConfiguration`](crate::model::SingleMasterChannelEndpointConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocols: std::option::Option<std::vec::Vec<crate::model::ChannelProtocol>>,
         pub(crate) role: std::option::Option<crate::model::ChannelRole>,

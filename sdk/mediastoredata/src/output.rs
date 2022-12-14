@@ -31,7 +31,7 @@ impl PutObjectOutput {
 pub mod put_object_output {
 
     /// A builder for [`PutObjectOutput`](crate::output::PutObjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_sha256: std::option::Option<std::string::String>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
@@ -116,7 +116,7 @@ impl ListItemsOutput {
 pub mod list_items_output {
 
     /// A builder for [`ListItemsOutput`](crate::output::ListItemsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Item>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -411,7 +411,7 @@ impl DescribeObjectOutput {
 pub mod describe_object_output {
 
     /// A builder for [`DescribeObjectOutput`](crate::output::DescribeObjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) e_tag: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -505,7 +505,7 @@ pub struct DeleteObjectOutput {}
 pub mod delete_object_output {
 
     /// A builder for [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).

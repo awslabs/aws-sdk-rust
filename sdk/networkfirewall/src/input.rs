@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_firewall_policy_input {
 
     /// A builder for [`AssociateFirewallPolicyInput`](crate::input::AssociateFirewallPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -204,7 +204,7 @@ impl AssociateFirewallPolicyInput {
 pub mod associate_subnets_input {
 
     /// A builder for [`AssociateSubnetsInput`](crate::input::AssociateSubnetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -407,7 +407,7 @@ impl AssociateSubnetsInput {
 pub mod create_firewall_input {
 
     /// A builder for [`CreateFirewallInput`](crate::input::CreateFirewallInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_arn: std::option::Option<std::string::String>,
@@ -698,7 +698,7 @@ impl CreateFirewallInput {
 pub mod create_firewall_policy_input {
 
     /// A builder for [`CreateFirewallPolicyInput`](crate::input::CreateFirewallPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_policy_name: std::option::Option<std::string::String>,
         pub(crate) firewall_policy: std::option::Option<crate::model::FirewallPolicy>,
@@ -933,7 +933,7 @@ impl CreateFirewallPolicyInput {
 pub mod create_rule_group_input {
 
     /// A builder for [`CreateRuleGroupInput`](crate::input::CreateRuleGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
         pub(crate) rule_group: std::option::Option<crate::model::RuleGroup>,
@@ -1253,7 +1253,7 @@ impl CreateRuleGroupInput {
 pub mod delete_firewall_input {
 
     /// A builder for [`DeleteFirewallInput`](crate::input::DeleteFirewallInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -1417,7 +1417,7 @@ impl DeleteFirewallInput {
 pub mod delete_firewall_policy_input {
 
     /// A builder for [`DeleteFirewallPolicyInput`](crate::input::DeleteFirewallPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_policy_name: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_arn: std::option::Option<std::string::String>,
@@ -1588,7 +1588,7 @@ impl DeleteFirewallPolicyInput {
 pub mod delete_resource_policy_input {
 
     /// A builder for [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1737,7 +1737,7 @@ impl DeleteResourcePolicyInput {
 pub mod delete_rule_group_input {
 
     /// A builder for [`DeleteRuleGroupInput`](crate::input::DeleteRuleGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
         pub(crate) rule_group_arn: std::option::Option<std::string::String>,
@@ -1920,7 +1920,7 @@ impl DeleteRuleGroupInput {
 pub mod describe_firewall_input {
 
     /// A builder for [`DescribeFirewallInput`](crate::input::DescribeFirewallInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_name: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -2086,7 +2086,7 @@ impl DescribeFirewallInput {
 pub mod describe_firewall_policy_input {
 
     /// A builder for [`DescribeFirewallPolicyInput`](crate::input::DescribeFirewallPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_policy_name: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_arn: std::option::Option<std::string::String>,
@@ -2257,7 +2257,7 @@ impl DescribeFirewallPolicyInput {
 pub mod describe_logging_configuration_input {
 
     /// A builder for [`DescribeLoggingConfigurationInput`](crate::input::DescribeLoggingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
         pub(crate) firewall_name: std::option::Option<std::string::String>,
@@ -2422,7 +2422,7 @@ impl DescribeLoggingConfigurationInput {
 pub mod describe_resource_policy_input {
 
     /// A builder for [`DescribeResourcePolicyInput`](crate::input::DescribeResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2571,7 +2571,7 @@ impl DescribeResourcePolicyInput {
 pub mod describe_rule_group_input {
 
     /// A builder for [`DescribeRuleGroupInput`](crate::input::DescribeRuleGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
         pub(crate) rule_group_arn: std::option::Option<std::string::String>,
@@ -2756,7 +2756,7 @@ impl DescribeRuleGroupInput {
 pub mod describe_rule_group_metadata_input {
 
     /// A builder for [`DescribeRuleGroupMetadataInput`](crate::input::DescribeRuleGroupMetadataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
         pub(crate) rule_group_arn: std::option::Option<std::string::String>,
@@ -2943,7 +2943,7 @@ impl DescribeRuleGroupMetadataInput {
 pub mod disassociate_subnets_input {
 
     /// A builder for [`DisassociateSubnetsInput`](crate::input::DisassociateSubnetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -3146,7 +3146,7 @@ impl DisassociateSubnetsInput {
 pub mod list_firewall_policies_input {
 
     /// A builder for [`ListFirewallPoliciesInput`](crate::input::ListFirewallPoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3307,7 +3307,7 @@ impl ListFirewallPoliciesInput {
 pub mod list_firewalls_input {
 
     /// A builder for [`ListFirewallsInput`](crate::input::ListFirewallsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) vpc_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3485,7 +3485,7 @@ impl ListFirewallsInput {
 pub mod list_rule_groups_input {
 
     /// A builder for [`ListRuleGroupsInput`](crate::input::ListRuleGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3684,7 +3684,7 @@ impl ListRuleGroupsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3857,7 +3857,7 @@ impl ListTagsForResourceInput {
 pub mod put_resource_policy_input {
 
     /// A builder for [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -4044,7 +4044,7 @@ impl PutResourcePolicyInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4210,7 +4210,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4376,7 +4376,7 @@ impl UntagResourceInput {
 pub mod update_firewall_delete_protection_input {
 
     /// A builder for [`UpdateFirewallDeleteProtectionInput`](crate::input::UpdateFirewallDeleteProtectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -4569,7 +4569,7 @@ impl UpdateFirewallDeleteProtectionInput {
 pub mod update_firewall_description_input {
 
     /// A builder for [`UpdateFirewallDescriptionInput`](crate::input::UpdateFirewallDescriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -4765,7 +4765,7 @@ impl UpdateFirewallDescriptionInput {
 pub mod update_firewall_encryption_configuration_input {
 
     /// A builder for [`UpdateFirewallEncryptionConfigurationInput`](crate::input::UpdateFirewallEncryptionConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -4961,7 +4961,7 @@ impl UpdateFirewallEncryptionConfigurationInput {
 pub mod update_firewall_policy_input {
 
     /// A builder for [`UpdateFirewallPolicyInput`](crate::input::UpdateFirewallPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_arn: std::option::Option<std::string::String>,
@@ -5208,7 +5208,7 @@ impl UpdateFirewallPolicyInput {
 pub mod update_firewall_policy_change_protection_input {
 
     /// A builder for [`UpdateFirewallPolicyChangeProtectionInput`](crate::input::UpdateFirewallPolicyChangeProtectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -5406,7 +5406,7 @@ impl UpdateFirewallPolicyChangeProtectionInput {
 pub mod update_logging_configuration_input {
 
     /// A builder for [`UpdateLoggingConfigurationInput`](crate::input::UpdateLoggingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
         pub(crate) firewall_name: std::option::Option<std::string::String>,
@@ -5589,7 +5589,7 @@ impl UpdateLoggingConfigurationInput {
 pub mod update_rule_group_input {
 
     /// A builder for [`UpdateRuleGroupInput`](crate::input::UpdateRuleGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) rule_group_arn: std::option::Option<std::string::String>,
@@ -5885,7 +5885,7 @@ impl UpdateRuleGroupInput {
 pub mod update_subnet_change_protection_input {
 
     /// A builder for [`UpdateSubnetChangeProtectionInput`](crate::input::UpdateSubnetChangeProtectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
         pub(crate) firewall_arn: std::option::Option<std::string::String>,

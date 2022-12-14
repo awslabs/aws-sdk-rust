@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_data_integration_input {
 
     /// A builder for [`CreateDataIntegrationInput`](crate::input::CreateDataIntegrationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -244,7 +244,7 @@ impl CreateDataIntegrationInput {
 pub mod create_event_integration_input {
 
     /// A builder for [`CreateEventIntegrationInput`](crate::input::CreateEventIntegrationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -474,7 +474,7 @@ impl CreateEventIntegrationInput {
 pub mod delete_data_integration_input {
 
     /// A builder for [`DeleteDataIntegrationInput`](crate::input::DeleteDataIntegrationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_integration_identifier: std::option::Option<std::string::String>,
     }
@@ -632,7 +632,7 @@ impl DeleteDataIntegrationInput {
 pub mod delete_event_integration_input {
 
     /// A builder for [`DeleteEventIntegrationInput`](crate::input::DeleteEventIntegrationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -778,7 +778,7 @@ impl DeleteEventIntegrationInput {
 pub mod get_data_integration_input {
 
     /// A builder for [`GetDataIntegrationInput`](crate::input::GetDataIntegrationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
     }
@@ -930,7 +930,7 @@ impl GetDataIntegrationInput {
 pub mod get_event_integration_input {
 
     /// A builder for [`GetEventIntegrationInput`](crate::input::GetEventIntegrationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -1076,7 +1076,7 @@ impl GetEventIntegrationInput {
 pub mod list_data_integration_associations_input {
 
     /// A builder for [`ListDataIntegrationAssociationsInput`](crate::input::ListDataIntegrationAssociationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_integration_identifier: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1279,7 +1279,7 @@ impl ListDataIntegrationAssociationsInput {
 pub mod list_data_integrations_input {
 
     /// A builder for [`ListDataIntegrationsInput`](crate::input::ListDataIntegrationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1440,7 +1440,7 @@ impl ListDataIntegrationsInput {
 pub mod list_event_integration_associations_input {
 
     /// A builder for [`ListEventIntegrationAssociationsInput`](crate::input::ListEventIntegrationAssociationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_integration_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1640,7 +1640,7 @@ impl ListEventIntegrationAssociationsInput {
 pub mod list_event_integrations_input {
 
     /// A builder for [`ListEventIntegrationsInput`](crate::input::ListEventIntegrationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1801,7 +1801,7 @@ impl ListEventIntegrationsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1949,7 +1949,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -2138,7 +2138,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2323,7 +2323,7 @@ impl UntagResourceInput {
 pub mod update_data_integration_input {
 
     /// A builder for [`UpdateDataIntegrationInput`](crate::input::UpdateDataIntegrationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2515,7 +2515,7 @@ impl UpdateDataIntegrationInput {
 pub mod update_event_integration_input {
 
     /// A builder for [`UpdateEventIntegrationInput`](crate::input::UpdateEventIntegrationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,

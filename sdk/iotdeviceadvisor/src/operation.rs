@@ -5,7 +5,7 @@
 /// [`create_suite_definition`](crate::client::Client::create_suite_definition).
 ///
 /// See [`crate::client::fluent_builders::CreateSuiteDefinition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSuiteDefinition {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSuiteDefinition {
 /// [`delete_suite_definition`](crate::client::Client::delete_suite_definition).
 ///
 /// See [`crate::client::fluent_builders::DeleteSuiteDefinition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSuiteDefinition {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSuiteDefinition {
 /// [`get_endpoint`](crate::client::Client::get_endpoint).
 ///
 /// See [`crate::client::fluent_builders::GetEndpoint`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEndpoint {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEndpoint {
 /// [`get_suite_definition`](crate::client::Client::get_suite_definition).
 ///
 /// See [`crate::client::fluent_builders::GetSuiteDefinition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSuiteDefinition {
     _private: (),
 }
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSuiteDefinition {
 /// [`get_suite_run`](crate::client::Client::get_suite_run).
 ///
 /// See [`crate::client::fluent_builders::GetSuiteRun`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSuiteRun {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSuiteRun {
 /// [`get_suite_run_report`](crate::client::Client::get_suite_run_report).
 ///
 /// See [`crate::client::fluent_builders::GetSuiteRunReport`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSuiteRunReport {
     _private: (),
 }
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSuiteRunReport {
 /// [`list_suite_definitions`](crate::client::Client::list_suite_definitions).
 ///
 /// See [`crate::client::fluent_builders::ListSuiteDefinitions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSuiteDefinitions {
     _private: (),
 }
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSuiteDefinitions {
 /// [`list_suite_runs`](crate::client::Client::list_suite_runs).
 ///
 /// See [`crate::client::fluent_builders::ListSuiteRuns`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSuiteRuns {
     _private: (),
 }
@@ -271,7 +271,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSuiteRuns {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -305,7 +305,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`start_suite_run`](crate::client::Client::start_suite_run).
 ///
 /// See [`crate::client::fluent_builders::StartSuiteRun`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartSuiteRun {
     _private: (),
 }
@@ -337,7 +337,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSuiteRun {
 /// [`stop_suite_run`](crate::client::Client::stop_suite_run).
 ///
 /// See [`crate::client::fluent_builders::StopSuiteRun`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopSuiteRun {
     _private: (),
 }
@@ -369,7 +369,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopSuiteRun {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -401,7 +401,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -433,7 +433,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_suite_definition`](crate::client::Client::update_suite_definition).
 ///
 /// See [`crate::client::fluent_builders::UpdateSuiteDefinition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSuiteDefinition {
     _private: (),
 }

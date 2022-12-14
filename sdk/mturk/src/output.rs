@@ -17,7 +17,7 @@ impl UpdateQualificationTypeOutput {
 pub mod update_qualification_type_output {
 
     /// A builder for [`UpdateQualificationTypeOutput`](crate::output::UpdateQualificationTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type: std::option::Option<crate::model::QualificationType>,
     }
@@ -58,7 +58,7 @@ pub struct UpdateNotificationSettingsOutput {}
 pub mod update_notification_settings_output {
 
     /// A builder for [`UpdateNotificationSettingsOutput`](crate::output::UpdateNotificationSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateNotificationSettingsOutput`](crate::output::UpdateNotificationSettingsOutput).
@@ -82,7 +82,7 @@ pub struct UpdateHitTypeOfHitOutput {}
 pub mod update_hit_type_of_hit_output {
 
     /// A builder for [`UpdateHitTypeOfHitOutput`](crate::output::UpdateHitTypeOfHitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateHitTypeOfHitOutput`](crate::output::UpdateHitTypeOfHitOutput).
@@ -106,7 +106,7 @@ pub struct UpdateHitReviewStatusOutput {}
 pub mod update_hit_review_status_output {
 
     /// A builder for [`UpdateHitReviewStatusOutput`](crate::output::UpdateHitReviewStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateHitReviewStatusOutput`](crate::output::UpdateHitReviewStatusOutput).
@@ -130,7 +130,7 @@ pub struct UpdateExpirationForHitOutput {}
 pub mod update_expiration_for_hit_output {
 
     /// A builder for [`UpdateExpirationForHitOutput`](crate::output::UpdateExpirationForHitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateExpirationForHitOutput`](crate::output::UpdateExpirationForHitOutput).
@@ -154,7 +154,7 @@ pub struct SendTestEventNotificationOutput {}
 pub mod send_test_event_notification_output {
 
     /// A builder for [`SendTestEventNotificationOutput`](crate::output::SendTestEventNotificationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SendTestEventNotificationOutput`](crate::output::SendTestEventNotificationOutput).
@@ -178,7 +178,7 @@ pub struct SendBonusOutput {}
 pub mod send_bonus_output {
 
     /// A builder for [`SendBonusOutput`](crate::output::SendBonusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SendBonusOutput`](crate::output::SendBonusOutput).
@@ -202,7 +202,7 @@ pub struct RejectQualificationRequestOutput {}
 pub mod reject_qualification_request_output {
 
     /// A builder for [`RejectQualificationRequestOutput`](crate::output::RejectQualificationRequestOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RejectQualificationRequestOutput`](crate::output::RejectQualificationRequestOutput).
@@ -226,7 +226,7 @@ pub struct RejectAssignmentOutput {}
 pub mod reject_assignment_output {
 
     /// A builder for [`RejectAssignmentOutput`](crate::output::RejectAssignmentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RejectAssignmentOutput`](crate::output::RejectAssignmentOutput).
@@ -263,7 +263,7 @@ impl NotifyWorkersOutput {
 pub mod notify_workers_output {
 
     /// A builder for [`NotifyWorkersOutput`](crate::output::NotifyWorkersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notify_workers_failure_statuses:
             std::option::Option<std::vec::Vec<crate::model::NotifyWorkersFailureStatus>>,
@@ -338,7 +338,7 @@ impl ListWorkersWithQualificationTypeOutput {
 pub mod list_workers_with_qualification_type_output {
 
     /// A builder for [`ListWorkersWithQualificationTypeOutput`](crate::output::ListWorkersWithQualificationTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) num_results: std::option::Option<i32>,
@@ -433,7 +433,7 @@ impl ListWorkerBlocksOutput {
 pub mod list_worker_blocks_output {
 
     /// A builder for [`ListWorkerBlocksOutput`](crate::output::ListWorkerBlocksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) num_results: std::option::Option<i32>,
@@ -549,7 +549,7 @@ impl ListReviewPolicyResultsForHitOutput {
 pub mod list_review_policy_results_for_hit_output {
 
     /// A builder for [`ListReviewPolicyResultsForHitOutput`](crate::output::ListReviewPolicyResultsForHitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit_id: std::option::Option<std::string::String>,
         pub(crate) assignment_review_policy: std::option::Option<crate::model::ReviewPolicy>,
@@ -683,7 +683,7 @@ impl ListReviewableHiTsOutput {
 pub mod list_reviewable_hi_ts_output {
 
     /// A builder for [`ListReviewableHiTsOutput`](crate::output::ListReviewableHiTsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) num_results: std::option::Option<i32>,
@@ -778,7 +778,7 @@ impl ListQualificationTypesOutput {
 pub mod list_qualification_types_output {
 
     /// A builder for [`ListQualificationTypesOutput`](crate::output::ListQualificationTypesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) num_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -877,7 +877,7 @@ impl ListQualificationRequestsOutput {
 pub mod list_qualification_requests_output {
 
     /// A builder for [`ListQualificationRequestsOutput`](crate::output::ListQualificationRequestsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) num_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -973,7 +973,7 @@ impl ListHiTsForQualificationTypeOutput {
 pub mod list_hi_ts_for_qualification_type_output {
 
     /// A builder for [`ListHiTsForQualificationTypeOutput`](crate::output::ListHiTsForQualificationTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) num_results: std::option::Option<i32>,
@@ -1068,7 +1068,7 @@ impl ListHiTsOutput {
 pub mod list_hi_ts_output {
 
     /// A builder for [`ListHiTsOutput`](crate::output::ListHiTsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) num_results: std::option::Option<i32>,
@@ -1163,7 +1163,7 @@ impl ListBonusPaymentsOutput {
 pub mod list_bonus_payments_output {
 
     /// A builder for [`ListBonusPaymentsOutput`](crate::output::ListBonusPaymentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) num_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1258,7 +1258,7 @@ impl ListAssignmentsForHitOutput {
 pub mod list_assignments_for_hit_output {
 
     /// A builder for [`ListAssignmentsForHitOutput`](crate::output::ListAssignmentsForHitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) num_results: std::option::Option<i32>,
@@ -1339,7 +1339,7 @@ impl GetQualificationTypeOutput {
 pub mod get_qualification_type_output {
 
     /// A builder for [`GetQualificationTypeOutput`](crate::output::GetQualificationTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type: std::option::Option<crate::model::QualificationType>,
     }
@@ -1390,7 +1390,7 @@ impl GetQualificationScoreOutput {
 pub mod get_qualification_score_output {
 
     /// A builder for [`GetQualificationScoreOutput`](crate::output::GetQualificationScoreOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification: std::option::Option<crate::model::Qualification>,
     }
@@ -1441,7 +1441,7 @@ impl GetHitOutput {
 pub mod get_hit_output {
 
     /// A builder for [`GetHitOutput`](crate::output::GetHitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit: std::option::Option<crate::model::Hit>,
     }
@@ -1487,7 +1487,7 @@ impl GetFileUploadUrlOutput {
 pub mod get_file_upload_url_output {
 
     /// A builder for [`GetFileUploadUrlOutput`](crate::output::GetFileUploadUrlOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_upload_url: std::option::Option<std::string::String>,
     }
@@ -1545,7 +1545,7 @@ impl GetAssignmentOutput {
 pub mod get_assignment_output {
 
     /// A builder for [`GetAssignmentOutput`](crate::output::GetAssignmentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assignment: std::option::Option<crate::model::Assignment>,
         pub(crate) hit: std::option::Option<crate::model::Hit>,
@@ -1615,7 +1615,7 @@ impl GetAccountBalanceOutput {
 pub mod get_account_balance_output {
 
     /// A builder for [`GetAccountBalanceOutput`](crate::output::GetAccountBalanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) available_balance: std::option::Option<std::string::String>,
         pub(crate) on_hold_balance: std::option::Option<std::string::String>,
@@ -1671,7 +1671,7 @@ pub struct DisassociateQualificationFromWorkerOutput {}
 pub mod disassociate_qualification_from_worker_output {
 
     /// A builder for [`DisassociateQualificationFromWorkerOutput`](crate::output::DisassociateQualificationFromWorkerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateQualificationFromWorkerOutput`](crate::output::DisassociateQualificationFromWorkerOutput).
@@ -1695,7 +1695,7 @@ pub struct DeleteWorkerBlockOutput {}
 pub mod delete_worker_block_output {
 
     /// A builder for [`DeleteWorkerBlockOutput`](crate::output::DeleteWorkerBlockOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWorkerBlockOutput`](crate::output::DeleteWorkerBlockOutput).
@@ -1719,7 +1719,7 @@ pub struct DeleteQualificationTypeOutput {}
 pub mod delete_qualification_type_output {
 
     /// A builder for [`DeleteQualificationTypeOutput`](crate::output::DeleteQualificationTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteQualificationTypeOutput`](crate::output::DeleteQualificationTypeOutput).
@@ -1743,7 +1743,7 @@ pub struct DeleteHitOutput {}
 pub mod delete_hit_output {
 
     /// A builder for [`DeleteHitOutput`](crate::output::DeleteHitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteHitOutput`](crate::output::DeleteHitOutput).
@@ -1767,7 +1767,7 @@ pub struct CreateWorkerBlockOutput {}
 pub mod create_worker_block_output {
 
     /// A builder for [`CreateWorkerBlockOutput`](crate::output::CreateWorkerBlockOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateWorkerBlockOutput`](crate::output::CreateWorkerBlockOutput).
@@ -1801,7 +1801,7 @@ impl CreateQualificationTypeOutput {
 pub mod create_qualification_type_output {
 
     /// A builder for [`CreateQualificationTypeOutput`](crate::output::CreateQualificationTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type: std::option::Option<crate::model::QualificationType>,
     }
@@ -1852,7 +1852,7 @@ impl CreateHitWithHitTypeOutput {
 pub mod create_hit_with_hit_type_output {
 
     /// A builder for [`CreateHitWithHitTypeOutput`](crate::output::CreateHitWithHitTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit: std::option::Option<crate::model::Hit>,
     }
@@ -1898,7 +1898,7 @@ impl CreateHitTypeOutput {
 pub mod create_hit_type_output {
 
     /// A builder for [`CreateHitTypeOutput`](crate::output::CreateHitTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit_type_id: std::option::Option<std::string::String>,
     }
@@ -1946,7 +1946,7 @@ impl CreateHitOutput {
 pub mod create_hit_output {
 
     /// A builder for [`CreateHitOutput`](crate::output::CreateHitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit: std::option::Option<crate::model::Hit>,
     }
@@ -1982,7 +1982,7 @@ pub struct CreateAdditionalAssignmentsForHitOutput {}
 pub mod create_additional_assignments_for_hit_output {
 
     /// A builder for [`CreateAdditionalAssignmentsForHitOutput`](crate::output::CreateAdditionalAssignmentsForHitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateAdditionalAssignmentsForHitOutput`](crate::output::CreateAdditionalAssignmentsForHitOutput).
@@ -2006,7 +2006,7 @@ pub struct AssociateQualificationWithWorkerOutput {}
 pub mod associate_qualification_with_worker_output {
 
     /// A builder for [`AssociateQualificationWithWorkerOutput`](crate::output::AssociateQualificationWithWorkerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateQualificationWithWorkerOutput`](crate::output::AssociateQualificationWithWorkerOutput).
@@ -2030,7 +2030,7 @@ pub struct ApproveAssignmentOutput {}
 pub mod approve_assignment_output {
 
     /// A builder for [`ApproveAssignmentOutput`](crate::output::ApproveAssignmentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ApproveAssignmentOutput`](crate::output::ApproveAssignmentOutput).
@@ -2054,7 +2054,7 @@ pub struct AcceptQualificationRequestOutput {}
 pub mod accept_qualification_request_output {
 
     /// A builder for [`AcceptQualificationRequestOutput`](crate::output::AcceptQualificationRequestOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AcceptQualificationRequestOutput`](crate::output::AcceptQualificationRequestOutput).

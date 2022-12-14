@@ -5,7 +5,7 @@
 /// [`batch_create_table_rows`](crate::client::Client::batch_create_table_rows).
 ///
 /// See [`crate::client::fluent_builders::BatchCreateTableRows`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchCreateTableRows {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateTableRows {
 /// [`batch_delete_table_rows`](crate::client::Client::batch_delete_table_rows).
 ///
 /// See [`crate::client::fluent_builders::BatchDeleteTableRows`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchDeleteTableRows {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteTableRows {
 /// [`batch_update_table_rows`](crate::client::Client::batch_update_table_rows).
 ///
 /// See [`crate::client::fluent_builders::BatchUpdateTableRows`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchUpdateTableRows {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateTableRows {
 /// [`batch_upsert_table_rows`](crate::client::Client::batch_upsert_table_rows).
 ///
 /// See [`crate::client::fluent_builders::BatchUpsertTableRows`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchUpsertTableRows {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpsertTableRows {
 /// [`describe_table_data_import_job`](crate::client::Client::describe_table_data_import_job).
 ///
 /// See [`crate::client::fluent_builders::DescribeTableDataImportJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTableDataImportJob {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTableDataImportJ
 /// [`get_screen_data`](crate::client::Client::get_screen_data).
 ///
 /// See [`crate::client::fluent_builders::GetScreenData`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetScreenData {
     _private: (),
 }
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetScreenData {
 /// [`invoke_screen_automation`](crate::client::Client::invoke_screen_automation).
 ///
 /// See [`crate::client::fluent_builders::InvokeScreenAutomation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct InvokeScreenAutomation {
     _private: (),
 }
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InvokeScreenAutomation {
 /// [`list_table_columns`](crate::client::Client::list_table_columns).
 ///
 /// See [`crate::client::fluent_builders::ListTableColumns`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTableColumns {
     _private: (),
 }
@@ -275,7 +275,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTableColumns {
 /// [`list_table_rows`](crate::client::Client::list_table_rows).
 ///
 /// See [`crate::client::fluent_builders::ListTableRows`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTableRows {
     _private: (),
 }
@@ -307,7 +307,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTableRows {
 /// [`list_tables`](crate::client::Client::list_tables).
 ///
 /// See [`crate::client::fluent_builders::ListTables`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTables {
     _private: (),
 }
@@ -339,7 +339,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTables {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -373,7 +373,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`query_table_rows`](crate::client::Client::query_table_rows).
 ///
 /// See [`crate::client::fluent_builders::QueryTableRows`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct QueryTableRows {
     _private: (),
 }
@@ -405,7 +405,7 @@ impl aws_smithy_http::response::ParseStrictResponse for QueryTableRows {
 /// [`start_table_data_import_job`](crate::client::Client::start_table_data_import_job).
 ///
 /// See [`crate::client::fluent_builders::StartTableDataImportJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartTableDataImportJob {
     _private: (),
 }
@@ -439,7 +439,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartTableDataImportJob 
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -471,7 +471,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }

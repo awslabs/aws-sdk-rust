@@ -21,7 +21,7 @@ impl StartConfigurationSessionOutput {
 pub mod start_configuration_session_output {
 
     /// A builder for [`StartConfigurationSessionOutput`](crate::output::StartConfigurationSessionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) initial_configuration_token: std::option::Option<std::string::String>,
     }
@@ -116,7 +116,7 @@ impl std::fmt::Debug for GetLatestConfigurationOutput {
 pub mod get_latest_configuration_output {
 
     /// A builder for [`GetLatestConfigurationOutput`](crate::output::GetLatestConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) next_poll_configuration_token: std::option::Option<std::string::String>,
         pub(crate) next_poll_interval_in_seconds: std::option::Option<i32>,

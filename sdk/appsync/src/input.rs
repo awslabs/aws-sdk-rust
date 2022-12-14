@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_api_input {
 
     /// A builder for [`AssociateApiInput`](crate::input::AssociateApiInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) api_id: std::option::Option<std::string::String>,
@@ -181,7 +181,7 @@ impl AssociateApiInput {
 pub mod create_api_cache_input {
 
     /// A builder for [`CreateApiCacheInput`](crate::input::CreateApiCacheInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) ttl: std::option::Option<i64>,
@@ -456,7 +456,7 @@ impl CreateApiCacheInput {
 pub mod create_api_key_input {
 
     /// A builder for [`CreateApiKeyInput`](crate::input::CreateApiKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -640,7 +640,7 @@ impl CreateApiKeyInput {
 pub mod create_data_source_input {
 
     /// A builder for [`CreateDataSourceInput`](crate::input::CreateDataSourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -960,7 +960,7 @@ impl CreateDataSourceInput {
 pub mod create_domain_name_input {
 
     /// A builder for [`CreateDomainNameInput`](crate::input::CreateDomainNameInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -1129,7 +1129,7 @@ impl CreateDomainNameInput {
 pub mod create_function_input {
 
     /// A builder for [`CreateFunctionInput`](crate::input::CreateFunctionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1402,7 +1402,7 @@ impl CreateFunctionInput {
 pub mod create_graphql_api_input {
 
     /// A builder for [`CreateGraphqlApiInput`](crate::input::CreateGraphqlApiInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) log_config: std::option::Option<crate::model::LogConfig>,
@@ -1691,7 +1691,7 @@ impl CreateGraphqlApiInput {
 pub mod create_resolver_input {
 
     /// A builder for [`CreateResolverInput`](crate::input::CreateResolverInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -2025,7 +2025,7 @@ impl CreateResolverInput {
 pub mod create_type_input {
 
     /// A builder for [`CreateTypeInput`](crate::input::CreateTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) definition: std::option::Option<std::string::String>,
@@ -2214,7 +2214,7 @@ impl CreateTypeInput {
 pub mod delete_api_cache_input {
 
     /// A builder for [`DeleteApiCacheInput`](crate::input::DeleteApiCacheInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
     }
@@ -2360,7 +2360,7 @@ impl DeleteApiCacheInput {
 pub mod delete_api_key_input {
 
     /// A builder for [`DeleteApiKeyInput`](crate::input::DeleteApiKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2542,7 +2542,7 @@ impl DeleteApiKeyInput {
 pub mod delete_data_source_input {
 
     /// A builder for [`DeleteDataSourceInput`](crate::input::DeleteDataSourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2726,7 +2726,7 @@ impl DeleteDataSourceInput {
 pub mod delete_domain_name_input {
 
     /// A builder for [`DeleteDomainNameInput`](crate::input::DeleteDomainNameInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -2878,7 +2878,7 @@ impl DeleteDomainNameInput {
 pub mod delete_function_input {
 
     /// A builder for [`DeleteFunctionInput`](crate::input::DeleteFunctionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) function_id: std::option::Option<std::string::String>,
@@ -3060,7 +3060,7 @@ impl DeleteFunctionInput {
 pub mod delete_graphql_api_input {
 
     /// A builder for [`DeleteGraphqlApiInput`](crate::input::DeleteGraphqlApiInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
     }
@@ -3208,7 +3208,7 @@ impl DeleteGraphqlApiInput {
 pub mod delete_resolver_input {
 
     /// A builder for [`DeleteResolverInput`](crate::input::DeleteResolverInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -3422,7 +3422,7 @@ impl DeleteResolverInput {
 pub mod delete_type_input {
 
     /// A builder for [`DeleteTypeInput`](crate::input::DeleteTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -3604,7 +3604,7 @@ impl DeleteTypeInput {
 pub mod disassociate_api_input {
 
     /// A builder for [`DisassociateApiInput`](crate::input::DisassociateApiInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -3754,7 +3754,7 @@ impl DisassociateApiInput {
 pub mod evaluate_mapping_template_input {
 
     /// A builder for [`EvaluateMappingTemplateInput`](crate::input::EvaluateMappingTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template: std::option::Option<std::string::String>,
         pub(crate) context: std::option::Option<std::string::String>,
@@ -3911,7 +3911,7 @@ impl EvaluateMappingTemplateInput {
 pub mod flush_api_cache_input {
 
     /// A builder for [`FlushApiCacheInput`](crate::input::FlushApiCacheInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
     }
@@ -4057,7 +4057,7 @@ impl FlushApiCacheInput {
 pub mod get_api_association_input {
 
     /// A builder for [`GetApiAssociationInput`](crate::input::GetApiAssociationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -4209,7 +4209,7 @@ impl GetApiAssociationInput {
 pub mod get_api_cache_input {
 
     /// A builder for [`GetApiCacheInput`](crate::input::GetApiCacheInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
     }
@@ -4355,7 +4355,7 @@ impl GetApiCacheInput {
 pub mod get_data_source_input {
 
     /// A builder for [`GetDataSourceInput`](crate::input::GetDataSourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4537,7 +4537,7 @@ impl GetDataSourceInput {
 pub mod get_domain_name_input {
 
     /// A builder for [`GetDomainNameInput`](crate::input::GetDomainNameInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -4687,7 +4687,7 @@ impl GetDomainNameInput {
 pub mod get_function_input {
 
     /// A builder for [`GetFunctionInput`](crate::input::GetFunctionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) function_id: std::option::Option<std::string::String>,
@@ -4869,7 +4869,7 @@ impl GetFunctionInput {
 pub mod get_graphql_api_input {
 
     /// A builder for [`GetGraphqlApiInput`](crate::input::GetGraphqlApiInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
     }
@@ -5015,7 +5015,7 @@ impl GetGraphqlApiInput {
 pub mod get_introspection_schema_input {
 
     /// A builder for [`GetIntrospectionSchemaInput`](crate::input::GetIntrospectionSchemaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) format: std::option::Option<crate::model::OutputType>,
@@ -5211,7 +5211,7 @@ impl GetIntrospectionSchemaInput {
 pub mod get_resolver_input {
 
     /// A builder for [`GetResolverInput`](crate::input::GetResolverInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -5425,7 +5425,7 @@ impl GetResolverInput {
 pub mod get_schema_creation_status_input {
 
     /// A builder for [`GetSchemaCreationStatusInput`](crate::input::GetSchemaCreationStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
     }
@@ -5573,7 +5573,7 @@ impl GetSchemaCreationStatusInput {
 pub mod get_type_input {
 
     /// A builder for [`GetTypeInput`](crate::input::GetTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -5783,7 +5783,7 @@ impl GetTypeInput {
 pub mod list_api_keys_input {
 
     /// A builder for [`ListApiKeysInput`](crate::input::ListApiKeysInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5972,7 +5972,7 @@ impl ListApiKeysInput {
 pub mod list_data_sources_input {
 
     /// A builder for [`ListDataSourcesInput`](crate::input::ListDataSourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6161,7 +6161,7 @@ impl ListDataSourcesInput {
 pub mod list_domain_names_input {
 
     /// A builder for [`ListDomainNamesInput`](crate::input::ListDomainNamesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -6318,7 +6318,7 @@ impl ListDomainNamesInput {
 pub mod list_functions_input {
 
     /// A builder for [`ListFunctionsInput`](crate::input::ListFunctionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6507,7 +6507,7 @@ impl ListFunctionsInput {
 pub mod list_graphql_apis_input {
 
     /// A builder for [`ListGraphqlApisInput`](crate::input::ListGraphqlApisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -6664,7 +6664,7 @@ impl ListGraphqlApisInput {
 pub mod list_resolvers_input {
 
     /// A builder for [`ListResolversInput`](crate::input::ListResolversInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -6889,7 +6889,7 @@ impl ListResolversInput {
 pub mod list_resolvers_by_function_input {
 
     /// A builder for [`ListResolversByFunctionInput`](crate::input::ListResolversByFunctionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) function_id: std::option::Option<std::string::String>,
@@ -7116,7 +7116,7 @@ impl ListResolversByFunctionInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -7264,7 +7264,7 @@ impl ListTagsForResourceInput {
 pub mod list_types_input {
 
     /// A builder for [`ListTypesInput`](crate::input::ListTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) format: std::option::Option<crate::model::TypeDefinitionFormat>,
@@ -7474,7 +7474,7 @@ impl ListTypesInput {
 pub mod start_schema_creation_input {
 
     /// A builder for [`StartSchemaCreationInput`](crate::input::StartSchemaCreationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) definition: std::option::Option<aws_smithy_types::Blob>,
@@ -7651,7 +7651,7 @@ impl StartSchemaCreationInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -7840,7 +7840,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8025,7 +8025,7 @@ impl UntagResourceInput {
 pub mod update_api_cache_input {
 
     /// A builder for [`UpdateApiCacheInput`](crate::input::UpdateApiCacheInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) ttl: std::option::Option<i64>,
@@ -8276,7 +8276,7 @@ impl UpdateApiCacheInput {
 pub mod update_api_key_input {
 
     /// A builder for [`UpdateApiKeyInput`](crate::input::UpdateApiKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -8496,7 +8496,7 @@ impl UpdateApiKeyInput {
 pub mod update_data_source_input {
 
     /// A builder for [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8840,7 +8840,7 @@ impl UpdateDataSourceInput {
 pub mod update_domain_name_input {
 
     /// A builder for [`UpdateDomainNameInput`](crate::input::UpdateDomainNameInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -9018,7 +9018,7 @@ impl UpdateDomainNameInput {
 pub mod update_function_input {
 
     /// A builder for [`UpdateFunctionInput`](crate::input::UpdateFunctionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -9327,7 +9327,7 @@ impl UpdateFunctionInput {
 pub mod update_graphql_api_input {
 
     /// A builder for [`UpdateGraphqlApiInput`](crate::input::UpdateGraphqlApiInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -9619,7 +9619,7 @@ impl UpdateGraphqlApiInput {
 pub mod update_resolver_input {
 
     /// A builder for [`UpdateResolverInput`](crate::input::UpdateResolverInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -9973,7 +9973,7 @@ impl UpdateResolverInput {
 pub mod update_type_input {
 
     /// A builder for [`UpdateTypeInput`](crate::input::UpdateTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) type_name: std::option::Option<std::string::String>,

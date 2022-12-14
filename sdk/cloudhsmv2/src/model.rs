@@ -25,7 +25,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -155,7 +155,7 @@ impl Backup {
 pub mod backup {
 
     /// A builder for [`Backup`](crate::model::Backup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_id: std::option::Option<std::string::String>,
         pub(crate) backup_state: std::option::Option<crate::model::BackupState>,
@@ -557,7 +557,7 @@ impl Cluster {
 pub mod cluster {
 
     /// A builder for [`Cluster`](crate::model::Cluster).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_policy: std::option::Option<crate::model::BackupPolicy>,
         pub(crate) backup_retention_policy:
@@ -864,7 +864,7 @@ impl Certificates {
 pub mod certificates {
 
     /// A builder for [`Certificates`](crate::model::Certificates).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_csr: std::option::Option<std::string::String>,
         pub(crate) hsm_certificate: std::option::Option<std::string::String>,
@@ -1159,7 +1159,7 @@ impl Hsm {
 pub mod hsm {
 
     /// A builder for [`Hsm`](crate::model::Hsm).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zone: std::option::Option<std::string::String>,
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -1415,7 +1415,7 @@ impl BackupRetentionPolicy {
 pub mod backup_retention_policy {
 
     /// A builder for [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::BackupRetentionType>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1671,7 +1671,7 @@ impl DestinationBackup {
 pub mod destination_backup {
 
     /// A builder for [`DestinationBackup`](crate::model::DestinationBackup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_region: std::option::Option<std::string::String>,

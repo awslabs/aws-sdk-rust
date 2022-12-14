@@ -25,7 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
 
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -165,7 +165,7 @@ impl std::fmt::Debug for ListDevicePositionsResponseEntry {
 pub mod list_device_positions_response_entry {
 
     /// A builder for [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) sample_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -301,7 +301,7 @@ impl PositionalAccuracy {
 pub mod positional_accuracy {
 
     /// A builder for [`PositionalAccuracy`](crate::model::PositionalAccuracy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) horizontal: std::option::Option<f64>,
     }
@@ -400,7 +400,7 @@ impl std::fmt::Debug for DevicePosition {
 pub mod device_position {
 
     /// A builder for [`DevicePosition`](crate::model::DevicePosition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) sample_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -566,7 +566,7 @@ impl BatchUpdateDevicePositionError {
 pub mod batch_update_device_position_error {
 
     /// A builder for [`BatchUpdateDevicePositionError`](crate::model::BatchUpdateDevicePositionError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) sample_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -651,7 +651,7 @@ impl BatchItemError {
 pub mod batch_item_error {
 
     /// A builder for [`BatchItemError`](crate::model::BatchItemError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::BatchItemErrorCode>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -797,7 +797,7 @@ impl std::fmt::Debug for DevicePositionUpdate {
 pub mod device_position_update {
 
     /// A builder for [`DevicePositionUpdate`](crate::model::DevicePositionUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) sample_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -942,7 +942,7 @@ impl BatchGetDevicePositionError {
 pub mod batch_get_device_position_error {
 
     /// A builder for [`BatchGetDevicePositionError`](crate::model::BatchGetDevicePositionError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<crate::model::BatchItemError>,
@@ -1012,7 +1012,7 @@ impl BatchDeleteDevicePositionHistoryError {
 pub mod batch_delete_device_position_history_error {
 
     /// A builder for [`BatchDeleteDevicePositionHistoryError`](crate::model::BatchDeleteDevicePositionHistoryError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<crate::model::BatchItemError>,
@@ -1120,7 +1120,7 @@ impl ListTrackersResponseEntry {
 pub mod list_trackers_response_entry {
 
     /// A builder for [`ListTrackersResponseEntry`](crate::model::ListTrackersResponseEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1347,7 +1347,7 @@ impl CalculateRouteMatrixSummary {
 pub mod calculate_route_matrix_summary {
 
     /// A builder for [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source: std::option::Option<std::string::String>,
         pub(crate) route_count: std::option::Option<i32>,
@@ -1489,7 +1489,7 @@ impl RouteMatrixEntry {
 pub mod route_matrix_entry {
 
     /// A builder for [`RouteMatrixEntry`](crate::model::RouteMatrixEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distance: std::option::Option<f64>,
         pub(crate) duration_seconds: std::option::Option<f64>,
@@ -1590,7 +1590,7 @@ impl RouteMatrixEntryError {
 pub mod route_matrix_entry_error {
 
     /// A builder for [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::RouteMatrixErrorCode>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1720,7 +1720,7 @@ impl CalculateRouteTruckModeOptions {
 pub mod calculate_route_truck_mode_options {
 
     /// A builder for [`CalculateRouteTruckModeOptions`](crate::model::CalculateRouteTruckModeOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) avoid_ferries: std::option::Option<bool>,
         pub(crate) avoid_tolls: std::option::Option<bool>,
@@ -1830,7 +1830,7 @@ impl TruckWeight {
 pub mod truck_weight {
 
     /// A builder for [`TruckWeight`](crate::model::TruckWeight).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total: std::option::Option<f64>,
         pub(crate) unit: std::option::Option<crate::model::VehicleWeightUnit>,
@@ -1985,7 +1985,7 @@ impl TruckDimensions {
 pub mod truck_dimensions {
 
     /// A builder for [`TruckDimensions`](crate::model::TruckDimensions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) length: std::option::Option<f64>,
         pub(crate) height: std::option::Option<f64>,
@@ -2147,7 +2147,7 @@ impl CalculateRouteCarModeOptions {
 pub mod calculate_route_car_mode_options {
 
     /// A builder for [`CalculateRouteCarModeOptions`](crate::model::CalculateRouteCarModeOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) avoid_ferries: std::option::Option<bool>,
         pub(crate) avoid_tolls: std::option::Option<bool>,
@@ -2319,7 +2319,7 @@ impl std::fmt::Debug for CalculateRouteSummary {
 pub mod calculate_route_summary {
 
     /// A builder for [`CalculateRouteSummary`](crate::model::CalculateRouteSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) route_b_box: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) data_source: std::option::Option<std::string::String>,
@@ -2540,7 +2540,7 @@ impl std::fmt::Debug for Leg {
 pub mod leg {
 
     /// A builder for [`Leg`](crate::model::Leg).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) start_position: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) end_position: std::option::Option<std::vec::Vec<f64>>,
@@ -2742,7 +2742,7 @@ impl std::fmt::Debug for Step {
 pub mod step {
 
     /// A builder for [`Step`](crate::model::Step).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) start_position: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) end_position: std::option::Option<std::vec::Vec<f64>>,
@@ -2874,7 +2874,7 @@ impl LegGeometry {
 pub mod leg_geometry {
 
     /// A builder for [`LegGeometry`](crate::model::LegGeometry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) line_string: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
     }
@@ -3004,7 +3004,7 @@ impl ListRouteCalculatorsResponseEntry {
 pub mod list_route_calculators_response_entry {
 
     /// A builder for [`ListRouteCalculatorsResponseEntry`](crate::model::ListRouteCalculatorsResponseEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) calculator_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -3185,7 +3185,7 @@ impl SearchForTextResult {
 pub mod search_for_text_result {
 
     /// A builder for [`SearchForTextResult`](crate::model::SearchForTextResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) place: std::option::Option<crate::model::Place>,
         pub(crate) distance: std::option::Option<f64>,
@@ -3381,7 +3381,7 @@ impl Place {
 pub mod place {
 
     /// A builder for [`Place`](crate::model::Place).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label: std::option::Option<std::string::String>,
         pub(crate) geometry: std::option::Option<crate::model::PlaceGeometry>,
@@ -3608,7 +3608,7 @@ impl TimeZone {
 pub mod time_zone {
 
     /// A builder for [`TimeZone`](crate::model::TimeZone).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) offset: std::option::Option<i32>,
@@ -3683,7 +3683,7 @@ impl std::fmt::Debug for PlaceGeometry {
 pub mod place_geometry {
 
     /// A builder for [`PlaceGeometry`](crate::model::PlaceGeometry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) point: std::option::Option<std::vec::Vec<f64>>,
     }
@@ -3831,7 +3831,7 @@ impl std::fmt::Debug for SearchPlaceIndexForTextSummary {
 pub mod search_place_index_for_text_summary {
 
     /// A builder for [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) bias_position: std::option::Option<std::vec::Vec<f64>>,
@@ -4033,7 +4033,7 @@ impl SearchForSuggestionsResult {
 pub mod search_for_suggestions_result {
 
     /// A builder for [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) place_id: std::option::Option<std::string::String>,
@@ -4166,7 +4166,7 @@ impl std::fmt::Debug for SearchPlaceIndexForSuggestionsSummary {
 pub mod search_place_index_for_suggestions_summary {
 
     /// A builder for [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) bias_position: std::option::Option<std::vec::Vec<f64>>,
@@ -4356,7 +4356,7 @@ impl SearchForPositionResult {
 pub mod search_for_position_result {
 
     /// A builder for [`SearchForPositionResult`](crate::model::SearchForPositionResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) place: std::option::Option<crate::model::Place>,
         pub(crate) distance: std::option::Option<f64>,
@@ -4479,7 +4479,7 @@ impl std::fmt::Debug for SearchPlaceIndexForPositionSummary {
 pub mod search_place_index_for_position_summary {
 
     /// A builder for [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4644,7 +4644,7 @@ impl ListPlaceIndexesResponseEntry {
 pub mod list_place_indexes_response_entry {
 
     /// A builder for [`ListPlaceIndexesResponseEntry`](crate::model::ListPlaceIndexesResponseEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4798,7 +4798,7 @@ impl DataSourceConfiguration {
 pub mod data_source_configuration {
 
     /// A builder for [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) intended_use: std::option::Option<crate::model::IntendedUse>,
     }
@@ -4935,7 +4935,7 @@ impl ListMapsResponseEntry {
 pub mod list_maps_response_entry {
 
     /// A builder for [`ListMapsResponseEntry`](crate::model::ListMapsResponseEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) map_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5094,7 +5094,7 @@ impl MapConfiguration {
 pub mod map_configuration {
 
     /// A builder for [`MapConfiguration`](crate::model::MapConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) style: std::option::Option<std::string::String>,
     }
@@ -5196,7 +5196,7 @@ impl std::fmt::Debug for GeofenceGeometry {
 pub mod geofence_geometry {
 
     /// A builder for [`GeofenceGeometry`](crate::model::GeofenceGeometry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) polygon: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>,
         pub(crate) circle: std::option::Option<crate::model::Circle>,
@@ -5292,7 +5292,7 @@ impl std::fmt::Debug for Circle {
 pub mod circle {
 
     /// A builder for [`Circle`](crate::model::Circle).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) center: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) radius: std::option::Option<f64>,
@@ -5408,7 +5408,7 @@ impl ListGeofenceResponseEntry {
 pub mod list_geofence_response_entry {
 
     /// A builder for [`ListGeofenceResponseEntry`](crate::model::ListGeofenceResponseEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
         pub(crate) geometry: std::option::Option<crate::model::GeofenceGeometry>,
@@ -5534,7 +5534,7 @@ impl BatchPutGeofenceError {
 pub mod batch_put_geofence_error {
 
     /// A builder for [`BatchPutGeofenceError`](crate::model::BatchPutGeofenceError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<crate::model::BatchItemError>,
@@ -5611,7 +5611,7 @@ impl BatchPutGeofenceSuccess {
 pub mod batch_put_geofence_success {
 
     /// A builder for [`BatchPutGeofenceSuccess`](crate::model::BatchPutGeofenceSuccess).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -5700,7 +5700,7 @@ impl BatchPutGeofenceRequestEntry {
 pub mod batch_put_geofence_request_entry {
 
     /// A builder for [`BatchPutGeofenceRequestEntry`](crate::model::BatchPutGeofenceRequestEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
         pub(crate) geometry: std::option::Option<crate::model::GeofenceGeometry>,
@@ -5781,7 +5781,7 @@ impl BatchEvaluateGeofencesError {
 pub mod batch_evaluate_geofences_error {
 
     /// A builder for [`BatchEvaluateGeofencesError`](crate::model::BatchEvaluateGeofencesError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) sample_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -5866,7 +5866,7 @@ impl BatchDeleteGeofenceError {
 pub mod batch_delete_geofence_error {
 
     /// A builder for [`BatchDeleteGeofenceError`](crate::model::BatchDeleteGeofenceError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<crate::model::BatchItemError>,
@@ -5974,7 +5974,7 @@ impl ListGeofenceCollectionsResponseEntry {
 pub mod list_geofence_collections_response_entry {
 
     /// A builder for [`ListGeofenceCollectionsResponseEntry`](crate::model::ListGeofenceCollectionsResponseEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,

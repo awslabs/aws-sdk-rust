@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_workflow_input {
 
     /// A builder for [`CreateWorkflowInput`](crate::input::CreateWorkflowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -282,7 +282,7 @@ impl CreateWorkflowInput {
 pub mod create_workflow_step_input {
 
     /// A builder for [`CreateWorkflowStepInput`](crate::input::CreateWorkflowStepInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) step_group_id: std::option::Option<std::string::String>,
@@ -581,7 +581,7 @@ impl CreateWorkflowStepInput {
 pub mod create_workflow_step_group_input {
 
     /// A builder for [`CreateWorkflowStepGroupInput`](crate::input::CreateWorkflowStepGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -791,7 +791,7 @@ impl CreateWorkflowStepGroupInput {
 pub mod delete_workflow_input {
 
     /// A builder for [`DeleteWorkflowInput`](crate::input::DeleteWorkflowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -935,7 +935,7 @@ impl DeleteWorkflowInput {
 pub mod delete_workflow_step_input {
 
     /// A builder for [`DeleteWorkflowStepInput`](crate::input::DeleteWorkflowStepInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) step_group_id: std::option::Option<std::string::String>,
@@ -1149,7 +1149,7 @@ impl DeleteWorkflowStepInput {
 pub mod delete_workflow_step_group_input {
 
     /// A builder for [`DeleteWorkflowStepGroupInput`](crate::input::DeleteWorkflowStepGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1333,7 +1333,7 @@ impl DeleteWorkflowStepGroupInput {
 pub mod get_template_input {
 
     /// A builder for [`GetTemplateInput`](crate::input::GetTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1477,7 +1477,7 @@ impl GetTemplateInput {
 pub mod get_template_step_input {
 
     /// A builder for [`GetTemplateStepInput`](crate::input::GetTemplateStepInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) template_id: std::option::Option<std::string::String>,
@@ -1692,7 +1692,7 @@ impl GetTemplateStepInput {
 pub mod get_template_step_group_input {
 
     /// A builder for [`GetTemplateStepGroupInput`](crate::input::GetTemplateStepGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_id: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1876,7 +1876,7 @@ impl GetTemplateStepGroupInput {
 pub mod get_workflow_input {
 
     /// A builder for [`GetWorkflowInput`](crate::input::GetWorkflowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -2020,7 +2020,7 @@ impl GetWorkflowInput {
 pub mod get_workflow_step_input {
 
     /// A builder for [`GetWorkflowStepInput`](crate::input::GetWorkflowStepInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) step_group_id: std::option::Option<std::string::String>,
@@ -2235,7 +2235,7 @@ impl GetWorkflowStepInput {
 pub mod get_workflow_step_group_input {
 
     /// A builder for [`GetWorkflowStepGroupInput`](crate::input::GetWorkflowStepGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -2419,7 +2419,7 @@ impl GetWorkflowStepGroupInput {
 pub mod list_plugins_input {
 
     /// A builder for [`ListPluginsInput`](crate::input::ListPluginsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2576,7 +2576,7 @@ impl ListPluginsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2724,7 +2724,7 @@ impl ListTagsForResourceInput {
 pub mod list_templates_input {
 
     /// A builder for [`ListTemplatesInput`](crate::input::ListTemplatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2898,7 +2898,7 @@ impl ListTemplatesInput {
 pub mod list_template_step_groups_input {
 
     /// A builder for [`ListTemplateStepGroupsInput`](crate::input::ListTemplateStepGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3093,7 +3093,7 @@ impl ListTemplateStepGroupsInput {
 pub mod list_template_steps_input {
 
     /// A builder for [`ListTemplateStepsInput`](crate::input::ListTemplateStepsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3314,7 +3314,7 @@ impl ListTemplateStepsInput {
 pub mod list_workflows_input {
 
     /// A builder for [`ListWorkflowsInput`](crate::input::ListWorkflowsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3551,7 +3551,7 @@ impl ListWorkflowsInput {
 pub mod list_workflow_step_groups_input {
 
     /// A builder for [`ListWorkflowStepGroupsInput`](crate::input::ListWorkflowStepGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3738,7 +3738,7 @@ impl ListWorkflowStepGroupsInput {
 pub mod list_workflow_steps_input {
 
     /// A builder for [`ListWorkflowStepsInput`](crate::input::ListWorkflowStepsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3968,7 +3968,7 @@ impl ListWorkflowStepsInput {
 pub mod retry_workflow_step_input {
 
     /// A builder for [`RetryWorkflowStepInput`](crate::input::RetryWorkflowStepInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) step_group_id: std::option::Option<std::string::String>,
@@ -4186,7 +4186,7 @@ impl RetryWorkflowStepInput {
 pub mod start_workflow_input {
 
     /// A builder for [`StartWorkflowInput`](crate::input::StartWorkflowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -4330,7 +4330,7 @@ impl StartWorkflowInput {
 pub mod stop_workflow_input {
 
     /// A builder for [`StopWorkflowInput`](crate::input::StopWorkflowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -4474,7 +4474,7 @@ impl StopWorkflowInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -4663,7 +4663,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4848,7 +4848,7 @@ impl UntagResourceInput {
 pub mod update_workflow_input {
 
     /// A builder for [`UpdateWorkflowInput`](crate::input::UpdateWorkflowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5093,7 +5093,7 @@ impl UpdateWorkflowInput {
 pub mod update_workflow_step_input {
 
     /// A builder for [`UpdateWorkflowStepInput`](crate::input::UpdateWorkflowStepInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) step_group_id: std::option::Option<std::string::String>,
@@ -5435,7 +5435,7 @@ impl UpdateWorkflowStepInput {
 pub mod update_workflow_step_group_input {
 
     /// A builder for [`UpdateWorkflowStepGroupInput`](crate::input::UpdateWorkflowStepGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,

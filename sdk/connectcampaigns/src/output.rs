@@ -7,7 +7,7 @@ pub struct UpdateCampaignOutboundCallConfigOutput {}
 pub mod update_campaign_outbound_call_config_output {
 
     /// A builder for [`UpdateCampaignOutboundCallConfigOutput`](crate::output::UpdateCampaignOutboundCallConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateCampaignOutboundCallConfigOutput`](crate::output::UpdateCampaignOutboundCallConfigOutput).
@@ -31,7 +31,7 @@ pub struct UpdateCampaignNameOutput {}
 pub mod update_campaign_name_output {
 
     /// A builder for [`UpdateCampaignNameOutput`](crate::output::UpdateCampaignNameOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateCampaignNameOutput`](crate::output::UpdateCampaignNameOutput).
@@ -55,7 +55,7 @@ pub struct UpdateCampaignDialerConfigOutput {}
 pub mod update_campaign_dialer_config_output {
 
     /// A builder for [`UpdateCampaignDialerConfigOutput`](crate::output::UpdateCampaignDialerConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateCampaignDialerConfigOutput`](crate::output::UpdateCampaignDialerConfigOutput).
@@ -79,7 +79,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -103,7 +103,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -127,7 +127,7 @@ pub struct StopCampaignOutput {}
 pub mod stop_campaign_output {
 
     /// A builder for [`StopCampaignOutput`](crate::output::StopCampaignOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StopCampaignOutput`](crate::output::StopCampaignOutput).
@@ -164,7 +164,7 @@ impl StartInstanceOnboardingJobOutput {
 pub mod start_instance_onboarding_job_output {
 
     /// A builder for [`StartInstanceOnboardingJobOutput`](crate::output::StartInstanceOnboardingJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_instance_onboarding_job_status:
             std::option::Option<crate::model::InstanceOnboardingJobStatus>,
@@ -209,7 +209,7 @@ pub struct StartCampaignOutput {}
 pub mod start_campaign_output {
 
     /// A builder for [`StartCampaignOutput`](crate::output::StartCampaignOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StartCampaignOutput`](crate::output::StartCampaignOutput).
@@ -233,7 +233,7 @@ pub struct ResumeCampaignOutput {}
 pub mod resume_campaign_output {
 
     /// A builder for [`ResumeCampaignOutput`](crate::output::ResumeCampaignOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ResumeCampaignOutput`](crate::output::ResumeCampaignOutput).
@@ -274,7 +274,7 @@ impl PutDialRequestBatchOutput {
 pub mod put_dial_request_batch_output {
 
     /// A builder for [`PutDialRequestBatchOutput`](crate::output::PutDialRequestBatchOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successful_requests:
             std::option::Option<std::vec::Vec<crate::model::SuccessfulRequest>>,
@@ -343,7 +343,7 @@ pub struct PauseCampaignOutput {}
 pub mod pause_campaign_output {
 
     /// A builder for [`PauseCampaignOutput`](crate::output::PauseCampaignOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PauseCampaignOutput`](crate::output::PauseCampaignOutput).
@@ -381,7 +381,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -451,7 +451,7 @@ impl ListCampaignsOutput {
 pub mod list_campaigns_output {
 
     /// A builder for [`ListCampaignsOutput`](crate::output::ListCampaignsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) campaign_summary_list:
@@ -524,7 +524,7 @@ impl GetInstanceOnboardingJobStatusOutput {
 pub mod get_instance_onboarding_job_status_output {
 
     /// A builder for [`GetInstanceOnboardingJobStatusOutput`](crate::output::GetInstanceOnboardingJobStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_instance_onboarding_job_status:
             std::option::Option<crate::model::InstanceOnboardingJobStatus>,
@@ -579,7 +579,7 @@ impl GetConnectInstanceConfigOutput {
 pub mod get_connect_instance_config_output {
 
     /// A builder for [`GetConnectInstanceConfigOutput`](crate::output::GetConnectInstanceConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_instance_config: std::option::Option<crate::model::InstanceConfig>,
     }
@@ -643,7 +643,7 @@ impl GetCampaignStateBatchOutput {
 pub mod get_campaign_state_batch_output {
 
     /// A builder for [`GetCampaignStateBatchOutput`](crate::output::GetCampaignStateBatchOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successful_requests:
             std::option::Option<std::vec::Vec<crate::model::SuccessfulCampaignStateResponse>>,
@@ -728,7 +728,7 @@ impl GetCampaignStateOutput {
 pub mod get_campaign_state_output {
 
     /// A builder for [`GetCampaignStateOutput`](crate::output::GetCampaignStateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::CampaignState>,
     }
@@ -777,7 +777,7 @@ impl DescribeCampaignOutput {
 pub mod describe_campaign_output {
 
     /// A builder for [`DescribeCampaignOutput`](crate::output::DescribeCampaignOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign: std::option::Option<crate::model::Campaign>,
     }
@@ -815,7 +815,7 @@ pub struct DeleteInstanceOnboardingJobOutput {}
 pub mod delete_instance_onboarding_job_output {
 
     /// A builder for [`DeleteInstanceOnboardingJobOutput`](crate::output::DeleteInstanceOnboardingJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteInstanceOnboardingJobOutput`](crate::output::DeleteInstanceOnboardingJobOutput).
@@ -839,7 +839,7 @@ pub struct DeleteConnectInstanceConfigOutput {}
 pub mod delete_connect_instance_config_output {
 
     /// A builder for [`DeleteConnectInstanceConfigOutput`](crate::output::DeleteConnectInstanceConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteConnectInstanceConfigOutput`](crate::output::DeleteConnectInstanceConfigOutput).
@@ -863,7 +863,7 @@ pub struct DeleteCampaignOutput {}
 pub mod delete_campaign_output {
 
     /// A builder for [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput).
@@ -915,7 +915,7 @@ impl CreateCampaignOutput {
 pub mod create_campaign_output {
 
     /// A builder for [`CreateCampaignOutput`](crate::output::CreateCampaignOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,

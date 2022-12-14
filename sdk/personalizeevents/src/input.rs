@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod put_events_input {
 
     /// A builder for [`PutEventsInput`](crate::input::PutEventsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracking_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -188,7 +188,7 @@ impl PutEventsInput {
 pub mod put_items_input {
 
     /// A builder for [`PutItemsInput`](crate::input::PutItemsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Item>>,
@@ -347,7 +347,7 @@ impl PutItemsInput {
 pub mod put_users_input {
 
     /// A builder for [`PutUsersInput`](crate::input::PutUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::User>>,

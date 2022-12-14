@@ -5,7 +5,7 @@
 /// [`batch_get_aggregate_resource_config`](crate::client::Client::batch_get_aggregate_resource_config).
 ///
 /// See [`crate::client::fluent_builders::BatchGetAggregateResourceConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetAggregateResourceConfig {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetAggregateResourc
 /// [`batch_get_resource_config`](crate::client::Client::batch_get_resource_config).
 ///
 /// See [`crate::client::fluent_builders::BatchGetResourceConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetResourceConfig {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetResourceConfig {
 /// [`delete_aggregation_authorization`](crate::client::Client::delete_aggregation_authorization).
 ///
 /// See [`crate::client::fluent_builders::DeleteAggregationAuthorization`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAggregationAuthorization {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAggregationAuthori
 /// [`delete_config_rule`](crate::client::Client::delete_config_rule).
 ///
 /// See [`crate::client::fluent_builders::DeleteConfigRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConfigRule {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigRule {
 /// [`delete_configuration_aggregator`](crate::client::Client::delete_configuration_aggregator).
 ///
 /// See [`crate::client::fluent_builders::DeleteConfigurationAggregator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConfigurationAggregator {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationAggre
 /// [`delete_configuration_recorder`](crate::client::Client::delete_configuration_recorder).
 ///
 /// See [`crate::client::fluent_builders::DeleteConfigurationRecorder`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConfigurationRecorder {
     _private: (),
 }
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationRecor
 /// [`delete_conformance_pack`](crate::client::Client::delete_conformance_pack).
 ///
 /// See [`crate::client::fluent_builders::DeleteConformancePack`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConformancePack {
     _private: (),
 }
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConformancePack {
 /// [`delete_delivery_channel`](crate::client::Client::delete_delivery_channel).
 ///
 /// See [`crate::client::fluent_builders::DeleteDeliveryChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDeliveryChannel {
     _private: (),
 }
@@ -277,7 +277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDeliveryChannel {
 /// [`delete_evaluation_results`](crate::client::Client::delete_evaluation_results).
 ///
 /// See [`crate::client::fluent_builders::DeleteEvaluationResults`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEvaluationResults {
     _private: (),
 }
@@ -311,7 +311,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEvaluationResults 
 /// [`delete_organization_config_rule`](crate::client::Client::delete_organization_config_rule).
 ///
 /// See [`crate::client::fluent_builders::DeleteOrganizationConfigRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteOrganizationConfigRule {
     _private: (),
 }
@@ -345,7 +345,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOrganizationConfig
 /// [`delete_organization_conformance_pack`](crate::client::Client::delete_organization_conformance_pack).
 ///
 /// See [`crate::client::fluent_builders::DeleteOrganizationConformancePack`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteOrganizationConformancePack {
     _private: (),
 }
@@ -379,7 +379,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOrganizationConfor
 /// [`delete_pending_aggregation_request`](crate::client::Client::delete_pending_aggregation_request).
 ///
 /// See [`crate::client::fluent_builders::DeletePendingAggregationRequest`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePendingAggregationRequest {
     _private: (),
 }
@@ -413,7 +413,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePendingAggregation
 /// [`delete_remediation_configuration`](crate::client::Client::delete_remediation_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeleteRemediationConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRemediationConfiguration {
     _private: (),
 }
@@ -447,7 +447,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRemediationConfigu
 /// [`delete_remediation_exceptions`](crate::client::Client::delete_remediation_exceptions).
 ///
 /// See [`crate::client::fluent_builders::DeleteRemediationExceptions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRemediationExceptions {
     _private: (),
 }
@@ -481,7 +481,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRemediationExcepti
 /// [`delete_resource_config`](crate::client::Client::delete_resource_config).
 ///
 /// See [`crate::client::fluent_builders::DeleteResourceConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteResourceConfig {
     _private: (),
 }
@@ -515,7 +515,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourceConfig {
 /// [`delete_retention_configuration`](crate::client::Client::delete_retention_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeleteRetentionConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRetentionConfiguration {
     _private: (),
 }
@@ -549,7 +549,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRetentionConfigura
 /// [`delete_stored_query`](crate::client::Client::delete_stored_query).
 ///
 /// See [`crate::client::fluent_builders::DeleteStoredQuery`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteStoredQuery {
     _private: (),
 }
@@ -583,7 +583,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStoredQuery {
 /// [`deliver_config_snapshot`](crate::client::Client::deliver_config_snapshot).
 ///
 /// See [`crate::client::fluent_builders::DeliverConfigSnapshot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeliverConfigSnapshot {
     _private: (),
 }
@@ -617,7 +617,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeliverConfigSnapshot {
 /// [`describe_aggregate_compliance_by_config_rules`](crate::client::Client::describe_aggregate_compliance_by_config_rules).
 ///
 /// See [`crate::client::fluent_builders::DescribeAggregateComplianceByConfigRules`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAggregateComplianceByConfigRules {
     _private: (),
 }
@@ -655,7 +655,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAggregateComplia
 /// [`describe_aggregate_compliance_by_conformance_packs`](crate::client::Client::describe_aggregate_compliance_by_conformance_packs).
 ///
 /// See [`crate::client::fluent_builders::DescribeAggregateComplianceByConformancePacks`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAggregateComplianceByConformancePacks {
     _private: (),
 }
@@ -694,7 +694,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`describe_aggregation_authorizations`](crate::client::Client::describe_aggregation_authorizations).
 ///
 /// See [`crate::client::fluent_builders::DescribeAggregationAuthorizations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAggregationAuthorizations {
     _private: (),
 }
@@ -728,7 +728,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAggregationAutho
 /// [`describe_compliance_by_config_rule`](crate::client::Client::describe_compliance_by_config_rule).
 ///
 /// See [`crate::client::fluent_builders::DescribeComplianceByConfigRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeComplianceByConfigRule {
     _private: (),
 }
@@ -762,7 +762,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeComplianceByConf
 /// [`describe_compliance_by_resource`](crate::client::Client::describe_compliance_by_resource).
 ///
 /// See [`crate::client::fluent_builders::DescribeComplianceByResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeComplianceByResource {
     _private: (),
 }
@@ -796,7 +796,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeComplianceByReso
 /// [`describe_config_rule_evaluation_status`](crate::client::Client::describe_config_rule_evaluation_status).
 ///
 /// See [`crate::client::fluent_builders::DescribeConfigRuleEvaluationStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConfigRuleEvaluationStatus {
     _private: (),
 }
@@ -830,7 +830,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConfigRuleEvalua
 /// [`describe_config_rules`](crate::client::Client::describe_config_rules).
 ///
 /// See [`crate::client::fluent_builders::DescribeConfigRules`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConfigRules {
     _private: (),
 }
@@ -864,7 +864,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConfigRules {
 /// [`describe_configuration_aggregators`](crate::client::Client::describe_configuration_aggregators).
 ///
 /// See [`crate::client::fluent_builders::DescribeConfigurationAggregators`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConfigurationAggregators {
     _private: (),
 }
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConfigurationAgg
 /// [`describe_configuration_aggregator_sources_status`](crate::client::Client::describe_configuration_aggregator_sources_status).
 ///
 /// See [`crate::client::fluent_builders::DescribeConfigurationAggregatorSourcesStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConfigurationAggregatorSourcesStatus {
     _private: (),
 }
@@ -939,7 +939,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`describe_configuration_recorders`](crate::client::Client::describe_configuration_recorders).
 ///
 /// See [`crate::client::fluent_builders::DescribeConfigurationRecorders`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConfigurationRecorders {
     _private: (),
 }
@@ -973,7 +973,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConfigurationRec
 /// [`describe_configuration_recorder_status`](crate::client::Client::describe_configuration_recorder_status).
 ///
 /// See [`crate::client::fluent_builders::DescribeConfigurationRecorderStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConfigurationRecorderStatus {
     _private: (),
 }
@@ -1007,7 +1007,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConfigurationRec
 /// [`describe_conformance_pack_compliance`](crate::client::Client::describe_conformance_pack_compliance).
 ///
 /// See [`crate::client::fluent_builders::DescribeConformancePackCompliance`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConformancePackCompliance {
     _private: (),
 }
@@ -1041,7 +1041,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConformancePackC
 /// [`describe_conformance_packs`](crate::client::Client::describe_conformance_packs).
 ///
 /// See [`crate::client::fluent_builders::DescribeConformancePacks`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConformancePacks {
     _private: (),
 }
@@ -1075,7 +1075,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConformancePacks
 /// [`describe_conformance_pack_status`](crate::client::Client::describe_conformance_pack_status).
 ///
 /// See [`crate::client::fluent_builders::DescribeConformancePackStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConformancePackStatus {
     _private: (),
 }
@@ -1109,7 +1109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConformancePackS
 /// [`describe_delivery_channels`](crate::client::Client::describe_delivery_channels).
 ///
 /// See [`crate::client::fluent_builders::DescribeDeliveryChannels`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDeliveryChannels {
     _private: (),
 }
@@ -1143,7 +1143,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDeliveryChannels
 /// [`describe_delivery_channel_status`](crate::client::Client::describe_delivery_channel_status).
 ///
 /// See [`crate::client::fluent_builders::DescribeDeliveryChannelStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDeliveryChannelStatus {
     _private: (),
 }
@@ -1177,7 +1177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDeliveryChannelS
 /// [`describe_organization_config_rules`](crate::client::Client::describe_organization_config_rules).
 ///
 /// See [`crate::client::fluent_builders::DescribeOrganizationConfigRules`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeOrganizationConfigRules {
     _private: (),
 }
@@ -1211,7 +1211,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOrganizationConf
 /// [`describe_organization_config_rule_statuses`](crate::client::Client::describe_organization_config_rule_statuses).
 ///
 /// See [`crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeOrganizationConfigRuleStatuses {
     _private: (),
 }
@@ -1247,7 +1247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOrganizationConf
 /// [`describe_organization_conformance_packs`](crate::client::Client::describe_organization_conformance_packs).
 ///
 /// See [`crate::client::fluent_builders::DescribeOrganizationConformancePacks`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeOrganizationConformancePacks {
     _private: (),
 }
@@ -1281,7 +1281,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOrganizationConf
 /// [`describe_organization_conformance_pack_statuses`](crate::client::Client::describe_organization_conformance_pack_statuses).
 ///
 /// See [`crate::client::fluent_builders::DescribeOrganizationConformancePackStatuses`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeOrganizationConformancePackStatuses {
     _private: (),
 }
@@ -1322,7 +1322,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`describe_pending_aggregation_requests`](crate::client::Client::describe_pending_aggregation_requests).
 ///
 /// See [`crate::client::fluent_builders::DescribePendingAggregationRequests`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePendingAggregationRequests {
     _private: (),
 }
@@ -1356,7 +1356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePendingAggregati
 /// [`describe_remediation_configurations`](crate::client::Client::describe_remediation_configurations).
 ///
 /// See [`crate::client::fluent_builders::DescribeRemediationConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRemediationConfigurations {
     _private: (),
 }
@@ -1390,7 +1390,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRemediationConfi
 /// [`describe_remediation_exceptions`](crate::client::Client::describe_remediation_exceptions).
 ///
 /// See [`crate::client::fluent_builders::DescribeRemediationExceptions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRemediationExceptions {
     _private: (),
 }
@@ -1424,7 +1424,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRemediationExcep
 /// [`describe_remediation_execution_status`](crate::client::Client::describe_remediation_execution_status).
 ///
 /// See [`crate::client::fluent_builders::DescribeRemediationExecutionStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRemediationExecutionStatus {
     _private: (),
 }
@@ -1458,7 +1458,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRemediationExecu
 /// [`describe_retention_configurations`](crate::client::Client::describe_retention_configurations).
 ///
 /// See [`crate::client::fluent_builders::DescribeRetentionConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRetentionConfigurations {
     _private: (),
 }
@@ -1492,7 +1492,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRetentionConfigu
 /// [`get_aggregate_compliance_details_by_config_rule`](crate::client::Client::get_aggregate_compliance_details_by_config_rule).
 ///
 /// See [`crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAggregateComplianceDetailsByConfigRule {
     _private: (),
 }
@@ -1531,7 +1531,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAggregateComplianceDe
 /// [`get_aggregate_config_rule_compliance_summary`](crate::client::Client::get_aggregate_config_rule_compliance_summary).
 ///
 /// See [`crate::client::fluent_builders::GetAggregateConfigRuleComplianceSummary`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAggregateConfigRuleComplianceSummary {
     _private: (),
 }
@@ -1569,7 +1569,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAggregateConfigRuleCo
 /// [`get_aggregate_conformance_pack_compliance_summary`](crate::client::Client::get_aggregate_conformance_pack_compliance_summary).
 ///
 /// See [`crate::client::fluent_builders::GetAggregateConformancePackComplianceSummary`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAggregateConformancePackComplianceSummary {
     _private: (),
 }
@@ -1610,7 +1610,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`get_aggregate_discovered_resource_counts`](crate::client::Client::get_aggregate_discovered_resource_counts).
 ///
 /// See [`crate::client::fluent_builders::GetAggregateDiscoveredResourceCounts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAggregateDiscoveredResourceCounts {
     _private: (),
 }
@@ -1646,7 +1646,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAggregateDiscoveredRe
 /// [`get_aggregate_resource_config`](crate::client::Client::get_aggregate_resource_config).
 ///
 /// See [`crate::client::fluent_builders::GetAggregateResourceConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAggregateResourceConfig {
     _private: (),
 }
@@ -1680,7 +1680,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAggregateResourceConf
 /// [`get_compliance_details_by_config_rule`](crate::client::Client::get_compliance_details_by_config_rule).
 ///
 /// See [`crate::client::fluent_builders::GetComplianceDetailsByConfigRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetComplianceDetailsByConfigRule {
     _private: (),
 }
@@ -1714,7 +1714,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComplianceDetailsByCo
 /// [`get_compliance_details_by_resource`](crate::client::Client::get_compliance_details_by_resource).
 ///
 /// See [`crate::client::fluent_builders::GetComplianceDetailsByResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetComplianceDetailsByResource {
     _private: (),
 }
@@ -1748,7 +1748,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComplianceDetailsByRe
 /// [`get_compliance_summary_by_config_rule`](crate::client::Client::get_compliance_summary_by_config_rule).
 ///
 /// See [`crate::client::fluent_builders::GetComplianceSummaryByConfigRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetComplianceSummaryByConfigRule {
     _private: (),
 }
@@ -1782,7 +1782,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComplianceSummaryByCo
 /// [`get_compliance_summary_by_resource_type`](crate::client::Client::get_compliance_summary_by_resource_type).
 ///
 /// See [`crate::client::fluent_builders::GetComplianceSummaryByResourceType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetComplianceSummaryByResourceType {
     _private: (),
 }
@@ -1816,7 +1816,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComplianceSummaryByRe
 /// [`get_conformance_pack_compliance_details`](crate::client::Client::get_conformance_pack_compliance_details).
 ///
 /// See [`crate::client::fluent_builders::GetConformancePackComplianceDetails`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetConformancePackComplianceDetails {
     _private: (),
 }
@@ -1850,7 +1850,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConformancePackCompli
 /// [`get_conformance_pack_compliance_summary`](crate::client::Client::get_conformance_pack_compliance_summary).
 ///
 /// See [`crate::client::fluent_builders::GetConformancePackComplianceSummary`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetConformancePackComplianceSummary {
     _private: (),
 }
@@ -1884,7 +1884,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConformancePackCompli
 /// [`get_custom_rule_policy`](crate::client::Client::get_custom_rule_policy).
 ///
 /// See [`crate::client::fluent_builders::GetCustomRulePolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCustomRulePolicy {
     _private: (),
 }
@@ -1918,7 +1918,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCustomRulePolicy {
 /// [`get_discovered_resource_counts`](crate::client::Client::get_discovered_resource_counts).
 ///
 /// See [`crate::client::fluent_builders::GetDiscoveredResourceCounts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDiscoveredResourceCounts {
     _private: (),
 }
@@ -1952,7 +1952,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDiscoveredResourceCou
 /// [`get_organization_config_rule_detailed_status`](crate::client::Client::get_organization_config_rule_detailed_status).
 ///
 /// See [`crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetOrganizationConfigRuleDetailedStatus {
     _private: (),
 }
@@ -1990,7 +1990,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOrganizationConfigRul
 /// [`get_organization_conformance_pack_detailed_status`](crate::client::Client::get_organization_conformance_pack_detailed_status).
 ///
 /// See [`crate::client::fluent_builders::GetOrganizationConformancePackDetailedStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetOrganizationConformancePackDetailedStatus {
     _private: (),
 }
@@ -2031,7 +2031,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`get_organization_custom_rule_policy`](crate::client::Client::get_organization_custom_rule_policy).
 ///
 /// See [`crate::client::fluent_builders::GetOrganizationCustomRulePolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetOrganizationCustomRulePolicy {
     _private: (),
 }
@@ -2065,7 +2065,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOrganizationCustomRul
 /// [`get_resource_config_history`](crate::client::Client::get_resource_config_history).
 ///
 /// See [`crate::client::fluent_builders::GetResourceConfigHistory`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResourceConfigHistory {
     _private: (),
 }
@@ -2099,7 +2099,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceConfigHistory
 /// [`get_stored_query`](crate::client::Client::get_stored_query).
 ///
 /// See [`crate::client::fluent_builders::GetStoredQuery`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetStoredQuery {
     _private: (),
 }
@@ -2131,7 +2131,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStoredQuery {
 /// [`list_aggregate_discovered_resources`](crate::client::Client::list_aggregate_discovered_resources).
 ///
 /// See [`crate::client::fluent_builders::ListAggregateDiscoveredResources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAggregateDiscoveredResources {
     _private: (),
 }
@@ -2165,7 +2165,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAggregateDiscoveredR
 /// [`list_conformance_pack_compliance_scores`](crate::client::Client::list_conformance_pack_compliance_scores).
 ///
 /// See [`crate::client::fluent_builders::ListConformancePackComplianceScores`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListConformancePackComplianceScores {
     _private: (),
 }
@@ -2199,7 +2199,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConformancePackCompl
 /// [`list_discovered_resources`](crate::client::Client::list_discovered_resources).
 ///
 /// See [`crate::client::fluent_builders::ListDiscoveredResources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDiscoveredResources {
     _private: (),
 }
@@ -2233,7 +2233,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDiscoveredResources 
 /// [`list_stored_queries`](crate::client::Client::list_stored_queries).
 ///
 /// See [`crate::client::fluent_builders::ListStoredQueries`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListStoredQueries {
     _private: (),
 }
@@ -2267,7 +2267,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStoredQueries {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -2301,7 +2301,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`put_aggregation_authorization`](crate::client::Client::put_aggregation_authorization).
 ///
 /// See [`crate::client::fluent_builders::PutAggregationAuthorization`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutAggregationAuthorization {
     _private: (),
 }
@@ -2335,7 +2335,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAggregationAuthorizat
 /// [`put_config_rule`](crate::client::Client::put_config_rule).
 ///
 /// See [`crate::client::fluent_builders::PutConfigRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutConfigRule {
     _private: (),
 }
@@ -2367,7 +2367,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutConfigRule {
 /// [`put_configuration_aggregator`](crate::client::Client::put_configuration_aggregator).
 ///
 /// See [`crate::client::fluent_builders::PutConfigurationAggregator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutConfigurationAggregator {
     _private: (),
 }
@@ -2401,7 +2401,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutConfigurationAggregat
 /// [`put_configuration_recorder`](crate::client::Client::put_configuration_recorder).
 ///
 /// See [`crate::client::fluent_builders::PutConfigurationRecorder`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutConfigurationRecorder {
     _private: (),
 }
@@ -2435,7 +2435,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutConfigurationRecorder
 /// [`put_conformance_pack`](crate::client::Client::put_conformance_pack).
 ///
 /// See [`crate::client::fluent_builders::PutConformancePack`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutConformancePack {
     _private: (),
 }
@@ -2469,7 +2469,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutConformancePack {
 /// [`put_delivery_channel`](crate::client::Client::put_delivery_channel).
 ///
 /// See [`crate::client::fluent_builders::PutDeliveryChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutDeliveryChannel {
     _private: (),
 }
@@ -2503,7 +2503,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDeliveryChannel {
 /// [`put_evaluations`](crate::client::Client::put_evaluations).
 ///
 /// See [`crate::client::fluent_builders::PutEvaluations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutEvaluations {
     _private: (),
 }
@@ -2535,7 +2535,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutEvaluations {
 /// [`put_external_evaluation`](crate::client::Client::put_external_evaluation).
 ///
 /// See [`crate::client::fluent_builders::PutExternalEvaluation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutExternalEvaluation {
     _private: (),
 }
@@ -2569,7 +2569,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutExternalEvaluation {
 /// [`put_organization_config_rule`](crate::client::Client::put_organization_config_rule).
 ///
 /// See [`crate::client::fluent_builders::PutOrganizationConfigRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutOrganizationConfigRule {
     _private: (),
 }
@@ -2603,7 +2603,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutOrganizationConfigRul
 /// [`put_organization_conformance_pack`](crate::client::Client::put_organization_conformance_pack).
 ///
 /// See [`crate::client::fluent_builders::PutOrganizationConformancePack`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutOrganizationConformancePack {
     _private: (),
 }
@@ -2637,7 +2637,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutOrganizationConforman
 /// [`put_remediation_configurations`](crate::client::Client::put_remediation_configurations).
 ///
 /// See [`crate::client::fluent_builders::PutRemediationConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRemediationConfigurations {
     _private: (),
 }
@@ -2671,7 +2671,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRemediationConfigurat
 /// [`put_remediation_exceptions`](crate::client::Client::put_remediation_exceptions).
 ///
 /// See [`crate::client::fluent_builders::PutRemediationExceptions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRemediationExceptions {
     _private: (),
 }
@@ -2705,7 +2705,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRemediationExceptions
 /// [`put_resource_config`](crate::client::Client::put_resource_config).
 ///
 /// See [`crate::client::fluent_builders::PutResourceConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutResourceConfig {
     _private: (),
 }
@@ -2739,7 +2739,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResourceConfig {
 /// [`put_retention_configuration`](crate::client::Client::put_retention_configuration).
 ///
 /// See [`crate::client::fluent_builders::PutRetentionConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRetentionConfiguration {
     _private: (),
 }
@@ -2773,7 +2773,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRetentionConfiguratio
 /// [`put_stored_query`](crate::client::Client::put_stored_query).
 ///
 /// See [`crate::client::fluent_builders::PutStoredQuery`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutStoredQuery {
     _private: (),
 }
@@ -2805,7 +2805,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutStoredQuery {
 /// [`select_aggregate_resource_config`](crate::client::Client::select_aggregate_resource_config).
 ///
 /// See [`crate::client::fluent_builders::SelectAggregateResourceConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SelectAggregateResourceConfig {
     _private: (),
 }
@@ -2839,7 +2839,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SelectAggregateResourceC
 /// [`select_resource_config`](crate::client::Client::select_resource_config).
 ///
 /// See [`crate::client::fluent_builders::SelectResourceConfig`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SelectResourceConfig {
     _private: (),
 }
@@ -2873,7 +2873,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SelectResourceConfig {
 /// [`start_config_rules_evaluation`](crate::client::Client::start_config_rules_evaluation).
 ///
 /// See [`crate::client::fluent_builders::StartConfigRulesEvaluation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartConfigRulesEvaluation {
     _private: (),
 }
@@ -2907,7 +2907,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartConfigRulesEvaluati
 /// [`start_configuration_recorder`](crate::client::Client::start_configuration_recorder).
 ///
 /// See [`crate::client::fluent_builders::StartConfigurationRecorder`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartConfigurationRecorder {
     _private: (),
 }
@@ -2941,7 +2941,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartConfigurationRecord
 /// [`start_remediation_execution`](crate::client::Client::start_remediation_execution).
 ///
 /// See [`crate::client::fluent_builders::StartRemediationExecution`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartRemediationExecution {
     _private: (),
 }
@@ -2975,7 +2975,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartRemediationExecutio
 /// [`stop_configuration_recorder`](crate::client::Client::stop_configuration_recorder).
 ///
 /// See [`crate::client::fluent_builders::StopConfigurationRecorder`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopConfigurationRecorder {
     _private: (),
 }
@@ -3009,7 +3009,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopConfigurationRecorde
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -3041,7 +3041,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }

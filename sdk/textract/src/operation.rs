@@ -5,7 +5,7 @@
 /// [`analyze_document`](crate::client::Client::analyze_document).
 ///
 /// See [`crate::client::fluent_builders::AnalyzeDocument`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AnalyzeDocument {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AnalyzeDocument {
 /// [`analyze_expense`](crate::client::Client::analyze_expense).
 ///
 /// See [`crate::client::fluent_builders::AnalyzeExpense`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AnalyzeExpense {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AnalyzeExpense {
 /// [`analyze_id`](crate::client::Client::analyze_id).
 ///
 /// See [`crate::client::fluent_builders::AnalyzeID`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AnalyzeID {
     _private: (),
 }
@@ -102,7 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AnalyzeID {
 /// [`detect_document_text`](crate::client::Client::detect_document_text).
 ///
 /// See [`crate::client::fluent_builders::DetectDocumentText`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DetectDocumentText {
     _private: (),
 }
@@ -136,7 +136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectDocumentText {
 /// [`get_document_analysis`](crate::client::Client::get_document_analysis).
 ///
 /// See [`crate::client::fluent_builders::GetDocumentAnalysis`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDocumentAnalysis {
     _private: (),
 }
@@ -170,7 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDocumentAnalysis {
 /// [`get_document_text_detection`](crate::client::Client::get_document_text_detection).
 ///
 /// See [`crate::client::fluent_builders::GetDocumentTextDetection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDocumentTextDetection {
     _private: (),
 }
@@ -204,7 +204,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDocumentTextDetection
 /// [`get_expense_analysis`](crate::client::Client::get_expense_analysis).
 ///
 /// See [`crate::client::fluent_builders::GetExpenseAnalysis`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetExpenseAnalysis {
     _private: (),
 }
@@ -238,7 +238,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExpenseAnalysis {
 /// [`start_document_analysis`](crate::client::Client::start_document_analysis).
 ///
 /// See [`crate::client::fluent_builders::StartDocumentAnalysis`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartDocumentAnalysis {
     _private: (),
 }
@@ -272,7 +272,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDocumentAnalysis {
 /// [`start_document_text_detection`](crate::client::Client::start_document_text_detection).
 ///
 /// See [`crate::client::fluent_builders::StartDocumentTextDetection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartDocumentTextDetection {
     _private: (),
 }
@@ -306,7 +306,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDocumentTextDetecti
 /// [`start_expense_analysis`](crate::client::Client::start_expense_analysis).
 ///
 /// See [`crate::client::fluent_builders::StartExpenseAnalysis`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartExpenseAnalysis {
     _private: (),
 }

@@ -17,7 +17,7 @@ impl UpdateServiceOutput {
 pub mod update_service_output {
 
     /// A builder for [`UpdateServiceOutput`](crate::output::UpdateServiceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
@@ -65,7 +65,7 @@ impl UpdatePublicDnsNamespaceOutput {
 pub mod update_public_dns_namespace_output {
 
     /// A builder for [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
@@ -113,7 +113,7 @@ impl UpdatePrivateDnsNamespaceOutput {
 pub mod update_private_dns_namespace_output {
 
     /// A builder for [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
@@ -151,7 +151,7 @@ pub struct UpdateInstanceCustomHealthStatusOutput {}
 pub mod update_instance_custom_health_status_output {
 
     /// A builder for [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput).
@@ -185,7 +185,7 @@ impl UpdateHttpNamespaceOutput {
 pub mod update_http_namespace_output {
 
     /// A builder for [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
@@ -223,7 +223,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -247,7 +247,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -281,7 +281,7 @@ impl RegisterInstanceOutput {
 pub mod register_instance_output {
 
     /// A builder for [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
@@ -329,7 +329,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -395,7 +395,7 @@ impl ListServicesOutput {
 pub mod list_services_output {
 
     /// A builder for [`ListServicesOutput`](crate::output::ListServicesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) services: std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -479,7 +479,7 @@ impl ListOperationsOutput {
 pub mod list_operations_output {
 
     /// A builder for [`ListOperationsOutput`](crate::output::ListOperationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operations: std::option::Option<std::vec::Vec<crate::model::OperationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -563,7 +563,7 @@ impl ListNamespacesOutput {
 pub mod list_namespaces_output {
 
     /// A builder for [`ListNamespacesOutput`](crate::output::ListNamespacesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespaces: std::option::Option<std::vec::Vec<crate::model::NamespaceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -643,7 +643,7 @@ impl ListInstancesOutput {
 pub mod list_instances_output {
 
     /// A builder for [`ListInstancesOutput`](crate::output::ListInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -712,7 +712,7 @@ impl GetServiceOutput {
 pub mod get_service_output {
 
     /// A builder for [`GetServiceOutput`](crate::output::GetServiceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::Service>,
     }
@@ -760,7 +760,7 @@ impl GetOperationOutput {
 pub mod get_operation_output {
 
     /// A builder for [`GetOperationOutput`](crate::output::GetOperationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
     }
@@ -811,7 +811,7 @@ impl GetNamespaceOutput {
 pub mod get_namespace_output {
 
     /// A builder for [`GetNamespaceOutput`](crate::output::GetNamespaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<crate::model::Namespace>,
     }
@@ -875,7 +875,7 @@ impl GetInstancesHealthStatusOutput {
 pub mod get_instances_health_status_output {
 
     /// A builder for [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::HealthStatus>,
@@ -952,7 +952,7 @@ impl GetInstanceOutput {
 pub mod get_instance_output {
 
     /// A builder for [`GetInstanceOutput`](crate::output::GetInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance: std::option::Option<crate::model::Instance>,
     }
@@ -1000,7 +1000,7 @@ impl DiscoverInstancesOutput {
 pub mod discover_instances_output {
 
     /// A builder for [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::HttpInstanceSummary>>,
     }
@@ -1057,7 +1057,7 @@ impl DeregisterInstanceOutput {
 pub mod deregister_instance_output {
 
     /// A builder for [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
@@ -1095,7 +1095,7 @@ pub struct DeleteServiceOutput {}
 pub mod delete_service_output {
 
     /// A builder for [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
@@ -1129,7 +1129,7 @@ impl DeleteNamespaceOutput {
 pub mod delete_namespace_output {
 
     /// A builder for [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
@@ -1177,7 +1177,7 @@ impl CreateServiceOutput {
 pub mod create_service_output {
 
     /// A builder for [`CreateServiceOutput`](crate::output::CreateServiceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::Service>,
     }
@@ -1225,7 +1225,7 @@ impl CreatePublicDnsNamespaceOutput {
 pub mod create_public_dns_namespace_output {
 
     /// A builder for [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
@@ -1273,7 +1273,7 @@ impl CreatePrivateDnsNamespaceOutput {
 pub mod create_private_dns_namespace_output {
 
     /// A builder for [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
@@ -1321,7 +1321,7 @@ impl CreateHttpNamespaceOutput {
 pub mod create_http_namespace_output {
 
     /// A builder for [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }

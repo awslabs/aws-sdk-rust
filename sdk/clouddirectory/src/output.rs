@@ -17,7 +17,7 @@ impl UpgradePublishedSchemaOutput {
 pub mod upgrade_published_schema_output {
 
     /// A builder for [`UpgradePublishedSchemaOutput`](crate::output::UpgradePublishedSchemaOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upgraded_schema_arn: std::option::Option<std::string::String>,
     }
@@ -75,7 +75,7 @@ impl UpgradeAppliedSchemaOutput {
 pub mod upgrade_applied_schema_output {
 
     /// A builder for [`UpgradeAppliedSchemaOutput`](crate::output::UpgradeAppliedSchemaOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upgraded_schema_arn: std::option::Option<std::string::String>,
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -131,7 +131,7 @@ pub struct UpdateTypedLinkFacetOutput {}
 pub mod update_typed_link_facet_output {
 
     /// A builder for [`UpdateTypedLinkFacetOutput`](crate::output::UpdateTypedLinkFacetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateTypedLinkFacetOutput`](crate::output::UpdateTypedLinkFacetOutput).
@@ -165,7 +165,7 @@ impl UpdateSchemaOutput {
 pub mod update_schema_output {
 
     /// A builder for [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
     }
@@ -213,7 +213,7 @@ impl UpdateObjectAttributesOutput {
 pub mod update_object_attributes_output {
 
     /// A builder for [`UpdateObjectAttributesOutput`](crate::output::UpdateObjectAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifier: std::option::Option<std::string::String>,
     }
@@ -254,7 +254,7 @@ pub struct UpdateLinkAttributesOutput {}
 pub mod update_link_attributes_output {
 
     /// A builder for [`UpdateLinkAttributesOutput`](crate::output::UpdateLinkAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateLinkAttributesOutput`](crate::output::UpdateLinkAttributesOutput).
@@ -278,7 +278,7 @@ pub struct UpdateFacetOutput {}
 pub mod update_facet_output {
 
     /// A builder for [`UpdateFacetOutput`](crate::output::UpdateFacetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateFacetOutput`](crate::output::UpdateFacetOutput).
@@ -302,7 +302,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -326,7 +326,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -350,7 +350,7 @@ pub struct RemoveFacetFromObjectOutput {}
 pub mod remove_facet_from_object_output {
 
     /// A builder for [`RemoveFacetFromObjectOutput`](crate::output::RemoveFacetFromObjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveFacetFromObjectOutput`](crate::output::RemoveFacetFromObjectOutput).
@@ -384,7 +384,7 @@ impl PutSchemaFromJsonOutput {
 pub mod put_schema_from_json_output {
 
     /// A builder for [`PutSchemaFromJsonOutput`](crate::output::PutSchemaFromJsonOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -430,7 +430,7 @@ impl PublishSchemaOutput {
 pub mod publish_schema_output {
 
     /// A builder for [`PublishSchemaOutput`](crate::output::PublishSchemaOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) published_schema_arn: std::option::Option<std::string::String>,
     }
@@ -488,7 +488,7 @@ impl LookupPolicyOutput {
 pub mod lookup_policy_output {
 
     /// A builder for [`LookupPolicyOutput`](crate::output::LookupPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_to_path_list:
             std::option::Option<std::vec::Vec<crate::model::PolicyToPath>>,
@@ -565,7 +565,7 @@ impl ListTypedLinkFacetNamesOutput {
 pub mod list_typed_link_facet_names_output {
 
     /// A builder for [`ListTypedLinkFacetNamesOutput`](crate::output::ListTypedLinkFacetNamesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) facet_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -641,7 +641,7 @@ impl ListTypedLinkFacetAttributesOutput {
 pub mod list_typed_link_facet_attributes_output {
 
     /// A builder for [`ListTypedLinkFacetAttributesOutput`](crate::output::ListTypedLinkFacetAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes:
             std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeDefinition>>,
@@ -718,7 +718,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -794,7 +794,7 @@ impl ListPublishedSchemaArnsOutput {
 pub mod list_published_schema_arns_output {
 
     /// A builder for [`ListPublishedSchemaArnsOutput`](crate::output::ListPublishedSchemaArnsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -870,7 +870,7 @@ impl ListPolicyAttachmentsOutput {
 pub mod list_policy_attachments_output {
 
     /// A builder for [`ListPolicyAttachmentsOutput`](crate::output::ListPolicyAttachmentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -948,7 +948,7 @@ impl ListOutgoingTypedLinksOutput {
 pub mod list_outgoing_typed_links_output {
 
     /// A builder for [`ListOutgoingTypedLinksOutput`](crate::output::ListOutgoingTypedLinksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_specifiers:
             std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
@@ -1025,7 +1025,7 @@ impl ListObjectPoliciesOutput {
 pub mod list_object_policies_output {
 
     /// A builder for [`ListObjectPoliciesOutput`](crate::output::ListObjectPoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_policy_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1115,7 +1115,7 @@ impl ListObjectParentsOutput {
 pub mod list_object_parents_output {
 
     /// A builder for [`ListObjectParentsOutput`](crate::output::ListObjectParentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parents: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -1229,7 +1229,7 @@ impl ListObjectParentPathsOutput {
 pub mod list_object_parent_paths_output {
 
     /// A builder for [`ListObjectParentPathsOutput`](crate::output::ListObjectParentPathsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path_to_object_identifiers_list:
             std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
@@ -1313,7 +1313,7 @@ impl ListObjectChildrenOutput {
 pub mod list_object_children_output {
 
     /// A builder for [`ListObjectChildrenOutput`](crate::output::ListObjectChildrenOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) children: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -1397,7 +1397,7 @@ impl ListObjectAttributesOutput {
 pub mod list_object_attributes_output {
 
     /// A builder for [`ListObjectAttributesOutput`](crate::output::ListObjectAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes:
             std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
@@ -1474,7 +1474,7 @@ impl ListManagedSchemaArnsOutput {
 pub mod list_managed_schema_arns_output {
 
     /// A builder for [`ListManagedSchemaArnsOutput`](crate::output::ListManagedSchemaArnsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1550,7 +1550,7 @@ impl ListIndexOutput {
 pub mod list_index_output {
 
     /// A builder for [`ListIndexOutput`](crate::output::ListIndexOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_attachments:
             std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
@@ -1627,7 +1627,7 @@ impl ListIncomingTypedLinksOutput {
 pub mod list_incoming_typed_links_output {
 
     /// A builder for [`ListIncomingTypedLinksOutput`](crate::output::ListIncomingTypedLinksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) link_specifiers:
             std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
@@ -1704,7 +1704,7 @@ impl ListFacetNamesOutput {
 pub mod list_facet_names_output {
 
     /// A builder for [`ListFacetNamesOutput`](crate::output::ListFacetNamesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) facet_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1780,7 +1780,7 @@ impl ListFacetAttributesOutput {
 pub mod list_facet_attributes_output {
 
     /// A builder for [`ListFacetAttributesOutput`](crate::output::ListFacetAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::FacetAttribute>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1856,7 +1856,7 @@ impl ListDirectoriesOutput {
 pub mod list_directories_output {
 
     /// A builder for [`ListDirectoriesOutput`](crate::output::ListDirectoriesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directories: std::option::Option<std::vec::Vec<crate::model::Directory>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1932,7 +1932,7 @@ impl ListDevelopmentSchemaArnsOutput {
 pub mod list_development_schema_arns_output {
 
     /// A builder for [`ListDevelopmentSchemaArnsOutput`](crate::output::ListDevelopmentSchemaArnsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2008,7 +2008,7 @@ impl ListAttachedIndicesOutput {
 pub mod list_attached_indices_output {
 
     /// A builder for [`ListAttachedIndicesOutput`](crate::output::ListAttachedIndicesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_attachments:
             std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
@@ -2085,7 +2085,7 @@ impl ListAppliedSchemaArnsOutput {
 pub mod list_applied_schema_arns_output {
 
     /// A builder for [`ListAppliedSchemaArnsOutput`](crate::output::ListAppliedSchemaArnsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2154,7 +2154,7 @@ impl GetTypedLinkFacetInformationOutput {
 pub mod get_typed_link_facet_information_output {
 
     /// A builder for [`GetTypedLinkFacetInformationOutput`](crate::output::GetTypedLinkFacetInformationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_attribute_order:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2219,7 +2219,7 @@ impl GetSchemaAsJsonOutput {
 pub mod get_schema_as_json_output {
 
     /// A builder for [`GetSchemaAsJsonOutput`](crate::output::GetSchemaAsJsonOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) document: std::option::Option<std::string::String>,
@@ -2286,7 +2286,7 @@ impl GetObjectInformationOutput {
 pub mod get_object_information_output {
 
     /// A builder for [`GetObjectInformationOutput`](crate::output::GetObjectInformationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_facets: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
         pub(crate) object_identifier: std::option::Option<std::string::String>,
@@ -2358,7 +2358,7 @@ impl GetObjectAttributesOutput {
 pub mod get_object_attributes_output {
 
     /// A builder for [`GetObjectAttributesOutput`](crate::output::GetObjectAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes:
             std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
@@ -2416,7 +2416,7 @@ impl GetLinkAttributesOutput {
 pub mod get_link_attributes_output {
 
     /// A builder for [`GetLinkAttributesOutput`](crate::output::GetLinkAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes:
             std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
@@ -2474,7 +2474,7 @@ impl GetFacetOutput {
 pub mod get_facet_output {
 
     /// A builder for [`GetFacetOutput`](crate::output::GetFacetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) facet: std::option::Option<crate::model::Facet>,
     }
@@ -2520,7 +2520,7 @@ impl GetDirectoryOutput {
 pub mod get_directory_output {
 
     /// A builder for [`GetDirectoryOutput`](crate::output::GetDirectoryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory: std::option::Option<crate::model::Directory>,
     }
@@ -2571,7 +2571,7 @@ impl GetAppliedSchemaVersionOutput {
 pub mod get_applied_schema_version_output {
 
     /// A builder for [`GetAppliedSchemaVersionOutput`](crate::output::GetAppliedSchemaVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) applied_schema_arn: std::option::Option<std::string::String>,
     }
@@ -2622,7 +2622,7 @@ impl EnableDirectoryOutput {
 pub mod enable_directory_output {
 
     /// A builder for [`EnableDirectoryOutput`](crate::output::EnableDirectoryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
     }
@@ -2673,7 +2673,7 @@ impl DisableDirectoryOutput {
 pub mod disable_directory_output {
 
     /// A builder for [`DisableDirectoryOutput`](crate::output::DisableDirectoryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
     }
@@ -2714,7 +2714,7 @@ pub struct DetachTypedLinkOutput {}
 pub mod detach_typed_link_output {
 
     /// A builder for [`DetachTypedLinkOutput`](crate::output::DetachTypedLinkOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DetachTypedLinkOutput`](crate::output::DetachTypedLinkOutput).
@@ -2738,7 +2738,7 @@ pub struct DetachPolicyOutput {}
 pub mod detach_policy_output {
 
     /// A builder for [`DetachPolicyOutput`](crate::output::DetachPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DetachPolicyOutput`](crate::output::DetachPolicyOutput).
@@ -2772,7 +2772,7 @@ impl DetachObjectOutput {
 pub mod detach_object_output {
 
     /// A builder for [`DetachObjectOutput`](crate::output::DetachObjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detached_object_identifier: std::option::Option<std::string::String>,
     }
@@ -2823,7 +2823,7 @@ impl DetachFromIndexOutput {
 pub mod detach_from_index_output {
 
     /// A builder for [`DetachFromIndexOutput`](crate::output::DetachFromIndexOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detached_object_identifier: std::option::Option<std::string::String>,
     }
@@ -2864,7 +2864,7 @@ pub struct DeleteTypedLinkFacetOutput {}
 pub mod delete_typed_link_facet_output {
 
     /// A builder for [`DeleteTypedLinkFacetOutput`](crate::output::DeleteTypedLinkFacetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTypedLinkFacetOutput`](crate::output::DeleteTypedLinkFacetOutput).
@@ -2898,7 +2898,7 @@ impl DeleteSchemaOutput {
 pub mod delete_schema_output {
 
     /// A builder for [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
     }
@@ -2936,7 +2936,7 @@ pub struct DeleteObjectOutput {}
 pub mod delete_object_output {
 
     /// A builder for [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
@@ -2960,7 +2960,7 @@ pub struct DeleteFacetOutput {}
 pub mod delete_facet_output {
 
     /// A builder for [`DeleteFacetOutput`](crate::output::DeleteFacetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFacetOutput`](crate::output::DeleteFacetOutput).
@@ -2994,7 +2994,7 @@ impl DeleteDirectoryOutput {
 pub mod delete_directory_output {
 
     /// A builder for [`DeleteDirectoryOutput`](crate::output::DeleteDirectoryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
     }
@@ -3035,7 +3035,7 @@ pub struct CreateTypedLinkFacetOutput {}
 pub mod create_typed_link_facet_output {
 
     /// A builder for [`CreateTypedLinkFacetOutput`](crate::output::CreateTypedLinkFacetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateTypedLinkFacetOutput`](crate::output::CreateTypedLinkFacetOutput).
@@ -3069,7 +3069,7 @@ impl CreateSchemaOutput {
 pub mod create_schema_output {
 
     /// A builder for [`CreateSchemaOutput`](crate::output::CreateSchemaOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
     }
@@ -3117,7 +3117,7 @@ impl CreateObjectOutput {
 pub mod create_object_output {
 
     /// A builder for [`CreateObjectOutput`](crate::output::CreateObjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifier: std::option::Option<std::string::String>,
     }
@@ -3168,7 +3168,7 @@ impl CreateIndexOutput {
 pub mod create_index_output {
 
     /// A builder for [`CreateIndexOutput`](crate::output::CreateIndexOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifier: std::option::Option<std::string::String>,
     }
@@ -3209,7 +3209,7 @@ pub struct CreateFacetOutput {}
 pub mod create_facet_output {
 
     /// A builder for [`CreateFacetOutput`](crate::output::CreateFacetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateFacetOutput`](crate::output::CreateFacetOutput).
@@ -3264,7 +3264,7 @@ impl CreateDirectoryOutput {
 pub mod create_directory_output {
 
     /// A builder for [`CreateDirectoryOutput`](crate::output::CreateDirectoryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3357,7 +3357,7 @@ impl BatchWriteOutput {
 pub mod batch_write_output {
 
     /// A builder for [`BatchWriteOutput`](crate::output::BatchWriteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) responses:
             std::option::Option<std::vec::Vec<crate::model::BatchWriteOperationResponse>>,
@@ -3415,7 +3415,7 @@ impl BatchReadOutput {
 pub mod batch_read_output {
 
     /// A builder for [`BatchReadOutput`](crate::output::BatchReadOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) responses:
             std::option::Option<std::vec::Vec<crate::model::BatchReadOperationResponse>>,
@@ -3473,7 +3473,7 @@ impl AttachTypedLinkOutput {
 pub mod attach_typed_link_output {
 
     /// A builder for [`AttachTypedLinkOutput`](crate::output::AttachTypedLinkOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
     }
@@ -3524,7 +3524,7 @@ impl AttachToIndexOutput {
 pub mod attach_to_index_output {
 
     /// A builder for [`AttachToIndexOutput`](crate::output::AttachToIndexOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_object_identifier: std::option::Option<std::string::String>,
     }
@@ -3565,7 +3565,7 @@ pub struct AttachPolicyOutput {}
 pub mod attach_policy_output {
 
     /// A builder for [`AttachPolicyOutput`](crate::output::AttachPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AttachPolicyOutput`](crate::output::AttachPolicyOutput).
@@ -3599,7 +3599,7 @@ impl AttachObjectOutput {
 pub mod attach_object_output {
 
     /// A builder for [`AttachObjectOutput`](crate::output::AttachObjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_object_identifier: std::option::Option<std::string::String>,
     }
@@ -3657,7 +3657,7 @@ impl ApplySchemaOutput {
 pub mod apply_schema_output {
 
     /// A builder for [`ApplySchemaOutput`](crate::output::ApplySchemaOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) applied_schema_arn: std::option::Option<std::string::String>,
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -3713,7 +3713,7 @@ pub struct AddFacetToObjectOutput {}
 pub mod add_facet_to_object_output {
 
     /// A builder for [`AddFacetToObjectOutput`](crate::output::AddFacetToObjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AddFacetToObjectOutput`](crate::output::AddFacetToObjectOutput).

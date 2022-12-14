@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod activate_pipeline_input {
 
     /// A builder for [`ActivatePipelineInput`](crate::input::ActivatePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) parameter_values:
@@ -189,7 +189,7 @@ impl ActivatePipelineInput {
 pub mod add_tags_input {
 
     /// A builder for [`AddTagsInput`](crate::input::AddTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -353,7 +353,7 @@ impl AddTagsInput {
 pub mod create_pipeline_input {
 
     /// A builder for [`CreatePipelineInput`](crate::input::CreatePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) unique_id: std::option::Option<std::string::String>,
@@ -543,7 +543,7 @@ impl CreatePipelineInput {
 pub mod deactivate_pipeline_input {
 
     /// A builder for [`DeactivatePipelineInput`](crate::input::DeactivatePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) cancel_active: std::option::Option<bool>,
@@ -702,7 +702,7 @@ impl DeactivatePipelineInput {
 pub mod delete_pipeline_input {
 
     /// A builder for [`DeletePipelineInput`](crate::input::DeletePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
     }
@@ -847,7 +847,7 @@ impl DeletePipelineInput {
 pub mod describe_objects_input {
 
     /// A builder for [`DescribeObjectsInput`](crate::input::DescribeObjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) object_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1037,7 +1037,7 @@ impl DescribeObjectsInput {
 pub mod describe_pipelines_input {
 
     /// A builder for [`DescribePipelinesInput`](crate::input::DescribePipelinesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1193,7 +1193,7 @@ impl DescribePipelinesInput {
 pub mod evaluate_expression_input {
 
     /// A builder for [`EvaluateExpressionInput`](crate::input::EvaluateExpressionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) object_id: std::option::Option<std::string::String>,
@@ -1364,7 +1364,7 @@ impl EvaluateExpressionInput {
 pub mod get_pipeline_definition_input {
 
     /// A builder for [`GetPipelineDefinitionInput`](crate::input::GetPipelineDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -1525,7 +1525,7 @@ impl GetPipelineDefinitionInput {
 pub mod list_pipelines_input {
 
     /// A builder for [`ListPipelinesInput`](crate::input::ListPipelinesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
@@ -1670,7 +1670,7 @@ impl ListPipelinesInput {
 pub mod poll_for_task_input {
 
     /// A builder for [`PollForTaskInput`](crate::input::PollForTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) worker_group: std::option::Option<std::string::String>,
         pub(crate) hostname: std::option::Option<std::string::String>,
@@ -1842,7 +1842,7 @@ impl PollForTaskInput {
 pub mod put_pipeline_definition_input {
 
     /// A builder for [`PutPipelineDefinitionInput`](crate::input::PutPipelineDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) pipeline_objects:
@@ -2057,7 +2057,7 @@ impl PutPipelineDefinitionInput {
 pub mod query_objects_input {
 
     /// A builder for [`QueryObjectsInput`](crate::input::QueryObjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) query: std::option::Option<crate::model::Query>,
@@ -2250,7 +2250,7 @@ impl QueryObjectsInput {
 pub mod remove_tags_input {
 
     /// A builder for [`RemoveTagsInput`](crate::input::RemoveTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2416,7 +2416,7 @@ impl RemoveTagsInput {
 pub mod report_task_progress_input {
 
     /// A builder for [`ReportTaskProgressInput`](crate::input::ReportTaskProgressInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
@@ -2584,7 +2584,7 @@ impl ReportTaskProgressInput {
 pub mod report_task_runner_heartbeat_input {
 
     /// A builder for [`ReportTaskRunnerHeartbeatInput`](crate::input::ReportTaskRunnerHeartbeatInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) taskrunner_id: std::option::Option<std::string::String>,
         pub(crate) worker_group: std::option::Option<std::string::String>,
@@ -2760,7 +2760,7 @@ impl ReportTaskRunnerHeartbeatInput {
 pub mod set_status_input {
 
     /// A builder for [`SetStatusInput`](crate::input::SetStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) object_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2936,7 +2936,7 @@ impl SetStatusInput {
 pub mod set_task_status_input {
 
     /// A builder for [`SetTaskStatusInput`](crate::input::SetTaskStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) task_status: std::option::Option<crate::model::TaskStatus>,
@@ -3138,7 +3138,7 @@ impl SetTaskStatusInput {
 pub mod validate_pipeline_definition_input {
 
     /// A builder for [`ValidatePipelineDefinitionInput`](crate::input::ValidatePipelineDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) pipeline_objects:

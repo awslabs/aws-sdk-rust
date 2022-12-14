@@ -22,7 +22,7 @@ impl GetSessionTokenOutput {
 pub mod get_session_token_output {
 
     /// A builder for [`GetSessionTokenOutput`](crate::output::GetSessionTokenOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) credentials: std::option::Option<crate::model::Credentials>,
     }
@@ -95,7 +95,7 @@ impl GetFederationTokenOutput {
 pub mod get_federation_token_output {
 
     /// A builder for [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) credentials: std::option::Option<crate::model::Credentials>,
         pub(crate) federated_user: std::option::Option<crate::model::FederatedUser>,
@@ -191,7 +191,7 @@ impl GetCallerIdentityOutput {
 pub mod get_caller_identity_output {
 
     /// A builder for [`GetCallerIdentityOutput`](crate::output::GetCallerIdentityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) account: std::option::Option<std::string::String>,
@@ -263,7 +263,7 @@ impl GetAccessKeyInfoOutput {
 pub mod get_access_key_info_output {
 
     /// A builder for [`GetAccessKeyInfoOutput`](crate::output::GetAccessKeyInfoOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account: std::option::Option<std::string::String>,
     }
@@ -311,7 +311,7 @@ impl DecodeAuthorizationMessageOutput {
 pub mod decode_authorization_message_output {
 
     /// A builder for [`DecodeAuthorizationMessageOutput`](crate::output::DecodeAuthorizationMessageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) decoded_message: std::option::Option<std::string::String>,
     }
@@ -412,7 +412,7 @@ impl AssumeRoleWithWebIdentityOutput {
 pub mod assume_role_with_web_identity_output {
 
     /// A builder for [`AssumeRoleWithWebIdentityOutput`](crate::output::AssumeRoleWithWebIdentityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) credentials: std::option::Option<crate::model::Credentials>,
         pub(crate) subject_from_web_identity_token: std::option::Option<std::string::String>,
@@ -637,7 +637,7 @@ impl AssumeRoleWithSamlOutput {
 pub mod assume_role_with_saml_output {
 
     /// A builder for [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) credentials: std::option::Option<crate::model::Credentials>,
         pub(crate) assumed_role_user: std::option::Option<crate::model::AssumedRoleUser>,
@@ -848,7 +848,7 @@ impl AssumeRoleOutput {
 pub mod assume_role_output {
 
     /// A builder for [`AssumeRoleOutput`](crate::output::AssumeRoleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) credentials: std::option::Option<crate::model::Credentials>,
         pub(crate) assumed_role_user: std::option::Option<crate::model::AssumedRoleUser>,

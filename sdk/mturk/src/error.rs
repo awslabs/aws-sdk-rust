@@ -39,7 +39,7 @@ impl std::error::Error for ServiceFault {}
 pub mod service_fault {
 
     /// A builder for [`ServiceFault`](crate::error::ServiceFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) turk_error_code: std::option::Option<std::string::String>,
@@ -123,7 +123,7 @@ impl std::error::Error for RequestError {}
 pub mod request_error {
 
     /// A builder for [`RequestError`](crate::error::RequestError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) turk_error_code: std::option::Option<std::string::String>,

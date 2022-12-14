@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod convert_recovery_point_to_snapshot_input {
 
     /// A builder for [`ConvertRecoveryPointToSnapshotInput`](crate::input::ConvertRecoveryPointToSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_point_id: std::option::Option<std::string::String>,
         pub(crate) snapshot_name: std::option::Option<std::string::String>,
@@ -181,7 +181,7 @@ impl ConvertRecoveryPointToSnapshotInput {
 pub mod create_endpoint_access_input {
 
     /// A builder for [`CreateEndpointAccessInput`](crate::input::CreateEndpointAccessInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_name: std::option::Option<std::string::String>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -390,7 +390,7 @@ impl CreateEndpointAccessInput {
 pub mod create_namespace_input {
 
     /// A builder for [`CreateNamespaceInput`](crate::input::CreateNamespaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) namespace_name: std::option::Option<std::string::String>,
         pub(crate) admin_username: std::option::Option<std::string::String>,
@@ -685,7 +685,7 @@ impl CreateNamespaceInput {
 pub mod create_snapshot_input {
 
     /// A builder for [`CreateSnapshotInput`](crate::input::CreateSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace_name: std::option::Option<std::string::String>,
         pub(crate) snapshot_name: std::option::Option<std::string::String>,
@@ -860,7 +860,7 @@ impl CreateSnapshotInput {
 pub mod create_usage_limit_input {
 
     /// A builder for [`CreateUsageLimitInput`](crate::input::CreateUsageLimitInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) usage_type: std::option::Option<crate::model::UsageLimitUsageType>,
@@ -1064,7 +1064,7 @@ impl CreateUsageLimitInput {
 pub mod create_workgroup_input {
 
     /// A builder for [`CreateWorkgroupInput`](crate::input::CreateWorkgroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workgroup_name: std::option::Option<std::string::String>,
         pub(crate) namespace_name: std::option::Option<std::string::String>,
@@ -1348,7 +1348,7 @@ impl CreateWorkgroupInput {
 pub mod delete_endpoint_access_input {
 
     /// A builder for [`DeleteEndpointAccessInput`](crate::input::DeleteEndpointAccessInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_name: std::option::Option<std::string::String>,
     }
@@ -1500,7 +1500,7 @@ impl DeleteEndpointAccessInput {
 pub mod delete_namespace_input {
 
     /// A builder for [`DeleteNamespaceInput`](crate::input::DeleteNamespaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace_name: std::option::Option<std::string::String>,
         pub(crate) final_snapshot_name: std::option::Option<std::string::String>,
@@ -1678,7 +1678,7 @@ impl DeleteNamespaceInput {
 pub mod delete_resource_policy_input {
 
     /// A builder for [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1827,7 +1827,7 @@ impl DeleteResourcePolicyInput {
 pub mod delete_snapshot_input {
 
     /// A builder for [`DeleteSnapshotInput`](crate::input::DeleteSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_name: std::option::Option<std::string::String>,
     }
@@ -1975,7 +1975,7 @@ impl DeleteSnapshotInput {
 pub mod delete_usage_limit_input {
 
     /// A builder for [`DeleteUsageLimitInput`](crate::input::DeleteUsageLimitInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_limit_id: std::option::Option<std::string::String>,
     }
@@ -2125,7 +2125,7 @@ impl DeleteUsageLimitInput {
 pub mod delete_workgroup_input {
 
     /// A builder for [`DeleteWorkgroupInput`](crate::input::DeleteWorkgroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workgroup_name: std::option::Option<std::string::String>,
     }
@@ -2273,7 +2273,7 @@ impl DeleteWorkgroupInput {
 pub mod get_credentials_input {
 
     /// A builder for [`GetCredentialsInput`](crate::input::GetCredentialsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workgroup_name: std::option::Option<std::string::String>,
         pub(crate) db_name: std::option::Option<std::string::String>,
@@ -2461,7 +2461,7 @@ impl GetCredentialsInput {
 pub mod get_endpoint_access_input {
 
     /// A builder for [`GetEndpointAccessInput`](crate::input::GetEndpointAccessInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_name: std::option::Option<std::string::String>,
     }
@@ -2611,7 +2611,7 @@ impl GetEndpointAccessInput {
 pub mod get_namespace_input {
 
     /// A builder for [`GetNamespaceInput`](crate::input::GetNamespaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace_name: std::option::Option<std::string::String>,
     }
@@ -2759,7 +2759,7 @@ impl GetNamespaceInput {
 pub mod get_recovery_point_input {
 
     /// A builder for [`GetRecoveryPointInput`](crate::input::GetRecoveryPointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_point_id: std::option::Option<std::string::String>,
     }
@@ -2909,7 +2909,7 @@ impl GetRecoveryPointInput {
 pub mod get_resource_policy_input {
 
     /// A builder for [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3056,7 +3056,7 @@ impl GetResourcePolicyInput {
 pub mod get_snapshot_input {
 
     /// A builder for [`GetSnapshotInput`](crate::input::GetSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_name: std::option::Option<std::string::String>,
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -3231,7 +3231,7 @@ impl GetSnapshotInput {
 pub mod get_usage_limit_input {
 
     /// A builder for [`GetUsageLimitInput`](crate::input::GetUsageLimitInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_limit_id: std::option::Option<std::string::String>,
     }
@@ -3379,7 +3379,7 @@ impl GetUsageLimitInput {
 pub mod get_workgroup_input {
 
     /// A builder for [`GetWorkgroupInput`](crate::input::GetWorkgroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workgroup_name: std::option::Option<std::string::String>,
     }
@@ -3527,7 +3527,7 @@ impl GetWorkgroupInput {
 pub mod list_endpoint_access_input {
 
     /// A builder for [`ListEndpointAccessInput`](crate::input::ListEndpointAccessInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3713,7 +3713,7 @@ impl ListEndpointAccessInput {
 pub mod list_namespaces_input {
 
     /// A builder for [`ListNamespacesInput`](crate::input::ListNamespacesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3870,7 +3870,7 @@ impl ListNamespacesInput {
 pub mod list_recovery_points_input {
 
     /// A builder for [`ListRecoveryPointsInput`](crate::input::ListRecoveryPointsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4074,7 +4074,7 @@ impl ListRecoveryPointsInput {
 pub mod list_snapshots_input {
 
     /// A builder for [`ListSnapshotsInput`](crate::input::ListSnapshotsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4306,7 +4306,7 @@ impl ListSnapshotsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -4455,7 +4455,7 @@ impl ListTagsForResourceInput {
 pub mod list_usage_limits_input {
 
     /// A builder for [`ListUsageLimitsInput`](crate::input::ListUsageLimitsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) usage_type: std::option::Option<crate::model::UsageLimitUsageType>,
@@ -4639,7 +4639,7 @@ impl ListUsageLimitsInput {
 pub mod list_workgroups_input {
 
     /// A builder for [`ListWorkgroupsInput`](crate::input::ListWorkgroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4796,7 +4796,7 @@ impl ListWorkgroupsInput {
 pub mod put_resource_policy_input {
 
     /// A builder for [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -4957,7 +4957,7 @@ impl PutResourcePolicyInput {
 pub mod restore_from_recovery_point_input {
 
     /// A builder for [`RestoreFromRecoveryPointInput`](crate::input::RestoreFromRecoveryPointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_point_id: std::option::Option<std::string::String>,
         pub(crate) namespace_name: std::option::Option<std::string::String>,
@@ -5139,7 +5139,7 @@ impl RestoreFromRecoveryPointInput {
 pub mod restore_from_snapshot_input {
 
     /// A builder for [`RestoreFromSnapshotInput`](crate::input::RestoreFromSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace_name: std::option::Option<std::string::String>,
         pub(crate) workgroup_name: std::option::Option<std::string::String>,
@@ -5346,7 +5346,7 @@ impl RestoreFromSnapshotInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5512,7 +5512,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5678,7 +5678,7 @@ impl UntagResourceInput {
 pub mod update_endpoint_access_input {
 
     /// A builder for [`UpdateEndpointAccessInput`](crate::input::UpdateEndpointAccessInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_name: std::option::Option<std::string::String>,
         pub(crate) vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5851,7 +5851,7 @@ impl UpdateEndpointAccessInput {
 pub mod update_namespace_input {
 
     /// A builder for [`UpdateNamespaceInput`](crate::input::UpdateNamespaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) namespace_name: std::option::Option<std::string::String>,
         pub(crate) admin_user_password: std::option::Option<std::string::String>,
@@ -6111,7 +6111,7 @@ impl UpdateNamespaceInput {
 pub mod update_snapshot_input {
 
     /// A builder for [`UpdateSnapshotInput`](crate::input::UpdateSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_name: std::option::Option<std::string::String>,
         pub(crate) retention_period: std::option::Option<i32>,
@@ -6271,7 +6271,7 @@ impl UpdateSnapshotInput {
 pub mod update_usage_limit_input {
 
     /// A builder for [`UpdateUsageLimitInput`](crate::input::UpdateUsageLimitInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_limit_id: std::option::Option<std::string::String>,
         pub(crate) amount: std::option::Option<i64>,
@@ -6448,7 +6448,7 @@ impl UpdateUsageLimitInput {
 pub mod update_workgroup_input {
 
     /// A builder for [`UpdateWorkgroupInput`](crate::input::UpdateWorkgroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workgroup_name: std::option::Option<std::string::String>,
         pub(crate) base_capacity: std::option::Option<i32>,

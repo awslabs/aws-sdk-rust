@@ -39,7 +39,7 @@ impl std::error::Error for TooManyRequests {}
 pub mod too_many_requests {
 
     /// A builder for [`TooManyRequests`](crate::error::TooManyRequests).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -120,7 +120,7 @@ impl std::error::Error for ThroughputLimitExceeded {}
 pub mod throughput_limit_exceeded {
 
     /// A builder for [`ThroughputLimitExceeded`](crate::error::ThroughputLimitExceeded).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -201,7 +201,7 @@ impl std::error::Error for InternalServerError {}
 pub mod internal_server_error {
 
     /// A builder for [`InternalServerError`](crate::error::InternalServerError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -282,7 +282,7 @@ impl std::error::Error for InsufficientThroughputCapacity {}
 pub mod insufficient_throughput_capacity {
 
     /// A builder for [`InsufficientThroughputCapacity`](crate::error::InsufficientThroughputCapacity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -363,7 +363,7 @@ impl std::error::Error for IncorrectFileSystemLifeCycleState {}
 pub mod incorrect_file_system_life_cycle_state {
 
     /// A builder for [`IncorrectFileSystemLifeCycleState`](crate::error::IncorrectFileSystemLifeCycleState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -444,7 +444,7 @@ impl std::error::Error for FileSystemNotFound {}
 pub mod file_system_not_found {
 
     /// A builder for [`FileSystemNotFound`](crate::error::FileSystemNotFound).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -525,7 +525,7 @@ impl std::error::Error for BadRequest {}
 pub mod bad_request {
 
     /// A builder for [`BadRequest`](crate::error::BadRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -606,7 +606,7 @@ impl std::error::Error for AccessPointNotFound {}
 pub mod access_point_not_found {
 
     /// A builder for [`AccessPointNotFound`](crate::error::AccessPointNotFound).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -687,7 +687,7 @@ impl std::error::Error for InvalidPolicyException {}
 pub mod invalid_policy_exception {
 
     /// A builder for [`InvalidPolicyException`](crate::error::InvalidPolicyException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -768,7 +768,7 @@ impl std::error::Error for ValidationException {}
 pub mod validation_exception {
 
     /// A builder for [`ValidationException`](crate::error::ValidationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -849,7 +849,7 @@ impl std::error::Error for SecurityGroupNotFound {}
 pub mod security_group_not_found {
 
     /// A builder for [`SecurityGroupNotFound`](crate::error::SecurityGroupNotFound).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -930,7 +930,7 @@ impl std::error::Error for SecurityGroupLimitExceeded {}
 pub mod security_group_limit_exceeded {
 
     /// A builder for [`SecurityGroupLimitExceeded`](crate::error::SecurityGroupLimitExceeded).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1011,7 +1011,7 @@ impl std::error::Error for MountTargetNotFound {}
 pub mod mount_target_not_found {
 
     /// A builder for [`MountTargetNotFound`](crate::error::MountTargetNotFound).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1092,7 +1092,7 @@ impl std::error::Error for IncorrectMountTargetState {}
 pub mod incorrect_mount_target_state {
 
     /// A builder for [`IncorrectMountTargetState`](crate::error::IncorrectMountTargetState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1173,7 +1173,7 @@ impl std::error::Error for ReplicationNotFound {}
 pub mod replication_not_found {
 
     /// A builder for [`ReplicationNotFound`](crate::error::ReplicationNotFound).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1254,7 +1254,7 @@ impl std::error::Error for PolicyNotFound {}
 pub mod policy_not_found {
 
     /// A builder for [`PolicyNotFound`](crate::error::PolicyNotFound).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1335,7 +1335,7 @@ impl std::error::Error for DependencyTimeout {}
 pub mod dependency_timeout {
 
     /// A builder for [`DependencyTimeout`](crate::error::DependencyTimeout).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1416,7 +1416,7 @@ impl std::error::Error for FileSystemInUse {}
 pub mod file_system_in_use {
 
     /// A builder for [`FileSystemInUse`](crate::error::FileSystemInUse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1497,7 +1497,7 @@ impl std::error::Error for UnsupportedAvailabilityZone {}
 pub mod unsupported_availability_zone {
 
     /// A builder for [`UnsupportedAvailabilityZone`](crate::error::UnsupportedAvailabilityZone).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1578,7 +1578,7 @@ impl std::error::Error for FileSystemLimitExceeded {}
 pub mod file_system_limit_exceeded {
 
     /// A builder for [`FileSystemLimitExceeded`](crate::error::FileSystemLimitExceeded).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1659,7 +1659,7 @@ impl std::error::Error for SubnetNotFound {}
 pub mod subnet_not_found {
 
     /// A builder for [`SubnetNotFound`](crate::error::SubnetNotFound).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1740,7 +1740,7 @@ impl std::error::Error for NoFreeAddressesInSubnet {}
 pub mod no_free_addresses_in_subnet {
 
     /// A builder for [`NoFreeAddressesInSubnet`](crate::error::NoFreeAddressesInSubnet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1821,7 +1821,7 @@ impl std::error::Error for NetworkInterfaceLimitExceeded {}
 pub mod network_interface_limit_exceeded {
 
     /// A builder for [`NetworkInterfaceLimitExceeded`](crate::error::NetworkInterfaceLimitExceeded).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1902,7 +1902,7 @@ impl std::error::Error for MountTargetConflict {}
 pub mod mount_target_conflict {
 
     /// A builder for [`MountTargetConflict`](crate::error::MountTargetConflict).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1983,7 +1983,7 @@ impl std::error::Error for IpAddressInUse {}
 pub mod ip_address_in_use {
 
     /// A builder for [`IpAddressInUse`](crate::error::IpAddressInUse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2064,7 +2064,7 @@ impl std::error::Error for AvailabilityZonesMismatch {}
 pub mod availability_zones_mismatch {
 
     /// A builder for [`AvailabilityZonesMismatch`](crate::error::AvailabilityZonesMismatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2152,7 +2152,7 @@ impl std::error::Error for FileSystemAlreadyExists {}
 pub mod file_system_already_exists {
 
     /// A builder for [`FileSystemAlreadyExists`](crate::error::FileSystemAlreadyExists).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2248,7 +2248,7 @@ impl std::error::Error for ThrottlingException {}
 pub mod throttling_exception {
 
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2329,7 +2329,7 @@ impl std::error::Error for AccessPointLimitExceeded {}
 pub mod access_point_limit_exceeded {
 
     /// A builder for [`AccessPointLimitExceeded`](crate::error::AccessPointLimitExceeded).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2417,7 +2417,7 @@ impl std::error::Error for AccessPointAlreadyExists {}
 pub mod access_point_already_exists {
 
     /// A builder for [`AccessPointAlreadyExists`](crate::error::AccessPointAlreadyExists).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,

@@ -36,7 +36,7 @@ impl std::fmt::Debug for UpdateNetworkSitePlanOutput {
 pub mod update_network_site_plan_output {
 
     /// A builder for [`UpdateNetworkSitePlanOutput`](crate::output::UpdateNetworkSitePlanOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
         pub(crate) tags: std::option::Option<
@@ -143,7 +143,7 @@ impl std::fmt::Debug for UpdateNetworkSiteOutput {
 pub mod update_network_site_output {
 
     /// A builder for [`UpdateNetworkSiteOutput`](crate::output::UpdateNetworkSiteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
         pub(crate) tags: std::option::Option<
@@ -221,7 +221,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -245,7 +245,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -279,7 +279,7 @@ impl PingOutput {
 pub mod ping_output {
 
     /// A builder for [`PingOutput`](crate::output::PingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
     }
@@ -338,7 +338,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -415,7 +415,7 @@ impl ListOrdersOutput {
 pub mod list_orders_output {
 
     /// A builder for [`ListOrdersOutput`](crate::output::ListOrdersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) orders: std::option::Option<std::vec::Vec<crate::model::Order>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -491,7 +491,7 @@ impl ListNetworkSitesOutput {
 pub mod list_network_sites_output {
 
     /// A builder for [`ListNetworkSitesOutput`](crate::output::ListNetworkSitesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_sites: std::option::Option<std::vec::Vec<crate::model::NetworkSite>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -567,7 +567,7 @@ impl ListNetworksOutput {
 pub mod list_networks_output {
 
     /// A builder for [`ListNetworksOutput`](crate::output::ListNetworksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) networks: std::option::Option<std::vec::Vec<crate::model::Network>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -643,7 +643,7 @@ impl ListNetworkResourcesOutput {
 pub mod list_network_resources_output {
 
     /// A builder for [`ListNetworkResourcesOutput`](crate::output::ListNetworkResourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_resources:
             std::option::Option<std::vec::Vec<crate::model::NetworkResource>>,
@@ -720,7 +720,7 @@ impl ListDeviceIdentifiersOutput {
 pub mod list_device_identifiers_output {
 
     /// A builder for [`ListDeviceIdentifiersOutput`](crate::output::ListDeviceIdentifiersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_identifiers:
             std::option::Option<std::vec::Vec<crate::model::DeviceIdentifier>>,
@@ -809,7 +809,7 @@ impl std::fmt::Debug for GetOrderOutput {
 pub mod get_order_output {
 
     /// A builder for [`GetOrderOutput`](crate::output::GetOrderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) order: std::option::Option<crate::model::Order>,
         pub(crate) tags: std::option::Option<
@@ -913,7 +913,7 @@ impl std::fmt::Debug for GetNetworkSiteOutput {
 pub mod get_network_site_output {
 
     /// A builder for [`GetNetworkSiteOutput`](crate::output::GetNetworkSiteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
         pub(crate) tags: std::option::Option<
@@ -1020,7 +1020,7 @@ impl std::fmt::Debug for GetNetworkResourceOutput {
 pub mod get_network_resource_output {
 
     /// A builder for [`GetNetworkResourceOutput`](crate::output::GetNetworkResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network_resource: std::option::Option<crate::model::NetworkResource>,
         pub(crate) tags: std::option::Option<
@@ -1127,7 +1127,7 @@ impl std::fmt::Debug for GetNetworkOutput {
 pub mod get_network_output {
 
     /// A builder for [`GetNetworkOutput`](crate::output::GetNetworkOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network: std::option::Option<crate::model::Network>,
         pub(crate) tags: std::option::Option<
@@ -1231,7 +1231,7 @@ impl std::fmt::Debug for GetDeviceIdentifierOutput {
 pub mod get_device_identifier_output {
 
     /// A builder for [`GetDeviceIdentifierOutput`](crate::output::GetDeviceIdentifierOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) device_identifier: std::option::Option<crate::model::DeviceIdentifier>,
         pub(crate) tags: std::option::Option<
@@ -1319,7 +1319,7 @@ impl DeleteNetworkSiteOutput {
 pub mod delete_network_site_output {
 
     /// A builder for [`DeleteNetworkSiteOutput`](crate::output::DeleteNetworkSiteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
     }
@@ -1370,7 +1370,7 @@ impl DeleteNetworkOutput {
 pub mod delete_network_output {
 
     /// A builder for [`DeleteNetworkOutput`](crate::output::DeleteNetworkOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network: std::option::Option<crate::model::Network>,
     }
@@ -1418,7 +1418,7 @@ impl DeactivateDeviceIdentifierOutput {
 pub mod deactivate_device_identifier_output {
 
     /// A builder for [`DeactivateDeviceIdentifierOutput`](crate::output::DeactivateDeviceIdentifierOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_identifier: std::option::Option<crate::model::DeviceIdentifier>,
     }
@@ -1488,7 +1488,7 @@ impl std::fmt::Debug for CreateNetworkSiteOutput {
 pub mod create_network_site_output {
 
     /// A builder for [`CreateNetworkSiteOutput`](crate::output::CreateNetworkSiteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
         pub(crate) tags: std::option::Option<
@@ -1595,7 +1595,7 @@ impl std::fmt::Debug for CreateNetworkOutput {
 pub mod create_network_output {
 
     /// A builder for [`CreateNetworkOutput`](crate::output::CreateNetworkOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network: std::option::Option<crate::model::Network>,
         pub(crate) tags: std::option::Option<
@@ -1680,7 +1680,7 @@ impl ConfigureAccessPointOutput {
 pub mod configure_access_point_output {
 
     /// A builder for [`ConfigureAccessPointOutput`](crate::output::ConfigureAccessPointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point: std::option::Option<crate::model::NetworkResource>,
     }
@@ -1731,7 +1731,7 @@ impl ActivateNetworkSiteOutput {
 pub mod activate_network_site_output {
 
     /// A builder for [`ActivateNetworkSiteOutput`](crate::output::ActivateNetworkSiteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
     }
@@ -1801,7 +1801,7 @@ impl std::fmt::Debug for ActivateDeviceIdentifierOutput {
 pub mod activate_device_identifier_output {
 
     /// A builder for [`ActivateDeviceIdentifierOutput`](crate::output::ActivateDeviceIdentifierOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) device_identifier: std::option::Option<crate::model::DeviceIdentifier>,
         pub(crate) tags: std::option::Option<
@@ -1889,7 +1889,7 @@ impl AcknowledgeOrderReceiptOutput {
 pub mod acknowledge_order_receipt_output {
 
     /// A builder for [`AcknowledgeOrderReceiptOutput`](crate::output::AcknowledgeOrderReceiptOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) order: std::option::Option<crate::model::Order>,
     }

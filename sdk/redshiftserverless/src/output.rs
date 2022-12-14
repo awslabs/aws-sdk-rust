@@ -24,7 +24,7 @@ impl ListWorkgroupsOutput {
 pub mod list_workgroups_output {
 
     /// A builder for [`ListWorkgroupsOutput`](crate::output::ListWorkgroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) workgroups: std::option::Option<std::vec::Vec<crate::model::Workgroup>>,
@@ -93,7 +93,7 @@ impl CreateWorkgroupOutput {
 pub mod create_workgroup_output {
 
     /// A builder for [`CreateWorkgroupOutput`](crate::output::CreateWorkgroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workgroup: std::option::Option<crate::model::Workgroup>,
     }
@@ -144,7 +144,7 @@ impl DeleteWorkgroupOutput {
 pub mod delete_workgroup_output {
 
     /// A builder for [`DeleteWorkgroupOutput`](crate::output::DeleteWorkgroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workgroup: std::option::Option<crate::model::Workgroup>,
     }
@@ -195,7 +195,7 @@ impl UpdateWorkgroupOutput {
 pub mod update_workgroup_output {
 
     /// A builder for [`UpdateWorkgroupOutput`](crate::output::UpdateWorkgroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workgroup: std::option::Option<crate::model::Workgroup>,
     }
@@ -246,7 +246,7 @@ impl GetWorkgroupOutput {
 pub mod get_workgroup_output {
 
     /// A builder for [`GetWorkgroupOutput`](crate::output::GetWorkgroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workgroup: std::option::Option<crate::model::Workgroup>,
     }
@@ -297,7 +297,7 @@ impl UpdateUsageLimitOutput {
 pub mod update_usage_limit_output {
 
     /// A builder for [`UpdateUsageLimitOutput`](crate::output::UpdateUsageLimitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_limit: std::option::Option<crate::model::UsageLimit>,
     }
@@ -355,7 +355,7 @@ impl ListUsageLimitsOutput {
 pub mod list_usage_limits_output {
 
     /// A builder for [`ListUsageLimitsOutput`](crate::output::ListUsageLimitsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_limits: std::option::Option<std::vec::Vec<crate::model::UsageLimit>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -424,7 +424,7 @@ impl GetUsageLimitOutput {
 pub mod get_usage_limit_output {
 
     /// A builder for [`GetUsageLimitOutput`](crate::output::GetUsageLimitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_limit: std::option::Option<crate::model::UsageLimit>,
     }
@@ -475,7 +475,7 @@ impl DeleteUsageLimitOutput {
 pub mod delete_usage_limit_output {
 
     /// A builder for [`DeleteUsageLimitOutput`](crate::output::DeleteUsageLimitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_limit: std::option::Option<crate::model::UsageLimit>,
     }
@@ -526,7 +526,7 @@ impl CreateUsageLimitOutput {
 pub mod create_usage_limit_output {
 
     /// A builder for [`CreateUsageLimitOutput`](crate::output::CreateUsageLimitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_limit: std::option::Option<crate::model::UsageLimit>,
     }
@@ -577,7 +577,7 @@ impl UpdateSnapshotOutput {
 pub mod update_snapshot_output {
 
     /// A builder for [`UpdateSnapshotOutput`](crate::output::UpdateSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot: std::option::Option<crate::model::Snapshot>,
     }
@@ -639,7 +639,7 @@ impl RestoreFromSnapshotOutput {
 pub mod restore_from_snapshot_output {
 
     /// A builder for [`RestoreFromSnapshotOutput`](crate::output::RestoreFromSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_name: std::option::Option<std::string::String>,
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -727,7 +727,7 @@ impl ListSnapshotsOutput {
 pub mod list_snapshots_output {
 
     /// A builder for [`ListSnapshotsOutput`](crate::output::ListSnapshotsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
@@ -796,7 +796,7 @@ impl GetSnapshotOutput {
 pub mod get_snapshot_output {
 
     /// A builder for [`GetSnapshotOutput`](crate::output::GetSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot: std::option::Option<crate::model::Snapshot>,
     }
@@ -844,7 +844,7 @@ impl DeleteSnapshotOutput {
 pub mod delete_snapshot_output {
 
     /// A builder for [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot: std::option::Option<crate::model::Snapshot>,
     }
@@ -892,7 +892,7 @@ impl CreateSnapshotOutput {
 pub mod create_snapshot_output {
 
     /// A builder for [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot: std::option::Option<crate::model::Snapshot>,
     }
@@ -947,7 +947,7 @@ impl RestoreFromRecoveryPointOutput {
 pub mod restore_from_recovery_point_output {
 
     /// A builder for [`RestoreFromRecoveryPointOutput`](crate::output::RestoreFromRecoveryPointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_point_id: std::option::Option<std::string::String>,
         pub(crate) namespace: std::option::Option<crate::model::Namespace>,
@@ -1020,7 +1020,7 @@ impl ListRecoveryPointsOutput {
 pub mod list_recovery_points_output {
 
     /// A builder for [`ListRecoveryPointsOutput`](crate::output::ListRecoveryPointsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_points: std::option::Option<std::vec::Vec<crate::model::RecoveryPoint>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1089,7 +1089,7 @@ impl GetRecoveryPointOutput {
 pub mod get_recovery_point_output {
 
     /// A builder for [`GetRecoveryPointOutput`](crate::output::GetRecoveryPointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_point: std::option::Option<crate::model::RecoveryPoint>,
     }
@@ -1140,7 +1140,7 @@ impl ConvertRecoveryPointToSnapshotOutput {
 pub mod convert_recovery_point_to_snapshot_output {
 
     /// A builder for [`ConvertRecoveryPointToSnapshotOutput`](crate::output::ConvertRecoveryPointToSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot: std::option::Option<crate::model::Snapshot>,
     }
@@ -1195,7 +1195,7 @@ impl ListNamespacesOutput {
 pub mod list_namespaces_output {
 
     /// A builder for [`ListNamespacesOutput`](crate::output::ListNamespacesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) namespaces: std::option::Option<std::vec::Vec<crate::model::Namespace>>,
@@ -1264,7 +1264,7 @@ impl CreateNamespaceOutput {
 pub mod create_namespace_output {
 
     /// A builder for [`CreateNamespaceOutput`](crate::output::CreateNamespaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<crate::model::Namespace>,
     }
@@ -1315,7 +1315,7 @@ impl DeleteNamespaceOutput {
 pub mod delete_namespace_output {
 
     /// A builder for [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<crate::model::Namespace>,
     }
@@ -1366,7 +1366,7 @@ impl UpdateNamespaceOutput {
 pub mod update_namespace_output {
 
     /// A builder for [`UpdateNamespaceOutput`](crate::output::UpdateNamespaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<crate::model::Namespace>,
     }
@@ -1417,7 +1417,7 @@ impl GetNamespaceOutput {
 pub mod get_namespace_output {
 
     /// A builder for [`GetNamespaceOutput`](crate::output::GetNamespaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<crate::model::Namespace>,
     }
@@ -1468,7 +1468,7 @@ impl UpdateEndpointAccessOutput {
 pub mod update_endpoint_access_output {
 
     /// A builder for [`UpdateEndpointAccessOutput`](crate::output::UpdateEndpointAccessOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<crate::model::EndpointAccess>,
     }
@@ -1526,7 +1526,7 @@ impl ListEndpointAccessOutput {
 pub mod list_endpoint_access_output {
 
     /// A builder for [`ListEndpointAccessOutput`](crate::output::ListEndpointAccessOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::EndpointAccess>>,
@@ -1595,7 +1595,7 @@ impl GetEndpointAccessOutput {
 pub mod get_endpoint_access_output {
 
     /// A builder for [`GetEndpointAccessOutput`](crate::output::GetEndpointAccessOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<crate::model::EndpointAccess>,
     }
@@ -1646,7 +1646,7 @@ impl DeleteEndpointAccessOutput {
 pub mod delete_endpoint_access_output {
 
     /// A builder for [`DeleteEndpointAccessOutput`](crate::output::DeleteEndpointAccessOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<crate::model::EndpointAccess>,
     }
@@ -1697,7 +1697,7 @@ impl CreateEndpointAccessOutput {
 pub mod create_endpoint_access_output {
 
     /// A builder for [`CreateEndpointAccessOutput`](crate::output::CreateEndpointAccessOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<crate::model::EndpointAccess>,
     }
@@ -1738,7 +1738,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -1762,7 +1762,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1796,7 +1796,7 @@ impl PutResourcePolicyOutput {
 pub mod put_resource_policy_output {
 
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_policy: std::option::Option<crate::model::ResourcePolicy>,
     }
@@ -1847,7 +1847,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -1902,7 +1902,7 @@ impl GetResourcePolicyOutput {
 pub mod get_resource_policy_output {
 
     /// A builder for [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_policy: std::option::Option<crate::model::ResourcePolicy>,
     }
@@ -1984,7 +1984,7 @@ impl std::fmt::Debug for GetCredentialsOutput {
 pub mod get_credentials_output {
 
     /// A builder for [`GetCredentialsOutput`](crate::output::GetCredentialsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) db_user: std::option::Option<std::string::String>,
         pub(crate) db_password: std::option::Option<std::string::String>,
@@ -2074,7 +2074,7 @@ pub struct DeleteResourcePolicyOutput {}
 pub mod delete_resource_policy_output {
 
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).

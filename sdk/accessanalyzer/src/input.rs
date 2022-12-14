@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod apply_archive_rule_input {
 
     /// A builder for [`ApplyArchiveRuleInput`](crate::input::ApplyArchiveRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzer_arn: std::option::Option<std::string::String>,
         pub(crate) rule_name: std::option::Option<std::string::String>,
@@ -174,7 +174,7 @@ impl ApplyArchiveRuleInput {
 pub mod cancel_policy_generation_input {
 
     /// A builder for [`CancelPolicyGenerationInput`](crate::input::CancelPolicyGenerationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -322,7 +322,7 @@ impl CancelPolicyGenerationInput {
 pub mod create_access_preview_input {
 
     /// A builder for [`CreateAccessPreviewInput`](crate::input::CreateAccessPreviewInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzer_arn: std::option::Option<std::string::String>,
         pub(crate) configurations: std::option::Option<
@@ -508,7 +508,7 @@ impl CreateAccessPreviewInput {
 pub mod create_analyzer_input {
 
     /// A builder for [`CreateAnalyzerInput`](crate::input::CreateAnalyzerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzer_name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::Type>,
@@ -729,7 +729,7 @@ impl CreateAnalyzerInput {
 pub mod create_archive_rule_input {
 
     /// A builder for [`CreateArchiveRuleInput`](crate::input::CreateArchiveRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzer_name: std::option::Option<std::string::String>,
         pub(crate) rule_name: std::option::Option<std::string::String>,
@@ -954,7 +954,7 @@ impl CreateArchiveRuleInput {
 pub mod delete_analyzer_input {
 
     /// A builder for [`DeleteAnalyzerInput`](crate::input::DeleteAnalyzerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzer_name: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1135,7 +1135,7 @@ impl DeleteAnalyzerInput {
 pub mod delete_archive_rule_input {
 
     /// A builder for [`DeleteArchiveRuleInput`](crate::input::DeleteArchiveRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzer_name: std::option::Option<std::string::String>,
         pub(crate) rule_name: std::option::Option<std::string::String>,
@@ -1350,7 +1350,7 @@ impl DeleteArchiveRuleInput {
 pub mod get_access_preview_input {
 
     /// A builder for [`GetAccessPreviewInput`](crate::input::GetAccessPreviewInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_preview_id: std::option::Option<std::string::String>,
         pub(crate) analyzer_arn: std::option::Option<std::string::String>,
@@ -1541,7 +1541,7 @@ impl GetAccessPreviewInput {
 pub mod get_analyzed_resource_input {
 
     /// A builder for [`GetAnalyzedResourceInput`](crate::input::GetAnalyzedResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzer_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1727,7 +1727,7 @@ impl GetAnalyzedResourceInput {
 pub mod get_analyzer_input {
 
     /// A builder for [`GetAnalyzerInput`](crate::input::GetAnalyzerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzer_name: std::option::Option<std::string::String>,
     }
@@ -1880,7 +1880,7 @@ impl GetAnalyzerInput {
 pub mod get_archive_rule_input {
 
     /// A builder for [`GetArchiveRuleInput`](crate::input::GetArchiveRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzer_name: std::option::Option<std::string::String>,
         pub(crate) rule_name: std::option::Option<std::string::String>,
@@ -2065,7 +2065,7 @@ impl GetArchiveRuleInput {
 pub mod get_finding_input {
 
     /// A builder for [`GetFindingInput`](crate::input::GetFindingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzer_arn: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2249,7 +2249,7 @@ impl GetFindingInput {
 pub mod get_generated_policy_input {
 
     /// A builder for [`GetGeneratedPolicyInput`](crate::input::GetGeneratedPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) include_resource_placeholders: std::option::Option<bool>,
@@ -2455,7 +2455,7 @@ impl GetGeneratedPolicyInput {
 pub mod list_access_preview_findings_input {
 
     /// A builder for [`ListAccessPreviewFindingsInput`](crate::input::ListAccessPreviewFindingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_preview_id: std::option::Option<std::string::String>,
         pub(crate) analyzer_arn: std::option::Option<std::string::String>,
@@ -2691,7 +2691,7 @@ impl ListAccessPreviewFindingsInput {
 pub mod list_access_previews_input {
 
     /// A builder for [`ListAccessPreviewsInput`](crate::input::ListAccessPreviewsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzer_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2883,7 +2883,7 @@ impl ListAccessPreviewsInput {
 pub mod list_analyzed_resources_input {
 
     /// A builder for [`ListAnalyzedResourcesInput`](crate::input::ListAnalyzedResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzer_arn: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
@@ -3066,7 +3066,7 @@ impl ListAnalyzedResourcesInput {
 pub mod list_analyzers_input {
 
     /// A builder for [`ListAnalyzersInput`](crate::input::ListAnalyzersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3242,7 +3242,7 @@ impl ListAnalyzersInput {
 pub mod list_archive_rules_input {
 
     /// A builder for [`ListArchiveRulesInput`](crate::input::ListArchiveRulesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzer_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3442,7 +3442,7 @@ impl ListArchiveRulesInput {
 pub mod list_findings_input {
 
     /// A builder for [`ListFindingsInput`](crate::input::ListFindingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzer_arn: std::option::Option<std::string::String>,
         pub(crate) filter: std::option::Option<
@@ -3647,7 +3647,7 @@ impl ListFindingsInput {
 pub mod list_policy_generations_input {
 
     /// A builder for [`ListPolicyGenerationsInput`](crate::input::ListPolicyGenerationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) principal_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3831,7 +3831,7 @@ impl ListPolicyGenerationsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3979,7 +3979,7 @@ impl ListTagsForResourceInput {
 pub mod start_policy_generation_input {
 
     /// A builder for [`StartPolicyGenerationInput`](crate::input::StartPolicyGenerationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_generation_details:
             std::option::Option<crate::model::PolicyGenerationDetails>,
@@ -4162,7 +4162,7 @@ impl StartPolicyGenerationInput {
 pub mod start_resource_scan_input {
 
     /// A builder for [`StartResourceScanInput`](crate::input::StartResourceScanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzer_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4316,7 +4316,7 @@ impl StartResourceScanInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -4505,7 +4505,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4690,7 +4690,7 @@ impl UntagResourceInput {
 pub mod update_archive_rule_input {
 
     /// A builder for [`UpdateArchiveRuleInput`](crate::input::UpdateArchiveRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzer_name: std::option::Option<std::string::String>,
         pub(crate) rule_name: std::option::Option<std::string::String>,
@@ -4935,7 +4935,7 @@ impl UpdateArchiveRuleInput {
 pub mod update_findings_input {
 
     /// A builder for [`UpdateFindingsInput`](crate::input::UpdateFindingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analyzer_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::FindingStatusUpdate>,
@@ -5138,7 +5138,7 @@ impl UpdateFindingsInput {
 pub mod validate_policy_input {
 
     /// A builder for [`ValidatePolicyInput`](crate::input::ValidatePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) locale: std::option::Option<crate::model::Locale>,
         pub(crate) max_results: std::option::Option<i32>,

@@ -126,7 +126,7 @@ impl UpdateOriginEndpointOutput {
 pub mod update_origin_endpoint_output {
 
     /// A builder for [`UpdateOriginEndpointOutput`](crate::output::UpdateOriginEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) authorization: std::option::Option<crate::model::Authorization>,
@@ -447,7 +447,7 @@ impl UpdateChannelOutput {
 pub mod update_channel_output {
 
     /// A builder for [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -583,7 +583,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -607,7 +607,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -687,7 +687,7 @@ impl RotateIngestEndpointCredentialsOutput {
 pub mod rotate_ingest_endpoint_credentials_output {
 
     /// A builder for [`RotateIngestEndpointCredentialsOutput`](crate::output::RotateIngestEndpointCredentialsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -880,7 +880,7 @@ impl RotateChannelCredentialsOutput {
 pub mod rotate_channel_credentials_output {
 
     /// A builder for [`RotateChannelCredentialsOutput`](crate::output::RotateChannelCredentialsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1030,7 +1030,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -1099,7 +1099,7 @@ impl ListOriginEndpointsOutput {
 pub mod list_origin_endpoints_output {
 
     /// A builder for [`ListOriginEndpointsOutput`](crate::output::ListOriginEndpointsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) origin_endpoints:
@@ -1176,7 +1176,7 @@ impl ListHarvestJobsOutput {
 pub mod list_harvest_jobs_output {
 
     /// A builder for [`ListHarvestJobsOutput`](crate::output::ListHarvestJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) harvest_jobs: std::option::Option<std::vec::Vec<crate::model::HarvestJob>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1252,7 +1252,7 @@ impl ListChannelsOutput {
 pub mod list_channels_output {
 
     /// A builder for [`ListChannelsOutput`](crate::output::ListChannelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1430,7 +1430,7 @@ impl DescribeOriginEndpointOutput {
 pub mod describe_origin_endpoint_output {
 
     /// A builder for [`DescribeOriginEndpointOutput`](crate::output::DescribeOriginEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) authorization: std::option::Option<crate::model::Authorization>,
@@ -1761,7 +1761,7 @@ impl DescribeHarvestJobOutput {
 pub mod describe_harvest_job_output {
 
     /// A builder for [`DescribeHarvestJobOutput`](crate::output::DescribeHarvestJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -1957,7 +1957,7 @@ impl DescribeChannelOutput {
 pub mod describe_channel_output {
 
     /// A builder for [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2093,7 +2093,7 @@ pub struct DeleteOriginEndpointOutput {}
 pub mod delete_origin_endpoint_output {
 
     /// A builder for [`DeleteOriginEndpointOutput`](crate::output::DeleteOriginEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteOriginEndpointOutput`](crate::output::DeleteOriginEndpointOutput).
@@ -2117,7 +2117,7 @@ pub struct DeleteChannelOutput {}
 pub mod delete_channel_output {
 
     /// A builder for [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
@@ -2260,7 +2260,7 @@ impl CreateOriginEndpointOutput {
 pub mod create_origin_endpoint_output {
 
     /// A builder for [`CreateOriginEndpointOutput`](crate::output::CreateOriginEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) authorization: std::option::Option<crate::model::Authorization>,
@@ -2591,7 +2591,7 @@ impl CreateHarvestJobOutput {
 pub mod create_harvest_job_output {
 
     /// A builder for [`CreateHarvestJobOutput`](crate::output::CreateHarvestJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -2787,7 +2787,7 @@ impl CreateChannelOutput {
 pub mod create_channel_output {
 
     /// A builder for [`CreateChannelOutput`](crate::output::CreateChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2979,7 +2979,7 @@ impl ConfigureLogsOutput {
 pub mod configure_logs_output {
 
     /// A builder for [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,

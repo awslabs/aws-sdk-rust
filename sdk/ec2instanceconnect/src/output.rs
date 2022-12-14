@@ -24,7 +24,7 @@ impl SendSshPublicKeyOutput {
 pub mod send_ssh_public_key_output {
 
     /// A builder for [`SendSshPublicKeyOutput`](crate::output::SendSshPublicKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) success: std::option::Option<bool>,
@@ -91,7 +91,7 @@ impl SendSerialConsoleSshPublicKeyOutput {
 pub mod send_serial_console_ssh_public_key_output {
 
     /// A builder for [`SendSerialConsoleSshPublicKeyOutput`](crate::output::SendSerialConsoleSshPublicKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) success: std::option::Option<bool>,

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod copy_backup_to_region_input {
 
     /// A builder for [`CopyBackupToRegionInput`](crate::input::CopyBackupToRegionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_region: std::option::Option<std::string::String>,
         pub(crate) backup_id: std::option::Option<std::string::String>,
@@ -188,7 +188,7 @@ impl CopyBackupToRegionInput {
 pub mod create_cluster_input {
 
     /// A builder for [`CreateClusterInput`](crate::input::CreateClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_retention_policy:
             std::option::Option<crate::model::BackupRetentionPolicy>,
@@ -417,7 +417,7 @@ impl CreateClusterInput {
 pub mod create_hsm_input {
 
     /// A builder for [`CreateHsmInput`](crate::input::CreateHsmInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
@@ -587,7 +587,7 @@ impl CreateHsmInput {
 pub mod delete_backup_input {
 
     /// A builder for [`DeleteBackupInput`](crate::input::DeleteBackupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_id: std::option::Option<std::string::String>,
     }
@@ -732,7 +732,7 @@ impl DeleteBackupInput {
 pub mod delete_cluster_input {
 
     /// A builder for [`DeleteClusterInput`](crate::input::DeleteClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
     }
@@ -877,7 +877,7 @@ impl DeleteClusterInput {
 pub mod delete_hsm_input {
 
     /// A builder for [`DeleteHsmInput`](crate::input::DeleteHsmInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
         pub(crate) hsm_id: std::option::Option<std::string::String>,
@@ -1056,7 +1056,7 @@ impl DeleteHsmInput {
 pub mod describe_backups_input {
 
     /// A builder for [`DescribeBackupsInput`](crate::input::DescribeBackupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1264,7 +1264,7 @@ impl DescribeBackupsInput {
 pub mod describe_clusters_input {
 
     /// A builder for [`DescribeClustersInput`](crate::input::DescribeClustersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
@@ -1458,7 +1458,7 @@ impl DescribeClustersInput {
 pub mod initialize_cluster_input {
 
     /// A builder for [`InitializeClusterInput`](crate::input::InitializeClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
         pub(crate) signed_cert: std::option::Option<std::string::String>,
@@ -1629,7 +1629,7 @@ impl InitializeClusterInput {
 pub mod list_tags_input {
 
     /// A builder for [`ListTagsInput`](crate::input::ListTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1796,7 +1796,7 @@ impl ListTagsInput {
 pub mod modify_backup_attributes_input {
 
     /// A builder for [`ModifyBackupAttributesInput`](crate::input::ModifyBackupAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_id: std::option::Option<std::string::String>,
         pub(crate) never_expires: std::option::Option<bool>,
@@ -1957,7 +1957,7 @@ impl ModifyBackupAttributesInput {
 pub mod modify_cluster_input {
 
     /// A builder for [`ModifyClusterInput`](crate::input::ModifyClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_retention_policy:
             std::option::Option<crate::model::BackupRetentionPolicy>,
@@ -2121,7 +2121,7 @@ impl ModifyClusterInput {
 pub mod restore_backup_input {
 
     /// A builder for [`RestoreBackupInput`](crate::input::RestoreBackupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_id: std::option::Option<std::string::String>,
     }
@@ -2266,7 +2266,7 @@ impl RestoreBackupInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2432,7 +2432,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) tag_key_list: std::option::Option<std::vec::Vec<std::string::String>>,

@@ -18,7 +18,7 @@ impl UpdateWebhookOutput {
 pub mod update_webhook_output {
 
     /// A builder for [`UpdateWebhookOutput`](crate::output::UpdateWebhookOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) webhook: std::option::Option<crate::model::Webhook>,
     }
@@ -66,7 +66,7 @@ impl UpdateDomainAssociationOutput {
 pub mod update_domain_association_output {
 
     /// A builder for [`UpdateDomainAssociationOutput`](crate::output::UpdateDomainAssociationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_association: std::option::Option<crate::model::DomainAssociation>,
     }
@@ -117,7 +117,7 @@ impl UpdateBranchOutput {
 pub mod update_branch_output {
 
     /// A builder for [`UpdateBranchOutput`](crate::output::UpdateBranchOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) branch: std::option::Option<crate::model::Branch>,
     }
@@ -165,7 +165,7 @@ impl UpdateAppOutput {
 pub mod update_app_output {
 
     /// A builder for [`UpdateAppOutput`](crate::output::UpdateAppOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app: std::option::Option<crate::model::App>,
     }
@@ -201,7 +201,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -225,7 +225,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -259,7 +259,7 @@ impl StopJobOutput {
 pub mod stop_job_output {
 
     /// A builder for [`StopJobOutput`](crate::output::StopJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_summary: std::option::Option<crate::model::JobSummary>,
     }
@@ -310,7 +310,7 @@ impl StartJobOutput {
 pub mod start_job_output {
 
     /// A builder for [`StartJobOutput`](crate::output::StartJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_summary: std::option::Option<crate::model::JobSummary>,
     }
@@ -361,7 +361,7 @@ impl StartDeploymentOutput {
 pub mod start_deployment_output {
 
     /// A builder for [`StartDeploymentOutput`](crate::output::StartDeploymentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_summary: std::option::Option<crate::model::JobSummary>,
     }
@@ -419,7 +419,7 @@ impl ListWebhooksOutput {
 pub mod list_webhooks_output {
 
     /// A builder for [`ListWebhooksOutput`](crate::output::ListWebhooksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) webhooks: std::option::Option<std::vec::Vec<crate::model::Webhook>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -492,7 +492,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -562,7 +562,7 @@ impl ListJobsOutput {
 pub mod list_jobs_output {
 
     /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_summaries: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -638,7 +638,7 @@ impl ListDomainAssociationsOutput {
 pub mod list_domain_associations_output {
 
     /// A builder for [`ListDomainAssociationsOutput`](crate::output::ListDomainAssociationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_associations:
             std::option::Option<std::vec::Vec<crate::model::DomainAssociation>>,
@@ -715,7 +715,7 @@ impl ListBranchesOutput {
 pub mod list_branches_output {
 
     /// A builder for [`ListBranchesOutput`](crate::output::ListBranchesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) branches: std::option::Option<std::vec::Vec<crate::model::Branch>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -791,7 +791,7 @@ impl ListBackendEnvironmentsOutput {
 pub mod list_backend_environments_output {
 
     /// A builder for [`ListBackendEnvironmentsOutput`](crate::output::ListBackendEnvironmentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backend_environments:
             std::option::Option<std::vec::Vec<crate::model::BackendEnvironment>>,
@@ -868,7 +868,7 @@ impl ListArtifactsOutput {
 pub mod list_artifacts_output {
 
     /// A builder for [`ListArtifactsOutput`](crate::output::ListArtifactsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) artifacts: std::option::Option<std::vec::Vec<crate::model::Artifact>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -944,7 +944,7 @@ impl ListAppsOutput {
 pub mod list_apps_output {
 
     /// A builder for [`ListAppsOutput`](crate::output::ListAppsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apps: std::option::Option<std::vec::Vec<crate::model::App>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1013,7 +1013,7 @@ impl GetWebhookOutput {
 pub mod get_webhook_output {
 
     /// A builder for [`GetWebhookOutput`](crate::output::GetWebhookOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) webhook: std::option::Option<crate::model::Webhook>,
     }
@@ -1061,7 +1061,7 @@ impl GetJobOutput {
 pub mod get_job_output {
 
     /// A builder for [`GetJobOutput`](crate::output::GetJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<crate::model::Job>,
     }
@@ -1107,7 +1107,7 @@ impl GetDomainAssociationOutput {
 pub mod get_domain_association_output {
 
     /// A builder for [`GetDomainAssociationOutput`](crate::output::GetDomainAssociationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_association: std::option::Option<crate::model::DomainAssociation>,
     }
@@ -1158,7 +1158,7 @@ impl GetBranchOutput {
 pub mod get_branch_output {
 
     /// A builder for [`GetBranchOutput`](crate::output::GetBranchOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) branch: std::option::Option<crate::model::Branch>,
     }
@@ -1206,7 +1206,7 @@ impl GetBackendEnvironmentOutput {
 pub mod get_backend_environment_output {
 
     /// A builder for [`GetBackendEnvironmentOutput`](crate::output::GetBackendEnvironmentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backend_environment: std::option::Option<crate::model::BackendEnvironment>,
     }
@@ -1264,7 +1264,7 @@ impl GetArtifactUrlOutput {
 pub mod get_artifact_url_output {
 
     /// A builder for [`GetArtifactUrlOutput`](crate::output::GetArtifactUrlOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) artifact_id: std::option::Option<std::string::String>,
         pub(crate) artifact_url: std::option::Option<std::string::String>,
@@ -1324,7 +1324,7 @@ impl GetAppOutput {
 pub mod get_app_output {
 
     /// A builder for [`GetAppOutput`](crate::output::GetAppOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app: std::option::Option<crate::model::App>,
     }
@@ -1370,7 +1370,7 @@ impl GenerateAccessLogsOutput {
 pub mod generate_access_logs_output {
 
     /// A builder for [`GenerateAccessLogsOutput`](crate::output::GenerateAccessLogsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_url: std::option::Option<std::string::String>,
     }
@@ -1418,7 +1418,7 @@ impl DeleteWebhookOutput {
 pub mod delete_webhook_output {
 
     /// A builder for [`DeleteWebhookOutput`](crate::output::DeleteWebhookOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) webhook: std::option::Option<crate::model::Webhook>,
     }
@@ -1466,7 +1466,7 @@ impl DeleteJobOutput {
 pub mod delete_job_output {
 
     /// A builder for [`DeleteJobOutput`](crate::output::DeleteJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_summary: std::option::Option<crate::model::JobSummary>,
     }
@@ -1517,7 +1517,7 @@ impl DeleteDomainAssociationOutput {
 pub mod delete_domain_association_output {
 
     /// A builder for [`DeleteDomainAssociationOutput`](crate::output::DeleteDomainAssociationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_association: std::option::Option<crate::model::DomainAssociation>,
     }
@@ -1568,7 +1568,7 @@ impl DeleteBranchOutput {
 pub mod delete_branch_output {
 
     /// A builder for [`DeleteBranchOutput`](crate::output::DeleteBranchOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) branch: std::option::Option<crate::model::Branch>,
     }
@@ -1616,7 +1616,7 @@ impl DeleteBackendEnvironmentOutput {
 pub mod delete_backend_environment_output {
 
     /// A builder for [`DeleteBackendEnvironmentOutput`](crate::output::DeleteBackendEnvironmentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backend_environment: std::option::Option<crate::model::BackendEnvironment>,
     }
@@ -1667,7 +1667,7 @@ impl DeleteAppOutput {
 pub mod delete_app_output {
 
     /// A builder for [`DeleteAppOutput`](crate::output::DeleteAppOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app: std::option::Option<crate::model::App>,
     }
@@ -1713,7 +1713,7 @@ impl CreateWebhookOutput {
 pub mod create_webhook_output {
 
     /// A builder for [`CreateWebhookOutput`](crate::output::CreateWebhookOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) webhook: std::option::Option<crate::model::Webhook>,
     }
@@ -1761,7 +1761,7 @@ impl CreateDomainAssociationOutput {
 pub mod create_domain_association_output {
 
     /// A builder for [`CreateDomainAssociationOutput`](crate::output::CreateDomainAssociationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_association: std::option::Option<crate::model::DomainAssociation>,
     }
@@ -1830,7 +1830,7 @@ impl CreateDeploymentOutput {
 pub mod create_deployment_output {
 
     /// A builder for [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) file_upload_urls: std::option::Option<
@@ -1922,7 +1922,7 @@ impl CreateBranchOutput {
 pub mod create_branch_output {
 
     /// A builder for [`CreateBranchOutput`](crate::output::CreateBranchOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) branch: std::option::Option<crate::model::Branch>,
     }
@@ -1970,7 +1970,7 @@ impl CreateBackendEnvironmentOutput {
 pub mod create_backend_environment_output {
 
     /// A builder for [`CreateBackendEnvironmentOutput`](crate::output::CreateBackendEnvironmentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backend_environment: std::option::Option<crate::model::BackendEnvironment>,
     }
@@ -2021,7 +2021,7 @@ impl CreateAppOutput {
 pub mod create_app_output {
 
     /// A builder for [`CreateAppOutput`](crate::output::CreateAppOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app: std::option::Option<crate::model::App>,
     }

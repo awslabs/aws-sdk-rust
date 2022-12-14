@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod batch_execute_statement_input {
 
     /// A builder for [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
@@ -252,7 +252,7 @@ impl BatchExecuteStatementInput {
 pub mod begin_transaction_input {
 
     /// A builder for [`BeginTransactionInput`](crate::input::BeginTransactionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
@@ -430,7 +430,7 @@ impl BeginTransactionInput {
 pub mod commit_transaction_input {
 
     /// A builder for [`CommitTransactionInput`](crate::input::CommitTransactionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
@@ -599,7 +599,7 @@ impl CommitTransactionInput {
 pub mod execute_sql_input {
 
     /// A builder for [`ExecuteSqlInput`](crate::input::ExecuteSqlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_or_instance_arn: std::option::Option<std::string::String>,
         pub(crate) aws_secret_store_arn: std::option::Option<std::string::String>,
@@ -800,7 +800,7 @@ impl ExecuteSqlInput {
 pub mod execute_statement_input {
 
     /// A builder for [`ExecuteStatementInput`](crate::input::ExecuteStatementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
@@ -1098,7 +1098,7 @@ impl ExecuteStatementInput {
 pub mod rollback_transaction_input {
 
     /// A builder for [`RollbackTransactionInput`](crate::input::RollbackTransactionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,

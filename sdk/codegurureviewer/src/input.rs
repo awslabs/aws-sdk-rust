@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_repository_input {
 
     /// A builder for [`AssociateRepositoryInput`](crate::input::AssociateRepositoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository: std::option::Option<crate::model::Repository>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -228,7 +228,7 @@ impl AssociateRepositoryInput {
 pub mod create_code_review_input {
 
     /// A builder for [`CreateCodeReviewInput`](crate::input::CreateCodeReviewInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) repository_association_arn: std::option::Option<std::string::String>,
@@ -420,7 +420,7 @@ impl CreateCodeReviewInput {
 pub mod describe_code_review_input {
 
     /// A builder for [`DescribeCodeReviewInput`](crate::input::DescribeCodeReviewInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_review_arn: std::option::Option<std::string::String>,
     }
@@ -575,7 +575,7 @@ impl DescribeCodeReviewInput {
 pub mod describe_recommendation_feedback_input {
 
     /// A builder for [`DescribeRecommendationFeedbackInput`](crate::input::DescribeRecommendationFeedbackInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_review_arn: std::option::Option<std::string::String>,
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
@@ -791,7 +791,7 @@ impl DescribeRecommendationFeedbackInput {
 pub mod describe_repository_association_input {
 
     /// A builder for [`DescribeRepositoryAssociationInput`](crate::input::DescribeRepositoryAssociationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_arn: std::option::Option<std::string::String>,
     }
@@ -946,7 +946,7 @@ impl DescribeRepositoryAssociationInput {
 pub mod disassociate_repository_input {
 
     /// A builder for [`DisassociateRepositoryInput`](crate::input::DisassociateRepositoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_arn: std::option::Option<std::string::String>,
     }
@@ -1101,7 +1101,7 @@ impl DisassociateRepositoryInput {
 pub mod list_code_reviews_input {
 
     /// A builder for [`ListCodeReviewsInput`](crate::input::ListCodeReviewsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provider_types: std::option::Option<std::vec::Vec<crate::model::ProviderType>>,
         pub(crate) states: std::option::Option<std::vec::Vec<crate::model::JobState>>,
@@ -1384,7 +1384,7 @@ impl ListCodeReviewsInput {
 pub mod list_recommendation_feedback_input {
 
     /// A builder for [`ListRecommendationFeedbackInput`](crate::input::ListRecommendationFeedbackInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1646,7 +1646,7 @@ impl ListRecommendationFeedbackInput {
 pub mod list_recommendations_input {
 
     /// A builder for [`ListRecommendationsInput`](crate::input::ListRecommendationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1846,7 +1846,7 @@ impl ListRecommendationsInput {
 pub mod list_repository_associations_input {
 
     /// A builder for [`ListRepositoryAssociationsInput`](crate::input::ListRepositoryAssociationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provider_types: std::option::Option<std::vec::Vec<crate::model::ProviderType>>,
         pub(crate) states:
@@ -2155,7 +2155,7 @@ impl ListRepositoryAssociationsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2303,7 +2303,7 @@ impl ListTagsForResourceInput {
 pub mod put_recommendation_feedback_input {
 
     /// A builder for [`PutRecommendationFeedbackInput`](crate::input::PutRecommendationFeedbackInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_review_arn: std::option::Option<std::string::String>,
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
@@ -2486,7 +2486,7 @@ impl PutRecommendationFeedbackInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -2683,7 +2683,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,

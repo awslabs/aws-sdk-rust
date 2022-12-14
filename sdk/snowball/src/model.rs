@@ -354,7 +354,7 @@ impl OnDeviceServiceConfiguration {
 pub mod on_device_service_configuration {
 
     /// A builder for [`OnDeviceServiceConfiguration`](crate::model::OnDeviceServiceConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nfs_on_device_service:
             std::option::Option<crate::model::NfsOnDeviceServiceConfiguration>,
@@ -435,7 +435,7 @@ impl TgwOnDeviceServiceConfiguration {
 pub mod tgw_on_device_service_configuration {
 
     /// A builder for [`TgwOnDeviceServiceConfiguration`](crate::model::TgwOnDeviceServiceConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_limit: std::option::Option<i32>,
         pub(crate) storage_unit: std::option::Option<crate::model::StorageUnit>,
@@ -592,7 +592,7 @@ impl NfsOnDeviceServiceConfiguration {
 pub mod nfs_on_device_service_configuration {
 
     /// A builder for [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_limit: std::option::Option<i32>,
         pub(crate) storage_unit: std::option::Option<crate::model::StorageUnit>,
@@ -671,7 +671,7 @@ impl JobResource {
 pub mod job_resource {
 
     /// A builder for [`JobResource`](crate::model::JobResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_resources: std::option::Option<std::vec::Vec<crate::model::S3Resource>>,
         pub(crate) lambda_resources:
@@ -779,7 +779,7 @@ impl Ec2AmiResource {
 pub mod ec2_ami_resource {
 
     /// A builder for [`Ec2AmiResource`](crate::model::Ec2AmiResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ami_id: std::option::Option<std::string::String>,
         pub(crate) snowball_ami_id: std::option::Option<std::string::String>,
@@ -849,7 +849,7 @@ impl LambdaResource {
 pub mod lambda_resource {
 
     /// A builder for [`LambdaResource`](crate::model::LambdaResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lambda_arn: std::option::Option<std::string::String>,
         pub(crate) event_triggers:
@@ -919,7 +919,7 @@ impl EventTriggerDefinition {
 pub mod event_trigger_definition {
 
     /// A builder for [`EventTriggerDefinition`](crate::model::EventTriggerDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_resource_arn: std::option::Option<std::string::String>,
     }
@@ -987,7 +987,7 @@ impl S3Resource {
 pub mod s3_resource {
 
     /// A builder for [`S3Resource`](crate::model::S3Resource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
         pub(crate) key_range: std::option::Option<crate::model::KeyRange>,
@@ -1079,7 +1079,7 @@ impl TargetOnDeviceService {
 pub mod target_on_device_service {
 
     /// A builder for [`TargetOnDeviceService`](crate::model::TargetOnDeviceService).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<crate::model::DeviceServiceName>,
         pub(crate) transfer_option: std::option::Option<crate::model::TransferOption>,
@@ -1339,7 +1339,7 @@ impl KeyRange {
 pub mod key_range {
 
     /// A builder for [`KeyRange`](crate::model::KeyRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin_marker: std::option::Option<std::string::String>,
         pub(crate) end_marker: std::option::Option<std::string::String>,
@@ -1416,7 +1416,7 @@ impl Notification {
 pub mod notification {
 
     /// A builder for [`Notification`](crate::model::Notification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
         pub(crate) job_states_to_notify: std::option::Option<std::vec::Vec<crate::model::JobState>>,
@@ -1726,7 +1726,7 @@ impl LongTermPricingListEntry {
 pub mod long_term_pricing_list_entry {
 
     /// A builder for [`LongTermPricingListEntry`](crate::model::LongTermPricingListEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) long_term_pricing_id: std::option::Option<std::string::String>,
         pub(crate) long_term_pricing_end_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -2174,7 +2174,7 @@ impl JobListEntry {
 pub mod job_list_entry {
 
     /// A builder for [`JobListEntry`](crate::model::JobListEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_state: std::option::Option<crate::model::JobState>,
@@ -2402,7 +2402,7 @@ impl CompatibleImage {
 pub mod compatible_image {
 
     /// A builder for [`CompatibleImage`](crate::model::CompatibleImage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ami_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2483,7 +2483,7 @@ impl ClusterListEntry {
 pub mod cluster_list_entry {
 
     /// A builder for [`ClusterListEntry`](crate::model::ClusterListEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
         pub(crate) cluster_state: std::option::Option<crate::model::ClusterState>,
@@ -2940,7 +2940,7 @@ impl JobMetadata {
 pub mod job_metadata {
 
     /// A builder for [`JobMetadata`](crate::model::JobMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_state: std::option::Option<crate::model::JobState>,
@@ -3385,7 +3385,7 @@ impl DeviceConfiguration {
 pub mod device_configuration {
 
     /// A builder for [`DeviceConfiguration`](crate::model::DeviceConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snowcone_device_configuration:
             std::option::Option<crate::model::SnowconeDeviceConfiguration>,
@@ -3440,7 +3440,7 @@ impl SnowconeDeviceConfiguration {
 pub mod snowcone_device_configuration {
 
     /// A builder for [`SnowconeDeviceConfiguration`](crate::model::SnowconeDeviceConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wireless_connection: std::option::Option<crate::model::WirelessConnection>,
     }
@@ -3491,7 +3491,7 @@ impl WirelessConnection {
 pub mod wireless_connection {
 
     /// A builder for [`WirelessConnection`](crate::model::WirelessConnection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_wifi_enabled: std::option::Option<bool>,
     }
@@ -3539,7 +3539,7 @@ impl TaxDocuments {
 pub mod tax_documents {
 
     /// A builder for [`TaxDocuments`](crate::model::TaxDocuments).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ind: std::option::Option<crate::model::IndTaxDocuments>,
     }
@@ -3588,7 +3588,7 @@ impl IndTaxDocuments {
 pub mod ind_tax_documents {
 
     /// A builder for [`IndTaxDocuments`](crate::model::IndTaxDocuments).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gstin: std::option::Option<std::string::String>,
     }
@@ -3651,7 +3651,7 @@ impl JobLogs {
 pub mod job_logs {
 
     /// A builder for [`JobLogs`](crate::model::JobLogs).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_completion_report_uri: std::option::Option<std::string::String>,
         pub(crate) job_success_log_uri: std::option::Option<std::string::String>,
@@ -3753,7 +3753,7 @@ impl DataTransfer {
 pub mod data_transfer {
 
     /// A builder for [`DataTransfer`](crate::model::DataTransfer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bytes_transferred: std::option::Option<i64>,
         pub(crate) objects_transferred: std::option::Option<i64>,
@@ -3863,7 +3863,7 @@ impl ShippingDetails {
 pub mod shipping_details {
 
     /// A builder for [`ShippingDetails`](crate::model::ShippingDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shipping_option: std::option::Option<crate::model::ShippingOption>,
         pub(crate) inbound_shipment: std::option::Option<crate::model::Shipment>,
@@ -3965,7 +3965,7 @@ impl Shipment {
 pub mod shipment {
 
     /// A builder for [`Shipment`](crate::model::Shipment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) tracking_number: std::option::Option<std::string::String>,
@@ -4147,7 +4147,7 @@ impl ClusterMetadata {
 pub mod cluster_metadata {
 
     /// A builder for [`ClusterMetadata`](crate::model::ClusterMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4501,7 +4501,7 @@ impl Address {
 pub mod address {
 
     /// A builder for [`Address`](crate::model::Address).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,

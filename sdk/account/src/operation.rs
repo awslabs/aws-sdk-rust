@@ -5,7 +5,7 @@
 /// [`delete_alternate_contact`](crate::client::Client::delete_alternate_contact).
 ///
 /// See [`crate::client::fluent_builders::DeleteAlternateContact`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAlternateContact {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAlternateContact {
 /// [`get_alternate_contact`](crate::client::Client::get_alternate_contact).
 ///
 /// See [`crate::client::fluent_builders::GetAlternateContact`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAlternateContact {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAlternateContact {
 /// [`get_contact_information`](crate::client::Client::get_contact_information).
 ///
 /// See [`crate::client::fluent_builders::GetContactInformation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetContactInformation {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContactInformation {
 /// [`put_alternate_contact`](crate::client::Client::put_alternate_contact).
 ///
 /// See [`crate::client::fluent_builders::PutAlternateContact`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutAlternateContact {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAlternateContact {
 /// [`put_contact_information`](crate::client::Client::put_contact_information).
 ///
 /// See [`crate::client::fluent_builders::PutContactInformation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutContactInformation {
     _private: (),
 }

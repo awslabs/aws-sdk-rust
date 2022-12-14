@@ -25,7 +25,7 @@ impl ListSatellitesOutput {
 pub mod list_satellites_output {
 
     /// A builder for [`ListSatellitesOutput`](crate::output::ListSatellitesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) satellites: std::option::Option<std::vec::Vec<crate::model::SatelliteListItem>>,
@@ -115,7 +115,7 @@ impl GetSatelliteOutput {
 pub mod get_satellite_output {
 
     /// A builder for [`GetSatelliteOutput`](crate::output::GetSatelliteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) satellite_id: std::option::Option<std::string::String>,
         pub(crate) satellite_arn: std::option::Option<std::string::String>,
@@ -221,7 +221,7 @@ impl ListMissionProfilesOutput {
 pub mod list_mission_profiles_output {
 
     /// A builder for [`ListMissionProfilesOutput`](crate::output::ListMissionProfilesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) mission_profile_list:
@@ -291,7 +291,7 @@ impl CreateMissionProfileOutput {
 pub mod create_mission_profile_output {
 
     /// A builder for [`CreateMissionProfileOutput`](crate::output::CreateMissionProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mission_profile_id: std::option::Option<std::string::String>,
     }
@@ -342,7 +342,7 @@ impl DeleteMissionProfileOutput {
 pub mod delete_mission_profile_output {
 
     /// A builder for [`DeleteMissionProfileOutput`](crate::output::DeleteMissionProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mission_profile_id: std::option::Option<std::string::String>,
     }
@@ -393,7 +393,7 @@ impl UpdateMissionProfileOutput {
 pub mod update_mission_profile_output {
 
     /// A builder for [`UpdateMissionProfileOutput`](crate::output::UpdateMissionProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mission_profile_id: std::option::Option<std::string::String>,
     }
@@ -511,7 +511,7 @@ impl GetMissionProfileOutput {
 pub mod get_mission_profile_output {
 
     /// A builder for [`GetMissionProfileOutput`](crate::output::GetMissionProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mission_profile_id: std::option::Option<std::string::String>,
         pub(crate) mission_profile_arn: std::option::Option<std::string::String>,
@@ -720,7 +720,7 @@ impl ListGroundStationsOutput {
 pub mod list_ground_stations_output {
 
     /// A builder for [`ListGroundStationsOutput`](crate::output::ListGroundStationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) ground_station_list:
@@ -800,7 +800,7 @@ impl ListDataflowEndpointGroupsOutput {
 pub mod list_dataflow_endpoint_groups_output {
 
     /// A builder for [`ListDataflowEndpointGroupsOutput`](crate::output::ListDataflowEndpointGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) dataflow_endpoint_group_list:
@@ -873,7 +873,7 @@ impl CreateDataflowEndpointGroupOutput {
 pub mod create_dataflow_endpoint_group_output {
 
     /// A builder for [`CreateDataflowEndpointGroupOutput`](crate::output::CreateDataflowEndpointGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataflow_endpoint_group_id: std::option::Option<std::string::String>,
     }
@@ -924,7 +924,7 @@ impl DeleteDataflowEndpointGroupOutput {
 pub mod delete_dataflow_endpoint_group_output {
 
     /// A builder for [`DeleteDataflowEndpointGroupOutput`](crate::output::DeleteDataflowEndpointGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataflow_endpoint_group_id: std::option::Option<std::string::String>,
     }
@@ -1000,7 +1000,7 @@ impl GetDataflowEndpointGroupOutput {
 pub mod get_dataflow_endpoint_group_output {
 
     /// A builder for [`GetDataflowEndpointGroupOutput`](crate::output::GetDataflowEndpointGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataflow_endpoint_group_id: std::option::Option<std::string::String>,
         pub(crate) dataflow_endpoint_group_arn: std::option::Option<std::string::String>,
@@ -1127,7 +1127,7 @@ impl ListContactsOutput {
 pub mod list_contacts_output {
 
     /// A builder for [`ListContactsOutput`](crate::output::ListContactsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) contact_list: std::option::Option<std::vec::Vec<crate::model::ContactData>>,
@@ -1196,7 +1196,7 @@ impl ReserveContactOutput {
 pub mod reserve_contact_output {
 
     /// A builder for [`ReserveContactOutput`](crate::output::ReserveContactOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
     }
@@ -1244,7 +1244,7 @@ impl CancelContactOutput {
 pub mod cancel_contact_output {
 
     /// A builder for [`CancelContactOutput`](crate::output::CancelContactOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
     }
@@ -1387,7 +1387,7 @@ impl DescribeContactOutput {
 pub mod describe_contact_output {
 
     /// A builder for [`DescribeContactOutput`](crate::output::DescribeContactOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
         pub(crate) mission_profile_arn: std::option::Option<std::string::String>,
@@ -1654,7 +1654,7 @@ impl ListConfigsOutput {
 pub mod list_configs_output {
 
     /// A builder for [`ListConfigsOutput`](crate::output::ListConfigsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) config_list: std::option::Option<std::vec::Vec<crate::model::ConfigListItem>>,
@@ -1737,7 +1737,7 @@ impl CreateConfigOutput {
 pub mod create_config_output {
 
     /// A builder for [`CreateConfigOutput`](crate::output::CreateConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
         pub(crate) config_type: std::option::Option<crate::model::ConfigCapabilityType>,
@@ -1826,7 +1826,7 @@ impl DeleteConfigOutput {
 pub mod delete_config_output {
 
     /// A builder for [`DeleteConfigOutput`](crate::output::DeleteConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
         pub(crate) config_type: std::option::Option<crate::model::ConfigCapabilityType>,
@@ -1915,7 +1915,7 @@ impl UpdateConfigOutput {
 pub mod update_config_output {
 
     /// A builder for [`UpdateConfigOutput`](crate::output::UpdateConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
         pub(crate) config_type: std::option::Option<crate::model::ConfigCapabilityType>,
@@ -2029,7 +2029,7 @@ impl GetConfigOutput {
 pub mod get_config_output {
 
     /// A builder for [`GetConfigOutput`](crate::output::GetConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
         pub(crate) config_arn: std::option::Option<std::string::String>,
@@ -2150,7 +2150,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -2174,7 +2174,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -2212,7 +2212,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -2303,7 +2303,7 @@ impl GetMinuteUsageOutput {
 pub mod get_minute_usage_output {
 
     /// A builder for [`GetMinuteUsageOutput`](crate::output::GetMinuteUsageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_reserved_minutes_customer: std::option::Option<bool>,
         pub(crate) total_reserved_minute_allocation: std::option::Option<i32>,

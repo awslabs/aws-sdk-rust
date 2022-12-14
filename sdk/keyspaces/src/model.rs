@@ -19,7 +19,7 @@ impl TimeToLive {
 pub mod time_to_live {
 
     /// A builder for [`TimeToLive`](crate::model::TimeToLive).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::TimeToLiveStatus>,
     }
@@ -160,7 +160,7 @@ impl PointInTimeRecovery {
 pub mod point_in_time_recovery {
 
     /// A builder for [`PointInTimeRecovery`](crate::model::PointInTimeRecovery).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::PointInTimeRecoveryStatus>,
     }
@@ -326,7 +326,7 @@ impl EncryptionSpecification {
 pub mod encryption_specification {
 
     /// A builder for [`EncryptionSpecification`](crate::model::EncryptionSpecification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::EncryptionType>,
         pub(crate) kms_key_identifier: std::option::Option<std::string::String>,
@@ -516,7 +516,7 @@ impl CapacitySpecification {
 pub mod capacity_specification {
 
     /// A builder for [`CapacitySpecification`](crate::model::CapacitySpecification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) throughput_mode: std::option::Option<crate::model::ThroughputMode>,
         pub(crate) read_capacity_units: std::option::Option<i64>,
@@ -696,7 +696,7 @@ impl ColumnDefinition {
 pub mod column_definition {
 
     /// A builder for [`ColumnDefinition`](crate::model::ColumnDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -765,7 +765,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -839,7 +839,7 @@ impl TableSummary {
 pub mod table_summary {
 
     /// A builder for [`TableSummary`](crate::model::TableSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -921,7 +921,7 @@ impl KeyspaceSummary {
 pub mod keyspace_summary {
 
     /// A builder for [`KeyspaceSummary`](crate::model::KeyspaceSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -984,7 +984,7 @@ impl Comment {
 pub mod comment {
 
     /// A builder for [`Comment`](crate::model::Comment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1041,7 +1041,7 @@ impl PointInTimeRecoverySummary {
 pub mod point_in_time_recovery_summary {
 
     /// A builder for [`PointInTimeRecoverySummary`](crate::model::PointInTimeRecoverySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::PointInTimeRecoveryStatus>,
         pub(crate) earliest_restorable_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -1141,7 +1141,7 @@ impl CapacitySpecificationSummary {
 pub mod capacity_specification_summary {
 
     /// A builder for [`CapacitySpecificationSummary`](crate::model::CapacitySpecificationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) throughput_mode: std::option::Option<crate::model::ThroughputMode>,
         pub(crate) read_capacity_units: std::option::Option<i64>,
@@ -1265,7 +1265,7 @@ impl SchemaDefinition {
 pub mod schema_definition {
 
     /// A builder for [`SchemaDefinition`](crate::model::SchemaDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) all_columns: std::option::Option<std::vec::Vec<crate::model::ColumnDefinition>>,
         pub(crate) partition_keys: std::option::Option<std::vec::Vec<crate::model::PartitionKey>>,
@@ -1385,7 +1385,7 @@ impl StaticColumn {
 pub mod static_column {
 
     /// A builder for [`StaticColumn`](crate::model::StaticColumn).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -1438,7 +1438,7 @@ impl ClusteringKey {
 pub mod clustering_key {
 
     /// A builder for [`ClusteringKey`](crate::model::ClusteringKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) order_by: std::option::Option<crate::model::SortOrder>,
@@ -1588,7 +1588,7 @@ impl PartitionKey {
 pub mod partition_key {
 
     /// A builder for [`PartitionKey`](crate::model::PartitionKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }

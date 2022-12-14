@@ -17,7 +17,7 @@ impl UpdateStackOutput {
 pub mod update_stack_output {
 
     /// A builder for [`UpdateStackOutput`](crate::output::UpdateStackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack: std::option::Option<crate::model::Stack>,
     }
@@ -53,7 +53,7 @@ pub struct UpdateImagePermissionsOutput {}
 pub mod update_image_permissions_output {
 
     /// A builder for [`UpdateImagePermissionsOutput`](crate::output::UpdateImagePermissionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateImagePermissionsOutput`](crate::output::UpdateImagePermissionsOutput).
@@ -87,7 +87,7 @@ impl UpdateFleetOutput {
 pub mod update_fleet_output {
 
     /// A builder for [`UpdateFleetOutput`](crate::output::UpdateFleetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet: std::option::Option<crate::model::Fleet>,
     }
@@ -133,7 +133,7 @@ impl UpdateEntitlementOutput {
 pub mod update_entitlement_output {
 
     /// A builder for [`UpdateEntitlementOutput`](crate::output::UpdateEntitlementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitlement: std::option::Option<crate::model::Entitlement>,
     }
@@ -184,7 +184,7 @@ impl UpdateDirectoryConfigOutput {
 pub mod update_directory_config_output {
 
     /// A builder for [`UpdateDirectoryConfigOutput`](crate::output::UpdateDirectoryConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_config: std::option::Option<crate::model::DirectoryConfig>,
     }
@@ -235,7 +235,7 @@ impl UpdateApplicationOutput {
 pub mod update_application_output {
 
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<crate::model::Application>,
     }
@@ -276,7 +276,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -300,7 +300,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -334,7 +334,7 @@ impl StopImageBuilderOutput {
 pub mod stop_image_builder_output {
 
     /// A builder for [`StopImageBuilderOutput`](crate::output::StopImageBuilderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_builder: std::option::Option<crate::model::ImageBuilder>,
     }
@@ -375,7 +375,7 @@ pub struct StopFleetOutput {}
 pub mod stop_fleet_output {
 
     /// A builder for [`StopFleetOutput`](crate::output::StopFleetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StopFleetOutput`](crate::output::StopFleetOutput).
@@ -409,7 +409,7 @@ impl StartImageBuilderOutput {
 pub mod start_image_builder_output {
 
     /// A builder for [`StartImageBuilderOutput`](crate::output::StartImageBuilderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_builder: std::option::Option<crate::model::ImageBuilder>,
     }
@@ -450,7 +450,7 @@ pub struct StartFleetOutput {}
 pub mod start_fleet_output {
 
     /// A builder for [`StartFleetOutput`](crate::output::StartFleetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StartFleetOutput`](crate::output::StartFleetOutput).
@@ -488,7 +488,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -561,7 +561,7 @@ impl ListEntitledApplicationsOutput {
 pub mod list_entitled_applications_output {
 
     /// A builder for [`ListEntitledApplicationsOutput`](crate::output::ListEntitledApplicationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitled_applications:
             std::option::Option<std::vec::Vec<crate::model::EntitledApplication>>,
@@ -638,7 +638,7 @@ impl ListAssociatedStacksOutput {
 pub mod list_associated_stacks_output {
 
     /// A builder for [`ListAssociatedStacksOutput`](crate::output::ListAssociatedStacksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -714,7 +714,7 @@ impl ListAssociatedFleetsOutput {
 pub mod list_associated_fleets_output {
 
     /// A builder for [`ListAssociatedFleetsOutput`](crate::output::ListAssociatedFleetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -773,7 +773,7 @@ pub struct ExpireSessionOutput {}
 pub mod expire_session_output {
 
     /// A builder for [`ExpireSessionOutput`](crate::output::ExpireSessionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ExpireSessionOutput`](crate::output::ExpireSessionOutput).
@@ -797,7 +797,7 @@ pub struct EnableUserOutput {}
 pub mod enable_user_output {
 
     /// A builder for [`EnableUserOutput`](crate::output::EnableUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`EnableUserOutput`](crate::output::EnableUserOutput).
@@ -821,7 +821,7 @@ pub struct DisassociateFleetOutput {}
 pub mod disassociate_fleet_output {
 
     /// A builder for [`DisassociateFleetOutput`](crate::output::DisassociateFleetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateFleetOutput`](crate::output::DisassociateFleetOutput).
@@ -845,7 +845,7 @@ pub struct DisassociateApplicationFromEntitlementOutput {}
 pub mod disassociate_application_from_entitlement_output {
 
     /// A builder for [`DisassociateApplicationFromEntitlementOutput`](crate::output::DisassociateApplicationFromEntitlementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateApplicationFromEntitlementOutput`](crate::output::DisassociateApplicationFromEntitlementOutput).
@@ -869,7 +869,7 @@ pub struct DisassociateApplicationFleetOutput {}
 pub mod disassociate_application_fleet_output {
 
     /// A builder for [`DisassociateApplicationFleetOutput`](crate::output::DisassociateApplicationFleetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateApplicationFleetOutput`](crate::output::DisassociateApplicationFleetOutput).
@@ -893,7 +893,7 @@ pub struct DisableUserOutput {}
 pub mod disable_user_output {
 
     /// A builder for [`DisableUserOutput`](crate::output::DisableUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisableUserOutput`](crate::output::DisableUserOutput).
@@ -937,7 +937,7 @@ impl DescribeUserStackAssociationsOutput {
 pub mod describe_user_stack_associations_output {
 
     /// A builder for [`DescribeUserStackAssociationsOutput`](crate::output::DescribeUserStackAssociationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_stack_associations:
             std::option::Option<std::vec::Vec<crate::model::UserStackAssociation>>,
@@ -1017,7 +1017,7 @@ impl DescribeUsersOutput {
 pub mod describe_users_output {
 
     /// A builder for [`DescribeUsersOutput`](crate::output::DescribeUsersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::User>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1096,7 +1096,7 @@ impl DescribeUsageReportSubscriptionsOutput {
 pub mod describe_usage_report_subscriptions_output {
 
     /// A builder for [`DescribeUsageReportSubscriptionsOutput`](crate::output::DescribeUsageReportSubscriptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_report_subscriptions:
             std::option::Option<std::vec::Vec<crate::model::UsageReportSubscription>>,
@@ -1176,7 +1176,7 @@ impl DescribeStacksOutput {
 pub mod describe_stacks_output {
 
     /// A builder for [`DescribeStacksOutput`](crate::output::DescribeStacksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stacks: std::option::Option<std::vec::Vec<crate::model::Stack>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1252,7 +1252,7 @@ impl DescribeSessionsOutput {
 pub mod describe_sessions_output {
 
     /// A builder for [`DescribeSessionsOutput`](crate::output::DescribeSessionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sessions: std::option::Option<std::vec::Vec<crate::model::Session>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1328,7 +1328,7 @@ impl DescribeImagesOutput {
 pub mod describe_images_output {
 
     /// A builder for [`DescribeImagesOutput`](crate::output::DescribeImagesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) images: std::option::Option<std::vec::Vec<crate::model::Image>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1414,7 +1414,7 @@ impl DescribeImagePermissionsOutput {
 pub mod describe_image_permissions_output {
 
     /// A builder for [`DescribeImagePermissionsOutput`](crate::output::DescribeImagePermissionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) shared_image_permissions_list:
@@ -1506,7 +1506,7 @@ impl DescribeImageBuildersOutput {
 pub mod describe_image_builders_output {
 
     /// A builder for [`DescribeImageBuildersOutput`](crate::output::DescribeImageBuildersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_builders: std::option::Option<std::vec::Vec<crate::model::ImageBuilder>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1582,7 +1582,7 @@ impl DescribeFleetsOutput {
 pub mod describe_fleets_output {
 
     /// A builder for [`DescribeFleetsOutput`](crate::output::DescribeFleetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleets: std::option::Option<std::vec::Vec<crate::model::Fleet>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1658,7 +1658,7 @@ impl DescribeEntitlementsOutput {
 pub mod describe_entitlements_output {
 
     /// A builder for [`DescribeEntitlementsOutput`](crate::output::DescribeEntitlementsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1734,7 +1734,7 @@ impl DescribeDirectoryConfigsOutput {
 pub mod describe_directory_configs_output {
 
     /// A builder for [`DescribeDirectoryConfigsOutput`](crate::output::DescribeDirectoryConfigsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_configs:
             std::option::Option<std::vec::Vec<crate::model::DirectoryConfig>>,
@@ -1811,7 +1811,7 @@ impl DescribeApplicationsOutput {
 pub mod describe_applications_output {
 
     /// A builder for [`DescribeApplicationsOutput`](crate::output::DescribeApplicationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1890,7 +1890,7 @@ impl DescribeApplicationFleetAssociationsOutput {
 pub mod describe_application_fleet_associations_output {
 
     /// A builder for [`DescribeApplicationFleetAssociationsOutput`](crate::output::DescribeApplicationFleetAssociationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_fleet_associations:
             std::option::Option<std::vec::Vec<crate::model::ApplicationFleetAssociation>>,
@@ -1970,7 +1970,7 @@ impl DescribeAppBlocksOutput {
 pub mod describe_app_blocks_output {
 
     /// A builder for [`DescribeAppBlocksOutput`](crate::output::DescribeAppBlocksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_blocks: std::option::Option<std::vec::Vec<crate::model::AppBlock>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2029,7 +2029,7 @@ pub struct DeleteUserOutput {}
 pub mod delete_user_output {
 
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUserOutput`](crate::output::DeleteUserOutput).
@@ -2053,7 +2053,7 @@ pub struct DeleteUsageReportSubscriptionOutput {}
 pub mod delete_usage_report_subscription_output {
 
     /// A builder for [`DeleteUsageReportSubscriptionOutput`](crate::output::DeleteUsageReportSubscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUsageReportSubscriptionOutput`](crate::output::DeleteUsageReportSubscriptionOutput).
@@ -2077,7 +2077,7 @@ pub struct DeleteStackOutput {}
 pub mod delete_stack_output {
 
     /// A builder for [`DeleteStackOutput`](crate::output::DeleteStackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteStackOutput`](crate::output::DeleteStackOutput).
@@ -2101,7 +2101,7 @@ pub struct DeleteImagePermissionsOutput {}
 pub mod delete_image_permissions_output {
 
     /// A builder for [`DeleteImagePermissionsOutput`](crate::output::DeleteImagePermissionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteImagePermissionsOutput`](crate::output::DeleteImagePermissionsOutput).
@@ -2135,7 +2135,7 @@ impl DeleteImageBuilderOutput {
 pub mod delete_image_builder_output {
 
     /// A builder for [`DeleteImageBuilderOutput`](crate::output::DeleteImageBuilderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_builder: std::option::Option<crate::model::ImageBuilder>,
     }
@@ -2186,7 +2186,7 @@ impl DeleteImageOutput {
 pub mod delete_image_output {
 
     /// A builder for [`DeleteImageOutput`](crate::output::DeleteImageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image: std::option::Option<crate::model::Image>,
     }
@@ -2222,7 +2222,7 @@ pub struct DeleteFleetOutput {}
 pub mod delete_fleet_output {
 
     /// A builder for [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
@@ -2246,7 +2246,7 @@ pub struct DeleteEntitlementOutput {}
 pub mod delete_entitlement_output {
 
     /// A builder for [`DeleteEntitlementOutput`](crate::output::DeleteEntitlementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEntitlementOutput`](crate::output::DeleteEntitlementOutput).
@@ -2270,7 +2270,7 @@ pub struct DeleteDirectoryConfigOutput {}
 pub mod delete_directory_config_output {
 
     /// A builder for [`DeleteDirectoryConfigOutput`](crate::output::DeleteDirectoryConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDirectoryConfigOutput`](crate::output::DeleteDirectoryConfigOutput).
@@ -2294,7 +2294,7 @@ pub struct DeleteApplicationOutput {}
 pub mod delete_application_output {
 
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
@@ -2318,7 +2318,7 @@ pub struct DeleteAppBlockOutput {}
 pub mod delete_app_block_output {
 
     /// A builder for [`DeleteAppBlockOutput`](crate::output::DeleteAppBlockOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAppBlockOutput`](crate::output::DeleteAppBlockOutput).
@@ -2342,7 +2342,7 @@ pub struct CreateUserOutput {}
 pub mod create_user_output {
 
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateUserOutput`](crate::output::CreateUserOutput).
@@ -2385,7 +2385,7 @@ impl CreateUsageReportSubscriptionOutput {
 pub mod create_usage_report_subscription_output {
 
     /// A builder for [`CreateUsageReportSubscriptionOutput`](crate::output::CreateUsageReportSubscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
         pub(crate) schedule: std::option::Option<crate::model::UsageReportSchedule>,
@@ -2460,7 +2460,7 @@ impl CreateUpdatedImageOutput {
 pub mod create_updated_image_output {
 
     /// A builder for [`CreateUpdatedImageOutput`](crate::output::CreateUpdatedImageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image: std::option::Option<crate::model::Image>,
         pub(crate) can_update_image: std::option::Option<bool>,
@@ -2527,7 +2527,7 @@ impl CreateStreamingUrlOutput {
 pub mod create_streaming_url_output {
 
     /// A builder for [`CreateStreamingUrlOutput`](crate::output::CreateStreamingUrlOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streaming_url: std::option::Option<std::string::String>,
         pub(crate) expires: std::option::Option<aws_smithy_types::DateTime>,
@@ -2593,7 +2593,7 @@ impl CreateStackOutput {
 pub mod create_stack_output {
 
     /// A builder for [`CreateStackOutput`](crate::output::CreateStackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack: std::option::Option<crate::model::Stack>,
     }
@@ -2646,7 +2646,7 @@ impl CreateImageBuilderStreamingUrlOutput {
 pub mod create_image_builder_streaming_url_output {
 
     /// A builder for [`CreateImageBuilderStreamingUrlOutput`](crate::output::CreateImageBuilderStreamingUrlOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streaming_url: std::option::Option<std::string::String>,
         pub(crate) expires: std::option::Option<aws_smithy_types::DateTime>,
@@ -2712,7 +2712,7 @@ impl CreateImageBuilderOutput {
 pub mod create_image_builder_output {
 
     /// A builder for [`CreateImageBuilderOutput`](crate::output::CreateImageBuilderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_builder: std::option::Option<crate::model::ImageBuilder>,
     }
@@ -2763,7 +2763,7 @@ impl CreateFleetOutput {
 pub mod create_fleet_output {
 
     /// A builder for [`CreateFleetOutput`](crate::output::CreateFleetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet: std::option::Option<crate::model::Fleet>,
     }
@@ -2809,7 +2809,7 @@ impl CreateEntitlementOutput {
 pub mod create_entitlement_output {
 
     /// A builder for [`CreateEntitlementOutput`](crate::output::CreateEntitlementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitlement: std::option::Option<crate::model::Entitlement>,
     }
@@ -2860,7 +2860,7 @@ impl CreateDirectoryConfigOutput {
 pub mod create_directory_config_output {
 
     /// A builder for [`CreateDirectoryConfigOutput`](crate::output::CreateDirectoryConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_config: std::option::Option<crate::model::DirectoryConfig>,
     }
@@ -2911,7 +2911,7 @@ impl CreateApplicationOutput {
 pub mod create_application_output {
 
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application: std::option::Option<crate::model::Application>,
     }
@@ -2962,7 +2962,7 @@ impl CreateAppBlockOutput {
 pub mod create_app_block_output {
 
     /// A builder for [`CreateAppBlockOutput`](crate::output::CreateAppBlockOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_block: std::option::Option<crate::model::AppBlock>,
     }
@@ -3010,7 +3010,7 @@ impl CopyImageOutput {
 pub mod copy_image_output {
 
     /// A builder for [`CopyImageOutput`](crate::output::CopyImageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_image_name: std::option::Option<std::string::String>,
     }
@@ -3061,7 +3061,7 @@ impl BatchDisassociateUserStackOutput {
 pub mod batch_disassociate_user_stack_output {
 
     /// A builder for [`BatchDisassociateUserStackOutput`](crate::output::BatchDisassociateUserStackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors:
             std::option::Option<std::vec::Vec<crate::model::UserStackAssociationError>>,
@@ -3119,7 +3119,7 @@ impl BatchAssociateUserStackOutput {
 pub mod batch_associate_user_stack_output {
 
     /// A builder for [`BatchAssociateUserStackOutput`](crate::output::BatchAssociateUserStackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors:
             std::option::Option<std::vec::Vec<crate::model::UserStackAssociationError>>,
@@ -3167,7 +3167,7 @@ pub struct AssociateFleetOutput {}
 pub mod associate_fleet_output {
 
     /// A builder for [`AssociateFleetOutput`](crate::output::AssociateFleetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateFleetOutput`](crate::output::AssociateFleetOutput).
@@ -3191,7 +3191,7 @@ pub struct AssociateApplicationToEntitlementOutput {}
 pub mod associate_application_to_entitlement_output {
 
     /// A builder for [`AssociateApplicationToEntitlementOutput`](crate::output::AssociateApplicationToEntitlementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateApplicationToEntitlementOutput`](crate::output::AssociateApplicationToEntitlementOutput).
@@ -3228,7 +3228,7 @@ impl AssociateApplicationFleetOutput {
 pub mod associate_application_fleet_output {
 
     /// A builder for [`AssociateApplicationFleetOutput`](crate::output::AssociateApplicationFleetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_fleet_association:
             std::option::Option<crate::model::ApplicationFleetAssociation>,

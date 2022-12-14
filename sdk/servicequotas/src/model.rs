@@ -25,7 +25,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -176,7 +176,7 @@ impl RequestedServiceQuotaChange {
 pub mod requested_service_quota_change {
 
     /// A builder for [`RequestedServiceQuotaChange`](crate::model::RequestedServiceQuotaChange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) case_id: std::option::Option<std::string::String>,
@@ -549,7 +549,7 @@ impl ServiceQuotaIncreaseRequestInTemplate {
 pub mod service_quota_increase_request_in_template {
 
     /// A builder for [`ServiceQuotaIncreaseRequestInTemplate`](crate::model::ServiceQuotaIncreaseRequestInTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -688,7 +688,7 @@ impl ServiceInfo {
 pub mod service_info {
 
     /// A builder for [`ServiceInfo`](crate::model::ServiceInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -825,7 +825,7 @@ impl ServiceQuota {
 pub mod service_quota {
 
     /// A builder for [`ServiceQuota`](crate::model::ServiceQuota).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -1030,7 +1030,7 @@ impl ErrorReason {
 pub mod error_reason {
 
     /// A builder for [`ErrorReason`](crate::model::ErrorReason).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
         pub(crate) error_message: std::option::Option<std::string::String>,
@@ -1220,7 +1220,7 @@ impl QuotaPeriod {
 pub mod quota_period {
 
     /// A builder for [`QuotaPeriod`](crate::model::QuotaPeriod).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) period_value: std::option::Option<i32>,
         pub(crate) period_unit: std::option::Option<crate::model::PeriodUnit>,
@@ -1431,7 +1431,7 @@ impl MetricInfo {
 pub mod metric_info {
 
     /// A builder for [`MetricInfo`](crate::model::MetricInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_namespace: std::option::Option<std::string::String>,
         pub(crate) metric_name: std::option::Option<std::string::String>,

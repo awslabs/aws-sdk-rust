@@ -5,7 +5,7 @@
 /// [`cancel_key_deletion`](crate::client::Client::cancel_key_deletion).
 ///
 /// See [`crate::client::fluent_builders::CancelKeyDeletion`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelKeyDeletion {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelKeyDeletion {
 /// [`connect_custom_key_store`](crate::client::Client::connect_custom_key_store).
 ///
 /// See [`crate::client::fluent_builders::ConnectCustomKeyStore`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ConnectCustomKeyStore {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConnectCustomKeyStore {
 /// [`create_alias`](crate::client::Client::create_alias).
 ///
 /// See [`crate::client::fluent_builders::CreateAlias`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAlias {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAlias {
 /// [`create_custom_key_store`](crate::client::Client::create_custom_key_store).
 ///
 /// See [`crate::client::fluent_builders::CreateCustomKeyStore`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCustomKeyStore {
     _private: (),
 }
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomKeyStore {
 /// [`create_grant`](crate::client::Client::create_grant).
 ///
 /// See [`crate::client::fluent_builders::CreateGrant`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateGrant {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGrant {
 /// [`create_key`](crate::client::Client::create_key).
 ///
 /// See [`crate::client::fluent_builders::CreateKey`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateKey {
     _private: (),
 }
@@ -202,7 +202,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateKey {
 /// [`decrypt`](crate::client::Client::decrypt).
 ///
 /// See [`crate::client::fluent_builders::Decrypt`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct Decrypt {
     _private: (),
 }
@@ -233,7 +233,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Decrypt {
 /// [`delete_alias`](crate::client::Client::delete_alias).
 ///
 /// See [`crate::client::fluent_builders::DeleteAlias`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAlias {
     _private: (),
 }
@@ -265,7 +265,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAlias {
 /// [`delete_custom_key_store`](crate::client::Client::delete_custom_key_store).
 ///
 /// See [`crate::client::fluent_builders::DeleteCustomKeyStore`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCustomKeyStore {
     _private: (),
 }
@@ -299,7 +299,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomKeyStore {
 /// [`delete_imported_key_material`](crate::client::Client::delete_imported_key_material).
 ///
 /// See [`crate::client::fluent_builders::DeleteImportedKeyMaterial`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteImportedKeyMaterial {
     _private: (),
 }
@@ -333,7 +333,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteImportedKeyMateria
 /// [`describe_custom_key_stores`](crate::client::Client::describe_custom_key_stores).
 ///
 /// See [`crate::client::fluent_builders::DescribeCustomKeyStores`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCustomKeyStores {
     _private: (),
 }
@@ -367,7 +367,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomKeyStores 
 /// [`describe_key`](crate::client::Client::describe_key).
 ///
 /// See [`crate::client::fluent_builders::DescribeKey`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeKey {
     _private: (),
 }
@@ -399,7 +399,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeKey {
 /// [`disable_key`](crate::client::Client::disable_key).
 ///
 /// See [`crate::client::fluent_builders::DisableKey`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisableKey {
     _private: (),
 }
@@ -431,7 +431,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableKey {
 /// [`disable_key_rotation`](crate::client::Client::disable_key_rotation).
 ///
 /// See [`crate::client::fluent_builders::DisableKeyRotation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisableKeyRotation {
     _private: (),
 }
@@ -465,7 +465,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableKeyRotation {
 /// [`disconnect_custom_key_store`](crate::client::Client::disconnect_custom_key_store).
 ///
 /// See [`crate::client::fluent_builders::DisconnectCustomKeyStore`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisconnectCustomKeyStore {
     _private: (),
 }
@@ -499,7 +499,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisconnectCustomKeyStore
 /// [`enable_key`](crate::client::Client::enable_key).
 ///
 /// See [`crate::client::fluent_builders::EnableKey`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct EnableKey {
     _private: (),
 }
@@ -530,7 +530,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableKey {
 /// [`enable_key_rotation`](crate::client::Client::enable_key_rotation).
 ///
 /// See [`crate::client::fluent_builders::EnableKeyRotation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct EnableKeyRotation {
     _private: (),
 }
@@ -564,7 +564,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableKeyRotation {
 /// [`encrypt`](crate::client::Client::encrypt).
 ///
 /// See [`crate::client::fluent_builders::Encrypt`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct Encrypt {
     _private: (),
 }
@@ -595,7 +595,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Encrypt {
 /// [`generate_data_key`](crate::client::Client::generate_data_key).
 ///
 /// See [`crate::client::fluent_builders::GenerateDataKey`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GenerateDataKey {
     _private: (),
 }
@@ -629,7 +629,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateDataKey {
 /// [`generate_data_key_pair`](crate::client::Client::generate_data_key_pair).
 ///
 /// See [`crate::client::fluent_builders::GenerateDataKeyPair`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GenerateDataKeyPair {
     _private: (),
 }
@@ -663,7 +663,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateDataKeyPair {
 /// [`generate_data_key_pair_without_plaintext`](crate::client::Client::generate_data_key_pair_without_plaintext).
 ///
 /// See [`crate::client::fluent_builders::GenerateDataKeyPairWithoutPlaintext`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GenerateDataKeyPairWithoutPlaintext {
     _private: (),
 }
@@ -699,7 +699,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateDataKeyPairWitho
 /// [`generate_data_key_without_plaintext`](crate::client::Client::generate_data_key_without_plaintext).
 ///
 /// See [`crate::client::fluent_builders::GenerateDataKeyWithoutPlaintext`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GenerateDataKeyWithoutPlaintext {
     _private: (),
 }
@@ -733,7 +733,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateDataKeyWithoutPl
 /// [`generate_mac`](crate::client::Client::generate_mac).
 ///
 /// See [`crate::client::fluent_builders::GenerateMac`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GenerateMac {
     _private: (),
 }
@@ -765,7 +765,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateMac {
 /// [`generate_random`](crate::client::Client::generate_random).
 ///
 /// See [`crate::client::fluent_builders::GenerateRandom`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GenerateRandom {
     _private: (),
 }
@@ -797,7 +797,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateRandom {
 /// [`get_key_policy`](crate::client::Client::get_key_policy).
 ///
 /// See [`crate::client::fluent_builders::GetKeyPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetKeyPolicy {
     _private: (),
 }
@@ -829,7 +829,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetKeyPolicy {
 /// [`get_key_rotation_status`](crate::client::Client::get_key_rotation_status).
 ///
 /// See [`crate::client::fluent_builders::GetKeyRotationStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetKeyRotationStatus {
     _private: (),
 }
@@ -863,7 +863,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetKeyRotationStatus {
 /// [`get_parameters_for_import`](crate::client::Client::get_parameters_for_import).
 ///
 /// See [`crate::client::fluent_builders::GetParametersForImport`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetParametersForImport {
     _private: (),
 }
@@ -897,7 +897,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetParametersForImport {
 /// [`get_public_key`](crate::client::Client::get_public_key).
 ///
 /// See [`crate::client::fluent_builders::GetPublicKey`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPublicKey {
     _private: (),
 }
@@ -929,7 +929,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPublicKey {
 /// [`import_key_material`](crate::client::Client::import_key_material).
 ///
 /// See [`crate::client::fluent_builders::ImportKeyMaterial`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ImportKeyMaterial {
     _private: (),
 }
@@ -963,7 +963,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportKeyMaterial {
 /// [`list_aliases`](crate::client::Client::list_aliases).
 ///
 /// See [`crate::client::fluent_builders::ListAliases`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAliases {
     _private: (),
 }
@@ -995,7 +995,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAliases {
 /// [`list_grants`](crate::client::Client::list_grants).
 ///
 /// See [`crate::client::fluent_builders::ListGrants`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListGrants {
     _private: (),
 }
@@ -1027,7 +1027,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGrants {
 /// [`list_key_policies`](crate::client::Client::list_key_policies).
 ///
 /// See [`crate::client::fluent_builders::ListKeyPolicies`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListKeyPolicies {
     _private: (),
 }
@@ -1061,7 +1061,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListKeyPolicies {
 /// [`list_keys`](crate::client::Client::list_keys).
 ///
 /// See [`crate::client::fluent_builders::ListKeys`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListKeys {
     _private: (),
 }
@@ -1092,7 +1092,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListKeys {
 /// [`list_resource_tags`](crate::client::Client::list_resource_tags).
 ///
 /// See [`crate::client::fluent_builders::ListResourceTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResourceTags {
     _private: (),
 }
@@ -1126,7 +1126,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceTags {
 /// [`list_retirable_grants`](crate::client::Client::list_retirable_grants).
 ///
 /// See [`crate::client::fluent_builders::ListRetirableGrants`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRetirableGrants {
     _private: (),
 }
@@ -1160,7 +1160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRetirableGrants {
 /// [`put_key_policy`](crate::client::Client::put_key_policy).
 ///
 /// See [`crate::client::fluent_builders::PutKeyPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutKeyPolicy {
     _private: (),
 }
@@ -1192,7 +1192,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutKeyPolicy {
 /// [`re_encrypt`](crate::client::Client::re_encrypt).
 ///
 /// See [`crate::client::fluent_builders::ReEncrypt`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ReEncrypt {
     _private: (),
 }
@@ -1223,7 +1223,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReEncrypt {
 /// [`replicate_key`](crate::client::Client::replicate_key).
 ///
 /// See [`crate::client::fluent_builders::ReplicateKey`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ReplicateKey {
     _private: (),
 }
@@ -1255,7 +1255,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReplicateKey {
 /// [`retire_grant`](crate::client::Client::retire_grant).
 ///
 /// See [`crate::client::fluent_builders::RetireGrant`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RetireGrant {
     _private: (),
 }
@@ -1287,7 +1287,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RetireGrant {
 /// [`revoke_grant`](crate::client::Client::revoke_grant).
 ///
 /// See [`crate::client::fluent_builders::RevokeGrant`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RevokeGrant {
     _private: (),
 }
@@ -1319,7 +1319,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeGrant {
 /// [`schedule_key_deletion`](crate::client::Client::schedule_key_deletion).
 ///
 /// See [`crate::client::fluent_builders::ScheduleKeyDeletion`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ScheduleKeyDeletion {
     _private: (),
 }
@@ -1353,7 +1353,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ScheduleKeyDeletion {
 /// [`sign`](crate::client::Client::sign).
 ///
 /// See [`crate::client::fluent_builders::Sign`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct Sign {
     _private: (),
 }
@@ -1384,7 +1384,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Sign {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1416,7 +1416,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1448,7 +1448,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_alias`](crate::client::Client::update_alias).
 ///
 /// See [`crate::client::fluent_builders::UpdateAlias`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAlias {
     _private: (),
 }
@@ -1480,7 +1480,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAlias {
 /// [`update_custom_key_store`](crate::client::Client::update_custom_key_store).
 ///
 /// See [`crate::client::fluent_builders::UpdateCustomKeyStore`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCustomKeyStore {
     _private: (),
 }
@@ -1514,7 +1514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCustomKeyStore {
 /// [`update_key_description`](crate::client::Client::update_key_description).
 ///
 /// See [`crate::client::fluent_builders::UpdateKeyDescription`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateKeyDescription {
     _private: (),
 }
@@ -1548,7 +1548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateKeyDescription {
 /// [`update_primary_region`](crate::client::Client::update_primary_region).
 ///
 /// See [`crate::client::fluent_builders::UpdatePrimaryRegion`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePrimaryRegion {
     _private: (),
 }
@@ -1582,7 +1582,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePrimaryRegion {
 /// [`verify`](crate::client::Client::verify).
 ///
 /// See [`crate::client::fluent_builders::Verify`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct Verify {
     _private: (),
 }
@@ -1613,7 +1613,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Verify {
 /// [`verify_mac`](crate::client::Client::verify_mac).
 ///
 /// See [`crate::client::fluent_builders::VerifyMac`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct VerifyMac {
     _private: (),
 }

@@ -67,7 +67,7 @@ impl ProjectDetails {
 pub mod project_details {
 
     /// A builder for [`ProjectDetails`](crate::model::ProjectDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) project_id: std::option::Option<std::string::String>,
@@ -246,7 +246,7 @@ impl Resource {
 pub mod resource {
 
     /// A builder for [`Resource`](crate::model::Resource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -463,7 +463,7 @@ impl ProjectSummary {
 pub mod project_summary {
 
     /// A builder for [`ProjectSummary`](crate::model::ProjectSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) project_id: std::option::Option<std::string::String>,
@@ -558,7 +558,7 @@ impl BundleDetails {
 pub mod bundle_details {
 
     /// A builder for [`BundleDetails`](crate::model::BundleDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bundle_id: std::option::Option<std::string::String>,
         pub(crate) title: std::option::Option<std::string::String>,

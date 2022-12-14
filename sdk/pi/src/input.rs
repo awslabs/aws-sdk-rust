@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod describe_dimension_keys_input {
 
     /// A builder for [`DescribeDimensionKeysInput`](crate::input::DescribeDimensionKeysInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -377,7 +377,7 @@ impl DescribeDimensionKeysInput {
 pub mod get_dimension_key_details_input {
 
     /// A builder for [`GetDimensionKeyDetailsInput`](crate::input::GetDimensionKeyDetailsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -613,7 +613,7 @@ impl GetDimensionKeyDetailsInput {
 pub mod get_resource_metadata_input {
 
     /// A builder for [`GetResourceMetadataInput`](crate::input::GetResourceMetadataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -775,7 +775,7 @@ impl GetResourceMetadataInput {
 pub mod get_resource_metrics_input {
 
     /// A builder for [`GetResourceMetricsInput`](crate::input::GetResourceMetricsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -1054,7 +1054,7 @@ impl GetResourceMetricsInput {
 pub mod list_available_resource_dimensions_input {
 
     /// A builder for [`ListAvailableResourceDimensionsInput`](crate::input::ListAvailableResourceDimensionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -1260,7 +1260,7 @@ impl ListAvailableResourceDimensionsInput {
 pub mod list_available_resource_metrics_input {
 
     /// A builder for [`ListAvailableResourceMetricsInput`](crate::input::ListAvailableResourceMetricsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
         pub(crate) identifier: std::option::Option<std::string::String>,

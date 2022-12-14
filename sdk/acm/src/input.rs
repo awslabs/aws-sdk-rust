@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod add_tags_to_certificate_input {
 
     /// A builder for [`AddTagsToCertificateInput`](crate::input::AddTagsToCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -182,7 +182,7 @@ impl AddTagsToCertificateInput {
 pub mod delete_certificate_input {
 
     /// A builder for [`DeleteCertificateInput`](crate::input::DeleteCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
@@ -336,7 +336,7 @@ impl DeleteCertificateInput {
 pub mod describe_certificate_input {
 
     /// A builder for [`DescribeCertificateInput`](crate::input::DescribeCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
@@ -490,7 +490,7 @@ impl DescribeCertificateInput {
 pub mod export_certificate_input {
 
     /// A builder for [`ExportCertificateInput`](crate::input::ExportCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
         pub(crate) passphrase: std::option::Option<aws_smithy_types::Blob>,
@@ -673,7 +673,7 @@ impl ExportCertificateInput {
 pub mod get_account_configuration_input {
 
     /// A builder for [`GetAccountConfigurationInput`](crate::input::GetAccountConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetAccountConfigurationInput`](crate::input::GetAccountConfigurationInput).
@@ -801,7 +801,7 @@ impl GetAccountConfigurationInput {
 pub mod get_certificate_input {
 
     /// A builder for [`GetCertificateInput`](crate::input::GetCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
@@ -953,7 +953,7 @@ impl GetCertificateInput {
 pub mod import_certificate_input {
 
     /// A builder for [`ImportCertificateInput`](crate::input::ImportCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
         pub(crate) certificate: std::option::Option<aws_smithy_types::Blob>,
@@ -1182,7 +1182,7 @@ impl ImportCertificateInput {
 pub mod list_certificates_input {
 
     /// A builder for [`ListCertificatesInput`](crate::input::ListCertificatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_statuses:
             std::option::Option<std::vec::Vec<crate::model::CertificateStatus>>,
@@ -1402,7 +1402,7 @@ impl ListCertificatesInput {
 pub mod list_tags_for_certificate_input {
 
     /// A builder for [`ListTagsForCertificateInput`](crate::input::ListTagsForCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
@@ -1558,7 +1558,7 @@ impl ListTagsForCertificateInput {
 pub mod put_account_configuration_input {
 
     /// A builder for [`PutAccountConfigurationInput`](crate::input::PutAccountConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expiry_events: std::option::Option<crate::model::ExpiryEventsConfiguration>,
         pub(crate) idempotency_token: std::option::Option<std::string::String>,
@@ -1725,7 +1725,7 @@ impl PutAccountConfigurationInput {
 pub mod remove_tags_from_certificate_input {
 
     /// A builder for [`RemoveTagsFromCertificateInput`](crate::input::RemoveTagsFromCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1902,7 +1902,7 @@ impl RemoveTagsFromCertificateInput {
 pub mod renew_certificate_input {
 
     /// A builder for [`RenewCertificateInput`](crate::input::RenewCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
@@ -2056,7 +2056,7 @@ impl RenewCertificateInput {
 pub mod request_certificate_input {
 
     /// A builder for [`RequestCertificateInput`](crate::input::RequestCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) validation_method: std::option::Option<crate::model::ValidationMethod>,
@@ -2347,7 +2347,7 @@ impl RequestCertificateInput {
 pub mod resend_validation_email_input {
 
     /// A builder for [`ResendValidationEmailInput`](crate::input::ResendValidationEmailInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -2542,7 +2542,7 @@ impl ResendValidationEmailInput {
 pub mod update_certificate_options_input {
 
     /// A builder for [`UpdateCertificateOptionsInput`](crate::input::UpdateCertificateOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
         pub(crate) options: std::option::Option<crate::model::CertificateOptions>,

@@ -25,7 +25,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -92,7 +92,7 @@ impl DestinationConfig {
 pub mod destination_config {
 
     /// A builder for [`DestinationConfig`](crate::model::DestinationConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
         pub(crate) services: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -256,7 +256,7 @@ impl TimeoutConfig {
 pub mod timeout_config {
 
     /// A builder for [`TimeoutConfig`](crate::model::TimeoutConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_lifetime_timeout_minutes: std::option::Option<i32>,
     }
@@ -339,7 +339,7 @@ impl TunnelSummary {
 pub mod tunnel_summary {
 
     /// A builder for [`TunnelSummary`](crate::model::TunnelSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tunnel_id: std::option::Option<std::string::String>,
         pub(crate) tunnel_arn: std::option::Option<std::string::String>,
@@ -618,7 +618,7 @@ impl Tunnel {
 pub mod tunnel {
 
     /// A builder for [`Tunnel`](crate::model::Tunnel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tunnel_id: std::option::Option<std::string::String>,
         pub(crate) tunnel_arn: std::option::Option<std::string::String>,
@@ -826,7 +826,7 @@ impl ConnectionState {
 pub mod connection_state {
 
     /// A builder for [`ConnectionState`](crate::model::ConnectionState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ConnectionStatus>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,

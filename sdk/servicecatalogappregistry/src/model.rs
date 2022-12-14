@@ -64,7 +64,7 @@ impl AttributeGroup {
 pub mod attribute_group {
 
     /// A builder for [`AttributeGroup`](crate::model::AttributeGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -253,7 +253,7 @@ impl Application {
 pub mod application {
 
     /// A builder for [`Application`](crate::model::Application).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -585,7 +585,7 @@ impl AttributeGroupDetails {
 pub mod attribute_group_details {
 
     /// A builder for [`AttributeGroupDetails`](crate::model::AttributeGroupDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -692,7 +692,7 @@ impl AttributeGroupSummary {
 pub mod attribute_group_summary {
 
     /// A builder for [`AttributeGroupSummary`](crate::model::AttributeGroupSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -813,7 +813,7 @@ impl ResourceInfo {
 pub mod resource_info {
 
     /// A builder for [`ResourceInfo`](crate::model::ResourceInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -908,7 +908,7 @@ impl ApplicationSummary {
 pub mod application_summary {
 
     /// A builder for [`ApplicationSummary`](crate::model::ApplicationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1043,7 +1043,7 @@ impl Resource {
 pub mod resource {
 
     /// A builder for [`Resource`](crate::model::Resource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1133,7 +1133,7 @@ impl ResourceIntegrations {
 pub mod resource_integrations {
 
     /// A builder for [`ResourceIntegrations`](crate::model::ResourceIntegrations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group: std::option::Option<crate::model::ResourceGroup>,
     }
@@ -1210,7 +1210,7 @@ impl ResourceGroup {
 pub mod resource_group {
 
     /// A builder for [`ResourceGroup`](crate::model::ResourceGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::ResourceGroupState>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1419,7 +1419,7 @@ impl Integrations {
 pub mod integrations {
 
     /// A builder for [`Integrations`](crate::model::Integrations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group: std::option::Option<crate::model::ResourceGroup>,
     }

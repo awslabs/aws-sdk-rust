@@ -137,7 +137,7 @@ impl LedgerEncryptionDescription {
 pub mod ledger_encryption_description {
 
     /// A builder for [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
         pub(crate) encryption_status: std::option::Option<crate::model::EncryptionStatus>,
@@ -431,7 +431,7 @@ impl KinesisConfiguration {
 pub mod kinesis_configuration {
 
     /// A builder for [`KinesisConfiguration`](crate::model::KinesisConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
         pub(crate) aggregation_enabled: std::option::Option<bool>,
@@ -507,7 +507,7 @@ impl LedgerSummary {
 pub mod ledger_summary {
 
     /// A builder for [`LedgerSummary`](crate::model::LedgerSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::LedgerState>,
@@ -648,7 +648,7 @@ impl JournalS3ExportDescription {
 pub mod journal_s3_export_description {
 
     /// A builder for [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ledger_name: std::option::Option<std::string::String>,
         pub(crate) export_id: std::option::Option<std::string::String>,
@@ -949,7 +949,7 @@ impl S3ExportConfiguration {
 pub mod s3_export_configuration {
 
     /// A builder for [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -1059,7 +1059,7 @@ impl S3EncryptionConfiguration {
 pub mod s3_encryption_configuration {
 
     /// A builder for [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_encryption_type:
             std::option::Option<crate::model::S3ObjectEncryptionType>,
@@ -1396,7 +1396,7 @@ impl JournalKinesisStreamDescription {
 pub mod journal_kinesis_stream_description {
 
     /// A builder for [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ledger_name: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1784,7 +1784,7 @@ impl std::fmt::Debug for ValueHolder {
 pub mod value_holder {
 
     /// A builder for [`ValueHolder`](crate::model::ValueHolder).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) ion_text: std::option::Option<std::string::String>,
     }

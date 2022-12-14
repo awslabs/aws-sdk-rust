@@ -25,7 +25,7 @@ impl GetEntitlementsOutput {
 pub mod get_entitlements_output {
 
     /// A builder for [`GetEntitlementsOutput`](crate::output::GetEntitlementsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,

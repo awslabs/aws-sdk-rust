@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_dataset_input {
 
     /// A builder for [`CreateDatasetInput`](crate::input::CreateDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) dataset_schema: std::option::Option<crate::model::DatasetSchema>,
@@ -216,7 +216,7 @@ impl CreateDatasetInput {
 pub mod create_inference_scheduler_input {
 
     /// A builder for [`CreateInferenceSchedulerInput`](crate::input::CreateInferenceSchedulerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_name: std::option::Option<std::string::String>,
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
@@ -512,7 +512,7 @@ impl CreateInferenceSchedulerInput {
 pub mod create_label_input {
 
     /// A builder for [`CreateLabelInput`](crate::input::CreateLabelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -761,7 +761,7 @@ impl CreateLabelInput {
 pub mod create_label_group_input {
 
     /// A builder for [`CreateLabelGroupInput`](crate::input::CreateLabelGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
         pub(crate) fault_codes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -974,7 +974,7 @@ impl CreateLabelGroupInput {
 pub mod create_model_input {
 
     /// A builder for [`CreateModelInput`](crate::input::CreateModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_name: std::option::Option<std::string::String>,
         pub(crate) dataset_name: std::option::Option<std::string::String>,
@@ -1324,7 +1324,7 @@ impl CreateModelInput {
 pub mod delete_dataset_input {
 
     /// A builder for [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
     }
@@ -1469,7 +1469,7 @@ impl DeleteDatasetInput {
 pub mod delete_inference_scheduler_input {
 
     /// A builder for [`DeleteInferenceSchedulerInput`](crate::input::DeleteInferenceSchedulerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
     }
@@ -1621,7 +1621,7 @@ impl DeleteInferenceSchedulerInput {
 pub mod delete_label_input {
 
     /// A builder for [`DeleteLabelInput`](crate::input::DeleteLabelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
         pub(crate) label_id: std::option::Option<std::string::String>,
@@ -1781,7 +1781,7 @@ impl DeleteLabelInput {
 pub mod delete_label_group_input {
 
     /// A builder for [`DeleteLabelGroupInput`](crate::input::DeleteLabelGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
     }
@@ -1931,7 +1931,7 @@ impl DeleteLabelGroupInput {
 pub mod delete_model_input {
 
     /// A builder for [`DeleteModelInput`](crate::input::DeleteModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_name: std::option::Option<std::string::String>,
     }
@@ -2076,7 +2076,7 @@ impl DeleteModelInput {
 pub mod describe_data_ingestion_job_input {
 
     /// A builder for [`DescribeDataIngestionJobInput`](crate::input::DescribeDataIngestionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -2225,7 +2225,7 @@ impl DescribeDataIngestionJobInput {
 pub mod describe_dataset_input {
 
     /// A builder for [`DescribeDatasetInput`](crate::input::DescribeDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
     }
@@ -2370,7 +2370,7 @@ impl DescribeDatasetInput {
 pub mod describe_inference_scheduler_input {
 
     /// A builder for [`DescribeInferenceSchedulerInput`](crate::input::DescribeInferenceSchedulerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
     }
@@ -2522,7 +2522,7 @@ impl DescribeInferenceSchedulerInput {
 pub mod describe_label_input {
 
     /// A builder for [`DescribeLabelInput`](crate::input::DescribeLabelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
         pub(crate) label_id: std::option::Option<std::string::String>,
@@ -2682,7 +2682,7 @@ impl DescribeLabelInput {
 pub mod describe_label_group_input {
 
     /// A builder for [`DescribeLabelGroupInput`](crate::input::DescribeLabelGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
     }
@@ -2832,7 +2832,7 @@ impl DescribeLabelGroupInput {
 pub mod describe_model_input {
 
     /// A builder for [`DescribeModelInput`](crate::input::DescribeModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_name: std::option::Option<std::string::String>,
     }
@@ -2977,7 +2977,7 @@ impl DescribeModelInput {
 pub mod list_data_ingestion_jobs_input {
 
     /// A builder for [`ListDataIngestionJobsInput`](crate::input::ListDataIngestionJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3165,7 +3165,7 @@ impl ListDataIngestionJobsInput {
 pub mod list_datasets_input {
 
     /// A builder for [`ListDatasetsInput`](crate::input::ListDatasetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3337,7 +3337,7 @@ impl ListDatasetsInput {
 pub mod list_inference_events_input {
 
     /// A builder for [`ListInferenceEventsInput`](crate::input::ListInferenceEventsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3541,7 +3541,7 @@ impl ListInferenceEventsInput {
 pub mod list_inference_executions_input {
 
     /// A builder for [`ListInferenceExecutionsInput`](crate::input::ListInferenceExecutionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3762,7 +3762,7 @@ impl ListInferenceExecutionsInput {
 pub mod list_inference_schedulers_input {
 
     /// A builder for [`ListInferenceSchedulersInput`](crate::input::ListInferenceSchedulersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3953,7 +3953,7 @@ impl ListInferenceSchedulersInput {
 pub mod list_label_groups_input {
 
     /// A builder for [`ListLabelGroupsInput`](crate::input::ListLabelGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name_begins_with: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4128,7 +4128,7 @@ impl ListLabelGroupsInput {
 pub mod list_labels_input {
 
     /// A builder for [`ListLabelsInput`](crate::input::ListLabelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
         pub(crate) interval_start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4354,7 +4354,7 @@ impl ListLabelsInput {
 pub mod list_models_input {
 
     /// A builder for [`ListModelsInput`](crate::input::ListModelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4553,7 +4553,7 @@ impl ListModelsInput {
 pub mod list_sensor_statistics_input {
 
     /// A builder for [`ListSensorStatisticsInput`](crate::input::ListSensorStatisticsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) ingestion_job_id: std::option::Option<std::string::String>,
@@ -4741,7 +4741,7 @@ impl ListSensorStatisticsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -4890,7 +4890,7 @@ impl ListTagsForResourceInput {
 pub mod start_data_ingestion_job_input {
 
     /// A builder for [`StartDataIngestionJobInput`](crate::input::StartDataIngestionJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) ingestion_input_configuration:
@@ -5085,7 +5085,7 @@ impl StartDataIngestionJobInput {
 pub mod start_inference_scheduler_input {
 
     /// A builder for [`StartInferenceSchedulerInput`](crate::input::StartInferenceSchedulerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
     }
@@ -5237,7 +5237,7 @@ impl StartInferenceSchedulerInput {
 pub mod stop_inference_scheduler_input {
 
     /// A builder for [`StopInferenceSchedulerInput`](crate::input::StopInferenceSchedulerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
     }
@@ -5389,7 +5389,7 @@ impl StopInferenceSchedulerInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5555,7 +5555,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5721,7 +5721,7 @@ impl UntagResourceInput {
 pub mod update_inference_scheduler_input {
 
     /// A builder for [`UpdateInferenceSchedulerInput`](crate::input::UpdateInferenceSchedulerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
         pub(crate) data_delay_offset_in_minutes: std::option::Option<i64>,
@@ -5950,7 +5950,7 @@ impl UpdateInferenceSchedulerInput {
 pub mod update_label_group_input {
 
     /// A builder for [`UpdateLabelGroupInput`](crate::input::UpdateLabelGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label_group_name: std::option::Option<std::string::String>,
         pub(crate) fault_codes: std::option::Option<std::vec::Vec<std::string::String>>,

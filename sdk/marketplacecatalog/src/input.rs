@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod cancel_change_set_input {
 
     /// A builder for [`CancelChangeSetInput`](crate::input::CancelChangeSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
         pub(crate) change_set_id: std::option::Option<std::string::String>,
@@ -186,7 +186,7 @@ impl CancelChangeSetInput {
 pub mod describe_change_set_input {
 
     /// A builder for [`DescribeChangeSetInput`](crate::input::DescribeChangeSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
         pub(crate) change_set_id: std::option::Option<std::string::String>,
@@ -369,7 +369,7 @@ impl DescribeChangeSetInput {
 pub mod describe_entity_input {
 
     /// A builder for [`DescribeEntityInput`](crate::input::DescribeEntityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -547,7 +547,7 @@ impl DescribeEntityInput {
 pub mod list_change_sets_input {
 
     /// A builder for [`ListChangeSetsInput`](crate::input::ListChangeSetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
         pub(crate) filter_list: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -744,7 +744,7 @@ impl ListChangeSetsInput {
 pub mod list_entities_input {
 
     /// A builder for [`ListEntitiesInput`](crate::input::ListEntitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
         pub(crate) entity_type: std::option::Option<std::string::String>,
@@ -953,7 +953,7 @@ impl ListEntitiesInput {
 pub mod start_change_set_input {
 
     /// A builder for [`StartChangeSetInput`](crate::input::StartChangeSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog: std::option::Option<std::string::String>,
         pub(crate) change_set: std::option::Option<std::vec::Vec<crate::model::Change>>,

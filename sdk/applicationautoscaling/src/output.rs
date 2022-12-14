@@ -7,7 +7,7 @@ pub struct RegisterScalableTargetOutput {}
 pub mod register_scalable_target_output {
 
     /// A builder for [`RegisterScalableTargetOutput`](crate::output::RegisterScalableTargetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RegisterScalableTargetOutput`](crate::output::RegisterScalableTargetOutput).
@@ -31,7 +31,7 @@ pub struct PutScheduledActionOutput {}
 pub mod put_scheduled_action_output {
 
     /// A builder for [`PutScheduledActionOutput`](crate::output::PutScheduledActionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutScheduledActionOutput`](crate::output::PutScheduledActionOutput).
@@ -72,7 +72,7 @@ impl PutScalingPolicyOutput {
 pub mod put_scaling_policy_output {
 
     /// A builder for [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
         pub(crate) alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
@@ -148,7 +148,7 @@ impl DescribeScheduledActionsOutput {
 pub mod describe_scheduled_actions_output {
 
     /// A builder for [`DescribeScheduledActionsOutput`](crate::output::DescribeScheduledActionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_actions:
             std::option::Option<std::vec::Vec<crate::model::ScheduledAction>>,
@@ -225,7 +225,7 @@ impl DescribeScalingPoliciesOutput {
 pub mod describe_scaling_policies_output {
 
     /// A builder for [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_policies:
             std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
@@ -302,7 +302,7 @@ impl DescribeScalingActivitiesOutput {
 pub mod describe_scaling_activities_output {
 
     /// A builder for [`DescribeScalingActivitiesOutput`](crate::output::DescribeScalingActivitiesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_activities:
             std::option::Option<std::vec::Vec<crate::model::ScalingActivity>>,
@@ -379,7 +379,7 @@ impl DescribeScalableTargetsOutput {
 pub mod describe_scalable_targets_output {
 
     /// A builder for [`DescribeScalableTargetsOutput`](crate::output::DescribeScalableTargetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scalable_targets:
             std::option::Option<std::vec::Vec<crate::model::ScalableTarget>>,
@@ -439,7 +439,7 @@ pub struct DeregisterScalableTargetOutput {}
 pub mod deregister_scalable_target_output {
 
     /// A builder for [`DeregisterScalableTargetOutput`](crate::output::DeregisterScalableTargetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterScalableTargetOutput`](crate::output::DeregisterScalableTargetOutput).
@@ -463,7 +463,7 @@ pub struct DeleteScheduledActionOutput {}
 pub mod delete_scheduled_action_output {
 
     /// A builder for [`DeleteScheduledActionOutput`](crate::output::DeleteScheduledActionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteScheduledActionOutput`](crate::output::DeleteScheduledActionOutput).
@@ -487,7 +487,7 @@ pub struct DeleteScalingPolicyOutput {}
 pub mod delete_scaling_policy_output {
 
     /// A builder for [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput).

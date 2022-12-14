@@ -30,7 +30,7 @@ impl std::error::Error for OperationTimeoutException {}
 pub mod operation_timeout_exception {
 
     /// A builder for [`OperationTimeoutException`](crate::error::OperationTimeoutException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl std::error::Error for InvalidInputException {}
 pub mod invalid_input_exception {
 
     /// A builder for [`InvalidInputException`](crate::error::InvalidInputException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl std::error::Error for InternalServiceException {}
 pub mod internal_service_exception {
 
     /// A builder for [`InternalServiceException`](crate::error::InternalServiceException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -210,7 +210,7 @@ impl std::error::Error for EntityNotFoundException {}
 pub mod entity_not_found_exception {
 
     /// A builder for [`EntityNotFoundException`](crate::error::EntityNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -270,7 +270,7 @@ impl std::error::Error for ConcurrentModificationException {}
 pub mod concurrent_modification_exception {
 
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -330,7 +330,7 @@ impl std::error::Error for GlueEncryptionException {}
 pub mod glue_encryption_exception {
 
     /// A builder for [`GlueEncryptionException`](crate::error::GlueEncryptionException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -390,7 +390,7 @@ impl std::error::Error for ResourceNumberLimitExceededException {}
 pub mod resource_number_limit_exceeded_exception {
 
     /// A builder for [`ResourceNumberLimitExceededException`](crate::error::ResourceNumberLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -450,7 +450,7 @@ impl std::error::Error for ResourceNotReadyException {}
 pub mod resource_not_ready_exception {
 
     /// A builder for [`ResourceNotReadyException`](crate::error::ResourceNotReadyException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -510,7 +510,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
 
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -570,7 +570,7 @@ impl std::error::Error for ValidationException {}
 pub mod validation_exception {
 
     /// A builder for [`ValidationException`](crate::error::ValidationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -630,7 +630,7 @@ impl std::error::Error for VersionMismatchException {}
 pub mod version_mismatch_exception {
 
     /// A builder for [`VersionMismatchException`](crate::error::VersionMismatchException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -690,7 +690,7 @@ impl std::error::Error for SchedulerTransitioningException {}
 pub mod scheduler_transitioning_exception {
 
     /// A builder for [`SchedulerTransitioningException`](crate::error::SchedulerTransitioningException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -750,7 +750,7 @@ impl std::error::Error for CrawlerRunningException {}
 pub mod crawler_running_exception {
 
     /// A builder for [`CrawlerRunningException`](crate::error::CrawlerRunningException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -810,7 +810,7 @@ impl std::error::Error for IllegalBlueprintStateException {}
 pub mod illegal_blueprint_state_exception {
 
     /// A builder for [`IllegalBlueprintStateException`](crate::error::IllegalBlueprintStateException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -870,7 +870,7 @@ impl std::error::Error for IllegalWorkflowStateException {}
 pub mod illegal_workflow_state_exception {
 
     /// A builder for [`IllegalWorkflowStateException`](crate::error::IllegalWorkflowStateException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -930,7 +930,7 @@ impl std::error::Error for IllegalSessionStateException {}
 pub mod illegal_session_state_exception {
 
     /// A builder for [`IllegalSessionStateException`](crate::error::IllegalSessionStateException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -990,7 +990,7 @@ impl std::error::Error for SchedulerNotRunningException {}
 pub mod scheduler_not_running_exception {
 
     /// A builder for [`SchedulerNotRunningException`](crate::error::SchedulerNotRunningException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1050,7 +1050,7 @@ impl std::error::Error for CrawlerStoppingException {}
 pub mod crawler_stopping_exception {
 
     /// A builder for [`CrawlerStoppingException`](crate::error::CrawlerStoppingException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1110,7 +1110,7 @@ impl std::error::Error for CrawlerNotRunningException {}
 pub mod crawler_not_running_exception {
 
     /// A builder for [`CrawlerNotRunningException`](crate::error::CrawlerNotRunningException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1170,7 +1170,7 @@ impl std::error::Error for ConcurrentRunsExceededException {}
 pub mod concurrent_runs_exceeded_exception {
 
     /// A builder for [`ConcurrentRunsExceededException`](crate::error::ConcurrentRunsExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1233,7 +1233,7 @@ impl std::error::Error for MlTransformNotReadyException {}
 pub mod ml_transform_not_ready_exception {
 
     /// A builder for [`MlTransformNotReadyException`](crate::error::MlTransformNotReadyException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1293,7 +1293,7 @@ impl std::error::Error for SchedulerRunningException {}
 pub mod scheduler_running_exception {
 
     /// A builder for [`SchedulerRunningException`](crate::error::SchedulerRunningException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1353,7 +1353,7 @@ impl std::error::Error for NoScheduleException {}
 pub mod no_schedule_exception {
 
     /// A builder for [`NoScheduleException`](crate::error::NoScheduleException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1413,7 +1413,7 @@ impl std::error::Error for AlreadyExistsException {}
 pub mod already_exists_exception {
 
     /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1473,7 +1473,7 @@ impl std::error::Error for ConditionCheckFailureException {}
 pub mod condition_check_failure_exception {
 
     /// A builder for [`ConditionCheckFailureException`](crate::error::ConditionCheckFailureException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1533,7 +1533,7 @@ impl std::error::Error for PermissionTypeMismatchException {}
 pub mod permission_type_mismatch_exception {
 
     /// A builder for [`PermissionTypeMismatchException`](crate::error::PermissionTypeMismatchException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1593,7 +1593,7 @@ impl std::error::Error for InvalidStateException {}
 pub mod invalid_state_exception {
 
     /// A builder for [`InvalidStateException`](crate::error::InvalidStateException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1653,7 +1653,7 @@ impl std::error::Error for ConflictException {}
 pub mod conflict_exception {
 
     /// A builder for [`ConflictException`](crate::error::ConflictException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1713,7 +1713,7 @@ impl std::error::Error for IdempotentParameterMismatchException {}
 pub mod idempotent_parameter_mismatch_exception {
 
     /// A builder for [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

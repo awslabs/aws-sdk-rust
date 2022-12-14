@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod describe_stream_input {
 
     /// A builder for [`DescribeStreamInput`](crate::input::DescribeStreamInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -177,7 +177,7 @@ impl DescribeStreamInput {
 pub mod get_records_input {
 
     /// A builder for [`GetRecordsInput`](crate::input::GetRecordsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shard_iterator: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
@@ -337,7 +337,7 @@ impl GetRecordsInput {
 pub mod get_shard_iterator_input {
 
     /// A builder for [`GetShardIteratorInput`](crate::input::GetShardIteratorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
         pub(crate) shard_id: std::option::Option<std::string::String>,
@@ -538,7 +538,7 @@ impl GetShardIteratorInput {
 pub mod list_streams_input {
 
     /// A builder for [`ListStreamsInput`](crate::input::ListStreamsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,

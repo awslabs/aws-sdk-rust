@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_notification_rule_input {
 
     /// A builder for [`CreateNotificationRuleInput`](crate::input::CreateNotificationRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) event_type_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -298,7 +298,7 @@ impl CreateNotificationRuleInput {
 pub mod delete_notification_rule_input {
 
     /// A builder for [`DeleteNotificationRuleInput`](crate::input::DeleteNotificationRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -440,7 +440,7 @@ impl DeleteNotificationRuleInput {
 pub mod delete_target_input {
 
     /// A builder for [`DeleteTargetInput`](crate::input::DeleteTargetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) target_address: std::option::Option<std::string::String>,
         pub(crate) force_unsubscribe_all: std::option::Option<bool>,
@@ -603,7 +603,7 @@ impl DeleteTargetInput {
 pub mod describe_notification_rule_input {
 
     /// A builder for [`DescribeNotificationRuleInput`](crate::input::DescribeNotificationRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -745,7 +745,7 @@ impl DescribeNotificationRuleInput {
 pub mod list_event_types_input {
 
     /// A builder for [`ListEventTypesInput`](crate::input::ListEventTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::ListEventTypesFilter>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -918,7 +918,7 @@ impl ListEventTypesInput {
 pub mod list_notification_rules_input {
 
     /// A builder for [`ListNotificationRulesInput`](crate::input::ListNotificationRulesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters:
             std::option::Option<std::vec::Vec<crate::model::ListNotificationRulesFilter>>,
@@ -1100,7 +1100,7 @@ impl ListNotificationRulesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -1242,7 +1242,7 @@ impl ListTagsForResourceInput {
 pub mod list_targets_input {
 
     /// A builder for [`ListTargetsInput`](crate::input::ListTargetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::ListTargetsFilter>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1419,7 +1419,7 @@ impl ListTargetsInput {
 pub mod subscribe_input {
 
     /// A builder for [`SubscribeInput`](crate::input::SubscribeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) target: std::option::Option<crate::model::Target>,
@@ -1584,7 +1584,7 @@ impl SubscribeInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -1753,7 +1753,7 @@ impl TagResourceInput {
 pub mod unsubscribe_input {
 
     /// A builder for [`UnsubscribeInput`](crate::input::UnsubscribeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) target_address: std::option::Option<std::string::String>,
@@ -1916,7 +1916,7 @@ impl UnsubscribeInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2101,7 +2101,7 @@ impl UntagResourceInput {
 pub mod update_notification_rule_input {
 
     /// A builder for [`UpdateNotificationRuleInput`](crate::input::UpdateNotificationRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,

@@ -5,7 +5,7 @@
 /// [`get_raw_message_content`](crate::client::Client::get_raw_message_content).
 ///
 /// See [`crate::client::fluent_builders::GetRawMessageContent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRawMessageContent {
     _private: (),
 }
@@ -48,7 +48,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetRawMessageContent {
 /// [`put_raw_message_content`](crate::client::Client::put_raw_message_content).
 ///
 /// See [`crate::client::fluent_builders::PutRawMessageContent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRawMessageContent {
     _private: (),
 }

@@ -30,7 +30,7 @@ impl std::error::Error for InternalServerError {}
 pub mod internal_server_error {
 
     /// A builder for [`InternalServerError`](crate::error::InternalServerError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl std::error::Error for ContainerNotFoundException {}
 pub mod container_not_found_exception {
 
     /// A builder for [`ContainerNotFoundException`](crate::error::ContainerNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl std::error::Error for RequestedRangeNotSatisfiableException {}
 pub mod requested_range_not_satisfiable_exception {
 
     /// A builder for [`RequestedRangeNotSatisfiableException`](crate::error::RequestedRangeNotSatisfiableException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -210,7 +210,7 @@ impl std::error::Error for ObjectNotFoundException {}
 pub mod object_not_found_exception {
 
     /// A builder for [`ObjectNotFoundException`](crate::error::ObjectNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

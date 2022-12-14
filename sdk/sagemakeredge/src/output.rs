@@ -7,7 +7,7 @@ pub struct SendHeartbeatOutput {}
 pub mod send_heartbeat_output {
 
     /// A builder for [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput).
@@ -48,7 +48,7 @@ impl GetDeviceRegistrationOutput {
 pub mod get_device_registration_output {
 
     /// A builder for [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_registration: std::option::Option<std::string::String>,
         pub(crate) cache_ttl: std::option::Option<std::string::String>,
@@ -111,7 +111,7 @@ impl GetDeploymentsOutput {
 pub mod get_deployments_output {
 
     /// A builder for [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployments: std::option::Option<std::vec::Vec<crate::model::EdgeDeployment>>,
     }

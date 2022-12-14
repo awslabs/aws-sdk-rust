@@ -46,7 +46,7 @@ impl LoRaWanUpdateDevice {
 pub mod lo_ra_wan_update_device {
 
     /// A builder for [`LoRaWanUpdateDevice`](crate::model::LoRaWanUpdateDevice).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_profile_id: std::option::Option<std::string::String>,
         pub(crate) service_profile_id: std::option::Option<std::string::String>,
@@ -157,7 +157,7 @@ impl UpdateFPorts {
 pub mod update_f_ports {
 
     /// A builder for [`UpdateFPorts`](crate::model::UpdateFPorts).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) positioning: std::option::Option<crate::model::Positioning>,
     }
@@ -222,7 +222,7 @@ impl Positioning {
 pub mod positioning {
 
     /// A builder for [`Positioning`](crate::model::Positioning).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) clock_sync: std::option::Option<i32>,
         pub(crate) stream: std::option::Option<i32>,
@@ -294,7 +294,7 @@ impl UpdateAbpV10X {
 pub mod update_abp_v10_x {
 
     /// A builder for [`UpdateAbpV10X`](crate::model::UpdateAbpV10X).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) f_cnt_start: std::option::Option<i32>,
     }
@@ -342,7 +342,7 @@ impl UpdateAbpV11 {
 pub mod update_abp_v11 {
 
     /// A builder for [`UpdateAbpV11`](crate::model::UpdateAbpV11).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) f_cnt_start: std::option::Option<i32>,
     }
@@ -402,7 +402,7 @@ impl MessageDeliveryStatusEventConfiguration {
 pub mod message_delivery_status_event_configuration {
 
     /// A builder for [`MessageDeliveryStatusEventConfiguration`](crate::model::MessageDeliveryStatusEventConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sidewalk:
             std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
@@ -570,7 +570,7 @@ impl SidewalkEventNotificationConfigurations {
 pub mod sidewalk_event_notification_configurations {
 
     /// A builder for [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amazon_id_event_topic:
             std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -639,7 +639,7 @@ impl ConnectionStatusEventConfiguration {
 pub mod connection_status_event_configuration {
 
     /// A builder for [`ConnectionStatusEventConfiguration`](crate::model::ConnectionStatusEventConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lo_ra_wan: std::option::Option<
             crate::model::LoRaWanConnectionStatusEventNotificationConfigurations,
@@ -718,7 +718,7 @@ impl LoRaWanConnectionStatusEventNotificationConfigurations {
 pub mod lo_ra_wan_connection_status_event_notification_configurations {
 
     /// A builder for [`LoRaWanConnectionStatusEventNotificationConfigurations`](crate::model::LoRaWanConnectionStatusEventNotificationConfigurations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_eui_event_topic:
             std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -786,7 +786,7 @@ impl JoinEventConfiguration {
 pub mod join_event_configuration {
 
     /// A builder for [`JoinEventConfiguration`](crate::model::JoinEventConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lo_ra_wan:
             std::option::Option<crate::model::LoRaWanJoinEventNotificationConfigurations>,
@@ -862,7 +862,7 @@ impl LoRaWanJoinEventNotificationConfigurations {
 pub mod lo_ra_wan_join_event_notification_configurations {
 
     /// A builder for [`LoRaWanJoinEventNotificationConfigurations`](crate::model::LoRaWanJoinEventNotificationConfigurations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dev_eui_event_topic:
             std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -929,7 +929,7 @@ impl ProximityEventConfiguration {
 pub mod proximity_event_configuration {
 
     /// A builder for [`ProximityEventConfiguration`](crate::model::ProximityEventConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sidewalk:
             std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
@@ -1015,7 +1015,7 @@ impl DeviceRegistrationStateEventConfiguration {
 pub mod device_registration_state_event_configuration {
 
     /// A builder for [`DeviceRegistrationStateEventConfiguration`](crate::model::DeviceRegistrationStateEventConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sidewalk:
             std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
@@ -1471,7 +1471,7 @@ impl std::fmt::Debug for SidewalkUpdateAccount {
 pub mod sidewalk_update_account {
 
     /// A builder for [`SidewalkUpdateAccount`](crate::model::SidewalkUpdateAccount).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_server_private_key: std::option::Option<std::string::String>,
     }
@@ -1538,7 +1538,7 @@ impl TraceContent {
 pub mod trace_content {
 
     /// A builder for [`TraceContent`](crate::model::TraceContent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wireless_device_frame_info:
             std::option::Option<crate::model::WirelessDeviceFrameInfo>,
@@ -1802,7 +1802,7 @@ impl LoRaWanMulticast {
 pub mod lo_ra_wan_multicast {
 
     /// A builder for [`LoRaWanMulticast`](crate::model::LoRaWanMulticast).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rf_region: std::option::Option<crate::model::SupportedRfRegion>,
         pub(crate) dl_class: std::option::Option<crate::model::DlClass>,
@@ -2071,7 +2071,7 @@ impl WirelessGatewayLogOption {
 pub mod wireless_gateway_log_option {
 
     /// A builder for [`WirelessGatewayLogOption`](crate::model::WirelessGatewayLogOption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::WirelessGatewayType>,
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
@@ -2164,7 +2164,7 @@ impl WirelessGatewayEventLogOption {
 pub mod wireless_gateway_event_log_option {
 
     /// A builder for [`WirelessGatewayEventLogOption`](crate::model::WirelessGatewayEventLogOption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event: std::option::Option<crate::model::WirelessGatewayEvent>,
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
@@ -2420,7 +2420,7 @@ impl WirelessDeviceLogOption {
 pub mod wireless_device_log_option {
 
     /// A builder for [`WirelessDeviceLogOption`](crate::model::WirelessDeviceLogOption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::WirelessDeviceType>,
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
@@ -2513,7 +2513,7 @@ impl WirelessDeviceEventLogOption {
 pub mod wireless_device_event_log_option {
 
     /// A builder for [`WirelessDeviceEventLogOption`](crate::model::WirelessDeviceEventLogOption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event: std::option::Option<crate::model::WirelessDeviceEvent>,
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
@@ -2781,7 +2781,7 @@ impl LoRaWanFuotaTask {
 pub mod lo_ra_wan_fuota_task {
 
     /// A builder for [`LoRaWanFuotaTask`](crate::model::LoRaWanFuotaTask).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rf_region: std::option::Option<crate::model::SupportedRfRegion>,
     }
@@ -2834,7 +2834,7 @@ impl MessageDeliveryStatusResourceTypeEventConfiguration {
 pub mod message_delivery_status_resource_type_event_configuration {
 
     /// A builder for [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::model::MessageDeliveryStatusResourceTypeEventConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sidewalk:
             std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
@@ -2893,7 +2893,7 @@ impl SidewalkResourceTypeEventConfiguration {
 pub mod sidewalk_resource_type_event_configuration {
 
     /// A builder for [`SidewalkResourceTypeEventConfiguration`](crate::model::SidewalkResourceTypeEventConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wireless_device_event_topic:
             std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -2952,7 +2952,7 @@ impl ConnectionStatusResourceTypeEventConfiguration {
 pub mod connection_status_resource_type_event_configuration {
 
     /// A builder for [`ConnectionStatusResourceTypeEventConfiguration`](crate::model::ConnectionStatusResourceTypeEventConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lo_ra_wan: std::option::Option<
             crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration,
@@ -3013,7 +3013,7 @@ impl LoRaWanConnectionStatusResourceTypeEventConfiguration {
 pub mod lo_ra_wan_connection_status_resource_type_event_configuration {
 
     /// A builder for [`LoRaWanConnectionStatusResourceTypeEventConfiguration`](crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wireless_gateway_event_topic:
             std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -3071,7 +3071,7 @@ impl JoinResourceTypeEventConfiguration {
 pub mod join_resource_type_event_configuration {
 
     /// A builder for [`JoinResourceTypeEventConfiguration`](crate::model::JoinResourceTypeEventConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lo_ra_wan:
             std::option::Option<crate::model::LoRaWanJoinResourceTypeEventConfiguration>,
@@ -3129,7 +3129,7 @@ impl LoRaWanJoinResourceTypeEventConfiguration {
 pub mod lo_ra_wan_join_resource_type_event_configuration {
 
     /// A builder for [`LoRaWanJoinResourceTypeEventConfiguration`](crate::model::LoRaWanJoinResourceTypeEventConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wireless_device_event_topic:
             std::option::Option<crate::model::EventNotificationTopicStatus>,
@@ -3186,7 +3186,7 @@ impl ProximityResourceTypeEventConfiguration {
 pub mod proximity_resource_type_event_configuration {
 
     /// A builder for [`ProximityResourceTypeEventConfiguration`](crate::model::ProximityResourceTypeEventConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sidewalk:
             std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
@@ -3243,7 +3243,7 @@ impl DeviceRegistrationStateResourceTypeEventConfiguration {
 pub mod device_registration_state_resource_type_event_configuration {
 
     /// A builder for [`DeviceRegistrationStateResourceTypeEventConfiguration`](crate::model::DeviceRegistrationStateResourceTypeEventConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sidewalk:
             std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
@@ -3397,7 +3397,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -3478,7 +3478,7 @@ impl LoRaWanMulticastSession {
 pub mod lo_ra_wan_multicast_session {
 
     /// A builder for [`LoRaWanMulticastSession`](crate::model::LoRaWanMulticastSession).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dl_dr: std::option::Option<i32>,
         pub(crate) dl_freq: std::option::Option<i32>,
@@ -3565,7 +3565,7 @@ impl LoRaWanStartFuotaTask {
 pub mod lo_ra_wan_start_fuota_task {
 
     /// A builder for [`LoRaWanStartFuotaTask`](crate::model::LoRaWanStartFuotaTask).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -3623,7 +3623,7 @@ impl WirelessMetadata {
 pub mod wireless_metadata {
 
     /// A builder for [`WirelessMetadata`](crate::model::WirelessMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanSendDataToDevice>,
         pub(crate) sidewalk: std::option::Option<crate::model::SidewalkSendDataToDevice>,
@@ -3703,7 +3703,7 @@ impl SidewalkSendDataToDevice {
 pub mod sidewalk_send_data_to_device {
 
     /// A builder for [`SidewalkSendDataToDevice`](crate::model::SidewalkSendDataToDevice).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) seq: std::option::Option<i32>,
         pub(crate) message_type: std::option::Option<crate::model::MessageType>,
@@ -3892,7 +3892,7 @@ impl LoRaWanSendDataToDevice {
 pub mod lo_ra_wan_send_data_to_device {
 
     /// A builder for [`LoRaWanSendDataToDevice`](crate::model::LoRaWanSendDataToDevice).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) f_port: std::option::Option<i32>,
         pub(crate) participating_gateways: std::option::Option<crate::model::ParticipatingGateways>,
@@ -3972,7 +3972,7 @@ impl ParticipatingGateways {
 pub mod participating_gateways {
 
     /// A builder for [`ParticipatingGateways`](crate::model::ParticipatingGateways).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) downlink_mode: std::option::Option<crate::model::DownlinkMode>,
         pub(crate) gateway_list: std::option::Option<std::vec::Vec<crate::model::GatewayListItem>>,
@@ -4063,7 +4063,7 @@ impl GatewayListItem {
 pub mod gateway_list_item {
 
     /// A builder for [`GatewayListItem`](crate::model::GatewayListItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_id: std::option::Option<std::string::String>,
         pub(crate) downlink_frequency: std::option::Option<i32>,
@@ -4218,7 +4218,7 @@ impl MulticastWirelessMetadata {
 pub mod multicast_wireless_metadata {
 
     /// A builder for [`MulticastWirelessMetadata`](crate::model::MulticastWirelessMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastMetadata>,
     }
@@ -4269,7 +4269,7 @@ impl LoRaWanMulticastMetadata {
 pub mod lo_ra_wan_multicast_metadata {
 
     /// A builder for [`LoRaWanMulticastMetadata`](crate::model::LoRaWanMulticastMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) f_port: std::option::Option<i32>,
     }
@@ -4317,7 +4317,7 @@ impl PositionSolverConfigurations {
 pub mod position_solver_configurations {
 
     /// A builder for [`PositionSolverConfigurations`](crate::model::PositionSolverConfigurations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) semtech_gnss: std::option::Option<crate::model::SemtechGnssConfiguration>,
     }
@@ -4375,7 +4375,7 @@ impl SemtechGnssConfiguration {
 pub mod semtech_gnss_configuration {
 
     /// A builder for [`SemtechGnssConfiguration`](crate::model::SemtechGnssConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::PositionConfigurationStatus>,
         pub(crate) fec: std::option::Option<crate::model::PositionConfigurationFec>,
@@ -4639,7 +4639,7 @@ impl UpdateWirelessGatewayTaskEntry {
 pub mod update_wireless_gateway_task_entry {
 
     /// A builder for [`UpdateWirelessGatewayTaskEntry`](crate::model::UpdateWirelessGatewayTaskEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanUpdateGatewayTaskEntry>,
@@ -4721,7 +4721,7 @@ impl LoRaWanUpdateGatewayTaskEntry {
 pub mod lo_ra_wan_update_gateway_task_entry {
 
     /// A builder for [`LoRaWanUpdateGatewayTaskEntry`](crate::model::LoRaWanUpdateGatewayTaskEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) current_version: std::option::Option<crate::model::LoRaWanGatewayVersion>,
         pub(crate) update_version: std::option::Option<crate::model::LoRaWanGatewayVersion>,
@@ -4801,7 +4801,7 @@ impl LoRaWanGatewayVersion {
 pub mod lo_ra_wan_gateway_version {
 
     /// A builder for [`LoRaWanGatewayVersion`](crate::model::LoRaWanGatewayVersion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_version: std::option::Option<std::string::String>,
         pub(crate) model: std::option::Option<std::string::String>,
@@ -4998,7 +4998,7 @@ impl WirelessGatewayStatistics {
 pub mod wireless_gateway_statistics {
 
     /// A builder for [`WirelessGatewayStatistics`](crate::model::WirelessGatewayStatistics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5147,7 +5147,7 @@ impl LoRaWanGateway {
 pub mod lo_ra_wan_gateway {
 
     /// A builder for [`LoRaWanGateway`](crate::model::LoRaWanGateway).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_eui: std::option::Option<std::string::String>,
         pub(crate) rf_region: std::option::Option<std::string::String>,
@@ -5290,7 +5290,7 @@ impl Beaconing {
 pub mod beaconing {
 
     /// A builder for [`Beaconing`](crate::model::Beaconing).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_rate: std::option::Option<i32>,
         pub(crate) frequencies: std::option::Option<std::vec::Vec<i32>>,
@@ -5426,7 +5426,7 @@ impl WirelessDeviceStatistics {
 pub mod wireless_device_statistics {
 
     /// A builder for [`WirelessDeviceStatistics`](crate::model::WirelessDeviceStatistics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5785,7 +5785,7 @@ impl SidewalkListDevice {
 pub mod sidewalk_list_device {
 
     /// A builder for [`SidewalkListDevice`](crate::model::SidewalkListDevice).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amazon_id: std::option::Option<std::string::String>,
         pub(crate) sidewalk_id: std::option::Option<std::string::String>,
@@ -5889,7 +5889,7 @@ impl CertificateList {
 pub mod certificate_list {
 
     /// A builder for [`CertificateList`](crate::model::CertificateList).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) signing_alg: std::option::Option<crate::model::SigningAlg>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -6042,7 +6042,7 @@ impl LoRaWanListDevice {
 pub mod lo_ra_wan_list_device {
 
     /// A builder for [`LoRaWanListDevice`](crate::model::LoRaWanListDevice).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dev_eui: std::option::Option<std::string::String>,
     }
@@ -6104,7 +6104,7 @@ impl ServiceProfile {
 pub mod service_profile {
 
     /// A builder for [`ServiceProfile`](crate::model::ServiceProfile).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6197,7 +6197,7 @@ impl DownlinkQueueMessage {
 pub mod downlink_queue_message {
 
     /// A builder for [`DownlinkQueueMessage`](crate::model::DownlinkQueueMessage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) transmit_mode: std::option::Option<i32>,
@@ -6305,7 +6305,7 @@ impl PositionConfigurationItem {
 pub mod position_configuration_item {
 
     /// A builder for [`PositionConfigurationItem`](crate::model::PositionConfigurationItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::PositionResourceType>,
@@ -6398,7 +6398,7 @@ impl PositionSolverDetails {
 pub mod position_solver_details {
 
     /// A builder for [`PositionSolverDetails`](crate::model::PositionSolverDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) semtech_gnss: std::option::Option<crate::model::SemtechGnssDetail>,
     }
@@ -6470,7 +6470,7 @@ impl SemtechGnssDetail {
 pub mod semtech_gnss_detail {
 
     /// A builder for [`SemtechGnssDetail`](crate::model::SemtechGnssDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provider: std::option::Option<crate::model::PositionSolverProvider>,
         pub(crate) r#type: std::option::Option<crate::model::PositionSolverType>,
@@ -6763,7 +6763,7 @@ impl std::fmt::Debug for SidewalkAccountInfoWithFingerprint {
 pub mod sidewalk_account_info_with_fingerprint {
 
     /// A builder for [`SidewalkAccountInfoWithFingerprint`](crate::model::SidewalkAccountInfoWithFingerprint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) amazon_id: std::option::Option<std::string::String>,
         pub(crate) fingerprint: std::option::Option<std::string::String>,
@@ -6851,7 +6851,7 @@ impl NetworkAnalyzerConfigurations {
 pub mod network_analyzer_configurations {
 
     /// A builder for [`NetworkAnalyzerConfigurations`](crate::model::NetworkAnalyzerConfigurations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6911,7 +6911,7 @@ impl MulticastGroupByFuotaTask {
 pub mod multicast_group_by_fuota_task {
 
     /// A builder for [`MulticastGroupByFuotaTask`](crate::model::MulticastGroupByFuotaTask).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -6971,7 +6971,7 @@ impl MulticastGroup {
 pub mod multicast_group {
 
     /// A builder for [`MulticastGroup`](crate::model::MulticastGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7057,7 +7057,7 @@ impl FuotaTask {
 pub mod fuota_task {
 
     /// A builder for [`FuotaTask`](crate::model::FuotaTask).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7152,7 +7152,7 @@ impl EventConfigurationItem {
 pub mod event_configuration_item {
 
     /// A builder for [`EventConfigurationItem`](crate::model::EventConfigurationItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) identifier_type: std::option::Option<crate::model::IdentifierType>,
@@ -7281,7 +7281,7 @@ impl EventNotificationItemConfigurations {
 pub mod event_notification_item_configurations {
 
     /// A builder for [`EventNotificationItemConfigurations`](crate::model::EventNotificationItemConfigurations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_registration_state:
             std::option::Option<crate::model::DeviceRegistrationStateEventConfiguration>,
@@ -7515,7 +7515,7 @@ impl DeviceProfile {
 pub mod device_profile {
 
     /// A builder for [`DeviceProfile`](crate::model::DeviceProfile).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7622,7 +7622,7 @@ impl Destinations {
 pub mod destinations {
 
     /// A builder for [`Destinations`](crate::model::Destinations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7747,7 +7747,7 @@ impl UpdateWirelessGatewayTaskCreate {
 pub mod update_wireless_gateway_task_create {
 
     /// A builder for [`UpdateWirelessGatewayTaskCreate`](crate::model::UpdateWirelessGatewayTaskCreate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_data_source: std::option::Option<std::string::String>,
         pub(crate) update_data_role: std::option::Option<std::string::String>,
@@ -7849,7 +7849,7 @@ impl LoRaWanUpdateGatewayTaskCreate {
 pub mod lo_ra_wan_update_gateway_task_create {
 
     /// A builder for [`LoRaWanUpdateGatewayTaskCreate`](crate::model::LoRaWanUpdateGatewayTaskCreate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_signature: std::option::Option<std::string::String>,
         pub(crate) sig_key_crc: std::option::Option<i64>,
@@ -8151,7 +8151,7 @@ impl LoRaWanGatewayCurrentVersion {
 pub mod lo_ra_wan_gateway_current_version {
 
     /// A builder for [`LoRaWanGatewayCurrentVersion`](crate::model::LoRaWanGatewayCurrentVersion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) current_version: std::option::Option<crate::model::LoRaWanGatewayVersion>,
     }
@@ -8320,7 +8320,7 @@ impl SidewalkDeviceMetadata {
 pub mod sidewalk_device_metadata {
 
     /// A builder for [`SidewalkDeviceMetadata`](crate::model::SidewalkDeviceMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rssi: std::option::Option<i32>,
         pub(crate) battery_level: std::option::Option<crate::model::BatteryLevel>,
@@ -8750,7 +8750,7 @@ impl LoRaWanDeviceMetadata {
 pub mod lo_ra_wan_device_metadata {
 
     /// A builder for [`LoRaWanDeviceMetadata`](crate::model::LoRaWanDeviceMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dev_eui: std::option::Option<std::string::String>,
         pub(crate) f_port: std::option::Option<i32>,
@@ -8882,7 +8882,7 @@ impl LoRaWanGatewayMetadata {
 pub mod lo_ra_wan_gateway_metadata {
 
     /// A builder for [`LoRaWanGatewayMetadata`](crate::model::LoRaWanGatewayMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_eui: std::option::Option<std::string::String>,
         pub(crate) snr: std::option::Option<f64>,
@@ -8975,7 +8975,7 @@ impl SidewalkDevice {
 pub mod sidewalk_device {
 
     /// A builder for [`SidewalkDevice`](crate::model::SidewalkDevice).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amazon_id: std::option::Option<std::string::String>,
         pub(crate) sidewalk_id: std::option::Option<std::string::String>,
@@ -9121,7 +9121,7 @@ impl LoRaWanDevice {
 pub mod lo_ra_wan_device {
 
     /// A builder for [`LoRaWanDevice`](crate::model::LoRaWanDevice).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dev_eui: std::option::Option<std::string::String>,
         pub(crate) device_profile_id: std::option::Option<std::string::String>,
@@ -9283,7 +9283,7 @@ impl FPorts {
 pub mod f_ports {
 
     /// A builder for [`FPorts`](crate::model::FPorts).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fuota: std::option::Option<i32>,
         pub(crate) multicast: std::option::Option<i32>,
@@ -9384,7 +9384,7 @@ impl AbpV10X {
 pub mod abp_v10_x {
 
     /// A builder for [`AbpV10X`](crate::model::AbpV10X).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dev_addr: std::option::Option<std::string::String>,
         pub(crate) session_keys: std::option::Option<crate::model::SessionKeysAbpV10X>,
@@ -9466,7 +9466,7 @@ impl SessionKeysAbpV10X {
 pub mod session_keys_abp_v10_x {
 
     /// A builder for [`SessionKeysAbpV10X`](crate::model::SessionKeysAbpV10X).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nwk_s_key: std::option::Option<std::string::String>,
         pub(crate) app_s_key: std::option::Option<std::string::String>,
@@ -9540,7 +9540,7 @@ impl AbpV11 {
 pub mod abp_v11 {
 
     /// A builder for [`AbpV11`](crate::model::AbpV11).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dev_addr: std::option::Option<std::string::String>,
         pub(crate) session_keys: std::option::Option<crate::model::SessionKeysAbpV11>,
@@ -9636,7 +9636,7 @@ impl SessionKeysAbpV11 {
 pub mod session_keys_abp_v11 {
 
     /// A builder for [`SessionKeysAbpV11`](crate::model::SessionKeysAbpV11).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) f_nwk_s_int_key: std::option::Option<std::string::String>,
         pub(crate) s_nwk_s_int_key: std::option::Option<std::string::String>,
@@ -9743,7 +9743,7 @@ impl OtaaV10X {
 pub mod otaa_v10_x {
 
     /// A builder for [`OtaaV10X`](crate::model::OtaaV10X).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_key: std::option::Option<std::string::String>,
         pub(crate) app_eui: std::option::Option<std::string::String>,
@@ -9829,7 +9829,7 @@ impl OtaaV11 {
 pub mod otaa_v11 {
 
     /// A builder for [`OtaaV11`](crate::model::OtaaV11).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_key: std::option::Option<std::string::String>,
         pub(crate) nwk_key: std::option::Option<std::string::String>,
@@ -10134,7 +10134,7 @@ impl LoRaWanGetServiceProfileInfo {
 pub mod lo_ra_wan_get_service_profile_info {
 
     /// A builder for [`LoRaWanGetServiceProfileInfo`](crate::model::LoRaWanGetServiceProfileInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ul_rate: std::option::Option<i32>,
         pub(crate) ul_bucket_size: std::option::Option<i32>,
@@ -10503,7 +10503,7 @@ impl Accuracy {
 pub mod accuracy {
 
     /// A builder for [`Accuracy`](crate::model::Accuracy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) horizontal_accuracy: std::option::Option<f32>,
         pub(crate) vertical_accuracy: std::option::Option<f32>,
@@ -10584,7 +10584,7 @@ impl LoRaWanMulticastGet {
 pub mod lo_ra_wan_multicast_get {
 
     /// A builder for [`LoRaWanMulticastGet`](crate::model::LoRaWanMulticastGet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rf_region: std::option::Option<crate::model::SupportedRfRegion>,
         pub(crate) dl_class: std::option::Option<crate::model::DlClass>,
@@ -10678,7 +10678,7 @@ impl LoRaWanFuotaTaskGetInfo {
 pub mod lo_ra_wan_fuota_task_get_info {
 
     /// A builder for [`LoRaWanFuotaTaskGetInfo`](crate::model::LoRaWanFuotaTaskGetInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rf_region: std::option::Option<std::string::String>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -10978,7 +10978,7 @@ impl LoRaWanDeviceProfile {
 pub mod lo_ra_wan_device_profile {
 
     /// A builder for [`LoRaWanDeviceProfile`](crate::model::LoRaWanDeviceProfile).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) supports_class_b: std::option::Option<bool>,
         pub(crate) class_b_timeout: std::option::Option<i32>,
@@ -11268,7 +11268,7 @@ impl LoRaWanServiceProfile {
 pub mod lo_ra_wan_service_profile {
 
     /// A builder for [`LoRaWanServiceProfile`](crate::model::LoRaWanServiceProfile).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) add_gw_metadata: std::option::Option<bool>,
         pub(crate) dr_min: std::option::Option<i32>,
@@ -11355,7 +11355,7 @@ impl std::fmt::Debug for SidewalkAccountInfo {
 pub mod sidewalk_account_info {
 
     /// A builder for [`SidewalkAccountInfo`](crate::model::SidewalkAccountInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) amazon_id: std::option::Option<std::string::String>,
         pub(crate) app_server_private_key: std::option::Option<std::string::String>,

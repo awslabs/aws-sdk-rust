@@ -39,7 +39,7 @@ impl Change {
 pub mod change {
 
     /// A builder for [`Change`](crate::model::Change).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_type: std::option::Option<std::string::String>,
         pub(crate) entity: std::option::Option<crate::model::Entity>,
@@ -130,7 +130,7 @@ impl Entity {
 pub mod entity {
 
     /// A builder for [`Entity`](crate::model::Entity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -225,7 +225,7 @@ impl EntitySummary {
 pub mod entity_summary {
 
     /// A builder for [`EntitySummary`](crate::model::EntitySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) entity_type: std::option::Option<std::string::String>,
@@ -345,7 +345,7 @@ impl Sort {
 pub mod sort {
 
     /// A builder for [`Sort`](crate::model::Sort).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sort_by: std::option::Option<std::string::String>,
         pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
@@ -529,7 +529,7 @@ impl Filter {
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -669,7 +669,7 @@ impl ChangeSetSummaryListItem {
 pub mod change_set_summary_list_item {
 
     /// A builder for [`ChangeSetSummaryListItem`](crate::model::ChangeSetSummaryListItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_id: std::option::Option<std::string::String>,
         pub(crate) change_set_arn: std::option::Option<std::string::String>,
@@ -1048,7 +1048,7 @@ impl ChangeSummary {
 pub mod change_summary {
 
     /// A builder for [`ChangeSummary`](crate::model::ChangeSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_type: std::option::Option<std::string::String>,
         pub(crate) entity: std::option::Option<crate::model::Entity>,
@@ -1160,7 +1160,7 @@ impl ErrorDetail {
 pub mod error_detail {
 
     /// A builder for [`ErrorDetail`](crate::model::ErrorDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,

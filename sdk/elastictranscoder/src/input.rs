@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod cancel_job_input {
 
     /// A builder for [`CancelJobInput`](crate::input::CancelJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -149,7 +149,7 @@ impl CancelJobInput {
 pub mod create_job_input {
 
     /// A builder for [`CreateJobInput`](crate::input::CreateJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) input: std::option::Option<crate::model::JobInput>,
@@ -423,7 +423,7 @@ impl CreateJobInput {
 pub mod create_pipeline_input {
 
     /// A builder for [`CreatePipelineInput`](crate::input::CreatePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) input_bucket: std::option::Option<std::string::String>,
@@ -794,7 +794,7 @@ impl CreatePipelineInput {
 pub mod create_preset_input {
 
     /// A builder for [`CreatePresetInput`](crate::input::CreatePresetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1003,7 +1003,7 @@ impl CreatePresetInput {
 pub mod delete_pipeline_input {
 
     /// A builder for [`DeletePipelineInput`](crate::input::DeletePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1147,7 +1147,7 @@ impl DeletePipelineInput {
 pub mod delete_preset_input {
 
     /// A builder for [`DeletePresetInput`](crate::input::DeletePresetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1291,7 +1291,7 @@ impl DeletePresetInput {
 pub mod list_jobs_by_pipeline_input {
 
     /// A builder for [`ListJobsByPipelineInput`](crate::input::ListJobsByPipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) ascending: std::option::Option<std::string::String>,
@@ -1485,7 +1485,7 @@ impl ListJobsByPipelineInput {
 pub mod list_jobs_by_status_input {
 
     /// A builder for [`ListJobsByStatusInput`](crate::input::ListJobsByStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) ascending: std::option::Option<std::string::String>,
@@ -1675,7 +1675,7 @@ impl ListJobsByStatusInput {
 pub mod list_pipelines_input {
 
     /// A builder for [`ListPipelinesInput`](crate::input::ListPipelinesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ascending: std::option::Option<std::string::String>,
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -1831,7 +1831,7 @@ impl ListPipelinesInput {
 pub mod list_presets_input {
 
     /// A builder for [`ListPresetsInput`](crate::input::ListPresetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ascending: std::option::Option<std::string::String>,
         pub(crate) page_token: std::option::Option<std::string::String>,
@@ -1987,7 +1987,7 @@ impl ListPresetsInput {
 pub mod read_job_input {
 
     /// A builder for [`ReadJobInput`](crate::input::ReadJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -2129,7 +2129,7 @@ impl ReadJobInput {
 pub mod read_pipeline_input {
 
     /// A builder for [`ReadPipelineInput`](crate::input::ReadPipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -2273,7 +2273,7 @@ impl ReadPipelineInput {
 pub mod read_preset_input {
 
     /// A builder for [`ReadPresetInput`](crate::input::ReadPresetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -2417,7 +2417,7 @@ impl ReadPresetInput {
 pub mod test_role_input {
 
     /// A builder for [`TestRoleInput`](crate::input::TestRoleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role: std::option::Option<std::string::String>,
         pub(crate) input_bucket: std::option::Option<std::string::String>,
@@ -2603,7 +2603,7 @@ impl TestRoleInput {
 pub mod update_pipeline_input {
 
     /// A builder for [`UpdatePipelineInput`](crate::input::UpdatePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2971,7 +2971,7 @@ impl UpdatePipelineInput {
 pub mod update_pipeline_notifications_input {
 
     /// A builder for [`UpdatePipelineNotificationsInput`](crate::input::UpdatePipelineNotificationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) notifications: std::option::Option<crate::model::Notifications>,
@@ -3163,7 +3163,7 @@ impl UpdatePipelineNotificationsInput {
 pub mod update_pipeline_status_input {
 
     /// A builder for [`UpdatePipelineStatusInput`](crate::input::UpdatePipelineStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,

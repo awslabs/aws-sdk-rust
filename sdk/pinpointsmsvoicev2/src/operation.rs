@@ -5,7 +5,7 @@
 /// [`associate_origination_identity`](crate::client::Client::associate_origination_identity).
 ///
 /// See [`crate::client::fluent_builders::AssociateOriginationIdentity`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateOriginationIdentity {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateOriginationIden
 /// [`create_configuration_set`](crate::client::Client::create_configuration_set).
 ///
 /// See [`crate::client::fluent_builders::CreateConfigurationSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateConfigurationSet {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfigurationSet {
 /// [`create_event_destination`](crate::client::Client::create_event_destination).
 ///
 /// See [`crate::client::fluent_builders::CreateEventDestination`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateEventDestination {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEventDestination {
 /// [`create_opt_out_list`](crate::client::Client::create_opt_out_list).
 ///
 /// See [`crate::client::fluent_builders::CreateOptOutList`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateOptOutList {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOptOutList {
 /// [`create_pool`](crate::client::Client::create_pool).
 ///
 /// See [`crate::client::fluent_builders::CreatePool`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePool {
     _private: (),
 }
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePool {
 /// [`delete_configuration_set`](crate::client::Client::delete_configuration_set).
 ///
 /// See [`crate::client::fluent_builders::DeleteConfigurationSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConfigurationSet {
     _private: (),
 }
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationSet {
 /// [`delete_default_message_type`](crate::client::Client::delete_default_message_type).
 ///
 /// See [`crate::client::fluent_builders::DeleteDefaultMessageType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDefaultMessageType {
     _private: (),
 }
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDefaultMessageType
 /// [`delete_default_sender_id`](crate::client::Client::delete_default_sender_id).
 ///
 /// See [`crate::client::fluent_builders::DeleteDefaultSenderId`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDefaultSenderId {
     _private: (),
 }
@@ -275,7 +275,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDefaultSenderId {
 /// [`delete_event_destination`](crate::client::Client::delete_event_destination).
 ///
 /// See [`crate::client::fluent_builders::DeleteEventDestination`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEventDestination {
     _private: (),
 }
@@ -309,7 +309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEventDestination {
 /// [`delete_keyword`](crate::client::Client::delete_keyword).
 ///
 /// See [`crate::client::fluent_builders::DeleteKeyword`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteKeyword {
     _private: (),
 }
@@ -341,7 +341,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteKeyword {
 /// [`delete_opted_out_number`](crate::client::Client::delete_opted_out_number).
 ///
 /// See [`crate::client::fluent_builders::DeleteOptedOutNumber`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteOptedOutNumber {
     _private: (),
 }
@@ -375,7 +375,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOptedOutNumber {
 /// [`delete_opt_out_list`](crate::client::Client::delete_opt_out_list).
 ///
 /// See [`crate::client::fluent_builders::DeleteOptOutList`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteOptOutList {
     _private: (),
 }
@@ -409,7 +409,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOptOutList {
 /// [`delete_pool`](crate::client::Client::delete_pool).
 ///
 /// See [`crate::client::fluent_builders::DeletePool`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePool {
     _private: (),
 }
@@ -441,7 +441,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePool {
 /// [`delete_text_message_spend_limit_override`](crate::client::Client::delete_text_message_spend_limit_override).
 ///
 /// See [`crate::client::fluent_builders::DeleteTextMessageSpendLimitOverride`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTextMessageSpendLimitOverride {
     _private: (),
 }
@@ -477,7 +477,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTextMessageSpendLi
 /// [`delete_voice_message_spend_limit_override`](crate::client::Client::delete_voice_message_spend_limit_override).
 ///
 /// See [`crate::client::fluent_builders::DeleteVoiceMessageSpendLimitOverride`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVoiceMessageSpendLimitOverride {
     _private: (),
 }
@@ -513,7 +513,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVoiceMessageSpendL
 /// [`describe_account_attributes`](crate::client::Client::describe_account_attributes).
 ///
 /// See [`crate::client::fluent_builders::DescribeAccountAttributes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAccountAttributes {
     _private: (),
 }
@@ -547,7 +547,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountAttribute
 /// [`describe_account_limits`](crate::client::Client::describe_account_limits).
 ///
 /// See [`crate::client::fluent_builders::DescribeAccountLimits`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAccountLimits {
     _private: (),
 }
@@ -581,7 +581,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountLimits {
 /// [`describe_configuration_sets`](crate::client::Client::describe_configuration_sets).
 ///
 /// See [`crate::client::fluent_builders::DescribeConfigurationSets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConfigurationSets {
     _private: (),
 }
@@ -615,7 +615,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConfigurationSet
 /// [`describe_keywords`](crate::client::Client::describe_keywords).
 ///
 /// See [`crate::client::fluent_builders::DescribeKeywords`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeKeywords {
     _private: (),
 }
@@ -649,7 +649,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeKeywords {
 /// [`describe_opted_out_numbers`](crate::client::Client::describe_opted_out_numbers).
 ///
 /// See [`crate::client::fluent_builders::DescribeOptedOutNumbers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeOptedOutNumbers {
     _private: (),
 }
@@ -683,7 +683,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOptedOutNumbers 
 /// [`describe_opt_out_lists`](crate::client::Client::describe_opt_out_lists).
 ///
 /// See [`crate::client::fluent_builders::DescribeOptOutLists`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeOptOutLists {
     _private: (),
 }
@@ -717,7 +717,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOptOutLists {
 /// [`describe_phone_numbers`](crate::client::Client::describe_phone_numbers).
 ///
 /// See [`crate::client::fluent_builders::DescribePhoneNumbers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePhoneNumbers {
     _private: (),
 }
@@ -751,7 +751,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePhoneNumbers {
 /// [`describe_pools`](crate::client::Client::describe_pools).
 ///
 /// See [`crate::client::fluent_builders::DescribePools`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePools {
     _private: (),
 }
@@ -783,7 +783,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePools {
 /// [`describe_sender_ids`](crate::client::Client::describe_sender_ids).
 ///
 /// See [`crate::client::fluent_builders::DescribeSenderIds`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSenderIds {
     _private: (),
 }
@@ -817,7 +817,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSenderIds {
 /// [`describe_spend_limits`](crate::client::Client::describe_spend_limits).
 ///
 /// See [`crate::client::fluent_builders::DescribeSpendLimits`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSpendLimits {
     _private: (),
 }
@@ -851,7 +851,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSpendLimits {
 /// [`disassociate_origination_identity`](crate::client::Client::disassociate_origination_identity).
 ///
 /// See [`crate::client::fluent_builders::DisassociateOriginationIdentity`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateOriginationIdentity {
     _private: (),
 }
@@ -885,7 +885,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateOriginationI
 /// [`list_pool_origination_identities`](crate::client::Client::list_pool_origination_identities).
 ///
 /// See [`crate::client::fluent_builders::ListPoolOriginationIdentities`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPoolOriginationIdentities {
     _private: (),
 }
@@ -919,7 +919,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPoolOriginationIdent
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -953,7 +953,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`put_keyword`](crate::client::Client::put_keyword).
 ///
 /// See [`crate::client::fluent_builders::PutKeyword`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutKeyword {
     _private: (),
 }
@@ -985,7 +985,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutKeyword {
 /// [`put_opted_out_number`](crate::client::Client::put_opted_out_number).
 ///
 /// See [`crate::client::fluent_builders::PutOptedOutNumber`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutOptedOutNumber {
     _private: (),
 }
@@ -1019,7 +1019,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutOptedOutNumber {
 /// [`release_phone_number`](crate::client::Client::release_phone_number).
 ///
 /// See [`crate::client::fluent_builders::ReleasePhoneNumber`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ReleasePhoneNumber {
     _private: (),
 }
@@ -1053,7 +1053,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReleasePhoneNumber {
 /// [`request_phone_number`](crate::client::Client::request_phone_number).
 ///
 /// See [`crate::client::fluent_builders::RequestPhoneNumber`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RequestPhoneNumber {
     _private: (),
 }
@@ -1087,7 +1087,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RequestPhoneNumber {
 /// [`send_text_message`](crate::client::Client::send_text_message).
 ///
 /// See [`crate::client::fluent_builders::SendTextMessage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendTextMessage {
     _private: (),
 }
@@ -1121,7 +1121,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendTextMessage {
 /// [`send_voice_message`](crate::client::Client::send_voice_message).
 ///
 /// See [`crate::client::fluent_builders::SendVoiceMessage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendVoiceMessage {
     _private: (),
 }
@@ -1155,7 +1155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendVoiceMessage {
 /// [`set_default_message_type`](crate::client::Client::set_default_message_type).
 ///
 /// See [`crate::client::fluent_builders::SetDefaultMessageType`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetDefaultMessageType {
     _private: (),
 }
@@ -1189,7 +1189,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetDefaultMessageType {
 /// [`set_default_sender_id`](crate::client::Client::set_default_sender_id).
 ///
 /// See [`crate::client::fluent_builders::SetDefaultSenderId`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetDefaultSenderId {
     _private: (),
 }
@@ -1223,7 +1223,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetDefaultSenderId {
 /// [`set_text_message_spend_limit_override`](crate::client::Client::set_text_message_spend_limit_override).
 ///
 /// See [`crate::client::fluent_builders::SetTextMessageSpendLimitOverride`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetTextMessageSpendLimitOverride {
     _private: (),
 }
@@ -1257,7 +1257,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetTextMessageSpendLimit
 /// [`set_voice_message_spend_limit_override`](crate::client::Client::set_voice_message_spend_limit_override).
 ///
 /// See [`crate::client::fluent_builders::SetVoiceMessageSpendLimitOverride`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetVoiceMessageSpendLimitOverride {
     _private: (),
 }
@@ -1291,7 +1291,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetVoiceMessageSpendLimi
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1323,7 +1323,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1355,7 +1355,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_event_destination`](crate::client::Client::update_event_destination).
 ///
 /// See [`crate::client::fluent_builders::UpdateEventDestination`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateEventDestination {
     _private: (),
 }
@@ -1389,7 +1389,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEventDestination {
 /// [`update_phone_number`](crate::client::Client::update_phone_number).
 ///
 /// See [`crate::client::fluent_builders::UpdatePhoneNumber`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePhoneNumber {
     _private: (),
 }
@@ -1423,7 +1423,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePhoneNumber {
 /// [`update_pool`](crate::client::Client::update_pool).
 ///
 /// See [`crate::client::fluent_builders::UpdatePool`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePool {
     _private: (),
 }

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_certificate_authority_input {
 
     /// A builder for [`CreateCertificateAuthorityInput`](crate::input::CreateCertificateAuthorityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_configuration:
             std::option::Option<crate::model::CertificateAuthorityConfiguration>,
@@ -268,7 +268,7 @@ impl CreateCertificateAuthorityInput {
 pub mod create_certificate_authority_audit_report_input {
 
     /// A builder for [`CreateCertificateAuthorityAuditReportInput`](crate::input::CreateCertificateAuthorityAuditReportInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
         pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
@@ -453,7 +453,7 @@ impl CreateCertificateAuthorityAuditReportInput {
 pub mod create_permission_input {
 
     /// A builder for [`CreatePermissionInput`](crate::input::CreatePermissionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
         pub(crate) principal: std::option::Option<std::string::String>,
@@ -653,7 +653,7 @@ impl CreatePermissionInput {
 pub mod delete_certificate_authority_input {
 
     /// A builder for [`DeleteCertificateAuthorityInput`](crate::input::DeleteCertificateAuthorityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
         pub(crate) permanent_deletion_time_in_days: std::option::Option<i32>,
@@ -822,7 +822,7 @@ impl DeleteCertificateAuthorityInput {
 pub mod delete_permission_input {
 
     /// A builder for [`DeletePermissionInput`](crate::input::DeletePermissionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
         pub(crate) principal: std::option::Option<std::string::String>,
@@ -1001,7 +1001,7 @@ impl DeletePermissionInput {
 pub mod delete_policy_input {
 
     /// A builder for [`DeletePolicyInput`](crate::input::DeletePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1146,7 +1146,7 @@ impl DeletePolicyInput {
 pub mod describe_certificate_authority_input {
 
     /// A builder for [`DescribeCertificateAuthorityInput`](crate::input::DescribeCertificateAuthorityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
     }
@@ -1297,7 +1297,7 @@ impl DescribeCertificateAuthorityInput {
 pub mod describe_certificate_authority_audit_report_input {
 
     /// A builder for [`DescribeCertificateAuthorityAuditReportInput`](crate::input::DescribeCertificateAuthorityAuditReportInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
         pub(crate) audit_report_id: std::option::Option<std::string::String>,
@@ -1463,7 +1463,7 @@ impl DescribeCertificateAuthorityAuditReportInput {
 pub mod get_certificate_input {
 
     /// A builder for [`GetCertificateInput`](crate::input::GetCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -1630,7 +1630,7 @@ impl GetCertificateInput {
 pub mod get_certificate_authority_certificate_input {
 
     /// A builder for [`GetCertificateAuthorityCertificateInput`](crate::input::GetCertificateAuthorityCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
     }
@@ -1781,7 +1781,7 @@ impl GetCertificateAuthorityCertificateInput {
 pub mod get_certificate_authority_csr_input {
 
     /// A builder for [`GetCertificateAuthorityCsrInput`](crate::input::GetCertificateAuthorityCsrInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
     }
@@ -1932,7 +1932,7 @@ impl GetCertificateAuthorityCsrInput {
 pub mod get_policy_input {
 
     /// A builder for [`GetPolicyInput`](crate::input::GetPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2075,7 +2075,7 @@ impl GetPolicyInput {
 pub mod import_certificate_authority_certificate_input {
 
     /// A builder for [`ImportCertificateAuthorityCertificateInput`](crate::input::ImportCertificateAuthorityCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
         pub(crate) certificate: std::option::Option<aws_smithy_types::Blob>,
@@ -2258,7 +2258,7 @@ impl ImportCertificateAuthorityCertificateInput {
 pub mod issue_certificate_input {
 
     /// A builder for [`IssueCertificateInput`](crate::input::IssueCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_passthrough: std::option::Option<crate::model::ApiPassthrough>,
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
@@ -2538,7 +2538,7 @@ impl IssueCertificateInput {
 pub mod list_certificate_authorities_input {
 
     /// A builder for [`ListCertificateAuthoritiesInput`](crate::input::ListCertificateAuthoritiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2714,7 +2714,7 @@ impl ListCertificateAuthoritiesInput {
 pub mod list_permissions_input {
 
     /// A builder for [`ListPermissionsInput`](crate::input::ListPermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2886,7 +2886,7 @@ impl ListPermissionsInput {
 pub mod list_tags_input {
 
     /// A builder for [`ListTagsInput`](crate::input::ListTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3057,7 +3057,7 @@ impl ListTagsInput {
 pub mod put_policy_input {
 
     /// A builder for [`PutPolicyInput`](crate::input::PutPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -3214,7 +3214,7 @@ impl PutPolicyInput {
 pub mod restore_certificate_authority_input {
 
     /// A builder for [`RestoreCertificateAuthorityInput`](crate::input::RestoreCertificateAuthorityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
     }
@@ -3365,7 +3365,7 @@ impl RestoreCertificateAuthorityInput {
 pub mod revoke_certificate_input {
 
     /// A builder for [`RevokeCertificateInput`](crate::input::RevokeCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
         pub(crate) certificate_serial: std::option::Option<std::string::String>,
@@ -3551,7 +3551,7 @@ impl RevokeCertificateInput {
 pub mod tag_certificate_authority_input {
 
     /// A builder for [`TagCertificateAuthorityInput`](crate::input::TagCertificateAuthorityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3726,7 +3726,7 @@ impl TagCertificateAuthorityInput {
 pub mod untag_certificate_authority_input {
 
     /// A builder for [`UntagCertificateAuthorityInput`](crate::input::UntagCertificateAuthorityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3901,7 +3901,7 @@ impl UntagCertificateAuthorityInput {
 pub mod update_certificate_authority_input {
 
     /// A builder for [`UpdateCertificateAuthorityInput`](crate::input::UpdateCertificateAuthorityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
         pub(crate) revocation_configuration:

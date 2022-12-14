@@ -5,7 +5,7 @@
 /// [`add_tags`](crate::client::Client::add_tags).
 ///
 /// See [`crate::client::fluent_builders::AddTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AddTags {
     _private: (),
 }
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTags {
 /// [`create_batch_prediction`](crate::client::Client::create_batch_prediction).
 ///
 /// See [`crate::client::fluent_builders::CreateBatchPrediction`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBatchPrediction {
     _private: (),
 }
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBatchPrediction {
 /// [`create_data_source_from_rds`](crate::client::Client::create_data_source_from_rds).
 ///
 /// See [`crate::client::fluent_builders::CreateDataSourceFromRDS`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDataSourceFromRDS {
     _private: (),
 }
@@ -104,7 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataSourceFromRDS 
 /// [`create_data_source_from_redshift`](crate::client::Client::create_data_source_from_redshift).
 ///
 /// See [`crate::client::fluent_builders::CreateDataSourceFromRedshift`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDataSourceFromRedshift {
     _private: (),
 }
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataSourceFromReds
 /// [`create_data_source_from_s3`](crate::client::Client::create_data_source_from_s3).
 ///
 /// See [`crate::client::fluent_builders::CreateDataSourceFromS3`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDataSourceFromS3 {
     _private: (),
 }
@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataSourceFromS3 {
 /// [`create_evaluation`](crate::client::Client::create_evaluation).
 ///
 /// See [`crate::client::fluent_builders::CreateEvaluation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateEvaluation {
     _private: (),
 }
@@ -206,7 +206,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEvaluation {
 /// [`create_ml_model`](crate::client::Client::create_ml_model).
 ///
 /// See [`crate::client::fluent_builders::CreateMLModel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMLModel {
     _private: (),
 }
@@ -238,7 +238,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMLModel {
 /// [`create_realtime_endpoint`](crate::client::Client::create_realtime_endpoint).
 ///
 /// See [`crate::client::fluent_builders::CreateRealtimeEndpoint`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRealtimeEndpoint {
     _private: (),
 }
@@ -272,7 +272,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRealtimeEndpoint {
 /// [`delete_batch_prediction`](crate::client::Client::delete_batch_prediction).
 ///
 /// See [`crate::client::fluent_builders::DeleteBatchPrediction`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBatchPrediction {
     _private: (),
 }
@@ -306,7 +306,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBatchPrediction {
 /// [`delete_data_source`](crate::client::Client::delete_data_source).
 ///
 /// See [`crate::client::fluent_builders::DeleteDataSource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDataSource {
     _private: (),
 }
@@ -340,7 +340,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataSource {
 /// [`delete_evaluation`](crate::client::Client::delete_evaluation).
 ///
 /// See [`crate::client::fluent_builders::DeleteEvaluation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEvaluation {
     _private: (),
 }
@@ -374,7 +374,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEvaluation {
 /// [`delete_ml_model`](crate::client::Client::delete_ml_model).
 ///
 /// See [`crate::client::fluent_builders::DeleteMLModel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMLModel {
     _private: (),
 }
@@ -406,7 +406,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMLModel {
 /// [`delete_realtime_endpoint`](crate::client::Client::delete_realtime_endpoint).
 ///
 /// See [`crate::client::fluent_builders::DeleteRealtimeEndpoint`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRealtimeEndpoint {
     _private: (),
 }
@@ -440,7 +440,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRealtimeEndpoint {
 /// [`delete_tags`](crate::client::Client::delete_tags).
 ///
 /// See [`crate::client::fluent_builders::DeleteTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTags {
     _private: (),
 }
@@ -472,7 +472,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTags {
 /// [`describe_batch_predictions`](crate::client::Client::describe_batch_predictions).
 ///
 /// See [`crate::client::fluent_builders::DescribeBatchPredictions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBatchPredictions {
     _private: (),
 }
@@ -506,7 +506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBatchPredictions
 /// [`describe_data_sources`](crate::client::Client::describe_data_sources).
 ///
 /// See [`crate::client::fluent_builders::DescribeDataSources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDataSources {
     _private: (),
 }
@@ -540,7 +540,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDataSources {
 /// [`describe_evaluations`](crate::client::Client::describe_evaluations).
 ///
 /// See [`crate::client::fluent_builders::DescribeEvaluations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEvaluations {
     _private: (),
 }
@@ -574,7 +574,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEvaluations {
 /// [`describe_ml_models`](crate::client::Client::describe_ml_models).
 ///
 /// See [`crate::client::fluent_builders::DescribeMLModels`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMLModels {
     _private: (),
 }
@@ -608,7 +608,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMLModels {
 /// [`describe_tags`](crate::client::Client::describe_tags).
 ///
 /// See [`crate::client::fluent_builders::DescribeTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTags {
     _private: (),
 }
@@ -640,7 +640,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTags {
 /// [`get_batch_prediction`](crate::client::Client::get_batch_prediction).
 ///
 /// See [`crate::client::fluent_builders::GetBatchPrediction`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBatchPrediction {
     _private: (),
 }
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBatchPrediction {
 /// [`get_data_source`](crate::client::Client::get_data_source).
 ///
 /// See [`crate::client::fluent_builders::GetDataSource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDataSource {
     _private: (),
 }
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataSource {
 /// [`get_evaluation`](crate::client::Client::get_evaluation).
 ///
 /// See [`crate::client::fluent_builders::GetEvaluation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEvaluation {
     _private: (),
 }
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEvaluation {
 /// [`get_ml_model`](crate::client::Client::get_ml_model).
 ///
 /// See [`crate::client::fluent_builders::GetMLModel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMLModel {
     _private: (),
 }
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMLModel {
 /// [`predict`](crate::client::Client::predict).
 ///
 /// See [`crate::client::fluent_builders::Predict`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct Predict {
     _private: (),
 }
@@ -801,7 +801,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Predict {
 /// [`update_batch_prediction`](crate::client::Client::update_batch_prediction).
 ///
 /// See [`crate::client::fluent_builders::UpdateBatchPrediction`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBatchPrediction {
     _private: (),
 }
@@ -835,7 +835,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBatchPrediction {
 /// [`update_data_source`](crate::client::Client::update_data_source).
 ///
 /// See [`crate::client::fluent_builders::UpdateDataSource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDataSource {
     _private: (),
 }
@@ -869,7 +869,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDataSource {
 /// [`update_evaluation`](crate::client::Client::update_evaluation).
 ///
 /// See [`crate::client::fluent_builders::UpdateEvaluation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateEvaluation {
     _private: (),
 }
@@ -903,7 +903,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEvaluation {
 /// [`update_ml_model`](crate::client::Client::update_ml_model).
 ///
 /// See [`crate::client::fluent_builders::UpdateMLModel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateMLModel {
     _private: (),
 }

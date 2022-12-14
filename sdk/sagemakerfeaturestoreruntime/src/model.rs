@@ -25,7 +25,7 @@ impl FeatureValue {
 pub mod feature_value {
 
     /// A builder for [`FeatureValue`](crate::model::FeatureValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_name: std::option::Option<std::string::String>,
         pub(crate) value_as_string: std::option::Option<std::string::String>,
@@ -104,7 +104,7 @@ impl BatchGetRecordIdentifier {
 pub mod batch_get_record_identifier {
 
     /// A builder for [`BatchGetRecordIdentifier`](crate::model::BatchGetRecordIdentifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
         pub(crate) record_identifiers_value_as_string:
@@ -222,7 +222,7 @@ impl BatchGetRecordError {
 pub mod batch_get_record_error {
 
     /// A builder for [`BatchGetRecordError`](crate::model::BatchGetRecordError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
         pub(crate) record_identifier_value_as_string: std::option::Option<std::string::String>,
@@ -332,7 +332,7 @@ impl BatchGetRecordResultDetail {
 pub mod batch_get_record_result_detail {
 
     /// A builder for [`BatchGetRecordResultDetail`](crate::model::BatchGetRecordResultDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
         pub(crate) record_identifier_value_as_string: std::option::Option<std::string::String>,

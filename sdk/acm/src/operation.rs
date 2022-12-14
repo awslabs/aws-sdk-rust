@@ -5,7 +5,7 @@
 /// [`add_tags_to_certificate`](crate::client::Client::add_tags_to_certificate).
 ///
 /// See [`crate::client::fluent_builders::AddTagsToCertificate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AddTagsToCertificate {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTagsToCertificate {
 /// [`delete_certificate`](crate::client::Client::delete_certificate).
 ///
 /// See [`crate::client::fluent_builders::DeleteCertificate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCertificate {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCertificate {
 /// [`describe_certificate`](crate::client::Client::describe_certificate).
 ///
 /// See [`crate::client::fluent_builders::DescribeCertificate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCertificate {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCertificate {
 /// [`export_certificate`](crate::client::Client::export_certificate).
 ///
 /// See [`crate::client::fluent_builders::ExportCertificate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExportCertificate {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportCertificate {
 /// [`get_account_configuration`](crate::client::Client::get_account_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetAccountConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAccountConfiguration {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountConfiguration 
 /// [`get_certificate`](crate::client::Client::get_certificate).
 ///
 /// See [`crate::client::fluent_builders::GetCertificate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCertificate {
     _private: (),
 }
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCertificate {
 /// [`import_certificate`](crate::client::Client::import_certificate).
 ///
 /// See [`crate::client::fluent_builders::ImportCertificate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ImportCertificate {
     _private: (),
 }
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportCertificate {
 /// [`list_certificates`](crate::client::Client::list_certificates).
 ///
 /// See [`crate::client::fluent_builders::ListCertificates`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCertificates {
     _private: (),
 }
@@ -275,7 +275,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCertificates {
 /// [`list_tags_for_certificate`](crate::client::Client::list_tags_for_certificate).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForCertificate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForCertificate {
     _private: (),
 }
@@ -309,7 +309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForCertificate {
 /// [`put_account_configuration`](crate::client::Client::put_account_configuration).
 ///
 /// See [`crate::client::fluent_builders::PutAccountConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutAccountConfiguration {
     _private: (),
 }
@@ -343,7 +343,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccountConfiguration 
 /// [`remove_tags_from_certificate`](crate::client::Client::remove_tags_from_certificate).
 ///
 /// See [`crate::client::fluent_builders::RemoveTagsFromCertificate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemoveTagsFromCertificate {
     _private: (),
 }
@@ -377,7 +377,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTagsFromCertificat
 /// [`renew_certificate`](crate::client::Client::renew_certificate).
 ///
 /// See [`crate::client::fluent_builders::RenewCertificate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RenewCertificate {
     _private: (),
 }
@@ -411,7 +411,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RenewCertificate {
 /// [`request_certificate`](crate::client::Client::request_certificate).
 ///
 /// See [`crate::client::fluent_builders::RequestCertificate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RequestCertificate {
     _private: (),
 }
@@ -445,7 +445,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RequestCertificate {
 /// [`resend_validation_email`](crate::client::Client::resend_validation_email).
 ///
 /// See [`crate::client::fluent_builders::ResendValidationEmail`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ResendValidationEmail {
     _private: (),
 }
@@ -479,7 +479,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResendValidationEmail {
 /// [`update_certificate_options`](crate::client::Client::update_certificate_options).
 ///
 /// See [`crate::client::fluent_builders::UpdateCertificateOptions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCertificateOptions {
     _private: (),
 }

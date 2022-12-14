@@ -49,7 +49,7 @@ impl std::fmt::Debug for UserProfileSummary {
 pub mod user_profile_summary {
 
     /// A builder for [`UserProfileSummary`](crate::model::UserProfileSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -163,7 +163,7 @@ impl TeamMember {
 pub mod team_member {
 
     /// A builder for [`TeamMember`](crate::model::TeamMember).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) project_role: std::option::Option<std::string::String>,
@@ -235,7 +235,7 @@ impl Resource {
 pub mod resource {
 
     /// A builder for [`Resource`](crate::model::Resource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -288,7 +288,7 @@ impl ProjectSummary {
 pub mod project_summary {
 
     /// A builder for [`ProjectSummary`](crate::model::ProjectSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_id: std::option::Option<std::string::String>,
         pub(crate) project_arn: std::option::Option<std::string::String>,
@@ -355,7 +355,7 @@ impl ProjectStatus {
 pub mod project_status {
 
     /// A builder for [`ProjectStatus`](crate::model::ProjectStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<std::string::String>,
@@ -433,7 +433,7 @@ impl Toolchain {
 pub mod toolchain {
 
     /// A builder for [`Toolchain`](crate::model::Toolchain).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::ToolchainSource>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -525,7 +525,7 @@ impl ToolchainSource {
 pub mod toolchain_source {
 
     /// A builder for [`ToolchainSource`](crate::model::ToolchainSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3Location>,
     }
@@ -578,7 +578,7 @@ impl S3Location {
 pub mod s3_location {
 
     /// A builder for [`S3Location`](crate::model::S3Location).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) bucket_key: std::option::Option<std::string::String>,
@@ -645,7 +645,7 @@ impl Code {
 pub mod code {
 
     /// A builder for [`Code`](crate::model::Code).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::CodeSource>,
         pub(crate) destination: std::option::Option<crate::model::CodeDestination>,
@@ -715,7 +715,7 @@ impl CodeDestination {
 pub mod code_destination {
 
     /// A builder for [`CodeDestination`](crate::model::CodeDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_commit: std::option::Option<crate::model::CodeCommitCodeDestination>,
         pub(crate) git_hub: std::option::Option<crate::model::GitHubCodeDestination>,
@@ -836,7 +836,7 @@ impl std::fmt::Debug for GitHubCodeDestination {
 pub mod git_hub_code_destination {
 
     /// A builder for [`GitHubCodeDestination`](crate::model::GitHubCodeDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -969,7 +969,7 @@ impl CodeCommitCodeDestination {
 pub mod code_commit_code_destination {
 
     /// A builder for [`CodeCommitCodeDestination`](crate::model::CodeCommitCodeDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -1015,7 +1015,7 @@ impl CodeSource {
 pub mod code_source {
 
     /// A builder for [`CodeSource`](crate::model::CodeSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3Location>,
     }

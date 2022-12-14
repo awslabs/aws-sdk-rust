@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod search_input {
 
     /// A builder for [`SearchInput`](crate::input::SearchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cursor: std::option::Option<std::string::String>,
         pub(crate) expr: std::option::Option<std::string::String>,
@@ -485,7 +485,7 @@ impl SearchInput {
 pub mod suggest_input {
 
     /// A builder for [`SuggestInput`](crate::input::SuggestInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query: std::option::Option<std::string::String>,
         pub(crate) suggester: std::option::Option<std::string::String>,

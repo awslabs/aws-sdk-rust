@@ -5,7 +5,7 @@
 /// [`disable_control`](crate::client::Client::disable_control).
 ///
 /// See [`crate::client::fluent_builders::DisableControl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisableControl {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableControl {
 /// [`enable_control`](crate::client::Client::enable_control).
 ///
 /// See [`crate::client::fluent_builders::EnableControl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct EnableControl {
     _private: (),
 }
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableControl {
 /// [`get_control_operation`](crate::client::Client::get_control_operation).
 ///
 /// See [`crate::client::fluent_builders::GetControlOperation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetControlOperation {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetControlOperation {
 /// [`list_enabled_controls`](crate::client::Client::list_enabled_controls).
 ///
 /// See [`crate::client::fluent_builders::ListEnabledControls`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEnabledControls {
     _private: (),
 }

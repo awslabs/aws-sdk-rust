@@ -60,7 +60,7 @@ impl Webhook {
 pub mod webhook {
 
     /// A builder for [`Webhook`](crate::model::Webhook).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) webhook_arn: std::option::Option<std::string::String>,
         pub(crate) webhook_id: std::option::Option<std::string::String>,
@@ -242,7 +242,7 @@ impl DomainAssociation {
 pub mod domain_association {
 
     /// A builder for [`DomainAssociation`](crate::model::DomainAssociation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_association_arn: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -440,7 +440,7 @@ impl SubDomain {
 pub mod sub_domain {
 
     /// A builder for [`SubDomain`](crate::model::SubDomain).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sub_domain_setting: std::option::Option<crate::model::SubDomainSetting>,
         pub(crate) verified: std::option::Option<bool>,
@@ -522,7 +522,7 @@ impl SubDomainSetting {
 pub mod sub_domain_setting {
 
     /// A builder for [`SubDomainSetting`](crate::model::SubDomainSetting).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prefix: std::option::Option<std::string::String>,
         pub(crate) branch_name: std::option::Option<std::string::String>,
@@ -942,7 +942,7 @@ impl std::fmt::Debug for Branch {
 pub mod branch {
 
     /// A builder for [`Branch`](crate::model::Branch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) branch_arn: std::option::Option<std::string::String>,
         pub(crate) branch_name: std::option::Option<std::string::String>,
@@ -1760,7 +1760,7 @@ impl std::fmt::Debug for App {
 pub mod app {
 
     /// A builder for [`App`](crate::model::App).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) app_arn: std::option::Option<std::string::String>,
@@ -2411,7 +2411,7 @@ impl std::fmt::Debug for AutoBranchCreationConfig {
 pub mod auto_branch_creation_config {
 
     /// A builder for [`AutoBranchCreationConfig`](crate::model::AutoBranchCreationConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) stage: std::option::Option<crate::model::Stage>,
         pub(crate) framework: std::option::Option<std::string::String>,
@@ -2638,7 +2638,7 @@ impl ProductionBranch {
 pub mod production_branch {
 
     /// A builder for [`ProductionBranch`](crate::model::ProductionBranch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_deploy_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<std::string::String>,
@@ -2813,7 +2813,7 @@ impl CustomRule {
 pub mod custom_rule {
 
     /// A builder for [`CustomRule`](crate::model::CustomRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
         pub(crate) target: std::option::Option<std::string::String>,
@@ -3107,7 +3107,7 @@ impl JobSummary {
 pub mod job_summary {
 
     /// A builder for [`JobSummary`](crate::model::JobSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -3521,7 +3521,7 @@ impl BackendEnvironment {
 pub mod backend_environment {
 
     /// A builder for [`BackendEnvironment`](crate::model::BackendEnvironment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backend_environment_arn: std::option::Option<std::string::String>,
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -3651,7 +3651,7 @@ impl Artifact {
 pub mod artifact {
 
     /// A builder for [`Artifact`](crate::model::Artifact).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) artifact_file_name: std::option::Option<std::string::String>,
         pub(crate) artifact_id: std::option::Option<std::string::String>,
@@ -3721,7 +3721,7 @@ impl Job {
 pub mod job {
 
     /// A builder for [`Job`](crate::model::Job).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::JobSummary>,
         pub(crate) steps: std::option::Option<std::vec::Vec<crate::model::Step>>,
@@ -3864,7 +3864,7 @@ impl Step {
 pub mod step {
 
     /// A builder for [`Step`](crate::model::Step).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) step_name: std::option::Option<std::string::String>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,

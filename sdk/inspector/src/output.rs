@@ -7,7 +7,7 @@ pub struct UpdateAssessmentTargetOutput {}
 pub mod update_assessment_target_output {
 
     /// A builder for [`UpdateAssessmentTargetOutput`](crate::output::UpdateAssessmentTargetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateAssessmentTargetOutput`](crate::output::UpdateAssessmentTargetOutput).
@@ -31,7 +31,7 @@ pub struct UnsubscribeFromEventOutput {}
 pub mod unsubscribe_from_event_output {
 
     /// A builder for [`UnsubscribeFromEventOutput`](crate::output::UnsubscribeFromEventOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UnsubscribeFromEventOutput`](crate::output::UnsubscribeFromEventOutput).
@@ -55,7 +55,7 @@ pub struct SubscribeToEventOutput {}
 pub mod subscribe_to_event_output {
 
     /// A builder for [`SubscribeToEventOutput`](crate::output::SubscribeToEventOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SubscribeToEventOutput`](crate::output::SubscribeToEventOutput).
@@ -79,7 +79,7 @@ pub struct StopAssessmentRunOutput {}
 pub mod stop_assessment_run_output {
 
     /// A builder for [`StopAssessmentRunOutput`](crate::output::StopAssessmentRunOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StopAssessmentRunOutput`](crate::output::StopAssessmentRunOutput).
@@ -113,7 +113,7 @@ impl StartAssessmentRunOutput {
 pub mod start_assessment_run_output {
 
     /// A builder for [`StartAssessmentRunOutput`](crate::output::StartAssessmentRunOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_arn: std::option::Option<std::string::String>,
     }
@@ -154,7 +154,7 @@ pub struct SetTagsForResourceOutput {}
 pub mod set_tags_for_resource_output {
 
     /// A builder for [`SetTagsForResourceOutput`](crate::output::SetTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetTagsForResourceOutput`](crate::output::SetTagsForResourceOutput).
@@ -194,7 +194,7 @@ impl RemoveAttributesFromFindingsOutput {
 pub mod remove_attributes_from_findings_output {
 
     /// A builder for [`RemoveAttributesFromFindingsOutput`](crate::output::RemoveAttributesFromFindingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_items: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,
@@ -249,7 +249,7 @@ pub struct RegisterCrossAccountAccessRoleOutput {}
 pub mod register_cross_account_access_role_output {
 
     /// A builder for [`RegisterCrossAccountAccessRoleOutput`](crate::output::RegisterCrossAccountAccessRoleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RegisterCrossAccountAccessRoleOutput`](crate::output::RegisterCrossAccountAccessRoleOutput).
@@ -290,7 +290,7 @@ impl PreviewAgentsOutput {
 pub mod preview_agents_output {
 
     /// A builder for [`PreviewAgentsOutput`](crate::output::PreviewAgentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_previews: std::option::Option<std::vec::Vec<crate::model::AgentPreview>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -359,7 +359,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -421,7 +421,7 @@ impl ListRulesPackagesOutput {
 pub mod list_rules_packages_output {
 
     /// A builder for [`ListRulesPackagesOutput`](crate::output::ListRulesPackagesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -497,7 +497,7 @@ impl ListFindingsOutput {
 pub mod list_findings_output {
 
     /// A builder for [`ListFindingsOutput`](crate::output::ListFindingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -573,7 +573,7 @@ impl ListExclusionsOutput {
 pub mod list_exclusions_output {
 
     /// A builder for [`ListExclusionsOutput`](crate::output::ListExclusionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exclusion_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -649,7 +649,7 @@ impl ListEventSubscriptionsOutput {
 pub mod list_event_subscriptions_output {
 
     /// A builder for [`ListEventSubscriptionsOutput`](crate::output::ListEventSubscriptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -725,7 +725,7 @@ impl ListAssessmentTemplatesOutput {
 pub mod list_assessment_templates_output {
 
     /// A builder for [`ListAssessmentTemplatesOutput`](crate::output::ListAssessmentTemplatesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_template_arns:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -802,7 +802,7 @@ impl ListAssessmentTargetsOutput {
 pub mod list_assessment_targets_output {
 
     /// A builder for [`ListAssessmentTargetsOutput`](crate::output::ListAssessmentTargetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -878,7 +878,7 @@ impl ListAssessmentRunsOutput {
 pub mod list_assessment_runs_output {
 
     /// A builder for [`ListAssessmentRunsOutput`](crate::output::ListAssessmentRunsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -956,7 +956,7 @@ impl ListAssessmentRunAgentsOutput {
 pub mod list_assessment_run_agents_output {
 
     /// A builder for [`ListAssessmentRunAgentsOutput`](crate::output::ListAssessmentRunAgentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_run_agents:
             std::option::Option<std::vec::Vec<crate::model::AssessmentRunAgent>>,
@@ -1026,7 +1026,7 @@ impl GetTelemetryMetadataOutput {
 pub mod get_telemetry_metadata_output {
 
     /// A builder for [`GetTelemetryMetadataOutput`](crate::output::GetTelemetryMetadataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) telemetry_metadata:
             std::option::Option<std::vec::Vec<crate::model::TelemetryMetadata>>,
@@ -1098,7 +1098,7 @@ impl GetExclusionsPreviewOutput {
 pub mod get_exclusions_preview_output {
 
     /// A builder for [`GetExclusionsPreviewOutput`](crate::output::GetExclusionsPreviewOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) preview_status: std::option::Option<crate::model::PreviewStatus>,
         pub(crate) exclusion_previews:
@@ -1190,7 +1190,7 @@ impl GetAssessmentReportOutput {
 pub mod get_assessment_report_output {
 
     /// A builder for [`GetAssessmentReportOutput`](crate::output::GetAssessmentReportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ReportStatus>,
         pub(crate) url: std::option::Option<std::string::String>,
@@ -1266,7 +1266,7 @@ impl DescribeRulesPackagesOutput {
 pub mod describe_rules_packages_output {
 
     /// A builder for [`DescribeRulesPackagesOutput`](crate::output::DescribeRulesPackagesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules_packages: std::option::Option<std::vec::Vec<crate::model::RulesPackage>>,
         pub(crate) failed_items: std::option::Option<
@@ -1365,7 +1365,7 @@ impl DescribeResourceGroupsOutput {
 pub mod describe_resource_groups_output {
 
     /// A builder for [`DescribeResourceGroupsOutput`](crate::output::DescribeResourceGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_groups: std::option::Option<std::vec::Vec<crate::model::ResourceGroup>>,
         pub(crate) failed_items: std::option::Option<
@@ -1464,7 +1464,7 @@ impl DescribeFindingsOutput {
 pub mod describe_findings_output {
 
     /// A builder for [`DescribeFindingsOutput`](crate::output::DescribeFindingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) findings: std::option::Option<std::vec::Vec<crate::model::Finding>>,
         pub(crate) failed_items: std::option::Option<
@@ -1568,7 +1568,7 @@ impl DescribeExclusionsOutput {
 pub mod describe_exclusions_output {
 
     /// A builder for [`DescribeExclusionsOutput`](crate::output::DescribeExclusionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exclusions: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::Exclusion>,
@@ -1676,7 +1676,7 @@ impl DescribeCrossAccountAccessRoleOutput {
 pub mod describe_cross_account_access_role_output {
 
     /// A builder for [`DescribeCrossAccountAccessRoleOutput`](crate::output::DescribeCrossAccountAccessRoleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) valid: std::option::Option<bool>,
@@ -1764,7 +1764,7 @@ impl DescribeAssessmentTemplatesOutput {
 pub mod describe_assessment_templates_output {
 
     /// A builder for [`DescribeAssessmentTemplatesOutput`](crate::output::DescribeAssessmentTemplatesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_templates:
             std::option::Option<std::vec::Vec<crate::model::AssessmentTemplate>>,
@@ -1864,7 +1864,7 @@ impl DescribeAssessmentTargetsOutput {
 pub mod describe_assessment_targets_output {
 
     /// A builder for [`DescribeAssessmentTargetsOutput`](crate::output::DescribeAssessmentTargetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_targets:
             std::option::Option<std::vec::Vec<crate::model::AssessmentTarget>>,
@@ -1964,7 +1964,7 @@ impl DescribeAssessmentRunsOutput {
 pub mod describe_assessment_runs_output {
 
     /// A builder for [`DescribeAssessmentRunsOutput`](crate::output::DescribeAssessmentRunsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_runs: std::option::Option<std::vec::Vec<crate::model::AssessmentRun>>,
         pub(crate) failed_items: std::option::Option<
@@ -2040,7 +2040,7 @@ pub struct DeleteAssessmentTemplateOutput {}
 pub mod delete_assessment_template_output {
 
     /// A builder for [`DeleteAssessmentTemplateOutput`](crate::output::DeleteAssessmentTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAssessmentTemplateOutput`](crate::output::DeleteAssessmentTemplateOutput).
@@ -2064,7 +2064,7 @@ pub struct DeleteAssessmentTargetOutput {}
 pub mod delete_assessment_target_output {
 
     /// A builder for [`DeleteAssessmentTargetOutput`](crate::output::DeleteAssessmentTargetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAssessmentTargetOutput`](crate::output::DeleteAssessmentTargetOutput).
@@ -2088,7 +2088,7 @@ pub struct DeleteAssessmentRunOutput {}
 pub mod delete_assessment_run_output {
 
     /// A builder for [`DeleteAssessmentRunOutput`](crate::output::DeleteAssessmentRunOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAssessmentRunOutput`](crate::output::DeleteAssessmentRunOutput).
@@ -2122,7 +2122,7 @@ impl CreateResourceGroupOutput {
 pub mod create_resource_group_output {
 
     /// A builder for [`CreateResourceGroupOutput`](crate::output::CreateResourceGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_arn: std::option::Option<std::string::String>,
     }
@@ -2173,7 +2173,7 @@ impl CreateExclusionsPreviewOutput {
 pub mod create_exclusions_preview_output {
 
     /// A builder for [`CreateExclusionsPreviewOutput`](crate::output::CreateExclusionsPreviewOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) preview_token: std::option::Option<std::string::String>,
     }
@@ -2224,7 +2224,7 @@ impl CreateAssessmentTemplateOutput {
 pub mod create_assessment_template_output {
 
     /// A builder for [`CreateAssessmentTemplateOutput`](crate::output::CreateAssessmentTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_template_arn: std::option::Option<std::string::String>,
     }
@@ -2275,7 +2275,7 @@ impl CreateAssessmentTargetOutput {
 pub mod create_assessment_target_output {
 
     /// A builder for [`CreateAssessmentTargetOutput`](crate::output::CreateAssessmentTargetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assessment_target_arn: std::option::Option<std::string::String>,
     }
@@ -2332,7 +2332,7 @@ impl AddAttributesToFindingsOutput {
 pub mod add_attributes_to_findings_output {
 
     /// A builder for [`AddAttributesToFindingsOutput`](crate::output::AddAttributesToFindingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_items: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::FailedItemDetails>,

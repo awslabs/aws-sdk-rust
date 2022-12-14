@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_cell_input {
 
     /// A builder for [`CreateCellInput`](crate::input::CreateCellInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cell_name: std::option::Option<std::string::String>,
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -195,7 +195,7 @@ impl CreateCellInput {
 pub mod create_cross_account_authorization_input {
 
     /// A builder for [`CreateCrossAccountAuthorizationInput`](crate::input::CreateCrossAccountAuthorizationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cross_account_authorization: std::option::Option<std::string::String>,
     }
@@ -342,7 +342,7 @@ impl CreateCrossAccountAuthorizationInput {
 pub mod create_readiness_check_input {
 
     /// A builder for [`CreateReadinessCheckInput`](crate::input::CreateReadinessCheckInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) readiness_check_name: std::option::Option<std::string::String>,
         pub(crate) resource_set_name: std::option::Option<std::string::String>,
@@ -533,7 +533,7 @@ impl CreateReadinessCheckInput {
 pub mod create_recovery_group_input {
 
     /// A builder for [`CreateRecoveryGroupInput`](crate::input::CreateRecoveryGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) recovery_group_name: std::option::Option<std::string::String>,
@@ -728,7 +728,7 @@ impl CreateRecoveryGroupInput {
 pub mod create_resource_set_input {
 
     /// A builder for [`CreateResourceSetInput`](crate::input::CreateResourceSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_set_name: std::option::Option<std::string::String>,
         pub(crate) resource_set_type: std::option::Option<std::string::String>,
@@ -940,7 +940,7 @@ impl CreateResourceSetInput {
 pub mod delete_cell_input {
 
     /// A builder for [`DeleteCellInput`](crate::input::DeleteCellInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cell_name: std::option::Option<std::string::String>,
     }
@@ -1086,7 +1086,7 @@ impl DeleteCellInput {
 pub mod delete_cross_account_authorization_input {
 
     /// A builder for [`DeleteCrossAccountAuthorizationInput`](crate::input::DeleteCrossAccountAuthorizationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cross_account_authorization: std::option::Option<std::string::String>,
     }
@@ -1244,7 +1244,7 @@ impl DeleteCrossAccountAuthorizationInput {
 pub mod delete_readiness_check_input {
 
     /// A builder for [`DeleteReadinessCheckInput`](crate::input::DeleteReadinessCheckInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) readiness_check_name: std::option::Option<std::string::String>,
     }
@@ -1399,7 +1399,7 @@ impl DeleteReadinessCheckInput {
 pub mod delete_recovery_group_input {
 
     /// A builder for [`DeleteRecoveryGroupInput`](crate::input::DeleteRecoveryGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_group_name: std::option::Option<std::string::String>,
     }
@@ -1554,7 +1554,7 @@ impl DeleteRecoveryGroupInput {
 pub mod delete_resource_set_input {
 
     /// A builder for [`DeleteResourceSetInput`](crate::input::DeleteResourceSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_set_name: std::option::Option<std::string::String>,
     }
@@ -1709,7 +1709,7 @@ impl DeleteResourceSetInput {
 pub mod get_architecture_recommendations_input {
 
     /// A builder for [`GetArchitectureRecommendationsInput`](crate::input::GetArchitectureRecommendationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1907,7 +1907,7 @@ impl GetArchitectureRecommendationsInput {
 pub mod get_cell_input {
 
     /// A builder for [`GetCellInput`](crate::input::GetCellInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cell_name: std::option::Option<std::string::String>,
     }
@@ -2051,7 +2051,7 @@ impl GetCellInput {
 pub mod get_cell_readiness_summary_input {
 
     /// A builder for [`GetCellReadinessSummaryInput`](crate::input::GetCellReadinessSummaryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cell_name: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2242,7 +2242,7 @@ impl GetCellReadinessSummaryInput {
 pub mod get_readiness_check_input {
 
     /// A builder for [`GetReadinessCheckInput`](crate::input::GetReadinessCheckInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) readiness_check_name: std::option::Option<std::string::String>,
     }
@@ -2397,7 +2397,7 @@ impl GetReadinessCheckInput {
 pub mod get_readiness_check_resource_status_input {
 
     /// A builder for [`GetReadinessCheckResourceStatusInput`](crate::input::GetReadinessCheckResourceStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2630,7 +2630,7 @@ impl GetReadinessCheckResourceStatusInput {
 pub mod get_readiness_check_status_input {
 
     /// A builder for [`GetReadinessCheckStatusInput`](crate::input::GetReadinessCheckStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2828,7 +2828,7 @@ impl GetReadinessCheckStatusInput {
 pub mod get_recovery_group_input {
 
     /// A builder for [`GetRecoveryGroupInput`](crate::input::GetRecoveryGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_group_name: std::option::Option<std::string::String>,
     }
@@ -2983,7 +2983,7 @@ impl GetRecoveryGroupInput {
 pub mod get_recovery_group_readiness_summary_input {
 
     /// A builder for [`GetRecoveryGroupReadinessSummaryInput`](crate::input::GetRecoveryGroupReadinessSummaryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3181,7 +3181,7 @@ impl GetRecoveryGroupReadinessSummaryInput {
 pub mod get_resource_set_input {
 
     /// A builder for [`GetResourceSetInput`](crate::input::GetResourceSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_set_name: std::option::Option<std::string::String>,
     }
@@ -3334,7 +3334,7 @@ impl GetResourceSetInput {
 pub mod list_cells_input {
 
     /// A builder for [`ListCellsInput`](crate::input::ListCellsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3489,7 +3489,7 @@ impl ListCellsInput {
 pub mod list_cross_account_authorizations_input {
 
     /// A builder for [`ListCrossAccountAuthorizationsInput`](crate::input::ListCrossAccountAuthorizationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3648,7 +3648,7 @@ impl ListCrossAccountAuthorizationsInput {
 pub mod list_readiness_checks_input {
 
     /// A builder for [`ListReadinessChecksInput`](crate::input::ListReadinessChecksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3807,7 +3807,7 @@ impl ListReadinessChecksInput {
 pub mod list_recovery_groups_input {
 
     /// A builder for [`ListRecoveryGroupsInput`](crate::input::ListRecoveryGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3966,7 +3966,7 @@ impl ListRecoveryGroupsInput {
 pub mod list_resource_sets_input {
 
     /// A builder for [`ListResourceSetsInput`](crate::input::ListResourceSetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4125,7 +4125,7 @@ impl ListResourceSetsInput {
 pub mod list_rules_input {
 
     /// A builder for [`ListRulesInput`](crate::input::ListRulesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4303,7 +4303,7 @@ impl ListRulesInput {
 pub mod list_tags_for_resources_input {
 
     /// A builder for [`ListTagsForResourcesInput`](crate::input::ListTagsForResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -4451,7 +4451,7 @@ impl ListTagsForResourcesInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -4640,7 +4640,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4825,7 +4825,7 @@ impl UntagResourceInput {
 pub mod update_cell_input {
 
     /// A builder for [`UpdateCellInput`](crate::input::UpdateCellInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cell_name: std::option::Option<std::string::String>,
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5006,7 +5006,7 @@ impl UpdateCellInput {
 pub mod update_readiness_check_input {
 
     /// A builder for [`UpdateReadinessCheckInput`](crate::input::UpdateReadinessCheckInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) readiness_check_name: std::option::Option<std::string::String>,
         pub(crate) resource_set_name: std::option::Option<std::string::String>,
@@ -5192,7 +5192,7 @@ impl UpdateReadinessCheckInput {
 pub mod update_recovery_group_input {
 
     /// A builder for [`UpdateRecoveryGroupInput`](crate::input::UpdateRecoveryGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) recovery_group_name: std::option::Option<std::string::String>,
@@ -5382,7 +5382,7 @@ impl UpdateRecoveryGroupInput {
 pub mod update_resource_set_input {
 
     /// A builder for [`UpdateResourceSetInput`](crate::input::UpdateResourceSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_set_name: std::option::Option<std::string::String>,
         pub(crate) resource_set_type: std::option::Option<std::string::String>,

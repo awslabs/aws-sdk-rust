@@ -5,7 +5,7 @@
 /// [`delete_report_definition`](crate::client::Client::delete_report_definition).
 ///
 /// See [`crate::client::fluent_builders::DeleteReportDefinition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteReportDefinition {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReportDefinition {
 /// [`get_report_definition`](crate::client::Client::get_report_definition).
 ///
 /// See [`crate::client::fluent_builders::GetReportDefinition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetReportDefinition {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReportDefinition {
 /// [`import_application_usage`](crate::client::Client::import_application_usage).
 ///
 /// See [`crate::client::fluent_builders::ImportApplicationUsage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ImportApplicationUsage {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportApplicationUsage {
 /// [`list_report_definitions`](crate::client::Client::list_report_definitions).
 ///
 /// See [`crate::client::fluent_builders::ListReportDefinitions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListReportDefinitions {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReportDefinitions {
 /// [`put_report_definition`](crate::client::Client::put_report_definition).
 ///
 /// See [`crate::client::fluent_builders::PutReportDefinition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutReportDefinition {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutReportDefinition {
 /// [`update_report_definition`](crate::client::Client::update_report_definition).
 ///
 /// See [`crate::client::fluent_builders::UpdateReportDefinition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateReportDefinition {
     _private: (),
 }

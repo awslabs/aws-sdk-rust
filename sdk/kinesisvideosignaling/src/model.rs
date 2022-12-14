@@ -39,7 +39,7 @@ impl IceServer {
 pub mod ice_server {
 
     /// A builder for [`IceServer`](crate::model::IceServer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uris: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) username: std::option::Option<std::string::String>,

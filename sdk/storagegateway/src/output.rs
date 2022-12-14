@@ -18,7 +18,7 @@ impl UpdateVtlDeviceTypeOutput {
 pub mod update_vtl_device_type_output {
 
     /// A builder for [`UpdateVtlDeviceTypeOutput`](crate::output::UpdateVtlDeviceTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vtl_device_arn: std::option::Option<std::string::String>,
     }
@@ -69,7 +69,7 @@ impl UpdateSnapshotScheduleOutput {
 pub mod update_snapshot_schedule_output {
 
     /// A builder for [`UpdateSnapshotScheduleOutput`](crate::output::UpdateSnapshotScheduleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
     }
@@ -117,7 +117,7 @@ impl UpdateSmbSecurityStrategyOutput {
 pub mod update_smb_security_strategy_output {
 
     /// A builder for [`UpdateSmbSecurityStrategyOutput`](crate::output::UpdateSmbSecurityStrategyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -165,7 +165,7 @@ impl UpdateSmbLocalGroupsOutput {
 pub mod update_smb_local_groups_output {
 
     /// A builder for [`UpdateSmbLocalGroupsOutput`](crate::output::UpdateSmbLocalGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -213,7 +213,7 @@ impl UpdateSmbFileShareVisibilityOutput {
 pub mod update_smb_file_share_visibility_output {
 
     /// A builder for [`UpdateSmbFileShareVisibilityOutput`](crate::output::UpdateSmbFileShareVisibilityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -261,7 +261,7 @@ impl UpdateSmbFileShareOutput {
 pub mod update_smb_file_share_output {
 
     /// A builder for [`UpdateSmbFileShareOutput`](crate::output::UpdateSmbFileShareOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
     }
@@ -312,7 +312,7 @@ impl UpdateNfsFileShareOutput {
 pub mod update_nfs_file_share_output {
 
     /// A builder for [`UpdateNfsFileShareOutput`](crate::output::UpdateNfsFileShareOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
     }
@@ -363,7 +363,7 @@ impl UpdateMaintenanceStartTimeOutput {
 pub mod update_maintenance_start_time_output {
 
     /// A builder for [`UpdateMaintenanceStartTimeOutput`](crate::output::UpdateMaintenanceStartTimeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -411,7 +411,7 @@ impl UpdateGatewaySoftwareNowOutput {
 pub mod update_gateway_software_now_output {
 
     /// A builder for [`UpdateGatewaySoftwareNowOutput`](crate::output::UpdateGatewaySoftwareNowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -466,7 +466,7 @@ impl UpdateGatewayInformationOutput {
 pub mod update_gateway_information_output {
 
     /// A builder for [`UpdateGatewayInformationOutput`](crate::output::UpdateGatewayInformationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) gateway_name: std::option::Option<std::string::String>,
@@ -526,7 +526,7 @@ impl UpdateFileSystemAssociationOutput {
 pub mod update_file_system_association_output {
 
     /// A builder for [`UpdateFileSystemAssociationOutput`](crate::output::UpdateFileSystemAssociationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_association_arn: std::option::Option<std::string::String>,
     }
@@ -587,7 +587,7 @@ impl UpdateChapCredentialsOutput {
 pub mod update_chap_credentials_output {
 
     /// A builder for [`UpdateChapCredentialsOutput`](crate::output::UpdateChapCredentialsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
         pub(crate) initiator_name: std::option::Option<std::string::String>,
@@ -650,7 +650,7 @@ impl UpdateBandwidthRateLimitScheduleOutput {
 pub mod update_bandwidth_rate_limit_schedule_output {
 
     /// A builder for [`UpdateBandwidthRateLimitScheduleOutput`](crate::output::UpdateBandwidthRateLimitScheduleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -698,7 +698,7 @@ impl UpdateBandwidthRateLimitOutput {
 pub mod update_bandwidth_rate_limit_output {
 
     /// A builder for [`UpdateBandwidthRateLimitOutput`](crate::output::UpdateBandwidthRateLimitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -746,7 +746,7 @@ impl UpdateAutomaticTapeCreationPolicyOutput {
 pub mod update_automatic_tape_creation_policy_output {
 
     /// A builder for [`UpdateAutomaticTapeCreationPolicyOutput`](crate::output::UpdateAutomaticTapeCreationPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -794,7 +794,7 @@ impl StartGatewayOutput {
 pub mod start_gateway_output {
 
     /// A builder for [`StartGatewayOutput`](crate::output::StartGatewayOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -842,7 +842,7 @@ impl StartAvailabilityMonitorTestOutput {
 pub mod start_availability_monitor_test_output {
 
     /// A builder for [`StartAvailabilityMonitorTestOutput`](crate::output::StartAvailabilityMonitorTestOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -890,7 +890,7 @@ impl ShutdownGatewayOutput {
 pub mod shutdown_gateway_output {
 
     /// A builder for [`ShutdownGatewayOutput`](crate::output::ShutdownGatewayOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -938,7 +938,7 @@ impl SetSmbGuestPasswordOutput {
 pub mod set_smb_guest_password_output {
 
     /// A builder for [`SetSmbGuestPasswordOutput`](crate::output::SetSmbGuestPasswordOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -986,7 +986,7 @@ impl SetLocalConsolePasswordOutput {
 pub mod set_local_console_password_output {
 
     /// A builder for [`SetLocalConsolePasswordOutput`](crate::output::SetLocalConsolePasswordOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -1034,7 +1034,7 @@ impl RetrieveTapeRecoveryPointOutput {
 pub mod retrieve_tape_recovery_point_output {
 
     /// A builder for [`RetrieveTapeRecoveryPointOutput`](crate::output::RetrieveTapeRecoveryPointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
     }
@@ -1082,7 +1082,7 @@ impl RetrieveTapeArchiveOutput {
 pub mod retrieve_tape_archive_output {
 
     /// A builder for [`RetrieveTapeArchiveOutput`](crate::output::RetrieveTapeArchiveOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
     }
@@ -1130,7 +1130,7 @@ impl ResetCacheOutput {
 pub mod reset_cache_output {
 
     /// A builder for [`ResetCacheOutput`](crate::output::ResetCacheOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -1178,7 +1178,7 @@ impl RemoveTagsFromResourceOutput {
 pub mod remove_tags_from_resource_output {
 
     /// A builder for [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1233,7 +1233,7 @@ impl RefreshCacheOutput {
 pub mod refresh_cache_output {
 
     /// A builder for [`RefreshCacheOutput`](crate::output::RefreshCacheOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
         pub(crate) notification_id: std::option::Option<std::string::String>,
@@ -1306,7 +1306,7 @@ impl NotifyWhenUploadedOutput {
 pub mod notify_when_uploaded_output {
 
     /// A builder for [`NotifyWhenUploadedOutput`](crate::output::NotifyWhenUploadedOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
         pub(crate) notification_id: std::option::Option<std::string::String>,
@@ -1390,7 +1390,7 @@ impl ListVolumesOutput {
 pub mod list_volumes_output {
 
     /// A builder for [`ListVolumesOutput`](crate::output::ListVolumesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -1481,7 +1481,7 @@ impl ListVolumeRecoveryPointsOutput {
 pub mod list_volume_recovery_points_output {
 
     /// A builder for [`ListVolumeRecoveryPointsOutput`](crate::output::ListVolumeRecoveryPointsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) volume_recovery_point_infos:
@@ -1554,7 +1554,7 @@ impl ListVolumeInitiatorsOutput {
 pub mod list_volume_initiators_output {
 
     /// A builder for [`ListVolumeInitiatorsOutput`](crate::output::ListVolumeInitiatorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) initiators: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1622,7 +1622,7 @@ impl ListTapesOutput {
 pub mod list_tapes_output {
 
     /// A builder for [`ListTapesOutput`](crate::output::ListTapesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_infos: std::option::Option<std::vec::Vec<crate::model::TapeInfo>>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -1698,7 +1698,7 @@ impl ListTapePoolsOutput {
 pub mod list_tape_pools_output {
 
     /// A builder for [`ListTapePoolsOutput`](crate::output::ListTapePoolsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_infos: std::option::Option<std::vec::Vec<crate::model::PoolInfo>>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -1781,7 +1781,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -1875,7 +1875,7 @@ impl ListLocalDisksOutput {
 pub mod list_local_disks_output {
 
     /// A builder for [`ListLocalDisksOutput`](crate::output::ListLocalDisksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) disks: std::option::Option<std::vec::Vec<crate::model::Disk>>,
@@ -1957,7 +1957,7 @@ impl ListGatewaysOutput {
 pub mod list_gateways_output {
 
     /// A builder for [`ListGatewaysOutput`](crate::output::ListGatewaysOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateways: std::option::Option<std::vec::Vec<crate::model::GatewayInfo>>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2043,7 +2043,7 @@ impl ListFileSystemAssociationsOutput {
 pub mod list_file_system_associations_output {
 
     /// A builder for [`ListFileSystemAssociationsOutput`](crate::output::ListFileSystemAssociationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -2144,7 +2144,7 @@ impl ListFileSharesOutput {
 pub mod list_file_shares_output {
 
     /// A builder for [`ListFileSharesOutput`](crate::output::ListFileSharesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
@@ -2229,7 +2229,7 @@ impl ListAutomaticTapeCreationPoliciesOutput {
 pub mod list_automatic_tape_creation_policies_output {
 
     /// A builder for [`ListAutomaticTapeCreationPoliciesOutput`](crate::output::ListAutomaticTapeCreationPoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatic_tape_creation_policy_infos:
             std::option::Option<std::vec::Vec<crate::model::AutomaticTapeCreationPolicyInfo>>,
@@ -2321,7 +2321,7 @@ impl JoinDomainOutput {
 pub mod join_domain_output {
 
     /// A builder for [`JoinDomainOutput`](crate::output::JoinDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) active_directory_status:
@@ -2406,7 +2406,7 @@ impl DisassociateFileSystemOutput {
 pub mod disassociate_file_system_output {
 
     /// A builder for [`DisassociateFileSystemOutput`](crate::output::DisassociateFileSystemOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_association_arn: std::option::Option<std::string::String>,
     }
@@ -2460,7 +2460,7 @@ impl DisableGatewayOutput {
 pub mod disable_gateway_output {
 
     /// A builder for [`DisableGatewayOutput`](crate::output::DisableGatewayOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -2508,7 +2508,7 @@ impl DetachVolumeOutput {
 pub mod detach_volume_output {
 
     /// A builder for [`DetachVolumeOutput`](crate::output::DetachVolumeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
     }
@@ -2577,7 +2577,7 @@ impl DescribeWorkingStorageOutput {
 pub mod describe_working_storage_output {
 
     /// A builder for [`DescribeWorkingStorageOutput`](crate::output::DescribeWorkingStorageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) disk_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2694,7 +2694,7 @@ impl DescribeVtlDevicesOutput {
 pub mod describe_vtl_devices_output {
 
     /// A builder for [`DescribeVtlDevicesOutput`](crate::output::DescribeVtlDevicesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) vtl_devices: std::option::Option<std::vec::Vec<crate::model::VtlDevice>>,
@@ -2796,7 +2796,7 @@ impl DescribeUploadBufferOutput {
 pub mod describe_upload_buffer_output {
 
     /// A builder for [`DescribeUploadBufferOutput`](crate::output::DescribeUploadBufferOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) disk_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2903,7 +2903,7 @@ impl DescribeTapesOutput {
 pub mod describe_tapes_output {
 
     /// A builder for [`DescribeTapesOutput`](crate::output::DescribeTapesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tapes: std::option::Option<std::vec::Vec<crate::model::Tape>>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2993,7 +2993,7 @@ impl DescribeTapeRecoveryPointsOutput {
 pub mod describe_tape_recovery_points_output {
 
     /// A builder for [`DescribeTapeRecoveryPointsOutput`](crate::output::DescribeTapeRecoveryPointsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) tape_recovery_point_infos:
@@ -3087,7 +3087,7 @@ impl DescribeTapeArchivesOutput {
 pub mod describe_tape_archives_output {
 
     /// A builder for [`DescribeTapeArchivesOutput`](crate::output::DescribeTapeArchivesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_archives: std::option::Option<std::vec::Vec<crate::model::TapeArchive>>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -3192,7 +3192,7 @@ impl DescribeStorediScsiVolumesOutput {
 pub mod describe_storedi_scsi_volumes_output {
 
     /// A builder for [`DescribeStorediScsiVolumesOutput`](crate::output::DescribeStorediScsiVolumesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storedi_scsi_volumes:
             std::option::Option<std::vec::Vec<crate::model::StorediScsiVolume>>,
@@ -3321,7 +3321,7 @@ impl DescribeSnapshotScheduleOutput {
 pub mod describe_snapshot_schedule_output {
 
     /// A builder for [`DescribeSnapshotScheduleOutput`](crate::output::DescribeSnapshotScheduleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
         pub(crate) start_at: std::option::Option<i32>,
@@ -3512,7 +3512,7 @@ impl DescribeSmbSettingsOutput {
 pub mod describe_smb_settings_output {
 
     /// A builder for [`DescribeSmbSettingsOutput`](crate::output::DescribeSmbSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -3678,7 +3678,7 @@ impl DescribeSmbFileSharesOutput {
 pub mod describe_smb_file_shares_output {
 
     /// A builder for [`DescribeSmbFileSharesOutput`](crate::output::DescribeSmbFileSharesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) smb_file_share_info_list:
             std::option::Option<std::vec::Vec<crate::model::SmbFileShareInfo>>,
@@ -3739,7 +3739,7 @@ impl DescribeNfsFileSharesOutput {
 pub mod describe_nfs_file_shares_output {
 
     /// A builder for [`DescribeNfsFileSharesOutput`](crate::output::DescribeNfsFileSharesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nfs_file_share_info_list:
             std::option::Option<std::vec::Vec<crate::model::NfsFileShareInfo>>,
@@ -3839,7 +3839,7 @@ impl DescribeMaintenanceStartTimeOutput {
 pub mod describe_maintenance_start_time_output {
 
     /// A builder for [`DescribeMaintenanceStartTimeOutput`](crate::output::DescribeMaintenanceStartTimeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) hour_of_day: std::option::Option<i32>,
@@ -4095,7 +4095,7 @@ impl DescribeGatewayInformationOutput {
 pub mod describe_gateway_information_output {
 
     /// A builder for [`DescribeGatewayInformationOutput`](crate::output::DescribeGatewayInformationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) gateway_id: std::option::Option<std::string::String>,
@@ -4462,7 +4462,7 @@ impl DescribeFileSystemAssociationsOutput {
 pub mod describe_file_system_associations_output {
 
     /// A builder for [`DescribeFileSystemAssociationsOutput`](crate::output::DescribeFileSystemAssociationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_association_info_list:
             std::option::Option<std::vec::Vec<crate::model::FileSystemAssociationInfo>>,
@@ -4535,7 +4535,7 @@ impl DescribeChapCredentialsOutput {
 pub mod describe_chap_credentials_output {
 
     /// A builder for [`DescribeChapCredentialsOutput`](crate::output::DescribeChapCredentialsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) chap_credentials: std::option::Option<std::vec::Vec<crate::model::ChapInfo>>,
     }
@@ -4604,7 +4604,7 @@ impl DescribeCachediScsiVolumesOutput {
 pub mod describe_cachedi_scsi_volumes_output {
 
     /// A builder for [`DescribeCachediScsiVolumesOutput`](crate::output::DescribeCachediScsiVolumesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cachedi_scsi_volumes:
             std::option::Option<std::vec::Vec<crate::model::CachediScsiVolume>>,
@@ -4704,7 +4704,7 @@ impl DescribeCacheOutput {
 pub mod describe_cache_output {
 
     /// A builder for [`DescribeCacheOutput`](crate::output::DescribeCacheOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) disk_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4843,7 +4843,7 @@ impl DescribeBandwidthRateLimitScheduleOutput {
 pub mod describe_bandwidth_rate_limit_schedule_output {
 
     /// A builder for [`DescribeBandwidthRateLimitScheduleOutput`](crate::output::DescribeBandwidthRateLimitScheduleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) bandwidth_rate_limit_intervals:
@@ -4930,7 +4930,7 @@ impl DescribeBandwidthRateLimitOutput {
 pub mod describe_bandwidth_rate_limit_output {
 
     /// A builder for [`DescribeBandwidthRateLimitOutput`](crate::output::DescribeBandwidthRateLimitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) average_upload_rate_limit_in_bits_per_sec: std::option::Option<i64>,
@@ -5024,7 +5024,7 @@ impl DescribeAvailabilityMonitorTestOutput {
 pub mod describe_availability_monitor_test_output {
 
     /// A builder for [`DescribeAvailabilityMonitorTestOutput`](crate::output::DescribeAvailabilityMonitorTestOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::AvailabilityMonitorTestStatus>,
@@ -5102,7 +5102,7 @@ impl DeleteVolumeOutput {
 pub mod delete_volume_output {
 
     /// A builder for [`DeleteVolumeOutput`](crate::output::DeleteVolumeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
     }
@@ -5150,7 +5150,7 @@ impl DeleteTapePoolOutput {
 pub mod delete_tape_pool_output {
 
     /// A builder for [`DeleteTapePoolOutput`](crate::output::DeleteTapePoolOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_arn: std::option::Option<std::string::String>,
     }
@@ -5198,7 +5198,7 @@ impl DeleteTapeArchiveOutput {
 pub mod delete_tape_archive_output {
 
     /// A builder for [`DeleteTapeArchiveOutput`](crate::output::DeleteTapeArchiveOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
     }
@@ -5246,7 +5246,7 @@ impl DeleteTapeOutput {
 pub mod delete_tape_output {
 
     /// A builder for [`DeleteTapeOutput`](crate::output::DeleteTapeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
     }
@@ -5294,7 +5294,7 @@ impl DeleteSnapshotScheduleOutput {
 pub mod delete_snapshot_schedule_output {
 
     /// A builder for [`DeleteSnapshotScheduleOutput`](crate::output::DeleteSnapshotScheduleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
     }
@@ -5342,7 +5342,7 @@ impl DeleteGatewayOutput {
 pub mod delete_gateway_output {
 
     /// A builder for [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -5390,7 +5390,7 @@ impl DeleteFileShareOutput {
 pub mod delete_file_share_output {
 
     /// A builder for [`DeleteFileShareOutput`](crate::output::DeleteFileShareOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
     }
@@ -5448,7 +5448,7 @@ impl DeleteChapCredentialsOutput {
 pub mod delete_chap_credentials_output {
 
     /// A builder for [`DeleteChapCredentialsOutput`](crate::output::DeleteChapCredentialsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
         pub(crate) initiator_name: std::option::Option<std::string::String>,
@@ -5511,7 +5511,7 @@ impl DeleteBandwidthRateLimitOutput {
 pub mod delete_bandwidth_rate_limit_output {
 
     /// A builder for [`DeleteBandwidthRateLimitOutput`](crate::output::DeleteBandwidthRateLimitOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -5559,7 +5559,7 @@ impl DeleteAutomaticTapeCreationPolicyOutput {
 pub mod delete_automatic_tape_creation_policy_output {
 
     /// A builder for [`DeleteAutomaticTapeCreationPolicyOutput`](crate::output::DeleteAutomaticTapeCreationPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -5607,7 +5607,7 @@ impl CreateTapeWithBarcodeOutput {
 pub mod create_tape_with_barcode_output {
 
     /// A builder for [`CreateTapeWithBarcodeOutput`](crate::output::CreateTapeWithBarcodeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
     }
@@ -5655,7 +5655,7 @@ impl CreateTapesOutput {
 pub mod create_tapes_output {
 
     /// A builder for [`CreateTapesOutput`](crate::output::CreateTapesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -5712,7 +5712,7 @@ impl CreateTapePoolOutput {
 pub mod create_tape_pool_output {
 
     /// A builder for [`CreateTapePoolOutput`](crate::output::CreateTapePoolOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_arn: std::option::Option<std::string::String>,
     }
@@ -5774,7 +5774,7 @@ impl CreateStorediScsiVolumeOutput {
 pub mod create_storedi_scsi_volume_output {
 
     /// A builder for [`CreateStorediScsiVolumeOutput`](crate::output::CreateStorediScsiVolumeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
         pub(crate) volume_size_in_bytes: std::option::Option<i64>,
@@ -5860,7 +5860,7 @@ impl CreateSnapshotFromVolumeRecoveryPointOutput {
 pub mod create_snapshot_from_volume_recovery_point_output {
 
     /// A builder for [`CreateSnapshotFromVolumeRecoveryPointOutput`](crate::output::CreateSnapshotFromVolumeRecoveryPointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
         pub(crate) volume_arn: std::option::Option<std::string::String>,
@@ -5942,7 +5942,7 @@ impl CreateSnapshotOutput {
 pub mod create_snapshot_output {
 
     /// A builder for [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
@@ -6002,7 +6002,7 @@ impl CreateSmbFileShareOutput {
 pub mod create_smb_file_share_output {
 
     /// A builder for [`CreateSmbFileShareOutput`](crate::output::CreateSmbFileShareOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
     }
@@ -6053,7 +6053,7 @@ impl CreateNfsFileShareOutput {
 pub mod create_nfs_file_share_output {
 
     /// A builder for [`CreateNfsFileShareOutput`](crate::output::CreateNfsFileShareOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
     }
@@ -6111,7 +6111,7 @@ impl CreateCachediScsiVolumeOutput {
 pub mod create_cachedi_scsi_volume_output {
 
     /// A builder for [`CreateCachediScsiVolumeOutput`](crate::output::CreateCachediScsiVolumeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -6171,7 +6171,7 @@ impl CancelRetrievalOutput {
 pub mod cancel_retrieval_output {
 
     /// A builder for [`CancelRetrievalOutput`](crate::output::CancelRetrievalOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
     }
@@ -6219,7 +6219,7 @@ impl CancelArchivalOutput {
 pub mod cancel_archival_output {
 
     /// A builder for [`CancelArchivalOutput`](crate::output::CancelArchivalOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
     }
@@ -6274,7 +6274,7 @@ impl AttachVolumeOutput {
 pub mod attach_volume_output {
 
     /// A builder for [`AttachVolumeOutput`](crate::output::AttachVolumeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -6334,7 +6334,7 @@ impl AssociateFileSystemOutput {
 pub mod associate_file_system_output {
 
     /// A builder for [`AssociateFileSystemOutput`](crate::output::AssociateFileSystemOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_association_arn: std::option::Option<std::string::String>,
     }
@@ -6388,7 +6388,7 @@ impl AssignTapePoolOutput {
 pub mod assign_tape_pool_output {
 
     /// A builder for [`AssignTapePoolOutput`](crate::output::AssignTapePoolOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
     }
@@ -6436,7 +6436,7 @@ impl AddWorkingStorageOutput {
 pub mod add_working_storage_output {
 
     /// A builder for [`AddWorkingStorageOutput`](crate::output::AddWorkingStorageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -6484,7 +6484,7 @@ impl AddUploadBufferOutput {
 pub mod add_upload_buffer_output {
 
     /// A builder for [`AddUploadBufferOutput`](crate::output::AddUploadBufferOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -6532,7 +6532,7 @@ impl AddTagsToResourceOutput {
 pub mod add_tags_to_resource_output {
 
     /// A builder for [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -6580,7 +6580,7 @@ impl AddCacheOutput {
 pub mod add_cache_output {
 
     /// A builder for [`AddCacheOutput`](crate::output::AddCacheOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
@@ -6630,7 +6630,7 @@ impl ActivateGatewayOutput {
 pub mod activate_gateway_output {
 
     /// A builder for [`ActivateGatewayOutput`](crate::output::ActivateGatewayOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }

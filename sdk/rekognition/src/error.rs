@@ -46,7 +46,7 @@ impl std::error::Error for ThrottlingException {}
 pub mod throttling_exception {
 
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -146,7 +146,7 @@ impl std::error::Error for ResourceNotFoundException {}
 pub mod resource_not_found_exception {
 
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -246,7 +246,7 @@ impl std::error::Error for ProvisionedThroughputExceededException {}
 pub mod provisioned_throughput_exceeded_exception {
 
     /// A builder for [`ProvisionedThroughputExceededException`](crate::error::ProvisionedThroughputExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -346,7 +346,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
 
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -446,7 +446,7 @@ impl std::error::Error for InternalServerError {}
 pub mod internal_server_error {
 
     /// A builder for [`InternalServerError`](crate::error::InternalServerError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -546,7 +546,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
 
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -646,7 +646,7 @@ impl std::error::Error for ResourceInUseException {}
 pub mod resource_in_use_exception {
 
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -746,7 +746,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
 
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -847,7 +847,7 @@ impl std::error::Error for ServiceQuotaExceededException {}
 pub mod service_quota_exceeded_exception {
 
     /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -947,7 +947,7 @@ impl std::error::Error for VideoTooLargeException {}
 pub mod video_too_large_exception {
 
     /// A builder for [`VideoTooLargeException`](crate::error::VideoTooLargeException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -1047,7 +1047,7 @@ impl std::error::Error for InvalidS3ObjectException {}
 pub mod invalid_s3_object_exception {
 
     /// A builder for [`InvalidS3ObjectException`](crate::error::InvalidS3ObjectException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -1147,7 +1147,7 @@ impl std::error::Error for IdempotentParameterMismatchException {}
 pub mod idempotent_parameter_mismatch_exception {
 
     /// A builder for [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -1247,7 +1247,7 @@ impl std::error::Error for InvalidImageFormatException {}
 pub mod invalid_image_format_exception {
 
     /// A builder for [`InvalidImageFormatException`](crate::error::InvalidImageFormatException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -1347,7 +1347,7 @@ impl std::error::Error for ImageTooLargeException {}
 pub mod image_too_large_exception {
 
     /// A builder for [`ImageTooLargeException`](crate::error::ImageTooLargeException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -1447,7 +1447,7 @@ impl std::error::Error for ResourceAlreadyExistsException {}
 pub mod resource_already_exists_exception {
 
     /// A builder for [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -1547,7 +1547,7 @@ impl std::error::Error for MalformedPolicyDocumentException {}
 pub mod malformed_policy_document_exception {
 
     /// A builder for [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -1647,7 +1647,7 @@ impl std::error::Error for InvalidPolicyRevisionIdException {}
 pub mod invalid_policy_revision_id_exception {
 
     /// A builder for [`InvalidPolicyRevisionIdException`](crate::error::InvalidPolicyRevisionIdException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -1747,7 +1747,7 @@ impl std::error::Error for InvalidPaginationTokenException {}
 pub mod invalid_pagination_token_exception {
 
     /// A builder for [`InvalidPaginationTokenException`](crate::error::InvalidPaginationTokenException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -1847,7 +1847,7 @@ impl std::error::Error for ResourceNotReadyException {}
 pub mod resource_not_ready_exception {
 
     /// A builder for [`ResourceNotReadyException`](crate::error::ResourceNotReadyException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -1968,7 +1968,7 @@ impl std::error::Error for HumanLoopQuotaExceededException {}
 pub mod human_loop_quota_exceeded_exception {
 
     /// A builder for [`HumanLoopQuotaExceededException`](crate::error::HumanLoopQuotaExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) quota_code: std::option::Option<std::string::String>,

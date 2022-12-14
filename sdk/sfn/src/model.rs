@@ -18,7 +18,7 @@ impl TracingConfiguration {
 pub mod tracing_configuration {
 
     /// A builder for [`TracingConfiguration`](crate::model::TracingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
     }
@@ -80,7 +80,7 @@ impl LoggingConfiguration {
 pub mod logging_configuration {
 
     /// A builder for [`LoggingConfiguration`](crate::model::LoggingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) level: std::option::Option<crate::model::LogLevel>,
         pub(crate) include_execution_data: std::option::Option<bool>,
@@ -163,7 +163,7 @@ impl LogDestination {
 pub mod log_destination {
 
     /// A builder for [`LogDestination`](crate::model::LogDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_log_group:
             std::option::Option<crate::model::CloudWatchLogsLogGroup>,
@@ -218,7 +218,7 @@ impl CloudWatchLogsLogGroup {
 pub mod cloud_watch_logs_log_group {
 
     /// A builder for [`CloudWatchLogsLogGroup`](crate::model::CloudWatchLogsLogGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_arn: std::option::Option<std::string::String>,
     }
@@ -378,7 +378,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -445,7 +445,7 @@ impl BillingDetails {
 pub mod billing_details {
 
     /// A builder for [`BillingDetails`](crate::model::BillingDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billed_memory_used_in_mb: std::option::Option<i64>,
         pub(crate) billed_duration_in_milliseconds: std::option::Option<i64>,
@@ -510,7 +510,7 @@ impl CloudWatchEventsExecutionDataDetails {
 pub mod cloud_watch_events_execution_data_details {
 
     /// A builder for [`CloudWatchEventsExecutionDataDetails`](crate::model::CloudWatchEventsExecutionDataDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) included: std::option::Option<bool>,
     }
@@ -694,7 +694,7 @@ impl StateMachineListItem {
 pub mod state_machine_list_item {
 
     /// A builder for [`StateMachineListItem`](crate::model::StateMachineListItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -948,7 +948,7 @@ impl ExecutionListItem {
 pub mod execution_list_item {
 
     /// A builder for [`ExecutionListItem`](crate::model::ExecutionListItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_arn: std::option::Option<std::string::String>,
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
@@ -1226,7 +1226,7 @@ impl ActivityListItem {
 pub mod activity_list_item {
 
     /// A builder for [`ActivityListItem`](crate::model::ActivityListItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1652,7 +1652,7 @@ impl HistoryEvent {
 pub mod history_event {
 
     /// A builder for [`HistoryEvent`](crate::model::HistoryEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) r#type: std::option::Option<crate::model::HistoryEventType>,
@@ -2398,7 +2398,7 @@ impl std::fmt::Debug for StateExitedEventDetails {
 pub mod state_exited_event_details {
 
     /// A builder for [`StateExitedEventDetails`](crate::model::StateExitedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) output: std::option::Option<std::string::String>,
@@ -2504,7 +2504,7 @@ impl HistoryEventExecutionDataDetails {
 pub mod history_event_execution_data_details {
 
     /// A builder for [`HistoryEventExecutionDataDetails`](crate::model::HistoryEventExecutionDataDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) truncated: std::option::Option<bool>,
     }
@@ -2577,7 +2577,7 @@ impl std::fmt::Debug for StateEnteredEventDetails {
 pub mod state_entered_event_details {
 
     /// A builder for [`StateEnteredEventDetails`](crate::model::StateEnteredEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) input: std::option::Option<std::string::String>,
@@ -2680,7 +2680,7 @@ impl std::fmt::Debug for LambdaFunctionTimedOutEventDetails {
 pub mod lambda_function_timed_out_event_details {
 
     /// A builder for [`LambdaFunctionTimedOutEventDetails`](crate::model::LambdaFunctionTimedOutEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -2765,7 +2765,7 @@ impl std::fmt::Debug for LambdaFunctionSucceededEventDetails {
 pub mod lambda_function_succeeded_event_details {
 
     /// A builder for [`LambdaFunctionSucceededEventDetails`](crate::model::LambdaFunctionSucceededEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) output: std::option::Option<std::string::String>,
         pub(crate) output_details:
@@ -2855,7 +2855,7 @@ impl std::fmt::Debug for LambdaFunctionStartFailedEventDetails {
 pub mod lambda_function_start_failed_event_details {
 
     /// A builder for [`LambdaFunctionStartFailedEventDetails`](crate::model::LambdaFunctionStartFailedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -2956,7 +2956,7 @@ impl std::fmt::Debug for LambdaFunctionScheduledEventDetails {
 pub mod lambda_function_scheduled_event_details {
 
     /// A builder for [`LambdaFunctionScheduledEventDetails`](crate::model::LambdaFunctionScheduledEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
         pub(crate) input: std::option::Option<std::string::String>,
@@ -3072,7 +3072,7 @@ impl std::fmt::Debug for LambdaFunctionScheduleFailedEventDetails {
 pub mod lambda_function_schedule_failed_event_details {
 
     /// A builder for [`LambdaFunctionScheduleFailedEventDetails`](crate::model::LambdaFunctionScheduleFailedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -3155,7 +3155,7 @@ impl std::fmt::Debug for LambdaFunctionFailedEventDetails {
 pub mod lambda_function_failed_event_details {
 
     /// A builder for [`LambdaFunctionFailedEventDetails`](crate::model::LambdaFunctionFailedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -3230,7 +3230,7 @@ impl MapIterationEventDetails {
 pub mod map_iteration_event_details {
 
     /// A builder for [`MapIterationEventDetails`](crate::model::MapIterationEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) index: std::option::Option<i32>,
@@ -3290,7 +3290,7 @@ impl MapStateStartedEventDetails {
 pub mod map_state_started_event_details {
 
     /// A builder for [`MapStateStartedEventDetails`](crate::model::MapStateStartedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) length: std::option::Option<i32>,
     }
@@ -3353,7 +3353,7 @@ impl std::fmt::Debug for ExecutionTimedOutEventDetails {
 pub mod execution_timed_out_event_details {
 
     /// A builder for [`ExecutionTimedOutEventDetails`](crate::model::ExecutionTimedOutEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -3436,7 +3436,7 @@ impl std::fmt::Debug for ExecutionAbortedEventDetails {
 pub mod execution_aborted_event_details {
 
     /// A builder for [`ExecutionAbortedEventDetails`](crate::model::ExecutionAbortedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -3521,7 +3521,7 @@ impl std::fmt::Debug for ExecutionSucceededEventDetails {
 pub mod execution_succeeded_event_details {
 
     /// A builder for [`ExecutionSucceededEventDetails`](crate::model::ExecutionSucceededEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) output: std::option::Option<std::string::String>,
         pub(crate) output_details:
@@ -3621,7 +3621,7 @@ impl std::fmt::Debug for ExecutionStartedEventDetails {
 pub mod execution_started_event_details {
 
     /// A builder for [`ExecutionStartedEventDetails`](crate::model::ExecutionStartedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) input: std::option::Option<std::string::String>,
         pub(crate) input_details:
@@ -3724,7 +3724,7 @@ impl std::fmt::Debug for ExecutionFailedEventDetails {
 pub mod execution_failed_event_details {
 
     /// A builder for [`ExecutionFailedEventDetails`](crate::model::ExecutionFailedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -3823,7 +3823,7 @@ impl std::fmt::Debug for TaskTimedOutEventDetails {
 pub mod task_timed_out_event_details {
 
     /// A builder for [`TaskTimedOutEventDetails`](crate::model::TaskTimedOutEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -3953,7 +3953,7 @@ impl std::fmt::Debug for TaskSucceededEventDetails {
 pub mod task_succeeded_event_details {
 
     /// A builder for [`TaskSucceededEventDetails`](crate::model::TaskSucceededEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -4090,7 +4090,7 @@ impl std::fmt::Debug for TaskSubmittedEventDetails {
 pub mod task_submitted_event_details {
 
     /// A builder for [`TaskSubmittedEventDetails`](crate::model::TaskSubmittedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -4225,7 +4225,7 @@ impl std::fmt::Debug for TaskSubmitFailedEventDetails {
 pub mod task_submit_failed_event_details {
 
     /// A builder for [`TaskSubmitFailedEventDetails`](crate::model::TaskSubmitFailedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -4329,7 +4329,7 @@ impl TaskStartedEventDetails {
 pub mod task_started_event_details {
 
     /// A builder for [`TaskStartedEventDetails`](crate::model::TaskStartedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -4423,7 +4423,7 @@ impl std::fmt::Debug for TaskStartFailedEventDetails {
 pub mod task_start_failed_event_details {
 
     /// A builder for [`TaskStartFailedEventDetails`](crate::model::TaskStartFailedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -4567,7 +4567,7 @@ impl std::fmt::Debug for TaskScheduledEventDetails {
 pub mod task_scheduled_event_details {
 
     /// A builder for [`TaskScheduledEventDetails`](crate::model::TaskScheduledEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -4721,7 +4721,7 @@ impl std::fmt::Debug for TaskFailedEventDetails {
 pub mod task_failed_event_details {
 
     /// A builder for [`TaskFailedEventDetails`](crate::model::TaskFailedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<std::string::String>,
@@ -4833,7 +4833,7 @@ impl std::fmt::Debug for ActivityTimedOutEventDetails {
 pub mod activity_timed_out_event_details {
 
     /// A builder for [`ActivityTimedOutEventDetails`](crate::model::ActivityTimedOutEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -4918,7 +4918,7 @@ impl std::fmt::Debug for ActivitySucceededEventDetails {
 pub mod activity_succeeded_event_details {
 
     /// A builder for [`ActivitySucceededEventDetails`](crate::model::ActivitySucceededEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) output: std::option::Option<std::string::String>,
         pub(crate) output_details:
@@ -4993,7 +4993,7 @@ impl ActivityStartedEventDetails {
 pub mod activity_started_event_details {
 
     /// A builder for [`ActivityStartedEventDetails`](crate::model::ActivityStartedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) worker_name: std::option::Option<std::string::String>,
     }
@@ -5082,7 +5082,7 @@ impl std::fmt::Debug for ActivityScheduledEventDetails {
 pub mod activity_scheduled_event_details {
 
     /// A builder for [`ActivityScheduledEventDetails`](crate::model::ActivityScheduledEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
         pub(crate) input: std::option::Option<std::string::String>,
@@ -5211,7 +5211,7 @@ impl std::fmt::Debug for ActivityScheduleFailedEventDetails {
 pub mod activity_schedule_failed_event_details {
 
     /// A builder for [`ActivityScheduleFailedEventDetails`](crate::model::ActivityScheduleFailedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
@@ -5294,7 +5294,7 @@ impl std::fmt::Debug for ActivityFailedEventDetails {
 pub mod activity_failed_event_details {
 
     /// A builder for [`ActivityFailedEventDetails`](crate::model::ActivityFailedEventDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,

@@ -38,7 +38,7 @@ impl ValidateE911AddressOutput {
 pub mod validate_e911_address_output {
 
     /// A builder for [`ValidateE911AddressOutput`](crate::output::ValidateE911AddressOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) validation_result: std::option::Option<i32>,
         pub(crate) address_external_id: std::option::Option<std::string::String>,
@@ -135,7 +135,7 @@ impl UpdateVoiceConnectorGroupOutput {
 pub mod update_voice_connector_group_output {
 
     /// A builder for [`UpdateVoiceConnectorGroupOutput`](crate::output::UpdateVoiceConnectorGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_group: std::option::Option<crate::model::VoiceConnectorGroup>,
     }
@@ -186,7 +186,7 @@ impl UpdateVoiceConnectorOutput {
 pub mod update_voice_connector_output {
 
     /// A builder for [`UpdateVoiceConnectorOutput`](crate::output::UpdateVoiceConnectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector: std::option::Option<crate::model::VoiceConnector>,
     }
@@ -227,7 +227,7 @@ pub struct UpdateUserSettingsOutput {}
 pub mod update_user_settings_output {
 
     /// A builder for [`UpdateUserSettingsOutput`](crate::output::UpdateUserSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateUserSettingsOutput`](crate::output::UpdateUserSettingsOutput).
@@ -261,7 +261,7 @@ impl UpdateUserOutput {
 pub mod update_user_output {
 
     /// A builder for [`UpdateUserOutput`](crate::output::UpdateUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user: std::option::Option<crate::model::User>,
     }
@@ -307,7 +307,7 @@ impl UpdateSipRuleOutput {
 pub mod update_sip_rule_output {
 
     /// A builder for [`UpdateSipRuleOutput`](crate::output::UpdateSipRuleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_rule: std::option::Option<crate::model::SipRule>,
     }
@@ -357,7 +357,7 @@ impl UpdateSipMediaApplicationCallOutput {
 pub mod update_sip_media_application_call_output {
 
     /// A builder for [`UpdateSipMediaApplicationCallOutput`](crate::output::UpdateSipMediaApplicationCallOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application_call:
             std::option::Option<crate::model::SipMediaApplicationCall>,
@@ -412,7 +412,7 @@ impl UpdateSipMediaApplicationOutput {
 pub mod update_sip_media_application_output {
 
     /// A builder for [`UpdateSipMediaApplicationOutput`](crate::output::UpdateSipMediaApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application: std::option::Option<crate::model::SipMediaApplication>,
     }
@@ -463,7 +463,7 @@ impl UpdateRoomMembershipOutput {
 pub mod update_room_membership_output {
 
     /// A builder for [`UpdateRoomMembershipOutput`](crate::output::UpdateRoomMembershipOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_membership: std::option::Option<crate::model::RoomMembership>,
     }
@@ -514,7 +514,7 @@ impl UpdateRoomOutput {
 pub mod update_room_output {
 
     /// A builder for [`UpdateRoomOutput`](crate::output::UpdateRoomOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room: std::option::Option<crate::model::Room>,
     }
@@ -560,7 +560,7 @@ impl UpdateProxySessionOutput {
 pub mod update_proxy_session_output {
 
     /// A builder for [`UpdateProxySessionOutput`](crate::output::UpdateProxySessionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proxy_session: std::option::Option<crate::model::ProxySession>,
     }
@@ -601,7 +601,7 @@ pub struct UpdatePhoneNumberSettingsOutput {}
 pub mod update_phone_number_settings_output {
 
     /// A builder for [`UpdatePhoneNumberSettingsOutput`](crate::output::UpdatePhoneNumberSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdatePhoneNumberSettingsOutput`](crate::output::UpdatePhoneNumberSettingsOutput).
@@ -635,7 +635,7 @@ impl UpdatePhoneNumberOutput {
 pub mod update_phone_number_output {
 
     /// A builder for [`UpdatePhoneNumberOutput`](crate::output::UpdatePhoneNumberOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number: std::option::Option<crate::model::PhoneNumber>,
     }
@@ -676,7 +676,7 @@ pub struct UpdateGlobalSettingsOutput {}
 pub mod update_global_settings_output {
 
     /// A builder for [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput).
@@ -710,7 +710,7 @@ impl UpdateChannelReadMarkerOutput {
 pub mod update_channel_read_marker_output {
 
     /// A builder for [`UpdateChannelReadMarkerOutput`](crate::output::UpdateChannelReadMarkerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
     }
@@ -765,7 +765,7 @@ impl UpdateChannelMessageOutput {
 pub mod update_channel_message_output {
 
     /// A builder for [`UpdateChannelMessageOutput`](crate::output::UpdateChannelMessageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -825,7 +825,7 @@ impl UpdateChannelOutput {
 pub mod update_channel_output {
 
     /// A builder for [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
     }
@@ -873,7 +873,7 @@ impl UpdateBotOutput {
 pub mod update_bot_output {
 
     /// A builder for [`UpdateBotOutput`](crate::output::UpdateBotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot: std::option::Option<crate::model::Bot>,
     }
@@ -919,7 +919,7 @@ impl UpdateAppInstanceUserOutput {
 pub mod update_app_instance_user_output {
 
     /// A builder for [`UpdateAppInstanceUserOutput`](crate::output::UpdateAppInstanceUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
     }
@@ -970,7 +970,7 @@ impl UpdateAppInstanceOutput {
 pub mod update_app_instance_output {
 
     /// A builder for [`UpdateAppInstanceOutput`](crate::output::UpdateAppInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
     }
@@ -1011,7 +1011,7 @@ pub struct UpdateAccountSettingsOutput {}
 pub mod update_account_settings_output {
 
     /// A builder for [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput).
@@ -1045,7 +1045,7 @@ impl UpdateAccountOutput {
 pub mod update_account_output {
 
     /// A builder for [`UpdateAccountOutput`](crate::output::UpdateAccountOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account: std::option::Option<crate::model::Account>,
     }
@@ -1083,7 +1083,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -1107,7 +1107,7 @@ pub struct UntagMeetingOutput {}
 pub mod untag_meeting_output {
 
     /// A builder for [`UntagMeetingOutput`](crate::output::UntagMeetingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagMeetingOutput`](crate::output::UntagMeetingOutput).
@@ -1131,7 +1131,7 @@ pub struct UntagAttendeeOutput {}
 pub mod untag_attendee_output {
 
     /// A builder for [`UntagAttendeeOutput`](crate::output::UntagAttendeeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagAttendeeOutput`](crate::output::UntagAttendeeOutput).
@@ -1155,7 +1155,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1179,7 +1179,7 @@ pub struct TagMeetingOutput {}
 pub mod tag_meeting_output {
 
     /// A builder for [`TagMeetingOutput`](crate::output::TagMeetingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagMeetingOutput`](crate::output::TagMeetingOutput).
@@ -1203,7 +1203,7 @@ pub struct TagAttendeeOutput {}
 pub mod tag_attendee_output {
 
     /// A builder for [`TagAttendeeOutput`](crate::output::TagAttendeeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagAttendeeOutput`](crate::output::TagAttendeeOutput).
@@ -1227,7 +1227,7 @@ pub struct StopMeetingTranscriptionOutput {}
 pub mod stop_meeting_transcription_output {
 
     /// A builder for [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput).
@@ -1251,7 +1251,7 @@ pub struct StartMeetingTranscriptionOutput {}
 pub mod start_meeting_transcription_output {
 
     /// A builder for [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput).
@@ -1292,7 +1292,7 @@ impl SendChannelMessageOutput {
 pub mod send_channel_message_output {
 
     /// A builder for [`SendChannelMessageOutput`](crate::output::SendChannelMessageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -1359,7 +1359,7 @@ impl SearchAvailablePhoneNumbersOutput {
 pub mod search_available_phone_numbers_output {
 
     /// A builder for [`SearchAvailablePhoneNumbersOutput`](crate::output::SearchAvailablePhoneNumbersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1428,7 +1428,7 @@ impl RestorePhoneNumberOutput {
 pub mod restore_phone_number_output {
 
     /// A builder for [`RestorePhoneNumberOutput`](crate::output::RestorePhoneNumberOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number: std::option::Option<crate::model::PhoneNumber>,
     }
@@ -1479,7 +1479,7 @@ impl ResetPersonalPinOutput {
 pub mod reset_personal_pin_output {
 
     /// A builder for [`ResetPersonalPinOutput`](crate::output::ResetPersonalPinOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user: std::option::Option<crate::model::User>,
     }
@@ -1525,7 +1525,7 @@ impl RegenerateSecurityTokenOutput {
 pub mod regenerate_security_token_output {
 
     /// A builder for [`RegenerateSecurityTokenOutput`](crate::output::RegenerateSecurityTokenOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot: std::option::Option<crate::model::Bot>,
     }
@@ -1561,7 +1561,7 @@ pub struct RedactRoomMessageOutput {}
 pub mod redact_room_message_output {
 
     /// A builder for [`RedactRoomMessageOutput`](crate::output::RedactRoomMessageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RedactRoomMessageOutput`](crate::output::RedactRoomMessageOutput).
@@ -1585,7 +1585,7 @@ pub struct RedactConversationMessageOutput {}
 pub mod redact_conversation_message_output {
 
     /// A builder for [`RedactConversationMessageOutput`](crate::output::RedactConversationMessageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RedactConversationMessageOutput`](crate::output::RedactConversationMessageOutput).
@@ -1626,7 +1626,7 @@ impl RedactChannelMessageOutput {
 pub mod redact_channel_message_output {
 
     /// A builder for [`RedactChannelMessageOutput`](crate::output::RedactChannelMessageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -1676,7 +1676,7 @@ pub struct PutVoiceConnectorTerminationCredentialsOutput {}
 pub mod put_voice_connector_termination_credentials_output {
 
     /// A builder for [`PutVoiceConnectorTerminationCredentialsOutput`](crate::output::PutVoiceConnectorTerminationCredentialsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutVoiceConnectorTerminationCredentialsOutput`](crate::output::PutVoiceConnectorTerminationCredentialsOutput).
@@ -1710,7 +1710,7 @@ impl PutVoiceConnectorTerminationOutput {
 pub mod put_voice_connector_termination_output {
 
     /// A builder for [`PutVoiceConnectorTerminationOutput`](crate::output::PutVoiceConnectorTerminationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) termination: std::option::Option<crate::model::Termination>,
     }
@@ -1763,7 +1763,7 @@ impl PutVoiceConnectorStreamingConfigurationOutput {
 pub mod put_voice_connector_streaming_configuration_output {
 
     /// A builder for [`PutVoiceConnectorStreamingConfigurationOutput`](crate::output::PutVoiceConnectorStreamingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streaming_configuration:
             std::option::Option<crate::model::StreamingConfiguration>,
@@ -1818,7 +1818,7 @@ impl PutVoiceConnectorProxyOutput {
 pub mod put_voice_connector_proxy_output {
 
     /// A builder for [`PutVoiceConnectorProxyOutput`](crate::output::PutVoiceConnectorProxyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proxy: std::option::Option<crate::model::Proxy>,
     }
@@ -1864,7 +1864,7 @@ impl PutVoiceConnectorOriginationOutput {
 pub mod put_voice_connector_origination_output {
 
     /// A builder for [`PutVoiceConnectorOriginationOutput`](crate::output::PutVoiceConnectorOriginationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origination: std::option::Option<crate::model::Origination>,
     }
@@ -1917,7 +1917,7 @@ impl PutVoiceConnectorLoggingConfigurationOutput {
 pub mod put_voice_connector_logging_configuration_output {
 
     /// A builder for [`PutVoiceConnectorLoggingConfigurationOutput`](crate::output::PutVoiceConnectorLoggingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     }
@@ -1971,7 +1971,7 @@ impl PutVoiceConnectorEmergencyCallingConfigurationOutput {
 pub mod put_voice_connector_emergency_calling_configuration_output {
 
     /// A builder for [`PutVoiceConnectorEmergencyCallingConfigurationOutput`](crate::output::PutVoiceConnectorEmergencyCallingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) emergency_calling_configuration:
             std::option::Option<crate::model::EmergencyCallingConfiguration>,
@@ -2031,7 +2031,7 @@ impl PutSipMediaApplicationLoggingConfigurationOutput {
 pub mod put_sip_media_application_logging_configuration_output {
 
     /// A builder for [`PutSipMediaApplicationLoggingConfigurationOutput`](crate::output::PutSipMediaApplicationLoggingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application_logging_configuration:
             std::option::Option<crate::model::SipMediaApplicationLoggingConfiguration>,
@@ -2095,7 +2095,7 @@ impl PutRetentionSettingsOutput {
 pub mod put_retention_settings_output {
 
     /// A builder for [`PutRetentionSettingsOutput`](crate::output::PutRetentionSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retention_settings: std::option::Option<crate::model::RetentionSettings>,
         pub(crate) initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -2161,7 +2161,7 @@ impl PutEventsConfigurationOutput {
 pub mod put_events_configuration_output {
 
     /// A builder for [`PutEventsConfigurationOutput`](crate::output::PutEventsConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events_configuration: std::option::Option<crate::model::EventsConfiguration>,
     }
@@ -2215,7 +2215,7 @@ impl PutAppInstanceStreamingConfigurationsOutput {
 pub mod put_app_instance_streaming_configurations_output {
 
     /// A builder for [`PutAppInstanceStreamingConfigurationsOutput`](crate::output::PutAppInstanceStreamingConfigurationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_streaming_configurations:
             std::option::Option<std::vec::Vec<crate::model::AppInstanceStreamingConfiguration>>,
@@ -2290,7 +2290,7 @@ impl PutAppInstanceRetentionSettingsOutput {
 pub mod put_app_instance_retention_settings_output {
 
     /// A builder for [`PutAppInstanceRetentionSettingsOutput`](crate::output::PutAppInstanceRetentionSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_retention_settings:
             std::option::Option<crate::model::AppInstanceRetentionSettings>,
@@ -2350,7 +2350,7 @@ pub struct LogoutUserOutput {}
 pub mod logout_user_output {
 
     /// A builder for [`LogoutUserOutput`](crate::output::LogoutUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`LogoutUserOutput`](crate::output::LogoutUserOutput).
@@ -2384,7 +2384,7 @@ impl ListVoiceConnectorTerminationCredentialsOutput {
 pub mod list_voice_connector_termination_credentials_output {
 
     /// A builder for [`ListVoiceConnectorTerminationCredentialsOutput`](crate::output::ListVoiceConnectorTerminationCredentialsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usernames: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -2449,7 +2449,7 @@ impl ListVoiceConnectorsOutput {
 pub mod list_voice_connectors_output {
 
     /// A builder for [`ListVoiceConnectorsOutput`](crate::output::ListVoiceConnectorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connectors:
             std::option::Option<std::vec::Vec<crate::model::VoiceConnector>>,
@@ -2529,7 +2529,7 @@ impl ListVoiceConnectorGroupsOutput {
 pub mod list_voice_connector_groups_output {
 
     /// A builder for [`ListVoiceConnectorGroupsOutput`](crate::output::ListVoiceConnectorGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_groups:
             std::option::Option<std::vec::Vec<crate::model::VoiceConnectorGroup>>,
@@ -2606,7 +2606,7 @@ impl ListUsersOutput {
 pub mod list_users_output {
 
     /// A builder for [`ListUsersOutput`](crate::output::ListUsersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::User>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2675,7 +2675,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -2733,7 +2733,7 @@ impl ListSupportedPhoneNumberCountriesOutput {
 pub mod list_supported_phone_number_countries_output {
 
     /// A builder for [`ListSupportedPhoneNumberCountriesOutput`](crate::output::ListSupportedPhoneNumberCountriesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_countries:
             std::option::Option<std::vec::Vec<crate::model::PhoneNumberCountry>>,
@@ -2798,7 +2798,7 @@ impl ListSipRulesOutput {
 pub mod list_sip_rules_output {
 
     /// A builder for [`ListSipRulesOutput`](crate::output::ListSipRulesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_rules: std::option::Option<std::vec::Vec<crate::model::SipRule>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2877,7 +2877,7 @@ impl ListSipMediaApplicationsOutput {
 pub mod list_sip_media_applications_output {
 
     /// A builder for [`ListSipMediaApplicationsOutput`](crate::output::ListSipMediaApplicationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_applications:
             std::option::Option<std::vec::Vec<crate::model::SipMediaApplication>>,
@@ -2954,7 +2954,7 @@ impl ListRoomsOutput {
 pub mod list_rooms_output {
 
     /// A builder for [`ListRoomsOutput`](crate::output::ListRoomsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rooms: std::option::Option<std::vec::Vec<crate::model::Room>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3030,7 +3030,7 @@ impl ListRoomMembershipsOutput {
 pub mod list_room_memberships_output {
 
     /// A builder for [`ListRoomMembershipsOutput`](crate::output::ListRoomMembershipsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_memberships:
             std::option::Option<std::vec::Vec<crate::model::RoomMembership>>,
@@ -3107,7 +3107,7 @@ impl ListProxySessionsOutput {
 pub mod list_proxy_sessions_output {
 
     /// A builder for [`ListProxySessionsOutput`](crate::output::ListProxySessionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proxy_sessions: std::option::Option<std::vec::Vec<crate::model::ProxySession>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3183,7 +3183,7 @@ impl ListPhoneNumbersOutput {
 pub mod list_phone_numbers_output {
 
     /// A builder for [`ListPhoneNumbersOutput`](crate::output::ListPhoneNumbersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3259,7 +3259,7 @@ impl ListPhoneNumberOrdersOutput {
 pub mod list_phone_number_orders_output {
 
     /// A builder for [`ListPhoneNumberOrdersOutput`](crate::output::ListPhoneNumberOrdersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_orders:
             std::option::Option<std::vec::Vec<crate::model::PhoneNumberOrder>>,
@@ -3329,7 +3329,7 @@ impl ListMeetingTagsOutput {
 pub mod list_meeting_tags_output {
 
     /// A builder for [`ListMeetingTagsOutput`](crate::output::ListMeetingTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -3391,7 +3391,7 @@ impl ListMeetingsOutput {
 pub mod list_meetings_output {
 
     /// A builder for [`ListMeetingsOutput`](crate::output::ListMeetingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meetings: std::option::Option<std::vec::Vec<crate::model::Meeting>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3470,7 +3470,7 @@ impl ListMediaCapturePipelinesOutput {
 pub mod list_media_capture_pipelines_output {
 
     /// A builder for [`ListMediaCapturePipelinesOutput`](crate::output::ListMediaCapturePipelinesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_capture_pipelines:
             std::option::Option<std::vec::Vec<crate::model::MediaCapturePipeline>>,
@@ -3561,7 +3561,7 @@ impl std::fmt::Debug for ListChannelsModeratedByAppInstanceUserOutput {
 pub mod list_channels_moderated_by_app_instance_user_output {
 
     /// A builder for [`ListChannelsModeratedByAppInstanceUserOutput`](crate::output::ListChannelsModeratedByAppInstanceUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channels: std::option::Option<
             std::vec::Vec<crate::model::ChannelModeratedByAppInstanceUserSummary>,
@@ -3661,7 +3661,7 @@ impl std::fmt::Debug for ListChannelsOutput {
 pub mod list_channels_output {
 
     /// A builder for [`ListChannelsOutput`](crate::output::ListChannelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channels: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3764,7 +3764,7 @@ impl std::fmt::Debug for ListChannelModeratorsOutput {
 pub mod list_channel_moderators_output {
 
     /// A builder for [`ListChannelModeratorsOutput`](crate::output::ListChannelModeratorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3878,7 +3878,7 @@ impl std::fmt::Debug for ListChannelMessagesOutput {
 pub mod list_channel_messages_output {
 
     /// A builder for [`ListChannelMessagesOutput`](crate::output::ListChannelMessagesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3988,7 +3988,7 @@ impl std::fmt::Debug for ListChannelMembershipsForAppInstanceUserOutput {
 pub mod list_channel_memberships_for_app_instance_user_output {
 
     /// A builder for [`ListChannelMembershipsForAppInstanceUserOutput`](crate::output::ListChannelMembershipsForAppInstanceUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_memberships: std::option::Option<
             std::vec::Vec<crate::model::ChannelMembershipForAppInstanceUserSummary>,
@@ -4099,7 +4099,7 @@ impl std::fmt::Debug for ListChannelMembershipsOutput {
 pub mod list_channel_memberships_output {
 
     /// A builder for [`ListChannelMembershipsOutput`](crate::output::ListChannelMembershipsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) channel_memberships:
@@ -4216,7 +4216,7 @@ impl std::fmt::Debug for ListChannelBansOutput {
 pub mod list_channel_bans_output {
 
     /// A builder for [`ListChannelBansOutput`](crate::output::ListChannelBansOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4314,7 +4314,7 @@ impl ListBotsOutput {
 pub mod list_bots_output {
 
     /// A builder for [`ListBotsOutput`](crate::output::ListBotsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bots: std::option::Option<std::vec::Vec<crate::model::Bot>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4383,7 +4383,7 @@ impl ListAttendeeTagsOutput {
 pub mod list_attendee_tags_output {
 
     /// A builder for [`ListAttendeeTagsOutput`](crate::output::ListAttendeeTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -4445,7 +4445,7 @@ impl ListAttendeesOutput {
 pub mod list_attendees_output {
 
     /// A builder for [`ListAttendeesOutput`](crate::output::ListAttendeesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4540,7 +4540,7 @@ impl std::fmt::Debug for ListAppInstanceUsersOutput {
 pub mod list_app_instance_users_output {
 
     /// A builder for [`ListAppInstanceUsersOutput`](crate::output::ListAppInstanceUsersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_users:
@@ -4649,7 +4649,7 @@ impl std::fmt::Debug for ListAppInstancesOutput {
 pub mod list_app_instances_output {
 
     /// A builder for [`ListAppInstancesOutput`](crate::output::ListAppInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instances:
             std::option::Option<std::vec::Vec<crate::model::AppInstanceSummary>>,
@@ -4753,7 +4753,7 @@ impl std::fmt::Debug for ListAppInstanceAdminsOutput {
 pub mod list_app_instance_admins_output {
 
     /// A builder for [`ListAppInstanceAdminsOutput`](crate::output::ListAppInstanceAdminsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_admins:
@@ -4854,7 +4854,7 @@ impl ListAccountsOutput {
 pub mod list_accounts_output {
 
     /// A builder for [`ListAccountsOutput`](crate::output::ListAccountsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4923,7 +4923,7 @@ impl InviteUsersOutput {
 pub mod invite_users_output {
 
     /// A builder for [`InviteUsersOutput`](crate::output::InviteUsersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) invites: std::option::Option<std::vec::Vec<crate::model::Invite>>,
     }
@@ -4980,7 +4980,7 @@ impl GetVoiceConnectorTerminationHealthOutput {
 pub mod get_voice_connector_termination_health_output {
 
     /// A builder for [`GetVoiceConnectorTerminationHealthOutput`](crate::output::GetVoiceConnectorTerminationHealthOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) termination_health: std::option::Option<crate::model::TerminationHealth>,
     }
@@ -5031,7 +5031,7 @@ impl GetVoiceConnectorTerminationOutput {
 pub mod get_voice_connector_termination_output {
 
     /// A builder for [`GetVoiceConnectorTerminationOutput`](crate::output::GetVoiceConnectorTerminationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) termination: std::option::Option<crate::model::Termination>,
     }
@@ -5084,7 +5084,7 @@ impl GetVoiceConnectorStreamingConfigurationOutput {
 pub mod get_voice_connector_streaming_configuration_output {
 
     /// A builder for [`GetVoiceConnectorStreamingConfigurationOutput`](crate::output::GetVoiceConnectorStreamingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streaming_configuration:
             std::option::Option<crate::model::StreamingConfiguration>,
@@ -5139,7 +5139,7 @@ impl GetVoiceConnectorProxyOutput {
 pub mod get_voice_connector_proxy_output {
 
     /// A builder for [`GetVoiceConnectorProxyOutput`](crate::output::GetVoiceConnectorProxyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proxy: std::option::Option<crate::model::Proxy>,
     }
@@ -5185,7 +5185,7 @@ impl GetVoiceConnectorOriginationOutput {
 pub mod get_voice_connector_origination_output {
 
     /// A builder for [`GetVoiceConnectorOriginationOutput`](crate::output::GetVoiceConnectorOriginationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origination: std::option::Option<crate::model::Origination>,
     }
@@ -5238,7 +5238,7 @@ impl GetVoiceConnectorLoggingConfigurationOutput {
 pub mod get_voice_connector_logging_configuration_output {
 
     /// A builder for [`GetVoiceConnectorLoggingConfigurationOutput`](crate::output::GetVoiceConnectorLoggingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     }
@@ -5289,7 +5289,7 @@ impl GetVoiceConnectorGroupOutput {
 pub mod get_voice_connector_group_output {
 
     /// A builder for [`GetVoiceConnectorGroupOutput`](crate::output::GetVoiceConnectorGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_group: std::option::Option<crate::model::VoiceConnectorGroup>,
     }
@@ -5343,7 +5343,7 @@ impl GetVoiceConnectorEmergencyCallingConfigurationOutput {
 pub mod get_voice_connector_emergency_calling_configuration_output {
 
     /// A builder for [`GetVoiceConnectorEmergencyCallingConfigurationOutput`](crate::output::GetVoiceConnectorEmergencyCallingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) emergency_calling_configuration:
             std::option::Option<crate::model::EmergencyCallingConfiguration>,
@@ -5400,7 +5400,7 @@ impl GetVoiceConnectorOutput {
 pub mod get_voice_connector_output {
 
     /// A builder for [`GetVoiceConnectorOutput`](crate::output::GetVoiceConnectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector: std::option::Option<crate::model::VoiceConnector>,
     }
@@ -5451,7 +5451,7 @@ impl GetUserSettingsOutput {
 pub mod get_user_settings_output {
 
     /// A builder for [`GetUserSettingsOutput`](crate::output::GetUserSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_settings: std::option::Option<crate::model::UserSettings>,
     }
@@ -5502,7 +5502,7 @@ impl GetUserOutput {
 pub mod get_user_output {
 
     /// A builder for [`GetUserOutput`](crate::output::GetUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user: std::option::Option<crate::model::User>,
     }
@@ -5548,7 +5548,7 @@ impl GetSipRuleOutput {
 pub mod get_sip_rule_output {
 
     /// A builder for [`GetSipRuleOutput`](crate::output::GetSipRuleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_rule: std::option::Option<crate::model::SipRule>,
     }
@@ -5599,7 +5599,7 @@ impl GetSipMediaApplicationLoggingConfigurationOutput {
 pub mod get_sip_media_application_logging_configuration_output {
 
     /// A builder for [`GetSipMediaApplicationLoggingConfigurationOutput`](crate::output::GetSipMediaApplicationLoggingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application_logging_configuration:
             std::option::Option<crate::model::SipMediaApplicationLoggingConfiguration>,
@@ -5656,7 +5656,7 @@ impl GetSipMediaApplicationOutput {
 pub mod get_sip_media_application_output {
 
     /// A builder for [`GetSipMediaApplicationOutput`](crate::output::GetSipMediaApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application: std::option::Option<crate::model::SipMediaApplication>,
     }
@@ -5707,7 +5707,7 @@ impl GetRoomOutput {
 pub mod get_room_output {
 
     /// A builder for [`GetRoomOutput`](crate::output::GetRoomOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room: std::option::Option<crate::model::Room>,
     }
@@ -5760,7 +5760,7 @@ impl GetRetentionSettingsOutput {
 pub mod get_retention_settings_output {
 
     /// A builder for [`GetRetentionSettingsOutput`](crate::output::GetRetentionSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retention_settings: std::option::Option<crate::model::RetentionSettings>,
         pub(crate) initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -5826,7 +5826,7 @@ impl GetProxySessionOutput {
 pub mod get_proxy_session_output {
 
     /// A builder for [`GetProxySessionOutput`](crate::output::GetProxySessionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proxy_session: std::option::Option<crate::model::ProxySession>,
     }
@@ -5897,7 +5897,7 @@ impl std::fmt::Debug for GetPhoneNumberSettingsOutput {
 pub mod get_phone_number_settings_output {
 
     /// A builder for [`GetPhoneNumberSettingsOutput`](crate::output::GetPhoneNumberSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) calling_name: std::option::Option<std::string::String>,
         pub(crate) calling_name_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -5971,7 +5971,7 @@ impl GetPhoneNumberOrderOutput {
 pub mod get_phone_number_order_output {
 
     /// A builder for [`GetPhoneNumberOrderOutput`](crate::output::GetPhoneNumberOrderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_order: std::option::Option<crate::model::PhoneNumberOrder>,
     }
@@ -6022,7 +6022,7 @@ impl GetPhoneNumberOutput {
 pub mod get_phone_number_output {
 
     /// A builder for [`GetPhoneNumberOutput`](crate::output::GetPhoneNumberOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number: std::option::Option<crate::model::PhoneNumber>,
     }
@@ -6073,7 +6073,7 @@ impl GetMessagingSessionEndpointOutput {
 pub mod get_messaging_session_endpoint_output {
 
     /// A builder for [`GetMessagingSessionEndpointOutput`](crate::output::GetMessagingSessionEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<crate::model::MessagingSessionEndpoint>,
     }
@@ -6124,7 +6124,7 @@ impl GetMeetingOutput {
 pub mod get_meeting_output {
 
     /// A builder for [`GetMeetingOutput`](crate::output::GetMeetingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting: std::option::Option<crate::model::Meeting>,
     }
@@ -6174,7 +6174,7 @@ impl GetMediaCapturePipelineOutput {
 pub mod get_media_capture_pipeline_output {
 
     /// A builder for [`GetMediaCapturePipelineOutput`](crate::output::GetMediaCapturePipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
     }
@@ -6232,7 +6232,7 @@ impl GetGlobalSettingsOutput {
 pub mod get_global_settings_output {
 
     /// A builder for [`GetGlobalSettingsOutput`](crate::output::GetGlobalSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) business_calling: std::option::Option<crate::model::BusinessCallingSettings>,
         pub(crate) voice_connector: std::option::Option<crate::model::VoiceConnectorSettings>,
@@ -6298,7 +6298,7 @@ impl GetEventsConfigurationOutput {
 pub mod get_events_configuration_output {
 
     /// A builder for [`GetEventsConfigurationOutput`](crate::output::GetEventsConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events_configuration: std::option::Option<crate::model::EventsConfiguration>,
     }
@@ -6349,7 +6349,7 @@ impl GetChannelMessageOutput {
 pub mod get_channel_message_output {
 
     /// A builder for [`GetChannelMessageOutput`](crate::output::GetChannelMessageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_message: std::option::Option<crate::model::ChannelMessage>,
     }
@@ -6400,7 +6400,7 @@ impl GetBotOutput {
 pub mod get_bot_output {
 
     /// A builder for [`GetBotOutput`](crate::output::GetBotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot: std::option::Option<crate::model::Bot>,
     }
@@ -6446,7 +6446,7 @@ impl GetAttendeeOutput {
 pub mod get_attendee_output {
 
     /// A builder for [`GetAttendeeOutput`](crate::output::GetAttendeeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendee: std::option::Option<crate::model::Attendee>,
     }
@@ -6497,7 +6497,7 @@ impl GetAppInstanceStreamingConfigurationsOutput {
 pub mod get_app_instance_streaming_configurations_output {
 
     /// A builder for [`GetAppInstanceStreamingConfigurationsOutput`](crate::output::GetAppInstanceStreamingConfigurationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_streaming_configurations:
             std::option::Option<std::vec::Vec<crate::model::AppInstanceStreamingConfiguration>>,
@@ -6572,7 +6572,7 @@ impl GetAppInstanceRetentionSettingsOutput {
 pub mod get_app_instance_retention_settings_output {
 
     /// A builder for [`GetAppInstanceRetentionSettingsOutput`](crate::output::GetAppInstanceRetentionSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_retention_settings:
             std::option::Option<crate::model::AppInstanceRetentionSettings>,
@@ -6642,7 +6642,7 @@ impl GetAccountSettingsOutput {
 pub mod get_account_settings_output {
 
     /// A builder for [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_settings: std::option::Option<crate::model::AccountSettings>,
     }
@@ -6693,7 +6693,7 @@ impl GetAccountOutput {
 pub mod get_account_output {
 
     /// A builder for [`GetAccountOutput`](crate::output::GetAccountOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account: std::option::Option<crate::model::Account>,
     }
@@ -6731,7 +6731,7 @@ pub struct DisassociateSigninDelegateGroupsFromAccountOutput {}
 pub mod disassociate_signin_delegate_groups_from_account_output {
 
     /// A builder for [`DisassociateSigninDelegateGroupsFromAccountOutput`](crate::output::DisassociateSigninDelegateGroupsFromAccountOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateSigninDelegateGroupsFromAccountOutput`](crate::output::DisassociateSigninDelegateGroupsFromAccountOutput).
@@ -6766,7 +6766,7 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupOutput {
 pub mod disassociate_phone_numbers_from_voice_connector_group_output {
 
     /// A builder for [`DisassociatePhoneNumbersFromVoiceConnectorGroupOutput`](crate::output::DisassociatePhoneNumbersFromVoiceConnectorGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_errors:
             std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
@@ -6825,7 +6825,7 @@ impl DisassociatePhoneNumbersFromVoiceConnectorOutput {
 pub mod disassociate_phone_numbers_from_voice_connector_output {
 
     /// A builder for [`DisassociatePhoneNumbersFromVoiceConnectorOutput`](crate::output::DisassociatePhoneNumbersFromVoiceConnectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_errors:
             std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
@@ -6874,7 +6874,7 @@ pub struct DisassociatePhoneNumberFromUserOutput {}
 pub mod disassociate_phone_number_from_user_output {
 
     /// A builder for [`DisassociatePhoneNumberFromUserOutput`](crate::output::DisassociatePhoneNumberFromUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociatePhoneNumberFromUserOutput`](crate::output::DisassociatePhoneNumberFromUserOutput).
@@ -6908,7 +6908,7 @@ impl DescribeChannelModeratorOutput {
 pub mod describe_channel_moderator_output {
 
     /// A builder for [`DescribeChannelModeratorOutput`](crate::output::DescribeChannelModeratorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_moderator: std::option::Option<crate::model::ChannelModerator>,
     }
@@ -6961,7 +6961,7 @@ impl DescribeChannelModeratedByAppInstanceUserOutput {
 pub mod describe_channel_moderated_by_app_instance_user_output {
 
     /// A builder for [`DescribeChannelModeratedByAppInstanceUserOutput`](crate::output::DescribeChannelModeratedByAppInstanceUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel:
             std::option::Option<crate::model::ChannelModeratedByAppInstanceUserSummary>,
@@ -7020,7 +7020,7 @@ impl DescribeChannelMembershipForAppInstanceUserOutput {
 pub mod describe_channel_membership_for_app_instance_user_output {
 
     /// A builder for [`DescribeChannelMembershipForAppInstanceUserOutput`](crate::output::DescribeChannelMembershipForAppInstanceUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_membership:
             std::option::Option<crate::model::ChannelMembershipForAppInstanceUserSummary>,
@@ -7076,7 +7076,7 @@ impl DescribeChannelMembershipOutput {
 pub mod describe_channel_membership_output {
 
     /// A builder for [`DescribeChannelMembershipOutput`](crate::output::DescribeChannelMembershipOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_membership: std::option::Option<crate::model::ChannelMembership>,
     }
@@ -7127,7 +7127,7 @@ impl DescribeChannelBanOutput {
 pub mod describe_channel_ban_output {
 
     /// A builder for [`DescribeChannelBanOutput`](crate::output::DescribeChannelBanOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_ban: std::option::Option<crate::model::ChannelBan>,
     }
@@ -7178,7 +7178,7 @@ impl DescribeChannelOutput {
 pub mod describe_channel_output {
 
     /// A builder for [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel: std::option::Option<crate::model::Channel>,
     }
@@ -7226,7 +7226,7 @@ impl DescribeAppInstanceUserOutput {
 pub mod describe_app_instance_user_output {
 
     /// A builder for [`DescribeAppInstanceUserOutput`](crate::output::DescribeAppInstanceUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_user: std::option::Option<crate::model::AppInstanceUser>,
     }
@@ -7277,7 +7277,7 @@ impl DescribeAppInstanceAdminOutput {
 pub mod describe_app_instance_admin_output {
 
     /// A builder for [`DescribeAppInstanceAdminOutput`](crate::output::DescribeAppInstanceAdminOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_admin: std::option::Option<crate::model::AppInstanceAdmin>,
     }
@@ -7328,7 +7328,7 @@ impl DescribeAppInstanceOutput {
 pub mod describe_app_instance_output {
 
     /// A builder for [`DescribeAppInstanceOutput`](crate::output::DescribeAppInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance: std::option::Option<crate::model::AppInstance>,
     }
@@ -7369,7 +7369,7 @@ pub struct DeleteVoiceConnectorTerminationCredentialsOutput {}
 pub mod delete_voice_connector_termination_credentials_output {
 
     /// A builder for [`DeleteVoiceConnectorTerminationCredentialsOutput`](crate::output::DeleteVoiceConnectorTerminationCredentialsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVoiceConnectorTerminationCredentialsOutput`](crate::output::DeleteVoiceConnectorTerminationCredentialsOutput).
@@ -7394,7 +7394,7 @@ pub struct DeleteVoiceConnectorTerminationOutput {}
 pub mod delete_voice_connector_termination_output {
 
     /// A builder for [`DeleteVoiceConnectorTerminationOutput`](crate::output::DeleteVoiceConnectorTerminationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVoiceConnectorTerminationOutput`](crate::output::DeleteVoiceConnectorTerminationOutput).
@@ -7418,7 +7418,7 @@ pub struct DeleteVoiceConnectorStreamingConfigurationOutput {}
 pub mod delete_voice_connector_streaming_configuration_output {
 
     /// A builder for [`DeleteVoiceConnectorStreamingConfigurationOutput`](crate::output::DeleteVoiceConnectorStreamingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVoiceConnectorStreamingConfigurationOutput`](crate::output::DeleteVoiceConnectorStreamingConfigurationOutput).
@@ -7443,7 +7443,7 @@ pub struct DeleteVoiceConnectorProxyOutput {}
 pub mod delete_voice_connector_proxy_output {
 
     /// A builder for [`DeleteVoiceConnectorProxyOutput`](crate::output::DeleteVoiceConnectorProxyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVoiceConnectorProxyOutput`](crate::output::DeleteVoiceConnectorProxyOutput).
@@ -7467,7 +7467,7 @@ pub struct DeleteVoiceConnectorOriginationOutput {}
 pub mod delete_voice_connector_origination_output {
 
     /// A builder for [`DeleteVoiceConnectorOriginationOutput`](crate::output::DeleteVoiceConnectorOriginationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVoiceConnectorOriginationOutput`](crate::output::DeleteVoiceConnectorOriginationOutput).
@@ -7491,7 +7491,7 @@ pub struct DeleteVoiceConnectorGroupOutput {}
 pub mod delete_voice_connector_group_output {
 
     /// A builder for [`DeleteVoiceConnectorGroupOutput`](crate::output::DeleteVoiceConnectorGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVoiceConnectorGroupOutput`](crate::output::DeleteVoiceConnectorGroupOutput).
@@ -7515,7 +7515,7 @@ pub struct DeleteVoiceConnectorEmergencyCallingConfigurationOutput {}
 pub mod delete_voice_connector_emergency_calling_configuration_output {
 
     /// A builder for [`DeleteVoiceConnectorEmergencyCallingConfigurationOutput`](crate::output::DeleteVoiceConnectorEmergencyCallingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVoiceConnectorEmergencyCallingConfigurationOutput`](crate::output::DeleteVoiceConnectorEmergencyCallingConfigurationOutput).
@@ -7542,7 +7542,7 @@ pub struct DeleteVoiceConnectorOutput {}
 pub mod delete_voice_connector_output {
 
     /// A builder for [`DeleteVoiceConnectorOutput`](crate::output::DeleteVoiceConnectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVoiceConnectorOutput`](crate::output::DeleteVoiceConnectorOutput).
@@ -7566,7 +7566,7 @@ pub struct DeleteSipRuleOutput {}
 pub mod delete_sip_rule_output {
 
     /// A builder for [`DeleteSipRuleOutput`](crate::output::DeleteSipRuleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSipRuleOutput`](crate::output::DeleteSipRuleOutput).
@@ -7590,7 +7590,7 @@ pub struct DeleteSipMediaApplicationOutput {}
 pub mod delete_sip_media_application_output {
 
     /// A builder for [`DeleteSipMediaApplicationOutput`](crate::output::DeleteSipMediaApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSipMediaApplicationOutput`](crate::output::DeleteSipMediaApplicationOutput).
@@ -7614,7 +7614,7 @@ pub struct DeleteRoomMembershipOutput {}
 pub mod delete_room_membership_output {
 
     /// A builder for [`DeleteRoomMembershipOutput`](crate::output::DeleteRoomMembershipOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRoomMembershipOutput`](crate::output::DeleteRoomMembershipOutput).
@@ -7638,7 +7638,7 @@ pub struct DeleteRoomOutput {}
 pub mod delete_room_output {
 
     /// A builder for [`DeleteRoomOutput`](crate::output::DeleteRoomOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRoomOutput`](crate::output::DeleteRoomOutput).
@@ -7662,7 +7662,7 @@ pub struct DeleteProxySessionOutput {}
 pub mod delete_proxy_session_output {
 
     /// A builder for [`DeleteProxySessionOutput`](crate::output::DeleteProxySessionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteProxySessionOutput`](crate::output::DeleteProxySessionOutput).
@@ -7686,7 +7686,7 @@ pub struct DeletePhoneNumberOutput {}
 pub mod delete_phone_number_output {
 
     /// A builder for [`DeletePhoneNumberOutput`](crate::output::DeletePhoneNumberOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePhoneNumberOutput`](crate::output::DeletePhoneNumberOutput).
@@ -7710,7 +7710,7 @@ pub struct DeleteMeetingOutput {}
 pub mod delete_meeting_output {
 
     /// A builder for [`DeleteMeetingOutput`](crate::output::DeleteMeetingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMeetingOutput`](crate::output::DeleteMeetingOutput).
@@ -7734,7 +7734,7 @@ pub struct DeleteMediaCapturePipelineOutput {}
 pub mod delete_media_capture_pipeline_output {
 
     /// A builder for [`DeleteMediaCapturePipelineOutput`](crate::output::DeleteMediaCapturePipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMediaCapturePipelineOutput`](crate::output::DeleteMediaCapturePipelineOutput).
@@ -7758,7 +7758,7 @@ pub struct DeleteEventsConfigurationOutput {}
 pub mod delete_events_configuration_output {
 
     /// A builder for [`DeleteEventsConfigurationOutput`](crate::output::DeleteEventsConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEventsConfigurationOutput`](crate::output::DeleteEventsConfigurationOutput).
@@ -7782,7 +7782,7 @@ pub struct DeleteChannelModeratorOutput {}
 pub mod delete_channel_moderator_output {
 
     /// A builder for [`DeleteChannelModeratorOutput`](crate::output::DeleteChannelModeratorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteChannelModeratorOutput`](crate::output::DeleteChannelModeratorOutput).
@@ -7806,7 +7806,7 @@ pub struct DeleteChannelMessageOutput {}
 pub mod delete_channel_message_output {
 
     /// A builder for [`DeleteChannelMessageOutput`](crate::output::DeleteChannelMessageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteChannelMessageOutput`](crate::output::DeleteChannelMessageOutput).
@@ -7830,7 +7830,7 @@ pub struct DeleteChannelMembershipOutput {}
 pub mod delete_channel_membership_output {
 
     /// A builder for [`DeleteChannelMembershipOutput`](crate::output::DeleteChannelMembershipOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteChannelMembershipOutput`](crate::output::DeleteChannelMembershipOutput).
@@ -7854,7 +7854,7 @@ pub struct DeleteChannelBanOutput {}
 pub mod delete_channel_ban_output {
 
     /// A builder for [`DeleteChannelBanOutput`](crate::output::DeleteChannelBanOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteChannelBanOutput`](crate::output::DeleteChannelBanOutput).
@@ -7878,7 +7878,7 @@ pub struct DeleteChannelOutput {}
 pub mod delete_channel_output {
 
     /// A builder for [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
@@ -7902,7 +7902,7 @@ pub struct DeleteAttendeeOutput {}
 pub mod delete_attendee_output {
 
     /// A builder for [`DeleteAttendeeOutput`](crate::output::DeleteAttendeeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAttendeeOutput`](crate::output::DeleteAttendeeOutput).
@@ -7926,7 +7926,7 @@ pub struct DeleteAppInstanceUserOutput {}
 pub mod delete_app_instance_user_output {
 
     /// A builder for [`DeleteAppInstanceUserOutput`](crate::output::DeleteAppInstanceUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAppInstanceUserOutput`](crate::output::DeleteAppInstanceUserOutput).
@@ -7950,7 +7950,7 @@ pub struct DeleteAppInstanceStreamingConfigurationsOutput {}
 pub mod delete_app_instance_streaming_configurations_output {
 
     /// A builder for [`DeleteAppInstanceStreamingConfigurationsOutput`](crate::output::DeleteAppInstanceStreamingConfigurationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAppInstanceStreamingConfigurationsOutput`](crate::output::DeleteAppInstanceStreamingConfigurationsOutput).
@@ -7975,7 +7975,7 @@ pub struct DeleteAppInstanceAdminOutput {}
 pub mod delete_app_instance_admin_output {
 
     /// A builder for [`DeleteAppInstanceAdminOutput`](crate::output::DeleteAppInstanceAdminOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAppInstanceAdminOutput`](crate::output::DeleteAppInstanceAdminOutput).
@@ -7999,7 +7999,7 @@ pub struct DeleteAppInstanceOutput {}
 pub mod delete_app_instance_output {
 
     /// A builder for [`DeleteAppInstanceOutput`](crate::output::DeleteAppInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAppInstanceOutput`](crate::output::DeleteAppInstanceOutput).
@@ -8023,7 +8023,7 @@ pub struct DeleteAccountOutput {}
 pub mod delete_account_output {
 
     /// A builder for [`DeleteAccountOutput`](crate::output::DeleteAccountOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccountOutput`](crate::output::DeleteAccountOutput).
@@ -8057,7 +8057,7 @@ impl CreateVoiceConnectorGroupOutput {
 pub mod create_voice_connector_group_output {
 
     /// A builder for [`CreateVoiceConnectorGroupOutput`](crate::output::CreateVoiceConnectorGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_group: std::option::Option<crate::model::VoiceConnectorGroup>,
     }
@@ -8108,7 +8108,7 @@ impl CreateVoiceConnectorOutput {
 pub mod create_voice_connector_output {
 
     /// A builder for [`CreateVoiceConnectorOutput`](crate::output::CreateVoiceConnectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector: std::option::Option<crate::model::VoiceConnector>,
     }
@@ -8159,7 +8159,7 @@ impl CreateUserOutput {
 pub mod create_user_output {
 
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user: std::option::Option<crate::model::User>,
     }
@@ -8205,7 +8205,7 @@ impl CreateSipRuleOutput {
 pub mod create_sip_rule_output {
 
     /// A builder for [`CreateSipRuleOutput`](crate::output::CreateSipRuleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_rule: std::option::Option<crate::model::SipRule>,
     }
@@ -8255,7 +8255,7 @@ impl CreateSipMediaApplicationCallOutput {
 pub mod create_sip_media_application_call_output {
 
     /// A builder for [`CreateSipMediaApplicationCallOutput`](crate::output::CreateSipMediaApplicationCallOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application_call:
             std::option::Option<crate::model::SipMediaApplicationCall>,
@@ -8310,7 +8310,7 @@ impl CreateSipMediaApplicationOutput {
 pub mod create_sip_media_application_output {
 
     /// A builder for [`CreateSipMediaApplicationOutput`](crate::output::CreateSipMediaApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application: std::option::Option<crate::model::SipMediaApplication>,
     }
@@ -8361,7 +8361,7 @@ impl CreateRoomMembershipOutput {
 pub mod create_room_membership_output {
 
     /// A builder for [`CreateRoomMembershipOutput`](crate::output::CreateRoomMembershipOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_membership: std::option::Option<crate::model::RoomMembership>,
     }
@@ -8412,7 +8412,7 @@ impl CreateRoomOutput {
 pub mod create_room_output {
 
     /// A builder for [`CreateRoomOutput`](crate::output::CreateRoomOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room: std::option::Option<crate::model::Room>,
     }
@@ -8458,7 +8458,7 @@ impl CreateProxySessionOutput {
 pub mod create_proxy_session_output {
 
     /// A builder for [`CreateProxySessionOutput`](crate::output::CreateProxySessionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proxy_session: std::option::Option<crate::model::ProxySession>,
     }
@@ -8509,7 +8509,7 @@ impl CreatePhoneNumberOrderOutput {
 pub mod create_phone_number_order_output {
 
     /// A builder for [`CreatePhoneNumberOrderOutput`](crate::output::CreatePhoneNumberOrderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_order: std::option::Option<crate::model::PhoneNumberOrder>,
     }
@@ -8574,7 +8574,7 @@ impl CreateMeetingWithAttendeesOutput {
 pub mod create_meeting_with_attendees_output {
 
     /// A builder for [`CreateMeetingWithAttendeesOutput`](crate::output::CreateMeetingWithAttendeesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting: std::option::Option<crate::model::Meeting>,
         pub(crate) attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
@@ -8664,7 +8664,7 @@ impl CreateMeetingDialOutOutput {
 pub mod create_meeting_dial_out_output {
 
     /// A builder for [`CreateMeetingDialOutOutput`](crate::output::CreateMeetingDialOutOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
     }
@@ -8715,7 +8715,7 @@ impl CreateMeetingOutput {
 pub mod create_meeting_output {
 
     /// A builder for [`CreateMeetingOutput`](crate::output::CreateMeetingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting: std::option::Option<crate::model::Meeting>,
     }
@@ -8765,7 +8765,7 @@ impl CreateMediaCapturePipelineOutput {
 pub mod create_media_capture_pipeline_output {
 
     /// A builder for [`CreateMediaCapturePipelineOutput`](crate::output::CreateMediaCapturePipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
     }
@@ -8823,7 +8823,7 @@ impl CreateChannelModeratorOutput {
 pub mod create_channel_moderator_output {
 
     /// A builder for [`CreateChannelModeratorOutput`](crate::output::CreateChannelModeratorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) channel_moderator: std::option::Option<crate::model::Identity>,
@@ -8893,7 +8893,7 @@ impl CreateChannelMembershipOutput {
 pub mod create_channel_membership_output {
 
     /// A builder for [`CreateChannelMembershipOutput`](crate::output::CreateChannelMembershipOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) member: std::option::Option<crate::model::Identity>,
@@ -8960,7 +8960,7 @@ impl CreateChannelBanOutput {
 pub mod create_channel_ban_output {
 
     /// A builder for [`CreateChannelBanOutput`](crate::output::CreateChannelBanOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) member: std::option::Option<crate::model::Identity>,
@@ -9020,7 +9020,7 @@ impl CreateChannelOutput {
 pub mod create_channel_output {
 
     /// A builder for [`CreateChannelOutput`](crate::output::CreateChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
     }
@@ -9068,7 +9068,7 @@ impl CreateBotOutput {
 pub mod create_bot_output {
 
     /// A builder for [`CreateBotOutput`](crate::output::CreateBotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot: std::option::Option<crate::model::Bot>,
     }
@@ -9114,7 +9114,7 @@ impl CreateAttendeeOutput {
 pub mod create_attendee_output {
 
     /// A builder for [`CreateAttendeeOutput`](crate::output::CreateAttendeeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendee: std::option::Option<crate::model::Attendee>,
     }
@@ -9162,7 +9162,7 @@ impl CreateAppInstanceUserOutput {
 pub mod create_app_instance_user_output {
 
     /// A builder for [`CreateAppInstanceUserOutput`](crate::output::CreateAppInstanceUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
     }
@@ -9220,7 +9220,7 @@ impl CreateAppInstanceAdminOutput {
 pub mod create_app_instance_admin_output {
 
     /// A builder for [`CreateAppInstanceAdminOutput`](crate::output::CreateAppInstanceAdminOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_admin: std::option::Option<crate::model::Identity>,
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
@@ -9286,7 +9286,7 @@ impl CreateAppInstanceOutput {
 pub mod create_app_instance_output {
 
     /// A builder for [`CreateAppInstanceOutput`](crate::output::CreateAppInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
     }
@@ -9337,7 +9337,7 @@ impl CreateAccountOutput {
 pub mod create_account_output {
 
     /// A builder for [`CreateAccountOutput`](crate::output::CreateAccountOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account: std::option::Option<crate::model::Account>,
     }
@@ -9385,7 +9385,7 @@ impl BatchUpdateUserOutput {
 pub mod batch_update_user_output {
 
     /// A builder for [`BatchUpdateUserOutput`](crate::output::BatchUpdateUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_errors: std::option::Option<std::vec::Vec<crate::model::UserError>>,
     }
@@ -9442,7 +9442,7 @@ impl BatchUpdatePhoneNumberOutput {
 pub mod batch_update_phone_number_output {
 
     /// A builder for [`BatchUpdatePhoneNumberOutput`](crate::output::BatchUpdatePhoneNumberOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_errors:
             std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
@@ -9500,7 +9500,7 @@ impl BatchUnsuspendUserOutput {
 pub mod batch_unsuspend_user_output {
 
     /// A builder for [`BatchUnsuspendUserOutput`](crate::output::BatchUnsuspendUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_errors: std::option::Option<std::vec::Vec<crate::model::UserError>>,
     }
@@ -9557,7 +9557,7 @@ impl BatchSuspendUserOutput {
 pub mod batch_suspend_user_output {
 
     /// A builder for [`BatchSuspendUserOutput`](crate::output::BatchSuspendUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_errors: std::option::Option<std::vec::Vec<crate::model::UserError>>,
     }
@@ -9614,7 +9614,7 @@ impl BatchDeletePhoneNumberOutput {
 pub mod batch_delete_phone_number_output {
 
     /// A builder for [`BatchDeletePhoneNumberOutput`](crate::output::BatchDeletePhoneNumberOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_errors:
             std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
@@ -9672,7 +9672,7 @@ impl BatchCreateRoomMembershipOutput {
 pub mod batch_create_room_membership_output {
 
     /// A builder for [`BatchCreateRoomMembershipOutput`](crate::output::BatchCreateRoomMembershipOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::MemberError>>,
     }
@@ -9740,7 +9740,7 @@ impl BatchCreateChannelMembershipOutput {
 pub mod batch_create_channel_membership_output {
 
     /// A builder for [`BatchCreateChannelMembershipOutput`](crate::output::BatchCreateChannelMembershipOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_channel_memberships:
             std::option::Option<crate::model::BatchChannelMemberships>,
@@ -9826,7 +9826,7 @@ impl BatchCreateAttendeeOutput {
 pub mod batch_create_attendee_output {
 
     /// A builder for [`BatchCreateAttendeeOutput`](crate::output::BatchCreateAttendeeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeError>>,
@@ -9894,7 +9894,7 @@ pub struct AssociateSigninDelegateGroupsWithAccountOutput {}
 pub mod associate_signin_delegate_groups_with_account_output {
 
     /// A builder for [`AssociateSigninDelegateGroupsWithAccountOutput`](crate::output::AssociateSigninDelegateGroupsWithAccountOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateSigninDelegateGroupsWithAccountOutput`](crate::output::AssociateSigninDelegateGroupsWithAccountOutput).
@@ -9919,7 +9919,7 @@ pub struct AssociatePhoneNumberWithUserOutput {}
 pub mod associate_phone_number_with_user_output {
 
     /// A builder for [`AssociatePhoneNumberWithUserOutput`](crate::output::AssociatePhoneNumberWithUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AssociatePhoneNumberWithUserOutput`](crate::output::AssociatePhoneNumberWithUserOutput).
@@ -9953,7 +9953,7 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupOutput {
 pub mod associate_phone_numbers_with_voice_connector_group_output {
 
     /// A builder for [`AssociatePhoneNumbersWithVoiceConnectorGroupOutput`](crate::output::AssociatePhoneNumbersWithVoiceConnectorGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_errors:
             std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
@@ -10012,7 +10012,7 @@ impl AssociatePhoneNumbersWithVoiceConnectorOutput {
 pub mod associate_phone_numbers_with_voice_connector_output {
 
     /// A builder for [`AssociatePhoneNumbersWithVoiceConnectorOutput`](crate::output::AssociatePhoneNumbersWithVoiceConnectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_errors:
             std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,

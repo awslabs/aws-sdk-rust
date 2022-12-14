@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod delete_session_input {
 
     /// A builder for [`DeleteSessionInput`](crate::input::DeleteSessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,
         pub(crate) bot_alias: std::option::Option<std::string::String>,
@@ -219,7 +219,7 @@ impl DeleteSessionInput {
 pub mod get_session_input {
 
     /// A builder for [`GetSessionInput`](crate::input::GetSessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,
         pub(crate) bot_alias: std::option::Option<std::string::String>,
@@ -889,7 +889,7 @@ impl PostContentInput {
 pub mod post_text_input {
 
     /// A builder for [`PostTextInput`](crate::input::PostTextInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,
         pub(crate) bot_alias: std::option::Option<std::string::String>,
@@ -1241,7 +1241,7 @@ impl PostTextInput {
 pub mod put_session_input {
 
     /// A builder for [`PutSessionInput`](crate::input::PutSessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,
         pub(crate) bot_alias: std::option::Option<std::string::String>,

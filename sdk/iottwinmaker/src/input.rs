@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod batch_put_property_values_input {
 
     /// A builder for [`BatchPutPropertyValuesInput`](crate::input::BatchPutPropertyValuesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) entries: std::option::Option<std::vec::Vec<crate::model::PropertyValueEntry>>,
@@ -196,7 +196,7 @@ impl BatchPutPropertyValuesInput {
 pub mod create_component_type_input {
 
     /// A builder for [`CreateComponentTypeInput`](crate::input::CreateComponentTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) is_singleton: std::option::Option<bool>,
@@ -534,7 +534,7 @@ impl CreateComponentTypeInput {
 pub mod create_entity_input {
 
     /// A builder for [`CreateEntityInput`](crate::input::CreateEntityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -809,7 +809,7 @@ impl CreateEntityInput {
 pub mod create_scene_input {
 
     /// A builder for [`CreateSceneInput`](crate::input::CreateSceneInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) scene_id: std::option::Option<std::string::String>,
@@ -1064,7 +1064,7 @@ impl CreateSceneInput {
 pub mod create_workspace_input {
 
     /// A builder for [`CreateWorkspaceInput`](crate::input::CreateWorkspaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1295,7 +1295,7 @@ impl CreateWorkspaceInput {
 pub mod delete_component_type_input {
 
     /// A builder for [`DeleteComponentTypeInput`](crate::input::DeleteComponentTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) component_type_id: std::option::Option<std::string::String>,
@@ -1484,7 +1484,7 @@ impl DeleteComponentTypeInput {
 pub mod delete_entity_input {
 
     /// A builder for [`DeleteEntityInput`](crate::input::DeleteEntityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -1696,7 +1696,7 @@ impl DeleteEntityInput {
 pub mod delete_scene_input {
 
     /// A builder for [`DeleteSceneInput`](crate::input::DeleteSceneInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) scene_id: std::option::Option<std::string::String>,
@@ -1880,7 +1880,7 @@ impl DeleteSceneInput {
 pub mod delete_workspace_input {
 
     /// A builder for [`DeleteWorkspaceInput`](crate::input::DeleteWorkspaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
     }
@@ -2032,7 +2032,7 @@ impl DeleteWorkspaceInput {
 pub mod get_component_type_input {
 
     /// A builder for [`GetComponentTypeInput`](crate::input::GetComponentTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) component_type_id: std::option::Option<std::string::String>,
@@ -2221,7 +2221,7 @@ impl GetComponentTypeInput {
 pub mod get_entity_input {
 
     /// A builder for [`GetEntityInput`](crate::input::GetEntityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -2403,7 +2403,7 @@ impl GetEntityInput {
 pub mod get_property_value_input {
 
     /// A builder for [`GetPropertyValueInput`](crate::input::GetPropertyValueInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_name: std::option::Option<std::string::String>,
         pub(crate) component_type_id: std::option::Option<std::string::String>,
@@ -2634,7 +2634,7 @@ impl GetPropertyValueInput {
 pub mod get_property_value_history_input {
 
     /// A builder for [`GetPropertyValueHistoryInput`](crate::input::GetPropertyValueHistoryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -3013,7 +3013,7 @@ impl GetPropertyValueHistoryInput {
 pub mod get_scene_input {
 
     /// A builder for [`GetSceneInput`](crate::input::GetSceneInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) scene_id: std::option::Option<std::string::String>,
@@ -3195,7 +3195,7 @@ impl GetSceneInput {
 pub mod get_workspace_input {
 
     /// A builder for [`GetWorkspaceInput`](crate::input::GetWorkspaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
     }
@@ -3347,7 +3347,7 @@ impl GetWorkspaceInput {
 pub mod list_component_types_input {
 
     /// A builder for [`ListComponentTypesInput`](crate::input::ListComponentTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) filters:
@@ -3561,7 +3561,7 @@ impl ListComponentTypesInput {
 pub mod list_entities_input {
 
     /// A builder for [`ListEntitiesInput`](crate::input::ListEntitiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::ListEntitiesFilter>>,
@@ -3776,7 +3776,7 @@ impl ListEntitiesInput {
 pub mod list_scenes_input {
 
     /// A builder for [`ListScenesInput`](crate::input::ListScenesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3966,7 +3966,7 @@ impl ListScenesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4136,7 +4136,7 @@ impl ListTagsForResourceInput {
 pub mod list_workspaces_input {
 
     /// A builder for [`ListWorkspacesInput`](crate::input::ListWorkspacesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4290,7 +4290,7 @@ impl ListWorkspacesInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -4461,7 +4461,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4647,7 +4647,7 @@ impl UntagResourceInput {
 pub mod update_component_type_input {
 
     /// A builder for [`UpdateComponentTypeInput`](crate::input::UpdateComponentTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) is_singleton: std::option::Option<bool>,
@@ -4956,7 +4956,7 @@ impl UpdateComponentTypeInput {
 pub mod update_entity_input {
 
     /// A builder for [`UpdateEntityInput`](crate::input::UpdateEntityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -5229,7 +5229,7 @@ impl UpdateEntityInput {
 pub mod update_scene_input {
 
     /// A builder for [`UpdateSceneInput`](crate::input::UpdateSceneInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) scene_id: std::option::Option<std::string::String>,
@@ -5475,7 +5475,7 @@ impl UpdateSceneInput {
 pub mod update_workspace_input {
 
     /// A builder for [`UpdateWorkspaceInput`](crate::input::UpdateWorkspaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,

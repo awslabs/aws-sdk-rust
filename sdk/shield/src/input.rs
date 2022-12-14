@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_drt_log_bucket_input {
 
     /// A builder for [`AssociateDrtLogBucketInput`](crate::input::AssociateDrtLogBucketInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_bucket: std::option::Option<std::string::String>,
     }
@@ -154,7 +154,7 @@ impl AssociateDrtLogBucketInput {
 pub mod associate_drt_role_input {
 
     /// A builder for [`AssociateDrtRoleInput`](crate::input::AssociateDrtRoleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
@@ -303,7 +303,7 @@ impl AssociateDrtRoleInput {
 pub mod associate_health_check_input {
 
     /// A builder for [`AssociateHealthCheckInput`](crate::input::AssociateHealthCheckInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_id: std::option::Option<std::string::String>,
         pub(crate) health_check_arn: std::option::Option<std::string::String>,
@@ -470,7 +470,7 @@ impl AssociateHealthCheckInput {
 pub mod associate_proactive_engagement_details_input {
 
     /// A builder for [`AssociateProactiveEngagementDetailsInput`](crate::input::AssociateProactiveEngagementDetailsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) emergency_contact_list:
             std::option::Option<std::vec::Vec<crate::model::EmergencyContact>>,
@@ -632,7 +632,7 @@ impl AssociateProactiveEngagementDetailsInput {
 pub mod create_protection_input {
 
     /// A builder for [`CreateProtectionInput`](crate::input::CreateProtectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -830,7 +830,7 @@ impl CreateProtectionInput {
 pub mod create_protection_group_input {
 
     /// A builder for [`CreateProtectionGroupInput`](crate::input::CreateProtectionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_group_id: std::option::Option<std::string::String>,
         pub(crate) aggregation: std::option::Option<crate::model::ProtectionGroupAggregation>,
@@ -1079,7 +1079,7 @@ impl CreateProtectionGroupInput {
 pub mod create_subscription_input {
 
     /// A builder for [`CreateSubscriptionInput`](crate::input::CreateSubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateSubscriptionInput`](crate::input::CreateSubscriptionInput).
@@ -1205,7 +1205,7 @@ impl CreateSubscriptionInput {
 pub mod delete_protection_input {
 
     /// A builder for [`DeleteProtectionInput`](crate::input::DeleteProtectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_id: std::option::Option<std::string::String>,
     }
@@ -1355,7 +1355,7 @@ impl DeleteProtectionInput {
 pub mod delete_protection_group_input {
 
     /// A builder for [`DeleteProtectionGroupInput`](crate::input::DeleteProtectionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_group_id: std::option::Option<std::string::String>,
     }
@@ -1507,7 +1507,7 @@ impl DeleteProtectionGroupInput {
 pub mod delete_subscription_input {
 
     /// A builder for [`DeleteSubscriptionInput`](crate::input::DeleteSubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSubscriptionInput`](crate::input::DeleteSubscriptionInput).
@@ -1633,7 +1633,7 @@ impl DeleteSubscriptionInput {
 pub mod describe_attack_input {
 
     /// A builder for [`DescribeAttackInput`](crate::input::DescribeAttackInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attack_id: std::option::Option<std::string::String>,
     }
@@ -1778,7 +1778,7 @@ impl DescribeAttackInput {
 pub mod describe_attack_statistics_input {
 
     /// A builder for [`DescribeAttackStatisticsInput`](crate::input::DescribeAttackStatisticsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeAttackStatisticsInput`](crate::input::DescribeAttackStatisticsInput).
@@ -1906,7 +1906,7 @@ impl DescribeAttackStatisticsInput {
 pub mod describe_drt_access_input {
 
     /// A builder for [`DescribeDrtAccessInput`](crate::input::DescribeDrtAccessInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeDrtAccessInput`](crate::input::DescribeDrtAccessInput).
@@ -2032,7 +2032,7 @@ impl DescribeDrtAccessInput {
 pub mod describe_emergency_contact_settings_input {
 
     /// A builder for [`DescribeEmergencyContactSettingsInput`](crate::input::DescribeEmergencyContactSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeEmergencyContactSettingsInput`](crate::input::DescribeEmergencyContactSettingsInput).
@@ -2157,7 +2157,7 @@ impl DescribeEmergencyContactSettingsInput {
 pub mod describe_protection_input {
 
     /// A builder for [`DescribeProtectionInput`](crate::input::DescribeProtectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_id: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2319,7 +2319,7 @@ impl DescribeProtectionInput {
 pub mod describe_protection_group_input {
 
     /// A builder for [`DescribeProtectionGroupInput`](crate::input::DescribeProtectionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_group_id: std::option::Option<std::string::String>,
     }
@@ -2471,7 +2471,7 @@ impl DescribeProtectionGroupInput {
 pub mod describe_subscription_input {
 
     /// A builder for [`DescribeSubscriptionInput`](crate::input::DescribeSubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeSubscriptionInput`](crate::input::DescribeSubscriptionInput).
@@ -2597,7 +2597,7 @@ impl DescribeSubscriptionInput {
 pub mod disable_application_layer_automatic_response_input {
 
     /// A builder for [`DisableApplicationLayerAutomaticResponseInput`](crate::input::DisableApplicationLayerAutomaticResponseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2745,7 +2745,7 @@ impl DisableApplicationLayerAutomaticResponseInput {
 pub mod disable_proactive_engagement_input {
 
     /// A builder for [`DisableProactiveEngagementInput`](crate::input::DisableProactiveEngagementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisableProactiveEngagementInput`](crate::input::DisableProactiveEngagementInput).
@@ -2873,7 +2873,7 @@ impl DisableProactiveEngagementInput {
 pub mod disassociate_drt_log_bucket_input {
 
     /// A builder for [`DisassociateDrtLogBucketInput`](crate::input::DisassociateDrtLogBucketInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_bucket: std::option::Option<std::string::String>,
     }
@@ -3022,7 +3022,7 @@ impl DisassociateDrtLogBucketInput {
 pub mod disassociate_drt_role_input {
 
     /// A builder for [`DisassociateDrtRoleInput`](crate::input::DisassociateDrtRoleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateDrtRoleInput`](crate::input::DisassociateDrtRoleInput).
@@ -3148,7 +3148,7 @@ impl DisassociateDrtRoleInput {
 pub mod disassociate_health_check_input {
 
     /// A builder for [`DisassociateHealthCheckInput`](crate::input::DisassociateHealthCheckInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_id: std::option::Option<std::string::String>,
         pub(crate) health_check_arn: std::option::Option<std::string::String>,
@@ -3315,7 +3315,7 @@ impl DisassociateHealthCheckInput {
 pub mod enable_application_layer_automatic_response_input {
 
     /// A builder for [`EnableApplicationLayerAutomaticResponseInput`](crate::input::EnableApplicationLayerAutomaticResponseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) action: std::option::Option<crate::model::ResponseAction>,
@@ -3476,7 +3476,7 @@ impl EnableApplicationLayerAutomaticResponseInput {
 pub mod enable_proactive_engagement_input {
 
     /// A builder for [`EnableProactiveEngagementInput`](crate::input::EnableProactiveEngagementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`EnableProactiveEngagementInput`](crate::input::EnableProactiveEngagementInput).
@@ -3604,7 +3604,7 @@ impl EnableProactiveEngagementInput {
 pub mod get_subscription_state_input {
 
     /// A builder for [`GetSubscriptionStateInput`](crate::input::GetSubscriptionStateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetSubscriptionStateInput`](crate::input::GetSubscriptionStateInput).
@@ -3732,7 +3732,7 @@ impl GetSubscriptionStateInput {
 pub mod list_attacks_input {
 
     /// A builder for [`ListAttacksInput`](crate::input::ListAttacksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) start_time: std::option::Option<crate::model::TimeRange>,
@@ -3945,7 +3945,7 @@ impl ListAttacksInput {
 pub mod list_protection_groups_input {
 
     /// A builder for [`ListProtectionGroupsInput`](crate::input::ListProtectionGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4133,7 +4133,7 @@ impl ListProtectionGroupsInput {
 pub mod list_protections_input {
 
     /// A builder for [`ListProtectionsInput`](crate::input::ListProtectionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4316,7 +4316,7 @@ impl ListProtectionsInput {
 pub mod list_resources_in_protection_group_input {
 
     /// A builder for [`ListResourcesInProtectionGroupInput`](crate::input::ListResourcesInProtectionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_group_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4497,7 +4497,7 @@ impl ListResourcesInProtectionGroupInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -4646,7 +4646,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4812,7 +4812,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4978,7 +4978,7 @@ impl UntagResourceInput {
 pub mod update_application_layer_automatic_response_input {
 
     /// A builder for [`UpdateApplicationLayerAutomaticResponseInput`](crate::input::UpdateApplicationLayerAutomaticResponseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) action: std::option::Option<crate::model::ResponseAction>,
@@ -5139,7 +5139,7 @@ impl UpdateApplicationLayerAutomaticResponseInput {
 pub mod update_emergency_contact_settings_input {
 
     /// A builder for [`UpdateEmergencyContactSettingsInput`](crate::input::UpdateEmergencyContactSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) emergency_contact_list:
             std::option::Option<std::vec::Vec<crate::model::EmergencyContact>>,
@@ -5297,7 +5297,7 @@ impl UpdateEmergencyContactSettingsInput {
 pub mod update_protection_group_input {
 
     /// A builder for [`UpdateProtectionGroupInput`](crate::input::UpdateProtectionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_group_id: std::option::Option<std::string::String>,
         pub(crate) aggregation: std::option::Option<crate::model::ProtectionGroupAggregation>,
@@ -5525,7 +5525,7 @@ impl UpdateProtectionGroupInput {
 pub mod update_subscription_input {
 
     /// A builder for [`UpdateSubscriptionInput`](crate::input::UpdateSubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_renew: std::option::Option<crate::model::AutoRenew>,
     }

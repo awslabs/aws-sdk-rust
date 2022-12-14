@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod batch_evaluate_feature_input {
 
     /// A builder for [`BatchEvaluateFeatureInput`](crate::input::BatchEvaluateFeatureInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) requests: std::option::Option<std::vec::Vec<crate::model::EvaluationRequest>>,
@@ -192,7 +192,7 @@ impl BatchEvaluateFeatureInput {
 pub mod create_experiment_input {
 
     /// A builder for [`CreateExperimentInput`](crate::input::CreateExperimentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -513,7 +513,7 @@ impl CreateExperimentInput {
 pub mod create_feature_input {
 
     /// A builder for [`CreateFeatureInput`](crate::input::CreateFeatureInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -822,7 +822,7 @@ impl CreateFeatureInput {
 pub mod create_launch_input {
 
     /// A builder for [`CreateLaunchInput`](crate::input::CreateLaunchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1120,7 +1120,7 @@ impl CreateLaunchInput {
 pub mod create_project_input {
 
     /// A builder for [`CreateProjectInput`](crate::input::CreateProjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1347,7 +1347,7 @@ impl CreateProjectInput {
 pub mod create_segment_input {
 
     /// A builder for [`CreateSegmentInput`](crate::input::CreateSegmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) pattern: std::option::Option<std::string::String>,
@@ -1548,7 +1548,7 @@ impl CreateSegmentInput {
 pub mod delete_experiment_input {
 
     /// A builder for [`DeleteExperimentInput`](crate::input::DeleteExperimentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) experiment: std::option::Option<std::string::String>,
@@ -1732,7 +1732,7 @@ impl DeleteExperimentInput {
 pub mod delete_feature_input {
 
     /// A builder for [`DeleteFeatureInput`](crate::input::DeleteFeatureInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) feature: std::option::Option<std::string::String>,
@@ -1914,7 +1914,7 @@ impl DeleteFeatureInput {
 pub mod delete_launch_input {
 
     /// A builder for [`DeleteLaunchInput`](crate::input::DeleteLaunchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) launch: std::option::Option<std::string::String>,
@@ -2096,7 +2096,7 @@ impl DeleteLaunchInput {
 pub mod delete_project_input {
 
     /// A builder for [`DeleteProjectInput`](crate::input::DeleteProjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
     }
@@ -2242,7 +2242,7 @@ impl DeleteProjectInput {
 pub mod delete_segment_input {
 
     /// A builder for [`DeleteSegmentInput`](crate::input::DeleteSegmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segment: std::option::Option<std::string::String>,
     }
@@ -2388,7 +2388,7 @@ impl DeleteSegmentInput {
 pub mod evaluate_feature_input {
 
     /// A builder for [`EvaluateFeatureInput`](crate::input::EvaluateFeatureInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) feature: std::option::Option<std::string::String>,
@@ -2615,7 +2615,7 @@ impl EvaluateFeatureInput {
 pub mod get_experiment_input {
 
     /// A builder for [`GetExperimentInput`](crate::input::GetExperimentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) experiment: std::option::Option<std::string::String>,
@@ -2797,7 +2797,7 @@ impl GetExperimentInput {
 pub mod get_experiment_results_input {
 
     /// A builder for [`GetExperimentResultsInput`](crate::input::GetExperimentResultsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) experiment: std::option::Option<std::string::String>,
@@ -3152,7 +3152,7 @@ impl GetExperimentResultsInput {
 pub mod get_feature_input {
 
     /// A builder for [`GetFeatureInput`](crate::input::GetFeatureInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) feature: std::option::Option<std::string::String>,
@@ -3334,7 +3334,7 @@ impl GetFeatureInput {
 pub mod get_launch_input {
 
     /// A builder for [`GetLaunchInput`](crate::input::GetLaunchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) launch: std::option::Option<std::string::String>,
@@ -3514,7 +3514,7 @@ impl GetLaunchInput {
 pub mod get_project_input {
 
     /// A builder for [`GetProjectInput`](crate::input::GetProjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
     }
@@ -3660,7 +3660,7 @@ impl GetProjectInput {
 pub mod get_segment_input {
 
     /// A builder for [`GetSegmentInput`](crate::input::GetSegmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segment: std::option::Option<std::string::String>,
     }
@@ -3806,7 +3806,7 @@ impl GetSegmentInput {
 pub mod list_experiments_input {
 
     /// A builder for [`ListExperimentsInput`](crate::input::ListExperimentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4017,7 +4017,7 @@ impl ListExperimentsInput {
 pub mod list_features_input {
 
     /// A builder for [`ListFeaturesInput`](crate::input::ListFeaturesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4208,7 +4208,7 @@ impl ListFeaturesInput {
 pub mod list_launches_input {
 
     /// A builder for [`ListLaunchesInput`](crate::input::ListLaunchesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4419,7 +4419,7 @@ impl ListLaunchesInput {
 pub mod list_projects_input {
 
     /// A builder for [`ListProjectsInput`](crate::input::ListProjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4578,7 +4578,7 @@ impl ListProjectsInput {
 pub mod list_segment_references_input {
 
     /// A builder for [`ListSegmentReferencesInput`](crate::input::ListSegmentReferencesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segment: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4794,7 +4794,7 @@ impl ListSegmentReferencesInput {
 pub mod list_segments_input {
 
     /// A builder for [`ListSegmentsInput`](crate::input::ListSegmentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4953,7 +4953,7 @@ impl ListSegmentsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -5101,7 +5101,7 @@ impl ListTagsForResourceInput {
 pub mod put_project_events_input {
 
     /// A builder for [`PutProjectEventsInput`](crate::input::PutProjectEventsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -5286,7 +5286,7 @@ impl PutProjectEventsInput {
 pub mod start_experiment_input {
 
     /// A builder for [`StartExperimentInput`](crate::input::StartExperimentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) experiment: std::option::Option<std::string::String>,
@@ -5497,7 +5497,7 @@ impl StartExperimentInput {
 pub mod start_launch_input {
 
     /// A builder for [`StartLaunchInput`](crate::input::StartLaunchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) launch: std::option::Option<std::string::String>,
@@ -5679,7 +5679,7 @@ impl StartLaunchInput {
 pub mod stop_experiment_input {
 
     /// A builder for [`StopExperimentInput`](crate::input::StopExperimentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) experiment: std::option::Option<std::string::String>,
@@ -5902,7 +5902,7 @@ impl StopExperimentInput {
 pub mod stop_launch_input {
 
     /// A builder for [`StopLaunchInput`](crate::input::StopLaunchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) launch: std::option::Option<std::string::String>,
@@ -6125,7 +6125,7 @@ impl StopLaunchInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -6314,7 +6314,7 @@ impl TagResourceInput {
 pub mod test_segment_pattern_input {
 
     /// A builder for [`TestSegmentPatternInput`](crate::input::TestSegmentPatternInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pattern: std::option::Option<std::string::String>,
         pub(crate) payload: std::option::Option<std::string::String>,
@@ -6468,7 +6468,7 @@ impl TestSegmentPatternInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6653,7 +6653,7 @@ impl UntagResourceInput {
 pub mod update_experiment_input {
 
     /// A builder for [`UpdateExperimentInput`](crate::input::UpdateExperimentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) experiment: std::option::Option<std::string::String>,
@@ -6973,7 +6973,7 @@ impl UpdateExperimentInput {
 pub mod update_feature_input {
 
     /// A builder for [`UpdateFeatureInput`](crate::input::UpdateFeatureInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) feature: std::option::Option<std::string::String>,
@@ -7289,7 +7289,7 @@ impl UpdateFeatureInput {
 pub mod update_launch_input {
 
     /// A builder for [`UpdateLaunchInput`](crate::input::UpdateLaunchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) launch: std::option::Option<std::string::String>,
@@ -7574,7 +7574,7 @@ impl UpdateLaunchInput {
 pub mod update_project_input {
 
     /// A builder for [`UpdateProjectInput`](crate::input::UpdateProjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) app_config_resource:
@@ -7767,7 +7767,7 @@ impl UpdateProjectInput {
 pub mod update_project_data_delivery_input {
 
     /// A builder for [`UpdateProjectDataDeliveryInput`](crate::input::UpdateProjectDataDeliveryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<std::string::String>,
         pub(crate) s3_destination: std::option::Option<crate::model::S3DestinationConfig>,

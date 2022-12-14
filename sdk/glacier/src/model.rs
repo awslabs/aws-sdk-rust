@@ -25,7 +25,7 @@ impl VaultNotificationConfig {
 pub mod vault_notification_config {
 
     /// A builder for [`VaultNotificationConfig`](crate::model::VaultNotificationConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sns_topic: std::option::Option<std::string::String>,
         pub(crate) events: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -94,7 +94,7 @@ impl VaultAccessPolicy {
 pub mod vault_access_policy {
 
     /// A builder for [`VaultAccessPolicy`](crate::model::VaultAccessPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
@@ -142,7 +142,7 @@ impl DataRetrievalPolicy {
 pub mod data_retrieval_policy {
 
     /// A builder for [`DataRetrievalPolicy`](crate::model::DataRetrievalPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::DataRetrievalRule>>,
     }
@@ -208,7 +208,7 @@ impl DataRetrievalRule {
 pub mod data_retrieval_rule {
 
     /// A builder for [`DataRetrievalRule`](crate::model::DataRetrievalRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) strategy: std::option::Option<std::string::String>,
         pub(crate) bytes_per_hour: std::option::Option<i64>,
@@ -307,7 +307,7 @@ impl DescribeVaultOutput {
 pub mod describe_vault_output {
 
     /// A builder for [`DescribeVaultOutput`](crate::model::DescribeVaultOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vault_arn: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -435,7 +435,7 @@ impl ProvisionedCapacityDescription {
 pub mod provisioned_capacity_description {
 
     /// A builder for [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity_id: std::option::Option<std::string::String>,
         pub(crate) start_date: std::option::Option<std::string::String>,
@@ -517,7 +517,7 @@ impl PartListElement {
 pub mod part_list_element {
 
     /// A builder for [`PartListElement`](crate::model::PartListElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) range_in_bytes: std::option::Option<std::string::String>,
         pub(crate) sha256_tree_hash: std::option::Option<std::string::String>,
@@ -611,7 +611,7 @@ impl UploadListElement {
 pub mod upload_list_element {
 
     /// A builder for [`UploadListElement`](crate::model::UploadListElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multipart_upload_id: std::option::Option<std::string::String>,
         pub(crate) vault_arn: std::option::Option<std::string::String>,
@@ -885,7 +885,7 @@ impl GlacierJobDescription {
 pub mod glacier_job_description {
 
     /// A builder for [`GlacierJobDescription`](crate::model::GlacierJobDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_description: std::option::Option<std::string::String>,
@@ -1239,7 +1239,7 @@ impl OutputLocation {
 pub mod output_location {
 
     /// A builder for [`OutputLocation`](crate::model::OutputLocation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3Location>,
     }
@@ -1342,7 +1342,7 @@ impl S3Location {
 pub mod s3_location {
 
     /// A builder for [`S3Location`](crate::model::S3Location).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -1628,7 +1628,7 @@ impl Grant {
 pub mod grant {
 
     /// A builder for [`Grant`](crate::model::Grant).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grantee: std::option::Option<crate::model::Grantee>,
         pub(crate) permission: std::option::Option<crate::model::Permission>,
@@ -1824,7 +1824,7 @@ impl Grantee {
 pub mod grantee {
 
     /// A builder for [`Grantee`](crate::model::Grantee).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::Type>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -2155,7 +2155,7 @@ impl Encryption {
 pub mod encryption {
 
     /// A builder for [`Encryption`](crate::model::Encryption).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -2341,7 +2341,7 @@ impl SelectParameters {
 pub mod select_parameters {
 
     /// A builder for [`SelectParameters`](crate::model::SelectParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_serialization: std::option::Option<crate::model::InputSerialization>,
         pub(crate) expression_type: std::option::Option<crate::model::ExpressionType>,
@@ -2434,7 +2434,7 @@ impl OutputSerialization {
 pub mod output_serialization {
 
     /// A builder for [`OutputSerialization`](crate::model::OutputSerialization).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) csv: std::option::Option<crate::model::CsvOutput>,
     }
@@ -2508,7 +2508,7 @@ impl CsvOutput {
 pub mod csv_output {
 
     /// A builder for [`CsvOutput`](crate::model::CsvOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quote_fields: std::option::Option<crate::model::QuoteFields>,
         pub(crate) quote_escape_character: std::option::Option<std::string::String>,
@@ -2794,7 +2794,7 @@ impl InputSerialization {
 pub mod input_serialization {
 
     /// A builder for [`InputSerialization`](crate::model::InputSerialization).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) csv: std::option::Option<crate::model::CsvInput>,
     }
@@ -2875,7 +2875,7 @@ impl CsvInput {
 pub mod csv_input {
 
     /// A builder for [`CsvInput`](crate::model::CsvInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_header_info: std::option::Option<crate::model::FileHeaderInfo>,
         pub(crate) comments: std::option::Option<std::string::String>,
@@ -3121,7 +3121,7 @@ impl InventoryRetrievalJobDescription {
 pub mod inventory_retrieval_job_description {
 
     /// A builder for [`InventoryRetrievalJobDescription`](crate::model::InventoryRetrievalJobDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<std::string::String>,
         pub(crate) start_date: std::option::Option<std::string::String>,
@@ -3407,7 +3407,7 @@ impl VaultLockPolicy {
 pub mod vault_lock_policy {
 
     /// A builder for [`VaultLockPolicy`](crate::model::VaultLockPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
@@ -3523,7 +3523,7 @@ impl JobParameters {
 pub mod job_parameters {
 
     /// A builder for [`JobParameters`](crate::model::JobParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -3718,7 +3718,7 @@ impl InventoryRetrievalJobInput {
 pub mod inventory_retrieval_job_input {
 
     /// A builder for [`InventoryRetrievalJobInput`](crate::model::InventoryRetrievalJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_date: std::option::Option<std::string::String>,
         pub(crate) end_date: std::option::Option<std::string::String>,

@@ -17,7 +17,7 @@ impl StartExpenseAnalysisOutput {
 pub mod start_expense_analysis_output {
 
     /// A builder for [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -65,7 +65,7 @@ impl StartDocumentTextDetectionOutput {
 pub mod start_document_text_detection_output {
 
     /// A builder for [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -113,7 +113,7 @@ impl StartDocumentAnalysisOutput {
 pub mod start_document_analysis_output {
 
     /// A builder for [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -203,7 +203,7 @@ impl GetExpenseAnalysisOutput {
 pub mod get_expense_analysis_output {
 
     /// A builder for [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
@@ -399,7 +399,7 @@ impl GetDocumentTextDetectionOutput {
 pub mod get_document_text_detection_output {
 
     /// A builder for [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
@@ -594,7 +594,7 @@ impl GetDocumentAnalysisOutput {
 pub mod get_document_analysis_output {
 
     /// A builder for [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
@@ -761,7 +761,7 @@ impl DetectDocumentTextOutput {
 pub mod detect_document_text_output {
 
     /// A builder for [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
         pub(crate) blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
@@ -865,7 +865,7 @@ impl AnalyzeIdOutput {
 pub mod analyze_id_output {
 
     /// A builder for [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_documents:
             std::option::Option<std::vec::Vec<crate::model::IdentityDocument>>,
@@ -960,7 +960,7 @@ impl AnalyzeExpenseOutput {
 pub mod analyze_expense_output {
 
     /// A builder for [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
         pub(crate) expense_documents:
@@ -1056,7 +1056,7 @@ impl AnalyzeDocumentOutput {
 pub mod analyze_document_output {
 
     /// A builder for [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
         pub(crate) blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,

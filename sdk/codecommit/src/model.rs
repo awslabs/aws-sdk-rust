@@ -88,7 +88,7 @@ impl PullRequest {
 pub mod pull_request {
 
     /// A builder for [`PullRequest`](crate::model::PullRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
         pub(crate) title: std::option::Option<std::string::String>,
@@ -342,7 +342,7 @@ impl ApprovalRule {
 pub mod approval_rule {
 
     /// A builder for [`ApprovalRule`](crate::model::ApprovalRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_id: std::option::Option<std::string::String>,
         pub(crate) approval_rule_name: std::option::Option<std::string::String>,
@@ -509,7 +509,7 @@ impl OriginApprovalRuleTemplate {
 pub mod origin_approval_rule_template {
 
     /// A builder for [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template_id: std::option::Option<std::string::String>,
         pub(crate) approval_rule_template_name: std::option::Option<std::string::String>,
@@ -620,7 +620,7 @@ impl PullRequestTarget {
 pub mod pull_request_target {
 
     /// A builder for [`PullRequestTarget`](crate::model::PullRequestTarget).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) source_reference: std::option::Option<std::string::String>,
@@ -779,7 +779,7 @@ impl MergeMetadata {
 pub mod merge_metadata {
 
     /// A builder for [`MergeMetadata`](crate::model::MergeMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_merged: std::option::Option<bool>,
         pub(crate) merged_by: std::option::Option<std::string::String>,
@@ -1213,7 +1213,7 @@ impl Comment {
 pub mod comment {
 
     /// A builder for [`Comment`](crate::model::Comment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment_id: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<std::string::String>,
@@ -1446,7 +1446,7 @@ impl ApprovalRuleTemplate {
 pub mod approval_rule_template {
 
     /// A builder for [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template_id: std::option::Option<std::string::String>,
         pub(crate) approval_rule_template_name: std::option::Option<std::string::String>,
@@ -1618,7 +1618,7 @@ impl RepositoryTriggerExecutionFailure {
 pub mod repository_trigger_execution_failure {
 
     /// A builder for [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trigger: std::option::Option<std::string::String>,
         pub(crate) failure_message: std::option::Option<std::string::String>,
@@ -1717,7 +1717,7 @@ impl RepositoryTrigger {
 pub mod repository_trigger {
 
     /// A builder for [`RepositoryTrigger`](crate::model::RepositoryTrigger).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) destination_arn: std::option::Option<std::string::String>,
@@ -2061,7 +2061,7 @@ impl Location {
 pub mod location {
 
     /// A builder for [`Location`](crate::model::Location).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) file_position: std::option::Option<i64>,
@@ -2336,7 +2336,7 @@ impl ConflictResolution {
 pub mod conflict_resolution {
 
     /// A builder for [`ConflictResolution`](crate::model::ConflictResolution).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replace_contents:
             std::option::Option<std::vec::Vec<crate::model::ReplaceContentEntry>>,
@@ -2444,7 +2444,7 @@ impl SetFileModeEntry {
 pub mod set_file_mode_entry {
 
     /// A builder for [`SetFileModeEntry`](crate::model::SetFileModeEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
@@ -2507,7 +2507,7 @@ impl DeleteFileEntry {
 pub mod delete_file_entry {
 
     /// A builder for [`DeleteFileEntry`](crate::model::DeleteFileEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
     }
@@ -2576,7 +2576,7 @@ impl ReplaceContentEntry {
 pub mod replace_content_entry {
 
     /// A builder for [`ReplaceContentEntry`](crate::model::ReplaceContentEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) replacement_type: std::option::Option<crate::model::ReplacementTypeEnum>,
@@ -2974,7 +2974,7 @@ impl RepositoryNameIdPair {
 pub mod repository_name_id_pair {
 
     /// A builder for [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) repository_id: std::option::Option<std::string::String>,
@@ -3283,7 +3283,7 @@ impl RepositoryMetadata {
 pub mod repository_metadata {
 
     /// A builder for [`RepositoryMetadata`](crate::model::RepositoryMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) repository_id: std::option::Option<std::string::String>,
@@ -3470,7 +3470,7 @@ impl Approval {
 pub mod approval {
 
     /// A builder for [`Approval`](crate::model::Approval).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) approval_state: std::option::Option<crate::model::ApprovalState>,
@@ -3596,7 +3596,7 @@ impl ConflictMetadata {
 pub mod conflict_metadata {
 
     /// A builder for [`ConflictMetadata`](crate::model::ConflictMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) file_sizes: std::option::Option<crate::model::FileSizes>,
@@ -3774,7 +3774,7 @@ impl MergeOperations {
 pub mod merge_operations {
 
     /// A builder for [`MergeOperations`](crate::model::MergeOperations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::ChangeTypeEnum>,
         pub(crate) destination: std::option::Option<crate::model::ChangeTypeEnum>,
@@ -3949,7 +3949,7 @@ impl IsBinaryFile {
 pub mod is_binary_file {
 
     /// A builder for [`IsBinaryFile`](crate::model::IsBinaryFile).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<bool>,
         pub(crate) destination: std::option::Option<bool>,
@@ -4035,7 +4035,7 @@ impl ObjectTypes {
 pub mod object_types {
 
     /// A builder for [`ObjectTypes`](crate::model::ObjectTypes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::ObjectTypeEnum>,
         pub(crate) destination: std::option::Option<crate::model::ObjectTypeEnum>,
@@ -4230,7 +4230,7 @@ impl FileModes {
 pub mod file_modes {
 
     /// A builder for [`FileModes`](crate::model::FileModes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::FileModeTypeEnum>,
         pub(crate) destination: std::option::Option<crate::model::FileModeTypeEnum>,
@@ -4325,7 +4325,7 @@ impl FileSizes {
 pub mod file_sizes {
 
     /// A builder for [`FileSizes`](crate::model::FileSizes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<i64>,
         pub(crate) destination: std::option::Option<i64>,
@@ -4411,7 +4411,7 @@ impl SubModule {
 pub mod sub_module {
 
     /// A builder for [`SubModule`](crate::model::SubModule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commit_id: std::option::Option<std::string::String>,
         pub(crate) absolute_path: std::option::Option<std::string::String>,
@@ -4510,7 +4510,7 @@ impl SymbolicLink {
 pub mod symbolic_link {
 
     /// A builder for [`SymbolicLink`](crate::model::SymbolicLink).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blob_id: std::option::Option<std::string::String>,
         pub(crate) absolute_path: std::option::Option<std::string::String>,
@@ -4624,7 +4624,7 @@ impl File {
 pub mod file {
 
     /// A builder for [`File`](crate::model::File).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blob_id: std::option::Option<std::string::String>,
         pub(crate) absolute_path: std::option::Option<std::string::String>,
@@ -4731,7 +4731,7 @@ impl Folder {
 pub mod folder {
 
     /// A builder for [`Folder`](crate::model::Folder).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tree_id: std::option::Option<std::string::String>,
         pub(crate) absolute_path: std::option::Option<std::string::String>,
@@ -4823,7 +4823,7 @@ impl Difference {
 pub mod difference {
 
     /// A builder for [`Difference`](crate::model::Difference).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) before_blob: std::option::Option<crate::model::BlobMetadata>,
         pub(crate) after_blob: std::option::Option<crate::model::BlobMetadata>,
@@ -4930,7 +4930,7 @@ impl BlobMetadata {
 pub mod blob_metadata {
 
     /// A builder for [`BlobMetadata`](crate::model::BlobMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blob_id: std::option::Option<std::string::String>,
         pub(crate) path: std::option::Option<std::string::String>,
@@ -5058,7 +5058,7 @@ impl Commit {
 pub mod commit {
 
     /// A builder for [`Commit`](crate::model::Commit).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commit_id: std::option::Option<std::string::String>,
         pub(crate) tree_id: std::option::Option<std::string::String>,
@@ -5206,7 +5206,7 @@ impl UserInfo {
 pub mod user_info {
 
     /// A builder for [`UserInfo`](crate::model::UserInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) email: std::option::Option<std::string::String>,
@@ -5327,7 +5327,7 @@ impl CommentsForPullRequest {
 pub mod comments_for_pull_request {
 
     /// A builder for [`CommentsForPullRequest`](crate::model::CommentsForPullRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -5528,7 +5528,7 @@ impl CommentsForComparedCommit {
 pub mod comments_for_compared_commit {
 
     /// A builder for [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) before_commit_id: std::option::Option<std::string::String>,
@@ -5686,7 +5686,7 @@ impl ReactionForComment {
 pub mod reaction_for_comment {
 
     /// A builder for [`ReactionForComment`](crate::model::ReactionForComment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reaction: std::option::Option<crate::model::ReactionValueFormats>,
         pub(crate) reaction_users: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5787,7 +5787,7 @@ impl ReactionValueFormats {
 pub mod reaction_value_formats {
 
     /// A builder for [`ReactionValueFormats`](crate::model::ReactionValueFormats).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) emoji: std::option::Option<std::string::String>,
         pub(crate) short_code: std::option::Option<std::string::String>,
@@ -5866,7 +5866,7 @@ impl BranchInfo {
 pub mod branch_info {
 
     /// A builder for [`BranchInfo`](crate::model::BranchInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) branch_name: std::option::Option<std::string::String>,
         pub(crate) commit_id: std::option::Option<std::string::String>,
@@ -5947,7 +5947,7 @@ impl Evaluation {
 pub mod evaluation {
 
     /// A builder for [`Evaluation`](crate::model::Evaluation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approved: std::option::Option<bool>,
         pub(crate) overridden: std::option::Option<bool>,
@@ -6148,7 +6148,7 @@ impl PullRequestEvent {
 pub mod pull_request_event {
 
     /// A builder for [`PullRequestEvent`](crate::model::PullRequestEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
         pub(crate) event_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -6390,7 +6390,7 @@ impl ApprovalRuleOverriddenEventMetadata {
 pub mod approval_rule_overridden_event_metadata {
 
     /// A builder for [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) override_status: std::option::Option<crate::model::OverrideStatus>,
@@ -6460,7 +6460,7 @@ impl ApprovalStateChangedEventMetadata {
 pub mod approval_state_changed_event_metadata {
 
     /// A builder for [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) approval_status: std::option::Option<crate::model::ApprovalState>,
@@ -6537,7 +6537,7 @@ impl ApprovalRuleEventMetadata {
 pub mod approval_rule_event_metadata {
 
     /// A builder for [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_name: std::option::Option<std::string::String>,
         pub(crate) approval_rule_id: std::option::Option<std::string::String>,
@@ -6632,7 +6632,7 @@ impl PullRequestMergedStateChangedEventMetadata {
 pub mod pull_request_merged_state_changed_event_metadata {
 
     /// A builder for [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) destination_reference: std::option::Option<std::string::String>,
@@ -6734,7 +6734,7 @@ impl PullRequestSourceReferenceUpdatedEventMetadata {
 pub mod pull_request_source_reference_updated_event_metadata {
 
     /// A builder for [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) before_commit_id: std::option::Option<std::string::String>,
@@ -6828,7 +6828,7 @@ impl PullRequestStatusChangedEventMetadata {
 pub mod pull_request_status_changed_event_metadata {
 
     /// A builder for [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_status: std::option::Option<crate::model::PullRequestStatusEnum>,
     }
@@ -6900,7 +6900,7 @@ impl PullRequestCreatedEventMetadata {
 pub mod pull_request_created_event_metadata {
 
     /// A builder for [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) source_commit_id: std::option::Option<std::string::String>,
@@ -7179,7 +7179,7 @@ impl MergeHunk {
 pub mod merge_hunk {
 
     /// A builder for [`MergeHunk`](crate::model::MergeHunk).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_conflict: std::option::Option<bool>,
         pub(crate) source: std::option::Option<crate::model::MergeHunkDetail>,
@@ -7286,7 +7286,7 @@ impl MergeHunkDetail {
 pub mod merge_hunk_detail {
 
     /// A builder for [`MergeHunkDetail`](crate::model::MergeHunkDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_line: std::option::Option<i32>,
         pub(crate) end_line: std::option::Option<i32>,
@@ -7372,7 +7372,7 @@ impl Target {
 pub mod target {
 
     /// A builder for [`Target`](crate::model::Target).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) source_reference: std::option::Option<std::string::String>,
@@ -7467,7 +7467,7 @@ impl FileMetadata {
 pub mod file_metadata {
 
     /// A builder for [`FileMetadata`](crate::model::FileMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) absolute_path: std::option::Option<std::string::String>,
         pub(crate) blob_id: std::option::Option<std::string::String>,
@@ -7566,7 +7566,7 @@ impl PutFileEntry {
 pub mod put_file_entry {
 
     /// A builder for [`PutFileEntry`](crate::model::PutFileEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
@@ -7666,7 +7666,7 @@ impl SourceFileSpecifier {
 pub mod source_file_specifier {
 
     /// A builder for [`SourceFileSpecifier`](crate::model::SourceFileSpecifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) is_move: std::option::Option<bool>,
@@ -7740,7 +7740,7 @@ impl BatchGetCommitsError {
 pub mod batch_get_commits_error {
 
     /// A builder for [`BatchGetCommitsError`](crate::model::BatchGetCommitsError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commit_id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -7829,7 +7829,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
 pub mod batch_disassociate_approval_rule_template_from_repositories_error {
 
     /// A builder for [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -7925,7 +7925,7 @@ impl BatchDescribeMergeConflictsError {
 pub mod batch_describe_merge_conflicts_error {
 
     /// A builder for [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) exception_name: std::option::Option<std::string::String>,
@@ -8007,7 +8007,7 @@ impl Conflict {
 pub mod conflict {
 
     /// A builder for [`Conflict`](crate::model::Conflict).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conflict_metadata: std::option::Option<crate::model::ConflictMetadata>,
         pub(crate) merge_hunks: std::option::Option<std::vec::Vec<crate::model::MergeHunk>>,
@@ -8093,7 +8093,7 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {
 pub mod batch_associate_approval_rule_template_with_repositories_error {
 
     /// A builder for [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,

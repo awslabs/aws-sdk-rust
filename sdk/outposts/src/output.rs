@@ -17,7 +17,7 @@ impl UpdateSiteRackPhysicalPropertiesOutput {
 pub mod update_site_rack_physical_properties_output {
 
     /// A builder for [`UpdateSiteRackPhysicalPropertiesOutput`](crate::output::UpdateSiteRackPhysicalPropertiesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site: std::option::Option<crate::model::Site>,
     }
@@ -70,7 +70,7 @@ impl UpdateSiteAddressOutput {
 pub mod update_site_address_output {
 
     /// A builder for [`UpdateSiteAddressOutput`](crate::output::UpdateSiteAddressOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address_type: std::option::Option<crate::model::AddressType>,
         pub(crate) address: std::option::Option<crate::model::Address>,
@@ -133,7 +133,7 @@ impl UpdateSiteOutput {
 pub mod update_site_output {
 
     /// A builder for [`UpdateSiteOutput`](crate::output::UpdateSiteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site: std::option::Option<crate::model::Site>,
     }
@@ -179,7 +179,7 @@ impl UpdateOutpostOutput {
 pub mod update_outpost_output {
 
     /// A builder for [`UpdateOutpostOutput`](crate::output::UpdateOutpostOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) outpost: std::option::Option<crate::model::Outpost>,
     }
@@ -217,7 +217,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -241,7 +241,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -282,7 +282,7 @@ impl StartConnectionOutput {
 pub mod start_connection_output {
 
     /// A builder for [`StartConnectionOutput`](crate::output::StartConnectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) underlay_ip_address: std::option::Option<std::string::String>,
@@ -352,7 +352,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -422,7 +422,7 @@ impl ListSitesOutput {
 pub mod list_sites_output {
 
     /// A builder for [`ListSitesOutput`](crate::output::ListSitesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sites: std::option::Option<std::vec::Vec<crate::model::Site>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -498,7 +498,7 @@ impl ListOutpostsOutput {
 pub mod list_outposts_output {
 
     /// A builder for [`ListOutpostsOutput`](crate::output::ListOutpostsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) outposts: std::option::Option<std::vec::Vec<crate::model::Outpost>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -574,7 +574,7 @@ impl ListOrdersOutput {
 pub mod list_orders_output {
 
     /// A builder for [`ListOrdersOutput`](crate::output::ListOrdersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) orders: std::option::Option<std::vec::Vec<crate::model::OrderSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -650,7 +650,7 @@ impl ListCatalogItemsOutput {
 pub mod list_catalog_items_output {
 
     /// A builder for [`ListCatalogItemsOutput`](crate::output::ListCatalogItemsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_items: std::option::Option<std::vec::Vec<crate::model::CatalogItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -726,7 +726,7 @@ impl ListAssetsOutput {
 pub mod list_assets_output {
 
     /// A builder for [`ListAssetsOutput`](crate::output::ListAssetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assets: std::option::Option<std::vec::Vec<crate::model::AssetInfo>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -809,7 +809,7 @@ impl GetSiteAddressOutput {
 pub mod get_site_address_output {
 
     /// A builder for [`GetSiteAddressOutput`](crate::output::GetSiteAddressOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site_id: std::option::Option<std::string::String>,
         pub(crate) address_type: std::option::Option<crate::model::AddressType>,
@@ -884,7 +884,7 @@ impl GetSiteOutput {
 pub mod get_site_output {
 
     /// A builder for [`GetSiteOutput`](crate::output::GetSiteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site: std::option::Option<crate::model::Site>,
     }
@@ -955,7 +955,7 @@ impl GetOutpostInstanceTypesOutput {
 pub mod get_outpost_instance_types_output {
 
     /// A builder for [`GetOutpostInstanceTypesOutput`](crate::output::GetOutpostInstanceTypesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_types:
             std::option::Option<std::vec::Vec<crate::model::InstanceTypeItem>>,
@@ -1053,7 +1053,7 @@ impl GetOutpostOutput {
 pub mod get_outpost_output {
 
     /// A builder for [`GetOutpostOutput`](crate::output::GetOutpostOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) outpost: std::option::Option<crate::model::Outpost>,
     }
@@ -1101,7 +1101,7 @@ impl GetOrderOutput {
 pub mod get_order_output {
 
     /// A builder for [`GetOrderOutput`](crate::output::GetOrderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) order: std::option::Option<crate::model::Order>,
     }
@@ -1154,7 +1154,7 @@ impl GetConnectionOutput {
 pub mod get_connection_output {
 
     /// A builder for [`GetConnectionOutput`](crate::output::GetConnectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) connection_details: std::option::Option<crate::model::ConnectionDetails>,
@@ -1220,7 +1220,7 @@ impl GetCatalogItemOutput {
 pub mod get_catalog_item_output {
 
     /// A builder for [`GetCatalogItemOutput`](crate::output::GetCatalogItemOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_item: std::option::Option<crate::model::CatalogItem>,
     }
@@ -1261,7 +1261,7 @@ pub struct DeleteSiteOutput {}
 pub mod delete_site_output {
 
     /// A builder for [`DeleteSiteOutput`](crate::output::DeleteSiteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSiteOutput`](crate::output::DeleteSiteOutput).
@@ -1285,7 +1285,7 @@ pub struct DeleteOutpostOutput {}
 pub mod delete_outpost_output {
 
     /// A builder for [`DeleteOutpostOutput`](crate::output::DeleteOutpostOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteOutpostOutput`](crate::output::DeleteOutpostOutput).
@@ -1319,7 +1319,7 @@ impl CreateSiteOutput {
 pub mod create_site_output {
 
     /// A builder for [`CreateSiteOutput`](crate::output::CreateSiteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site: std::option::Option<crate::model::Site>,
     }
@@ -1365,7 +1365,7 @@ impl CreateOutpostOutput {
 pub mod create_outpost_output {
 
     /// A builder for [`CreateOutpostOutput`](crate::output::CreateOutpostOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) outpost: std::option::Option<crate::model::Outpost>,
     }
@@ -1413,7 +1413,7 @@ impl CreateOrderOutput {
 pub mod create_order_output {
 
     /// A builder for [`CreateOrderOutput`](crate::output::CreateOrderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) order: std::option::Option<crate::model::Order>,
     }
@@ -1449,7 +1449,7 @@ pub struct CancelOrderOutput {}
 pub mod cancel_order_output {
 
     /// A builder for [`CancelOrderOutput`](crate::output::CancelOrderOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CancelOrderOutput`](crate::output::CancelOrderOutput).

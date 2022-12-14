@@ -5,7 +5,7 @@
 /// [`cancel_job`](crate::client::Client::cancel_job).
 ///
 /// See [`crate::client::fluent_builders::CancelJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelJob {
     _private: (),
 }
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelJob {
 /// [`create_compute_environment`](crate::client::Client::create_compute_environment).
 ///
 /// See [`crate::client::fluent_builders::CreateComputeEnvironment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateComputeEnvironment {
     _private: (),
 }
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateComputeEnvironment
 /// [`create_job_queue`](crate::client::Client::create_job_queue).
 ///
 /// See [`crate::client::fluent_builders::CreateJobQueue`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateJobQueue {
     _private: (),
 }
@@ -102,7 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateJobQueue {
 /// [`create_scheduling_policy`](crate::client::Client::create_scheduling_policy).
 ///
 /// See [`crate::client::fluent_builders::CreateSchedulingPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSchedulingPolicy {
     _private: (),
 }
@@ -136,7 +136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSchedulingPolicy {
 /// [`delete_compute_environment`](crate::client::Client::delete_compute_environment).
 ///
 /// See [`crate::client::fluent_builders::DeleteComputeEnvironment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteComputeEnvironment {
     _private: (),
 }
@@ -170,7 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteComputeEnvironment
 /// [`delete_job_queue`](crate::client::Client::delete_job_queue).
 ///
 /// See [`crate::client::fluent_builders::DeleteJobQueue`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteJobQueue {
     _private: (),
 }
@@ -202,7 +202,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteJobQueue {
 /// [`delete_scheduling_policy`](crate::client::Client::delete_scheduling_policy).
 ///
 /// See [`crate::client::fluent_builders::DeleteSchedulingPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSchedulingPolicy {
     _private: (),
 }
@@ -236,7 +236,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSchedulingPolicy {
 /// [`deregister_job_definition`](crate::client::Client::deregister_job_definition).
 ///
 /// See [`crate::client::fluent_builders::DeregisterJobDefinition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeregisterJobDefinition {
     _private: (),
 }
@@ -270,7 +270,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterJobDefinition 
 /// [`describe_compute_environments`](crate::client::Client::describe_compute_environments).
 ///
 /// See [`crate::client::fluent_builders::DescribeComputeEnvironments`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeComputeEnvironments {
     _private: (),
 }
@@ -380,7 +380,7 @@ mod describe_compute_environments_request_test {
 /// [`describe_job_definitions`](crate::client::Client::describe_job_definitions).
 ///
 /// See [`crate::client::fluent_builders::DescribeJobDefinitions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeJobDefinitions {
     _private: (),
 }
@@ -414,7 +414,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJobDefinitions {
 /// [`describe_job_queues`](crate::client::Client::describe_job_queues).
 ///
 /// See [`crate::client::fluent_builders::DescribeJobQueues`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeJobQueues {
     _private: (),
 }
@@ -448,7 +448,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJobQueues {
 /// [`describe_jobs`](crate::client::Client::describe_jobs).
 ///
 /// See [`crate::client::fluent_builders::DescribeJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeJobs {
     _private: (),
 }
@@ -480,7 +480,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJobs {
 /// [`describe_scheduling_policies`](crate::client::Client::describe_scheduling_policies).
 ///
 /// See [`crate::client::fluent_builders::DescribeSchedulingPolicies`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSchedulingPolicies {
     _private: (),
 }
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSchedulingPolici
 /// [`list_jobs`](crate::client::Client::list_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListJobs {
     _private: (),
 }
@@ -545,7 +545,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJobs {
 /// [`list_scheduling_policies`](crate::client::Client::list_scheduling_policies).
 ///
 /// See [`crate::client::fluent_builders::ListSchedulingPolicies`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSchedulingPolicies {
     _private: (),
 }
@@ -579,7 +579,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSchedulingPolicies {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -613,7 +613,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`register_job_definition`](crate::client::Client::register_job_definition).
 ///
 /// See [`crate::client::fluent_builders::RegisterJobDefinition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterJobDefinition {
     _private: (),
 }
@@ -647,7 +647,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterJobDefinition {
 /// [`submit_job`](crate::client::Client::submit_job).
 ///
 /// See [`crate::client::fluent_builders::SubmitJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SubmitJob {
     _private: (),
 }
@@ -678,7 +678,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SubmitJob {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -710,7 +710,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`terminate_job`](crate::client::Client::terminate_job).
 ///
 /// See [`crate::client::fluent_builders::TerminateJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TerminateJob {
     _private: (),
 }
@@ -742,7 +742,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateJob {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -774,7 +774,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_compute_environment`](crate::client::Client::update_compute_environment).
 ///
 /// See [`crate::client::fluent_builders::UpdateComputeEnvironment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateComputeEnvironment {
     _private: (),
 }
@@ -808,7 +808,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateComputeEnvironment
 /// [`update_job_queue`](crate::client::Client::update_job_queue).
 ///
 /// See [`crate::client::fluent_builders::UpdateJobQueue`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateJobQueue {
     _private: (),
 }
@@ -840,7 +840,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateJobQueue {
 /// [`update_scheduling_policy`](crate::client::Client::update_scheduling_policy).
 ///
 /// See [`crate::client::fluent_builders::UpdateSchedulingPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSchedulingPolicy {
     _private: (),
 }

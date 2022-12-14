@@ -88,7 +88,7 @@ impl SavingsPlanOffering {
 pub mod savings_plan_offering {
 
     /// A builder for [`SavingsPlanOffering`](crate::model::SavingsPlanOffering).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offering_id: std::option::Option<std::string::String>,
         pub(crate) product_types:
@@ -292,7 +292,7 @@ impl SavingsPlanOfferingProperty {
 pub mod savings_plan_offering_property {
 
     /// A builder for [`SavingsPlanOfferingProperty`](crate::model::SavingsPlanOfferingProperty).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SavingsPlanOfferingPropertyKey>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -838,7 +838,7 @@ impl SavingsPlanOfferingFilterElement {
 pub mod savings_plan_offering_filter_element {
 
     /// A builder for [`SavingsPlanOfferingFilterElement`](crate::model::SavingsPlanOfferingFilterElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SavingsPlanOfferingFilterAttribute>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1056,7 +1056,7 @@ impl SavingsPlanOfferingRate {
 pub mod savings_plan_offering_rate {
 
     /// A builder for [`SavingsPlanOfferingRate`](crate::model::SavingsPlanOfferingRate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plan_offering:
             std::option::Option<crate::model::ParentSavingsPlanOffering>,
@@ -1223,7 +1223,7 @@ impl SavingsPlanOfferingRateProperty {
 pub mod savings_plan_offering_rate_property {
 
     /// A builder for [`SavingsPlanOfferingRateProperty`](crate::model::SavingsPlanOfferingRateProperty).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1528,7 +1528,7 @@ impl ParentSavingsPlanOffering {
 pub mod parent_savings_plan_offering {
 
     /// A builder for [`ParentSavingsPlanOffering`](crate::model::ParentSavingsPlanOffering).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offering_id: std::option::Option<std::string::String>,
         pub(crate) payment_option: std::option::Option<crate::model::SavingsPlanPaymentOption>,
@@ -1655,7 +1655,7 @@ impl SavingsPlanOfferingRateFilterElement {
 pub mod savings_plan_offering_rate_filter_element {
 
     /// A builder for [`SavingsPlanOfferingRateFilterElement`](crate::model::SavingsPlanOfferingRateFilterElement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SavingsPlanRateFilterAttribute>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1969,7 +1969,7 @@ impl SavingsPlan {
 pub mod savings_plan {
 
     /// A builder for [`SavingsPlan`](crate::model::SavingsPlan).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offering_id: std::option::Option<std::string::String>,
         pub(crate) savings_plan_id: std::option::Option<std::string::String>,
@@ -2399,7 +2399,7 @@ impl SavingsPlanFilter {
 pub mod savings_plan_filter {
 
     /// A builder for [`SavingsPlanFilter`](crate::model::SavingsPlanFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SavingsPlansFilterName>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2657,7 +2657,7 @@ impl SavingsPlanRate {
 pub mod savings_plan_rate {
 
     /// A builder for [`SavingsPlanRate`](crate::model::SavingsPlanRate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rate: std::option::Option<std::string::String>,
         pub(crate) currency: std::option::Option<crate::model::CurrencyCode>,
@@ -2818,7 +2818,7 @@ impl SavingsPlanRateProperty {
 pub mod savings_plan_rate_property {
 
     /// A builder for [`SavingsPlanRateProperty`](crate::model::SavingsPlanRateProperty).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SavingsPlanRatePropertyKey>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -3001,7 +3001,7 @@ impl SavingsPlanRateFilter {
 pub mod savings_plan_rate_filter {
 
     /// A builder for [`SavingsPlanRateFilter`](crate::model::SavingsPlanRateFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SavingsPlanRateFilterName>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,

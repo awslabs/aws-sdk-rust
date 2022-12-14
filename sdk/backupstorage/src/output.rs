@@ -17,7 +17,7 @@ impl StartObjectOutput {
 pub mod start_object_output {
 
     /// A builder for [`StartObjectOutput`](crate::output::StartObjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upload_id: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl PutObjectOutput {
 pub mod put_object_output {
 
     /// A builder for [`PutObjectOutput`](crate::output::PutObjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inline_chunk_checksum: std::option::Option<std::string::String>,
         pub(crate) inline_chunk_checksum_algorithm:
@@ -203,7 +203,7 @@ impl PutChunkOutput {
 pub mod put_chunk_output {
 
     /// A builder for [`PutChunkOutput`](crate::output::PutChunkOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) chunk_checksum: std::option::Option<std::string::String>,
         pub(crate) chunk_checksum_algorithm:
@@ -282,7 +282,7 @@ impl NotifyObjectCompleteOutput {
 pub mod notify_object_complete_output {
 
     /// A builder for [`NotifyObjectCompleteOutput`](crate::output::NotifyObjectCompleteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_checksum: std::option::Option<std::string::String>,
         pub(crate) object_checksum_algorithm:
@@ -359,7 +359,7 @@ impl ListObjectsOutput {
 pub mod list_objects_output {
 
     /// A builder for [`ListObjectsOutput`](crate::output::ListObjectsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_list: std::option::Option<std::vec::Vec<crate::model::BackupObject>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -435,7 +435,7 @@ impl ListChunksOutput {
 pub mod list_chunks_output {
 
     /// A builder for [`ListChunksOutput`](crate::output::ListChunksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) chunk_list: std::option::Option<std::vec::Vec<crate::model::Chunk>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -745,7 +745,7 @@ pub struct DeleteObjectOutput {}
 pub mod delete_object_output {
 
     /// A builder for [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).

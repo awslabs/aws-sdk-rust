@@ -173,7 +173,7 @@ impl UpdateConnectionAuthRequestParameters {
 pub mod update_connection_auth_request_parameters {
 
     /// A builder for [`UpdateConnectionAuthRequestParameters`](crate::model::UpdateConnectionAuthRequestParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) basic_auth_parameters:
             std::option::Option<crate::model::UpdateConnectionBasicAuthRequestParameters>,
@@ -305,7 +305,7 @@ impl ConnectionHttpParameters {
 pub mod connection_http_parameters {
 
     /// A builder for [`ConnectionHttpParameters`](crate::model::ConnectionHttpParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) header_parameters:
             std::option::Option<std::vec::Vec<crate::model::ConnectionHeaderParameter>>,
@@ -424,7 +424,7 @@ impl ConnectionBodyParameter {
 pub mod connection_body_parameter {
 
     /// A builder for [`ConnectionBodyParameter`](crate::model::ConnectionBodyParameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -510,7 +510,7 @@ impl ConnectionQueryStringParameter {
 pub mod connection_query_string_parameter {
 
     /// A builder for [`ConnectionQueryStringParameter`](crate::model::ConnectionQueryStringParameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -596,7 +596,7 @@ impl ConnectionHeaderParameter {
 pub mod connection_header_parameter {
 
     /// A builder for [`ConnectionHeaderParameter`](crate::model::ConnectionHeaderParameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -675,7 +675,7 @@ impl UpdateConnectionApiKeyAuthRequestParameters {
 pub mod update_connection_api_key_auth_request_parameters {
 
     /// A builder for [`UpdateConnectionApiKeyAuthRequestParameters`](crate::model::UpdateConnectionApiKeyAuthRequestParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_key_name: std::option::Option<std::string::String>,
         pub(crate) api_key_value: std::option::Option<std::string::String>,
@@ -764,7 +764,7 @@ impl UpdateConnectionOAuthRequestParameters {
 pub mod update_connection_o_auth_request_parameters {
 
     /// A builder for [`UpdateConnectionOAuthRequestParameters`](crate::model::UpdateConnectionOAuthRequestParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_parameters:
             std::option::Option<crate::model::UpdateConnectionOAuthClientRequestParameters>,
@@ -972,7 +972,7 @@ impl UpdateConnectionOAuthClientRequestParameters {
 pub mod update_connection_o_auth_client_request_parameters {
 
     /// A builder for [`UpdateConnectionOAuthClientRequestParameters`](crate::model::UpdateConnectionOAuthClientRequestParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) client_secret: std::option::Option<std::string::String>,
@@ -1042,7 +1042,7 @@ impl UpdateConnectionBasicAuthRequestParameters {
 pub mod update_connection_basic_auth_request_parameters {
 
     /// A builder for [`UpdateConnectionBasicAuthRequestParameters`](crate::model::UpdateConnectionBasicAuthRequestParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
@@ -1532,7 +1532,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1716,7 +1716,7 @@ impl ReplayDestination {
 pub mod replay_destination {
 
     /// A builder for [`ReplayDestination`](crate::model::ReplayDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) filter_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1799,7 +1799,7 @@ impl RemoveTargetsResultEntry {
 pub mod remove_targets_result_entry {
 
     /// A builder for [`RemoveTargetsResultEntry`](crate::model::RemoveTargetsResultEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -1888,7 +1888,7 @@ impl PutTargetsResultEntry {
 pub mod put_targets_result_entry {
 
     /// A builder for [`PutTargetsResultEntry`](crate::model::PutTargetsResultEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -2084,7 +2084,7 @@ impl Target {
 pub mod target {
 
     /// A builder for [`Target`](crate::model::Target).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2368,7 +2368,7 @@ impl RetryPolicy {
 pub mod retry_policy {
 
     /// A builder for [`RetryPolicy`](crate::model::RetryPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) maximum_retry_attempts: std::option::Option<i32>,
         pub(crate) maximum_event_age_in_seconds: std::option::Option<i32>,
@@ -2428,7 +2428,7 @@ impl DeadLetterConfig {
 pub mod dead_letter_config {
 
     /// A builder for [`DeadLetterConfig`](crate::model::DeadLetterConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -2477,7 +2477,7 @@ impl SageMakerPipelineParameters {
 pub mod sage_maker_pipeline_parameters {
 
     /// A builder for [`SageMakerPipelineParameters`](crate::model::SageMakerPipelineParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_parameter_list:
             std::option::Option<std::vec::Vec<crate::model::SageMakerPipelineParameter>>,
@@ -2545,7 +2545,7 @@ impl SageMakerPipelineParameter {
 pub mod sage_maker_pipeline_parameter {
 
     /// A builder for [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2640,7 +2640,7 @@ impl RedshiftDataParameters {
 pub mod redshift_data_parameters {
 
     /// A builder for [`RedshiftDataParameters`](crate::model::RedshiftDataParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_manager_arn: std::option::Option<std::string::String>,
         pub(crate) database: std::option::Option<std::string::String>,
@@ -2776,7 +2776,7 @@ impl HttpParameters {
 pub mod http_parameters {
 
     /// A builder for [`HttpParameters`](crate::model::HttpParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path_parameter_values: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) header_parameters: std::option::Option<
@@ -2891,7 +2891,7 @@ impl SqsParameters {
 pub mod sqs_parameters {
 
     /// A builder for [`SqsParameters`](crate::model::SqsParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_group_id: std::option::Option<std::string::String>,
     }
@@ -2963,7 +2963,7 @@ impl BatchParameters {
 pub mod batch_parameters {
 
     /// A builder for [`BatchParameters`](crate::model::BatchParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_definition: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -3056,7 +3056,7 @@ impl BatchRetryStrategy {
 pub mod batch_retry_strategy {
 
     /// A builder for [`BatchRetryStrategy`](crate::model::BatchRetryStrategy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attempts: std::option::Option<i32>,
     }
@@ -3104,7 +3104,7 @@ impl BatchArrayProperties {
 pub mod batch_array_properties {
 
     /// A builder for [`BatchArrayProperties`](crate::model::BatchArrayProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size: std::option::Option<i32>,
     }
@@ -3257,7 +3257,7 @@ impl EcsParameters {
 pub mod ecs_parameters {
 
     /// A builder for [`EcsParameters`](crate::model::EcsParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_definition_arn: std::option::Option<std::string::String>,
         pub(crate) task_count: std::option::Option<i32>,
@@ -3616,7 +3616,7 @@ impl PlacementStrategy {
 pub mod placement_strategy {
 
     /// A builder for [`PlacementStrategy`](crate::model::PlacementStrategy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::PlacementStrategyType>,
         pub(crate) field: std::option::Option<std::string::String>,
@@ -3783,7 +3783,7 @@ impl PlacementConstraint {
 pub mod placement_constraint {
 
     /// A builder for [`PlacementConstraint`](crate::model::PlacementConstraint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::PlacementConstraintType>,
         pub(crate) expression: std::option::Option<std::string::String>,
@@ -3952,7 +3952,7 @@ impl CapacityProviderStrategyItem {
 pub mod capacity_provider_strategy_item {
 
     /// A builder for [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity_provider: std::option::Option<std::string::String>,
         pub(crate) weight: std::option::Option<i32>,
@@ -4027,7 +4027,7 @@ impl NetworkConfiguration {
 pub mod network_configuration {
 
     /// A builder for [`NetworkConfiguration`](crate::model::NetworkConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) awsvpc_configuration: std::option::Option<crate::model::AwsVpcConfiguration>,
     }
@@ -4092,7 +4092,7 @@ impl AwsVpcConfiguration {
 pub mod aws_vpc_configuration {
 
     /// A builder for [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4370,7 +4370,7 @@ impl RunCommandParameters {
 pub mod run_command_parameters {
 
     /// A builder for [`RunCommandParameters`](crate::model::RunCommandParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) run_command_targets:
             std::option::Option<std::vec::Vec<crate::model::RunCommandTarget>>,
@@ -4435,7 +4435,7 @@ impl RunCommandTarget {
 pub mod run_command_target {
 
     /// A builder for [`RunCommandTarget`](crate::model::RunCommandTarget).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4504,7 +4504,7 @@ impl KinesisParameters {
 pub mod kinesis_parameters {
 
     /// A builder for [`KinesisParameters`](crate::model::KinesisParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) partition_key_path: std::option::Option<std::string::String>,
     }
@@ -4656,7 +4656,7 @@ impl InputTransformer {
 pub mod input_transformer {
 
     /// A builder for [`InputTransformer`](crate::model::InputTransformer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_paths_map: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -4931,7 +4931,7 @@ impl Condition {
 pub mod condition {
 
     /// A builder for [`Condition`](crate::model::Condition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -5017,7 +5017,7 @@ impl PutPartnerEventsResultEntry {
 pub mod put_partner_events_result_entry {
 
     /// A builder for [`PutPartnerEventsResultEntry`](crate::model::PutPartnerEventsResultEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -5120,7 +5120,7 @@ impl PutPartnerEventsRequestEntry {
 pub mod put_partner_events_request_entry {
 
     /// A builder for [`PutPartnerEventsRequestEntry`](crate::model::PutPartnerEventsRequestEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source: std::option::Option<std::string::String>,
@@ -5239,7 +5239,7 @@ impl PutEventsResultEntry {
 pub mod put_events_result_entry {
 
     /// A builder for [`PutEventsResultEntry`](crate::model::PutEventsResultEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -5358,7 +5358,7 @@ impl PutEventsRequestEntry {
 pub mod put_events_request_entry {
 
     /// A builder for [`PutEventsRequestEntry`](crate::model::PutEventsRequestEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source: std::option::Option<std::string::String>,
@@ -5550,7 +5550,7 @@ impl Rule {
 pub mod rule {
 
     /// A builder for [`Rule`](crate::model::Rule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5761,7 +5761,7 @@ impl Replay {
 pub mod replay {
 
     /// A builder for [`Replay`](crate::model::Replay).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replay_name: std::option::Option<std::string::String>,
         pub(crate) event_source_arn: std::option::Option<std::string::String>,
@@ -5930,7 +5930,7 @@ impl PartnerEventSource {
 pub mod partner_event_source {
 
     /// A builder for [`PartnerEventSource`](crate::model::PartnerEventSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6011,7 +6011,7 @@ impl PartnerEventSourceAccount {
 pub mod partner_event_source_account {
 
     /// A builder for [`PartnerEventSourceAccount`](crate::model::PartnerEventSourceAccount).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -6234,7 +6234,7 @@ impl EventSource {
 pub mod event_source {
 
     /// A builder for [`EventSource`](crate::model::EventSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) created_by: std::option::Option<std::string::String>,
@@ -6365,7 +6365,7 @@ impl EventBus {
 pub mod event_bus {
 
     /// A builder for [`EventBus`](crate::model::EventBus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6488,7 +6488,7 @@ impl Connection {
 pub mod connection {
 
     /// A builder for [`Connection`](crate::model::Connection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6691,7 +6691,7 @@ impl Archive {
 pub mod archive {
 
     /// A builder for [`Archive`](crate::model::Archive).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) archive_name: std::option::Option<std::string::String>,
         pub(crate) event_source_arn: std::option::Option<std::string::String>,
@@ -6885,7 +6885,7 @@ impl ApiDestination {
 pub mod api_destination {
 
     /// A builder for [`ApiDestination`](crate::model::ApiDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_destination_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7084,7 +7084,7 @@ impl ConnectionAuthResponseParameters {
 pub mod connection_auth_response_parameters {
 
     /// A builder for [`ConnectionAuthResponseParameters`](crate::model::ConnectionAuthResponseParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) basic_auth_parameters:
             std::option::Option<crate::model::ConnectionBasicAuthResponseParameters>,
@@ -7196,7 +7196,7 @@ impl ConnectionApiKeyAuthResponseParameters {
 pub mod connection_api_key_auth_response_parameters {
 
     /// A builder for [`ConnectionApiKeyAuthResponseParameters`](crate::model::ConnectionApiKeyAuthResponseParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_key_name: std::option::Option<std::string::String>,
     }
@@ -7270,7 +7270,7 @@ impl ConnectionOAuthResponseParameters {
 pub mod connection_o_auth_response_parameters {
 
     /// A builder for [`ConnectionOAuthResponseParameters`](crate::model::ConnectionOAuthResponseParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_parameters:
             std::option::Option<crate::model::ConnectionOAuthClientResponseParameters>,
@@ -7374,7 +7374,7 @@ impl ConnectionOAuthClientResponseParameters {
 pub mod connection_o_auth_client_response_parameters {
 
     /// A builder for [`ConnectionOAuthClientResponseParameters`](crate::model::ConnectionOAuthClientResponseParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
     }
@@ -7422,7 +7422,7 @@ impl ConnectionBasicAuthResponseParameters {
 pub mod connection_basic_auth_response_parameters {
 
     /// A builder for [`ConnectionBasicAuthResponseParameters`](crate::model::ConnectionBasicAuthResponseParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
     }
@@ -7502,7 +7502,7 @@ impl CreateConnectionAuthRequestParameters {
 pub mod create_connection_auth_request_parameters {
 
     /// A builder for [`CreateConnectionAuthRequestParameters`](crate::model::CreateConnectionAuthRequestParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) basic_auth_parameters:
             std::option::Option<crate::model::CreateConnectionBasicAuthRequestParameters>,
@@ -7621,7 +7621,7 @@ impl CreateConnectionApiKeyAuthRequestParameters {
 pub mod create_connection_api_key_auth_request_parameters {
 
     /// A builder for [`CreateConnectionApiKeyAuthRequestParameters`](crate::model::CreateConnectionApiKeyAuthRequestParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_key_name: std::option::Option<std::string::String>,
         pub(crate) api_key_value: std::option::Option<std::string::String>,
@@ -7710,7 +7710,7 @@ impl CreateConnectionOAuthRequestParameters {
 pub mod create_connection_o_auth_request_parameters {
 
     /// A builder for [`CreateConnectionOAuthRequestParameters`](crate::model::CreateConnectionOAuthRequestParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_parameters:
             std::option::Option<crate::model::CreateConnectionOAuthClientRequestParameters>,
@@ -7821,7 +7821,7 @@ impl CreateConnectionOAuthClientRequestParameters {
 pub mod create_connection_o_auth_client_request_parameters {
 
     /// A builder for [`CreateConnectionOAuthClientRequestParameters`](crate::model::CreateConnectionOAuthClientRequestParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) client_secret: std::option::Option<std::string::String>,
@@ -7891,7 +7891,7 @@ impl CreateConnectionBasicAuthRequestParameters {
 pub mod create_connection_basic_auth_request_parameters {
 
     /// A builder for [`CreateConnectionBasicAuthRequestParameters`](crate::model::CreateConnectionBasicAuthRequestParameters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,

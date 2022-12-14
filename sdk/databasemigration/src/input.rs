@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod add_tags_to_resource_input {
 
     /// A builder for [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -175,7 +175,7 @@ impl AddTagsToResourceInput {
 pub mod apply_pending_maintenance_action_input {
 
     /// A builder for [`ApplyPendingMaintenanceActionInput`](crate::input::ApplyPendingMaintenanceActionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_instance_arn: std::option::Option<std::string::String>,
         pub(crate) apply_action: std::option::Option<std::string::String>,
@@ -362,7 +362,7 @@ impl ApplyPendingMaintenanceActionInput {
 pub mod cancel_replication_task_assessment_run_input {
 
     /// A builder for [`CancelReplicationTaskAssessmentRunInput`](crate::input::CancelReplicationTaskAssessmentRunInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_task_assessment_run_arn: std::option::Option<std::string::String>,
     }
@@ -514,7 +514,7 @@ impl CancelReplicationTaskAssessmentRunInput {
 pub mod create_endpoint_input {
 
     /// A builder for [`CreateEndpointInput`](crate::input::CreateEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) endpoint_identifier: std::option::Option<std::string::String>,
         pub(crate) endpoint_type: std::option::Option<crate::model::ReplicationEndpointTypeValue>,
@@ -1219,7 +1219,7 @@ impl CreateEndpointInput {
 pub mod create_event_subscription_input {
 
     /// A builder for [`CreateEventSubscriptionInput`](crate::input::CreateEventSubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_name: std::option::Option<std::string::String>,
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
@@ -1479,7 +1479,7 @@ impl CreateEventSubscriptionInput {
 pub mod create_fleet_advisor_collector_input {
 
     /// A builder for [`CreateFleetAdvisorCollectorInput`](crate::input::CreateFleetAdvisorCollectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collector_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1670,7 +1670,7 @@ impl CreateFleetAdvisorCollectorInput {
 pub mod create_replication_instance_input {
 
     /// A builder for [`CreateReplicationInstanceInput`](crate::input::CreateReplicationInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) allocated_storage: std::option::Option<i32>,
@@ -2070,7 +2070,7 @@ impl CreateReplicationInstanceInput {
 pub mod create_replication_subnet_group_input {
 
     /// A builder for [`CreateReplicationSubnetGroupInput`](crate::input::CreateReplicationSubnetGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_subnet_group_identifier: std::option::Option<std::string::String>,
         pub(crate) replication_subnet_group_description: std::option::Option<std::string::String>,
@@ -2286,7 +2286,7 @@ impl CreateReplicationSubnetGroupInput {
 pub mod create_replication_task_input {
 
     /// A builder for [`CreateReplicationTaskInput`](crate::input::CreateReplicationTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_task_identifier: std::option::Option<std::string::String>,
         pub(crate) source_endpoint_arn: std::option::Option<std::string::String>,
@@ -2654,7 +2654,7 @@ impl CreateReplicationTaskInput {
 pub mod delete_certificate_input {
 
     /// A builder for [`DeleteCertificateInput`](crate::input::DeleteCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
@@ -2804,7 +2804,7 @@ impl DeleteCertificateInput {
 pub mod delete_connection_input {
 
     /// A builder for [`DeleteConnectionInput`](crate::input::DeleteConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
         pub(crate) replication_instance_arn: std::option::Option<std::string::String>,
@@ -2966,7 +2966,7 @@ impl DeleteConnectionInput {
 pub mod delete_endpoint_input {
 
     /// A builder for [`DeleteEndpointInput`](crate::input::DeleteEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
     }
@@ -3111,7 +3111,7 @@ impl DeleteEndpointInput {
 pub mod delete_event_subscription_input {
 
     /// A builder for [`DeleteEventSubscriptionInput`](crate::input::DeleteEventSubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_name: std::option::Option<std::string::String>,
     }
@@ -3263,7 +3263,7 @@ impl DeleteEventSubscriptionInput {
 pub mod delete_fleet_advisor_collector_input {
 
     /// A builder for [`DeleteFleetAdvisorCollectorInput`](crate::input::DeleteFleetAdvisorCollectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collector_referenced_id: std::option::Option<std::string::String>,
     }
@@ -3412,7 +3412,7 @@ impl DeleteFleetAdvisorCollectorInput {
 pub mod delete_fleet_advisor_databases_input {
 
     /// A builder for [`DeleteFleetAdvisorDatabasesInput`](crate::input::DeleteFleetAdvisorDatabasesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) database_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -3567,7 +3567,7 @@ impl DeleteFleetAdvisorDatabasesInput {
 pub mod delete_replication_instance_input {
 
     /// A builder for [`DeleteReplicationInstanceInput`](crate::input::DeleteReplicationInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_instance_arn: std::option::Option<std::string::String>,
     }
@@ -3719,7 +3719,7 @@ impl DeleteReplicationInstanceInput {
 pub mod delete_replication_subnet_group_input {
 
     /// A builder for [`DeleteReplicationSubnetGroupInput`](crate::input::DeleteReplicationSubnetGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_subnet_group_identifier: std::option::Option<std::string::String>,
     }
@@ -3871,7 +3871,7 @@ impl DeleteReplicationSubnetGroupInput {
 pub mod delete_replication_task_input {
 
     /// A builder for [`DeleteReplicationTaskInput`](crate::input::DeleteReplicationTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_task_arn: std::option::Option<std::string::String>,
     }
@@ -4023,7 +4023,7 @@ impl DeleteReplicationTaskInput {
 pub mod delete_replication_task_assessment_run_input {
 
     /// A builder for [`DeleteReplicationTaskAssessmentRunInput`](crate::input::DeleteReplicationTaskAssessmentRunInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_task_assessment_run_arn: std::option::Option<std::string::String>,
     }
@@ -4175,7 +4175,7 @@ impl DeleteReplicationTaskAssessmentRunInput {
 pub mod describe_account_attributes_input {
 
     /// A builder for [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput).
@@ -4303,7 +4303,7 @@ impl DescribeAccountAttributesInput {
 pub mod describe_applicable_individual_assessments_input {
 
     /// A builder for [`DescribeApplicableIndividualAssessmentsInput`](crate::input::DescribeApplicableIndividualAssessmentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_task_arn: std::option::Option<std::string::String>,
         pub(crate) replication_instance_arn: std::option::Option<std::string::String>,
@@ -4536,7 +4536,7 @@ impl DescribeApplicableIndividualAssessmentsInput {
 pub mod describe_certificates_input {
 
     /// A builder for [`DescribeCertificatesInput`](crate::input::DescribeCertificatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -4718,7 +4718,7 @@ impl DescribeCertificatesInput {
 pub mod describe_connections_input {
 
     /// A builder for [`DescribeConnectionsInput`](crate::input::DescribeConnectionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -4904,7 +4904,7 @@ impl DescribeConnectionsInput {
 pub mod describe_endpoints_input {
 
     /// A builder for [`DescribeEndpointsInput`](crate::input::DescribeEndpointsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -5090,7 +5090,7 @@ impl DescribeEndpointsInput {
 pub mod describe_endpoint_settings_input {
 
     /// A builder for [`DescribeEndpointSettingsInput`](crate::input::DescribeEndpointSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_name: std::option::Option<std::string::String>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -5263,7 +5263,7 @@ impl DescribeEndpointSettingsInput {
 pub mod describe_endpoint_types_input {
 
     /// A builder for [`DescribeEndpointTypesInput`](crate::input::DescribeEndpointTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -5451,7 +5451,7 @@ impl DescribeEndpointTypesInput {
 pub mod describe_event_categories_input {
 
     /// A builder for [`DescribeEventCategoriesInput`](crate::input::DescribeEventCategoriesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_type: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5623,7 +5623,7 @@ impl DescribeEventCategoriesInput {
 pub mod describe_events_input {
 
     /// A builder for [`DescribeEventsInput`](crate::input::DescribeEventsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_identifier: std::option::Option<std::string::String>,
         pub(crate) source_type: std::option::Option<crate::model::SourceType>,
@@ -5900,7 +5900,7 @@ impl DescribeEventsInput {
 pub mod describe_event_subscriptions_input {
 
     /// A builder for [`DescribeEventSubscriptionsInput`](crate::input::DescribeEventSubscriptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_name: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6103,7 +6103,7 @@ impl DescribeEventSubscriptionsInput {
 pub mod describe_fleet_advisor_collectors_input {
 
     /// A builder for [`DescribeFleetAdvisorCollectorsInput`](crate::input::DescribeFleetAdvisorCollectorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -6292,7 +6292,7 @@ impl DescribeFleetAdvisorCollectorsInput {
 pub mod describe_fleet_advisor_databases_input {
 
     /// A builder for [`DescribeFleetAdvisorDatabasesInput`](crate::input::DescribeFleetAdvisorDatabasesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -6489,7 +6489,7 @@ impl DescribeFleetAdvisorDatabasesInput {
 pub mod describe_fleet_advisor_lsa_analysis_input {
 
     /// A builder for [`DescribeFleetAdvisorLsaAnalysisInput`](crate::input::DescribeFleetAdvisorLsaAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_records: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6647,7 +6647,7 @@ impl DescribeFleetAdvisorLsaAnalysisInput {
 pub mod describe_fleet_advisor_schema_object_summary_input {
 
     /// A builder for [`DescribeFleetAdvisorSchemaObjectSummaryInput`](crate::input::DescribeFleetAdvisorSchemaObjectSummaryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -6834,7 +6834,7 @@ impl DescribeFleetAdvisorSchemaObjectSummaryInput {
 pub mod describe_fleet_advisor_schemas_input {
 
     /// A builder for [`DescribeFleetAdvisorSchemasInput`](crate::input::DescribeFleetAdvisorSchemasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -7037,7 +7037,7 @@ impl DescribeFleetAdvisorSchemasInput {
 pub mod describe_orderable_replication_instances_input {
 
     /// A builder for [`DescribeOrderableReplicationInstancesInput`](crate::input::DescribeOrderableReplicationInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_records: std::option::Option<i32>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -7199,7 +7199,7 @@ impl DescribeOrderableReplicationInstancesInput {
 pub mod describe_pending_maintenance_actions_input {
 
     /// A builder for [`DescribePendingMaintenanceActionsInput`](crate::input::DescribePendingMaintenanceActionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_instance_arn: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7397,7 +7397,7 @@ impl DescribePendingMaintenanceActionsInput {
 pub mod describe_refresh_schemas_status_input {
 
     /// A builder for [`DescribeRefreshSchemasStatusInput`](crate::input::DescribeRefreshSchemasStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
     }
@@ -7543,7 +7543,7 @@ impl DescribeRefreshSchemasStatusInput {
 pub mod describe_replication_instances_input {
 
     /// A builder for [`DescribeReplicationInstancesInput`](crate::input::DescribeReplicationInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -7728,7 +7728,7 @@ impl DescribeReplicationInstancesInput {
 pub mod describe_replication_instance_task_logs_input {
 
     /// A builder for [`DescribeReplicationInstanceTaskLogsInput`](crate::input::DescribeReplicationInstanceTaskLogsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_instance_arn: std::option::Option<std::string::String>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -7905,7 +7905,7 @@ impl DescribeReplicationInstanceTaskLogsInput {
 pub mod describe_replication_subnet_groups_input {
 
     /// A builder for [`DescribeReplicationSubnetGroupsInput`](crate::input::DescribeReplicationSubnetGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -8090,7 +8090,7 @@ impl DescribeReplicationSubnetGroupsInput {
 pub mod describe_replication_task_assessment_results_input {
 
     /// A builder for [`DescribeReplicationTaskAssessmentResultsInput`](crate::input::DescribeReplicationTaskAssessmentResultsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_task_arn: std::option::Option<std::string::String>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -8269,7 +8269,7 @@ impl DescribeReplicationTaskAssessmentResultsInput {
 pub mod describe_replication_task_assessment_runs_input {
 
     /// A builder for [`DescribeReplicationTaskAssessmentRunsInput`](crate::input::DescribeReplicationTaskAssessmentRunsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -8450,7 +8450,7 @@ impl DescribeReplicationTaskAssessmentRunsInput {
 pub mod describe_replication_task_individual_assessments_input {
 
     /// A builder for [`DescribeReplicationTaskIndividualAssessmentsInput`](crate::input::DescribeReplicationTaskIndividualAssessmentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -8634,7 +8634,7 @@ impl DescribeReplicationTaskIndividualAssessmentsInput {
 pub mod describe_replication_tasks_input {
 
     /// A builder for [`DescribeReplicationTasksInput`](crate::input::DescribeReplicationTasksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -8834,7 +8834,7 @@ impl DescribeReplicationTasksInput {
 pub mod describe_schemas_input {
 
     /// A builder for [`DescribeSchemasInput`](crate::input::DescribeSchemasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -9007,7 +9007,7 @@ impl DescribeSchemasInput {
 pub mod describe_table_statistics_input {
 
     /// A builder for [`DescribeTableStatisticsInput`](crate::input::DescribeTableStatisticsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_task_arn: std::option::Option<std::string::String>,
         pub(crate) max_records: std::option::Option<i32>,
@@ -9212,7 +9212,7 @@ impl DescribeTableStatisticsInput {
 pub mod import_certificate_input {
 
     /// A builder for [`ImportCertificateInput`](crate::input::ImportCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) certificate_identifier: std::option::Option<std::string::String>,
         pub(crate) certificate_pem: std::option::Option<std::string::String>,
@@ -9425,7 +9425,7 @@ impl ImportCertificateInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9595,7 +9595,7 @@ impl ListTagsForResourceInput {
 pub mod modify_endpoint_input {
 
     /// A builder for [`ModifyEndpointInput`](crate::input::ModifyEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_identifier: std::option::Option<std::string::String>,
@@ -10283,7 +10283,7 @@ impl ModifyEndpointInput {
 pub mod modify_event_subscription_input {
 
     /// A builder for [`ModifyEventSubscriptionInput`](crate::input::ModifyEventSubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_name: std::option::Option<std::string::String>,
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
@@ -10497,7 +10497,7 @@ impl ModifyEventSubscriptionInput {
 pub mod modify_replication_instance_input {
 
     /// A builder for [`ModifyReplicationInstanceInput`](crate::input::ModifyReplicationInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_instance_arn: std::option::Option<std::string::String>,
         pub(crate) allocated_storage: std::option::Option<i32>,
@@ -10822,7 +10822,7 @@ impl ModifyReplicationInstanceInput {
 pub mod modify_replication_subnet_group_input {
 
     /// A builder for [`ModifyReplicationSubnetGroupInput`](crate::input::ModifyReplicationSubnetGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_subnet_group_identifier: std::option::Option<std::string::String>,
         pub(crate) replication_subnet_group_description: std::option::Option<std::string::String>,
@@ -11013,7 +11013,7 @@ impl ModifyReplicationSubnetGroupInput {
 pub mod modify_replication_task_input {
 
     /// A builder for [`ModifyReplicationTaskInput`](crate::input::ModifyReplicationTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_task_arn: std::option::Option<std::string::String>,
         pub(crate) replication_task_identifier: std::option::Option<std::string::String>,
@@ -11315,7 +11315,7 @@ impl ModifyReplicationTaskInput {
 pub mod move_replication_task_input {
 
     /// A builder for [`MoveReplicationTaskInput`](crate::input::MoveReplicationTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_task_arn: std::option::Option<std::string::String>,
         pub(crate) target_replication_instance_arn: std::option::Option<std::string::String>,
@@ -11483,7 +11483,7 @@ impl MoveReplicationTaskInput {
 pub mod reboot_replication_instance_input {
 
     /// A builder for [`RebootReplicationInstanceInput`](crate::input::RebootReplicationInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_instance_arn: std::option::Option<std::string::String>,
         pub(crate) force_failover: std::option::Option<bool>,
@@ -11659,7 +11659,7 @@ impl RebootReplicationInstanceInput {
 pub mod refresh_schemas_input {
 
     /// A builder for [`RefreshSchemasInput`](crate::input::RefreshSchemasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
         pub(crate) replication_instance_arn: std::option::Option<std::string::String>,
@@ -11819,7 +11819,7 @@ impl RefreshSchemasInput {
 pub mod reload_tables_input {
 
     /// A builder for [`ReloadTablesInput`](crate::input::ReloadTablesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_task_arn: std::option::Option<std::string::String>,
         pub(crate) tables_to_reload:
@@ -12008,7 +12008,7 @@ impl ReloadTablesInput {
 pub mod remove_tags_from_resource_input {
 
     /// A builder for [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12178,7 +12178,7 @@ impl RemoveTagsFromResourceInput {
 pub mod run_fleet_advisor_lsa_analysis_input {
 
     /// A builder for [`RunFleetAdvisorLsaAnalysisInput`](crate::input::RunFleetAdvisorLsaAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RunFleetAdvisorLsaAnalysisInput`](crate::input::RunFleetAdvisorLsaAnalysisInput).
@@ -12303,7 +12303,7 @@ impl RunFleetAdvisorLsaAnalysisInput {
 pub mod start_replication_task_input {
 
     /// A builder for [`StartReplicationTaskInput`](crate::input::StartReplicationTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_task_arn: std::option::Option<std::string::String>,
         pub(crate) start_replication_task_type:
@@ -12541,7 +12541,7 @@ impl StartReplicationTaskInput {
 pub mod start_replication_task_assessment_input {
 
     /// A builder for [`StartReplicationTaskAssessmentInput`](crate::input::StartReplicationTaskAssessmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_task_arn: std::option::Option<std::string::String>,
     }
@@ -12690,7 +12690,7 @@ impl StartReplicationTaskAssessmentInput {
 pub mod start_replication_task_assessment_run_input {
 
     /// A builder for [`StartReplicationTaskAssessmentRunInput`](crate::input::StartReplicationTaskAssessmentRunInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_task_arn: std::option::Option<std::string::String>,
         pub(crate) service_access_role_arn: std::option::Option<std::string::String>,
@@ -12991,7 +12991,7 @@ impl StartReplicationTaskAssessmentRunInput {
 pub mod stop_replication_task_input {
 
     /// A builder for [`StopReplicationTaskInput`](crate::input::StopReplicationTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_task_arn: std::option::Option<std::string::String>,
     }
@@ -13141,7 +13141,7 @@ impl StopReplicationTaskInput {
 pub mod test_connection_input {
 
     /// A builder for [`TestConnectionInput`](crate::input::TestConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_instance_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
@@ -13301,7 +13301,7 @@ impl TestConnectionInput {
 pub mod update_subscriptions_to_event_bridge_input {
 
     /// A builder for [`UpdateSubscriptionsToEventBridgeInput`](crate::input::UpdateSubscriptionsToEventBridgeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) force_move: std::option::Option<bool>,
     }

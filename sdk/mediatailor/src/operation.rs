@@ -5,7 +5,7 @@
 /// [`configure_logs_for_playback_configuration`](crate::client::Client::configure_logs_for_playback_configuration).
 ///
 /// See [`crate::client::fluent_builders::ConfigureLogsForPlaybackConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ConfigureLogsForPlaybackConfiguration {
     _private: (),
 }
@@ -41,7 +41,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfigureLogsForPlayback
 /// [`create_channel`](crate::client::Client::create_channel).
 ///
 /// See [`crate::client::fluent_builders::CreateChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateChannel {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChannel {
 /// [`create_live_source`](crate::client::Client::create_live_source).
 ///
 /// See [`crate::client::fluent_builders::CreateLiveSource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLiveSource {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLiveSource {
 /// [`create_prefetch_schedule`](crate::client::Client::create_prefetch_schedule).
 ///
 /// See [`crate::client::fluent_builders::CreatePrefetchSchedule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePrefetchSchedule {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePrefetchSchedule {
 /// [`create_program`](crate::client::Client::create_program).
 ///
 /// See [`crate::client::fluent_builders::CreateProgram`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateProgram {
     _private: (),
 }
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProgram {
 /// [`create_source_location`](crate::client::Client::create_source_location).
 ///
 /// See [`crate::client::fluent_builders::CreateSourceLocation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSourceLocation {
     _private: (),
 }
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSourceLocation {
 /// [`create_vod_source`](crate::client::Client::create_vod_source).
 ///
 /// See [`crate::client::fluent_builders::CreateVodSource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateVodSource {
     _private: (),
 }
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVodSource {
 /// [`delete_channel`](crate::client::Client::delete_channel).
 ///
 /// See [`crate::client::fluent_builders::DeleteChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteChannel {
     _private: (),
 }
@@ -273,7 +273,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannel {
 /// [`delete_channel_policy`](crate::client::Client::delete_channel_policy).
 ///
 /// See [`crate::client::fluent_builders::DeleteChannelPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteChannelPolicy {
     _private: (),
 }
@@ -307,7 +307,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannelPolicy {
 /// [`delete_live_source`](crate::client::Client::delete_live_source).
 ///
 /// See [`crate::client::fluent_builders::DeleteLiveSource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLiveSource {
     _private: (),
 }
@@ -341,7 +341,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLiveSource {
 /// [`delete_playback_configuration`](crate::client::Client::delete_playback_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeletePlaybackConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePlaybackConfiguration {
     _private: (),
 }
@@ -375,7 +375,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePlaybackConfigurat
 /// [`delete_prefetch_schedule`](crate::client::Client::delete_prefetch_schedule).
 ///
 /// See [`crate::client::fluent_builders::DeletePrefetchSchedule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePrefetchSchedule {
     _private: (),
 }
@@ -409,7 +409,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePrefetchSchedule {
 /// [`delete_program`](crate::client::Client::delete_program).
 ///
 /// See [`crate::client::fluent_builders::DeleteProgram`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteProgram {
     _private: (),
 }
@@ -441,7 +441,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProgram {
 /// [`delete_source_location`](crate::client::Client::delete_source_location).
 ///
 /// See [`crate::client::fluent_builders::DeleteSourceLocation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSourceLocation {
     _private: (),
 }
@@ -475,7 +475,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSourceLocation {
 /// [`delete_vod_source`](crate::client::Client::delete_vod_source).
 ///
 /// See [`crate::client::fluent_builders::DeleteVodSource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVodSource {
     _private: (),
 }
@@ -509,7 +509,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVodSource {
 /// [`describe_channel`](crate::client::Client::describe_channel).
 ///
 /// See [`crate::client::fluent_builders::DescribeChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeChannel {
     _private: (),
 }
@@ -543,7 +543,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannel {
 /// [`describe_live_source`](crate::client::Client::describe_live_source).
 ///
 /// See [`crate::client::fluent_builders::DescribeLiveSource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLiveSource {
     _private: (),
 }
@@ -577,7 +577,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLiveSource {
 /// [`describe_program`](crate::client::Client::describe_program).
 ///
 /// See [`crate::client::fluent_builders::DescribeProgram`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeProgram {
     _private: (),
 }
@@ -611,7 +611,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProgram {
 /// [`describe_source_location`](crate::client::Client::describe_source_location).
 ///
 /// See [`crate::client::fluent_builders::DescribeSourceLocation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSourceLocation {
     _private: (),
 }
@@ -645,7 +645,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSourceLocation {
 /// [`describe_vod_source`](crate::client::Client::describe_vod_source).
 ///
 /// See [`crate::client::fluent_builders::DescribeVodSource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeVodSource {
     _private: (),
 }
@@ -679,7 +679,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVodSource {
 /// [`get_channel_policy`](crate::client::Client::get_channel_policy).
 ///
 /// See [`crate::client::fluent_builders::GetChannelPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetChannelPolicy {
     _private: (),
 }
@@ -713,7 +713,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChannelPolicy {
 /// [`get_channel_schedule`](crate::client::Client::get_channel_schedule).
 ///
 /// See [`crate::client::fluent_builders::GetChannelSchedule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetChannelSchedule {
     _private: (),
 }
@@ -747,7 +747,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChannelSchedule {
 /// [`get_playback_configuration`](crate::client::Client::get_playback_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetPlaybackConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPlaybackConfiguration {
     _private: (),
 }
@@ -781,7 +781,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPlaybackConfiguration
 /// [`get_prefetch_schedule`](crate::client::Client::get_prefetch_schedule).
 ///
 /// See [`crate::client::fluent_builders::GetPrefetchSchedule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPrefetchSchedule {
     _private: (),
 }
@@ -815,7 +815,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPrefetchSchedule {
 /// [`list_alerts`](crate::client::Client::list_alerts).
 ///
 /// See [`crate::client::fluent_builders::ListAlerts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAlerts {
     _private: (),
 }
@@ -847,7 +847,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAlerts {
 /// [`list_channels`](crate::client::Client::list_channels).
 ///
 /// See [`crate::client::fluent_builders::ListChannels`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListChannels {
     _private: (),
 }
@@ -879,7 +879,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannels {
 /// [`list_live_sources`](crate::client::Client::list_live_sources).
 ///
 /// See [`crate::client::fluent_builders::ListLiveSources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLiveSources {
     _private: (),
 }
@@ -913,7 +913,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLiveSources {
 /// [`list_playback_configurations`](crate::client::Client::list_playback_configurations).
 ///
 /// See [`crate::client::fluent_builders::ListPlaybackConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPlaybackConfigurations {
     _private: (),
 }
@@ -947,7 +947,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPlaybackConfiguratio
 /// [`list_prefetch_schedules`](crate::client::Client::list_prefetch_schedules).
 ///
 /// See [`crate::client::fluent_builders::ListPrefetchSchedules`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPrefetchSchedules {
     _private: (),
 }
@@ -981,7 +981,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPrefetchSchedules {
 /// [`list_source_locations`](crate::client::Client::list_source_locations).
 ///
 /// See [`crate::client::fluent_builders::ListSourceLocations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSourceLocations {
     _private: (),
 }
@@ -1015,7 +1015,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSourceLocations {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -1049,7 +1049,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_vod_sources`](crate::client::Client::list_vod_sources).
 ///
 /// See [`crate::client::fluent_builders::ListVodSources`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVodSources {
     _private: (),
 }
@@ -1081,7 +1081,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVodSources {
 /// [`put_channel_policy`](crate::client::Client::put_channel_policy).
 ///
 /// See [`crate::client::fluent_builders::PutChannelPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutChannelPolicy {
     _private: (),
 }
@@ -1115,7 +1115,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutChannelPolicy {
 /// [`put_playback_configuration`](crate::client::Client::put_playback_configuration).
 ///
 /// See [`crate::client::fluent_builders::PutPlaybackConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutPlaybackConfiguration {
     _private: (),
 }
@@ -1149,7 +1149,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPlaybackConfiguration
 /// [`start_channel`](crate::client::Client::start_channel).
 ///
 /// See [`crate::client::fluent_builders::StartChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartChannel {
     _private: (),
 }
@@ -1181,7 +1181,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartChannel {
 /// [`stop_channel`](crate::client::Client::stop_channel).
 ///
 /// See [`crate::client::fluent_builders::StopChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopChannel {
     _private: (),
 }
@@ -1213,7 +1213,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopChannel {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1245,7 +1245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1277,7 +1277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_channel`](crate::client::Client::update_channel).
 ///
 /// See [`crate::client::fluent_builders::UpdateChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateChannel {
     _private: (),
 }
@@ -1309,7 +1309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateChannel {
 /// [`update_live_source`](crate::client::Client::update_live_source).
 ///
 /// See [`crate::client::fluent_builders::UpdateLiveSource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLiveSource {
     _private: (),
 }
@@ -1343,7 +1343,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLiveSource {
 /// [`update_source_location`](crate::client::Client::update_source_location).
 ///
 /// See [`crate::client::fluent_builders::UpdateSourceLocation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSourceLocation {
     _private: (),
 }
@@ -1377,7 +1377,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSourceLocation {
 /// [`update_vod_source`](crate::client::Client::update_vod_source).
 ///
 /// See [`crate::client::fluent_builders::UpdateVodSource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateVodSource {
     _private: (),
 }

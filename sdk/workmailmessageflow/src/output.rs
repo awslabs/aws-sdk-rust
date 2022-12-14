@@ -7,7 +7,7 @@ pub struct PutRawMessageContentOutput {}
 pub mod put_raw_message_content_output {
 
     /// A builder for [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput).

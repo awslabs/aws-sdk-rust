@@ -32,7 +32,7 @@ impl ResolveCustomerOutput {
 pub mod resolve_customer_output {
 
     /// A builder for [`ResolveCustomerOutput`](crate::output::ResolveCustomerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) customer_identifier: std::option::Option<std::string::String>,
         pub(crate) product_code: std::option::Option<std::string::String>,
@@ -119,7 +119,7 @@ impl RegisterUsageOutput {
 pub mod register_usage_output {
 
     /// A builder for [`RegisterUsageOutput`](crate::output::RegisterUsageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) public_key_rotation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) signature: std::option::Option<std::string::String>,
@@ -182,7 +182,7 @@ impl MeterUsageOutput {
 pub mod meter_usage_output {
 
     /// A builder for [`MeterUsageOutput`](crate::output::MeterUsageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metering_record_id: std::option::Option<std::string::String>,
     }
@@ -240,7 +240,7 @@ impl BatchMeterUsageOutput {
 pub mod batch_meter_usage_output {
 
     /// A builder for [`BatchMeterUsageOutput`](crate::output::BatchMeterUsageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::UsageRecordResult>>,
         pub(crate) unprocessed_records:

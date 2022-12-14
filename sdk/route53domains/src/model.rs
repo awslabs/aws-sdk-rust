@@ -48,7 +48,7 @@ impl BillingRecord {
 pub mod billing_record {
 
     /// A builder for [`BillingRecord`](crate::model::BillingRecord).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<crate::model::OperationType>,
@@ -356,7 +356,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -435,7 +435,7 @@ impl Nameserver {
 pub mod nameserver {
 
     /// A builder for [`Nameserver`](crate::model::Nameserver).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) glue_ips: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -633,7 +633,7 @@ impl std::fmt::Debug for ContactDetail {
 pub mod contact_detail {
 
     /// A builder for [`ContactDetail`](crate::model::ContactDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) first_name: std::option::Option<std::string::String>,
         pub(crate) last_name: std::option::Option<std::string::String>,
@@ -1450,7 +1450,7 @@ impl std::fmt::Debug for ExtraParam {
 pub mod extra_param {
 
     /// A builder for [`ExtraParam`](crate::model::ExtraParam).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ExtraParamName>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -3822,7 +3822,7 @@ impl DomainPrice {
 pub mod domain_price {
 
     /// A builder for [`DomainPrice`](crate::model::DomainPrice).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) registration_price: std::option::Option<crate::model::PriceWithCurrency>,
@@ -3952,7 +3952,7 @@ impl PriceWithCurrency {
 pub mod price_with_currency {
 
     /// A builder for [`PriceWithCurrency`](crate::model::PriceWithCurrency).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) price: std::option::Option<f64>,
         pub(crate) currency: std::option::Option<std::string::String>,
@@ -4033,7 +4033,7 @@ impl OperationSummary {
 pub mod operation_summary {
 
     /// A builder for [`OperationSummary`](crate::model::OperationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::OperationStatus>,
@@ -4249,7 +4249,7 @@ impl DomainSummary {
 pub mod domain_summary {
 
     /// A builder for [`DomainSummary`](crate::model::DomainSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) auto_renew: std::option::Option<bool>,
@@ -4343,7 +4343,7 @@ impl SortCondition {
 pub mod sort_condition {
 
     /// A builder for [`SortCondition`](crate::model::SortCondition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ListDomainsAttributeName>,
         pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
@@ -4615,7 +4615,7 @@ impl FilterCondition {
 pub mod filter_condition {
 
     /// A builder for [`FilterCondition`](crate::model::FilterCondition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ListDomainsAttributeName>,
         pub(crate) operator: std::option::Option<crate::model::Operator>,
@@ -4929,7 +4929,7 @@ impl DomainSuggestion {
 pub mod domain_suggestion {
 
     /// A builder for [`DomainSuggestion`](crate::model::DomainSuggestion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) availability: std::option::Option<std::string::String>,
@@ -5250,7 +5250,7 @@ impl DomainTransferability {
 pub mod domain_transferability {
 
     /// A builder for [`DomainTransferability`](crate::model::DomainTransferability).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transferable: std::option::Option<crate::model::Transferable>,
     }

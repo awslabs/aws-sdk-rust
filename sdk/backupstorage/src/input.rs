@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod delete_object_input {
 
     /// A builder for [`DeleteObjectInput`](crate::input::DeleteObjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_job_id: std::option::Option<std::string::String>,
         pub(crate) object_name: std::option::Option<std::string::String>,
@@ -190,7 +190,7 @@ impl DeleteObjectInput {
 pub mod get_chunk_input {
 
     /// A builder for [`GetChunkInput`](crate::input::GetChunkInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_job_id: std::option::Option<std::string::String>,
         pub(crate) chunk_token: std::option::Option<std::string::String>,
@@ -373,7 +373,7 @@ impl GetChunkInput {
 pub mod get_object_metadata_input {
 
     /// A builder for [`GetObjectMetadataInput`](crate::input::GetObjectMetadataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_job_id: std::option::Option<std::string::String>,
         pub(crate) object_token: std::option::Option<std::string::String>,
@@ -560,7 +560,7 @@ impl GetObjectMetadataInput {
 pub mod list_chunks_input {
 
     /// A builder for [`ListChunksInput`](crate::input::ListChunksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_job_id: std::option::Option<std::string::String>,
         pub(crate) object_token: std::option::Option<std::string::String>,
@@ -788,7 +788,7 @@ impl ListChunksInput {
 pub mod list_objects_input {
 
     /// A builder for [`ListObjectsInput`](crate::input::ListObjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_job_id: std::option::Option<std::string::String>,
         pub(crate) starting_object_name: std::option::Option<std::string::String>,
@@ -2167,7 +2167,7 @@ impl PutObjectInput {
 pub mod start_object_input {
 
     /// A builder for [`StartObjectInput`](crate::input::StartObjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_job_id: std::option::Option<std::string::String>,
         pub(crate) object_name: std::option::Option<std::string::String>,

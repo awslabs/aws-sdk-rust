@@ -17,7 +17,7 @@ impl UpdateExperimentTemplateOutput {
 pub mod update_experiment_template_output {
 
     /// A builder for [`UpdateExperimentTemplateOutput`](crate::output::UpdateExperimentTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) experiment_template: std::option::Option<crate::model::ExperimentTemplate>,
     }
@@ -58,7 +58,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -82,7 +82,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -116,7 +116,7 @@ impl StopExperimentOutput {
 pub mod stop_experiment_output {
 
     /// A builder for [`StopExperimentOutput`](crate::output::StopExperimentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) experiment: std::option::Option<crate::model::Experiment>,
     }
@@ -167,7 +167,7 @@ impl StartExperimentOutput {
 pub mod start_experiment_output {
 
     /// A builder for [`StartExperimentOutput`](crate::output::StartExperimentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) experiment: std::option::Option<crate::model::Experiment>,
     }
@@ -228,7 +228,7 @@ impl ListTargetResourceTypesOutput {
 pub mod list_target_resource_types_output {
 
     /// A builder for [`ListTargetResourceTypesOutput`](crate::output::ListTargetResourceTypesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_resource_types:
             std::option::Option<std::vec::Vec<crate::model::TargetResourceTypeSummary>>,
@@ -305,7 +305,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -378,7 +378,7 @@ impl ListExperimentTemplatesOutput {
 pub mod list_experiment_templates_output {
 
     /// A builder for [`ListExperimentTemplatesOutput`](crate::output::ListExperimentTemplatesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) experiment_templates:
             std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateSummary>>,
@@ -458,7 +458,7 @@ impl ListExperimentsOutput {
 pub mod list_experiments_output {
 
     /// A builder for [`ListExperimentsOutput`](crate::output::ListExperimentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) experiments: std::option::Option<std::vec::Vec<crate::model::ExperimentSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -534,7 +534,7 @@ impl ListActionsOutput {
 pub mod list_actions_output {
 
     /// A builder for [`ListActionsOutput`](crate::output::ListActionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::ActionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -603,7 +603,7 @@ impl GetTargetResourceTypeOutput {
 pub mod get_target_resource_type_output {
 
     /// A builder for [`GetTargetResourceTypeOutput`](crate::output::GetTargetResourceTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_resource_type: std::option::Option<crate::model::TargetResourceType>,
     }
@@ -654,7 +654,7 @@ impl GetExperimentTemplateOutput {
 pub mod get_experiment_template_output {
 
     /// A builder for [`GetExperimentTemplateOutput`](crate::output::GetExperimentTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) experiment_template: std::option::Option<crate::model::ExperimentTemplate>,
     }
@@ -705,7 +705,7 @@ impl GetExperimentOutput {
 pub mod get_experiment_output {
 
     /// A builder for [`GetExperimentOutput`](crate::output::GetExperimentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) experiment: std::option::Option<crate::model::Experiment>,
     }
@@ -756,7 +756,7 @@ impl GetActionOutput {
 pub mod get_action_output {
 
     /// A builder for [`GetActionOutput`](crate::output::GetActionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
     }
@@ -804,7 +804,7 @@ impl DeleteExperimentTemplateOutput {
 pub mod delete_experiment_template_output {
 
     /// A builder for [`DeleteExperimentTemplateOutput`](crate::output::DeleteExperimentTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) experiment_template: std::option::Option<crate::model::ExperimentTemplate>,
     }
@@ -855,7 +855,7 @@ impl CreateExperimentTemplateOutput {
 pub mod create_experiment_template_output {
 
     /// A builder for [`CreateExperimentTemplateOutput`](crate::output::CreateExperimentTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) experiment_template: std::option::Option<crate::model::ExperimentTemplate>,
     }

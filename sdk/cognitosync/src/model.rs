@@ -53,7 +53,7 @@ impl Record {
 pub mod record {
 
     /// A builder for [`Record`](crate::model::Record).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -198,7 +198,7 @@ impl RecordPatch {
 pub mod record_patch {
 
     /// A builder for [`RecordPatch`](crate::model::RecordPatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) op: std::option::Option<crate::model::Operation>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -405,7 +405,7 @@ impl CognitoStreams {
 pub mod cognito_streams {
 
     /// A builder for [`CognitoStreams`](crate::model::CognitoStreams).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -581,7 +581,7 @@ impl PushSync {
 pub mod push_sync {
 
     /// A builder for [`PushSync`](crate::model::PushSync).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -771,7 +771,7 @@ impl IdentityPoolUsage {
 pub mod identity_pool_usage {
 
     /// A builder for [`IdentityPoolUsage`](crate::model::IdentityPoolUsage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) sync_sessions_count: std::option::Option<i64>,
@@ -903,7 +903,7 @@ impl Dataset {
 pub mod dataset {
 
     /// A builder for [`Dataset`](crate::model::Dataset).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) dataset_name: std::option::Option<std::string::String>,
@@ -1162,7 +1162,7 @@ impl IdentityUsage {
 pub mod identity_usage {
 
     /// A builder for [`IdentityUsage`](crate::model::IdentityUsage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,

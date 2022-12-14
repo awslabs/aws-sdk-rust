@@ -5,7 +5,7 @@
 /// [`delete_object`](crate::client::Client::delete_object).
 ///
 /// See [`crate::client::fluent_builders::DeleteObject`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteObject {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObject {
 /// [`get_chunk`](crate::client::Client::get_chunk).
 ///
 /// See [`crate::client::fluent_builders::GetChunk`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetChunk {
     _private: (),
 }
@@ -75,7 +75,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetChunk {
 /// [`get_object_metadata`](crate::client::Client::get_object_metadata).
 ///
 /// See [`crate::client::fluent_builders::GetObjectMetadata`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObjectMetadata {
     _private: (),
 }
@@ -116,7 +116,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetObjectMetadata {
 /// [`list_chunks`](crate::client::Client::list_chunks).
 ///
 /// See [`crate::client::fluent_builders::ListChunks`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListChunks {
     _private: (),
 }
@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChunks {
 /// [`list_objects`](crate::client::Client::list_objects).
 ///
 /// See [`crate::client::fluent_builders::ListObjects`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListObjects {
     _private: (),
 }
@@ -180,7 +180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjects {
 /// [`notify_object_complete`](crate::client::Client::notify_object_complete).
 ///
 /// See [`crate::client::fluent_builders::NotifyObjectComplete`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct NotifyObjectComplete {
     _private: (),
 }
@@ -214,7 +214,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyObjectComplete {
 /// [`put_chunk`](crate::client::Client::put_chunk).
 ///
 /// See [`crate::client::fluent_builders::PutChunk`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutChunk {
     _private: (),
 }
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutChunk {
 /// [`put_object`](crate::client::Client::put_object).
 ///
 /// See [`crate::client::fluent_builders::PutObject`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutObject {
     _private: (),
 }
@@ -276,7 +276,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObject {
 /// [`start_object`](crate::client::Client::start_object).
 ///
 /// See [`crate::client::fluent_builders::StartObject`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartObject {
     _private: (),
 }

@@ -7,7 +7,7 @@ pub struct UpdateSubscriptionOutput {}
 pub mod update_subscription_output {
 
     /// A builder for [`UpdateSubscriptionOutput`](crate::output::UpdateSubscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateSubscriptionOutput`](crate::output::UpdateSubscriptionOutput).
@@ -31,7 +31,7 @@ pub struct UpdateProtectionGroupOutput {}
 pub mod update_protection_group_output {
 
     /// A builder for [`UpdateProtectionGroupOutput`](crate::output::UpdateProtectionGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateProtectionGroupOutput`](crate::output::UpdateProtectionGroupOutput).
@@ -55,7 +55,7 @@ pub struct UpdateEmergencyContactSettingsOutput {}
 pub mod update_emergency_contact_settings_output {
 
     /// A builder for [`UpdateEmergencyContactSettingsOutput`](crate::output::UpdateEmergencyContactSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateEmergencyContactSettingsOutput`](crate::output::UpdateEmergencyContactSettingsOutput).
@@ -79,7 +79,7 @@ pub struct UpdateApplicationLayerAutomaticResponseOutput {}
 pub mod update_application_layer_automatic_response_output {
 
     /// A builder for [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput).
@@ -103,7 +103,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -127,7 +127,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -161,7 +161,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -227,7 +227,7 @@ impl ListResourcesInProtectionGroupOutput {
 pub mod list_resources_in_protection_group_output {
 
     /// A builder for [`ListResourcesInProtectionGroupOutput`](crate::output::ListResourcesInProtectionGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -311,7 +311,7 @@ impl ListProtectionsOutput {
 pub mod list_protections_output {
 
     /// A builder for [`ListProtectionsOutput`](crate::output::ListProtectionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protections: std::option::Option<std::vec::Vec<crate::model::Protection>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -395,7 +395,7 @@ impl ListProtectionGroupsOutput {
 pub mod list_protection_groups_output {
 
     /// A builder for [`ListProtectionGroupsOutput`](crate::output::ListProtectionGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_groups:
             std::option::Option<std::vec::Vec<crate::model::ProtectionGroup>>,
@@ -480,7 +480,7 @@ impl ListAttacksOutput {
 pub mod list_attacks_output {
 
     /// A builder for [`ListAttacksOutput`](crate::output::ListAttacksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attack_summaries:
             std::option::Option<std::vec::Vec<crate::model::AttackSummary>>,
@@ -554,7 +554,7 @@ impl GetSubscriptionStateOutput {
 pub mod get_subscription_state_output {
 
     /// A builder for [`GetSubscriptionStateOutput`](crate::output::GetSubscriptionStateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_state: std::option::Option<crate::model::SubscriptionState>,
     }
@@ -595,7 +595,7 @@ pub struct EnableProactiveEngagementOutput {}
 pub mod enable_proactive_engagement_output {
 
     /// A builder for [`EnableProactiveEngagementOutput`](crate::output::EnableProactiveEngagementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`EnableProactiveEngagementOutput`](crate::output::EnableProactiveEngagementOutput).
@@ -619,7 +619,7 @@ pub struct EnableApplicationLayerAutomaticResponseOutput {}
 pub mod enable_application_layer_automatic_response_output {
 
     /// A builder for [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput).
@@ -643,7 +643,7 @@ pub struct DisassociateHealthCheckOutput {}
 pub mod disassociate_health_check_output {
 
     /// A builder for [`DisassociateHealthCheckOutput`](crate::output::DisassociateHealthCheckOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateHealthCheckOutput`](crate::output::DisassociateHealthCheckOutput).
@@ -667,7 +667,7 @@ pub struct DisassociateDrtRoleOutput {}
 pub mod disassociate_drt_role_output {
 
     /// A builder for [`DisassociateDrtRoleOutput`](crate::output::DisassociateDrtRoleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateDrtRoleOutput`](crate::output::DisassociateDrtRoleOutput).
@@ -691,7 +691,7 @@ pub struct DisassociateDrtLogBucketOutput {}
 pub mod disassociate_drt_log_bucket_output {
 
     /// A builder for [`DisassociateDrtLogBucketOutput`](crate::output::DisassociateDrtLogBucketOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateDrtLogBucketOutput`](crate::output::DisassociateDrtLogBucketOutput).
@@ -715,7 +715,7 @@ pub struct DisableProactiveEngagementOutput {}
 pub mod disable_proactive_engagement_output {
 
     /// A builder for [`DisableProactiveEngagementOutput`](crate::output::DisableProactiveEngagementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisableProactiveEngagementOutput`](crate::output::DisableProactiveEngagementOutput).
@@ -739,7 +739,7 @@ pub struct DisableApplicationLayerAutomaticResponseOutput {}
 pub mod disable_application_layer_automatic_response_output {
 
     /// A builder for [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput).
@@ -774,7 +774,7 @@ impl DescribeSubscriptionOutput {
 pub mod describe_subscription_output {
 
     /// A builder for [`DescribeSubscriptionOutput`](crate::output::DescribeSubscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription: std::option::Option<crate::model::Subscription>,
     }
@@ -825,7 +825,7 @@ impl DescribeProtectionGroupOutput {
 pub mod describe_protection_group_output {
 
     /// A builder for [`DescribeProtectionGroupOutput`](crate::output::DescribeProtectionGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_group: std::option::Option<crate::model::ProtectionGroup>,
     }
@@ -876,7 +876,7 @@ impl DescribeProtectionOutput {
 pub mod describe_protection_output {
 
     /// A builder for [`DescribeProtectionOutput`](crate::output::DescribeProtectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection: std::option::Option<crate::model::Protection>,
     }
@@ -927,7 +927,7 @@ impl DescribeEmergencyContactSettingsOutput {
 pub mod describe_emergency_contact_settings_output {
 
     /// A builder for [`DescribeEmergencyContactSettingsOutput`](crate::output::DescribeEmergencyContactSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) emergency_contact_list:
             std::option::Option<std::vec::Vec<crate::model::EmergencyContact>>,
@@ -992,7 +992,7 @@ impl DescribeDrtAccessOutput {
 pub mod describe_drt_access_output {
 
     /// A builder for [`DescribeDrtAccessOutput`](crate::output::DescribeDrtAccessOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) log_bucket_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1068,7 +1068,7 @@ impl DescribeAttackStatisticsOutput {
 pub mod describe_attack_statistics_output {
 
     /// A builder for [`DescribeAttackStatisticsOutput`](crate::output::DescribeAttackStatisticsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_range: std::option::Option<crate::model::TimeRange>,
         pub(crate) data_items:
@@ -1141,7 +1141,7 @@ impl DescribeAttackOutput {
 pub mod describe_attack_output {
 
     /// A builder for [`DescribeAttackOutput`](crate::output::DescribeAttackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attack: std::option::Option<crate::model::AttackDetail>,
     }
@@ -1183,7 +1183,7 @@ pub struct DeleteSubscriptionOutput {}
 pub mod delete_subscription_output {
 
     /// A builder for [`DeleteSubscriptionOutput`](crate::output::DeleteSubscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSubscriptionOutput`](crate::output::DeleteSubscriptionOutput).
@@ -1207,7 +1207,7 @@ pub struct DeleteProtectionGroupOutput {}
 pub mod delete_protection_group_output {
 
     /// A builder for [`DeleteProtectionGroupOutput`](crate::output::DeleteProtectionGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteProtectionGroupOutput`](crate::output::DeleteProtectionGroupOutput).
@@ -1231,7 +1231,7 @@ pub struct DeleteProtectionOutput {}
 pub mod delete_protection_output {
 
     /// A builder for [`DeleteProtectionOutput`](crate::output::DeleteProtectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteProtectionOutput`](crate::output::DeleteProtectionOutput).
@@ -1255,7 +1255,7 @@ pub struct CreateSubscriptionOutput {}
 pub mod create_subscription_output {
 
     /// A builder for [`CreateSubscriptionOutput`](crate::output::CreateSubscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateSubscriptionOutput`](crate::output::CreateSubscriptionOutput).
@@ -1279,7 +1279,7 @@ pub struct CreateProtectionGroupOutput {}
 pub mod create_protection_group_output {
 
     /// A builder for [`CreateProtectionGroupOutput`](crate::output::CreateProtectionGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateProtectionGroupOutput`](crate::output::CreateProtectionGroupOutput).
@@ -1313,7 +1313,7 @@ impl CreateProtectionOutput {
 pub mod create_protection_output {
 
     /// A builder for [`CreateProtectionOutput`](crate::output::CreateProtectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_id: std::option::Option<std::string::String>,
     }
@@ -1354,7 +1354,7 @@ pub struct AssociateProactiveEngagementDetailsOutput {}
 pub mod associate_proactive_engagement_details_output {
 
     /// A builder for [`AssociateProactiveEngagementDetailsOutput`](crate::output::AssociateProactiveEngagementDetailsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateProactiveEngagementDetailsOutput`](crate::output::AssociateProactiveEngagementDetailsOutput).
@@ -1378,7 +1378,7 @@ pub struct AssociateHealthCheckOutput {}
 pub mod associate_health_check_output {
 
     /// A builder for [`AssociateHealthCheckOutput`](crate::output::AssociateHealthCheckOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateHealthCheckOutput`](crate::output::AssociateHealthCheckOutput).
@@ -1402,7 +1402,7 @@ pub struct AssociateDrtRoleOutput {}
 pub mod associate_drt_role_output {
 
     /// A builder for [`AssociateDrtRoleOutput`](crate::output::AssociateDrtRoleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateDrtRoleOutput`](crate::output::AssociateDrtRoleOutput).
@@ -1426,7 +1426,7 @@ pub struct AssociateDrtLogBucketOutput {}
 pub mod associate_drt_log_bucket_output {
 
     /// A builder for [`AssociateDrtLogBucketOutput`](crate::output::AssociateDrtLogBucketOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateDrtLogBucketOutput`](crate::output::AssociateDrtLogBucketOutput).

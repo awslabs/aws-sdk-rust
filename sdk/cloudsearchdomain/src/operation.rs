@@ -5,7 +5,7 @@
 /// [`search`](crate::client::Client::search).
 ///
 /// See [`crate::client::fluent_builders::Search`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct Search {
     _private: (),
 }
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Search {
 /// [`suggest`](crate::client::Client::suggest).
 ///
 /// See [`crate::client::fluent_builders::Suggest`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct Suggest {
     _private: (),
 }
@@ -67,7 +67,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Suggest {
 /// [`upload_documents`](crate::client::Client::upload_documents).
 ///
 /// See [`crate::client::fluent_builders::UploadDocuments`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UploadDocuments {
     _private: (),
 }

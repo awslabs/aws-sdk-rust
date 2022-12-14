@@ -17,7 +17,7 @@ impl UpdateEnvironmentMembershipOutput {
 pub mod update_environment_membership_output {
 
     /// A builder for [`UpdateEnvironmentMembershipOutput`](crate::output::UpdateEnvironmentMembershipOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) membership: std::option::Option<crate::model::EnvironmentMember>,
     }
@@ -58,7 +58,7 @@ pub struct UpdateEnvironmentOutput {}
 pub mod update_environment_output {
 
     /// A builder for [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
@@ -82,7 +82,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -106,7 +106,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -147,7 +147,7 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -216,7 +216,7 @@ impl ListEnvironmentsOutput {
 pub mod list_environments_output {
 
     /// A builder for [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) environment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -310,7 +310,7 @@ impl DescribeEnvironmentStatusOutput {
 pub mod describe_environment_status_output {
 
     /// A builder for [`DescribeEnvironmentStatusOutput`](crate::output::DescribeEnvironmentStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::EnvironmentStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -391,7 +391,7 @@ impl DescribeEnvironmentsOutput {
 pub mod describe_environments_output {
 
     /// A builder for [`DescribeEnvironmentsOutput`](crate::output::DescribeEnvironmentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environments: std::option::Option<std::vec::Vec<crate::model::Environment>>,
     }
@@ -455,7 +455,7 @@ impl DescribeEnvironmentMembershipsOutput {
 pub mod describe_environment_memberships_output {
 
     /// A builder for [`DescribeEnvironmentMembershipsOutput`](crate::output::DescribeEnvironmentMembershipsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) memberships: std::option::Option<std::vec::Vec<crate::model::EnvironmentMember>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -514,7 +514,7 @@ pub struct DeleteEnvironmentMembershipOutput {}
 pub mod delete_environment_membership_output {
 
     /// A builder for [`DeleteEnvironmentMembershipOutput`](crate::output::DeleteEnvironmentMembershipOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEnvironmentMembershipOutput`](crate::output::DeleteEnvironmentMembershipOutput).
@@ -538,7 +538,7 @@ pub struct DeleteEnvironmentOutput {}
 pub mod delete_environment_output {
 
     /// A builder for [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
@@ -572,7 +572,7 @@ impl CreateEnvironmentMembershipOutput {
 pub mod create_environment_membership_output {
 
     /// A builder for [`CreateEnvironmentMembershipOutput`](crate::output::CreateEnvironmentMembershipOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) membership: std::option::Option<crate::model::EnvironmentMember>,
     }
@@ -623,7 +623,7 @@ impl CreateEnvironmentEc2Output {
 pub mod create_environment_ec2_output {
 
     /// A builder for [`CreateEnvironmentEc2Output`](crate::output::CreateEnvironmentEc2Output).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
     }

@@ -25,7 +25,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -92,7 +92,7 @@ impl ResourceKey {
 pub mod resource_key {
 
     /// A builder for [`ResourceKey`](crate::model::ResourceKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -1112,7 +1112,7 @@ impl QueryInfo {
 pub mod query_info {
 
     /// A builder for [`QueryInfo`](crate::model::QueryInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) select_fields: std::option::Option<std::vec::Vec<crate::model::FieldInfo>>,
     }
@@ -1169,7 +1169,7 @@ impl FieldInfo {
 pub mod field_info {
 
     /// A builder for [`FieldInfo`](crate::model::FieldInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -1243,7 +1243,7 @@ impl StoredQuery {
 pub mod stored_query {
 
     /// A builder for [`StoredQuery`](crate::model::StoredQuery).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
         pub(crate) query_arn: std::option::Option<std::string::String>,
@@ -1350,7 +1350,7 @@ impl RetentionConfiguration {
 pub mod retention_configuration {
 
     /// A builder for [`RetentionConfiguration`](crate::model::RetentionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) retention_period_in_days: std::option::Option<i32>,
@@ -1421,7 +1421,7 @@ impl FailedRemediationExceptionBatch {
 pub mod failed_remediation_exception_batch {
 
     /// A builder for [`FailedRemediationExceptionBatch`](crate::model::FailedRemediationExceptionBatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failure_message: std::option::Option<std::string::String>,
         pub(crate) failed_items:
@@ -1522,7 +1522,7 @@ impl RemediationException {
 pub mod remediation_exception {
 
     /// A builder for [`RemediationException`](crate::model::RemediationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -1634,7 +1634,7 @@ impl RemediationExceptionResourceKey {
 pub mod remediation_exception_resource_key {
 
     /// A builder for [`RemediationExceptionResourceKey`](crate::model::RemediationExceptionResourceKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -1704,7 +1704,7 @@ impl FailedRemediationBatch {
 pub mod failed_remediation_batch {
 
     /// A builder for [`FailedRemediationBatch`](crate::model::FailedRemediationBatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failure_message: std::option::Option<std::string::String>,
         pub(crate) failed_items:
@@ -1868,7 +1868,7 @@ impl RemediationConfiguration {
 pub mod remediation_configuration {
 
     /// A builder for [`RemediationConfiguration`](crate::model::RemediationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
         pub(crate) target_type: std::option::Option<crate::model::RemediationTargetType>,
@@ -2094,7 +2094,7 @@ impl ExecutionControls {
 pub mod execution_controls {
 
     /// A builder for [`ExecutionControls`](crate::model::ExecutionControls).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ssm_controls: std::option::Option<crate::model::SsmControls>,
     }
@@ -2152,7 +2152,7 @@ impl SsmControls {
 pub mod ssm_controls {
 
     /// A builder for [`SsmControls`](crate::model::SsmControls).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) concurrent_execution_rate_percentage: std::option::Option<i32>,
         pub(crate) error_percentage: std::option::Option<i32>,
@@ -2222,7 +2222,7 @@ impl RemediationParameterValue {
 pub mod remediation_parameter_value {
 
     /// A builder for [`RemediationParameterValue`](crate::model::RemediationParameterValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_value: std::option::Option<crate::model::ResourceValue>,
         pub(crate) static_value: std::option::Option<crate::model::StaticValue>,
@@ -2288,7 +2288,7 @@ impl StaticValue {
 pub mod static_value {
 
     /// A builder for [`StaticValue`](crate::model::StaticValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -2345,7 +2345,7 @@ impl ResourceValue {
 pub mod resource_value {
 
     /// A builder for [`ResourceValue`](crate::model::ResourceValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<crate::model::ResourceValueType>,
     }
@@ -2575,7 +2575,7 @@ impl ConformancePackInputParameter {
 pub mod conformance_pack_input_parameter {
 
     /// A builder for [`ConformancePackInputParameter`](crate::model::ConformancePackInputParameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_name: std::option::Option<std::string::String>,
         pub(crate) parameter_value: std::option::Option<std::string::String>,
@@ -2724,7 +2724,7 @@ impl OrganizationCustomPolicyRuleMetadata {
 pub mod organization_custom_policy_rule_metadata {
 
     /// A builder for [`OrganizationCustomPolicyRuleMetadata`](crate::model::OrganizationCustomPolicyRuleMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) organization_config_rule_trigger_types:
@@ -3252,7 +3252,7 @@ impl OrganizationCustomRuleMetadata {
 pub mod organization_custom_rule_metadata {
 
     /// A builder for [`OrganizationCustomRuleMetadata`](crate::model::OrganizationCustomRuleMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) lambda_function_arn: std::option::Option<std::string::String>,
@@ -3622,7 +3622,7 @@ impl OrganizationManagedRuleMetadata {
 pub mod organization_managed_rule_metadata {
 
     /// A builder for [`OrganizationManagedRuleMetadata`](crate::model::OrganizationManagedRuleMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) rule_identifier: std::option::Option<std::string::String>,
@@ -3817,7 +3817,7 @@ impl ExternalEvaluation {
 pub mod external_evaluation {
 
     /// A builder for [`ExternalEvaluation`](crate::model::ExternalEvaluation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compliance_resource_type: std::option::Option<std::string::String>,
         pub(crate) compliance_resource_id: std::option::Option<std::string::String>,
@@ -4062,7 +4062,7 @@ impl Evaluation {
 pub mod evaluation {
 
     /// A builder for [`Evaluation`](crate::model::Evaluation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compliance_resource_type: std::option::Option<std::string::String>,
         pub(crate) compliance_resource_id: std::option::Option<std::string::String>,
@@ -4216,7 +4216,7 @@ impl DeliveryChannel {
 pub mod delivery_channel {
 
     /// A builder for [`DeliveryChannel`](crate::model::DeliveryChannel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
@@ -4363,7 +4363,7 @@ impl ConfigSnapshotDeliveryProperties {
 pub mod config_snapshot_delivery_properties {
 
     /// A builder for [`ConfigSnapshotDeliveryProperties`](crate::model::ConfigSnapshotDeliveryProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_frequency: std::option::Option<crate::model::MaximumExecutionFrequency>,
     }
@@ -4429,7 +4429,7 @@ impl TemplateSsmDocumentDetails {
 pub mod template_ssm_document_details {
 
     /// A builder for [`TemplateSsmDocumentDetails`](crate::model::TemplateSsmDocumentDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_name: std::option::Option<std::string::String>,
         pub(crate) document_version: std::option::Option<std::string::String>,
@@ -4517,7 +4517,7 @@ impl ConfigurationRecorder {
 pub mod configuration_recorder {
 
     /// A builder for [`ConfigurationRecorder`](crate::model::ConfigurationRecorder).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -4634,7 +4634,7 @@ impl RecordingGroup {
 pub mod recording_group {
 
     /// A builder for [`RecordingGroup`](crate::model::RecordingGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) all_supported: std::option::Option<bool>,
         pub(crate) include_global_resource_types: std::option::Option<bool>,
@@ -4784,7 +4784,7 @@ impl ConfigurationAggregator {
 pub mod configuration_aggregator {
 
     /// A builder for [`ConfigurationAggregator`](crate::model::ConfigurationAggregator).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_aggregator_name: std::option::Option<std::string::String>,
         pub(crate) configuration_aggregator_arn: std::option::Option<std::string::String>,
@@ -4956,7 +4956,7 @@ impl OrganizationAggregationSource {
 pub mod organization_aggregation_source {
 
     /// A builder for [`OrganizationAggregationSource`](crate::model::OrganizationAggregationSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5051,7 +5051,7 @@ impl AccountAggregationSource {
 pub mod account_aggregation_source {
 
     /// A builder for [`AccountAggregationSource`](crate::model::AccountAggregationSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) all_aws_regions: std::option::Option<bool>,
@@ -5236,7 +5236,7 @@ impl ConfigRule {
 pub mod config_rule {
 
     /// A builder for [`ConfigRule`](crate::model::ConfigRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
         pub(crate) config_rule_arn: std::option::Option<std::string::String>,
@@ -5571,7 +5571,7 @@ impl Source {
 pub mod source {
 
     /// A builder for [`Source`](crate::model::Source).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner: std::option::Option<crate::model::Owner>,
         pub(crate) source_identifier: std::option::Option<std::string::String>,
@@ -5694,7 +5694,7 @@ impl CustomPolicyDetails {
 pub mod custom_policy_details {
 
     /// A builder for [`CustomPolicyDetails`](crate::model::CustomPolicyDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_runtime: std::option::Option<std::string::String>,
         pub(crate) policy_text: std::option::Option<std::string::String>,
@@ -5805,7 +5805,7 @@ impl SourceDetail {
 pub mod source_detail {
 
     /// A builder for [`SourceDetail`](crate::model::SourceDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_source: std::option::Option<crate::model::EventSource>,
         pub(crate) message_type: std::option::Option<crate::model::MessageType>,
@@ -6228,7 +6228,7 @@ impl Scope {
 pub mod scope {
 
     /// A builder for [`Scope`](crate::model::Scope).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compliance_resource_types:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6346,7 +6346,7 @@ impl AggregationAuthorization {
 pub mod aggregation_authorization {
 
     /// A builder for [`AggregationAuthorization`](crate::model::AggregationAuthorization).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aggregation_authorization_arn: std::option::Option<std::string::String>,
         pub(crate) authorized_account_id: std::option::Option<std::string::String>,
@@ -6466,7 +6466,7 @@ impl StoredQueryMetadata {
 pub mod stored_query_metadata {
 
     /// A builder for [`StoredQueryMetadata`](crate::model::StoredQueryMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
         pub(crate) query_arn: std::option::Option<std::string::String>,
@@ -6571,7 +6571,7 @@ impl ResourceIdentifier {
 pub mod resource_identifier {
 
     /// A builder for [`ResourceIdentifier`](crate::model::ResourceIdentifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -6678,7 +6678,7 @@ impl ConformancePackComplianceScore {
 pub mod conformance_pack_compliance_score {
 
     /// A builder for [`ConformancePackComplianceScore`](crate::model::ConformancePackComplianceScore).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) score: std::option::Option<std::string::String>,
         pub(crate) conformance_pack_name: std::option::Option<std::string::String>,
@@ -6931,7 +6931,7 @@ impl ConformancePackComplianceScoresFilters {
 pub mod conformance_pack_compliance_scores_filters {
 
     /// A builder for [`ConformancePackComplianceScoresFilters`](crate::model::ConformancePackComplianceScoresFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conformance_pack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -7016,7 +7016,7 @@ impl AggregateResourceIdentifier {
 pub mod aggregate_resource_identifier {
 
     /// A builder for [`AggregateResourceIdentifier`](crate::model::AggregateResourceIdentifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_account_id: std::option::Option<std::string::String>,
         pub(crate) source_region: std::option::Option<std::string::String>,
@@ -7145,7 +7145,7 @@ impl ResourceFilters {
 pub mod resource_filters {
 
     /// A builder for [`ResourceFilters`](crate::model::ResourceFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -7387,7 +7387,7 @@ impl ConfigurationItem {
 pub mod configuration_item {
 
     /// A builder for [`ConfigurationItem`](crate::model::ConfigurationItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -7773,7 +7773,7 @@ impl Relationship {
 pub mod relationship {
 
     /// A builder for [`Relationship`](crate::model::Relationship).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -8130,7 +8130,7 @@ impl OrganizationConformancePackDetailedStatus {
 pub mod organization_conformance_pack_detailed_status {
 
     /// A builder for [`OrganizationConformancePackDetailedStatus`](crate::model::OrganizationConformancePackDetailedStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) conformance_pack_name: std::option::Option<std::string::String>,
@@ -8442,7 +8442,7 @@ impl OrganizationResourceDetailedStatusFilters {
 pub mod organization_resource_detailed_status_filters {
 
     /// A builder for [`OrganizationResourceDetailedStatusFilters`](crate::model::OrganizationResourceDetailedStatusFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::OrganizationResourceDetailedStatus>,
@@ -8590,7 +8590,7 @@ impl MemberAccountStatus {
 pub mod member_account_status {
 
     /// A builder for [`MemberAccountStatus`](crate::model::MemberAccountStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
@@ -8908,7 +8908,7 @@ impl StatusDetailFilters {
 pub mod status_detail_filters {
 
     /// A builder for [`StatusDetailFilters`](crate::model::StatusDetailFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) member_account_rule_status:
@@ -9006,7 +9006,7 @@ impl ResourceCount {
 pub mod resource_count {
 
     /// A builder for [`ResourceCount`](crate::model::ResourceCount).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) count: std::option::Option<i64>,
@@ -9079,7 +9079,7 @@ impl ConformancePackComplianceSummary {
 pub mod conformance_pack_compliance_summary {
 
     /// A builder for [`ConformancePackComplianceSummary`](crate::model::ConformancePackComplianceSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conformance_pack_name: std::option::Option<std::string::String>,
         pub(crate) conformance_pack_compliance_status:
@@ -9278,7 +9278,7 @@ impl ConformancePackEvaluationResult {
 pub mod conformance_pack_evaluation_result {
 
     /// A builder for [`ConformancePackEvaluationResult`](crate::model::ConformancePackEvaluationResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compliance_type:
             std::option::Option<crate::model::ConformancePackComplianceType>,
@@ -9403,7 +9403,7 @@ impl EvaluationResultIdentifier {
 pub mod evaluation_result_identifier {
 
     /// A builder for [`EvaluationResultIdentifier`](crate::model::EvaluationResultIdentifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_result_qualifier:
             std::option::Option<crate::model::EvaluationResultQualifier>,
@@ -9487,7 +9487,7 @@ impl EvaluationResultQualifier {
 pub mod evaluation_result_qualifier {
 
     /// A builder for [`EvaluationResultQualifier`](crate::model::EvaluationResultQualifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -9594,7 +9594,7 @@ impl ConformancePackEvaluationFilters {
 pub mod conformance_pack_evaluation_filters {
 
     /// A builder for [`ConformancePackEvaluationFilters`](crate::model::ConformancePackEvaluationFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) compliance_type:
@@ -9719,7 +9719,7 @@ impl ComplianceSummaryByResourceType {
 pub mod compliance_summary_by_resource_type {
 
     /// A builder for [`ComplianceSummaryByResourceType`](crate::model::ComplianceSummaryByResourceType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) compliance_summary: std::option::Option<crate::model::ComplianceSummary>,
@@ -9803,7 +9803,7 @@ impl ComplianceSummary {
 pub mod compliance_summary {
 
     /// A builder for [`ComplianceSummary`](crate::model::ComplianceSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compliant_resource_count:
             std::option::Option<crate::model::ComplianceContributorCount>,
@@ -9899,7 +9899,7 @@ impl ComplianceContributorCount {
 pub mod compliance_contributor_count {
 
     /// A builder for [`ComplianceContributorCount`](crate::model::ComplianceContributorCount).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capped_count: std::option::Option<i32>,
         pub(crate) cap_exceeded: std::option::Option<bool>,
@@ -9998,7 +9998,7 @@ impl EvaluationResult {
 pub mod evaluation_result {
 
     /// A builder for [`EvaluationResult`](crate::model::EvaluationResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_result_identifier:
             std::option::Option<crate::model::EvaluationResultIdentifier>,
@@ -10131,7 +10131,7 @@ impl GroupedResourceCount {
 pub mod grouped_resource_count {
 
     /// A builder for [`GroupedResourceCount`](crate::model::GroupedResourceCount).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
         pub(crate) resource_count: std::option::Option<i64>,
@@ -10302,7 +10302,7 @@ impl ResourceCountFilters {
 pub mod resource_count_filters {
 
     /// A builder for [`ResourceCountFilters`](crate::model::ResourceCountFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -10387,7 +10387,7 @@ impl AggregateConformancePackComplianceSummary {
 pub mod aggregate_conformance_pack_compliance_summary {
 
     /// A builder for [`AggregateConformancePackComplianceSummary`](crate::model::AggregateConformancePackComplianceSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compliance_summary:
             std::option::Option<crate::model::AggregateConformancePackComplianceCount>,
@@ -10461,7 +10461,7 @@ impl AggregateConformancePackComplianceCount {
 pub mod aggregate_conformance_pack_compliance_count {
 
     /// A builder for [`AggregateConformancePackComplianceCount`](crate::model::AggregateConformancePackComplianceCount).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compliant_conformance_pack_count: std::option::Option<i32>,
         pub(crate) non_compliant_conformance_pack_count: std::option::Option<i32>,
@@ -10630,7 +10630,7 @@ impl AggregateConformancePackComplianceSummaryFilters {
 pub mod aggregate_conformance_pack_compliance_summary_filters {
 
     /// A builder for [`AggregateConformancePackComplianceSummaryFilters`](crate::model::AggregateConformancePackComplianceSummaryFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) aws_region: std::option::Option<std::string::String>,
@@ -10698,7 +10698,7 @@ impl AggregateComplianceCount {
 pub mod aggregate_compliance_count {
 
     /// A builder for [`AggregateComplianceCount`](crate::model::AggregateComplianceCount).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
         pub(crate) compliance_summary: std::option::Option<crate::model::ComplianceSummary>,
@@ -10860,7 +10860,7 @@ impl ConfigRuleComplianceSummaryFilters {
 pub mod config_rule_compliance_summary_filters {
 
     /// A builder for [`ConfigRuleComplianceSummaryFilters`](crate::model::ConfigRuleComplianceSummaryFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) aws_region: std::option::Option<std::string::String>,
@@ -10966,7 +10966,7 @@ impl AggregateEvaluationResult {
 pub mod aggregate_evaluation_result {
 
     /// A builder for [`AggregateEvaluationResult`](crate::model::AggregateEvaluationResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_result_identifier:
             std::option::Option<crate::model::EvaluationResultIdentifier>,
@@ -11132,7 +11132,7 @@ impl RemediationExecutionStatus {
 pub mod remediation_execution_status {
 
     /// A builder for [`RemediationExecutionStatus`](crate::model::RemediationExecutionStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_key: std::option::Option<crate::model::ResourceKey>,
         pub(crate) state: std::option::Option<crate::model::RemediationExecutionState>,
@@ -11278,7 +11278,7 @@ impl RemediationExecutionStep {
 pub mod remediation_execution_step {
 
     /// A builder for [`RemediationExecutionStep`](crate::model::RemediationExecutionStep).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::RemediationExecutionStepState>,
@@ -11592,7 +11592,7 @@ impl PendingAggregationRequest {
 pub mod pending_aggregation_request {
 
     /// A builder for [`PendingAggregationRequest`](crate::model::PendingAggregationRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) requester_account_id: std::option::Option<std::string::String>,
         pub(crate) requester_aws_region: std::option::Option<std::string::String>,
@@ -11710,7 +11710,7 @@ impl OrganizationConformancePackStatus {
 pub mod organization_conformance_pack_status {
 
     /// A builder for [`OrganizationConformancePackStatus`](crate::model::OrganizationConformancePackStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_conformance_pack_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::OrganizationResourceStatus>,
@@ -12035,7 +12035,7 @@ impl OrganizationConformancePack {
 pub mod organization_conformance_pack {
 
     /// A builder for [`OrganizationConformancePack`](crate::model::OrganizationConformancePack).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_conformance_pack_name: std::option::Option<std::string::String>,
         pub(crate) organization_conformance_pack_arn: std::option::Option<std::string::String>,
@@ -12260,7 +12260,7 @@ impl OrganizationConfigRuleStatus {
 pub mod organization_config_rule_status {
 
     /// A builder for [`OrganizationConfigRuleStatus`](crate::model::OrganizationConfigRuleStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_config_rule_name: std::option::Option<std::string::String>,
         pub(crate) organization_rule_status:
@@ -12587,7 +12587,7 @@ impl OrganizationConfigRule {
 pub mod organization_config_rule {
 
     /// A builder for [`OrganizationConfigRule`](crate::model::OrganizationConfigRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_config_rule_name: std::option::Option<std::string::String>,
         pub(crate) organization_config_rule_arn: std::option::Option<std::string::String>,
@@ -12829,7 +12829,7 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicy {
 pub mod organization_custom_policy_rule_metadata_no_policy {
 
     /// A builder for [`OrganizationCustomPolicyRuleMetadataNoPolicy`](crate::model::OrganizationCustomPolicyRuleMetadataNoPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) organization_config_rule_trigger_types:
@@ -13082,7 +13082,7 @@ impl DeliveryChannelStatus {
 pub mod delivery_channel_status {
 
     /// A builder for [`DeliveryChannelStatus`](crate::model::DeliveryChannelStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) config_snapshot_delivery_info:
@@ -13210,7 +13210,7 @@ impl ConfigStreamDeliveryInfo {
 pub mod config_stream_delivery_info {
 
     /// A builder for [`ConfigStreamDeliveryInfo`](crate::model::ConfigStreamDeliveryInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_status: std::option::Option<crate::model::DeliveryStatus>,
         pub(crate) last_error_code: std::option::Option<std::string::String>,
@@ -13438,7 +13438,7 @@ impl ConfigExportDeliveryInfo {
 pub mod config_export_delivery_info {
 
     /// A builder for [`ConfigExportDeliveryInfo`](crate::model::ConfigExportDeliveryInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_status: std::option::Option<crate::model::DeliveryStatus>,
         pub(crate) last_error_code: std::option::Option<std::string::String>,
@@ -13631,7 +13631,7 @@ impl ConformancePackStatusDetail {
 pub mod conformance_pack_status_detail {
 
     /// A builder for [`ConformancePackStatusDetail`](crate::model::ConformancePackStatusDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conformance_pack_name: std::option::Option<std::string::String>,
         pub(crate) conformance_pack_id: std::option::Option<std::string::String>,
@@ -13986,7 +13986,7 @@ impl ConformancePackDetail {
 pub mod conformance_pack_detail {
 
     /// A builder for [`ConformancePackDetail`](crate::model::ConformancePackDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conformance_pack_name: std::option::Option<std::string::String>,
         pub(crate) conformance_pack_arn: std::option::Option<std::string::String>,
@@ -14194,7 +14194,7 @@ impl ConformancePackRuleCompliance {
 pub mod conformance_pack_rule_compliance {
 
     /// A builder for [`ConformancePackRuleCompliance`](crate::model::ConformancePackRuleCompliance).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
         pub(crate) compliance_type:
@@ -14298,7 +14298,7 @@ impl ConformancePackComplianceFilters {
 pub mod conformance_pack_compliance_filters {
 
     /// A builder for [`ConformancePackComplianceFilters`](crate::model::ConformancePackComplianceFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) compliance_type:
@@ -14425,7 +14425,7 @@ impl ConfigurationRecorderStatus {
 pub mod configuration_recorder_status {
 
     /// A builder for [`ConfigurationRecorderStatus`](crate::model::ConfigurationRecorderStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) last_start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -14724,7 +14724,7 @@ impl AggregatedSourceStatus {
 pub mod aggregated_source_status {
 
     /// A builder for [`AggregatedSourceStatus`](crate::model::AggregatedSourceStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_id: std::option::Option<std::string::String>,
         pub(crate) source_type: std::option::Option<crate::model::AggregatedSourceType>,
@@ -15173,7 +15173,7 @@ impl ConfigRuleEvaluationStatus {
 pub mod config_rule_evaluation_status {
 
     /// A builder for [`ConfigRuleEvaluationStatus`](crate::model::ConfigRuleEvaluationStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
         pub(crate) config_rule_arn: std::option::Option<std::string::String>,
@@ -15465,7 +15465,7 @@ impl ComplianceByResource {
 pub mod compliance_by_resource {
 
     /// A builder for [`ComplianceByResource`](crate::model::ComplianceByResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -15560,7 +15560,7 @@ impl Compliance {
 pub mod compliance {
 
     /// A builder for [`Compliance`](crate::model::Compliance).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compliance_type: std::option::Option<crate::model::ComplianceType>,
         pub(crate) compliance_contributor_count:
@@ -15645,7 +15645,7 @@ impl ComplianceByConfigRule {
 pub mod compliance_by_config_rule {
 
     /// A builder for [`ComplianceByConfigRule`](crate::model::ComplianceByConfigRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
         pub(crate) compliance: std::option::Option<crate::model::Compliance>,
@@ -15735,7 +15735,7 @@ impl AggregateComplianceByConformancePack {
 pub mod aggregate_compliance_by_conformance_pack {
 
     /// A builder for [`AggregateComplianceByConformancePack`](crate::model::AggregateComplianceByConformancePack).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conformance_pack_name: std::option::Option<std::string::String>,
         pub(crate) compliance:
@@ -15853,7 +15853,7 @@ impl AggregateConformancePackCompliance {
 pub mod aggregate_conformance_pack_compliance {
 
     /// A builder for [`AggregateConformancePackCompliance`](crate::model::AggregateConformancePackCompliance).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compliance_type:
             std::option::Option<crate::model::ConformancePackComplianceType>,
@@ -15967,7 +15967,7 @@ impl AggregateConformancePackComplianceFilters {
 pub mod aggregate_conformance_pack_compliance_filters {
 
     /// A builder for [`AggregateConformancePackComplianceFilters`](crate::model::AggregateConformancePackComplianceFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conformance_pack_name: std::option::Option<std::string::String>,
         pub(crate) compliance_type:
@@ -16083,7 +16083,7 @@ impl AggregateComplianceByConfigRule {
 pub mod aggregate_compliance_by_config_rule {
 
     /// A builder for [`AggregateComplianceByConfigRule`](crate::model::AggregateComplianceByConfigRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
         pub(crate) compliance: std::option::Option<crate::model::Compliance>,
@@ -16196,7 +16196,7 @@ impl ConfigRuleComplianceFilters {
 pub mod config_rule_compliance_filters {
 
     /// A builder for [`ConfigRuleComplianceFilters`](crate::model::ConfigRuleComplianceFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
         pub(crate) compliance_type: std::option::Option<crate::model::ComplianceType>,
@@ -16298,7 +16298,7 @@ impl FailedDeleteRemediationExceptionsBatch {
 pub mod failed_delete_remediation_exceptions_batch {
 
     /// A builder for [`FailedDeleteRemediationExceptionsBatch`](crate::model::FailedDeleteRemediationExceptionsBatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failure_message: std::option::Option<std::string::String>,
         pub(crate) failed_items:
@@ -16493,7 +16493,7 @@ impl BaseConfigurationItem {
 pub mod base_configuration_item {
 
     /// A builder for [`BaseConfigurationItem`](crate::model::BaseConfigurationItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,

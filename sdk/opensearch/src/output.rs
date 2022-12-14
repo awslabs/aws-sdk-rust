@@ -69,7 +69,7 @@ impl UpgradeDomainOutput {
 pub mod upgrade_domain_output {
 
     /// A builder for [`UpgradeDomainOutput`](crate::output::UpgradeDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upgrade_id: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -214,7 +214,7 @@ impl UpdatePackageOutput {
 pub mod update_package_output {
 
     /// A builder for [`UpdatePackageOutput`](crate::output::UpdatePackageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_details: std::option::Option<crate::model::PackageDetails>,
     }
@@ -272,7 +272,7 @@ impl UpdateDomainConfigOutput {
 pub mod update_domain_config_output {
 
     /// A builder for [`UpdateDomainConfigOutput`](crate::output::UpdateDomainConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_config: std::option::Option<crate::model::DomainConfig>,
         pub(crate) dry_run_results: std::option::Option<crate::model::DryRunResults>,
@@ -340,7 +340,7 @@ impl StartServiceSoftwareUpdateOutput {
 pub mod start_service_software_update_output {
 
     /// A builder for [`StartServiceSoftwareUpdateOutput`](crate::output::StartServiceSoftwareUpdateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_software_options:
             std::option::Option<crate::model::ServiceSoftwareOptions>,
@@ -385,7 +385,7 @@ pub struct RemoveTagsOutput {}
 pub mod remove_tags_output {
 
     /// A builder for [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
@@ -419,7 +419,7 @@ impl RejectInboundConnectionOutput {
 pub mod reject_inbound_connection_output {
 
     /// A builder for [`RejectInboundConnectionOutput`](crate::output::RejectInboundConnectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection: std::option::Option<crate::model::InboundConnection>,
     }
@@ -477,7 +477,7 @@ impl PurchaseReservedInstanceOfferingOutput {
 pub mod purchase_reserved_instance_offering_output {
 
     /// A builder for [`PurchaseReservedInstanceOfferingOutput`](crate::output::PurchaseReservedInstanceOfferingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_instance_id: std::option::Option<std::string::String>,
         pub(crate) reservation_name: std::option::Option<std::string::String>,
@@ -550,7 +550,7 @@ impl ListVersionsOutput {
 pub mod list_versions_output {
 
     /// A builder for [`ListVersionsOutput`](crate::output::ListVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) versions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -619,7 +619,7 @@ impl ListTagsOutput {
 pub mod list_tags_output {
 
     /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -686,7 +686,7 @@ impl ListPackagesForDomainOutput {
 pub mod list_packages_for_domain_output {
 
     /// A builder for [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_package_details_list:
             std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
@@ -769,7 +769,7 @@ impl ListInstanceTypeDetailsOutput {
 pub mod list_instance_type_details_output {
 
     /// A builder for [`ListInstanceTypeDetailsOutput`](crate::output::ListInstanceTypeDetailsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_type_details:
             std::option::Option<std::vec::Vec<crate::model::InstanceTypeDetails>>,
@@ -848,7 +848,7 @@ impl ListDomainsForPackageOutput {
 pub mod list_domains_for_package_output {
 
     /// A builder for [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_package_details_list:
             std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
@@ -921,7 +921,7 @@ impl ListDomainNamesOutput {
 pub mod list_domain_names_output {
 
     /// A builder for [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_names: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
     }
@@ -1018,7 +1018,7 @@ impl GetUpgradeStatusOutput {
 pub mod get_upgrade_status_output {
 
     /// A builder for [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upgrade_step: std::option::Option<crate::model::UpgradeStep>,
         pub(crate) step_status: std::option::Option<crate::model::UpgradeStatus>,
@@ -1129,7 +1129,7 @@ impl GetUpgradeHistoryOutput {
 pub mod get_upgrade_history_output {
 
     /// A builder for [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upgrade_histories:
             std::option::Option<std::vec::Vec<crate::model::UpgradeHistory>>,
@@ -1216,7 +1216,7 @@ impl GetPackageVersionHistoryOutput {
 pub mod get_package_version_history_output {
 
     /// A builder for [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
         pub(crate) package_version_history_list:
@@ -1304,7 +1304,7 @@ impl GetCompatibleVersionsOutput {
 pub mod get_compatible_versions_output {
 
     /// A builder for [`GetCompatibleVersionsOutput`](crate::output::GetCompatibleVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compatible_versions:
             std::option::Option<std::vec::Vec<crate::model::CompatibleVersionsMap>>,
@@ -1364,7 +1364,7 @@ impl DissociatePackageOutput {
 pub mod dissociate_package_output {
 
     /// A builder for [`DissociatePackageOutput`](crate::output::DissociatePackageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_package_details: std::option::Option<crate::model::DomainPackageDetails>,
     }
@@ -1422,7 +1422,7 @@ impl DescribeReservedInstancesOutput {
 pub mod describe_reserved_instances_output {
 
     /// A builder for [`DescribeReservedInstancesOutput`](crate::output::DescribeReservedInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) reserved_instances:
@@ -1502,7 +1502,7 @@ impl DescribeReservedInstanceOfferingsOutput {
 pub mod describe_reserved_instance_offerings_output {
 
     /// A builder for [`DescribeReservedInstanceOfferingsOutput`](crate::output::DescribeReservedInstanceOfferingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) reserved_instance_offerings:
@@ -1582,7 +1582,7 @@ impl DescribePackagesOutput {
 pub mod describe_packages_output {
 
     /// A builder for [`DescribePackagesOutput`](crate::output::DescribePackagesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_details_list:
             std::option::Option<std::vec::Vec<crate::model::PackageDetails>>,
@@ -1659,7 +1659,7 @@ impl DescribeOutboundConnectionsOutput {
 pub mod describe_outbound_connections_output {
 
     /// A builder for [`DescribeOutboundConnectionsOutput`](crate::output::DescribeOutboundConnectionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections:
             std::option::Option<std::vec::Vec<crate::model::OutboundConnection>>,
@@ -1745,7 +1745,7 @@ impl DescribeInstanceTypeLimitsOutput {
 pub mod describe_instance_type_limits_output {
 
     /// A builder for [`DescribeInstanceTypeLimitsOutput`](crate::output::DescribeInstanceTypeLimitsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limits_by_role: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::Limits>,
@@ -1829,7 +1829,7 @@ impl DescribeInboundConnectionsOutput {
 pub mod describe_inbound_connections_output {
 
     /// A builder for [`DescribeInboundConnectionsOutput`](crate::output::DescribeInboundConnectionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::InboundConnection>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1898,7 +1898,7 @@ impl DescribeDomainsOutput {
 pub mod describe_domains_output {
 
     /// A builder for [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status_list:
             std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
@@ -1956,7 +1956,7 @@ impl DescribeDomainConfigOutput {
 pub mod describe_domain_config_output {
 
     /// A builder for [`DescribeDomainConfigOutput`](crate::output::DescribeDomainConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_config: std::option::Option<crate::model::DomainConfig>,
     }
@@ -2009,7 +2009,7 @@ impl DescribeDomainChangeProgressOutput {
 pub mod describe_domain_change_progress_output {
 
     /// A builder for [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_progress_status:
             std::option::Option<crate::model::ChangeProgressStatusDetails>,
@@ -2071,7 +2071,7 @@ impl DescribeDomainAutoTunesOutput {
 pub mod describe_domain_auto_tunes_output {
 
     /// A builder for [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_tunes: std::option::Option<std::vec::Vec<crate::model::AutoTune>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2140,7 +2140,7 @@ impl DescribeDomainOutput {
 pub mod describe_domain_output {
 
     /// A builder for [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status: std::option::Option<crate::model::DomainStatus>,
     }
@@ -2191,7 +2191,7 @@ impl DeletePackageOutput {
 pub mod delete_package_output {
 
     /// A builder for [`DeletePackageOutput`](crate::output::DeletePackageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_details: std::option::Option<crate::model::PackageDetails>,
     }
@@ -2242,7 +2242,7 @@ impl DeleteOutboundConnectionOutput {
 pub mod delete_outbound_connection_output {
 
     /// A builder for [`DeleteOutboundConnectionOutput`](crate::output::DeleteOutboundConnectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection: std::option::Option<crate::model::OutboundConnection>,
     }
@@ -2293,7 +2293,7 @@ impl DeleteInboundConnectionOutput {
 pub mod delete_inbound_connection_output {
 
     /// A builder for [`DeleteInboundConnectionOutput`](crate::output::DeleteInboundConnectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection: std::option::Option<crate::model::InboundConnection>,
     }
@@ -2344,7 +2344,7 @@ impl DeleteDomainOutput {
 pub mod delete_domain_output {
 
     /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status: std::option::Option<crate::model::DomainStatus>,
     }
@@ -2395,7 +2395,7 @@ impl CreatePackageOutput {
 pub mod create_package_output {
 
     /// A builder for [`CreatePackageOutput`](crate::output::CreatePackageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_details: std::option::Option<crate::model::PackageDetails>,
     }
@@ -2480,7 +2480,7 @@ impl CreateOutboundConnectionOutput {
 pub mod create_outbound_connection_output {
 
     /// A builder for [`CreateOutboundConnectionOutput`](crate::output::CreateOutboundConnectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) local_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
         pub(crate) remote_domain_info:
@@ -2598,7 +2598,7 @@ impl CreateDomainOutput {
 pub mod create_domain_output {
 
     /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status: std::option::Option<crate::model::DomainStatus>,
     }
@@ -2651,7 +2651,7 @@ impl CancelServiceSoftwareUpdateOutput {
 pub mod cancel_service_software_update_output {
 
     /// A builder for [`CancelServiceSoftwareUpdateOutput`](crate::output::CancelServiceSoftwareUpdateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_software_options:
             std::option::Option<crate::model::ServiceSoftwareOptions>,
@@ -2708,7 +2708,7 @@ impl AssociatePackageOutput {
 pub mod associate_package_output {
 
     /// A builder for [`AssociatePackageOutput`](crate::output::AssociatePackageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_package_details: std::option::Option<crate::model::DomainPackageDetails>,
     }
@@ -2749,7 +2749,7 @@ pub struct AddTagsOutput {}
 pub mod add_tags_output {
 
     /// A builder for [`AddTagsOutput`](crate::output::AddTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsOutput`](crate::output::AddTagsOutput).
@@ -2783,7 +2783,7 @@ impl AcceptInboundConnectionOutput {
 pub mod accept_inbound_connection_output {
 
     /// A builder for [`AcceptInboundConnectionOutput`](crate::output::AcceptInboundConnectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection: std::option::Option<crate::model::InboundConnection>,
     }

@@ -39,7 +39,7 @@ impl std::error::Error for InvalidGatewayRequestException {}
 pub mod invalid_gateway_request_exception {
 
     /// A builder for [`InvalidGatewayRequestException`](crate::error::InvalidGatewayRequestException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<crate::model::StorageGatewayError>,
@@ -123,7 +123,7 @@ impl std::error::Error for InternalServerError {}
 pub mod internal_server_error {
 
     /// A builder for [`InternalServerError`](crate::error::InternalServerError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<crate::model::StorageGatewayError>,
@@ -207,7 +207,7 @@ impl std::error::Error for ServiceUnavailableError {}
 pub mod service_unavailable_error {
 
     /// A builder for [`ServiceUnavailableError`](crate::error::ServiceUnavailableError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<crate::model::StorageGatewayError>,

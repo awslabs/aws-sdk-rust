@@ -119,7 +119,7 @@ impl UpdateApplicationOutput {
 pub mod update_application_output {
 
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) author: std::option::Option<std::string::String>,
@@ -343,7 +343,7 @@ pub struct UnshareApplicationOutput {}
 pub mod unshare_application_output {
 
     /// A builder for [`UnshareApplicationOutput`](crate::output::UnshareApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UnshareApplicationOutput`](crate::output::UnshareApplicationOutput).
@@ -377,7 +377,7 @@ impl PutApplicationPolicyOutput {
 pub mod put_application_policy_output {
 
     /// A builder for [`PutApplicationPolicyOutput`](crate::output::PutApplicationPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statements:
             std::option::Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>,
@@ -442,7 +442,7 @@ impl ListApplicationVersionsOutput {
 pub mod list_application_versions_output {
 
     /// A builder for [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) versions: std::option::Option<std::vec::Vec<crate::model::VersionSummary>>,
@@ -518,7 +518,7 @@ impl ListApplicationsOutput {
 pub mod list_applications_output {
 
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) applications:
             std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
@@ -598,7 +598,7 @@ impl ListApplicationDependenciesOutput {
 pub mod list_application_dependencies_output {
 
     /// A builder for [`ListApplicationDependenciesOutput`](crate::output::ListApplicationDependenciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dependencies:
             std::option::Option<std::vec::Vec<crate::model::ApplicationDependencySummary>>,
@@ -716,7 +716,7 @@ impl GetCloudFormationTemplateOutput {
 pub mod get_cloud_formation_template_output {
 
     /// A builder for [`GetCloudFormationTemplateOutput`](crate::output::GetCloudFormationTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<std::string::String>,
@@ -854,7 +854,7 @@ impl GetApplicationPolicyOutput {
 pub mod get_application_policy_output {
 
     /// A builder for [`GetApplicationPolicyOutput`](crate::output::GetApplicationPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statements:
             std::option::Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>,
@@ -1014,7 +1014,7 @@ impl GetApplicationOutput {
 pub mod get_application_output {
 
     /// A builder for [`GetApplicationOutput`](crate::output::GetApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) author: std::option::Option<std::string::String>,
@@ -1238,7 +1238,7 @@ pub struct DeleteApplicationOutput {}
 pub mod delete_application_output {
 
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
@@ -1320,7 +1320,7 @@ impl CreateCloudFormationTemplateOutput {
 pub mod create_cloud_formation_template_output {
 
     /// A builder for [`CreateCloudFormationTemplateOutput`](crate::output::CreateCloudFormationTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<std::string::String>,
@@ -1485,7 +1485,7 @@ impl CreateCloudFormationChangeSetOutput {
 pub mod create_cloud_formation_change_set_output {
 
     /// A builder for [`CreateCloudFormationChangeSetOutput`](crate::output::CreateCloudFormationChangeSetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) change_set_id: std::option::Option<std::string::String>,
@@ -1657,7 +1657,7 @@ impl CreateApplicationVersionOutput {
 pub mod create_application_version_output {
 
     /// A builder for [`CreateApplicationVersionOutput`](crate::output::CreateApplicationVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<std::string::String>,
@@ -1952,7 +1952,7 @@ impl CreateApplicationOutput {
 pub mod create_application_output {
 
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) author: std::option::Option<std::string::String>,

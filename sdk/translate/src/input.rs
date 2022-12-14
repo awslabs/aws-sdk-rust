@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_parallel_data_input {
 
     /// A builder for [`CreateParallelDataInput`](crate::input::CreateParallelDataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -229,7 +229,7 @@ impl CreateParallelDataInput {
 pub mod delete_parallel_data_input {
 
     /// A builder for [`DeleteParallelDataInput`](crate::input::DeleteParallelDataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -374,7 +374,7 @@ impl DeleteParallelDataInput {
 pub mod delete_terminology_input {
 
     /// A builder for [`DeleteTerminologyInput`](crate::input::DeleteTerminologyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -519,7 +519,7 @@ impl DeleteTerminologyInput {
 pub mod describe_text_translation_job_input {
 
     /// A builder for [`DescribeTextTranslationJobInput`](crate::input::DescribeTextTranslationJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -665,7 +665,7 @@ impl DescribeTextTranslationJobInput {
 pub mod get_parallel_data_input {
 
     /// A builder for [`GetParallelDataInput`](crate::input::GetParallelDataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -808,7 +808,7 @@ impl GetParallelDataInput {
 pub mod get_terminology_input {
 
     /// A builder for [`GetTerminologyInput`](crate::input::GetTerminologyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) terminology_data_format:
@@ -976,7 +976,7 @@ impl GetTerminologyInput {
 pub mod import_terminology_input {
 
     /// A builder for [`ImportTerminologyInput`](crate::input::ImportTerminologyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) merge_strategy: std::option::Option<crate::model::MergeStrategy>,
@@ -1200,7 +1200,7 @@ impl ImportTerminologyInput {
 pub mod list_languages_input {
 
     /// A builder for [`ListLanguagesInput`](crate::input::ListLanguagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) display_language_code: std::option::Option<crate::model::DisplayLanguageCode>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1372,7 +1372,7 @@ impl ListLanguagesInput {
 pub mod list_parallel_data_input {
 
     /// A builder for [`ListParallelDataInput`](crate::input::ListParallelDataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1531,7 +1531,7 @@ impl ListParallelDataInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1680,7 +1680,7 @@ impl ListTagsForResourceInput {
 pub mod list_terminologies_input {
 
     /// A builder for [`ListTerminologiesInput`](crate::input::ListTerminologiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1839,7 +1839,7 @@ impl ListTerminologiesInput {
 pub mod list_text_translation_jobs_input {
 
     /// A builder for [`ListTextTranslationJobsInput`](crate::input::ListTextTranslationJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::TextTranslationJobFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2015,7 +2015,7 @@ impl ListTextTranslationJobsInput {
 pub mod start_text_translation_job_input {
 
     /// A builder for [`StartTextTranslationJobInput`](crate::input::StartTextTranslationJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
@@ -2335,7 +2335,7 @@ impl StartTextTranslationJobInput {
 pub mod stop_text_translation_job_input {
 
     /// A builder for [`StopTextTranslationJobInput`](crate::input::StopTextTranslationJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -2484,7 +2484,7 @@ impl StopTextTranslationJobInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2649,7 +2649,7 @@ impl TagResourceInput {
 pub mod translate_text_input {
 
     /// A builder for [`TranslateTextInput`](crate::input::TranslateTextInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) terminology_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2866,7 +2866,7 @@ impl TranslateTextInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3031,7 +3031,7 @@ impl UntagResourceInput {
 pub mod update_parallel_data_input {
 
     /// A builder for [`UpdateParallelDataInput`](crate::input::UpdateParallelDataInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,

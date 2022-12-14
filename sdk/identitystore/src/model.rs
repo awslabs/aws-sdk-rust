@@ -245,7 +245,7 @@ impl std::fmt::Debug for User {
 pub mod user {
 
     /// A builder for [`User`](crate::model::User).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -560,7 +560,7 @@ impl std::fmt::Debug for PhoneNumber {
 pub mod phone_number {
 
     /// A builder for [`PhoneNumber`](crate::model::PhoneNumber).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -704,7 +704,7 @@ impl std::fmt::Debug for Address {
 pub mod address {
 
     /// A builder for [`Address`](crate::model::Address).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) street_address: std::option::Option<std::string::String>,
         pub(crate) locality: std::option::Option<std::string::String>,
@@ -876,7 +876,7 @@ impl std::fmt::Debug for Email {
 pub mod email {
 
     /// A builder for [`Email`](crate::model::Email).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -1004,7 +1004,7 @@ impl std::fmt::Debug for Name {
 pub mod name {
 
     /// A builder for [`Name`](crate::model::Name).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) formatted: std::option::Option<std::string::String>,
         pub(crate) family_name: std::option::Option<std::string::String>,
@@ -1145,7 +1145,7 @@ impl std::fmt::Debug for ExternalId {
 pub mod external_id {
 
     /// A builder for [`ExternalId`](crate::model::ExternalId).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) issuer: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1228,7 +1228,7 @@ impl std::fmt::Debug for Filter {
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) attribute_path: std::option::Option<std::string::String>,
         pub(crate) attribute_value: std::option::Option<std::string::String>,
@@ -1405,7 +1405,7 @@ impl AttributeOperation {
 pub mod attribute_operation {
 
     /// A builder for [`AttributeOperation`](crate::model::AttributeOperation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_path: std::option::Option<std::string::String>,
         pub(crate) attribute_value: std::option::Option<aws_smithy_types::Document>,
@@ -1510,7 +1510,7 @@ impl std::fmt::Debug for Group {
 pub mod group {
 
     /// A builder for [`Group`](crate::model::Group).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -1650,7 +1650,7 @@ impl GroupMembership {
 pub mod group_membership {
 
     /// A builder for [`GroupMembership`](crate::model::GroupMembership).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
         pub(crate) membership_id: std::option::Option<std::string::String>,
@@ -1800,7 +1800,7 @@ impl std::fmt::Debug for GroupMembershipExistenceResult {
 pub mod group_membership_existence_result {
 
     /// A builder for [`GroupMembershipExistenceResult`](crate::model::GroupMembershipExistenceResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
         pub(crate) member_id: std::option::Option<crate::model::MemberId>,
@@ -1941,7 +1941,7 @@ impl UniqueAttribute {
 pub mod unique_attribute {
 
     /// A builder for [`UniqueAttribute`](crate::model::UniqueAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_path: std::option::Option<std::string::String>,
         pub(crate) attribute_value: std::option::Option<aws_smithy_types::Document>,

@@ -88,7 +88,7 @@ impl Queue {
 pub mod queue {
 
     /// A builder for [`Queue`](crate::model::Queue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -483,7 +483,7 @@ impl ReservationPlan {
 pub mod reservation_plan {
 
     /// A builder for [`ReservationPlan`](crate::model::ReservationPlan).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commitment: std::option::Option<crate::model::Commitment>,
         pub(crate) expires_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -977,7 +977,7 @@ impl ReservationPlanSettings {
 pub mod reservation_plan_settings {
 
     /// A builder for [`ReservationPlanSettings`](crate::model::ReservationPlanSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commitment: std::option::Option<crate::model::Commitment>,
         pub(crate) renewal_type: std::option::Option<crate::model::RenewalType>,
@@ -1104,7 +1104,7 @@ impl Preset {
 pub mod preset {
 
     /// A builder for [`Preset`](crate::model::Preset).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) category: std::option::Option<std::string::String>,
@@ -1269,7 +1269,7 @@ impl PresetSettings {
 pub mod preset_settings {
 
     /// A builder for [`PresetSettings`](crate::model::PresetSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_descriptions:
             std::option::Option<std::vec::Vec<crate::model::AudioDescription>>,
@@ -1480,7 +1480,7 @@ impl VideoDescription {
 pub mod video_description {
 
     /// A builder for [`VideoDescription`](crate::model::VideoDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) afd_signaling: std::option::Option<crate::model::AfdSignaling>,
         pub(crate) anti_alias: std::option::Option<crate::model::AntiAlias>,
@@ -1772,7 +1772,7 @@ impl VideoPreprocessor {
 pub mod video_preprocessor {
 
     /// A builder for [`VideoPreprocessor`](crate::model::VideoPreprocessor).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) color_corrector: std::option::Option<crate::model::ColorCorrector>,
         pub(crate) deinterlacer: std::option::Option<crate::model::Deinterlacer>,
@@ -1942,7 +1942,7 @@ impl TimecodeBurnin {
 pub mod timecode_burnin {
 
     /// A builder for [`TimecodeBurnin`](crate::model::TimecodeBurnin).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) font_size: std::option::Option<i32>,
         pub(crate) position: std::option::Option<crate::model::TimecodeBurninPosition>,
@@ -2157,7 +2157,7 @@ impl PartnerWatermarking {
 pub mod partner_watermarking {
 
     /// A builder for [`PartnerWatermarking`](crate::model::PartnerWatermarking).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nexguard_file_marker_settings:
             std::option::Option<crate::model::NexGuardFileMarkerSettings>,
@@ -2233,7 +2233,7 @@ impl NexGuardFileMarkerSettings {
 pub mod nex_guard_file_marker_settings {
 
     /// A builder for [`NexGuardFileMarkerSettings`](crate::model::NexGuardFileMarkerSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license: std::option::Option<std::string::String>,
         pub(crate) payload: std::option::Option<i32>,
@@ -2456,7 +2456,7 @@ impl NoiseReducer {
 pub mod noise_reducer {
 
     /// A builder for [`NoiseReducer`](crate::model::NoiseReducer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<crate::model::NoiseReducerFilter>,
         pub(crate) filter_settings: std::option::Option<crate::model::NoiseReducerFilterSettings>,
@@ -2594,7 +2594,7 @@ impl NoiseReducerTemporalFilterSettings {
 pub mod noise_reducer_temporal_filter_settings {
 
     /// A builder for [`NoiseReducerTemporalFilterSettings`](crate::model::NoiseReducerTemporalFilterSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aggressive_mode: std::option::Option<i32>,
         pub(crate) post_temporal_sharpening:
@@ -2912,7 +2912,7 @@ impl NoiseReducerSpatialFilterSettings {
 pub mod noise_reducer_spatial_filter_settings {
 
     /// A builder for [`NoiseReducerSpatialFilterSettings`](crate::model::NoiseReducerSpatialFilterSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) post_filter_sharpen_strength: std::option::Option<i32>,
         pub(crate) speed: std::option::Option<i32>,
@@ -2984,7 +2984,7 @@ impl NoiseReducerFilterSettings {
 pub mod noise_reducer_filter_settings {
 
     /// A builder for [`NoiseReducerFilterSettings`](crate::model::NoiseReducerFilterSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) strength: std::option::Option<i32>,
     }
@@ -3163,7 +3163,7 @@ impl ImageInserter {
 pub mod image_inserter {
 
     /// A builder for [`ImageInserter`](crate::model::ImageInserter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insertable_images:
             std::option::Option<std::vec::Vec<crate::model::InsertableImage>>,
@@ -3291,7 +3291,7 @@ impl InsertableImage {
 pub mod insertable_image {
 
     /// A builder for [`InsertableImage`](crate::model::InsertableImage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration: std::option::Option<i32>,
         pub(crate) fade_in: std::option::Option<i32>,
@@ -3469,7 +3469,7 @@ impl Hdr10Plus {
 pub mod hdr10_plus {
 
     /// A builder for [`Hdr10Plus`](crate::model::Hdr10Plus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mastering_monitor_nits: std::option::Option<i32>,
         pub(crate) target_monitor_nits: std::option::Option<i32>,
@@ -3550,7 +3550,7 @@ impl DolbyVision {
 pub mod dolby_vision {
 
     /// A builder for [`DolbyVision`](crate::model::DolbyVision).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) l6_metadata: std::option::Option<crate::model::DolbyVisionLevel6Metadata>,
         pub(crate) l6_mode: std::option::Option<crate::model::DolbyVisionLevel6Mode>,
@@ -3934,7 +3934,7 @@ impl DolbyVisionLevel6Metadata {
 pub mod dolby_vision_level6_metadata {
 
     /// A builder for [`DolbyVisionLevel6Metadata`](crate::model::DolbyVisionLevel6Metadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_cll: std::option::Option<i32>,
         pub(crate) max_fall: std::option::Option<i32>,
@@ -4008,7 +4008,7 @@ impl Deinterlacer {
 pub mod deinterlacer {
 
     /// A builder for [`Deinterlacer`](crate::model::Deinterlacer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) algorithm: std::option::Option<crate::model::DeinterlaceAlgorithm>,
         pub(crate) control: std::option::Option<crate::model::DeinterlacerControl>,
@@ -4424,7 +4424,7 @@ impl ColorCorrector {
 pub mod color_corrector {
 
     /// A builder for [`ColorCorrector`](crate::model::ColorCorrector).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) brightness: std::option::Option<i32>,
         pub(crate) color_space_conversion: std::option::Option<crate::model::ColorSpaceConversion>,
@@ -4726,7 +4726,7 @@ impl Hdr10Metadata {
 pub mod hdr10_metadata {
 
     /// A builder for [`Hdr10Metadata`](crate::model::Hdr10Metadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blue_primary_x: std::option::Option<i32>,
         pub(crate) blue_primary_y: std::option::Option<i32>,
@@ -5322,7 +5322,7 @@ impl Rectangle {
 pub mod rectangle {
 
     /// A builder for [`Rectangle`](crate::model::Rectangle).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) height: std::option::Option<i32>,
         pub(crate) width: std::option::Option<i32>,
@@ -5667,7 +5667,7 @@ impl VideoCodecSettings {
 pub mod video_codec_settings {
 
     /// A builder for [`VideoCodecSettings`](crate::model::VideoCodecSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) av1_settings: std::option::Option<crate::model::Av1Settings>,
         pub(crate) avc_intra_settings: std::option::Option<crate::model::AvcIntraSettings>,
@@ -6009,7 +6009,7 @@ impl XavcSettings {
 pub mod xavc_settings {
 
     /// A builder for [`XavcSettings`](crate::model::XavcSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adaptive_quantization:
             std::option::Option<crate::model::XavcAdaptiveQuantization>,
@@ -6373,7 +6373,7 @@ impl XavcHdProfileSettings {
 pub mod xavc_hd_profile_settings {
 
     /// A builder for [`XavcHdProfileSettings`](crate::model::XavcHdProfileSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bitrate_class: std::option::Option<crate::model::XavcHdProfileBitrateClass>,
         pub(crate) flicker_adaptive_quantization:
@@ -7126,7 +7126,7 @@ impl XavcHdIntraCbgProfileSettings {
 pub mod xavc_hd_intra_cbg_profile_settings {
 
     /// A builder for [`XavcHdIntraCbgProfileSettings`](crate::model::XavcHdIntraCbgProfileSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) xavc_class: std::option::Option<crate::model::XavcHdIntraCbgProfileClass>,
     }
@@ -7328,7 +7328,7 @@ impl Xavc4kProfileSettings {
 pub mod xavc4k_profile_settings {
 
     /// A builder for [`Xavc4kProfileSettings`](crate::model::Xavc4kProfileSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bitrate_class: std::option::Option<crate::model::Xavc4kProfileBitrateClass>,
         pub(crate) codec_profile: std::option::Option<crate::model::Xavc4kProfileCodecProfile>,
@@ -7773,7 +7773,7 @@ impl Xavc4kIntraVbrProfileSettings {
 pub mod xavc4k_intra_vbr_profile_settings {
 
     /// A builder for [`Xavc4kIntraVbrProfileSettings`](crate::model::Xavc4kIntraVbrProfileSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) xavc_class: std::option::Option<crate::model::Xavc4kIntraVbrProfileClass>,
     }
@@ -7921,7 +7921,7 @@ impl Xavc4kIntraCbgProfileSettings {
 pub mod xavc4k_intra_cbg_profile_settings {
 
     /// A builder for [`Xavc4kIntraCbgProfileSettings`](crate::model::Xavc4kIntraCbgProfileSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) xavc_class: std::option::Option<crate::model::Xavc4kIntraCbgProfileClass>,
     }
@@ -8946,7 +8946,7 @@ impl Vp9Settings {
 pub mod vp9_settings {
 
     /// A builder for [`Vp9Settings`](crate::model::Vp9Settings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bitrate: std::option::Option<i32>,
         pub(crate) framerate_control: std::option::Option<crate::model::Vp9FramerateControl>,
@@ -9704,7 +9704,7 @@ impl Vp8Settings {
 pub mod vp8_settings {
 
     /// A builder for [`Vp8Settings`](crate::model::Vp8Settings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bitrate: std::option::Option<i32>,
         pub(crate) framerate_control: std::option::Option<crate::model::Vp8FramerateControl>,
@@ -10434,7 +10434,7 @@ impl Vc3Settings {
 pub mod vc3_settings {
 
     /// A builder for [`Vc3Settings`](crate::model::Vc3Settings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) framerate_control: std::option::Option<crate::model::Vc3FramerateControl>,
         pub(crate) framerate_conversion_algorithm:
@@ -11339,7 +11339,7 @@ impl ProresSettings {
 pub mod prores_settings {
 
     /// A builder for [`ProresSettings`](crate::model::ProresSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) chroma_sampling: std::option::Option<crate::model::ProresChromaSampling>,
         pub(crate) codec_profile: std::option::Option<crate::model::ProresCodecProfile>,
@@ -12675,7 +12675,7 @@ impl Mpeg2Settings {
 pub mod mpeg2_settings {
 
     /// A builder for [`Mpeg2Settings`](crate::model::Mpeg2Settings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adaptive_quantization:
             std::option::Option<crate::model::Mpeg2AdaptiveQuantization>,
@@ -15298,7 +15298,7 @@ impl H265Settings {
 pub mod h265_settings {
 
     /// A builder for [`H265Settings`](crate::model::H265Settings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adaptive_quantization:
             std::option::Option<crate::model::H265AdaptiveQuantization>,
@@ -17069,7 +17069,7 @@ impl H265QvbrSettings {
 pub mod h265_qvbr_settings {
 
     /// A builder for [`H265QvbrSettings`](crate::model::H265QvbrSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_average_bitrate: std::option::Option<i32>,
         pub(crate) qvbr_quality_level: std::option::Option<i32>,
@@ -18797,7 +18797,7 @@ impl H264Settings {
 pub mod h264_settings {
 
     /// A builder for [`H264Settings`](crate::model::H264Settings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adaptive_quantization:
             std::option::Option<crate::model::H264AdaptiveQuantization>,
@@ -20364,7 +20364,7 @@ impl H264QvbrSettings {
 pub mod h264_qvbr_settings {
 
     /// A builder for [`H264QvbrSettings`](crate::model::H264QvbrSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_average_bitrate: std::option::Option<i32>,
         pub(crate) qvbr_quality_level: std::option::Option<i32>,
@@ -21923,7 +21923,7 @@ impl FrameCaptureSettings {
 pub mod frame_capture_settings {
 
     /// A builder for [`FrameCaptureSettings`](crate::model::FrameCaptureSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) framerate_denominator: std::option::Option<i32>,
         pub(crate) framerate_numerator: std::option::Option<i32>,
@@ -22227,7 +22227,7 @@ impl AvcIntraSettings {
 pub mod avc_intra_settings {
 
     /// A builder for [`AvcIntraSettings`](crate::model::AvcIntraSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) avc_intra_class: std::option::Option<crate::model::AvcIntraClass>,
         pub(crate) avc_intra_uhd_settings: std::option::Option<crate::model::AvcIntraUhdSettings>,
@@ -22991,7 +22991,7 @@ impl AvcIntraUhdSettings {
 pub mod avc_intra_uhd_settings {
 
     /// A builder for [`AvcIntraUhdSettings`](crate::model::AvcIntraUhdSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quality_tuning_level:
             std::option::Option<crate::model::AvcIntraUhdQualityTuningLevel>,
@@ -23330,7 +23330,7 @@ impl Av1Settings {
 pub mod av1_settings {
 
     /// A builder for [`Av1Settings`](crate::model::Av1Settings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adaptive_quantization:
             std::option::Option<crate::model::Av1AdaptiveQuantization>,
@@ -23746,7 +23746,7 @@ impl Av1QvbrSettings {
 pub mod av1_qvbr_settings {
 
     /// A builder for [`Av1QvbrSettings`](crate::model::Av1QvbrSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qvbr_quality_level: std::option::Option<i32>,
         pub(crate) qvbr_quality_level_fine_tune: std::option::Option<f64>,
@@ -24438,7 +24438,7 @@ impl ContainerSettings {
 pub mod container_settings {
 
     /// A builder for [`ContainerSettings`](crate::model::ContainerSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cmfc_settings: std::option::Option<crate::model::CmfcSettings>,
         pub(crate) container: std::option::Option<crate::model::ContainerType>,
@@ -24625,7 +24625,7 @@ impl MxfSettings {
 pub mod mxf_settings {
 
     /// A builder for [`MxfSettings`](crate::model::MxfSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) afd_signaling: std::option::Option<crate::model::MxfAfdSignaling>,
         pub(crate) profile: std::option::Option<crate::model::MxfProfile>,
@@ -24713,7 +24713,7 @@ impl MxfXavcProfileSettings {
 pub mod mxf_xavc_profile_settings {
 
     /// A builder for [`MxfXavcProfileSettings`](crate::model::MxfXavcProfileSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_mode: std::option::Option<crate::model::MxfXavcDurationMode>,
         pub(crate) max_anc_data_size: std::option::Option<i32>,
@@ -25111,7 +25111,7 @@ impl MpdSettings {
 pub mod mpd_settings {
 
     /// A builder for [`MpdSettings`](crate::model::MpdSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accessibility_caption_hints:
             std::option::Option<crate::model::MpdAccessibilityCaptionHints>,
@@ -25935,7 +25935,7 @@ impl Mp4Settings {
 pub mod mp4_settings {
 
     /// A builder for [`Mp4Settings`](crate::model::Mp4Settings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_duration: std::option::Option<crate::model::CmfcAudioDuration>,
         pub(crate) cslg_atom: std::option::Option<crate::model::Mp4CslgAtom>,
@@ -26450,7 +26450,7 @@ impl MovSettings {
 pub mod mov_settings {
 
     /// A builder for [`MovSettings`](crate::model::MovSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) clap_atom: std::option::Option<crate::model::MovClapAtom>,
         pub(crate) cslg_atom: std::option::Option<crate::model::MovCslgAtom>,
@@ -27141,7 +27141,7 @@ impl M3u8Settings {
 pub mod m3u8_settings {
 
     /// A builder for [`M3u8Settings`](crate::model::M3u8Settings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_duration: std::option::Option<crate::model::M3u8AudioDuration>,
         pub(crate) audio_frames_per_pes: std::option::Option<i32>,
@@ -28243,7 +28243,7 @@ impl M2tsSettings {
 pub mod m2ts_settings {
 
     /// A builder for [`M2tsSettings`](crate::model::M2tsSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_buffer_model: std::option::Option<crate::model::M2tsAudioBufferModel>,
         pub(crate) audio_duration: std::option::Option<crate::model::M2tsAudioDuration>,
@@ -29124,7 +29124,7 @@ impl M2tsScte35Esam {
 pub mod m2ts_scte35_esam {
 
     /// A builder for [`M2tsScte35Esam`](crate::model::M2tsScte35Esam).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scte35_esam_pid: std::option::Option<i32>,
     }
@@ -29896,7 +29896,7 @@ impl DvbTdtSettings {
 pub mod dvb_tdt_settings {
 
     /// A builder for [`DvbTdtSettings`](crate::model::DvbTdtSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tdt_interval: std::option::Option<i32>,
     }
@@ -29965,7 +29965,7 @@ impl DvbSdtSettings {
 pub mod dvb_sdt_settings {
 
     /// A builder for [`DvbSdtSettings`](crate::model::DvbSdtSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_sdt: std::option::Option<crate::model::OutputSdt>,
         pub(crate) sdt_interval: std::option::Option<i32>,
@@ -30174,7 +30174,7 @@ impl DvbNitSettings {
 pub mod dvb_nit_settings {
 
     /// A builder for [`DvbNitSettings`](crate::model::DvbNitSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_id: std::option::Option<i32>,
         pub(crate) network_name: std::option::Option<std::string::String>,
@@ -30612,7 +30612,7 @@ impl F4vSettings {
 pub mod f4v_settings {
 
     /// A builder for [`F4vSettings`](crate::model::F4vSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) moov_placement: std::option::Option<crate::model::F4vMoovPlacement>,
     }
@@ -30958,7 +30958,7 @@ impl CmfcSettings {
 pub mod cmfc_settings {
 
     /// A builder for [`CmfcSettings`](crate::model::CmfcSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_duration: std::option::Option<crate::model::CmfcAudioDuration>,
         pub(crate) audio_group_id: std::option::Option<std::string::String>,
@@ -31825,7 +31825,7 @@ impl CaptionDescriptionPreset {
 pub mod caption_description_preset {
 
     /// A builder for [`CaptionDescriptionPreset`](crate::model::CaptionDescriptionPreset).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_language_code: std::option::Option<std::string::String>,
         pub(crate) destination_settings:
@@ -33065,7 +33065,7 @@ impl CaptionDestinationSettings {
 pub mod caption_destination_settings {
 
     /// A builder for [`CaptionDestinationSettings`](crate::model::CaptionDestinationSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) burnin_destination_settings:
             std::option::Option<crate::model::BurninDestinationSettings>,
@@ -33294,7 +33294,7 @@ impl WebvttDestinationSettings {
 pub mod webvtt_destination_settings {
 
     /// A builder for [`WebvttDestinationSettings`](crate::model::WebvttDestinationSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accessibility: std::option::Option<crate::model::WebvttAccessibilitySubs>,
         pub(crate) style_passthrough: std::option::Option<crate::model::WebvttStylePassthrough>,
@@ -33549,7 +33549,7 @@ impl TtmlDestinationSettings {
 pub mod ttml_destination_settings {
 
     /// A builder for [`TtmlDestinationSettings`](crate::model::TtmlDestinationSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) style_passthrough: std::option::Option<crate::model::TtmlStylePassthrough>,
     }
@@ -33699,7 +33699,7 @@ impl TeletextDestinationSettings {
 pub mod teletext_destination_settings {
 
     /// A builder for [`TeletextDestinationSettings`](crate::model::TeletextDestinationSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_number: std::option::Option<std::string::String>,
         pub(crate) page_types: std::option::Option<std::vec::Vec<crate::model::TeletextPageType>>,
@@ -33883,7 +33883,7 @@ impl SrtDestinationSettings {
 pub mod srt_destination_settings {
 
     /// A builder for [`SrtDestinationSettings`](crate::model::SrtDestinationSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) style_passthrough: std::option::Option<crate::model::SrtStylePassthrough>,
     }
@@ -34026,7 +34026,7 @@ impl SccDestinationSettings {
 pub mod scc_destination_settings {
 
     /// A builder for [`SccDestinationSettings`](crate::model::SccDestinationSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) framerate: std::option::Option<crate::model::SccDestinationFramerate>,
     }
@@ -34197,7 +34197,7 @@ impl ImscDestinationSettings {
 pub mod imsc_destination_settings {
 
     /// A builder for [`ImscDestinationSettings`](crate::model::ImscDestinationSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accessibility: std::option::Option<crate::model::ImscAccessibilitySubs>,
         pub(crate) style_passthrough: std::option::Option<crate::model::ImscStylePassthrough>,
@@ -34454,7 +34454,7 @@ impl EmbeddedDestinationSettings {
 pub mod embedded_destination_settings {
 
     /// A builder for [`EmbeddedDestinationSettings`](crate::model::EmbeddedDestinationSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination608_channel_number: std::option::Option<i32>,
         pub(crate) destination708_service_number: std::option::Option<i32>,
@@ -34714,7 +34714,7 @@ impl DvbSubDestinationSettings {
 pub mod dvb_sub_destination_settings {
 
     /// A builder for [`DvbSubDestinationSettings`](crate::model::DvbSubDestinationSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alignment: std::option::Option<crate::model::DvbSubtitleAlignment>,
         pub(crate) apply_font_color: std::option::Option<crate::model::DvbSubtitleApplyFontColor>,
@@ -36638,7 +36638,7 @@ impl BurninDestinationSettings {
 pub mod burnin_destination_settings {
 
     /// A builder for [`BurninDestinationSettings`](crate::model::BurninDestinationSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alignment: std::option::Option<crate::model::BurninSubtitleAlignment>,
         pub(crate) apply_font_color:
@@ -37988,7 +37988,7 @@ impl AudioDescription {
 pub mod audio_description {
 
     /// A builder for [`AudioDescription`](crate::model::AudioDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_channel_tagging_settings:
             std::option::Option<crate::model::AudioChannelTaggingSettings>,
@@ -38209,7 +38209,7 @@ impl RemixSettings {
 pub mod remix_settings {
 
     /// A builder for [`RemixSettings`](crate::model::RemixSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_mapping: std::option::Option<crate::model::ChannelMapping>,
         pub(crate) channels_in: std::option::Option<i32>,
@@ -38284,7 +38284,7 @@ impl ChannelMapping {
 pub mod channel_mapping {
 
     /// A builder for [`ChannelMapping`](crate::model::ChannelMapping).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_channels:
             std::option::Option<std::vec::Vec<crate::model::OutputChannelMapping>>,
@@ -38349,7 +38349,7 @@ impl OutputChannelMapping {
 pub mod output_channel_mapping {
 
     /// A builder for [`OutputChannelMapping`](crate::model::OutputChannelMapping).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_channels: std::option::Option<std::vec::Vec<i32>>,
         pub(crate) input_channels_fine_tune: std::option::Option<std::vec::Vec<f64>>,
@@ -38589,7 +38589,7 @@ impl AudioCodecSettings {
 pub mod audio_codec_settings {
 
     /// A builder for [`AudioCodecSettings`](crate::model::AudioCodecSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aac_settings: std::option::Option<crate::model::AacSettings>,
         pub(crate) ac3_settings: std::option::Option<crate::model::Ac3Settings>,
@@ -38808,7 +38808,7 @@ impl WavSettings {
 pub mod wav_settings {
 
     /// A builder for [`WavSettings`](crate::model::WavSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bit_depth: std::option::Option<i32>,
         pub(crate) channels: std::option::Option<i32>,
@@ -38996,7 +38996,7 @@ impl VorbisSettings {
 pub mod vorbis_settings {
 
     /// A builder for [`VorbisSettings`](crate::model::VorbisSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channels: std::option::Option<i32>,
         pub(crate) sample_rate: std::option::Option<i32>,
@@ -39082,7 +39082,7 @@ impl OpusSettings {
 pub mod opus_settings {
 
     /// A builder for [`OpusSettings`](crate::model::OpusSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bitrate: std::option::Option<i32>,
         pub(crate) channels: std::option::Option<i32>,
@@ -39182,7 +39182,7 @@ impl Mp3Settings {
 pub mod mp3_settings {
 
     /// A builder for [`Mp3Settings`](crate::model::Mp3Settings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bitrate: std::option::Option<i32>,
         pub(crate) channels: std::option::Option<i32>,
@@ -39387,7 +39387,7 @@ impl Mp2Settings {
 pub mod mp2_settings {
 
     /// A builder for [`Mp2Settings`](crate::model::Mp2Settings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bitrate: std::option::Option<i32>,
         pub(crate) channels: std::option::Option<i32>,
@@ -39609,7 +39609,7 @@ impl Eac3Settings {
 pub mod eac3_settings {
 
     /// A builder for [`Eac3Settings`](crate::model::Eac3Settings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attenuation_control: std::option::Option<crate::model::Eac3AttenuationControl>,
         pub(crate) bitrate: std::option::Option<i32>,
@@ -41445,7 +41445,7 @@ impl Eac3AtmosSettings {
 pub mod eac3_atmos_settings {
 
     /// A builder for [`Eac3AtmosSettings`](crate::model::Eac3AtmosSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bitrate: std::option::Option<i32>,
         pub(crate) bitstream_mode: std::option::Option<crate::model::Eac3AtmosBitstreamMode>,
@@ -42912,7 +42912,7 @@ impl AiffSettings {
 pub mod aiff_settings {
 
     /// A builder for [`AiffSettings`](crate::model::AiffSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bit_depth: std::option::Option<i32>,
         pub(crate) channels: std::option::Option<i32>,
@@ -43056,7 +43056,7 @@ impl Ac3Settings {
 pub mod ac3_settings {
 
     /// A builder for [`Ac3Settings`](crate::model::Ac3Settings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bitrate: std::option::Option<i32>,
         pub(crate) bitstream_mode: std::option::Option<crate::model::Ac3BitstreamMode>,
@@ -44050,7 +44050,7 @@ impl AacSettings {
 pub mod aac_settings {
 
     /// A builder for [`AacSettings`](crate::model::AacSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_description_broadcaster_mix:
             std::option::Option<crate::model::AacAudioDescriptionBroadcasterMix>,
@@ -45020,7 +45020,7 @@ impl AudioNormalizationSettings {
 pub mod audio_normalization_settings {
 
     /// A builder for [`AudioNormalizationSettings`](crate::model::AudioNormalizationSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) algorithm: std::option::Option<crate::model::AudioNormalizationAlgorithm>,
         pub(crate) algorithm_control:
@@ -45535,7 +45535,7 @@ impl AudioChannelTaggingSettings {
 pub mod audio_channel_tagging_settings {
 
     /// A builder for [`AudioChannelTaggingSettings`](crate::model::AudioChannelTaggingSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_tag: std::option::Option<crate::model::AudioChannelTag>,
     }
@@ -45832,7 +45832,7 @@ impl JobTemplate {
 pub mod job_template {
 
     /// A builder for [`JobTemplate`](crate::model::JobTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acceleration_settings: std::option::Option<crate::model::AccelerationSettings>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -46308,7 +46308,7 @@ impl JobTemplateSettings {
 pub mod job_template_settings {
 
     /// A builder for [`JobTemplateSettings`](crate::model::JobTemplateSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_avail_offset: std::option::Option<i32>,
         pub(crate) avail_blanking: std::option::Option<crate::model::AvailBlanking>,
@@ -46538,7 +46538,7 @@ impl TimedMetadataInsertion {
 pub mod timed_metadata_insertion {
 
     /// A builder for [`TimedMetadataInsertion`](crate::model::TimedMetadataInsertion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id3_insertions: std::option::Option<std::vec::Vec<crate::model::Id3Insertion>>,
     }
@@ -46602,7 +46602,7 @@ impl Id3Insertion {
 pub mod id3_insertion {
 
     /// A builder for [`Id3Insertion`](crate::model::Id3Insertion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id3: std::option::Option<std::string::String>,
         pub(crate) timecode: std::option::Option<std::string::String>,
@@ -46683,7 +46683,7 @@ impl TimecodeConfig {
 pub mod timecode_config {
 
     /// A builder for [`TimecodeConfig`](crate::model::TimecodeConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anchor: std::option::Option<std::string::String>,
         pub(crate) source: std::option::Option<crate::model::TimecodeSource>,
@@ -46898,7 +46898,7 @@ impl OutputGroup {
 pub mod output_group {
 
     /// A builder for [`OutputGroup`](crate::model::OutputGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automated_encoding_settings:
             std::option::Option<crate::model::AutomatedEncodingSettings>,
@@ -47062,7 +47062,7 @@ impl Output {
 pub mod output {
 
     /// A builder for [`Output`](crate::model::Output).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_descriptions:
             std::option::Option<std::vec::Vec<crate::model::AudioDescription>>,
@@ -47226,7 +47226,7 @@ impl OutputSettings {
 pub mod output_settings {
 
     /// A builder for [`OutputSettings`](crate::model::OutputSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hls_settings: std::option::Option<crate::model::HlsSettings>,
     }
@@ -47326,7 +47326,7 @@ impl HlsSettings {
 pub mod hls_settings {
 
     /// A builder for [`HlsSettings`](crate::model::HlsSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_group_id: std::option::Option<std::string::String>,
         pub(crate) audio_only_container: std::option::Option<crate::model::HlsAudioOnlyContainer>,
@@ -47892,7 +47892,7 @@ impl CaptionDescription {
 pub mod caption_description {
 
     /// A builder for [`CaptionDescription`](crate::model::CaptionDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) caption_selector_name: std::option::Option<std::string::String>,
         pub(crate) custom_language_code: std::option::Option<std::string::String>,
@@ -48050,7 +48050,7 @@ impl OutputGroupSettings {
 pub mod output_group_settings {
 
     /// A builder for [`OutputGroupSettings`](crate::model::OutputGroupSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cmaf_group_settings: std::option::Option<crate::model::CmafGroupSettings>,
         pub(crate) dash_iso_group_settings: std::option::Option<crate::model::DashIsoGroupSettings>,
@@ -48352,7 +48352,7 @@ impl MsSmoothGroupSettings {
 pub mod ms_smooth_group_settings {
 
     /// A builder for [`MsSmoothGroupSettings`](crate::model::MsSmoothGroupSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) additional_manifests:
             std::option::Option<std::vec::Vec<crate::model::MsSmoothAdditionalManifest>>,
@@ -48704,7 +48704,7 @@ impl MsSmoothEncryptionSettings {
 pub mod ms_smooth_encryption_settings {
 
     /// A builder for [`MsSmoothEncryptionSettings`](crate::model::MsSmoothEncryptionSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
     }
@@ -48776,7 +48776,7 @@ impl SpekeKeyProvider {
 pub mod speke_key_provider {
 
     /// A builder for [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -48872,7 +48872,7 @@ impl DestinationSettings {
 pub mod destination_settings {
 
     /// A builder for [`DestinationSettings`](crate::model::DestinationSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_settings: std::option::Option<crate::model::S3DestinationSettings>,
     }
@@ -48930,7 +48930,7 @@ impl S3DestinationSettings {
 pub mod s3_destination_settings {
 
     /// A builder for [`S3DestinationSettings`](crate::model::S3DestinationSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_control: std::option::Option<crate::model::S3DestinationAccessControl>,
         pub(crate) encryption: std::option::Option<crate::model::S3EncryptionSettings>,
@@ -49012,7 +49012,7 @@ impl S3EncryptionSettings {
 pub mod s3_encryption_settings {
 
     /// A builder for [`S3EncryptionSettings`](crate::model::S3EncryptionSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_type: std::option::Option<crate::model::S3ServerSideEncryptionType>,
         pub(crate) kms_encryption_context: std::option::Option<std::string::String>,
@@ -49182,7 +49182,7 @@ impl S3DestinationAccessControl {
 pub mod s3_destination_access_control {
 
     /// A builder for [`S3DestinationAccessControl`](crate::model::S3DestinationAccessControl).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canned_acl: std::option::Option<crate::model::S3ObjectCannedAcl>,
     }
@@ -49439,7 +49439,7 @@ impl MsSmoothAdditionalManifest {
 pub mod ms_smooth_additional_manifest {
 
     /// A builder for [`MsSmoothAdditionalManifest`](crate::model::MsSmoothAdditionalManifest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) manifest_name_modifier: std::option::Option<std::string::String>,
         pub(crate) selected_outputs: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -49750,7 +49750,7 @@ impl HlsGroupSettings {
 pub mod hls_group_settings {
 
     /// A builder for [`HlsGroupSettings`](crate::model::HlsGroupSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_markers: std::option::Option<std::vec::Vec<crate::model::HlsAdMarkers>>,
         pub(crate) additional_manifests:
@@ -51150,7 +51150,7 @@ impl HlsImageBasedTrickPlaySettings {
 pub mod hls_image_based_trick_play_settings {
 
     /// A builder for [`HlsImageBasedTrickPlaySettings`](crate::model::HlsImageBasedTrickPlaySettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interval_cadence: std::option::Option<crate::model::HlsIntervalCadence>,
         pub(crate) thumbnail_height: std::option::Option<i32>,
@@ -51500,7 +51500,7 @@ impl HlsEncryptionSettings {
 pub mod hls_encryption_settings {
 
     /// A builder for [`HlsEncryptionSettings`](crate::model::HlsEncryptionSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) constant_initialization_vector: std::option::Option<std::string::String>,
         pub(crate) encryption_method: std::option::Option<crate::model::HlsEncryptionType>,
@@ -51761,7 +51761,7 @@ impl StaticKeyProvider {
 pub mod static_key_provider {
 
     /// A builder for [`StaticKeyProvider`](crate::model::StaticKeyProvider).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_format: std::option::Option<std::string::String>,
         pub(crate) key_format_versions: std::option::Option<std::string::String>,
@@ -52611,7 +52611,7 @@ impl HlsCaptionLanguageMapping {
 pub mod hls_caption_language_mapping {
 
     /// A builder for [`HlsCaptionLanguageMapping`](crate::model::HlsCaptionLanguageMapping).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) caption_channel: std::option::Option<i32>,
         pub(crate) custom_language_code: std::option::Option<std::string::String>,
@@ -52803,7 +52803,7 @@ impl HlsAdditionalManifest {
 pub mod hls_additional_manifest {
 
     /// A builder for [`HlsAdditionalManifest`](crate::model::HlsAdditionalManifest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) manifest_name_modifier: std::option::Option<std::string::String>,
         pub(crate) selected_outputs: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -52972,7 +52972,7 @@ impl FileGroupSettings {
 pub mod file_group_settings {
 
     /// A builder for [`FileGroupSettings`](crate::model::FileGroupSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination: std::option::Option<std::string::String>,
         pub(crate) destination_settings: std::option::Option<crate::model::DestinationSettings>,
@@ -53173,7 +53173,7 @@ impl DashIsoGroupSettings {
 pub mod dash_iso_group_settings {
 
     /// A builder for [`DashIsoGroupSettings`](crate::model::DashIsoGroupSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) additional_manifests:
             std::option::Option<std::vec::Vec<crate::model::DashAdditionalManifest>>,
@@ -53988,7 +53988,7 @@ impl DashIsoImageBasedTrickPlaySettings {
 pub mod dash_iso_image_based_trick_play_settings {
 
     /// A builder for [`DashIsoImageBasedTrickPlaySettings`](crate::model::DashIsoImageBasedTrickPlaySettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interval_cadence: std::option::Option<crate::model::DashIsoIntervalCadence>,
         pub(crate) thumbnail_height: std::option::Option<i32>,
@@ -54395,7 +54395,7 @@ impl DashIsoEncryptionSettings {
 pub mod dash_iso_encryption_settings {
 
     /// A builder for [`DashIsoEncryptionSettings`](crate::model::DashIsoEncryptionSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) playback_device_compatibility:
             std::option::Option<crate::model::DashIsoPlaybackDeviceCompatibility>,
@@ -54664,7 +54664,7 @@ impl DashAdditionalManifest {
 pub mod dash_additional_manifest {
 
     /// A builder for [`DashAdditionalManifest`](crate::model::DashAdditionalManifest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) manifest_name_modifier: std::option::Option<std::string::String>,
         pub(crate) selected_outputs: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -54924,7 +54924,7 @@ impl CmafGroupSettings {
 pub mod cmaf_group_settings {
 
     /// A builder for [`CmafGroupSettings`](crate::model::CmafGroupSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) additional_manifests:
             std::option::Option<std::vec::Vec<crate::model::CmafAdditionalManifest>>,
@@ -56390,7 +56390,7 @@ impl CmafImageBasedTrickPlaySettings {
 pub mod cmaf_image_based_trick_play_settings {
 
     /// A builder for [`CmafImageBasedTrickPlaySettings`](crate::model::CmafImageBasedTrickPlaySettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interval_cadence: std::option::Option<crate::model::CmafIntervalCadence>,
         pub(crate) thumbnail_height: std::option::Option<i32>,
@@ -56733,7 +56733,7 @@ impl CmafEncryptionSettings {
 pub mod cmaf_encryption_settings {
 
     /// A builder for [`CmafEncryptionSettings`](crate::model::CmafEncryptionSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) constant_initialization_vector: std::option::Option<std::string::String>,
         pub(crate) encryption_method: std::option::Option<crate::model::CmafEncryptionType>,
@@ -56986,7 +56986,7 @@ impl SpekeKeyProviderCmaf {
 pub mod speke_key_provider_cmaf {
 
     /// A builder for [`SpekeKeyProviderCmaf`](crate::model::SpekeKeyProviderCmaf).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
         pub(crate) dash_signaled_system_ids:
@@ -57477,7 +57477,7 @@ impl CmafAdditionalManifest {
 pub mod cmaf_additional_manifest {
 
     /// A builder for [`CmafAdditionalManifest`](crate::model::CmafAdditionalManifest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) manifest_name_modifier: std::option::Option<std::string::String>,
         pub(crate) selected_outputs: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -57549,7 +57549,7 @@ impl AutomatedEncodingSettings {
 pub mod automated_encoding_settings {
 
     /// A builder for [`AutomatedEncodingSettings`](crate::model::AutomatedEncodingSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) abr_settings: std::option::Option<crate::model::AutomatedAbrSettings>,
     }
@@ -57621,7 +57621,7 @@ impl AutomatedAbrSettings {
 pub mod automated_abr_settings {
 
     /// A builder for [`AutomatedAbrSettings`](crate::model::AutomatedAbrSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_abr_bitrate: std::option::Option<i32>,
         pub(crate) max_renditions: std::option::Option<i32>,
@@ -57749,7 +57749,7 @@ impl AutomatedAbrRule {
 pub mod automated_abr_rule {
 
     /// A builder for [`AutomatedAbrRule`](crate::model::AutomatedAbrRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allowed_renditions:
             std::option::Option<std::vec::Vec<crate::model::AllowedRenditionSize>>,
@@ -57990,7 +57990,7 @@ impl MinTopRenditionSize {
 pub mod min_top_rendition_size {
 
     /// A builder for [`MinTopRenditionSize`](crate::model::MinTopRenditionSize).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) height: std::option::Option<i32>,
         pub(crate) width: std::option::Option<i32>,
@@ -58057,7 +58057,7 @@ impl MinBottomRenditionSize {
 pub mod min_bottom_rendition_size {
 
     /// A builder for [`MinBottomRenditionSize`](crate::model::MinBottomRenditionSize).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) height: std::option::Option<i32>,
         pub(crate) width: std::option::Option<i32>,
@@ -58124,7 +58124,7 @@ impl ForceIncludeRenditionSize {
 pub mod force_include_rendition_size {
 
     /// A builder for [`ForceIncludeRenditionSize`](crate::model::ForceIncludeRenditionSize).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) height: std::option::Option<i32>,
         pub(crate) width: std::option::Option<i32>,
@@ -58198,7 +58198,7 @@ impl AllowedRenditionSize {
 pub mod allowed_rendition_size {
 
     /// A builder for [`AllowedRenditionSize`](crate::model::AllowedRenditionSize).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) height: std::option::Option<i32>,
         pub(crate) required: std::option::Option<crate::model::RequiredFlag>,
@@ -58442,7 +58442,7 @@ impl NielsenNonLinearWatermarkSettings {
 pub mod nielsen_non_linear_watermark_settings {
 
     /// A builder for [`NielsenNonLinearWatermarkSettings`](crate::model::NielsenNonLinearWatermarkSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_watermark_process:
             std::option::Option<crate::model::NielsenActiveWatermarkProcessType>,
@@ -58932,7 +58932,7 @@ impl NielsenConfiguration {
 pub mod nielsen_configuration {
 
     /// A builder for [`NielsenConfiguration`](crate::model::NielsenConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) breakout_code: std::option::Option<i32>,
         pub(crate) distributor_id: std::option::Option<std::string::String>,
@@ -59030,7 +59030,7 @@ impl MotionImageInserter {
 pub mod motion_image_inserter {
 
     /// A builder for [`MotionImageInserter`](crate::model::MotionImageInserter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) framerate: std::option::Option<crate::model::MotionImageInsertionFramerate>,
         pub(crate) input: std::option::Option<std::string::String>,
@@ -59249,7 +59249,7 @@ impl MotionImageInsertionOffset {
 pub mod motion_image_insertion_offset {
 
     /// A builder for [`MotionImageInsertionOffset`](crate::model::MotionImageInsertionOffset).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_x: std::option::Option<i32>,
         pub(crate) image_y: std::option::Option<i32>,
@@ -59408,7 +59408,7 @@ impl MotionImageInsertionFramerate {
 pub mod motion_image_insertion_framerate {
 
     /// A builder for [`MotionImageInsertionFramerate`](crate::model::MotionImageInsertionFramerate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) framerate_denominator: std::option::Option<i32>,
         pub(crate) framerate_numerator: std::option::Option<i32>,
@@ -59552,7 +59552,7 @@ impl KantarWatermarkSettings {
 pub mod kantar_watermark_settings {
 
     /// A builder for [`KantarWatermarkSettings`](crate::model::KantarWatermarkSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) content_reference: std::option::Option<std::string::String>,
@@ -59893,7 +59893,7 @@ impl InputTemplate {
 pub mod input_template {
 
     /// A builder for [`InputTemplate`](crate::model::InputTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_selector_groups: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AudioSelectorGroup>,
@@ -60300,7 +60300,7 @@ impl VideoSelector {
 pub mod video_selector {
 
     /// A builder for [`VideoSelector`](crate::model::VideoSelector).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alpha_behavior: std::option::Option<crate::model::AlphaBehavior>,
         pub(crate) color_space: std::option::Option<crate::model::ColorSpace>,
@@ -61435,7 +61435,7 @@ impl InputClipping {
 pub mod input_clipping {
 
     /// A builder for [`InputClipping`](crate::model::InputClipping).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) end_timecode: std::option::Option<std::string::String>,
         pub(crate) start_timecode: std::option::Option<std::string::String>,
@@ -61793,7 +61793,7 @@ impl CaptionSelector {
 pub mod caption_selector {
 
     /// A builder for [`CaptionSelector`](crate::model::CaptionSelector).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_language_code: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -61933,7 +61933,7 @@ impl CaptionSourceSettings {
 pub mod caption_source_settings {
 
     /// A builder for [`CaptionSourceSettings`](crate::model::CaptionSourceSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ancillary_source_settings:
             std::option::Option<crate::model::AncillarySourceSettings>,
@@ -62122,7 +62122,7 @@ impl WebvttHlsSourceSettings {
 pub mod webvtt_hls_source_settings {
 
     /// A builder for [`WebvttHlsSourceSettings`](crate::model::WebvttHlsSourceSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rendition_group_id: std::option::Option<std::string::String>,
         pub(crate) rendition_language_code: std::option::Option<crate::model::LanguageCode>,
@@ -62203,7 +62203,7 @@ impl TrackSourceSettings {
 pub mod track_source_settings {
 
     /// A builder for [`TrackSourceSettings`](crate::model::TrackSourceSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) track_number: std::option::Option<i32>,
     }
@@ -62251,7 +62251,7 @@ impl TeletextSourceSettings {
 pub mod teletext_source_settings {
 
     /// A builder for [`TeletextSourceSettings`](crate::model::TeletextSourceSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_number: std::option::Option<std::string::String>,
     }
@@ -62496,7 +62496,7 @@ impl FileSourceSettings {
 pub mod file_source_settings {
 
     /// A builder for [`FileSourceSettings`](crate::model::FileSourceSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) convert608_to708: std::option::Option<crate::model::FileSourceConvert608To708>,
         pub(crate) framerate: std::option::Option<crate::model::CaptionSourceFramerate>,
@@ -62700,7 +62700,7 @@ impl CaptionSourceFramerate {
 pub mod caption_source_framerate {
 
     /// A builder for [`CaptionSourceFramerate`](crate::model::CaptionSourceFramerate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) framerate_denominator: std::option::Option<i32>,
         pub(crate) framerate_numerator: std::option::Option<i32>,
@@ -62875,7 +62875,7 @@ impl EmbeddedSourceSettings {
 pub mod embedded_source_settings {
 
     /// A builder for [`EmbeddedSourceSettings`](crate::model::EmbeddedSourceSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) convert608_to708: std::option::Option<crate::model::EmbeddedConvert608To708>,
         pub(crate) source608_channel_number: std::option::Option<i32>,
@@ -63152,7 +63152,7 @@ impl DvbSubSourceSettings {
 pub mod dvb_sub_source_settings {
 
     /// A builder for [`DvbSubSourceSettings`](crate::model::DvbSubSourceSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pid: std::option::Option<i32>,
     }
@@ -63216,7 +63216,7 @@ impl AncillarySourceSettings {
 pub mod ancillary_source_settings {
 
     /// A builder for [`AncillarySourceSettings`](crate::model::AncillarySourceSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) convert608_to708: std::option::Option<crate::model::AncillaryConvert608To708>,
         pub(crate) source_ancillary_channel_number: std::option::Option<i32>,
@@ -63568,7 +63568,7 @@ impl AudioSelector {
 pub mod audio_selector {
 
     /// A builder for [`AudioSelector`](crate::model::AudioSelector).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_duration_correction:
             std::option::Option<crate::model::AudioDurationCorrection>,
@@ -63908,7 +63908,7 @@ impl HlsRenditionGroupSettings {
 pub mod hls_rendition_group_settings {
 
     /// A builder for [`HlsRenditionGroupSettings`](crate::model::HlsRenditionGroupSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rendition_group_id: std::option::Option<std::string::String>,
         pub(crate) rendition_language_code: std::option::Option<crate::model::LanguageCode>,
@@ -64183,7 +64183,7 @@ impl AudioSelectorGroup {
 pub mod audio_selector_group {
 
     /// A builder for [`AudioSelectorGroup`](crate::model::AudioSelectorGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_selector_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -64249,7 +64249,7 @@ impl ExtendedDataServices {
 pub mod extended_data_services {
 
     /// A builder for [`ExtendedDataServices`](crate::model::ExtendedDataServices).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) copy_protection_action: std::option::Option<crate::model::CopyProtectionAction>,
         pub(crate) vchip_action: std::option::Option<crate::model::VchipAction>,
@@ -64517,7 +64517,7 @@ impl EsamSettings {
 pub mod esam_settings {
 
     /// A builder for [`EsamSettings`](crate::model::EsamSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) manifest_confirm_condition_notification:
             std::option::Option<crate::model::EsamManifestConfirmConditionNotification>,
@@ -64604,7 +64604,7 @@ impl EsamSignalProcessingNotification {
 pub mod esam_signal_processing_notification {
 
     /// A builder for [`EsamSignalProcessingNotification`](crate::model::EsamSignalProcessingNotification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scc_xml: std::option::Option<std::string::String>,
     }
@@ -64652,7 +64652,7 @@ impl EsamManifestConfirmConditionNotification {
 pub mod esam_manifest_confirm_condition_notification {
 
     /// A builder for [`EsamManifestConfirmConditionNotification`](crate::model::EsamManifestConfirmConditionNotification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mcc_xml: std::option::Option<std::string::String>,
     }
@@ -64700,7 +64700,7 @@ impl AvailBlanking {
 pub mod avail_blanking {
 
     /// A builder for [`AvailBlanking`](crate::model::AvailBlanking).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) avail_blanking_image: std::option::Option<std::string::String>,
     }
@@ -64765,7 +64765,7 @@ impl HopDestination {
 pub mod hop_destination {
 
     /// A builder for [`HopDestination`](crate::model::HopDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) priority: std::option::Option<i32>,
         pub(crate) queue: std::option::Option<std::string::String>,
@@ -64837,7 +64837,7 @@ impl AccelerationSettings {
 pub mod acceleration_settings {
 
     /// A builder for [`AccelerationSettings`](crate::model::AccelerationSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mode: std::option::Option<crate::model::AccelerationMode>,
     }
@@ -64995,7 +64995,7 @@ impl Policy {
 pub mod policy {
 
     /// A builder for [`Policy`](crate::model::Policy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_inputs: std::option::Option<crate::model::InputPolicy>,
         pub(crate) https_inputs: std::option::Option<crate::model::InputPolicy>,
@@ -65177,7 +65177,7 @@ impl ResourceTags {
 pub mod resource_tags {
 
     /// A builder for [`ResourceTags`](crate::model::ResourceTags).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -65804,7 +65804,7 @@ impl Job {
 pub mod job {
 
     /// A builder for [`Job`](crate::model::Job).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acceleration_settings: std::option::Option<crate::model::AccelerationSettings>,
         pub(crate) acceleration_status: std::option::Option<crate::model::AccelerationStatus>,
@@ -66235,7 +66235,7 @@ impl Timing {
 pub mod timing {
 
     /// A builder for [`Timing`](crate::model::Timing).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finish_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -66599,7 +66599,7 @@ impl JobSettings {
 pub mod job_settings {
 
     /// A builder for [`JobSettings`](crate::model::JobSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_avail_offset: std::option::Option<i32>,
         pub(crate) avail_blanking: std::option::Option<crate::model::AvailBlanking>,
@@ -66996,7 +66996,7 @@ impl Input {
 pub mod input {
 
     /// A builder for [`Input`](crate::model::Input).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_selector_groups: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AudioSelectorGroup>,
@@ -67401,7 +67401,7 @@ impl InputVideoGenerator {
 pub mod input_video_generator {
 
     /// A builder for [`InputVideoGenerator`](crate::model::InputVideoGenerator).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration: std::option::Option<i32>,
     }
@@ -67470,7 +67470,7 @@ impl InputDecryptionSettings {
 pub mod input_decryption_settings {
 
     /// A builder for [`InputDecryptionSettings`](crate::model::InputDecryptionSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) decryption_mode: std::option::Option<crate::model::DecryptionMode>,
         pub(crate) encrypted_decryption_key: std::option::Option<std::string::String>,
@@ -67675,7 +67675,7 @@ impl QueueTransition {
 pub mod queue_transition {
 
     /// A builder for [`QueueTransition`](crate::model::QueueTransition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_queue: std::option::Option<std::string::String>,
         pub(crate) source_queue: std::option::Option<std::string::String>,
@@ -67753,7 +67753,7 @@ impl OutputGroupDetail {
 pub mod output_group_detail {
 
     /// A builder for [`OutputGroupDetail`](crate::model::OutputGroupDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_details: std::option::Option<std::vec::Vec<crate::model::OutputDetail>>,
     }
@@ -67817,7 +67817,7 @@ impl OutputDetail {
 pub mod output_detail {
 
     /// A builder for [`OutputDetail`](crate::model::OutputDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_ms: std::option::Option<i32>,
         pub(crate) video_details: std::option::Option<crate::model::VideoDetail>,
@@ -67887,7 +67887,7 @@ impl VideoDetail {
 pub mod video_detail {
 
     /// A builder for [`VideoDetail`](crate::model::VideoDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) height_in_px: std::option::Option<i32>,
         pub(crate) width_in_px: std::option::Option<i32>,
@@ -67954,7 +67954,7 @@ impl JobMessages {
 pub mod job_messages {
 
     /// A builder for [`JobMessages`](crate::model::JobMessages).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) info: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) warning: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -68336,7 +68336,7 @@ impl Endpoint {
 pub mod endpoint {
 
     /// A builder for [`Endpoint`](crate::model::Endpoint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
     }

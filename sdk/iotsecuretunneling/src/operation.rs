@@ -5,7 +5,7 @@
 /// [`close_tunnel`](crate::client::Client::close_tunnel).
 ///
 /// See [`crate::client::fluent_builders::CloseTunnel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CloseTunnel {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CloseTunnel {
 /// [`describe_tunnel`](crate::client::Client::describe_tunnel).
 ///
 /// See [`crate::client::fluent_builders::DescribeTunnel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTunnel {
     _private: (),
 }
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTunnel {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_tunnels`](crate::client::Client::list_tunnels).
 ///
 /// See [`crate::client::fluent_builders::ListTunnels`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTunnels {
     _private: (),
 }
@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTunnels {
 /// [`open_tunnel`](crate::client::Client::open_tunnel).
 ///
 /// See [`crate::client::fluent_builders::OpenTunnel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct OpenTunnel {
     _private: (),
 }
@@ -167,7 +167,7 @@ impl aws_smithy_http::response::ParseStrictResponse for OpenTunnel {
 /// [`rotate_tunnel_access_token`](crate::client::Client::rotate_tunnel_access_token).
 ///
 /// See [`crate::client::fluent_builders::RotateTunnelAccessToken`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RotateTunnelAccessToken {
     _private: (),
 }
@@ -201,7 +201,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RotateTunnelAccessToken 
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -233,7 +233,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }

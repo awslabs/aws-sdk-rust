@@ -112,7 +112,7 @@ impl std::fmt::Debug for WorkspaceSummary {
 pub mod workspace_summary {
 
     /// A builder for [`WorkspaceSummary`](crate::model::WorkspaceSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -351,7 +351,7 @@ impl AuthenticationSummary {
 pub mod authentication_summary {
 
     /// A builder for [`AuthenticationSummary`](crate::model::AuthenticationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) providers:
             std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
@@ -853,7 +853,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
 
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1206,7 +1206,7 @@ impl std::fmt::Debug for WorkspaceDescription {
 pub mod workspace_description {
 
     /// A builder for [`WorkspaceDescription`](crate::model::WorkspaceDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) account_access_type: std::option::Option<crate::model::AccountAccessType>,
         pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
@@ -2040,7 +2040,7 @@ impl UpdateError {
 pub mod update_error {
 
     /// A builder for [`UpdateError`](crate::model::UpdateError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<i32>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2129,7 +2129,7 @@ impl UpdateInstruction {
 pub mod update_instruction {
 
     /// A builder for [`UpdateInstruction`](crate::model::UpdateInstruction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::UpdateAction>,
         pub(crate) role: std::option::Option<crate::model::Role>,
@@ -2222,7 +2222,7 @@ impl User {
 pub mod user {
 
     /// A builder for [`User`](crate::model::User).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::UserType>,
@@ -2566,7 +2566,7 @@ impl PermissionEntry {
 pub mod permission_entry {
 
     /// A builder for [`PermissionEntry`](crate::model::PermissionEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user: std::option::Option<crate::model::User>,
         pub(crate) role: std::option::Option<crate::model::Role>,
@@ -2640,7 +2640,7 @@ impl AuthenticationDescription {
 pub mod authentication_description {
 
     /// A builder for [`AuthenticationDescription`](crate::model::AuthenticationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) providers:
             std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
@@ -2728,7 +2728,7 @@ impl AwsSsoAuthentication {
 pub mod aws_sso_authentication {
 
     /// A builder for [`AwsSsoAuthentication`](crate::model::AwsSsoAuthentication).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sso_client_id: std::option::Option<std::string::String>,
     }
@@ -2786,7 +2786,7 @@ impl SamlAuthentication {
 pub mod saml_authentication {
 
     /// A builder for [`SamlAuthentication`](crate::model::SamlAuthentication).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::SamlConfigurationStatus>,
         pub(crate) configuration: std::option::Option<crate::model::SamlConfiguration>,
@@ -2880,7 +2880,7 @@ impl SamlConfiguration {
 pub mod saml_configuration {
 
     /// A builder for [`SamlConfiguration`](crate::model::SamlConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) idp_metadata: std::option::Option<crate::model::IdpMetadata>,
         pub(crate) assertion_attributes: std::option::Option<crate::model::AssertionAttributes>,
@@ -3001,7 +3001,7 @@ impl RoleValues {
 pub mod role_values {
 
     /// A builder for [`RoleValues`](crate::model::RoleValues).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) editor: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) admin: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3114,7 +3114,7 @@ impl AssertionAttributes {
 pub mod assertion_attributes {
 
     /// A builder for [`AssertionAttributes`](crate::model::AssertionAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) login: std::option::Option<std::string::String>,

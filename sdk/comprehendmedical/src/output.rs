@@ -17,7 +17,7 @@ impl StopSnomedctInferenceJobOutput {
 pub mod stop_snomedct_inference_job_output {
 
     /// A builder for [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -65,7 +65,7 @@ impl StopRxNormInferenceJobOutput {
 pub mod stop_rx_norm_inference_job_output {
 
     /// A builder for [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -113,7 +113,7 @@ impl StopPhiDetectionJobOutput {
 pub mod stop_phi_detection_job_output {
 
     /// A builder for [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -161,7 +161,7 @@ impl StopIcd10CmInferenceJobOutput {
 pub mod stop_icd10_cm_inference_job_output {
 
     /// A builder for [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -209,7 +209,7 @@ impl StopEntitiesDetectionV2JobOutput {
 pub mod stop_entities_detection_v2_job_output {
 
     /// A builder for [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -257,7 +257,7 @@ impl StartSnomedctInferenceJobOutput {
 pub mod start_snomedct_inference_job_output {
 
     /// A builder for [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -305,7 +305,7 @@ impl StartRxNormInferenceJobOutput {
 pub mod start_rx_norm_inference_job_output {
 
     /// A builder for [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -353,7 +353,7 @@ impl StartPhiDetectionJobOutput {
 pub mod start_phi_detection_job_output {
 
     /// A builder for [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -401,7 +401,7 @@ impl StartIcd10CmInferenceJobOutput {
 pub mod start_icd10_cm_inference_job_output {
 
     /// A builder for [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -449,7 +449,7 @@ impl StartEntitiesDetectionV2JobOutput {
 pub mod start_entities_detection_v2_job_output {
 
     /// A builder for [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -507,7 +507,7 @@ impl ListSnomedctInferenceJobsOutput {
 pub mod list_snomedct_inference_jobs_output {
 
     /// A builder for [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties_list:
             std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
@@ -595,7 +595,7 @@ impl ListRxNormInferenceJobsOutput {
 pub mod list_rx_norm_inference_jobs_output {
 
     /// A builder for [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties_list:
             std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
@@ -683,7 +683,7 @@ impl ListPhiDetectionJobsOutput {
 pub mod list_phi_detection_jobs_output {
 
     /// A builder for [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties_list:
             std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
@@ -771,7 +771,7 @@ impl ListIcd10CmInferenceJobsOutput {
 pub mod list_icd10_cm_inference_jobs_output {
 
     /// A builder for [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties_list:
             std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
@@ -859,7 +859,7 @@ impl ListEntitiesDetectionV2JobsOutput {
 pub mod list_entities_detection_v2_jobs_output {
 
     /// A builder for [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties_list:
             std::option::Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
@@ -965,7 +965,7 @@ impl InferSnomedctOutput {
 pub mod infer_snomedct_output {
 
     /// A builder for [`InferSnomedctOutput`](crate::output::InferSnomedctOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::SnomedctEntity>>,
         pub(crate) pagination_token: std::option::Option<std::string::String>,
@@ -1096,7 +1096,7 @@ impl InferRxNormOutput {
 pub mod infer_rx_norm_output {
 
     /// A builder for [`InferRxNormOutput`](crate::output::InferRxNormOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::RxNormEntity>>,
         pub(crate) pagination_token: std::option::Option<std::string::String>,
@@ -1197,7 +1197,7 @@ impl InferIcd10CmOutput {
 pub mod infer_icd10_cm_output {
 
     /// A builder for [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Icd10CmEntity>>,
         pub(crate) pagination_token: std::option::Option<std::string::String>,
@@ -1298,7 +1298,7 @@ impl DetectPhiOutput {
 pub mod detect_phi_output {
 
     /// A builder for [`DetectPhiOutput`](crate::output::DetectPhiOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
         pub(crate) pagination_token: std::option::Option<std::string::String>,
@@ -1406,7 +1406,7 @@ impl DetectEntitiesV2Output {
 pub mod detect_entities_v2_output {
 
     /// A builder for [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
         pub(crate) unmapped_attributes:
@@ -1536,7 +1536,7 @@ impl DetectEntitiesOutput {
 pub mod detect_entities_output {
 
     /// A builder for [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
         pub(crate) unmapped_attributes:
@@ -1648,7 +1648,7 @@ impl DescribeSnomedctInferenceJobOutput {
 pub mod describe_snomedct_inference_job_output {
 
     /// A builder for [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties:
             std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
@@ -1707,7 +1707,7 @@ impl DescribeRxNormInferenceJobOutput {
 pub mod describe_rx_norm_inference_job_output {
 
     /// A builder for [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties:
             std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
@@ -1766,7 +1766,7 @@ impl DescribePhiDetectionJobOutput {
 pub mod describe_phi_detection_job_output {
 
     /// A builder for [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties:
             std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
@@ -1825,7 +1825,7 @@ impl DescribeIcd10CmInferenceJobOutput {
 pub mod describe_icd10_cm_inference_job_output {
 
     /// A builder for [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties:
             std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,
@@ -1884,7 +1884,7 @@ impl DescribeEntitiesDetectionV2JobOutput {
 pub mod describe_entities_detection_v2_job_output {
 
     /// A builder for [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties:
             std::option::Option<crate::model::ComprehendMedicalAsyncJobProperties>,

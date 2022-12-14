@@ -38,7 +38,7 @@ impl Forecast {
 pub mod forecast {
 
     /// A builder for [`Forecast`](crate::model::Forecast).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predictions: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::DataPoint>>,
@@ -127,7 +127,7 @@ impl DataPoint {
 pub mod data_point {
 
     /// A builder for [`DataPoint`](crate::model::DataPoint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<f64>,

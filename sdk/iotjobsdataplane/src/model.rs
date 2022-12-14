@@ -36,7 +36,7 @@ impl JobExecutionState {
 pub mod job_execution_state {
 
     /// A builder for [`JobExecutionState`](crate::model::JobExecutionState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::JobExecutionStatus>,
         pub(crate) status_details: std::option::Option<
@@ -333,7 +333,7 @@ impl JobExecution {
 pub mod job_execution {
 
     /// A builder for [`JobExecution`](crate::model::JobExecution).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -559,7 +559,7 @@ impl JobExecutionSummary {
 pub mod job_execution_summary {
 
     /// A builder for [`JobExecutionSummary`](crate::model::JobExecutionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) queued_at: std::option::Option<i64>,

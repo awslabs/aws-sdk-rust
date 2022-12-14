@@ -60,7 +60,7 @@ impl MeshRef {
 pub mod mesh_ref {
 
     /// A builder for [`MeshRef`](crate::model::MeshRef).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) mesh_owner: std::option::Option<std::string::String>,
@@ -210,7 +210,7 @@ impl MeshData {
 pub mod mesh_data {
 
     /// A builder for [`MeshData`](crate::model::MeshData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) spec: std::option::Option<crate::model::MeshSpec>,
@@ -297,7 +297,7 @@ impl MeshStatus {
 pub mod mesh_status {
 
     /// A builder for [`MeshStatus`](crate::model::MeshStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::MeshStatusCode>,
     }
@@ -485,7 +485,7 @@ impl ResourceMetadata {
 pub mod resource_metadata {
 
     /// A builder for [`ResourceMetadata`](crate::model::ResourceMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i64>,
@@ -621,7 +621,7 @@ impl MeshSpec {
 pub mod mesh_spec {
 
     /// A builder for [`MeshSpec`](crate::model::MeshSpec).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) egress_filter: std::option::Option<crate::model::EgressFilter>,
         pub(crate) service_discovery: std::option::Option<crate::model::MeshServiceDiscovery>,
@@ -687,7 +687,7 @@ impl MeshServiceDiscovery {
 pub mod mesh_service_discovery {
 
     /// A builder for [`MeshServiceDiscovery`](crate::model::MeshServiceDiscovery).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_preference: std::option::Option<crate::model::IpPreference>,
     }
@@ -838,7 +838,7 @@ impl EgressFilter {
 pub mod egress_filter {
 
     /// A builder for [`EgressFilter`](crate::model::EgressFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::EgressFilterType>,
     }
@@ -986,7 +986,7 @@ impl TagRef {
 pub mod tag_ref {
 
     /// A builder for [`TagRef`](crate::model::TagRef).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1095,7 +1095,7 @@ impl VirtualServiceRef {
 pub mod virtual_service_ref {
 
     /// A builder for [`VirtualServiceRef`](crate::model::VirtualServiceRef).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_service_name: std::option::Option<std::string::String>,
@@ -1267,7 +1267,7 @@ impl VirtualServiceData {
 pub mod virtual_service_data {
 
     /// A builder for [`VirtualServiceData`](crate::model::VirtualServiceData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_service_name: std::option::Option<std::string::String>,
@@ -1375,7 +1375,7 @@ impl VirtualServiceStatus {
 pub mod virtual_service_status {
 
     /// A builder for [`VirtualServiceStatus`](crate::model::VirtualServiceStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::VirtualServiceStatusCode>,
     }
@@ -1523,7 +1523,7 @@ impl VirtualServiceSpec {
 pub mod virtual_service_spec {
 
     /// A builder for [`VirtualServiceSpec`](crate::model::VirtualServiceSpec).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provider: std::option::Option<crate::model::VirtualServiceProvider>,
     }
@@ -1629,7 +1629,7 @@ impl VirtualRouterServiceProvider {
 pub mod virtual_router_service_provider {
 
     /// A builder for [`VirtualRouterServiceProvider`](crate::model::VirtualRouterServiceProvider).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_router_name: std::option::Option<std::string::String>,
     }
@@ -1680,7 +1680,7 @@ impl VirtualNodeServiceProvider {
 pub mod virtual_node_service_provider {
 
     /// A builder for [`VirtualNodeServiceProvider`](crate::model::VirtualNodeServiceProvider).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node_name: std::option::Option<std::string::String>,
     }
@@ -1780,7 +1780,7 @@ impl VirtualRouterRef {
 pub mod virtual_router_ref {
 
     /// A builder for [`VirtualRouterRef`](crate::model::VirtualRouterRef).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_router_name: std::option::Option<std::string::String>,
@@ -1952,7 +1952,7 @@ impl VirtualRouterData {
 pub mod virtual_router_data {
 
     /// A builder for [`VirtualRouterData`](crate::model::VirtualRouterData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_router_name: std::option::Option<std::string::String>,
@@ -2060,7 +2060,7 @@ impl VirtualRouterStatus {
 pub mod virtual_router_status {
 
     /// A builder for [`VirtualRouterStatus`](crate::model::VirtualRouterStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::VirtualRouterStatusCode>,
     }
@@ -2208,7 +2208,7 @@ impl VirtualRouterSpec {
 pub mod virtual_router_spec {
 
     /// A builder for [`VirtualRouterSpec`](crate::model::VirtualRouterSpec).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listeners:
             std::option::Option<std::vec::Vec<crate::model::VirtualRouterListener>>,
@@ -2266,7 +2266,7 @@ impl VirtualRouterListener {
 pub mod virtual_router_listener {
 
     /// A builder for [`VirtualRouterListener`](crate::model::VirtualRouterListener).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port_mapping: std::option::Option<crate::model::PortMapping>,
     }
@@ -2324,7 +2324,7 @@ impl PortMapping {
 pub mod port_mapping {
 
     /// A builder for [`PortMapping`](crate::model::PortMapping).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port: std::option::Option<i32>,
         pub(crate) protocol: std::option::Option<crate::model::PortProtocol>,
@@ -2543,7 +2543,7 @@ impl RouteRef {
 pub mod route_ref {
 
     /// A builder for [`RouteRef`](crate::model::RouteRef).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_router_name: std::option::Option<std::string::String>,
@@ -2734,7 +2734,7 @@ impl RouteData {
 pub mod route_data {
 
     /// A builder for [`RouteData`](crate::model::RouteData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_router_name: std::option::Option<std::string::String>,
@@ -2848,7 +2848,7 @@ impl RouteStatus {
 pub mod route_status {
 
     /// A builder for [`RouteStatus`](crate::model::RouteStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::RouteStatusCode>,
     }
@@ -3022,7 +3022,7 @@ impl RouteSpec {
 pub mod route_spec {
 
     /// A builder for [`RouteSpec`](crate::model::RouteSpec).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) priority: std::option::Option<i32>,
         pub(crate) http_route: std::option::Option<crate::model::HttpRoute>,
@@ -3148,7 +3148,7 @@ impl GrpcRoute {
 pub mod grpc_route {
 
     /// A builder for [`GrpcRoute`](crate::model::GrpcRoute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::GrpcRouteAction>,
         pub(crate) r#match: std::option::Option<crate::model::GrpcRouteMatch>,
@@ -3251,7 +3251,7 @@ impl GrpcTimeout {
 pub mod grpc_timeout {
 
     /// A builder for [`GrpcTimeout`](crate::model::GrpcTimeout).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) per_request: std::option::Option<crate::model::Duration>,
         pub(crate) idle: std::option::Option<crate::model::Duration>,
@@ -3321,7 +3321,7 @@ impl Duration {
 pub mod duration {
 
     /// A builder for [`Duration`](crate::model::Duration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<i64>,
         pub(crate) unit: std::option::Option<crate::model::DurationUnit>,
@@ -3511,7 +3511,7 @@ impl GrpcRetryPolicy {
 pub mod grpc_retry_policy {
 
     /// A builder for [`GrpcRetryPolicy`](crate::model::GrpcRetryPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) per_retry_timeout: std::option::Option<crate::model::Duration>,
         pub(crate) max_retries: std::option::Option<i64>,
@@ -3872,7 +3872,7 @@ impl GrpcRouteMatch {
 pub mod grpc_route_match {
 
     /// A builder for [`GrpcRouteMatch`](crate::model::GrpcRouteMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) method_name: std::option::Option<std::string::String>,
@@ -3979,7 +3979,7 @@ impl GrpcRouteMetadata {
 pub mod grpc_route_metadata {
 
     /// A builder for [`GrpcRouteMetadata`](crate::model::GrpcRouteMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) invert: std::option::Option<bool>,
@@ -4157,7 +4157,7 @@ impl MatchRange {
 pub mod match_range {
 
     /// A builder for [`MatchRange`](crate::model::MatchRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start: std::option::Option<i64>,
         pub(crate) end: std::option::Option<i64>,
@@ -4217,7 +4217,7 @@ impl GrpcRouteAction {
 pub mod grpc_route_action {
 
     /// A builder for [`GrpcRouteAction`](crate::model::GrpcRouteAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) weighted_targets:
             std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
@@ -4289,7 +4289,7 @@ impl WeightedTarget {
 pub mod weighted_target {
 
     /// A builder for [`WeightedTarget`](crate::model::WeightedTarget).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node: std::option::Option<std::string::String>,
         pub(crate) weight: std::option::Option<i32>,
@@ -4382,7 +4382,7 @@ impl HttpRoute {
 pub mod http_route {
 
     /// A builder for [`HttpRoute`](crate::model::HttpRoute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#match: std::option::Option<crate::model::HttpRouteMatch>,
         pub(crate) action: std::option::Option<crate::model::HttpRouteAction>,
@@ -4485,7 +4485,7 @@ impl HttpTimeout {
 pub mod http_timeout {
 
     /// A builder for [`HttpTimeout`](crate::model::HttpTimeout).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) per_request: std::option::Option<crate::model::Duration>,
         pub(crate) idle: std::option::Option<crate::model::Duration>,
@@ -4581,7 +4581,7 @@ impl HttpRetryPolicy {
 pub mod http_retry_policy {
 
     /// A builder for [`HttpRetryPolicy`](crate::model::HttpRetryPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) per_retry_timeout: std::option::Option<crate::model::Duration>,
         pub(crate) max_retries: std::option::Option<i64>,
@@ -4699,7 +4699,7 @@ impl HttpRouteAction {
 pub mod http_route_action {
 
     /// A builder for [`HttpRouteAction`](crate::model::HttpRouteAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) weighted_targets:
             std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
@@ -4799,7 +4799,7 @@ impl HttpRouteMatch {
 pub mod http_route_match {
 
     /// A builder for [`HttpRouteMatch`](crate::model::HttpRouteMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prefix: std::option::Option<std::string::String>,
         pub(crate) path: std::option::Option<crate::model::HttpPathMatch>,
@@ -4952,7 +4952,7 @@ impl HttpRouteHeader {
 pub mod http_route_header {
 
     /// A builder for [`HttpRouteHeader`](crate::model::HttpRouteHeader).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) invert: std::option::Option<bool>,
@@ -5347,7 +5347,7 @@ impl HttpQueryParameter {
 pub mod http_query_parameter {
 
     /// A builder for [`HttpQueryParameter`](crate::model::HttpQueryParameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#match: std::option::Option<crate::model::QueryParameterMatch>,
@@ -5410,7 +5410,7 @@ impl QueryParameterMatch {
 pub mod query_parameter_match {
 
     /// A builder for [`QueryParameterMatch`](crate::model::QueryParameterMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exact: std::option::Option<std::string::String>,
     }
@@ -5463,7 +5463,7 @@ impl HttpPathMatch {
 pub mod http_path_match {
 
     /// A builder for [`HttpPathMatch`](crate::model::HttpPathMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exact: std::option::Option<std::string::String>,
         pub(crate) regex: std::option::Option<std::string::String>,
@@ -5537,7 +5537,7 @@ impl TcpRoute {
 pub mod tcp_route {
 
     /// A builder for [`TcpRoute`](crate::model::TcpRoute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::TcpRouteAction>,
         pub(crate) timeout: std::option::Option<crate::model::TcpTimeout>,
@@ -5615,7 +5615,7 @@ impl TcpRouteMatch {
 pub mod tcp_route_match {
 
     /// A builder for [`TcpRouteMatch`](crate::model::TcpRouteMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port: std::option::Option<i32>,
     }
@@ -5661,7 +5661,7 @@ impl TcpTimeout {
 pub mod tcp_timeout {
 
     /// A builder for [`TcpTimeout`](crate::model::TcpTimeout).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) idle: std::option::Option<crate::model::Duration>,
     }
@@ -5707,7 +5707,7 @@ impl TcpRouteAction {
 pub mod tcp_route_action {
 
     /// A builder for [`TcpRouteAction`](crate::model::TcpRouteAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) weighted_targets:
             std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
@@ -5814,7 +5814,7 @@ impl VirtualNodeRef {
 pub mod virtual_node_ref {
 
     /// A builder for [`VirtualNodeRef`](crate::model::VirtualNodeRef).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_node_name: std::option::Option<std::string::String>,
@@ -5986,7 +5986,7 @@ impl VirtualNodeData {
 pub mod virtual_node_data {
 
     /// A builder for [`VirtualNodeData`](crate::model::VirtualNodeData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_node_name: std::option::Option<std::string::String>,
@@ -6094,7 +6094,7 @@ impl VirtualNodeStatus {
 pub mod virtual_node_status {
 
     /// A builder for [`VirtualNodeStatus`](crate::model::VirtualNodeStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::VirtualNodeStatusCode>,
     }
@@ -6270,7 +6270,7 @@ impl VirtualNodeSpec {
 pub mod virtual_node_spec {
 
     /// A builder for [`VirtualNodeSpec`](crate::model::VirtualNodeSpec).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_discovery: std::option::Option<crate::model::ServiceDiscovery>,
         pub(crate) listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
@@ -6390,7 +6390,7 @@ impl Logging {
 pub mod logging {
 
     /// A builder for [`Logging`](crate::model::Logging).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_log: std::option::Option<crate::model::AccessLog>,
     }
@@ -6489,7 +6489,7 @@ impl FileAccessLog {
 pub mod file_access_log {
 
     /// A builder for [`FileAccessLog`](crate::model::FileAccessLog).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) format: std::option::Option<crate::model::LoggingFormat>,
@@ -6616,7 +6616,7 @@ impl JsonFormatRef {
 pub mod json_format_ref {
 
     /// A builder for [`JsonFormatRef`](crate::model::JsonFormatRef).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -6676,7 +6676,7 @@ impl BackendDefaults {
 pub mod backend_defaults {
 
     /// A builder for [`BackendDefaults`](crate::model::BackendDefaults).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_policy: std::option::Option<crate::model::ClientPolicy>,
     }
@@ -6727,7 +6727,7 @@ impl ClientPolicy {
 pub mod client_policy {
 
     /// A builder for [`ClientPolicy`](crate::model::ClientPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tls: std::option::Option<crate::model::ClientPolicyTls>,
     }
@@ -6797,7 +6797,7 @@ impl ClientPolicyTls {
 pub mod client_policy_tls {
 
     /// A builder for [`ClientPolicyTls`](crate::model::ClientPolicyTls).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enforce: std::option::Option<bool>,
         pub(crate) ports: std::option::Option<std::vec::Vec<i32>>,
@@ -6902,7 +6902,7 @@ impl TlsValidationContext {
 pub mod tls_validation_context {
 
     /// A builder for [`TlsValidationContext`](crate::model::TlsValidationContext).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust: std::option::Option<crate::model::TlsValidationContextTrust>,
         pub(crate) subject_alternative_names:
@@ -6972,7 +6972,7 @@ impl SubjectAlternativeNames {
 pub mod subject_alternative_names {
 
     /// A builder for [`SubjectAlternativeNames`](crate::model::SubjectAlternativeNames).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#match: std::option::Option<crate::model::SubjectAlternativeNameMatchers>,
     }
@@ -7023,7 +7023,7 @@ impl SubjectAlternativeNameMatchers {
 pub mod subject_alternative_name_matchers {
 
     /// A builder for [`SubjectAlternativeNameMatchers`](crate::model::SubjectAlternativeNameMatchers).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exact: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -7150,7 +7150,7 @@ impl TlsValidationContextSdsTrust {
 pub mod tls_validation_context_sds_trust {
 
     /// A builder for [`TlsValidationContextSdsTrust`](crate::model::TlsValidationContextSdsTrust).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_name: std::option::Option<std::string::String>,
     }
@@ -7198,7 +7198,7 @@ impl TlsValidationContextFileTrust {
 pub mod tls_validation_context_file_trust {
 
     /// A builder for [`TlsValidationContextFileTrust`](crate::model::TlsValidationContextFileTrust).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_chain: std::option::Option<std::string::String>,
     }
@@ -7249,7 +7249,7 @@ impl TlsValidationContextAcmTrust {
 pub mod tls_validation_context_acm_trust {
 
     /// A builder for [`TlsValidationContextAcmTrust`](crate::model::TlsValidationContextAcmTrust).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arns:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7358,7 +7358,7 @@ impl ListenerTlsSdsCertificate {
 pub mod listener_tls_sds_certificate {
 
     /// A builder for [`ListenerTlsSdsCertificate`](crate::model::ListenerTlsSdsCertificate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_name: std::option::Option<std::string::String>,
     }
@@ -7413,7 +7413,7 @@ impl ListenerTlsFileCertificate {
 pub mod listener_tls_file_certificate {
 
     /// A builder for [`ListenerTlsFileCertificate`](crate::model::ListenerTlsFileCertificate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_chain: std::option::Option<std::string::String>,
         pub(crate) private_key: std::option::Option<std::string::String>,
@@ -7522,7 +7522,7 @@ impl VirtualServiceBackend {
 pub mod virtual_service_backend {
 
     /// A builder for [`VirtualServiceBackend`](crate::model::VirtualServiceBackend).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service_name: std::option::Option<std::string::String>,
         pub(crate) client_policy: std::option::Option<crate::model::ClientPolicy>,
@@ -7623,7 +7623,7 @@ impl Listener {
 pub mod listener {
 
     /// A builder for [`Listener`](crate::model::Listener).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port_mapping: std::option::Option<crate::model::PortMapping>,
         pub(crate) tls: std::option::Option<crate::model::ListenerTls>,
@@ -7838,7 +7838,7 @@ impl VirtualNodeGrpcConnectionPool {
 pub mod virtual_node_grpc_connection_pool {
 
     /// A builder for [`VirtualNodeGrpcConnectionPool`](crate::model::VirtualNodeGrpcConnectionPool).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_requests: std::option::Option<i32>,
     }
@@ -7886,7 +7886,7 @@ impl VirtualNodeHttp2ConnectionPool {
 pub mod virtual_node_http2_connection_pool {
 
     /// A builder for [`VirtualNodeHttp2ConnectionPool`](crate::model::VirtualNodeHttp2ConnectionPool).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_requests: std::option::Option<i32>,
     }
@@ -7941,7 +7941,7 @@ impl VirtualNodeHttpConnectionPool {
 pub mod virtual_node_http_connection_pool {
 
     /// A builder for [`VirtualNodeHttpConnectionPool`](crate::model::VirtualNodeHttpConnectionPool).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_connections: std::option::Option<i32>,
         pub(crate) max_pending_requests: std::option::Option<i32>,
@@ -8001,7 +8001,7 @@ impl VirtualNodeTcpConnectionPool {
 pub mod virtual_node_tcp_connection_pool {
 
     /// A builder for [`VirtualNodeTcpConnectionPool`](crate::model::VirtualNodeTcpConnectionPool).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_connections: std::option::Option<i32>,
     }
@@ -8070,7 +8070,7 @@ impl OutlierDetection {
 pub mod outlier_detection {
 
     /// A builder for [`OutlierDetection`](crate::model::OutlierDetection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_server_errors: std::option::Option<i64>,
         pub(crate) interval: std::option::Option<crate::model::Duration>,
@@ -8280,7 +8280,7 @@ impl HealthCheckPolicy {
 pub mod health_check_policy {
 
     /// A builder for [`HealthCheckPolicy`](crate::model::HealthCheckPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_millis: std::option::Option<i64>,
         pub(crate) interval_millis: std::option::Option<i64>,
@@ -8427,7 +8427,7 @@ impl ListenerTls {
 pub mod listener_tls {
 
     /// A builder for [`ListenerTls`](crate::model::ListenerTls).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mode: std::option::Option<crate::model::ListenerTlsMode>,
         pub(crate) certificate: std::option::Option<crate::model::ListenerTlsCertificate>,
@@ -8527,7 +8527,7 @@ impl ListenerTlsValidationContext {
 pub mod listener_tls_validation_context {
 
     /// A builder for [`ListenerTlsValidationContext`](crate::model::ListenerTlsValidationContext).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust: std::option::Option<crate::model::ListenerTlsValidationContextTrust>,
         pub(crate) subject_alternative_names:
@@ -8718,7 +8718,7 @@ impl ListenerTlsAcmCertificate {
 pub mod listener_tls_acm_certificate {
 
     /// A builder for [`ListenerTlsAcmCertificate`](crate::model::ListenerTlsAcmCertificate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
@@ -8940,7 +8940,7 @@ impl AwsCloudMapServiceDiscovery {
 pub mod aws_cloud_map_service_discovery {
 
     /// A builder for [`AwsCloudMapServiceDiscovery`](crate::model::AwsCloudMapServiceDiscovery).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace_name: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -9049,7 +9049,7 @@ impl AwsCloudMapInstanceAttribute {
 pub mod aws_cloud_map_instance_attribute {
 
     /// A builder for [`AwsCloudMapInstanceAttribute`](crate::model::AwsCloudMapInstanceAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -9123,7 +9123,7 @@ impl DnsServiceDiscovery {
 pub mod dns_service_discovery {
 
     /// A builder for [`DnsServiceDiscovery`](crate::model::DnsServiceDiscovery).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hostname: std::option::Option<std::string::String>,
         pub(crate) response_type: std::option::Option<crate::model::DnsResponseType>,
@@ -9340,7 +9340,7 @@ impl VirtualGatewayRef {
 pub mod virtual_gateway_ref {
 
     /// A builder for [`VirtualGatewayRef`](crate::model::VirtualGatewayRef).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_gateway_name: std::option::Option<std::string::String>,
@@ -9512,7 +9512,7 @@ impl VirtualGatewayData {
 pub mod virtual_gateway_data {
 
     /// A builder for [`VirtualGatewayData`](crate::model::VirtualGatewayData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) virtual_gateway_name: std::option::Option<std::string::String>,
@@ -9620,7 +9620,7 @@ impl VirtualGatewayStatus {
 pub mod virtual_gateway_status {
 
     /// A builder for [`VirtualGatewayStatus`](crate::model::VirtualGatewayStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::VirtualGatewayStatusCode>,
     }
@@ -9784,7 +9784,7 @@ impl VirtualGatewaySpec {
 pub mod virtual_gateway_spec {
 
     /// A builder for [`VirtualGatewaySpec`](crate::model::VirtualGatewaySpec).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backend_defaults:
             std::option::Option<crate::model::VirtualGatewayBackendDefaults>,
@@ -9876,7 +9876,7 @@ impl VirtualGatewayLogging {
 pub mod virtual_gateway_logging {
 
     /// A builder for [`VirtualGatewayLogging`](crate::model::VirtualGatewayLogging).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_log: std::option::Option<crate::model::VirtualGatewayAccessLog>,
     }
@@ -9973,7 +9973,7 @@ impl VirtualGatewayFileAccessLog {
 pub mod virtual_gateway_file_access_log {
 
     /// A builder for [`VirtualGatewayFileAccessLog`](crate::model::VirtualGatewayFileAccessLog).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) format: std::option::Option<crate::model::LoggingFormat>,
@@ -10061,7 +10061,7 @@ impl VirtualGatewayListener {
 pub mod virtual_gateway_listener {
 
     /// A builder for [`VirtualGatewayListener`](crate::model::VirtualGatewayListener).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_check: std::option::Option<crate::model::VirtualGatewayHealthCheckPolicy>,
         pub(crate) port_mapping: std::option::Option<crate::model::VirtualGatewayPortMapping>,
@@ -10237,7 +10237,7 @@ impl VirtualGatewayGrpcConnectionPool {
 pub mod virtual_gateway_grpc_connection_pool {
 
     /// A builder for [`VirtualGatewayGrpcConnectionPool`](crate::model::VirtualGatewayGrpcConnectionPool).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_requests: std::option::Option<i32>,
     }
@@ -10285,7 +10285,7 @@ impl VirtualGatewayHttp2ConnectionPool {
 pub mod virtual_gateway_http2_connection_pool {
 
     /// A builder for [`VirtualGatewayHttp2ConnectionPool`](crate::model::VirtualGatewayHttp2ConnectionPool).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_requests: std::option::Option<i32>,
     }
@@ -10340,7 +10340,7 @@ impl VirtualGatewayHttpConnectionPool {
 pub mod virtual_gateway_http_connection_pool {
 
     /// A builder for [`VirtualGatewayHttpConnectionPool`](crate::model::VirtualGatewayHttpConnectionPool).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_connections: std::option::Option<i32>,
         pub(crate) max_pending_requests: std::option::Option<i32>,
@@ -10428,7 +10428,7 @@ impl VirtualGatewayListenerTls {
 pub mod virtual_gateway_listener_tls {
 
     /// A builder for [`VirtualGatewayListenerTls`](crate::model::VirtualGatewayListenerTls).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mode: std::option::Option<crate::model::VirtualGatewayListenerTlsMode>,
         pub(crate) validation:
@@ -10599,7 +10599,7 @@ impl VirtualGatewayListenerTlsSdsCertificate {
 pub mod virtual_gateway_listener_tls_sds_certificate {
 
     /// A builder for [`VirtualGatewayListenerTlsSdsCertificate`](crate::model::VirtualGatewayListenerTlsSdsCertificate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_name: std::option::Option<std::string::String>,
     }
@@ -10654,7 +10654,7 @@ impl VirtualGatewayListenerTlsFileCertificate {
 pub mod virtual_gateway_listener_tls_file_certificate {
 
     /// A builder for [`VirtualGatewayListenerTlsFileCertificate`](crate::model::VirtualGatewayListenerTlsFileCertificate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_chain: std::option::Option<std::string::String>,
         pub(crate) private_key: std::option::Option<std::string::String>,
@@ -10717,7 +10717,7 @@ impl VirtualGatewayListenerTlsAcmCertificate {
 pub mod virtual_gateway_listener_tls_acm_certificate {
 
     /// A builder for [`VirtualGatewayListenerTlsAcmCertificate`](crate::model::VirtualGatewayListenerTlsAcmCertificate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
@@ -10779,7 +10779,7 @@ impl VirtualGatewayListenerTlsValidationContext {
 pub mod virtual_gateway_listener_tls_validation_context {
 
     /// A builder for [`VirtualGatewayListenerTlsValidationContext`](crate::model::VirtualGatewayListenerTlsValidationContext).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust:
             std::option::Option<crate::model::VirtualGatewayListenerTlsValidationContextTrust>,
@@ -10911,7 +10911,7 @@ impl VirtualGatewayTlsValidationContextSdsTrust {
 pub mod virtual_gateway_tls_validation_context_sds_trust {
 
     /// A builder for [`VirtualGatewayTlsValidationContextSdsTrust`](crate::model::VirtualGatewayTlsValidationContextSdsTrust).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_name: std::option::Option<std::string::String>,
     }
@@ -10959,7 +10959,7 @@ impl VirtualGatewayTlsValidationContextFileTrust {
 pub mod virtual_gateway_tls_validation_context_file_trust {
 
     /// A builder for [`VirtualGatewayTlsValidationContextFileTrust`](crate::model::VirtualGatewayTlsValidationContextFileTrust).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_chain: std::option::Option<std::string::String>,
     }
@@ -11114,7 +11114,7 @@ impl VirtualGatewayPortMapping {
 pub mod virtual_gateway_port_mapping {
 
     /// A builder for [`VirtualGatewayPortMapping`](crate::model::VirtualGatewayPortMapping).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port: std::option::Option<i32>,
         pub(crate) protocol: std::option::Option<crate::model::VirtualGatewayPortProtocol>,
@@ -11316,7 +11316,7 @@ impl VirtualGatewayHealthCheckPolicy {
 pub mod virtual_gateway_health_check_policy {
 
     /// A builder for [`VirtualGatewayHealthCheckPolicy`](crate::model::VirtualGatewayHealthCheckPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_millis: std::option::Option<i64>,
         pub(crate) interval_millis: std::option::Option<i64>,
@@ -11439,7 +11439,7 @@ impl VirtualGatewayBackendDefaults {
 pub mod virtual_gateway_backend_defaults {
 
     /// A builder for [`VirtualGatewayBackendDefaults`](crate::model::VirtualGatewayBackendDefaults).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_policy: std::option::Option<crate::model::VirtualGatewayClientPolicy>,
     }
@@ -11490,7 +11490,7 @@ impl VirtualGatewayClientPolicy {
 pub mod virtual_gateway_client_policy {
 
     /// A builder for [`VirtualGatewayClientPolicy`](crate::model::VirtualGatewayClientPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tls: std::option::Option<crate::model::VirtualGatewayClientPolicyTls>,
     }
@@ -11564,7 +11564,7 @@ impl VirtualGatewayClientPolicyTls {
 pub mod virtual_gateway_client_policy_tls {
 
     /// A builder for [`VirtualGatewayClientPolicyTls`](crate::model::VirtualGatewayClientPolicyTls).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enforce: std::option::Option<bool>,
         pub(crate) ports: std::option::Option<std::vec::Vec<i32>>,
@@ -11679,7 +11679,7 @@ impl VirtualGatewayTlsValidationContext {
 pub mod virtual_gateway_tls_validation_context {
 
     /// A builder for [`VirtualGatewayTlsValidationContext`](crate::model::VirtualGatewayTlsValidationContext).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust:
             std::option::Option<crate::model::VirtualGatewayTlsValidationContextTrust>,
@@ -11826,7 +11826,7 @@ impl VirtualGatewayTlsValidationContextAcmTrust {
 pub mod virtual_gateway_tls_validation_context_acm_trust {
 
     /// A builder for [`VirtualGatewayTlsValidationContextAcmTrust`](crate::model::VirtualGatewayTlsValidationContextAcmTrust).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arns:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11995,7 +11995,7 @@ impl GatewayRouteRef {
 pub mod gateway_route_ref {
 
     /// A builder for [`GatewayRouteRef`](crate::model::GatewayRouteRef).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) gateway_route_name: std::option::Option<std::string::String>,
@@ -12189,7 +12189,7 @@ impl GatewayRouteData {
 pub mod gateway_route_data {
 
     /// A builder for [`GatewayRouteData`](crate::model::GatewayRouteData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh_name: std::option::Option<std::string::String>,
         pub(crate) gateway_route_name: std::option::Option<std::string::String>,
@@ -12312,7 +12312,7 @@ impl GatewayRouteStatus {
 pub mod gateway_route_status {
 
     /// A builder for [`GatewayRouteStatus`](crate::model::GatewayRouteStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::GatewayRouteStatusCode>,
     }
@@ -12481,7 +12481,7 @@ impl GatewayRouteSpec {
 pub mod gateway_route_spec {
 
     /// A builder for [`GatewayRouteSpec`](crate::model::GatewayRouteSpec).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) priority: std::option::Option<i32>,
         pub(crate) http_route: std::option::Option<crate::model::HttpGatewayRoute>,
@@ -12581,7 +12581,7 @@ impl GrpcGatewayRoute {
 pub mod grpc_gateway_route {
 
     /// A builder for [`GrpcGatewayRoute`](crate::model::GrpcGatewayRoute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#match: std::option::Option<crate::model::GrpcGatewayRouteMatch>,
         pub(crate) action: std::option::Option<crate::model::GrpcGatewayRouteAction>,
@@ -12654,7 +12654,7 @@ impl GrpcGatewayRouteAction {
 pub mod grpc_gateway_route_action {
 
     /// A builder for [`GrpcGatewayRouteAction`](crate::model::GrpcGatewayRouteAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target: std::option::Option<crate::model::GatewayRouteTarget>,
         pub(crate) rewrite: std::option::Option<crate::model::GrpcGatewayRouteRewrite>,
@@ -12720,7 +12720,7 @@ impl GrpcGatewayRouteRewrite {
 pub mod grpc_gateway_route_rewrite {
 
     /// A builder for [`GrpcGatewayRouteRewrite`](crate::model::GrpcGatewayRouteRewrite).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hostname: std::option::Option<crate::model::GatewayRouteHostnameRewrite>,
     }
@@ -12773,7 +12773,7 @@ impl GatewayRouteHostnameRewrite {
 pub mod gateway_route_hostname_rewrite {
 
     /// A builder for [`GatewayRouteHostnameRewrite`](crate::model::GatewayRouteHostnameRewrite).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_target_hostname:
             std::option::Option<crate::model::DefaultGatewayRouteRewrite>,
@@ -12929,7 +12929,7 @@ impl GatewayRouteTarget {
 pub mod gateway_route_target {
 
     /// A builder for [`GatewayRouteTarget`](crate::model::GatewayRouteTarget).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service: std::option::Option<crate::model::GatewayRouteVirtualService>,
         pub(crate) port: std::option::Option<i32>,
@@ -12992,7 +12992,7 @@ impl GatewayRouteVirtualService {
 pub mod gateway_route_virtual_service {
 
     /// A builder for [`GatewayRouteVirtualService`](crate::model::GatewayRouteVirtualService).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service_name: std::option::Option<std::string::String>,
     }
@@ -13064,7 +13064,7 @@ impl GrpcGatewayRouteMatch {
 pub mod grpc_gateway_route_match {
 
     /// A builder for [`GrpcGatewayRouteMatch`](crate::model::GrpcGatewayRouteMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) hostname: std::option::Option<crate::model::GatewayRouteHostnameMatch>,
@@ -13175,7 +13175,7 @@ impl GrpcGatewayRouteMetadata {
 pub mod grpc_gateway_route_metadata {
 
     /// A builder for [`GrpcGatewayRouteMetadata`](crate::model::GrpcGatewayRouteMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) invert: std::option::Option<bool>,
@@ -13353,7 +13353,7 @@ impl GatewayRouteHostnameMatch {
 pub mod gateway_route_hostname_match {
 
     /// A builder for [`GatewayRouteHostnameMatch`](crate::model::GatewayRouteHostnameMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exact: std::option::Option<std::string::String>,
         pub(crate) suffix: std::option::Option<std::string::String>,
@@ -13420,7 +13420,7 @@ impl HttpGatewayRoute {
 pub mod http_gateway_route {
 
     /// A builder for [`HttpGatewayRoute`](crate::model::HttpGatewayRoute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#match: std::option::Option<crate::model::HttpGatewayRouteMatch>,
         pub(crate) action: std::option::Option<crate::model::HttpGatewayRouteAction>,
@@ -13493,7 +13493,7 @@ impl HttpGatewayRouteAction {
 pub mod http_gateway_route_action {
 
     /// A builder for [`HttpGatewayRouteAction`](crate::model::HttpGatewayRouteAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target: std::option::Option<crate::model::GatewayRouteTarget>,
         pub(crate) rewrite: std::option::Option<crate::model::HttpGatewayRouteRewrite>,
@@ -13573,7 +13573,7 @@ impl HttpGatewayRouteRewrite {
 pub mod http_gateway_route_rewrite {
 
     /// A builder for [`HttpGatewayRouteRewrite`](crate::model::HttpGatewayRouteRewrite).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prefix: std::option::Option<crate::model::HttpGatewayRoutePrefixRewrite>,
         pub(crate) path: std::option::Option<crate::model::HttpGatewayRoutePathRewrite>,
@@ -13654,7 +13654,7 @@ impl HttpGatewayRoutePathRewrite {
 pub mod http_gateway_route_path_rewrite {
 
     /// A builder for [`HttpGatewayRoutePathRewrite`](crate::model::HttpGatewayRoutePathRewrite).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) exact: std::option::Option<std::string::String>,
     }
@@ -13707,7 +13707,7 @@ impl HttpGatewayRoutePrefixRewrite {
 pub mod http_gateway_route_prefix_rewrite {
 
     /// A builder for [`HttpGatewayRoutePrefixRewrite`](crate::model::HttpGatewayRoutePrefixRewrite).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_prefix: std::option::Option<crate::model::DefaultGatewayRouteRewrite>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -13812,7 +13812,7 @@ impl HttpGatewayRouteMatch {
 pub mod http_gateway_route_match {
 
     /// A builder for [`HttpGatewayRouteMatch`](crate::model::HttpGatewayRouteMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prefix: std::option::Option<std::string::String>,
         pub(crate) path: std::option::Option<crate::model::HttpPathMatch>,
@@ -13969,7 +13969,7 @@ impl HttpGatewayRouteHeader {
 pub mod http_gateway_route_header {
 
     /// A builder for [`HttpGatewayRouteHeader`](crate::model::HttpGatewayRouteHeader).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) invert: std::option::Option<bool>,

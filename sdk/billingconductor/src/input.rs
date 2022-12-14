@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_accounts_input {
 
     /// A builder for [`AssociateAccountsInput`](crate::input::AssociateAccountsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -168,7 +168,7 @@ impl AssociateAccountsInput {
 pub mod associate_pricing_rules_input {
 
     /// A builder for [`AssociatePricingRulesInput`](crate::input::AssociatePricingRulesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) pricing_rule_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -333,7 +333,7 @@ impl AssociatePricingRulesInput {
 pub mod batch_associate_resources_to_custom_line_item_input {
 
     /// A builder for [`BatchAssociateResourcesToCustomLineItemInput`](crate::input::BatchAssociateResourcesToCustomLineItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -515,7 +515,7 @@ impl BatchAssociateResourcesToCustomLineItemInput {
 pub mod batch_disassociate_resources_from_custom_line_item_input {
 
     /// A builder for [`BatchDisassociateResourcesFromCustomLineItemInput`](crate::input::BatchDisassociateResourcesFromCustomLineItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -703,7 +703,7 @@ impl BatchDisassociateResourcesFromCustomLineItemInput {
 pub mod create_billing_group_input {
 
     /// A builder for [`CreateBillingGroupInput`](crate::input::CreateBillingGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -963,7 +963,7 @@ impl CreateBillingGroupInput {
 pub mod create_custom_line_item_input {
 
     /// A builder for [`CreateCustomLineItemInput`](crate::input::CreateCustomLineItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1227,7 +1227,7 @@ impl CreateCustomLineItemInput {
 pub mod create_pricing_plan_input {
 
     /// A builder for [`CreatePricingPlanInput`](crate::input::CreatePricingPlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1458,7 +1458,7 @@ impl CreatePricingPlanInput {
 pub mod create_pricing_rule_input {
 
     /// A builder for [`CreatePricingRuleInput`](crate::input::CreatePricingRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1725,7 +1725,7 @@ impl CreatePricingRuleInput {
 pub mod delete_billing_group_input {
 
     /// A builder for [`DeleteBillingGroupInput`](crate::input::DeleteBillingGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -1865,7 +1865,7 @@ impl DeleteBillingGroupInput {
 pub mod delete_custom_line_item_input {
 
     /// A builder for [`DeleteCustomLineItemInput`](crate::input::DeleteCustomLineItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) billing_period_range:
@@ -2028,7 +2028,7 @@ impl DeleteCustomLineItemInput {
 pub mod delete_pricing_plan_input {
 
     /// A builder for [`DeletePricingPlanInput`](crate::input::DeletePricingPlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -2168,7 +2168,7 @@ impl DeletePricingPlanInput {
 pub mod delete_pricing_rule_input {
 
     /// A builder for [`DeletePricingRuleInput`](crate::input::DeletePricingRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -2308,7 +2308,7 @@ impl DeletePricingRuleInput {
 pub mod disassociate_accounts_input {
 
     /// A builder for [`DisassociateAccountsInput`](crate::input::DisassociateAccountsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2471,7 +2471,7 @@ impl DisassociateAccountsInput {
 pub mod disassociate_pricing_rules_input {
 
     /// A builder for [`DisassociatePricingRulesInput`](crate::input::DisassociatePricingRulesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) pricing_rule_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2636,7 +2636,7 @@ impl DisassociatePricingRulesInput {
 pub mod list_account_associations_input {
 
     /// A builder for [`ListAccountAssociationsInput`](crate::input::ListAccountAssociationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<crate::model::ListAccountAssociationsFilter>,
@@ -2816,7 +2816,7 @@ impl ListAccountAssociationsInput {
 pub mod list_billing_group_cost_reports_input {
 
     /// A builder for [`ListBillingGroupCostReportsInput`](crate::input::ListBillingGroupCostReportsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3000,7 +3000,7 @@ impl ListBillingGroupCostReportsInput {
 pub mod list_billing_groups_input {
 
     /// A builder for [`ListBillingGroupsInput`](crate::input::ListBillingGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3184,7 +3184,7 @@ impl ListBillingGroupsInput {
 pub mod list_custom_line_items_input {
 
     /// A builder for [`ListCustomLineItemsInput`](crate::input::ListCustomLineItemsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3370,7 +3370,7 @@ impl ListCustomLineItemsInput {
 pub mod list_pricing_plans_input {
 
     /// A builder for [`ListPricingPlansInput`](crate::input::ListPricingPlansInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<crate::model::ListPricingPlansFilter>,
@@ -3554,7 +3554,7 @@ impl ListPricingPlansInput {
 pub mod list_pricing_plans_associated_with_pricing_rule_input {
 
     /// A builder for [`ListPricingPlansAssociatedWithPricingRuleInput`](crate::input::ListPricingPlansAssociatedWithPricingRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
         pub(crate) pricing_rule_arn: std::option::Option<std::string::String>,
@@ -3741,7 +3741,7 @@ impl ListPricingPlansAssociatedWithPricingRuleInput {
 pub mod list_pricing_rules_input {
 
     /// A builder for [`ListPricingRulesInput`](crate::input::ListPricingRulesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<crate::model::ListPricingRulesFilter>,
@@ -3925,7 +3925,7 @@ impl ListPricingRulesInput {
 pub mod list_pricing_rules_associated_to_pricing_plan_input {
 
     /// A builder for [`ListPricingRulesAssociatedToPricingPlanInput`](crate::input::ListPricingRulesAssociatedToPricingPlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
         pub(crate) pricing_plan_arn: std::option::Option<std::string::String>,
@@ -4109,7 +4109,7 @@ impl ListPricingRulesAssociatedToPricingPlanInput {
 pub mod list_resources_associated_to_custom_line_item_input {
 
     /// A builder for [`ListResourcesAssociatedToCustomLineItemInput`](crate::input::ListResourcesAssociatedToCustomLineItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4309,7 +4309,7 @@ impl ListResourcesAssociatedToCustomLineItemInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -4457,7 +4457,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -4646,7 +4646,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4831,7 +4831,7 @@ impl UntagResourceInput {
 pub mod update_billing_group_input {
 
     /// A builder for [`UpdateBillingGroupInput`](crate::input::UpdateBillingGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5041,7 +5041,7 @@ impl UpdateBillingGroupInput {
 pub mod update_custom_line_item_input {
 
     /// A builder for [`UpdateCustomLineItemInput`](crate::input::UpdateCustomLineItemInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5258,7 +5258,7 @@ impl UpdateCustomLineItemInput {
 pub mod update_pricing_plan_input {
 
     /// A builder for [`UpdatePricingPlanInput`](crate::input::UpdatePricingPlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5433,7 +5433,7 @@ impl UpdatePricingPlanInput {
 pub mod update_pricing_rule_input {
 
     /// A builder for [`UpdatePricingRuleInput`](crate::input::UpdatePricingRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,

@@ -53,7 +53,7 @@ impl VirtualMachine {
 pub mod virtual_machine {
 
     /// A builder for [`VirtualMachine`](crate::model::VirtualMachine).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host_name: std::option::Option<std::string::String>,
         pub(crate) hypervisor_id: std::option::Option<std::string::String>,
@@ -202,7 +202,7 @@ impl VirtualMachineDetails {
 pub mod virtual_machine_details {
 
     /// A builder for [`VirtualMachineDetails`](crate::model::VirtualMachineDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host_name: std::option::Option<std::string::String>,
         pub(crate) hypervisor_id: std::option::Option<std::string::String>,
@@ -345,7 +345,7 @@ impl Hypervisor {
 pub mod hypervisor {
 
     /// A builder for [`Hypervisor`](crate::model::Hypervisor).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
         pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
@@ -554,7 +554,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -642,7 +642,7 @@ impl Gateway {
 pub mod gateway {
 
     /// A builder for [`Gateway`](crate::model::Gateway).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) gateway_display_name: std::option::Option<std::string::String>,
@@ -888,7 +888,7 @@ impl GatewayDetails {
 pub mod gateway_details {
 
     /// A builder for [`GatewayDetails`](crate::model::GatewayDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) gateway_display_name: std::option::Option<std::string::String>,
@@ -1059,7 +1059,7 @@ impl MaintenanceStartTime {
 pub mod maintenance_start_time {
 
     /// A builder for [`MaintenanceStartTime`](crate::model::MaintenanceStartTime).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) day_of_month: std::option::Option<i32>,
         pub(crate) day_of_week: std::option::Option<i32>,

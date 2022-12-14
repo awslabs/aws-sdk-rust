@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod accept_domain_transfer_from_another_aws_account_input {
 
     /// A builder for [`AcceptDomainTransferFromAnotherAwsAccountInput`](crate::input::AcceptDomainTransferFromAnotherAwsAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
@@ -166,7 +166,7 @@ impl AcceptDomainTransferFromAnotherAwsAccountInput {
 pub mod cancel_domain_transfer_to_another_aws_account_input {
 
     /// A builder for [`CancelDomainTransferToAnotherAwsAccountInput`](crate::input::CancelDomainTransferToAnotherAwsAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -312,7 +312,7 @@ impl CancelDomainTransferToAnotherAwsAccountInput {
 pub mod check_domain_availability_input {
 
     /// A builder for [`CheckDomainAvailabilityInput`](crate::input::CheckDomainAvailabilityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) idn_lang_code: std::option::Option<std::string::String>,
@@ -492,7 +492,7 @@ impl CheckDomainAvailabilityInput {
 pub mod check_domain_transferability_input {
 
     /// A builder for [`CheckDomainTransferabilityInput`](crate::input::CheckDomainTransferabilityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) auth_code: std::option::Option<std::string::String>,
@@ -675,7 +675,7 @@ impl CheckDomainTransferabilityInput {
 pub mod delete_domain_input {
 
     /// A builder for [`DeleteDomainInput`](crate::input::DeleteDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -820,7 +820,7 @@ impl DeleteDomainInput {
 pub mod delete_tags_for_domain_input {
 
     /// A builder for [`DeleteTagsForDomainInput`](crate::input::DeleteTagsForDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) tags_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -990,7 +990,7 @@ impl DeleteTagsForDomainInput {
 pub mod disable_domain_auto_renew_input {
 
     /// A builder for [`DisableDomainAutoRenewInput`](crate::input::DisableDomainAutoRenewInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -1139,7 +1139,7 @@ impl DisableDomainAutoRenewInput {
 pub mod disable_domain_transfer_lock_input {
 
     /// A builder for [`DisableDomainTransferLockInput`](crate::input::DisableDomainTransferLockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -1288,7 +1288,7 @@ impl DisableDomainTransferLockInput {
 pub mod enable_domain_auto_renew_input {
 
     /// A builder for [`EnableDomainAutoRenewInput`](crate::input::EnableDomainAutoRenewInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -1437,7 +1437,7 @@ impl EnableDomainAutoRenewInput {
 pub mod enable_domain_transfer_lock_input {
 
     /// A builder for [`EnableDomainTransferLockInput`](crate::input::EnableDomainTransferLockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -1586,7 +1586,7 @@ impl EnableDomainTransferLockInput {
 pub mod get_contact_reachability_status_input {
 
     /// A builder for [`GetContactReachabilityStatusInput`](crate::input::GetContactReachabilityStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -1732,7 +1732,7 @@ impl GetContactReachabilityStatusInput {
 pub mod get_domain_detail_input {
 
     /// A builder for [`GetDomainDetailInput`](crate::input::GetDomainDetailInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -1877,7 +1877,7 @@ impl GetDomainDetailInput {
 pub mod get_domain_suggestions_input {
 
     /// A builder for [`GetDomainSuggestionsInput`](crate::input::GetDomainSuggestionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) suggestion_count: std::option::Option<i32>,
@@ -2066,7 +2066,7 @@ impl GetDomainSuggestionsInput {
 pub mod get_operation_detail_input {
 
     /// A builder for [`GetOperationDetailInput`](crate::input::GetOperationDetailInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
@@ -2213,7 +2213,7 @@ impl GetOperationDetailInput {
 pub mod list_domains_input {
 
     /// A builder for [`ListDomainsInput`](crate::input::ListDomainsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_conditions:
             std::option::Option<std::vec::Vec<crate::model::FilterCondition>>,
@@ -2411,7 +2411,7 @@ impl ListDomainsInput {
 pub mod list_operations_input {
 
     /// A builder for [`ListOperationsInput`](crate::input::ListOperationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) submitted_since: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2585,7 +2585,7 @@ impl ListOperationsInput {
 pub mod list_prices_input {
 
     /// A builder for [`ListPricesInput`](crate::input::ListPricesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tld: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2760,7 +2760,7 @@ impl ListPricesInput {
 pub mod list_tags_for_domain_input {
 
     /// A builder for [`ListTagsForDomainInput`](crate::input::ListTagsForDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -2907,7 +2907,7 @@ impl ListTagsForDomainInput {
 pub mod register_domain_input {
 
     /// A builder for [`RegisterDomainInput`](crate::input::RegisterDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) idn_lang_code: std::option::Option<std::string::String>,
@@ -3244,7 +3244,7 @@ impl RegisterDomainInput {
 pub mod reject_domain_transfer_from_another_aws_account_input {
 
     /// A builder for [`RejectDomainTransferFromAnotherAwsAccountInput`](crate::input::RejectDomainTransferFromAnotherAwsAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -3393,7 +3393,7 @@ impl RejectDomainTransferFromAnotherAwsAccountInput {
 pub mod renew_domain_input {
 
     /// A builder for [`RenewDomainInput`](crate::input::RenewDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) duration_in_years: std::option::Option<i32>,
@@ -3564,7 +3564,7 @@ impl RenewDomainInput {
 pub mod resend_contact_reachability_email_input {
 
     /// A builder for [`ResendContactReachabilityEmailInput`](crate::input::ResendContactReachabilityEmailInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -3710,7 +3710,7 @@ impl ResendContactReachabilityEmailInput {
 pub mod retrieve_domain_auth_code_input {
 
     /// A builder for [`RetrieveDomainAuthCodeInput`](crate::input::RetrieveDomainAuthCodeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
@@ -3859,7 +3859,7 @@ impl RetrieveDomainAuthCodeInput {
 pub mod transfer_domain_input {
 
     /// A builder for [`TransferDomainInput`](crate::input::TransferDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) idn_lang_code: std::option::Option<std::string::String>,
@@ -4229,7 +4229,7 @@ impl TransferDomainInput {
 pub mod transfer_domain_to_another_aws_account_input {
 
     /// A builder for [`TransferDomainToAnotherAwsAccountInput`](crate::input::TransferDomainToAnotherAwsAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4387,7 +4387,7 @@ impl TransferDomainToAnotherAwsAccountInput {
 pub mod update_domain_contact_input {
 
     /// A builder for [`UpdateDomainContactInput`](crate::input::UpdateDomainContactInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) admin_contact: std::option::Option<crate::model::ContactDetail>,
@@ -4589,7 +4589,7 @@ impl UpdateDomainContactInput {
 pub mod update_domain_contact_privacy_input {
 
     /// A builder for [`UpdateDomainContactPrivacyInput`](crate::input::UpdateDomainContactPrivacyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) admin_privacy: std::option::Option<bool>,
@@ -4783,7 +4783,7 @@ impl UpdateDomainContactPrivacyInput {
 pub mod update_domain_nameservers_input {
 
     /// A builder for [`UpdateDomainNameserversInput`](crate::input::UpdateDomainNameserversInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) fi_auth_key: std::option::Option<std::string::String>,
@@ -4976,7 +4976,7 @@ impl UpdateDomainNameserversInput {
 pub mod update_tags_for_domain_input {
 
     /// A builder for [`UpdateTagsForDomainInput`](crate::input::UpdateTagsForDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) tags_to_update: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5146,7 +5146,7 @@ impl UpdateTagsForDomainInput {
 pub mod view_billing_input {
 
     /// A builder for [`ViewBillingInput`](crate::input::ViewBillingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end: std::option::Option<aws_smithy_types::DateTime>,

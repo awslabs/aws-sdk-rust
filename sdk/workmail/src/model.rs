@@ -32,7 +32,7 @@ impl BookingOptions {
 pub mod booking_options {
 
     /// A builder for [`BookingOptions`](crate::model::BookingOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_accept_requests: std::option::Option<bool>,
         pub(crate) auto_decline_recurring_requests: std::option::Option<bool>,
@@ -241,7 +241,7 @@ impl ImpersonationRule {
 pub mod impersonation_rule {
 
     /// A builder for [`ImpersonationRule`](crate::model::ImpersonationRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) impersonation_rule_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -555,7 +555,7 @@ impl LambdaAvailabilityProvider {
 pub mod lambda_availability_provider {
 
     /// A builder for [`LambdaAvailabilityProvider`](crate::model::LambdaAvailabilityProvider).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lambda_arn: std::option::Option<std::string::String>,
     }
@@ -626,7 +626,7 @@ impl std::fmt::Debug for EwsAvailabilityProvider {
 pub mod ews_availability_provider {
 
     /// A builder for [`EwsAvailabilityProvider`](crate::model::EwsAvailabilityProvider).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) ews_endpoint: std::option::Option<std::string::String>,
         pub(crate) ews_username: std::option::Option<std::string::String>,
@@ -714,7 +714,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -788,7 +788,7 @@ impl FolderConfiguration {
 pub mod folder_configuration {
 
     /// A builder for [`FolderConfiguration`](crate::model::FolderConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::FolderName>,
         pub(crate) action: std::option::Option<crate::model::RetentionAction>,
@@ -1305,7 +1305,7 @@ impl User {
 pub mod user {
 
     /// A builder for [`User`](crate::model::User).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) email: std::option::Option<std::string::String>,
@@ -1675,7 +1675,7 @@ impl Resource {
 pub mod resource {
 
     /// A builder for [`Resource`](crate::model::Resource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) email: std::option::Option<std::string::String>,
@@ -1898,7 +1898,7 @@ impl Delegate {
 pub mod delegate {
 
     /// A builder for [`Delegate`](crate::model::Delegate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::MemberType>,
@@ -2076,7 +2076,7 @@ impl OrganizationSummary {
 pub mod organization_summary {
 
     /// A builder for [`OrganizationSummary`](crate::model::OrganizationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) alias: std::option::Option<std::string::String>,
@@ -2272,7 +2272,7 @@ impl MobileDeviceAccessRule {
 pub mod mobile_device_access_rule {
 
     /// A builder for [`MobileDeviceAccessRule`](crate::model::MobileDeviceAccessRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mobile_device_access_rule_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2603,7 +2603,7 @@ impl MobileDeviceAccessOverride {
 pub mod mobile_device_access_override {
 
     /// A builder for [`MobileDeviceAccessOverride`](crate::model::MobileDeviceAccessOverride).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -2727,7 +2727,7 @@ impl MailDomainSummary {
 pub mod mail_domain_summary {
 
     /// A builder for [`MailDomainSummary`](crate::model::MailDomainSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) default_domain: std::option::Option<bool>,
@@ -2801,7 +2801,7 @@ impl Permission {
 pub mod permission {
 
     /// A builder for [`Permission`](crate::model::Permission).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grantee_id: std::option::Option<std::string::String>,
         pub(crate) grantee_type: std::option::Option<crate::model::MemberType>,
@@ -2942,7 +2942,7 @@ impl MailboxExportJob {
 pub mod mailbox_export_job {
 
     /// A builder for [`MailboxExportJob`](crate::model::MailboxExportJob).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -3228,7 +3228,7 @@ impl ImpersonationRole {
 pub mod impersonation_role {
 
     /// A builder for [`ImpersonationRole`](crate::model::ImpersonationRole).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) impersonation_role_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3371,7 +3371,7 @@ impl Group {
 pub mod group {
 
     /// A builder for [`Group`](crate::model::Group).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) email: std::option::Option<std::string::String>,
@@ -3520,7 +3520,7 @@ impl Member {
 pub mod member {
 
     /// A builder for [`Member`](crate::model::Member).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3673,7 +3673,7 @@ impl AvailabilityConfiguration {
 pub mod availability_configuration {
 
     /// A builder for [`AvailabilityConfiguration`](crate::model::AvailabilityConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) provider_type: std::option::Option<crate::model::AvailabilityProviderType>,
@@ -3806,7 +3806,7 @@ impl RedactedEwsAvailabilityProvider {
 pub mod redacted_ews_availability_provider {
 
     /// A builder for [`RedactedEwsAvailabilityProvider`](crate::model::RedactedEwsAvailabilityProvider).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ews_endpoint: std::option::Option<std::string::String>,
         pub(crate) ews_username: std::option::Option<std::string::String>,
@@ -4042,7 +4042,7 @@ impl AccessControlRule {
 pub mod access_control_rule {
 
     /// A builder for [`AccessControlRule`](crate::model::AccessControlRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) effect: std::option::Option<crate::model::AccessControlRuleEffect>,
@@ -4323,7 +4323,7 @@ impl MobileDeviceAccessMatchedRule {
 pub mod mobile_device_access_matched_rule {
 
     /// A builder for [`MobileDeviceAccessMatchedRule`](crate::model::MobileDeviceAccessMatchedRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mobile_device_access_rule_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4500,7 +4500,7 @@ impl DnsRecord {
 pub mod dns_record {
 
     /// A builder for [`DnsRecord`](crate::model::DnsRecord).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) hostname: std::option::Option<std::string::String>,
@@ -4579,7 +4579,7 @@ impl ImpersonationMatchedRule {
 pub mod impersonation_matched_rule {
 
     /// A builder for [`ImpersonationMatchedRule`](crate::model::ImpersonationMatchedRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) impersonation_rule_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4650,7 +4650,7 @@ impl Domain {
 pub mod domain {
 
     /// A builder for [`Domain`](crate::model::Domain).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,

@@ -18,7 +18,7 @@ impl UpdateThingShadowOutput {
 pub mod update_thing_shadow_output {
 
     /// A builder for [`UpdateThingShadowOutput`](crate::output::UpdateThingShadowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
     }
@@ -56,7 +56,7 @@ pub struct PublishOutput {}
 pub mod publish_output {
 
     /// A builder for [`PublishOutput`](crate::output::PublishOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PublishOutput`](crate::output::PublishOutput).
@@ -97,7 +97,7 @@ impl ListRetainedMessagesOutput {
 pub mod list_retained_messages_output {
 
     /// A builder for [`ListRetainedMessagesOutput`](crate::output::ListRetainedMessagesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retained_topics:
             std::option::Option<std::vec::Vec<crate::model::RetainedMessageSummary>>,
@@ -181,7 +181,7 @@ impl ListNamedShadowsForThingOutput {
 pub mod list_named_shadows_for_thing_output {
 
     /// A builder for [`ListNamedShadowsForThingOutput`](crate::output::ListNamedShadowsForThingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -262,7 +262,7 @@ impl GetThingShadowOutput {
 pub mod get_thing_shadow_output {
 
     /// A builder for [`GetThingShadowOutput`](crate::output::GetThingShadowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
     }
@@ -331,7 +331,7 @@ impl GetRetainedMessageOutput {
 pub mod get_retained_message_output {
 
     /// A builder for [`GetRetainedMessageOutput`](crate::output::GetRetainedMessageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic: std::option::Option<std::string::String>,
         pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
@@ -415,7 +415,7 @@ impl DeleteThingShadowOutput {
 pub mod delete_thing_shadow_output {
 
     /// A builder for [`DeleteThingShadowOutput`](crate::output::DeleteThingShadowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
     }

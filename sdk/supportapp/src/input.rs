@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_slack_channel_configuration_input {
 
     /// A builder for [`CreateSlackChannelConfigurationInput`](crate::input::CreateSlackChannelConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_id: std::option::Option<std::string::String>,
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -275,7 +275,7 @@ impl CreateSlackChannelConfigurationInput {
 pub mod delete_account_alias_input {
 
     /// A builder for [`DeleteAccountAliasInput`](crate::input::DeleteAccountAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccountAliasInput`](crate::input::DeleteAccountAliasInput).
@@ -389,7 +389,7 @@ impl DeleteAccountAliasInput {
 pub mod delete_slack_channel_configuration_input {
 
     /// A builder for [`DeleteSlackChannelConfigurationInput`](crate::input::DeleteSlackChannelConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_id: std::option::Option<std::string::String>,
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -543,7 +543,7 @@ impl DeleteSlackChannelConfigurationInput {
 pub mod delete_slack_workspace_configuration_input {
 
     /// A builder for [`DeleteSlackWorkspaceConfigurationInput`](crate::input::DeleteSlackWorkspaceConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_id: std::option::Option<std::string::String>,
     }
@@ -685,7 +685,7 @@ impl DeleteSlackWorkspaceConfigurationInput {
 pub mod get_account_alias_input {
 
     /// A builder for [`GetAccountAliasInput`](crate::input::GetAccountAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetAccountAliasInput`](crate::input::GetAccountAliasInput).
@@ -797,7 +797,7 @@ impl GetAccountAliasInput {
 pub mod list_slack_channel_configurations_input {
 
     /// A builder for [`ListSlackChannelConfigurationsInput`](crate::input::ListSlackChannelConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -939,7 +939,7 @@ impl ListSlackChannelConfigurationsInput {
 pub mod list_slack_workspace_configurations_input {
 
     /// A builder for [`ListSlackWorkspaceConfigurationsInput`](crate::input::ListSlackWorkspaceConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -1081,7 +1081,7 @@ impl ListSlackWorkspaceConfigurationsInput {
 pub mod put_account_alias_input {
 
     /// A builder for [`PutAccountAliasInput`](crate::input::PutAccountAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_alias: std::option::Option<std::string::String>,
     }
@@ -1224,7 +1224,7 @@ impl PutAccountAliasInput {
 pub mod update_slack_channel_configuration_input {
 
     /// A builder for [`UpdateSlackChannelConfigurationInput`](crate::input::UpdateSlackChannelConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_id: std::option::Option<std::string::String>,
         pub(crate) channel_id: std::option::Option<std::string::String>,

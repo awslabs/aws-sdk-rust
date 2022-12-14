@@ -110,7 +110,7 @@ impl UpdateTrailOutput {
 pub mod update_trail_output {
 
     /// A builder for [`UpdateTrailOutput`](crate::output::UpdateTrailOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
@@ -400,7 +400,7 @@ impl UpdateEventDataStoreOutput {
 pub mod update_event_data_store_output {
 
     /// A builder for [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -574,7 +574,7 @@ pub struct StopLoggingOutput {}
 pub mod stop_logging_output {
 
     /// A builder for [`StopLoggingOutput`](crate::output::StopLoggingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StopLoggingOutput`](crate::output::StopLoggingOutput).
@@ -664,7 +664,7 @@ impl StopImportOutput {
 pub mod stop_import_output {
 
     /// A builder for [`StopImportOutput`](crate::output::StopImportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_id: std::option::Option<std::string::String>,
         pub(crate) import_source: std::option::Option<crate::model::ImportSource>,
@@ -838,7 +838,7 @@ impl StartQueryOutput {
 pub mod start_query_output {
 
     /// A builder for [`StartQueryOutput`](crate::output::StartQueryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
     }
@@ -876,7 +876,7 @@ pub struct StartLoggingOutput {}
 pub mod start_logging_output {
 
     /// A builder for [`StartLoggingOutput`](crate::output::StartLoggingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StartLoggingOutput`](crate::output::StartLoggingOutput).
@@ -959,7 +959,7 @@ impl StartImportOutput {
 pub mod start_import_output {
 
     /// A builder for [`StartImportOutput`](crate::output::StartImportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_id: std::option::Option<std::string::String>,
         pub(crate) destinations: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1184,7 +1184,7 @@ impl RestoreEventDataStoreOutput {
 pub mod restore_event_data_store_output {
 
     /// A builder for [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1358,7 +1358,7 @@ pub struct RemoveTagsOutput {}
 pub mod remove_tags_output {
 
     /// A builder for [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
@@ -1399,7 +1399,7 @@ impl PutInsightSelectorsOutput {
 pub mod put_insight_selectors_output {
 
     /// A builder for [`PutInsightSelectorsOutput`](crate::output::PutInsightSelectorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_arn: std::option::Option<std::string::String>,
         pub(crate) insight_selectors:
@@ -1488,7 +1488,7 @@ impl PutEventSelectorsOutput {
 pub mod put_event_selectors_output {
 
     /// A builder for [`PutEventSelectorsOutput`](crate::output::PutEventSelectorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_arn: std::option::Option<std::string::String>,
         pub(crate) event_selectors: std::option::Option<std::vec::Vec<crate::model::EventSelector>>,
@@ -1591,7 +1591,7 @@ impl LookupEventsOutput {
 pub mod lookup_events_output {
 
     /// A builder for [`LookupEventsOutput`](crate::output::LookupEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1667,7 +1667,7 @@ impl ListTrailsOutput {
 pub mod list_trails_output {
 
     /// A builder for [`ListTrailsOutput`](crate::output::ListTrailsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trails: std::option::Option<std::vec::Vec<crate::model::TrailInfo>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1743,7 +1743,7 @@ impl ListTagsOutput {
 pub mod list_tags_output {
 
     /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_tag_list: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1819,7 +1819,7 @@ impl ListQueriesOutput {
 pub mod list_queries_output {
 
     /// A builder for [`ListQueriesOutput`](crate::output::ListQueriesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queries: std::option::Option<std::vec::Vec<crate::model::Query>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1899,7 +1899,7 @@ impl ListPublicKeysOutput {
 pub mod list_public_keys_output {
 
     /// A builder for [`ListPublicKeysOutput`](crate::output::ListPublicKeysOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) public_key_list: std::option::Option<std::vec::Vec<crate::model::PublicKey>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1979,7 +1979,7 @@ impl ListImportsOutput {
 pub mod list_imports_output {
 
     /// A builder for [`ListImportsOutput`](crate::output::ListImportsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) imports: std::option::Option<std::vec::Vec<crate::model::ImportsListItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2055,7 +2055,7 @@ impl ListImportFailuresOutput {
 pub mod list_import_failures_output {
 
     /// A builder for [`ListImportFailuresOutput`](crate::output::ListImportFailuresOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failures:
             std::option::Option<std::vec::Vec<crate::model::ImportFailureListItem>>,
@@ -2132,7 +2132,7 @@ impl ListEventDataStoresOutput {
 pub mod list_event_data_stores_output {
 
     /// A builder for [`ListEventDataStoresOutput`](crate::output::ListEventDataStoresOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_stores:
             std::option::Option<std::vec::Vec<crate::model::EventDataStore>>,
@@ -2209,7 +2209,7 @@ impl ListChannelsOutput {
 pub mod list_channels_output {
 
     /// A builder for [`ListChannelsOutput`](crate::output::ListChannelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2400,7 +2400,7 @@ impl GetTrailStatusOutput {
 pub mod get_trail_status_output {
 
     /// A builder for [`GetTrailStatusOutput`](crate::output::GetTrailStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_logging: std::option::Option<bool>,
         pub(crate) latest_delivery_error: std::option::Option<std::string::String>,
@@ -2718,7 +2718,7 @@ impl GetTrailOutput {
 pub mod get_trail_output {
 
     /// A builder for [`GetTrailOutput`](crate::output::GetTrailOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail: std::option::Option<crate::model::Trail>,
     }
@@ -2800,7 +2800,7 @@ impl GetQueryResultsOutput {
 pub mod get_query_results_output {
 
     /// A builder for [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_status: std::option::Option<crate::model::QueryStatus>,
         pub(crate) query_statistics: std::option::Option<crate::model::QueryStatistics>,
@@ -2936,7 +2936,7 @@ impl GetInsightSelectorsOutput {
 pub mod get_insight_selectors_output {
 
     /// A builder for [`GetInsightSelectorsOutput`](crate::output::GetInsightSelectorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_arn: std::option::Option<std::string::String>,
         pub(crate) insight_selectors:
@@ -3062,7 +3062,7 @@ impl GetImportOutput {
 pub mod get_import_output {
 
     /// A builder for [`GetImportOutput`](crate::output::GetImportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_id: std::option::Option<std::string::String>,
         pub(crate) destinations: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3253,7 +3253,7 @@ impl GetEventSelectorsOutput {
 pub mod get_event_selectors_output {
 
     /// A builder for [`GetEventSelectorsOutput`](crate::output::GetEventSelectorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_arn: std::option::Option<std::string::String>,
         pub(crate) event_selectors: std::option::Option<std::vec::Vec<crate::model::EventSelector>>,
@@ -3413,7 +3413,7 @@ impl GetEventDataStoreOutput {
 pub mod get_event_data_store_output {
 
     /// A builder for [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3625,7 +3625,7 @@ impl GetChannelOutput {
 pub mod get_channel_output {
 
     /// A builder for [`GetChannelOutput`](crate::output::GetChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3733,7 +3733,7 @@ impl DescribeTrailsOutput {
 pub mod describe_trails_output {
 
     /// A builder for [`DescribeTrailsOutput`](crate::output::DescribeTrailsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_list: std::option::Option<std::vec::Vec<crate::model::Trail>>,
     }
@@ -3820,7 +3820,7 @@ impl DescribeQueryOutput {
 pub mod describe_query_output {
 
     /// A builder for [`DescribeQueryOutput`](crate::output::DescribeQueryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
         pub(crate) query_string: std::option::Option<std::string::String>,
@@ -3919,7 +3919,7 @@ pub struct DeleteTrailOutput {}
 pub mod delete_trail_output {
 
     /// A builder for [`DeleteTrailOutput`](crate::output::DeleteTrailOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTrailOutput`](crate::output::DeleteTrailOutput).
@@ -3943,7 +3943,7 @@ pub struct DeleteEventDataStoreOutput {}
 pub mod delete_event_data_store_output {
 
     /// A builder for [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput).
@@ -4069,7 +4069,7 @@ impl CreateTrailOutput {
 pub mod create_trail_output {
 
     /// A builder for [`CreateTrailOutput`](crate::output::CreateTrailOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
@@ -4366,7 +4366,7 @@ impl CreateEventDataStoreOutput {
 pub mod create_event_data_store_output {
 
     /// A builder for [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4578,7 +4578,7 @@ impl CancelQueryOutput {
 pub mod cancel_query_output {
 
     /// A builder for [`CancelQueryOutput`](crate::output::CancelQueryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
         pub(crate) query_status: std::option::Option<crate::model::QueryStatus>,
@@ -4631,7 +4631,7 @@ pub struct AddTagsOutput {}
 pub mod add_tags_output {
 
     /// A builder for [`AddTagsOutput`](crate::output::AddTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsOutput`](crate::output::AddTagsOutput).

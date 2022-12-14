@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod delete_thing_shadow_input {
 
     /// A builder for [`DeleteThingShadowInput`](crate::input::DeleteThingShadowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
         pub(crate) shadow_name: std::option::Option<std::string::String>,
@@ -178,7 +178,7 @@ impl DeleteThingShadowInput {
 pub mod get_retained_message_input {
 
     /// A builder for [`GetRetainedMessageInput`](crate::input::GetRetainedMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic: std::option::Option<std::string::String>,
     }
@@ -324,7 +324,7 @@ impl GetRetainedMessageInput {
 pub mod get_thing_shadow_input {
 
     /// A builder for [`GetThingShadowInput`](crate::input::GetThingShadowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
         pub(crate) shadow_name: std::option::Option<std::string::String>,
@@ -495,7 +495,7 @@ impl GetThingShadowInput {
 pub mod list_named_shadows_for_thing_input {
 
     /// A builder for [`ListNamedShadowsForThingInput`](crate::input::ListNamedShadowsForThingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -692,7 +692,7 @@ impl ListNamedShadowsForThingInput {
 pub mod list_retained_messages_input {
 
     /// A builder for [`ListRetainedMessagesInput`](crate::input::ListRetainedMessagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -851,7 +851,7 @@ impl ListRetainedMessagesInput {
 pub mod publish_input {
 
     /// A builder for [`PublishInput`](crate::input::PublishInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic: std::option::Option<std::string::String>,
         pub(crate) qos: std::option::Option<i32>,
@@ -1073,7 +1073,7 @@ impl PublishInput {
 pub mod update_thing_shadow_input {
 
     /// A builder for [`UpdateThingShadowInput`](crate::input::UpdateThingShadowInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
         pub(crate) shadow_name: std::option::Option<std::string::String>,

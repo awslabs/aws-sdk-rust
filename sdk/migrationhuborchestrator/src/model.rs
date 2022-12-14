@@ -53,7 +53,7 @@ impl WorkflowStepGroupSummary {
 pub mod workflow_step_group_summary {
 
     /// A builder for [`WorkflowStepGroupSummary`](crate::model::WorkflowStepGroupSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -408,7 +408,7 @@ impl Tool {
 pub mod tool {
 
     /// A builder for [`Tool`](crate::model::Tool).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) url: std::option::Option<std::string::String>,
@@ -675,7 +675,7 @@ impl WorkflowStepSummary {
 pub mod workflow_step_summary {
 
     /// A builder for [`WorkflowStepSummary`](crate::model::WorkflowStepSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) step_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1005,7 +1005,7 @@ impl WorkflowStepOutput {
 pub mod workflow_step_output {
 
     /// A builder for [`WorkflowStepOutput`](crate::model::WorkflowStepOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) data_type: std::option::Option<crate::model::DataType>,
@@ -1288,7 +1288,7 @@ impl WorkflowStepAutomationConfiguration {
 pub mod workflow_step_automation_configuration {
 
     /// A builder for [`WorkflowStepAutomationConfiguration`](crate::model::WorkflowStepAutomationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) script_location_s3_bucket: std::option::Option<std::string::String>,
         pub(crate) script_location_s3_key: std::option::Option<crate::model::PlatformScriptKey>,
@@ -1591,7 +1591,7 @@ impl PlatformCommand {
 pub mod platform_command {
 
     /// A builder for [`PlatformCommand`](crate::model::PlatformCommand).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) linux: std::option::Option<std::string::String>,
         pub(crate) windows: std::option::Option<std::string::String>,
@@ -1658,7 +1658,7 @@ impl PlatformScriptKey {
 pub mod platform_script_key {
 
     /// A builder for [`PlatformScriptKey`](crate::model::PlatformScriptKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) linux: std::option::Option<std::string::String>,
         pub(crate) windows: std::option::Option<std::string::String>,
@@ -1739,7 +1739,7 @@ impl TemplateStepGroupSummary {
 pub mod template_step_group_summary {
 
     /// A builder for [`TemplateStepGroupSummary`](crate::model::TemplateStepGroupSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1897,7 +1897,7 @@ impl TemplateStepSummary {
 pub mod template_step_summary {
 
     /// A builder for [`TemplateStepSummary`](crate::model::TemplateStepSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) step_group_id: std::option::Option<std::string::String>,
@@ -2096,7 +2096,7 @@ impl StepAutomationConfiguration {
 pub mod step_automation_configuration {
 
     /// A builder for [`StepAutomationConfiguration`](crate::model::StepAutomationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) script_location_s3_bucket: std::option::Option<std::string::String>,
         pub(crate) script_location_s3_key: std::option::Option<crate::model::PlatformScriptKey>,
@@ -2221,7 +2221,7 @@ impl StepOutput {
 pub mod step_output {
 
     /// A builder for [`StepOutput`](crate::model::StepOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) data_type: std::option::Option<crate::model::DataType>,
@@ -2328,7 +2328,7 @@ impl PluginSummary {
 pub mod plugin_summary {
 
     /// A builder for [`PluginSummary`](crate::model::PluginSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) plugin_id: std::option::Option<std::string::String>,
         pub(crate) hostname: std::option::Option<std::string::String>,
@@ -2553,7 +2553,7 @@ impl TemplateSummary {
 pub mod template_summary {
 
     /// A builder for [`TemplateSummary`](crate::model::TemplateSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2736,7 +2736,7 @@ impl TemplateInput {
 pub mod template_input {
 
     /// A builder for [`TemplateInput`](crate::model::TemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_name: std::option::Option<std::string::String>,
         pub(crate) data_type: std::option::Option<crate::model::DataType>,
@@ -3038,7 +3038,7 @@ impl MigrationWorkflowSummary {
 pub mod migration_workflow_summary {
 
     /// A builder for [`MigrationWorkflowSummary`](crate::model::MigrationWorkflowSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,

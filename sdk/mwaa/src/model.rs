@@ -146,7 +146,7 @@ impl LoggingConfigurationInput {
 pub mod logging_configuration_input {
 
     /// A builder for [`LoggingConfigurationInput`](crate::model::LoggingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dag_processing_logs:
             std::option::Option<crate::model::ModuleLoggingConfigurationInput>,
@@ -276,7 +276,7 @@ impl ModuleLoggingConfigurationInput {
 pub mod module_logging_configuration_input {
 
     /// A builder for [`ModuleLoggingConfigurationInput`](crate::model::ModuleLoggingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) log_level: std::option::Option<crate::model::LoggingLevel>,
@@ -444,7 +444,7 @@ impl UpdateNetworkConfigurationInput {
 pub mod update_network_configuration_input {
 
     /// A builder for [`UpdateNetworkConfigurationInput`](crate::model::UpdateNetworkConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -536,7 +536,7 @@ impl MetricDatum {
 pub mod metric_datum {
 
     /// A builder for [`MetricDatum`](crate::model::MetricDatum).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -680,7 +680,7 @@ impl StatisticSet {
 pub mod statistic_set {
 
     /// A builder for [`StatisticSet`](crate::model::StatisticSet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sample_count: std::option::Option<i32>,
         pub(crate) sum: std::option::Option<f64>,
@@ -1014,7 +1014,7 @@ impl Dimension {
 pub mod dimension {
 
     /// A builder for [`Dimension`](crate::model::Dimension).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1324,7 +1324,7 @@ impl std::fmt::Debug for Environment {
 pub mod environment {
 
     /// A builder for [`Environment`](crate::model::Environment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EnvironmentStatus>,
@@ -1847,7 +1847,7 @@ impl LastUpdate {
 pub mod last_update {
 
     /// A builder for [`LastUpdate`](crate::model::LastUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::UpdateStatus>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -1944,7 +1944,7 @@ impl UpdateError {
 pub mod update_error {
 
     /// A builder for [`UpdateError`](crate::model::UpdateError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
@@ -2132,7 +2132,7 @@ impl LoggingConfiguration {
 pub mod logging_configuration {
 
     /// A builder for [`LoggingConfiguration`](crate::model::LoggingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dag_processing_logs:
             std::option::Option<crate::model::ModuleLoggingConfiguration>,
@@ -2261,7 +2261,7 @@ impl ModuleLoggingConfiguration {
 pub mod module_logging_configuration {
 
     /// A builder for [`ModuleLoggingConfiguration`](crate::model::ModuleLoggingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) log_level: std::option::Option<crate::model::LoggingLevel>,
@@ -2346,7 +2346,7 @@ impl NetworkConfiguration {
 pub mod network_configuration {
 
     /// A builder for [`NetworkConfiguration`](crate::model::NetworkConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,

@@ -18,7 +18,7 @@ impl UpdateProjectOutput {
 pub mod update_project_output {
 
     /// A builder for [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<crate::model::ProjectDetails>,
     }
@@ -76,7 +76,7 @@ impl ListProjectsOutput {
 pub mod list_projects_output {
 
     /// A builder for [`ListProjectsOutput`](crate::output::ListProjectsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) projects: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -152,7 +152,7 @@ impl ListBundlesOutput {
 pub mod list_bundles_output {
 
     /// A builder for [`ListBundlesOutput`](crate::output::ListBundlesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bundle_list: std::option::Option<std::vec::Vec<crate::model::BundleDetails>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -235,7 +235,7 @@ impl ExportProjectOutput {
 pub mod export_project_output {
 
     /// A builder for [`ExportProjectOutput`](crate::output::ExportProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) download_url: std::option::Option<std::string::String>,
         pub(crate) share_url: std::option::Option<std::string::String>,
@@ -307,7 +307,7 @@ impl ExportBundleOutput {
 pub mod export_bundle_output {
 
     /// A builder for [`ExportBundleOutput`](crate::output::ExportBundleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) download_url: std::option::Option<std::string::String>,
     }
@@ -355,7 +355,7 @@ impl DescribeProjectOutput {
 pub mod describe_project_output {
 
     /// A builder for [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<crate::model::ProjectDetails>,
     }
@@ -406,7 +406,7 @@ impl DescribeBundleOutput {
 pub mod describe_bundle_output {
 
     /// A builder for [`DescribeBundleOutput`](crate::output::DescribeBundleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<crate::model::BundleDetails>,
     }
@@ -464,7 +464,7 @@ impl DeleteProjectOutput {
 pub mod delete_project_output {
 
     /// A builder for [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deleted_resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
         pub(crate) orphaned_resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -542,7 +542,7 @@ impl CreateProjectOutput {
 pub mod create_project_output {
 
     /// A builder for [`CreateProjectOutput`](crate::output::CreateProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<crate::model::ProjectDetails>,
     }

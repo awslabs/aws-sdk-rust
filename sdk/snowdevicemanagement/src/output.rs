@@ -17,7 +17,7 @@ impl CancelTaskOutput {
 pub mod cancel_task_output {
 
     /// A builder for [`CancelTaskOutput`](crate::output::CancelTaskOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
     }
@@ -72,7 +72,7 @@ impl ListTasksOutput {
 pub mod list_tasks_output {
 
     /// A builder for [`ListTasksOutput`](crate::output::ListTasksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tasks: std::option::Option<std::vec::Vec<crate::model::TaskSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -148,7 +148,7 @@ impl CreateTaskOutput {
 pub mod create_task_output {
 
     /// A builder for [`CreateTaskOutput`](crate::output::CreateTaskOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) task_arn: std::option::Option<std::string::String>,
@@ -268,7 +268,7 @@ impl DescribeTaskOutput {
 pub mod describe_task_output {
 
     /// A builder for [`DescribeTaskOutput`](crate::output::DescribeTaskOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) task_arn: std::option::Option<std::string::String>,
@@ -454,7 +454,7 @@ impl ListExecutionsOutput {
 pub mod list_executions_output {
 
     /// A builder for [`ListExecutionsOutput`](crate::output::ListExecutionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) executions: std::option::Option<std::vec::Vec<crate::model::ExecutionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -558,7 +558,7 @@ impl DescribeExecutionOutput {
 pub mod describe_execution_output {
 
     /// A builder for [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) execution_id: std::option::Option<std::string::String>,
@@ -685,7 +685,7 @@ impl ListDeviceResourcesOutput {
 pub mod list_device_resources_output {
 
     /// A builder for [`ListDeviceResourcesOutput`](crate::output::ListDeviceResourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::ResourceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -754,7 +754,7 @@ impl DescribeDeviceEc2InstancesOutput {
 pub mod describe_device_ec2_instances_output {
 
     /// A builder for [`DescribeDeviceEc2InstancesOutput`](crate::output::DescribeDeviceEc2InstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
     }
@@ -818,7 +818,7 @@ impl ListDevicesOutput {
 pub mod list_devices_output {
 
     /// A builder for [`ListDevicesOutput`](crate::output::ListDevicesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) devices: std::option::Option<std::vec::Vec<crate::model::DeviceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -964,7 +964,7 @@ impl DescribeDeviceOutput {
 pub mod describe_device_output {
 
     /// A builder for [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_reached_out_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -1182,7 +1182,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -1206,7 +1206,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1244,7 +1244,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,

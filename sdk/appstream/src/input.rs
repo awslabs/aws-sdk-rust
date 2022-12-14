@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_application_fleet_input {
 
     /// A builder for [`AssociateApplicationFleetInput`](crate::input::AssociateApplicationFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_name: std::option::Option<std::string::String>,
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -169,7 +169,7 @@ impl AssociateApplicationFleetInput {
 pub mod associate_application_to_entitlement_input {
 
     /// A builder for [`AssociateApplicationToEntitlementInput`](crate::input::AssociateApplicationToEntitlementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
         pub(crate) entitlement_name: std::option::Option<std::string::String>,
@@ -345,7 +345,7 @@ impl AssociateApplicationToEntitlementInput {
 pub mod associate_fleet_input {
 
     /// A builder for [`AssociateFleetInput`](crate::input::AssociateFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_name: std::option::Option<std::string::String>,
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -502,7 +502,7 @@ impl AssociateFleetInput {
 pub mod batch_associate_user_stack_input {
 
     /// A builder for [`BatchAssociateUserStackInput`](crate::input::BatchAssociateUserStackInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_stack_associations:
             std::option::Option<std::vec::Vec<crate::model::UserStackAssociation>>,
@@ -664,7 +664,7 @@ impl BatchAssociateUserStackInput {
 pub mod batch_disassociate_user_stack_input {
 
     /// A builder for [`BatchDisassociateUserStackInput`](crate::input::BatchDisassociateUserStackInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_stack_associations:
             std::option::Option<std::vec::Vec<crate::model::UserStackAssociation>>,
@@ -823,7 +823,7 @@ impl BatchDisassociateUserStackInput {
 pub mod copy_image_input {
 
     /// A builder for [`CopyImageInput`](crate::input::CopyImageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_image_name: std::option::Option<std::string::String>,
         pub(crate) destination_image_name: std::option::Option<std::string::String>,
@@ -1017,7 +1017,7 @@ impl CopyImageInput {
 pub mod create_app_block_input {
 
     /// A builder for [`CreateAppBlockInput`](crate::input::CreateAppBlockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1245,7 +1245,7 @@ impl CreateAppBlockInput {
 pub mod create_application_input {
 
     /// A builder for [`CreateApplicationInput`](crate::input::CreateApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -1559,7 +1559,7 @@ impl CreateApplicationInput {
 pub mod create_directory_config_input {
 
     /// A builder for [`CreateDirectoryConfigInput`](crate::input::CreateDirectoryConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_name: std::option::Option<std::string::String>,
         pub(crate) organizational_unit_distinguished_names:
@@ -1758,7 +1758,7 @@ impl CreateDirectoryConfigInput {
 pub mod create_entitlement_input {
 
     /// A builder for [`CreateEntitlementInput`](crate::input::CreateEntitlementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -1966,7 +1966,7 @@ impl CreateEntitlementInput {
 pub mod create_fleet_input {
 
     /// A builder for [`CreateFleetInput`](crate::input::CreateFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) image_name: std::option::Option<std::string::String>,
@@ -2541,7 +2541,7 @@ impl CreateFleetInput {
 pub mod create_image_builder_input {
 
     /// A builder for [`CreateImageBuilderInput`](crate::input::CreateImageBuilderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) image_name: std::option::Option<std::string::String>,
@@ -2954,7 +2954,7 @@ impl CreateImageBuilderInput {
 pub mod create_image_builder_streaming_url_input {
 
     /// A builder for [`CreateImageBuilderStreamingUrlInput`](crate::input::CreateImageBuilderStreamingUrlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) validity: std::option::Option<i64>,
@@ -3112,7 +3112,7 @@ impl CreateImageBuilderStreamingUrlInput {
 pub mod create_stack_input {
 
     /// A builder for [`CreateStackInput`](crate::input::CreateStackInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -3462,7 +3462,7 @@ impl CreateStackInput {
 pub mod create_streaming_url_input {
 
     /// A builder for [`CreateStreamingUrlInput`](crate::input::CreateStreamingUrlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
         pub(crate) fleet_name: std::option::Option<std::string::String>,
@@ -3675,7 +3675,7 @@ impl CreateStreamingUrlInput {
 pub mod create_updated_image_input {
 
     /// A builder for [`CreateUpdatedImageInput`](crate::input::CreateUpdatedImageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) existing_image_name: std::option::Option<std::string::String>,
         pub(crate) new_image_name: std::option::Option<std::string::String>,
@@ -3919,7 +3919,7 @@ impl CreateUpdatedImageInput {
 pub mod create_usage_report_subscription_input {
 
     /// A builder for [`CreateUsageReportSubscriptionInput`](crate::input::CreateUsageReportSubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateUsageReportSubscriptionInput`](crate::input::CreateUsageReportSubscriptionInput).
@@ -4044,7 +4044,7 @@ impl CreateUsageReportSubscriptionInput {
 pub mod create_user_input {
 
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) message_action: std::option::Option<crate::model::MessageAction>,
@@ -4262,7 +4262,7 @@ impl CreateUserInput {
 pub mod delete_app_block_input {
 
     /// A builder for [`DeleteAppBlockInput`](crate::input::DeleteAppBlockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -4405,7 +4405,7 @@ impl DeleteAppBlockInput {
 pub mod delete_application_input {
 
     /// A builder for [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -4550,7 +4550,7 @@ impl DeleteApplicationInput {
 pub mod delete_directory_config_input {
 
     /// A builder for [`DeleteDirectoryConfigInput`](crate::input::DeleteDirectoryConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_name: std::option::Option<std::string::String>,
     }
@@ -4702,7 +4702,7 @@ impl DeleteDirectoryConfigInput {
 pub mod delete_entitlement_input {
 
     /// A builder for [`DeleteEntitlementInput`](crate::input::DeleteEntitlementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -4861,7 +4861,7 @@ impl DeleteEntitlementInput {
 pub mod delete_fleet_input {
 
     /// A builder for [`DeleteFleetInput`](crate::input::DeleteFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -5004,7 +5004,7 @@ impl DeleteFleetInput {
 pub mod delete_image_input {
 
     /// A builder for [`DeleteImageInput`](crate::input::DeleteImageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -5147,7 +5147,7 @@ impl DeleteImageInput {
 pub mod delete_image_builder_input {
 
     /// A builder for [`DeleteImageBuilderInput`](crate::input::DeleteImageBuilderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -5292,7 +5292,7 @@ impl DeleteImageBuilderInput {
 pub mod delete_image_permissions_input {
 
     /// A builder for [`DeleteImagePermissionsInput`](crate::input::DeleteImagePermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) shared_account_id: std::option::Option<std::string::String>,
@@ -5456,7 +5456,7 @@ impl DeleteImagePermissionsInput {
 pub mod delete_stack_input {
 
     /// A builder for [`DeleteStackInput`](crate::input::DeleteStackInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -5599,7 +5599,7 @@ impl DeleteStackInput {
 pub mod delete_usage_report_subscription_input {
 
     /// A builder for [`DeleteUsageReportSubscriptionInput`](crate::input::DeleteUsageReportSubscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUsageReportSubscriptionInput`](crate::input::DeleteUsageReportSubscriptionInput).
@@ -5724,7 +5724,7 @@ impl DeleteUsageReportSubscriptionInput {
 pub mod delete_user_input {
 
     /// A builder for [`DeleteUserInput`](crate::input::DeleteUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
@@ -5896,7 +5896,7 @@ impl DeleteUserInput {
 pub mod describe_app_blocks_input {
 
     /// A builder for [`DescribeAppBlocksInput`](crate::input::DescribeAppBlocksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6076,7 +6076,7 @@ impl DescribeAppBlocksInput {
 pub mod describe_application_fleet_associations_input {
 
     /// A builder for [`DescribeApplicationFleetAssociationsInput`](crate::input::DescribeApplicationFleetAssociationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_name: std::option::Option<std::string::String>,
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -6261,7 +6261,7 @@ impl DescribeApplicationFleetAssociationsInput {
 pub mod describe_applications_input {
 
     /// A builder for [`DescribeApplicationsInput`](crate::input::DescribeApplicationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6441,7 +6441,7 @@ impl DescribeApplicationsInput {
 pub mod describe_directory_configs_input {
 
     /// A builder for [`DescribeDirectoryConfigsInput`](crate::input::DescribeDirectoryConfigsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -6623,7 +6623,7 @@ impl DescribeDirectoryConfigsInput {
 pub mod describe_entitlements_input {
 
     /// A builder for [`DescribeEntitlementsInput`](crate::input::DescribeEntitlementsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -6806,7 +6806,7 @@ impl DescribeEntitlementsInput {
 pub mod describe_fleets_input {
 
     /// A builder for [`DescribeFleetsInput`](crate::input::DescribeFleetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6972,7 +6972,7 @@ impl DescribeFleetsInput {
 pub mod describe_image_builders_input {
 
     /// A builder for [`DescribeImageBuildersInput`](crate::input::DescribeImageBuildersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -7154,7 +7154,7 @@ impl DescribeImageBuildersInput {
 pub mod describe_image_permissions_input {
 
     /// A builder for [`DescribeImagePermissionsInput`](crate::input::DescribeImagePermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -7348,7 +7348,7 @@ impl DescribeImagePermissionsInput {
 pub mod describe_images_input {
 
     /// A builder for [`DescribeImagesInput`](crate::input::DescribeImagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7562,7 +7562,7 @@ impl DescribeImagesInput {
 pub mod describe_sessions_input {
 
     /// A builder for [`DescribeSessionsInput`](crate::input::DescribeSessionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
         pub(crate) fleet_name: std::option::Option<std::string::String>,
@@ -7772,7 +7772,7 @@ impl DescribeSessionsInput {
 pub mod describe_stacks_input {
 
     /// A builder for [`DescribeStacksInput`](crate::input::DescribeStacksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7938,7 +7938,7 @@ impl DescribeStacksInput {
 pub mod describe_usage_report_subscriptions_input {
 
     /// A builder for [`DescribeUsageReportSubscriptionsInput`](crate::input::DescribeUsageReportSubscriptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -8096,7 +8096,7 @@ impl DescribeUsageReportSubscriptionsInput {
 pub mod describe_users_input {
 
     /// A builder for [`DescribeUsersInput`](crate::input::DescribeUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -8268,7 +8268,7 @@ impl DescribeUsersInput {
 pub mod describe_user_stack_associations_input {
 
     /// A builder for [`DescribeUserStackAssociationsInput`](crate::input::DescribeUserStackAssociationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -8480,7 +8480,7 @@ impl DescribeUserStackAssociationsInput {
 pub mod disable_user_input {
 
     /// A builder for [`DisableUserInput`](crate::input::DisableUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
@@ -8652,7 +8652,7 @@ impl DisableUserInput {
 pub mod disassociate_application_fleet_input {
 
     /// A builder for [`DisassociateApplicationFleetInput`](crate::input::DisassociateApplicationFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_name: std::option::Option<std::string::String>,
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -8813,7 +8813,7 @@ impl DisassociateApplicationFleetInput {
 pub mod disassociate_application_from_entitlement_input {
 
     /// A builder for [`DisassociateApplicationFromEntitlementInput`](crate::input::DisassociateApplicationFromEntitlementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
         pub(crate) entitlement_name: std::option::Option<std::string::String>,
@@ -8989,7 +8989,7 @@ impl DisassociateApplicationFromEntitlementInput {
 pub mod disassociate_fleet_input {
 
     /// A builder for [`DisassociateFleetInput`](crate::input::DisassociateFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_name: std::option::Option<std::string::String>,
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -9148,7 +9148,7 @@ impl DisassociateFleetInput {
 pub mod enable_user_input {
 
     /// A builder for [`EnableUserInput`](crate::input::EnableUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
@@ -9320,7 +9320,7 @@ impl EnableUserInput {
 pub mod expire_session_input {
 
     /// A builder for [`ExpireSessionInput`](crate::input::ExpireSessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_id: std::option::Option<std::string::String>,
     }
@@ -9465,7 +9465,7 @@ impl ExpireSessionInput {
 pub mod list_associated_fleets_input {
 
     /// A builder for [`ListAssociatedFleetsInput`](crate::input::ListAssociatedFleetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -9626,7 +9626,7 @@ impl ListAssociatedFleetsInput {
 pub mod list_associated_stacks_input {
 
     /// A builder for [`ListAssociatedStacksInput`](crate::input::ListAssociatedStacksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -9787,7 +9787,7 @@ impl ListAssociatedStacksInput {
 pub mod list_entitled_applications_input {
 
     /// A builder for [`ListEntitledApplicationsInput`](crate::input::ListEntitledApplicationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_name: std::option::Option<std::string::String>,
         pub(crate) entitlement_name: std::option::Option<std::string::String>,
@@ -9975,7 +9975,7 @@ impl ListEntitledApplicationsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -10124,7 +10124,7 @@ impl ListTagsForResourceInput {
 pub mod start_fleet_input {
 
     /// A builder for [`StartFleetInput`](crate::input::StartFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -10267,7 +10267,7 @@ impl StartFleetInput {
 pub mod start_image_builder_input {
 
     /// A builder for [`StartImageBuilderInput`](crate::input::StartImageBuilderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) appstream_agent_version: std::option::Option<std::string::String>,
@@ -10429,7 +10429,7 @@ impl StartImageBuilderInput {
 pub mod stop_fleet_input {
 
     /// A builder for [`StopFleetInput`](crate::input::StopFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -10570,7 +10570,7 @@ impl StopFleetInput {
 pub mod stop_image_builder_input {
 
     /// A builder for [`StopImageBuilderInput`](crate::input::StopImageBuilderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -10715,7 +10715,7 @@ impl StopImageBuilderInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -10895,7 +10895,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11061,7 +11061,7 @@ impl UntagResourceInput {
 pub mod update_application_input {
 
     /// A builder for [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -11326,7 +11326,7 @@ impl UpdateApplicationInput {
 pub mod update_directory_config_input {
 
     /// A builder for [`UpdateDirectoryConfigInput`](crate::input::UpdateDirectoryConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_name: std::option::Option<std::string::String>,
         pub(crate) organizational_unit_distinguished_names:
@@ -11525,7 +11525,7 @@ impl UpdateDirectoryConfigInput {
 pub mod update_entitlement_input {
 
     /// A builder for [`UpdateEntitlementInput`](crate::input::UpdateEntitlementInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) stack_name: std::option::Option<std::string::String>,
@@ -11733,7 +11733,7 @@ impl UpdateEntitlementInput {
 pub mod update_fleet_input {
 
     /// A builder for [`UpdateFleetInput`](crate::input::UpdateFleetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_name: std::option::Option<std::string::String>,
         pub(crate) image_arn: std::option::Option<std::string::String>,
@@ -12264,7 +12264,7 @@ impl UpdateFleetInput {
 pub mod update_image_permissions_input {
 
     /// A builder for [`UpdateImagePermissionsInput`](crate::input::UpdateImagePermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) shared_account_id: std::option::Option<std::string::String>,
@@ -12443,7 +12443,7 @@ impl UpdateImagePermissionsInput {
 pub mod update_stack_input {
 
     /// A builder for [`UpdateStackInput`](crate::input::UpdateStackInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,

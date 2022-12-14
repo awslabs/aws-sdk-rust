@@ -5,7 +5,7 @@
 /// [`add_custom_routing_endpoints`](crate::client::Client::add_custom_routing_endpoints).
 ///
 /// See [`crate::client::fluent_builders::AddCustomRoutingEndpoints`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AddCustomRoutingEndpoints {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddCustomRoutingEndpoint
 /// [`advertise_byoip_cidr`](crate::client::Client::advertise_byoip_cidr).
 ///
 /// See [`crate::client::fluent_builders::AdvertiseByoipCidr`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdvertiseByoipCidr {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdvertiseByoipCidr {
 /// [`allow_custom_routing_traffic`](crate::client::Client::allow_custom_routing_traffic).
 ///
 /// See [`crate::client::fluent_builders::AllowCustomRoutingTraffic`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AllowCustomRoutingTraffic {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AllowCustomRoutingTraffi
 /// [`create_accelerator`](crate::client::Client::create_accelerator).
 ///
 /// See [`crate::client::fluent_builders::CreateAccelerator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAccelerator {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccelerator {
 /// [`create_custom_routing_accelerator`](crate::client::Client::create_custom_routing_accelerator).
 ///
 /// See [`crate::client::fluent_builders::CreateCustomRoutingAccelerator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCustomRoutingAccelerator {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomRoutingAccel
 /// [`create_custom_routing_endpoint_group`](crate::client::Client::create_custom_routing_endpoint_group).
 ///
 /// See [`crate::client::fluent_builders::CreateCustomRoutingEndpointGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCustomRoutingEndpointGroup {
     _private: (),
 }
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomRoutingEndpo
 /// [`create_custom_routing_listener`](crate::client::Client::create_custom_routing_listener).
 ///
 /// See [`crate::client::fluent_builders::CreateCustomRoutingListener`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCustomRoutingListener {
     _private: (),
 }
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomRoutingListe
 /// [`create_endpoint_group`](crate::client::Client::create_endpoint_group).
 ///
 /// See [`crate::client::fluent_builders::CreateEndpointGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateEndpointGroup {
     _private: (),
 }
@@ -277,7 +277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEndpointGroup {
 /// [`create_listener`](crate::client::Client::create_listener).
 ///
 /// See [`crate::client::fluent_builders::CreateListener`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateListener {
     _private: (),
 }
@@ -309,7 +309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateListener {
 /// [`delete_accelerator`](crate::client::Client::delete_accelerator).
 ///
 /// See [`crate::client::fluent_builders::DeleteAccelerator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAccelerator {
     _private: (),
 }
@@ -343,7 +343,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccelerator {
 /// [`delete_custom_routing_accelerator`](crate::client::Client::delete_custom_routing_accelerator).
 ///
 /// See [`crate::client::fluent_builders::DeleteCustomRoutingAccelerator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCustomRoutingAccelerator {
     _private: (),
 }
@@ -377,7 +377,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomRoutingAccel
 /// [`delete_custom_routing_endpoint_group`](crate::client::Client::delete_custom_routing_endpoint_group).
 ///
 /// See [`crate::client::fluent_builders::DeleteCustomRoutingEndpointGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCustomRoutingEndpointGroup {
     _private: (),
 }
@@ -411,7 +411,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomRoutingEndpo
 /// [`delete_custom_routing_listener`](crate::client::Client::delete_custom_routing_listener).
 ///
 /// See [`crate::client::fluent_builders::DeleteCustomRoutingListener`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCustomRoutingListener {
     _private: (),
 }
@@ -445,7 +445,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomRoutingListe
 /// [`delete_endpoint_group`](crate::client::Client::delete_endpoint_group).
 ///
 /// See [`crate::client::fluent_builders::DeleteEndpointGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEndpointGroup {
     _private: (),
 }
@@ -479,7 +479,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEndpointGroup {
 /// [`delete_listener`](crate::client::Client::delete_listener).
 ///
 /// See [`crate::client::fluent_builders::DeleteListener`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteListener {
     _private: (),
 }
@@ -511,7 +511,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteListener {
 /// [`deny_custom_routing_traffic`](crate::client::Client::deny_custom_routing_traffic).
 ///
 /// See [`crate::client::fluent_builders::DenyCustomRoutingTraffic`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DenyCustomRoutingTraffic {
     _private: (),
 }
@@ -545,7 +545,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DenyCustomRoutingTraffic
 /// [`deprovision_byoip_cidr`](crate::client::Client::deprovision_byoip_cidr).
 ///
 /// See [`crate::client::fluent_builders::DeprovisionByoipCidr`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeprovisionByoipCidr {
     _private: (),
 }
@@ -579,7 +579,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprovisionByoipCidr {
 /// [`describe_accelerator`](crate::client::Client::describe_accelerator).
 ///
 /// See [`crate::client::fluent_builders::DescribeAccelerator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAccelerator {
     _private: (),
 }
@@ -613,7 +613,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccelerator {
 /// [`describe_accelerator_attributes`](crate::client::Client::describe_accelerator_attributes).
 ///
 /// See [`crate::client::fluent_builders::DescribeAcceleratorAttributes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAcceleratorAttributes {
     _private: (),
 }
@@ -647,7 +647,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAcceleratorAttri
 /// [`describe_custom_routing_accelerator`](crate::client::Client::describe_custom_routing_accelerator).
 ///
 /// See [`crate::client::fluent_builders::DescribeCustomRoutingAccelerator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCustomRoutingAccelerator {
     _private: (),
 }
@@ -681,7 +681,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomRoutingAcc
 /// [`describe_custom_routing_accelerator_attributes`](crate::client::Client::describe_custom_routing_accelerator_attributes).
 ///
 /// See [`crate::client::fluent_builders::DescribeCustomRoutingAcceleratorAttributes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCustomRoutingAcceleratorAttributes {
     _private: (),
 }
@@ -720,7 +720,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomRoutingAcc
 /// [`describe_custom_routing_endpoint_group`](crate::client::Client::describe_custom_routing_endpoint_group).
 ///
 /// See [`crate::client::fluent_builders::DescribeCustomRoutingEndpointGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCustomRoutingEndpointGroup {
     _private: (),
 }
@@ -754,7 +754,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomRoutingEnd
 /// [`describe_custom_routing_listener`](crate::client::Client::describe_custom_routing_listener).
 ///
 /// See [`crate::client::fluent_builders::DescribeCustomRoutingListener`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCustomRoutingListener {
     _private: (),
 }
@@ -788,7 +788,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomRoutingLis
 /// [`describe_endpoint_group`](crate::client::Client::describe_endpoint_group).
 ///
 /// See [`crate::client::fluent_builders::DescribeEndpointGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEndpointGroup {
     _private: (),
 }
@@ -822,7 +822,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEndpointGroup {
 /// [`describe_listener`](crate::client::Client::describe_listener).
 ///
 /// See [`crate::client::fluent_builders::DescribeListener`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeListener {
     _private: (),
 }
@@ -856,7 +856,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeListener {
 /// [`list_accelerators`](crate::client::Client::list_accelerators).
 ///
 /// See [`crate::client::fluent_builders::ListAccelerators`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAccelerators {
     _private: (),
 }
@@ -890,7 +890,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccelerators {
 /// [`list_byoip_cidrs`](crate::client::Client::list_byoip_cidrs).
 ///
 /// See [`crate::client::fluent_builders::ListByoipCidrs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListByoipCidrs {
     _private: (),
 }
@@ -922,7 +922,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListByoipCidrs {
 /// [`list_custom_routing_accelerators`](crate::client::Client::list_custom_routing_accelerators).
 ///
 /// See [`crate::client::fluent_builders::ListCustomRoutingAccelerators`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCustomRoutingAccelerators {
     _private: (),
 }
@@ -956,7 +956,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomRoutingAcceler
 /// [`list_custom_routing_endpoint_groups`](crate::client::Client::list_custom_routing_endpoint_groups).
 ///
 /// See [`crate::client::fluent_builders::ListCustomRoutingEndpointGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCustomRoutingEndpointGroups {
     _private: (),
 }
@@ -990,7 +990,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomRoutingEndpoin
 /// [`list_custom_routing_listeners`](crate::client::Client::list_custom_routing_listeners).
 ///
 /// See [`crate::client::fluent_builders::ListCustomRoutingListeners`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCustomRoutingListeners {
     _private: (),
 }
@@ -1024,7 +1024,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomRoutingListene
 /// [`list_custom_routing_port_mappings`](crate::client::Client::list_custom_routing_port_mappings).
 ///
 /// See [`crate::client::fluent_builders::ListCustomRoutingPortMappings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCustomRoutingPortMappings {
     _private: (),
 }
@@ -1058,7 +1058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomRoutingPortMap
 /// [`list_custom_routing_port_mappings_by_destination`](crate::client::Client::list_custom_routing_port_mappings_by_destination).
 ///
 /// See [`crate::client::fluent_builders::ListCustomRoutingPortMappingsByDestination`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCustomRoutingPortMappingsByDestination {
     _private: (),
 }
@@ -1097,7 +1097,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomRoutingPortMap
 /// [`list_endpoint_groups`](crate::client::Client::list_endpoint_groups).
 ///
 /// See [`crate::client::fluent_builders::ListEndpointGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEndpointGroups {
     _private: (),
 }
@@ -1131,7 +1131,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEndpointGroups {
 /// [`list_listeners`](crate::client::Client::list_listeners).
 ///
 /// See [`crate::client::fluent_builders::ListListeners`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListListeners {
     _private: (),
 }
@@ -1163,7 +1163,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListListeners {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -1197,7 +1197,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`provision_byoip_cidr`](crate::client::Client::provision_byoip_cidr).
 ///
 /// See [`crate::client::fluent_builders::ProvisionByoipCidr`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ProvisionByoipCidr {
     _private: (),
 }
@@ -1231,7 +1231,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ProvisionByoipCidr {
 /// [`remove_custom_routing_endpoints`](crate::client::Client::remove_custom_routing_endpoints).
 ///
 /// See [`crate::client::fluent_builders::RemoveCustomRoutingEndpoints`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemoveCustomRoutingEndpoints {
     _private: (),
 }
@@ -1265,7 +1265,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveCustomRoutingEndpo
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1297,7 +1297,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1329,7 +1329,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_accelerator`](crate::client::Client::update_accelerator).
 ///
 /// See [`crate::client::fluent_builders::UpdateAccelerator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAccelerator {
     _private: (),
 }
@@ -1363,7 +1363,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAccelerator {
 /// [`update_accelerator_attributes`](crate::client::Client::update_accelerator_attributes).
 ///
 /// See [`crate::client::fluent_builders::UpdateAcceleratorAttributes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAcceleratorAttributes {
     _private: (),
 }
@@ -1397,7 +1397,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAcceleratorAttribu
 /// [`update_custom_routing_accelerator`](crate::client::Client::update_custom_routing_accelerator).
 ///
 /// See [`crate::client::fluent_builders::UpdateCustomRoutingAccelerator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCustomRoutingAccelerator {
     _private: (),
 }
@@ -1431,7 +1431,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCustomRoutingAccel
 /// [`update_custom_routing_accelerator_attributes`](crate::client::Client::update_custom_routing_accelerator_attributes).
 ///
 /// See [`crate::client::fluent_builders::UpdateCustomRoutingAcceleratorAttributes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCustomRoutingAcceleratorAttributes {
     _private: (),
 }
@@ -1469,7 +1469,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCustomRoutingAccel
 /// [`update_custom_routing_listener`](crate::client::Client::update_custom_routing_listener).
 ///
 /// See [`crate::client::fluent_builders::UpdateCustomRoutingListener`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCustomRoutingListener {
     _private: (),
 }
@@ -1503,7 +1503,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCustomRoutingListe
 /// [`update_endpoint_group`](crate::client::Client::update_endpoint_group).
 ///
 /// See [`crate::client::fluent_builders::UpdateEndpointGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateEndpointGroup {
     _private: (),
 }
@@ -1537,7 +1537,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEndpointGroup {
 /// [`update_listener`](crate::client::Client::update_listener).
 ///
 /// See [`crate::client::fluent_builders::UpdateListener`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateListener {
     _private: (),
 }
@@ -1569,7 +1569,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateListener {
 /// [`withdraw_byoip_cidr`](crate::client::Client::withdraw_byoip_cidr).
 ///
 /// See [`crate::client::fluent_builders::WithdrawByoipCidr`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct WithdrawByoipCidr {
     _private: (),
 }

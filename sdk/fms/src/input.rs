@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_admin_account_input {
 
     /// A builder for [`AssociateAdminAccountInput`](crate::input::AssociateAdminAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) admin_account: std::option::Option<std::string::String>,
     }
@@ -157,7 +157,7 @@ impl AssociateAdminAccountInput {
 pub mod associate_third_party_firewall_input {
 
     /// A builder for [`AssociateThirdPartyFirewallInput`](crate::input::AssociateThirdPartyFirewallInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) third_party_firewall: std::option::Option<crate::model::ThirdPartyFirewall>,
     }
@@ -306,7 +306,7 @@ impl AssociateThirdPartyFirewallInput {
 pub mod delete_apps_list_input {
 
     /// A builder for [`DeleteAppsListInput`](crate::input::DeleteAppsListInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_id: std::option::Option<std::string::String>,
     }
@@ -451,7 +451,7 @@ impl DeleteAppsListInput {
 pub mod delete_notification_channel_input {
 
     /// A builder for [`DeleteNotificationChannelInput`](crate::input::DeleteNotificationChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteNotificationChannelInput`](crate::input::DeleteNotificationChannelInput).
@@ -579,7 +579,7 @@ impl DeleteNotificationChannelInput {
 pub mod delete_policy_input {
 
     /// A builder for [`DeletePolicyInput`](crate::input::DeletePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
         pub(crate) delete_all_policy_resources: std::option::Option<bool>,
@@ -760,7 +760,7 @@ impl DeletePolicyInput {
 pub mod delete_protocols_list_input {
 
     /// A builder for [`DeleteProtocolsListInput`](crate::input::DeleteProtocolsListInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_id: std::option::Option<std::string::String>,
     }
@@ -907,7 +907,7 @@ impl DeleteProtocolsListInput {
 pub mod disassociate_admin_account_input {
 
     /// A builder for [`DisassociateAdminAccountInput`](crate::input::DisassociateAdminAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateAdminAccountInput`](crate::input::DisassociateAdminAccountInput).
@@ -1035,7 +1035,7 @@ impl DisassociateAdminAccountInput {
 pub mod disassociate_third_party_firewall_input {
 
     /// A builder for [`DisassociateThirdPartyFirewallInput`](crate::input::DisassociateThirdPartyFirewallInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) third_party_firewall: std::option::Option<crate::model::ThirdPartyFirewall>,
     }
@@ -1184,7 +1184,7 @@ impl DisassociateThirdPartyFirewallInput {
 pub mod get_admin_account_input {
 
     /// A builder for [`GetAdminAccountInput`](crate::input::GetAdminAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetAdminAccountInput`](crate::input::GetAdminAccountInput).
@@ -1308,7 +1308,7 @@ impl GetAdminAccountInput {
 pub mod get_apps_list_input {
 
     /// A builder for [`GetAppsListInput`](crate::input::GetAppsListInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_id: std::option::Option<std::string::String>,
         pub(crate) default_list: std::option::Option<bool>,
@@ -1465,7 +1465,7 @@ impl GetAppsListInput {
 pub mod get_compliance_detail_input {
 
     /// A builder for [`GetComplianceDetailInput`](crate::input::GetComplianceDetailInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
         pub(crate) member_account: std::option::Option<std::string::String>,
@@ -1627,7 +1627,7 @@ impl GetComplianceDetailInput {
 pub mod get_notification_channel_input {
 
     /// A builder for [`GetNotificationChannelInput`](crate::input::GetNotificationChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetNotificationChannelInput`](crate::input::GetNotificationChannelInput).
@@ -1755,7 +1755,7 @@ impl GetNotificationChannelInput {
 pub mod get_policy_input {
 
     /// A builder for [`GetPolicyInput`](crate::input::GetPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
     }
@@ -1898,7 +1898,7 @@ impl GetPolicyInput {
 pub mod get_protection_status_input {
 
     /// A builder for [`GetProtectionStatusInput`](crate::input::GetProtectionStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
         pub(crate) member_account_id: std::option::Option<std::string::String>,
@@ -2114,7 +2114,7 @@ impl GetProtectionStatusInput {
 pub mod get_protocols_list_input {
 
     /// A builder for [`GetProtocolsListInput`](crate::input::GetProtocolsListInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_id: std::option::Option<std::string::String>,
         pub(crate) default_list: std::option::Option<bool>,
@@ -2273,7 +2273,7 @@ impl GetProtocolsListInput {
 pub mod get_third_party_firewall_association_status_input {
 
     /// A builder for [`GetThirdPartyFirewallAssociationStatusInput`](crate::input::GetThirdPartyFirewallAssociationStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) third_party_firewall: std::option::Option<crate::model::ThirdPartyFirewall>,
     }
@@ -2422,7 +2422,7 @@ impl GetThirdPartyFirewallAssociationStatusInput {
 pub mod get_violation_details_input {
 
     /// A builder for [`GetViolationDetailsInput`](crate::input::GetViolationDetailsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
         pub(crate) member_account: std::option::Option<std::string::String>,
@@ -2611,7 +2611,7 @@ impl GetViolationDetailsInput {
 pub mod list_apps_lists_input {
 
     /// A builder for [`ListAppsListsInput`](crate::input::ListAppsListsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_lists: std::option::Option<bool>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2782,7 +2782,7 @@ impl ListAppsListsInput {
 pub mod list_compliance_status_input {
 
     /// A builder for [`ListComplianceStatusInput`](crate::input::ListComplianceStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2955,7 +2955,7 @@ impl ListComplianceStatusInput {
 pub mod list_member_accounts_input {
 
     /// A builder for [`ListMemberAccountsInput`](crate::input::ListMemberAccountsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3114,7 +3114,7 @@ impl ListMemberAccountsInput {
 pub mod list_policies_input {
 
     /// A builder for [`ListPoliciesInput`](crate::input::ListPoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3271,7 +3271,7 @@ impl ListPoliciesInput {
 pub mod list_protocols_lists_input {
 
     /// A builder for [`ListProtocolsListsInput`](crate::input::ListProtocolsListsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_lists: std::option::Option<bool>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3444,7 +3444,7 @@ impl ListProtocolsListsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3593,7 +3593,7 @@ impl ListTagsForResourceInput {
 pub mod list_third_party_firewall_firewall_policies_input {
 
     /// A builder for [`ListThirdPartyFirewallFirewallPoliciesInput`](crate::input::ListThirdPartyFirewallFirewallPoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) third_party_firewall: std::option::Option<crate::model::ThirdPartyFirewall>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3768,7 +3768,7 @@ impl ListThirdPartyFirewallFirewallPoliciesInput {
 pub mod put_apps_list_input {
 
     /// A builder for [`PutAppsListInput`](crate::input::PutAppsListInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apps_list: std::option::Option<crate::model::AppsListData>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3937,7 +3937,7 @@ impl PutAppsListInput {
 pub mod put_notification_channel_input {
 
     /// A builder for [`PutNotificationChannelInput`](crate::input::PutNotificationChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
         pub(crate) sns_role_name: std::option::Option<std::string::String>,
@@ -4104,7 +4104,7 @@ impl PutNotificationChannelInput {
 pub mod put_policy_input {
 
     /// A builder for [`PutPolicyInput`](crate::input::PutPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::Policy>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4268,7 +4268,7 @@ impl PutPolicyInput {
 pub mod put_protocols_list_input {
 
     /// A builder for [`PutProtocolsListInput`](crate::input::PutProtocolsListInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocols_list: std::option::Option<crate::model::ProtocolsListData>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4439,7 +4439,7 @@ impl PutProtocolsListInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4605,7 +4605,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,

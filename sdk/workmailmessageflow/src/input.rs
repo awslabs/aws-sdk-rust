@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod get_raw_message_content_input {
 
     /// A builder for [`GetRawMessageContentInput`](crate::input::GetRawMessageContentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
     }
@@ -153,7 +153,7 @@ impl GetRawMessageContentInput {
 pub mod put_raw_message_content_input {
 
     /// A builder for [`PutRawMessageContentInput`](crate::input::PutRawMessageContentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<crate::model::RawMessageContent>,

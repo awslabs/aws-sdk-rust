@@ -64,7 +64,7 @@ impl std::fmt::Debug for UpdateUserProfileOutput {
 pub mod update_user_profile_output {
 
     /// A builder for [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -210,7 +210,7 @@ impl UpdateTeamMemberOutput {
 pub mod update_team_member_output {
 
     /// A builder for [`UpdateTeamMemberOutput`](crate::output::UpdateTeamMemberOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) project_role: std::option::Option<std::string::String>,
@@ -272,7 +272,7 @@ pub struct UpdateProjectOutput {}
 pub mod update_project_output {
 
     /// A builder for [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
@@ -296,7 +296,7 @@ pub struct UntagProjectOutput {}
 pub mod untag_project_output {
 
     /// A builder for [`UntagProjectOutput`](crate::output::UntagProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagProjectOutput`](crate::output::UntagProjectOutput).
@@ -334,7 +334,7 @@ impl TagProjectOutput {
 pub mod tag_project_output {
 
     /// A builder for [`TagProjectOutput`](crate::output::TagProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -404,7 +404,7 @@ impl ListUserProfilesOutput {
 pub mod list_user_profiles_output {
 
     /// A builder for [`ListUserProfilesOutput`](crate::output::ListUserProfilesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_profiles:
             std::option::Option<std::vec::Vec<crate::model::UserProfileSummary>>,
@@ -481,7 +481,7 @@ impl ListTeamMembersOutput {
 pub mod list_team_members_output {
 
     /// A builder for [`ListTeamMembersOutput`](crate::output::ListTeamMembersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_members: std::option::Option<std::vec::Vec<crate::model::TeamMember>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -561,7 +561,7 @@ impl ListTagsForProjectOutput {
 pub mod list_tags_for_project_output {
 
     /// A builder for [`ListTagsForProjectOutput`](crate::output::ListTagsForProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -645,7 +645,7 @@ impl ListResourcesOutput {
 pub mod list_resources_output {
 
     /// A builder for [`ListResourcesOutput`](crate::output::ListResourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -721,7 +721,7 @@ impl ListProjectsOutput {
 pub mod list_projects_output {
 
     /// A builder for [`ListProjectsOutput`](crate::output::ListProjectsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) projects: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -780,7 +780,7 @@ pub struct DisassociateTeamMemberOutput {}
 pub mod disassociate_team_member_output {
 
     /// A builder for [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput).
@@ -861,7 +861,7 @@ impl std::fmt::Debug for DescribeUserProfileOutput {
 pub mod describe_user_profile_output {
 
     /// A builder for [`DescribeUserProfileOutput`](crate::output::DescribeUserProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -1064,7 +1064,7 @@ impl std::fmt::Debug for DescribeProjectOutput {
 pub mod describe_project_output {
 
     /// A builder for [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1235,7 +1235,7 @@ impl DeleteUserProfileOutput {
 pub mod delete_user_profile_output {
 
     /// A builder for [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
     }
@@ -1290,7 +1290,7 @@ impl DeleteProjectOutput {
 pub mod delete_project_output {
 
     /// A builder for [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
         pub(crate) project_arn: std::option::Option<std::string::String>,
@@ -1397,7 +1397,7 @@ impl std::fmt::Debug for CreateUserProfileOutput {
 pub mod create_user_profile_output {
 
     /// A builder for [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -1550,7 +1550,7 @@ impl CreateProjectOutput {
 pub mod create_project_output {
 
     /// A builder for [`CreateProjectOutput`](crate::output::CreateProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1640,7 +1640,7 @@ impl AssociateTeamMemberOutput {
 pub mod associate_team_member_output {
 
     /// A builder for [`AssociateTeamMemberOutput`](crate::output::AssociateTeamMemberOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }

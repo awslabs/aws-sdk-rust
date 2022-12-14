@@ -7,7 +7,7 @@ pub struct UpdateServiceIntegrationOutput {}
 pub mod update_service_integration_output {
 
     /// A builder for [`UpdateServiceIntegrationOutput`](crate::output::UpdateServiceIntegrationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateServiceIntegrationOutput`](crate::output::UpdateServiceIntegrationOutput).
@@ -31,7 +31,7 @@ pub struct UpdateResourceCollectionOutput {}
 pub mod update_resource_collection_output {
 
     /// A builder for [`UpdateResourceCollectionOutput`](crate::output::UpdateResourceCollectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateResourceCollectionOutput`](crate::output::UpdateResourceCollectionOutput).
@@ -55,7 +55,7 @@ pub struct UpdateEventSourcesConfigOutput {}
 pub mod update_event_sources_config_output {
 
     /// A builder for [`UpdateEventSourcesConfigOutput`](crate::output::UpdateEventSourcesConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateEventSourcesConfigOutput`](crate::output::UpdateEventSourcesConfigOutput).
@@ -79,7 +79,7 @@ pub struct StartCostEstimationOutput {}
 pub mod start_cost_estimation_output {
 
     /// A builder for [`StartCostEstimationOutput`](crate::output::StartCostEstimationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StartCostEstimationOutput`](crate::output::StartCostEstimationOutput).
@@ -132,7 +132,7 @@ impl SearchOrganizationInsightsOutput {
 pub mod search_organization_insights_output {
 
     /// A builder for [`SearchOrganizationInsightsOutput`](crate::output::SearchOrganizationInsightsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proactive_insights:
             std::option::Option<std::vec::Vec<crate::model::ProactiveInsightSummary>>,
@@ -243,7 +243,7 @@ impl SearchInsightsOutput {
 pub mod search_insights_output {
 
     /// A builder for [`SearchInsightsOutput`](crate::output::SearchInsightsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proactive_insights:
             std::option::Option<std::vec::Vec<crate::model::ProactiveInsightSummary>>,
@@ -325,7 +325,7 @@ pub struct RemoveNotificationChannelOutput {}
 pub mod remove_notification_channel_output {
 
     /// A builder for [`RemoveNotificationChannelOutput`](crate::output::RemoveNotificationChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveNotificationChannelOutput`](crate::output::RemoveNotificationChannelOutput).
@@ -349,7 +349,7 @@ pub struct PutFeedbackOutput {}
 pub mod put_feedback_output {
 
     /// A builder for [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
@@ -390,7 +390,7 @@ impl ListRecommendationsOutput {
 pub mod list_recommendations_output {
 
     /// A builder for [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendations:
             std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
@@ -480,7 +480,7 @@ impl ListOrganizationInsightsOutput {
 pub mod list_organization_insights_output {
 
     /// A builder for [`ListOrganizationInsightsOutput`](crate::output::ListOrganizationInsightsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proactive_insights:
             std::option::Option<std::vec::Vec<crate::model::ProactiveOrganizationInsightSummary>>,
@@ -589,7 +589,7 @@ impl ListNotificationChannelsOutput {
 pub mod list_notification_channels_output {
 
     /// A builder for [`ListNotificationChannelsOutput`](crate::output::ListNotificationChannelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channels: std::option::Option<std::vec::Vec<crate::model::NotificationChannel>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -668,7 +668,7 @@ impl ListMonitoredResourcesOutput {
 pub mod list_monitored_resources_output {
 
     /// A builder for [`ListMonitoredResourcesOutput`](crate::output::ListMonitoredResourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitored_resource_identifiers:
             std::option::Option<std::vec::Vec<crate::model::MonitoredResourceIdentifier>>,
@@ -760,7 +760,7 @@ impl ListInsightsOutput {
 pub mod list_insights_output {
 
     /// A builder for [`ListInsightsOutput`](crate::output::ListInsightsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proactive_insights:
             std::option::Option<std::vec::Vec<crate::model::ProactiveInsightSummary>>,
@@ -859,7 +859,7 @@ impl ListEventsOutput {
 pub mod list_events_output {
 
     /// A builder for [`ListEventsOutput`](crate::output::ListEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -942,7 +942,7 @@ impl ListAnomalousLogGroupsOutput {
 pub mod list_anomalous_log_groups_output {
 
     /// A builder for [`ListAnomalousLogGroupsOutput`](crate::output::ListAnomalousLogGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_id: std::option::Option<std::string::String>,
         pub(crate) anomalous_log_groups:
@@ -1044,7 +1044,7 @@ impl ListAnomaliesForInsightOutput {
 pub mod list_anomalies_for_insight_output {
 
     /// A builder for [`ListAnomaliesForInsightOutput`](crate::output::ListAnomaliesForInsightOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proactive_anomalies:
             std::option::Option<std::vec::Vec<crate::model::ProactiveAnomalySummary>>,
@@ -1145,7 +1145,7 @@ impl GetResourceCollectionOutput {
 pub mod get_resource_collection_output {
 
     /// A builder for [`GetResourceCollectionOutput`](crate::output::GetResourceCollectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_collection: std::option::Option<crate::model::ResourceCollectionFilter>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1249,7 +1249,7 @@ impl GetCostEstimationOutput {
 pub mod get_cost_estimation_output {
 
     /// A builder for [`GetCostEstimationOutput`](crate::output::GetCostEstimationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_collection:
             std::option::Option<crate::model::CostEstimationResourceCollectionFilter>,
@@ -1381,7 +1381,7 @@ impl DescribeServiceIntegrationOutput {
 pub mod describe_service_integration_output {
 
     /// A builder for [`DescribeServiceIntegrationOutput`](crate::output::DescribeServiceIntegrationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_integration: std::option::Option<crate::model::ServiceIntegrationConfig>,
     }
@@ -1474,7 +1474,7 @@ impl DescribeResourceCollectionHealthOutput {
 pub mod describe_resource_collection_health_output {
 
     /// A builder for [`DescribeResourceCollectionHealthOutput`](crate::output::DescribeResourceCollectionHealthOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_formation:
             std::option::Option<std::vec::Vec<crate::model::CloudFormationHealth>>,
@@ -1648,7 +1648,7 @@ impl DescribeOrganizationResourceCollectionHealthOutput {
 pub mod describe_organization_resource_collection_health_output {
 
     /// A builder for [`DescribeOrganizationResourceCollectionHealthOutput`](crate::output::DescribeOrganizationResourceCollectionHealthOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_formation:
             std::option::Option<std::vec::Vec<crate::model::CloudFormationHealth>>,
@@ -1805,7 +1805,7 @@ impl DescribeOrganizationOverviewOutput {
 pub mod describe_organization_overview_output {
 
     /// A builder for [`DescribeOrganizationOverviewOutput`](crate::output::DescribeOrganizationOverviewOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reactive_insights: std::option::Option<i32>,
         pub(crate) proactive_insights: std::option::Option<i32>,
@@ -1886,7 +1886,7 @@ impl DescribeOrganizationHealthOutput {
 pub mod describe_organization_health_output {
 
     /// A builder for [`DescribeOrganizationHealthOutput`](crate::output::DescribeOrganizationHealthOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_reactive_insights: std::option::Option<i32>,
         pub(crate) open_proactive_insights: std::option::Option<i32>,
@@ -1977,7 +1977,7 @@ impl DescribeInsightOutput {
 pub mod describe_insight_output {
 
     /// A builder for [`DescribeInsightOutput`](crate::output::DescribeInsightOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proactive_insight: std::option::Option<crate::model::ProactiveInsight>,
         pub(crate) reactive_insight: std::option::Option<crate::model::ReactiveInsight>,
@@ -2043,7 +2043,7 @@ impl DescribeFeedbackOutput {
 pub mod describe_feedback_output {
 
     /// A builder for [`DescribeFeedbackOutput`](crate::output::DescribeFeedbackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_feedback: std::option::Option<crate::model::InsightFeedback>,
     }
@@ -2094,7 +2094,7 @@ impl DescribeEventSourcesConfigOutput {
 pub mod describe_event_sources_config_output {
 
     /// A builder for [`DescribeEventSourcesConfigOutput`](crate::output::DescribeEventSourcesConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_sources: std::option::Option<crate::model::EventSourcesConfig>,
     }
@@ -2152,7 +2152,7 @@ impl DescribeAnomalyOutput {
 pub mod describe_anomaly_output {
 
     /// A builder for [`DescribeAnomalyOutput`](crate::output::DescribeAnomalyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proactive_anomaly: std::option::Option<crate::model::ProactiveAnomaly>,
         pub(crate) reactive_anomaly: std::option::Option<crate::model::ReactiveAnomaly>,
@@ -2232,7 +2232,7 @@ impl DescribeAccountOverviewOutput {
 pub mod describe_account_overview_output {
 
     /// A builder for [`DescribeAccountOverviewOutput`](crate::output::DescribeAccountOverviewOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reactive_insights: std::option::Option<i32>,
         pub(crate) proactive_insights: std::option::Option<i32>,
@@ -2328,7 +2328,7 @@ impl DescribeAccountHealthOutput {
 pub mod describe_account_health_output {
 
     /// A builder for [`DescribeAccountHealthOutput`](crate::output::DescribeAccountHealthOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_reactive_insights: std::option::Option<i32>,
         pub(crate) open_proactive_insights: std::option::Option<i32>,
@@ -2402,7 +2402,7 @@ pub struct DeleteInsightOutput {}
 pub mod delete_insight_output {
 
     /// A builder for [`DeleteInsightOutput`](crate::output::DeleteInsightOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteInsightOutput`](crate::output::DeleteInsightOutput).
@@ -2436,7 +2436,7 @@ impl AddNotificationChannelOutput {
 pub mod add_notification_channel_output {
 
     /// A builder for [`AddNotificationChannelOutput`](crate::output::AddNotificationChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }

@@ -25,7 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
 
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -199,7 +199,7 @@ impl UpdateRoutingControlStateEntry {
 pub mod update_routing_control_state_entry {
 
     /// A builder for [`UpdateRoutingControlStateEntry`](crate::model::UpdateRoutingControlStateEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
         pub(crate) routing_control_state: std::option::Option<crate::model::RoutingControlState>,
@@ -385,7 +385,7 @@ impl RoutingControl {
 pub mod routing_control {
 
     /// A builder for [`RoutingControl`](crate::model::RoutingControl).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
         pub(crate) control_panel_name: std::option::Option<std::string::String>,

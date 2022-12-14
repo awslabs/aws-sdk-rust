@@ -18,7 +18,7 @@ impl UpdateRecordsOutput {
 pub mod update_records_output {
 
     /// A builder for [`UpdateRecordsOutput`](crate::output::UpdateRecordsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::Record>>,
     }
@@ -65,7 +65,7 @@ pub struct UnsubscribeFromDatasetOutput {}
 pub mod unsubscribe_from_dataset_output {
 
     /// A builder for [`UnsubscribeFromDatasetOutput`](crate::output::UnsubscribeFromDatasetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UnsubscribeFromDatasetOutput`](crate::output::UnsubscribeFromDatasetOutput).
@@ -89,7 +89,7 @@ pub struct SubscribeToDatasetOutput {}
 pub mod subscribe_to_dataset_output {
 
     /// A builder for [`SubscribeToDatasetOutput`](crate::output::SubscribeToDatasetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SubscribeToDatasetOutput`](crate::output::SubscribeToDatasetOutput).
@@ -137,7 +137,7 @@ impl SetIdentityPoolConfigurationOutput {
 pub mod set_identity_pool_configuration_output {
 
     /// A builder for [`SetIdentityPoolConfigurationOutput`](crate::output::SetIdentityPoolConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) push_sync: std::option::Option<crate::model::PushSync>,
@@ -205,7 +205,7 @@ pub struct SetCognitoEventsOutput {}
 pub mod set_cognito_events_output {
 
     /// A builder for [`SetCognitoEventsOutput`](crate::output::SetCognitoEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetCognitoEventsOutput`](crate::output::SetCognitoEventsOutput).
@@ -239,7 +239,7 @@ impl RegisterDeviceOutput {
 pub mod register_device_output {
 
     /// A builder for [`RegisterDeviceOutput`](crate::output::RegisterDeviceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
     }
@@ -343,7 +343,7 @@ impl ListRecordsOutput {
 pub mod list_records_output {
 
     /// A builder for [`ListRecordsOutput`](crate::output::ListRecordsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::Record>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -537,7 +537,7 @@ impl ListIdentityPoolUsageOutput {
 pub mod list_identity_pool_usage_output {
 
     /// A builder for [`ListIdentityPoolUsageOutput`](crate::output::ListIdentityPoolUsageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_usages:
             std::option::Option<std::vec::Vec<crate::model::IdentityPoolUsage>>,
@@ -645,7 +645,7 @@ impl ListDatasetsOutput {
 pub mod list_datasets_output {
 
     /// A builder for [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datasets: std::option::Option<std::vec::Vec<crate::model::Dataset>>,
         pub(crate) count: std::option::Option<i32>,
@@ -740,7 +740,7 @@ impl GetIdentityPoolConfigurationOutput {
 pub mod get_identity_pool_configuration_output {
 
     /// A builder for [`GetIdentityPoolConfigurationOutput`](crate::output::GetIdentityPoolConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) push_sync: std::option::Option<crate::model::PushSync>,
@@ -822,7 +822,7 @@ impl GetCognitoEventsOutput {
 pub mod get_cognito_events_output {
 
     /// A builder for [`GetCognitoEventsOutput`](crate::output::GetCognitoEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -923,7 +923,7 @@ impl GetBulkPublishDetailsOutput {
 pub mod get_bulk_publish_details_output {
 
     /// A builder for [`GetBulkPublishDetailsOutput`](crate::output::GetBulkPublishDetailsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) bulk_publish_start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1042,7 +1042,7 @@ impl DescribeIdentityUsageOutput {
 pub mod describe_identity_usage_output {
 
     /// A builder for [`DescribeIdentityUsageOutput`](crate::output::DescribeIdentityUsageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_usage: std::option::Option<crate::model::IdentityUsage>,
     }
@@ -1093,7 +1093,7 @@ impl DescribeIdentityPoolUsageOutput {
 pub mod describe_identity_pool_usage_output {
 
     /// A builder for [`DescribeIdentityPoolUsageOutput`](crate::output::DescribeIdentityPoolUsageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_usage: std::option::Option<crate::model::IdentityPoolUsage>,
     }
@@ -1144,7 +1144,7 @@ impl DescribeDatasetOutput {
 pub mod describe_dataset_output {
 
     /// A builder for [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset: std::option::Option<crate::model::Dataset>,
     }
@@ -1192,7 +1192,7 @@ impl DeleteDatasetOutput {
 pub mod delete_dataset_output {
 
     /// A builder for [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset: std::option::Option<crate::model::Dataset>,
     }
@@ -1240,7 +1240,7 @@ impl BulkPublishOutput {
 pub mod bulk_publish_output {
 
     /// A builder for [`BulkPublishOutput`](crate::output::BulkPublishOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
     }

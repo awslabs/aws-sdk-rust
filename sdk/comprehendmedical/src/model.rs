@@ -110,7 +110,7 @@ impl OutputDataConfig {
 pub mod output_data_config {
 
     /// A builder for [`OutputDataConfig`](crate::model::OutputDataConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
         pub(crate) s3_key: std::option::Option<std::string::String>,
@@ -179,7 +179,7 @@ impl InputDataConfig {
 pub mod input_data_config {
 
     /// A builder for [`InputDataConfig`](crate::model::InputDataConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
         pub(crate) s3_key: std::option::Option<std::string::String>,
@@ -332,7 +332,7 @@ impl ComprehendMedicalAsyncJobProperties {
 pub mod comprehend_medical_async_job_properties {
 
     /// A builder for [`ComprehendMedicalAsyncJobProperties`](crate::model::ComprehendMedicalAsyncJobProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -710,7 +710,7 @@ impl ComprehendMedicalAsyncJobFilter {
 pub mod comprehend_medical_async_job_filter {
 
     /// A builder for [`ComprehendMedicalAsyncJobFilter`](crate::model::ComprehendMedicalAsyncJobFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
@@ -803,7 +803,7 @@ impl Characters {
 pub mod characters {
 
     /// A builder for [`Characters`](crate::model::Characters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) original_text_characters: std::option::Option<i32>,
     }
@@ -865,7 +865,7 @@ impl SnomedctDetails {
 pub mod snomedct_details {
 
     /// A builder for [`SnomedctDetails`](crate::model::SnomedctDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) edition: std::option::Option<std::string::String>,
         pub(crate) language: std::option::Option<std::string::String>,
@@ -1000,7 +1000,7 @@ impl SnomedctEntity {
 pub mod snomedct_entity {
 
     /// A builder for [`SnomedctEntity`](crate::model::SnomedctEntity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<i32>,
         pub(crate) text: std::option::Option<std::string::String>,
@@ -1204,7 +1204,7 @@ impl SnomedctConcept {
 pub mod snomedct_concept {
 
     /// A builder for [`SnomedctConcept`](crate::model::SnomedctConcept).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -1283,7 +1283,7 @@ impl SnomedctTrait {
 pub mod snomedct_trait {
 
     /// A builder for [`SnomedctTrait`](crate::model::SnomedctTrait).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SnomedctTraitName>,
         pub(crate) score: std::option::Option<f32>,
@@ -1520,7 +1520,7 @@ impl SnomedctAttribute {
 pub mod snomedct_attribute {
 
     /// A builder for [`SnomedctAttribute`](crate::model::SnomedctAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category: std::option::Option<crate::model::SnomedctEntityCategory>,
         pub(crate) r#type: std::option::Option<crate::model::SnomedctAttributeType>,
@@ -2216,7 +2216,7 @@ impl RxNormEntity {
 pub mod rx_norm_entity {
 
     /// A builder for [`RxNormEntity`](crate::model::RxNormEntity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<i32>,
         pub(crate) text: std::option::Option<std::string::String>,
@@ -2420,7 +2420,7 @@ impl RxNormConcept {
 pub mod rx_norm_concept {
 
     /// A builder for [`RxNormConcept`](crate::model::RxNormConcept).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -2499,7 +2499,7 @@ impl RxNormTrait {
 pub mod rx_norm_trait {
 
     /// A builder for [`RxNormTrait`](crate::model::RxNormTrait).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::RxNormTraitName>,
         pub(crate) score: std::option::Option<f32>,
@@ -2696,7 +2696,7 @@ impl RxNormAttribute {
 pub mod rx_norm_attribute {
 
     /// A builder for [`RxNormAttribute`](crate::model::RxNormAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::RxNormAttributeType>,
         pub(crate) score: std::option::Option<f32>,
@@ -3205,7 +3205,7 @@ impl Icd10CmEntity {
 pub mod icd10_cm_entity {
 
     /// A builder for [`Icd10CmEntity`](crate::model::Icd10CmEntity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<i32>,
         pub(crate) text: std::option::Option<std::string::String>,
@@ -3409,7 +3409,7 @@ impl Icd10CmConcept {
 pub mod icd10_cm_concept {
 
     /// A builder for [`Icd10CmConcept`](crate::model::Icd10CmConcept).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,
@@ -3488,7 +3488,7 @@ impl Icd10CmTrait {
 pub mod icd10_cm_trait {
 
     /// A builder for [`Icd10CmTrait`](crate::model::Icd10CmTrait).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::Icd10CmTraitName>,
         pub(crate) score: std::option::Option<f32>,
@@ -3714,7 +3714,7 @@ impl Icd10CmAttribute {
 pub mod icd10_cm_attribute {
 
     /// A builder for [`Icd10CmAttribute`](crate::model::Icd10CmAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::Icd10CmAttributeType>,
         pub(crate) score: std::option::Option<f32>,
@@ -4340,7 +4340,7 @@ impl Entity {
 pub mod entity {
 
     /// A builder for [`Entity`](crate::model::Entity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<i32>,
         pub(crate) begin_offset: std::option::Option<i32>,
@@ -4568,7 +4568,7 @@ impl Attribute {
 pub mod attribute {
 
     /// A builder for [`Attribute`](crate::model::Attribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::EntitySubType>,
         pub(crate) score: std::option::Option<f32>,
@@ -4746,7 +4746,7 @@ impl Trait {
 pub mod r#trait {
 
     /// A builder for [`Trait`](crate::model::Trait).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::AttributeName>,
         pub(crate) score: std::option::Option<f32>,
@@ -5534,7 +5534,7 @@ impl UnmappedAttribute {
 pub mod unmapped_attribute {
 
     /// A builder for [`UnmappedAttribute`](crate::model::UnmappedAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::EntityType>,
         pub(crate) attribute: std::option::Option<crate::model::Attribute>,

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_delegate_to_resource_input {
 
     /// A builder for [`AssociateDelegateToResourceInput`](crate::input::AssociateDelegateToResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -178,7 +178,7 @@ impl AssociateDelegateToResourceInput {
 pub mod associate_member_to_group_input {
 
     /// A builder for [`AssociateMemberToGroupInput`](crate::input::AssociateMemberToGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -354,7 +354,7 @@ impl AssociateMemberToGroupInput {
 pub mod assume_impersonation_role_input {
 
     /// A builder for [`AssumeImpersonationRoleInput`](crate::input::AssumeImpersonationRoleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) impersonation_role_id: std::option::Option<std::string::String>,
@@ -521,7 +521,7 @@ impl AssumeImpersonationRoleInput {
 pub mod cancel_mailbox_export_job_input {
 
     /// A builder for [`CancelMailboxExportJobInput`](crate::input::CancelMailboxExportJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -700,7 +700,7 @@ impl CancelMailboxExportJobInput {
 pub mod create_alias_input {
 
     /// A builder for [`CreateAliasInput`](crate::input::CreateAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -872,7 +872,7 @@ impl CreateAliasInput {
 pub mod create_availability_configuration_input {
 
     /// A builder for [`CreateAvailabilityConfigurationInput`](crate::input::CreateAvailabilityConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) organization_id: std::option::Option<std::string::String>,
@@ -1078,7 +1078,7 @@ impl CreateAvailabilityConfigurationInput {
 pub mod create_group_input {
 
     /// A builder for [`CreateGroupInput`](crate::input::CreateGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1238,7 +1238,7 @@ impl CreateGroupInput {
 pub mod create_impersonation_role_input {
 
     /// A builder for [`CreateImpersonationRoleInput`](crate::input::CreateImpersonationRoleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) organization_id: std::option::Option<std::string::String>,
@@ -1465,7 +1465,7 @@ impl CreateImpersonationRoleInput {
 pub mod create_mobile_device_access_rule_input {
 
     /// A builder for [`CreateMobileDeviceAccessRuleInput`](crate::input::CreateMobileDeviceAccessRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1841,7 +1841,7 @@ impl CreateMobileDeviceAccessRuleInput {
 pub mod create_organization_input {
 
     /// A builder for [`CreateOrganizationInput`](crate::input::CreateOrganizationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) alias: std::option::Option<std::string::String>,
@@ -2060,7 +2060,7 @@ impl CreateOrganizationInput {
 pub mod create_resource_input {
 
     /// A builder for [`CreateResourceInput`](crate::input::CreateResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2232,7 +2232,7 @@ impl CreateResourceInput {
 pub mod create_user_input {
 
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2426,7 +2426,7 @@ impl CreateUserInput {
 pub mod delete_access_control_rule_input {
 
     /// A builder for [`DeleteAccessControlRuleInput`](crate::input::DeleteAccessControlRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2590,7 +2590,7 @@ impl DeleteAccessControlRuleInput {
 pub mod delete_alias_input {
 
     /// A builder for [`DeleteAliasInput`](crate::input::DeleteAliasInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -2762,7 +2762,7 @@ impl DeleteAliasInput {
 pub mod delete_availability_configuration_input {
 
     /// A builder for [`DeleteAvailabilityConfigurationInput`](crate::input::DeleteAvailabilityConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -2923,7 +2923,7 @@ impl DeleteAvailabilityConfigurationInput {
 pub mod delete_email_monitoring_configuration_input {
 
     /// A builder for [`DeleteEmailMonitoringConfigurationInput`](crate::input::DeleteEmailMonitoringConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
     }
@@ -3072,7 +3072,7 @@ impl DeleteEmailMonitoringConfigurationInput {
 pub mod delete_group_input {
 
     /// A builder for [`DeleteGroupInput`](crate::input::DeleteGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -3232,7 +3232,7 @@ impl DeleteGroupInput {
 pub mod delete_impersonation_role_input {
 
     /// A builder for [`DeleteImpersonationRoleInput`](crate::input::DeleteImpersonationRoleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) impersonation_role_id: std::option::Option<std::string::String>,
@@ -3399,7 +3399,7 @@ impl DeleteImpersonationRoleInput {
 pub mod delete_mailbox_permissions_input {
 
     /// A builder for [`DeleteMailboxPermissionsInput`](crate::input::DeleteMailboxPermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -3575,7 +3575,7 @@ impl DeleteMailboxPermissionsInput {
 pub mod delete_mobile_device_access_override_input {
 
     /// A builder for [`DeleteMobileDeviceAccessOverrideInput`](crate::input::DeleteMobileDeviceAccessOverrideInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -3758,7 +3758,7 @@ impl DeleteMobileDeviceAccessOverrideInput {
 pub mod delete_mobile_device_access_rule_input {
 
     /// A builder for [`DeleteMobileDeviceAccessRuleInput`](crate::input::DeleteMobileDeviceAccessRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) mobile_device_access_rule_id: std::option::Option<std::string::String>,
@@ -3925,7 +3925,7 @@ impl DeleteMobileDeviceAccessRuleInput {
 pub mod delete_organization_input {
 
     /// A builder for [`DeleteOrganizationInput`](crate::input::DeleteOrganizationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) organization_id: std::option::Option<std::string::String>,
@@ -4102,7 +4102,7 @@ impl DeleteOrganizationInput {
 pub mod delete_resource_input {
 
     /// A builder for [`DeleteResourceInput`](crate::input::DeleteResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -4262,7 +4262,7 @@ impl DeleteResourceInput {
 pub mod delete_retention_policy_input {
 
     /// A builder for [`DeleteRetentionPolicyInput`](crate::input::DeleteRetentionPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4426,7 +4426,7 @@ impl DeleteRetentionPolicyInput {
 pub mod delete_user_input {
 
     /// A builder for [`DeleteUserInput`](crate::input::DeleteUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -4586,7 +4586,7 @@ impl DeleteUserInput {
 pub mod deregister_from_work_mail_input {
 
     /// A builder for [`DeregisterFromWorkMailInput`](crate::input::DeregisterFromWorkMailInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -4750,7 +4750,7 @@ impl DeregisterFromWorkMailInput {
 pub mod deregister_mail_domain_input {
 
     /// A builder for [`DeregisterMailDomainInput`](crate::input::DeregisterMailDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -4914,7 +4914,7 @@ impl DeregisterMailDomainInput {
 pub mod describe_email_monitoring_configuration_input {
 
     /// A builder for [`DescribeEmailMonitoringConfigurationInput`](crate::input::DescribeEmailMonitoringConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
     }
@@ -5063,7 +5063,7 @@ impl DescribeEmailMonitoringConfigurationInput {
 pub mod describe_group_input {
 
     /// A builder for [`DescribeGroupInput`](crate::input::DescribeGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -5223,7 +5223,7 @@ impl DescribeGroupInput {
 pub mod describe_inbound_dmarc_settings_input {
 
     /// A builder for [`DescribeInboundDmarcSettingsInput`](crate::input::DescribeInboundDmarcSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
     }
@@ -5372,7 +5372,7 @@ impl DescribeInboundDmarcSettingsInput {
 pub mod describe_mailbox_export_job_input {
 
     /// A builder for [`DescribeMailboxExportJobInput`](crate::input::DescribeMailboxExportJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) organization_id: std::option::Option<std::string::String>,
@@ -5536,7 +5536,7 @@ impl DescribeMailboxExportJobInput {
 pub mod describe_organization_input {
 
     /// A builder for [`DescribeOrganizationInput`](crate::input::DescribeOrganizationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
     }
@@ -5686,7 +5686,7 @@ impl DescribeOrganizationInput {
 pub mod describe_resource_input {
 
     /// A builder for [`DescribeResourceInput`](crate::input::DescribeResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -5848,7 +5848,7 @@ impl DescribeResourceInput {
 pub mod describe_user_input {
 
     /// A builder for [`DescribeUserInput`](crate::input::DescribeUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -6008,7 +6008,7 @@ impl DescribeUserInput {
 pub mod disassociate_delegate_from_resource_input {
 
     /// A builder for [`DisassociateDelegateFromResourceInput`](crate::input::DisassociateDelegateFromResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -6181,7 +6181,7 @@ impl DisassociateDelegateFromResourceInput {
 pub mod disassociate_member_from_group_input {
 
     /// A builder for [`DisassociateMemberFromGroupInput`](crate::input::DisassociateMemberFromGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -6354,7 +6354,7 @@ impl DisassociateMemberFromGroupInput {
 pub mod get_access_control_effect_input {
 
     /// A builder for [`GetAccessControlEffectInput`](crate::input::GetAccessControlEffectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) ip_address: std::option::Option<std::string::String>,
@@ -6557,7 +6557,7 @@ impl GetAccessControlEffectInput {
 pub mod get_default_retention_policy_input {
 
     /// A builder for [`GetDefaultRetentionPolicyInput`](crate::input::GetDefaultRetentionPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
     }
@@ -6709,7 +6709,7 @@ impl GetDefaultRetentionPolicyInput {
 pub mod get_impersonation_role_input {
 
     /// A builder for [`GetImpersonationRoleInput`](crate::input::GetImpersonationRoleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) impersonation_role_id: std::option::Option<std::string::String>,
@@ -6876,7 +6876,7 @@ impl GetImpersonationRoleInput {
 pub mod get_impersonation_role_effect_input {
 
     /// A builder for [`GetImpersonationRoleEffectInput`](crate::input::GetImpersonationRoleEffectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) impersonation_role_id: std::option::Option<std::string::String>,
@@ -7062,7 +7062,7 @@ impl GetImpersonationRoleEffectInput {
 pub mod get_mailbox_details_input {
 
     /// A builder for [`GetMailboxDetailsInput`](crate::input::GetMailboxDetailsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -7224,7 +7224,7 @@ impl GetMailboxDetailsInput {
 pub mod get_mail_domain_input {
 
     /// A builder for [`GetMailDomainInput`](crate::input::GetMailDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -7384,7 +7384,7 @@ impl GetMailDomainInput {
 pub mod get_mobile_device_access_effect_input {
 
     /// A builder for [`GetMobileDeviceAccessEffectInput`](crate::input::GetMobileDeviceAccessEffectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) device_type: std::option::Option<std::string::String>,
@@ -7587,7 +7587,7 @@ impl GetMobileDeviceAccessEffectInput {
 pub mod get_mobile_device_access_override_input {
 
     /// A builder for [`GetMobileDeviceAccessOverrideInput`](crate::input::GetMobileDeviceAccessOverrideInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -7770,7 +7770,7 @@ impl GetMobileDeviceAccessOverrideInput {
 pub mod list_access_control_rules_input {
 
     /// A builder for [`ListAccessControlRulesInput`](crate::input::ListAccessControlRulesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
     }
@@ -7922,7 +7922,7 @@ impl ListAccessControlRulesInput {
 pub mod list_aliases_input {
 
     /// A builder for [`ListAliasesInput`](crate::input::ListAliasesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -8106,7 +8106,7 @@ impl ListAliasesInput {
 pub mod list_availability_configurations_input {
 
     /// A builder for [`ListAvailabilityConfigurationsInput`](crate::input::ListAvailabilityConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -8279,7 +8279,7 @@ impl ListAvailabilityConfigurationsInput {
 pub mod list_group_members_input {
 
     /// A builder for [`ListGroupMembersInput`](crate::input::ListGroupMembersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -8465,7 +8465,7 @@ impl ListGroupMembersInput {
 pub mod list_groups_input {
 
     /// A builder for [`ListGroupsInput`](crate::input::ListGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -8637,7 +8637,7 @@ impl ListGroupsInput {
 pub mod list_impersonation_roles_input {
 
     /// A builder for [`ListImpersonationRolesInput`](crate::input::ListImpersonationRolesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -8813,7 +8813,7 @@ impl ListImpersonationRolesInput {
 pub mod list_mailbox_export_jobs_input {
 
     /// A builder for [`ListMailboxExportJobsInput`](crate::input::ListMailboxExportJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -8989,7 +8989,7 @@ impl ListMailboxExportJobsInput {
 pub mod list_mailbox_permissions_input {
 
     /// A builder for [`ListMailboxPermissionsInput`](crate::input::ListMailboxPermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -9177,7 +9177,7 @@ impl ListMailboxPermissionsInput {
 pub mod list_mail_domains_input {
 
     /// A builder for [`ListMailDomainsInput`](crate::input::ListMailDomainsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -9349,7 +9349,7 @@ impl ListMailDomainsInput {
 pub mod list_mobile_device_access_overrides_input {
 
     /// A builder for [`ListMobileDeviceAccessOverridesInput`](crate::input::ListMobileDeviceAccessOverridesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -9556,7 +9556,7 @@ impl ListMobileDeviceAccessOverridesInput {
 pub mod list_mobile_device_access_rules_input {
 
     /// A builder for [`ListMobileDeviceAccessRulesInput`](crate::input::ListMobileDeviceAccessRulesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
     }
@@ -9705,7 +9705,7 @@ impl ListMobileDeviceAccessRulesInput {
 pub mod list_organizations_input {
 
     /// A builder for [`ListOrganizationsInput`](crate::input::ListOrganizationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -9864,7 +9864,7 @@ impl ListOrganizationsInput {
 pub mod list_resource_delegates_input {
 
     /// A builder for [`ListResourceDelegatesInput`](crate::input::ListResourceDelegatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -10052,7 +10052,7 @@ impl ListResourceDelegatesInput {
 pub mod list_resources_input {
 
     /// A builder for [`ListResourcesInput`](crate::input::ListResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -10224,7 +10224,7 @@ impl ListResourcesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -10373,7 +10373,7 @@ impl ListTagsForResourceInput {
 pub mod list_users_input {
 
     /// A builder for [`ListUsersInput`](crate::input::ListUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -10543,7 +10543,7 @@ impl ListUsersInput {
 pub mod put_access_control_rule_input {
 
     /// A builder for [`PutAccessControlRuleInput`](crate::input::PutAccessControlRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) effect: std::option::Option<crate::model::AccessControlRuleEffect>,
@@ -10903,7 +10903,7 @@ impl PutAccessControlRuleInput {
 pub mod put_email_monitoring_configuration_input {
 
     /// A builder for [`PutEmailMonitoringConfigurationInput`](crate::input::PutEmailMonitoringConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -11079,7 +11079,7 @@ impl PutEmailMonitoringConfigurationInput {
 pub mod put_inbound_dmarc_settings_input {
 
     /// A builder for [`PutInboundDmarcSettingsInput`](crate::input::PutInboundDmarcSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) enforced: std::option::Option<bool>,
@@ -11243,7 +11243,7 @@ impl PutInboundDmarcSettingsInput {
 pub mod put_mailbox_permissions_input {
 
     /// A builder for [`PutMailboxPermissionsInput`](crate::input::PutMailboxPermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -11441,7 +11441,7 @@ impl PutMailboxPermissionsInput {
 pub mod put_mobile_device_access_override_input {
 
     /// A builder for [`PutMobileDeviceAccessOverrideInput`](crate::input::PutMobileDeviceAccessOverrideInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -11651,7 +11651,7 @@ impl PutMobileDeviceAccessOverrideInput {
 pub mod put_retention_policy_input {
 
     /// A builder for [`PutRetentionPolicyInput`](crate::input::PutRetentionPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -11870,7 +11870,7 @@ impl PutRetentionPolicyInput {
 pub mod register_mail_domain_input {
 
     /// A builder for [`RegisterMailDomainInput`](crate::input::RegisterMailDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) organization_id: std::option::Option<std::string::String>,
@@ -12047,7 +12047,7 @@ impl RegisterMailDomainInput {
 pub mod register_to_work_mail_input {
 
     /// A builder for [`RegisterToWorkMailInput`](crate::input::RegisterToWorkMailInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -12221,7 +12221,7 @@ impl RegisterToWorkMailInput {
 pub mod reset_password_input {
 
     /// A builder for [`ResetPasswordInput`](crate::input::ResetPasswordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -12402,7 +12402,7 @@ impl ResetPasswordInput {
 pub mod start_mailbox_export_job_input {
 
     /// A builder for [`StartMailboxExportJobInput`](crate::input::StartMailboxExportJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) organization_id: std::option::Option<std::string::String>,
@@ -12644,7 +12644,7 @@ impl StartMailboxExportJobInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -12810,7 +12810,7 @@ impl TagResourceInput {
 pub mod test_availability_configuration_input {
 
     /// A builder for [`TestAvailabilityConfigurationInput`](crate::input::TestAvailabilityConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -13001,7 +13001,7 @@ impl TestAvailabilityConfigurationInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13167,7 +13167,7 @@ impl UntagResourceInput {
 pub mod update_availability_configuration_input {
 
     /// A builder for [`UpdateAvailabilityConfigurationInput`](crate::input::UpdateAvailabilityConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -13358,7 +13358,7 @@ impl UpdateAvailabilityConfigurationInput {
 pub mod update_default_mail_domain_input {
 
     /// A builder for [`UpdateDefaultMailDomainInput`](crate::input::UpdateDefaultMailDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -13522,7 +13522,7 @@ impl UpdateDefaultMailDomainInput {
 pub mod update_impersonation_role_input {
 
     /// A builder for [`UpdateImpersonationRoleInput`](crate::input::UpdateImpersonationRoleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) impersonation_role_id: std::option::Option<std::string::String>,
@@ -13749,7 +13749,7 @@ impl UpdateImpersonationRoleInput {
 pub mod update_mailbox_quota_input {
 
     /// A builder for [`UpdateMailboxQuotaInput`](crate::input::UpdateMailboxQuotaInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -13923,7 +13923,7 @@ impl UpdateMailboxQuotaInput {
 pub mod update_mobile_device_access_rule_input {
 
     /// A builder for [`UpdateMobileDeviceAccessRuleInput`](crate::input::UpdateMobileDeviceAccessRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) mobile_device_access_rule_id: std::option::Option<std::string::String>,
@@ -14302,7 +14302,7 @@ impl UpdateMobileDeviceAccessRuleInput {
 pub mod update_primary_email_address_input {
 
     /// A builder for [`UpdatePrimaryEmailAddressInput`](crate::input::UpdatePrimaryEmailAddressInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -14478,7 +14478,7 @@ impl UpdatePrimaryEmailAddressInput {
 pub mod update_resource_input {
 
     /// A builder for [`UpdateResourceInput`](crate::input::UpdateResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,

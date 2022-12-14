@@ -262,7 +262,7 @@ impl BatchResultErrorEntry {
 pub mod batch_result_error_entry {
 
     /// A builder for [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) sender_fault: std::option::Option<bool>,
@@ -385,7 +385,7 @@ impl SendMessageBatchResultEntry {
 pub mod send_message_batch_result_entry {
 
     /// A builder for [`SendMessageBatchResultEntry`](crate::model::SendMessageBatchResultEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -646,7 +646,7 @@ impl SendMessageBatchRequestEntry {
 pub mod send_message_batch_request_entry {
 
     /// A builder for [`SendMessageBatchRequestEntry`](crate::model::SendMessageBatchRequestEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) message_body: std::option::Option<std::string::String>,
@@ -917,7 +917,7 @@ impl MessageSystemAttributeValue {
 pub mod message_system_attribute_value {
 
     /// A builder for [`MessageSystemAttributeValue`](crate::model::MessageSystemAttributeValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) string_value: std::option::Option<std::string::String>,
         pub(crate) binary_value: std::option::Option<aws_smithy_types::Blob>,
@@ -1154,7 +1154,7 @@ impl MessageAttributeValue {
 pub mod message_attribute_value {
 
     /// A builder for [`MessageAttributeValue`](crate::model::MessageAttributeValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) string_value: std::option::Option<std::string::String>,
         pub(crate) binary_value: std::option::Option<aws_smithy_types::Blob>,
@@ -1347,7 +1347,7 @@ impl Message {
 pub mod message {
 
     /// A builder for [`Message`](crate::model::Message).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) receipt_handle: std::option::Option<std::string::String>,
@@ -1668,7 +1668,7 @@ impl DeleteMessageBatchResultEntry {
 pub mod delete_message_batch_result_entry {
 
     /// A builder for [`DeleteMessageBatchResultEntry`](crate::model::DeleteMessageBatchResultEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1727,7 +1727,7 @@ impl DeleteMessageBatchRequestEntry {
 pub mod delete_message_batch_request_entry {
 
     /// A builder for [`DeleteMessageBatchRequestEntry`](crate::model::DeleteMessageBatchRequestEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) receipt_handle: std::option::Option<std::string::String>,
@@ -1796,7 +1796,7 @@ impl ChangeMessageVisibilityBatchResultEntry {
 pub mod change_message_visibility_batch_result_entry {
 
     /// A builder for [`ChangeMessageVisibilityBatchResultEntry`](crate::model::ChangeMessageVisibilityBatchResultEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1867,7 +1867,7 @@ impl ChangeMessageVisibilityBatchRequestEntry {
 pub mod change_message_visibility_batch_request_entry {
 
     /// A builder for [`ChangeMessageVisibilityBatchRequestEntry`](crate::model::ChangeMessageVisibilityBatchRequestEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) receipt_handle: std::option::Option<std::string::String>,

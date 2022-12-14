@@ -5,7 +5,7 @@
 /// [`associate_entity_to_thing`](crate::client::Client::associate_entity_to_thing).
 ///
 /// See [`crate::client::fluent_builders::AssociateEntityToThing`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateEntityToThing {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateEntityToThing {
 /// [`create_flow_template`](crate::client::Client::create_flow_template).
 ///
 /// See [`crate::client::fluent_builders::CreateFlowTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateFlowTemplate {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFlowTemplate {
 /// [`create_system_instance`](crate::client::Client::create_system_instance).
 ///
 /// See [`crate::client::fluent_builders::CreateSystemInstance`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSystemInstance {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSystemInstance {
 /// [`create_system_template`](crate::client::Client::create_system_template).
 ///
 /// See [`crate::client::fluent_builders::CreateSystemTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSystemTemplate {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSystemTemplate {
 /// [`delete_flow_template`](crate::client::Client::delete_flow_template).
 ///
 /// See [`crate::client::fluent_builders::DeleteFlowTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFlowTemplate {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFlowTemplate {
 /// [`delete_namespace`](crate::client::Client::delete_namespace).
 ///
 /// See [`crate::client::fluent_builders::DeleteNamespace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteNamespace {
     _private: (),
 }
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNamespace {
 /// [`delete_system_instance`](crate::client::Client::delete_system_instance).
 ///
 /// See [`crate::client::fluent_builders::DeleteSystemInstance`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSystemInstance {
     _private: (),
 }
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSystemInstance {
 /// [`delete_system_template`](crate::client::Client::delete_system_template).
 ///
 /// See [`crate::client::fluent_builders::DeleteSystemTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSystemTemplate {
     _private: (),
 }
@@ -277,7 +277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSystemTemplate {
 /// [`deploy_system_instance`](crate::client::Client::deploy_system_instance).
 ///
 /// See [`crate::client::fluent_builders::DeploySystemInstance`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeploySystemInstance {
     _private: (),
 }
@@ -311,7 +311,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeploySystemInstance {
 /// [`deprecate_flow_template`](crate::client::Client::deprecate_flow_template).
 ///
 /// See [`crate::client::fluent_builders::DeprecateFlowTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeprecateFlowTemplate {
     _private: (),
 }
@@ -345,7 +345,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprecateFlowTemplate {
 /// [`deprecate_system_template`](crate::client::Client::deprecate_system_template).
 ///
 /// See [`crate::client::fluent_builders::DeprecateSystemTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeprecateSystemTemplate {
     _private: (),
 }
@@ -379,7 +379,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprecateSystemTemplate 
 /// [`describe_namespace`](crate::client::Client::describe_namespace).
 ///
 /// See [`crate::client::fluent_builders::DescribeNamespace`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeNamespace {
     _private: (),
 }
@@ -413,7 +413,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNamespace {
 /// [`dissociate_entity_from_thing`](crate::client::Client::dissociate_entity_from_thing).
 ///
 /// See [`crate::client::fluent_builders::DissociateEntityFromThing`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DissociateEntityFromThing {
     _private: (),
 }
@@ -447,7 +447,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DissociateEntityFromThin
 /// [`get_entities`](crate::client::Client::get_entities).
 ///
 /// See [`crate::client::fluent_builders::GetEntities`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEntities {
     _private: (),
 }
@@ -479,7 +479,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEntities {
 /// [`get_flow_template`](crate::client::Client::get_flow_template).
 ///
 /// See [`crate::client::fluent_builders::GetFlowTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFlowTemplate {
     _private: (),
 }
@@ -513,7 +513,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFlowTemplate {
 /// [`get_flow_template_revisions`](crate::client::Client::get_flow_template_revisions).
 ///
 /// See [`crate::client::fluent_builders::GetFlowTemplateRevisions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFlowTemplateRevisions {
     _private: (),
 }
@@ -547,7 +547,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFlowTemplateRevisions
 /// [`get_namespace_deletion_status`](crate::client::Client::get_namespace_deletion_status).
 ///
 /// See [`crate::client::fluent_builders::GetNamespaceDeletionStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetNamespaceDeletionStatus {
     _private: (),
 }
@@ -581,7 +581,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNamespaceDeletionStat
 /// [`get_system_instance`](crate::client::Client::get_system_instance).
 ///
 /// See [`crate::client::fluent_builders::GetSystemInstance`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSystemInstance {
     _private: (),
 }
@@ -615,7 +615,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSystemInstance {
 /// [`get_system_template`](crate::client::Client::get_system_template).
 ///
 /// See [`crate::client::fluent_builders::GetSystemTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSystemTemplate {
     _private: (),
 }
@@ -649,7 +649,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSystemTemplate {
 /// [`get_system_template_revisions`](crate::client::Client::get_system_template_revisions).
 ///
 /// See [`crate::client::fluent_builders::GetSystemTemplateRevisions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSystemTemplateRevisions {
     _private: (),
 }
@@ -683,7 +683,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSystemTemplateRevisio
 /// [`get_upload_status`](crate::client::Client::get_upload_status).
 ///
 /// See [`crate::client::fluent_builders::GetUploadStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetUploadStatus {
     _private: (),
 }
@@ -717,7 +717,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUploadStatus {
 /// [`list_flow_execution_messages`](crate::client::Client::list_flow_execution_messages).
 ///
 /// See [`crate::client::fluent_builders::ListFlowExecutionMessages`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFlowExecutionMessages {
     _private: (),
 }
@@ -751,7 +751,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFlowExecutionMessage
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -785,7 +785,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`search_entities`](crate::client::Client::search_entities).
 ///
 /// See [`crate::client::fluent_builders::SearchEntities`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchEntities {
     _private: (),
 }
@@ -817,7 +817,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchEntities {
 /// [`search_flow_executions`](crate::client::Client::search_flow_executions).
 ///
 /// See [`crate::client::fluent_builders::SearchFlowExecutions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchFlowExecutions {
     _private: (),
 }
@@ -851,7 +851,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchFlowExecutions {
 /// [`search_flow_templates`](crate::client::Client::search_flow_templates).
 ///
 /// See [`crate::client::fluent_builders::SearchFlowTemplates`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchFlowTemplates {
     _private: (),
 }
@@ -885,7 +885,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchFlowTemplates {
 /// [`search_system_instances`](crate::client::Client::search_system_instances).
 ///
 /// See [`crate::client::fluent_builders::SearchSystemInstances`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchSystemInstances {
     _private: (),
 }
@@ -919,7 +919,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchSystemInstances {
 /// [`search_system_templates`](crate::client::Client::search_system_templates).
 ///
 /// See [`crate::client::fluent_builders::SearchSystemTemplates`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchSystemTemplates {
     _private: (),
 }
@@ -953,7 +953,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchSystemTemplates {
 /// [`search_things`](crate::client::Client::search_things).
 ///
 /// See [`crate::client::fluent_builders::SearchThings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchThings {
     _private: (),
 }
@@ -985,7 +985,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchThings {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1017,7 +1017,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`undeploy_system_instance`](crate::client::Client::undeploy_system_instance).
 ///
 /// See [`crate::client::fluent_builders::UndeploySystemInstance`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UndeploySystemInstance {
     _private: (),
 }
@@ -1051,7 +1051,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UndeploySystemInstance {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1083,7 +1083,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_flow_template`](crate::client::Client::update_flow_template).
 ///
 /// See [`crate::client::fluent_builders::UpdateFlowTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFlowTemplate {
     _private: (),
 }
@@ -1117,7 +1117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFlowTemplate {
 /// [`update_system_template`](crate::client::Client::update_system_template).
 ///
 /// See [`crate::client::fluent_builders::UpdateSystemTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSystemTemplate {
     _private: (),
 }
@@ -1151,7 +1151,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSystemTemplate {
 /// [`upload_entity_definitions`](crate::client::Client::upload_entity_definitions).
 ///
 /// See [`crate::client::fluent_builders::UploadEntityDefinitions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UploadEntityDefinitions {
     _private: (),
 }

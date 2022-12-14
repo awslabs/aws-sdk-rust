@@ -91,7 +91,7 @@ impl ResourceShare {
 pub mod resource_share {
 
     /// A builder for [`ResourceShare`](crate::model::ResourceShare).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -392,7 +392,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -620,7 +620,7 @@ impl ResourceShareInvitation {
 pub mod resource_share_invitation {
 
     /// A builder for [`ResourceShareInvitation`](crate::model::ResourceShareInvitation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_invitation_arn: std::option::Option<std::string::String>,
         pub(crate) resource_share_name: std::option::Option<std::string::String>,
@@ -883,7 +883,7 @@ impl ResourceShareAssociation {
 pub mod resource_share_association {
 
     /// A builder for [`ResourceShareAssociation`](crate::model::ResourceShareAssociation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
         pub(crate) resource_share_name: std::option::Option<std::string::String>,
@@ -1406,7 +1406,7 @@ impl ServiceNameAndResourceType {
 pub mod service_name_and_resource_type {
 
     /// A builder for [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -1737,7 +1737,7 @@ impl ResourceSharePermissionSummary {
 pub mod resource_share_permission_summary {
 
     /// A builder for [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -1954,7 +1954,7 @@ impl Resource {
 pub mod resource {
 
     /// A builder for [`Resource`](crate::model::Resource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -2356,7 +2356,7 @@ impl Principal {
 pub mod principal {
 
     /// A builder for [`Principal`](crate::model::Principal).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
@@ -2468,7 +2468,7 @@ impl TagFilter {
 pub mod tag_filter {
 
     /// A builder for [`TagFilter`](crate::model::TagFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_key: std::option::Option<std::string::String>,
         pub(crate) tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2593,7 +2593,7 @@ impl ResourceSharePermissionDetail {
 pub mod resource_share_permission_detail {
 
     /// A builder for [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,

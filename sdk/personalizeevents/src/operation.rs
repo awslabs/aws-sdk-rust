@@ -5,7 +5,7 @@
 /// [`put_events`](crate::client::Client::put_events).
 ///
 /// See [`crate::client::fluent_builders::PutEvents`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutEvents {
     _private: (),
 }
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutEvents {
 /// [`put_items`](crate::client::Client::put_items).
 ///
 /// See [`crate::client::fluent_builders::PutItems`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutItems {
     _private: (),
 }
@@ -67,7 +67,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutItems {
 /// [`put_users`](crate::client::Client::put_users).
 ///
 /// See [`crate::client::fluent_builders::PutUsers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutUsers {
     _private: (),
 }

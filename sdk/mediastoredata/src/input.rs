@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod delete_object_input {
 
     /// A builder for [`DeleteObjectInput`](crate::input::DeleteObjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
     }
@@ -160,7 +160,7 @@ impl DeleteObjectInput {
 pub mod describe_object_input {
 
     /// A builder for [`DescribeObjectInput`](crate::input::DescribeObjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
     }
@@ -315,7 +315,7 @@ impl DescribeObjectInput {
 pub mod get_object_input {
 
     /// A builder for [`GetObjectInput`](crate::input::GetObjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) range: std::option::Option<std::string::String>,
@@ -495,7 +495,7 @@ impl GetObjectInput {
 pub mod list_items_input {
 
     /// A builder for [`ListItemsInput`](crate::input::ListItemsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,

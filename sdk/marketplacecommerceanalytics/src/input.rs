@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod generate_data_set_input {
 
     /// A builder for [`GenerateDataSetInput`](crate::input::GenerateDataSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_type: std::option::Option<crate::model::DataSetType>,
         pub(crate) data_set_publication_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -315,7 +315,7 @@ impl GenerateDataSetInput {
 pub mod start_support_data_export_input {
 
     /// A builder for [`StartSupportDataExportInput`](crate::input::StartSupportDataExportInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_type: std::option::Option<crate::model::SupportDataSetType>,
         pub(crate) from_date: std::option::Option<aws_smithy_types::DateTime>,

@@ -25,7 +25,7 @@ impl TypedLinkFacetAttributeUpdate {
 pub mod typed_link_facet_attribute_update {
 
     /// A builder for [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute: std::option::Option<crate::model::TypedLinkAttributeDefinition>,
         pub(crate) action: std::option::Option<crate::model::UpdateActionType>,
@@ -222,7 +222,7 @@ impl TypedLinkAttributeDefinition {
 pub mod typed_link_attribute_definition {
 
     /// A builder for [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::FacetAttributeType>,
@@ -454,7 +454,7 @@ impl Rule {
 pub mod rule {
 
     /// A builder for [`Rule`](crate::model::Rule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::RuleType>,
         pub(crate) parameters: std::option::Option<
@@ -855,7 +855,7 @@ impl ObjectAttributeUpdate {
 pub mod object_attribute_update {
 
     /// A builder for [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_attribute_key: std::option::Option<crate::model::AttributeKey>,
         pub(crate) object_attribute_action:
@@ -936,7 +936,7 @@ impl ObjectAttributeAction {
 pub mod object_attribute_action {
 
     /// A builder for [`ObjectAttributeAction`](crate::model::ObjectAttributeAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_attribute_action_type:
             std::option::Option<crate::model::UpdateActionType>,
@@ -1024,7 +1024,7 @@ impl AttributeKey {
 pub mod attribute_key {
 
     /// A builder for [`AttributeKey`](crate::model::AttributeKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
         pub(crate) facet_name: std::option::Option<std::string::String>,
@@ -1106,7 +1106,7 @@ impl ObjectReference {
 pub mod object_reference {
 
     /// A builder for [`ObjectReference`](crate::model::ObjectReference).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) selector: std::option::Option<std::string::String>,
     }
@@ -1171,7 +1171,7 @@ impl LinkAttributeUpdate {
 pub mod link_attribute_update {
 
     /// A builder for [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_key: std::option::Option<crate::model::AttributeKey>,
         pub(crate) attribute_action: std::option::Option<crate::model::LinkAttributeAction>,
@@ -1246,7 +1246,7 @@ impl LinkAttributeAction {
 pub mod link_attribute_action {
 
     /// A builder for [`LinkAttributeAction`](crate::model::LinkAttributeAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_action_type: std::option::Option<crate::model::UpdateActionType>,
         pub(crate) attribute_update_value: std::option::Option<crate::model::TypedAttributeValue>,
@@ -1338,7 +1338,7 @@ impl TypedLinkSpecifier {
 pub mod typed_link_specifier {
 
     /// A builder for [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_facet: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
         pub(crate) source_object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -1454,7 +1454,7 @@ impl AttributeNameAndValue {
 pub mod attribute_name_and_value {
 
     /// A builder for [`AttributeNameAndValue`](crate::model::AttributeNameAndValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<crate::model::TypedAttributeValue>,
@@ -1527,7 +1527,7 @@ impl TypedLinkSchemaAndFacetName {
 pub mod typed_link_schema_and_facet_name {
 
     /// A builder for [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
         pub(crate) typed_link_name: std::option::Option<std::string::String>,
@@ -1697,7 +1697,7 @@ impl FacetAttributeUpdate {
 pub mod facet_attribute_update {
 
     /// A builder for [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute: std::option::Option<crate::model::FacetAttribute>,
         pub(crate) action: std::option::Option<crate::model::UpdateActionType>,
@@ -1790,7 +1790,7 @@ impl FacetAttribute {
 pub mod facet_attribute {
 
     /// A builder for [`FacetAttribute`](crate::model::FacetAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) attribute_definition:
@@ -1894,7 +1894,7 @@ impl FacetAttributeReference {
 pub mod facet_attribute_reference {
 
     /// A builder for [`FacetAttributeReference`](crate::model::FacetAttributeReference).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_facet_name: std::option::Option<std::string::String>,
         pub(crate) target_attribute_name: std::option::Option<std::string::String>,
@@ -1985,7 +1985,7 @@ impl FacetAttributeDefinition {
 pub mod facet_attribute_definition {
 
     /// A builder for [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::FacetAttributeType>,
         pub(crate) default_value: std::option::Option<crate::model::TypedAttributeValue>,
@@ -2094,7 +2094,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2161,7 +2161,7 @@ impl SchemaFacet {
 pub mod schema_facet {
 
     /// A builder for [`SchemaFacet`](crate::model::SchemaFacet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
         pub(crate) facet_name: std::option::Option<std::string::String>,
@@ -2228,7 +2228,7 @@ impl PolicyToPath {
 pub mod policy_to_path {
 
     /// A builder for [`PolicyToPath`](crate::model::PolicyToPath).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) policies: std::option::Option<std::vec::Vec<crate::model::PolicyAttachment>>,
@@ -2311,7 +2311,7 @@ impl PolicyAttachment {
 pub mod policy_attachment {
 
     /// A builder for [`PolicyAttachment`](crate::model::PolicyAttachment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
         pub(crate) object_identifier: std::option::Option<std::string::String>,
@@ -2483,7 +2483,7 @@ impl TypedLinkAttributeRange {
 pub mod typed_link_attribute_range {
 
     /// A builder for [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
         pub(crate) range: std::option::Option<crate::model::TypedAttributeValueRange>,
@@ -2570,7 +2570,7 @@ impl TypedAttributeValueRange {
 pub mod typed_attribute_value_range {
 
     /// A builder for [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_mode: std::option::Option<crate::model::RangeMode>,
         pub(crate) start_value: std::option::Option<crate::model::TypedAttributeValue>,
@@ -2781,7 +2781,7 @@ impl ObjectIdentifierAndLinkNameTuple {
 pub mod object_identifier_and_link_name_tuple {
 
     /// A builder for [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifier: std::option::Option<std::string::String>,
         pub(crate) link_name: std::option::Option<std::string::String>,
@@ -2851,7 +2851,7 @@ impl PathToObjectIdentifiers {
 pub mod path_to_object_identifiers {
 
     /// A builder for [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) object_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2927,7 +2927,7 @@ impl AttributeKeyAndValue {
 pub mod attribute_key_and_value {
 
     /// A builder for [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<crate::model::AttributeKey>,
         pub(crate) value: std::option::Option<crate::model::TypedAttributeValue>,
@@ -2997,7 +2997,7 @@ impl IndexAttachment {
 pub mod index_attachment {
 
     /// A builder for [`IndexAttachment`](crate::model::IndexAttachment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) indexed_attributes:
             std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
@@ -3077,7 +3077,7 @@ impl ObjectAttributeRange {
 pub mod object_attribute_range {
 
     /// A builder for [`ObjectAttributeRange`](crate::model::ObjectAttributeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_key: std::option::Option<crate::model::AttributeKey>,
         pub(crate) range: std::option::Option<crate::model::TypedAttributeValueRange>,
@@ -3164,7 +3164,7 @@ impl Directory {
 pub mod directory {
 
     /// A builder for [`Directory`](crate::model::Directory).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) directory_arn: std::option::Option<std::string::String>,
@@ -3366,7 +3366,7 @@ impl Facet {
 pub mod facet {
 
     /// A builder for [`Facet`](crate::model::Facet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) object_type: std::option::Option<crate::model::ObjectType>,
@@ -3548,7 +3548,7 @@ impl TypedLinkFacet {
 pub mod typed_link_facet {
 
     /// A builder for [`TypedLinkFacet`](crate::model::TypedLinkFacet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) attributes:
@@ -3964,7 +3964,7 @@ impl BatchWriteOperationResponse {
 pub mod batch_write_operation_response {
 
     /// A builder for [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_object: std::option::Option<crate::model::BatchCreateObjectResponse>,
         pub(crate) attach_object: std::option::Option<crate::model::BatchAttachObjectResponse>,
@@ -4243,7 +4243,7 @@ pub struct BatchUpdateLinkAttributesResponse {}
 pub mod batch_update_link_attributes_response {
 
     /// A builder for [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse).
@@ -4267,7 +4267,7 @@ pub struct BatchDetachTypedLinkResponse {}
 pub mod batch_detach_typed_link_response {
 
     /// A builder for [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse).
@@ -4301,7 +4301,7 @@ impl BatchAttachTypedLinkResponse {
 pub mod batch_attach_typed_link_response {
 
     /// A builder for [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
     }
@@ -4352,7 +4352,7 @@ impl BatchDetachFromIndexResponse {
 pub mod batch_detach_from_index_response {
 
     /// A builder for [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detached_object_identifier: std::option::Option<std::string::String>,
     }
@@ -4403,7 +4403,7 @@ impl BatchAttachToIndexResponse {
 pub mod batch_attach_to_index_response {
 
     /// A builder for [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_object_identifier: std::option::Option<std::string::String>,
     }
@@ -4454,7 +4454,7 @@ impl BatchCreateIndexResponse {
 pub mod batch_create_index_response {
 
     /// A builder for [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifier: std::option::Option<std::string::String>,
     }
@@ -4495,7 +4495,7 @@ pub struct BatchDetachPolicyResponse {}
 pub mod batch_detach_policy_response {
 
     /// A builder for [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse).
@@ -4519,7 +4519,7 @@ pub struct BatchAttachPolicyResponse {}
 pub mod batch_attach_policy_response {
 
     /// A builder for [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse).
@@ -4543,7 +4543,7 @@ pub struct BatchRemoveFacetFromObjectResponse {}
 pub mod batch_remove_facet_from_object_response {
 
     /// A builder for [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse).
@@ -4567,7 +4567,7 @@ pub struct BatchAddFacetToObjectResponse {}
 pub mod batch_add_facet_to_object_response {
 
     /// A builder for [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse).
@@ -4591,7 +4591,7 @@ pub struct BatchDeleteObjectResponse {}
 pub mod batch_delete_object_response {
 
     /// A builder for [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse).
@@ -4625,7 +4625,7 @@ impl BatchUpdateObjectAttributesResponse {
 pub mod batch_update_object_attributes_response {
 
     /// A builder for [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifier: std::option::Option<std::string::String>,
     }
@@ -4676,7 +4676,7 @@ impl BatchDetachObjectResponse {
 pub mod batch_detach_object_response {
 
     /// A builder for [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detached_object_identifier: std::option::Option<std::string::String>,
     }
@@ -4727,7 +4727,7 @@ impl BatchAttachObjectResponse {
 pub mod batch_attach_object_response {
 
     /// A builder for [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_object_identifier: std::option::Option<std::string::String>,
     }
@@ -4778,7 +4778,7 @@ impl BatchCreateObjectResponse {
 pub mod batch_create_object_response {
 
     /// A builder for [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifier: std::option::Option<std::string::String>,
     }
@@ -4933,7 +4933,7 @@ impl BatchWriteOperation {
 pub mod batch_write_operation {
 
     /// A builder for [`BatchWriteOperation`](crate::model::BatchWriteOperation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_object: std::option::Option<crate::model::BatchCreateObject>,
         pub(crate) attach_object: std::option::Option<crate::model::BatchAttachObject>,
@@ -5213,7 +5213,7 @@ impl BatchUpdateLinkAttributes {
 pub mod batch_update_link_attributes {
 
     /// A builder for [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
         pub(crate) attribute_updates:
@@ -5286,7 +5286,7 @@ impl BatchDetachTypedLink {
 pub mod batch_detach_typed_link {
 
     /// A builder for [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
     }
@@ -5360,7 +5360,7 @@ impl BatchAttachTypedLink {
 pub mod batch_attach_typed_link {
 
     /// A builder for [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) target_object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5473,7 +5473,7 @@ impl BatchDetachFromIndex {
 pub mod batch_detach_from_index {
 
     /// A builder for [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) target_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5546,7 +5546,7 @@ impl BatchAttachToIndex {
 pub mod batch_attach_to_index {
 
     /// A builder for [`BatchAttachToIndex`](crate::model::BatchAttachToIndex).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) target_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5643,7 +5643,7 @@ impl BatchCreateIndex {
 pub mod batch_create_index {
 
     /// A builder for [`BatchCreateIndex`](crate::model::BatchCreateIndex).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ordered_indexed_attribute_list:
             std::option::Option<std::vec::Vec<crate::model::AttributeKey>>,
@@ -5762,7 +5762,7 @@ impl BatchDetachPolicy {
 pub mod batch_detach_policy {
 
     /// A builder for [`BatchDetachPolicy`](crate::model::BatchDetachPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5835,7 +5835,7 @@ impl BatchAttachPolicy {
 pub mod batch_attach_policy {
 
     /// A builder for [`BatchAttachPolicy`](crate::model::BatchAttachPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5908,7 +5908,7 @@ impl BatchRemoveFacetFromObject {
 pub mod batch_remove_facet_from_object {
 
     /// A builder for [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_facet: std::option::Option<crate::model::SchemaFacet>,
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5991,7 +5991,7 @@ impl BatchAddFacetToObject {
 pub mod batch_add_facet_to_object {
 
     /// A builder for [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_facet: std::option::Option<crate::model::SchemaFacet>,
         pub(crate) object_attribute_list:
@@ -6079,7 +6079,7 @@ impl BatchDeleteObject {
 pub mod batch_delete_object {
 
     /// A builder for [`BatchDeleteObject`](crate::model::BatchDeleteObject).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
     }
@@ -6137,7 +6137,7 @@ impl BatchUpdateObjectAttributes {
 pub mod batch_update_object_attributes {
 
     /// A builder for [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) attribute_updates:
@@ -6224,7 +6224,7 @@ impl BatchDetachObject {
 pub mod batch_detach_object {
 
     /// A builder for [`BatchDetachObject`](crate::model::BatchDetachObject).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parent_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) link_name: std::option::Option<std::string::String>,
@@ -6316,7 +6316,7 @@ impl BatchAttachObject {
 pub mod batch_attach_object {
 
     /// A builder for [`BatchAttachObject`](crate::model::BatchAttachObject).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parent_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) child_reference: std::option::Option<crate::model::ObjectReference>,
@@ -6425,7 +6425,7 @@ impl BatchCreateObject {
 pub mod batch_create_object {
 
     /// A builder for [`BatchCreateObject`](crate::model::BatchCreateObject).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_facet: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
         pub(crate) object_attribute_list:
@@ -6555,7 +6555,7 @@ impl BatchReadOperationResponse {
 pub mod batch_read_operation_response {
 
     /// A builder for [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successful_response:
             std::option::Option<crate::model::BatchReadSuccessfulResponse>,
@@ -6632,7 +6632,7 @@ impl BatchReadException {
 pub mod batch_read_exception {
 
     /// A builder for [`BatchReadException`](crate::model::BatchReadException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::BatchReadExceptionType>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6981,7 +6981,7 @@ impl BatchReadSuccessfulResponse {
 pub mod batch_read_successful_response {
 
     /// A builder for [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_object_attributes:
             std::option::Option<crate::model::BatchListObjectAttributesResponse>,
@@ -7285,7 +7285,7 @@ impl BatchListObjectParentsResponse {
 pub mod batch_list_object_parents_response {
 
     /// A builder for [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parent_links:
             std::option::Option<std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>>,
@@ -7360,7 +7360,7 @@ impl BatchGetLinkAttributesResponse {
 pub mod batch_get_link_attributes_response {
 
     /// A builder for [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes:
             std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
@@ -7425,7 +7425,7 @@ impl BatchListIncomingTypedLinksResponse {
 pub mod batch_list_incoming_typed_links_response {
 
     /// A builder for [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) link_specifiers:
             std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
@@ -7504,7 +7504,7 @@ impl BatchListOutgoingTypedLinksResponse {
 pub mod batch_list_outgoing_typed_links_response {
 
     /// A builder for [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_specifiers:
             std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
@@ -7581,7 +7581,7 @@ impl BatchListIndexResponse {
 pub mod batch_list_index_response {
 
     /// A builder for [`BatchListIndexResponse`](crate::model::BatchListIndexResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_attachments:
             std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
@@ -7658,7 +7658,7 @@ impl BatchLookupPolicyResponse {
 pub mod batch_lookup_policy_response {
 
     /// A builder for [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_to_path_list:
             std::option::Option<std::vec::Vec<crate::model::PolicyToPath>>,
@@ -7735,7 +7735,7 @@ impl BatchListPolicyAttachmentsResponse {
 pub mod batch_list_policy_attachments_response {
 
     /// A builder for [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7811,7 +7811,7 @@ impl BatchListObjectPoliciesResponse {
 pub mod batch_list_object_policies_response {
 
     /// A builder for [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_policy_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7890,7 +7890,7 @@ impl BatchListObjectParentPathsResponse {
 pub mod batch_list_object_parent_paths_response {
 
     /// A builder for [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path_to_object_identifiers_list:
             std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
@@ -7970,7 +7970,7 @@ impl BatchListAttachedIndicesResponse {
 pub mod batch_list_attached_indices_response {
 
     /// A builder for [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_attachments:
             std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
@@ -8040,7 +8040,7 @@ impl BatchGetObjectAttributesResponse {
 pub mod batch_get_object_attributes_response {
 
     /// A builder for [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes:
             std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
@@ -8105,7 +8105,7 @@ impl BatchGetObjectInformationResponse {
 pub mod batch_get_object_information_response {
 
     /// A builder for [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_facets: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
         pub(crate) object_identifier: std::option::Option<std::string::String>,
@@ -8188,7 +8188,7 @@ impl BatchListObjectChildrenResponse {
 pub mod batch_list_object_children_response {
 
     /// A builder for [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) children: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -8272,7 +8272,7 @@ impl BatchListObjectAttributesResponse {
 pub mod batch_list_object_attributes_response {
 
     /// A builder for [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes:
             std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
@@ -8457,7 +8457,7 @@ impl BatchReadOperation {
 pub mod batch_read_operation {
 
     /// A builder for [`BatchReadOperation`](crate::model::BatchReadOperation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_object_attributes:
             std::option::Option<crate::model::BatchListObjectAttributes>,
@@ -8748,7 +8748,7 @@ impl BatchGetLinkAttributes {
 pub mod batch_get_link_attributes {
 
     /// A builder for [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
         pub(crate) attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8853,7 +8853,7 @@ impl BatchListIncomingTypedLinks {
 pub mod batch_list_incoming_typed_links {
 
     /// A builder for [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) filter_attribute_ranges:
@@ -9005,7 +9005,7 @@ impl BatchListOutgoingTypedLinks {
 pub mod batch_list_outgoing_typed_links {
 
     /// A builder for [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) filter_attribute_ranges:
@@ -9148,7 +9148,7 @@ impl BatchListIndex {
 pub mod batch_list_index {
 
     /// A builder for [`BatchListIndex`](crate::model::BatchListIndex).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ranges_on_indexed_values:
             std::option::Option<std::vec::Vec<crate::model::ObjectAttributeRange>>,
@@ -9262,7 +9262,7 @@ impl BatchLookupPolicy {
 pub mod batch_lookup_policy {
 
     /// A builder for [`BatchLookupPolicy`](crate::model::BatchLookupPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -9351,7 +9351,7 @@ impl BatchListPolicyAttachments {
 pub mod batch_list_policy_attachments {
 
     /// A builder for [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -9440,7 +9440,7 @@ impl BatchListObjectPolicies {
 pub mod batch_list_object_policies {
 
     /// A builder for [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -9529,7 +9529,7 @@ impl BatchListObjectParents {
 pub mod batch_list_object_parents {
 
     /// A builder for [`BatchListObjectParents`](crate::model::BatchListObjectParents).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -9618,7 +9618,7 @@ impl BatchGetObjectAttributes {
 pub mod batch_get_object_attributes {
 
     /// A builder for [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) schema_facet: std::option::Option<crate::model::SchemaFacet>,
@@ -9705,7 +9705,7 @@ impl BatchGetObjectInformation {
 pub mod batch_get_object_information {
 
     /// A builder for [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
     }
@@ -9770,7 +9770,7 @@ impl BatchListObjectParentPaths {
 pub mod batch_list_object_parent_paths {
 
     /// A builder for [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -9859,7 +9859,7 @@ impl BatchListAttachedIndices {
 pub mod batch_list_attached_indices {
 
     /// A builder for [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -9948,7 +9948,7 @@ impl BatchListObjectChildren {
 pub mod batch_list_object_children {
 
     /// A builder for [`BatchListObjectChildren`](crate::model::BatchListObjectChildren).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -10044,7 +10044,7 @@ impl BatchListObjectAttributes {
 pub mod batch_list_object_attributes {
 
     /// A builder for [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) next_token: std::option::Option<std::string::String>,

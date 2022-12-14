@@ -40,7 +40,7 @@ impl UpdateParallelDataOutput {
 pub mod update_parallel_data_output {
 
     /// A builder for [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ParallelDataStatus>,
@@ -127,7 +127,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -191,7 +191,7 @@ impl TranslateTextOutput {
 pub mod translate_text_output {
 
     /// A builder for [`TranslateTextOutput`](crate::output::TranslateTextOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) translated_text: std::option::Option<std::string::String>,
         pub(crate) source_language_code: std::option::Option<std::string::String>,
@@ -299,7 +299,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -340,7 +340,7 @@ impl StopTextTranslationJobOutput {
 pub mod stop_text_translation_job_output {
 
     /// A builder for [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
@@ -428,7 +428,7 @@ impl StartTextTranslationJobOutput {
 pub mod start_text_translation_job_output {
 
     /// A builder for [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
@@ -519,7 +519,7 @@ impl ListTextTranslationJobsOutput {
 pub mod list_text_translation_jobs_output {
 
     /// A builder for [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text_translation_job_properties_list:
             std::option::Option<std::vec::Vec<crate::model::TextTranslationJobProperties>>,
@@ -604,7 +604,7 @@ impl ListTerminologiesOutput {
 pub mod list_terminologies_output {
 
     /// A builder for [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) terminology_properties_list:
             std::option::Option<std::vec::Vec<crate::model::TerminologyProperties>>,
@@ -677,7 +677,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -741,7 +741,7 @@ impl ListParallelDataOutput {
 pub mod list_parallel_data_output {
 
     /// A builder for [`ListParallelDataOutput`](crate::output::ListParallelDataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parallel_data_properties_list:
             std::option::Option<std::vec::Vec<crate::model::ParallelDataProperties>>,
@@ -828,7 +828,7 @@ impl ListLanguagesOutput {
 pub mod list_languages_output {
 
     /// A builder for [`ListLanguagesOutput`](crate::output::ListLanguagesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) languages: std::option::Option<std::vec::Vec<crate::model::Language>>,
         pub(crate) display_language_code: std::option::Option<crate::model::DisplayLanguageCode>,
@@ -923,7 +923,7 @@ impl ImportTerminologyOutput {
 pub mod import_terminology_output {
 
     /// A builder for [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) terminology_properties: std::option::Option<crate::model::TerminologyProperties>,
         pub(crate) auxiliary_data_location:
@@ -1024,7 +1024,7 @@ impl GetTerminologyOutput {
 pub mod get_terminology_output {
 
     /// A builder for [`GetTerminologyOutput`](crate::output::GetTerminologyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) terminology_properties: std::option::Option<crate::model::TerminologyProperties>,
         pub(crate) terminology_data_location:
@@ -1160,7 +1160,7 @@ impl GetParallelDataOutput {
 pub mod get_parallel_data_output {
 
     /// A builder for [`GetParallelDataOutput`](crate::output::GetParallelDataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parallel_data_properties:
             std::option::Option<crate::model::ParallelDataProperties>,
@@ -1280,7 +1280,7 @@ impl DescribeTextTranslationJobOutput {
 pub mod describe_text_translation_job_output {
 
     /// A builder for [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text_translation_job_properties:
             std::option::Option<crate::model::TextTranslationJobProperties>,
@@ -1325,7 +1325,7 @@ pub struct DeleteTerminologyOutput {}
 pub mod delete_terminology_output {
 
     /// A builder for [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput).
@@ -1366,7 +1366,7 @@ impl DeleteParallelDataOutput {
 pub mod delete_parallel_data_output {
 
     /// A builder for [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ParallelDataStatus>,
@@ -1436,7 +1436,7 @@ impl CreateParallelDataOutput {
 pub mod create_parallel_data_output {
 
     /// A builder for [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ParallelDataStatus>,

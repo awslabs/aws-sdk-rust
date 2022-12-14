@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod add_custom_routing_endpoints_input {
 
     /// A builder for [`AddCustomRoutingEndpointsInput`](crate::input::AddCustomRoutingEndpointsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_configurations:
             std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointConfiguration>>,
@@ -184,7 +184,7 @@ impl AddCustomRoutingEndpointsInput {
 pub mod advertise_byoip_cidr_input {
 
     /// A builder for [`AdvertiseByoipCidrInput`](crate::input::AdvertiseByoipCidrInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr: std::option::Option<std::string::String>,
     }
@@ -329,7 +329,7 @@ impl AdvertiseByoipCidrInput {
 pub mod allow_custom_routing_traffic_input {
 
     /// A builder for [`AllowCustomRoutingTrafficInput`](crate::input::AllowCustomRoutingTrafficInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
@@ -558,7 +558,7 @@ impl AllowCustomRoutingTrafficInput {
 pub mod create_accelerator_input {
 
     /// A builder for [`CreateAcceleratorInput`](crate::input::CreateAcceleratorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) ip_address_type: std::option::Option<crate::model::IpAddressType>,
@@ -804,7 +804,7 @@ impl CreateAcceleratorInput {
 pub mod create_custom_routing_accelerator_input {
 
     /// A builder for [`CreateCustomRoutingAcceleratorInput`](crate::input::CreateCustomRoutingAcceleratorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) ip_address_type: std::option::Option<crate::model::IpAddressType>,
@@ -1049,7 +1049,7 @@ impl CreateCustomRoutingAcceleratorInput {
 pub mod create_custom_routing_endpoint_group_input {
 
     /// A builder for [`CreateCustomRoutingEndpointGroupInput`](crate::input::CreateCustomRoutingEndpointGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_group_region: std::option::Option<std::string::String>,
@@ -1255,7 +1255,7 @@ impl CreateCustomRoutingEndpointGroupInput {
 pub mod create_custom_routing_listener_input {
 
     /// A builder for [`CreateCustomRoutingListenerInput`](crate::input::CreateCustomRoutingListenerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_arn: std::option::Option<std::string::String>,
         pub(crate) port_ranges: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
@@ -1445,7 +1445,7 @@ impl CreateCustomRoutingListenerInput {
 pub mod create_endpoint_group_input {
 
     /// A builder for [`CreateEndpointGroupInput`](crate::input::CreateEndpointGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_group_region: std::option::Option<std::string::String>,
@@ -1758,7 +1758,7 @@ impl CreateEndpointGroupInput {
 pub mod create_listener_input {
 
     /// A builder for [`CreateListenerInput`](crate::input::CreateListenerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_arn: std::option::Option<std::string::String>,
         pub(crate) port_ranges: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
@@ -1978,7 +1978,7 @@ impl CreateListenerInput {
 pub mod delete_accelerator_input {
 
     /// A builder for [`DeleteAcceleratorInput`](crate::input::DeleteAcceleratorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_arn: std::option::Option<std::string::String>,
     }
@@ -2128,7 +2128,7 @@ impl DeleteAcceleratorInput {
 pub mod delete_custom_routing_accelerator_input {
 
     /// A builder for [`DeleteCustomRoutingAcceleratorInput`](crate::input::DeleteCustomRoutingAcceleratorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_arn: std::option::Option<std::string::String>,
     }
@@ -2277,7 +2277,7 @@ impl DeleteCustomRoutingAcceleratorInput {
 pub mod delete_custom_routing_endpoint_group_input {
 
     /// A builder for [`DeleteCustomRoutingEndpointGroupInput`](crate::input::DeleteCustomRoutingEndpointGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
     }
@@ -2426,7 +2426,7 @@ impl DeleteCustomRoutingEndpointGroupInput {
 pub mod delete_custom_routing_listener_input {
 
     /// A builder for [`DeleteCustomRoutingListenerInput`](crate::input::DeleteCustomRoutingListenerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener_arn: std::option::Option<std::string::String>,
     }
@@ -2572,7 +2572,7 @@ impl DeleteCustomRoutingListenerInput {
 pub mod delete_endpoint_group_input {
 
     /// A builder for [`DeleteEndpointGroupInput`](crate::input::DeleteEndpointGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
     }
@@ -2722,7 +2722,7 @@ impl DeleteEndpointGroupInput {
 pub mod delete_listener_input {
 
     /// A builder for [`DeleteListenerInput`](crate::input::DeleteListenerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener_arn: std::option::Option<std::string::String>,
     }
@@ -2867,7 +2867,7 @@ impl DeleteListenerInput {
 pub mod deny_custom_routing_traffic_input {
 
     /// A builder for [`DenyCustomRoutingTrafficInput`](crate::input::DenyCustomRoutingTrafficInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
@@ -3094,7 +3094,7 @@ impl DenyCustomRoutingTrafficInput {
 pub mod deprovision_byoip_cidr_input {
 
     /// A builder for [`DeprovisionByoipCidrInput`](crate::input::DeprovisionByoipCidrInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr: std::option::Option<std::string::String>,
     }
@@ -3241,7 +3241,7 @@ impl DeprovisionByoipCidrInput {
 pub mod describe_accelerator_input {
 
     /// A builder for [`DescribeAcceleratorInput`](crate::input::DescribeAcceleratorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_arn: std::option::Option<std::string::String>,
     }
@@ -3391,7 +3391,7 @@ impl DescribeAcceleratorInput {
 pub mod describe_accelerator_attributes_input {
 
     /// A builder for [`DescribeAcceleratorAttributesInput`](crate::input::DescribeAcceleratorAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_arn: std::option::Option<std::string::String>,
     }
@@ -3540,7 +3540,7 @@ impl DescribeAcceleratorAttributesInput {
 pub mod describe_custom_routing_accelerator_input {
 
     /// A builder for [`DescribeCustomRoutingAcceleratorInput`](crate::input::DescribeCustomRoutingAcceleratorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_arn: std::option::Option<std::string::String>,
     }
@@ -3689,7 +3689,7 @@ impl DescribeCustomRoutingAcceleratorInput {
 pub mod describe_custom_routing_accelerator_attributes_input {
 
     /// A builder for [`DescribeCustomRoutingAcceleratorAttributesInput`](crate::input::DescribeCustomRoutingAcceleratorAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_arn: std::option::Option<std::string::String>,
     }
@@ -3841,7 +3841,7 @@ impl DescribeCustomRoutingAcceleratorAttributesInput {
 pub mod describe_custom_routing_endpoint_group_input {
 
     /// A builder for [`DescribeCustomRoutingEndpointGroupInput`](crate::input::DescribeCustomRoutingEndpointGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
     }
@@ -3990,7 +3990,7 @@ impl DescribeCustomRoutingEndpointGroupInput {
 pub mod describe_custom_routing_listener_input {
 
     /// A builder for [`DescribeCustomRoutingListenerInput`](crate::input::DescribeCustomRoutingListenerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener_arn: std::option::Option<std::string::String>,
     }
@@ -4136,7 +4136,7 @@ impl DescribeCustomRoutingListenerInput {
 pub mod describe_endpoint_group_input {
 
     /// A builder for [`DescribeEndpointGroupInput`](crate::input::DescribeEndpointGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
     }
@@ -4288,7 +4288,7 @@ impl DescribeEndpointGroupInput {
 pub mod describe_listener_input {
 
     /// A builder for [`DescribeListenerInput`](crate::input::DescribeListenerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener_arn: std::option::Option<std::string::String>,
     }
@@ -4435,7 +4435,7 @@ impl DescribeListenerInput {
 pub mod list_accelerators_input {
 
     /// A builder for [`ListAcceleratorsInput`](crate::input::ListAcceleratorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4594,7 +4594,7 @@ impl ListAcceleratorsInput {
 pub mod list_byoip_cidrs_input {
 
     /// A builder for [`ListByoipCidrsInput`](crate::input::ListByoipCidrsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4751,7 +4751,7 @@ impl ListByoipCidrsInput {
 pub mod list_custom_routing_accelerators_input {
 
     /// A builder for [`ListCustomRoutingAcceleratorsInput`](crate::input::ListCustomRoutingAcceleratorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4909,7 +4909,7 @@ impl ListCustomRoutingAcceleratorsInput {
 pub mod list_custom_routing_endpoint_groups_input {
 
     /// A builder for [`ListCustomRoutingEndpointGroupsInput`](crate::input::ListCustomRoutingEndpointGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5079,7 +5079,7 @@ impl ListCustomRoutingEndpointGroupsInput {
 pub mod list_custom_routing_listeners_input {
 
     /// A builder for [`ListCustomRoutingListenersInput`](crate::input::ListCustomRoutingListenersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5252,7 +5252,7 @@ impl ListCustomRoutingListenersInput {
 pub mod list_custom_routing_port_mappings_input {
 
     /// A builder for [`ListCustomRoutingPortMappingsInput`](crate::input::ListCustomRoutingPortMappingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
@@ -5440,7 +5440,7 @@ impl ListCustomRoutingPortMappingsInput {
 pub mod list_custom_routing_port_mappings_by_destination_input {
 
     /// A builder for [`ListCustomRoutingPortMappingsByDestinationInput`](crate::input::ListCustomRoutingPortMappingsByDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
         pub(crate) destination_address: std::option::Option<std::string::String>,
@@ -5628,7 +5628,7 @@ impl ListCustomRoutingPortMappingsByDestinationInput {
 pub mod list_endpoint_groups_input {
 
     /// A builder for [`ListEndpointGroupsInput`](crate::input::ListEndpointGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5799,7 +5799,7 @@ impl ListEndpointGroupsInput {
 pub mod list_listeners_input {
 
     /// A builder for [`ListListenersInput`](crate::input::ListListenersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5971,7 +5971,7 @@ impl ListListenersInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -6120,7 +6120,7 @@ impl ListTagsForResourceInput {
 pub mod provision_byoip_cidr_input {
 
     /// A builder for [`ProvisionByoipCidrInput`](crate::input::ProvisionByoipCidrInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr: std::option::Option<std::string::String>,
         pub(crate) cidr_authorization_context:
@@ -6286,7 +6286,7 @@ impl ProvisionByoipCidrInput {
 pub mod remove_custom_routing_endpoints_input {
 
     /// A builder for [`RemoveCustomRoutingEndpointsInput`](crate::input::RemoveCustomRoutingEndpointsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
@@ -6456,7 +6456,7 @@ impl RemoveCustomRoutingEndpointsInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6622,7 +6622,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6788,7 +6788,7 @@ impl UntagResourceInput {
 pub mod update_accelerator_input {
 
     /// A builder for [`UpdateAcceleratorInput`](crate::input::UpdateAcceleratorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6979,7 +6979,7 @@ impl UpdateAcceleratorInput {
 pub mod update_accelerator_attributes_input {
 
     /// A builder for [`UpdateAcceleratorAttributesInput`](crate::input::UpdateAcceleratorAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_arn: std::option::Option<std::string::String>,
         pub(crate) flow_logs_enabled: std::option::Option<bool>,
@@ -7176,7 +7176,7 @@ impl UpdateAcceleratorAttributesInput {
 pub mod update_custom_routing_accelerator_input {
 
     /// A builder for [`UpdateCustomRoutingAcceleratorInput`](crate::input::UpdateCustomRoutingAcceleratorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7366,7 +7366,7 @@ impl UpdateCustomRoutingAcceleratorInput {
 pub mod update_custom_routing_accelerator_attributes_input {
 
     /// A builder for [`UpdateCustomRoutingAcceleratorAttributesInput`](crate::input::UpdateCustomRoutingAcceleratorAttributesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accelerator_arn: std::option::Option<std::string::String>,
         pub(crate) flow_logs_enabled: std::option::Option<bool>,
@@ -7565,7 +7565,7 @@ impl UpdateCustomRoutingAcceleratorAttributesInput {
 pub mod update_custom_routing_listener_input {
 
     /// A builder for [`UpdateCustomRoutingListenerInput`](crate::input::UpdateCustomRoutingListenerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener_arn: std::option::Option<std::string::String>,
         pub(crate) port_ranges: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
@@ -7734,7 +7734,7 @@ impl UpdateCustomRoutingListenerInput {
 pub mod update_endpoint_group_input {
 
     /// A builder for [`UpdateEndpointGroupInput`](crate::input::UpdateEndpointGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_configurations:
@@ -8017,7 +8017,7 @@ impl UpdateEndpointGroupInput {
 pub mod update_listener_input {
 
     /// A builder for [`UpdateListenerInput`](crate::input::UpdateListenerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener_arn: std::option::Option<std::string::String>,
         pub(crate) port_ranges: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
@@ -8216,7 +8216,7 @@ impl UpdateListenerInput {
 pub mod withdraw_byoip_cidr_input {
 
     /// A builder for [`WithdrawByoipCidrInput`](crate::input::WithdrawByoipCidrInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr: std::option::Option<std::string::String>,
     }

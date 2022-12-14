@@ -5,7 +5,7 @@
 /// [`cancel_job`](crate::client::Client::cancel_job).
 ///
 /// See [`crate::client::fluent_builders::CancelJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelJob {
     _private: (),
 }
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelJob {
 /// [`cancel_quantum_task`](crate::client::Client::cancel_quantum_task).
 ///
 /// See [`crate::client::fluent_builders::CancelQuantumTask`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelQuantumTask {
     _private: (),
 }
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelQuantumTask {
 /// [`create_job`](crate::client::Client::create_job).
 ///
 /// See [`crate::client::fluent_builders::CreateJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateJob {
     _private: (),
 }
@@ -101,7 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateJob {
 /// [`create_quantum_task`](crate::client::Client::create_quantum_task).
 ///
 /// See [`crate::client::fluent_builders::CreateQuantumTask`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateQuantumTask {
     _private: (),
 }
@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateQuantumTask {
 /// [`get_device`](crate::client::Client::get_device).
 ///
 /// See [`crate::client::fluent_builders::GetDevice`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDevice {
     _private: (),
 }
@@ -166,7 +166,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDevice {
 /// [`get_job`](crate::client::Client::get_job).
 ///
 /// See [`crate::client::fluent_builders::GetJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetJob {
     _private: (),
 }
@@ -197,7 +197,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJob {
 /// [`get_quantum_task`](crate::client::Client::get_quantum_task).
 ///
 /// See [`crate::client::fluent_builders::GetQuantumTask`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetQuantumTask {
     _private: (),
 }
@@ -229,7 +229,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQuantumTask {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -263,7 +263,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`search_devices`](crate::client::Client::search_devices).
 ///
 /// See [`crate::client::fluent_builders::SearchDevices`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchDevices {
     _private: (),
 }
@@ -295,7 +295,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchDevices {
 /// [`search_jobs`](crate::client::Client::search_jobs).
 ///
 /// See [`crate::client::fluent_builders::SearchJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchJobs {
     _private: (),
 }
@@ -327,7 +327,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchJobs {
 /// [`search_quantum_tasks`](crate::client::Client::search_quantum_tasks).
 ///
 /// See [`crate::client::fluent_builders::SearchQuantumTasks`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchQuantumTasks {
     _private: (),
 }
@@ -361,7 +361,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchQuantumTasks {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -393,7 +393,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }

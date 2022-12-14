@@ -30,7 +30,7 @@ impl std::error::Error for TestFailoverNotAvailableFault {}
 pub mod test_failover_not_available_fault {
 
     /// A builder for [`TestFailoverNotAvailableFault`](crate::error::TestFailoverNotAvailableFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl std::error::Error for ReplicationGroupNotFoundFault {}
 pub mod replication_group_not_found_fault {
 
     /// A builder for [`ReplicationGroupNotFoundFault`](crate::error::ReplicationGroupNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl std::error::Error for NodeGroupNotFoundFault {}
 pub mod node_group_not_found_fault {
 
     /// A builder for [`NodeGroupNotFoundFault`](crate::error::NodeGroupNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -210,7 +210,7 @@ impl std::error::Error for InvalidReplicationGroupStateFault {}
 pub mod invalid_replication_group_state_fault {
 
     /// A builder for [`InvalidReplicationGroupStateFault`](crate::error::InvalidReplicationGroupStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -270,7 +270,7 @@ impl std::error::Error for InvalidParameterValueException {}
 pub mod invalid_parameter_value_exception {
 
     /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -330,7 +330,7 @@ impl std::error::Error for InvalidParameterCombinationException {}
 pub mod invalid_parameter_combination_exception {
 
     /// A builder for [`InvalidParameterCombinationException`](crate::error::InvalidParameterCombinationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -390,7 +390,7 @@ impl std::error::Error for InvalidKmsKeyFault {}
 pub mod invalid_kms_key_fault {
 
     /// A builder for [`InvalidKmsKeyFault`](crate::error::InvalidKmsKeyFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -450,7 +450,7 @@ impl std::error::Error for InvalidCacheClusterStateFault {}
 pub mod invalid_cache_cluster_state_fault {
 
     /// A builder for [`InvalidCacheClusterStateFault`](crate::error::InvalidCacheClusterStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -513,7 +513,7 @@ impl std::error::Error for ApiCallRateForCustomerExceededFault {}
 pub mod api_call_rate_for_customer_exceeded_fault {
 
     /// A builder for [`ApiCallRateForCustomerExceededFault`](crate::error::ApiCallRateForCustomerExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -573,7 +573,7 @@ impl std::error::Error for ReplicationGroupAlreadyUnderMigrationFault {}
 pub mod replication_group_already_under_migration_fault {
 
     /// A builder for [`ReplicationGroupAlreadyUnderMigrationFault`](crate::error::ReplicationGroupAlreadyUnderMigrationFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -633,7 +633,7 @@ impl std::error::Error for InvalidCacheSecurityGroupStateFault {}
 pub mod invalid_cache_security_group_state_fault {
 
     /// A builder for [`InvalidCacheSecurityGroupStateFault`](crate::error::InvalidCacheSecurityGroupStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -693,7 +693,7 @@ impl std::error::Error for CacheSecurityGroupNotFoundFault {}
 pub mod cache_security_group_not_found_fault {
 
     /// A builder for [`CacheSecurityGroupNotFoundFault`](crate::error::CacheSecurityGroupNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -753,7 +753,7 @@ impl std::error::Error for AuthorizationNotFoundFault {}
 pub mod authorization_not_found_fault {
 
     /// A builder for [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -813,7 +813,7 @@ impl std::error::Error for InvalidGlobalReplicationGroupStateFault {}
 pub mod invalid_global_replication_group_state_fault {
 
     /// A builder for [`InvalidGlobalReplicationGroupStateFault`](crate::error::InvalidGlobalReplicationGroupStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -873,7 +873,7 @@ impl std::error::Error for InvalidCacheParameterGroupStateFault {}
 pub mod invalid_cache_parameter_group_state_fault {
 
     /// A builder for [`InvalidCacheParameterGroupStateFault`](crate::error::InvalidCacheParameterGroupStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -933,7 +933,7 @@ impl std::error::Error for CacheParameterGroupNotFoundFault {}
 pub mod cache_parameter_group_not_found_fault {
 
     /// A builder for [`CacheParameterGroupNotFoundFault`](crate::error::CacheParameterGroupNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -993,7 +993,7 @@ impl std::error::Error for UserNotFoundFault {}
 pub mod user_not_found_fault {
 
     /// A builder for [`UserNotFoundFault`](crate::error::UserNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1053,7 +1053,7 @@ impl std::error::Error for UserGroupNotFoundFault {}
 pub mod user_group_not_found_fault {
 
     /// A builder for [`UserGroupNotFoundFault`](crate::error::UserGroupNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1113,7 +1113,7 @@ impl std::error::Error for TagNotFoundFault {}
 pub mod tag_not_found_fault {
 
     /// A builder for [`TagNotFoundFault`](crate::error::TagNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1173,7 +1173,7 @@ impl std::error::Error for SnapshotNotFoundFault {}
 pub mod snapshot_not_found_fault {
 
     /// A builder for [`SnapshotNotFoundFault`](crate::error::SnapshotNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1233,7 +1233,7 @@ impl std::error::Error for ReservedCacheNodeNotFoundFault {}
 pub mod reserved_cache_node_not_found_fault {
 
     /// A builder for [`ReservedCacheNodeNotFoundFault`](crate::error::ReservedCacheNodeNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1293,7 +1293,7 @@ impl std::error::Error for InvalidArnFault {}
 pub mod invalid_arn_fault {
 
     /// A builder for [`InvalidArnFault`](crate::error::InvalidArnFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1353,7 +1353,7 @@ impl std::error::Error for CacheSubnetGroupNotFoundFault {}
 pub mod cache_subnet_group_not_found_fault {
 
     /// A builder for [`CacheSubnetGroupNotFoundFault`](crate::error::CacheSubnetGroupNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1413,7 +1413,7 @@ impl std::error::Error for CacheClusterNotFoundFault {}
 pub mod cache_cluster_not_found_fault {
 
     /// A builder for [`CacheClusterNotFoundFault`](crate::error::CacheClusterNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1473,7 +1473,7 @@ impl std::error::Error for GlobalReplicationGroupNotFoundFault {}
 pub mod global_replication_group_not_found_fault {
 
     /// A builder for [`GlobalReplicationGroupNotFoundFault`](crate::error::GlobalReplicationGroupNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1533,7 +1533,7 @@ impl std::error::Error for TagQuotaPerResourceExceeded {}
 pub mod tag_quota_per_resource_exceeded {
 
     /// A builder for [`TagQuotaPerResourceExceeded`](crate::error::TagQuotaPerResourceExceeded).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1593,7 +1593,7 @@ impl std::error::Error for ReservedCacheNodesOfferingNotFoundFault {}
 pub mod reserved_cache_nodes_offering_not_found_fault {
 
     /// A builder for [`ReservedCacheNodesOfferingNotFoundFault`](crate::error::ReservedCacheNodesOfferingNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1653,7 +1653,7 @@ impl std::error::Error for ReservedCacheNodeQuotaExceededFault {}
 pub mod reserved_cache_node_quota_exceeded_fault {
 
     /// A builder for [`ReservedCacheNodeQuotaExceededFault`](crate::error::ReservedCacheNodeQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1713,7 +1713,7 @@ impl std::error::Error for ReservedCacheNodeAlreadyExistsFault {}
 pub mod reserved_cache_node_already_exists_fault {
 
     /// A builder for [`ReservedCacheNodeAlreadyExistsFault`](crate::error::ReservedCacheNodeAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1773,7 +1773,7 @@ impl std::error::Error for ServiceLinkedRoleNotFoundFault {}
 pub mod service_linked_role_not_found_fault {
 
     /// A builder for [`ServiceLinkedRoleNotFoundFault`](crate::error::ServiceLinkedRoleNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1833,7 +1833,7 @@ impl std::error::Error for InvalidUserGroupStateFault {}
 pub mod invalid_user_group_state_fault {
 
     /// A builder for [`InvalidUserGroupStateFault`](crate::error::InvalidUserGroupStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1893,7 +1893,7 @@ impl std::error::Error for DuplicateUserNameFault {}
 pub mod duplicate_user_name_fault {
 
     /// A builder for [`DuplicateUserNameFault`](crate::error::DuplicateUserNameFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1953,7 +1953,7 @@ impl std::error::Error for DefaultUserRequired {}
 pub mod default_user_required {
 
     /// A builder for [`DefaultUserRequired`](crate::error::DefaultUserRequired).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2013,7 +2013,7 @@ impl std::error::Error for InvalidUserStateFault {}
 pub mod invalid_user_state_fault {
 
     /// A builder for [`InvalidUserStateFault`](crate::error::InvalidUserStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2073,7 +2073,7 @@ impl std::error::Error for NodeQuotaForCustomerExceededFault {}
 pub mod node_quota_for_customer_exceeded_fault {
 
     /// A builder for [`NodeQuotaForCustomerExceededFault`](crate::error::NodeQuotaForCustomerExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2133,7 +2133,7 @@ impl std::error::Error for NodeGroupsPerReplicationGroupQuotaExceededFault {}
 pub mod node_groups_per_replication_group_quota_exceeded_fault {
 
     /// A builder for [`NodeGroupsPerReplicationGroupQuotaExceededFault`](crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2197,7 +2197,7 @@ impl std::error::Error for InvalidVpcNetworkStateFault {}
 pub mod invalid_vpc_network_state_fault {
 
     /// A builder for [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2257,7 +2257,7 @@ impl std::error::Error for InsufficientCacheClusterCapacityFault {}
 pub mod insufficient_cache_cluster_capacity_fault {
 
     /// A builder for [`InsufficientCacheClusterCapacityFault`](crate::error::InsufficientCacheClusterCapacityFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2317,7 +2317,7 @@ impl std::error::Error for NodeQuotaForClusterExceededFault {}
 pub mod node_quota_for_cluster_exceeded_fault {
 
     /// A builder for [`NodeQuotaForClusterExceededFault`](crate::error::NodeQuotaForClusterExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2377,7 +2377,7 @@ impl std::error::Error for SubnetNotAllowedFault {}
 pub mod subnet_not_allowed_fault {
 
     /// A builder for [`SubnetNotAllowedFault`](crate::error::SubnetNotAllowedFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2437,7 +2437,7 @@ impl std::error::Error for SubnetInUse {}
 pub mod subnet_in_use {
 
     /// A builder for [`SubnetInUse`](crate::error::SubnetInUse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2497,7 +2497,7 @@ impl std::error::Error for InvalidSubnet {}
 pub mod invalid_subnet {
 
     /// A builder for [`InvalidSubnet`](crate::error::InvalidSubnet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2557,7 +2557,7 @@ impl std::error::Error for CacheSubnetQuotaExceededFault {}
 pub mod cache_subnet_quota_exceeded_fault {
 
     /// A builder for [`CacheSubnetQuotaExceededFault`](crate::error::CacheSubnetQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2617,7 +2617,7 @@ impl std::error::Error for NoOperationFault {}
 pub mod no_operation_fault {
 
     /// A builder for [`NoOperationFault`](crate::error::NoOperationFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2677,7 +2677,7 @@ impl std::error::Error for ClusterQuotaForCustomerExceededFault {}
 pub mod cluster_quota_for_customer_exceeded_fault {
 
     /// A builder for [`ClusterQuotaForCustomerExceededFault`](crate::error::ClusterQuotaForCustomerExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2737,7 +2737,7 @@ impl std::error::Error for ServiceUpdateNotFoundFault {}
 pub mod service_update_not_found_fault {
 
     /// A builder for [`ServiceUpdateNotFoundFault`](crate::error::ServiceUpdateNotFoundFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2797,7 +2797,7 @@ impl std::error::Error for DefaultUserAssociatedToUserGroupFault {}
 pub mod default_user_associated_to_user_group_fault {
 
     /// A builder for [`DefaultUserAssociatedToUserGroupFault`](crate::error::DefaultUserAssociatedToUserGroupFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2857,7 +2857,7 @@ impl std::error::Error for InvalidSnapshotStateFault {}
 pub mod invalid_snapshot_state_fault {
 
     /// A builder for [`InvalidSnapshotStateFault`](crate::error::InvalidSnapshotStateFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2917,7 +2917,7 @@ impl std::error::Error for SnapshotQuotaExceededFault {}
 pub mod snapshot_quota_exceeded_fault {
 
     /// A builder for [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2982,7 +2982,7 @@ impl std::error::Error for SnapshotFeatureNotSupportedFault {}
 pub mod snapshot_feature_not_supported_fault {
 
     /// A builder for [`SnapshotFeatureNotSupportedFault`](crate::error::SnapshotFeatureNotSupportedFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3042,7 +3042,7 @@ impl std::error::Error for SnapshotAlreadyExistsFault {}
 pub mod snapshot_already_exists_fault {
 
     /// A builder for [`SnapshotAlreadyExistsFault`](crate::error::SnapshotAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3102,7 +3102,7 @@ impl std::error::Error for CacheSubnetGroupInUse {}
 pub mod cache_subnet_group_in_use {
 
     /// A builder for [`CacheSubnetGroupInUse`](crate::error::CacheSubnetGroupInUse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3162,7 +3162,7 @@ impl std::error::Error for UserGroupQuotaExceededFault {}
 pub mod user_group_quota_exceeded_fault {
 
     /// A builder for [`UserGroupQuotaExceededFault`](crate::error::UserGroupQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3222,7 +3222,7 @@ impl std::error::Error for UserGroupAlreadyExistsFault {}
 pub mod user_group_already_exists_fault {
 
     /// A builder for [`UserGroupAlreadyExistsFault`](crate::error::UserGroupAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3282,7 +3282,7 @@ impl std::error::Error for UserQuotaExceededFault {}
 pub mod user_quota_exceeded_fault {
 
     /// A builder for [`UserQuotaExceededFault`](crate::error::UserQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3342,7 +3342,7 @@ impl std::error::Error for UserAlreadyExistsFault {}
 pub mod user_already_exists_fault {
 
     /// A builder for [`UserAlreadyExistsFault`](crate::error::UserAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3402,7 +3402,7 @@ impl std::error::Error for ReplicationGroupAlreadyExistsFault {}
 pub mod replication_group_already_exists_fault {
 
     /// A builder for [`ReplicationGroupAlreadyExistsFault`](crate::error::ReplicationGroupAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3462,7 +3462,7 @@ impl std::error::Error for GlobalReplicationGroupAlreadyExistsFault {}
 pub mod global_replication_group_already_exists_fault {
 
     /// A builder for [`GlobalReplicationGroupAlreadyExistsFault`](crate::error::GlobalReplicationGroupAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3522,7 +3522,7 @@ impl std::error::Error for CacheSubnetGroupQuotaExceededFault {}
 pub mod cache_subnet_group_quota_exceeded_fault {
 
     /// A builder for [`CacheSubnetGroupQuotaExceededFault`](crate::error::CacheSubnetGroupQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3582,7 +3582,7 @@ impl std::error::Error for CacheSubnetGroupAlreadyExistsFault {}
 pub mod cache_subnet_group_already_exists_fault {
 
     /// A builder for [`CacheSubnetGroupAlreadyExistsFault`](crate::error::CacheSubnetGroupAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3642,7 +3642,7 @@ impl std::error::Error for CacheSecurityGroupQuotaExceededFault {}
 pub mod cache_security_group_quota_exceeded_fault {
 
     /// A builder for [`CacheSecurityGroupQuotaExceededFault`](crate::error::CacheSecurityGroupQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3702,7 +3702,7 @@ impl std::error::Error for CacheSecurityGroupAlreadyExistsFault {}
 pub mod cache_security_group_already_exists_fault {
 
     /// A builder for [`CacheSecurityGroupAlreadyExistsFault`](crate::error::CacheSecurityGroupAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3762,7 +3762,7 @@ impl std::error::Error for CacheParameterGroupQuotaExceededFault {}
 pub mod cache_parameter_group_quota_exceeded_fault {
 
     /// A builder for [`CacheParameterGroupQuotaExceededFault`](crate::error::CacheParameterGroupQuotaExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3822,7 +3822,7 @@ impl std::error::Error for CacheParameterGroupAlreadyExistsFault {}
 pub mod cache_parameter_group_already_exists_fault {
 
     /// A builder for [`CacheParameterGroupAlreadyExistsFault`](crate::error::CacheParameterGroupAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3882,7 +3882,7 @@ impl std::error::Error for CacheClusterAlreadyExistsFault {}
 pub mod cache_cluster_already_exists_fault {
 
     /// A builder for [`CacheClusterAlreadyExistsFault`](crate::error::CacheClusterAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -3942,7 +3942,7 @@ impl std::error::Error for ReplicationGroupNotUnderMigrationFault {}
 pub mod replication_group_not_under_migration_fault {
 
     /// A builder for [`ReplicationGroupNotUnderMigrationFault`](crate::error::ReplicationGroupNotUnderMigrationFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -4002,7 +4002,7 @@ impl std::error::Error for AuthorizationAlreadyExistsFault {}
 pub mod authorization_already_exists_fault {
 
     /// A builder for [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

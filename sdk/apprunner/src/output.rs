@@ -24,7 +24,7 @@ impl UpdateServiceOutput {
 pub mod update_service_output {
 
     /// A builder for [`UpdateServiceOutput`](crate::output::UpdateServiceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::Service>,
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -74,7 +74,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -98,7 +98,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -132,7 +132,7 @@ impl StartDeploymentOutput {
 pub mod start_deployment_output {
 
     /// A builder for [`StartDeploymentOutput`](crate::output::StartDeploymentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
@@ -187,7 +187,7 @@ impl ResumeServiceOutput {
 pub mod resume_service_output {
 
     /// A builder for [`ResumeServiceOutput`](crate::output::ResumeServiceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::Service>,
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -254,7 +254,7 @@ impl PauseServiceOutput {
 pub mod pause_service_output {
 
     /// A builder for [`PauseServiceOutput`](crate::output::PauseServiceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::Service>,
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -321,7 +321,7 @@ impl ListVpcConnectorsOutput {
 pub mod list_vpc_connectors_output {
 
     /// A builder for [`ListVpcConnectorsOutput`](crate::output::ListVpcConnectorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_connectors: std::option::Option<std::vec::Vec<crate::model::VpcConnector>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -390,7 +390,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -452,7 +452,7 @@ impl ListServicesOutput {
 pub mod list_services_output {
 
     /// A builder for [`ListServicesOutput`](crate::output::ListServicesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_summary_list:
             std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
@@ -529,7 +529,7 @@ impl ListOperationsOutput {
 pub mod list_operations_output {
 
     /// A builder for [`ListOperationsOutput`](crate::output::ListOperationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_summary_list:
             std::option::Option<std::vec::Vec<crate::model::OperationSummary>>,
@@ -609,7 +609,7 @@ impl ListObservabilityConfigurationsOutput {
 pub mod list_observability_configurations_output {
 
     /// A builder for [`ListObservabilityConfigurationsOutput`](crate::output::ListObservabilityConfigurationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observability_configuration_summary_list:
             std::option::Option<std::vec::Vec<crate::model::ObservabilityConfigurationSummary>>,
@@ -697,7 +697,7 @@ impl ListConnectionsOutput {
 pub mod list_connections_output {
 
     /// A builder for [`ListConnectionsOutput`](crate::output::ListConnectionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_summary_list:
             std::option::Option<std::vec::Vec<crate::model::ConnectionSummary>>,
@@ -777,7 +777,7 @@ impl ListAutoScalingConfigurationsOutput {
 pub mod list_auto_scaling_configurations_output {
 
     /// A builder for [`ListAutoScalingConfigurationsOutput`](crate::output::ListAutoScalingConfigurationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_configuration_summary_list:
             std::option::Option<std::vec::Vec<crate::model::AutoScalingConfigurationSummary>>,
@@ -869,7 +869,7 @@ impl DisassociateCustomDomainOutput {
 pub mod disassociate_custom_domain_output {
 
     /// A builder for [`DisassociateCustomDomainOutput`](crate::output::DisassociateCustomDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_target: std::option::Option<std::string::String>,
         pub(crate) service_arn: std::option::Option<std::string::String>,
@@ -944,7 +944,7 @@ impl DescribeVpcConnectorOutput {
 pub mod describe_vpc_connector_output {
 
     /// A builder for [`DescribeVpcConnectorOutput`](crate::output::DescribeVpcConnectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_connector: std::option::Option<crate::model::VpcConnector>,
     }
@@ -995,7 +995,7 @@ impl DescribeServiceOutput {
 pub mod describe_service_output {
 
     /// A builder for [`DescribeServiceOutput`](crate::output::DescribeServiceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::Service>,
     }
@@ -1045,7 +1045,7 @@ impl DescribeObservabilityConfigurationOutput {
 pub mod describe_observability_configuration_output {
 
     /// A builder for [`DescribeObservabilityConfigurationOutput`](crate::output::DescribeObservabilityConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observability_configuration:
             std::option::Option<crate::model::ObservabilityConfiguration>,
@@ -1121,7 +1121,7 @@ impl DescribeCustomDomainsOutput {
 pub mod describe_custom_domains_output {
 
     /// A builder for [`DescribeCustomDomainsOutput`](crate::output::DescribeCustomDomainsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_target: std::option::Option<std::string::String>,
         pub(crate) service_arn: std::option::Option<std::string::String>,
@@ -1216,7 +1216,7 @@ impl DescribeAutoScalingConfigurationOutput {
 pub mod describe_auto_scaling_configuration_output {
 
     /// A builder for [`DescribeAutoScalingConfigurationOutput`](crate::output::DescribeAutoScalingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_configuration:
             std::option::Option<crate::model::AutoScalingConfiguration>,
@@ -1271,7 +1271,7 @@ impl DeleteVpcConnectorOutput {
 pub mod delete_vpc_connector_output {
 
     /// A builder for [`DeleteVpcConnectorOutput`](crate::output::DeleteVpcConnectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_connector: std::option::Option<crate::model::VpcConnector>,
     }
@@ -1329,7 +1329,7 @@ impl DeleteServiceOutput {
 pub mod delete_service_output {
 
     /// A builder for [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::Service>,
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -1391,7 +1391,7 @@ impl DeleteObservabilityConfigurationOutput {
 pub mod delete_observability_configuration_output {
 
     /// A builder for [`DeleteObservabilityConfigurationOutput`](crate::output::DeleteObservabilityConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observability_configuration:
             std::option::Option<crate::model::ObservabilityConfiguration>,
@@ -1446,7 +1446,7 @@ impl DeleteConnectionOutput {
 pub mod delete_connection_output {
 
     /// A builder for [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection: std::option::Option<crate::model::Connection>,
     }
@@ -1499,7 +1499,7 @@ impl DeleteAutoScalingConfigurationOutput {
 pub mod delete_auto_scaling_configuration_output {
 
     /// A builder for [`DeleteAutoScalingConfigurationOutput`](crate::output::DeleteAutoScalingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_configuration:
             std::option::Option<crate::model::AutoScalingConfiguration>,
@@ -1554,7 +1554,7 @@ impl CreateVpcConnectorOutput {
 pub mod create_vpc_connector_output {
 
     /// A builder for [`CreateVpcConnectorOutput`](crate::output::CreateVpcConnectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_connector: std::option::Option<crate::model::VpcConnector>,
     }
@@ -1612,7 +1612,7 @@ impl CreateServiceOutput {
 pub mod create_service_output {
 
     /// A builder for [`CreateServiceOutput`](crate::output::CreateServiceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::Service>,
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -1674,7 +1674,7 @@ impl CreateObservabilityConfigurationOutput {
 pub mod create_observability_configuration_output {
 
     /// A builder for [`CreateObservabilityConfigurationOutput`](crate::output::CreateObservabilityConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observability_configuration:
             std::option::Option<crate::model::ObservabilityConfiguration>,
@@ -1729,7 +1729,7 @@ impl CreateConnectionOutput {
 pub mod create_connection_output {
 
     /// A builder for [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection: std::option::Option<crate::model::Connection>,
     }
@@ -1782,7 +1782,7 @@ impl CreateAutoScalingConfigurationOutput {
 pub mod create_auto_scaling_configuration_output {
 
     /// A builder for [`CreateAutoScalingConfigurationOutput`](crate::output::CreateAutoScalingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_configuration:
             std::option::Option<crate::model::AutoScalingConfiguration>,
@@ -1851,7 +1851,7 @@ impl AssociateCustomDomainOutput {
 pub mod associate_custom_domain_output {
 
     /// A builder for [`AssociateCustomDomainOutput`](crate::output::AssociateCustomDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_target: std::option::Option<std::string::String>,
         pub(crate) service_arn: std::option::Option<std::string::String>,

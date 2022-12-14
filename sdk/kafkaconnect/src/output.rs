@@ -24,7 +24,7 @@ impl UpdateConnectorOutput {
 pub mod update_connector_output {
 
     /// A builder for [`UpdateConnectorOutput`](crate::output::UpdateConnectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_arn: std::option::Option<std::string::String>,
         pub(crate) connector_state: std::option::Option<crate::model::ConnectorState>,
@@ -100,7 +100,7 @@ impl ListWorkerConfigurationsOutput {
 pub mod list_worker_configurations_output {
 
     /// A builder for [`ListWorkerConfigurationsOutput`](crate::output::ListWorkerConfigurationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) worker_configurations:
@@ -180,7 +180,7 @@ impl ListCustomPluginsOutput {
 pub mod list_custom_plugins_output {
 
     /// A builder for [`ListCustomPluginsOutput`](crate::output::ListCustomPluginsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_plugins:
             std::option::Option<std::vec::Vec<crate::model::CustomPluginSummary>>,
@@ -257,7 +257,7 @@ impl ListConnectorsOutput {
 pub mod list_connectors_output {
 
     /// A builder for [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connectors: std::option::Option<std::vec::Vec<crate::model::ConnectorSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -356,7 +356,7 @@ impl DescribeWorkerConfigurationOutput {
 pub mod describe_worker_configuration_output {
 
     /// A builder for [`DescribeWorkerConfigurationOutput`](crate::output::DescribeWorkerConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -509,7 +509,7 @@ impl DescribeCustomPluginOutput {
 pub mod describe_custom_plugin_output {
 
     /// A builder for [`DescribeCustomPluginOutput`](crate::output::DescribeCustomPluginOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) custom_plugin_arn: std::option::Option<std::string::String>,
@@ -803,7 +803,7 @@ impl std::fmt::Debug for DescribeConnectorOutput {
 pub mod describe_connector_output {
 
     /// A builder for [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) capacity: std::option::Option<crate::model::CapacityDescription>,
         pub(crate) connector_arn: std::option::Option<std::string::String>,
@@ -1168,7 +1168,7 @@ impl DeleteCustomPluginOutput {
 pub mod delete_custom_plugin_output {
 
     /// A builder for [`DeleteCustomPluginOutput`](crate::output::DeleteCustomPluginOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_plugin_arn: std::option::Option<std::string::String>,
         pub(crate) custom_plugin_state: std::option::Option<crate::model::CustomPluginState>,
@@ -1241,7 +1241,7 @@ impl DeleteConnectorOutput {
 pub mod delete_connector_output {
 
     /// A builder for [`DeleteConnectorOutput`](crate::output::DeleteConnectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_arn: std::option::Option<std::string::String>,
         pub(crate) connector_state: std::option::Option<crate::model::ConnectorState>,
@@ -1330,7 +1330,7 @@ impl CreateWorkerConfigurationOutput {
 pub mod create_worker_configuration_output {
 
     /// A builder for [`CreateWorkerConfigurationOutput`](crate::output::CreateWorkerConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) latest_revision:
@@ -1448,7 +1448,7 @@ impl CreateCustomPluginOutput {
 pub mod create_custom_plugin_output {
 
     /// A builder for [`CreateCustomPluginOutput`](crate::output::CreateCustomPluginOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_plugin_arn: std::option::Option<std::string::String>,
         pub(crate) custom_plugin_state: std::option::Option<crate::model::CustomPluginState>,
@@ -1552,7 +1552,7 @@ impl CreateConnectorOutput {
 pub mod create_connector_output {
 
     /// A builder for [`CreateConnectorOutput`](crate::output::CreateConnectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_arn: std::option::Option<std::string::String>,
         pub(crate) connector_name: std::option::Option<std::string::String>,

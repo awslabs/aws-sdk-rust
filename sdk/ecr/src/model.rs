@@ -25,7 +25,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -194,7 +194,7 @@ impl ImageScanStatus {
 pub mod image_scan_status {
 
     /// A builder for [`ImageScanStatus`](crate::model::ImageScanStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ScanStatus>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -390,7 +390,7 @@ impl ImageIdentifier {
 pub mod image_identifier {
 
     /// A builder for [`ImageIdentifier`](crate::model::ImageIdentifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_digest: std::option::Option<std::string::String>,
         pub(crate) image_tag: std::option::Option<std::string::String>,
@@ -450,7 +450,7 @@ impl ReplicationConfiguration {
 pub mod replication_configuration {
 
     /// A builder for [`ReplicationConfiguration`](crate::model::ReplicationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::ReplicationRule>>,
     }
@@ -512,7 +512,7 @@ impl ReplicationRule {
 pub mod replication_rule {
 
     /// A builder for [`ReplicationRule`](crate::model::ReplicationRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destinations:
             std::option::Option<std::vec::Vec<crate::model::ReplicationDestination>>,
@@ -599,7 +599,7 @@ impl RepositoryFilter {
 pub mod repository_filter {
 
     /// A builder for [`RepositoryFilter`](crate::model::RepositoryFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<std::string::String>,
         pub(crate) filter_type: std::option::Option<crate::model::RepositoryFilterType>,
@@ -756,7 +756,7 @@ impl ReplicationDestination {
 pub mod replication_destination {
 
     /// A builder for [`ReplicationDestination`](crate::model::ReplicationDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -823,7 +823,7 @@ impl RegistryScanningConfiguration {
 pub mod registry_scanning_configuration {
 
     /// A builder for [`RegistryScanningConfiguration`](crate::model::RegistryScanningConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scan_type: std::option::Option<crate::model::ScanType>,
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::RegistryScanningRule>>,
@@ -902,7 +902,7 @@ impl RegistryScanningRule {
 pub mod registry_scanning_rule {
 
     /// A builder for [`RegistryScanningRule`](crate::model::RegistryScanningRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scan_frequency: std::option::Option<crate::model::ScanFrequency>,
         pub(crate) repository_filters:
@@ -982,7 +982,7 @@ impl ScanningRepositoryFilter {
 pub mod scanning_repository_filter {
 
     /// A builder for [`ScanningRepositoryFilter`](crate::model::ScanningRepositoryFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter: std::option::Option<std::string::String>,
         pub(crate) filter_type: std::option::Option<crate::model::ScanningRepositoryFilterType>,
@@ -1409,7 +1409,7 @@ impl ImageScanningConfiguration {
 pub mod image_scanning_configuration {
 
     /// A builder for [`ImageScanningConfiguration`](crate::model::ImageScanningConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scan_on_push: std::option::Option<bool>,
     }
@@ -1485,7 +1485,7 @@ impl Image {
 pub mod image {
 
     /// A builder for [`Image`](crate::model::Image).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -1593,7 +1593,7 @@ impl ListImagesFilter {
 pub mod list_images_filter {
 
     /// A builder for [`ListImagesFilter`](crate::model::ListImagesFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_status: std::option::Option<crate::model::TagStatus>,
     }
@@ -1739,7 +1739,7 @@ impl LifecyclePolicyPreviewSummary {
 pub mod lifecycle_policy_preview_summary {
 
     /// A builder for [`LifecyclePolicyPreviewSummary`](crate::model::LifecyclePolicyPreviewSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expiring_image_total_count: std::option::Option<i32>,
     }
@@ -1815,7 +1815,7 @@ impl LifecyclePolicyPreviewResult {
 pub mod lifecycle_policy_preview_result {
 
     /// A builder for [`LifecyclePolicyPreviewResult`](crate::model::LifecyclePolicyPreviewResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) image_digest: std::option::Option<std::string::String>,
@@ -1926,7 +1926,7 @@ impl LifecyclePolicyRuleAction {
 pub mod lifecycle_policy_rule_action {
 
     /// A builder for [`LifecyclePolicyRuleAction`](crate::model::LifecyclePolicyRuleAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ImageActionType>,
     }
@@ -2062,7 +2062,7 @@ impl LifecyclePolicyPreviewFilter {
 pub mod lifecycle_policy_preview_filter {
 
     /// A builder for [`LifecyclePolicyPreviewFilter`](crate::model::LifecyclePolicyPreviewFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_status: std::option::Option<crate::model::TagStatus>,
     }
@@ -2127,7 +2127,7 @@ impl AuthorizationData {
 pub mod authorization_data {
 
     /// A builder for [`AuthorizationData`](crate::model::AuthorizationData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization_token: std::option::Option<std::string::String>,
         pub(crate) expires_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -2261,7 +2261,7 @@ impl Repository {
 pub mod repository {
 
     /// A builder for [`Repository`](crate::model::Repository).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_arn: std::option::Option<std::string::String>,
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -2435,7 +2435,7 @@ impl EncryptionConfiguration {
 pub mod encryption_configuration {
 
     /// A builder for [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
         pub(crate) kms_key: std::option::Option<std::string::String>,
@@ -2613,7 +2613,7 @@ impl PullThroughCacheRule {
 pub mod pull_through_cache_rule {
 
     /// A builder for [`PullThroughCacheRule`](crate::model::PullThroughCacheRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ecr_repository_prefix: std::option::Option<std::string::String>,
         pub(crate) upstream_registry_url: std::option::Option<std::string::String>,
@@ -2742,7 +2742,7 @@ impl ImageScanFindings {
 pub mod image_scan_findings {
 
     /// A builder for [`ImageScanFindings`](crate::model::ImageScanFindings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) vulnerability_source_updated_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -2979,7 +2979,7 @@ impl EnhancedImageScanFinding {
 pub mod enhanced_image_scan_finding {
 
     /// A builder for [`EnhancedImageScanFinding`](crate::model::EnhancedImageScanFinding).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -3229,7 +3229,7 @@ impl ScoreDetails {
 pub mod score_details {
 
     /// A builder for [`ScoreDetails`](crate::model::ScoreDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cvss: std::option::Option<crate::model::CvssScoreDetails>,
     }
@@ -3306,7 +3306,7 @@ impl CvssScoreDetails {
 pub mod cvss_score_details {
 
     /// A builder for [`CvssScoreDetails`](crate::model::CvssScoreDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adjustments:
             std::option::Option<std::vec::Vec<crate::model::CvssScoreAdjustment>>,
@@ -3422,7 +3422,7 @@ impl CvssScoreAdjustment {
 pub mod cvss_score_adjustment {
 
     /// A builder for [`CvssScoreAdjustment`](crate::model::CvssScoreAdjustment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<std::string::String>,
@@ -3507,7 +3507,7 @@ impl Resource {
 pub mod resource {
 
     /// A builder for [`Resource`](crate::model::Resource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<crate::model::ResourceDetails>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3613,7 +3613,7 @@ impl ResourceDetails {
 pub mod resource_details {
 
     /// A builder for [`ResourceDetails`](crate::model::ResourceDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_ecr_container_image:
             std::option::Option<crate::model::AwsEcrContainerImageDetails>,
@@ -3717,7 +3717,7 @@ impl AwsEcrContainerImageDetails {
 pub mod aws_ecr_container_image_details {
 
     /// A builder for [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) architecture: std::option::Option<std::string::String>,
         pub(crate) author: std::option::Option<std::string::String>,
@@ -3864,7 +3864,7 @@ impl Remediation {
 pub mod remediation {
 
     /// A builder for [`Remediation`](crate::model::Remediation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation: std::option::Option<crate::model::Recommendation>,
     }
@@ -3922,7 +3922,7 @@ impl Recommendation {
 pub mod recommendation {
 
     /// A builder for [`Recommendation`](crate::model::Recommendation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) text: std::option::Option<std::string::String>,
@@ -4045,7 +4045,7 @@ impl PackageVulnerabilityDetails {
 pub mod package_vulnerability_details {
 
     /// A builder for [`PackageVulnerabilityDetails`](crate::model::PackageVulnerabilityDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cvss: std::option::Option<std::vec::Vec<crate::model::CvssScore>>,
         pub(crate) reference_urls: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4299,7 +4299,7 @@ impl VulnerablePackage {
 pub mod vulnerable_package {
 
     /// A builder for [`VulnerablePackage`](crate::model::VulnerablePackage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arch: std::option::Option<std::string::String>,
         pub(crate) epoch: std::option::Option<i32>,
@@ -4458,7 +4458,7 @@ impl CvssScore {
 pub mod cvss_score {
 
     /// A builder for [`CvssScore`](crate::model::CvssScore).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base_score: std::option::Option<f64>,
         pub(crate) scoring_vector: std::option::Option<std::string::String>,
@@ -4573,7 +4573,7 @@ impl ImageScanFinding {
 pub mod image_scan_finding {
 
     /// A builder for [`ImageScanFinding`](crate::model::ImageScanFinding).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4688,7 +4688,7 @@ impl Attribute {
 pub mod attribute {
 
     /// A builder for [`Attribute`](crate::model::Attribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -4947,7 +4947,7 @@ impl ImageDetail {
 pub mod image_detail {
 
     /// A builder for [`ImageDetail`](crate::model::ImageDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -5178,7 +5178,7 @@ impl ImageScanFindingsSummary {
 pub mod image_scan_findings_summary {
 
     /// A builder for [`ImageScanFindingsSummary`](crate::model::ImageScanFindingsSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) vulnerability_source_updated_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -5271,7 +5271,7 @@ impl DescribeImagesFilter {
 pub mod describe_images_filter {
 
     /// A builder for [`DescribeImagesFilter`](crate::model::DescribeImagesFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_status: std::option::Option<crate::model::TagStatus>,
     }
@@ -5343,7 +5343,7 @@ impl ImageReplicationStatus {
 pub mod image_replication_status {
 
     /// A builder for [`ImageReplicationStatus`](crate::model::ImageReplicationStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -5543,7 +5543,7 @@ impl RepositoryScanningConfigurationFailure {
 pub mod repository_scanning_configuration_failure {
 
     /// A builder for [`RepositoryScanningConfigurationFailure`](crate::model::RepositoryScanningConfigurationFailure).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) failure_code:
@@ -5746,7 +5746,7 @@ impl RepositoryScanningConfiguration {
 pub mod repository_scanning_configuration {
 
     /// A builder for [`RepositoryScanningConfiguration`](crate::model::RepositoryScanningConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_arn: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -5878,7 +5878,7 @@ impl ImageFailure {
 pub mod image_failure {
 
     /// A builder for [`ImageFailure`](crate::model::ImageFailure).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_id: std::option::Option<crate::model::ImageIdentifier>,
         pub(crate) failure_code: std::option::Option<crate::model::ImageFailureCode>,
@@ -6096,7 +6096,7 @@ impl LayerFailure {
 pub mod layer_failure {
 
     /// A builder for [`LayerFailure`](crate::model::LayerFailure).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_digest: std::option::Option<std::string::String>,
         pub(crate) failure_code: std::option::Option<crate::model::LayerFailureCode>,
@@ -6285,7 +6285,7 @@ impl Layer {
 pub mod layer {
 
     /// A builder for [`Layer`](crate::model::Layer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_digest: std::option::Option<std::string::String>,
         pub(crate) layer_availability: std::option::Option<crate::model::LayerAvailability>,

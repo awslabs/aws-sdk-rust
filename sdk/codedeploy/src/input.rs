@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod add_tags_to_on_premises_instances_input {
 
     /// A builder for [`AddTagsToOnPremisesInstancesInput`](crate::input::AddTagsToOnPremisesInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -183,7 +183,7 @@ impl AddTagsToOnPremisesInstancesInput {
 pub mod batch_get_application_revisions_input {
 
     /// A builder for [`BatchGetApplicationRevisionsInput`](crate::input::BatchGetApplicationRevisionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) revisions: std::option::Option<std::vec::Vec<crate::model::RevisionLocation>>,
@@ -353,7 +353,7 @@ impl BatchGetApplicationRevisionsInput {
 pub mod batch_get_applications_input {
 
     /// A builder for [`BatchGetApplicationsInput`](crate::input::BatchGetApplicationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -511,7 +511,7 @@ impl BatchGetApplicationsInput {
 pub mod batch_get_deployment_groups_input {
 
     /// A builder for [`BatchGetDeploymentGroupsInput`](crate::input::BatchGetDeploymentGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) deployment_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -684,7 +684,7 @@ impl BatchGetDeploymentGroupsInput {
 pub mod batch_get_deployment_instances_input {
 
     /// A builder for [`BatchGetDeploymentInstancesInput`](crate::input::BatchGetDeploymentInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -854,7 +854,7 @@ impl BatchGetDeploymentInstancesInput {
 pub mod batch_get_deployments_input {
 
     /// A builder for [`BatchGetDeploymentsInput`](crate::input::BatchGetDeploymentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1010,7 +1010,7 @@ impl BatchGetDeploymentsInput {
 pub mod batch_get_deployment_targets_input {
 
     /// A builder for [`BatchGetDeploymentTargetsInput`](crate::input::BatchGetDeploymentTargetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) target_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1203,7 +1203,7 @@ impl BatchGetDeploymentTargetsInput {
 pub mod batch_get_on_premises_instances_input {
 
     /// A builder for [`BatchGetOnPremisesInstancesInput`](crate::input::BatchGetOnPremisesInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1358,7 +1358,7 @@ impl BatchGetOnPremisesInstancesInput {
 pub mod continue_deployment_input {
 
     /// A builder for [`ContinueDeploymentInput`](crate::input::ContinueDeploymentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) deployment_wait_type: std::option::Option<crate::model::DeploymentWaitType>,
@@ -1523,7 +1523,7 @@ impl ContinueDeploymentInput {
 pub mod create_application_input {
 
     /// A builder for [`CreateApplicationInput`](crate::input::CreateApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) compute_platform: std::option::Option<crate::model::ComputePlatform>,
@@ -1709,7 +1709,7 @@ impl CreateApplicationInput {
 pub mod create_deployment_input {
 
     /// A builder for [`CreateDeploymentInput`](crate::input::CreateDeploymentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) deployment_group_name: std::option::Option<std::string::String>,
@@ -2042,7 +2042,7 @@ impl CreateDeploymentInput {
 pub mod create_deployment_config_input {
 
     /// A builder for [`CreateDeploymentConfigInput`](crate::input::CreateDeploymentConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_config_name: std::option::Option<std::string::String>,
         pub(crate) minimum_healthy_hosts: std::option::Option<crate::model::MinimumHealthyHosts>,
@@ -2253,7 +2253,7 @@ impl CreateDeploymentConfigInput {
 pub mod create_deployment_group_input {
 
     /// A builder for [`CreateDeploymentGroupInput`](crate::input::CreateDeploymentGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) deployment_group_name: std::option::Option<std::string::String>,
@@ -2726,7 +2726,7 @@ impl CreateDeploymentGroupInput {
 pub mod delete_application_input {
 
     /// A builder for [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
     }
@@ -2876,7 +2876,7 @@ impl DeleteApplicationInput {
 pub mod delete_deployment_config_input {
 
     /// A builder for [`DeleteDeploymentConfigInput`](crate::input::DeleteDeploymentConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_config_name: std::option::Option<std::string::String>,
     }
@@ -3028,7 +3028,7 @@ impl DeleteDeploymentConfigInput {
 pub mod delete_deployment_group_input {
 
     /// A builder for [`DeleteDeploymentGroupInput`](crate::input::DeleteDeploymentGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) deployment_group_name: std::option::Option<std::string::String>,
@@ -3195,7 +3195,7 @@ impl DeleteDeploymentGroupInput {
 pub mod delete_git_hub_account_token_input {
 
     /// A builder for [`DeleteGitHubAccountTokenInput`](crate::input::DeleteGitHubAccountTokenInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) token_name: std::option::Option<std::string::String>,
     }
@@ -3344,7 +3344,7 @@ impl DeleteGitHubAccountTokenInput {
 pub mod delete_resources_by_external_id_input {
 
     /// A builder for [`DeleteResourcesByExternalIdInput`](crate::input::DeleteResourcesByExternalIdInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) external_id: std::option::Option<std::string::String>,
     }
@@ -3490,7 +3490,7 @@ impl DeleteResourcesByExternalIdInput {
 pub mod deregister_on_premises_instance_input {
 
     /// A builder for [`DeregisterOnPremisesInstanceInput`](crate::input::DeregisterOnPremisesInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_name: std::option::Option<std::string::String>,
     }
@@ -3639,7 +3639,7 @@ impl DeregisterOnPremisesInstanceInput {
 pub mod get_application_input {
 
     /// A builder for [`GetApplicationInput`](crate::input::GetApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
     }
@@ -3787,7 +3787,7 @@ impl GetApplicationInput {
 pub mod get_application_revision_input {
 
     /// A builder for [`GetApplicationRevisionInput`](crate::input::GetApplicationRevisionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) revision: std::option::Option<crate::model::RevisionLocation>,
@@ -3954,7 +3954,7 @@ impl GetApplicationRevisionInput {
 pub mod get_deployment_input {
 
     /// A builder for [`GetDeploymentInput`](crate::input::GetDeploymentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
     }
@@ -4102,7 +4102,7 @@ impl GetDeploymentInput {
 pub mod get_deployment_config_input {
 
     /// A builder for [`GetDeploymentConfigInput`](crate::input::GetDeploymentConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_config_name: std::option::Option<std::string::String>,
     }
@@ -4252,7 +4252,7 @@ impl GetDeploymentConfigInput {
 pub mod get_deployment_group_input {
 
     /// A builder for [`GetDeploymentGroupInput`](crate::input::GetDeploymentGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) deployment_group_name: std::option::Option<std::string::String>,
@@ -4417,7 +4417,7 @@ impl GetDeploymentGroupInput {
 pub mod get_deployment_instance_input {
 
     /// A builder for [`GetDeploymentInstanceInput`](crate::input::GetDeploymentInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -4581,7 +4581,7 @@ impl GetDeploymentInstanceInput {
 pub mod get_deployment_target_input {
 
     /// A builder for [`GetDeploymentTargetInput`](crate::input::GetDeploymentTargetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) target_id: std::option::Option<std::string::String>,
@@ -4743,7 +4743,7 @@ impl GetDeploymentTargetInput {
 pub mod get_on_premises_instance_input {
 
     /// A builder for [`GetOnPremisesInstanceInput`](crate::input::GetOnPremisesInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_name: std::option::Option<std::string::String>,
     }
@@ -4895,7 +4895,7 @@ impl GetOnPremisesInstanceInput {
 pub mod list_application_revisions_input {
 
     /// A builder for [`ListApplicationRevisionsInput`](crate::input::ListApplicationRevisionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) sort_by: std::option::Option<crate::model::ApplicationRevisionSortBy>,
@@ -5167,7 +5167,7 @@ impl ListApplicationRevisionsInput {
 pub mod list_applications_input {
 
     /// A builder for [`ListApplicationsInput`](crate::input::ListApplicationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -5314,7 +5314,7 @@ impl ListApplicationsInput {
 pub mod list_deployment_configs_input {
 
     /// A builder for [`ListDeploymentConfigsInput`](crate::input::ListDeploymentConfigsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -5463,7 +5463,7 @@ impl ListDeploymentConfigsInput {
 pub mod list_deployment_groups_input {
 
     /// A builder for [`ListDeploymentGroupsInput`](crate::input::ListDeploymentGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5627,7 +5627,7 @@ impl ListDeploymentGroupsInput {
 pub mod list_deployment_instances_input {
 
     /// A builder for [`ListDeploymentInstancesInput`](crate::input::ListDeploymentInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5851,7 +5851,7 @@ impl ListDeploymentInstancesInput {
 pub mod list_deployments_input {
 
     /// A builder for [`ListDeploymentsInput`](crate::input::ListDeploymentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) deployment_group_name: std::option::Option<std::string::String>,
@@ -6099,7 +6099,7 @@ impl ListDeploymentsInput {
 pub mod list_deployment_targets_input {
 
     /// A builder for [`ListDeploymentTargetsInput`](crate::input::ListDeploymentTargetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6306,7 +6306,7 @@ impl ListDeploymentTargetsInput {
 pub mod list_git_hub_account_token_names_input {
 
     /// A builder for [`ListGitHubAccountTokenNamesInput`](crate::input::ListGitHubAccountTokenNamesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -6452,7 +6452,7 @@ impl ListGitHubAccountTokenNamesInput {
 pub mod list_on_premises_instances_input {
 
     /// A builder for [`ListOnPremisesInstancesInput`](crate::input::ListOnPremisesInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registration_status: std::option::Option<crate::model::RegistrationStatus>,
         pub(crate) tag_filters: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
@@ -6645,7 +6645,7 @@ impl ListOnPremisesInstancesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6806,7 +6806,7 @@ impl ListTagsForResourceInput {
 pub mod put_lifecycle_event_hook_execution_status_input {
 
     /// A builder for [`PutLifecycleEventHookExecutionStatusInput`](crate::input::PutLifecycleEventHookExecutionStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle_event_hook_execution_id: std::option::Option<std::string::String>,
@@ -6988,7 +6988,7 @@ impl PutLifecycleEventHookExecutionStatusInput {
 pub mod register_application_revision_input {
 
     /// A builder for [`RegisterApplicationRevisionInput`](crate::input::RegisterApplicationRevisionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -7164,7 +7164,7 @@ impl RegisterApplicationRevisionInput {
 pub mod register_on_premises_instance_input {
 
     /// A builder for [`RegisterOnPremisesInstanceInput`](crate::input::RegisterOnPremisesInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_name: std::option::Option<std::string::String>,
         pub(crate) iam_session_arn: std::option::Option<std::string::String>,
@@ -7340,7 +7340,7 @@ impl RegisterOnPremisesInstanceInput {
 pub mod remove_tags_from_on_premises_instances_input {
 
     /// A builder for [`RemoveTagsFromOnPremisesInstancesInput`](crate::input::RemoveTagsFromOnPremisesInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7516,7 +7516,7 @@ impl RemoveTagsFromOnPremisesInstancesInput {
 pub mod skip_wait_time_for_instance_termination_input {
 
     /// A builder for [`SkipWaitTimeForInstanceTerminationInput`](crate::input::SkipWaitTimeForInstanceTerminationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
     }
@@ -7665,7 +7665,7 @@ impl SkipWaitTimeForInstanceTerminationInput {
 pub mod stop_deployment_input {
 
     /// A builder for [`StopDeploymentInput`](crate::input::StopDeploymentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) auto_rollback_enabled: std::option::Option<bool>,
@@ -7825,7 +7825,7 @@ impl StopDeploymentInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7991,7 +7991,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8157,7 +8157,7 @@ impl UntagResourceInput {
 pub mod update_application_input {
 
     /// A builder for [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) new_application_name: std::option::Option<std::string::String>,
@@ -8322,7 +8322,7 @@ impl UpdateApplicationInput {
 pub mod update_deployment_group_input {
 
     /// A builder for [`UpdateDeploymentGroupInput`](crate::input::UpdateDeploymentGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
         pub(crate) current_deployment_group_name: std::option::Option<std::string::String>,

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod delete_lexicon_input {
 
     /// A builder for [`DeleteLexiconInput`](crate::input::DeleteLexiconInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -149,7 +149,7 @@ impl DeleteLexiconInput {
 pub mod describe_voices_input {
 
     /// A builder for [`DescribeVoicesInput`](crate::input::DescribeVoicesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine: std::option::Option<crate::model::Engine>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -354,7 +354,7 @@ impl DescribeVoicesInput {
 pub mod get_lexicon_input {
 
     /// A builder for [`GetLexiconInput`](crate::input::GetLexiconInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -498,7 +498,7 @@ impl GetLexiconInput {
 pub mod get_speech_synthesis_task_input {
 
     /// A builder for [`GetSpeechSynthesisTaskInput`](crate::input::GetSpeechSynthesisTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
     }
@@ -646,7 +646,7 @@ impl GetSpeechSynthesisTaskInput {
 pub mod list_lexicons_input {
 
     /// A builder for [`ListLexiconsInput`](crate::input::ListLexiconsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -785,7 +785,7 @@ impl ListLexiconsInput {
 pub mod list_speech_synthesis_tasks_input {
 
     /// A builder for [`ListSpeechSynthesisTasksInput`](crate::input::ListSpeechSynthesisTasksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -963,7 +963,7 @@ impl ListSpeechSynthesisTasksInput {
 pub mod put_lexicon_input {
 
     /// A builder for [`PutLexiconInput`](crate::input::PutLexiconInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<std::string::String>,
@@ -1143,7 +1143,7 @@ impl PutLexiconInput {
 pub mod start_speech_synthesis_task_input {
 
     /// A builder for [`StartSpeechSynthesisTaskInput`](crate::input::StartSpeechSynthesisTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine: std::option::Option<crate::model::Engine>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -1459,7 +1459,7 @@ impl StartSpeechSynthesisTaskInput {
 pub mod synthesize_speech_input {
 
     /// A builder for [`SynthesizeSpeechInput`](crate::input::SynthesizeSpeechInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine: std::option::Option<crate::model::Engine>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,

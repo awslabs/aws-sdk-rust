@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_savings_plan_input {
 
     /// A builder for [`CreateSavingsPlanInput`](crate::input::CreateSavingsPlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plan_offering_id: std::option::Option<std::string::String>,
         pub(crate) commitment: std::option::Option<std::string::String>,
@@ -236,7 +236,7 @@ impl CreateSavingsPlanInput {
 pub mod delete_queued_savings_plan_input {
 
     /// A builder for [`DeleteQueuedSavingsPlanInput`](crate::input::DeleteQueuedSavingsPlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plan_id: std::option::Option<std::string::String>,
     }
@@ -383,7 +383,7 @@ impl DeleteQueuedSavingsPlanInput {
 pub mod describe_savings_plan_rates_input {
 
     /// A builder for [`DescribeSavingsPlanRatesInput`](crate::input::DescribeSavingsPlanRatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plan_id: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::SavingsPlanRateFilter>>,
@@ -575,7 +575,7 @@ impl DescribeSavingsPlanRatesInput {
 pub mod describe_savings_plans_input {
 
     /// A builder for [`DescribeSavingsPlansInput`](crate::input::DescribeSavingsPlansInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plan_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) savings_plan_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -815,7 +815,7 @@ impl DescribeSavingsPlansInput {
 pub mod describe_savings_plans_offering_rates_input {
 
     /// A builder for [`DescribeSavingsPlansOfferingRatesInput`](crate::input::DescribeSavingsPlansOfferingRatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plan_offering_ids:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1151,7 +1151,7 @@ impl DescribeSavingsPlansOfferingRatesInput {
 pub mod describe_savings_plans_offerings_input {
 
     /// A builder for [`DescribeSavingsPlansOfferingsInput`](crate::input::DescribeSavingsPlansOfferingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offering_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) payment_options:
@@ -1531,7 +1531,7 @@ impl DescribeSavingsPlansOfferingsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1675,7 +1675,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -1844,7 +1844,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,

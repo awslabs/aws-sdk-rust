@@ -32,7 +32,7 @@ impl TableMember {
 pub mod table_member {
 
     /// A builder for [`TableMember`](crate::model::TableMember).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -167,7 +167,7 @@ impl StatementData {
 pub mod statement_data {
 
     /// A builder for [`StatementData`](crate::model::StatementData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) query_string: std::option::Option<std::string::String>,
@@ -360,7 +360,7 @@ impl SqlParameter {
 pub mod sql_parameter {
 
     /// A builder for [`SqlParameter`](crate::model::SqlParameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -627,7 +627,7 @@ impl ColumnMetadata {
 pub mod column_metadata {
 
     /// A builder for [`ColumnMetadata`](crate::model::ColumnMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_case_sensitive: std::option::Option<bool>,
         pub(crate) is_currency: std::option::Option<bool>,
@@ -1003,7 +1003,7 @@ impl SubStatementData {
 pub mod sub_statement_data {
 
     /// A builder for [`SubStatementData`](crate::model::SubStatementData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) duration: std::option::Option<i64>,

@@ -24,7 +24,7 @@ impl ListAvailableResourceMetricsOutput {
 pub mod list_available_resource_metrics_output {
 
     /// A builder for [`ListAvailableResourceMetricsOutput`](crate::output::ListAvailableResourceMetricsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metrics:
             std::option::Option<std::vec::Vec<crate::model::ResponseResourceMetric>>,
@@ -101,7 +101,7 @@ impl ListAvailableResourceDimensionsOutput {
 pub mod list_available_resource_dimensions_output {
 
     /// A builder for [`ListAvailableResourceDimensionsOutput`](crate::output::ListAvailableResourceDimensionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_dimensions:
             std::option::Option<std::vec::Vec<crate::model::MetricDimensionGroups>>,
@@ -199,7 +199,7 @@ impl GetResourceMetricsOutput {
 pub mod get_resource_metrics_output {
 
     /// A builder for [`GetResourceMetricsOutput`](crate::output::GetResourceMetricsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aligned_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) aligned_end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -324,7 +324,7 @@ impl GetResourceMetadataOutput {
 pub mod get_resource_metadata_output {
 
     /// A builder for [`GetResourceMetadataOutput`](crate::output::GetResourceMetadataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) features: std::option::Option<
@@ -401,7 +401,7 @@ impl GetDimensionKeyDetailsOutput {
 pub mod get_dimension_key_details_output {
 
     /// A builder for [`GetDimensionKeyDetailsOutput`](crate::output::GetDimensionKeyDetailsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::DimensionKeyDetail>>,
     }
@@ -486,7 +486,7 @@ impl DescribeDimensionKeysOutput {
 pub mod describe_dimension_keys_output {
 
     /// A builder for [`DescribeDimensionKeysOutput`](crate::output::DescribeDimensionKeysOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aligned_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) aligned_end_time: std::option::Option<aws_smithy_types::DateTime>,

@@ -25,7 +25,7 @@ impl ListWorkspacesOutput {
 pub mod list_workspaces_output {
 
     /// A builder for [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspaces: std::option::Option<std::vec::Vec<crate::model::WorkspaceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -119,7 +119,7 @@ impl CreateWorkspaceOutput {
 pub mod create_workspace_output {
 
     /// A builder for [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -213,7 +213,7 @@ pub struct DeleteWorkspaceOutput {}
 pub mod delete_workspace_output {
 
     /// A builder for [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput).
@@ -237,7 +237,7 @@ pub struct UpdateWorkspaceAliasOutput {}
 pub mod update_workspace_alias_output {
 
     /// A builder for [`UpdateWorkspaceAliasOutput`](crate::output::UpdateWorkspaceAliasOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateWorkspaceAliasOutput`](crate::output::UpdateWorkspaceAliasOutput).
@@ -271,7 +271,7 @@ impl DescribeWorkspaceOutput {
 pub mod describe_workspace_output {
 
     /// A builder for [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace: std::option::Option<crate::model::WorkspaceDescription>,
     }
@@ -332,7 +332,7 @@ impl ListRuleGroupsNamespacesOutput {
 pub mod list_rule_groups_namespaces_output {
 
     /// A builder for [`ListRuleGroupsNamespacesOutput`](crate::output::ListRuleGroupsNamespacesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_groups_namespaces:
             std::option::Option<std::vec::Vec<crate::model::RuleGroupsNamespaceSummary>>,
@@ -430,7 +430,7 @@ impl CreateRuleGroupsNamespaceOutput {
 pub mod create_rule_groups_namespace_output {
 
     /// A builder for [`CreateRuleGroupsNamespaceOutput`](crate::output::CreateRuleGroupsNamespaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -524,7 +524,7 @@ pub struct DeleteRuleGroupsNamespaceOutput {}
 pub mod delete_rule_groups_namespace_output {
 
     /// A builder for [`DeleteRuleGroupsNamespaceOutput`](crate::output::DeleteRuleGroupsNamespaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRuleGroupsNamespaceOutput`](crate::output::DeleteRuleGroupsNamespaceOutput).
@@ -583,7 +583,7 @@ impl PutRuleGroupsNamespaceOutput {
 pub mod put_rule_groups_namespace_output {
 
     /// A builder for [`PutRuleGroupsNamespaceOutput`](crate::output::PutRuleGroupsNamespaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -689,7 +689,7 @@ impl DescribeRuleGroupsNamespaceOutput {
 pub mod describe_rule_groups_namespace_output {
 
     /// A builder for [`DescribeRuleGroupsNamespaceOutput`](crate::output::DescribeRuleGroupsNamespaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_groups_namespace:
             std::option::Option<crate::model::RuleGroupsNamespaceDescription>,
@@ -744,7 +744,7 @@ impl CreateLoggingConfigurationOutput {
 pub mod create_logging_configuration_output {
 
     /// A builder for [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::LoggingConfigurationStatus>,
     }
@@ -785,7 +785,7 @@ pub struct DeleteLoggingConfigurationOutput {}
 pub mod delete_logging_configuration_output {
 
     /// A builder for [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
@@ -819,7 +819,7 @@ impl UpdateLoggingConfigurationOutput {
 pub mod update_logging_configuration_output {
 
     /// A builder for [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::LoggingConfigurationStatus>,
     }
@@ -872,7 +872,7 @@ impl DescribeLoggingConfigurationOutput {
 pub mod describe_logging_configuration_output {
 
     /// A builder for [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_configuration:
             std::option::Option<crate::model::LoggingConfigurationMetadata>,
@@ -927,7 +927,7 @@ impl CreateAlertManagerDefinitionOutput {
 pub mod create_alert_manager_definition_output {
 
     /// A builder for [`CreateAlertManagerDefinitionOutput`](crate::output::CreateAlertManagerDefinitionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
     }
@@ -968,7 +968,7 @@ pub struct DeleteAlertManagerDefinitionOutput {}
 pub mod delete_alert_manager_definition_output {
 
     /// A builder for [`DeleteAlertManagerDefinitionOutput`](crate::output::DeleteAlertManagerDefinitionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAlertManagerDefinitionOutput`](crate::output::DeleteAlertManagerDefinitionOutput).
@@ -1002,7 +1002,7 @@ impl PutAlertManagerDefinitionOutput {
 pub mod put_alert_manager_definition_output {
 
     /// A builder for [`PutAlertManagerDefinitionOutput`](crate::output::PutAlertManagerDefinitionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
     }
@@ -1056,7 +1056,7 @@ impl DescribeAlertManagerDefinitionOutput {
 pub mod describe_alert_manager_definition_output {
 
     /// A builder for [`DescribeAlertManagerDefinitionOutput`](crate::output::DescribeAlertManagerDefinitionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alert_manager_definition:
             std::option::Option<crate::model::AlertManagerDefinitionDescription>,
@@ -1101,7 +1101,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -1125,7 +1125,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1163,7 +1163,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_aws_account_with_partner_account_input {
 
     /// A builder for [`AssociateAwsAccountWithPartnerAccountInput`](crate::input::AssociateAwsAccountWithPartnerAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sidewalk: std::option::Option<crate::model::SidewalkAccountInfo>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -188,7 +188,7 @@ impl AssociateAwsAccountWithPartnerAccountInput {
 pub mod associate_multicast_group_with_fuota_task_input {
 
     /// A builder for [`AssociateMulticastGroupWithFuotaTaskInput`](crate::input::AssociateMulticastGroupWithFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) multicast_group_id: std::option::Option<std::string::String>,
@@ -364,7 +364,7 @@ impl AssociateMulticastGroupWithFuotaTaskInput {
 pub mod associate_wireless_device_with_fuota_task_input {
 
     /// A builder for [`AssociateWirelessDeviceWithFuotaTaskInput`](crate::input::AssociateWirelessDeviceWithFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) wireless_device_id: std::option::Option<std::string::String>,
@@ -540,7 +540,7 @@ impl AssociateWirelessDeviceWithFuotaTaskInput {
 pub mod associate_wireless_device_with_multicast_group_input {
 
     /// A builder for [`AssociateWirelessDeviceWithMulticastGroupInput`](crate::input::AssociateWirelessDeviceWithMulticastGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) wireless_device_id: std::option::Option<std::string::String>,
@@ -719,7 +719,7 @@ impl AssociateWirelessDeviceWithMulticastGroupInput {
 pub mod associate_wireless_device_with_thing_input {
 
     /// A builder for [`AssociateWirelessDeviceWithThingInput`](crate::input::AssociateWirelessDeviceWithThingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) thing_arn: std::option::Option<std::string::String>,
@@ -892,7 +892,7 @@ impl AssociateWirelessDeviceWithThingInput {
 pub mod associate_wireless_gateway_with_certificate_input {
 
     /// A builder for [`AssociateWirelessGatewayWithCertificateInput`](crate::input::AssociateWirelessGatewayWithCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) iot_certificate_id: std::option::Option<std::string::String>,
@@ -1068,7 +1068,7 @@ impl AssociateWirelessGatewayWithCertificateInput {
 pub mod associate_wireless_gateway_with_thing_input {
 
     /// A builder for [`AssociateWirelessGatewayWithThingInput`](crate::input::AssociateWirelessGatewayWithThingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) thing_arn: std::option::Option<std::string::String>,
@@ -1241,7 +1241,7 @@ impl AssociateWirelessGatewayWithThingInput {
 pub mod cancel_multicast_group_session_input {
 
     /// A builder for [`CancelMulticastGroupSessionInput`](crate::input::CancelMulticastGroupSessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1387,7 +1387,7 @@ impl CancelMulticastGroupSessionInput {
 pub mod create_destination_input {
 
     /// A builder for [`CreateDestinationInput`](crate::input::CreateDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) expression_type: std::option::Option<crate::model::ExpressionType>,
@@ -1619,7 +1619,7 @@ impl CreateDestinationInput {
 pub mod create_device_profile_input {
 
     /// A builder for [`CreateDeviceProfileInput`](crate::input::CreateDeviceProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanDeviceProfile>,
@@ -1815,7 +1815,7 @@ impl CreateDeviceProfileInput {
 pub mod create_fuota_task_input {
 
     /// A builder for [`CreateFuotaTaskInput`](crate::input::CreateFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2051,7 +2051,7 @@ impl CreateFuotaTaskInput {
 pub mod create_multicast_group_input {
 
     /// A builder for [`CreateMulticastGroupInput`](crate::input::CreateMulticastGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2261,7 +2261,7 @@ impl CreateMulticastGroupInput {
 pub mod create_network_analyzer_configuration_input {
 
     /// A builder for [`CreateNetworkAnalyzerConfigurationInput`](crate::input::CreateNetworkAnalyzerConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) trace_content: std::option::Option<crate::model::TraceContent>,
@@ -2511,7 +2511,7 @@ impl CreateNetworkAnalyzerConfigurationInput {
 pub mod create_service_profile_input {
 
     /// A builder for [`CreateServiceProfileInput`](crate::input::CreateServiceProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanServiceProfile>,
@@ -2709,7 +2709,7 @@ impl CreateServiceProfileInput {
 pub mod create_wireless_device_input {
 
     /// A builder for [`CreateWirelessDeviceInput`](crate::input::CreateWirelessDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::WirelessDeviceType>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2949,7 +2949,7 @@ impl CreateWirelessDeviceInput {
 pub mod create_wireless_gateway_input {
 
     /// A builder for [`CreateWirelessGatewayInput`](crate::input::CreateWirelessGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -3159,7 +3159,7 @@ impl CreateWirelessGatewayInput {
 pub mod create_wireless_gateway_task_input {
 
     /// A builder for [`CreateWirelessGatewayTaskInput`](crate::input::CreateWirelessGatewayTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) wireless_gateway_task_definition_id: std::option::Option<std::string::String>,
@@ -3341,7 +3341,7 @@ impl CreateWirelessGatewayTaskInput {
 pub mod create_wireless_gateway_task_definition_input {
 
     /// A builder for [`CreateWirelessGatewayTaskDefinitionInput`](crate::input::CreateWirelessGatewayTaskDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_create_tasks: std::option::Option<bool>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3549,7 +3549,7 @@ impl CreateWirelessGatewayTaskDefinitionInput {
 pub mod delete_destination_input {
 
     /// A builder for [`DeleteDestinationInput`](crate::input::DeleteDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -3695,7 +3695,7 @@ impl DeleteDestinationInput {
 pub mod delete_device_profile_input {
 
     /// A builder for [`DeleteDeviceProfileInput`](crate::input::DeleteDeviceProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -3841,7 +3841,7 @@ impl DeleteDeviceProfileInput {
 pub mod delete_fuota_task_input {
 
     /// A builder for [`DeleteFuotaTaskInput`](crate::input::DeleteFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -3984,7 +3984,7 @@ impl DeleteFuotaTaskInput {
 pub mod delete_multicast_group_input {
 
     /// A builder for [`DeleteMulticastGroupInput`](crate::input::DeleteMulticastGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -4130,7 +4130,7 @@ impl DeleteMulticastGroupInput {
 pub mod delete_network_analyzer_configuration_input {
 
     /// A builder for [`DeleteNetworkAnalyzerConfigurationInput`](crate::input::DeleteNetworkAnalyzerConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_name: std::option::Option<std::string::String>,
     }
@@ -4285,7 +4285,7 @@ impl DeleteNetworkAnalyzerConfigurationInput {
 pub mod delete_queued_messages_input {
 
     /// A builder for [`DeleteQueuedMessagesInput`](crate::input::DeleteQueuedMessagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -4492,7 +4492,7 @@ impl DeleteQueuedMessagesInput {
 pub mod delete_service_profile_input {
 
     /// A builder for [`DeleteServiceProfileInput`](crate::input::DeleteServiceProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -4638,7 +4638,7 @@ impl DeleteServiceProfileInput {
 pub mod delete_wireless_device_input {
 
     /// A builder for [`DeleteWirelessDeviceInput`](crate::input::DeleteWirelessDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -4784,7 +4784,7 @@ impl DeleteWirelessDeviceInput {
 pub mod delete_wireless_gateway_input {
 
     /// A builder for [`DeleteWirelessGatewayInput`](crate::input::DeleteWirelessGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -4930,7 +4930,7 @@ impl DeleteWirelessGatewayInput {
 pub mod delete_wireless_gateway_task_input {
 
     /// A builder for [`DeleteWirelessGatewayTaskInput`](crate::input::DeleteWirelessGatewayTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -5076,7 +5076,7 @@ impl DeleteWirelessGatewayTaskInput {
 pub mod delete_wireless_gateway_task_definition_input {
 
     /// A builder for [`DeleteWirelessGatewayTaskDefinitionInput`](crate::input::DeleteWirelessGatewayTaskDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -5222,7 +5222,7 @@ impl DeleteWirelessGatewayTaskDefinitionInput {
 pub mod disassociate_aws_account_from_partner_account_input {
 
     /// A builder for [`DisassociateAwsAccountFromPartnerAccountInput`](crate::input::DisassociateAwsAccountFromPartnerAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) partner_account_id: std::option::Option<std::string::String>,
         pub(crate) partner_type: std::option::Option<crate::model::PartnerType>,
@@ -5413,7 +5413,7 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
 pub mod disassociate_multicast_group_from_fuota_task_input {
 
     /// A builder for [`DisassociateMulticastGroupFromFuotaTaskInput`](crate::input::DisassociateMulticastGroupFromFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) multicast_group_id: std::option::Option<std::string::String>,
@@ -5600,7 +5600,7 @@ impl DisassociateMulticastGroupFromFuotaTaskInput {
 pub mod disassociate_wireless_device_from_fuota_task_input {
 
     /// A builder for [`DisassociateWirelessDeviceFromFuotaTaskInput`](crate::input::DisassociateWirelessDeviceFromFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) wireless_device_id: std::option::Option<std::string::String>,
@@ -5787,7 +5787,7 @@ impl DisassociateWirelessDeviceFromFuotaTaskInput {
 pub mod disassociate_wireless_device_from_multicast_group_input {
 
     /// A builder for [`DisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::DisassociateWirelessDeviceFromMulticastGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) wireless_device_id: std::option::Option<std::string::String>,
@@ -5977,7 +5977,7 @@ impl DisassociateWirelessDeviceFromMulticastGroupInput {
 pub mod disassociate_wireless_device_from_thing_input {
 
     /// A builder for [`DisassociateWirelessDeviceFromThingInput`](crate::input::DisassociateWirelessDeviceFromThingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -6123,7 +6123,7 @@ impl DisassociateWirelessDeviceFromThingInput {
 pub mod disassociate_wireless_gateway_from_certificate_input {
 
     /// A builder for [`DisassociateWirelessGatewayFromCertificateInput`](crate::input::DisassociateWirelessGatewayFromCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -6270,7 +6270,7 @@ impl DisassociateWirelessGatewayFromCertificateInput {
 pub mod disassociate_wireless_gateway_from_thing_input {
 
     /// A builder for [`DisassociateWirelessGatewayFromThingInput`](crate::input::DisassociateWirelessGatewayFromThingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -6416,7 +6416,7 @@ impl DisassociateWirelessGatewayFromThingInput {
 pub mod get_destination_input {
 
     /// A builder for [`GetDestinationInput`](crate::input::GetDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -6560,7 +6560,7 @@ impl GetDestinationInput {
 pub mod get_device_profile_input {
 
     /// A builder for [`GetDeviceProfileInput`](crate::input::GetDeviceProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -6706,7 +6706,7 @@ impl GetDeviceProfileInput {
 pub mod get_event_configuration_by_resource_types_input {
 
     /// A builder for [`GetEventConfigurationByResourceTypesInput`](crate::input::GetEventConfigurationByResourceTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetEventConfigurationByResourceTypesInput`](crate::input::GetEventConfigurationByResourceTypesInput).
@@ -6821,7 +6821,7 @@ impl GetEventConfigurationByResourceTypesInput {
 pub mod get_fuota_task_input {
 
     /// A builder for [`GetFuotaTaskInput`](crate::input::GetFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -6964,7 +6964,7 @@ impl GetFuotaTaskInput {
 pub mod get_log_levels_by_resource_types_input {
 
     /// A builder for [`GetLogLevelsByResourceTypesInput`](crate::input::GetLogLevelsByResourceTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetLogLevelsByResourceTypesInput`](crate::input::GetLogLevelsByResourceTypesInput).
@@ -7078,7 +7078,7 @@ impl GetLogLevelsByResourceTypesInput {
 pub mod get_multicast_group_input {
 
     /// A builder for [`GetMulticastGroupInput`](crate::input::GetMulticastGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -7224,7 +7224,7 @@ impl GetMulticastGroupInput {
 pub mod get_multicast_group_session_input {
 
     /// A builder for [`GetMulticastGroupSessionInput`](crate::input::GetMulticastGroupSessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -7370,7 +7370,7 @@ impl GetMulticastGroupSessionInput {
 pub mod get_network_analyzer_configuration_input {
 
     /// A builder for [`GetNetworkAnalyzerConfigurationInput`](crate::input::GetNetworkAnalyzerConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_name: std::option::Option<std::string::String>,
     }
@@ -7525,7 +7525,7 @@ impl GetNetworkAnalyzerConfigurationInput {
 pub mod get_partner_account_input {
 
     /// A builder for [`GetPartnerAccountInput`](crate::input::GetPartnerAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) partner_account_id: std::option::Option<std::string::String>,
         pub(crate) partner_type: std::option::Option<crate::model::PartnerType>,
@@ -7714,7 +7714,7 @@ impl GetPartnerAccountInput {
 pub mod get_position_input {
 
     /// A builder for [`GetPositionInput`](crate::input::GetPositionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::PositionResourceType>,
@@ -7901,7 +7901,7 @@ impl GetPositionInput {
 pub mod get_position_configuration_input {
 
     /// A builder for [`GetPositionConfigurationInput`](crate::input::GetPositionConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::PositionResourceType>,
@@ -8090,7 +8090,7 @@ impl GetPositionConfigurationInput {
 pub mod get_resource_event_configuration_input {
 
     /// A builder for [`GetResourceEventConfigurationInput`](crate::input::GetResourceEventConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) identifier_type: std::option::Option<crate::model::IdentifierType>,
@@ -8299,7 +8299,7 @@ impl GetResourceEventConfigurationInput {
 pub mod get_resource_log_level_input {
 
     /// A builder for [`GetResourceLogLevelInput`](crate::input::GetResourceLogLevelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -8496,7 +8496,7 @@ impl GetResourceLogLevelInput {
 pub mod get_service_endpoint_input {
 
     /// A builder for [`GetServiceEndpointInput`](crate::input::GetServiceEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_type: std::option::Option<crate::model::WirelessGatewayServiceType>,
     }
@@ -8643,7 +8643,7 @@ impl GetServiceEndpointInput {
 pub mod get_service_profile_input {
 
     /// A builder for [`GetServiceProfileInput`](crate::input::GetServiceProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -8789,7 +8789,7 @@ impl GetServiceProfileInput {
 pub mod get_wireless_device_input {
 
     /// A builder for [`GetWirelessDeviceInput`](crate::input::GetWirelessDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) identifier_type: std::option::Option<crate::model::WirelessDeviceIdType>,
@@ -8975,7 +8975,7 @@ impl GetWirelessDeviceInput {
 pub mod get_wireless_device_statistics_input {
 
     /// A builder for [`GetWirelessDeviceStatisticsInput`](crate::input::GetWirelessDeviceStatisticsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wireless_device_id: std::option::Option<std::string::String>,
     }
@@ -9130,7 +9130,7 @@ impl GetWirelessDeviceStatisticsInput {
 pub mod get_wireless_gateway_input {
 
     /// A builder for [`GetWirelessGatewayInput`](crate::input::GetWirelessGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) identifier_type: std::option::Option<crate::model::WirelessGatewayIdType>,
@@ -9316,7 +9316,7 @@ impl GetWirelessGatewayInput {
 pub mod get_wireless_gateway_certificate_input {
 
     /// A builder for [`GetWirelessGatewayCertificateInput`](crate::input::GetWirelessGatewayCertificateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -9462,7 +9462,7 @@ impl GetWirelessGatewayCertificateInput {
 pub mod get_wireless_gateway_firmware_information_input {
 
     /// A builder for [`GetWirelessGatewayFirmwareInformationInput`](crate::input::GetWirelessGatewayFirmwareInformationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -9612,7 +9612,7 @@ impl GetWirelessGatewayFirmwareInformationInput {
 pub mod get_wireless_gateway_statistics_input {
 
     /// A builder for [`GetWirelessGatewayStatisticsInput`](crate::input::GetWirelessGatewayStatisticsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wireless_gateway_id: std::option::Option<std::string::String>,
     }
@@ -9767,7 +9767,7 @@ impl GetWirelessGatewayStatisticsInput {
 pub mod get_wireless_gateway_task_input {
 
     /// A builder for [`GetWirelessGatewayTaskInput`](crate::input::GetWirelessGatewayTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -9913,7 +9913,7 @@ impl GetWirelessGatewayTaskInput {
 pub mod get_wireless_gateway_task_definition_input {
 
     /// A builder for [`GetWirelessGatewayTaskDefinitionInput`](crate::input::GetWirelessGatewayTaskDefinitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -10059,7 +10059,7 @@ impl GetWirelessGatewayTaskDefinitionInput {
 pub mod list_destinations_input {
 
     /// A builder for [`ListDestinationsInput`](crate::input::ListDestinationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -10218,7 +10218,7 @@ impl ListDestinationsInput {
 pub mod list_device_profiles_input {
 
     /// A builder for [`ListDeviceProfilesInput`](crate::input::ListDeviceProfilesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -10377,7 +10377,7 @@ impl ListDeviceProfilesInput {
 pub mod list_event_configurations_input {
 
     /// A builder for [`ListEventConfigurationsInput`](crate::input::ListEventConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::EventNotificationResourceType>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -10562,7 +10562,7 @@ impl ListEventConfigurationsInput {
 pub mod list_fuota_tasks_input {
 
     /// A builder for [`ListFuotaTasksInput`](crate::input::ListFuotaTasksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -10719,7 +10719,7 @@ impl ListFuotaTasksInput {
 pub mod list_multicast_groups_input {
 
     /// A builder for [`ListMulticastGroupsInput`](crate::input::ListMulticastGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -10878,7 +10878,7 @@ impl ListMulticastGroupsInput {
 pub mod list_multicast_groups_by_fuota_task_input {
 
     /// A builder for [`ListMulticastGroupsByFuotaTaskInput`](crate::input::ListMulticastGroupsByFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -11069,7 +11069,7 @@ impl ListMulticastGroupsByFuotaTaskInput {
 pub mod list_network_analyzer_configurations_input {
 
     /// A builder for [`ListNetworkAnalyzerConfigurationsInput`](crate::input::ListNetworkAnalyzerConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -11229,7 +11229,7 @@ impl ListNetworkAnalyzerConfigurationsInput {
 pub mod list_partner_accounts_input {
 
     /// A builder for [`ListPartnerAccountsInput`](crate::input::ListPartnerAccountsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -11388,7 +11388,7 @@ impl ListPartnerAccountsInput {
 pub mod list_position_configurations_input {
 
     /// A builder for [`ListPositionConfigurationsInput`](crate::input::ListPositionConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::PositionResourceType>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -11570,7 +11570,7 @@ impl ListPositionConfigurationsInput {
 pub mod list_queued_messages_input {
 
     /// A builder for [`ListQueuedMessagesInput`](crate::input::ListQueuedMessagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -11784,7 +11784,7 @@ impl ListQueuedMessagesInput {
 pub mod list_service_profiles_input {
 
     /// A builder for [`ListServiceProfilesInput`](crate::input::ListServiceProfilesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -11943,7 +11943,7 @@ impl ListServiceProfilesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -12098,7 +12098,7 @@ impl ListTagsForResourceInput {
 pub mod list_wireless_devices_input {
 
     /// A builder for [`ListWirelessDevicesInput`](crate::input::ListWirelessDevicesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -12395,7 +12395,7 @@ impl ListWirelessDevicesInput {
 pub mod list_wireless_gateways_input {
 
     /// A builder for [`ListWirelessGatewaysInput`](crate::input::ListWirelessGatewaysInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -12554,7 +12554,7 @@ impl ListWirelessGatewaysInput {
 pub mod list_wireless_gateway_task_definitions_input {
 
     /// A builder for [`ListWirelessGatewayTaskDefinitionsInput`](crate::input::ListWirelessGatewayTaskDefinitionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -12741,7 +12741,7 @@ impl ListWirelessGatewayTaskDefinitionsInput {
 pub mod put_position_configuration_input {
 
     /// A builder for [`PutPositionConfigurationInput`](crate::input::PutPositionConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::PositionResourceType>,
@@ -12973,7 +12973,7 @@ impl PutPositionConfigurationInput {
 pub mod put_resource_log_level_input {
 
     /// A builder for [`PutResourceLogLevelInput`](crate::input::PutResourceLogLevelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -13198,7 +13198,7 @@ impl PutResourceLogLevelInput {
 pub mod reset_all_resource_log_levels_input {
 
     /// A builder for [`ResetAllResourceLogLevelsInput`](crate::input::ResetAllResourceLogLevelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ResetAllResourceLogLevelsInput`](crate::input::ResetAllResourceLogLevelsInput).
@@ -13312,7 +13312,7 @@ impl ResetAllResourceLogLevelsInput {
 pub mod reset_resource_log_level_input {
 
     /// A builder for [`ResetResourceLogLevelInput`](crate::input::ResetResourceLogLevelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -13509,7 +13509,7 @@ impl ResetResourceLogLevelInput {
 pub mod send_data_to_multicast_group_input {
 
     /// A builder for [`SendDataToMulticastGroupInput`](crate::input::SendDataToMulticastGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) payload_data: std::option::Option<std::string::String>,
@@ -13700,7 +13700,7 @@ impl SendDataToMulticastGroupInput {
 pub mod send_data_to_wireless_device_input {
 
     /// A builder for [`SendDataToWirelessDeviceInput`](crate::input::SendDataToWirelessDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) transmit_mode: std::option::Option<i32>,
@@ -13903,7 +13903,7 @@ impl SendDataToWirelessDeviceInput {
 pub mod start_bulk_associate_wireless_device_with_multicast_group_input {
 
     /// A builder for [`StartBulkAssociateWirelessDeviceWithMulticastGroupInput`](crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) query_string: std::option::Option<std::string::String>,
@@ -14101,7 +14101,7 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
 pub mod start_bulk_disassociate_wireless_device_from_multicast_group_input {
 
     /// A builder for [`StartBulkDisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) query_string: std::option::Option<std::string::String>,
@@ -14299,7 +14299,7 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
 pub mod start_fuota_task_input {
 
     /// A builder for [`StartFuotaTaskInput`](crate::input::StartFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanStartFuotaTask>,
@@ -14473,7 +14473,7 @@ impl StartFuotaTaskInput {
 pub mod start_multicast_group_session_input {
 
     /// A builder for [`StartMulticastGroupSessionInput`](crate::input::StartMulticastGroupSessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastSession>,
@@ -14649,7 +14649,7 @@ impl StartMulticastGroupSessionInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -14837,7 +14837,7 @@ impl TagResourceInput {
 pub mod test_wireless_device_input {
 
     /// A builder for [`TestWirelessDeviceInput`](crate::input::TestWirelessDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -14983,7 +14983,7 @@ impl TestWirelessDeviceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15167,7 +15167,7 @@ impl UntagResourceInput {
 pub mod update_destination_input {
 
     /// A builder for [`UpdateDestinationInput`](crate::input::UpdateDestinationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) expression_type: std::option::Option<crate::model::ExpressionType>,
@@ -15380,7 +15380,7 @@ impl UpdateDestinationInput {
 pub mod update_event_configuration_by_resource_types_input {
 
     /// A builder for [`UpdateEventConfigurationByResourceTypesInput`](crate::input::UpdateEventConfigurationByResourceTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_registration_state: std::option::Option<
             crate::model::DeviceRegistrationStateResourceTypeEventConfiguration,
@@ -15608,7 +15608,7 @@ impl UpdateEventConfigurationByResourceTypesInput {
 pub mod update_fuota_task_input {
 
     /// A builder for [`UpdateFuotaTaskInput`](crate::input::UpdateFuotaTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -15836,7 +15836,7 @@ impl UpdateFuotaTaskInput {
 pub mod update_log_levels_by_resource_types_input {
 
     /// A builder for [`UpdateLogLevelsByResourceTypesInput`](crate::input::UpdateLogLevelsByResourceTypesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_log_level: std::option::Option<crate::model::LogLevel>,
         pub(crate) wireless_device_log_options:
@@ -16030,7 +16030,7 @@ impl UpdateLogLevelsByResourceTypesInput {
 pub mod update_multicast_group_input {
 
     /// A builder for [`UpdateMulticastGroupInput`](crate::input::UpdateMulticastGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -16233,7 +16233,7 @@ impl UpdateMulticastGroupInput {
 pub mod update_network_analyzer_configuration_input {
 
     /// A builder for [`UpdateNetworkAnalyzerConfigurationInput`](crate::input::UpdateNetworkAnalyzerConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_name: std::option::Option<std::string::String>,
         pub(crate) trace_content: std::option::Option<crate::model::TraceContent>,
@@ -16518,7 +16518,7 @@ impl UpdateNetworkAnalyzerConfigurationInput {
 pub mod update_partner_account_input {
 
     /// A builder for [`UpdatePartnerAccountInput`](crate::input::UpdatePartnerAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sidewalk: std::option::Option<crate::model::SidewalkUpdateAccount>,
         pub(crate) partner_account_id: std::option::Option<std::string::String>,
@@ -16738,7 +16738,7 @@ impl UpdatePartnerAccountInput {
 pub mod update_position_input {
 
     /// A builder for [`UpdatePositionInput`](crate::input::UpdatePositionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::PositionResourceType>,
@@ -16957,7 +16957,7 @@ impl UpdatePositionInput {
 pub mod update_resource_event_configuration_input {
 
     /// A builder for [`UpdateResourceEventConfigurationInput`](crate::input::UpdateResourceEventConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) identifier_type: std::option::Option<crate::model::IdentifierType>,
@@ -17266,7 +17266,7 @@ impl UpdateResourceEventConfigurationInput {
 pub mod update_wireless_device_input {
 
     /// A builder for [`UpdateWirelessDeviceInput`](crate::input::UpdateWirelessDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) destination_name: std::option::Option<std::string::String>,
@@ -17484,7 +17484,7 @@ impl UpdateWirelessDeviceInput {
 pub mod update_wireless_gateway_input {
 
     /// A builder for [`UpdateWirelessGatewayInput`](crate::input::UpdateWirelessGatewayInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,

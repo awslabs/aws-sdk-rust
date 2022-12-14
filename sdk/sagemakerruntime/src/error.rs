@@ -30,7 +30,7 @@ impl std::error::Error for ValidationError {}
 pub mod validation_error {
 
     /// A builder for [`ValidationError`](crate::error::ValidationError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl std::error::Error for ServiceUnavailable {}
 pub mod service_unavailable {
 
     /// A builder for [`ServiceUnavailable`](crate::error::ServiceUnavailable).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl std::error::Error for InternalFailure {}
 pub mod internal_failure {
 
     /// A builder for [`InternalFailure`](crate::error::InternalFailure).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -210,7 +210,7 @@ impl std::error::Error for ModelNotReadyException {}
 pub mod model_not_ready_exception {
 
     /// A builder for [`ModelNotReadyException`](crate::error::ModelNotReadyException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -293,7 +293,7 @@ impl std::error::Error for ModelError {}
 pub mod model_error {
 
     /// A builder for [`ModelError`](crate::error::ModelError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) original_status_code: std::option::Option<i32>,
@@ -395,7 +395,7 @@ impl std::error::Error for InternalDependencyException {}
 pub mod internal_dependency_exception {
 
     /// A builder for [`InternalDependencyException`](crate::error::InternalDependencyException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

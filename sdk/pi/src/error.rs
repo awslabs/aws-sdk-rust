@@ -30,7 +30,7 @@ impl std::error::Error for NotAuthorizedException {}
 pub mod not_authorized_exception {
 
     /// A builder for [`NotAuthorizedException`](crate::error::NotAuthorizedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl std::error::Error for InvalidArgumentException {}
 pub mod invalid_argument_exception {
 
     /// A builder for [`InvalidArgumentException`](crate::error::InvalidArgumentException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl std::error::Error for InternalServiceError {}
 pub mod internal_service_error {
 
     /// A builder for [`InternalServiceError`](crate::error::InternalServiceError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

@@ -30,7 +30,7 @@ impl std::error::Error for SubnetNotFoundException {}
 pub mod subnet_not_found_exception {
 
     /// A builder for [`SubnetNotFoundException`](crate::error::SubnetNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl std::error::Error for LoadBalancerNotFoundException {}
 pub mod load_balancer_not_found_exception {
 
     /// A builder for [`LoadBalancerNotFoundException`](crate::error::LoadBalancerNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl std::error::Error for InvalidSubnetException {}
 pub mod invalid_subnet_exception {
 
     /// A builder for [`InvalidSubnetException`](crate::error::InvalidSubnetException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -210,7 +210,7 @@ impl std::error::Error for InvalidConfigurationRequestException {}
 pub mod invalid_configuration_request_exception {
 
     /// A builder for [`InvalidConfigurationRequestException`](crate::error::InvalidConfigurationRequestException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -270,7 +270,7 @@ impl std::error::Error for AvailabilityZoneNotSupportedException {}
 pub mod availability_zone_not_supported_exception {
 
     /// A builder for [`AvailabilityZoneNotSupportedException`](crate::error::AvailabilityZoneNotSupportedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -330,7 +330,7 @@ impl std::error::Error for AllocationIdNotFoundException {}
 pub mod allocation_id_not_found_exception {
 
     /// A builder for [`AllocationIdNotFoundException`](crate::error::AllocationIdNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -390,7 +390,7 @@ impl std::error::Error for InvalidSecurityGroupException {}
 pub mod invalid_security_group_exception {
 
     /// A builder for [`InvalidSecurityGroupException`](crate::error::InvalidSecurityGroupException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -450,7 +450,7 @@ impl std::error::Error for RuleNotFoundException {}
 pub mod rule_not_found_exception {
 
     /// A builder for [`RuleNotFoundException`](crate::error::RuleNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -510,7 +510,7 @@ impl std::error::Error for PriorityInUseException {}
 pub mod priority_in_use_exception {
 
     /// A builder for [`PriorityInUseException`](crate::error::PriorityInUseException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -570,7 +570,7 @@ impl std::error::Error for OperationNotPermittedException {}
 pub mod operation_not_permitted_exception {
 
     /// A builder for [`OperationNotPermittedException`](crate::error::OperationNotPermittedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -630,7 +630,7 @@ impl std::error::Error for TooManyTagsException {}
 pub mod too_many_tags_exception {
 
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -690,7 +690,7 @@ impl std::error::Error for TargetGroupNotFoundException {}
 pub mod target_group_not_found_exception {
 
     /// A builder for [`TargetGroupNotFoundException`](crate::error::TargetGroupNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -750,7 +750,7 @@ impl std::error::Error for ListenerNotFoundException {}
 pub mod listener_not_found_exception {
 
     /// A builder for [`ListenerNotFoundException`](crate::error::ListenerNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -810,7 +810,7 @@ impl std::error::Error for TooManyTargetsException {}
 pub mod too_many_targets_exception {
 
     /// A builder for [`TooManyTargetsException`](crate::error::TooManyTargetsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -870,7 +870,7 @@ impl std::error::Error for TooManyRegistrationsForTargetIdException {}
 pub mod too_many_registrations_for_target_id_exception {
 
     /// A builder for [`TooManyRegistrationsForTargetIdException`](crate::error::TooManyRegistrationsForTargetIdException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -930,7 +930,7 @@ impl std::error::Error for InvalidTargetException {}
 pub mod invalid_target_exception {
 
     /// A builder for [`InvalidTargetException`](crate::error::InvalidTargetException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -990,7 +990,7 @@ impl std::error::Error for UnsupportedProtocolException {}
 pub mod unsupported_protocol_exception {
 
     /// A builder for [`UnsupportedProtocolException`](crate::error::UnsupportedProtocolException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1050,7 +1050,7 @@ impl std::error::Error for TooManyUniqueTargetGroupsPerLoadBalancerException {}
 pub mod too_many_unique_target_groups_per_load_balancer_exception {
 
     /// A builder for [`TooManyUniqueTargetGroupsPerLoadBalancerException`](crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1111,7 +1111,7 @@ impl std::error::Error for TooManyActionsException {}
 pub mod too_many_actions_exception {
 
     /// A builder for [`TooManyActionsException`](crate::error::TooManyActionsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1171,7 +1171,7 @@ impl std::error::Error for TargetGroupAssociationLimitException {}
 pub mod target_group_association_limit_exception {
 
     /// A builder for [`TargetGroupAssociationLimitException`](crate::error::TargetGroupAssociationLimitException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1231,7 +1231,7 @@ impl std::error::Error for InvalidLoadBalancerActionException {}
 pub mod invalid_load_balancer_action_exception {
 
     /// A builder for [`InvalidLoadBalancerActionException`](crate::error::InvalidLoadBalancerActionException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1291,7 +1291,7 @@ impl std::error::Error for IncompatibleProtocolsException {}
 pub mod incompatible_protocols_exception {
 
     /// A builder for [`IncompatibleProtocolsException`](crate::error::IncompatibleProtocolsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1351,7 +1351,7 @@ impl std::error::Error for TooManyListenersException {}
 pub mod too_many_listeners_exception {
 
     /// A builder for [`TooManyListenersException`](crate::error::TooManyListenersException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1411,7 +1411,7 @@ impl std::error::Error for TooManyCertificatesException {}
 pub mod too_many_certificates_exception {
 
     /// A builder for [`TooManyCertificatesException`](crate::error::TooManyCertificatesException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1471,7 +1471,7 @@ impl std::error::Error for SslPolicyNotFoundException {}
 pub mod ssl_policy_not_found_exception {
 
     /// A builder for [`SslPolicyNotFoundException`](crate::error::SslPolicyNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1531,7 +1531,7 @@ impl std::error::Error for DuplicateListenerException {}
 pub mod duplicate_listener_exception {
 
     /// A builder for [`DuplicateListenerException`](crate::error::DuplicateListenerException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1591,7 +1591,7 @@ impl std::error::Error for CertificateNotFoundException {}
 pub mod certificate_not_found_exception {
 
     /// A builder for [`CertificateNotFoundException`](crate::error::CertificateNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1654,7 +1654,7 @@ impl std::error::Error for AlpnPolicyNotSupportedException {}
 pub mod alpn_policy_not_supported_exception {
 
     /// A builder for [`AlpnPolicyNotSupportedException`](crate::error::AlpnPolicyNotSupportedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1714,7 +1714,7 @@ impl std::error::Error for HealthUnavailableException {}
 pub mod health_unavailable_exception {
 
     /// A builder for [`HealthUnavailableException`](crate::error::HealthUnavailableException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1774,7 +1774,7 @@ impl std::error::Error for ResourceInUseException {}
 pub mod resource_in_use_exception {
 
     /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1834,7 +1834,7 @@ impl std::error::Error for TooManyTargetGroupsException {}
 pub mod too_many_target_groups_exception {
 
     /// A builder for [`TooManyTargetGroupsException`](crate::error::TooManyTargetGroupsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1894,7 +1894,7 @@ impl std::error::Error for DuplicateTargetGroupNameException {}
 pub mod duplicate_target_group_name_exception {
 
     /// A builder for [`DuplicateTargetGroupNameException`](crate::error::DuplicateTargetGroupNameException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1954,7 +1954,7 @@ impl std::error::Error for TooManyRulesException {}
 pub mod too_many_rules_exception {
 
     /// A builder for [`TooManyRulesException`](crate::error::TooManyRulesException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2014,7 +2014,7 @@ impl std::error::Error for TooManyLoadBalancersException {}
 pub mod too_many_load_balancers_exception {
 
     /// A builder for [`TooManyLoadBalancersException`](crate::error::TooManyLoadBalancersException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2074,7 +2074,7 @@ impl std::error::Error for InvalidSchemeException {}
 pub mod invalid_scheme_exception {
 
     /// A builder for [`InvalidSchemeException`](crate::error::InvalidSchemeException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2134,7 +2134,7 @@ impl std::error::Error for DuplicateTagKeysException {}
 pub mod duplicate_tag_keys_exception {
 
     /// A builder for [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2194,7 +2194,7 @@ impl std::error::Error for DuplicateLoadBalancerNameException {}
 pub mod duplicate_load_balancer_name_exception {
 
     /// A builder for [`DuplicateLoadBalancerNameException`](crate::error::DuplicateLoadBalancerNameException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

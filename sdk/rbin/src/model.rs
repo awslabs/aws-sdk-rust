@@ -294,7 +294,7 @@ impl ResourceTag {
 pub mod resource_tag {
 
     /// A builder for [`ResourceTag`](crate::model::ResourceTag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_tag_key: std::option::Option<std::string::String>,
         pub(crate) resource_tag_value: std::option::Option<std::string::String>,
@@ -457,7 +457,7 @@ impl RetentionPeriod {
 pub mod retention_period {
 
     /// A builder for [`RetentionPeriod`](crate::model::RetentionPeriod).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retention_period_value: std::option::Option<i32>,
         pub(crate) retention_period_unit: std::option::Option<crate::model::RetentionPeriodUnit>,
@@ -701,7 +701,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -775,7 +775,7 @@ impl RuleSummary {
 pub mod rule_summary {
 
     /// A builder for [`RuleSummary`](crate::model::RuleSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,

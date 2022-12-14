@@ -24,7 +24,7 @@ impl ListMeshesOutput {
 pub mod list_meshes_output {
 
     /// A builder for [`ListMeshesOutput`](crate::output::ListMeshesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meshes: std::option::Option<std::vec::Vec<crate::model::MeshRef>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -93,7 +93,7 @@ impl CreateMeshOutput {
 pub mod create_mesh_output {
 
     /// A builder for [`CreateMeshOutput`](crate::output::CreateMeshOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh: std::option::Option<crate::model::MeshData>,
     }
@@ -139,7 +139,7 @@ impl DeleteMeshOutput {
 pub mod delete_mesh_output {
 
     /// A builder for [`DeleteMeshOutput`](crate::output::DeleteMeshOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh: std::option::Option<crate::model::MeshData>,
     }
@@ -185,7 +185,7 @@ impl UpdateMeshOutput {
 pub mod update_mesh_output {
 
     /// A builder for [`UpdateMeshOutput`](crate::output::UpdateMeshOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh: std::option::Option<crate::model::MeshData>,
     }
@@ -231,7 +231,7 @@ impl DescribeMeshOutput {
 pub mod describe_mesh_output {
 
     /// A builder for [`DescribeMeshOutput`](crate::output::DescribeMeshOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh: std::option::Option<crate::model::MeshData>,
     }
@@ -284,7 +284,7 @@ impl ListVirtualServicesOutput {
 pub mod list_virtual_services_output {
 
     /// A builder for [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_services:
             std::option::Option<std::vec::Vec<crate::model::VirtualServiceRef>>,
@@ -354,7 +354,7 @@ impl CreateVirtualServiceOutput {
 pub mod create_virtual_service_output {
 
     /// A builder for [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service: std::option::Option<crate::model::VirtualServiceData>,
     }
@@ -405,7 +405,7 @@ impl DeleteVirtualServiceOutput {
 pub mod delete_virtual_service_output {
 
     /// A builder for [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service: std::option::Option<crate::model::VirtualServiceData>,
     }
@@ -456,7 +456,7 @@ impl UpdateVirtualServiceOutput {
 pub mod update_virtual_service_output {
 
     /// A builder for [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service: std::option::Option<crate::model::VirtualServiceData>,
     }
@@ -507,7 +507,7 @@ impl DescribeVirtualServiceOutput {
 pub mod describe_virtual_service_output {
 
     /// A builder for [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service: std::option::Option<crate::model::VirtualServiceData>,
     }
@@ -565,7 +565,7 @@ impl ListVirtualRoutersOutput {
 pub mod list_virtual_routers_output {
 
     /// A builder for [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_routers:
             std::option::Option<std::vec::Vec<crate::model::VirtualRouterRef>>,
@@ -635,7 +635,7 @@ impl CreateVirtualRouterOutput {
 pub mod create_virtual_router_output {
 
     /// A builder for [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_router: std::option::Option<crate::model::VirtualRouterData>,
     }
@@ -686,7 +686,7 @@ impl DeleteVirtualRouterOutput {
 pub mod delete_virtual_router_output {
 
     /// A builder for [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_router: std::option::Option<crate::model::VirtualRouterData>,
     }
@@ -737,7 +737,7 @@ impl UpdateVirtualRouterOutput {
 pub mod update_virtual_router_output {
 
     /// A builder for [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_router: std::option::Option<crate::model::VirtualRouterData>,
     }
@@ -788,7 +788,7 @@ impl DescribeVirtualRouterOutput {
 pub mod describe_virtual_router_output {
 
     /// A builder for [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_router: std::option::Option<crate::model::VirtualRouterData>,
     }
@@ -846,7 +846,7 @@ impl ListRoutesOutput {
 pub mod list_routes_output {
 
     /// A builder for [`ListRoutesOutput`](crate::output::ListRoutesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routes: std::option::Option<std::vec::Vec<crate::model::RouteRef>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -915,7 +915,7 @@ impl CreateRouteOutput {
 pub mod create_route_output {
 
     /// A builder for [`CreateRouteOutput`](crate::output::CreateRouteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route: std::option::Option<crate::model::RouteData>,
     }
@@ -961,7 +961,7 @@ impl DeleteRouteOutput {
 pub mod delete_route_output {
 
     /// A builder for [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route: std::option::Option<crate::model::RouteData>,
     }
@@ -1007,7 +1007,7 @@ impl UpdateRouteOutput {
 pub mod update_route_output {
 
     /// A builder for [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route: std::option::Option<crate::model::RouteData>,
     }
@@ -1053,7 +1053,7 @@ impl DescribeRouteOutput {
 pub mod describe_route_output {
 
     /// A builder for [`DescribeRouteOutput`](crate::output::DescribeRouteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route: std::option::Option<crate::model::RouteData>,
     }
@@ -1106,7 +1106,7 @@ impl ListVirtualNodesOutput {
 pub mod list_virtual_nodes_output {
 
     /// A builder for [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_nodes: std::option::Option<std::vec::Vec<crate::model::VirtualNodeRef>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1175,7 +1175,7 @@ impl CreateVirtualNodeOutput {
 pub mod create_virtual_node_output {
 
     /// A builder for [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node: std::option::Option<crate::model::VirtualNodeData>,
     }
@@ -1226,7 +1226,7 @@ impl DeleteVirtualNodeOutput {
 pub mod delete_virtual_node_output {
 
     /// A builder for [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node: std::option::Option<crate::model::VirtualNodeData>,
     }
@@ -1277,7 +1277,7 @@ impl UpdateVirtualNodeOutput {
 pub mod update_virtual_node_output {
 
     /// A builder for [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node: std::option::Option<crate::model::VirtualNodeData>,
     }
@@ -1328,7 +1328,7 @@ impl DescribeVirtualNodeOutput {
 pub mod describe_virtual_node_output {
 
     /// A builder for [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node: std::option::Option<crate::model::VirtualNodeData>,
     }
@@ -1386,7 +1386,7 @@ impl ListVirtualGatewaysOutput {
 pub mod list_virtual_gateways_output {
 
     /// A builder for [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateways:
             std::option::Option<std::vec::Vec<crate::model::VirtualGatewayRef>>,
@@ -1456,7 +1456,7 @@ impl CreateVirtualGatewayOutput {
 pub mod create_virtual_gateway_output {
 
     /// A builder for [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
     }
@@ -1507,7 +1507,7 @@ impl DeleteVirtualGatewayOutput {
 pub mod delete_virtual_gateway_output {
 
     /// A builder for [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
     }
@@ -1558,7 +1558,7 @@ impl UpdateVirtualGatewayOutput {
 pub mod update_virtual_gateway_output {
 
     /// A builder for [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
     }
@@ -1609,7 +1609,7 @@ impl DescribeVirtualGatewayOutput {
 pub mod describe_virtual_gateway_output {
 
     /// A builder for [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
     }
@@ -1667,7 +1667,7 @@ impl ListGatewayRoutesOutput {
 pub mod list_gateway_routes_output {
 
     /// A builder for [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_routes:
             std::option::Option<std::vec::Vec<crate::model::GatewayRouteRef>>,
@@ -1737,7 +1737,7 @@ impl CreateGatewayRouteOutput {
 pub mod create_gateway_route_output {
 
     /// A builder for [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_route: std::option::Option<crate::model::GatewayRouteData>,
     }
@@ -1788,7 +1788,7 @@ impl DeleteGatewayRouteOutput {
 pub mod delete_gateway_route_output {
 
     /// A builder for [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_route: std::option::Option<crate::model::GatewayRouteData>,
     }
@@ -1839,7 +1839,7 @@ impl UpdateGatewayRouteOutput {
 pub mod update_gateway_route_output {
 
     /// A builder for [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_route: std::option::Option<crate::model::GatewayRouteData>,
     }
@@ -1890,7 +1890,7 @@ impl DescribeGatewayRouteOutput {
 pub mod describe_gateway_route_output {
 
     /// A builder for [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_route: std::option::Option<crate::model::GatewayRouteData>,
     }
@@ -1931,7 +1931,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -1955,7 +1955,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1996,7 +1996,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
         pub(crate) next_token: std::option::Option<std::string::String>,

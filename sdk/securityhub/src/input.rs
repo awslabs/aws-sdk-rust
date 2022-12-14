@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod accept_administrator_invitation_input {
 
     /// A builder for [`AcceptAdministratorInvitationInput`](crate::input::AcceptAdministratorInvitationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) administrator_id: std::option::Option<std::string::String>,
         pub(crate) invitation_id: std::option::Option<std::string::String>,
@@ -164,7 +164,7 @@ impl AcceptAdministratorInvitationInput {
 pub mod accept_invitation_input {
 
     /// A builder for [`AcceptInvitationInput`](crate::input::AcceptInvitationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) master_id: std::option::Option<std::string::String>,
         pub(crate) invitation_id: std::option::Option<std::string::String>,
@@ -321,7 +321,7 @@ impl AcceptInvitationInput {
 pub mod batch_disable_standards_input {
 
     /// A builder for [`BatchDisableStandardsInput`](crate::input::BatchDisableStandardsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) standards_subscription_arns:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -478,7 +478,7 @@ impl BatchDisableStandardsInput {
 pub mod batch_enable_standards_input {
 
     /// A builder for [`BatchEnableStandardsInput`](crate::input::BatchEnableStandardsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) standards_subscription_requests:
             std::option::Option<std::vec::Vec<crate::model::StandardsSubscriptionRequest>>,
@@ -635,7 +635,7 @@ impl BatchEnableStandardsInput {
 pub mod batch_import_findings_input {
 
     /// A builder for [`BatchImportFindingsInput`](crate::input::BatchImportFindingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) findings: std::option::Option<std::vec::Vec<crate::model::AwsSecurityFinding>>,
     }
@@ -786,7 +786,7 @@ impl BatchImportFindingsInput {
 pub mod batch_update_findings_input {
 
     /// A builder for [`BatchUpdateFindingsInput`](crate::input::BatchUpdateFindingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_identifiers:
             std::option::Option<std::vec::Vec<crate::model::AwsSecurityFindingIdentifier>>,
@@ -1132,7 +1132,7 @@ impl BatchUpdateFindingsInput {
 pub mod create_action_target_input {
 
     /// A builder for [`CreateActionTargetInput`](crate::input::CreateActionTargetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1298,7 +1298,7 @@ impl CreateActionTargetInput {
 pub mod create_finding_aggregator_input {
 
     /// A builder for [`CreateFindingAggregatorInput`](crate::input::CreateFindingAggregatorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_linking_mode: std::option::Option<std::string::String>,
         pub(crate) regions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1482,7 +1482,7 @@ impl CreateFindingAggregatorInput {
 pub mod create_insight_input {
 
     /// A builder for [`CreateInsightInput`](crate::input::CreateInsightInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<crate::model::AwsSecurityFindingFilters>,
@@ -1652,7 +1652,7 @@ impl CreateInsightInput {
 pub mod create_members_input {
 
     /// A builder for [`CreateMembersInput`](crate::input::CreateMembersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_details:
             std::option::Option<std::vec::Vec<crate::model::AccountDetails>>,
@@ -1802,7 +1802,7 @@ impl CreateMembersInput {
 pub mod decline_invitations_input {
 
     /// A builder for [`DeclineInvitationsInput`](crate::input::DeclineInvitationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1953,7 +1953,7 @@ impl DeclineInvitationsInput {
 pub mod delete_action_target_input {
 
     /// A builder for [`DeleteActionTargetInput`](crate::input::DeleteActionTargetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_target_arn: std::option::Option<std::string::String>,
     }
@@ -2108,7 +2108,7 @@ impl DeleteActionTargetInput {
 pub mod delete_finding_aggregator_input {
 
     /// A builder for [`DeleteFindingAggregatorInput`](crate::input::DeleteFindingAggregatorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_aggregator_arn: std::option::Option<std::string::String>,
     }
@@ -2263,7 +2263,7 @@ impl DeleteFindingAggregatorInput {
 pub mod delete_insight_input {
 
     /// A builder for [`DeleteInsightInput`](crate::input::DeleteInsightInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_arn: std::option::Option<std::string::String>,
     }
@@ -2409,7 +2409,7 @@ impl DeleteInsightInput {
 pub mod delete_invitations_input {
 
     /// A builder for [`DeleteInvitationsInput`](crate::input::DeleteInvitationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -2560,7 +2560,7 @@ impl DeleteInvitationsInput {
 pub mod delete_members_input {
 
     /// A builder for [`DeleteMembersInput`](crate::input::DeleteMembersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -2709,7 +2709,7 @@ impl DeleteMembersInput {
 pub mod describe_action_targets_input {
 
     /// A builder for [`DescribeActionTargetsInput`](crate::input::DescribeActionTargetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2888,7 +2888,7 @@ impl DescribeActionTargetsInput {
 pub mod describe_hub_input {
 
     /// A builder for [`DescribeHubInput`](crate::input::DescribeHubInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hub_arn: std::option::Option<std::string::String>,
     }
@@ -3027,7 +3027,7 @@ impl DescribeHubInput {
 pub mod describe_organization_configuration_input {
 
     /// A builder for [`DescribeOrganizationConfigurationInput`](crate::input::DescribeOrganizationConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationInput`](crate::input::DescribeOrganizationConfigurationInput).
@@ -3141,7 +3141,7 @@ impl DescribeOrganizationConfigurationInput {
 pub mod describe_products_input {
 
     /// A builder for [`DescribeProductsInput`](crate::input::DescribeProductsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3319,7 +3319,7 @@ impl DescribeProductsInput {
 pub mod describe_standards_input {
 
     /// A builder for [`DescribeStandardsInput`](crate::input::DescribeStandardsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3480,7 +3480,7 @@ impl DescribeStandardsInput {
 pub mod describe_standards_controls_input {
 
     /// A builder for [`DescribeStandardsControlsInput`](crate::input::DescribeStandardsControlsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) standards_subscription_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3680,7 +3680,7 @@ impl DescribeStandardsControlsInput {
 pub mod disable_import_findings_for_product_input {
 
     /// A builder for [`DisableImportFindingsForProductInput`](crate::input::DisableImportFindingsForProductInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_subscription_arn: std::option::Option<std::string::String>,
     }
@@ -3835,7 +3835,7 @@ impl DisableImportFindingsForProductInput {
 pub mod disable_organization_admin_account_input {
 
     /// A builder for [`DisableOrganizationAdminAccountInput`](crate::input::DisableOrganizationAdminAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) admin_account_id: std::option::Option<std::string::String>,
     }
@@ -3979,7 +3979,7 @@ impl DisableOrganizationAdminAccountInput {
 pub mod disable_security_hub_input {
 
     /// A builder for [`DisableSecurityHubInput`](crate::input::DisableSecurityHubInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisableSecurityHubInput`](crate::input::DisableSecurityHubInput).
@@ -4093,7 +4093,7 @@ impl DisableSecurityHubInput {
 pub mod disassociate_from_administrator_account_input {
 
     /// A builder for [`DisassociateFromAdministratorAccountInput`](crate::input::DisassociateFromAdministratorAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateFromAdministratorAccountInput`](crate::input::DisassociateFromAdministratorAccountInput).
@@ -4207,7 +4207,7 @@ impl DisassociateFromAdministratorAccountInput {
 pub mod disassociate_from_master_account_input {
 
     /// A builder for [`DisassociateFromMasterAccountInput`](crate::input::DisassociateFromMasterAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateFromMasterAccountInput`](crate::input::DisassociateFromMasterAccountInput).
@@ -4321,7 +4321,7 @@ impl DisassociateFromMasterAccountInput {
 pub mod disassociate_members_input {
 
     /// A builder for [`DisassociateMembersInput`](crate::input::DisassociateMembersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -4472,7 +4472,7 @@ impl DisassociateMembersInput {
 pub mod enable_import_findings_for_product_input {
 
     /// A builder for [`EnableImportFindingsForProductInput`](crate::input::EnableImportFindingsForProductInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_arn: std::option::Option<std::string::String>,
     }
@@ -4613,7 +4613,7 @@ impl EnableImportFindingsForProductInput {
 pub mod enable_organization_admin_account_input {
 
     /// A builder for [`EnableOrganizationAdminAccountInput`](crate::input::EnableOrganizationAdminAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) admin_account_id: std::option::Option<std::string::String>,
     }
@@ -4757,7 +4757,7 @@ impl EnableOrganizationAdminAccountInput {
 pub mod enable_security_hub_input {
 
     /// A builder for [`EnableSecurityHubInput`](crate::input::EnableSecurityHubInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -4928,7 +4928,7 @@ impl EnableSecurityHubInput {
 pub mod get_administrator_account_input {
 
     /// A builder for [`GetAdministratorAccountInput`](crate::input::GetAdministratorAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetAdministratorAccountInput`](crate::input::GetAdministratorAccountInput).
@@ -5042,7 +5042,7 @@ impl GetAdministratorAccountInput {
 pub mod get_enabled_standards_input {
 
     /// A builder for [`GetEnabledStandardsInput`](crate::input::GetEnabledStandardsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) standards_subscription_arns:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5223,7 +5223,7 @@ impl GetEnabledStandardsInput {
 pub mod get_finding_aggregator_input {
 
     /// A builder for [`GetFindingAggregatorInput`](crate::input::GetFindingAggregatorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_aggregator_arn: std::option::Option<std::string::String>,
     }
@@ -5378,7 +5378,7 @@ impl GetFindingAggregatorInput {
 pub mod get_findings_input {
 
     /// A builder for [`GetFindingsInput`](crate::input::GetFindingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<crate::model::AwsSecurityFindingFilters>,
         pub(crate) sort_criteria: std::option::Option<std::vec::Vec<crate::model::SortCriterion>>,
@@ -5572,7 +5572,7 @@ impl GetFindingsInput {
 pub mod get_insight_results_input {
 
     /// A builder for [`GetInsightResultsInput`](crate::input::GetInsightResultsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_arn: std::option::Option<std::string::String>,
     }
@@ -5724,7 +5724,7 @@ impl GetInsightResultsInput {
 pub mod get_insights_input {
 
     /// A builder for [`GetInsightsInput`](crate::input::GetInsightsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5899,7 +5899,7 @@ impl GetInsightsInput {
 pub mod get_invitations_count_input {
 
     /// A builder for [`GetInvitationsCountInput`](crate::input::GetInvitationsCountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetInvitationsCountInput`](crate::input::GetInvitationsCountInput).
@@ -6013,7 +6013,7 @@ impl GetInvitationsCountInput {
 pub mod get_master_account_input {
 
     /// A builder for [`GetMasterAccountInput`](crate::input::GetMasterAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetMasterAccountInput`](crate::input::GetMasterAccountInput).
@@ -6127,7 +6127,7 @@ impl GetMasterAccountInput {
 pub mod get_members_input {
 
     /// A builder for [`GetMembersInput`](crate::input::GetMembersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -6276,7 +6276,7 @@ impl GetMembersInput {
 pub mod invite_members_input {
 
     /// A builder for [`InviteMembersInput`](crate::input::InviteMembersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -6425,7 +6425,7 @@ impl InviteMembersInput {
 pub mod list_enabled_products_for_import_input {
 
     /// A builder for [`ListEnabledProductsForImportInput`](crate::input::ListEnabledProductsForImportInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -6586,7 +6586,7 @@ impl ListEnabledProductsForImportInput {
 pub mod list_finding_aggregators_input {
 
     /// A builder for [`ListFindingAggregatorsInput`](crate::input::ListFindingAggregatorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -6745,7 +6745,7 @@ impl ListFindingAggregatorsInput {
 pub mod list_invitations_input {
 
     /// A builder for [`ListInvitationsInput`](crate::input::ListInvitationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -6904,7 +6904,7 @@ impl ListInvitationsInput {
 pub mod list_members_input {
 
     /// A builder for [`ListMembersInput`](crate::input::ListMembersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) only_associated: std::option::Option<bool>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -7085,7 +7085,7 @@ impl ListMembersInput {
 pub mod list_organization_admin_accounts_input {
 
     /// A builder for [`ListOrganizationAdminAccountsInput`](crate::input::ListOrganizationAdminAccountsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7244,7 +7244,7 @@ impl ListOrganizationAdminAccountsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -7392,7 +7392,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -7581,7 +7581,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7766,7 +7766,7 @@ impl UntagResourceInput {
 pub mod update_action_target_input {
 
     /// A builder for [`UpdateActionTargetInput`](crate::input::UpdateActionTargetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_target_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7959,7 +7959,7 @@ impl UpdateActionTargetInput {
 pub mod update_finding_aggregator_input {
 
     /// A builder for [`UpdateFindingAggregatorInput`](crate::input::UpdateFindingAggregatorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_aggregator_arn: std::option::Option<std::string::String>,
         pub(crate) region_linking_mode: std::option::Option<std::string::String>,
@@ -8158,7 +8158,7 @@ impl UpdateFindingAggregatorInput {
 pub mod update_findings_input {
 
     /// A builder for [`UpdateFindingsInput`](crate::input::UpdateFindingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<crate::model::AwsSecurityFindingFilters>,
         pub(crate) note: std::option::Option<crate::model::NoteUpdate>,
@@ -8328,7 +8328,7 @@ impl UpdateFindingsInput {
 pub mod update_insight_input {
 
     /// A builder for [`UpdateInsightInput`](crate::input::UpdateInsightInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8530,7 +8530,7 @@ impl UpdateInsightInput {
 pub mod update_organization_configuration_input {
 
     /// A builder for [`UpdateOrganizationConfigurationInput`](crate::input::UpdateOrganizationConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_enable: std::option::Option<bool>,
         pub(crate) auto_enable_standards: std::option::Option<crate::model::AutoEnableStandards>,
@@ -8694,7 +8694,7 @@ impl UpdateOrganizationConfigurationInput {
 pub mod update_security_hub_configuration_input {
 
     /// A builder for [`UpdateSecurityHubConfigurationInput`](crate::input::UpdateSecurityHubConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_enable_controls: std::option::Option<bool>,
     }
@@ -8837,7 +8837,7 @@ impl UpdateSecurityHubConfigurationInput {
 pub mod update_standards_control_input {
 
     /// A builder for [`UpdateStandardsControlInput`](crate::input::UpdateStandardsControlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) standards_control_arn: std::option::Option<std::string::String>,
         pub(crate) control_status: std::option::Option<crate::model::ControlStatus>,

@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_member_account_input {
 
     /// A builder for [`AssociateMemberAccountInput`](crate::input::AssociateMemberAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,
     }
@@ -157,7 +157,7 @@ impl AssociateMemberAccountInput {
 pub mod associate_s3_resources_input {
 
     /// A builder for [`AssociateS3ResourcesInput`](crate::input::AssociateS3ResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,
         pub(crate) s3_resources:
@@ -331,7 +331,7 @@ impl AssociateS3ResourcesInput {
 pub mod disassociate_member_account_input {
 
     /// A builder for [`DisassociateMemberAccountInput`](crate::input::DisassociateMemberAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,
     }
@@ -483,7 +483,7 @@ impl DisassociateMemberAccountInput {
 pub mod disassociate_s3_resources_input {
 
     /// A builder for [`DisassociateS3ResourcesInput`](crate::input::DisassociateS3ResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,
         pub(crate) associated_s3_resources:
@@ -657,7 +657,7 @@ impl DisassociateS3ResourcesInput {
 pub mod list_member_accounts_input {
 
     /// A builder for [`ListMemberAccountsInput`](crate::input::ListMemberAccountsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -816,7 +816,7 @@ impl ListMemberAccountsInput {
 pub mod list_s3_resources_input {
 
     /// A builder for [`ListS3ResourcesInput`](crate::input::ListS3ResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -988,7 +988,7 @@ impl ListS3ResourcesInput {
 pub mod update_s3_resources_input {
 
     /// A builder for [`UpdateS3ResourcesInput`](crate::input::UpdateS3ResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_account_id: std::option::Option<std::string::String>,
         pub(crate) s3_resources_update:

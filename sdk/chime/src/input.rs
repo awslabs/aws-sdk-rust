@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_phone_numbers_with_voice_connector_input {
 
     /// A builder for [`AssociatePhoneNumbersWithVoiceConnectorInput`](crate::input::AssociatePhoneNumbersWithVoiceConnectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
         pub(crate) e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -215,7 +215,7 @@ impl AssociatePhoneNumbersWithVoiceConnectorInput {
 pub mod associate_phone_numbers_with_voice_connector_group_input {
 
     /// A builder for [`AssociatePhoneNumbersWithVoiceConnectorGroupInput`](crate::input::AssociatePhoneNumbersWithVoiceConnectorGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_group_id: std::option::Option<std::string::String>,
         pub(crate) e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -428,7 +428,7 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupInput {
 pub mod associate_phone_number_with_user_input {
 
     /// A builder for [`AssociatePhoneNumberWithUserInput`](crate::input::AssociatePhoneNumberWithUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -658,7 +658,7 @@ impl AssociatePhoneNumberWithUserInput {
 pub mod associate_signin_delegate_groups_with_account_input {
 
     /// A builder for [`AssociateSigninDelegateGroupsWithAccountInput`](crate::input::AssociateSigninDelegateGroupsWithAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) signin_delegate_groups:
@@ -852,7 +852,7 @@ impl AssociateSigninDelegateGroupsWithAccountInput {
 pub mod batch_create_attendee_input {
 
     /// A builder for [`BatchCreateAttendeeInput`](crate::input::BatchCreateAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) attendees:
@@ -1049,7 +1049,7 @@ impl BatchCreateAttendeeInput {
 pub mod batch_create_channel_membership_input {
 
     /// A builder for [`BatchCreateChannelMembershipInput`](crate::input::BatchCreateChannelMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ChannelMembershipType>,
@@ -1275,7 +1275,7 @@ impl BatchCreateChannelMembershipInput {
 pub mod batch_create_room_membership_input {
 
     /// A builder for [`BatchCreateRoomMembershipInput`](crate::input::BatchCreateRoomMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) room_id: std::option::Option<std::string::String>,
@@ -1506,7 +1506,7 @@ impl BatchCreateRoomMembershipInput {
 pub mod batch_delete_phone_number_input {
 
     /// A builder for [`BatchDeletePhoneNumberInput`](crate::input::BatchDeletePhoneNumberInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1668,7 +1668,7 @@ impl BatchDeletePhoneNumberInput {
 pub mod batch_suspend_user_input {
 
     /// A builder for [`BatchSuspendUserInput`](crate::input::BatchSuspendUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) user_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1864,7 +1864,7 @@ impl BatchSuspendUserInput {
 pub mod batch_unsuspend_user_input {
 
     /// A builder for [`BatchUnsuspendUserInput`](crate::input::BatchUnsuspendUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) user_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2060,7 +2060,7 @@ impl BatchUnsuspendUserInput {
 pub mod batch_update_phone_number_input {
 
     /// A builder for [`BatchUpdatePhoneNumberInput`](crate::input::BatchUpdatePhoneNumberInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_phone_number_request_items:
             std::option::Option<std::vec::Vec<crate::model::UpdatePhoneNumberRequestItem>>,
@@ -2226,7 +2226,7 @@ impl BatchUpdatePhoneNumberInput {
 pub mod batch_update_user_input {
 
     /// A builder for [`BatchUpdateUserInput`](crate::input::BatchUpdateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) update_user_request_items:
@@ -2415,7 +2415,7 @@ impl BatchUpdateUserInput {
 pub mod create_account_input {
 
     /// A builder for [`CreateAccountInput`](crate::input::CreateAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -2553,7 +2553,7 @@ impl CreateAccountInput {
 pub mod create_app_instance_input {
 
     /// A builder for [`CreateAppInstanceInput`](crate::input::CreateAppInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) metadata: std::option::Option<std::string::String>,
@@ -2758,7 +2758,7 @@ impl CreateAppInstanceInput {
 pub mod create_app_instance_admin_input {
 
     /// A builder for [`CreateAppInstanceAdminInput`](crate::input::CreateAppInstanceAdminInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_admin_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
@@ -2946,7 +2946,7 @@ impl CreateAppInstanceAdminInput {
 pub mod create_app_instance_user_input {
 
     /// A builder for [`CreateAppInstanceUserInput`](crate::input::CreateAppInstanceUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_user_id: std::option::Option<std::string::String>,
@@ -3185,7 +3185,7 @@ impl CreateAppInstanceUserInput {
 pub mod create_attendee_input {
 
     /// A builder for [`CreateAttendeeInput`](crate::input::CreateAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) external_user_id: std::option::Option<std::string::String>,
@@ -3394,7 +3394,7 @@ impl CreateAttendeeInput {
 pub mod create_bot_input {
 
     /// A builder for [`CreateBotInput`](crate::input::CreateBotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -3585,7 +3585,7 @@ impl CreateBotInput {
 pub mod create_channel_input {
 
     /// A builder for [`CreateChannelInput`](crate::input::CreateChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3847,7 +3847,7 @@ impl CreateChannelInput {
 pub mod create_channel_ban_input {
 
     /// A builder for [`CreateChannelBanInput`](crate::input::CreateChannelBanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) member_arn: std::option::Option<std::string::String>,
@@ -4040,7 +4040,7 @@ impl CreateChannelBanInput {
 pub mod create_channel_membership_input {
 
     /// A builder for [`CreateChannelMembershipInput`](crate::input::CreateChannelMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) member_arn: std::option::Option<std::string::String>,
@@ -4251,7 +4251,7 @@ impl CreateChannelMembershipInput {
 pub mod create_channel_moderator_input {
 
     /// A builder for [`CreateChannelModeratorInput`](crate::input::CreateChannelModeratorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) channel_moderator_arn: std::option::Option<std::string::String>,
@@ -4450,7 +4450,7 @@ impl CreateChannelModeratorInput {
 pub mod create_media_capture_pipeline_input {
 
     /// A builder for [`CreateMediaCapturePipelineInput`](crate::input::CreateMediaCapturePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_type: std::option::Option<crate::model::MediaPipelineSourceType>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
@@ -4685,7 +4685,7 @@ impl CreateMediaCapturePipelineInput {
 pub mod create_meeting_input {
 
     /// A builder for [`CreateMeetingInput`](crate::input::CreateMeetingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) external_meeting_id: std::option::Option<std::string::String>,
@@ -4930,7 +4930,7 @@ impl CreateMeetingInput {
 pub mod create_meeting_dial_out_input {
 
     /// A builder for [`CreateMeetingDialOutInput`](crate::input::CreateMeetingDialOutInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) from_phone_number: std::option::Option<std::string::String>,
@@ -5150,7 +5150,7 @@ impl CreateMeetingDialOutInput {
 pub mod create_meeting_with_attendees_input {
 
     /// A builder for [`CreateMeetingWithAttendeesInput`](crate::input::CreateMeetingWithAttendeesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) external_meeting_id: std::option::Option<std::string::String>,
@@ -5428,7 +5428,7 @@ impl CreateMeetingWithAttendeesInput {
 pub mod create_phone_number_order_input {
 
     /// A builder for [`CreatePhoneNumberOrderInput`](crate::input::CreatePhoneNumberOrderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_type: std::option::Option<crate::model::PhoneNumberProductType>,
         pub(crate) e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5596,7 +5596,7 @@ impl CreatePhoneNumberOrderInput {
 pub mod create_proxy_session_input {
 
     /// A builder for [`CreateProxySessionInput`](crate::input::CreateProxySessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
         pub(crate) participant_phone_numbers:
@@ -5895,7 +5895,7 @@ impl CreateProxySessionInput {
 pub mod create_room_input {
 
     /// A builder for [`CreateRoomInput`](crate::input::CreateRoomInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6098,7 +6098,7 @@ impl CreateRoomInput {
 pub mod create_room_membership_input {
 
     /// A builder for [`CreateRoomMembershipInput`](crate::input::CreateRoomMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) room_id: std::option::Option<std::string::String>,
@@ -6325,7 +6325,7 @@ impl CreateRoomMembershipInput {
 pub mod create_sip_media_application_input {
 
     /// A builder for [`CreateSipMediaApplicationInput`](crate::input::CreateSipMediaApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_region: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6503,7 +6503,7 @@ impl CreateSipMediaApplicationInput {
 pub mod create_sip_media_application_call_input {
 
     /// A builder for [`CreateSipMediaApplicationCallInput`](crate::input::CreateSipMediaApplicationCallInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) from_phone_number: std::option::Option<std::string::String>,
         pub(crate) to_phone_number: std::option::Option<std::string::String>,
@@ -6740,7 +6740,7 @@ impl CreateSipMediaApplicationCallInput {
 pub mod create_sip_rule_input {
 
     /// A builder for [`CreateSipRuleInput`](crate::input::CreateSipRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) trigger_type: std::option::Option<crate::model::SipRuleTriggerType>,
@@ -6947,7 +6947,7 @@ impl CreateSipRuleInput {
 pub mod create_user_input {
 
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -7166,7 +7166,7 @@ impl CreateUserInput {
 pub mod create_voice_connector_input {
 
     /// A builder for [`CreateVoiceConnectorInput`](crate::input::CreateVoiceConnectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) aws_region: std::option::Option<crate::model::VoiceConnectorAwsRegion>,
@@ -7337,7 +7337,7 @@ impl CreateVoiceConnectorInput {
 pub mod create_voice_connector_group_input {
 
     /// A builder for [`CreateVoiceConnectorGroupInput`](crate::input::CreateVoiceConnectorGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) voice_connector_items:
@@ -7503,7 +7503,7 @@ impl CreateVoiceConnectorGroupInput {
 pub mod delete_account_input {
 
     /// A builder for [`DeleteAccountInput`](crate::input::DeleteAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
@@ -7649,7 +7649,7 @@ impl DeleteAccountInput {
 pub mod delete_app_instance_input {
 
     /// A builder for [`DeleteAppInstanceInput`](crate::input::DeleteAppInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
     }
@@ -7806,7 +7806,7 @@ impl DeleteAppInstanceInput {
 pub mod delete_app_instance_admin_input {
 
     /// A builder for [`DeleteAppInstanceAdminInput`](crate::input::DeleteAppInstanceAdminInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_admin_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
@@ -7998,7 +7998,7 @@ impl DeleteAppInstanceAdminInput {
 pub mod delete_app_instance_streaming_configurations_input {
 
     /// A builder for [`DeleteAppInstanceStreamingConfigurationsInput`](crate::input::DeleteAppInstanceStreamingConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
     }
@@ -8155,7 +8155,7 @@ impl DeleteAppInstanceStreamingConfigurationsInput {
 pub mod delete_app_instance_user_input {
 
     /// A builder for [`DeleteAppInstanceUserInput`](crate::input::DeleteAppInstanceUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
     }
@@ -8312,7 +8312,7 @@ impl DeleteAppInstanceUserInput {
 pub mod delete_attendee_input {
 
     /// A builder for [`DeleteAttendeeInput`](crate::input::DeleteAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) attendee_id: std::option::Option<std::string::String>,
@@ -8494,7 +8494,7 @@ impl DeleteAttendeeInput {
 pub mod delete_channel_input {
 
     /// A builder for [`DeleteChannelInput`](crate::input::DeleteChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) chime_bearer: std::option::Option<std::string::String>,
@@ -8655,7 +8655,7 @@ impl DeleteChannelInput {
 pub mod delete_channel_ban_input {
 
     /// A builder for [`DeleteChannelBanInput`](crate::input::DeleteChannelBanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) member_arn: std::option::Option<std::string::String>,
@@ -8854,7 +8854,7 @@ impl DeleteChannelBanInput {
 pub mod delete_channel_membership_input {
 
     /// A builder for [`DeleteChannelMembershipInput`](crate::input::DeleteChannelMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) member_arn: std::option::Option<std::string::String>,
@@ -9054,7 +9054,7 @@ impl DeleteChannelMembershipInput {
 pub mod delete_channel_message_input {
 
     /// A builder for [`DeleteChannelMessageInput`](crate::input::DeleteChannelMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -9254,7 +9254,7 @@ impl DeleteChannelMessageInput {
 pub mod delete_channel_moderator_input {
 
     /// A builder for [`DeleteChannelModeratorInput`](crate::input::DeleteChannelModeratorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) channel_moderator_arn: std::option::Option<std::string::String>,
@@ -9457,7 +9457,7 @@ impl DeleteChannelModeratorInput {
 pub mod delete_events_configuration_input {
 
     /// A builder for [`DeleteEventsConfigurationInput`](crate::input::DeleteEventsConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bot_id: std::option::Option<std::string::String>,
@@ -9641,7 +9641,7 @@ impl DeleteEventsConfigurationInput {
 pub mod delete_media_capture_pipeline_input {
 
     /// A builder for [`DeleteMediaCapturePipelineInput`](crate::input::DeleteMediaCapturePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
     }
@@ -9796,7 +9796,7 @@ impl DeleteMediaCapturePipelineInput {
 pub mod delete_meeting_input {
 
     /// A builder for [`DeleteMeetingInput`](crate::input::DeleteMeetingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
     }
@@ -9942,7 +9942,7 @@ impl DeleteMeetingInput {
 pub mod delete_phone_number_input {
 
     /// A builder for [`DeletePhoneNumberInput`](crate::input::DeletePhoneNumberInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_id: std::option::Option<std::string::String>,
     }
@@ -10097,7 +10097,7 @@ impl DeletePhoneNumberInput {
 pub mod delete_proxy_session_input {
 
     /// A builder for [`DeleteProxySessionInput`](crate::input::DeleteProxySessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
         pub(crate) proxy_session_id: std::option::Option<std::string::String>,
@@ -10287,7 +10287,7 @@ impl DeleteProxySessionInput {
 pub mod delete_room_input {
 
     /// A builder for [`DeleteRoomInput`](crate::input::DeleteRoomInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) room_id: std::option::Option<std::string::String>,
@@ -10469,7 +10469,7 @@ impl DeleteRoomInput {
 pub mod delete_room_membership_input {
 
     /// A builder for [`DeleteRoomMembershipInput`](crate::input::DeleteRoomMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) room_id: std::option::Option<std::string::String>,
@@ -10685,7 +10685,7 @@ impl DeleteRoomMembershipInput {
 pub mod delete_sip_media_application_input {
 
     /// A builder for [`DeleteSipMediaApplicationInput`](crate::input::DeleteSipMediaApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application_id: std::option::Option<std::string::String>,
     }
@@ -10840,7 +10840,7 @@ impl DeleteSipMediaApplicationInput {
 pub mod delete_sip_rule_input {
 
     /// A builder for [`DeleteSipRuleInput`](crate::input::DeleteSipRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_rule_id: std::option::Option<std::string::String>,
     }
@@ -10986,7 +10986,7 @@ impl DeleteSipRuleInput {
 pub mod delete_voice_connector_input {
 
     /// A builder for [`DeleteVoiceConnectorInput`](crate::input::DeleteVoiceConnectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
     }
@@ -11141,7 +11141,7 @@ impl DeleteVoiceConnectorInput {
 pub mod delete_voice_connector_emergency_calling_configuration_input {
 
     /// A builder for [`DeleteVoiceConnectorEmergencyCallingConfigurationInput`](crate::input::DeleteVoiceConnectorEmergencyCallingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
     }
@@ -11300,7 +11300,7 @@ impl DeleteVoiceConnectorEmergencyCallingConfigurationInput {
 pub mod delete_voice_connector_group_input {
 
     /// A builder for [`DeleteVoiceConnectorGroupInput`](crate::input::DeleteVoiceConnectorGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_group_id: std::option::Option<std::string::String>,
     }
@@ -11455,7 +11455,7 @@ impl DeleteVoiceConnectorGroupInput {
 pub mod delete_voice_connector_origination_input {
 
     /// A builder for [`DeleteVoiceConnectorOriginationInput`](crate::input::DeleteVoiceConnectorOriginationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
     }
@@ -11610,7 +11610,7 @@ impl DeleteVoiceConnectorOriginationInput {
 pub mod delete_voice_connector_proxy_input {
 
     /// A builder for [`DeleteVoiceConnectorProxyInput`](crate::input::DeleteVoiceConnectorProxyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
     }
@@ -11765,7 +11765,7 @@ impl DeleteVoiceConnectorProxyInput {
 pub mod delete_voice_connector_streaming_configuration_input {
 
     /// A builder for [`DeleteVoiceConnectorStreamingConfigurationInput`](crate::input::DeleteVoiceConnectorStreamingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
     }
@@ -11923,7 +11923,7 @@ impl DeleteVoiceConnectorStreamingConfigurationInput {
 pub mod delete_voice_connector_termination_input {
 
     /// A builder for [`DeleteVoiceConnectorTerminationInput`](crate::input::DeleteVoiceConnectorTerminationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
     }
@@ -12078,7 +12078,7 @@ impl DeleteVoiceConnectorTerminationInput {
 pub mod delete_voice_connector_termination_credentials_input {
 
     /// A builder for [`DeleteVoiceConnectorTerminationCredentialsInput`](crate::input::DeleteVoiceConnectorTerminationCredentialsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
         pub(crate) usernames: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12279,7 +12279,7 @@ impl DeleteVoiceConnectorTerminationCredentialsInput {
 pub mod describe_app_instance_input {
 
     /// A builder for [`DescribeAppInstanceInput`](crate::input::DescribeAppInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
     }
@@ -12436,7 +12436,7 @@ impl DescribeAppInstanceInput {
 pub mod describe_app_instance_admin_input {
 
     /// A builder for [`DescribeAppInstanceAdminInput`](crate::input::DescribeAppInstanceAdminInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_admin_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
@@ -12628,7 +12628,7 @@ impl DescribeAppInstanceAdminInput {
 pub mod describe_app_instance_user_input {
 
     /// A builder for [`DescribeAppInstanceUserInput`](crate::input::DescribeAppInstanceUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
     }
@@ -12785,7 +12785,7 @@ impl DescribeAppInstanceUserInput {
 pub mod describe_channel_input {
 
     /// A builder for [`DescribeChannelInput`](crate::input::DescribeChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) chime_bearer: std::option::Option<std::string::String>,
@@ -12946,7 +12946,7 @@ impl DescribeChannelInput {
 pub mod describe_channel_ban_input {
 
     /// A builder for [`DescribeChannelBanInput`](crate::input::DescribeChannelBanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) member_arn: std::option::Option<std::string::String>,
@@ -13145,7 +13145,7 @@ impl DescribeChannelBanInput {
 pub mod describe_channel_membership_input {
 
     /// A builder for [`DescribeChannelMembershipInput`](crate::input::DescribeChannelMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) member_arn: std::option::Option<std::string::String>,
@@ -13345,7 +13345,7 @@ impl DescribeChannelMembershipInput {
 pub mod describe_channel_membership_for_app_instance_user_input {
 
     /// A builder for [`DescribeChannelMembershipForAppInstanceUserInput`](crate::input::DescribeChannelMembershipForAppInstanceUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
@@ -13554,7 +13554,7 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
 pub mod describe_channel_moderated_by_app_instance_user_input {
 
     /// A builder for [`DescribeChannelModeratedByAppInstanceUserInput`](crate::input::DescribeChannelModeratedByAppInstanceUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
@@ -13766,7 +13766,7 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
 pub mod describe_channel_moderator_input {
 
     /// A builder for [`DescribeChannelModeratorInput`](crate::input::DescribeChannelModeratorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) channel_moderator_arn: std::option::Option<std::string::String>,
@@ -13969,7 +13969,7 @@ impl DescribeChannelModeratorInput {
 pub mod disassociate_phone_number_from_user_input {
 
     /// A builder for [`DisassociatePhoneNumberFromUserInput`](crate::input::DisassociatePhoneNumberFromUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -14162,7 +14162,7 @@ impl DisassociatePhoneNumberFromUserInput {
 pub mod disassociate_phone_numbers_from_voice_connector_input {
 
     /// A builder for [`DisassociatePhoneNumbersFromVoiceConnectorInput`](crate::input::DisassociatePhoneNumbersFromVoiceConnectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
         pub(crate) e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14363,7 +14363,7 @@ impl DisassociatePhoneNumbersFromVoiceConnectorInput {
 pub mod disassociate_phone_numbers_from_voice_connector_group_input {
 
     /// A builder for [`DisassociatePhoneNumbersFromVoiceConnectorGroupInput`](crate::input::DisassociatePhoneNumbersFromVoiceConnectorGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_group_id: std::option::Option<std::string::String>,
         pub(crate) e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14565,7 +14565,7 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
 pub mod disassociate_signin_delegate_groups_from_account_input {
 
     /// A builder for [`DisassociateSigninDelegateGroupsFromAccountInput`](crate::input::DisassociateSigninDelegateGroupsFromAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) group_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14759,7 +14759,7 @@ impl DisassociateSigninDelegateGroupsFromAccountInput {
 pub mod get_account_input {
 
     /// A builder for [`GetAccountInput`](crate::input::GetAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
@@ -14905,7 +14905,7 @@ impl GetAccountInput {
 pub mod get_account_settings_input {
 
     /// A builder for [`GetAccountSettingsInput`](crate::input::GetAccountSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
@@ -15057,7 +15057,7 @@ impl GetAccountSettingsInput {
 pub mod get_app_instance_retention_settings_input {
 
     /// A builder for [`GetAppInstanceRetentionSettingsInput`](crate::input::GetAppInstanceRetentionSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
     }
@@ -15214,7 +15214,7 @@ impl GetAppInstanceRetentionSettingsInput {
 pub mod get_app_instance_streaming_configurations_input {
 
     /// A builder for [`GetAppInstanceStreamingConfigurationsInput`](crate::input::GetAppInstanceStreamingConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
     }
@@ -15369,7 +15369,7 @@ impl GetAppInstanceStreamingConfigurationsInput {
 pub mod get_attendee_input {
 
     /// A builder for [`GetAttendeeInput`](crate::input::GetAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) attendee_id: std::option::Option<std::string::String>,
@@ -15551,7 +15551,7 @@ impl GetAttendeeInput {
 pub mod get_bot_input {
 
     /// A builder for [`GetBotInput`](crate::input::GetBotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bot_id: std::option::Option<std::string::String>,
@@ -15728,7 +15728,7 @@ impl GetBotInput {
 pub mod get_channel_message_input {
 
     /// A builder for [`GetChannelMessageInput`](crate::input::GetChannelMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -15927,7 +15927,7 @@ impl GetChannelMessageInput {
 pub mod get_events_configuration_input {
 
     /// A builder for [`GetEventsConfigurationInput`](crate::input::GetEventsConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bot_id: std::option::Option<std::string::String>,
@@ -16111,7 +16111,7 @@ impl GetEventsConfigurationInput {
 pub mod get_global_settings_input {
 
     /// A builder for [`GetGlobalSettingsInput`](crate::input::GetGlobalSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetGlobalSettingsInput`](crate::input::GetGlobalSettingsInput).
@@ -16225,7 +16225,7 @@ impl GetGlobalSettingsInput {
 pub mod get_media_capture_pipeline_input {
 
     /// A builder for [`GetMediaCapturePipelineInput`](crate::input::GetMediaCapturePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_pipeline_id: std::option::Option<std::string::String>,
     }
@@ -16380,7 +16380,7 @@ impl GetMediaCapturePipelineInput {
 pub mod get_meeting_input {
 
     /// A builder for [`GetMeetingInput`](crate::input::GetMeetingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
     }
@@ -16526,7 +16526,7 @@ impl GetMeetingInput {
 pub mod get_messaging_session_endpoint_input {
 
     /// A builder for [`GetMessagingSessionEndpointInput`](crate::input::GetMessagingSessionEndpointInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetMessagingSessionEndpointInput`](crate::input::GetMessagingSessionEndpointInput).
@@ -16642,7 +16642,7 @@ impl GetMessagingSessionEndpointInput {
 pub mod get_phone_number_input {
 
     /// A builder for [`GetPhoneNumberInput`](crate::input::GetPhoneNumberInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_id: std::option::Option<std::string::String>,
     }
@@ -16795,7 +16795,7 @@ impl GetPhoneNumberInput {
 pub mod get_phone_number_order_input {
 
     /// A builder for [`GetPhoneNumberOrderInput`](crate::input::GetPhoneNumberOrderInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_order_id: std::option::Option<std::string::String>,
     }
@@ -16950,7 +16950,7 @@ impl GetPhoneNumberOrderInput {
 pub mod get_phone_number_settings_input {
 
     /// A builder for [`GetPhoneNumberSettingsInput`](crate::input::GetPhoneNumberSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetPhoneNumberSettingsInput`](crate::input::GetPhoneNumberSettingsInput).
@@ -17064,7 +17064,7 @@ impl GetPhoneNumberSettingsInput {
 pub mod get_proxy_session_input {
 
     /// A builder for [`GetProxySessionInput`](crate::input::GetProxySessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
         pub(crate) proxy_session_id: std::option::Option<std::string::String>,
@@ -17252,7 +17252,7 @@ impl GetProxySessionInput {
 pub mod get_retention_settings_input {
 
     /// A builder for [`GetRetentionSettingsInput`](crate::input::GetRetentionSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
@@ -17404,7 +17404,7 @@ impl GetRetentionSettingsInput {
 pub mod get_room_input {
 
     /// A builder for [`GetRoomInput`](crate::input::GetRoomInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) room_id: std::option::Option<std::string::String>,
@@ -17583,7 +17583,7 @@ impl GetRoomInput {
 pub mod get_sip_media_application_input {
 
     /// A builder for [`GetSipMediaApplicationInput`](crate::input::GetSipMediaApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application_id: std::option::Option<std::string::String>,
     }
@@ -17738,7 +17738,7 @@ impl GetSipMediaApplicationInput {
 pub mod get_sip_media_application_logging_configuration_input {
 
     /// A builder for [`GetSipMediaApplicationLoggingConfigurationInput`](crate::input::GetSipMediaApplicationLoggingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application_id: std::option::Option<std::string::String>,
     }
@@ -17896,7 +17896,7 @@ impl GetSipMediaApplicationLoggingConfigurationInput {
 pub mod get_sip_rule_input {
 
     /// A builder for [`GetSipRuleInput`](crate::input::GetSipRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_rule_id: std::option::Option<std::string::String>,
     }
@@ -18042,7 +18042,7 @@ impl GetSipRuleInput {
 pub mod get_user_input {
 
     /// A builder for [`GetUserInput`](crate::input::GetUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -18221,7 +18221,7 @@ impl GetUserInput {
 pub mod get_user_settings_input {
 
     /// A builder for [`GetUserSettingsInput`](crate::input::GetUserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -18403,7 +18403,7 @@ impl GetUserSettingsInput {
 pub mod get_voice_connector_input {
 
     /// A builder for [`GetVoiceConnectorInput`](crate::input::GetVoiceConnectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
     }
@@ -18558,7 +18558,7 @@ impl GetVoiceConnectorInput {
 pub mod get_voice_connector_emergency_calling_configuration_input {
 
     /// A builder for [`GetVoiceConnectorEmergencyCallingConfigurationInput`](crate::input::GetVoiceConnectorEmergencyCallingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
     }
@@ -18716,7 +18716,7 @@ impl GetVoiceConnectorEmergencyCallingConfigurationInput {
 pub mod get_voice_connector_group_input {
 
     /// A builder for [`GetVoiceConnectorGroupInput`](crate::input::GetVoiceConnectorGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_group_id: std::option::Option<std::string::String>,
     }
@@ -18871,7 +18871,7 @@ impl GetVoiceConnectorGroupInput {
 pub mod get_voice_connector_logging_configuration_input {
 
     /// A builder for [`GetVoiceConnectorLoggingConfigurationInput`](crate::input::GetVoiceConnectorLoggingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
     }
@@ -19026,7 +19026,7 @@ impl GetVoiceConnectorLoggingConfigurationInput {
 pub mod get_voice_connector_origination_input {
 
     /// A builder for [`GetVoiceConnectorOriginationInput`](crate::input::GetVoiceConnectorOriginationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
     }
@@ -19181,7 +19181,7 @@ impl GetVoiceConnectorOriginationInput {
 pub mod get_voice_connector_proxy_input {
 
     /// A builder for [`GetVoiceConnectorProxyInput`](crate::input::GetVoiceConnectorProxyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
     }
@@ -19336,7 +19336,7 @@ impl GetVoiceConnectorProxyInput {
 pub mod get_voice_connector_streaming_configuration_input {
 
     /// A builder for [`GetVoiceConnectorStreamingConfigurationInput`](crate::input::GetVoiceConnectorStreamingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
     }
@@ -19491,7 +19491,7 @@ impl GetVoiceConnectorStreamingConfigurationInput {
 pub mod get_voice_connector_termination_input {
 
     /// A builder for [`GetVoiceConnectorTerminationInput`](crate::input::GetVoiceConnectorTerminationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
     }
@@ -19646,7 +19646,7 @@ impl GetVoiceConnectorTerminationInput {
 pub mod get_voice_connector_termination_health_input {
 
     /// A builder for [`GetVoiceConnectorTerminationHealthInput`](crate::input::GetVoiceConnectorTerminationHealthInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
     }
@@ -19801,7 +19801,7 @@ impl GetVoiceConnectorTerminationHealthInput {
 pub mod invite_users_input {
 
     /// A builder for [`InviteUsersInput`](crate::input::InviteUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) user_email_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20007,7 +20007,7 @@ impl InviteUsersInput {
 pub mod list_accounts_input {
 
     /// A builder for [`ListAccountsInput`](crate::input::ListAccountsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) user_email: std::option::Option<std::string::String>,
@@ -20216,7 +20216,7 @@ impl ListAccountsInput {
 pub mod list_app_instance_admins_input {
 
     /// A builder for [`ListAppInstanceAdminsInput`](crate::input::ListAppInstanceAdminsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -20430,7 +20430,7 @@ impl ListAppInstanceAdminsInput {
 pub mod list_app_instances_input {
 
     /// A builder for [`ListAppInstancesInput`](crate::input::ListAppInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -20604,7 +20604,7 @@ impl ListAppInstancesInput {
 pub mod list_app_instance_users_input {
 
     /// A builder for [`ListAppInstanceUsersInput`](crate::input::ListAppInstanceUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -20813,7 +20813,7 @@ impl ListAppInstanceUsersInput {
 pub mod list_attendees_input {
 
     /// A builder for [`ListAttendeesInput`](crate::input::ListAttendeesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -21011,7 +21011,7 @@ impl ListAttendeesInput {
 pub mod list_attendee_tags_input {
 
     /// A builder for [`ListAttendeeTagsInput`](crate::input::ListAttendeeTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) attendee_id: std::option::Option<std::string::String>,
@@ -21195,7 +21195,7 @@ impl ListAttendeeTagsInput {
 pub mod list_bots_input {
 
     /// A builder for [`ListBotsInput`](crate::input::ListBotsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -21386,7 +21386,7 @@ impl ListBotsInput {
 pub mod list_channel_bans_input {
 
     /// A builder for [`ListChannelBansInput`](crate::input::ListChannelBansInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -21609,7 +21609,7 @@ impl ListChannelBansInput {
 pub mod list_channel_memberships_input {
 
     /// A builder for [`ListChannelMembershipsInput`](crate::input::ListChannelMembershipsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ChannelMembershipType>,
@@ -21856,7 +21856,7 @@ impl ListChannelMembershipsInput {
 pub mod list_channel_memberships_for_app_instance_user_input {
 
     /// A builder for [`ListChannelMembershipsForAppInstanceUserInput`](crate::input::ListChannelMembershipsForAppInstanceUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -22075,7 +22075,7 @@ impl ListChannelMembershipsForAppInstanceUserInput {
 pub mod list_channel_messages_input {
 
     /// A builder for [`ListChannelMessagesInput`](crate::input::ListChannelMessagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
@@ -22378,7 +22378,7 @@ impl ListChannelMessagesInput {
 pub mod list_channel_moderators_input {
 
     /// A builder for [`ListChannelModeratorsInput`](crate::input::ListChannelModeratorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -22604,7 +22604,7 @@ impl ListChannelModeratorsInput {
 pub mod list_channels_input {
 
     /// A builder for [`ListChannelsInput`](crate::input::ListChannelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) privacy: std::option::Option<crate::model::ChannelPrivacy>,
@@ -22846,7 +22846,7 @@ impl ListChannelsInput {
 pub mod list_channels_moderated_by_app_instance_user_input {
 
     /// A builder for [`ListChannelsModeratedByAppInstanceUserInput`](crate::input::ListChannelsModeratedByAppInstanceUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -23062,7 +23062,7 @@ impl ListChannelsModeratedByAppInstanceUserInput {
 pub mod list_media_capture_pipelines_input {
 
     /// A builder for [`ListMediaCapturePipelinesInput`](crate::input::ListMediaCapturePipelinesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -23226,7 +23226,7 @@ impl ListMediaCapturePipelinesInput {
 pub mod list_meetings_input {
 
     /// A builder for [`ListMeetingsInput`](crate::input::ListMeetingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -23388,7 +23388,7 @@ impl ListMeetingsInput {
 pub mod list_meeting_tags_input {
 
     /// A builder for [`ListMeetingTagsInput`](crate::input::ListMeetingTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
     }
@@ -23534,7 +23534,7 @@ impl ListMeetingTagsInput {
 pub mod list_phone_number_orders_input {
 
     /// A builder for [`ListPhoneNumberOrdersInput`](crate::input::ListPhoneNumberOrdersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -23698,7 +23698,7 @@ impl ListPhoneNumberOrdersInput {
 pub mod list_phone_numbers_input {
 
     /// A builder for [`ListPhoneNumbersInput`](crate::input::ListPhoneNumbersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::PhoneNumberStatus>,
         pub(crate) product_type: std::option::Option<crate::model::PhoneNumberProductType>,
@@ -23948,7 +23948,7 @@ impl ListPhoneNumbersInput {
 pub mod list_proxy_sessions_input {
 
     /// A builder for [`ListProxySessionsInput`](crate::input::ListProxySessionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ProxySessionStatus>,
@@ -24171,7 +24171,7 @@ impl ListProxySessionsInput {
 pub mod list_room_memberships_input {
 
     /// A builder for [`ListRoomMembershipsInput`](crate::input::ListRoomMembershipsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) room_id: std::option::Option<std::string::String>,
@@ -24403,7 +24403,7 @@ impl ListRoomMembershipsInput {
 pub mod list_rooms_input {
 
     /// A builder for [`ListRoomsInput`](crate::input::ListRoomsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) member_id: std::option::Option<std::string::String>,
@@ -24616,7 +24616,7 @@ impl ListRoomsInput {
 pub mod list_sip_media_applications_input {
 
     /// A builder for [`ListSipMediaApplicationsInput`](crate::input::ListSipMediaApplicationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -24780,7 +24780,7 @@ impl ListSipMediaApplicationsInput {
 pub mod list_sip_rules_input {
 
     /// A builder for [`ListSipRulesInput`](crate::input::ListSipRulesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -24965,7 +24965,7 @@ impl ListSipRulesInput {
 pub mod list_supported_phone_number_countries_input {
 
     /// A builder for [`ListSupportedPhoneNumberCountriesInput`](crate::input::ListSupportedPhoneNumberCountriesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_type: std::option::Option<crate::model::PhoneNumberProductType>,
     }
@@ -25115,7 +25115,7 @@ impl ListSupportedPhoneNumberCountriesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -25274,7 +25274,7 @@ impl ListTagsForResourceInput {
 pub mod list_users_input {
 
     /// A builder for [`ListUsersInput`](crate::input::ListUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) user_email: std::option::Option<std::string::String>,
@@ -25518,7 +25518,7 @@ impl ListUsersInput {
 pub mod list_voice_connector_groups_input {
 
     /// A builder for [`ListVoiceConnectorGroupsInput`](crate::input::ListVoiceConnectorGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -25682,7 +25682,7 @@ impl ListVoiceConnectorGroupsInput {
 pub mod list_voice_connectors_input {
 
     /// A builder for [`ListVoiceConnectorsInput`](crate::input::ListVoiceConnectorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -25846,7 +25846,7 @@ impl ListVoiceConnectorsInput {
 pub mod list_voice_connector_termination_credentials_input {
 
     /// A builder for [`ListVoiceConnectorTerminationCredentialsInput`](crate::input::ListVoiceConnectorTerminationCredentialsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
     }
@@ -26003,7 +26003,7 @@ impl ListVoiceConnectorTerminationCredentialsInput {
 pub mod logout_user_input {
 
     /// A builder for [`LogoutUserInput`](crate::input::LogoutUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -26194,7 +26194,7 @@ impl LogoutUserInput {
 pub mod put_app_instance_retention_settings_input {
 
     /// A builder for [`PutAppInstanceRetentionSettingsInput`](crate::input::PutAppInstanceRetentionSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_retention_settings:
@@ -26383,7 +26383,7 @@ impl PutAppInstanceRetentionSettingsInput {
 pub mod put_app_instance_streaming_configurations_input {
 
     /// A builder for [`PutAppInstanceStreamingConfigurationsInput`](crate::input::PutAppInstanceStreamingConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_streaming_configurations:
@@ -26580,7 +26580,7 @@ impl PutAppInstanceStreamingConfigurationsInput {
 pub mod put_events_configuration_input {
 
     /// A builder for [`PutEventsConfigurationInput`](crate::input::PutEventsConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bot_id: std::option::Option<std::string::String>,
@@ -26826,7 +26826,7 @@ impl PutEventsConfigurationInput {
 pub mod put_retention_settings_input {
 
     /// A builder for [`PutRetentionSettingsInput`](crate::input::PutRetentionSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) retention_settings: std::option::Option<crate::model::RetentionSettings>,
@@ -27009,7 +27009,7 @@ impl PutRetentionSettingsInput {
 pub mod put_sip_media_application_logging_configuration_input {
 
     /// A builder for [`PutSipMediaApplicationLoggingConfigurationInput`](crate::input::PutSipMediaApplicationLoggingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application_id: std::option::Option<std::string::String>,
         pub(crate) sip_media_application_logging_configuration:
@@ -27200,7 +27200,7 @@ impl PutSipMediaApplicationLoggingConfigurationInput {
 pub mod put_voice_connector_emergency_calling_configuration_input {
 
     /// A builder for [`PutVoiceConnectorEmergencyCallingConfigurationInput`](crate::input::PutVoiceConnectorEmergencyCallingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
         pub(crate) emergency_calling_configuration:
@@ -27390,7 +27390,7 @@ impl PutVoiceConnectorEmergencyCallingConfigurationInput {
 pub mod put_voice_connector_logging_configuration_input {
 
     /// A builder for [`PutVoiceConnectorLoggingConfigurationInput`](crate::input::PutVoiceConnectorLoggingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
@@ -27573,7 +27573,7 @@ impl PutVoiceConnectorLoggingConfigurationInput {
 pub mod put_voice_connector_origination_input {
 
     /// A builder for [`PutVoiceConnectorOriginationInput`](crate::input::PutVoiceConnectorOriginationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
         pub(crate) origination: std::option::Option<crate::model::Origination>,
@@ -27756,7 +27756,7 @@ impl PutVoiceConnectorOriginationInput {
 pub mod put_voice_connector_proxy_input {
 
     /// A builder for [`PutVoiceConnectorProxyInput`](crate::input::PutVoiceConnectorProxyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
         pub(crate) default_session_expiry_minutes: std::option::Option<i32>,
@@ -28011,7 +28011,7 @@ impl PutVoiceConnectorProxyInput {
 pub mod put_voice_connector_streaming_configuration_input {
 
     /// A builder for [`PutVoiceConnectorStreamingConfigurationInput`](crate::input::PutVoiceConnectorStreamingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
         pub(crate) streaming_configuration:
@@ -28198,7 +28198,7 @@ impl PutVoiceConnectorStreamingConfigurationInput {
 pub mod put_voice_connector_termination_input {
 
     /// A builder for [`PutVoiceConnectorTerminationInput`](crate::input::PutVoiceConnectorTerminationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
         pub(crate) termination: std::option::Option<crate::model::Termination>,
@@ -28381,7 +28381,7 @@ impl PutVoiceConnectorTerminationInput {
 pub mod put_voice_connector_termination_credentials_input {
 
     /// A builder for [`PutVoiceConnectorTerminationCredentialsInput`](crate::input::PutVoiceConnectorTerminationCredentialsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
         pub(crate) credentials: std::option::Option<std::vec::Vec<crate::model::Credential>>,
@@ -28579,7 +28579,7 @@ impl PutVoiceConnectorTerminationCredentialsInput {
 pub mod redact_channel_message_input {
 
     /// A builder for [`RedactChannelMessageInput`](crate::input::RedactChannelMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -28788,7 +28788,7 @@ impl RedactChannelMessageInput {
 pub mod redact_conversation_message_input {
 
     /// A builder for [`RedactConversationMessageInput`](crate::input::RedactConversationMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) conversation_id: std::option::Option<std::string::String>,
@@ -29016,7 +29016,7 @@ impl RedactConversationMessageInput {
 pub mod redact_room_message_input {
 
     /// A builder for [`RedactRoomMessageInput`](crate::input::RedactRoomMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) room_id: std::option::Option<std::string::String>,
@@ -29241,7 +29241,7 @@ impl RedactRoomMessageInput {
 pub mod regenerate_security_token_input {
 
     /// A builder for [`RegenerateSecurityTokenInput`](crate::input::RegenerateSecurityTokenInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bot_id: std::option::Option<std::string::String>,
@@ -29434,7 +29434,7 @@ impl RegenerateSecurityTokenInput {
 pub mod reset_personal_pin_input {
 
     /// A builder for [`ResetPersonalPinInput`](crate::input::ResetPersonalPinInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -29627,7 +29627,7 @@ impl ResetPersonalPinInput {
 pub mod restore_phone_number_input {
 
     /// A builder for [`RestorePhoneNumberInput`](crate::input::RestorePhoneNumberInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) phone_number_id: std::option::Option<std::string::String>,
     }
@@ -29791,7 +29791,7 @@ impl RestorePhoneNumberInput {
 pub mod search_available_phone_numbers_input {
 
     /// A builder for [`SearchAvailablePhoneNumbersInput`](crate::input::SearchAvailablePhoneNumbersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) area_code: std::option::Option<std::string::String>,
         pub(crate) city: std::option::Option<std::string::String>,
@@ -30070,7 +30070,7 @@ impl SearchAvailablePhoneNumbersInput {
 pub mod send_channel_message_input {
 
     /// A builder for [`SendChannelMessageInput`](crate::input::SendChannelMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<std::string::String>,
@@ -30336,7 +30336,7 @@ impl SendChannelMessageInput {
 pub mod start_meeting_transcription_input {
 
     /// A builder for [`StartMeetingTranscriptionInput`](crate::input::StartMeetingTranscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) transcription_configuration:
@@ -30532,7 +30532,7 @@ impl StartMeetingTranscriptionInput {
 pub mod stop_meeting_transcription_input {
 
     /// A builder for [`StopMeetingTranscriptionInput`](crate::input::StopMeetingTranscriptionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
     }
@@ -30693,7 +30693,7 @@ impl StopMeetingTranscriptionInput {
 pub mod tag_attendee_input {
 
     /// A builder for [`TagAttendeeInput`](crate::input::TagAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) attendee_id: std::option::Option<std::string::String>,
@@ -30919,7 +30919,7 @@ impl TagAttendeeInput {
 pub mod tag_meeting_input {
 
     /// A builder for [`TagMeetingInput`](crate::input::TagMeetingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -31109,7 +31109,7 @@ impl TagMeetingInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -31287,7 +31287,7 @@ impl TagResourceInput {
 pub mod untag_attendee_input {
 
     /// A builder for [`UntagAttendeeInput`](crate::input::UntagAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) attendee_id: std::option::Option<std::string::String>,
@@ -31513,7 +31513,7 @@ impl UntagAttendeeInput {
 pub mod untag_meeting_input {
 
     /// A builder for [`UntagMeetingInput`](crate::input::UntagMeetingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -31703,7 +31703,7 @@ impl UntagMeetingInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -31881,7 +31881,7 @@ impl UntagResourceInput {
 pub mod update_account_input {
 
     /// A builder for [`UpdateAccountInput`](crate::input::UpdateAccountInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -32068,7 +32068,7 @@ impl UpdateAccountInput {
 pub mod update_account_settings_input {
 
     /// A builder for [`UpdateAccountSettingsInput`](crate::input::UpdateAccountSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) account_settings: std::option::Option<crate::model::AccountSettings>,
@@ -32251,7 +32251,7 @@ impl UpdateAccountSettingsInput {
 pub mod update_app_instance_input {
 
     /// A builder for [`UpdateAppInstanceInput`](crate::input::UpdateAppInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -32455,7 +32455,7 @@ impl UpdateAppInstanceInput {
 pub mod update_app_instance_user_input {
 
     /// A builder for [`UpdateAppInstanceUserInput`](crate::input::UpdateAppInstanceUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -32661,7 +32661,7 @@ impl UpdateAppInstanceUserInput {
 pub mod update_bot_input {
 
     /// A builder for [`UpdateBotInput`](crate::input::UpdateBotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bot_id: std::option::Option<std::string::String>,
@@ -32867,7 +32867,7 @@ impl UpdateBotInput {
 pub mod update_channel_input {
 
     /// A builder for [`UpdateChannelInput`](crate::input::UpdateChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -33089,7 +33089,7 @@ impl UpdateChannelInput {
 pub mod update_channel_message_input {
 
     /// A builder for [`UpdateChannelMessageInput`](crate::input::UpdateChannelMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -33340,7 +33340,7 @@ impl UpdateChannelMessageInput {
 pub mod update_channel_read_marker_input {
 
     /// A builder for [`UpdateChannelReadMarkerInput`](crate::input::UpdateChannelReadMarkerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) chime_bearer: std::option::Option<std::string::String>,
@@ -33508,7 +33508,7 @@ impl UpdateChannelReadMarkerInput {
 pub mod update_global_settings_input {
 
     /// A builder for [`UpdateGlobalSettingsInput`](crate::input::UpdateGlobalSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) business_calling: std::option::Option<crate::model::BusinessCallingSettings>,
         pub(crate) voice_connector: std::option::Option<crate::model::VoiceConnectorSettings>,
@@ -33670,7 +33670,7 @@ impl UpdateGlobalSettingsInput {
 pub mod update_phone_number_input {
 
     /// A builder for [`UpdatePhoneNumberInput`](crate::input::UpdatePhoneNumberInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) phone_number_id: std::option::Option<std::string::String>,
         pub(crate) product_type: std::option::Option<crate::model::PhoneNumberProductType>,
@@ -33875,7 +33875,7 @@ impl UpdatePhoneNumberInput {
 pub mod update_phone_number_settings_input {
 
     /// A builder for [`UpdatePhoneNumberSettingsInput`](crate::input::UpdatePhoneNumberSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) calling_name: std::option::Option<std::string::String>,
     }
@@ -34026,7 +34026,7 @@ impl UpdatePhoneNumberSettingsInput {
 pub mod update_proxy_session_input {
 
     /// A builder for [`UpdateProxySessionInput`](crate::input::UpdateProxySessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
         pub(crate) proxy_session_id: std::option::Option<std::string::String>,
@@ -34263,7 +34263,7 @@ impl UpdateProxySessionInput {
 pub mod update_room_input {
 
     /// A builder for [`UpdateRoomInput`](crate::input::UpdateRoomInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) room_id: std::option::Option<std::string::String>,
@@ -34480,7 +34480,7 @@ impl UpdateRoomInput {
 pub mod update_room_membership_input {
 
     /// A builder for [`UpdateRoomMembershipInput`](crate::input::UpdateRoomMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) room_id: std::option::Option<std::string::String>,
@@ -34727,7 +34727,7 @@ impl UpdateRoomMembershipInput {
 pub mod update_sip_media_application_input {
 
     /// A builder for [`UpdateSipMediaApplicationInput`](crate::input::UpdateSipMediaApplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -34932,7 +34932,7 @@ impl UpdateSipMediaApplicationInput {
 pub mod update_sip_media_application_call_input {
 
     /// A builder for [`UpdateSipMediaApplicationCallInput`](crate::input::UpdateSipMediaApplicationCallInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application_id: std::option::Option<std::string::String>,
         pub(crate) transaction_id: std::option::Option<std::string::String>,
@@ -35164,7 +35164,7 @@ impl UpdateSipMediaApplicationCallInput {
 pub mod update_sip_rule_input {
 
     /// A builder for [`UpdateSipRuleInput`](crate::input::UpdateSipRuleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_rule_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -35373,7 +35373,7 @@ impl UpdateSipRuleInput {
 pub mod update_user_input {
 
     /// A builder for [`UpdateUserInput`](crate::input::UpdateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -35615,7 +35615,7 @@ impl UpdateUserInput {
 pub mod update_user_settings_input {
 
     /// A builder for [`UpdateUserSettingsInput`](crate::input::UpdateUserSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -35828,7 +35828,7 @@ impl UpdateUserSettingsInput {
 pub mod update_voice_connector_input {
 
     /// A builder for [`UpdateVoiceConnectorInput`](crate::input::UpdateVoiceConnectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -36023,7 +36023,7 @@ impl UpdateVoiceConnectorInput {
 pub mod update_voice_connector_group_input {
 
     /// A builder for [`UpdateVoiceConnectorGroupInput`](crate::input::UpdateVoiceConnectorGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_group_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -36228,7 +36228,7 @@ impl UpdateVoiceConnectorGroupInput {
 pub mod validate_e911_address_input {
 
     /// A builder for [`ValidateE911AddressInput`](crate::input::ValidateE911AddressInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) street_number: std::option::Option<std::string::String>,

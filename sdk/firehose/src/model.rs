@@ -84,7 +84,7 @@ impl HttpEndpointDestinationUpdate {
 pub mod http_endpoint_destination_update {
 
     /// A builder for [`HttpEndpointDestinationUpdate`](crate::model::HttpEndpointDestinationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_configuration:
             std::option::Option<crate::model::HttpEndpointConfiguration>,
@@ -323,7 +323,7 @@ impl S3DestinationUpdate {
 pub mod s3_destination_update {
 
     /// A builder for [`S3DestinationUpdate`](crate::model::S3DestinationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
@@ -494,7 +494,7 @@ impl CloudWatchLoggingOptions {
 pub mod cloud_watch_logging_options {
 
     /// A builder for [`CloudWatchLoggingOptions`](crate::model::CloudWatchLoggingOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) log_group_name: std::option::Option<std::string::String>,
@@ -579,7 +579,7 @@ impl EncryptionConfiguration {
 pub mod encryption_configuration {
 
     /// A builder for [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) no_encryption_config: std::option::Option<crate::model::NoEncryptionConfig>,
         pub(crate) kms_encryption_config: std::option::Option<crate::model::KmsEncryptionConfig>,
@@ -645,7 +645,7 @@ impl KmsEncryptionConfig {
 pub mod kms_encryption_config {
 
     /// A builder for [`KmsEncryptionConfig`](crate::model::KmsEncryptionConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) awskms_key_arn: std::option::Option<std::string::String>,
     }
@@ -899,7 +899,7 @@ impl BufferingHints {
 pub mod buffering_hints {
 
     /// A builder for [`BufferingHints`](crate::model::BufferingHints).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_in_m_bs: std::option::Option<i32>,
         pub(crate) interval_in_seconds: std::option::Option<i32>,
@@ -1053,7 +1053,7 @@ impl HttpEndpointRetryOptions {
 pub mod http_endpoint_retry_options {
 
     /// A builder for [`HttpEndpointRetryOptions`](crate::model::HttpEndpointRetryOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_seconds: std::option::Option<i32>,
     }
@@ -1108,7 +1108,7 @@ impl ProcessingConfiguration {
 pub mod processing_configuration {
 
     /// A builder for [`ProcessingConfiguration`](crate::model::ProcessingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) processors: std::option::Option<std::vec::Vec<crate::model::Processor>>,
@@ -1184,7 +1184,7 @@ impl Processor {
 pub mod processor {
 
     /// A builder for [`Processor`](crate::model::Processor).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ProcessorType>,
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::ProcessorParameter>>,
@@ -1260,7 +1260,7 @@ impl ProcessorParameter {
 pub mod processor_parameter {
 
     /// A builder for [`ProcessorParameter`](crate::model::ProcessorParameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_name: std::option::Option<crate::model::ProcessorParameterName>,
         pub(crate) parameter_value: std::option::Option<std::string::String>,
@@ -1578,7 +1578,7 @@ impl HttpEndpointRequestConfiguration {
 pub mod http_endpoint_request_configuration {
 
     /// A builder for [`HttpEndpointRequestConfiguration`](crate::model::HttpEndpointRequestConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_encoding: std::option::Option<crate::model::ContentEncoding>,
         pub(crate) common_attributes:
@@ -1669,7 +1669,7 @@ impl std::fmt::Debug for HttpEndpointCommonAttribute {
 pub mod http_endpoint_common_attribute {
 
     /// A builder for [`HttpEndpointCommonAttribute`](crate::model::HttpEndpointCommonAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
         pub(crate) attribute_value: std::option::Option<std::string::String>,
@@ -1842,7 +1842,7 @@ impl HttpEndpointBufferingHints {
 pub mod http_endpoint_buffering_hints {
 
     /// A builder for [`HttpEndpointBufferingHints`](crate::model::HttpEndpointBufferingHints).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_in_m_bs: std::option::Option<i32>,
         pub(crate) interval_in_seconds: std::option::Option<i32>,
@@ -1931,7 +1931,7 @@ impl std::fmt::Debug for HttpEndpointConfiguration {
 pub mod http_endpoint_configuration {
 
     /// A builder for [`HttpEndpointConfiguration`](crate::model::HttpEndpointConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2078,7 +2078,7 @@ impl SplunkDestinationUpdate {
 pub mod splunk_destination_update {
 
     /// A builder for [`SplunkDestinationUpdate`](crate::model::SplunkDestinationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hec_endpoint: std::option::Option<std::string::String>,
         pub(crate) hec_endpoint_type: std::option::Option<crate::model::HecEndpointType>,
@@ -2345,7 +2345,7 @@ impl SplunkRetryOptions {
 pub mod splunk_retry_options {
 
     /// A builder for [`SplunkRetryOptions`](crate::model::SplunkRetryOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_seconds: std::option::Option<i32>,
     }
@@ -2564,7 +2564,7 @@ impl AmazonopensearchserviceDestinationUpdate {
 pub mod amazonopensearchservice_destination_update {
 
     /// A builder for [`AmazonopensearchserviceDestinationUpdate`](crate::model::AmazonopensearchserviceDestinationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) domain_arn: std::option::Option<std::string::String>,
@@ -2773,7 +2773,7 @@ impl AmazonopensearchserviceRetryOptions {
 pub mod amazonopensearchservice_retry_options {
 
     /// A builder for [`AmazonopensearchserviceRetryOptions`](crate::model::AmazonopensearchserviceRetryOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_seconds: std::option::Option<i32>,
     }
@@ -2828,7 +2828,7 @@ impl AmazonopensearchserviceBufferingHints {
 pub mod amazonopensearchservice_buffering_hints {
 
     /// A builder for [`AmazonopensearchserviceBufferingHints`](crate::model::AmazonopensearchserviceBufferingHints).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interval_in_seconds: std::option::Option<i32>,
         pub(crate) size_in_m_bs: std::option::Option<i32>,
@@ -3077,7 +3077,7 @@ impl ElasticsearchDestinationUpdate {
 pub mod elasticsearch_destination_update {
 
     /// A builder for [`ElasticsearchDestinationUpdate`](crate::model::ElasticsearchDestinationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) domain_arn: std::option::Option<std::string::String>,
@@ -3282,7 +3282,7 @@ impl ElasticsearchRetryOptions {
 pub mod elasticsearch_retry_options {
 
     /// A builder for [`ElasticsearchRetryOptions`](crate::model::ElasticsearchRetryOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_seconds: std::option::Option<i32>,
     }
@@ -3339,7 +3339,7 @@ impl ElasticsearchBufferingHints {
 pub mod elasticsearch_buffering_hints {
 
     /// A builder for [`ElasticsearchBufferingHints`](crate::model::ElasticsearchBufferingHints).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interval_in_seconds: std::option::Option<i32>,
         pub(crate) size_in_m_bs: std::option::Option<i32>,
@@ -3604,7 +3604,7 @@ impl std::fmt::Debug for RedshiftDestinationUpdate {
 pub mod redshift_destination_update {
 
     /// A builder for [`RedshiftDestinationUpdate`](crate::model::RedshiftDestinationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_jdbcurl: std::option::Option<std::string::String>,
@@ -3918,7 +3918,7 @@ impl RedshiftRetryOptions {
 pub mod redshift_retry_options {
 
     /// A builder for [`RedshiftRetryOptions`](crate::model::RedshiftRetryOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_seconds: std::option::Option<i32>,
     }
@@ -3992,7 +3992,7 @@ impl CopyCommand {
 pub mod copy_command {
 
     /// A builder for [`CopyCommand`](crate::model::CopyCommand).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_table_name: std::option::Option<std::string::String>,
         pub(crate) data_table_columns: std::option::Option<std::string::String>,
@@ -4178,7 +4178,7 @@ impl ExtendedS3DestinationUpdate {
 pub mod extended_s3_destination_update {
 
     /// A builder for [`ExtendedS3DestinationUpdate`](crate::model::ExtendedS3DestinationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
@@ -4427,7 +4427,7 @@ impl DynamicPartitioningConfiguration {
 pub mod dynamic_partitioning_configuration {
 
     /// A builder for [`DynamicPartitioningConfiguration`](crate::model::DynamicPartitioningConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retry_options: std::option::Option<crate::model::RetryOptions>,
         pub(crate) enabled: std::option::Option<bool>,
@@ -4490,7 +4490,7 @@ impl RetryOptions {
 pub mod retry_options {
 
     /// A builder for [`RetryOptions`](crate::model::RetryOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_seconds: std::option::Option<i32>,
     }
@@ -4563,7 +4563,7 @@ impl DataFormatConversionConfiguration {
 pub mod data_format_conversion_configuration {
 
     /// A builder for [`DataFormatConversionConfiguration`](crate::model::DataFormatConversionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_configuration: std::option::Option<crate::model::SchemaConfiguration>,
         pub(crate) input_format_configuration:
@@ -4664,7 +4664,7 @@ impl OutputFormatConfiguration {
 pub mod output_format_configuration {
 
     /// A builder for [`OutputFormatConfiguration`](crate::model::OutputFormatConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) serializer: std::option::Option<crate::model::Serializer>,
     }
@@ -4722,7 +4722,7 @@ impl Serializer {
 pub mod serializer {
 
     /// A builder for [`Serializer`](crate::model::Serializer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parquet_ser_de: std::option::Option<crate::model::ParquetSerDe>,
         pub(crate) orc_ser_de: std::option::Option<crate::model::OrcSerDe>,
@@ -4855,7 +4855,7 @@ impl OrcSerDe {
 pub mod orc_ser_de {
 
     /// A builder for [`OrcSerDe`](crate::model::OrcSerDe).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stripe_size_bytes: std::option::Option<i32>,
         pub(crate) block_size_bytes: std::option::Option<i32>,
@@ -5254,7 +5254,7 @@ impl ParquetSerDe {
 pub mod parquet_ser_de {
 
     /// A builder for [`ParquetSerDe`](crate::model::ParquetSerDe).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) block_size_bytes: std::option::Option<i32>,
         pub(crate) page_size_bytes: std::option::Option<i32>,
@@ -5560,7 +5560,7 @@ impl InputFormatConfiguration {
 pub mod input_format_configuration {
 
     /// A builder for [`InputFormatConfiguration`](crate::model::InputFormatConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deserializer: std::option::Option<crate::model::Deserializer>,
     }
@@ -5618,7 +5618,7 @@ impl Deserializer {
 pub mod deserializer {
 
     /// A builder for [`Deserializer`](crate::model::Deserializer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_x_json_ser_de: std::option::Option<crate::model::OpenXJsonSerDe>,
         pub(crate) hive_json_ser_de: std::option::Option<crate::model::HiveJsonSerDe>,
@@ -5684,7 +5684,7 @@ impl HiveJsonSerDe {
 pub mod hive_json_ser_de {
 
     /// A builder for [`HiveJsonSerDe`](crate::model::HiveJsonSerDe).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp_formats: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -5761,7 +5761,7 @@ impl OpenXJsonSerDe {
 pub mod open_x_json_ser_de {
 
     /// A builder for [`OpenXJsonSerDe`](crate::model::OpenXJsonSerDe).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) convert_dots_in_json_keys_to_underscores: std::option::Option<bool>,
         pub(crate) case_insensitive: std::option::Option<bool>,
@@ -5903,7 +5903,7 @@ impl SchemaConfiguration {
 pub mod schema_configuration {
 
     /// A builder for [`SchemaConfiguration`](crate::model::SchemaConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) catalog_id: std::option::Option<std::string::String>,
@@ -6123,7 +6123,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -6198,7 +6198,7 @@ impl DeliveryStreamEncryptionConfigurationInput {
 pub mod delivery_stream_encryption_configuration_input {
 
     /// A builder for [`DeliveryStreamEncryptionConfigurationInput`](crate::model::DeliveryStreamEncryptionConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_arn: std::option::Option<std::string::String>,
         pub(crate) key_type: std::option::Option<crate::model::KeyType>,
@@ -6370,7 +6370,7 @@ impl PutRecordBatchResponseEntry {
 pub mod put_record_batch_response_entry {
 
     /// A builder for [`PutRecordBatchResponseEntry`](crate::model::PutRecordBatchResponseEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -6445,7 +6445,7 @@ impl Record {
 pub mod record {
 
     /// A builder for [`Record`](crate::model::Record).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
     }
@@ -6673,7 +6673,7 @@ impl DeliveryStreamDescription {
 pub mod delivery_stream_description {
 
     /// A builder for [`DeliveryStreamDescription`](crate::model::DeliveryStreamDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_name: std::option::Option<std::string::String>,
         pub(crate) delivery_stream_arn: std::option::Option<std::string::String>,
@@ -6973,7 +6973,7 @@ impl DestinationDescription {
 pub mod destination_description {
 
     /// A builder for [`DestinationDescription`](crate::model::DestinationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_id: std::option::Option<std::string::String>,
         pub(crate) s3_destination_description:
@@ -7226,7 +7226,7 @@ impl HttpEndpointDestinationDescription {
 pub mod http_endpoint_destination_description {
 
     /// A builder for [`HttpEndpointDestinationDescription`](crate::model::HttpEndpointDestinationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_configuration:
             std::option::Option<crate::model::HttpEndpointDescription>,
@@ -7467,7 +7467,7 @@ impl S3DestinationDescription {
 pub mod s3_destination_description {
 
     /// A builder for [`S3DestinationDescription`](crate::model::S3DestinationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
@@ -7637,7 +7637,7 @@ impl std::fmt::Debug for HttpEndpointDescription {
 pub mod http_endpoint_description {
 
     /// A builder for [`HttpEndpointDescription`](crate::model::HttpEndpointDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7767,7 +7767,7 @@ impl SplunkDestinationDescription {
 pub mod splunk_destination_description {
 
     /// A builder for [`SplunkDestinationDescription`](crate::model::SplunkDestinationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hec_endpoint: std::option::Option<std::string::String>,
         pub(crate) hec_endpoint_type: std::option::Option<crate::model::HecEndpointType>,
@@ -8046,7 +8046,7 @@ impl AmazonopensearchserviceDestinationDescription {
 pub mod amazonopensearchservice_destination_description {
 
     /// A builder for [`AmazonopensearchserviceDestinationDescription`](crate::model::AmazonopensearchserviceDestinationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) domain_arn: std::option::Option<std::string::String>,
@@ -8342,7 +8342,7 @@ impl VpcConfigurationDescription {
 pub mod vpc_configuration_description {
 
     /// A builder for [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -8659,7 +8659,7 @@ impl ElasticsearchDestinationDescription {
 pub mod elasticsearch_destination_description {
 
     /// A builder for [`ElasticsearchDestinationDescription`](crate::model::ElasticsearchDestinationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) domain_arn: std::option::Option<std::string::String>,
@@ -9085,7 +9085,7 @@ impl std::fmt::Debug for RedshiftDestinationDescription {
 pub mod redshift_destination_description {
 
     /// A builder for [`RedshiftDestinationDescription`](crate::model::RedshiftDestinationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_jdbcurl: std::option::Option<std::string::String>,
@@ -9401,7 +9401,7 @@ impl ExtendedS3DestinationDescription {
 pub mod extended_s3_destination_description {
 
     /// A builder for [`ExtendedS3DestinationDescription`](crate::model::ExtendedS3DestinationDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
@@ -9650,7 +9650,7 @@ impl SourceDescription {
 pub mod source_description {
 
     /// A builder for [`SourceDescription`](crate::model::SourceDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kinesis_stream_source_description:
             std::option::Option<crate::model::KinesisStreamSourceDescription>,
@@ -9719,7 +9719,7 @@ impl KinesisStreamSourceDescription {
 pub mod kinesis_stream_source_description {
 
     /// A builder for [`KinesisStreamSourceDescription`](crate::model::KinesisStreamSourceDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kinesis_stream_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -9818,7 +9818,7 @@ impl DeliveryStreamEncryptionConfiguration {
 pub mod delivery_stream_encryption_configuration {
 
     /// A builder for [`DeliveryStreamEncryptionConfiguration`](crate::model::DeliveryStreamEncryptionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_arn: std::option::Option<std::string::String>,
         pub(crate) key_type: std::option::Option<crate::model::KeyType>,
@@ -9915,7 +9915,7 @@ impl FailureDescription {
 pub mod failure_description {
 
     /// A builder for [`FailureDescription`](crate::model::FailureDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::DeliveryStreamFailureType>,
         pub(crate) details: std::option::Option<std::string::String>,
@@ -10451,7 +10451,7 @@ impl HttpEndpointDestinationConfiguration {
 pub mod http_endpoint_destination_configuration {
 
     /// A builder for [`HttpEndpointDestinationConfiguration`](crate::model::HttpEndpointDestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_configuration:
             std::option::Option<crate::model::HttpEndpointConfiguration>,
@@ -10690,7 +10690,7 @@ impl S3DestinationConfiguration {
 pub mod s3_destination_configuration {
 
     /// A builder for [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
@@ -10911,7 +10911,7 @@ impl SplunkDestinationConfiguration {
 pub mod splunk_destination_configuration {
 
     /// A builder for [`SplunkDestinationConfiguration`](crate::model::SplunkDestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hec_endpoint: std::option::Option<std::string::String>,
         pub(crate) hec_endpoint_type: std::option::Option<crate::model::HecEndpointType>,
@@ -11185,7 +11185,7 @@ impl AmazonopensearchserviceDestinationConfiguration {
 pub mod amazonopensearchservice_destination_configuration {
 
     /// A builder for [`AmazonopensearchserviceDestinationConfiguration`](crate::model::AmazonopensearchserviceDestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) domain_arn: std::option::Option<std::string::String>,
@@ -11466,7 +11466,7 @@ impl VpcConfiguration {
 pub mod vpc_configuration {
 
     /// A builder for [`VpcConfiguration`](crate::model::VpcConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -11680,7 +11680,7 @@ impl ElasticsearchDestinationConfiguration {
 pub mod elasticsearch_destination_configuration {
 
     /// A builder for [`ElasticsearchDestinationConfiguration`](crate::model::ElasticsearchDestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) domain_arn: std::option::Option<std::string::String>,
@@ -12017,7 +12017,7 @@ impl std::fmt::Debug for RedshiftDestinationConfiguration {
 pub mod redshift_destination_configuration {
 
     /// A builder for [`RedshiftDestinationConfiguration`](crate::model::RedshiftDestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_jdbcurl: std::option::Option<std::string::String>,
@@ -12341,7 +12341,7 @@ impl ExtendedS3DestinationConfiguration {
 pub mod extended_s3_destination_configuration {
 
     /// A builder for [`ExtendedS3DestinationConfiguration`](crate::model::ExtendedS3DestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
@@ -12594,7 +12594,7 @@ impl KinesisStreamSourceConfiguration {
 pub mod kinesis_stream_source_configuration {
 
     /// A builder for [`KinesisStreamSourceConfiguration`](crate::model::KinesisStreamSourceConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kinesis_stream_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,

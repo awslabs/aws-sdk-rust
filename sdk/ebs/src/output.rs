@@ -96,7 +96,7 @@ impl std::fmt::Debug for StartSnapshotOutput {
 pub mod start_snapshot_output {
 
     /// A builder for [`StartSnapshotOutput`](crate::output::StartSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
@@ -290,7 +290,7 @@ impl PutSnapshotBlockOutput {
 pub mod put_snapshot_block_output {
 
     /// A builder for [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) checksum: std::option::Option<std::string::String>,
         pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
@@ -392,7 +392,7 @@ impl std::fmt::Debug for ListSnapshotBlocksOutput {
 pub mod list_snapshot_blocks_output {
 
     /// A builder for [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
         pub(crate) expiry_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -539,7 +539,7 @@ impl ListChangedBlocksOutput {
 pub mod list_changed_blocks_output {
 
     /// A builder for [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) changed_blocks: std::option::Option<std::vec::Vec<crate::model::ChangedBlock>>,
         pub(crate) expiry_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -776,7 +776,7 @@ impl CompleteSnapshotOutput {
 pub mod complete_snapshot_output {
 
     /// A builder for [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::Status>,
     }

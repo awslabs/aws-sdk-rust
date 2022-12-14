@@ -5,7 +5,7 @@
 /// [`clone_receipt_rule_set`](crate::client::Client::clone_receipt_rule_set).
 ///
 /// See [`crate::client::fluent_builders::CloneReceiptRuleSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CloneReceiptRuleSet {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CloneReceiptRuleSet {
 /// [`create_configuration_set`](crate::client::Client::create_configuration_set).
 ///
 /// See [`crate::client::fluent_builders::CreateConfigurationSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateConfigurationSet {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfigurationSet {
 /// [`create_configuration_set_event_destination`](crate::client::Client::create_configuration_set_event_destination).
 ///
 /// See [`crate::client::fluent_builders::CreateConfigurationSetEventDestination`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateConfigurationSetEventDestination {
     _private: (),
 }
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfigurationSetEv
 /// [`create_configuration_set_tracking_options`](crate::client::Client::create_configuration_set_tracking_options).
 ///
 /// See [`crate::client::fluent_builders::CreateConfigurationSetTrackingOptions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateConfigurationSetTrackingOptions {
     _private: (),
 }
@@ -145,7 +145,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfigurationSetTr
 /// [`create_custom_verification_email_template`](crate::client::Client::create_custom_verification_email_template).
 ///
 /// See [`crate::client::fluent_builders::CreateCustomVerificationEmailTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCustomVerificationEmailTemplate {
     _private: (),
 }
@@ -181,7 +181,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomVerification
 /// [`create_receipt_filter`](crate::client::Client::create_receipt_filter).
 ///
 /// See [`crate::client::fluent_builders::CreateReceiptFilter`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateReceiptFilter {
     _private: (),
 }
@@ -215,7 +215,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReceiptFilter {
 /// [`create_receipt_rule`](crate::client::Client::create_receipt_rule).
 ///
 /// See [`crate::client::fluent_builders::CreateReceiptRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateReceiptRule {
     _private: (),
 }
@@ -249,7 +249,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReceiptRule {
 /// [`create_receipt_rule_set`](crate::client::Client::create_receipt_rule_set).
 ///
 /// See [`crate::client::fluent_builders::CreateReceiptRuleSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateReceiptRuleSet {
     _private: (),
 }
@@ -283,7 +283,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReceiptRuleSet {
 /// [`create_template`](crate::client::Client::create_template).
 ///
 /// See [`crate::client::fluent_builders::CreateTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateTemplate {
     _private: (),
 }
@@ -315,7 +315,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTemplate {
 /// [`delete_configuration_set`](crate::client::Client::delete_configuration_set).
 ///
 /// See [`crate::client::fluent_builders::DeleteConfigurationSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConfigurationSet {
     _private: (),
 }
@@ -349,7 +349,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationSet {
 /// [`delete_configuration_set_event_destination`](crate::client::Client::delete_configuration_set_event_destination).
 ///
 /// See [`crate::client::fluent_builders::DeleteConfigurationSetEventDestination`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConfigurationSetEventDestination {
     _private: (),
 }
@@ -385,7 +385,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationSetEv
 /// [`delete_configuration_set_tracking_options`](crate::client::Client::delete_configuration_set_tracking_options).
 ///
 /// See [`crate::client::fluent_builders::DeleteConfigurationSetTrackingOptions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConfigurationSetTrackingOptions {
     _private: (),
 }
@@ -421,7 +421,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationSetTr
 /// [`delete_custom_verification_email_template`](crate::client::Client::delete_custom_verification_email_template).
 ///
 /// See [`crate::client::fluent_builders::DeleteCustomVerificationEmailTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCustomVerificationEmailTemplate {
     _private: (),
 }
@@ -457,7 +457,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomVerification
 /// [`delete_identity`](crate::client::Client::delete_identity).
 ///
 /// See [`crate::client::fluent_builders::DeleteIdentity`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteIdentity {
     _private: (),
 }
@@ -489,7 +489,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIdentity {
 /// [`delete_identity_policy`](crate::client::Client::delete_identity_policy).
 ///
 /// See [`crate::client::fluent_builders::DeleteIdentityPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteIdentityPolicy {
     _private: (),
 }
@@ -523,7 +523,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIdentityPolicy {
 /// [`delete_receipt_filter`](crate::client::Client::delete_receipt_filter).
 ///
 /// See [`crate::client::fluent_builders::DeleteReceiptFilter`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteReceiptFilter {
     _private: (),
 }
@@ -557,7 +557,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReceiptFilter {
 /// [`delete_receipt_rule`](crate::client::Client::delete_receipt_rule).
 ///
 /// See [`crate::client::fluent_builders::DeleteReceiptRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteReceiptRule {
     _private: (),
 }
@@ -591,7 +591,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReceiptRule {
 /// [`delete_receipt_rule_set`](crate::client::Client::delete_receipt_rule_set).
 ///
 /// See [`crate::client::fluent_builders::DeleteReceiptRuleSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteReceiptRuleSet {
     _private: (),
 }
@@ -625,7 +625,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReceiptRuleSet {
 /// [`delete_template`](crate::client::Client::delete_template).
 ///
 /// See [`crate::client::fluent_builders::DeleteTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTemplate {
     _private: (),
 }
@@ -657,7 +657,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTemplate {
 /// [`delete_verified_email_address`](crate::client::Client::delete_verified_email_address).
 ///
 /// See [`crate::client::fluent_builders::DeleteVerifiedEmailAddress`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVerifiedEmailAddress {
     _private: (),
 }
@@ -691,7 +691,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVerifiedEmailAddre
 /// [`describe_active_receipt_rule_set`](crate::client::Client::describe_active_receipt_rule_set).
 ///
 /// See [`crate::client::fluent_builders::DescribeActiveReceiptRuleSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeActiveReceiptRuleSet {
     _private: (),
 }
@@ -725,7 +725,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeActiveReceiptRul
 /// [`describe_configuration_set`](crate::client::Client::describe_configuration_set).
 ///
 /// See [`crate::client::fluent_builders::DescribeConfigurationSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConfigurationSet {
     _private: (),
 }
@@ -759,7 +759,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConfigurationSet
 /// [`describe_receipt_rule`](crate::client::Client::describe_receipt_rule).
 ///
 /// See [`crate::client::fluent_builders::DescribeReceiptRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeReceiptRule {
     _private: (),
 }
@@ -793,7 +793,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReceiptRule {
 /// [`describe_receipt_rule_set`](crate::client::Client::describe_receipt_rule_set).
 ///
 /// See [`crate::client::fluent_builders::DescribeReceiptRuleSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeReceiptRuleSet {
     _private: (),
 }
@@ -827,7 +827,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReceiptRuleSet {
 /// [`get_account_sending_enabled`](crate::client::Client::get_account_sending_enabled).
 ///
 /// See [`crate::client::fluent_builders::GetAccountSendingEnabled`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAccountSendingEnabled {
     _private: (),
 }
@@ -861,7 +861,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountSendingEnabled
 /// [`get_custom_verification_email_template`](crate::client::Client::get_custom_verification_email_template).
 ///
 /// See [`crate::client::fluent_builders::GetCustomVerificationEmailTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCustomVerificationEmailTemplate {
     _private: (),
 }
@@ -895,7 +895,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCustomVerificationEma
 /// [`get_identity_dkim_attributes`](crate::client::Client::get_identity_dkim_attributes).
 ///
 /// See [`crate::client::fluent_builders::GetIdentityDkimAttributes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetIdentityDkimAttributes {
     _private: (),
 }
@@ -929,7 +929,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIdentityDkimAttribute
 /// [`get_identity_mail_from_domain_attributes`](crate::client::Client::get_identity_mail_from_domain_attributes).
 ///
 /// See [`crate::client::fluent_builders::GetIdentityMailFromDomainAttributes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetIdentityMailFromDomainAttributes {
     _private: (),
 }
@@ -965,7 +965,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIdentityMailFromDomai
 /// [`get_identity_notification_attributes`](crate::client::Client::get_identity_notification_attributes).
 ///
 /// See [`crate::client::fluent_builders::GetIdentityNotificationAttributes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetIdentityNotificationAttributes {
     _private: (),
 }
@@ -999,7 +999,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIdentityNotificationA
 /// [`get_identity_policies`](crate::client::Client::get_identity_policies).
 ///
 /// See [`crate::client::fluent_builders::GetIdentityPolicies`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetIdentityPolicies {
     _private: (),
 }
@@ -1033,7 +1033,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIdentityPolicies {
 /// [`get_identity_verification_attributes`](crate::client::Client::get_identity_verification_attributes).
 ///
 /// See [`crate::client::fluent_builders::GetIdentityVerificationAttributes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetIdentityVerificationAttributes {
     _private: (),
 }
@@ -1067,7 +1067,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIdentityVerificationA
 /// [`get_send_quota`](crate::client::Client::get_send_quota).
 ///
 /// See [`crate::client::fluent_builders::GetSendQuota`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSendQuota {
     _private: (),
 }
@@ -1099,7 +1099,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSendQuota {
 /// [`get_send_statistics`](crate::client::Client::get_send_statistics).
 ///
 /// See [`crate::client::fluent_builders::GetSendStatistics`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSendStatistics {
     _private: (),
 }
@@ -1133,7 +1133,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSendStatistics {
 /// [`get_template`](crate::client::Client::get_template).
 ///
 /// See [`crate::client::fluent_builders::GetTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTemplate {
     _private: (),
 }
@@ -1165,7 +1165,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTemplate {
 /// [`list_configuration_sets`](crate::client::Client::list_configuration_sets).
 ///
 /// See [`crate::client::fluent_builders::ListConfigurationSets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListConfigurationSets {
     _private: (),
 }
@@ -1199,7 +1199,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConfigurationSets {
 /// [`list_custom_verification_email_templates`](crate::client::Client::list_custom_verification_email_templates).
 ///
 /// See [`crate::client::fluent_builders::ListCustomVerificationEmailTemplates`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCustomVerificationEmailTemplates {
     _private: (),
 }
@@ -1235,7 +1235,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomVerificationEm
 /// [`list_identities`](crate::client::Client::list_identities).
 ///
 /// See [`crate::client::fluent_builders::ListIdentities`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListIdentities {
     _private: (),
 }
@@ -1267,7 +1267,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIdentities {
 /// [`list_identity_policies`](crate::client::Client::list_identity_policies).
 ///
 /// See [`crate::client::fluent_builders::ListIdentityPolicies`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListIdentityPolicies {
     _private: (),
 }
@@ -1301,7 +1301,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIdentityPolicies {
 /// [`list_receipt_filters`](crate::client::Client::list_receipt_filters).
 ///
 /// See [`crate::client::fluent_builders::ListReceiptFilters`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListReceiptFilters {
     _private: (),
 }
@@ -1335,7 +1335,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReceiptFilters {
 /// [`list_receipt_rule_sets`](crate::client::Client::list_receipt_rule_sets).
 ///
 /// See [`crate::client::fluent_builders::ListReceiptRuleSets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListReceiptRuleSets {
     _private: (),
 }
@@ -1369,7 +1369,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReceiptRuleSets {
 /// [`list_templates`](crate::client::Client::list_templates).
 ///
 /// See [`crate::client::fluent_builders::ListTemplates`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTemplates {
     _private: (),
 }
@@ -1401,7 +1401,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTemplates {
 /// [`list_verified_email_addresses`](crate::client::Client::list_verified_email_addresses).
 ///
 /// See [`crate::client::fluent_builders::ListVerifiedEmailAddresses`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVerifiedEmailAddresses {
     _private: (),
 }
@@ -1435,7 +1435,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVerifiedEmailAddress
 /// [`put_configuration_set_delivery_options`](crate::client::Client::put_configuration_set_delivery_options).
 ///
 /// See [`crate::client::fluent_builders::PutConfigurationSetDeliveryOptions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutConfigurationSetDeliveryOptions {
     _private: (),
 }
@@ -1469,7 +1469,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutConfigurationSetDeliv
 /// [`put_identity_policy`](crate::client::Client::put_identity_policy).
 ///
 /// See [`crate::client::fluent_builders::PutIdentityPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutIdentityPolicy {
     _private: (),
 }
@@ -1503,7 +1503,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutIdentityPolicy {
 /// [`reorder_receipt_rule_set`](crate::client::Client::reorder_receipt_rule_set).
 ///
 /// See [`crate::client::fluent_builders::ReorderReceiptRuleSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ReorderReceiptRuleSet {
     _private: (),
 }
@@ -1537,7 +1537,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReorderReceiptRuleSet {
 /// [`send_bounce`](crate::client::Client::send_bounce).
 ///
 /// See [`crate::client::fluent_builders::SendBounce`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendBounce {
     _private: (),
 }
@@ -1569,7 +1569,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendBounce {
 /// [`send_bulk_templated_email`](crate::client::Client::send_bulk_templated_email).
 ///
 /// See [`crate::client::fluent_builders::SendBulkTemplatedEmail`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendBulkTemplatedEmail {
     _private: (),
 }
@@ -1603,7 +1603,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendBulkTemplatedEmail {
 /// [`send_custom_verification_email`](crate::client::Client::send_custom_verification_email).
 ///
 /// See [`crate::client::fluent_builders::SendCustomVerificationEmail`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendCustomVerificationEmail {
     _private: (),
 }
@@ -1637,7 +1637,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendCustomVerificationEm
 /// [`send_email`](crate::client::Client::send_email).
 ///
 /// See [`crate::client::fluent_builders::SendEmail`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendEmail {
     _private: (),
 }
@@ -1668,7 +1668,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendEmail {
 /// [`send_raw_email`](crate::client::Client::send_raw_email).
 ///
 /// See [`crate::client::fluent_builders::SendRawEmail`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendRawEmail {
     _private: (),
 }
@@ -1700,7 +1700,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendRawEmail {
 /// [`send_templated_email`](crate::client::Client::send_templated_email).
 ///
 /// See [`crate::client::fluent_builders::SendTemplatedEmail`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendTemplatedEmail {
     _private: (),
 }
@@ -1734,7 +1734,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendTemplatedEmail {
 /// [`set_active_receipt_rule_set`](crate::client::Client::set_active_receipt_rule_set).
 ///
 /// See [`crate::client::fluent_builders::SetActiveReceiptRuleSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetActiveReceiptRuleSet {
     _private: (),
 }
@@ -1768,7 +1768,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetActiveReceiptRuleSet 
 /// [`set_identity_dkim_enabled`](crate::client::Client::set_identity_dkim_enabled).
 ///
 /// See [`crate::client::fluent_builders::SetIdentityDkimEnabled`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetIdentityDkimEnabled {
     _private: (),
 }
@@ -1802,7 +1802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetIdentityDkimEnabled {
 /// [`set_identity_feedback_forwarding_enabled`](crate::client::Client::set_identity_feedback_forwarding_enabled).
 ///
 /// See [`crate::client::fluent_builders::SetIdentityFeedbackForwardingEnabled`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetIdentityFeedbackForwardingEnabled {
     _private: (),
 }
@@ -1838,7 +1838,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetIdentityFeedbackForwa
 /// [`set_identity_headers_in_notifications_enabled`](crate::client::Client::set_identity_headers_in_notifications_enabled).
 ///
 /// See [`crate::client::fluent_builders::SetIdentityHeadersInNotificationsEnabled`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetIdentityHeadersInNotificationsEnabled {
     _private: (),
 }
@@ -1876,7 +1876,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetIdentityHeadersInNoti
 /// [`set_identity_mail_from_domain`](crate::client::Client::set_identity_mail_from_domain).
 ///
 /// See [`crate::client::fluent_builders::SetIdentityMailFromDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetIdentityMailFromDomain {
     _private: (),
 }
@@ -1910,7 +1910,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetIdentityMailFromDomai
 /// [`set_identity_notification_topic`](crate::client::Client::set_identity_notification_topic).
 ///
 /// See [`crate::client::fluent_builders::SetIdentityNotificationTopic`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetIdentityNotificationTopic {
     _private: (),
 }
@@ -1944,7 +1944,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetIdentityNotificationT
 /// [`set_receipt_rule_position`](crate::client::Client::set_receipt_rule_position).
 ///
 /// See [`crate::client::fluent_builders::SetReceiptRulePosition`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetReceiptRulePosition {
     _private: (),
 }
@@ -1978,7 +1978,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetReceiptRulePosition {
 /// [`test_render_template`](crate::client::Client::test_render_template).
 ///
 /// See [`crate::client::fluent_builders::TestRenderTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TestRenderTemplate {
     _private: (),
 }
@@ -2012,7 +2012,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestRenderTemplate {
 /// [`update_account_sending_enabled`](crate::client::Client::update_account_sending_enabled).
 ///
 /// See [`crate::client::fluent_builders::UpdateAccountSendingEnabled`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAccountSendingEnabled {
     _private: (),
 }
@@ -2046,7 +2046,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAccountSendingEnab
 /// [`update_configuration_set_event_destination`](crate::client::Client::update_configuration_set_event_destination).
 ///
 /// See [`crate::client::fluent_builders::UpdateConfigurationSetEventDestination`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateConfigurationSetEventDestination {
     _private: (),
 }
@@ -2082,7 +2082,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConfigurationSetEv
 /// [`update_configuration_set_reputation_metrics_enabled`](crate::client::Client::update_configuration_set_reputation_metrics_enabled).
 ///
 /// See [`crate::client::fluent_builders::UpdateConfigurationSetReputationMetricsEnabled`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateConfigurationSetReputationMetricsEnabled {
     _private: (),
 }
@@ -2121,7 +2121,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`update_configuration_set_sending_enabled`](crate::client::Client::update_configuration_set_sending_enabled).
 ///
 /// See [`crate::client::fluent_builders::UpdateConfigurationSetSendingEnabled`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateConfigurationSetSendingEnabled {
     _private: (),
 }
@@ -2157,7 +2157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConfigurationSetSe
 /// [`update_configuration_set_tracking_options`](crate::client::Client::update_configuration_set_tracking_options).
 ///
 /// See [`crate::client::fluent_builders::UpdateConfigurationSetTrackingOptions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateConfigurationSetTrackingOptions {
     _private: (),
 }
@@ -2193,7 +2193,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConfigurationSetTr
 /// [`update_custom_verification_email_template`](crate::client::Client::update_custom_verification_email_template).
 ///
 /// See [`crate::client::fluent_builders::UpdateCustomVerificationEmailTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCustomVerificationEmailTemplate {
     _private: (),
 }
@@ -2229,7 +2229,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCustomVerification
 /// [`update_receipt_rule`](crate::client::Client::update_receipt_rule).
 ///
 /// See [`crate::client::fluent_builders::UpdateReceiptRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateReceiptRule {
     _private: (),
 }
@@ -2263,7 +2263,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateReceiptRule {
 /// [`update_template`](crate::client::Client::update_template).
 ///
 /// See [`crate::client::fluent_builders::UpdateTemplate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateTemplate {
     _private: (),
 }
@@ -2295,7 +2295,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTemplate {
 /// [`verify_domain_dkim`](crate::client::Client::verify_domain_dkim).
 ///
 /// See [`crate::client::fluent_builders::VerifyDomainDkim`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct VerifyDomainDkim {
     _private: (),
 }
@@ -2329,7 +2329,7 @@ impl aws_smithy_http::response::ParseStrictResponse for VerifyDomainDkim {
 /// [`verify_domain_identity`](crate::client::Client::verify_domain_identity).
 ///
 /// See [`crate::client::fluent_builders::VerifyDomainIdentity`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct VerifyDomainIdentity {
     _private: (),
 }
@@ -2363,7 +2363,7 @@ impl aws_smithy_http::response::ParseStrictResponse for VerifyDomainIdentity {
 /// [`verify_email_address`](crate::client::Client::verify_email_address).
 ///
 /// See [`crate::client::fluent_builders::VerifyEmailAddress`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct VerifyEmailAddress {
     _private: (),
 }
@@ -2397,7 +2397,7 @@ impl aws_smithy_http::response::ParseStrictResponse for VerifyEmailAddress {
 /// [`verify_email_identity`](crate::client::Client::verify_email_identity).
 ///
 /// See [`crate::client::fluent_builders::VerifyEmailIdentity`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct VerifyEmailIdentity {
     _private: (),
 }

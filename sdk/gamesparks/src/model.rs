@@ -87,7 +87,7 @@ impl StageDetails {
 pub mod stage_details {
 
     /// A builder for [`StageDetails`](crate::model::StageDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) game_key: std::option::Option<std::string::String>,
@@ -390,7 +390,7 @@ impl SnapshotDetails {
 pub mod snapshot_details {
 
     /// A builder for [`SnapshotDetails`](crate::model::SnapshotDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -523,7 +523,7 @@ impl Section {
 pub mod section {
 
     /// A builder for [`Section`](crate::model::Section).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) size: std::option::Option<i32>,
@@ -617,7 +617,7 @@ impl GameConfigurationDetails {
 pub mod game_configuration_details {
 
     /// A builder for [`GameConfigurationDetails`](crate::model::GameConfigurationDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sections: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::Section>,
@@ -737,7 +737,7 @@ impl SectionModification {
 pub mod section_modification {
 
     /// A builder for [`SectionModification`](crate::model::SectionModification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) section: std::option::Option<std::string::String>,
         pub(crate) path: std::option::Option<std::string::String>,
@@ -976,7 +976,7 @@ impl GameDetails {
 pub mod game_details {
 
     /// A builder for [`GameDetails`](crate::model::GameDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1268,7 +1268,7 @@ impl StageDeploymentDetails {
 pub mod stage_deployment_details {
 
     /// A builder for [`StageDeploymentDetails`](crate::model::StageDeploymentDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
@@ -1413,7 +1413,7 @@ impl DeploymentResult {
 pub mod deployment_result {
 
     /// A builder for [`DeploymentResult`](crate::model::DeploymentResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result_code: std::option::Option<crate::model::ResultCode>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1777,7 +1777,7 @@ impl Generator {
 pub mod generator {
 
     /// A builder for [`Generator`](crate::model::Generator).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_platform: std::option::Option<std::string::String>,
         pub(crate) language: std::option::Option<std::string::String>,
@@ -1891,7 +1891,7 @@ impl StageSummary {
 pub mod stage_summary {
 
     /// A builder for [`StageSummary`](crate::model::StageSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) game_key: std::option::Option<std::string::String>,
@@ -2041,7 +2041,7 @@ impl StageDeploymentSummary {
 pub mod stage_deployment_summary {
 
     /// A builder for [`StageDeploymentSummary`](crate::model::StageDeploymentSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
@@ -2185,7 +2185,7 @@ impl SnapshotSummary {
 pub mod snapshot_summary {
 
     /// A builder for [`SnapshotSummary`](crate::model::SnapshotSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2305,7 +2305,7 @@ impl GeneratedCodeJobDetails {
 pub mod generated_code_job_details {
 
     /// A builder for [`GeneratedCodeJobDetails`](crate::model::GeneratedCodeJobDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_url: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::GeneratedCodeJobState>,
@@ -2539,7 +2539,7 @@ impl GameSummary {
 pub mod game_summary {
 
     /// A builder for [`GameSummary`](crate::model::GameSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2661,7 +2661,7 @@ impl ExtensionVersionDetails {
 pub mod extension_version_details {
 
     /// A builder for [`ExtensionVersionDetails`](crate::model::ExtensionVersionDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2759,7 +2759,7 @@ impl ExtensionDetails {
 pub mod extension_details {
 
     /// A builder for [`ExtensionDetails`](crate::model::ExtensionDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2831,7 +2831,7 @@ impl ImportGameConfigurationSource {
 pub mod import_game_configuration_source {
 
     /// A builder for [`ImportGameConfigurationSource`](crate::model::ImportGameConfigurationSource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file: std::option::Option<aws_smithy_types::Blob>,
     }
@@ -2884,7 +2884,7 @@ impl Connection {
 pub mod connection {
 
     /// A builder for [`Connection`](crate::model::Connection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,

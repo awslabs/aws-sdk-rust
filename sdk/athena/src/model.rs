@@ -152,7 +152,7 @@ impl WorkGroupConfigurationUpdates {
 pub mod work_group_configuration_updates {
 
     /// A builder for [`WorkGroupConfigurationUpdates`](crate::model::WorkGroupConfigurationUpdates).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enforce_work_group_configuration: std::option::Option<bool>,
         pub(crate) result_configuration_updates:
@@ -301,7 +301,7 @@ impl EngineVersion {
 pub mod engine_version {
 
     /// A builder for [`EngineVersion`](crate::model::EngineVersion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) selected_engine_version: std::option::Option<std::string::String>,
         pub(crate) effective_engine_version: std::option::Option<std::string::String>,
@@ -420,7 +420,7 @@ impl ResultConfigurationUpdates {
 pub mod result_configuration_updates {
 
     /// A builder for [`ResultConfigurationUpdates`](crate::model::ResultConfigurationUpdates).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_location: std::option::Option<std::string::String>,
         pub(crate) remove_output_location: std::option::Option<bool>,
@@ -576,7 +576,7 @@ impl AclConfiguration {
 pub mod acl_configuration {
 
     /// A builder for [`AclConfiguration`](crate::model::AclConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_acl_option: std::option::Option<crate::model::S3AclOption>,
     }
@@ -721,7 +721,7 @@ impl EncryptionConfiguration {
 pub mod encryption_configuration {
 
     /// A builder for [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_option: std::option::Option<crate::model::EncryptionOption>,
         pub(crate) kms_key: std::option::Option<std::string::String>,
@@ -983,7 +983,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1154,7 +1154,7 @@ impl ResultConfiguration {
 pub mod result_configuration {
 
     /// A builder for [`ResultConfiguration`](crate::model::ResultConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_location: std::option::Option<std::string::String>,
         pub(crate) encryption_configuration:
@@ -1263,7 +1263,7 @@ impl QueryExecutionContext {
 pub mod query_execution_context {
 
     /// A builder for [`QueryExecutionContext`](crate::model::QueryExecutionContext).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) database: std::option::Option<std::string::String>,
         pub(crate) catalog: std::option::Option<std::string::String>,
@@ -1351,7 +1351,7 @@ impl WorkGroupSummary {
 pub mod work_group_summary {
 
     /// A builder for [`WorkGroupSummary`](crate::model::WorkGroupSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::WorkGroupState>,
@@ -1502,7 +1502,7 @@ impl TableMetadata {
 pub mod table_metadata {
 
     /// A builder for [`TableMetadata`](crate::model::TableMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1677,7 +1677,7 @@ impl Column {
 pub mod column {
 
     /// A builder for [`Column`](crate::model::Column).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -1756,7 +1756,7 @@ impl PreparedStatementSummary {
 pub mod prepared_statement_summary {
 
     /// A builder for [`PreparedStatementSummary`](crate::model::PreparedStatementSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statement_name: std::option::Option<std::string::String>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1829,7 +1829,7 @@ impl DataCatalogSummary {
 pub mod data_catalog_summary {
 
     /// A builder for [`DataCatalogSummary`](crate::model::DataCatalogSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::DataCatalogType>,
@@ -1910,7 +1910,7 @@ impl Database {
 pub mod database {
 
     /// A builder for [`Database`](crate::model::Database).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2027,7 +2027,7 @@ impl WorkGroup {
 pub mod work_group {
 
     /// A builder for [`WorkGroup`](crate::model::WorkGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::WorkGroupState>,
@@ -2167,7 +2167,7 @@ impl WorkGroupConfiguration {
 pub mod work_group_configuration {
 
     /// A builder for [`WorkGroupConfiguration`](crate::model::WorkGroupConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result_configuration: std::option::Option<crate::model::ResultConfiguration>,
         pub(crate) enforce_work_group_configuration: std::option::Option<bool>,
@@ -2304,7 +2304,7 @@ impl QueryRuntimeStatistics {
 pub mod query_runtime_statistics {
 
     /// A builder for [`QueryRuntimeStatistics`](crate::model::QueryRuntimeStatistics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeline: std::option::Option<crate::model::QueryRuntimeStatisticsTimeline>,
         pub(crate) rows: std::option::Option<crate::model::QueryRuntimeStatisticsRows>,
@@ -2441,7 +2441,7 @@ impl QueryStage {
 pub mod query_stage {
 
     /// A builder for [`QueryStage`](crate::model::QueryStage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stage_id: std::option::Option<i64>,
         pub(crate) state: std::option::Option<std::string::String>,
@@ -2618,7 +2618,7 @@ impl QueryStagePlanNode {
 pub mod query_stage_plan_node {
 
     /// A builder for [`QueryStagePlanNode`](crate::model::QueryStagePlanNode).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -2741,7 +2741,7 @@ impl QueryRuntimeStatisticsRows {
 pub mod query_runtime_statistics_rows {
 
     /// A builder for [`QueryRuntimeStatisticsRows`](crate::model::QueryRuntimeStatisticsRows).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_rows: std::option::Option<i64>,
         pub(crate) input_bytes: std::option::Option<i64>,
@@ -2853,7 +2853,7 @@ impl QueryRuntimeStatisticsTimeline {
 pub mod query_runtime_statistics_timeline {
 
     /// A builder for [`QueryRuntimeStatisticsTimeline`](crate::model::QueryRuntimeStatisticsTimeline).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_queue_time_in_millis: std::option::Option<i64>,
         pub(crate) query_planning_time_in_millis: std::option::Option<i64>,
@@ -2968,7 +2968,7 @@ impl ResultSet {
 pub mod result_set {
 
     /// A builder for [`ResultSet`](crate::model::ResultSet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rows: std::option::Option<std::vec::Vec<crate::model::Row>>,
         pub(crate) result_set_metadata: std::option::Option<crate::model::ResultSetMetadata>,
@@ -3040,7 +3040,7 @@ impl ResultSetMetadata {
 pub mod result_set_metadata {
 
     /// A builder for [`ResultSetMetadata`](crate::model::ResultSetMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_info: std::option::Option<std::vec::Vec<crate::model::ColumnInfo>>,
     }
@@ -3160,7 +3160,7 @@ impl ColumnInfo {
 pub mod column_info {
 
     /// A builder for [`ColumnInfo`](crate::model::ColumnInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_name: std::option::Option<std::string::String>,
         pub(crate) schema_name: std::option::Option<std::string::String>,
@@ -3414,7 +3414,7 @@ impl Row {
 pub mod row {
 
     /// A builder for [`Row`](crate::model::Row).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data: std::option::Option<std::vec::Vec<crate::model::Datum>>,
     }
@@ -3469,7 +3469,7 @@ impl Datum {
 pub mod datum {
 
     /// A builder for [`Datum`](crate::model::Datum).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) var_char_value: std::option::Option<std::string::String>,
     }
@@ -3585,7 +3585,7 @@ impl QueryExecution {
 pub mod query_execution {
 
     /// A builder for [`QueryExecution`](crate::model::QueryExecution).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_execution_id: std::option::Option<std::string::String>,
         pub(crate) query: std::option::Option<std::string::String>,
@@ -3817,7 +3817,7 @@ impl QueryExecutionStatistics {
 pub mod query_execution_statistics {
 
     /// A builder for [`QueryExecutionStatistics`](crate::model::QueryExecutionStatistics).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_execution_time_in_millis: std::option::Option<i64>,
         pub(crate) data_scanned_in_bytes: std::option::Option<i64>,
@@ -3984,7 +3984,7 @@ impl QueryExecutionStatus {
 pub mod query_execution_status {
 
     /// A builder for [`QueryExecutionStatus`](crate::model::QueryExecutionStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::QueryExecutionState>,
         pub(crate) state_change_reason: std::option::Option<std::string::String>,
@@ -4126,7 +4126,7 @@ impl AthenaError {
 pub mod athena_error {
 
     /// A builder for [`AthenaError`](crate::model::AthenaError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_category: std::option::Option<i32>,
         pub(crate) error_type: std::option::Option<i32>,
@@ -4449,7 +4449,7 @@ impl PreparedStatement {
 pub mod prepared_statement {
 
     /// A builder for [`PreparedStatement`](crate::model::PreparedStatement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statement_name: std::option::Option<std::string::String>,
         pub(crate) query_statement: std::option::Option<std::string::String>,
@@ -4592,7 +4592,7 @@ impl NamedQuery {
 pub mod named_query {
 
     /// A builder for [`NamedQuery`](crate::model::NamedQuery).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4754,7 +4754,7 @@ impl DataCatalog {
 pub mod data_catalog {
 
     /// A builder for [`DataCatalog`](crate::model::DataCatalog).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4898,7 +4898,7 @@ impl UnprocessedQueryExecutionId {
 pub mod unprocessed_query_execution_id {
 
     /// A builder for [`UnprocessedQueryExecutionId`](crate::model::UnprocessedQueryExecutionId).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_execution_id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -5000,7 +5000,7 @@ impl UnprocessedPreparedStatementName {
 pub mod unprocessed_prepared_statement_name {
 
     /// A builder for [`UnprocessedPreparedStatementName`](crate::model::UnprocessedPreparedStatementName).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statement_name: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -5102,7 +5102,7 @@ impl UnprocessedNamedQueryId {
 pub mod unprocessed_named_query_id {
 
     /// A builder for [`UnprocessedNamedQueryId`](crate::model::UnprocessedNamedQueryId).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) named_query_id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,

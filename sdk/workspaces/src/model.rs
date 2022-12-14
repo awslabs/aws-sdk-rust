@@ -25,7 +25,7 @@ impl IpRuleItem {
 pub mod ip_rule_item {
 
     /// A builder for [`IpRuleItem`](crate::model::IpRuleItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_rule: std::option::Option<std::string::String>,
         pub(crate) rule_desc: std::option::Option<std::string::String>,
@@ -92,7 +92,7 @@ impl ConnectionAliasPermission {
 pub mod connection_alias_permission {
 
     /// A builder for [`ConnectionAliasPermission`](crate::model::ConnectionAliasPermission).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shared_account_id: std::option::Option<std::string::String>,
         pub(crate) allow_association: std::option::Option<bool>,
@@ -169,7 +169,7 @@ impl FailedWorkspaceChangeRequest {
 pub mod failed_workspace_change_request {
 
     /// A builder for [`FailedWorkspaceChangeRequest`](crate::model::FailedWorkspaceChangeRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -244,7 +244,7 @@ impl TerminateRequest {
 pub mod terminate_request {
 
     /// A builder for [`TerminateRequest`](crate::model::TerminateRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
     }
@@ -292,7 +292,7 @@ impl StopRequest {
 pub mod stop_request {
 
     /// A builder for [`StopRequest`](crate::model::StopRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
     }
@@ -340,7 +340,7 @@ impl StartRequest {
 pub mod start_request {
 
     /// A builder for [`StartRequest`](crate::model::StartRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
     }
@@ -395,7 +395,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -545,7 +545,7 @@ impl RebuildRequest {
 pub mod rebuild_request {
 
     /// A builder for [`RebuildRequest`](crate::model::RebuildRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
     }
@@ -593,7 +593,7 @@ impl RebootRequest {
 pub mod reboot_request {
 
     /// A builder for [`RebootRequest`](crate::model::RebootRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
     }
@@ -761,7 +761,7 @@ impl WorkspaceProperties {
 pub mod workspace_properties {
 
     /// A builder for [`WorkspaceProperties`](crate::model::WorkspaceProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) running_mode: std::option::Option<crate::model::RunningMode>,
         pub(crate) running_mode_auto_stop_timeout_in_minutes: std::option::Option<i32>,
@@ -1143,7 +1143,7 @@ impl WorkspaceCreationProperties {
 pub mod workspace_creation_properties {
 
     /// A builder for [`WorkspaceCreationProperties`](crate::model::WorkspaceCreationProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enable_work_docs: std::option::Option<bool>,
         pub(crate) enable_internet_access: std::option::Option<bool>,
@@ -1324,7 +1324,7 @@ impl WorkspaceAccessProperties {
 pub mod workspace_access_properties {
 
     /// A builder for [`WorkspaceAccessProperties`](crate::model::WorkspaceAccessProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_type_windows: std::option::Option<crate::model::AccessPropertyValue>,
         pub(crate) device_type_osx: std::option::Option<crate::model::AccessPropertyValue>,
@@ -1600,7 +1600,7 @@ impl SelfservicePermissions {
 pub mod selfservice_permissions {
 
     /// A builder for [`SelfservicePermissions`](crate::model::SelfservicePermissions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) restart_workspace: std::option::Option<crate::model::ReconnectEnum>,
         pub(crate) increase_volume_size: std::option::Option<crate::model::ReconnectEnum>,
@@ -1926,7 +1926,7 @@ impl SamlProperties {
 pub mod saml_properties {
 
     /// A builder for [`SamlProperties`](crate::model::SamlProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::SamlStatusEnum>,
         pub(crate) user_access_url: std::option::Option<std::string::String>,
@@ -2129,7 +2129,7 @@ impl ClientProperties {
 pub mod client_properties {
 
     /// A builder for [`ClientProperties`](crate::model::ClientProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reconnect_enabled: std::option::Option<crate::model::ReconnectEnum>,
         pub(crate) log_upload_enabled: std::option::Option<crate::model::LogUploadEnum>,
@@ -2629,7 +2629,7 @@ impl DefaultClientBrandingAttributes {
 pub mod default_client_branding_attributes {
 
     /// A builder for [`DefaultClientBrandingAttributes`](crate::model::DefaultClientBrandingAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logo_url: std::option::Option<std::string::String>,
         pub(crate) support_email: std::option::Option<std::string::String>,
@@ -2844,7 +2844,7 @@ impl IosClientBrandingAttributes {
 pub mod ios_client_branding_attributes {
 
     /// A builder for [`IosClientBrandingAttributes`](crate::model::IosClientBrandingAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logo_url: std::option::Option<std::string::String>,
         pub(crate) logo2x_url: std::option::Option<std::string::String>,
@@ -3069,7 +3069,7 @@ impl DefaultImportClientBrandingAttributes {
 pub mod default_import_client_branding_attributes {
 
     /// A builder for [`DefaultImportClientBrandingAttributes`](crate::model::DefaultImportClientBrandingAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logo: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) support_email: std::option::Option<std::string::String>,
@@ -3284,7 +3284,7 @@ impl IosImportClientBrandingAttributes {
 pub mod ios_import_client_branding_attributes {
 
     /// A builder for [`IosImportClientBrandingAttributes`](crate::model::IosImportClientBrandingAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logo: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) logo2x: std::option::Option<aws_smithy_types::Blob>,
@@ -3455,7 +3455,7 @@ impl Snapshot {
 pub mod snapshot {
 
     /// A builder for [`Snapshot`](crate::model::Snapshot).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -3531,7 +3531,7 @@ impl WorkspaceConnectionStatus {
 pub mod workspace_connection_status {
 
     /// A builder for [`WorkspaceConnectionStatus`](crate::model::WorkspaceConnectionStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) connection_state: std::option::Option<crate::model::ConnectionState>,
@@ -3829,7 +3829,7 @@ impl Workspace {
 pub mod workspace {
 
     /// A builder for [`Workspace`](crate::model::Workspace).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) directory_id: std::option::Option<std::string::String>,
@@ -4087,7 +4087,7 @@ impl ModificationState {
 pub mod modification_state {
 
     /// A builder for [`ModificationState`](crate::model::ModificationState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<crate::model::ModificationResourceEnum>,
         pub(crate) state: std::option::Option<crate::model::ModificationStateEnum>,
@@ -4597,7 +4597,7 @@ impl WorkspaceImage {
 pub mod workspace_image {
 
     /// A builder for [`WorkspaceImage`](crate::model::WorkspaceImage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4799,7 +4799,7 @@ impl UpdateResult {
 pub mod update_result {
 
     /// A builder for [`UpdateResult`](crate::model::UpdateResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_available: std::option::Option<bool>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5048,7 +5048,7 @@ impl OperatingSystem {
 pub mod operating_system {
 
     /// A builder for [`OperatingSystem`](crate::model::OperatingSystem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::OperatingSystemType>,
     }
@@ -5281,7 +5281,7 @@ impl ImagePermission {
 pub mod image_permission {
 
     /// A builder for [`ImagePermission`](crate::model::ImagePermission).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shared_account_id: std::option::Option<std::string::String>,
     }
@@ -5451,7 +5451,7 @@ impl WorkspaceDirectory {
 pub mod workspace_directory {
 
     /// A builder for [`WorkspaceDirectory`](crate::model::WorkspaceDirectory).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) alias: std::option::Option<std::string::String>,
@@ -5798,7 +5798,7 @@ impl DefaultWorkspaceCreationProperties {
 pub mod default_workspace_creation_properties {
 
     /// A builder for [`DefaultWorkspaceCreationProperties`](crate::model::DefaultWorkspaceCreationProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enable_work_docs: std::option::Option<bool>,
         pub(crate) enable_internet_access: std::option::Option<bool>,
@@ -6180,7 +6180,7 @@ impl WorkspaceBundle {
 pub mod workspace_bundle {
 
     /// A builder for [`WorkspaceBundle`](crate::model::WorkspaceBundle).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bundle_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6351,7 +6351,7 @@ impl ComputeType {
 pub mod compute_type {
 
     /// A builder for [`ComputeType`](crate::model::ComputeType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::Compute>,
     }
@@ -6397,7 +6397,7 @@ impl UserStorage {
 pub mod user_storage {
 
     /// A builder for [`UserStorage`](crate::model::UserStorage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity: std::option::Option<std::string::String>,
     }
@@ -6445,7 +6445,7 @@ impl RootStorage {
 pub mod root_storage {
 
     /// A builder for [`RootStorage`](crate::model::RootStorage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity: std::option::Option<std::string::String>,
     }
@@ -6514,7 +6514,7 @@ impl WorkspacesIpGroup {
 pub mod workspaces_ip_group {
 
     /// A builder for [`WorkspacesIpGroup`](crate::model::WorkspacesIpGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -6635,7 +6635,7 @@ impl ConnectionAlias {
 pub mod connection_alias {
 
     /// A builder for [`ConnectionAlias`](crate::model::ConnectionAlias).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_string: std::option::Option<std::string::String>,
         pub(crate) alias_id: std::option::Option<std::string::String>,
@@ -6771,7 +6771,7 @@ impl ConnectionAliasAssociation {
 pub mod connection_alias_association {
 
     /// A builder for [`ConnectionAliasAssociation`](crate::model::ConnectionAliasAssociation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_status: std::option::Option<crate::model::AssociationStatus>,
         pub(crate) associated_account_id: std::option::Option<std::string::String>,
@@ -7095,7 +7095,7 @@ impl ConnectClientAddIn {
 pub mod connect_client_add_in {
 
     /// A builder for [`ConnectClientAddIn`](crate::model::ConnectClientAddIn).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) add_in_id: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -7186,7 +7186,7 @@ impl ClientPropertiesResult {
 pub mod client_properties_result {
 
     /// A builder for [`ClientPropertiesResult`](crate::model::ClientPropertiesResult).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) client_properties: std::option::Option<crate::model::ClientProperties>,
@@ -7290,7 +7290,7 @@ impl AccountModification {
 pub mod account_modification {
 
     /// A builder for [`AccountModification`](crate::model::AccountModification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) modification_state:
             std::option::Option<crate::model::DedicatedTenancyModificationStateEnum>,
@@ -7746,7 +7746,7 @@ impl FailedCreateWorkspaceRequest {
 pub mod failed_create_workspace_request {
 
     /// A builder for [`FailedCreateWorkspaceRequest`](crate::model::FailedCreateWorkspaceRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_request: std::option::Option<crate::model::WorkspaceRequest>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -7873,7 +7873,7 @@ impl WorkspaceRequest {
 pub mod workspace_request {
 
     /// A builder for [`WorkspaceRequest`](crate::model::WorkspaceRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) user_name: std::option::Option<std::string::String>,

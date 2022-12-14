@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod describe_services_input {
 
     /// A builder for [`DescribeServicesInput`](crate::input::DescribeServicesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) format_version: std::option::Option<std::string::String>,
@@ -193,7 +193,7 @@ impl DescribeServicesInput {
 pub mod get_attribute_values_input {
 
     /// A builder for [`GetAttributeValuesInput`](crate::input::GetAttributeValuesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) attribute_name: std::option::Option<std::string::String>,
@@ -379,7 +379,7 @@ impl GetAttributeValuesInput {
 pub mod get_products_input {
 
     /// A builder for [`GetProductsInput`](crate::input::GetProductsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,

@@ -39,7 +39,7 @@ impl std::error::Error for UnsupportedOperationException {}
 pub mod unsupported_operation_exception {
 
     /// A builder for [`UnsupportedOperationException`](crate::error::UnsupportedOperationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -120,7 +120,7 @@ impl std::error::Error for ServiceException {}
 pub mod service_exception {
 
     /// A builder for [`ServiceException`](crate::error::ServiceException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -201,7 +201,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
 
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -282,7 +282,7 @@ impl std::error::Error for EntityDoesNotExistException {}
 pub mod entity_does_not_exist_exception {
 
     /// A builder for [`EntityDoesNotExistException`](crate::error::EntityDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -363,7 +363,7 @@ impl std::error::Error for ClientException {}
 pub mod client_exception {
 
     /// A builder for [`ClientException`](crate::error::ClientException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -444,7 +444,7 @@ impl std::error::Error for UnsupportedSettingsException {}
 pub mod unsupported_settings_exception {
 
     /// A builder for [`UnsupportedSettingsException`](crate::error::UnsupportedSettingsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -525,7 +525,7 @@ impl std::error::Error for IncompatibleSettingsException {}
 pub mod incompatible_settings_exception {
 
     /// A builder for [`IncompatibleSettingsException`](crate::error::IncompatibleSettingsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -606,7 +606,7 @@ impl std::error::Error for DirectoryUnavailableException {}
 pub mod directory_unavailable_exception {
 
     /// A builder for [`DirectoryUnavailableException`](crate::error::DirectoryUnavailableException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -687,7 +687,7 @@ impl std::error::Error for DirectoryDoesNotExistException {}
 pub mod directory_does_not_exist_exception {
 
     /// A builder for [`DirectoryDoesNotExistException`](crate::error::DirectoryDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -768,7 +768,7 @@ impl std::error::Error for DomainControllerLimitExceededException {}
 pub mod domain_controller_limit_exceeded_exception {
 
     /// A builder for [`DomainControllerLimitExceededException`](crate::error::DomainControllerLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -849,7 +849,7 @@ impl std::error::Error for InvalidTargetException {}
 pub mod invalid_target_exception {
 
     /// A builder for [`InvalidTargetException`](crate::error::InvalidTargetException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -930,7 +930,7 @@ impl std::error::Error for DirectoryNotSharedException {}
 pub mod directory_not_shared_exception {
 
     /// A builder for [`DirectoryNotSharedException`](crate::error::DirectoryNotSharedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -1011,7 +1011,7 @@ impl std::error::Error for SnapshotLimitExceededException {}
 pub mod snapshot_limit_exceeded_exception {
 
     /// A builder for [`SnapshotLimitExceededException`](crate::error::SnapshotLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -1092,7 +1092,7 @@ impl std::error::Error for ShareLimitExceededException {}
 pub mod share_limit_exceeded_exception {
 
     /// A builder for [`ShareLimitExceededException`](crate::error::ShareLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -1173,7 +1173,7 @@ impl std::error::Error for OrganizationsException {}
 pub mod organizations_exception {
 
     /// A builder for [`OrganizationsException`](crate::error::OrganizationsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -1254,7 +1254,7 @@ impl std::error::Error for DirectoryAlreadySharedException {}
 pub mod directory_already_shared_exception {
 
     /// A builder for [`DirectoryAlreadySharedException`](crate::error::DirectoryAlreadySharedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -1335,7 +1335,7 @@ impl std::error::Error for AccessDeniedException {}
 pub mod access_denied_exception {
 
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -1416,7 +1416,7 @@ impl std::error::Error for UserDoesNotExistException {}
 pub mod user_does_not_exist_exception {
 
     /// A builder for [`UserDoesNotExistException`](crate::error::UserDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -1497,7 +1497,7 @@ impl std::error::Error for InvalidPasswordException {}
 pub mod invalid_password_exception {
 
     /// A builder for [`InvalidPasswordException`](crate::error::InvalidPasswordException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -1578,7 +1578,7 @@ impl std::error::Error for InvalidCertificateException {}
 pub mod invalid_certificate_exception {
 
     /// A builder for [`InvalidCertificateException`](crate::error::InvalidCertificateException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -1659,7 +1659,7 @@ impl std::error::Error for CertificateLimitExceededException {}
 pub mod certificate_limit_exceeded_exception {
 
     /// A builder for [`CertificateLimitExceededException`](crate::error::CertificateLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -1740,7 +1740,7 @@ impl std::error::Error for CertificateAlreadyExistsException {}
 pub mod certificate_already_exists_exception {
 
     /// A builder for [`CertificateAlreadyExistsException`](crate::error::CertificateAlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -1821,7 +1821,7 @@ impl std::error::Error for InvalidNextTokenException {}
 pub mod invalid_next_token_exception {
 
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -1902,7 +1902,7 @@ impl std::error::Error for InsufficientPermissionsException {}
 pub mod insufficient_permissions_exception {
 
     /// A builder for [`InsufficientPermissionsException`](crate::error::InsufficientPermissionsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -1983,7 +1983,7 @@ impl std::error::Error for AuthenticationFailedException {}
 pub mod authentication_failed_exception {
 
     /// A builder for [`AuthenticationFailedException`](crate::error::AuthenticationFailedException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -2064,7 +2064,7 @@ impl std::error::Error for EntityAlreadyExistsException {}
 pub mod entity_already_exists_exception {
 
     /// A builder for [`EntityAlreadyExistsException`](crate::error::EntityAlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -2145,7 +2145,7 @@ impl std::error::Error for NoAvailableCertificateException {}
 pub mod no_available_certificate_exception {
 
     /// A builder for [`NoAvailableCertificateException`](crate::error::NoAvailableCertificateException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -2229,7 +2229,7 @@ impl std::error::Error for InvalidLdapsStatusException {}
 pub mod invalid_ldaps_status_exception {
 
     /// A builder for [`InvalidLdapsStatusException`](crate::error::InvalidLdapsStatusException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -2310,7 +2310,7 @@ impl std::error::Error for InvalidClientAuthStatusException {}
 pub mod invalid_client_auth_status_exception {
 
     /// A builder for [`InvalidClientAuthStatusException`](crate::error::InvalidClientAuthStatusException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -2391,7 +2391,7 @@ impl std::error::Error for CertificateDoesNotExistException {}
 pub mod certificate_does_not_exist_exception {
 
     /// A builder for [`CertificateDoesNotExistException`](crate::error::CertificateDoesNotExistException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -2472,7 +2472,7 @@ impl std::error::Error for CertificateInUseException {}
 pub mod certificate_in_use_exception {
 
     /// A builder for [`CertificateInUseException`](crate::error::CertificateInUseException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -2553,7 +2553,7 @@ impl std::error::Error for DirectoryLimitExceededException {}
 pub mod directory_limit_exceeded_exception {
 
     /// A builder for [`DirectoryLimitExceededException`](crate::error::DirectoryLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -2634,7 +2634,7 @@ impl std::error::Error for TagLimitExceededException {}
 pub mod tag_limit_exceeded_exception {
 
     /// A builder for [`TagLimitExceededException`](crate::error::TagLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -2715,7 +2715,7 @@ impl std::error::Error for RegionLimitExceededException {}
 pub mod region_limit_exceeded_exception {
 
     /// A builder for [`RegionLimitExceededException`](crate::error::RegionLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -2796,7 +2796,7 @@ impl std::error::Error for DirectoryAlreadyInRegionException {}
 pub mod directory_already_in_region_exception {
 
     /// A builder for [`DirectoryAlreadyInRegionException`](crate::error::DirectoryAlreadyInRegionException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -2877,7 +2877,7 @@ impl std::error::Error for IpRouteLimitExceededException {}
 pub mod ip_route_limit_exceeded_exception {
 
     /// A builder for [`IpRouteLimitExceededException`](crate::error::IpRouteLimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) request_id: std::option::Option<std::string::String>,

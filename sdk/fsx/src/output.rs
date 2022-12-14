@@ -17,7 +17,7 @@ impl UpdateVolumeOutput {
 pub mod update_volume_output {
 
     /// A builder for [`UpdateVolumeOutput`](crate::output::UpdateVolumeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume: std::option::Option<crate::model::Volume>,
     }
@@ -67,7 +67,7 @@ impl UpdateStorageVirtualMachineOutput {
 pub mod update_storage_virtual_machine_output {
 
     /// A builder for [`UpdateStorageVirtualMachineOutput`](crate::output::UpdateStorageVirtualMachineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_virtual_machine:
             std::option::Option<crate::model::StorageVirtualMachine>,
@@ -122,7 +122,7 @@ impl UpdateSnapshotOutput {
 pub mod update_snapshot_output {
 
     /// A builder for [`UpdateSnapshotOutput`](crate::output::UpdateSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot: std::option::Option<crate::model::Snapshot>,
     }
@@ -170,7 +170,7 @@ impl UpdateFileSystemOutput {
 pub mod update_file_system_output {
 
     /// A builder for [`UpdateFileSystemOutput`](crate::output::UpdateFileSystemOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system: std::option::Option<crate::model::FileSystem>,
     }
@@ -221,7 +221,7 @@ impl UpdateFileCacheOutput {
 pub mod update_file_cache_output {
 
     /// A builder for [`UpdateFileCacheOutput`](crate::output::UpdateFileCacheOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_cache: std::option::Option<crate::model::FileCache>,
     }
@@ -272,7 +272,7 @@ impl UpdateDataRepositoryAssociationOutput {
 pub mod update_data_repository_association_output {
 
     /// A builder for [`UpdateDataRepositoryAssociationOutput`](crate::output::UpdateDataRepositoryAssociationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association: std::option::Option<crate::model::DataRepositoryAssociation>,
     }
@@ -313,7 +313,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -337,7 +337,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -378,7 +378,7 @@ impl RestoreVolumeFromSnapshotOutput {
 pub mod restore_volume_from_snapshot_output {
 
     /// A builder for [`RestoreVolumeFromSnapshotOutput`](crate::output::RestoreVolumeFromSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::VolumeLifecycle>,
@@ -441,7 +441,7 @@ impl ReleaseFileSystemNfsV3LocksOutput {
 pub mod release_file_system_nfs_v3_locks_output {
 
     /// A builder for [`ReleaseFileSystemNfsV3LocksOutput`](crate::output::ReleaseFileSystemNfsV3LocksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system: std::option::Option<crate::model::FileSystem>,
     }
@@ -499,7 +499,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -568,7 +568,7 @@ impl DisassociateFileSystemAliasesOutput {
 pub mod disassociate_file_system_aliases_output {
 
     /// A builder for [`DisassociateFileSystemAliasesOutput`](crate::output::DisassociateFileSystemAliasesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
     }
@@ -632,7 +632,7 @@ impl DescribeVolumesOutput {
 pub mod describe_volumes_output {
 
     /// A builder for [`DescribeVolumesOutput`](crate::output::DescribeVolumesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -711,7 +711,7 @@ impl DescribeStorageVirtualMachinesOutput {
 pub mod describe_storage_virtual_machines_output {
 
     /// A builder for [`DescribeStorageVirtualMachinesOutput`](crate::output::DescribeStorageVirtualMachinesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_virtual_machines:
             std::option::Option<std::vec::Vec<crate::model::StorageVirtualMachine>>,
@@ -791,7 +791,7 @@ impl DescribeSnapshotsOutput {
 pub mod describe_snapshots_output {
 
     /// A builder for [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -867,7 +867,7 @@ impl DescribeFileSystemsOutput {
 pub mod describe_file_systems_output {
 
     /// A builder for [`DescribeFileSystemsOutput`](crate::output::DescribeFileSystemsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_systems: std::option::Option<std::vec::Vec<crate::model::FileSystem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -943,7 +943,7 @@ impl DescribeFileSystemAliasesOutput {
 pub mod describe_file_system_aliases_output {
 
     /// A builder for [`DescribeFileSystemAliasesOutput`](crate::output::DescribeFileSystemAliasesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1019,7 +1019,7 @@ impl DescribeFileCachesOutput {
 pub mod describe_file_caches_output {
 
     /// A builder for [`DescribeFileCachesOutput`](crate::output::DescribeFileCachesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_caches: std::option::Option<std::vec::Vec<crate::model::FileCache>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1097,7 +1097,7 @@ impl DescribeDataRepositoryTasksOutput {
 pub mod describe_data_repository_tasks_output {
 
     /// A builder for [`DescribeDataRepositoryTasksOutput`](crate::output::DescribeDataRepositoryTasksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_repository_tasks:
             std::option::Option<std::vec::Vec<crate::model::DataRepositoryTask>>,
@@ -1174,7 +1174,7 @@ impl DescribeDataRepositoryAssociationsOutput {
 pub mod describe_data_repository_associations_output {
 
     /// A builder for [`DescribeDataRepositoryAssociationsOutput`](crate::output::DescribeDataRepositoryAssociationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associations:
             std::option::Option<std::vec::Vec<crate::model::DataRepositoryAssociation>>,
@@ -1251,7 +1251,7 @@ impl DescribeBackupsOutput {
 pub mod describe_backups_output {
 
     /// A builder for [`DescribeBackupsOutput`](crate::output::DescribeBackupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backups: std::option::Option<std::vec::Vec<crate::model::Backup>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1334,7 +1334,7 @@ impl DeleteVolumeOutput {
 pub mod delete_volume_output {
 
     /// A builder for [`DeleteVolumeOutput`](crate::output::DeleteVolumeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::VolumeLifecycle>,
@@ -1419,7 +1419,7 @@ impl DeleteStorageVirtualMachineOutput {
 pub mod delete_storage_virtual_machine_output {
 
     /// A builder for [`DeleteStorageVirtualMachineOutput`](crate::output::DeleteStorageVirtualMachineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_virtual_machine_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::StorageVirtualMachineLifecycle>,
@@ -1492,7 +1492,7 @@ impl DeleteSnapshotOutput {
 pub mod delete_snapshot_output {
 
     /// A builder for [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::SnapshotLifecycle>,
@@ -1589,7 +1589,7 @@ impl DeleteFileSystemOutput {
 pub mod delete_file_system_output {
 
     /// A builder for [`DeleteFileSystemOutput`](crate::output::DeleteFileSystemOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::FileSystemLifecycle>,
@@ -1719,7 +1719,7 @@ impl DeleteFileCacheOutput {
 pub mod delete_file_cache_output {
 
     /// A builder for [`DeleteFileCacheOutput`](crate::output::DeleteFileCacheOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_cache_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::FileCacheLifecycle>,
@@ -1799,7 +1799,7 @@ impl DeleteDataRepositoryAssociationOutput {
 pub mod delete_data_repository_association_output {
 
     /// A builder for [`DeleteDataRepositoryAssociationOutput`](crate::output::DeleteDataRepositoryAssociationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::DataRepositoryLifecycle>,
@@ -1884,7 +1884,7 @@ impl DeleteBackupOutput {
 pub mod delete_backup_output {
 
     /// A builder for [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::BackupLifecycle>,
@@ -1947,7 +1947,7 @@ impl CreateVolumeFromBackupOutput {
 pub mod create_volume_from_backup_output {
 
     /// A builder for [`CreateVolumeFromBackupOutput`](crate::output::CreateVolumeFromBackupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume: std::option::Option<crate::model::Volume>,
     }
@@ -1995,7 +1995,7 @@ impl CreateVolumeOutput {
 pub mod create_volume_output {
 
     /// A builder for [`CreateVolumeOutput`](crate::output::CreateVolumeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume: std::option::Option<crate::model::Volume>,
     }
@@ -2045,7 +2045,7 @@ impl CreateStorageVirtualMachineOutput {
 pub mod create_storage_virtual_machine_output {
 
     /// A builder for [`CreateStorageVirtualMachineOutput`](crate::output::CreateStorageVirtualMachineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_virtual_machine:
             std::option::Option<crate::model::StorageVirtualMachine>,
@@ -2100,7 +2100,7 @@ impl CreateSnapshotOutput {
 pub mod create_snapshot_output {
 
     /// A builder for [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot: std::option::Option<crate::model::Snapshot>,
     }
@@ -2148,7 +2148,7 @@ impl CreateFileSystemFromBackupOutput {
 pub mod create_file_system_from_backup_output {
 
     /// A builder for [`CreateFileSystemFromBackupOutput`](crate::output::CreateFileSystemFromBackupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system: std::option::Option<crate::model::FileSystem>,
     }
@@ -2199,7 +2199,7 @@ impl CreateFileSystemOutput {
 pub mod create_file_system_output {
 
     /// A builder for [`CreateFileSystemOutput`](crate::output::CreateFileSystemOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system: std::option::Option<crate::model::FileSystem>,
     }
@@ -2250,7 +2250,7 @@ impl CreateFileCacheOutput {
 pub mod create_file_cache_output {
 
     /// A builder for [`CreateFileCacheOutput`](crate::output::CreateFileCacheOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_cache: std::option::Option<crate::model::FileCacheCreating>,
     }
@@ -2301,7 +2301,7 @@ impl CreateDataRepositoryTaskOutput {
 pub mod create_data_repository_task_output {
 
     /// A builder for [`CreateDataRepositoryTaskOutput`](crate::output::CreateDataRepositoryTaskOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_repository_task: std::option::Option<crate::model::DataRepositoryTask>,
     }
@@ -2352,7 +2352,7 @@ impl CreateDataRepositoryAssociationOutput {
 pub mod create_data_repository_association_output {
 
     /// A builder for [`CreateDataRepositoryAssociationOutput`](crate::output::CreateDataRepositoryAssociationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association: std::option::Option<crate::model::DataRepositoryAssociation>,
     }
@@ -2403,7 +2403,7 @@ impl CreateBackupOutput {
 pub mod create_backup_output {
 
     /// A builder for [`CreateBackupOutput`](crate::output::CreateBackupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup: std::option::Option<crate::model::Backup>,
     }
@@ -2451,7 +2451,7 @@ impl CopyBackupOutput {
 pub mod copy_backup_output {
 
     /// A builder for [`CopyBackupOutput`](crate::output::CopyBackupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup: std::option::Option<crate::model::Backup>,
     }
@@ -2522,7 +2522,7 @@ impl CancelDataRepositoryTaskOutput {
 pub mod cancel_data_repository_task_output {
 
     /// A builder for [`CancelDataRepositoryTaskOutput`](crate::output::CancelDataRepositoryTaskOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle: std::option::Option<crate::model::DataRepositoryTaskLifecycle>,
         pub(crate) task_id: std::option::Option<std::string::String>,
@@ -2601,7 +2601,7 @@ impl AssociateFileSystemAliasesOutput {
 pub mod associate_file_system_aliases_output {
 
     /// A builder for [`AssociateFileSystemAliasesOutput`](crate::output::AssociateFileSystemAliasesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
     }

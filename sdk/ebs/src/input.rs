@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod complete_snapshot_input {
 
     /// A builder for [`CompleteSnapshotInput`](crate::input::CompleteSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
         pub(crate) changed_blocks_count: std::option::Option<i32>,
@@ -218,7 +218,7 @@ impl CompleteSnapshotInput {
 pub mod get_snapshot_block_input {
 
     /// A builder for [`GetSnapshotBlockInput`](crate::input::GetSnapshotBlockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
         pub(crate) block_index: std::option::Option<i32>,
@@ -440,7 +440,7 @@ impl GetSnapshotBlockInput {
 pub mod list_changed_blocks_input {
 
     /// A builder for [`ListChangedBlocksInput`](crate::input::ListChangedBlocksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) first_snapshot_id: std::option::Option<std::string::String>,
         pub(crate) second_snapshot_id: std::option::Option<std::string::String>,
@@ -701,7 +701,7 @@ impl ListChangedBlocksInput {
 pub mod list_snapshot_blocks_input {
 
     /// A builder for [`ListSnapshotBlocksInput`](crate::input::ListSnapshotBlocksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1215,7 +1215,7 @@ impl PutSnapshotBlockInput {
 pub mod start_snapshot_input {
 
     /// A builder for [`StartSnapshotInput`](crate::input::StartSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) volume_size: std::option::Option<i64>,
         pub(crate) parent_snapshot_id: std::option::Option<std::string::String>,

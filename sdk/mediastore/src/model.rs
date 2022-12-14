@@ -25,7 +25,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -95,7 +95,7 @@ impl MetricPolicy {
 pub mod metric_policy {
 
     /// A builder for [`MetricPolicy`](crate::model::MetricPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_level_metrics:
             std::option::Option<crate::model::ContainerLevelMetrics>,
@@ -179,7 +179,7 @@ impl MetricPolicyRule {
 pub mod metric_policy_rule {
 
     /// A builder for [`MetricPolicyRule`](crate::model::MetricPolicyRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_group: std::option::Option<std::string::String>,
         pub(crate) object_group_name: std::option::Option<std::string::String>,
@@ -372,7 +372,7 @@ impl CorsRule {
 pub mod cors_rule {
 
     /// A builder for [`CorsRule`](crate::model::CorsRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allowed_origins: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) allowed_methods: std::option::Option<std::vec::Vec<crate::model::MethodName>>,
@@ -667,7 +667,7 @@ impl Container {
 pub mod container {
 
     /// A builder for [`Container`](crate::model::Container).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,

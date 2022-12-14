@@ -7,7 +7,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -31,7 +31,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -114,7 +114,7 @@ impl StartMigrationOutput {
 pub mod start_migration_output {
 
     /// A builder for [`StartMigrationOutput`](crate::output::StartMigrationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) v1_bot_name: std::option::Option<std::string::String>,
         pub(crate) v1_bot_version: std::option::Option<std::string::String>,
@@ -300,7 +300,7 @@ impl StartImportOutput {
 pub mod start_import_output {
 
     /// A builder for [`StartImportOutput`](crate::output::StartImportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
@@ -516,7 +516,7 @@ impl PutSlotTypeOutput {
 pub mod put_slot_type_output {
 
     /// A builder for [`PutSlotTypeOutput`](crate::output::PutSlotTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -849,7 +849,7 @@ impl PutIntentOutput {
 pub mod put_intent_output {
 
     /// A builder for [`PutIntentOutput`](crate::output::PutIntentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1237,7 +1237,7 @@ impl PutBotAliasOutput {
 pub mod put_bot_alias_output {
 
     /// A builder for [`PutBotAliasOutput`](crate::output::PutBotAliasOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1542,7 +1542,7 @@ impl PutBotOutput {
 pub mod put_bot_output {
 
     /// A builder for [`PutBotOutput`](crate::output::PutBotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1864,7 +1864,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -1926,7 +1926,7 @@ impl GetUtterancesViewOutput {
 pub mod get_utterances_view_output {
 
     /// A builder for [`GetUtterancesViewOutput`](crate::output::GetUtterancesViewOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,
         pub(crate) utterances: std::option::Option<std::vec::Vec<crate::model::UtteranceList>>,
@@ -2002,7 +2002,7 @@ impl GetSlotTypeVersionsOutput {
 pub mod get_slot_type_versions_output {
 
     /// A builder for [`GetSlotTypeVersionsOutput`](crate::output::GetSlotTypeVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) slot_types: std::option::Option<std::vec::Vec<crate::model::SlotTypeMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2078,7 +2078,7 @@ impl GetSlotTypesOutput {
 pub mod get_slot_types_output {
 
     /// A builder for [`GetSlotTypesOutput`](crate::output::GetSlotTypesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) slot_types: std::option::Option<std::vec::Vec<crate::model::SlotTypeMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2215,7 +2215,7 @@ impl GetSlotTypeOutput {
 pub mod get_slot_type_output {
 
     /// A builder for [`GetSlotTypeOutput`](crate::output::GetSlotTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2417,7 +2417,7 @@ impl GetMigrationsOutput {
 pub mod get_migrations_output {
 
     /// A builder for [`GetMigrationsOutput`](crate::output::GetMigrationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) migration_summaries:
             std::option::Option<std::vec::Vec<crate::model::MigrationSummary>>,
@@ -2560,7 +2560,7 @@ impl GetMigrationOutput {
 pub mod get_migration_output {
 
     /// A builder for [`GetMigrationOutput`](crate::output::GetMigrationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) migration_id: std::option::Option<std::string::String>,
         pub(crate) v1_bot_name: std::option::Option<std::string::String>,
@@ -2757,7 +2757,7 @@ impl GetIntentVersionsOutput {
 pub mod get_intent_versions_output {
 
     /// A builder for [`GetIntentVersionsOutput`](crate::output::GetIntentVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) intents: std::option::Option<std::vec::Vec<crate::model::IntentMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2833,7 +2833,7 @@ impl GetIntentsOutput {
 pub mod get_intents_output {
 
     /// A builder for [`GetIntentsOutput`](crate::output::GetIntentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) intents: std::option::Option<std::vec::Vec<crate::model::IntentMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3021,7 +3021,7 @@ impl GetIntentOutput {
 pub mod get_intent_output {
 
     /// A builder for [`GetIntentOutput`](crate::output::GetIntentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -3381,7 +3381,7 @@ impl GetImportOutput {
 pub mod get_import_output {
 
     /// A builder for [`GetImportOutput`](crate::output::GetImportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
@@ -3574,7 +3574,7 @@ impl GetExportOutput {
 pub mod get_export_output {
 
     /// A builder for [`GetExportOutput`](crate::output::GetExportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -3723,7 +3723,7 @@ impl GetBuiltinSlotTypesOutput {
 pub mod get_builtin_slot_types_output {
 
     /// A builder for [`GetBuiltinSlotTypesOutput`](crate::output::GetBuiltinSlotTypesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) slot_types:
             std::option::Option<std::vec::Vec<crate::model::BuiltinSlotTypeMetadata>>,
@@ -3800,7 +3800,7 @@ impl GetBuiltinIntentsOutput {
 pub mod get_builtin_intents_output {
 
     /// A builder for [`GetBuiltinIntentsOutput`](crate::output::GetBuiltinIntentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) intents: std::option::Option<std::vec::Vec<crate::model::BuiltinIntentMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3883,7 +3883,7 @@ impl GetBuiltinIntentOutput {
 pub mod get_builtin_intent_output {
 
     /// A builder for [`GetBuiltinIntentOutput`](crate::output::GetBuiltinIntentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) signature: std::option::Option<std::string::String>,
         pub(crate) supported_locales: std::option::Option<std::vec::Vec<crate::model::Locale>>,
@@ -3980,7 +3980,7 @@ impl GetBotVersionsOutput {
 pub mod get_bot_versions_output {
 
     /// A builder for [`GetBotVersionsOutput`](crate::output::GetBotVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bots: std::option::Option<std::vec::Vec<crate::model::BotMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4056,7 +4056,7 @@ impl GetBotsOutput {
 pub mod get_bots_output {
 
     /// A builder for [`GetBotsOutput`](crate::output::GetBotsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bots: std::option::Option<std::vec::Vec<crate::model::BotMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4135,7 +4135,7 @@ impl GetBotChannelAssociationsOutput {
 pub mod get_bot_channel_associations_output {
 
     /// A builder for [`GetBotChannelAssociationsOutput`](crate::output::GetBotChannelAssociationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_channel_associations:
             std::option::Option<std::vec::Vec<crate::model::BotChannelAssociation>>,
@@ -4293,7 +4293,7 @@ impl std::fmt::Debug for GetBotChannelAssociationOutput {
 pub mod get_bot_channel_association_output {
 
     /// A builder for [`GetBotChannelAssociationOutput`](crate::output::GetBotChannelAssociationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4495,7 +4495,7 @@ impl GetBotAliasesOutput {
 pub mod get_bot_aliases_output {
 
     /// A builder for [`GetBotAliasesOutput`](crate::output::GetBotAliasesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_aliases: std::option::Option<std::vec::Vec<crate::model::BotAliasMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4615,7 +4615,7 @@ impl GetBotAliasOutput {
 pub mod get_bot_alias_output {
 
     /// A builder for [`GetBotAliasOutput`](crate::output::GetBotAliasOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4885,7 +4885,7 @@ impl GetBotOutput {
 pub mod get_bot_output {
 
     /// A builder for [`GetBotOutput`](crate::output::GetBotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5164,7 +5164,7 @@ pub struct DeleteUtterancesOutput {}
 pub mod delete_utterances_output {
 
     /// A builder for [`DeleteUtterancesOutput`](crate::output::DeleteUtterancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUtterancesOutput`](crate::output::DeleteUtterancesOutput).
@@ -5188,7 +5188,7 @@ pub struct DeleteSlotTypeVersionOutput {}
 pub mod delete_slot_type_version_output {
 
     /// A builder for [`DeleteSlotTypeVersionOutput`](crate::output::DeleteSlotTypeVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSlotTypeVersionOutput`](crate::output::DeleteSlotTypeVersionOutput).
@@ -5212,7 +5212,7 @@ pub struct DeleteSlotTypeOutput {}
 pub mod delete_slot_type_output {
 
     /// A builder for [`DeleteSlotTypeOutput`](crate::output::DeleteSlotTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSlotTypeOutput`](crate::output::DeleteSlotTypeOutput).
@@ -5236,7 +5236,7 @@ pub struct DeleteIntentVersionOutput {}
 pub mod delete_intent_version_output {
 
     /// A builder for [`DeleteIntentVersionOutput`](crate::output::DeleteIntentVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteIntentVersionOutput`](crate::output::DeleteIntentVersionOutput).
@@ -5260,7 +5260,7 @@ pub struct DeleteIntentOutput {}
 pub mod delete_intent_output {
 
     /// A builder for [`DeleteIntentOutput`](crate::output::DeleteIntentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteIntentOutput`](crate::output::DeleteIntentOutput).
@@ -5284,7 +5284,7 @@ pub struct DeleteBotVersionOutput {}
 pub mod delete_bot_version_output {
 
     /// A builder for [`DeleteBotVersionOutput`](crate::output::DeleteBotVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBotVersionOutput`](crate::output::DeleteBotVersionOutput).
@@ -5308,7 +5308,7 @@ pub struct DeleteBotChannelAssociationOutput {}
 pub mod delete_bot_channel_association_output {
 
     /// A builder for [`DeleteBotChannelAssociationOutput`](crate::output::DeleteBotChannelAssociationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBotChannelAssociationOutput`](crate::output::DeleteBotChannelAssociationOutput).
@@ -5332,7 +5332,7 @@ pub struct DeleteBotAliasOutput {}
 pub mod delete_bot_alias_output {
 
     /// A builder for [`DeleteBotAliasOutput`](crate::output::DeleteBotAliasOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBotAliasOutput`](crate::output::DeleteBotAliasOutput).
@@ -5356,7 +5356,7 @@ pub struct DeleteBotOutput {}
 pub mod delete_bot_output {
 
     /// A builder for [`DeleteBotOutput`](crate::output::DeleteBotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBotOutput`](crate::output::DeleteBotOutput).
@@ -5458,7 +5458,7 @@ impl CreateSlotTypeVersionOutput {
 pub mod create_slot_type_version_output {
 
     /// A builder for [`CreateSlotTypeVersionOutput`](crate::output::CreateSlotTypeVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5772,7 +5772,7 @@ impl CreateIntentVersionOutput {
 pub mod create_intent_version_output {
 
     /// A builder for [`CreateIntentVersionOutput`](crate::output::CreateIntentVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -6204,7 +6204,7 @@ impl CreateBotVersionOutput {
 pub mod create_bot_version_output {
 
     /// A builder for [`CreateBotVersionOutput`](crate::output::CreateBotVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,

@@ -7,7 +7,7 @@ pub struct StopHumanLoopOutput {}
 pub mod stop_human_loop_output {
 
     /// A builder for [`StopHumanLoopOutput`](crate::output::StopHumanLoopOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StopHumanLoopOutput`](crate::output::StopHumanLoopOutput).
@@ -41,7 +41,7 @@ impl StartHumanLoopOutput {
 pub mod start_human_loop_output {
 
     /// A builder for [`StartHumanLoopOutput`](crate::output::StartHumanLoopOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_arn: std::option::Option<std::string::String>,
     }
@@ -99,7 +99,7 @@ impl ListHumanLoopsOutput {
 pub mod list_human_loops_output {
 
     /// A builder for [`ListHumanLoopsOutput`](crate::output::ListHumanLoopsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_summaries:
             std::option::Option<std::vec::Vec<crate::model::HumanLoopSummary>>,
@@ -220,7 +220,7 @@ impl DescribeHumanLoopOutput {
 pub mod describe_human_loop_output {
 
     /// A builder for [`DescribeHumanLoopOutput`](crate::output::DescribeHumanLoopOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
@@ -365,7 +365,7 @@ pub struct DeleteHumanLoopOutput {}
 pub mod delete_human_loop_output {
 
     /// A builder for [`DeleteHumanLoopOutput`](crate::output::DeleteHumanLoopOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteHumanLoopOutput`](crate::output::DeleteHumanLoopOutput).

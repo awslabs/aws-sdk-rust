@@ -409,7 +409,7 @@ impl CategoryProperties {
 pub mod category_properties {
 
     /// A builder for [`CategoryProperties`](crate::model::CategoryProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_name: std::option::Option<std::string::String>,
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -643,7 +643,7 @@ impl SentimentFilter {
 pub mod sentiment_filter {
 
     /// A builder for [`SentimentFilter`](crate::model::SentimentFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sentiments: std::option::Option<std::vec::Vec<crate::model::SentimentValue>>,
         pub(crate) absolute_time_range: std::option::Option<crate::model::AbsoluteTimeRange>,
@@ -871,7 +871,7 @@ impl RelativeTimeRange {
 pub mod relative_time_range {
 
     /// A builder for [`RelativeTimeRange`](crate::model::RelativeTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_percentage: std::option::Option<i32>,
         pub(crate) end_percentage: std::option::Option<i32>,
@@ -979,7 +979,7 @@ impl AbsoluteTimeRange {
 pub mod absolute_time_range {
 
     /// A builder for [`AbsoluteTimeRange`](crate::model::AbsoluteTimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<i64>,
         pub(crate) end_time: std::option::Option<i64>,
@@ -1209,7 +1209,7 @@ impl TranscriptFilter {
 pub mod transcript_filter {
 
     /// A builder for [`TranscriptFilter`](crate::model::TranscriptFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transcript_filter_type: std::option::Option<crate::model::TranscriptFilterType>,
         pub(crate) absolute_time_range: std::option::Option<crate::model::AbsoluteTimeRange>,
@@ -1463,7 +1463,7 @@ impl InterruptionFilter {
 pub mod interruption_filter {
 
     /// A builder for [`InterruptionFilter`](crate::model::InterruptionFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) threshold: std::option::Option<i64>,
         pub(crate) participant_role: std::option::Option<crate::model::ParticipantRole>,
@@ -1595,7 +1595,7 @@ impl NonTalkTimeFilter {
 pub mod non_talk_time_filter {
 
     /// A builder for [`NonTalkTimeFilter`](crate::model::NonTalkTimeFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) threshold: std::option::Option<i64>,
         pub(crate) absolute_time_range: std::option::Option<crate::model::AbsoluteTimeRange>,
@@ -1696,7 +1696,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1976,7 +1976,7 @@ impl TranscriptionJob {
 pub mod transcription_job {
 
     /// A builder for [`TranscriptionJob`](crate::model::TranscriptionJob).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transcription_job_name: std::option::Option<std::string::String>,
         pub(crate) transcription_job_status:
@@ -2457,7 +2457,7 @@ impl LanguageIdSettings {
 pub mod language_id_settings {
 
     /// A builder for [`LanguageIdSettings`](crate::model::LanguageIdSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
@@ -2568,7 +2568,7 @@ impl SubtitlesOutput {
 pub mod subtitles_output {
 
     /// A builder for [`SubtitlesOutput`](crate::model::SubtitlesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) formats: std::option::Option<std::vec::Vec<crate::model::SubtitleFormat>>,
         pub(crate) subtitle_file_uris: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2763,7 +2763,7 @@ impl LanguageCodeItem {
 pub mod language_code_item {
 
     /// A builder for [`LanguageCodeItem`](crate::model::LanguageCodeItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) duration_in_seconds: std::option::Option<f32>,
@@ -2844,7 +2844,7 @@ impl ContentRedaction {
 pub mod content_redaction {
 
     /// A builder for [`ContentRedaction`](crate::model::ContentRedaction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) redaction_type: std::option::Option<crate::model::RedactionType>,
         pub(crate) redaction_output: std::option::Option<crate::model::RedactionOutput>,
@@ -3280,7 +3280,7 @@ impl JobExecutionSettings {
 pub mod job_execution_settings {
 
     /// A builder for [`JobExecutionSettings`](crate::model::JobExecutionSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_deferred_execution: std::option::Option<bool>,
         pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
@@ -3354,7 +3354,7 @@ impl ModelSettings {
 pub mod model_settings {
 
     /// A builder for [`ModelSettings`](crate::model::ModelSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_model_name: std::option::Option<std::string::String>,
     }
@@ -3494,7 +3494,7 @@ impl Settings {
 pub mod settings {
 
     /// A builder for [`Settings`](crate::model::Settings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
         pub(crate) show_speaker_labels: std::option::Option<bool>,
@@ -3795,7 +3795,7 @@ impl Transcript {
 pub mod transcript {
 
     /// A builder for [`Transcript`](crate::model::Transcript).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transcript_file_uri: std::option::Option<std::string::String>,
         pub(crate) redacted_transcript_file_uri: std::option::Option<std::string::String>,
@@ -3911,7 +3911,7 @@ impl Media {
 pub mod media {
 
     /// A builder for [`Media`](crate::model::Media).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_file_uri: std::option::Option<std::string::String>,
         pub(crate) redacted_media_file_uri: std::option::Option<std::string::String>,
@@ -4229,7 +4229,7 @@ impl Subtitles {
 pub mod subtitles {
 
     /// A builder for [`Subtitles`](crate::model::Subtitles).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) formats: std::option::Option<std::vec::Vec<crate::model::SubtitleFormat>>,
         pub(crate) output_start_index: std::option::Option<i32>,
@@ -4437,7 +4437,7 @@ impl MedicalTranscriptionJob {
 pub mod medical_transcription_job {
 
     /// A builder for [`MedicalTranscriptionJob`](crate::model::MedicalTranscriptionJob).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) medical_transcription_job_name: std::option::Option<std::string::String>,
         pub(crate) transcription_job_status:
@@ -5074,7 +5074,7 @@ impl MedicalTranscriptionSetting {
 pub mod medical_transcription_setting {
 
     /// A builder for [`MedicalTranscriptionSetting`](crate::model::MedicalTranscriptionSetting).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) show_speaker_labels: std::option::Option<bool>,
         pub(crate) max_speaker_labels: std::option::Option<i32>,
@@ -5223,7 +5223,7 @@ impl MedicalTranscript {
 pub mod medical_transcript {
 
     /// A builder for [`MedicalTranscript`](crate::model::MedicalTranscript).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transcript_file_uri: std::option::Option<std::string::String>,
     }
@@ -5419,7 +5419,7 @@ impl CallAnalyticsJob {
 pub mod call_analytics_job {
 
     /// A builder for [`CallAnalyticsJob`](crate::model::CallAnalyticsJob).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) call_analytics_job_name: std::option::Option<std::string::String>,
         pub(crate) call_analytics_job_status:
@@ -5723,7 +5723,7 @@ impl ChannelDefinition {
 pub mod channel_definition {
 
     /// A builder for [`ChannelDefinition`](crate::model::ChannelDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_id: std::option::Option<i32>,
         pub(crate) participant_role: std::option::Option<crate::model::ParticipantRole>,
@@ -5858,7 +5858,7 @@ impl CallAnalyticsJobSettings {
 pub mod call_analytics_job_settings {
 
     /// A builder for [`CallAnalyticsJobSettings`](crate::model::CallAnalyticsJobSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
@@ -6170,7 +6170,7 @@ impl VocabularyFilterInfo {
 pub mod vocabulary_filter_info {
 
     /// A builder for [`VocabularyFilterInfo`](crate::model::VocabularyFilterInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -6282,7 +6282,7 @@ impl VocabularyInfo {
 pub mod vocabulary_info {
 
     /// A builder for [`VocabularyInfo`](crate::model::VocabularyInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -6491,7 +6491,7 @@ impl TranscriptionJobSummary {
 pub mod transcription_job_summary {
 
     /// A builder for [`TranscriptionJobSummary`](crate::model::TranscriptionJobSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transcription_job_name: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -6934,7 +6934,7 @@ impl MedicalTranscriptionJobSummary {
 pub mod medical_transcription_job_summary {
 
     /// A builder for [`MedicalTranscriptionJobSummary`](crate::model::MedicalTranscriptionJobSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) medical_transcription_job_name: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -7225,7 +7225,7 @@ impl LanguageModel {
 pub mod language_model {
 
     /// A builder for [`LanguageModel`](crate::model::LanguageModel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_name: std::option::Option<std::string::String>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -7427,7 +7427,7 @@ impl InputDataConfig {
 pub mod input_data_config {
 
     /// A builder for [`InputDataConfig`](crate::model::InputDataConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
         pub(crate) tuning_data_s3_uri: std::option::Option<std::string::String>,
@@ -7855,7 +7855,7 @@ impl CallAnalyticsJobSummary {
 pub mod call_analytics_job_summary {
 
     /// A builder for [`CallAnalyticsJobSummary`](crate::model::CallAnalyticsJobSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) call_analytics_job_name: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,

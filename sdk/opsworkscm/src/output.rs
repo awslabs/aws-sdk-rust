@@ -17,7 +17,7 @@ impl UpdateServerEngineAttributesOutput {
 pub mod update_server_engine_attributes_output {
 
     /// A builder for [`UpdateServerEngineAttributesOutput`](crate::output::UpdateServerEngineAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server: std::option::Option<crate::model::Server>,
     }
@@ -65,7 +65,7 @@ impl UpdateServerOutput {
 pub mod update_server_output {
 
     /// A builder for [`UpdateServerOutput`](crate::output::UpdateServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server: std::option::Option<crate::model::Server>,
     }
@@ -103,7 +103,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -127,7 +127,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -161,7 +161,7 @@ impl StartMaintenanceOutput {
 pub mod start_maintenance_output {
 
     /// A builder for [`StartMaintenanceOutput`](crate::output::StartMaintenanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server: std::option::Option<crate::model::Server>,
     }
@@ -209,7 +209,7 @@ impl RestoreServerOutput {
 pub mod restore_server_output {
 
     /// A builder for [`RestoreServerOutput`](crate::output::RestoreServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server: std::option::Option<crate::model::Server>,
     }
@@ -264,7 +264,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -340,7 +340,7 @@ impl ExportServerEngineAttributeOutput {
 pub mod export_server_engine_attribute_output {
 
     /// A builder for [`ExportServerEngineAttributeOutput`](crate::output::ExportServerEngineAttributeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_attribute: std::option::Option<crate::model::EngineAttribute>,
         pub(crate) server_name: std::option::Option<std::string::String>,
@@ -403,7 +403,7 @@ impl DisassociateNodeOutput {
 pub mod disassociate_node_output {
 
     /// A builder for [`DisassociateNodeOutput`](crate::output::DisassociateNodeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) node_association_status_token: std::option::Option<std::string::String>,
     }
@@ -476,7 +476,7 @@ impl DescribeServersOutput {
 pub mod describe_servers_output {
 
     /// A builder for [`DescribeServersOutput`](crate::output::DescribeServersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) servers: std::option::Option<std::vec::Vec<crate::model::Server>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -578,7 +578,7 @@ impl DescribeNodeAssociationStatusOutput {
 pub mod describe_node_association_status_output {
 
     /// A builder for [`DescribeNodeAssociationStatusOutput`](crate::output::DescribeNodeAssociationStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) node_association_status:
             std::option::Option<crate::model::NodeAssociationStatus>,
@@ -674,7 +674,7 @@ impl DescribeEventsOutput {
 pub mod describe_events_output {
 
     /// A builder for [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_events: std::option::Option<std::vec::Vec<crate::model::ServerEvent>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -750,7 +750,7 @@ impl DescribeBackupsOutput {
 pub mod describe_backups_output {
 
     /// A builder for [`DescribeBackupsOutput`](crate::output::DescribeBackupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backups: std::option::Option<std::vec::Vec<crate::model::Backup>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -819,7 +819,7 @@ impl DescribeAccountAttributesOutput {
 pub mod describe_account_attributes_output {
 
     /// A builder for [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
     }
@@ -866,7 +866,7 @@ pub struct DeleteServerOutput {}
 pub mod delete_server_output {
 
     /// A builder for [`DeleteServerOutput`](crate::output::DeleteServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteServerOutput`](crate::output::DeleteServerOutput).
@@ -890,7 +890,7 @@ pub struct DeleteBackupOutput {}
 pub mod delete_backup_output {
 
     /// A builder for [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
@@ -924,7 +924,7 @@ impl CreateServerOutput {
 pub mod create_server_output {
 
     /// A builder for [`CreateServerOutput`](crate::output::CreateServerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server: std::option::Option<crate::model::Server>,
     }
@@ -972,7 +972,7 @@ impl CreateBackupOutput {
 pub mod create_backup_output {
 
     /// A builder for [`CreateBackupOutput`](crate::output::CreateBackupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup: std::option::Option<crate::model::Backup>,
     }
@@ -1020,7 +1020,7 @@ impl AssociateNodeOutput {
 pub mod associate_node_output {
 
     /// A builder for [`AssociateNodeOutput`](crate::output::AssociateNodeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) node_association_status_token: std::option::Option<std::string::String>,
     }

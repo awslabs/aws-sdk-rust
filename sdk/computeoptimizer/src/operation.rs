@@ -5,7 +5,7 @@
 /// [`delete_recommendation_preferences`](crate::client::Client::delete_recommendation_preferences).
 ///
 /// See [`crate::client::fluent_builders::DeleteRecommendationPreferences`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRecommendationPreferences {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecommendationPref
 /// [`describe_recommendation_export_jobs`](crate::client::Client::describe_recommendation_export_jobs).
 ///
 /// See [`crate::client::fluent_builders::DescribeRecommendationExportJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRecommendationExportJobs {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRecommendationEx
 /// [`export_auto_scaling_group_recommendations`](crate::client::Client::export_auto_scaling_group_recommendations).
 ///
 /// See [`crate::client::fluent_builders::ExportAutoScalingGroupRecommendations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExportAutoScalingGroupRecommendations {
     _private: (),
 }
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportAutoScalingGroupRe
 /// [`export_ebs_volume_recommendations`](crate::client::Client::export_ebs_volume_recommendations).
 ///
 /// See [`crate::client::fluent_builders::ExportEBSVolumeRecommendations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExportEBSVolumeRecommendations {
     _private: (),
 }
@@ -143,7 +143,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportEBSVolumeRecommend
 /// [`export_ec2_instance_recommendations`](crate::client::Client::export_ec2_instance_recommendations).
 ///
 /// See [`crate::client::fluent_builders::ExportEC2InstanceRecommendations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExportEC2InstanceRecommendations {
     _private: (),
 }
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportEC2InstanceRecomme
 /// [`export_lambda_function_recommendations`](crate::client::Client::export_lambda_function_recommendations).
 ///
 /// See [`crate::client::fluent_builders::ExportLambdaFunctionRecommendations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExportLambdaFunctionRecommendations {
     _private: (),
 }
@@ -211,7 +211,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportLambdaFunctionReco
 /// [`get_auto_scaling_group_recommendations`](crate::client::Client::get_auto_scaling_group_recommendations).
 ///
 /// See [`crate::client::fluent_builders::GetAutoScalingGroupRecommendations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAutoScalingGroupRecommendations {
     _private: (),
 }
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAutoScalingGroupRecom
 /// [`get_ebs_volume_recommendations`](crate::client::Client::get_ebs_volume_recommendations).
 ///
 /// See [`crate::client::fluent_builders::GetEBSVolumeRecommendations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEBSVolumeRecommendations {
     _private: (),
 }
@@ -279,7 +279,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEBSVolumeRecommendati
 /// [`get_ec2_instance_recommendations`](crate::client::Client::get_ec2_instance_recommendations).
 ///
 /// See [`crate::client::fluent_builders::GetEC2InstanceRecommendations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEC2InstanceRecommendations {
     _private: (),
 }
@@ -313,7 +313,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEC2InstanceRecommenda
 /// [`get_ec2_recommendation_projected_metrics`](crate::client::Client::get_ec2_recommendation_projected_metrics).
 ///
 /// See [`crate::client::fluent_builders::GetEC2RecommendationProjectedMetrics`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEC2RecommendationProjectedMetrics {
     _private: (),
 }
@@ -349,7 +349,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEC2RecommendationProj
 /// [`get_effective_recommendation_preferences`](crate::client::Client::get_effective_recommendation_preferences).
 ///
 /// See [`crate::client::fluent_builders::GetEffectiveRecommendationPreferences`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEffectiveRecommendationPreferences {
     _private: (),
 }
@@ -385,7 +385,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEffectiveRecommendati
 /// [`get_enrollment_status`](crate::client::Client::get_enrollment_status).
 ///
 /// See [`crate::client::fluent_builders::GetEnrollmentStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEnrollmentStatus {
     _private: (),
 }
@@ -419,7 +419,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEnrollmentStatus {
 /// [`get_enrollment_statuses_for_organization`](crate::client::Client::get_enrollment_statuses_for_organization).
 ///
 /// See [`crate::client::fluent_builders::GetEnrollmentStatusesForOrganization`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEnrollmentStatusesForOrganization {
     _private: (),
 }
@@ -455,7 +455,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEnrollmentStatusesFor
 /// [`get_lambda_function_recommendations`](crate::client::Client::get_lambda_function_recommendations).
 ///
 /// See [`crate::client::fluent_builders::GetLambdaFunctionRecommendations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLambdaFunctionRecommendations {
     _private: (),
 }
@@ -489,7 +489,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLambdaFunctionRecomme
 /// [`get_recommendation_preferences`](crate::client::Client::get_recommendation_preferences).
 ///
 /// See [`crate::client::fluent_builders::GetRecommendationPreferences`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRecommendationPreferences {
     _private: (),
 }
@@ -523,7 +523,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecommendationPrefere
 /// [`get_recommendation_summaries`](crate::client::Client::get_recommendation_summaries).
 ///
 /// See [`crate::client::fluent_builders::GetRecommendationSummaries`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRecommendationSummaries {
     _private: (),
 }
@@ -557,7 +557,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecommendationSummari
 /// [`put_recommendation_preferences`](crate::client::Client::put_recommendation_preferences).
 ///
 /// See [`crate::client::fluent_builders::PutRecommendationPreferences`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRecommendationPreferences {
     _private: (),
 }
@@ -591,7 +591,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRecommendationPrefere
 /// [`update_enrollment_status`](crate::client::Client::update_enrollment_status).
 ///
 /// See [`crate::client::fluent_builders::UpdateEnrollmentStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateEnrollmentStatus {
     _private: (),
 }

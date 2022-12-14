@@ -5,7 +5,7 @@
 /// [`create_media_capture_pipeline`](crate::client::Client::create_media_capture_pipeline).
 ///
 /// See [`crate::client::fluent_builders::CreateMediaCapturePipeline`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMediaCapturePipeline {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMediaCapturePipeli
 /// [`create_media_concatenation_pipeline`](crate::client::Client::create_media_concatenation_pipeline).
 ///
 /// See [`crate::client::fluent_builders::CreateMediaConcatenationPipeline`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMediaConcatenationPipeline {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMediaConcatenation
 /// [`create_media_live_connector_pipeline`](crate::client::Client::create_media_live_connector_pipeline).
 ///
 /// See [`crate::client::fluent_builders::CreateMediaLiveConnectorPipeline`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMediaLiveConnectorPipeline {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMediaLiveConnector
 /// [`delete_media_capture_pipeline`](crate::client::Client::delete_media_capture_pipeline).
 ///
 /// See [`crate::client::fluent_builders::DeleteMediaCapturePipeline`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMediaCapturePipeline {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMediaCapturePipeli
 /// [`delete_media_pipeline`](crate::client::Client::delete_media_pipeline).
 ///
 /// See [`crate::client::fluent_builders::DeleteMediaPipeline`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMediaPipeline {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMediaPipeline {
 /// [`get_media_capture_pipeline`](crate::client::Client::get_media_capture_pipeline).
 ///
 /// See [`crate::client::fluent_builders::GetMediaCapturePipeline`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMediaCapturePipeline {
     _private: (),
 }
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMediaCapturePipeline 
 /// [`get_media_pipeline`](crate::client::Client::get_media_pipeline).
 ///
 /// See [`crate::client::fluent_builders::GetMediaPipeline`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMediaPipeline {
     _private: (),
 }
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMediaPipeline {
 /// [`list_media_capture_pipelines`](crate::client::Client::list_media_capture_pipelines).
 ///
 /// See [`crate::client::fluent_builders::ListMediaCapturePipelines`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMediaCapturePipelines {
     _private: (),
 }
@@ -277,7 +277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMediaCapturePipeline
 /// [`list_media_pipelines`](crate::client::Client::list_media_pipelines).
 ///
 /// See [`crate::client::fluent_builders::ListMediaPipelines`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMediaPipelines {
     _private: (),
 }
@@ -311,7 +311,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMediaPipelines {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -345,7 +345,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -377,7 +377,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }

@@ -7,7 +7,7 @@ pub struct UpdateVolumeOutput {}
 pub mod update_volume_output {
 
     /// A builder for [`UpdateVolumeOutput`](crate::output::UpdateVolumeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateVolumeOutput`](crate::output::UpdateVolumeOutput).
@@ -31,7 +31,7 @@ pub struct UpdateUserProfileOutput {}
 pub mod update_user_profile_output {
 
     /// A builder for [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput).
@@ -55,7 +55,7 @@ pub struct UpdateStackOutput {}
 pub mod update_stack_output {
 
     /// A builder for [`UpdateStackOutput`](crate::output::UpdateStackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateStackOutput`](crate::output::UpdateStackOutput).
@@ -79,7 +79,7 @@ pub struct UpdateRdsDbInstanceOutput {}
 pub mod update_rds_db_instance_output {
 
     /// A builder for [`UpdateRdsDbInstanceOutput`](crate::output::UpdateRdsDbInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateRdsDbInstanceOutput`](crate::output::UpdateRdsDbInstanceOutput).
@@ -103,7 +103,7 @@ pub struct UpdateMyUserProfileOutput {}
 pub mod update_my_user_profile_output {
 
     /// A builder for [`UpdateMyUserProfileOutput`](crate::output::UpdateMyUserProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateMyUserProfileOutput`](crate::output::UpdateMyUserProfileOutput).
@@ -127,7 +127,7 @@ pub struct UpdateLayerOutput {}
 pub mod update_layer_output {
 
     /// A builder for [`UpdateLayerOutput`](crate::output::UpdateLayerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateLayerOutput`](crate::output::UpdateLayerOutput).
@@ -151,7 +151,7 @@ pub struct UpdateInstanceOutput {}
 pub mod update_instance_output {
 
     /// A builder for [`UpdateInstanceOutput`](crate::output::UpdateInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateInstanceOutput`](crate::output::UpdateInstanceOutput).
@@ -175,7 +175,7 @@ pub struct UpdateElasticIpOutput {}
 pub mod update_elastic_ip_output {
 
     /// A builder for [`UpdateElasticIpOutput`](crate::output::UpdateElasticIpOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateElasticIpOutput`](crate::output::UpdateElasticIpOutput).
@@ -199,7 +199,7 @@ pub struct UpdateAppOutput {}
 pub mod update_app_output {
 
     /// A builder for [`UpdateAppOutput`](crate::output::UpdateAppOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateAppOutput`](crate::output::UpdateAppOutput).
@@ -223,7 +223,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -247,7 +247,7 @@ pub struct UnassignVolumeOutput {}
 pub mod unassign_volume_output {
 
     /// A builder for [`UnassignVolumeOutput`](crate::output::UnassignVolumeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UnassignVolumeOutput`](crate::output::UnassignVolumeOutput).
@@ -271,7 +271,7 @@ pub struct UnassignInstanceOutput {}
 pub mod unassign_instance_output {
 
     /// A builder for [`UnassignInstanceOutput`](crate::output::UnassignInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UnassignInstanceOutput`](crate::output::UnassignInstanceOutput).
@@ -295,7 +295,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -319,7 +319,7 @@ pub struct StopStackOutput {}
 pub mod stop_stack_output {
 
     /// A builder for [`StopStackOutput`](crate::output::StopStackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StopStackOutput`](crate::output::StopStackOutput).
@@ -343,7 +343,7 @@ pub struct StopInstanceOutput {}
 pub mod stop_instance_output {
 
     /// A builder for [`StopInstanceOutput`](crate::output::StopInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StopInstanceOutput`](crate::output::StopInstanceOutput).
@@ -367,7 +367,7 @@ pub struct StartStackOutput {}
 pub mod start_stack_output {
 
     /// A builder for [`StartStackOutput`](crate::output::StartStackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StartStackOutput`](crate::output::StartStackOutput).
@@ -391,7 +391,7 @@ pub struct StartInstanceOutput {}
 pub mod start_instance_output {
 
     /// A builder for [`StartInstanceOutput`](crate::output::StartInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StartInstanceOutput`](crate::output::StartInstanceOutput).
@@ -415,7 +415,7 @@ pub struct SetTimeBasedAutoScalingOutput {}
 pub mod set_time_based_auto_scaling_output {
 
     /// A builder for [`SetTimeBasedAutoScalingOutput`](crate::output::SetTimeBasedAutoScalingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetTimeBasedAutoScalingOutput`](crate::output::SetTimeBasedAutoScalingOutput).
@@ -439,7 +439,7 @@ pub struct SetPermissionOutput {}
 pub mod set_permission_output {
 
     /// A builder for [`SetPermissionOutput`](crate::output::SetPermissionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetPermissionOutput`](crate::output::SetPermissionOutput).
@@ -463,7 +463,7 @@ pub struct SetLoadBasedAutoScalingOutput {}
 pub mod set_load_based_auto_scaling_output {
 
     /// A builder for [`SetLoadBasedAutoScalingOutput`](crate::output::SetLoadBasedAutoScalingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SetLoadBasedAutoScalingOutput`](crate::output::SetLoadBasedAutoScalingOutput).
@@ -497,7 +497,7 @@ impl RegisterVolumeOutput {
 pub mod register_volume_output {
 
     /// A builder for [`RegisterVolumeOutput`](crate::output::RegisterVolumeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_id: std::option::Option<std::string::String>,
     }
@@ -535,7 +535,7 @@ pub struct RegisterRdsDbInstanceOutput {}
 pub mod register_rds_db_instance_output {
 
     /// A builder for [`RegisterRdsDbInstanceOutput`](crate::output::RegisterRdsDbInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RegisterRdsDbInstanceOutput`](crate::output::RegisterRdsDbInstanceOutput).
@@ -569,7 +569,7 @@ impl RegisterInstanceOutput {
 pub mod register_instance_output {
 
     /// A builder for [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
     }
@@ -617,7 +617,7 @@ impl RegisterElasticIpOutput {
 pub mod register_elastic_ip_output {
 
     /// A builder for [`RegisterElasticIpOutput`](crate::output::RegisterElasticIpOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elastic_ip: std::option::Option<std::string::String>,
     }
@@ -665,7 +665,7 @@ impl RegisterEcsClusterOutput {
 pub mod register_ecs_cluster_output {
 
     /// A builder for [`RegisterEcsClusterOutput`](crate::output::RegisterEcsClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ecs_cluster_arn: std::option::Option<std::string::String>,
     }
@@ -706,7 +706,7 @@ pub struct RebootInstanceOutput {}
 pub mod reboot_instance_output {
 
     /// A builder for [`RebootInstanceOutput`](crate::output::RebootInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RebootInstanceOutput`](crate::output::RebootInstanceOutput).
@@ -751,7 +751,7 @@ impl ListTagsOutput {
 pub mod list_tags_output {
 
     /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -828,7 +828,7 @@ impl GrantAccessOutput {
 pub mod grant_access_output {
 
     /// A builder for [`GrantAccessOutput`](crate::output::GrantAccessOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) temporary_credential: std::option::Option<crate::model::TemporaryCredential>,
     }
@@ -886,7 +886,7 @@ impl GetHostnameSuggestionOutput {
 pub mod get_hostname_suggestion_output {
 
     /// A builder for [`GetHostnameSuggestionOutput`](crate::output::GetHostnameSuggestionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_id: std::option::Option<std::string::String>,
         pub(crate) hostname: std::option::Option<std::string::String>,
@@ -936,7 +936,7 @@ pub struct DisassociateElasticIpOutput {}
 pub mod disassociate_elastic_ip_output {
 
     /// A builder for [`DisassociateElasticIpOutput`](crate::output::DisassociateElasticIpOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateElasticIpOutput`](crate::output::DisassociateElasticIpOutput).
@@ -960,7 +960,7 @@ pub struct DetachElasticLoadBalancerOutput {}
 pub mod detach_elastic_load_balancer_output {
 
     /// A builder for [`DetachElasticLoadBalancerOutput`](crate::output::DetachElasticLoadBalancerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DetachElasticLoadBalancerOutput`](crate::output::DetachElasticLoadBalancerOutput).
@@ -994,7 +994,7 @@ impl DescribeVolumesOutput {
 pub mod describe_volumes_output {
 
     /// A builder for [`DescribeVolumesOutput`](crate::output::DescribeVolumesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
     }
@@ -1051,7 +1051,7 @@ impl DescribeUserProfilesOutput {
 pub mod describe_user_profiles_output {
 
     /// A builder for [`DescribeUserProfilesOutput`](crate::output::DescribeUserProfilesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_profiles: std::option::Option<std::vec::Vec<crate::model::UserProfile>>,
     }
@@ -1111,7 +1111,7 @@ impl DescribeTimeBasedAutoScalingOutput {
 pub mod describe_time_based_auto_scaling_output {
 
     /// A builder for [`DescribeTimeBasedAutoScalingOutput`](crate::output::DescribeTimeBasedAutoScalingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_based_auto_scaling_configurations:
             std::option::Option<std::vec::Vec<crate::model::TimeBasedAutoScalingConfiguration>>,
@@ -1176,7 +1176,7 @@ impl DescribeStackSummaryOutput {
 pub mod describe_stack_summary_output {
 
     /// A builder for [`DescribeStackSummaryOutput`](crate::output::DescribeStackSummaryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_summary: std::option::Option<crate::model::StackSummary>,
     }
@@ -1227,7 +1227,7 @@ impl DescribeStacksOutput {
 pub mod describe_stacks_output {
 
     /// A builder for [`DescribeStacksOutput`](crate::output::DescribeStacksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stacks: std::option::Option<std::vec::Vec<crate::model::Stack>>,
     }
@@ -1295,7 +1295,7 @@ impl DescribeStackProvisioningParametersOutput {
 pub mod describe_stack_provisioning_parameters_output {
 
     /// A builder for [`DescribeStackProvisioningParametersOutput`](crate::output::DescribeStackProvisioningParametersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_installer_url: std::option::Option<std::string::String>,
         pub(crate) parameters: std::option::Option<
@@ -1375,7 +1375,7 @@ impl DescribeServiceErrorsOutput {
 pub mod describe_service_errors_output {
 
     /// A builder for [`DescribeServiceErrorsOutput`](crate::output::DescribeServiceErrorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_errors: std::option::Option<std::vec::Vec<crate::model::ServiceError>>,
     }
@@ -1432,7 +1432,7 @@ impl DescribeRdsDbInstancesOutput {
 pub mod describe_rds_db_instances_output {
 
     /// A builder for [`DescribeRdsDbInstancesOutput`](crate::output::DescribeRdsDbInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rds_db_instances:
             std::option::Option<std::vec::Vec<crate::model::RdsDbInstance>>,
@@ -1490,7 +1490,7 @@ impl DescribeRaidArraysOutput {
 pub mod describe_raid_arrays_output {
 
     /// A builder for [`DescribeRaidArraysOutput`](crate::output::DescribeRaidArraysOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) raid_arrays: std::option::Option<std::vec::Vec<crate::model::RaidArray>>,
     }
@@ -1557,7 +1557,7 @@ impl DescribePermissionsOutput {
 pub mod describe_permissions_output {
 
     /// A builder for [`DescribePermissionsOutput`](crate::output::DescribePermissionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
     }
@@ -1624,7 +1624,7 @@ impl DescribeOperatingSystemsOutput {
 pub mod describe_operating_systems_output {
 
     /// A builder for [`DescribeOperatingSystemsOutput`](crate::output::DescribeOperatingSystemsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operating_systems:
             std::option::Option<std::vec::Vec<crate::model::OperatingSystem>>,
@@ -1682,7 +1682,7 @@ impl DescribeMyUserProfileOutput {
 pub mod describe_my_user_profile_output {
 
     /// A builder for [`DescribeMyUserProfileOutput`](crate::output::DescribeMyUserProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_profile: std::option::Option<crate::model::SelfUserProfile>,
     }
@@ -1736,7 +1736,7 @@ impl DescribeLoadBasedAutoScalingOutput {
 pub mod describe_load_based_auto_scaling_output {
 
     /// A builder for [`DescribeLoadBasedAutoScalingOutput`](crate::output::DescribeLoadBasedAutoScalingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_based_auto_scaling_configurations:
             std::option::Option<std::vec::Vec<crate::model::LoadBasedAutoScalingConfiguration>>,
@@ -1801,7 +1801,7 @@ impl DescribeLayersOutput {
 pub mod describe_layers_output {
 
     /// A builder for [`DescribeLayersOutput`](crate::output::DescribeLayersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
     }
@@ -1858,7 +1858,7 @@ impl DescribeInstancesOutput {
 pub mod describe_instances_output {
 
     /// A builder for [`DescribeInstancesOutput`](crate::output::DescribeInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     }
@@ -1918,7 +1918,7 @@ impl DescribeElasticLoadBalancersOutput {
 pub mod describe_elastic_load_balancers_output {
 
     /// A builder for [`DescribeElasticLoadBalancersOutput`](crate::output::DescribeElasticLoadBalancersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elastic_load_balancers:
             std::option::Option<std::vec::Vec<crate::model::ElasticLoadBalancer>>,
@@ -1976,7 +1976,7 @@ impl DescribeElasticIpsOutput {
 pub mod describe_elastic_ips_output {
 
     /// A builder for [`DescribeElasticIpsOutput`](crate::output::DescribeElasticIpsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elastic_ips: std::option::Option<std::vec::Vec<crate::model::ElasticIp>>,
     }
@@ -2040,7 +2040,7 @@ impl DescribeEcsClustersOutput {
 pub mod describe_ecs_clusters_output {
 
     /// A builder for [`DescribeEcsClustersOutput`](crate::output::DescribeEcsClustersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ecs_clusters: std::option::Option<std::vec::Vec<crate::model::EcsCluster>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2109,7 +2109,7 @@ impl DescribeDeploymentsOutput {
 pub mod describe_deployments_output {
 
     /// A builder for [`DescribeDeploymentsOutput`](crate::output::DescribeDeploymentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployments: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
     }
@@ -2166,7 +2166,7 @@ impl DescribeCommandsOutput {
 pub mod describe_commands_output {
 
     /// A builder for [`DescribeCommandsOutput`](crate::output::DescribeCommandsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commands: std::option::Option<std::vec::Vec<crate::model::Command>>,
     }
@@ -2223,7 +2223,7 @@ impl DescribeAppsOutput {
 pub mod describe_apps_output {
 
     /// A builder for [`DescribeAppsOutput`](crate::output::DescribeAppsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apps: std::option::Option<std::vec::Vec<crate::model::App>>,
     }
@@ -2278,7 +2278,7 @@ impl DescribeAgentVersionsOutput {
 pub mod describe_agent_versions_output {
 
     /// A builder for [`DescribeAgentVersionsOutput`](crate::output::DescribeAgentVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_versions: std::option::Option<std::vec::Vec<crate::model::AgentVersion>>,
     }
@@ -2325,7 +2325,7 @@ pub struct DeregisterVolumeOutput {}
 pub mod deregister_volume_output {
 
     /// A builder for [`DeregisterVolumeOutput`](crate::output::DeregisterVolumeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterVolumeOutput`](crate::output::DeregisterVolumeOutput).
@@ -2349,7 +2349,7 @@ pub struct DeregisterRdsDbInstanceOutput {}
 pub mod deregister_rds_db_instance_output {
 
     /// A builder for [`DeregisterRdsDbInstanceOutput`](crate::output::DeregisterRdsDbInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterRdsDbInstanceOutput`](crate::output::DeregisterRdsDbInstanceOutput).
@@ -2373,7 +2373,7 @@ pub struct DeregisterInstanceOutput {}
 pub mod deregister_instance_output {
 
     /// A builder for [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput).
@@ -2397,7 +2397,7 @@ pub struct DeregisterElasticIpOutput {}
 pub mod deregister_elastic_ip_output {
 
     /// A builder for [`DeregisterElasticIpOutput`](crate::output::DeregisterElasticIpOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterElasticIpOutput`](crate::output::DeregisterElasticIpOutput).
@@ -2421,7 +2421,7 @@ pub struct DeregisterEcsClusterOutput {}
 pub mod deregister_ecs_cluster_output {
 
     /// A builder for [`DeregisterEcsClusterOutput`](crate::output::DeregisterEcsClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterEcsClusterOutput`](crate::output::DeregisterEcsClusterOutput).
@@ -2445,7 +2445,7 @@ pub struct DeleteUserProfileOutput {}
 pub mod delete_user_profile_output {
 
     /// A builder for [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput).
@@ -2469,7 +2469,7 @@ pub struct DeleteStackOutput {}
 pub mod delete_stack_output {
 
     /// A builder for [`DeleteStackOutput`](crate::output::DeleteStackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteStackOutput`](crate::output::DeleteStackOutput).
@@ -2493,7 +2493,7 @@ pub struct DeleteLayerOutput {}
 pub mod delete_layer_output {
 
     /// A builder for [`DeleteLayerOutput`](crate::output::DeleteLayerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLayerOutput`](crate::output::DeleteLayerOutput).
@@ -2517,7 +2517,7 @@ pub struct DeleteInstanceOutput {}
 pub mod delete_instance_output {
 
     /// A builder for [`DeleteInstanceOutput`](crate::output::DeleteInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteInstanceOutput`](crate::output::DeleteInstanceOutput).
@@ -2541,7 +2541,7 @@ pub struct DeleteAppOutput {}
 pub mod delete_app_output {
 
     /// A builder for [`DeleteAppOutput`](crate::output::DeleteAppOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAppOutput`](crate::output::DeleteAppOutput).
@@ -2575,7 +2575,7 @@ impl CreateUserProfileOutput {
 pub mod create_user_profile_output {
 
     /// A builder for [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iam_user_arn: std::option::Option<std::string::String>,
     }
@@ -2623,7 +2623,7 @@ impl CreateStackOutput {
 pub mod create_stack_output {
 
     /// A builder for [`CreateStackOutput`](crate::output::CreateStackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
     }
@@ -2671,7 +2671,7 @@ impl CreateLayerOutput {
 pub mod create_layer_output {
 
     /// A builder for [`CreateLayerOutput`](crate::output::CreateLayerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_id: std::option::Option<std::string::String>,
     }
@@ -2719,7 +2719,7 @@ impl CreateInstanceOutput {
 pub mod create_instance_output {
 
     /// A builder for [`CreateInstanceOutput`](crate::output::CreateInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
     }
@@ -2767,7 +2767,7 @@ impl CreateDeploymentOutput {
 pub mod create_deployment_output {
 
     /// A builder for [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
     }
@@ -2818,7 +2818,7 @@ impl CreateAppOutput {
 pub mod create_app_output {
 
     /// A builder for [`CreateAppOutput`](crate::output::CreateAppOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
     }
@@ -2866,7 +2866,7 @@ impl CloneStackOutput {
 pub mod clone_stack_output {
 
     /// A builder for [`CloneStackOutput`](crate::output::CloneStackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
     }
@@ -2904,7 +2904,7 @@ pub struct AttachElasticLoadBalancerOutput {}
 pub mod attach_elastic_load_balancer_output {
 
     /// A builder for [`AttachElasticLoadBalancerOutput`](crate::output::AttachElasticLoadBalancerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AttachElasticLoadBalancerOutput`](crate::output::AttachElasticLoadBalancerOutput).
@@ -2928,7 +2928,7 @@ pub struct AssociateElasticIpOutput {}
 pub mod associate_elastic_ip_output {
 
     /// A builder for [`AssociateElasticIpOutput`](crate::output::AssociateElasticIpOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateElasticIpOutput`](crate::output::AssociateElasticIpOutput).
@@ -2952,7 +2952,7 @@ pub struct AssignVolumeOutput {}
 pub mod assign_volume_output {
 
     /// A builder for [`AssignVolumeOutput`](crate::output::AssignVolumeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AssignVolumeOutput`](crate::output::AssignVolumeOutput).
@@ -2976,7 +2976,7 @@ pub struct AssignInstanceOutput {}
 pub mod assign_instance_output {
 
     /// A builder for [`AssignInstanceOutput`](crate::output::AssignInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AssignInstanceOutput`](crate::output::AssignInstanceOutput).

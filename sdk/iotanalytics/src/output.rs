@@ -7,7 +7,7 @@ pub struct UpdatePipelineOutput {}
 pub mod update_pipeline_output {
 
     /// A builder for [`UpdatePipelineOutput`](crate::output::UpdatePipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdatePipelineOutput`](crate::output::UpdatePipelineOutput).
@@ -31,7 +31,7 @@ pub struct UpdateDatastoreOutput {}
 pub mod update_datastore_output {
 
     /// A builder for [`UpdateDatastoreOutput`](crate::output::UpdateDatastoreOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDatastoreOutput`](crate::output::UpdateDatastoreOutput).
@@ -55,7 +55,7 @@ pub struct UpdateDatasetOutput {}
 pub mod update_dataset_output {
 
     /// A builder for [`UpdateDatasetOutput`](crate::output::UpdateDatasetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDatasetOutput`](crate::output::UpdateDatasetOutput).
@@ -79,7 +79,7 @@ pub struct UpdateChannelOutput {}
 pub mod update_channel_output {
 
     /// A builder for [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
@@ -103,7 +103,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -127,7 +127,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -161,7 +161,7 @@ impl StartPipelineReprocessingOutput {
 pub mod start_pipeline_reprocessing_output {
 
     /// A builder for [`StartPipelineReprocessingOutput`](crate::output::StartPipelineReprocessingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reprocessing_id: std::option::Option<std::string::String>,
     }
@@ -212,7 +212,7 @@ impl SampleChannelDataOutput {
 pub mod sample_channel_data_output {
 
     /// A builder for [`SampleChannelDataOutput`](crate::output::SampleChannelDataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) payloads: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
     }
@@ -276,7 +276,7 @@ impl RunPipelineActivityOutput {
 pub mod run_pipeline_activity_output {
 
     /// A builder for [`RunPipelineActivityOutput`](crate::output::RunPipelineActivityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) payloads: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
         pub(crate) log_result: std::option::Option<std::string::String>,
@@ -335,7 +335,7 @@ pub struct PutLoggingOptionsOutput {}
 pub mod put_logging_options_output {
 
     /// A builder for [`PutLoggingOptionsOutput`](crate::output::PutLoggingOptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutLoggingOptionsOutput`](crate::output::PutLoggingOptionsOutput).
@@ -369,7 +369,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -431,7 +431,7 @@ impl ListPipelinesOutput {
 pub mod list_pipelines_output {
 
     /// A builder for [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_summaries:
             std::option::Option<std::vec::Vec<crate::model::PipelineSummary>>,
@@ -508,7 +508,7 @@ impl ListDatastoresOutput {
 pub mod list_datastores_output {
 
     /// A builder for [`ListDatastoresOutput`](crate::output::ListDatastoresOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_summaries:
             std::option::Option<std::vec::Vec<crate::model::DatastoreSummary>>,
@@ -585,7 +585,7 @@ impl ListDatasetsOutput {
 pub mod list_datasets_output {
 
     /// A builder for [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_summaries:
             std::option::Option<std::vec::Vec<crate::model::DatasetSummary>>,
@@ -665,7 +665,7 @@ impl ListDatasetContentsOutput {
 pub mod list_dataset_contents_output {
 
     /// A builder for [`ListDatasetContentsOutput`](crate::output::ListDatasetContentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_content_summaries:
             std::option::Option<std::vec::Vec<crate::model::DatasetContentSummary>>,
@@ -745,7 +745,7 @@ impl ListChannelsOutput {
 pub mod list_channels_output {
 
     /// A builder for [`ListChannelsOutput`](crate::output::ListChannelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_summaries:
             std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
@@ -829,7 +829,7 @@ impl GetDatasetContentOutput {
 pub mod get_dataset_content_output {
 
     /// A builder for [`GetDatasetContentOutput`](crate::output::GetDatasetContentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entries: std::option::Option<std::vec::Vec<crate::model::DatasetEntry>>,
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -916,7 +916,7 @@ impl DescribePipelineOutput {
 pub mod describe_pipeline_output {
 
     /// A builder for [`DescribePipelineOutput`](crate::output::DescribePipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline: std::option::Option<crate::model::Pipeline>,
     }
@@ -964,7 +964,7 @@ impl DescribeLoggingOptionsOutput {
 pub mod describe_logging_options_output {
 
     /// A builder for [`DescribeLoggingOptionsOutput`](crate::output::DescribeLoggingOptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_options: std::option::Option<crate::model::LoggingOptions>,
     }
@@ -1022,7 +1022,7 @@ impl DescribeDatastoreOutput {
 pub mod describe_datastore_output {
 
     /// A builder for [`DescribeDatastoreOutput`](crate::output::DescribeDatastoreOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore: std::option::Option<crate::model::Datastore>,
         pub(crate) statistics: std::option::Option<crate::model::DatastoreStatistics>,
@@ -1088,7 +1088,7 @@ impl DescribeDatasetOutput {
 pub mod describe_dataset_output {
 
     /// A builder for [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset: std::option::Option<crate::model::Dataset>,
     }
@@ -1143,7 +1143,7 @@ impl DescribeChannelOutput {
 pub mod describe_channel_output {
 
     /// A builder for [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel: std::option::Option<crate::model::Channel>,
         pub(crate) statistics: std::option::Option<crate::model::ChannelStatistics>,
@@ -1196,7 +1196,7 @@ pub struct DeletePipelineOutput {}
 pub mod delete_pipeline_output {
 
     /// A builder for [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
@@ -1220,7 +1220,7 @@ pub struct DeleteDatastoreOutput {}
 pub mod delete_datastore_output {
 
     /// A builder for [`DeleteDatastoreOutput`](crate::output::DeleteDatastoreOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDatastoreOutput`](crate::output::DeleteDatastoreOutput).
@@ -1244,7 +1244,7 @@ pub struct DeleteDatasetContentOutput {}
 pub mod delete_dataset_content_output {
 
     /// A builder for [`DeleteDatasetContentOutput`](crate::output::DeleteDatasetContentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDatasetContentOutput`](crate::output::DeleteDatasetContentOutput).
@@ -1268,7 +1268,7 @@ pub struct DeleteDatasetOutput {}
 pub mod delete_dataset_output {
 
     /// A builder for [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
@@ -1292,7 +1292,7 @@ pub struct DeleteChannelOutput {}
 pub mod delete_channel_output {
 
     /// A builder for [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
@@ -1333,7 +1333,7 @@ impl CreatePipelineOutput {
 pub mod create_pipeline_output {
 
     /// A builder for [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
         pub(crate) pipeline_arn: std::option::Option<std::string::String>,
@@ -1410,7 +1410,7 @@ impl CreateDatastoreOutput {
 pub mod create_datastore_output {
 
     /// A builder for [`CreateDatastoreOutput`](crate::output::CreateDatastoreOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_name: std::option::Option<std::string::String>,
         pub(crate) datastore_arn: std::option::Option<std::string::String>,
@@ -1491,7 +1491,7 @@ impl CreateDatasetContentOutput {
 pub mod create_dataset_content_output {
 
     /// A builder for [`CreateDatasetContentOutput`](crate::output::CreateDatasetContentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_id: std::option::Option<std::string::String>,
     }
@@ -1553,7 +1553,7 @@ impl CreateDatasetOutput {
 pub mod create_dataset_output {
 
     /// A builder for [`CreateDatasetOutput`](crate::output::CreateDatasetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
@@ -1642,7 +1642,7 @@ impl CreateChannelOutput {
 pub mod create_channel_output {
 
     /// A builder for [`CreateChannelOutput`](crate::output::CreateChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -1707,7 +1707,7 @@ pub struct CancelPipelineReprocessingOutput {}
 pub mod cancel_pipeline_reprocessing_output {
 
     /// A builder for [`CancelPipelineReprocessingOutput`](crate::output::CancelPipelineReprocessingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CancelPipelineReprocessingOutput`](crate::output::CancelPipelineReprocessingOutput).
@@ -1744,7 +1744,7 @@ impl BatchPutMessageOutput {
 pub mod batch_put_message_output {
 
     /// A builder for [`BatchPutMessageOutput`](crate::output::BatchPutMessageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_put_message_error_entries:
             std::option::Option<std::vec::Vec<crate::model::BatchPutMessageErrorEntry>>,

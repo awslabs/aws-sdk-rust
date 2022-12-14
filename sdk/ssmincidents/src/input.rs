@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_replication_set_input {
 
     /// A builder for [`CreateReplicationSetInput`](crate::input::CreateReplicationSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regions: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::RegionMapInputValue>,
@@ -181,7 +181,7 @@ impl CreateReplicationSetInput {
 pub mod create_response_plan_input {
 
     /// A builder for [`CreateResponsePlanInput`](crate::input::CreateResponsePlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -445,7 +445,7 @@ impl CreateResponsePlanInput {
 pub mod create_timeline_event_input {
 
     /// A builder for [`CreateTimelineEventInput`](crate::input::CreateTimelineEventInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) incident_record_arn: std::option::Option<std::string::String>,
@@ -644,7 +644,7 @@ impl CreateTimelineEventInput {
 pub mod delete_incident_record_input {
 
     /// A builder for [`DeleteIncidentRecordInput`](crate::input::DeleteIncidentRecordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -786,7 +786,7 @@ impl DeleteIncidentRecordInput {
 pub mod delete_replication_set_input {
 
     /// A builder for [`DeleteReplicationSetInput`](crate::input::DeleteReplicationSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -936,7 +936,7 @@ impl DeleteReplicationSetInput {
 pub mod delete_resource_policy_input {
 
     /// A builder for [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) policy_id: std::option::Option<std::string::String>,
@@ -1092,7 +1092,7 @@ impl DeleteResourcePolicyInput {
 pub mod delete_response_plan_input {
 
     /// A builder for [`DeleteResponsePlanInput`](crate::input::DeleteResponsePlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -1232,7 +1232,7 @@ impl DeleteResponsePlanInput {
 pub mod delete_timeline_event_input {
 
     /// A builder for [`DeleteTimelineEventInput`](crate::input::DeleteTimelineEventInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) incident_record_arn: std::option::Option<std::string::String>,
         pub(crate) event_id: std::option::Option<std::string::String>,
@@ -1389,7 +1389,7 @@ impl DeleteTimelineEventInput {
 pub mod get_incident_record_input {
 
     /// A builder for [`GetIncidentRecordInput`](crate::input::GetIncidentRecordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -1539,7 +1539,7 @@ impl GetIncidentRecordInput {
 pub mod get_replication_set_input {
 
     /// A builder for [`GetReplicationSetInput`](crate::input::GetReplicationSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -1689,7 +1689,7 @@ impl GetReplicationSetInput {
 pub mod get_resource_policies_input {
 
     /// A builder for [`GetResourcePoliciesInput`](crate::input::GetResourcePoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1879,7 +1879,7 @@ impl GetResourcePoliciesInput {
 pub mod get_response_plan_input {
 
     /// A builder for [`GetResponsePlanInput`](crate::input::GetResponsePlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -2027,7 +2027,7 @@ impl GetResponsePlanInput {
 pub mod get_timeline_event_input {
 
     /// A builder for [`GetTimelineEventInput`](crate::input::GetTimelineEventInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) incident_record_arn: std::option::Option<std::string::String>,
         pub(crate) event_id: std::option::Option<std::string::String>,
@@ -2213,7 +2213,7 @@ impl GetTimelineEventInput {
 pub mod list_incident_records_input {
 
     /// A builder for [`ListIncidentRecordsInput`](crate::input::ListIncidentRecordsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2412,7 +2412,7 @@ impl ListIncidentRecordsInput {
 pub mod list_related_items_input {
 
     /// A builder for [`ListRelatedItemsInput`](crate::input::ListRelatedItemsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) incident_record_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2581,7 +2581,7 @@ impl ListRelatedItemsInput {
 pub mod list_replication_sets_input {
 
     /// A builder for [`ListReplicationSetsInput`](crate::input::ListReplicationSetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2735,7 +2735,7 @@ impl ListReplicationSetsInput {
 pub mod list_response_plans_input {
 
     /// A builder for [`ListResponsePlansInput`](crate::input::ListResponsePlansInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2889,7 +2889,7 @@ impl ListResponsePlansInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3037,7 +3037,7 @@ impl ListTagsForResourceInput {
 pub mod list_timeline_events_input {
 
     /// A builder for [`ListTimelineEventsInput`](crate::input::ListTimelineEventsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) incident_record_arn: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -3277,7 +3277,7 @@ impl ListTimelineEventsInput {
 pub mod put_resource_policy_input {
 
     /// A builder for [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -3431,7 +3431,7 @@ impl PutResourcePolicyInput {
 pub mod start_incident_input {
 
     /// A builder for [`StartIncidentInput`](crate::input::StartIncidentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) response_plan_arn: std::option::Option<std::string::String>,
@@ -3665,7 +3665,7 @@ impl StartIncidentInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -3854,7 +3854,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4039,7 +4039,7 @@ impl UntagResourceInput {
 pub mod update_deletion_protection_input {
 
     /// A builder for [`UpdateDeletionProtectionInput`](crate::input::UpdateDeletionProtectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) deletion_protected: std::option::Option<bool>,
@@ -4210,7 +4210,7 @@ impl UpdateDeletionProtectionInput {
 pub mod update_incident_record_input {
 
     /// A builder for [`UpdateIncidentRecordInput`](crate::input::UpdateIncidentRecordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4475,7 +4475,7 @@ impl UpdateIncidentRecordInput {
 pub mod update_related_items_input {
 
     /// A builder for [`UpdateRelatedItemsInput`](crate::input::UpdateRelatedItemsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) incident_record_arn: std::option::Option<std::string::String>,
@@ -4650,7 +4650,7 @@ impl UpdateRelatedItemsInput {
 pub mod update_replication_set_input {
 
     /// A builder for [`UpdateReplicationSetInput`](crate::input::UpdateReplicationSetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) actions:
@@ -4831,7 +4831,7 @@ impl UpdateReplicationSetInput {
 pub mod update_response_plan_input {
 
     /// A builder for [`UpdateResponsePlanInput`](crate::input::UpdateResponsePlanInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5185,7 +5185,7 @@ impl UpdateResponsePlanInput {
 pub mod update_timeline_event_input {
 
     /// A builder for [`UpdateTimelineEventInput`](crate::input::UpdateTimelineEventInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) incident_record_arn: std::option::Option<std::string::String>,

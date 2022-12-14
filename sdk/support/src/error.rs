@@ -30,7 +30,7 @@ impl std::error::Error for InternalServerError {}
 pub mod internal_server_error {
 
     /// A builder for [`InternalServerError`](crate::error::InternalServerError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl std::error::Error for CaseIdNotFound {}
 pub mod case_id_not_found {
 
     /// A builder for [`CaseIdNotFound`](crate::error::CaseIdNotFound).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl std::error::Error for DescribeAttachmentLimitExceeded {}
 pub mod describe_attachment_limit_exceeded {
 
     /// A builder for [`DescribeAttachmentLimitExceeded`](crate::error::DescribeAttachmentLimitExceeded).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -210,7 +210,7 @@ impl std::error::Error for AttachmentIdNotFound {}
 pub mod attachment_id_not_found {
 
     /// A builder for [`AttachmentIdNotFound`](crate::error::AttachmentIdNotFound).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -270,7 +270,7 @@ impl std::error::Error for CaseCreationLimitExceeded {}
 pub mod case_creation_limit_exceeded {
 
     /// A builder for [`CaseCreationLimitExceeded`](crate::error::CaseCreationLimitExceeded).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -330,7 +330,7 @@ impl std::error::Error for AttachmentSetIdNotFound {}
 pub mod attachment_set_id_not_found {
 
     /// A builder for [`AttachmentSetIdNotFound`](crate::error::AttachmentSetIdNotFound).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -390,7 +390,7 @@ impl std::error::Error for AttachmentSetExpired {}
 pub mod attachment_set_expired {
 
     /// A builder for [`AttachmentSetExpired`](crate::error::AttachmentSetExpired).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -450,7 +450,7 @@ impl std::error::Error for AttachmentSetSizeLimitExceeded {}
 pub mod attachment_set_size_limit_exceeded {
 
     /// A builder for [`AttachmentSetSizeLimitExceeded`](crate::error::AttachmentSetSizeLimitExceeded).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -510,7 +510,7 @@ impl std::error::Error for AttachmentLimitExceeded {}
 pub mod attachment_limit_exceeded {
 
     /// A builder for [`AttachmentLimitExceeded`](crate::error::AttachmentLimitExceeded).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

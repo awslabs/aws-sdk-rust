@@ -29,7 +29,7 @@ impl QueryFilter {
 pub mod query_filter {
 
     /// A builder for [`QueryFilter`](crate::model::QueryFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -107,7 +107,7 @@ impl TimeRange {
 pub mod time_range {
 
     /// A builder for [`TimeRange`](crate::model::TimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) after: std::option::Option<i64>,
         pub(crate) before: std::option::Option<i64>,
@@ -241,7 +241,7 @@ impl AppMonitorConfiguration {
 pub mod app_monitor_configuration {
 
     /// A builder for [`AppMonitorConfiguration`](crate::model::AppMonitorConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) excluded_pages: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -568,7 +568,7 @@ impl AppMonitorSummary {
 pub mod app_monitor_summary {
 
     /// A builder for [`AppMonitorSummary`](crate::model::AppMonitorSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -824,7 +824,7 @@ impl AppMonitor {
 pub mod app_monitor {
 
     /// A builder for [`AppMonitor`](crate::model::AppMonitor).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -998,7 +998,7 @@ impl DataStorage {
 pub mod data_storage {
 
     /// A builder for [`DataStorage`](crate::model::DataStorage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cw_log: std::option::Option<crate::model::CwLog>,
     }
@@ -1053,7 +1053,7 @@ impl CwLog {
 pub mod cw_log {
 
     /// A builder for [`CwLog`](crate::model::CwLog).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cw_log_enabled: std::option::Option<bool>,
         pub(crate) cw_log_group: std::option::Option<std::string::String>,
@@ -1141,7 +1141,7 @@ impl RumEvent {
 pub mod rum_event {
 
     /// A builder for [`RumEvent`](crate::model::RumEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -1247,7 +1247,7 @@ impl UserDetails {
 pub mod user_details {
 
     /// A builder for [`UserDetails`](crate::model::UserDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) session_id: std::option::Option<std::string::String>,
@@ -1321,7 +1321,7 @@ impl AppMonitorDetails {
 pub mod app_monitor_details {
 
     /// A builder for [`AppMonitorDetails`](crate::model::AppMonitorDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,

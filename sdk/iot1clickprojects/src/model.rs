@@ -35,7 +35,7 @@ impl PlacementTemplate {
 pub mod placement_template {
 
     /// A builder for [`PlacementTemplate`](crate::model::PlacementTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_attributes: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -140,7 +140,7 @@ impl DeviceTemplate {
 pub mod device_template {
 
     /// A builder for [`DeviceTemplate`](crate::model::DeviceTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_type: std::option::Option<std::string::String>,
         pub(crate) callback_overrides: std::option::Option<
@@ -249,7 +249,7 @@ impl ProjectSummary {
 pub mod project_summary {
 
     /// A builder for [`ProjectSummary`](crate::model::ProjectSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -389,7 +389,7 @@ impl PlacementSummary {
 pub mod placement_summary {
 
     /// A builder for [`PlacementSummary`](crate::model::PlacementSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
         pub(crate) placement_name: std::option::Option<std::string::String>,
@@ -528,7 +528,7 @@ impl ProjectDescription {
 pub mod project_description {
 
     /// A builder for [`ProjectDescription`](crate::model::ProjectDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -706,7 +706,7 @@ impl PlacementDescription {
 pub mod placement_description {
 
     /// A builder for [`PlacementDescription`](crate::model::PlacementDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
         pub(crate) placement_name: std::option::Option<std::string::String>,

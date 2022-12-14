@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_http_namespace_input {
 
     /// A builder for [`CreateHttpNamespaceInput`](crate::input::CreateHttpNamespaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
@@ -203,7 +203,7 @@ impl CreateHttpNamespaceInput {
 pub mod create_private_dns_namespace_input {
 
     /// A builder for [`CreatePrivateDnsNamespaceInput`](crate::input::CreatePrivateDnsNamespaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
@@ -430,7 +430,7 @@ impl CreatePrivateDnsNamespaceInput {
 pub mod create_public_dns_namespace_input {
 
     /// A builder for [`CreatePublicDnsNamespaceInput`](crate::input::CreatePublicDnsNamespaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
@@ -645,7 +645,7 @@ impl CreatePublicDnsNamespaceInput {
 pub mod create_service_input {
 
     /// A builder for [`CreateServiceInput`](crate::input::CreateServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) namespace_id: std::option::Option<std::string::String>,
@@ -947,7 +947,7 @@ impl CreateServiceInput {
 pub mod delete_namespace_input {
 
     /// A builder for [`DeleteNamespaceInput`](crate::input::DeleteNamespaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1090,7 +1090,7 @@ impl DeleteNamespaceInput {
 pub mod delete_service_input {
 
     /// A builder for [`DeleteServiceInput`](crate::input::DeleteServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1233,7 +1233,7 @@ impl DeleteServiceInput {
 pub mod deregister_instance_input {
 
     /// A builder for [`DeregisterInstanceInput`](crate::input::DeregisterInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_id: std::option::Option<std::string::String>,
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -1392,7 +1392,7 @@ impl DeregisterInstanceInput {
 pub mod discover_instances_input {
 
     /// A builder for [`DiscoverInstancesInput`](crate::input::DiscoverInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace_name: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
@@ -1693,7 +1693,7 @@ impl DiscoverInstancesInput {
 pub mod get_instance_input {
 
     /// A builder for [`GetInstanceInput`](crate::input::GetInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_id: std::option::Option<std::string::String>,
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -1850,7 +1850,7 @@ impl GetInstanceInput {
 pub mod get_instances_health_status_input {
 
     /// A builder for [`GetInstancesHealthStatusInput`](crate::input::GetInstancesHealthStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_id: std::option::Option<std::string::String>,
         pub(crate) instances: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2052,7 +2052,7 @@ impl GetInstancesHealthStatusInput {
 pub mod get_namespace_input {
 
     /// A builder for [`GetNamespaceInput`](crate::input::GetNamespaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -2195,7 +2195,7 @@ impl GetNamespaceInput {
 pub mod get_operation_input {
 
     /// A builder for [`GetOperationInput`](crate::input::GetOperationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
@@ -2340,7 +2340,7 @@ impl GetOperationInput {
 pub mod get_service_input {
 
     /// A builder for [`GetServiceInput`](crate::input::GetServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -2483,7 +2483,7 @@ impl GetServiceInput {
 pub mod list_instances_input {
 
     /// A builder for [`ListInstancesInput`](crate::input::ListInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2654,7 +2654,7 @@ impl ListInstancesInput {
 pub mod list_namespaces_input {
 
     /// A builder for [`ListNamespacesInput`](crate::input::ListNamespacesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2840,7 +2840,7 @@ impl ListNamespacesInput {
 pub mod list_operations_input {
 
     /// A builder for [`ListOperationsInput`](crate::input::ListOperationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3026,7 +3026,7 @@ impl ListOperationsInput {
 pub mod list_services_input {
 
     /// A builder for [`ListServicesInput`](crate::input::ListServicesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3212,7 +3212,7 @@ impl ListServicesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3361,7 +3361,7 @@ impl ListTagsForResourceInput {
 pub mod register_instance_input {
 
     /// A builder for [`RegisterInstanceInput`](crate::input::RegisterInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_id: std::option::Option<std::string::String>,
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -3719,7 +3719,7 @@ impl RegisterInstanceInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3885,7 +3885,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4051,7 +4051,7 @@ impl UntagResourceInput {
 pub mod update_http_namespace_input {
 
     /// A builder for [`UpdateHttpNamespaceInput`](crate::input::UpdateHttpNamespaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) updater_request_id: std::option::Option<std::string::String>,
@@ -4231,7 +4231,7 @@ impl UpdateHttpNamespaceInput {
 pub mod update_instance_custom_health_status_input {
 
     /// A builder for [`UpdateInstanceCustomHealthStatusInput`](crate::input::UpdateInstanceCustomHealthStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_id: std::option::Option<std::string::String>,
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -4404,7 +4404,7 @@ impl UpdateInstanceCustomHealthStatusInput {
 pub mod update_private_dns_namespace_input {
 
     /// A builder for [`UpdatePrivateDnsNamespaceInput`](crate::input::UpdatePrivateDnsNamespaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) updater_request_id: std::option::Option<std::string::String>,
@@ -4586,7 +4586,7 @@ impl UpdatePrivateDnsNamespaceInput {
 pub mod update_public_dns_namespace_input {
 
     /// A builder for [`UpdatePublicDnsNamespaceInput`](crate::input::UpdatePublicDnsNamespaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) updater_request_id: std::option::Option<std::string::String>,
@@ -4768,7 +4768,7 @@ impl UpdatePublicDnsNamespaceInput {
 pub mod update_service_input {
 
     /// A builder for [`UpdateServiceInput`](crate::input::UpdateServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) service: std::option::Option<crate::model::ServiceChange>,

@@ -39,7 +39,7 @@ impl LogPattern {
 pub mod log_pattern {
 
     /// A builder for [`LogPattern`](crate::model::LogPattern).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pattern_set_name: std::option::Option<std::string::String>,
         pub(crate) pattern_name: std::option::Option<std::string::String>,
@@ -372,7 +372,7 @@ impl ApplicationInfo {
 pub mod application_info {
 
     /// A builder for [`ApplicationInfo`](crate::model::ApplicationInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
         pub(crate) life_cycle: std::option::Option<std::string::String>,
@@ -624,7 +624,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -767,7 +767,7 @@ impl Problem {
 pub mod problem {
 
     /// A builder for [`Problem`](crate::model::Problem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) title: std::option::Option<std::string::String>,
@@ -1399,7 +1399,7 @@ impl ConfigurationEvent {
 pub mod configuration_event {
 
     /// A builder for [`ConfigurationEvent`](crate::model::ConfigurationEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitored_resource_arn: std::option::Option<std::string::String>,
         pub(crate) event_status: std::option::Option<crate::model::ConfigurationEventStatus>,
@@ -1784,7 +1784,7 @@ impl ApplicationComponent {
 pub mod application_component {
 
     /// A builder for [`ApplicationComponent`](crate::model::ApplicationComponent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_name: std::option::Option<std::string::String>,
         pub(crate) component_remarks: std::option::Option<std::string::String>,
@@ -2026,7 +2026,7 @@ impl RelatedObservations {
 pub mod related_observations {
 
     /// A builder for [`RelatedObservations`](crate::model::RelatedObservations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observation_list: std::option::Option<std::vec::Vec<crate::model::Observation>>,
     }
@@ -2393,7 +2393,7 @@ impl Observation {
 pub mod observation {
 
     /// A builder for [`Observation`](crate::model::Observation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,

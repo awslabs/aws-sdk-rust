@@ -60,7 +60,7 @@ impl TrustAnchorDetail {
 pub mod trust_anchor_detail {
 
     /// A builder for [`TrustAnchorDetail`](crate::model::TrustAnchorDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_anchor_id: std::option::Option<std::string::String>,
         pub(crate) trust_anchor_arn: std::option::Option<std::string::String>,
@@ -199,7 +199,7 @@ impl Source {
 pub mod source {
 
     /// A builder for [`Source`](crate::model::Source).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_type: std::option::Option<crate::model::TrustAnchorType>,
         pub(crate) source_data: std::option::Option<crate::model::SourceData>,
@@ -430,7 +430,7 @@ impl std::fmt::Debug for Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -540,7 +540,7 @@ impl SubjectSummary {
 pub mod subject_summary {
 
     /// A builder for [`SubjectSummary`](crate::model::SubjectSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subject_arn: std::option::Option<std::string::String>,
         pub(crate) subject_id: std::option::Option<std::string::String>,
@@ -725,7 +725,7 @@ impl SubjectDetail {
 pub mod subject_detail {
 
     /// A builder for [`SubjectDetail`](crate::model::SubjectDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subject_arn: std::option::Option<std::string::String>,
         pub(crate) subject_id: std::option::Option<std::string::String>,
@@ -915,7 +915,7 @@ impl InstanceProperty {
 pub mod instance_property {
 
     /// A builder for [`InstanceProperty`](crate::model::InstanceProperty).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) seen_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) properties: std::option::Option<
@@ -1042,7 +1042,7 @@ impl CredentialSummary {
 pub mod credential_summary {
 
     /// A builder for [`CredentialSummary`](crate::model::CredentialSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) seen_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) serial_number: std::option::Option<std::string::String>,
@@ -1236,7 +1236,7 @@ impl ProfileDetail {
 pub mod profile_detail {
 
     /// A builder for [`ProfileDetail`](crate::model::ProfileDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_id: std::option::Option<std::string::String>,
         pub(crate) profile_arn: std::option::Option<std::string::String>,
@@ -1492,7 +1492,7 @@ impl CrlDetail {
 pub mod crl_detail {
 
     /// A builder for [`CrlDetail`](crate::model::CrlDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl_id: std::option::Option<std::string::String>,
         pub(crate) crl_arn: std::option::Option<std::string::String>,

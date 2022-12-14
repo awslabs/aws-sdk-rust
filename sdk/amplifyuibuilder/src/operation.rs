@@ -5,7 +5,7 @@
 /// [`create_component`](crate::client::Client::create_component).
 ///
 /// See [`crate::client::fluent_builders::CreateComponent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateComponent {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateComponent {
 /// [`create_form`](crate::client::Client::create_form).
 ///
 /// See [`crate::client::fluent_builders::CreateForm`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateForm {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateForm {
 /// [`create_theme`](crate::client::Client::create_theme).
 ///
 /// See [`crate::client::fluent_builders::CreateTheme`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateTheme {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTheme {
 /// [`delete_component`](crate::client::Client::delete_component).
 ///
 /// See [`crate::client::fluent_builders::DeleteComponent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteComponent {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteComponent {
 /// [`delete_form`](crate::client::Client::delete_form).
 ///
 /// See [`crate::client::fluent_builders::DeleteForm`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteForm {
     _private: (),
 }
@@ -169,7 +169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteForm {
 /// [`delete_theme`](crate::client::Client::delete_theme).
 ///
 /// See [`crate::client::fluent_builders::DeleteTheme`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTheme {
     _private: (),
 }
@@ -201,7 +201,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTheme {
 /// [`exchange_code_for_token`](crate::client::Client::exchange_code_for_token).
 ///
 /// See [`crate::client::fluent_builders::ExchangeCodeForToken`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExchangeCodeForToken {
     _private: (),
 }
@@ -235,7 +235,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExchangeCodeForToken {
 /// [`export_components`](crate::client::Client::export_components).
 ///
 /// See [`crate::client::fluent_builders::ExportComponents`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExportComponents {
     _private: (),
 }
@@ -269,7 +269,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportComponents {
 /// [`export_forms`](crate::client::Client::export_forms).
 ///
 /// See [`crate::client::fluent_builders::ExportForms`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExportForms {
     _private: (),
 }
@@ -301,7 +301,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportForms {
 /// [`export_themes`](crate::client::Client::export_themes).
 ///
 /// See [`crate::client::fluent_builders::ExportThemes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExportThemes {
     _private: (),
 }
@@ -333,7 +333,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportThemes {
 /// [`get_component`](crate::client::Client::get_component).
 ///
 /// See [`crate::client::fluent_builders::GetComponent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetComponent {
     _private: (),
 }
@@ -365,7 +365,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComponent {
 /// [`get_form`](crate::client::Client::get_form).
 ///
 /// See [`crate::client::fluent_builders::GetForm`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetForm {
     _private: (),
 }
@@ -396,7 +396,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetForm {
 /// [`get_metadata`](crate::client::Client::get_metadata).
 ///
 /// See [`crate::client::fluent_builders::GetMetadata`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMetadata {
     _private: (),
 }
@@ -428,7 +428,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMetadata {
 /// [`get_theme`](crate::client::Client::get_theme).
 ///
 /// See [`crate::client::fluent_builders::GetTheme`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTheme {
     _private: (),
 }
@@ -459,7 +459,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTheme {
 /// [`list_components`](crate::client::Client::list_components).
 ///
 /// See [`crate::client::fluent_builders::ListComponents`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListComponents {
     _private: (),
 }
@@ -491,7 +491,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListComponents {
 /// [`list_forms`](crate::client::Client::list_forms).
 ///
 /// See [`crate::client::fluent_builders::ListForms`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListForms {
     _private: (),
 }
@@ -522,7 +522,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListForms {
 /// [`list_themes`](crate::client::Client::list_themes).
 ///
 /// See [`crate::client::fluent_builders::ListThemes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListThemes {
     _private: (),
 }
@@ -554,7 +554,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListThemes {
 /// [`put_metadata_flag`](crate::client::Client::put_metadata_flag).
 ///
 /// See [`crate::client::fluent_builders::PutMetadataFlag`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutMetadataFlag {
     _private: (),
 }
@@ -588,7 +588,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMetadataFlag {
 /// [`refresh_token`](crate::client::Client::refresh_token).
 ///
 /// See [`crate::client::fluent_builders::RefreshToken`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RefreshToken {
     _private: (),
 }
@@ -620,7 +620,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RefreshToken {
 /// [`update_component`](crate::client::Client::update_component).
 ///
 /// See [`crate::client::fluent_builders::UpdateComponent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateComponent {
     _private: (),
 }
@@ -654,7 +654,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateComponent {
 /// [`update_form`](crate::client::Client::update_form).
 ///
 /// See [`crate::client::fluent_builders::UpdateForm`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateForm {
     _private: (),
 }
@@ -686,7 +686,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateForm {
 /// [`update_theme`](crate::client::Client::update_theme).
 ///
 /// See [`crate::client::fluent_builders::UpdateTheme`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateTheme {
     _private: (),
 }

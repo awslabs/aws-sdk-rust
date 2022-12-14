@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_custom_domain_input {
 
     /// A builder for [`AssociateCustomDomainInput`](crate::input::AssociateCustomDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -180,7 +180,7 @@ impl AssociateCustomDomainInput {
 pub mod create_auto_scaling_configuration_input {
 
     /// A builder for [`CreateAutoScalingConfigurationInput`](crate::input::CreateAutoScalingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_configuration_name: std::option::Option<std::string::String>,
         pub(crate) max_concurrency: std::option::Option<i32>,
@@ -403,7 +403,7 @@ impl CreateAutoScalingConfigurationInput {
 pub mod create_connection_input {
 
     /// A builder for [`CreateConnectionInput`](crate::input::CreateConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_name: std::option::Option<std::string::String>,
         pub(crate) provider_type: std::option::Option<crate::model::ProviderType>,
@@ -589,7 +589,7 @@ impl CreateConnectionInput {
 pub mod create_observability_configuration_input {
 
     /// A builder for [`CreateObservabilityConfigurationInput`](crate::input::CreateObservabilityConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observability_configuration_name: std::option::Option<std::string::String>,
         pub(crate) trace_configuration: std::option::Option<crate::model::TraceConfiguration>,
@@ -783,7 +783,7 @@ impl CreateObservabilityConfigurationInput {
 pub mod create_service_input {
 
     /// A builder for [`CreateServiceInput`](crate::input::CreateServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) source_configuration: std::option::Option<crate::model::SourceConfiguration>,
@@ -1076,7 +1076,7 @@ impl CreateServiceInput {
 pub mod create_vpc_connector_input {
 
     /// A builder for [`CreateVpcConnectorInput`](crate::input::CreateVpcConnectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_connector_name: std::option::Option<std::string::String>,
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1293,7 +1293,7 @@ impl CreateVpcConnectorInput {
 pub mod delete_auto_scaling_configuration_input {
 
     /// A builder for [`DeleteAutoScalingConfigurationInput`](crate::input::DeleteAutoScalingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_configuration_arn: std::option::Option<std::string::String>,
     }
@@ -1447,7 +1447,7 @@ impl DeleteAutoScalingConfigurationInput {
 pub mod delete_connection_input {
 
     /// A builder for [`DeleteConnectionInput`](crate::input::DeleteConnectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
     }
@@ -1597,7 +1597,7 @@ impl DeleteConnectionInput {
 pub mod delete_observability_configuration_input {
 
     /// A builder for [`DeleteObservabilityConfigurationInput`](crate::input::DeleteObservabilityConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observability_configuration_arn: std::option::Option<std::string::String>,
     }
@@ -1751,7 +1751,7 @@ impl DeleteObservabilityConfigurationInput {
 pub mod delete_service_input {
 
     /// A builder for [`DeleteServiceInput`](crate::input::DeleteServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
     }
@@ -1896,7 +1896,7 @@ impl DeleteServiceInput {
 pub mod delete_vpc_connector_input {
 
     /// A builder for [`DeleteVpcConnectorInput`](crate::input::DeleteVpcConnectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_connector_arn: std::option::Option<std::string::String>,
     }
@@ -2048,7 +2048,7 @@ impl DeleteVpcConnectorInput {
 pub mod describe_auto_scaling_configuration_input {
 
     /// A builder for [`DescribeAutoScalingConfigurationInput`](crate::input::DescribeAutoScalingConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_configuration_arn: std::option::Option<std::string::String>,
     }
@@ -2202,7 +2202,7 @@ impl DescribeAutoScalingConfigurationInput {
 pub mod describe_custom_domains_input {
 
     /// A builder for [`DescribeCustomDomainsInput`](crate::input::DescribeCustomDomainsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2379,7 +2379,7 @@ impl DescribeCustomDomainsInput {
 pub mod describe_observability_configuration_input {
 
     /// A builder for [`DescribeObservabilityConfigurationInput`](crate::input::DescribeObservabilityConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observability_configuration_arn: std::option::Option<std::string::String>,
     }
@@ -2533,7 +2533,7 @@ impl DescribeObservabilityConfigurationInput {
 pub mod describe_service_input {
 
     /// A builder for [`DescribeServiceInput`](crate::input::DescribeServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
     }
@@ -2678,7 +2678,7 @@ impl DescribeServiceInput {
 pub mod describe_vpc_connector_input {
 
     /// A builder for [`DescribeVpcConnectorInput`](crate::input::DescribeVpcConnectorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_connector_arn: std::option::Option<std::string::String>,
     }
@@ -2832,7 +2832,7 @@ impl DescribeVpcConnectorInput {
 pub mod disassociate_custom_domain_input {
 
     /// A builder for [`DisassociateCustomDomainInput`](crate::input::DisassociateCustomDomainInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -2993,7 +2993,7 @@ impl DisassociateCustomDomainInput {
 pub mod list_auto_scaling_configurations_input {
 
     /// A builder for [`ListAutoScalingConfigurationsInput`](crate::input::ListAutoScalingConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_scaling_configuration_name: std::option::Option<std::string::String>,
         pub(crate) latest_only: std::option::Option<bool>,
@@ -3189,7 +3189,7 @@ impl ListAutoScalingConfigurationsInput {
 pub mod list_connections_input {
 
     /// A builder for [`ListConnectionsInput`](crate::input::ListConnectionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_name: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3365,7 +3365,7 @@ impl ListConnectionsInput {
 pub mod list_observability_configurations_input {
 
     /// A builder for [`ListObservabilityConfigurationsInput`](crate::input::ListObservabilityConfigurationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observability_configuration_name: std::option::Option<std::string::String>,
         pub(crate) latest_only: std::option::Option<bool>,
@@ -3561,7 +3561,7 @@ impl ListObservabilityConfigurationsInput {
 pub mod list_operations_input {
 
     /// A builder for [`ListOperationsInput`](crate::input::ListOperationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3734,7 +3734,7 @@ impl ListOperationsInput {
 pub mod list_services_input {
 
     /// A builder for [`ListServicesInput`](crate::input::ListServicesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3895,7 +3895,7 @@ impl ListServicesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -4046,7 +4046,7 @@ impl ListTagsForResourceInput {
 pub mod list_vpc_connectors_input {
 
     /// A builder for [`ListVpcConnectorsInput`](crate::input::ListVpcConnectorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4209,7 +4209,7 @@ impl ListVpcConnectorsInput {
 pub mod pause_service_input {
 
     /// A builder for [`PauseServiceInput`](crate::input::PauseServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
     }
@@ -4354,7 +4354,7 @@ impl PauseServiceInput {
 pub mod resume_service_input {
 
     /// A builder for [`ResumeServiceInput`](crate::input::ResumeServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
     }
@@ -4499,7 +4499,7 @@ impl ResumeServiceInput {
 pub mod start_deployment_input {
 
     /// A builder for [`StartDeploymentInput`](crate::input::StartDeploymentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
     }
@@ -4644,7 +4644,7 @@ impl StartDeploymentInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4812,7 +4812,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4980,7 +4980,7 @@ impl UntagResourceInput {
 pub mod update_service_input {
 
     /// A builder for [`UpdateServiceInput`](crate::input::UpdateServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_arn: std::option::Option<std::string::String>,
         pub(crate) source_configuration: std::option::Option<crate::model::SourceConfiguration>,

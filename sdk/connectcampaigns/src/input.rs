@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_campaign_input {
 
     /// A builder for [`CreateCampaignInput`](crate::input::CreateCampaignInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) connect_instance_id: std::option::Option<std::string::String>,
@@ -219,7 +219,7 @@ impl CreateCampaignInput {
 pub mod delete_campaign_input {
 
     /// A builder for [`DeleteCampaignInput`](crate::input::DeleteCampaignInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -362,7 +362,7 @@ impl DeleteCampaignInput {
 pub mod delete_connect_instance_config_input {
 
     /// A builder for [`DeleteConnectInstanceConfigInput`](crate::input::DeleteConnectInstanceConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_instance_id: std::option::Option<std::string::String>,
     }
@@ -517,7 +517,7 @@ impl DeleteConnectInstanceConfigInput {
 pub mod delete_instance_onboarding_job_input {
 
     /// A builder for [`DeleteInstanceOnboardingJobInput`](crate::input::DeleteInstanceOnboardingJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_instance_id: std::option::Option<std::string::String>,
     }
@@ -672,7 +672,7 @@ impl DeleteInstanceOnboardingJobInput {
 pub mod describe_campaign_input {
 
     /// A builder for [`DescribeCampaignInput`](crate::input::DescribeCampaignInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -817,7 +817,7 @@ impl DescribeCampaignInput {
 pub mod get_campaign_state_input {
 
     /// A builder for [`GetCampaignStateInput`](crate::input::GetCampaignStateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -963,7 +963,7 @@ impl GetCampaignStateInput {
 pub mod get_campaign_state_batch_input {
 
     /// A builder for [`GetCampaignStateBatchInput`](crate::input::GetCampaignStateBatchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1116,7 +1116,7 @@ impl GetCampaignStateBatchInput {
 pub mod get_connect_instance_config_input {
 
     /// A builder for [`GetConnectInstanceConfigInput`](crate::input::GetConnectInstanceConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_instance_id: std::option::Option<std::string::String>,
     }
@@ -1271,7 +1271,7 @@ impl GetConnectInstanceConfigInput {
 pub mod get_instance_onboarding_job_status_input {
 
     /// A builder for [`GetInstanceOnboardingJobStatusInput`](crate::input::GetInstanceOnboardingJobStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_instance_id: std::option::Option<std::string::String>,
     }
@@ -1426,7 +1426,7 @@ impl GetInstanceOnboardingJobStatusInput {
 pub mod list_campaigns_input {
 
     /// A builder for [`ListCampaignsInput`](crate::input::ListCampaignsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1593,7 +1593,7 @@ impl ListCampaignsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -1738,7 +1738,7 @@ impl ListTagsForResourceInput {
 pub mod pause_campaign_input {
 
     /// A builder for [`PauseCampaignInput`](crate::input::PauseCampaignInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -1882,7 +1882,7 @@ impl PauseCampaignInput {
 pub mod put_dial_request_batch_input {
 
     /// A builder for [`PutDialRequestBatchInput`](crate::input::PutDialRequestBatchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) dial_requests: std::option::Option<std::vec::Vec<crate::model::DialRequest>>,
@@ -2067,7 +2067,7 @@ impl PutDialRequestBatchInput {
 pub mod resume_campaign_input {
 
     /// A builder for [`ResumeCampaignInput`](crate::input::ResumeCampaignInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -2211,7 +2211,7 @@ impl ResumeCampaignInput {
 pub mod start_campaign_input {
 
     /// A builder for [`StartCampaignInput`](crate::input::StartCampaignInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -2355,7 +2355,7 @@ impl StartCampaignInput {
 pub mod start_instance_onboarding_job_input {
 
     /// A builder for [`StartInstanceOnboardingJobInput`](crate::input::StartInstanceOnboardingJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_instance_id: std::option::Option<std::string::String>,
         pub(crate) encryption_config: std::option::Option<crate::model::EncryptionConfig>,
@@ -2538,7 +2538,7 @@ impl StartInstanceOnboardingJobInput {
 pub mod stop_campaign_input {
 
     /// A builder for [`StopCampaignInput`](crate::input::StopCampaignInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -2681,7 +2681,7 @@ impl StopCampaignInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -2869,7 +2869,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3053,7 +3053,7 @@ impl UntagResourceInput {
 pub mod update_campaign_dialer_config_input {
 
     /// A builder for [`UpdateCampaignDialerConfigInput`](crate::input::UpdateCampaignDialerConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) dialer_config: std::option::Option<crate::model::DialerConfig>,
@@ -3229,7 +3229,7 @@ impl UpdateCampaignDialerConfigInput {
 pub mod update_campaign_name_input {
 
     /// A builder for [`UpdateCampaignNameInput`](crate::input::UpdateCampaignNameInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3402,7 +3402,7 @@ impl UpdateCampaignNameInput {
 pub mod update_campaign_outbound_call_config_input {
 
     /// A builder for [`UpdateCampaignOutboundCallConfigInput`](crate::input::UpdateCampaignOutboundCallConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) connect_contact_flow_id: std::option::Option<std::string::String>,

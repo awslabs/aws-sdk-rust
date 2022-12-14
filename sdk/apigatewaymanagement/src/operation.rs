@@ -5,7 +5,7 @@
 /// [`delete_connection`](crate::client::Client::delete_connection).
 ///
 /// See [`crate::client::fluent_builders::DeleteConnection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConnection {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConnection {
 /// [`get_connection`](crate::client::Client::get_connection).
 ///
 /// See [`crate::client::fluent_builders::GetConnection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetConnection {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConnection {
 /// [`post_to_connection`](crate::client::Client::post_to_connection).
 ///
 /// See [`crate::client::fluent_builders::PostToConnection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PostToConnection {
     _private: (),
 }

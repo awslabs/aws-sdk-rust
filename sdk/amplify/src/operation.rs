@@ -5,7 +5,7 @@
 /// [`create_app`](crate::client::Client::create_app).
 ///
 /// See [`crate::client::fluent_builders::CreateApp`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateApp {
     _private: (),
 }
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApp {
 /// [`create_backend_environment`](crate::client::Client::create_backend_environment).
 ///
 /// See [`crate::client::fluent_builders::CreateBackendEnvironment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBackendEnvironment {
     _private: (),
 }
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackendEnvironment
 /// [`create_branch`](crate::client::Client::create_branch).
 ///
 /// See [`crate::client::fluent_builders::CreateBranch`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBranch {
     _private: (),
 }
@@ -102,7 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBranch {
 /// [`create_deployment`](crate::client::Client::create_deployment).
 ///
 /// See [`crate::client::fluent_builders::CreateDeployment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDeployment {
     _private: (),
 }
@@ -136,7 +136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDeployment {
 /// [`create_domain_association`](crate::client::Client::create_domain_association).
 ///
 /// See [`crate::client::fluent_builders::CreateDomainAssociation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDomainAssociation {
     _private: (),
 }
@@ -170,7 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDomainAssociation 
 /// [`create_webhook`](crate::client::Client::create_webhook).
 ///
 /// See [`crate::client::fluent_builders::CreateWebhook`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWebhook {
     _private: (),
 }
@@ -202,7 +202,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWebhook {
 /// [`delete_app`](crate::client::Client::delete_app).
 ///
 /// See [`crate::client::fluent_builders::DeleteApp`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteApp {
     _private: (),
 }
@@ -233,7 +233,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApp {
 /// [`delete_backend_environment`](crate::client::Client::delete_backend_environment).
 ///
 /// See [`crate::client::fluent_builders::DeleteBackendEnvironment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBackendEnvironment {
     _private: (),
 }
@@ -267,7 +267,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackendEnvironment
 /// [`delete_branch`](crate::client::Client::delete_branch).
 ///
 /// See [`crate::client::fluent_builders::DeleteBranch`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBranch {
     _private: (),
 }
@@ -299,7 +299,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBranch {
 /// [`delete_domain_association`](crate::client::Client::delete_domain_association).
 ///
 /// See [`crate::client::fluent_builders::DeleteDomainAssociation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDomainAssociation {
     _private: (),
 }
@@ -333,7 +333,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDomainAssociation 
 /// [`delete_job`](crate::client::Client::delete_job).
 ///
 /// See [`crate::client::fluent_builders::DeleteJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteJob {
     _private: (),
 }
@@ -364,7 +364,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteJob {
 /// [`delete_webhook`](crate::client::Client::delete_webhook).
 ///
 /// See [`crate::client::fluent_builders::DeleteWebhook`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWebhook {
     _private: (),
 }
@@ -396,7 +396,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWebhook {
 /// [`generate_access_logs`](crate::client::Client::generate_access_logs).
 ///
 /// See [`crate::client::fluent_builders::GenerateAccessLogs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GenerateAccessLogs {
     _private: (),
 }
@@ -430,7 +430,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateAccessLogs {
 /// [`get_app`](crate::client::Client::get_app).
 ///
 /// See [`crate::client::fluent_builders::GetApp`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetApp {
     _private: (),
 }
@@ -461,7 +461,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApp {
 /// [`get_artifact_url`](crate::client::Client::get_artifact_url).
 ///
 /// See [`crate::client::fluent_builders::GetArtifactUrl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetArtifactUrl {
     _private: (),
 }
@@ -493,7 +493,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetArtifactUrl {
 /// [`get_backend_environment`](crate::client::Client::get_backend_environment).
 ///
 /// See [`crate::client::fluent_builders::GetBackendEnvironment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackendEnvironment {
     _private: (),
 }
@@ -527,7 +527,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackendEnvironment {
 /// [`get_branch`](crate::client::Client::get_branch).
 ///
 /// See [`crate::client::fluent_builders::GetBranch`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBranch {
     _private: (),
 }
@@ -558,7 +558,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBranch {
 /// [`get_domain_association`](crate::client::Client::get_domain_association).
 ///
 /// See [`crate::client::fluent_builders::GetDomainAssociation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDomainAssociation {
     _private: (),
 }
@@ -592,7 +592,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomainAssociation {
 /// [`get_job`](crate::client::Client::get_job).
 ///
 /// See [`crate::client::fluent_builders::GetJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetJob {
     _private: (),
 }
@@ -623,7 +623,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJob {
 /// [`get_webhook`](crate::client::Client::get_webhook).
 ///
 /// See [`crate::client::fluent_builders::GetWebhook`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetWebhook {
     _private: (),
 }
@@ -655,7 +655,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWebhook {
 /// [`list_apps`](crate::client::Client::list_apps).
 ///
 /// See [`crate::client::fluent_builders::ListApps`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListApps {
     _private: (),
 }
@@ -686,7 +686,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApps {
 /// [`list_artifacts`](crate::client::Client::list_artifacts).
 ///
 /// See [`crate::client::fluent_builders::ListArtifacts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListArtifacts {
     _private: (),
 }
@@ -718,7 +718,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListArtifacts {
 /// [`list_backend_environments`](crate::client::Client::list_backend_environments).
 ///
 /// See [`crate::client::fluent_builders::ListBackendEnvironments`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBackendEnvironments {
     _private: (),
 }
@@ -752,7 +752,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackendEnvironments 
 /// [`list_branches`](crate::client::Client::list_branches).
 ///
 /// See [`crate::client::fluent_builders::ListBranches`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBranches {
     _private: (),
 }
@@ -784,7 +784,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBranches {
 /// [`list_domain_associations`](crate::client::Client::list_domain_associations).
 ///
 /// See [`crate::client::fluent_builders::ListDomainAssociations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDomainAssociations {
     _private: (),
 }
@@ -818,7 +818,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomainAssociations {
 /// [`list_jobs`](crate::client::Client::list_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListJobs {
     _private: (),
 }
@@ -849,7 +849,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJobs {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -883,7 +883,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_webhooks`](crate::client::Client::list_webhooks).
 ///
 /// See [`crate::client::fluent_builders::ListWebhooks`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWebhooks {
     _private: (),
 }
@@ -915,7 +915,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWebhooks {
 /// [`start_deployment`](crate::client::Client::start_deployment).
 ///
 /// See [`crate::client::fluent_builders::StartDeployment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartDeployment {
     _private: (),
 }
@@ -949,7 +949,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDeployment {
 /// [`start_job`](crate::client::Client::start_job).
 ///
 /// See [`crate::client::fluent_builders::StartJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartJob {
     _private: (),
 }
@@ -980,7 +980,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartJob {
 /// [`stop_job`](crate::client::Client::stop_job).
 ///
 /// See [`crate::client::fluent_builders::StopJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopJob {
     _private: (),
 }
@@ -1011,7 +1011,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopJob {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1043,7 +1043,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1075,7 +1075,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_app`](crate::client::Client::update_app).
 ///
 /// See [`crate::client::fluent_builders::UpdateApp`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateApp {
     _private: (),
 }
@@ -1106,7 +1106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateApp {
 /// [`update_branch`](crate::client::Client::update_branch).
 ///
 /// See [`crate::client::fluent_builders::UpdateBranch`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBranch {
     _private: (),
 }
@@ -1138,7 +1138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBranch {
 /// [`update_domain_association`](crate::client::Client::update_domain_association).
 ///
 /// See [`crate::client::fluent_builders::UpdateDomainAssociation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDomainAssociation {
     _private: (),
 }
@@ -1172,7 +1172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDomainAssociation 
 /// [`update_webhook`](crate::client::Client::update_webhook).
 ///
 /// See [`crate::client::fluent_builders::UpdateWebhook`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateWebhook {
     _private: (),
 }

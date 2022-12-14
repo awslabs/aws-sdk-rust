@@ -86,7 +86,7 @@ impl Channel {
 pub mod channel {
 
     /// A builder for [`Channel`](crate::model::Channel).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -470,7 +470,7 @@ impl StreamSessionSummary {
 pub mod stream_session_summary {
 
     /// A builder for [`StreamSessionSummary`](crate::model::StreamSessionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_id: std::option::Option<std::string::String>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -595,7 +595,7 @@ impl StreamSummary {
 pub mod stream_summary {
 
     /// A builder for [`StreamSummary`](crate::model::StreamSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
@@ -894,7 +894,7 @@ impl StreamFilters {
 pub mod stream_filters {
 
     /// A builder for [`StreamFilters`](crate::model::StreamFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health: std::option::Option<crate::model::StreamHealth>,
     }
@@ -963,7 +963,7 @@ impl StreamKeySummary {
 pub mod stream_key_summary {
 
     /// A builder for [`StreamKeySummary`](crate::model::StreamKeySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -1086,7 +1086,7 @@ impl RecordingConfigurationSummary {
 pub mod recording_configuration_summary {
 
     /// A builder for [`RecordingConfigurationSummary`](crate::model::RecordingConfigurationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1306,7 +1306,7 @@ impl DestinationConfiguration {
 pub mod destination_configuration {
 
     /// A builder for [`DestinationConfiguration`](crate::model::DestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3DestinationConfiguration>,
     }
@@ -1355,7 +1355,7 @@ impl S3DestinationConfiguration {
 pub mod s3_destination_configuration {
 
     /// A builder for [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
     }
@@ -1421,7 +1421,7 @@ impl PlaybackKeyPairSummary {
 pub mod playback_key_pair_summary {
 
     /// A builder for [`PlaybackKeyPairSummary`](crate::model::PlaybackKeyPairSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1549,7 +1549,7 @@ impl ChannelSummary {
 pub mod channel_summary {
 
     /// A builder for [`ChannelSummary`](crate::model::ChannelSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1708,7 +1708,7 @@ impl PlaybackKeyPair {
 pub mod playback_key_pair {
 
     /// A builder for [`PlaybackKeyPair`](crate::model::PlaybackKeyPair).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1853,7 +1853,7 @@ impl StreamSession {
 pub mod stream_session {
 
     /// A builder for [`StreamSession`](crate::model::StreamSession).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_id: std::option::Option<std::string::String>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2012,7 +2012,7 @@ impl StreamEvent {
 pub mod stream_event {
 
     /// A builder for [`StreamEvent`](crate::model::StreamEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -2137,7 +2137,7 @@ impl RecordingConfiguration {
 pub mod recording_configuration {
 
     /// A builder for [`RecordingConfiguration`](crate::model::RecordingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2305,7 +2305,7 @@ impl ThumbnailConfiguration {
 pub mod thumbnail_configuration {
 
     /// A builder for [`ThumbnailConfiguration`](crate::model::ThumbnailConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recording_mode: std::option::Option<crate::model::RecordingMode>,
         pub(crate) target_interval_seconds: std::option::Option<i64>,
@@ -2467,7 +2467,7 @@ impl IngestConfiguration {
 pub mod ingest_configuration {
 
     /// A builder for [`IngestConfiguration`](crate::model::IngestConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) video: std::option::Option<crate::model::VideoConfiguration>,
         pub(crate) audio: std::option::Option<crate::model::AudioConfiguration>,
@@ -2554,7 +2554,7 @@ impl AudioConfiguration {
 pub mod audio_configuration {
 
     /// A builder for [`AudioConfiguration`](crate::model::AudioConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) codec: std::option::Option<std::string::String>,
         pub(crate) target_bitrate: std::option::Option<i64>,
@@ -2687,7 +2687,7 @@ impl VideoConfiguration {
 pub mod video_configuration {
 
     /// A builder for [`VideoConfiguration`](crate::model::VideoConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) avc_profile: std::option::Option<std::string::String>,
         pub(crate) avc_level: std::option::Option<std::string::String>,
@@ -2854,7 +2854,7 @@ impl std::fmt::Debug for StreamKey {
 pub mod stream_key {
 
     /// A builder for [`StreamKey`](crate::model::StreamKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -3007,7 +3007,7 @@ impl Stream {
 pub mod stream {
 
     /// A builder for [`Stream`](crate::model::Stream).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
@@ -3147,7 +3147,7 @@ impl BatchError {
 pub mod batch_error {
 
     /// A builder for [`BatchError`](crate::model::BatchError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) code: std::option::Option<std::string::String>,

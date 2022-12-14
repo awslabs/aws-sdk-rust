@@ -18,7 +18,7 @@ impl TagKeyOnly {
 pub mod tag_key_only {
 
     /// A builder for [`TagKeyOnly`](crate::model::TagKeyOnly).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
     }
@@ -64,7 +64,7 @@ impl Instance {
 pub mod instance {
 
     /// A builder for [`Instance`](crate::model::Instance).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
     }
@@ -153,7 +153,7 @@ impl LoadBalancerAttributes {
 pub mod load_balancer_attributes {
 
     /// A builder for [`LoadBalancerAttributes`](crate::model::LoadBalancerAttributes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cross_zone_load_balancing:
             std::option::Option<crate::model::CrossZoneLoadBalancing>,
@@ -298,7 +298,7 @@ impl AdditionalAttribute {
 pub mod additional_attribute {
 
     /// A builder for [`AdditionalAttribute`](crate::model::AdditionalAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -366,7 +366,7 @@ impl ConnectionSettings {
 pub mod connection_settings {
 
     /// A builder for [`ConnectionSettings`](crate::model::ConnectionSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) idle_timeout: std::option::Option<i32>,
     }
@@ -421,7 +421,7 @@ impl ConnectionDraining {
 pub mod connection_draining {
 
     /// A builder for [`ConnectionDraining`](crate::model::ConnectionDraining).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) timeout: std::option::Option<i32>,
@@ -504,7 +504,7 @@ impl AccessLog {
 pub mod access_log {
 
     /// A builder for [`AccessLog`](crate::model::AccessLog).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
@@ -596,7 +596,7 @@ impl CrossZoneLoadBalancing {
 pub mod cross_zone_load_balancing {
 
     /// A builder for [`CrossZoneLoadBalancing`](crate::model::CrossZoneLoadBalancing).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
     }
@@ -651,7 +651,7 @@ impl TagDescription {
 pub mod tag_description {
 
     /// A builder for [`TagDescription`](crate::model::TagDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -730,7 +730,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -907,7 +907,7 @@ impl LoadBalancerDescription {
 pub mod load_balancer_description {
 
     /// A builder for [`LoadBalancerDescription`](crate::model::LoadBalancerDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) load_balancer_name: std::option::Option<std::string::String>,
         pub(crate) dns_name: std::option::Option<std::string::String>,
@@ -1228,7 +1228,7 @@ impl SourceSecurityGroup {
 pub mod source_security_group {
 
     /// A builder for [`SourceSecurityGroup`](crate::model::SourceSecurityGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_alias: std::option::Option<std::string::String>,
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -1326,7 +1326,7 @@ impl HealthCheck {
 pub mod health_check {
 
     /// A builder for [`HealthCheck`](crate::model::HealthCheck).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target: std::option::Option<std::string::String>,
         pub(crate) interval: std::option::Option<i32>,
@@ -1439,7 +1439,7 @@ impl BackendServerDescription {
 pub mod backend_server_description {
 
     /// A builder for [`BackendServerDescription`](crate::model::BackendServerDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_port: std::option::Option<i32>,
         pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1528,7 +1528,7 @@ impl Policies {
 pub mod policies {
 
     /// A builder for [`Policies`](crate::model::Policies).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_cookie_stickiness_policies:
             std::option::Option<std::vec::Vec<crate::model::AppCookieStickinessPolicy>>,
@@ -1642,7 +1642,7 @@ impl LbCookieStickinessPolicy {
 pub mod lb_cookie_stickiness_policy {
 
     /// A builder for [`LbCookieStickinessPolicy`](crate::model::LbCookieStickinessPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
         pub(crate) cookie_expiration_period: std::option::Option<i64>,
@@ -1709,7 +1709,7 @@ impl AppCookieStickinessPolicy {
 pub mod app_cookie_stickiness_policy {
 
     /// A builder for [`AppCookieStickinessPolicy`](crate::model::AppCookieStickinessPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
         pub(crate) cookie_name: std::option::Option<std::string::String>,
@@ -1776,7 +1776,7 @@ impl ListenerDescription {
 pub mod listener_description {
 
     /// A builder for [`ListenerDescription`](crate::model::ListenerDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener: std::option::Option<crate::model::Listener>,
         pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1880,7 +1880,7 @@ impl Listener {
 pub mod listener {
 
     /// A builder for [`Listener`](crate::model::Listener).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocol: std::option::Option<std::string::String>,
         pub(crate) load_balancer_port: std::option::Option<i32>,
@@ -2005,7 +2005,7 @@ impl PolicyTypeDescription {
 pub mod policy_type_description {
 
     /// A builder for [`PolicyTypeDescription`](crate::model::PolicyTypeDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_type_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2135,7 +2135,7 @@ impl PolicyAttributeTypeDescription {
 pub mod policy_attribute_type_description {
 
     /// A builder for [`PolicyAttributeTypeDescription`](crate::model::PolicyAttributeTypeDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
         pub(crate) attribute_type: std::option::Option<std::string::String>,
@@ -2271,7 +2271,7 @@ impl PolicyDescription {
 pub mod policy_description {
 
     /// A builder for [`PolicyDescription`](crate::model::PolicyDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
         pub(crate) policy_type_name: std::option::Option<std::string::String>,
@@ -2366,7 +2366,7 @@ impl PolicyAttributeDescription {
 pub mod policy_attribute_description {
 
     /// A builder for [`PolicyAttributeDescription`](crate::model::PolicyAttributeDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
         pub(crate) attribute_value: std::option::Option<std::string::String>,
@@ -2485,7 +2485,7 @@ impl InstanceState {
 pub mod instance_state {
 
     /// A builder for [`InstanceState`](crate::model::InstanceState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<std::string::String>,
@@ -2618,7 +2618,7 @@ impl Limit {
 pub mod limit {
 
     /// A builder for [`Limit`](crate::model::Limit).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) max: std::option::Option<std::string::String>,
@@ -2695,7 +2695,7 @@ impl PolicyAttribute {
 pub mod policy_attribute {
 
     /// A builder for [`PolicyAttribute`](crate::model::PolicyAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
         pub(crate) attribute_value: std::option::Option<std::string::String>,

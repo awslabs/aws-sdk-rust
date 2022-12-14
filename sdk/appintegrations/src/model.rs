@@ -57,7 +57,7 @@ impl EventIntegration {
 pub mod event_integration {
 
     /// A builder for [`EventIntegration`](crate::model::EventIntegration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_integration_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -191,7 +191,7 @@ impl EventFilter {
 pub mod event_filter {
 
     /// A builder for [`EventFilter`](crate::model::EventFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
     }
@@ -278,7 +278,7 @@ impl EventIntegrationAssociation {
 pub mod event_integration_association {
 
     /// A builder for [`EventIntegrationAssociation`](crate::model::EventIntegrationAssociation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_integration_association_arn: std::option::Option<std::string::String>,
         pub(crate) event_integration_association_id: std::option::Option<std::string::String>,
@@ -435,7 +435,7 @@ impl DataIntegrationSummary {
 pub mod data_integration_summary {
 
     /// A builder for [`DataIntegrationSummary`](crate::model::DataIntegrationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -521,7 +521,7 @@ impl DataIntegrationAssociationSummary {
 pub mod data_integration_association_summary {
 
     /// A builder for [`DataIntegrationAssociationSummary`](crate::model::DataIntegrationAssociationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_integration_association_arn: std::option::Option<std::string::String>,
         pub(crate) data_integration_arn: std::option::Option<std::string::String>,
@@ -616,7 +616,7 @@ impl ScheduleConfiguration {
 pub mod schedule_configuration {
 
     /// A builder for [`ScheduleConfiguration`](crate::model::ScheduleConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) first_execution_from: std::option::Option<std::string::String>,
         pub(crate) object: std::option::Option<std::string::String>,

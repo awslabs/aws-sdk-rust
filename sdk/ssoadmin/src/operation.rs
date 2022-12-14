@@ -5,7 +5,7 @@
 /// [`attach_customer_managed_policy_reference_to_permission_set`](crate::client::Client::attach_customer_managed_policy_reference_to_permission_set).
 ///
 /// See [`crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AttachCustomerManagedPolicyReferenceToPermissionSet {
     _private: (),
 }
@@ -43,7 +43,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`attach_managed_policy_to_permission_set`](crate::client::Client::attach_managed_policy_to_permission_set).
 ///
 /// See [`crate::client::fluent_builders::AttachManagedPolicyToPermissionSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AttachManagedPolicyToPermissionSet {
     _private: (),
 }
@@ -77,7 +77,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachManagedPolicyToPer
 /// [`create_account_assignment`](crate::client::Client::create_account_assignment).
 ///
 /// See [`crate::client::fluent_builders::CreateAccountAssignment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAccountAssignment {
     _private: (),
 }
@@ -111,7 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccountAssignment 
 /// [`create_instance_access_control_attribute_configuration`](crate::client::Client::create_instance_access_control_attribute_configuration).
 ///
 /// See [`crate::client::fluent_builders::CreateInstanceAccessControlAttributeConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateInstanceAccessControlAttributeConfiguration {
     _private: (),
 }
@@ -149,7 +149,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`create_permission_set`](crate::client::Client::create_permission_set).
 ///
 /// See [`crate::client::fluent_builders::CreatePermissionSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePermissionSet {
     _private: (),
 }
@@ -183,7 +183,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePermissionSet {
 /// [`delete_account_assignment`](crate::client::Client::delete_account_assignment).
 ///
 /// See [`crate::client::fluent_builders::DeleteAccountAssignment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAccountAssignment {
     _private: (),
 }
@@ -217,7 +217,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccountAssignment 
 /// [`delete_inline_policy_from_permission_set`](crate::client::Client::delete_inline_policy_from_permission_set).
 ///
 /// See [`crate::client::fluent_builders::DeleteInlinePolicyFromPermissionSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteInlinePolicyFromPermissionSet {
     _private: (),
 }
@@ -253,7 +253,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInlinePolicyFromPe
 /// [`delete_instance_access_control_attribute_configuration`](crate::client::Client::delete_instance_access_control_attribute_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeleteInstanceAccessControlAttributeConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteInstanceAccessControlAttributeConfiguration {
     _private: (),
 }
@@ -291,7 +291,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`delete_permissions_boundary_from_permission_set`](crate::client::Client::delete_permissions_boundary_from_permission_set).
 ///
 /// See [`crate::client::fluent_builders::DeletePermissionsBoundaryFromPermissionSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePermissionsBoundaryFromPermissionSet {
     _private: (),
 }
@@ -330,7 +330,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePermissionsBoundar
 /// [`delete_permission_set`](crate::client::Client::delete_permission_set).
 ///
 /// See [`crate::client::fluent_builders::DeletePermissionSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePermissionSet {
     _private: (),
 }
@@ -364,7 +364,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePermissionSet {
 /// [`describe_account_assignment_creation_status`](crate::client::Client::describe_account_assignment_creation_status).
 ///
 /// See [`crate::client::fluent_builders::DescribeAccountAssignmentCreationStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAccountAssignmentCreationStatus {
     _private: (),
 }
@@ -402,7 +402,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountAssignmen
 /// [`describe_account_assignment_deletion_status`](crate::client::Client::describe_account_assignment_deletion_status).
 ///
 /// See [`crate::client::fluent_builders::DescribeAccountAssignmentDeletionStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAccountAssignmentDeletionStatus {
     _private: (),
 }
@@ -440,7 +440,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountAssignmen
 /// [`describe_instance_access_control_attribute_configuration`](crate::client::Client::describe_instance_access_control_attribute_configuration).
 ///
 /// See [`crate::client::fluent_builders::DescribeInstanceAccessControlAttributeConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeInstanceAccessControlAttributeConfiguration {
     _private: (),
 }
@@ -477,7 +477,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`describe_permission_set`](crate::client::Client::describe_permission_set).
 ///
 /// See [`crate::client::fluent_builders::DescribePermissionSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePermissionSet {
     _private: (),
 }
@@ -511,7 +511,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePermissionSet {
 /// [`describe_permission_set_provisioning_status`](crate::client::Client::describe_permission_set_provisioning_status).
 ///
 /// See [`crate::client::fluent_builders::DescribePermissionSetProvisioningStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePermissionSetProvisioningStatus {
     _private: (),
 }
@@ -549,7 +549,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePermissionSetPro
 /// [`detach_customer_managed_policy_reference_from_permission_set`](crate::client::Client::detach_customer_managed_policy_reference_from_permission_set).
 ///
 /// See [`crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DetachCustomerManagedPolicyReferenceFromPermissionSet {
     _private: (),
 }
@@ -587,7 +587,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`detach_managed_policy_from_permission_set`](crate::client::Client::detach_managed_policy_from_permission_set).
 ///
 /// See [`crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DetachManagedPolicyFromPermissionSet {
     _private: (),
 }
@@ -623,7 +623,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachManagedPolicyFromP
 /// [`get_inline_policy_for_permission_set`](crate::client::Client::get_inline_policy_for_permission_set).
 ///
 /// See [`crate::client::fluent_builders::GetInlinePolicyForPermissionSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetInlinePolicyForPermissionSet {
     _private: (),
 }
@@ -657,7 +657,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInlinePolicyForPermis
 /// [`get_permissions_boundary_for_permission_set`](crate::client::Client::get_permissions_boundary_for_permission_set).
 ///
 /// See [`crate::client::fluent_builders::GetPermissionsBoundaryForPermissionSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPermissionsBoundaryForPermissionSet {
     _private: (),
 }
@@ -695,7 +695,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPermissionsBoundaryFo
 /// [`list_account_assignment_creation_status`](crate::client::Client::list_account_assignment_creation_status).
 ///
 /// See [`crate::client::fluent_builders::ListAccountAssignmentCreationStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAccountAssignmentCreationStatus {
     _private: (),
 }
@@ -729,7 +729,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountAssignmentCre
 /// [`list_account_assignment_deletion_status`](crate::client::Client::list_account_assignment_deletion_status).
 ///
 /// See [`crate::client::fluent_builders::ListAccountAssignmentDeletionStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAccountAssignmentDeletionStatus {
     _private: (),
 }
@@ -763,7 +763,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountAssignmentDel
 /// [`list_account_assignments`](crate::client::Client::list_account_assignments).
 ///
 /// See [`crate::client::fluent_builders::ListAccountAssignments`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAccountAssignments {
     _private: (),
 }
@@ -797,7 +797,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountAssignments {
 /// [`list_accounts_for_provisioned_permission_set`](crate::client::Client::list_accounts_for_provisioned_permission_set).
 ///
 /// See [`crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAccountsForProvisionedPermissionSet {
     _private: (),
 }
@@ -835,7 +835,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountsForProvision
 /// [`list_customer_managed_policy_references_in_permission_set`](crate::client::Client::list_customer_managed_policy_references_in_permission_set).
 ///
 /// See [`crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCustomerManagedPolicyReferencesInPermissionSet {
     _private: (),
 }
@@ -873,7 +873,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`list_instances`](crate::client::Client::list_instances).
 ///
 /// See [`crate::client::fluent_builders::ListInstances`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListInstances {
     _private: (),
 }
@@ -905,7 +905,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInstances {
 /// [`list_managed_policies_in_permission_set`](crate::client::Client::list_managed_policies_in_permission_set).
 ///
 /// See [`crate::client::fluent_builders::ListManagedPoliciesInPermissionSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListManagedPoliciesInPermissionSet {
     _private: (),
 }
@@ -939,7 +939,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListManagedPoliciesInPer
 /// [`list_permission_set_provisioning_status`](crate::client::Client::list_permission_set_provisioning_status).
 ///
 /// See [`crate::client::fluent_builders::ListPermissionSetProvisioningStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPermissionSetProvisioningStatus {
     _private: (),
 }
@@ -973,7 +973,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPermissionSetProvisi
 /// [`list_permission_sets`](crate::client::Client::list_permission_sets).
 ///
 /// See [`crate::client::fluent_builders::ListPermissionSets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPermissionSets {
     _private: (),
 }
@@ -1007,7 +1007,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPermissionSets {
 /// [`list_permission_sets_provisioned_to_account`](crate::client::Client::list_permission_sets_provisioned_to_account).
 ///
 /// See [`crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPermissionSetsProvisionedToAccount {
     _private: (),
 }
@@ -1045,7 +1045,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPermissionSetsProvis
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -1079,7 +1079,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`provision_permission_set`](crate::client::Client::provision_permission_set).
 ///
 /// See [`crate::client::fluent_builders::ProvisionPermissionSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ProvisionPermissionSet {
     _private: (),
 }
@@ -1113,7 +1113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ProvisionPermissionSet {
 /// [`put_inline_policy_to_permission_set`](crate::client::Client::put_inline_policy_to_permission_set).
 ///
 /// See [`crate::client::fluent_builders::PutInlinePolicyToPermissionSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutInlinePolicyToPermissionSet {
     _private: (),
 }
@@ -1147,7 +1147,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutInlinePolicyToPermiss
 /// [`put_permissions_boundary_to_permission_set`](crate::client::Client::put_permissions_boundary_to_permission_set).
 ///
 /// See [`crate::client::fluent_builders::PutPermissionsBoundaryToPermissionSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutPermissionsBoundaryToPermissionSet {
     _private: (),
 }
@@ -1183,7 +1183,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPermissionsBoundaryTo
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1215,7 +1215,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1247,7 +1247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_instance_access_control_attribute_configuration`](crate::client::Client::update_instance_access_control_attribute_configuration).
 ///
 /// See [`crate::client::fluent_builders::UpdateInstanceAccessControlAttributeConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateInstanceAccessControlAttributeConfiguration {
     _private: (),
 }
@@ -1285,7 +1285,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`update_permission_set`](crate::client::Client::update_permission_set).
 ///
 /// See [`crate::client::fluent_builders::UpdatePermissionSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePermissionSet {
     _private: (),
 }

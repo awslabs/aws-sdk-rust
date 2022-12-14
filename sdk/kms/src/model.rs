@@ -364,7 +364,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_key: std::option::Option<std::string::String>,
         pub(crate) tag_value: std::option::Option<std::string::String>,
@@ -745,7 +745,7 @@ impl KeyMetadata {
 pub mod key_metadata {
 
     /// A builder for [`KeyMetadata`](crate::model::KeyMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -1179,7 +1179,7 @@ impl MultiRegionConfiguration {
 pub mod multi_region_configuration {
 
     /// A builder for [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multi_region_key_type: std::option::Option<crate::model::MultiRegionKeyType>,
         pub(crate) primary_key: std::option::Option<crate::model::MultiRegionKey>,
@@ -1273,7 +1273,7 @@ impl MultiRegionKey {
 pub mod multi_region_key {
 
     /// A builder for [`MultiRegionKey`](crate::model::MultiRegionKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) region: std::option::Option<std::string::String>,
@@ -2283,7 +2283,7 @@ impl GrantListEntry {
 pub mod grant_list_entry {
 
     /// A builder for [`GrantListEntry`](crate::model::GrantListEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) grant_id: std::option::Option<std::string::String>,
@@ -2473,7 +2473,7 @@ impl GrantConstraints {
 pub mod grant_constraints {
 
     /// A builder for [`GrantConstraints`](crate::model::GrantConstraints).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_context_subset: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -2755,7 +2755,7 @@ impl KeyListEntry {
 pub mod key_list_entry {
 
     /// A builder for [`KeyListEntry`](crate::model::KeyListEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) key_arn: std::option::Option<std::string::String>,
@@ -2843,7 +2843,7 @@ impl AliasListEntry {
 pub mod alias_list_entry {
 
     /// A builder for [`AliasListEntry`](crate::model::AliasListEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_name: std::option::Option<std::string::String>,
         pub(crate) alias_arn: std::option::Option<std::string::String>,
@@ -3421,7 +3421,7 @@ impl CustomKeyStoresListEntry {
 pub mod custom_key_stores_list_entry {
 
     /// A builder for [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
         pub(crate) custom_key_store_name: std::option::Option<std::string::String>,

@@ -25,7 +25,7 @@ impl ValidationExceptionField {
 pub mod validation_exception_field {
 
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -206,7 +206,7 @@ impl VpcAttachment {
 pub mod vpc_attachment {
 
     /// A builder for [`VpcAttachment`](crate::model::VpcAttachment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment: std::option::Option<crate::model::Attachment>,
         pub(crate) subnet_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -290,7 +290,7 @@ impl VpcOptions {
 pub mod vpc_options {
 
     /// A builder for [`VpcOptions`](crate::model::VpcOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ipv6_support: std::option::Option<bool>,
     }
@@ -431,7 +431,7 @@ impl Attachment {
 pub mod attachment {
 
     /// A builder for [`Attachment`](crate::model::Attachment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
         pub(crate) core_network_arn: std::option::Option<std::string::String>,
@@ -695,7 +695,7 @@ impl ProposedSegmentChange {
 pub mod proposed_segment_change {
 
     /// A builder for [`ProposedSegmentChange`](crate::model::ProposedSegmentChange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) attachment_policy_rule_number: std::option::Option<i32>,
@@ -790,7 +790,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1157,7 +1157,7 @@ impl std::fmt::Debug for Site {
 pub mod site {
 
     /// A builder for [`Site`](crate::model::Site).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) site_id: std::option::Option<std::string::String>,
         pub(crate) site_arn: std::option::Option<std::string::String>,
@@ -1441,7 +1441,7 @@ impl std::fmt::Debug for Location {
 pub mod location {
 
     /// A builder for [`Location`](crate::model::Location).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
         pub(crate) latitude: std::option::Option<std::string::String>,
@@ -1592,7 +1592,7 @@ impl Link {
 pub mod link {
 
     /// A builder for [`Link`](crate::model::Link).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) link_id: std::option::Option<std::string::String>,
         pub(crate) link_arn: std::option::Option<std::string::String>,
@@ -1885,7 +1885,7 @@ impl Bandwidth {
 pub mod bandwidth {
 
     /// A builder for [`Bandwidth`](crate::model::Bandwidth).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upload_speed: std::option::Option<i32>,
         pub(crate) download_speed: std::option::Option<i32>,
@@ -1980,7 +1980,7 @@ impl GlobalNetwork {
 pub mod global_network {
 
     /// A builder for [`GlobalNetwork`](crate::model::GlobalNetwork).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
         pub(crate) global_network_arn: std::option::Option<std::string::String>,
@@ -2322,7 +2322,7 @@ impl std::fmt::Debug for Device {
 pub mod device {
 
     /// A builder for [`Device`](crate::model::Device).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) device_arn: std::option::Option<std::string::String>,
@@ -2674,7 +2674,7 @@ impl AwsLocation {
 pub mod aws_location {
 
     /// A builder for [`AwsLocation`](crate::model::AwsLocation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) zone: std::option::Option<std::string::String>,
         pub(crate) subnet_arn: std::option::Option<std::string::String>,
@@ -2790,7 +2790,7 @@ impl CoreNetwork {
 pub mod core_network {
 
     /// A builder for [`CoreNetwork`](crate::model::CoreNetwork).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -2990,7 +2990,7 @@ impl CoreNetworkEdge {
 pub mod core_network_edge {
 
     /// A builder for [`CoreNetworkEdge`](crate::model::CoreNetworkEdge).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) edge_location: std::option::Option<std::string::String>,
         pub(crate) asn: std::option::Option<i64>,
@@ -3088,7 +3088,7 @@ impl CoreNetworkSegment {
 pub mod core_network_segment {
 
     /// A builder for [`CoreNetworkSegment`](crate::model::CoreNetworkSegment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) edge_locations: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3348,7 +3348,7 @@ impl Connection {
 pub mod connection {
 
     /// A builder for [`Connection`](crate::model::Connection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) connection_arn: std::option::Option<std::string::String>,
@@ -3716,7 +3716,7 @@ impl RouteAnalysis {
 pub mod route_analysis {
 
     /// A builder for [`RouteAnalysis`](crate::model::RouteAnalysis).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
         pub(crate) owner_account_id: std::option::Option<std::string::String>,
@@ -3918,7 +3918,7 @@ impl RouteAnalysisPath {
 pub mod route_analysis_path {
 
     /// A builder for [`RouteAnalysisPath`](crate::model::RouteAnalysisPath).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) completion_status: std::option::Option<crate::model::RouteAnalysisCompletion>,
         pub(crate) path: std::option::Option<std::vec::Vec<crate::model::PathComponent>>,
@@ -4004,7 +4004,7 @@ impl PathComponent {
 pub mod path_component {
 
     /// A builder for [`PathComponent`](crate::model::PathComponent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sequence: std::option::Option<i32>,
         pub(crate) resource: std::option::Option<crate::model::NetworkResourceSummary>,
@@ -4117,7 +4117,7 @@ impl NetworkResourceSummary {
 pub mod network_resource_summary {
 
     /// A builder for [`NetworkResourceSummary`](crate::model::NetworkResourceSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registered_gateway_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4275,7 +4275,7 @@ impl RouteAnalysisCompletion {
 pub mod route_analysis_completion {
 
     /// A builder for [`RouteAnalysisCompletion`](crate::model::RouteAnalysisCompletion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result_code:
             std::option::Option<crate::model::RouteAnalysisCompletionResultCode>,
@@ -4683,7 +4683,7 @@ impl RouteAnalysisEndpointOptions {
 pub mod route_analysis_endpoint_options {
 
     /// A builder for [`RouteAnalysisEndpointOptions`](crate::model::RouteAnalysisEndpointOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transit_gateway_attachment_arn: std::option::Option<std::string::String>,
         pub(crate) transit_gateway_arn: std::option::Option<std::string::String>,
@@ -4868,7 +4868,7 @@ impl RouteAnalysisEndpointOptionsSpecification {
 pub mod route_analysis_endpoint_options_specification {
 
     /// A builder for [`RouteAnalysisEndpointOptionsSpecification`](crate::model::RouteAnalysisEndpointOptionsSpecification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transit_gateway_attachment_arn: std::option::Option<std::string::String>,
         pub(crate) ip_address: std::option::Option<std::string::String>,
@@ -4955,7 +4955,7 @@ impl OrganizationStatus {
 pub mod organization_status {
 
     /// A builder for [`OrganizationStatus`](crate::model::OrganizationStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) organization_aws_service_access_status: std::option::Option<std::string::String>,
@@ -5068,7 +5068,7 @@ impl AccountStatus {
 pub mod account_status {
 
     /// A builder for [`AccountStatus`](crate::model::AccountStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) slr_deployment_status: std::option::Option<std::string::String>,
@@ -5180,7 +5180,7 @@ impl CoreNetworkPolicy {
 pub mod core_network_policy {
 
     /// A builder for [`CoreNetworkPolicy`](crate::model::CoreNetworkPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
         pub(crate) policy_version_id: std::option::Option<i32>,
@@ -5351,7 +5351,7 @@ impl CoreNetworkPolicyError {
 pub mod core_network_policy_error {
 
     /// A builder for [`CoreNetworkPolicyError`](crate::model::CoreNetworkPolicyError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5648,7 +5648,7 @@ impl TransitGatewayRegistration {
 pub mod transit_gateway_registration {
 
     /// A builder for [`TransitGatewayRegistration`](crate::model::TransitGatewayRegistration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
         pub(crate) transit_gateway_arn: std::option::Option<std::string::String>,
@@ -5736,7 +5736,7 @@ impl TransitGatewayRegistrationStateReason {
 pub mod transit_gateway_registration_state_reason {
 
     /// A builder for [`TransitGatewayRegistrationStateReason`](crate::model::TransitGatewayRegistrationStateReason).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::TransitGatewayRegistrationState>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5969,7 +5969,7 @@ impl Peering {
 pub mod peering {
 
     /// A builder for [`Peering`](crate::model::Peering).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
         pub(crate) core_network_arn: std::option::Option<std::string::String>,
@@ -6379,7 +6379,7 @@ impl CoreNetworkSummary {
 pub mod core_network_summary {
 
     /// A builder for [`CoreNetworkSummary`](crate::model::CoreNetworkSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
         pub(crate) core_network_arn: std::option::Option<std::string::String>,
@@ -6558,7 +6558,7 @@ impl CoreNetworkPolicyVersion {
 pub mod core_network_policy_version {
 
     /// A builder for [`CoreNetworkPolicyVersion`](crate::model::CoreNetworkPolicyVersion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
         pub(crate) policy_version_id: std::option::Option<i32>,
@@ -6720,7 +6720,7 @@ impl ConnectPeerSummary {
 pub mod connect_peer_summary {
 
     /// A builder for [`ConnectPeerSummary`](crate::model::ConnectPeerSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
         pub(crate) connect_attachment_id: std::option::Option<std::string::String>,
@@ -6981,7 +6981,7 @@ impl TransitGatewayRouteTableAttachment {
 pub mod transit_gateway_route_table_attachment {
 
     /// A builder for [`TransitGatewayRouteTableAttachment`](crate::model::TransitGatewayRouteTableAttachment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment: std::option::Option<crate::model::Attachment>,
         pub(crate) peering_id: std::option::Option<std::string::String>,
@@ -7076,7 +7076,7 @@ impl TransitGatewayPeering {
 pub mod transit_gateway_peering {
 
     /// A builder for [`TransitGatewayPeering`](crate::model::TransitGatewayPeering).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) peering: std::option::Option<crate::model::Peering>,
         pub(crate) transit_gateway_arn: std::option::Option<std::string::String>,
@@ -7187,7 +7187,7 @@ impl TransitGatewayConnectPeerAssociation {
 pub mod transit_gateway_connect_peer_association {
 
     /// A builder for [`TransitGatewayConnectPeerAssociation`](crate::model::TransitGatewayConnectPeerAssociation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transit_gateway_connect_peer_arn: std::option::Option<std::string::String>,
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -7408,7 +7408,7 @@ impl SiteToSiteVpnAttachment {
 pub mod site_to_site_vpn_attachment {
 
     /// A builder for [`SiteToSiteVpnAttachment`](crate::model::SiteToSiteVpnAttachment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment: std::option::Option<crate::model::Attachment>,
         pub(crate) vpn_connection_arn: std::option::Option<std::string::String>,
@@ -7530,7 +7530,7 @@ impl NetworkTelemetry {
 pub mod network_telemetry {
 
     /// A builder for [`NetworkTelemetry`](crate::model::NetworkTelemetry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registered_gateway_arn: std::option::Option<std::string::String>,
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -7700,7 +7700,7 @@ impl ConnectionHealth {
 pub mod connection_health {
 
     /// A builder for [`ConnectionHealth`](crate::model::ConnectionHealth).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ConnectionType>,
         pub(crate) status: std::option::Option<crate::model::ConnectionStatus>,
@@ -7989,7 +7989,7 @@ impl NetworkRoute {
 pub mod network_route {
 
     /// A builder for [`NetworkRoute`](crate::model::NetworkRoute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_cidr_block: std::option::Option<std::string::String>,
         pub(crate) destinations:
@@ -8316,7 +8316,7 @@ impl NetworkRouteDestination {
 pub mod network_route_destination {
 
     /// A builder for [`NetworkRouteDestination`](crate::model::NetworkRouteDestination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_attachment_id: std::option::Option<std::string::String>,
         pub(crate) transit_gateway_attachment_id: std::option::Option<std::string::String>,
@@ -8543,7 +8543,7 @@ impl CoreNetworkSegmentEdgeIdentifier {
 pub mod core_network_segment_edge_identifier {
 
     /// A builder for [`CoreNetworkSegmentEdgeIdentifier`](crate::model::CoreNetworkSegmentEdgeIdentifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
         pub(crate) segment_name: std::option::Option<std::string::String>,
@@ -8631,7 +8631,7 @@ impl RouteTableIdentifier {
 pub mod route_table_identifier {
 
     /// A builder for [`RouteTableIdentifier`](crate::model::RouteTableIdentifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transit_gateway_route_table_arn: std::option::Option<std::string::String>,
         pub(crate) core_network_segment_edge:
@@ -8822,7 +8822,7 @@ impl NetworkResource {
 pub mod network_resource {
 
     /// A builder for [`NetworkResource`](crate::model::NetworkResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registered_gateway_arn: std::option::Option<std::string::String>,
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -9079,7 +9079,7 @@ impl Relationship {
 pub mod relationship {
 
     /// A builder for [`Relationship`](crate::model::Relationship).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from: std::option::Option<std::string::String>,
         pub(crate) to: std::option::Option<std::string::String>,
@@ -9146,7 +9146,7 @@ impl NetworkResourceCount {
 pub mod network_resource_count {
 
     /// A builder for [`NetworkResourceCount`](crate::model::NetworkResourceCount).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) count: std::option::Option<i32>,
@@ -9232,7 +9232,7 @@ impl LinkAssociation {
 pub mod link_association {
 
     /// A builder for [`LinkAssociation`](crate::model::LinkAssociation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -9452,7 +9452,7 @@ impl CustomerGatewayAssociation {
 pub mod customer_gateway_association {
 
     /// A builder for [`CustomerGatewayAssociation`](crate::model::CustomerGatewayAssociation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) customer_gateway_arn: std::option::Option<std::string::String>,
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -9694,7 +9694,7 @@ impl CoreNetworkChange {
 pub mod core_network_change {
 
     /// A builder for [`CoreNetworkChange`](crate::model::CoreNetworkChange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ChangeType>,
         pub(crate) action: std::option::Option<crate::model::ChangeAction>,
@@ -9856,7 +9856,7 @@ impl CoreNetworkChangeValues {
 pub mod core_network_change_values {
 
     /// A builder for [`CoreNetworkChangeValues`](crate::model::CoreNetworkChangeValues).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segment_name: std::option::Option<std::string::String>,
         pub(crate) edge_locations: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10271,7 +10271,7 @@ impl CoreNetworkChangeEvent {
 pub mod core_network_change_event {
 
     /// A builder for [`CoreNetworkChangeEvent`](crate::model::CoreNetworkChangeEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ChangeType>,
         pub(crate) action: std::option::Option<crate::model::ChangeAction>,
@@ -10415,7 +10415,7 @@ impl CoreNetworkChangeEventValues {
 pub mod core_network_change_event_values {
 
     /// A builder for [`CoreNetworkChangeEventValues`](crate::model::CoreNetworkChangeEventValues).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) edge_location: std::option::Option<std::string::String>,
         pub(crate) segment_name: std::option::Option<std::string::String>,
@@ -10633,7 +10633,7 @@ impl ConnectPeerAssociation {
 pub mod connect_peer_association {
 
     /// A builder for [`ConnectPeerAssociation`](crate::model::ConnectPeerAssociation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_peer_id: std::option::Option<std::string::String>,
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -10889,7 +10889,7 @@ impl ConnectPeer {
 pub mod connect_peer {
 
     /// A builder for [`ConnectPeer`](crate::model::ConnectPeer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
         pub(crate) connect_attachment_id: std::option::Option<std::string::String>,
@@ -11082,7 +11082,7 @@ impl ConnectPeerConfiguration {
 pub mod connect_peer_configuration {
 
     /// A builder for [`ConnectPeerConfiguration`](crate::model::ConnectPeerConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_address: std::option::Option<std::string::String>,
         pub(crate) peer_address: std::option::Option<std::string::String>,
@@ -11227,7 +11227,7 @@ impl ConnectPeerBgpConfiguration {
 pub mod connect_peer_bgp_configuration {
 
     /// A builder for [`ConnectPeerBgpConfiguration`](crate::model::ConnectPeerBgpConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_asn: std::option::Option<i64>,
         pub(crate) peer_asn: std::option::Option<i64>,
@@ -11413,7 +11413,7 @@ impl ConnectAttachment {
 pub mod connect_attachment {
 
     /// A builder for [`ConnectAttachment`](crate::model::ConnectAttachment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment: std::option::Option<crate::model::Attachment>,
         pub(crate) transport_attachment_id: std::option::Option<std::string::String>,
@@ -11494,7 +11494,7 @@ impl ConnectAttachmentOptions {
 pub mod connect_attachment_options {
 
     /// A builder for [`ConnectAttachmentOptions`](crate::model::ConnectAttachmentOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocol: std::option::Option<crate::model::TunnelProtocol>,
     }
@@ -11545,7 +11545,7 @@ impl BgpOptions {
 pub mod bgp_options {
 
     /// A builder for [`BgpOptions`](crate::model::BgpOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) peer_asn: std::option::Option<i64>,
     }

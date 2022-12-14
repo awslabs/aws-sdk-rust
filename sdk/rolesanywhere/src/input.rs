@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_profile_input {
 
     /// A builder for [`CreateProfileInput`](crate::input::CreateProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) require_instance_properties: std::option::Option<bool>,
@@ -259,7 +259,7 @@ impl CreateProfileInput {
 pub mod create_trust_anchor_input {
 
     /// A builder for [`CreateTrustAnchorInput`](crate::input::CreateTrustAnchorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) source: std::option::Option<crate::model::Source>,
@@ -446,7 +446,7 @@ impl CreateTrustAnchorInput {
 pub mod delete_crl_input {
 
     /// A builder for [`DeleteCrlInput`](crate::input::DeleteCrlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl_id: std::option::Option<std::string::String>,
     }
@@ -589,7 +589,7 @@ impl DeleteCrlInput {
 pub mod delete_profile_input {
 
     /// A builder for [`DeleteProfileInput`](crate::input::DeleteProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_id: std::option::Option<std::string::String>,
     }
@@ -735,7 +735,7 @@ impl DeleteProfileInput {
 pub mod delete_trust_anchor_input {
 
     /// A builder for [`DeleteTrustAnchorInput`](crate::input::DeleteTrustAnchorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_anchor_id: std::option::Option<std::string::String>,
     }
@@ -890,7 +890,7 @@ impl DeleteTrustAnchorInput {
 pub mod disable_crl_input {
 
     /// A builder for [`DisableCrlInput`](crate::input::DisableCrlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl_id: std::option::Option<std::string::String>,
     }
@@ -1036,7 +1036,7 @@ impl DisableCrlInput {
 pub mod disable_profile_input {
 
     /// A builder for [`DisableProfileInput`](crate::input::DisableProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_id: std::option::Option<std::string::String>,
     }
@@ -1186,7 +1186,7 @@ impl DisableProfileInput {
 pub mod disable_trust_anchor_input {
 
     /// A builder for [`DisableTrustAnchorInput`](crate::input::DisableTrustAnchorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_anchor_id: std::option::Option<std::string::String>,
     }
@@ -1341,7 +1341,7 @@ impl DisableTrustAnchorInput {
 pub mod enable_crl_input {
 
     /// A builder for [`EnableCrlInput`](crate::input::EnableCrlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl_id: std::option::Option<std::string::String>,
     }
@@ -1485,7 +1485,7 @@ impl EnableCrlInput {
 pub mod enable_profile_input {
 
     /// A builder for [`EnableProfileInput`](crate::input::EnableProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_id: std::option::Option<std::string::String>,
     }
@@ -1635,7 +1635,7 @@ impl EnableProfileInput {
 pub mod enable_trust_anchor_input {
 
     /// A builder for [`EnableTrustAnchorInput`](crate::input::EnableTrustAnchorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_anchor_id: std::option::Option<std::string::String>,
     }
@@ -1790,7 +1790,7 @@ impl EnableTrustAnchorInput {
 pub mod get_crl_input {
 
     /// A builder for [`GetCrlInput`](crate::input::GetCrlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl_id: std::option::Option<std::string::String>,
     }
@@ -1933,7 +1933,7 @@ impl GetCrlInput {
 pub mod get_profile_input {
 
     /// A builder for [`GetProfileInput`](crate::input::GetProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_id: std::option::Option<std::string::String>,
     }
@@ -2079,7 +2079,7 @@ impl GetProfileInput {
 pub mod get_subject_input {
 
     /// A builder for [`GetSubjectInput`](crate::input::GetSubjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subject_id: std::option::Option<std::string::String>,
     }
@@ -2225,7 +2225,7 @@ impl GetSubjectInput {
 pub mod get_trust_anchor_input {
 
     /// A builder for [`GetTrustAnchorInput`](crate::input::GetTrustAnchorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_anchor_id: std::option::Option<std::string::String>,
     }
@@ -2378,7 +2378,7 @@ impl GetTrustAnchorInput {
 pub mod import_crl_input {
 
     /// A builder for [`ImportCrlInput`](crate::input::ImportCrlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) crl_data: std::option::Option<aws_smithy_types::Blob>,
@@ -2576,7 +2576,7 @@ impl ImportCrlInput {
 pub mod list_crls_input {
 
     /// A builder for [`ListCrlsInput`](crate::input::ListCrlsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) page_size: std::option::Option<i32>,
@@ -2733,7 +2733,7 @@ impl ListCrlsInput {
 pub mod list_profiles_input {
 
     /// A builder for [`ListProfilesInput`](crate::input::ListProfilesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) page_size: std::option::Option<i32>,
@@ -2892,7 +2892,7 @@ impl ListProfilesInput {
 pub mod list_subjects_input {
 
     /// A builder for [`ListSubjectsInput`](crate::input::ListSubjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) page_size: std::option::Option<i32>,
@@ -3051,7 +3051,7 @@ impl ListSubjectsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3206,7 +3206,7 @@ impl ListTagsForResourceInput {
 pub mod list_trust_anchors_input {
 
     /// A builder for [`ListTrustAnchorsInput`](crate::input::ListTrustAnchorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) page_size: std::option::Option<i32>,
@@ -3367,7 +3367,7 @@ impl ListTrustAnchorsInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3528,7 +3528,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3689,7 +3689,7 @@ impl UntagResourceInput {
 pub mod update_crl_input {
 
     /// A builder for [`UpdateCrlInput`](crate::input::UpdateCrlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) crl_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3870,7 +3870,7 @@ impl UpdateCrlInput {
 pub mod update_profile_input {
 
     /// A builder for [`UpdateProfileInput`](crate::input::UpdateProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4111,7 +4111,7 @@ impl UpdateProfileInput {
 pub mod update_trust_anchor_input {
 
     /// A builder for [`UpdateTrustAnchorInput`](crate::input::UpdateTrustAnchorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust_anchor_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,

@@ -18,7 +18,7 @@ impl ArtifactConfigInput {
 pub mod artifact_config_input {
 
     /// A builder for [`ArtifactConfigInput`](crate::model::ArtifactConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_encryption: std::option::Option<crate::model::S3EncryptionConfig>,
     }
@@ -79,7 +79,7 @@ impl S3EncryptionConfig {
 pub mod s3_encryption_config {
 
     /// A builder for [`S3EncryptionConfig`](crate::model::S3EncryptionConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_mode: std::option::Option<crate::model::EncryptionMode>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
@@ -242,7 +242,7 @@ impl VisualReferenceInput {
 pub mod visual_reference_input {
 
     /// A builder for [`VisualReferenceInput`](crate::model::VisualReferenceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base_screenshots:
             std::option::Option<std::vec::Vec<crate::model::BaseScreenshot>>,
@@ -322,7 +322,7 @@ impl BaseScreenshot {
 pub mod base_screenshot {
 
     /// A builder for [`BaseScreenshot`](crate::model::BaseScreenshot).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) screenshot_name: std::option::Option<std::string::String>,
         pub(crate) ignore_coordinates: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -401,7 +401,7 @@ impl VpcConfigInput {
 pub mod vpc_config_input {
 
     /// A builder for [`VpcConfigInput`](crate::model::VpcConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -516,7 +516,7 @@ impl CanaryRunConfigInput {
 pub mod canary_run_config_input {
 
     /// A builder for [`CanaryRunConfigInput`](crate::model::CanaryRunConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_in_seconds: std::option::Option<i32>,
         pub(crate) memory_in_mb: std::option::Option<i32>,
@@ -644,7 +644,7 @@ impl CanaryScheduleInput {
 pub mod canary_schedule_input {
 
     /// A builder for [`CanaryScheduleInput`](crate::model::CanaryScheduleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
         pub(crate) duration_in_seconds: std::option::Option<i64>,
@@ -742,7 +742,7 @@ impl CanaryCodeInput {
 pub mod canary_code_input {
 
     /// A builder for [`CanaryCodeInput`](crate::model::CanaryCodeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
         pub(crate) s3_key: std::option::Option<std::string::String>,
@@ -854,7 +854,7 @@ impl GroupSummary {
 pub mod group_summary {
 
     /// A builder for [`GroupSummary`](crate::model::GroupSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -965,7 +965,7 @@ impl Group {
 pub mod group {
 
     /// A builder for [`Group`](crate::model::Group).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1124,7 +1124,7 @@ impl CanaryRun {
 pub mod canary_run {
 
     /// A builder for [`CanaryRun`](crate::model::CanaryRun).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1236,7 +1236,7 @@ impl CanaryRunTimeline {
 pub mod canary_run_timeline {
 
     /// A builder for [`CanaryRunTimeline`](crate::model::CanaryRunTimeline).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) started: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) completed: std::option::Option<aws_smithy_types::DateTime>,
@@ -1318,7 +1318,7 @@ impl CanaryRunStatus {
 pub mod canary_run_status {
 
     /// A builder for [`CanaryRunStatus`](crate::model::CanaryRunStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::CanaryRunState>,
         pub(crate) state_reason: std::option::Option<std::string::String>,
@@ -1699,7 +1699,7 @@ impl Canary {
 pub mod canary {
 
     /// A builder for [`Canary`](crate::model::Canary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1995,7 +1995,7 @@ impl ArtifactConfigOutput {
 pub mod artifact_config_output {
 
     /// A builder for [`ArtifactConfigOutput`](crate::model::ArtifactConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_encryption: std::option::Option<crate::model::S3EncryptionConfig>,
     }
@@ -2054,7 +2054,7 @@ impl VisualReferenceOutput {
 pub mod visual_reference_output {
 
     /// A builder for [`VisualReferenceOutput`](crate::model::VisualReferenceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base_screenshots:
             std::option::Option<std::vec::Vec<crate::model::BaseScreenshot>>,
@@ -2141,7 +2141,7 @@ impl VpcConfigOutput {
 pub mod vpc_config_output {
 
     /// A builder for [`VpcConfigOutput`](crate::model::VpcConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2252,7 +2252,7 @@ impl CanaryTimeline {
 pub mod canary_timeline {
 
     /// A builder for [`CanaryTimeline`](crate::model::CanaryTimeline).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
@@ -2362,7 +2362,7 @@ impl CanaryStatus {
 pub mod canary_status {
 
     /// A builder for [`CanaryStatus`](crate::model::CanaryStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::CanaryState>,
         pub(crate) state_reason: std::option::Option<std::string::String>,
@@ -2734,7 +2734,7 @@ impl CanaryRunConfigOutput {
 pub mod canary_run_config_output {
 
     /// A builder for [`CanaryRunConfigOutput`](crate::model::CanaryRunConfigOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_in_seconds: std::option::Option<i32>,
         pub(crate) memory_in_mb: std::option::Option<i32>,
@@ -2821,7 +2821,7 @@ impl CanaryScheduleOutput {
 pub mod canary_schedule_output {
 
     /// A builder for [`CanaryScheduleOutput`](crate::model::CanaryScheduleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
         pub(crate) duration_in_seconds: std::option::Option<i64>,
@@ -2896,7 +2896,7 @@ impl CanaryCodeOutput {
 pub mod canary_code_output {
 
     /// A builder for [`CanaryCodeOutput`](crate::model::CanaryCodeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_location_arn: std::option::Option<std::string::String>,
         pub(crate) handler: std::option::Option<std::string::String>,
@@ -2980,7 +2980,7 @@ impl RuntimeVersion {
 pub mod runtime_version {
 
     /// A builder for [`RuntimeVersion`](crate::model::RuntimeVersion).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -3077,7 +3077,7 @@ impl CanaryLastRun {
 pub mod canary_last_run {
 
     /// A builder for [`CanaryLastRun`](crate::model::CanaryLastRun).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canary_name: std::option::Option<std::string::String>,
         pub(crate) last_run: std::option::Option<crate::model::CanaryRun>,

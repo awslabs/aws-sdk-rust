@@ -30,7 +30,7 @@ impl std::error::Error for UnknownResourceFault {}
 pub mod unknown_resource_fault {
 
     /// A builder for [`UnknownResourceFault`](crate::error::UnknownResourceFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl std::error::Error for OperationNotPermittedFault {}
 pub mod operation_not_permitted_fault {
 
     /// A builder for [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl std::error::Error for LimitExceededFault {}
 pub mod limit_exceeded_fault {
 
     /// A builder for [`LimitExceededFault`](crate::error::LimitExceededFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -210,7 +210,7 @@ impl std::error::Error for TypeAlreadyExistsFault {}
 pub mod type_already_exists_fault {
 
     /// A builder for [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -270,7 +270,7 @@ impl std::error::Error for DomainAlreadyExistsFault {}
 pub mod domain_already_exists_fault {
 
     /// A builder for [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -330,7 +330,7 @@ impl std::error::Error for TooManyTagsFault {}
 pub mod too_many_tags_fault {
 
     /// A builder for [`TooManyTagsFault`](crate::error::TooManyTagsFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -390,7 +390,7 @@ impl std::error::Error for WorkflowExecutionAlreadyStartedFault {}
 pub mod workflow_execution_already_started_fault {
 
     /// A builder for [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -450,7 +450,7 @@ impl std::error::Error for TypeDeprecatedFault {}
 pub mod type_deprecated_fault {
 
     /// A builder for [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -513,7 +513,7 @@ impl std::error::Error for DefaultUndefinedFault {}
 pub mod default_undefined_fault {
 
     /// A builder for [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -573,7 +573,7 @@ impl std::error::Error for DomainDeprecatedFault {}
 pub mod domain_deprecated_fault {
 
     /// A builder for [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

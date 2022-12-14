@@ -30,7 +30,7 @@ impl std::error::Error for UploadNotFoundException {}
 pub mod upload_not_found_exception {
 
     /// A builder for [`UploadNotFoundException`](crate::error::UploadNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl std::error::Error for ServerException {}
 pub mod server_exception {
 
     /// A builder for [`ServerException`](crate::error::ServerException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl std::error::Error for RepositoryNotFoundException {}
 pub mod repository_not_found_exception {
 
     /// A builder for [`RepositoryNotFoundException`](crate::error::RepositoryNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -210,7 +210,7 @@ impl std::error::Error for LimitExceededException {}
 pub mod limit_exceeded_exception {
 
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -279,7 +279,7 @@ impl std::error::Error for KmsException {}
 pub mod kms_exception {
 
     /// A builder for [`KmsException`](crate::error::KmsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) kms_error: std::option::Option<std::string::String>,
@@ -351,7 +351,7 @@ impl std::error::Error for InvalidParameterException {}
 pub mod invalid_parameter_exception {
 
     /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -441,7 +441,7 @@ impl std::error::Error for InvalidLayerPartException {}
 pub mod invalid_layer_part_exception {
 
     /// A builder for [`InvalidLayerPartException`](crate::error::InvalidLayerPartException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -552,7 +552,7 @@ impl std::error::Error for TooManyTagsException {}
 pub mod too_many_tags_exception {
 
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -612,7 +612,7 @@ impl std::error::Error for InvalidTagParameterException {}
 pub mod invalid_tag_parameter_exception {
 
     /// A builder for [`InvalidTagParameterException`](crate::error::InvalidTagParameterException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -672,7 +672,7 @@ impl std::error::Error for LifecyclePolicyPreviewInProgressException {}
 pub mod lifecycle_policy_preview_in_progress_exception {
 
     /// A builder for [`LifecyclePolicyPreviewInProgressException`](crate::error::LifecyclePolicyPreviewInProgressException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -732,7 +732,7 @@ impl std::error::Error for LifecyclePolicyNotFoundException {}
 pub mod lifecycle_policy_not_found_exception {
 
     /// A builder for [`LifecyclePolicyNotFoundException`](crate::error::LifecyclePolicyNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -792,7 +792,7 @@ impl std::error::Error for ValidationException {}
 pub mod validation_exception {
 
     /// A builder for [`ValidationException`](crate::error::ValidationException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -852,7 +852,7 @@ impl std::error::Error for UnsupportedImageTypeException {}
 pub mod unsupported_image_type_exception {
 
     /// A builder for [`UnsupportedImageTypeException`](crate::error::UnsupportedImageTypeException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -912,7 +912,7 @@ impl std::error::Error for ImageNotFoundException {}
 pub mod image_not_found_exception {
 
     /// A builder for [`ImageNotFoundException`](crate::error::ImageNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -972,7 +972,7 @@ impl std::error::Error for ReferencedImagesNotFoundException {}
 pub mod referenced_images_not_found_exception {
 
     /// A builder for [`ReferencedImagesNotFoundException`](crate::error::ReferencedImagesNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1032,7 +1032,7 @@ impl std::error::Error for LayersNotFoundException {}
 pub mod layers_not_found_exception {
 
     /// A builder for [`LayersNotFoundException`](crate::error::LayersNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1092,7 +1092,7 @@ impl std::error::Error for ImageTagAlreadyExistsException {}
 pub mod image_tag_already_exists_exception {
 
     /// A builder for [`ImageTagAlreadyExistsException`](crate::error::ImageTagAlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1152,7 +1152,7 @@ impl std::error::Error for ImageDigestDoesNotMatchException {}
 pub mod image_digest_does_not_match_exception {
 
     /// A builder for [`ImageDigestDoesNotMatchException`](crate::error::ImageDigestDoesNotMatchException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1212,7 +1212,7 @@ impl std::error::Error for ImageAlreadyExistsException {}
 pub mod image_already_exists_exception {
 
     /// A builder for [`ImageAlreadyExistsException`](crate::error::ImageAlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1272,7 +1272,7 @@ impl std::error::Error for RepositoryPolicyNotFoundException {}
 pub mod repository_policy_not_found_exception {
 
     /// A builder for [`RepositoryPolicyNotFoundException`](crate::error::RepositoryPolicyNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1332,7 +1332,7 @@ impl std::error::Error for RegistryPolicyNotFoundException {}
 pub mod registry_policy_not_found_exception {
 
     /// A builder for [`RegistryPolicyNotFoundException`](crate::error::RegistryPolicyNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1392,7 +1392,7 @@ impl std::error::Error for LifecyclePolicyPreviewNotFoundException {}
 pub mod lifecycle_policy_preview_not_found_exception {
 
     /// A builder for [`LifecyclePolicyPreviewNotFoundException`](crate::error::LifecyclePolicyPreviewNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1452,7 +1452,7 @@ impl std::error::Error for LayerInaccessibleException {}
 pub mod layer_inaccessible_exception {
 
     /// A builder for [`LayerInaccessibleException`](crate::error::LayerInaccessibleException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1512,7 +1512,7 @@ impl std::error::Error for PullThroughCacheRuleNotFoundException {}
 pub mod pull_through_cache_rule_not_found_exception {
 
     /// A builder for [`PullThroughCacheRuleNotFoundException`](crate::error::PullThroughCacheRuleNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1572,7 +1572,7 @@ impl std::error::Error for ScanNotFoundException {}
 pub mod scan_not_found_exception {
 
     /// A builder for [`ScanNotFoundException`](crate::error::ScanNotFoundException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1632,7 +1632,7 @@ impl std::error::Error for RepositoryNotEmptyException {}
 pub mod repository_not_empty_exception {
 
     /// A builder for [`RepositoryNotEmptyException`](crate::error::RepositoryNotEmptyException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1692,7 +1692,7 @@ impl std::error::Error for RepositoryAlreadyExistsException {}
 pub mod repository_already_exists_exception {
 
     /// A builder for [`RepositoryAlreadyExistsException`](crate::error::RepositoryAlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1752,7 +1752,7 @@ impl std::error::Error for UnsupportedUpstreamRegistryException {}
 pub mod unsupported_upstream_registry_exception {
 
     /// A builder for [`UnsupportedUpstreamRegistryException`](crate::error::UnsupportedUpstreamRegistryException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1812,7 +1812,7 @@ impl std::error::Error for PullThroughCacheRuleAlreadyExistsException {}
 pub mod pull_through_cache_rule_already_exists_exception {
 
     /// A builder for [`PullThroughCacheRuleAlreadyExistsException`](crate::error::PullThroughCacheRuleAlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1872,7 +1872,7 @@ impl std::error::Error for LayerPartTooSmallException {}
 pub mod layer_part_too_small_exception {
 
     /// A builder for [`LayerPartTooSmallException`](crate::error::LayerPartTooSmallException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1932,7 +1932,7 @@ impl std::error::Error for LayerAlreadyExistsException {}
 pub mod layer_already_exists_exception {
 
     /// A builder for [`LayerAlreadyExistsException`](crate::error::LayerAlreadyExistsException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -1992,7 +1992,7 @@ impl std::error::Error for InvalidLayerException {}
 pub mod invalid_layer_exception {
 
     /// A builder for [`InvalidLayerException`](crate::error::InvalidLayerException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -2052,7 +2052,7 @@ impl std::error::Error for EmptyUploadException {}
 pub mod empty_upload_exception {
 
     /// A builder for [`EmptyUploadException`](crate::error::EmptyUploadException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

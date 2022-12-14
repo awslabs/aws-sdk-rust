@@ -25,7 +25,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -172,7 +172,7 @@ impl BgpPeer {
 pub mod bgp_peer {
 
     /// A builder for [`BgpPeer`](crate::model::BgpPeer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bgp_peer_id: std::option::Option<std::string::String>,
         pub(crate) asn: std::option::Option<i32>,
@@ -663,7 +663,7 @@ impl RouteFilterPrefix {
 pub mod route_filter_prefix {
 
     /// A builder for [`RouteFilterPrefix`](crate::model::RouteFilterPrefix).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr: std::option::Option<std::string::String>,
     }
@@ -881,7 +881,7 @@ impl MacSecKey {
 pub mod mac_sec_key {
 
     /// A builder for [`MacSecKey`](crate::model::MacSecKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_arn: std::option::Option<std::string::String>,
         pub(crate) ckn: std::option::Option<std::string::String>,
@@ -1251,7 +1251,7 @@ impl Connection {
 pub mod connection {
 
     /// A builder for [`Connection`](crate::model::Connection).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -1966,7 +1966,7 @@ impl DirectConnectGatewayAssociation {
 pub mod direct_connect_gateway_association {
 
     /// A builder for [`DirectConnectGatewayAssociation`](crate::model::DirectConnectGatewayAssociation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
         pub(crate) direct_connect_gateway_owner_account: std::option::Option<std::string::String>,
@@ -2208,7 +2208,7 @@ impl AssociatedGateway {
 pub mod associated_gateway {
 
     /// A builder for [`AssociatedGateway`](crate::model::AssociatedGateway).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::GatewayType>,
@@ -2547,7 +2547,7 @@ impl DirectConnectGateway {
 pub mod direct_connect_gateway {
 
     /// A builder for [`DirectConnectGateway`](crate::model::DirectConnectGateway).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
         pub(crate) direct_connect_gateway_name: std::option::Option<std::string::String>,
@@ -2840,7 +2840,7 @@ impl VirtualInterfaceTestHistory {
 pub mod virtual_interface_test_history {
 
     /// A builder for [`VirtualInterfaceTestHistory`](crate::model::VirtualInterfaceTestHistory).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) test_id: std::option::Option<std::string::String>,
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -3194,7 +3194,7 @@ impl VirtualInterface {
 pub mod virtual_interface {
 
     /// A builder for [`VirtualInterface`](crate::model::VirtualInterface).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -3659,7 +3659,7 @@ impl VirtualGateway {
 pub mod virtual_gateway {
 
     /// A builder for [`VirtualGateway`](crate::model::VirtualGateway).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateway_id: std::option::Option<std::string::String>,
         pub(crate) virtual_gateway_state: std::option::Option<std::string::String>,
@@ -3744,7 +3744,7 @@ impl ResourceTag {
 pub mod resource_tag {
 
     /// A builder for [`ResourceTag`](crate::model::ResourceTag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3848,7 +3848,7 @@ impl RouterType {
 pub mod router_type {
 
     /// A builder for [`RouterType`](crate::model::RouterType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vendor: std::option::Option<std::string::String>,
         pub(crate) platform: std::option::Option<std::string::String>,
@@ -4003,7 +4003,7 @@ impl Location {
 pub mod location {
 
     /// A builder for [`Location`](crate::model::Location).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_code: std::option::Option<std::string::String>,
         pub(crate) location_name: std::option::Option<std::string::String>,
@@ -4395,7 +4395,7 @@ impl Lag {
 pub mod lag {
 
     /// A builder for [`Lag`](crate::model::Lag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections_bandwidth: std::option::Option<std::string::String>,
         pub(crate) number_of_connections: std::option::Option<i32>,
@@ -4869,7 +4869,7 @@ impl Interconnect {
 pub mod interconnect {
 
     /// A builder for [`Interconnect`](crate::model::Interconnect).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_id: std::option::Option<std::string::String>,
         pub(crate) interconnect_name: std::option::Option<std::string::String>,
@@ -5268,7 +5268,7 @@ impl Loa {
 pub mod loa {
 
     /// A builder for [`Loa`](crate::model::Loa).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) loa_content: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) loa_content_type: std::option::Option<crate::model::LoaContentType>,
@@ -5392,7 +5392,7 @@ impl DirectConnectGatewayAttachment {
 pub mod direct_connect_gateway_attachment {
 
     /// A builder for [`DirectConnectGatewayAttachment`](crate::model::DirectConnectGatewayAttachment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
@@ -5821,7 +5821,7 @@ impl DirectConnectGatewayAssociationProposal {
 pub mod direct_connect_gateway_association_proposal {
 
     /// A builder for [`DirectConnectGatewayAssociationProposal`](crate::model::DirectConnectGatewayAssociationProposal).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proposal_id: std::option::Option<std::string::String>,
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
@@ -6201,7 +6201,7 @@ impl CustomerAgreement {
 pub mod customer_agreement {
 
     /// A builder for [`CustomerAgreement`](crate::model::CustomerAgreement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agreement_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
@@ -6336,7 +6336,7 @@ impl NewTransitVirtualInterface {
 pub mod new_transit_virtual_interface {
 
     /// A builder for [`NewTransitVirtualInterface`](crate::model::NewTransitVirtualInterface).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_name: std::option::Option<std::string::String>,
         pub(crate) vlan: std::option::Option<i32>,
@@ -6588,7 +6588,7 @@ impl NewPublicVirtualInterface {
 pub mod new_public_virtual_interface {
 
     /// A builder for [`NewPublicVirtualInterface`](crate::model::NewPublicVirtualInterface).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_name: std::option::Option<std::string::String>,
         pub(crate) vlan: std::option::Option<i32>,
@@ -6844,7 +6844,7 @@ impl NewPrivateVirtualInterface {
 pub mod new_private_virtual_interface {
 
     /// A builder for [`NewPrivateVirtualInterface`](crate::model::NewPrivateVirtualInterface).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_name: std::option::Option<std::string::String>,
         pub(crate) vlan: std::option::Option<i32>,
@@ -7081,7 +7081,7 @@ impl NewBgpPeer {
 pub mod new_bgp_peer {
 
     /// A builder for [`NewBgpPeer`](crate::model::NewBgpPeer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asn: std::option::Option<i32>,
         pub(crate) auth_key: std::option::Option<std::string::String>,
@@ -7244,7 +7244,7 @@ impl NewTransitVirtualInterfaceAllocation {
 pub mod new_transit_virtual_interface_allocation {
 
     /// A builder for [`NewTransitVirtualInterfaceAllocation`](crate::model::NewTransitVirtualInterfaceAllocation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_name: std::option::Option<std::string::String>,
         pub(crate) vlan: std::option::Option<i32>,
@@ -7469,7 +7469,7 @@ impl NewPublicVirtualInterfaceAllocation {
 pub mod new_public_virtual_interface_allocation {
 
     /// A builder for [`NewPublicVirtualInterfaceAllocation`](crate::model::NewPublicVirtualInterfaceAllocation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_name: std::option::Option<std::string::String>,
         pub(crate) vlan: std::option::Option<i32>,
@@ -7704,7 +7704,7 @@ impl NewPrivateVirtualInterfaceAllocation {
 pub mod new_private_virtual_interface_allocation {
 
     /// A builder for [`NewPrivateVirtualInterfaceAllocation`](crate::model::NewPrivateVirtualInterfaceAllocation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_name: std::option::Option<std::string::String>,
         pub(crate) vlan: std::option::Option<i32>,

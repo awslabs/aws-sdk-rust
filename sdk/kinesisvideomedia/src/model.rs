@@ -62,7 +62,7 @@ impl StartSelector {
 pub mod start_selector {
 
     /// A builder for [`StartSelector`](crate::model::StartSelector).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_selector_type: std::option::Option<crate::model::StartSelectorType>,
         pub(crate) after_fragment_number: std::option::Option<std::string::String>,

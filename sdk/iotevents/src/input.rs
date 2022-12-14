@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_alarm_model_input {
 
     /// A builder for [`CreateAlarmModelInput`](crate::input::CreateAlarmModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
         pub(crate) alarm_model_description: std::option::Option<std::string::String>,
@@ -284,7 +284,7 @@ impl CreateAlarmModelInput {
 pub mod create_detector_model_input {
 
     /// A builder for [`CreateDetectorModelInput`](crate::input::CreateDetectorModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
         pub(crate) detector_model_definition:
@@ -523,7 +523,7 @@ impl CreateDetectorModelInput {
 pub mod create_input_input {
 
     /// A builder for [`CreateInputInput`](crate::input::CreateInputInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_name: std::option::Option<std::string::String>,
         pub(crate) input_description: std::option::Option<std::string::String>,
@@ -714,7 +714,7 @@ impl CreateInputInput {
 pub mod delete_alarm_model_input {
 
     /// A builder for [`DeleteAlarmModelInput`](crate::input::DeleteAlarmModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
     }
@@ -869,7 +869,7 @@ impl DeleteAlarmModelInput {
 pub mod delete_detector_model_input {
 
     /// A builder for [`DeleteDetectorModelInput`](crate::input::DeleteDetectorModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
     }
@@ -1024,7 +1024,7 @@ impl DeleteDetectorModelInput {
 pub mod delete_input_input {
 
     /// A builder for [`DeleteInputInput`](crate::input::DeleteInputInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_name: std::option::Option<std::string::String>,
     }
@@ -1170,7 +1170,7 @@ impl DeleteInputInput {
 pub mod describe_alarm_model_input {
 
     /// A builder for [`DescribeAlarmModelInput`](crate::input::DescribeAlarmModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
         pub(crate) alarm_model_version: std::option::Option<std::string::String>,
@@ -1353,7 +1353,7 @@ impl DescribeAlarmModelInput {
 pub mod describe_detector_model_input {
 
     /// A builder for [`DescribeDetectorModelInput`](crate::input::DescribeDetectorModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
         pub(crate) detector_model_version: std::option::Option<std::string::String>,
@@ -1536,7 +1536,7 @@ impl DescribeDetectorModelInput {
 pub mod describe_detector_model_analysis_input {
 
     /// A builder for [`DescribeDetectorModelAnalysisInput`](crate::input::DescribeDetectorModelAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_id: std::option::Option<std::string::String>,
     }
@@ -1688,7 +1688,7 @@ impl DescribeDetectorModelAnalysisInput {
 pub mod describe_input_input {
 
     /// A builder for [`DescribeInputInput`](crate::input::DescribeInputInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_name: std::option::Option<std::string::String>,
     }
@@ -1834,7 +1834,7 @@ impl DescribeInputInput {
 pub mod describe_logging_options_input {
 
     /// A builder for [`DescribeLoggingOptionsInput`](crate::input::DescribeLoggingOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeLoggingOptionsInput`](crate::input::DescribeLoggingOptionsInput).
@@ -1948,7 +1948,7 @@ impl DescribeLoggingOptionsInput {
 pub mod get_detector_model_analysis_results_input {
 
     /// A builder for [`GetDetectorModelAnalysisResultsInput`](crate::input::GetDetectorModelAnalysisResultsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2145,7 +2145,7 @@ impl GetDetectorModelAnalysisResultsInput {
 pub mod list_alarm_models_input {
 
     /// A builder for [`ListAlarmModelsInput`](crate::input::ListAlarmModelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2304,7 +2304,7 @@ impl ListAlarmModelsInput {
 pub mod list_alarm_model_versions_input {
 
     /// A builder for [`ListAlarmModelVersionsInput`](crate::input::ListAlarmModelVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2504,7 +2504,7 @@ impl ListAlarmModelVersionsInput {
 pub mod list_detector_models_input {
 
     /// A builder for [`ListDetectorModelsInput`](crate::input::ListDetectorModelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2665,7 +2665,7 @@ impl ListDetectorModelsInput {
 pub mod list_detector_model_versions_input {
 
     /// A builder for [`ListDetectorModelVersionsInput`](crate::input::ListDetectorModelVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2865,7 +2865,7 @@ impl ListDetectorModelVersionsInput {
 pub mod list_input_routings_input {
 
     /// A builder for [`ListInputRoutingsInput`](crate::input::ListInputRoutingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_identifier: std::option::Option<crate::model::InputIdentifier>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3034,7 +3034,7 @@ impl ListInputRoutingsInput {
 pub mod list_inputs_input {
 
     /// A builder for [`ListInputsInput`](crate::input::ListInputsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3193,7 +3193,7 @@ impl ListInputsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3348,7 +3348,7 @@ impl ListTagsForResourceInput {
 pub mod put_logging_options_input {
 
     /// A builder for [`PutLoggingOptionsInput`](crate::input::PutLoggingOptionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) logging_options: std::option::Option<crate::model::LoggingOptions>,
     }
@@ -3493,7 +3493,7 @@ impl PutLoggingOptionsInput {
 pub mod start_detector_model_analysis_input {
 
     /// A builder for [`StartDetectorModelAnalysisInput`](crate::input::StartDetectorModelAnalysisInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_definition:
             std::option::Option<crate::model::DetectorModelDefinition>,
@@ -3641,7 +3641,7 @@ impl StartDetectorModelAnalysisInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3829,7 +3829,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4013,7 +4013,7 @@ impl UntagResourceInput {
 pub mod update_alarm_model_input {
 
     /// A builder for [`UpdateAlarmModelInput`](crate::input::UpdateAlarmModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
         pub(crate) alarm_model_description: std::option::Option<std::string::String>,
@@ -4281,7 +4281,7 @@ impl UpdateAlarmModelInput {
 pub mod update_detector_model_input {
 
     /// A builder for [`UpdateDetectorModelInput`](crate::input::UpdateDetectorModelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
         pub(crate) detector_model_definition:
@@ -4511,7 +4511,7 @@ impl UpdateDetectorModelInput {
 pub mod update_input_input {
 
     /// A builder for [`UpdateInputInput`](crate::input::UpdateInputInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_name: std::option::Option<std::string::String>,
         pub(crate) input_description: std::option::Option<std::string::String>,

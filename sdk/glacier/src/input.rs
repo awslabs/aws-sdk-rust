@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod abort_multipart_upload_input {
 
     /// A builder for [`AbortMultipartUploadInput`](crate::input::AbortMultipartUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -228,7 +228,7 @@ impl AbortMultipartUploadInput {
 pub mod abort_vault_lock_input {
 
     /// A builder for [`AbortVaultLockInput`](crate::input::AbortVaultLockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -417,7 +417,7 @@ impl AbortVaultLockInput {
 pub mod add_tags_to_vault_input {
 
     /// A builder for [`AddTagsToVaultInput`](crate::input::AddTagsToVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -658,7 +658,7 @@ impl AddTagsToVaultInput {
 pub mod complete_multipart_upload_input {
 
     /// A builder for [`CompleteMultipartUploadInput`](crate::input::CompleteMultipartUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -907,7 +907,7 @@ impl CompleteMultipartUploadInput {
 pub mod complete_vault_lock_input {
 
     /// A builder for [`CompleteVaultLockInput`](crate::input::CompleteVaultLockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -1130,7 +1130,7 @@ impl CompleteVaultLockInput {
 pub mod create_vault_input {
 
     /// A builder for [`CreateVaultInput`](crate::input::CreateVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -1319,7 +1319,7 @@ impl CreateVaultInput {
 pub mod delete_archive_input {
 
     /// A builder for [`DeleteArchiveInput`](crate::input::DeleteArchiveInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -1540,7 +1540,7 @@ impl DeleteArchiveInput {
 pub mod delete_vault_input {
 
     /// A builder for [`DeleteVaultInput`](crate::input::DeleteVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -1729,7 +1729,7 @@ impl DeleteVaultInput {
 pub mod delete_vault_access_policy_input {
 
     /// A builder for [`DeleteVaultAccessPolicyInput`](crate::input::DeleteVaultAccessPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -1920,7 +1920,7 @@ impl DeleteVaultAccessPolicyInput {
 pub mod delete_vault_notifications_input {
 
     /// A builder for [`DeleteVaultNotificationsInput`](crate::input::DeleteVaultNotificationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -2111,7 +2111,7 @@ impl DeleteVaultNotificationsInput {
 pub mod describe_job_input {
 
     /// A builder for [`DescribeJobInput`](crate::input::DescribeJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -2332,7 +2332,7 @@ impl DescribeJobInput {
 pub mod describe_vault_input {
 
     /// A builder for [`DescribeVaultInput`](crate::input::DescribeVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -2521,7 +2521,7 @@ impl DescribeVaultInput {
 pub mod get_data_retrieval_policy_input {
 
     /// A builder for [`GetDataRetrievalPolicyInput`](crate::input::GetDataRetrievalPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
@@ -2680,7 +2680,7 @@ impl GetDataRetrievalPolicyInput {
 pub mod get_job_output_input {
 
     /// A builder for [`GetJobOutputInput`](crate::input::GetJobOutputInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -2928,7 +2928,7 @@ impl GetJobOutputInput {
 pub mod get_vault_access_policy_input {
 
     /// A builder for [`GetVaultAccessPolicyInput`](crate::input::GetVaultAccessPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -3119,7 +3119,7 @@ impl GetVaultAccessPolicyInput {
 pub mod get_vault_lock_input {
 
     /// A builder for [`GetVaultLockInput`](crate::input::GetVaultLockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -3308,7 +3308,7 @@ impl GetVaultLockInput {
 pub mod get_vault_notifications_input {
 
     /// A builder for [`GetVaultNotificationsInput`](crate::input::GetVaultNotificationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -3499,7 +3499,7 @@ impl GetVaultNotificationsInput {
 pub mod initiate_job_input {
 
     /// A builder for [`InitiateJobInput`](crate::input::InitiateJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -3717,7 +3717,7 @@ impl InitiateJobInput {
 pub mod initiate_multipart_upload_input {
 
     /// A builder for [`InitiateMultipartUploadInput`](crate::input::InitiateMultipartUploadInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -3939,7 +3939,7 @@ impl InitiateMultipartUploadInput {
 pub mod initiate_vault_lock_input {
 
     /// A builder for [`InitiateVaultLockInput`](crate::input::InitiateVaultLockInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -4159,7 +4159,7 @@ impl InitiateVaultLockInput {
 pub mod list_jobs_input {
 
     /// A builder for [`ListJobsInput`](crate::input::ListJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -4424,7 +4424,7 @@ impl ListJobsInput {
 pub mod list_multipart_uploads_input {
 
     /// A builder for [`ListMultipartUploadsInput`](crate::input::ListMultipartUploadsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -4660,7 +4660,7 @@ impl ListMultipartUploadsInput {
 pub mod list_parts_input {
 
     /// A builder for [`ListPartsInput`](crate::input::ListPartsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -4924,7 +4924,7 @@ impl ListPartsInput {
 pub mod list_provisioned_capacity_input {
 
     /// A builder for [`ListProvisionedCapacityInput`](crate::input::ListProvisionedCapacityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
@@ -5083,7 +5083,7 @@ impl ListProvisionedCapacityInput {
 pub mod list_tags_for_vault_input {
 
     /// A builder for [`ListTagsForVaultInput`](crate::input::ListTagsForVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -5274,7 +5274,7 @@ impl ListTagsForVaultInput {
 pub mod list_vaults_input {
 
     /// A builder for [`ListVaultsInput`](crate::input::ListVaultsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -5472,7 +5472,7 @@ impl ListVaultsInput {
 pub mod purchase_provisioned_capacity_input {
 
     /// A builder for [`PurchaseProvisionedCapacityInput`](crate::input::PurchaseProvisionedCapacityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
@@ -5631,7 +5631,7 @@ impl PurchaseProvisionedCapacityInput {
 pub mod remove_tags_from_vault_input {
 
     /// A builder for [`RemoveTagsFromVaultInput`](crate::input::RemoveTagsFromVaultInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -5868,7 +5868,7 @@ impl RemoveTagsFromVaultInput {
 pub mod set_data_retrieval_policy_input {
 
     /// A builder for [`SetDataRetrievalPolicyInput`](crate::input::SetDataRetrievalPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<crate::model::DataRetrievalPolicy>,
@@ -6058,7 +6058,7 @@ impl SetDataRetrievalPolicyInput {
 pub mod set_vault_access_policy_input {
 
     /// A builder for [`SetVaultAccessPolicyInput`](crate::input::SetVaultAccessPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,
@@ -6278,7 +6278,7 @@ impl SetVaultAccessPolicyInput {
 pub mod set_vault_notifications_input {
 
     /// A builder for [`SetVaultNotificationsInput`](crate::input::SetVaultNotificationsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) vault_name: std::option::Option<std::string::String>,

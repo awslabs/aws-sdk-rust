@@ -7,7 +7,7 @@ pub struct UpdateVariableOutput {}
 pub mod update_variable_output {
 
     /// A builder for [`UpdateVariableOutput`](crate::output::UpdateVariableOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateVariableOutput`](crate::output::UpdateVariableOutput).
@@ -41,7 +41,7 @@ impl UpdateRuleVersionOutput {
 pub mod update_rule_version_output {
 
     /// A builder for [`UpdateRuleVersionOutput`](crate::output::UpdateRuleVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule: std::option::Option<crate::model::Rule>,
     }
@@ -77,7 +77,7 @@ pub struct UpdateRuleMetadataOutput {}
 pub mod update_rule_metadata_output {
 
     /// A builder for [`UpdateRuleMetadataOutput`](crate::output::UpdateRuleMetadataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateRuleMetadataOutput`](crate::output::UpdateRuleMetadataOutput).
@@ -101,7 +101,7 @@ pub struct UpdateModelVersionStatusOutput {}
 pub mod update_model_version_status_output {
 
     /// A builder for [`UpdateModelVersionStatusOutput`](crate::output::UpdateModelVersionStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateModelVersionStatusOutput`](crate::output::UpdateModelVersionStatusOutput).
@@ -156,7 +156,7 @@ impl UpdateModelVersionOutput {
 pub mod update_model_version_output {
 
     /// A builder for [`UpdateModelVersionOutput`](crate::output::UpdateModelVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_id: std::option::Option<std::string::String>,
         pub(crate) model_type: std::option::Option<crate::model::ModelTypeEnum>,
@@ -236,7 +236,7 @@ pub struct UpdateModelOutput {}
 pub mod update_model_output {
 
     /// A builder for [`UpdateModelOutput`](crate::output::UpdateModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateModelOutput`](crate::output::UpdateModelOutput).
@@ -260,7 +260,7 @@ pub struct UpdateEventLabelOutput {}
 pub mod update_event_label_output {
 
     /// A builder for [`UpdateEventLabelOutput`](crate::output::UpdateEventLabelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateEventLabelOutput`](crate::output::UpdateEventLabelOutput).
@@ -284,7 +284,7 @@ pub struct UpdateDetectorVersionStatusOutput {}
 pub mod update_detector_version_status_output {
 
     /// A builder for [`UpdateDetectorVersionStatusOutput`](crate::output::UpdateDetectorVersionStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDetectorVersionStatusOutput`](crate::output::UpdateDetectorVersionStatusOutput).
@@ -308,7 +308,7 @@ pub struct UpdateDetectorVersionMetadataOutput {}
 pub mod update_detector_version_metadata_output {
 
     /// A builder for [`UpdateDetectorVersionMetadataOutput`](crate::output::UpdateDetectorVersionMetadataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDetectorVersionMetadataOutput`](crate::output::UpdateDetectorVersionMetadataOutput).
@@ -332,7 +332,7 @@ pub struct UpdateDetectorVersionOutput {}
 pub mod update_detector_version_output {
 
     /// A builder for [`UpdateDetectorVersionOutput`](crate::output::UpdateDetectorVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDetectorVersionOutput`](crate::output::UpdateDetectorVersionOutput).
@@ -356,7 +356,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -380,7 +380,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -404,7 +404,7 @@ pub struct SendEventOutput {}
 pub mod send_event_output {
 
     /// A builder for [`SendEventOutput`](crate::output::SendEventOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SendEventOutput`](crate::output::SendEventOutput).
@@ -428,7 +428,7 @@ pub struct PutOutcomeOutput {}
 pub mod put_outcome_output {
 
     /// A builder for [`PutOutcomeOutput`](crate::output::PutOutcomeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutOutcomeOutput`](crate::output::PutOutcomeOutput).
@@ -452,7 +452,7 @@ pub struct PutLabelOutput {}
 pub mod put_label_output {
 
     /// A builder for [`PutLabelOutput`](crate::output::PutLabelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutLabelOutput`](crate::output::PutLabelOutput).
@@ -476,7 +476,7 @@ pub struct PutKmsEncryptionKeyOutput {}
 pub mod put_kms_encryption_key_output {
 
     /// A builder for [`PutKmsEncryptionKeyOutput`](crate::output::PutKmsEncryptionKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutKmsEncryptionKeyOutput`](crate::output::PutKmsEncryptionKeyOutput).
@@ -500,7 +500,7 @@ pub struct PutExternalModelOutput {}
 pub mod put_external_model_output {
 
     /// A builder for [`PutExternalModelOutput`](crate::output::PutExternalModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutExternalModelOutput`](crate::output::PutExternalModelOutput).
@@ -524,7 +524,7 @@ pub struct PutEventTypeOutput {}
 pub mod put_event_type_output {
 
     /// A builder for [`PutEventTypeOutput`](crate::output::PutEventTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutEventTypeOutput`](crate::output::PutEventTypeOutput).
@@ -548,7 +548,7 @@ pub struct PutEntityTypeOutput {}
 pub mod put_entity_type_output {
 
     /// A builder for [`PutEntityTypeOutput`](crate::output::PutEntityTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutEntityTypeOutput`](crate::output::PutEntityTypeOutput).
@@ -572,7 +572,7 @@ pub struct PutDetectorOutput {}
 pub mod put_detector_output {
 
     /// A builder for [`PutDetectorOutput`](crate::output::PutDetectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutDetectorOutput`](crate::output::PutDetectorOutput).
@@ -613,7 +613,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -692,7 +692,7 @@ impl ListEventPredictionsOutput {
 pub mod list_event_predictions_output {
 
     /// A builder for [`ListEventPredictionsOutput`](crate::output::ListEventPredictionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_prediction_summaries:
             std::option::Option<std::vec::Vec<crate::model::EventPredictionSummary>>,
@@ -772,7 +772,7 @@ impl GetVariablesOutput {
 pub mod get_variables_output {
 
     /// A builder for [`GetVariablesOutput`](crate::output::GetVariablesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) variables: std::option::Option<std::vec::Vec<crate::model::Variable>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -848,7 +848,7 @@ impl GetRulesOutput {
 pub mod get_rules_output {
 
     /// A builder for [`GetRulesOutput`](crate::output::GetRulesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_details: std::option::Option<std::vec::Vec<crate::model::RuleDetail>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -924,7 +924,7 @@ impl GetOutcomesOutput {
 pub mod get_outcomes_output {
 
     /// A builder for [`GetOutcomesOutput`](crate::output::GetOutcomesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) outcomes: std::option::Option<std::vec::Vec<crate::model::Outcome>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1079,7 +1079,7 @@ impl GetModelVersionOutput {
 pub mod get_model_version_output {
 
     /// A builder for [`GetModelVersionOutput`](crate::output::GetModelVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_id: std::option::Option<std::string::String>,
         pub(crate) model_type: std::option::Option<crate::model::ModelTypeEnum>,
@@ -1272,7 +1272,7 @@ impl GetModelsOutput {
 pub mod get_models_output {
 
     /// A builder for [`GetModelsOutput`](crate::output::GetModelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) models: std::option::Option<std::vec::Vec<crate::model::Model>>,
@@ -1348,7 +1348,7 @@ impl GetLabelsOutput {
 pub mod get_labels_output {
 
     /// A builder for [`GetLabelsOutput`](crate::output::GetLabelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) labels: std::option::Option<std::vec::Vec<crate::model::Label>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1417,7 +1417,7 @@ impl GetKmsEncryptionKeyOutput {
 pub mod get_kms_encryption_key_output {
 
     /// A builder for [`GetKmsEncryptionKeyOutput`](crate::output::GetKmsEncryptionKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_key: std::option::Option<crate::model::KmsKey>,
     }
@@ -1472,7 +1472,7 @@ impl GetExternalModelsOutput {
 pub mod get_external_models_output {
 
     /// A builder for [`GetExternalModelsOutput`](crate::output::GetExternalModelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) external_models: std::option::Option<std::vec::Vec<crate::model::ExternalModel>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1548,7 +1548,7 @@ impl GetEventTypesOutput {
 pub mod get_event_types_output {
 
     /// A builder for [`GetEventTypesOutput`](crate::output::GetEventTypesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1721,7 +1721,7 @@ impl GetEventPredictionMetadataOutput {
 pub mod get_event_prediction_metadata_output {
 
     /// A builder for [`GetEventPredictionMetadataOutput`](crate::output::GetEventPredictionMetadataOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_id: std::option::Option<std::string::String>,
         pub(crate) event_type_name: std::option::Option<std::string::String>,
@@ -2026,7 +2026,7 @@ impl GetEventPredictionOutput {
 pub mod get_event_prediction_output {
 
     /// A builder for [`GetEventPredictionOutput`](crate::output::GetEventPredictionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_scores: std::option::Option<std::vec::Vec<crate::model::ModelScores>>,
         pub(crate) rule_results: std::option::Option<std::vec::Vec<crate::model::RuleResult>>,
@@ -2126,7 +2126,7 @@ impl GetEventOutput {
 pub mod get_event_output {
 
     /// A builder for [`GetEventOutput`](crate::output::GetEventOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event: std::option::Option<crate::model::Event>,
     }
@@ -2179,7 +2179,7 @@ impl GetEntityTypesOutput {
 pub mod get_entity_types_output {
 
     /// A builder for [`GetEntityTypesOutput`](crate::output::GetEntityTypesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_types: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2322,7 +2322,7 @@ impl GetDetectorVersionOutput {
 pub mod get_detector_version_output {
 
     /// A builder for [`GetDetectorVersionOutput`](crate::output::GetDetectorVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_id: std::option::Option<std::string::String>,
         pub(crate) detector_version_id: std::option::Option<std::string::String>,
@@ -2541,7 +2541,7 @@ impl GetDetectorsOutput {
 pub mod get_detectors_output {
 
     /// A builder for [`GetDetectorsOutput`](crate::output::GetDetectorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detectors: std::option::Option<std::vec::Vec<crate::model::Detector>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2617,7 +2617,7 @@ impl GetDeleteEventsByEventTypeStatusOutput {
 pub mod get_delete_events_by_event_type_status_output {
 
     /// A builder for [`GetDeleteEventsByEventTypeStatusOutput`](crate::output::GetDeleteEventsByEventTypeStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_type_name: std::option::Option<std::string::String>,
         pub(crate) events_deletion_status: std::option::Option<crate::model::AsyncJobStatus>,
@@ -2690,7 +2690,7 @@ impl GetBatchPredictionJobsOutput {
 pub mod get_batch_prediction_jobs_output {
 
     /// A builder for [`GetBatchPredictionJobsOutput`](crate::output::GetBatchPredictionJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_predictions:
             std::option::Option<std::vec::Vec<crate::model::BatchPrediction>>,
@@ -2767,7 +2767,7 @@ impl GetBatchImportJobsOutput {
 pub mod get_batch_import_jobs_output {
 
     /// A builder for [`GetBatchImportJobsOutput`](crate::output::GetBatchImportJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_imports: std::option::Option<std::vec::Vec<crate::model::BatchImport>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2845,7 +2845,7 @@ impl DescribeModelVersionsOutput {
 pub mod describe_model_versions_output {
 
     /// A builder for [`DescribeModelVersionsOutput`](crate::output::DescribeModelVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_version_details:
             std::option::Option<std::vec::Vec<crate::model::ModelVersionDetail>>,
@@ -2939,7 +2939,7 @@ impl DescribeDetectorOutput {
 pub mod describe_detector_output {
 
     /// A builder for [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_id: std::option::Option<std::string::String>,
         pub(crate) detector_version_summaries:
@@ -3026,7 +3026,7 @@ pub struct DeleteVariableOutput {}
 pub mod delete_variable_output {
 
     /// A builder for [`DeleteVariableOutput`](crate::output::DeleteVariableOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVariableOutput`](crate::output::DeleteVariableOutput).
@@ -3050,7 +3050,7 @@ pub struct DeleteRuleOutput {}
 pub mod delete_rule_output {
 
     /// A builder for [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
@@ -3074,7 +3074,7 @@ pub struct DeleteOutcomeOutput {}
 pub mod delete_outcome_output {
 
     /// A builder for [`DeleteOutcomeOutput`](crate::output::DeleteOutcomeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteOutcomeOutput`](crate::output::DeleteOutcomeOutput).
@@ -3098,7 +3098,7 @@ pub struct DeleteModelVersionOutput {}
 pub mod delete_model_version_output {
 
     /// A builder for [`DeleteModelVersionOutput`](crate::output::DeleteModelVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteModelVersionOutput`](crate::output::DeleteModelVersionOutput).
@@ -3122,7 +3122,7 @@ pub struct DeleteModelOutput {}
 pub mod delete_model_output {
 
     /// A builder for [`DeleteModelOutput`](crate::output::DeleteModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteModelOutput`](crate::output::DeleteModelOutput).
@@ -3146,7 +3146,7 @@ pub struct DeleteLabelOutput {}
 pub mod delete_label_output {
 
     /// A builder for [`DeleteLabelOutput`](crate::output::DeleteLabelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLabelOutput`](crate::output::DeleteLabelOutput).
@@ -3170,7 +3170,7 @@ pub struct DeleteExternalModelOutput {}
 pub mod delete_external_model_output {
 
     /// A builder for [`DeleteExternalModelOutput`](crate::output::DeleteExternalModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteExternalModelOutput`](crate::output::DeleteExternalModelOutput).
@@ -3194,7 +3194,7 @@ pub struct DeleteEventTypeOutput {}
 pub mod delete_event_type_output {
 
     /// A builder for [`DeleteEventTypeOutput`](crate::output::DeleteEventTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEventTypeOutput`](crate::output::DeleteEventTypeOutput).
@@ -3235,7 +3235,7 @@ impl DeleteEventsByEventTypeOutput {
 pub mod delete_events_by_event_type_output {
 
     /// A builder for [`DeleteEventsByEventTypeOutput`](crate::output::DeleteEventsByEventTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_type_name: std::option::Option<std::string::String>,
         pub(crate) events_deletion_status: std::option::Option<std::string::String>,
@@ -3291,7 +3291,7 @@ pub struct DeleteEventOutput {}
 pub mod delete_event_output {
 
     /// A builder for [`DeleteEventOutput`](crate::output::DeleteEventOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEventOutput`](crate::output::DeleteEventOutput).
@@ -3315,7 +3315,7 @@ pub struct DeleteEntityTypeOutput {}
 pub mod delete_entity_type_output {
 
     /// A builder for [`DeleteEntityTypeOutput`](crate::output::DeleteEntityTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEntityTypeOutput`](crate::output::DeleteEntityTypeOutput).
@@ -3339,7 +3339,7 @@ pub struct DeleteDetectorVersionOutput {}
 pub mod delete_detector_version_output {
 
     /// A builder for [`DeleteDetectorVersionOutput`](crate::output::DeleteDetectorVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDetectorVersionOutput`](crate::output::DeleteDetectorVersionOutput).
@@ -3363,7 +3363,7 @@ pub struct DeleteDetectorOutput {}
 pub mod delete_detector_output {
 
     /// A builder for [`DeleteDetectorOutput`](crate::output::DeleteDetectorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDetectorOutput`](crate::output::DeleteDetectorOutput).
@@ -3387,7 +3387,7 @@ pub struct DeleteBatchPredictionJobOutput {}
 pub mod delete_batch_prediction_job_output {
 
     /// A builder for [`DeleteBatchPredictionJobOutput`](crate::output::DeleteBatchPredictionJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBatchPredictionJobOutput`](crate::output::DeleteBatchPredictionJobOutput).
@@ -3411,7 +3411,7 @@ pub struct DeleteBatchImportJobOutput {}
 pub mod delete_batch_import_job_output {
 
     /// A builder for [`DeleteBatchImportJobOutput`](crate::output::DeleteBatchImportJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBatchImportJobOutput`](crate::output::DeleteBatchImportJobOutput).
@@ -3435,7 +3435,7 @@ pub struct CreateVariableOutput {}
 pub mod create_variable_output {
 
     /// A builder for [`CreateVariableOutput`](crate::output::CreateVariableOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateVariableOutput`](crate::output::CreateVariableOutput).
@@ -3469,7 +3469,7 @@ impl CreateRuleOutput {
 pub mod create_rule_output {
 
     /// A builder for [`CreateRuleOutput`](crate::output::CreateRuleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule: std::option::Option<crate::model::Rule>,
     }
@@ -3536,7 +3536,7 @@ impl CreateModelVersionOutput {
 pub mod create_model_version_output {
 
     /// A builder for [`CreateModelVersionOutput`](crate::output::CreateModelVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_id: std::option::Option<std::string::String>,
         pub(crate) model_type: std::option::Option<crate::model::ModelTypeEnum>,
@@ -3616,7 +3616,7 @@ pub struct CreateModelOutput {}
 pub mod create_model_output {
 
     /// A builder for [`CreateModelOutput`](crate::output::CreateModelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateModelOutput`](crate::output::CreateModelOutput).
@@ -3664,7 +3664,7 @@ impl CreateDetectorVersionOutput {
 pub mod create_detector_version_output {
 
     /// A builder for [`CreateDetectorVersionOutput`](crate::output::CreateDetectorVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_id: std::option::Option<std::string::String>,
         pub(crate) detector_version_id: std::option::Option<std::string::String>,
@@ -3732,7 +3732,7 @@ pub struct CreateBatchPredictionJobOutput {}
 pub mod create_batch_prediction_job_output {
 
     /// A builder for [`CreateBatchPredictionJobOutput`](crate::output::CreateBatchPredictionJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateBatchPredictionJobOutput`](crate::output::CreateBatchPredictionJobOutput).
@@ -3756,7 +3756,7 @@ pub struct CreateBatchImportJobOutput {}
 pub mod create_batch_import_job_output {
 
     /// A builder for [`CreateBatchImportJobOutput`](crate::output::CreateBatchImportJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateBatchImportJobOutput`](crate::output::CreateBatchImportJobOutput).
@@ -3780,7 +3780,7 @@ pub struct CancelBatchPredictionJobOutput {}
 pub mod cancel_batch_prediction_job_output {
 
     /// A builder for [`CancelBatchPredictionJobOutput`](crate::output::CancelBatchPredictionJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CancelBatchPredictionJobOutput`](crate::output::CancelBatchPredictionJobOutput).
@@ -3804,7 +3804,7 @@ pub struct CancelBatchImportJobOutput {}
 pub mod cancel_batch_import_job_output {
 
     /// A builder for [`CancelBatchImportJobOutput`](crate::output::CancelBatchImportJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CancelBatchImportJobOutput`](crate::output::CancelBatchImportJobOutput).
@@ -3845,7 +3845,7 @@ impl BatchGetVariableOutput {
 pub mod batch_get_variable_output {
 
     /// A builder for [`BatchGetVariableOutput`](crate::output::BatchGetVariableOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) variables: std::option::Option<std::vec::Vec<crate::model::Variable>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchGetVariableError>>,
@@ -3923,7 +3923,7 @@ impl BatchCreateVariableOutput {
 pub mod batch_create_variable_output {
 
     /// A builder for [`BatchCreateVariableOutput`](crate::output::BatchCreateVariableOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors:
             std::option::Option<std::vec::Vec<crate::model::BatchCreateVariableError>>,

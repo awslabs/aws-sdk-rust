@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_user_to_permission_group_input {
 
     /// A builder for [`AssociateUserToPermissionGroupInput`](crate::input::AssociateUserToPermissionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission_group_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -220,7 +220,7 @@ impl AssociateUserToPermissionGroupInput {
 pub mod create_changeset_input {
 
     /// A builder for [`CreateChangesetInput`](crate::input::CreateChangesetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) dataset_id: std::option::Option<std::string::String>,
@@ -514,7 +514,7 @@ impl CreateChangesetInput {
 pub mod create_dataset_input {
 
     /// A builder for [`CreateDatasetInput`](crate::input::CreateDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) dataset_title: std::option::Option<std::string::String>,
@@ -768,7 +768,7 @@ impl CreateDatasetInput {
 pub mod create_data_view_input {
 
     /// A builder for [`CreateDataViewInput`](crate::input::CreateDataViewInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) dataset_id: std::option::Option<std::string::String>,
@@ -1032,7 +1032,7 @@ impl CreateDataViewInput {
 pub mod create_permission_group_input {
 
     /// A builder for [`CreatePermissionGroupInput`](crate::input::CreatePermissionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1260,7 +1260,7 @@ impl CreatePermissionGroupInput {
 pub mod create_user_input {
 
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::UserType>,
@@ -1513,7 +1513,7 @@ impl CreateUserInput {
 pub mod delete_dataset_input {
 
     /// A builder for [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) dataset_id: std::option::Option<std::string::String>,
@@ -1687,7 +1687,7 @@ impl DeleteDatasetInput {
 pub mod delete_permission_group_input {
 
     /// A builder for [`DeletePermissionGroupInput`](crate::input::DeletePermissionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission_group_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1870,7 +1870,7 @@ impl DeletePermissionGroupInput {
 pub mod disable_user_input {
 
     /// A builder for [`DisableUserInput`](crate::input::DisableUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -2045,7 +2045,7 @@ impl DisableUserInput {
 pub mod disassociate_user_from_permission_group_input {
 
     /// A builder for [`DisassociateUserFromPermissionGroupInput`](crate::input::DisassociateUserFromPermissionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission_group_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -2263,7 +2263,7 @@ impl DisassociateUserFromPermissionGroupInput {
 pub mod enable_user_input {
 
     /// A builder for [`EnableUserInput`](crate::input::EnableUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -2438,7 +2438,7 @@ impl EnableUserInput {
 pub mod get_changeset_input {
 
     /// A builder for [`GetChangesetInput`](crate::input::GetChangesetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_id: std::option::Option<std::string::String>,
         pub(crate) changeset_id: std::option::Option<std::string::String>,
@@ -2620,7 +2620,7 @@ impl GetChangesetInput {
 pub mod get_dataset_input {
 
     /// A builder for [`GetDatasetInput`](crate::input::GetDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_id: std::option::Option<std::string::String>,
     }
@@ -2766,7 +2766,7 @@ impl GetDatasetInput {
 pub mod get_data_view_input {
 
     /// A builder for [`GetDataViewInput`](crate::input::GetDataViewInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_view_id: std::option::Option<std::string::String>,
         pub(crate) dataset_id: std::option::Option<std::string::String>,
@@ -2948,7 +2948,7 @@ impl GetDataViewInput {
 pub mod get_external_data_view_access_details_input {
 
     /// A builder for [`GetExternalDataViewAccessDetailsInput`](crate::input::GetExternalDataViewAccessDetailsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_view_id: std::option::Option<std::string::String>,
         pub(crate) dataset_id: std::option::Option<std::string::String>,
@@ -3132,7 +3132,7 @@ impl GetExternalDataViewAccessDetailsInput {
 pub mod get_permission_group_input {
 
     /// A builder for [`GetPermissionGroupInput`](crate::input::GetPermissionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission_group_id: std::option::Option<std::string::String>,
     }
@@ -3287,7 +3287,7 @@ impl GetPermissionGroupInput {
 pub mod get_programmatic_access_credentials_input {
 
     /// A builder for [`GetProgrammaticAccessCredentialsInput`](crate::input::GetProgrammaticAccessCredentialsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_minutes: std::option::Option<i64>,
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -3464,7 +3464,7 @@ impl GetProgrammaticAccessCredentialsInput {
 pub mod get_user_input {
 
     /// A builder for [`GetUserInput`](crate::input::GetUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
     }
@@ -3608,7 +3608,7 @@ impl GetUserInput {
 pub mod get_working_location_input {
 
     /// A builder for [`GetWorkingLocationInput`](crate::input::GetWorkingLocationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_type: std::option::Option<crate::model::LocationType>,
     }
@@ -3761,7 +3761,7 @@ impl GetWorkingLocationInput {
 pub mod list_changesets_input {
 
     /// A builder for [`ListChangesetsInput`](crate::input::ListChangesetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3956,7 +3956,7 @@ impl ListChangesetsInput {
 pub mod list_datasets_input {
 
     /// A builder for [`ListDatasetsInput`](crate::input::ListDatasetsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4115,7 +4115,7 @@ impl ListDatasetsInput {
 pub mod list_data_views_input {
 
     /// A builder for [`ListDataViewsInput`](crate::input::ListDataViewsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4310,7 +4310,7 @@ impl ListDataViewsInput {
 pub mod list_permission_groups_input {
 
     /// A builder for [`ListPermissionGroupsInput`](crate::input::ListPermissionGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4468,7 +4468,7 @@ impl ListPermissionGroupsInput {
 pub mod list_permission_groups_by_user_input {
 
     /// A builder for [`ListPermissionGroupsByUserInput`](crate::input::ListPermissionGroupsByUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4658,7 +4658,7 @@ impl ListPermissionGroupsByUserInput {
 pub mod list_users_input {
 
     /// A builder for [`ListUsersInput`](crate::input::ListUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4812,7 +4812,7 @@ impl ListUsersInput {
 pub mod list_users_by_permission_group_input {
 
     /// A builder for [`ListUsersByPermissionGroupInput`](crate::input::ListUsersByPermissionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission_group_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -5009,7 +5009,7 @@ impl ListUsersByPermissionGroupInput {
 pub mod reset_user_password_input {
 
     /// A builder for [`ResetUserPasswordInput`](crate::input::ResetUserPasswordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -5186,7 +5186,7 @@ impl ResetUserPasswordInput {
 pub mod update_changeset_input {
 
     /// A builder for [`UpdateChangesetInput`](crate::input::UpdateChangesetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) dataset_id: std::option::Option<std::string::String>,
@@ -5487,7 +5487,7 @@ impl UpdateChangesetInput {
 pub mod update_dataset_input {
 
     /// A builder for [`UpdateDatasetInput`](crate::input::UpdateDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) dataset_id: std::option::Option<std::string::String>,
@@ -5739,7 +5739,7 @@ impl UpdateDatasetInput {
 pub mod update_permission_group_input {
 
     /// A builder for [`UpdatePermissionGroupInput`](crate::input::UpdatePermissionGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) permission_group_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6007,7 +6007,7 @@ impl UpdatePermissionGroupInput {
 pub mod update_user_input {
 
     /// A builder for [`UpdateUserInput`](crate::input::UpdateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::UserType>,

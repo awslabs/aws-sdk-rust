@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod batch_update_cluster_input {
 
     /// A builder for [`BatchUpdateClusterInput`](crate::input::BatchUpdateClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) service_update: std::option::Option<crate::model::ServiceUpdateRequest>,
@@ -176,7 +176,7 @@ impl BatchUpdateClusterInput {
 pub mod copy_snapshot_input {
 
     /// A builder for [`CopySnapshotInput`](crate::input::CopySnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_snapshot_name: std::option::Option<std::string::String>,
         pub(crate) target_snapshot_name: std::option::Option<std::string::String>,
@@ -387,7 +387,7 @@ impl CopySnapshotInput {
 pub mod create_acl_input {
 
     /// A builder for [`CreateAclInput`](crate::input::CreateAclInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acl_name: std::option::Option<std::string::String>,
         pub(crate) user_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -572,7 +572,7 @@ impl CreateAclInput {
 pub mod create_cluster_input {
 
     /// A builder for [`CreateClusterInput`](crate::input::CreateClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
         pub(crate) node_type: std::option::Option<std::string::String>,
@@ -1009,7 +1009,7 @@ impl CreateClusterInput {
 pub mod create_parameter_group_input {
 
     /// A builder for [`CreateParameterGroupInput`](crate::input::CreateParameterGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) family: std::option::Option<std::string::String>,
@@ -1206,7 +1206,7 @@ impl CreateParameterGroupInput {
 pub mod create_snapshot_input {
 
     /// A builder for [`CreateSnapshotInput`](crate::input::CreateSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
         pub(crate) snapshot_name: std::option::Option<std::string::String>,
@@ -1399,7 +1399,7 @@ impl CreateSnapshotInput {
 pub mod create_subnet_group_input {
 
     /// A builder for [`CreateSubnetGroupInput`](crate::input::CreateSubnetGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_group_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1603,7 +1603,7 @@ impl CreateSubnetGroupInput {
 pub mod create_user_input {
 
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) authentication_mode: std::option::Option<crate::model::AuthenticationMode>,
@@ -1799,7 +1799,7 @@ impl CreateUserInput {
 pub mod delete_acl_input {
 
     /// A builder for [`DeleteAclInput`](crate::input::DeleteAclInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acl_name: std::option::Option<std::string::String>,
     }
@@ -1942,7 +1942,7 @@ impl DeleteAclInput {
 pub mod delete_cluster_input {
 
     /// A builder for [`DeleteClusterInput`](crate::input::DeleteClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
         pub(crate) final_snapshot_name: std::option::Option<std::string::String>,
@@ -2102,7 +2102,7 @@ impl DeleteClusterInput {
 pub mod delete_parameter_group_input {
 
     /// A builder for [`DeleteParameterGroupInput`](crate::input::DeleteParameterGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_group_name: std::option::Option<std::string::String>,
     }
@@ -2254,7 +2254,7 @@ impl DeleteParameterGroupInput {
 pub mod delete_snapshot_input {
 
     /// A builder for [`DeleteSnapshotInput`](crate::input::DeleteSnapshotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_name: std::option::Option<std::string::String>,
     }
@@ -2402,7 +2402,7 @@ impl DeleteSnapshotInput {
 pub mod delete_subnet_group_input {
 
     /// A builder for [`DeleteSubnetGroupInput`](crate::input::DeleteSubnetGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_group_name: std::option::Option<std::string::String>,
     }
@@ -2552,7 +2552,7 @@ impl DeleteSubnetGroupInput {
 pub mod delete_user_input {
 
     /// A builder for [`DeleteUserInput`](crate::input::DeleteUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
     }
@@ -2697,7 +2697,7 @@ impl DeleteUserInput {
 pub mod describe_ac_ls_input {
 
     /// A builder for [`DescribeAcLsInput`](crate::input::DescribeAcLsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acl_name: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2866,7 +2866,7 @@ impl DescribeAcLsInput {
 pub mod describe_clusters_input {
 
     /// A builder for [`DescribeClustersInput`](crate::input::DescribeClustersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3049,7 +3049,7 @@ impl DescribeClustersInput {
 pub mod describe_engine_versions_input {
 
     /// A builder for [`DescribeEngineVersionsInput`](crate::input::DescribeEngineVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_version: std::option::Option<std::string::String>,
         pub(crate) parameter_group_family: std::option::Option<std::string::String>,
@@ -3252,7 +3252,7 @@ impl DescribeEngineVersionsInput {
 pub mod describe_events_input {
 
     /// A builder for [`DescribeEventsInput`](crate::input::DescribeEventsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_name: std::option::Option<std::string::String>,
         pub(crate) source_type: std::option::Option<crate::model::SourceType>,
@@ -3478,7 +3478,7 @@ impl DescribeEventsInput {
 pub mod describe_parameter_groups_input {
 
     /// A builder for [`DescribeParameterGroupsInput`](crate::input::DescribeParameterGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3654,7 +3654,7 @@ impl DescribeParameterGroupsInput {
 pub mod describe_parameters_input {
 
     /// A builder for [`DescribeParametersInput`](crate::input::DescribeParametersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3828,7 +3828,7 @@ impl DescribeParametersInput {
 pub mod describe_service_updates_input {
 
     /// A builder for [`DescribeServiceUpdatesInput`](crate::input::DescribeServiceUpdatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_update_name: std::option::Option<std::string::String>,
         pub(crate) cluster_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4046,7 +4046,7 @@ impl DescribeServiceUpdatesInput {
 pub mod describe_snapshots_input {
 
     /// A builder for [`DescribeSnapshotsInput`](crate::input::DescribeSnapshotsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
         pub(crate) snapshot_name: std::option::Option<std::string::String>,
@@ -4256,7 +4256,7 @@ impl DescribeSnapshotsInput {
 pub mod describe_subnet_groups_input {
 
     /// A builder for [`DescribeSubnetGroupsInput`](crate::input::DescribeSubnetGroupsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_group_name: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4432,7 +4432,7 @@ impl DescribeSubnetGroupsInput {
 pub mod describe_users_input {
 
     /// A builder for [`DescribeUsersInput`](crate::input::DescribeUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4622,7 +4622,7 @@ impl DescribeUsersInput {
 pub mod failover_shard_input {
 
     /// A builder for [`FailoverShardInput`](crate::input::FailoverShardInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
         pub(crate) shard_name: std::option::Option<std::string::String>,
@@ -4779,7 +4779,7 @@ impl FailoverShardInput {
 pub mod list_allowed_node_type_updates_input {
 
     /// A builder for [`ListAllowedNodeTypeUpdatesInput`](crate::input::ListAllowedNodeTypeUpdatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
     }
@@ -4925,7 +4925,7 @@ impl ListAllowedNodeTypeUpdatesInput {
 pub mod list_tags_input {
 
     /// A builder for [`ListTagsInput`](crate::input::ListTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -5067,7 +5067,7 @@ impl ListTagsInput {
 pub mod reset_parameter_group_input {
 
     /// A builder for [`ResetParameterGroupInput`](crate::input::ResetParameterGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) all_parameters: std::option::Option<bool>,
@@ -5250,7 +5250,7 @@ impl ResetParameterGroupInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5416,7 +5416,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5582,7 +5582,7 @@ impl UntagResourceInput {
 pub mod update_acl_input {
 
     /// A builder for [`UpdateAclInput`](crate::input::UpdateAclInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acl_name: std::option::Option<std::string::String>,
         pub(crate) user_names_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5767,7 +5767,7 @@ impl UpdateAclInput {
 pub mod update_cluster_input {
 
     /// A builder for [`UpdateClusterInput`](crate::input::UpdateClusterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -6109,7 +6109,7 @@ impl UpdateClusterInput {
 pub mod update_parameter_group_input {
 
     /// A builder for [`UpdateParameterGroupInput`](crate::input::UpdateParameterGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) parameter_name_values:
@@ -6283,7 +6283,7 @@ impl UpdateParameterGroupInput {
 pub mod update_subnet_group_input {
 
     /// A builder for [`UpdateSubnetGroupInput`](crate::input::UpdateSubnetGroupInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_group_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -6466,7 +6466,7 @@ impl UpdateSubnetGroupInput {
 pub mod update_user_input {
 
     /// A builder for [`UpdateUserInput`](crate::input::UpdateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) authentication_mode: std::option::Option<crate::model::AuthenticationMode>,

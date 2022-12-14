@@ -7,7 +7,7 @@ pub struct UpdateEventIntegrationOutput {}
 pub mod update_event_integration_output {
 
     /// A builder for [`UpdateEventIntegrationOutput`](crate::output::UpdateEventIntegrationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateEventIntegrationOutput`](crate::output::UpdateEventIntegrationOutput).
@@ -31,7 +31,7 @@ pub struct UpdateDataIntegrationOutput {}
 pub mod update_data_integration_output {
 
     /// A builder for [`UpdateDataIntegrationOutput`](crate::output::UpdateDataIntegrationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDataIntegrationOutput`](crate::output::UpdateDataIntegrationOutput).
@@ -55,7 +55,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -79,7 +79,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -117,7 +117,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -187,7 +187,7 @@ impl ListEventIntegrationsOutput {
 pub mod list_event_integrations_output {
 
     /// A builder for [`ListEventIntegrationsOutput`](crate::output::ListEventIntegrationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_integrations:
             std::option::Option<std::vec::Vec<crate::model::EventIntegration>>,
@@ -267,7 +267,7 @@ impl ListEventIntegrationAssociationsOutput {
 pub mod list_event_integration_associations_output {
 
     /// A builder for [`ListEventIntegrationAssociationsOutput`](crate::output::ListEventIntegrationAssociationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_integration_associations:
             std::option::Option<std::vec::Vec<crate::model::EventIntegrationAssociation>>,
@@ -349,7 +349,7 @@ impl ListDataIntegrationsOutput {
 pub mod list_data_integrations_output {
 
     /// A builder for [`ListDataIntegrationsOutput`](crate::output::ListDataIntegrationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_integrations:
             std::option::Option<std::vec::Vec<crate::model::DataIntegrationSummary>>,
@@ -429,7 +429,7 @@ impl ListDataIntegrationAssociationsOutput {
 pub mod list_data_integration_associations_output {
 
     /// A builder for [`ListDataIntegrationAssociationsOutput`](crate::output::ListDataIntegrationAssociationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_integration_associations:
             std::option::Option<std::vec::Vec<crate::model::DataIntegrationAssociationSummary>>,
@@ -543,7 +543,7 @@ impl GetEventIntegrationOutput {
 pub mod get_event_integration_output {
 
     /// A builder for [`GetEventIntegrationOutput`](crate::output::GetEventIntegrationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -732,7 +732,7 @@ impl GetDataIntegrationOutput {
 pub mod get_data_integration_output {
 
     /// A builder for [`GetDataIntegrationOutput`](crate::output::GetDataIntegrationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -877,7 +877,7 @@ pub struct DeleteEventIntegrationOutput {}
 pub mod delete_event_integration_output {
 
     /// A builder for [`DeleteEventIntegrationOutput`](crate::output::DeleteEventIntegrationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEventIntegrationOutput`](crate::output::DeleteEventIntegrationOutput).
@@ -901,7 +901,7 @@ pub struct DeleteDataIntegrationOutput {}
 pub mod delete_data_integration_output {
 
     /// A builder for [`DeleteDataIntegrationOutput`](crate::output::DeleteDataIntegrationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDataIntegrationOutput`](crate::output::DeleteDataIntegrationOutput).
@@ -935,7 +935,7 @@ impl CreateEventIntegrationOutput {
 pub mod create_event_integration_output {
 
     /// A builder for [`CreateEventIntegrationOutput`](crate::output::CreateEventIntegrationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_integration_arn: std::option::Option<std::string::String>,
     }
@@ -1048,7 +1048,7 @@ impl CreateDataIntegrationOutput {
 pub mod create_data_integration_output {
 
     /// A builder for [`CreateDataIntegrationOutput`](crate::output::CreateDataIntegrationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,

@@ -39,7 +39,7 @@ impl SatelliteListItem {
 pub mod satellite_list_item {
 
     /// A builder for [`SatelliteListItem`](crate::model::SatelliteListItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) satellite_id: std::option::Option<std::string::String>,
         pub(crate) satellite_arn: std::option::Option<std::string::String>,
@@ -156,7 +156,7 @@ impl MissionProfileListItem {
 pub mod mission_profile_list_item {
 
     /// A builder for [`MissionProfileListItem`](crate::model::MissionProfileListItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mission_profile_id: std::option::Option<std::string::String>,
         pub(crate) mission_profile_arn: std::option::Option<std::string::String>,
@@ -260,7 +260,7 @@ impl GroundStationData {
 pub mod ground_station_data {
 
     /// A builder for [`GroundStationData`](crate::model::GroundStationData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ground_station_id: std::option::Option<std::string::String>,
         pub(crate) ground_station_name: std::option::Option<std::string::String>,
@@ -345,7 +345,7 @@ impl DataflowEndpointListItem {
 pub mod dataflow_endpoint_list_item {
 
     /// A builder for [`DataflowEndpointListItem`](crate::model::DataflowEndpointListItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataflow_endpoint_group_id: std::option::Option<std::string::String>,
         pub(crate) dataflow_endpoint_group_arn: std::option::Option<std::string::String>,
@@ -421,7 +421,7 @@ impl EndpointDetails {
 pub mod endpoint_details {
 
     /// A builder for [`EndpointDetails`](crate::model::EndpointDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_details: std::option::Option<crate::model::SecurityDetails>,
         pub(crate) endpoint: std::option::Option<crate::model::DataflowEndpoint>,
@@ -508,7 +508,7 @@ impl DataflowEndpoint {
 pub mod dataflow_endpoint {
 
     /// A builder for [`DataflowEndpoint`](crate::model::DataflowEndpoint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) address: std::option::Option<crate::model::SocketAddress>,
@@ -710,7 +710,7 @@ impl SocketAddress {
 pub mod socket_address {
 
     /// A builder for [`SocketAddress`](crate::model::SocketAddress).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) port: std::option::Option<i32>,
@@ -784,7 +784,7 @@ impl SecurityDetails {
 pub mod security_details {
 
     /// A builder for [`SecurityDetails`](crate::model::SecurityDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -962,7 +962,7 @@ impl ContactData {
 pub mod contact_data {
 
     /// A builder for [`ContactData`](crate::model::ContactData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_id: std::option::Option<std::string::String>,
         pub(crate) mission_profile_arn: std::option::Option<std::string::String>,
@@ -1208,7 +1208,7 @@ impl Elevation {
 pub mod elevation {
 
     /// A builder for [`Elevation`](crate::model::Elevation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<f64>,
         pub(crate) unit: std::option::Option<crate::model::AngleUnits>,
@@ -1531,7 +1531,7 @@ impl DataflowDetail {
 pub mod dataflow_detail {
 
     /// A builder for [`DataflowDetail`](crate::model::DataflowDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::Source>,
         pub(crate) destination: std::option::Option<crate::model::Destination>,
@@ -1630,7 +1630,7 @@ impl Destination {
 pub mod destination {
 
     /// A builder for [`Destination`](crate::model::Destination).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_type: std::option::Option<crate::model::ConfigCapabilityType>,
         pub(crate) config_id: std::option::Option<std::string::String>,
@@ -1805,7 +1805,7 @@ impl S3RecordingDetails {
 pub mod s3_recording_details {
 
     /// A builder for [`S3RecordingDetails`](crate::model::S3RecordingDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
         pub(crate) key_template: std::option::Option<std::string::String>,
@@ -1865,7 +1865,7 @@ impl AntennaDemodDecodeDetails {
 pub mod antenna_demod_decode_details {
 
     /// A builder for [`AntennaDemodDecodeDetails`](crate::model::AntennaDemodDecodeDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_node: std::option::Option<std::string::String>,
     }
@@ -2059,7 +2059,7 @@ impl Source {
 pub mod source {
 
     /// A builder for [`Source`](crate::model::Source).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_type: std::option::Option<crate::model::ConfigCapabilityType>,
         pub(crate) config_id: std::option::Option<std::string::String>,
@@ -2173,7 +2173,7 @@ impl ConfigListItem {
 pub mod config_list_item {
 
     /// A builder for [`ConfigListItem`](crate::model::ConfigListItem).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_id: std::option::Option<std::string::String>,
         pub(crate) config_type: std::option::Option<crate::model::ConfigCapabilityType>,
@@ -2414,7 +2414,7 @@ impl S3RecordingConfig {
 pub mod s3_recording_config {
 
     /// A builder for [`S3RecordingConfig`](crate::model::S3RecordingConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -2494,7 +2494,7 @@ impl UplinkEchoConfig {
 pub mod uplink_echo_config {
 
     /// A builder for [`UplinkEchoConfig`](crate::model::UplinkEchoConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) antenna_uplink_config_arn: std::option::Option<std::string::String>,
@@ -2571,7 +2571,7 @@ impl AntennaUplinkConfig {
 pub mod antenna_uplink_config {
 
     /// A builder for [`AntennaUplinkConfig`](crate::model::AntennaUplinkConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transmit_disabled: std::option::Option<bool>,
         pub(crate) spectrum_config: std::option::Option<crate::model::UplinkSpectrumConfig>,
@@ -2653,7 +2653,7 @@ impl Eirp {
 pub mod eirp {
 
     /// A builder for [`Eirp`](crate::model::Eirp).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<f64>,
         pub(crate) units: std::option::Option<crate::model::EirpUnits>,
@@ -2805,7 +2805,7 @@ impl UplinkSpectrumConfig {
 pub mod uplink_spectrum_config {
 
     /// A builder for [`UplinkSpectrumConfig`](crate::model::UplinkSpectrumConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) center_frequency: std::option::Option<crate::model::Frequency>,
         pub(crate) polarization: std::option::Option<crate::model::Polarization>,
@@ -2973,7 +2973,7 @@ impl Frequency {
 pub mod frequency {
 
     /// A builder for [`Frequency`](crate::model::Frequency).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<f64>,
         pub(crate) units: std::option::Option<crate::model::FrequencyUnits>,
@@ -3145,7 +3145,7 @@ impl AntennaDownlinkDemodDecodeConfig {
 pub mod antenna_downlink_demod_decode_config {
 
     /// A builder for [`AntennaDownlinkDemodDecodeConfig`](crate::model::AntennaDownlinkDemodDecodeConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) spectrum_config: std::option::Option<crate::model::SpectrumConfig>,
         pub(crate) demodulation_config: std::option::Option<crate::model::DemodulationConfig>,
@@ -3226,7 +3226,7 @@ impl DecodeConfig {
 pub mod decode_config {
 
     /// A builder for [`DecodeConfig`](crate::model::DecodeConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) unvalidated_json: std::option::Option<std::string::String>,
     }
@@ -3277,7 +3277,7 @@ impl DemodulationConfig {
 pub mod demodulation_config {
 
     /// A builder for [`DemodulationConfig`](crate::model::DemodulationConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) unvalidated_json: std::option::Option<std::string::String>,
     }
@@ -3352,7 +3352,7 @@ impl SpectrumConfig {
 pub mod spectrum_config {
 
     /// A builder for [`SpectrumConfig`](crate::model::SpectrumConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) center_frequency: std::option::Option<crate::model::Frequency>,
         pub(crate) bandwidth: std::option::Option<crate::model::FrequencyBandwidth>,
@@ -3460,7 +3460,7 @@ impl FrequencyBandwidth {
 pub mod frequency_bandwidth {
 
     /// A builder for [`FrequencyBandwidth`](crate::model::FrequencyBandwidth).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<f64>,
         pub(crate) units: std::option::Option<crate::model::BandwidthUnits>,
@@ -3635,7 +3635,7 @@ impl DataflowEndpointConfig {
 pub mod dataflow_endpoint_config {
 
     /// A builder for [`DataflowEndpointConfig`](crate::model::DataflowEndpointConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataflow_endpoint_name: std::option::Option<std::string::String>,
         pub(crate) dataflow_endpoint_region: std::option::Option<std::string::String>,
@@ -3701,7 +3701,7 @@ impl TrackingConfig {
 pub mod tracking_config {
 
     /// A builder for [`TrackingConfig`](crate::model::TrackingConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) autotrack: std::option::Option<crate::model::Criticality>,
     }
@@ -3847,7 +3847,7 @@ impl AntennaDownlinkConfig {
 pub mod antenna_downlink_config {
 
     /// A builder for [`AntennaDownlinkConfig`](crate::model::AntennaDownlinkConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) spectrum_config: std::option::Option<crate::model::SpectrumConfig>,
     }

@@ -119,7 +119,7 @@ impl WebsiteCaSummary {
 pub mod website_ca_summary {
 
     /// A builder for [`WebsiteCaSummary`](crate::model::WebsiteCaSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) website_ca_id: std::option::Option<std::string::String>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -220,7 +220,7 @@ impl WebsiteAuthorizationProviderSummary {
 pub mod website_authorization_provider_summary {
 
     /// A builder for [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization_provider_id: std::option::Option<std::string::String>,
         pub(crate) authorization_provider_type:
@@ -457,7 +457,7 @@ impl FleetSummary {
 pub mod fleet_summary {
 
     /// A builder for [`FleetSummary`](crate::model::FleetSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -753,7 +753,7 @@ impl DomainSummary {
 pub mod domain_summary {
 
     /// A builder for [`DomainSummary`](crate::model::DomainSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -979,7 +979,7 @@ impl DeviceSummary {
 pub mod device_summary {
 
     /// A builder for [`DeviceSummary`](crate::model::DeviceSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) device_status: std::option::Option<crate::model::DeviceStatus>,

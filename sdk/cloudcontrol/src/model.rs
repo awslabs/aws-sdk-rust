@@ -121,7 +121,7 @@ impl std::fmt::Debug for ProgressEvent {
 pub mod progress_event {
 
     /// A builder for [`ProgressEvent`](crate::model::ProgressEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -741,7 +741,7 @@ impl std::fmt::Debug for ResourceDescription {
 pub mod resource_description {
 
     /// A builder for [`ResourceDescription`](crate::model::ResourceDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) properties: std::option::Option<std::string::String>,
@@ -834,7 +834,7 @@ impl ResourceRequestStatusFilter {
 pub mod resource_request_status_filter {
 
     /// A builder for [`ResourceRequestStatusFilter`](crate::model::ResourceRequestStatusFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
         pub(crate) operation_statuses:

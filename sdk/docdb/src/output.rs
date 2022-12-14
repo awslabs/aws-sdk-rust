@@ -17,7 +17,7 @@ impl StopDbClusterOutput {
 pub mod stop_db_cluster_output {
 
     /// A builder for [`StopDbClusterOutput`](crate::output::StopDbClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
@@ -68,7 +68,7 @@ impl StartDbClusterOutput {
 pub mod start_db_cluster_output {
 
     /// A builder for [`StartDbClusterOutput`](crate::output::StartDbClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
@@ -119,7 +119,7 @@ impl RestoreDbClusterToPointInTimeOutput {
 pub mod restore_db_cluster_to_point_in_time_output {
 
     /// A builder for [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
@@ -170,7 +170,7 @@ impl RestoreDbClusterFromSnapshotOutput {
 pub mod restore_db_cluster_from_snapshot_output {
 
     /// A builder for [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
@@ -237,7 +237,7 @@ impl ResetDbClusterParameterGroupOutput {
 pub mod reset_db_cluster_parameter_group_output {
 
     /// A builder for [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     }
@@ -297,7 +297,7 @@ pub struct RemoveTagsFromResourceOutput {}
 pub mod remove_tags_from_resource_output {
 
     /// A builder for [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
@@ -331,7 +331,7 @@ impl RemoveSourceIdentifierFromSubscriptionOutput {
 pub mod remove_source_identifier_from_subscription_output {
 
     /// A builder for [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
     }
@@ -382,7 +382,7 @@ impl RemoveFromGlobalClusterOutput {
 pub mod remove_from_global_cluster_output {
 
     /// A builder for [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
     }
@@ -433,7 +433,7 @@ impl RebootDbInstanceOutput {
 pub mod reboot_db_instance_output {
 
     /// A builder for [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
     }
@@ -484,7 +484,7 @@ impl ModifyGlobalClusterOutput {
 pub mod modify_global_cluster_output {
 
     /// A builder for [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
     }
@@ -535,7 +535,7 @@ impl ModifyEventSubscriptionOutput {
 pub mod modify_event_subscription_output {
 
     /// A builder for [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
     }
@@ -586,7 +586,7 @@ impl ModifyDbSubnetGroupOutput {
 pub mod modify_db_subnet_group_output {
 
     /// A builder for [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
     }
@@ -637,7 +637,7 @@ impl ModifyDbInstanceOutput {
 pub mod modify_db_instance_output {
 
     /// A builder for [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
     }
@@ -691,7 +691,7 @@ impl ModifyDbClusterSnapshotAttributeOutput {
 pub mod modify_db_cluster_snapshot_attribute_output {
 
     /// A builder for [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot_attributes_result:
             std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
@@ -762,7 +762,7 @@ impl ModifyDbClusterParameterGroupOutput {
 pub mod modify_db_cluster_parameter_group_output {
 
     /// A builder for [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     }
@@ -832,7 +832,7 @@ impl ModifyDbClusterOutput {
 pub mod modify_db_cluster_output {
 
     /// A builder for [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
@@ -883,7 +883,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -940,7 +940,7 @@ impl FailoverDbClusterOutput {
 pub mod failover_db_cluster_output {
 
     /// A builder for [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
@@ -1001,7 +1001,7 @@ impl DescribePendingMaintenanceActionsOutput {
 pub mod describe_pending_maintenance_actions_output {
 
     /// A builder for [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pending_maintenance_actions:
             std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
@@ -1086,7 +1086,7 @@ impl DescribeOrderableDbInstanceOptionsOutput {
 pub mod describe_orderable_db_instance_options_output {
 
     /// A builder for [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) orderable_db_instance_options:
             std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>,
@@ -1166,7 +1166,7 @@ impl DescribeGlobalClustersOutput {
 pub mod describe_global_clusters_output {
 
     /// A builder for [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) global_clusters: std::option::Option<std::vec::Vec<crate::model::GlobalCluster>>,
@@ -1245,7 +1245,7 @@ impl DescribeEventSubscriptionsOutput {
 pub mod describe_event_subscriptions_output {
 
     /// A builder for [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) event_subscriptions_list:
@@ -1322,7 +1322,7 @@ impl DescribeEventsOutput {
 pub mod describe_events_output {
 
     /// A builder for [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -1394,7 +1394,7 @@ impl DescribeEventCategoriesOutput {
 pub mod describe_event_categories_output {
 
     /// A builder for [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_categories_map_list:
             std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
@@ -1455,7 +1455,7 @@ impl DescribeEngineDefaultClusterParametersOutput {
 pub mod describe_engine_default_cluster_parameters_output {
 
     /// A builder for [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_defaults: std::option::Option<crate::model::EngineDefaults>,
     }
@@ -1513,7 +1513,7 @@ impl DescribeDbSubnetGroupsOutput {
 pub mod describe_db_subnet_groups_output {
 
     /// A builder for [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) db_subnet_groups:
@@ -1590,7 +1590,7 @@ impl DescribeDbInstancesOutput {
 pub mod describe_db_instances_output {
 
     /// A builder for [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) db_instances: std::option::Option<std::vec::Vec<crate::model::DbInstance>>,
@@ -1666,7 +1666,7 @@ impl DescribeDbEngineVersionsOutput {
 pub mod describe_db_engine_versions_output {
 
     /// A builder for [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) db_engine_versions:
@@ -1743,7 +1743,7 @@ impl DescribeDbClusterSnapshotsOutput {
 pub mod describe_db_cluster_snapshots_output {
 
     /// A builder for [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) db_cluster_snapshots:
@@ -1816,7 +1816,7 @@ impl DescribeDbClusterSnapshotAttributesOutput {
 pub mod describe_db_cluster_snapshot_attributes_output {
 
     /// A builder for [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot_attributes_result:
             std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
@@ -1878,7 +1878,7 @@ impl DescribeDbClustersOutput {
 pub mod describe_db_clusters_output {
 
     /// A builder for [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) db_clusters: std::option::Option<std::vec::Vec<crate::model::DbCluster>>,
@@ -1954,7 +1954,7 @@ impl DescribeDbClusterParametersOutput {
 pub mod describe_db_cluster_parameters_output {
 
     /// A builder for [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2033,7 +2033,7 @@ impl DescribeDbClusterParameterGroupsOutput {
 pub mod describe_db_cluster_parameter_groups_output {
 
     /// A builder for [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) db_cluster_parameter_groups:
@@ -2113,7 +2113,7 @@ impl DescribeCertificatesOutput {
 pub mod describe_certificates_output {
 
     /// A builder for [`DescribeCertificatesOutput`](crate::output::DescribeCertificatesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2182,7 +2182,7 @@ impl DeleteGlobalClusterOutput {
 pub mod delete_global_cluster_output {
 
     /// A builder for [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
     }
@@ -2233,7 +2233,7 @@ impl DeleteEventSubscriptionOutput {
 pub mod delete_event_subscription_output {
 
     /// A builder for [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
     }
@@ -2274,7 +2274,7 @@ pub struct DeleteDbSubnetGroupOutput {}
 pub mod delete_db_subnet_group_output {
 
     /// A builder for [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
@@ -2308,7 +2308,7 @@ impl DeleteDbInstanceOutput {
 pub mod delete_db_instance_output {
 
     /// A builder for [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
     }
@@ -2359,7 +2359,7 @@ impl DeleteDbClusterSnapshotOutput {
 pub mod delete_db_cluster_snapshot_output {
 
     /// A builder for [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
     }
@@ -2400,7 +2400,7 @@ pub struct DeleteDbClusterParameterGroupOutput {}
 pub mod delete_db_cluster_parameter_group_output {
 
     /// A builder for [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
@@ -2434,7 +2434,7 @@ impl DeleteDbClusterOutput {
 pub mod delete_db_cluster_output {
 
     /// A builder for [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
@@ -2485,7 +2485,7 @@ impl CreateGlobalClusterOutput {
 pub mod create_global_cluster_output {
 
     /// A builder for [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
     }
@@ -2536,7 +2536,7 @@ impl CreateEventSubscriptionOutput {
 pub mod create_event_subscription_output {
 
     /// A builder for [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
     }
@@ -2587,7 +2587,7 @@ impl CreateDbSubnetGroupOutput {
 pub mod create_db_subnet_group_output {
 
     /// A builder for [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
     }
@@ -2638,7 +2638,7 @@ impl CreateDbInstanceOutput {
 pub mod create_db_instance_output {
 
     /// A builder for [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
     }
@@ -2689,7 +2689,7 @@ impl CreateDbClusterSnapshotOutput {
 pub mod create_db_cluster_snapshot_output {
 
     /// A builder for [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
     }
@@ -2742,7 +2742,7 @@ impl CreateDbClusterParameterGroupOutput {
 pub mod create_db_cluster_parameter_group_output {
 
     /// A builder for [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group:
             std::option::Option<crate::model::DbClusterParameterGroup>,
@@ -2797,7 +2797,7 @@ impl CreateDbClusterOutput {
 pub mod create_db_cluster_output {
 
     /// A builder for [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
@@ -2848,7 +2848,7 @@ impl CopyDbClusterSnapshotOutput {
 pub mod copy_db_cluster_snapshot_output {
 
     /// A builder for [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
     }
@@ -2901,7 +2901,7 @@ impl CopyDbClusterParameterGroupOutput {
 pub mod copy_db_cluster_parameter_group_output {
 
     /// A builder for [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group:
             std::option::Option<crate::model::DbClusterParameterGroup>,
@@ -2959,7 +2959,7 @@ impl ApplyPendingMaintenanceActionOutput {
 pub mod apply_pending_maintenance_action_output {
 
     /// A builder for [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_pending_maintenance_actions:
             std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
@@ -3004,7 +3004,7 @@ pub struct AddTagsToResourceOutput {}
 pub mod add_tags_to_resource_output {
 
     /// A builder for [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
@@ -3038,7 +3038,7 @@ impl AddSourceIdentifierToSubscriptionOutput {
 pub mod add_source_identifier_to_subscription_output {
 
     /// A builder for [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
     }

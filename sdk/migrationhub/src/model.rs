@@ -54,7 +54,7 @@ impl ResourceAttribute {
 pub mod resource_attribute {
 
     /// A builder for [`ResourceAttribute`](crate::model::ResourceAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ResourceAttributeType>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -274,7 +274,7 @@ impl Task {
 pub mod task {
 
     /// A builder for [`Task`](crate::model::Task).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::Status>,
         pub(crate) status_detail: std::option::Option<std::string::String>,
@@ -546,7 +546,7 @@ impl ProgressUpdateStreamSummary {
 pub mod progress_update_stream_summary {
 
     /// A builder for [`ProgressUpdateStreamSummary`](crate::model::ProgressUpdateStreamSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream_name: std::option::Option<std::string::String>,
     }
@@ -635,7 +635,7 @@ impl MigrationTaskSummary {
 pub mod migration_task_summary {
 
     /// A builder for [`MigrationTaskSummary`](crate::model::MigrationTaskSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
         pub(crate) migration_task_name: std::option::Option<std::string::String>,
@@ -762,7 +762,7 @@ impl DiscoveredResource {
 pub mod discovered_resource {
 
     /// A builder for [`DiscoveredResource`](crate::model::DiscoveredResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -832,7 +832,7 @@ impl CreatedArtifact {
 pub mod created_artifact {
 
     /// A builder for [`CreatedArtifact`](crate::model::CreatedArtifact).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -906,7 +906,7 @@ impl ApplicationState {
 pub mod application_state {
 
     /// A builder for [`ApplicationState`](crate::model::ApplicationState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) application_status: std::option::Option<crate::model::ApplicationStatus>,
@@ -1018,7 +1018,7 @@ impl MigrationTask {
 pub mod migration_task {
 
     /// A builder for [`MigrationTask`](crate::model::MigrationTask).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
         pub(crate) migration_task_name: std::option::Option<std::string::String>,

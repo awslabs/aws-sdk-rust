@@ -39,7 +39,7 @@ impl RetainedMessageSummary {
 pub mod retained_message_summary {
 
     /// A builder for [`RetainedMessageSummary`](crate::model::RetainedMessageSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic: std::option::Option<std::string::String>,
         pub(crate) payload_size: std::option::Option<i64>,

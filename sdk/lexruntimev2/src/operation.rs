@@ -5,7 +5,7 @@
 /// [`delete_session`](crate::client::Client::delete_session).
 ///
 /// See [`crate::client::fluent_builders::DeleteSession`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSession {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSession {
 /// [`get_session`](crate::client::Client::get_session).
 ///
 /// See [`crate::client::fluent_builders::GetSession`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSession {
     _private: (),
 }
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSession {
 /// [`put_session`](crate::client::Client::put_session).
 ///
 /// See [`crate::client::fluent_builders::PutSession`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutSession {
     _private: (),
 }
@@ -108,7 +108,7 @@ impl aws_smithy_http::response::ParseHttpResponse for PutSession {
 /// [`recognize_text`](crate::client::Client::recognize_text).
 ///
 /// See [`crate::client::fluent_builders::RecognizeText`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RecognizeText {
     _private: (),
 }
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RecognizeText {
 /// [`recognize_utterance`](crate::client::Client::recognize_utterance).
 ///
 /// See [`crate::client::fluent_builders::RecognizeUtterance`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RecognizeUtterance {
     _private: (),
 }

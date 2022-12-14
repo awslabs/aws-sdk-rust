@@ -30,7 +30,7 @@ impl std::error::Error for ObjectAlreadyInActiveTierError {}
 pub mod object_already_in_active_tier_error {
 
     /// A builder for [`ObjectAlreadyInActiveTierError`](crate::error::ObjectAlreadyInActiveTierError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -90,7 +90,7 @@ impl std::error::Error for NoSuchKey {}
 pub mod no_such_key {
 
     /// A builder for [`NoSuchKey`](crate::error::NoSuchKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -150,7 +150,7 @@ impl std::error::Error for NoSuchBucket {}
 pub mod no_such_bucket {
 
     /// A builder for [`NoSuchBucket`](crate::error::NoSuchBucket).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -210,7 +210,7 @@ impl std::error::Error for NotFound {}
 pub mod not_found {
 
     /// A builder for [`NotFound`](crate::error::NotFound).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -286,7 +286,7 @@ impl std::error::Error for InvalidObjectState {}
 pub mod invalid_object_state {
 
     /// A builder for [`InvalidObjectState`](crate::error::InvalidObjectState).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_class: std::option::Option<crate::model::StorageClass>,
         pub(crate) access_tier: std::option::Option<crate::model::IntelligentTieringAccessTier>,
@@ -376,7 +376,7 @@ impl std::error::Error for BucketAlreadyOwnedByYou {}
 pub mod bucket_already_owned_by_you {
 
     /// A builder for [`BucketAlreadyOwnedByYou`](crate::error::BucketAlreadyOwnedByYou).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -436,7 +436,7 @@ impl std::error::Error for BucketAlreadyExists {}
 pub mod bucket_already_exists {
 
     /// A builder for [`BucketAlreadyExists`](crate::error::BucketAlreadyExists).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -496,7 +496,7 @@ impl std::error::Error for ObjectNotInActiveTierError {}
 pub mod object_not_in_active_tier_error {
 
     /// A builder for [`ObjectNotInActiveTierError`](crate::error::ObjectNotInActiveTierError).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -556,7 +556,7 @@ impl std::error::Error for NoSuchUpload {}
 pub mod no_such_upload {
 
     /// A builder for [`NoSuchUpload`](crate::error::NoSuchUpload).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

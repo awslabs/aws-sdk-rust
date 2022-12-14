@@ -5,7 +5,7 @@
 /// [`describe_entities_detection_v2_job`](crate::client::Client::describe_entities_detection_v2_job).
 ///
 /// See [`crate::client::fluent_builders::DescribeEntitiesDetectionV2Job`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEntitiesDetectionV2Job {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEntitiesDetectio
 /// [`describe_icd10_cm_inference_job`](crate::client::Client::describe_icd10_cm_inference_job).
 ///
 /// See [`crate::client::fluent_builders::DescribeICD10CMInferenceJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeICD10CMInferenceJob {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeICD10CMInference
 /// [`describe_phi_detection_job`](crate::client::Client::describe_phi_detection_job).
 ///
 /// See [`crate::client::fluent_builders::DescribePHIDetectionJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePHIDetectionJob {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePHIDetectionJob 
 /// [`describe_rx_norm_inference_job`](crate::client::Client::describe_rx_norm_inference_job).
 ///
 /// See [`crate::client::fluent_builders::DescribeRxNormInferenceJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRxNormInferenceJob {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRxNormInferenceJ
 /// [`describe_snomedct_inference_job`](crate::client::Client::describe_snomedct_inference_job).
 ///
 /// See [`crate::client::fluent_builders::DescribeSNOMEDCTInferenceJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSNOMEDCTInferenceJob {
     _private: (),
 }
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSNOMEDCTInferenc
 /// [`detect_entities`](crate::client::Client::detect_entities).
 ///
 /// See [`crate::client::fluent_builders::DetectEntities`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DetectEntities {
     _private: (),
 }
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectEntities {
 /// [`detect_entities_v2`](crate::client::Client::detect_entities_v2).
 ///
 /// See [`crate::client::fluent_builders::DetectEntitiesV2`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DetectEntitiesV2 {
     _private: (),
 }
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectEntitiesV2 {
 /// [`detect_phi`](crate::client::Client::detect_phi).
 ///
 /// See [`crate::client::fluent_builders::DetectPHI`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DetectPHI {
     _private: (),
 }
@@ -272,7 +272,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectPHI {
 /// [`infer_icd10_cm`](crate::client::Client::infer_icd10_cm).
 ///
 /// See [`crate::client::fluent_builders::InferICD10CM`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct InferICD10CM {
     _private: (),
 }
@@ -304,7 +304,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InferICD10CM {
 /// [`infer_rx_norm`](crate::client::Client::infer_rx_norm).
 ///
 /// See [`crate::client::fluent_builders::InferRxNorm`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct InferRxNorm {
     _private: (),
 }
@@ -336,7 +336,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InferRxNorm {
 /// [`infer_snomedct`](crate::client::Client::infer_snomedct).
 ///
 /// See [`crate::client::fluent_builders::InferSNOMEDCT`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct InferSNOMEDCT {
     _private: (),
 }
@@ -368,7 +368,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InferSNOMEDCT {
 /// [`list_entities_detection_v2_jobs`](crate::client::Client::list_entities_detection_v2_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListEntitiesDetectionV2Jobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEntitiesDetectionV2Jobs {
     _private: (),
 }
@@ -402,7 +402,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEntitiesDetectionV2J
 /// [`list_icd10_cm_inference_jobs`](crate::client::Client::list_icd10_cm_inference_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListICD10CMInferenceJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListICD10CMInferenceJobs {
     _private: (),
 }
@@ -436,7 +436,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListICD10CMInferenceJobs
 /// [`list_phi_detection_jobs`](crate::client::Client::list_phi_detection_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListPHIDetectionJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPHIDetectionJobs {
     _private: (),
 }
@@ -470,7 +470,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPHIDetectionJobs {
 /// [`list_rx_norm_inference_jobs`](crate::client::Client::list_rx_norm_inference_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListRxNormInferenceJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRxNormInferenceJobs {
     _private: (),
 }
@@ -504,7 +504,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRxNormInferenceJobs 
 /// [`list_snomedct_inference_jobs`](crate::client::Client::list_snomedct_inference_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListSNOMEDCTInferenceJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSNOMEDCTInferenceJobs {
     _private: (),
 }
@@ -538,7 +538,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSNOMEDCTInferenceJob
 /// [`start_entities_detection_v2_job`](crate::client::Client::start_entities_detection_v2_job).
 ///
 /// See [`crate::client::fluent_builders::StartEntitiesDetectionV2Job`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartEntitiesDetectionV2Job {
     _private: (),
 }
@@ -572,7 +572,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartEntitiesDetectionV2
 /// [`start_icd10_cm_inference_job`](crate::client::Client::start_icd10_cm_inference_job).
 ///
 /// See [`crate::client::fluent_builders::StartICD10CMInferenceJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartICD10CMInferenceJob {
     _private: (),
 }
@@ -606,7 +606,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartICD10CMInferenceJob
 /// [`start_phi_detection_job`](crate::client::Client::start_phi_detection_job).
 ///
 /// See [`crate::client::fluent_builders::StartPHIDetectionJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartPHIDetectionJob {
     _private: (),
 }
@@ -640,7 +640,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartPHIDetectionJob {
 /// [`start_rx_norm_inference_job`](crate::client::Client::start_rx_norm_inference_job).
 ///
 /// See [`crate::client::fluent_builders::StartRxNormInferenceJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartRxNormInferenceJob {
     _private: (),
 }
@@ -674,7 +674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartRxNormInferenceJob 
 /// [`start_snomedct_inference_job`](crate::client::Client::start_snomedct_inference_job).
 ///
 /// See [`crate::client::fluent_builders::StartSNOMEDCTInferenceJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartSNOMEDCTInferenceJob {
     _private: (),
 }
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSNOMEDCTInferenceJo
 /// [`stop_entities_detection_v2_job`](crate::client::Client::stop_entities_detection_v2_job).
 ///
 /// See [`crate::client::fluent_builders::StopEntitiesDetectionV2Job`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopEntitiesDetectionV2Job {
     _private: (),
 }
@@ -742,7 +742,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopEntitiesDetectionV2J
 /// [`stop_icd10_cm_inference_job`](crate::client::Client::stop_icd10_cm_inference_job).
 ///
 /// See [`crate::client::fluent_builders::StopICD10CMInferenceJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopICD10CMInferenceJob {
     _private: (),
 }
@@ -776,7 +776,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopICD10CMInferenceJob 
 /// [`stop_phi_detection_job`](crate::client::Client::stop_phi_detection_job).
 ///
 /// See [`crate::client::fluent_builders::StopPHIDetectionJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopPHIDetectionJob {
     _private: (),
 }
@@ -810,7 +810,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopPHIDetectionJob {
 /// [`stop_rx_norm_inference_job`](crate::client::Client::stop_rx_norm_inference_job).
 ///
 /// See [`crate::client::fluent_builders::StopRxNormInferenceJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopRxNormInferenceJob {
     _private: (),
 }
@@ -844,7 +844,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopRxNormInferenceJob {
 /// [`stop_snomedct_inference_job`](crate::client::Client::stop_snomedct_inference_job).
 ///
 /// See [`crate::client::fluent_builders::StopSNOMEDCTInferenceJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopSNOMEDCTInferenceJob {
     _private: (),
 }

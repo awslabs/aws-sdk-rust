@@ -132,7 +132,7 @@ impl ParallelDataConfig {
 pub mod parallel_data_config {
 
     /// A builder for [`ParallelDataConfig`](crate::model::ParallelDataConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
         pub(crate) format: std::option::Option<crate::model::ParallelDataFormat>,
@@ -307,7 +307,7 @@ impl TranslationSettings {
 pub mod translation_settings {
 
     /// A builder for [`TranslationSettings`](crate::model::TranslationSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) formality: std::option::Option<crate::model::Formality>,
         pub(crate) profanity: std::option::Option<crate::model::Profanity>,
@@ -563,7 +563,7 @@ impl AppliedTerminology {
 pub mod applied_terminology {
 
     /// A builder for [`AppliedTerminology`](crate::model::AppliedTerminology).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) terms: std::option::Option<std::vec::Vec<crate::model::Term>>,
@@ -639,7 +639,7 @@ impl Term {
 pub mod term {
 
     /// A builder for [`Term`](crate::model::Term).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_text: std::option::Option<std::string::String>,
         pub(crate) target_text: std::option::Option<std::string::String>,
@@ -706,7 +706,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -896,7 +896,7 @@ impl OutputDataConfig {
 pub mod output_data_config {
 
     /// A builder for [`OutputDataConfig`](crate::model::OutputDataConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
         pub(crate) encryption_key: std::option::Option<crate::model::EncryptionKey>,
@@ -966,7 +966,7 @@ impl EncryptionKey {
 pub mod encryption_key {
 
     /// A builder for [`EncryptionKey`](crate::model::EncryptionKey).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::EncryptionKeyType>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1147,7 +1147,7 @@ impl InputDataConfig {
 pub mod input_data_config {
 
     /// A builder for [`InputDataConfig`](crate::model::InputDataConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -1329,7 +1329,7 @@ impl TextTranslationJobProperties {
 pub mod text_translation_job_properties {
 
     /// A builder for [`TextTranslationJobProperties`](crate::model::TextTranslationJobProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -1613,7 +1613,7 @@ impl JobDetails {
 pub mod job_details {
 
     /// A builder for [`JobDetails`](crate::model::JobDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) translated_documents_count: std::option::Option<i32>,
         pub(crate) documents_with_errors_count: std::option::Option<i32>,
@@ -1706,7 +1706,7 @@ impl TextTranslationJobFilter {
 pub mod text_translation_job_filter {
 
     /// A builder for [`TextTranslationJobFilter`](crate::model::TextTranslationJobFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
@@ -1918,7 +1918,7 @@ impl TerminologyProperties {
 pub mod terminology_properties {
 
     /// A builder for [`TerminologyProperties`](crate::model::TerminologyProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2478,7 +2478,7 @@ impl ParallelDataProperties {
 pub mod parallel_data_properties {
 
     /// A builder for [`ParallelDataProperties`](crate::model::ParallelDataProperties).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2896,7 +2896,7 @@ impl Language {
 pub mod language {
 
     /// A builder for [`Language`](crate::model::Language).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_name: std::option::Option<std::string::String>,
         pub(crate) language_code: std::option::Option<std::string::String>,
@@ -2977,7 +2977,7 @@ impl TerminologyDataLocation {
 pub mod terminology_data_location {
 
     /// A builder for [`TerminologyDataLocation`](crate::model::TerminologyDataLocation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_type: std::option::Option<std::string::String>,
         pub(crate) location: std::option::Option<std::string::String>,
@@ -3101,7 +3101,7 @@ impl std::fmt::Debug for TerminologyData {
 pub mod terminology_data {
 
     /// A builder for [`TerminologyData`](crate::model::TerminologyData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) file: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) format: std::option::Option<crate::model::TerminologyDataFormat>,
@@ -3318,7 +3318,7 @@ impl ParallelDataDataLocation {
 pub mod parallel_data_data_location {
 
     /// A builder for [`ParallelDataDataLocation`](crate::model::ParallelDataDataLocation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_type: std::option::Option<std::string::String>,
         pub(crate) location: std::option::Option<std::string::String>,

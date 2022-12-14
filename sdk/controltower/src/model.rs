@@ -18,7 +18,7 @@ impl EnabledControlSummary {
 pub mod enabled_control_summary {
 
     /// A builder for [`EnabledControlSummary`](crate::model::EnabledControlSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_identifier: std::option::Option<std::string::String>,
     }
@@ -97,7 +97,7 @@ impl ControlOperation {
 pub mod control_operation {
 
     /// A builder for [`ControlOperation`](crate::model::ControlOperation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_type: std::option::Option<crate::model::ControlOperationType>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,

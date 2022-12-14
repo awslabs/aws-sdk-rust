@@ -125,8 +125,8 @@ version = "1.2.0"
 version = "3.2.0"
 
 [dev-dependencies.tokio]
-version = "1"
-features = ["macros", "test-util", "rt", "rt-multi-thread"]
+version = "1.8.4"
+features = ["macros", "test-util", "rt-multi-thread"]
 
 [dev-dependencies.tracing-appender]
 version = "0.2.2"

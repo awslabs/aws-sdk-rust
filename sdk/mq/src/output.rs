@@ -7,7 +7,7 @@ pub struct UpdateUserOutput {}
 pub mod update_user_output {
 
     /// A builder for [`UpdateUserOutput`](crate::output::UpdateUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateUserOutput`](crate::output::UpdateUserOutput).
@@ -76,7 +76,7 @@ impl UpdateConfigurationOutput {
 pub mod update_configuration_output {
 
     /// A builder for [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
@@ -268,7 +268,7 @@ impl UpdateBrokerOutput {
 pub mod update_broker_output {
 
     /// A builder for [`UpdateBrokerOutput`](crate::output::UpdateBrokerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authentication_strategy:
             std::option::Option<crate::model::AuthenticationStrategy>,
@@ -453,7 +453,7 @@ pub struct RebootBrokerOutput {}
 pub mod reboot_broker_output {
 
     /// A builder for [`RebootBrokerOutput`](crate::output::RebootBrokerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RebootBrokerOutput`](crate::output::RebootBrokerOutput).
@@ -508,7 +508,7 @@ impl ListUsersOutput {
 pub mod list_users_output {
 
     /// A builder for [`ListUsersOutput`](crate::output::ListUsersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -605,7 +605,7 @@ impl ListTagsOutput {
 pub mod list_tags_output {
 
     /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -682,7 +682,7 @@ impl ListConfigurationsOutput {
 pub mod list_configurations_output {
 
     /// A builder for [`ListConfigurationsOutput`](crate::output::ListConfigurationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -784,7 +784,7 @@ impl ListConfigurationRevisionsOutput {
 pub mod list_configuration_revisions_output {
 
     /// A builder for [`ListConfigurationRevisionsOutput`](crate::output::ListConfigurationRevisionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -888,7 +888,7 @@ impl ListBrokersOutput {
 pub mod list_brokers_output {
 
     /// A builder for [`ListBrokersOutput`](crate::output::ListBrokersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_summaries:
             std::option::Option<std::vec::Vec<crate::model::BrokerSummary>>,
@@ -986,7 +986,7 @@ impl DescribeUserOutput {
 pub mod describe_user_output {
 
     /// A builder for [`DescribeUserOutput`](crate::output::DescribeUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_id: std::option::Option<std::string::String>,
         pub(crate) console_access: std::option::Option<bool>,
@@ -1115,7 +1115,7 @@ impl DescribeConfigurationRevisionOutput {
 pub mod describe_configuration_revision_output {
 
     /// A builder for [`DescribeConfigurationRevisionOutput`](crate::output::DescribeConfigurationRevisionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_id: std::option::Option<std::string::String>,
         pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
@@ -1274,7 +1274,7 @@ impl DescribeConfigurationOutput {
 pub mod describe_configuration_output {
 
     /// A builder for [`DescribeConfigurationOutput`](crate::output::DescribeConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) authentication_strategy:
@@ -1483,7 +1483,7 @@ impl DescribeBrokerInstanceOptionsOutput {
 pub mod describe_broker_instance_options_output {
 
     /// A builder for [`DescribeBrokerInstanceOptionsOutput`](crate::output::DescribeBrokerInstanceOptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_instance_options:
             std::option::Option<std::vec::Vec<crate::model::BrokerInstanceOption>>,
@@ -1582,7 +1582,7 @@ impl DescribeBrokerEngineTypesOutput {
 pub mod describe_broker_engine_types_output {
 
     /// A builder for [`DescribeBrokerEngineTypesOutput`](crate::output::DescribeBrokerEngineTypesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_engine_types:
             std::option::Option<std::vec::Vec<crate::model::BrokerEngineType>>,
@@ -1874,7 +1874,7 @@ impl DescribeBrokerOutput {
 pub mod describe_broker_output {
 
     /// A builder for [`DescribeBrokerOutput`](crate::output::DescribeBrokerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) actions_required:
             std::option::Option<std::vec::Vec<crate::model::ActionRequired>>,
@@ -2389,7 +2389,7 @@ pub struct DeleteUserOutput {}
 pub mod delete_user_output {
 
     /// A builder for [`DeleteUserOutput`](crate::output::DeleteUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteUserOutput`](crate::output::DeleteUserOutput).
@@ -2413,7 +2413,7 @@ pub struct DeleteTagsOutput {}
 pub mod delete_tags_output {
 
     /// A builder for [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
@@ -2447,7 +2447,7 @@ impl DeleteBrokerOutput {
 pub mod delete_broker_output {
 
     /// A builder for [`DeleteBrokerOutput`](crate::output::DeleteBrokerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_id: std::option::Option<std::string::String>,
     }
@@ -2485,7 +2485,7 @@ pub struct CreateUserOutput {}
 pub mod create_user_output {
 
     /// A builder for [`CreateUserOutput`](crate::output::CreateUserOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateUserOutput`](crate::output::CreateUserOutput).
@@ -2509,7 +2509,7 @@ pub struct CreateTagsOutput {}
 pub mod create_tags_output {
 
     /// A builder for [`CreateTagsOutput`](crate::output::CreateTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateTagsOutput`](crate::output::CreateTagsOutput).
@@ -2580,7 +2580,7 @@ impl CreateConfigurationOutput {
 pub mod create_configuration_output {
 
     /// A builder for [`CreateConfigurationOutput`](crate::output::CreateConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) authentication_strategy:
@@ -2708,7 +2708,7 @@ impl CreateBrokerOutput {
 pub mod create_broker_output {
 
     /// A builder for [`CreateBrokerOutput`](crate::output::CreateBrokerOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) broker_arn: std::option::Option<std::string::String>,
         pub(crate) broker_id: std::option::Option<std::string::String>,

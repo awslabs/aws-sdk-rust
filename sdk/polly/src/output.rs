@@ -133,7 +133,7 @@ impl StartSpeechSynthesisTaskOutput {
 pub mod start_speech_synthesis_task_output {
 
     /// A builder for [`StartSpeechSynthesisTaskOutput`](crate::output::StartSpeechSynthesisTaskOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) synthesis_task: std::option::Option<crate::model::SynthesisTask>,
     }
@@ -174,7 +174,7 @@ pub struct PutLexiconOutput {}
 pub mod put_lexicon_output {
 
     /// A builder for [`PutLexiconOutput`](crate::output::PutLexiconOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutLexiconOutput`](crate::output::PutLexiconOutput).
@@ -215,7 +215,7 @@ impl ListSpeechSynthesisTasksOutput {
 pub mod list_speech_synthesis_tasks_output {
 
     /// A builder for [`ListSpeechSynthesisTasksOutput`](crate::output::ListSpeechSynthesisTasksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) synthesis_tasks: std::option::Option<std::vec::Vec<crate::model::SynthesisTask>>,
@@ -291,7 +291,7 @@ impl ListLexiconsOutput {
 pub mod list_lexicons_output {
 
     /// A builder for [`ListLexiconsOutput`](crate::output::ListLexiconsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lexicons: std::option::Option<std::vec::Vec<crate::model::LexiconDescription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -360,7 +360,7 @@ impl GetSpeechSynthesisTaskOutput {
 pub mod get_speech_synthesis_task_output {
 
     /// A builder for [`GetSpeechSynthesisTaskOutput`](crate::output::GetSpeechSynthesisTaskOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) synthesis_task: std::option::Option<crate::model::SynthesisTask>,
     }
@@ -418,7 +418,7 @@ impl GetLexiconOutput {
 pub mod get_lexicon_output {
 
     /// A builder for [`GetLexiconOutput`](crate::output::GetLexiconOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lexicon: std::option::Option<crate::model::Lexicon>,
         pub(crate) lexicon_attributes: std::option::Option<crate::model::LexiconAttributes>,
@@ -488,7 +488,7 @@ impl DescribeVoicesOutput {
 pub mod describe_voices_output {
 
     /// A builder for [`DescribeVoicesOutput`](crate::output::DescribeVoicesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voices: std::option::Option<std::vec::Vec<crate::model::Voice>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -547,7 +547,7 @@ pub struct DeleteLexiconOutput {}
 pub mod delete_lexicon_output {
 
     /// A builder for [`DeleteLexiconOutput`](crate::output::DeleteLexiconOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLexiconOutput`](crate::output::DeleteLexiconOutput).

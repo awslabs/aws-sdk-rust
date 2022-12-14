@@ -8,7 +8,7 @@ pub struct PutReportDefinitionOutput {}
 pub mod put_report_definition_output {
 
     /// A builder for [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput).
@@ -32,7 +32,7 @@ pub struct ModifyReportDefinitionOutput {}
 pub mod modify_report_definition_output {
 
     /// A builder for [`ModifyReportDefinitionOutput`](crate::output::ModifyReportDefinitionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ModifyReportDefinitionOutput`](crate::output::ModifyReportDefinitionOutput).
@@ -73,7 +73,7 @@ impl DescribeReportDefinitionsOutput {
 pub mod describe_report_definitions_output {
 
     /// A builder for [`DescribeReportDefinitionsOutput`](crate::output::DescribeReportDefinitionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_definitions:
             std::option::Option<std::vec::Vec<crate::model::ReportDefinition>>,
@@ -143,7 +143,7 @@ impl DeleteReportDefinitionOutput {
 pub mod delete_report_definition_output {
 
     /// A builder for [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) response_message: std::option::Option<std::string::String>,
     }

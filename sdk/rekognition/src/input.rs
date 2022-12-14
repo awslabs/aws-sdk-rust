@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod compare_faces_input {
 
     /// A builder for [`CompareFacesInput`](crate::input::CompareFacesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_image: std::option::Option<crate::model::Image>,
         pub(crate) target_image: std::option::Option<crate::model::Image>,
@@ -195,7 +195,7 @@ impl CompareFacesInput {
 pub mod copy_project_version_input {
 
     /// A builder for [`CopyProjectVersionInput`](crate::input::CopyProjectVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_project_arn: std::option::Option<std::string::String>,
         pub(crate) source_project_version_arn: std::option::Option<std::string::String>,
@@ -459,7 +459,7 @@ impl CopyProjectVersionInput {
 pub mod create_collection_input {
 
     /// A builder for [`CreateCollectionInput`](crate::input::CreateCollectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -638,7 +638,7 @@ impl CreateCollectionInput {
 pub mod create_dataset_input {
 
     /// A builder for [`CreateDatasetInput`](crate::input::CreateDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_source: std::option::Option<crate::model::DatasetSource>,
         pub(crate) dataset_type: std::option::Option<crate::model::DatasetType>,
@@ -813,7 +813,7 @@ impl CreateDatasetInput {
 pub mod create_project_input {
 
     /// A builder for [`CreateProjectInput`](crate::input::CreateProjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
     }
@@ -958,7 +958,7 @@ impl CreateProjectInput {
 pub mod create_project_version_input {
 
     /// A builder for [`CreateProjectVersionInput`](crate::input::CreateProjectVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_arn: std::option::Option<std::string::String>,
         pub(crate) version_name: std::option::Option<std::string::String>,
@@ -1221,7 +1221,7 @@ impl CreateProjectVersionInput {
 pub mod create_stream_processor_input {
 
     /// A builder for [`CreateStreamProcessorInput`](crate::input::CreateStreamProcessorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input: std::option::Option<crate::model::StreamProcessorInput>,
         pub(crate) output: std::option::Option<crate::model::StreamProcessorOutput>,
@@ -1534,7 +1534,7 @@ impl CreateStreamProcessorInput {
 pub mod delete_collection_input {
 
     /// A builder for [`DeleteCollectionInput`](crate::input::DeleteCollectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_id: std::option::Option<std::string::String>,
     }
@@ -1684,7 +1684,7 @@ impl DeleteCollectionInput {
 pub mod delete_dataset_input {
 
     /// A builder for [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
     }
@@ -1829,7 +1829,7 @@ impl DeleteDatasetInput {
 pub mod delete_faces_input {
 
     /// A builder for [`DeleteFacesInput`](crate::input::DeleteFacesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_id: std::option::Option<std::string::String>,
         pub(crate) face_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1998,7 +1998,7 @@ impl DeleteFacesInput {
 pub mod delete_project_input {
 
     /// A builder for [`DeleteProjectInput`](crate::input::DeleteProjectInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_arn: std::option::Option<std::string::String>,
     }
@@ -2143,7 +2143,7 @@ impl DeleteProjectInput {
 pub mod delete_project_policy_input {
 
     /// A builder for [`DeleteProjectPolicyInput`](crate::input::DeleteProjectPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_arn: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -2317,7 +2317,7 @@ impl DeleteProjectPolicyInput {
 pub mod delete_project_version_input {
 
     /// A builder for [`DeleteProjectVersionInput`](crate::input::DeleteProjectVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_version_arn: std::option::Option<std::string::String>,
     }
@@ -2469,7 +2469,7 @@ impl DeleteProjectVersionInput {
 pub mod delete_stream_processor_input {
 
     /// A builder for [`DeleteStreamProcessorInput`](crate::input::DeleteStreamProcessorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -2616,7 +2616,7 @@ impl DeleteStreamProcessorInput {
 pub mod describe_collection_input {
 
     /// A builder for [`DescribeCollectionInput`](crate::input::DescribeCollectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_id: std::option::Option<std::string::String>,
     }
@@ -2766,7 +2766,7 @@ impl DescribeCollectionInput {
 pub mod describe_dataset_input {
 
     /// A builder for [`DescribeDatasetInput`](crate::input::DescribeDatasetInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
     }
@@ -2911,7 +2911,7 @@ impl DescribeDatasetInput {
 pub mod describe_projects_input {
 
     /// A builder for [`DescribeProjectsInput`](crate::input::DescribeProjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -3091,7 +3091,7 @@ impl DescribeProjectsInput {
 pub mod describe_project_versions_input {
 
     /// A builder for [`DescribeProjectVersionsInput`](crate::input::DescribeProjectVersionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_arn: std::option::Option<std::string::String>,
         pub(crate) version_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3285,7 +3285,7 @@ impl DescribeProjectVersionsInput {
 pub mod describe_stream_processor_input {
 
     /// A builder for [`DescribeStreamProcessorInput`](crate::input::DescribeStreamProcessorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -3432,7 +3432,7 @@ impl DescribeStreamProcessorInput {
 pub mod detect_custom_labels_input {
 
     /// A builder for [`DetectCustomLabelsInput`](crate::input::DetectCustomLabelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_version_arn: std::option::Option<std::string::String>,
         pub(crate) image: std::option::Option<crate::model::Image>,
@@ -3630,7 +3630,7 @@ impl DetectCustomLabelsInput {
 pub mod detect_faces_input {
 
     /// A builder for [`DetectFacesInput`](crate::input::DetectFacesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image: std::option::Option<crate::model::Image>,
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -3800,7 +3800,7 @@ impl DetectFacesInput {
 pub mod detect_labels_input {
 
     /// A builder for [`DetectLabelsInput`](crate::input::DetectLabelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image: std::option::Option<crate::model::Image>,
         pub(crate) max_labels: std::option::Option<i32>,
@@ -3973,7 +3973,7 @@ impl DetectLabelsInput {
 pub mod detect_moderation_labels_input {
 
     /// A builder for [`DetectModerationLabelsInput`](crate::input::DetectModerationLabelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image: std::option::Option<crate::model::Image>,
         pub(crate) min_confidence: std::option::Option<f32>,
@@ -4153,7 +4153,7 @@ impl DetectModerationLabelsInput {
 pub mod detect_protective_equipment_input {
 
     /// A builder for [`DetectProtectiveEquipmentInput`](crate::input::DetectProtectiveEquipmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image: std::option::Option<crate::model::Image>,
         pub(crate) summarization_attributes:
@@ -4321,7 +4321,7 @@ impl DetectProtectiveEquipmentInput {
 pub mod detect_text_input {
 
     /// A builder for [`DetectTextInput`](crate::input::DetectTextInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image: std::option::Option<crate::model::Image>,
         pub(crate) filters: std::option::Option<crate::model::DetectTextFilters>,
@@ -4483,7 +4483,7 @@ impl DetectTextInput {
 pub mod distribute_dataset_entries_input {
 
     /// A builder for [`DistributeDatasetEntriesInput`](crate::input::DistributeDatasetEntriesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datasets: std::option::Option<std::vec::Vec<crate::model::DistributeDataset>>,
     }
@@ -4641,7 +4641,7 @@ impl DistributeDatasetEntriesInput {
 pub mod get_celebrity_info_input {
 
     /// A builder for [`GetCelebrityInfoInput`](crate::input::GetCelebrityInfoInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
     }
@@ -4786,7 +4786,7 @@ impl GetCelebrityInfoInput {
 pub mod get_celebrity_recognition_input {
 
     /// A builder for [`GetCelebrityRecognitionInput`](crate::input::GetCelebrityRecognitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -4974,7 +4974,7 @@ impl GetCelebrityRecognitionInput {
 pub mod get_content_moderation_input {
 
     /// A builder for [`GetContentModerationInput`](crate::input::GetContentModerationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5162,7 +5162,7 @@ impl GetContentModerationInput {
 pub mod get_face_detection_input {
 
     /// A builder for [`GetFaceDetectionInput`](crate::input::GetFaceDetectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5333,7 +5333,7 @@ impl GetFaceDetectionInput {
 pub mod get_face_search_input {
 
     /// A builder for [`GetFaceSearchInput`](crate::input::GetFaceSearchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5517,7 +5517,7 @@ impl GetFaceSearchInput {
 pub mod get_label_detection_input {
 
     /// A builder for [`GetLabelDetectionInput`](crate::input::GetLabelDetectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5703,7 +5703,7 @@ impl GetLabelDetectionInput {
 pub mod get_person_tracking_input {
 
     /// A builder for [`GetPersonTrackingInput`](crate::input::GetPersonTrackingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -5889,7 +5889,7 @@ impl GetPersonTrackingInput {
 pub mod get_segment_detection_input {
 
     /// A builder for [`GetSegmentDetectionInput`](crate::input::GetSegmentDetectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -6060,7 +6060,7 @@ impl GetSegmentDetectionInput {
 pub mod get_text_detection_input {
 
     /// A builder for [`GetTextDetectionInput`](crate::input::GetTextDetectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -6231,7 +6231,7 @@ impl GetTextDetectionInput {
 pub mod index_faces_input {
 
     /// A builder for [`IndexFacesInput`](crate::input::IndexFacesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_id: std::option::Option<std::string::String>,
         pub(crate) image: std::option::Option<crate::model::Image>,
@@ -6467,7 +6467,7 @@ impl IndexFacesInput {
 pub mod list_collections_input {
 
     /// A builder for [`ListCollectionsInput`](crate::input::ListCollectionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -6624,7 +6624,7 @@ impl ListCollectionsInput {
 pub mod list_dataset_entries_input {
 
     /// A builder for [`ListDatasetEntriesInput`](crate::input::ListDatasetEntriesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
         pub(crate) contains_labels: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6855,7 +6855,7 @@ impl ListDatasetEntriesInput {
 pub mod list_dataset_labels_input {
 
     /// A builder for [`ListDatasetLabelsInput`](crate::input::ListDatasetLabelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7026,7 +7026,7 @@ impl ListDatasetLabelsInput {
 pub mod list_faces_input {
 
     /// A builder for [`ListFacesInput`](crate::input::ListFacesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7196,7 +7196,7 @@ impl ListFacesInput {
 pub mod list_project_policies_input {
 
     /// A builder for [`ListProjectPoliciesInput`](crate::input::ListProjectPoliciesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -7367,7 +7367,7 @@ impl ListProjectPoliciesInput {
 pub mod list_stream_processors_input {
 
     /// A builder for [`ListStreamProcessorsInput`](crate::input::ListStreamProcessorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -7528,7 +7528,7 @@ impl ListStreamProcessorsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -7677,7 +7677,7 @@ impl ListTagsForResourceInput {
 pub mod put_project_policy_input {
 
     /// A builder for [`PutProjectPolicyInput`](crate::input::PutProjectPolicyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_arn: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -7866,7 +7866,7 @@ impl PutProjectPolicyInput {
 pub mod recognize_celebrities_input {
 
     /// A builder for [`RecognizeCelebritiesInput`](crate::input::RecognizeCelebritiesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image: std::option::Option<crate::model::Image>,
     }
@@ -8013,7 +8013,7 @@ impl RecognizeCelebritiesInput {
 pub mod search_faces_input {
 
     /// A builder for [`SearchFacesInput`](crate::input::SearchFacesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_id: std::option::Option<std::string::String>,
         pub(crate) face_id: std::option::Option<std::string::String>,
@@ -8197,7 +8197,7 @@ impl SearchFacesInput {
 pub mod search_faces_by_image_input {
 
     /// A builder for [`SearchFacesByImageInput`](crate::input::SearchFacesByImageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_id: std::option::Option<std::string::String>,
         pub(crate) image: std::option::Option<crate::model::Image>,
@@ -8402,7 +8402,7 @@ impl SearchFacesByImageInput {
 pub mod start_celebrity_recognition_input {
 
     /// A builder for [`StartCelebrityRecognitionInput`](crate::input::StartCelebrityRecognitionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) video: std::option::Option<crate::model::Video>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -8593,7 +8593,7 @@ impl StartCelebrityRecognitionInput {
 pub mod start_content_moderation_input {
 
     /// A builder for [`StartContentModerationInput`](crate::input::StartContentModerationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) video: std::option::Option<crate::model::Video>,
         pub(crate) min_confidence: std::option::Option<f32>,
@@ -8796,7 +8796,7 @@ impl StartContentModerationInput {
 pub mod start_face_detection_input {
 
     /// A builder for [`StartFaceDetectionInput`](crate::input::StartFaceDetectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) video: std::option::Option<crate::model::Video>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -9004,7 +9004,7 @@ impl StartFaceDetectionInput {
 pub mod start_face_search_input {
 
     /// A builder for [`StartFaceSearchInput`](crate::input::StartFaceSearchInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) video: std::option::Option<crate::model::Video>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -9218,7 +9218,7 @@ impl StartFaceSearchInput {
 pub mod start_label_detection_input {
 
     /// A builder for [`StartLabelDetectionInput`](crate::input::StartLabelDetectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) video: std::option::Option<crate::model::Video>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -9421,7 +9421,7 @@ impl StartLabelDetectionInput {
 pub mod start_person_tracking_input {
 
     /// A builder for [`StartPersonTrackingInput`](crate::input::StartPersonTrackingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) video: std::option::Option<crate::model::Video>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -9610,7 +9610,7 @@ impl StartPersonTrackingInput {
 pub mod start_project_version_input {
 
     /// A builder for [`StartProjectVersionInput`](crate::input::StartProjectVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_version_arn: std::option::Option<std::string::String>,
         pub(crate) min_inference_units: std::option::Option<i32>,
@@ -9788,7 +9788,7 @@ impl StartProjectVersionInput {
 pub mod start_segment_detection_input {
 
     /// A builder for [`StartSegmentDetectionInput`](crate::input::StartSegmentDetectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) video: std::option::Option<crate::model::Video>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -10015,7 +10015,7 @@ impl StartSegmentDetectionInput {
 pub mod start_stream_processor_input {
 
     /// A builder for [`StartStreamProcessorInput`](crate::input::StartStreamProcessorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) start_selector: std::option::Option<crate::model::StreamProcessingStartSelector>,
@@ -10201,7 +10201,7 @@ impl StartStreamProcessorInput {
 pub mod start_text_detection_input {
 
     /// A builder for [`StartTextDetectionInput`](crate::input::StartTextDetectionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) video: std::option::Option<crate::model::Video>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -10405,7 +10405,7 @@ impl StartTextDetectionInput {
 pub mod stop_project_version_input {
 
     /// A builder for [`StopProjectVersionInput`](crate::input::StopProjectVersionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_version_arn: std::option::Option<std::string::String>,
     }
@@ -10557,7 +10557,7 @@ impl StopProjectVersionInput {
 pub mod stop_stream_processor_input {
 
     /// A builder for [`StopStreamProcessorInput`](crate::input::StopStreamProcessorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
@@ -10702,7 +10702,7 @@ impl StopStreamProcessorInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -10876,7 +10876,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11042,7 +11042,7 @@ impl UntagResourceInput {
 pub mod update_dataset_entries_input {
 
     /// A builder for [`UpdateDatasetEntriesInput`](crate::input::UpdateDatasetEntriesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
         pub(crate) changes: std::option::Option<crate::model::DatasetChanges>,
@@ -11206,7 +11206,7 @@ impl UpdateDatasetEntriesInput {
 pub mod update_stream_processor_input {
 
     /// A builder for [`UpdateStreamProcessorInput`](crate::input::UpdateStreamProcessorInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) settings_for_update:

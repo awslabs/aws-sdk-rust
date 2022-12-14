@@ -7,7 +7,7 @@ pub struct UpdateLongTermPricingOutput {}
 pub mod update_long_term_pricing_output {
 
     /// A builder for [`UpdateLongTermPricingOutput`](crate::output::UpdateLongTermPricingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateLongTermPricingOutput`](crate::output::UpdateLongTermPricingOutput).
@@ -31,7 +31,7 @@ pub struct UpdateJobShipmentStateOutput {}
 pub mod update_job_shipment_state_output {
 
     /// A builder for [`UpdateJobShipmentStateOutput`](crate::output::UpdateJobShipmentStateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateJobShipmentStateOutput`](crate::output::UpdateJobShipmentStateOutput).
@@ -55,7 +55,7 @@ pub struct UpdateJobOutput {}
 pub mod update_job_output {
 
     /// A builder for [`UpdateJobOutput`](crate::output::UpdateJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateJobOutput`](crate::output::UpdateJobOutput).
@@ -79,7 +79,7 @@ pub struct UpdateClusterOutput {}
 pub mod update_cluster_output {
 
     /// A builder for [`UpdateClusterOutput`](crate::output::UpdateClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateClusterOutput`](crate::output::UpdateClusterOutput).
@@ -123,7 +123,7 @@ impl ListLongTermPricingOutput {
 pub mod list_long_term_pricing_output {
 
     /// A builder for [`ListLongTermPricingOutput`](crate::output::ListLongTermPricingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) long_term_pricing_entries:
             std::option::Option<std::vec::Vec<crate::model::LongTermPricingListEntry>>,
@@ -203,7 +203,7 @@ impl ListJobsOutput {
 pub mod list_jobs_output {
 
     /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_list_entries: std::option::Option<std::vec::Vec<crate::model::JobListEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -279,7 +279,7 @@ impl ListCompatibleImagesOutput {
 pub mod list_compatible_images_output {
 
     /// A builder for [`ListCompatibleImagesOutput`](crate::output::ListCompatibleImagesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compatible_images:
             std::option::Option<std::vec::Vec<crate::model::CompatibleImage>>,
@@ -356,7 +356,7 @@ impl ListClustersOutput {
 pub mod list_clusters_output {
 
     /// A builder for [`ListClustersOutput`](crate::output::ListClustersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_list_entries:
             std::option::Option<std::vec::Vec<crate::model::ClusterListEntry>>,
@@ -433,7 +433,7 @@ impl ListClusterJobsOutput {
 pub mod list_cluster_jobs_output {
 
     /// A builder for [`ListClusterJobsOutput`](crate::output::ListClusterJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_list_entries: std::option::Option<std::vec::Vec<crate::model::JobListEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -502,7 +502,7 @@ impl GetSoftwareUpdatesOutput {
 pub mod get_software_updates_output {
 
     /// A builder for [`GetSoftwareUpdatesOutput`](crate::output::GetSoftwareUpdatesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) updates_uri: std::option::Option<std::string::String>,
     }
@@ -557,7 +557,7 @@ impl GetSnowballUsageOutput {
 pub mod get_snowball_usage_output {
 
     /// A builder for [`GetSnowballUsageOutput`](crate::output::GetSnowballUsageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snowball_limit: std::option::Option<i32>,
         pub(crate) snowballs_in_use: std::option::Option<i32>,
@@ -617,7 +617,7 @@ impl GetJobUnlockCodeOutput {
 pub mod get_job_unlock_code_output {
 
     /// A builder for [`GetJobUnlockCodeOutput`](crate::output::GetJobUnlockCodeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) unlock_code: std::option::Option<std::string::String>,
     }
@@ -665,7 +665,7 @@ impl GetJobManifestOutput {
 pub mod get_job_manifest_output {
 
     /// A builder for [`GetJobManifestOutput`](crate::output::GetJobManifestOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) manifest_uri: std::option::Option<std::string::String>,
     }
@@ -727,7 +727,7 @@ impl DescribeReturnShippingLabelOutput {
 pub mod describe_return_shipping_label_output {
 
     /// A builder for [`DescribeReturnShippingLabelOutput`](crate::output::DescribeReturnShippingLabelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ShippingLabelStatus>,
         pub(crate) expiration_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -815,7 +815,7 @@ impl DescribeJobOutput {
 pub mod describe_job_output {
 
     /// A builder for [`DescribeJobOutput`](crate::output::DescribeJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_metadata: std::option::Option<crate::model::JobMetadata>,
         pub(crate) sub_job_metadata: std::option::Option<std::vec::Vec<crate::model::JobMetadata>>,
@@ -887,7 +887,7 @@ impl DescribeClusterOutput {
 pub mod describe_cluster_output {
 
     /// A builder for [`DescribeClusterOutput`](crate::output::DescribeClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_metadata: std::option::Option<crate::model::ClusterMetadata>,
     }
@@ -945,7 +945,7 @@ impl DescribeAddressesOutput {
 pub mod describe_addresses_output {
 
     /// A builder for [`DescribeAddressesOutput`](crate::output::DescribeAddressesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) addresses: std::option::Option<std::vec::Vec<crate::model::Address>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1014,7 +1014,7 @@ impl DescribeAddressOutput {
 pub mod describe_address_output {
 
     /// A builder for [`DescribeAddressOutput`](crate::output::DescribeAddressOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<crate::model::Address>,
     }
@@ -1062,7 +1062,7 @@ impl CreateReturnShippingLabelOutput {
 pub mod create_return_shipping_label_output {
 
     /// A builder for [`CreateReturnShippingLabelOutput`](crate::output::CreateReturnShippingLabelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ShippingLabelStatus>,
     }
@@ -1113,7 +1113,7 @@ impl CreateLongTermPricingOutput {
 pub mod create_long_term_pricing_output {
 
     /// A builder for [`CreateLongTermPricingOutput`](crate::output::CreateLongTermPricingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) long_term_pricing_id: std::option::Option<std::string::String>,
     }
@@ -1164,7 +1164,7 @@ impl CreateJobOutput {
 pub mod create_job_output {
 
     /// A builder for [`CreateJobOutput`](crate::output::CreateJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -1212,7 +1212,7 @@ impl CreateClusterOutput {
 pub mod create_cluster_output {
 
     /// A builder for [`CreateClusterOutput`](crate::output::CreateClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
     }
@@ -1260,7 +1260,7 @@ impl CreateAddressOutput {
 pub mod create_address_output {
 
     /// A builder for [`CreateAddressOutput`](crate::output::CreateAddressOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address_id: std::option::Option<std::string::String>,
     }
@@ -1298,7 +1298,7 @@ pub struct CancelJobOutput {}
 pub mod cancel_job_output {
 
     /// A builder for [`CancelJobOutput`](crate::output::CancelJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CancelJobOutput`](crate::output::CancelJobOutput).
@@ -1322,7 +1322,7 @@ pub struct CancelClusterOutput {}
 pub mod cancel_cluster_output {
 
     /// A builder for [`CancelClusterOutput`](crate::output::CancelClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CancelClusterOutput`](crate::output::CancelClusterOutput).

@@ -24,7 +24,7 @@ impl UpdateCostCategoryDefinitionOutput {
 pub mod update_cost_category_definition_output {
 
     /// A builder for [`UpdateCostCategoryDefinitionOutput`](crate::output::UpdateCostCategoryDefinitionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cost_category_arn: std::option::Option<std::string::String>,
         pub(crate) effective_start: std::option::Option<std::string::String>,
@@ -93,7 +93,7 @@ impl UpdateCostAllocationTagsStatusOutput {
 pub mod update_cost_allocation_tags_status_output {
 
     /// A builder for [`UpdateCostAllocationTagsStatusOutput`](crate::output::UpdateCostAllocationTagsStatusOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors:
             std::option::Option<std::vec::Vec<crate::model::UpdateCostAllocationTagsStatusError>>,
@@ -153,7 +153,7 @@ impl UpdateAnomalySubscriptionOutput {
 pub mod update_anomaly_subscription_output {
 
     /// A builder for [`UpdateAnomalySubscriptionOutput`](crate::output::UpdateAnomalySubscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
     }
@@ -204,7 +204,7 @@ impl UpdateAnomalyMonitorOutput {
 pub mod update_anomaly_monitor_output {
 
     /// A builder for [`UpdateAnomalyMonitorOutput`](crate::output::UpdateAnomalyMonitorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitor_arn: std::option::Option<std::string::String>,
     }
@@ -242,7 +242,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -266,7 +266,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -300,7 +300,7 @@ impl ProvideAnomalyFeedbackOutput {
 pub mod provide_anomaly_feedback_output {
 
     /// A builder for [`ProvideAnomalyFeedbackOutput`](crate::output::ProvideAnomalyFeedbackOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_id: std::option::Option<std::string::String>,
     }
@@ -348,7 +348,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
     }
@@ -415,7 +415,7 @@ impl ListCostCategoryDefinitionsOutput {
 pub mod list_cost_category_definitions_output {
 
     /// A builder for [`ListCostCategoryDefinitionsOutput`](crate::output::ListCostCategoryDefinitionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cost_category_references:
             std::option::Option<std::vec::Vec<crate::model::CostCategoryReference>>,
@@ -495,7 +495,7 @@ impl ListCostAllocationTagsOutput {
 pub mod list_cost_allocation_tags_output {
 
     /// A builder for [`ListCostAllocationTagsOutput`](crate::output::ListCostAllocationTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cost_allocation_tags:
             std::option::Option<std::vec::Vec<crate::model::CostAllocationTag>>,
@@ -572,7 +572,7 @@ impl GetUsageForecastOutput {
 pub mod get_usage_forecast_output {
 
     /// A builder for [`GetUsageForecastOutput`](crate::output::GetUsageForecastOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total: std::option::Option<crate::model::MetricValue>,
         pub(crate) forecast_results_by_time:
@@ -663,7 +663,7 @@ impl GetTagsOutput {
 pub mod get_tags_output {
 
     /// A builder for [`GetTagsOutput`](crate::output::GetTagsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -783,7 +783,7 @@ impl GetSavingsPlansUtilizationDetailsOutput {
 pub mod get_savings_plans_utilization_details_output {
 
     /// A builder for [`GetSavingsPlansUtilizationDetailsOutput`](crate::output::GetSavingsPlansUtilizationDetailsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plans_utilization_details:
             std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationDetail>>,
@@ -896,7 +896,7 @@ impl GetSavingsPlansUtilizationOutput {
 pub mod get_savings_plans_utilization_output {
 
     /// A builder for [`GetSavingsPlansUtilizationOutput`](crate::output::GetSavingsPlansUtilizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plans_utilizations_by_time:
             std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationByTime>>,
@@ -991,7 +991,7 @@ impl GetSavingsPlansPurchaseRecommendationOutput {
 pub mod get_savings_plans_purchase_recommendation_output {
 
     /// A builder for [`GetSavingsPlansPurchaseRecommendationOutput`](crate::output::GetSavingsPlansPurchaseRecommendationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metadata:
             std::option::Option<crate::model::SavingsPlansPurchaseRecommendationMetadata>,
@@ -1090,7 +1090,7 @@ impl GetSavingsPlansCoverageOutput {
 pub mod get_savings_plans_coverage_output {
 
     /// A builder for [`GetSavingsPlansCoverageOutput`](crate::output::GetSavingsPlansCoverageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plans_coverages:
             std::option::Option<std::vec::Vec<crate::model::SavingsPlansCoverage>>,
@@ -1198,7 +1198,7 @@ impl GetRightsizingRecommendationOutput {
 pub mod get_rightsizing_recommendation_output {
 
     /// A builder for [`GetRightsizingRecommendationOutput`](crate::output::GetRightsizingRecommendationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metadata: std::option::Option<crate::model::RightsizingRecommendationMetadata>,
         pub(crate) summary: std::option::Option<crate::model::RightsizingRecommendationSummary>,
@@ -1337,7 +1337,7 @@ impl GetReservationUtilizationOutput {
 pub mod get_reservation_utilization_output {
 
     /// A builder for [`GetReservationUtilizationOutput`](crate::output::GetReservationUtilizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) utilizations_by_time:
             std::option::Option<std::vec::Vec<crate::model::UtilizationByTime>>,
@@ -1444,7 +1444,7 @@ impl GetReservationPurchaseRecommendationOutput {
 pub mod get_reservation_purchase_recommendation_output {
 
     /// A builder for [`GetReservationPurchaseRecommendationOutput`](crate::output::GetReservationPurchaseRecommendationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metadata:
             std::option::Option<crate::model::ReservationPurchaseRecommendationMetadata>,
@@ -1555,7 +1555,7 @@ impl GetReservationCoverageOutput {
 pub mod get_reservation_coverage_output {
 
     /// A builder for [`GetReservationCoverageOutput`](crate::output::GetReservationCoverageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) coverages_by_time:
             std::option::Option<std::vec::Vec<crate::model::CoverageByTime>>,
@@ -1742,7 +1742,7 @@ impl GetDimensionValuesOutput {
 pub mod get_dimension_values_output {
 
     /// A builder for [`GetDimensionValuesOutput`](crate::output::GetDimensionValuesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimension_values:
             std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
@@ -1927,7 +1927,7 @@ impl GetCostForecastOutput {
 pub mod get_cost_forecast_output {
 
     /// A builder for [`GetCostForecastOutput`](crate::output::GetCostForecastOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total: std::option::Option<crate::model::MetricValue>,
         pub(crate) forecast_results_by_time:
@@ -2027,7 +2027,7 @@ impl GetCostCategoriesOutput {
 pub mod get_cost_categories_output {
 
     /// A builder for [`GetCostCategoriesOutput`](crate::output::GetCostCategoriesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
         pub(crate) cost_category_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2170,7 +2170,7 @@ impl GetCostAndUsageWithResourcesOutput {
 pub mod get_cost_and_usage_with_resources_output {
 
     /// A builder for [`GetCostAndUsageWithResourcesOutput`](crate::output::GetCostAndUsageWithResourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
         pub(crate) group_definitions:
@@ -2313,7 +2313,7 @@ impl GetCostAndUsageOutput {
 pub mod get_cost_and_usage_output {
 
     /// A builder for [`GetCostAndUsageOutput`](crate::output::GetCostAndUsageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
         pub(crate) group_definitions:
@@ -2442,7 +2442,7 @@ impl GetAnomalySubscriptionsOutput {
 pub mod get_anomaly_subscriptions_output {
 
     /// A builder for [`GetAnomalySubscriptionsOutput`](crate::output::GetAnomalySubscriptionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_subscriptions:
             std::option::Option<std::vec::Vec<crate::model::AnomalySubscription>>,
@@ -2522,7 +2522,7 @@ impl GetAnomalyMonitorsOutput {
 pub mod get_anomaly_monitors_output {
 
     /// A builder for [`GetAnomalyMonitorsOutput`](crate::output::GetAnomalyMonitorsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_monitors:
             std::option::Option<std::vec::Vec<crate::model::AnomalyMonitor>>,
@@ -2602,7 +2602,7 @@ impl GetAnomaliesOutput {
 pub mod get_anomalies_output {
 
     /// A builder for [`GetAnomaliesOutput`](crate::output::GetAnomaliesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomalies: std::option::Option<std::vec::Vec<crate::model::Anomaly>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
@@ -2674,7 +2674,7 @@ impl DescribeCostCategoryDefinitionOutput {
 pub mod describe_cost_category_definition_output {
 
     /// A builder for [`DescribeCostCategoryDefinitionOutput`](crate::output::DescribeCostCategoryDefinitionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cost_category: std::option::Option<crate::model::CostCategory>,
     }
@@ -2732,7 +2732,7 @@ impl DeleteCostCategoryDefinitionOutput {
 pub mod delete_cost_category_definition_output {
 
     /// A builder for [`DeleteCostCategoryDefinitionOutput`](crate::output::DeleteCostCategoryDefinitionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cost_category_arn: std::option::Option<std::string::String>,
         pub(crate) effective_end: std::option::Option<std::string::String>,
@@ -2788,7 +2788,7 @@ pub struct DeleteAnomalySubscriptionOutput {}
 pub mod delete_anomaly_subscription_output {
 
     /// A builder for [`DeleteAnomalySubscriptionOutput`](crate::output::DeleteAnomalySubscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAnomalySubscriptionOutput`](crate::output::DeleteAnomalySubscriptionOutput).
@@ -2812,7 +2812,7 @@ pub struct DeleteAnomalyMonitorOutput {}
 pub mod delete_anomaly_monitor_output {
 
     /// A builder for [`DeleteAnomalyMonitorOutput`](crate::output::DeleteAnomalyMonitorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAnomalyMonitorOutput`](crate::output::DeleteAnomalyMonitorOutput).
@@ -2853,7 +2853,7 @@ impl CreateCostCategoryDefinitionOutput {
 pub mod create_cost_category_definition_output {
 
     /// A builder for [`CreateCostCategoryDefinitionOutput`](crate::output::CreateCostCategoryDefinitionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cost_category_arn: std::option::Option<std::string::String>,
         pub(crate) effective_start: std::option::Option<std::string::String>,
@@ -2919,7 +2919,7 @@ impl CreateAnomalySubscriptionOutput {
 pub mod create_anomaly_subscription_output {
 
     /// A builder for [`CreateAnomalySubscriptionOutput`](crate::output::CreateAnomalySubscriptionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
     }
@@ -2970,7 +2970,7 @@ impl CreateAnomalyMonitorOutput {
 pub mod create_anomaly_monitor_output {
 
     /// A builder for [`CreateAnomalyMonitorOutput`](crate::output::CreateAnomalyMonitorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitor_arn: std::option::Option<std::string::String>,
     }

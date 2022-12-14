@@ -29,7 +29,7 @@ impl ListStreamsOutput {
 pub mod list_streams_output {
 
     /// A builder for [`ListStreamsOutput`](crate::output::ListStreamsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streams: std::option::Option<std::vec::Vec<crate::model::Stream>>,
         pub(crate) last_evaluated_stream_arn: std::option::Option<std::string::String>,
@@ -105,7 +105,7 @@ impl GetShardIteratorOutput {
 pub mod get_shard_iterator_output {
 
     /// A builder for [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shard_iterator: std::option::Option<std::string::String>,
     }
@@ -163,7 +163,7 @@ impl GetRecordsOutput {
 pub mod get_records_output {
 
     /// A builder for [`GetRecordsOutput`](crate::output::GetRecordsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::Record>>,
         pub(crate) next_shard_iterator: std::option::Option<std::string::String>,
@@ -235,7 +235,7 @@ impl DescribeStreamOutput {
 pub mod describe_stream_output {
 
     /// A builder for [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_description: std::option::Option<crate::model::StreamDescription>,
     }

@@ -17,7 +17,7 @@ impl QueryWhatIfForecastOutput {
 pub mod query_what_if_forecast_output {
 
     /// A builder for [`QueryWhatIfForecastOutput`](crate::output::QueryWhatIfForecastOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forecast: std::option::Option<crate::model::Forecast>,
     }
@@ -65,7 +65,7 @@ impl QueryForecastOutput {
 pub mod query_forecast_output {
 
     /// A builder for [`QueryForecastOutput`](crate::output::QueryForecastOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forecast: std::option::Option<crate::model::Forecast>,
     }

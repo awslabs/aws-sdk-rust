@@ -61,7 +61,7 @@ impl SendCommandOutput {
 pub mod send_command_output {
 
     /// A builder for [`SendCommandOutput`](crate::output::SendCommandOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_session: std::option::Option<crate::model::StartSessionResult>,
         pub(crate) start_transaction: std::option::Option<crate::model::StartTransactionResult>,

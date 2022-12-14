@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod batch_meter_usage_input {
 
     /// A builder for [`BatchMeterUsageInput`](crate::input::BatchMeterUsageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_records: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,
         pub(crate) product_code: std::option::Option<std::string::String>,
@@ -171,7 +171,7 @@ impl BatchMeterUsageInput {
 pub mod meter_usage_input {
 
     /// A builder for [`MeterUsageInput`](crate::input::MeterUsageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_code: std::option::Option<std::string::String>,
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -394,7 +394,7 @@ impl MeterUsageInput {
 pub mod register_usage_input {
 
     /// A builder for [`RegisterUsageInput`](crate::input::RegisterUsageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_code: std::option::Option<std::string::String>,
         pub(crate) public_key_version: std::option::Option<i32>,
@@ -563,7 +563,7 @@ impl RegisterUsageInput {
 pub mod resolve_customer_input {
 
     /// A builder for [`ResolveCustomerInput`](crate::input::ResolveCustomerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registration_token: std::option::Option<std::string::String>,
     }

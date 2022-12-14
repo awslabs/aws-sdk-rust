@@ -339,7 +339,7 @@ impl XssMatchSetUpdate {
 pub mod xss_match_set_update {
 
     /// A builder for [`XssMatchSetUpdate`](crate::model::XssMatchSetUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::ChangeAction>,
         pub(crate) xss_match_tuple: std::option::Option<crate::model::XssMatchTuple>,
@@ -490,7 +490,7 @@ impl XssMatchTuple {
 pub mod xss_match_tuple {
 
     /// A builder for [`XssMatchTuple`](crate::model::XssMatchTuple).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_to_match: std::option::Option<crate::model::FieldToMatch>,
         pub(crate) text_transformation: std::option::Option<crate::model::TextTransformation>,
@@ -782,7 +782,7 @@ impl FieldToMatch {
 pub mod field_to_match {
 
     /// A builder for [`FieldToMatch`](crate::model::FieldToMatch).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::MatchFieldType>,
         pub(crate) data: std::option::Option<std::string::String>,
@@ -1094,7 +1094,7 @@ impl WafAction {
 pub mod waf_action {
 
     /// A builder for [`WafAction`](crate::model::WafAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::WafActionType>,
     }
@@ -1258,7 +1258,7 @@ impl WebAclUpdate {
 pub mod web_acl_update {
 
     /// A builder for [`WebAclUpdate`](crate::model::WebAclUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::ChangeAction>,
         pub(crate) activated_rule: std::option::Option<crate::model::ActivatedRule>,
@@ -1404,7 +1404,7 @@ impl ActivatedRule {
 pub mod activated_rule {
 
     /// A builder for [`ActivatedRule`](crate::model::ActivatedRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) priority: std::option::Option<i32>,
         pub(crate) rule_id: std::option::Option<std::string::String>,
@@ -1568,7 +1568,7 @@ impl ExcludedRule {
 pub mod excluded_rule {
 
     /// A builder for [`ExcludedRule`](crate::model::ExcludedRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_id: std::option::Option<std::string::String>,
     }
@@ -1715,7 +1715,7 @@ impl WafOverrideAction {
 pub mod waf_override_action {
 
     /// A builder for [`WafOverrideAction`](crate::model::WafOverrideAction).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::WafOverrideActionType>,
     }
@@ -1871,7 +1871,7 @@ impl SqlInjectionMatchSetUpdate {
 pub mod sql_injection_match_set_update {
 
     /// A builder for [`SqlInjectionMatchSetUpdate`](crate::model::SqlInjectionMatchSetUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::ChangeAction>,
         pub(crate) sql_injection_match_tuple:
@@ -2026,7 +2026,7 @@ impl SqlInjectionMatchTuple {
 pub mod sql_injection_match_tuple {
 
     /// A builder for [`SqlInjectionMatchTuple`](crate::model::SqlInjectionMatchTuple).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_to_match: std::option::Option<crate::model::FieldToMatch>,
         pub(crate) text_transformation: std::option::Option<crate::model::TextTransformation>,
@@ -2177,7 +2177,7 @@ impl SizeConstraintSetUpdate {
 pub mod size_constraint_set_update {
 
     /// A builder for [`SizeConstraintSetUpdate`](crate::model::SizeConstraintSetUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::ChangeAction>,
         pub(crate) size_constraint: std::option::Option<crate::model::SizeConstraint>,
@@ -2360,7 +2360,7 @@ impl SizeConstraint {
 pub mod size_constraint {
 
     /// A builder for [`SizeConstraint`](crate::model::SizeConstraint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_to_match: std::option::Option<crate::model::FieldToMatch>,
         pub(crate) text_transformation: std::option::Option<crate::model::TextTransformation>,
@@ -2668,7 +2668,7 @@ impl RuleGroupUpdate {
 pub mod rule_group_update {
 
     /// A builder for [`RuleGroupUpdate`](crate::model::RuleGroupUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::ChangeAction>,
         pub(crate) activated_rule: std::option::Option<crate::model::ActivatedRule>,
@@ -2745,7 +2745,7 @@ impl RuleUpdate {
 pub mod rule_update {
 
     /// A builder for [`RuleUpdate`](crate::model::RuleUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::ChangeAction>,
         pub(crate) predicate: std::option::Option<crate::model::Predicate>,
@@ -2831,7 +2831,7 @@ impl Predicate {
 pub mod predicate {
 
     /// A builder for [`Predicate`](crate::model::Predicate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) negated: std::option::Option<bool>,
         pub(crate) r#type: std::option::Option<crate::model::PredicateType>,
@@ -3039,7 +3039,7 @@ impl RegexPatternSetUpdate {
 pub mod regex_pattern_set_update {
 
     /// A builder for [`RegexPatternSetUpdate`](crate::model::RegexPatternSetUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::ChangeAction>,
         pub(crate) regex_pattern_string: std::option::Option<std::string::String>,
@@ -3116,7 +3116,7 @@ impl RegexMatchSetUpdate {
 pub mod regex_match_set_update {
 
     /// A builder for [`RegexMatchSetUpdate`](crate::model::RegexMatchSetUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::ChangeAction>,
         pub(crate) regex_match_tuple: std::option::Option<crate::model::RegexMatchTuple>,
@@ -3281,7 +3281,7 @@ impl RegexMatchTuple {
 pub mod regex_match_tuple {
 
     /// A builder for [`RegexMatchTuple`](crate::model::RegexMatchTuple).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_to_match: std::option::Option<crate::model::FieldToMatch>,
         pub(crate) text_transformation: std::option::Option<crate::model::TextTransformation>,
@@ -3449,7 +3449,7 @@ impl IpSetUpdate {
 pub mod ip_set_update {
 
     /// A builder for [`IpSetUpdate`](crate::model::IpSetUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::ChangeAction>,
         pub(crate) ip_set_descriptor: std::option::Option<crate::model::IpSetDescriptor>,
@@ -3546,7 +3546,7 @@ impl IpSetDescriptor {
 pub mod ip_set_descriptor {
 
     /// A builder for [`IpSetDescriptor`](crate::model::IpSetDescriptor).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::IpSetDescriptorType>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -3732,7 +3732,7 @@ impl GeoMatchSetUpdate {
 pub mod geo_match_set_update {
 
     /// A builder for [`GeoMatchSetUpdate`](crate::model::GeoMatchSetUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::ChangeAction>,
         pub(crate) geo_match_constraint: std::option::Option<crate::model::GeoMatchConstraint>,
@@ -3809,7 +3809,7 @@ impl GeoMatchConstraint {
 pub mod geo_match_constraint {
 
     /// A builder for [`GeoMatchConstraint`](crate::model::GeoMatchConstraint).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::GeoMatchConstraintType>,
         pub(crate) value: std::option::Option<crate::model::GeoMatchConstraintValue>,
@@ -5319,7 +5319,7 @@ impl ByteMatchSetUpdate {
 pub mod byte_match_set_update {
 
     /// A builder for [`ByteMatchSetUpdate`](crate::model::ByteMatchSetUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::ChangeAction>,
         pub(crate) byte_match_tuple: std::option::Option<crate::model::ByteMatchTuple>,
@@ -5550,7 +5550,7 @@ impl ByteMatchTuple {
 pub mod byte_match_tuple {
 
     /// A builder for [`ByteMatchTuple`](crate::model::ByteMatchTuple).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_to_match: std::option::Option<crate::model::FieldToMatch>,
         pub(crate) target_string: std::option::Option<aws_smithy_types::Blob>,
@@ -5909,7 +5909,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -5987,7 +5987,7 @@ impl LoggingConfiguration {
 pub mod logging_configuration {
 
     /// A builder for [`LoggingConfiguration`](crate::model::LoggingConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) log_destination_configs: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6090,7 +6090,7 @@ impl XssMatchSetSummary {
 pub mod xss_match_set_summary {
 
     /// A builder for [`XssMatchSetSummary`](crate::model::XssMatchSetSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) xss_match_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6168,7 +6168,7 @@ impl WebAclSummary {
 pub mod web_acl_summary {
 
     /// A builder for [`WebAclSummary`](crate::model::WebAclSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) web_acl_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6242,7 +6242,7 @@ impl TagInfoForResource {
 pub mod tag_info_for_resource {
 
     /// A builder for [`TagInfoForResource`](crate::model::TagInfoForResource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6329,7 +6329,7 @@ impl SubscribedRuleGroupSummary {
 pub mod subscribed_rule_group_summary {
 
     /// A builder for [`SubscribedRuleGroupSummary`](crate::model::SubscribedRuleGroupSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6417,7 +6417,7 @@ impl SqlInjectionMatchSetSummary {
 pub mod sql_injection_match_set_summary {
 
     /// A builder for [`SqlInjectionMatchSetSummary`](crate::model::SqlInjectionMatchSetSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sql_injection_match_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6495,7 +6495,7 @@ impl SizeConstraintSetSummary {
 pub mod size_constraint_set_summary {
 
     /// A builder for [`SizeConstraintSetSummary`](crate::model::SizeConstraintSetSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_constraint_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6573,7 +6573,7 @@ impl RuleSummary {
 pub mod rule_summary {
 
     /// A builder for [`RuleSummary`](crate::model::RuleSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6648,7 +6648,7 @@ impl RuleGroupSummary {
 pub mod rule_group_summary {
 
     /// A builder for [`RuleGroupSummary`](crate::model::RuleGroupSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6726,7 +6726,7 @@ impl RegexPatternSetSummary {
 pub mod regex_pattern_set_summary {
 
     /// A builder for [`RegexPatternSetSummary`](crate::model::RegexPatternSetSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regex_pattern_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6804,7 +6804,7 @@ impl RegexMatchSetSummary {
 pub mod regex_match_set_summary {
 
     /// A builder for [`RegexMatchSetSummary`](crate::model::RegexMatchSetSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regex_match_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6880,7 +6880,7 @@ impl IpSetSummary {
 pub mod ip_set_summary {
 
     /// A builder for [`IpSetSummary`](crate::model::IpSetSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6951,7 +6951,7 @@ impl GeoMatchSetSummary {
 pub mod geo_match_set_summary {
 
     /// A builder for [`GeoMatchSetSummary`](crate::model::GeoMatchSetSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geo_match_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7027,7 +7027,7 @@ impl ByteMatchSetSummary {
 pub mod byte_match_set_summary {
 
     /// A builder for [`ByteMatchSetSummary`](crate::model::ByteMatchSetSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) byte_match_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7112,7 +7112,7 @@ impl XssMatchSet {
 pub mod xss_match_set {
 
     /// A builder for [`XssMatchSet`](crate::model::XssMatchSet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) xss_match_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7240,7 +7240,7 @@ impl WebAcl {
 pub mod web_acl {
 
     /// A builder for [`WebAcl`](crate::model::WebAcl).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) web_acl_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7385,7 +7385,7 @@ impl SqlInjectionMatchSet {
 pub mod sql_injection_match_set {
 
     /// A builder for [`SqlInjectionMatchSet`](crate::model::SqlInjectionMatchSet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sql_injection_match_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7495,7 +7495,7 @@ impl SizeConstraintSet {
 pub mod size_constraint_set {
 
     /// A builder for [`SizeConstraintSet`](crate::model::SizeConstraintSet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_constraint_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7595,7 +7595,7 @@ impl TimeWindow {
 pub mod time_window {
 
     /// A builder for [`TimeWindow`](crate::model::TimeWindow).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -7693,7 +7693,7 @@ impl SampledHttpRequest {
 pub mod sampled_http_request {
 
     /// A builder for [`SampledHttpRequest`](crate::model::SampledHttpRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request: std::option::Option<crate::model::HttpRequest>,
         pub(crate) weight: std::option::Option<i64>,
@@ -7845,7 +7845,7 @@ impl HttpRequest {
 pub mod http_request {
 
     /// A builder for [`HttpRequest`](crate::model::HttpRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_ip: std::option::Option<std::string::String>,
         pub(crate) country: std::option::Option<std::string::String>,
@@ -7981,7 +7981,7 @@ impl HttpHeader {
 pub mod http_header {
 
     /// A builder for [`HttpHeader`](crate::model::HttpHeader).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -8067,7 +8067,7 @@ impl RuleGroup {
 pub mod rule_group {
 
     /// A builder for [`RuleGroup`](crate::model::RuleGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8176,7 +8176,7 @@ impl Rule {
 pub mod rule {
 
     /// A builder for [`Rule`](crate::model::Rule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8291,7 +8291,7 @@ impl RegexPatternSet {
 pub mod regex_pattern_set {
 
     /// A builder for [`RegexPatternSet`](crate::model::RegexPatternSet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regex_pattern_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8408,7 +8408,7 @@ impl RegexMatchSet {
 pub mod regex_match_set {
 
     /// A builder for [`RegexMatchSet`](crate::model::RegexMatchSet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regex_match_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8550,7 +8550,7 @@ impl RateBasedRule {
 pub mod rate_based_rule {
 
     /// A builder for [`RateBasedRule`](crate::model::RateBasedRule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8773,7 +8773,7 @@ impl IpSet {
 pub mod ip_set {
 
     /// A builder for [`IpSet`](crate::model::IpSet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8879,7 +8879,7 @@ impl GeoMatchSet {
 pub mod geo_match_set {
 
     /// A builder for [`GeoMatchSet`](crate::model::GeoMatchSet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geo_match_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -9084,7 +9084,7 @@ impl ByteMatchSet {
 pub mod byte_match_set {
 
     /// A builder for [`ByteMatchSet`](crate::model::ByteMatchSet).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) byte_match_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,

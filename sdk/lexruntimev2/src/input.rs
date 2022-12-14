@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod delete_session_input {
 
     /// A builder for [`DeleteSessionInput`](crate::input::DeleteSessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_alias_id: std::option::Option<std::string::String>,
@@ -243,7 +243,7 @@ impl DeleteSessionInput {
 pub mod get_session_input {
 
     /// A builder for [`GetSessionInput`](crate::input::GetSessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_alias_id: std::option::Option<std::string::String>,
@@ -481,7 +481,7 @@ impl GetSessionInput {
 pub mod put_session_input {
 
     /// A builder for [`PutSessionInput`](crate::input::PutSessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_alias_id: std::option::Option<std::string::String>,
@@ -822,7 +822,7 @@ impl PutSessionInput {
 pub mod recognize_text_input {
 
     /// A builder for [`RecognizeTextInput`](crate::input::RecognizeTextInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_alias_id: std::option::Option<std::string::String>,

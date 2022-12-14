@@ -7,7 +7,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -31,7 +31,7 @@ pub struct UndeprecateWorkflowTypeOutput {}
 pub mod undeprecate_workflow_type_output {
 
     /// A builder for [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput).
@@ -55,7 +55,7 @@ pub struct UndeprecateDomainOutput {}
 pub mod undeprecate_domain_output {
 
     /// A builder for [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput).
@@ -79,7 +79,7 @@ pub struct UndeprecateActivityTypeOutput {}
 pub mod undeprecate_activity_type_output {
 
     /// A builder for [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput).
@@ -103,7 +103,7 @@ pub struct TerminateWorkflowExecutionOutput {}
 pub mod terminate_workflow_execution_output {
 
     /// A builder for [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput).
@@ -127,7 +127,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -161,7 +161,7 @@ impl StartWorkflowExecutionOutput {
 pub mod start_workflow_execution_output {
 
     /// A builder for [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) run_id: std::option::Option<std::string::String>,
     }
@@ -199,7 +199,7 @@ pub struct SignalWorkflowExecutionOutput {}
 pub mod signal_workflow_execution_output {
 
     /// A builder for [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput).
@@ -223,7 +223,7 @@ pub struct RespondDecisionTaskCompletedOutput {}
 pub mod respond_decision_task_completed_output {
 
     /// A builder for [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput).
@@ -247,7 +247,7 @@ pub struct RespondActivityTaskFailedOutput {}
 pub mod respond_activity_task_failed_output {
 
     /// A builder for [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput).
@@ -271,7 +271,7 @@ pub struct RespondActivityTaskCompletedOutput {}
 pub mod respond_activity_task_completed_output {
 
     /// A builder for [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput).
@@ -295,7 +295,7 @@ pub struct RespondActivityTaskCanceledOutput {}
 pub mod respond_activity_task_canceled_output {
 
     /// A builder for [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput).
@@ -319,7 +319,7 @@ pub struct RequestCancelWorkflowExecutionOutput {}
 pub mod request_cancel_workflow_execution_output {
 
     /// A builder for [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput).
@@ -343,7 +343,7 @@ pub struct RegisterWorkflowTypeOutput {}
 pub mod register_workflow_type_output {
 
     /// A builder for [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput).
@@ -367,7 +367,7 @@ pub struct RegisterDomainOutput {}
 pub mod register_domain_output {
 
     /// A builder for [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
@@ -391,7 +391,7 @@ pub struct RegisterActivityTypeOutput {}
 pub mod register_activity_type_output {
 
     /// A builder for [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput).
@@ -425,7 +425,7 @@ impl RecordActivityTaskHeartbeatOutput {
 pub mod record_activity_task_heartbeat_output {
 
     /// A builder for [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cancel_requested: std::option::Option<bool>,
     }
@@ -517,7 +517,7 @@ impl PollForDecisionTaskOutput {
 pub mod poll_for_decision_task_output {
 
     /// A builder for [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_token: std::option::Option<std::string::String>,
         pub(crate) started_event_id: std::option::Option<i64>,
@@ -692,7 +692,7 @@ impl PollForActivityTaskOutput {
 pub mod poll_for_activity_task_output {
 
     /// A builder for [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_token: std::option::Option<std::string::String>,
         pub(crate) activity_id: std::option::Option<std::string::String>,
@@ -815,7 +815,7 @@ impl ListWorkflowTypesOutput {
 pub mod list_workflow_types_output {
 
     /// A builder for [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_infos: std::option::Option<std::vec::Vec<crate::model::WorkflowTypeInfo>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
@@ -889,7 +889,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
     }
@@ -953,7 +953,7 @@ impl ListOpenWorkflowExecutionsOutput {
 pub mod list_open_workflow_executions_output {
 
     /// A builder for [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_infos:
             std::option::Option<std::vec::Vec<crate::model::WorkflowExecutionInfo>>,
@@ -1037,7 +1037,7 @@ impl ListDomainsOutput {
 pub mod list_domains_output {
 
     /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_infos: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
@@ -1120,7 +1120,7 @@ impl ListClosedWorkflowExecutionsOutput {
 pub mod list_closed_workflow_executions_output {
 
     /// A builder for [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_infos:
             std::option::Option<std::vec::Vec<crate::model::WorkflowExecutionInfo>>,
@@ -1204,7 +1204,7 @@ impl ListActivityTypesOutput {
 pub mod list_activity_types_output {
 
     /// A builder for [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_infos: std::option::Option<std::vec::Vec<crate::model::ActivityTypeInfo>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
@@ -1287,7 +1287,7 @@ impl GetWorkflowExecutionHistoryOutput {
 pub mod get_workflow_execution_history_output {
 
     /// A builder for [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::HistoryEvent>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
@@ -1378,7 +1378,7 @@ impl DescribeWorkflowTypeOutput {
 pub mod describe_workflow_type_output {
 
     /// A builder for [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_info: std::option::Option<crate::model::WorkflowTypeInfo>,
         pub(crate) configuration: std::option::Option<crate::model::WorkflowTypeConfiguration>,
@@ -1486,7 +1486,7 @@ impl DescribeWorkflowExecutionOutput {
 pub mod describe_workflow_execution_output {
 
     /// A builder for [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_info: std::option::Option<crate::model::WorkflowExecutionInfo>,
         pub(crate) execution_configuration:
@@ -1608,7 +1608,7 @@ impl DescribeDomainOutput {
 pub mod describe_domain_output {
 
     /// A builder for [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_info: std::option::Option<crate::model::DomainInfo>,
         pub(crate) configuration: std::option::Option<crate::model::DomainConfiguration>,
@@ -1691,7 +1691,7 @@ impl DescribeActivityTypeOutput {
 pub mod describe_activity_type_output {
 
     /// A builder for [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_info: std::option::Option<crate::model::ActivityTypeInfo>,
         pub(crate) configuration: std::option::Option<crate::model::ActivityTypeConfiguration>,
@@ -1757,7 +1757,7 @@ pub struct DeprecateWorkflowTypeOutput {}
 pub mod deprecate_workflow_type_output {
 
     /// A builder for [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput).
@@ -1781,7 +1781,7 @@ pub struct DeprecateDomainOutput {}
 pub mod deprecate_domain_output {
 
     /// A builder for [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput).
@@ -1805,7 +1805,7 @@ pub struct DeprecateActivityTypeOutput {}
 pub mod deprecate_activity_type_output {
 
     /// A builder for [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput).
@@ -1846,7 +1846,7 @@ impl CountPendingDecisionTasksOutput {
 pub mod count_pending_decision_tasks_output {
 
     /// A builder for [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
         pub(crate) truncated: std::option::Option<bool>,
@@ -1913,7 +1913,7 @@ impl CountPendingActivityTasksOutput {
 pub mod count_pending_activity_tasks_output {
 
     /// A builder for [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
         pub(crate) truncated: std::option::Option<bool>,
@@ -1980,7 +1980,7 @@ impl CountOpenWorkflowExecutionsOutput {
 pub mod count_open_workflow_executions_output {
 
     /// A builder for [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
         pub(crate) truncated: std::option::Option<bool>,
@@ -2047,7 +2047,7 @@ impl CountClosedWorkflowExecutionsOutput {
 pub mod count_closed_workflow_executions_output {
 
     /// A builder for [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
         pub(crate) truncated: std::option::Option<bool>,

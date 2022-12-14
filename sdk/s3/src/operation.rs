@@ -5,7 +5,7 @@
 /// [`abort_multipart_upload`](crate::client::Client::abort_multipart_upload).
 ///
 /// See [`crate::client::fluent_builders::AbortMultipartUpload`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AbortMultipartUpload {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AbortMultipartUpload {
 /// [`complete_multipart_upload`](crate::client::Client::complete_multipart_upload).
 ///
 /// See [`crate::client::fluent_builders::CompleteMultipartUpload`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CompleteMultipartUpload {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CompleteMultipartUpload 
 /// [`copy_object`](crate::client::Client::copy_object).
 ///
 /// See [`crate::client::fluent_builders::CopyObject`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CopyObject {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyObject {
 /// [`create_bucket`](crate::client::Client::create_bucket).
 ///
 /// See [`crate::client::fluent_builders::CreateBucket`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBucket {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBucket {
 /// [`create_multipart_upload`](crate::client::Client::create_multipart_upload).
 ///
 /// See [`crate::client::fluent_builders::CreateMultipartUpload`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMultipartUpload {
     _private: (),
 }
@@ -199,7 +199,7 @@ mod create_multipart_upload_request_test {
 /// [`delete_bucket`](crate::client::Client::delete_bucket).
 ///
 /// See [`crate::client::fluent_builders::DeleteBucket`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucket {
     _private: (),
 }
@@ -231,7 +231,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucket {
 /// [`delete_bucket_analytics_configuration`](crate::client::Client::delete_bucket_analytics_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeleteBucketAnalyticsConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketAnalyticsConfiguration {
     _private: (),
 }
@@ -265,7 +265,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketAnalyticsCon
 /// [`delete_bucket_cors`](crate::client::Client::delete_bucket_cors).
 ///
 /// See [`crate::client::fluent_builders::DeleteBucketCors`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketCors {
     _private: (),
 }
@@ -299,7 +299,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketCors {
 /// [`delete_bucket_encryption`](crate::client::Client::delete_bucket_encryption).
 ///
 /// See [`crate::client::fluent_builders::DeleteBucketEncryption`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketEncryption {
     _private: (),
 }
@@ -333,7 +333,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketEncryption {
 /// [`delete_bucket_intelligent_tiering_configuration`](crate::client::Client::delete_bucket_intelligent_tiering_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeleteBucketIntelligentTieringConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketIntelligentTieringConfiguration {
     _private: (),
 }
@@ -374,7 +374,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`delete_bucket_inventory_configuration`](crate::client::Client::delete_bucket_inventory_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeleteBucketInventoryConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketInventoryConfiguration {
     _private: (),
 }
@@ -408,7 +408,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketInventoryCon
 /// [`delete_bucket_lifecycle`](crate::client::Client::delete_bucket_lifecycle).
 ///
 /// See [`crate::client::fluent_builders::DeleteBucketLifecycle`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketLifecycle {
     _private: (),
 }
@@ -442,7 +442,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketLifecycle {
 /// [`delete_bucket_metrics_configuration`](crate::client::Client::delete_bucket_metrics_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeleteBucketMetricsConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketMetricsConfiguration {
     _private: (),
 }
@@ -476,7 +476,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketMetricsConfi
 /// [`delete_bucket_ownership_controls`](crate::client::Client::delete_bucket_ownership_controls).
 ///
 /// See [`crate::client::fluent_builders::DeleteBucketOwnershipControls`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketOwnershipControls {
     _private: (),
 }
@@ -510,7 +510,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketOwnershipCon
 /// [`delete_bucket_policy`](crate::client::Client::delete_bucket_policy).
 ///
 /// See [`crate::client::fluent_builders::DeleteBucketPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketPolicy {
     _private: (),
 }
@@ -544,7 +544,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketPolicy {
 /// [`delete_bucket_replication`](crate::client::Client::delete_bucket_replication).
 ///
 /// See [`crate::client::fluent_builders::DeleteBucketReplication`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketReplication {
     _private: (),
 }
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketReplication 
 /// [`delete_bucket_tagging`](crate::client::Client::delete_bucket_tagging).
 ///
 /// See [`crate::client::fluent_builders::DeleteBucketTagging`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketTagging {
     _private: (),
 }
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketTagging {
 /// [`delete_bucket_website`](crate::client::Client::delete_bucket_website).
 ///
 /// See [`crate::client::fluent_builders::DeleteBucketWebsite`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketWebsite {
     _private: (),
 }
@@ -646,7 +646,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketWebsite {
 /// [`delete_object`](crate::client::Client::delete_object).
 ///
 /// See [`crate::client::fluent_builders::DeleteObject`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteObject {
     _private: (),
 }
@@ -678,7 +678,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObject {
 /// [`delete_objects`](crate::client::Client::delete_objects).
 ///
 /// See [`crate::client::fluent_builders::DeleteObjects`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteObjects {
     _private: (),
 }
@@ -710,7 +710,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObjects {
 /// [`delete_object_tagging`](crate::client::Client::delete_object_tagging).
 ///
 /// See [`crate::client::fluent_builders::DeleteObjectTagging`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteObjectTagging {
     _private: (),
 }
@@ -744,7 +744,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObjectTagging {
 /// [`delete_public_access_block`](crate::client::Client::delete_public_access_block).
 ///
 /// See [`crate::client::fluent_builders::DeletePublicAccessBlock`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePublicAccessBlock {
     _private: (),
 }
@@ -778,7 +778,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePublicAccessBlock 
 /// [`get_bucket_accelerate_configuration`](crate::client::Client::get_bucket_accelerate_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetBucketAccelerateConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketAccelerateConfiguration {
     _private: (),
 }
@@ -812,7 +812,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketAccelerateConfi
 /// [`get_bucket_acl`](crate::client::Client::get_bucket_acl).
 ///
 /// See [`crate::client::fluent_builders::GetBucketAcl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketAcl {
     _private: (),
 }
@@ -844,7 +844,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketAcl {
 /// [`get_bucket_analytics_configuration`](crate::client::Client::get_bucket_analytics_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetBucketAnalyticsConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketAnalyticsConfiguration {
     _private: (),
 }
@@ -878,7 +878,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketAnalyticsConfig
 /// [`get_bucket_cors`](crate::client::Client::get_bucket_cors).
 ///
 /// See [`crate::client::fluent_builders::GetBucketCors`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketCors {
     _private: (),
 }
@@ -910,7 +910,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketCors {
 /// [`get_bucket_encryption`](crate::client::Client::get_bucket_encryption).
 ///
 /// See [`crate::client::fluent_builders::GetBucketEncryption`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketEncryption {
     _private: (),
 }
@@ -944,7 +944,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketEncryption {
 /// [`get_bucket_intelligent_tiering_configuration`](crate::client::Client::get_bucket_intelligent_tiering_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetBucketIntelligentTieringConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketIntelligentTieringConfiguration {
     _private: (),
 }
@@ -982,7 +982,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketIntelligentTier
 /// [`get_bucket_inventory_configuration`](crate::client::Client::get_bucket_inventory_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetBucketInventoryConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketInventoryConfiguration {
     _private: (),
 }
@@ -1016,7 +1016,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketInventoryConfig
 /// [`get_bucket_lifecycle_configuration`](crate::client::Client::get_bucket_lifecycle_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetBucketLifecycleConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketLifecycleConfiguration {
     _private: (),
 }
@@ -1050,7 +1050,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketLifecycleConfig
 /// [`get_bucket_location`](crate::client::Client::get_bucket_location).
 ///
 /// See [`crate::client::fluent_builders::GetBucketLocation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketLocation {
     _private: (),
 }
@@ -1117,7 +1117,7 @@ mod get_bucket_location_request_test {
 /// [`get_bucket_logging`](crate::client::Client::get_bucket_logging).
 ///
 /// See [`crate::client::fluent_builders::GetBucketLogging`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketLogging {
     _private: (),
 }
@@ -1151,7 +1151,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketLogging {
 /// [`get_bucket_metrics_configuration`](crate::client::Client::get_bucket_metrics_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetBucketMetricsConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketMetricsConfiguration {
     _private: (),
 }
@@ -1185,7 +1185,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketMetricsConfigur
 /// [`get_bucket_notification_configuration`](crate::client::Client::get_bucket_notification_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetBucketNotificationConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketNotificationConfiguration {
     _private: (),
 }
@@ -1219,7 +1219,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketNotificationCon
 /// [`get_bucket_ownership_controls`](crate::client::Client::get_bucket_ownership_controls).
 ///
 /// See [`crate::client::fluent_builders::GetBucketOwnershipControls`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketOwnershipControls {
     _private: (),
 }
@@ -1253,7 +1253,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketOwnershipContro
 /// [`get_bucket_policy`](crate::client::Client::get_bucket_policy).
 ///
 /// See [`crate::client::fluent_builders::GetBucketPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketPolicy {
     _private: (),
 }
@@ -1287,7 +1287,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketPolicy {
 /// [`get_bucket_policy_status`](crate::client::Client::get_bucket_policy_status).
 ///
 /// See [`crate::client::fluent_builders::GetBucketPolicyStatus`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketPolicyStatus {
     _private: (),
 }
@@ -1321,7 +1321,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketPolicyStatus {
 /// [`get_bucket_replication`](crate::client::Client::get_bucket_replication).
 ///
 /// See [`crate::client::fluent_builders::GetBucketReplication`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketReplication {
     _private: (),
 }
@@ -1355,7 +1355,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketReplication {
 /// [`get_bucket_request_payment`](crate::client::Client::get_bucket_request_payment).
 ///
 /// See [`crate::client::fluent_builders::GetBucketRequestPayment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketRequestPayment {
     _private: (),
 }
@@ -1389,7 +1389,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketRequestPayment 
 /// [`get_bucket_tagging`](crate::client::Client::get_bucket_tagging).
 ///
 /// See [`crate::client::fluent_builders::GetBucketTagging`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketTagging {
     _private: (),
 }
@@ -1423,7 +1423,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketTagging {
 /// [`get_bucket_versioning`](crate::client::Client::get_bucket_versioning).
 ///
 /// See [`crate::client::fluent_builders::GetBucketVersioning`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketVersioning {
     _private: (),
 }
@@ -1457,7 +1457,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketVersioning {
 /// [`get_bucket_website`](crate::client::Client::get_bucket_website).
 ///
 /// See [`crate::client::fluent_builders::GetBucketWebsite`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketWebsite {
     _private: (),
 }
@@ -1491,7 +1491,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketWebsite {
 /// [`get_object`](crate::client::Client::get_object).
 ///
 /// See [`crate::client::fluent_builders::GetObject`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObject {
     _private: (),
 }
@@ -1529,7 +1529,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetObject {
 /// [`get_object_acl`](crate::client::Client::get_object_acl).
 ///
 /// See [`crate::client::fluent_builders::GetObjectAcl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObjectAcl {
     _private: (),
 }
@@ -1561,7 +1561,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectAcl {
 /// [`get_object_attributes`](crate::client::Client::get_object_attributes).
 ///
 /// See [`crate::client::fluent_builders::GetObjectAttributes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObjectAttributes {
     _private: (),
 }
@@ -1595,7 +1595,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectAttributes {
 /// [`get_object_legal_hold`](crate::client::Client::get_object_legal_hold).
 ///
 /// See [`crate::client::fluent_builders::GetObjectLegalHold`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObjectLegalHold {
     _private: (),
 }
@@ -1629,7 +1629,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectLegalHold {
 /// [`get_object_lock_configuration`](crate::client::Client::get_object_lock_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetObjectLockConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObjectLockConfiguration {
     _private: (),
 }
@@ -1663,7 +1663,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectLockConfigurati
 /// [`get_object_retention`](crate::client::Client::get_object_retention).
 ///
 /// See [`crate::client::fluent_builders::GetObjectRetention`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObjectRetention {
     _private: (),
 }
@@ -1697,7 +1697,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectRetention {
 /// [`get_object_tagging`](crate::client::Client::get_object_tagging).
 ///
 /// See [`crate::client::fluent_builders::GetObjectTagging`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObjectTagging {
     _private: (),
 }
@@ -1731,7 +1731,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectTagging {
 /// [`get_object_torrent`](crate::client::Client::get_object_torrent).
 ///
 /// See [`crate::client::fluent_builders::GetObjectTorrent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObjectTorrent {
     _private: (),
 }
@@ -1772,7 +1772,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetObjectTorrent {
 /// [`get_public_access_block`](crate::client::Client::get_public_access_block).
 ///
 /// See [`crate::client::fluent_builders::GetPublicAccessBlock`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPublicAccessBlock {
     _private: (),
 }
@@ -1806,7 +1806,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPublicAccessBlock {
 /// [`head_bucket`](crate::client::Client::head_bucket).
 ///
 /// See [`crate::client::fluent_builders::HeadBucket`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct HeadBucket {
     _private: (),
 }
@@ -1878,7 +1878,7 @@ mod head_bucket_request_test {
 /// [`head_object`](crate::client::Client::head_object).
 ///
 /// See [`crate::client::fluent_builders::HeadObject`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct HeadObject {
     _private: (),
 }
@@ -1972,7 +1972,7 @@ mod head_object_request_test {
 /// [`list_bucket_analytics_configurations`](crate::client::Client::list_bucket_analytics_configurations).
 ///
 /// See [`crate::client::fluent_builders::ListBucketAnalyticsConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBucketAnalyticsConfigurations {
     _private: (),
 }
@@ -2006,7 +2006,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBucketAnalyticsConfi
 /// [`list_bucket_intelligent_tiering_configurations`](crate::client::Client::list_bucket_intelligent_tiering_configurations).
 ///
 /// See [`crate::client::fluent_builders::ListBucketIntelligentTieringConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBucketIntelligentTieringConfigurations {
     _private: (),
 }
@@ -2045,7 +2045,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBucketIntelligentTie
 /// [`list_bucket_inventory_configurations`](crate::client::Client::list_bucket_inventory_configurations).
 ///
 /// See [`crate::client::fluent_builders::ListBucketInventoryConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBucketInventoryConfigurations {
     _private: (),
 }
@@ -2079,7 +2079,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBucketInventoryConfi
 /// [`list_bucket_metrics_configurations`](crate::client::Client::list_bucket_metrics_configurations).
 ///
 /// See [`crate::client::fluent_builders::ListBucketMetricsConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBucketMetricsConfigurations {
     _private: (),
 }
@@ -2113,7 +2113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBucketMetricsConfigu
 /// [`list_buckets`](crate::client::Client::list_buckets).
 ///
 /// See [`crate::client::fluent_builders::ListBuckets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBuckets {
     _private: (),
 }
@@ -2145,7 +2145,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBuckets {
 /// [`list_multipart_uploads`](crate::client::Client::list_multipart_uploads).
 ///
 /// See [`crate::client::fluent_builders::ListMultipartUploads`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMultipartUploads {
     _private: (),
 }
@@ -2179,7 +2179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMultipartUploads {
 /// [`list_objects`](crate::client::Client::list_objects).
 ///
 /// See [`crate::client::fluent_builders::ListObjects`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListObjects {
     _private: (),
 }
@@ -2317,7 +2317,7 @@ mod list_objects_request_test {
 /// [`list_objects_v2`](crate::client::Client::list_objects_v2).
 ///
 /// See [`crate::client::fluent_builders::ListObjectsV2`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListObjectsV2 {
     _private: (),
 }
@@ -2349,7 +2349,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjectsV2 {
 /// [`list_object_versions`](crate::client::Client::list_object_versions).
 ///
 /// See [`crate::client::fluent_builders::ListObjectVersions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListObjectVersions {
     _private: (),
 }
@@ -2383,7 +2383,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjectVersions {
 /// [`list_parts`](crate::client::Client::list_parts).
 ///
 /// See [`crate::client::fluent_builders::ListParts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListParts {
     _private: (),
 }
@@ -2414,7 +2414,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListParts {
 /// [`put_bucket_accelerate_configuration`](crate::client::Client::put_bucket_accelerate_configuration).
 ///
 /// See [`crate::client::fluent_builders::PutBucketAccelerateConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketAccelerateConfiguration {
     _private: (),
 }
@@ -2448,7 +2448,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketAccelerateConfi
 /// [`put_bucket_acl`](crate::client::Client::put_bucket_acl).
 ///
 /// See [`crate::client::fluent_builders::PutBucketAcl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketAcl {
     _private: (),
 }
@@ -2480,7 +2480,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketAcl {
 /// [`put_bucket_analytics_configuration`](crate::client::Client::put_bucket_analytics_configuration).
 ///
 /// See [`crate::client::fluent_builders::PutBucketAnalyticsConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketAnalyticsConfiguration {
     _private: (),
 }
@@ -2514,7 +2514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketAnalyticsConfig
 /// [`put_bucket_cors`](crate::client::Client::put_bucket_cors).
 ///
 /// See [`crate::client::fluent_builders::PutBucketCors`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketCors {
     _private: (),
 }
@@ -2546,7 +2546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketCors {
 /// [`put_bucket_encryption`](crate::client::Client::put_bucket_encryption).
 ///
 /// See [`crate::client::fluent_builders::PutBucketEncryption`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketEncryption {
     _private: (),
 }
@@ -2580,7 +2580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketEncryption {
 /// [`put_bucket_intelligent_tiering_configuration`](crate::client::Client::put_bucket_intelligent_tiering_configuration).
 ///
 /// See [`crate::client::fluent_builders::PutBucketIntelligentTieringConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketIntelligentTieringConfiguration {
     _private: (),
 }
@@ -2618,7 +2618,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketIntelligentTier
 /// [`put_bucket_inventory_configuration`](crate::client::Client::put_bucket_inventory_configuration).
 ///
 /// See [`crate::client::fluent_builders::PutBucketInventoryConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketInventoryConfiguration {
     _private: (),
 }
@@ -2652,7 +2652,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketInventoryConfig
 /// [`put_bucket_lifecycle_configuration`](crate::client::Client::put_bucket_lifecycle_configuration).
 ///
 /// See [`crate::client::fluent_builders::PutBucketLifecycleConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketLifecycleConfiguration {
     _private: (),
 }
@@ -2730,7 +2730,7 @@ mod put_bucket_lifecycle_configuration_request_test {
 /// [`put_bucket_logging`](crate::client::Client::put_bucket_logging).
 ///
 /// See [`crate::client::fluent_builders::PutBucketLogging`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketLogging {
     _private: (),
 }
@@ -2764,7 +2764,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketLogging {
 /// [`put_bucket_metrics_configuration`](crate::client::Client::put_bucket_metrics_configuration).
 ///
 /// See [`crate::client::fluent_builders::PutBucketMetricsConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketMetricsConfiguration {
     _private: (),
 }
@@ -2798,7 +2798,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketMetricsConfigur
 /// [`put_bucket_notification_configuration`](crate::client::Client::put_bucket_notification_configuration).
 ///
 /// See [`crate::client::fluent_builders::PutBucketNotificationConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketNotificationConfiguration {
     _private: (),
 }
@@ -2832,7 +2832,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketNotificationCon
 /// [`put_bucket_ownership_controls`](crate::client::Client::put_bucket_ownership_controls).
 ///
 /// See [`crate::client::fluent_builders::PutBucketOwnershipControls`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketOwnershipControls {
     _private: (),
 }
@@ -2866,7 +2866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketOwnershipContro
 /// [`put_bucket_policy`](crate::client::Client::put_bucket_policy).
 ///
 /// See [`crate::client::fluent_builders::PutBucketPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketPolicy {
     _private: (),
 }
@@ -2900,7 +2900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketPolicy {
 /// [`put_bucket_replication`](crate::client::Client::put_bucket_replication).
 ///
 /// See [`crate::client::fluent_builders::PutBucketReplication`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketReplication {
     _private: (),
 }
@@ -2934,7 +2934,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketReplication {
 /// [`put_bucket_request_payment`](crate::client::Client::put_bucket_request_payment).
 ///
 /// See [`crate::client::fluent_builders::PutBucketRequestPayment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketRequestPayment {
     _private: (),
 }
@@ -2968,7 +2968,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketRequestPayment 
 /// [`put_bucket_tagging`](crate::client::Client::put_bucket_tagging).
 ///
 /// See [`crate::client::fluent_builders::PutBucketTagging`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketTagging {
     _private: (),
 }
@@ -3002,7 +3002,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketTagging {
 /// [`put_bucket_versioning`](crate::client::Client::put_bucket_versioning).
 ///
 /// See [`crate::client::fluent_builders::PutBucketVersioning`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketVersioning {
     _private: (),
 }
@@ -3036,7 +3036,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketVersioning {
 /// [`put_bucket_website`](crate::client::Client::put_bucket_website).
 ///
 /// See [`crate::client::fluent_builders::PutBucketWebsite`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketWebsite {
     _private: (),
 }
@@ -3070,7 +3070,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketWebsite {
 /// [`put_object`](crate::client::Client::put_object).
 ///
 /// See [`crate::client::fluent_builders::PutObject`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutObject {
     _private: (),
 }
@@ -3158,7 +3158,7 @@ mod put_object_request_test {
 /// [`put_object_acl`](crate::client::Client::put_object_acl).
 ///
 /// See [`crate::client::fluent_builders::PutObjectAcl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutObjectAcl {
     _private: (),
 }
@@ -3190,7 +3190,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObjectAcl {
 /// [`put_object_legal_hold`](crate::client::Client::put_object_legal_hold).
 ///
 /// See [`crate::client::fluent_builders::PutObjectLegalHold`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutObjectLegalHold {
     _private: (),
 }
@@ -3224,7 +3224,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObjectLegalHold {
 /// [`put_object_lock_configuration`](crate::client::Client::put_object_lock_configuration).
 ///
 /// See [`crate::client::fluent_builders::PutObjectLockConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutObjectLockConfiguration {
     _private: (),
 }
@@ -3258,7 +3258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObjectLockConfigurati
 /// [`put_object_retention`](crate::client::Client::put_object_retention).
 ///
 /// See [`crate::client::fluent_builders::PutObjectRetention`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutObjectRetention {
     _private: (),
 }
@@ -3292,7 +3292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObjectRetention {
 /// [`put_object_tagging`](crate::client::Client::put_object_tagging).
 ///
 /// See [`crate::client::fluent_builders::PutObjectTagging`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutObjectTagging {
     _private: (),
 }
@@ -3326,7 +3326,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObjectTagging {
 /// [`put_public_access_block`](crate::client::Client::put_public_access_block).
 ///
 /// See [`crate::client::fluent_builders::PutPublicAccessBlock`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutPublicAccessBlock {
     _private: (),
 }
@@ -3360,7 +3360,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPublicAccessBlock {
 /// [`restore_object`](crate::client::Client::restore_object).
 ///
 /// See [`crate::client::fluent_builders::RestoreObject`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RestoreObject {
     _private: (),
 }
@@ -3392,7 +3392,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreObject {
 /// [`select_object_content`](crate::client::Client::select_object_content).
 ///
 /// See [`crate::client::fluent_builders::SelectObjectContent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SelectObjectContent {
     _private: (),
 }
@@ -3435,7 +3435,7 @@ impl aws_smithy_http::response::ParseHttpResponse for SelectObjectContent {
 /// [`upload_part`](crate::client::Client::upload_part).
 ///
 /// See [`crate::client::fluent_builders::UploadPart`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UploadPart {
     _private: (),
 }
@@ -3467,7 +3467,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UploadPart {
 /// [`upload_part_copy`](crate::client::Client::upload_part_copy).
 ///
 /// See [`crate::client::fluent_builders::UploadPartCopy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UploadPartCopy {
     _private: (),
 }
@@ -3499,7 +3499,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UploadPartCopy {
 /// [`write_get_object_response`](crate::client::Client::write_get_object_response).
 ///
 /// See [`crate::client::fluent_builders::WriteGetObjectResponse`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct WriteGetObjectResponse {
     _private: (),
 }

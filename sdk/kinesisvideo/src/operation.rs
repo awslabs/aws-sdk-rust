@@ -5,7 +5,7 @@
 /// [`create_signaling_channel`](crate::client::Client::create_signaling_channel).
 ///
 /// See [`crate::client::fluent_builders::CreateSignalingChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSignalingChannel {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSignalingChannel {
 /// [`create_stream`](crate::client::Client::create_stream).
 ///
 /// See [`crate::client::fluent_builders::CreateStream`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateStream {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStream {
 /// [`delete_signaling_channel`](crate::client::Client::delete_signaling_channel).
 ///
 /// See [`crate::client::fluent_builders::DeleteSignalingChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSignalingChannel {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSignalingChannel {
 /// [`delete_stream`](crate::client::Client::delete_stream).
 ///
 /// See [`crate::client::fluent_builders::DeleteStream`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteStream {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStream {
 /// [`describe_image_generation_configuration`](crate::client::Client::describe_image_generation_configuration).
 ///
 /// See [`crate::client::fluent_builders::DescribeImageGenerationConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeImageGenerationConfiguration {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImageGenerationC
 /// [`describe_notification_configuration`](crate::client::Client::describe_notification_configuration).
 ///
 /// See [`crate::client::fluent_builders::DescribeNotificationConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeNotificationConfiguration {
     _private: (),
 }
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNotificationConf
 /// [`describe_signaling_channel`](crate::client::Client::describe_signaling_channel).
 ///
 /// See [`crate::client::fluent_builders::DescribeSignalingChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSignalingChannel {
     _private: (),
 }
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSignalingChannel
 /// [`describe_stream`](crate::client::Client::describe_stream).
 ///
 /// See [`crate::client::fluent_builders::DescribeStream`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeStream {
     _private: (),
 }
@@ -271,7 +271,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStream {
 /// [`get_data_endpoint`](crate::client::Client::get_data_endpoint).
 ///
 /// See [`crate::client::fluent_builders::GetDataEndpoint`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDataEndpoint {
     _private: (),
 }
@@ -305,7 +305,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataEndpoint {
 /// [`get_signaling_channel_endpoint`](crate::client::Client::get_signaling_channel_endpoint).
 ///
 /// See [`crate::client::fluent_builders::GetSignalingChannelEndpoint`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSignalingChannelEndpoint {
     _private: (),
 }
@@ -339,7 +339,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSignalingChannelEndpo
 /// [`list_signaling_channels`](crate::client::Client::list_signaling_channels).
 ///
 /// See [`crate::client::fluent_builders::ListSignalingChannels`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSignalingChannels {
     _private: (),
 }
@@ -373,7 +373,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSignalingChannels {
 /// [`list_streams`](crate::client::Client::list_streams).
 ///
 /// See [`crate::client::fluent_builders::ListStreams`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListStreams {
     _private: (),
 }
@@ -405,7 +405,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreams {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -439,7 +439,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_tags_for_stream`](crate::client::Client::list_tags_for_stream).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForStream`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForStream {
     _private: (),
 }
@@ -473,7 +473,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForStream {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -505,7 +505,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`tag_stream`](crate::client::Client::tag_stream).
 ///
 /// See [`crate::client::fluent_builders::TagStream`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagStream {
     _private: (),
 }
@@ -536,7 +536,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagStream {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -568,7 +568,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`untag_stream`](crate::client::Client::untag_stream).
 ///
 /// See [`crate::client::fluent_builders::UntagStream`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagStream {
     _private: (),
 }
@@ -600,7 +600,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagStream {
 /// [`update_data_retention`](crate::client::Client::update_data_retention).
 ///
 /// See [`crate::client::fluent_builders::UpdateDataRetention`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDataRetention {
     _private: (),
 }
@@ -634,7 +634,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDataRetention {
 /// [`update_image_generation_configuration`](crate::client::Client::update_image_generation_configuration).
 ///
 /// See [`crate::client::fluent_builders::UpdateImageGenerationConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateImageGenerationConfiguration {
     _private: (),
 }
@@ -668,7 +668,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateImageGenerationCon
 /// [`update_notification_configuration`](crate::client::Client::update_notification_configuration).
 ///
 /// See [`crate::client::fluent_builders::UpdateNotificationConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateNotificationConfiguration {
     _private: (),
 }
@@ -702,7 +702,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNotificationConfig
 /// [`update_signaling_channel`](crate::client::Client::update_signaling_channel).
 ///
 /// See [`crate::client::fluent_builders::UpdateSignalingChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSignalingChannel {
     _private: (),
 }
@@ -736,7 +736,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSignalingChannel {
 /// [`update_stream`](crate::client::Client::update_stream).
 ///
 /// See [`crate::client::fluent_builders::UpdateStream`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateStream {
     _private: (),
 }

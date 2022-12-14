@@ -117,7 +117,7 @@ impl Setting {
 pub mod setting {
 
     /// A builder for [`Setting`](crate::model::Setting).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -244,7 +244,7 @@ impl std::fmt::Debug for RadiusSettings {
 pub mod radius_settings {
 
     /// A builder for [`RadiusSettings`](crate::model::RadiusSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) radius_servers: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) radius_port: std::option::Option<i32>,
@@ -521,7 +521,7 @@ impl UnshareTarget {
 pub mod unshare_target {
 
     /// A builder for [`UnshareTarget`](crate::model::UnshareTarget).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::TargetType>,
@@ -763,7 +763,7 @@ impl ShareTarget {
 pub mod share_target {
 
     /// A builder for [`ShareTarget`](crate::model::ShareTarget).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::TargetType>,
@@ -823,7 +823,7 @@ impl ClientCertAuthSettings {
 pub mod client_cert_auth_settings {
 
     /// A builder for [`ClientCertAuthSettings`](crate::model::ClientCertAuthSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ocsp_url: std::option::Option<std::string::String>,
     }
@@ -968,7 +968,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1072,7 +1072,7 @@ impl SchemaExtensionInfo {
 pub mod schema_extension_info {
 
     /// A builder for [`SchemaExtensionInfo`](crate::model::SchemaExtensionInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) schema_extension_id: std::option::Option<std::string::String>,
@@ -1367,7 +1367,7 @@ impl LogSubscription {
 pub mod log_subscription {
 
     /// A builder for [`LogSubscription`](crate::model::LogSubscription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) log_group_name: std::option::Option<std::string::String>,
@@ -1480,7 +1480,7 @@ impl IpRouteInfo {
 pub mod ip_route_info {
 
     /// A builder for [`IpRouteInfo`](crate::model::IpRouteInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) cidr_ip: std::option::Option<std::string::String>,
@@ -1742,7 +1742,7 @@ impl CertificateInfo {
 pub mod certificate_info {
 
     /// A builder for [`CertificateInfo`](crate::model::CertificateInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_id: std::option::Option<std::string::String>,
         pub(crate) common_name: std::option::Option<std::string::String>,
@@ -1981,7 +1981,7 @@ impl SnapshotLimits {
 pub mod snapshot_limits {
 
     /// A builder for [`SnapshotLimits`](crate::model::SnapshotLimits).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) manual_snapshots_limit: std::option::Option<i32>,
         pub(crate) manual_snapshots_current_count: std::option::Option<i32>,
@@ -2117,7 +2117,7 @@ impl DirectoryLimits {
 pub mod directory_limits {
 
     /// A builder for [`DirectoryLimits`](crate::model::DirectoryLimits).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_only_directories_limit: std::option::Option<i32>,
         pub(crate) cloud_only_directories_current_count: std::option::Option<i32>,
@@ -2535,7 +2535,7 @@ impl Trust {
 pub mod trust {
 
     /// A builder for [`Trust`](crate::model::Trust).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) trust_id: std::option::Option<std::string::String>,
@@ -3097,7 +3097,7 @@ impl Snapshot {
 pub mod snapshot {
 
     /// A builder for [`Snapshot`](crate::model::Snapshot).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
@@ -3467,7 +3467,7 @@ impl std::fmt::Debug for SharedDirectory {
 pub mod shared_directory {
 
     /// A builder for [`SharedDirectory`](crate::model::SharedDirectory).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) owner_account_id: std::option::Option<std::string::String>,
         pub(crate) owner_directory_id: std::option::Option<std::string::String>,
@@ -3858,7 +3858,7 @@ impl SettingEntry {
 pub mod setting_entry {
 
     /// A builder for [`SettingEntry`](crate::model::SettingEntry).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4225,7 +4225,7 @@ impl RegionDescription {
 pub mod region_description {
 
     /// A builder for [`RegionDescription`](crate::model::RegionDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) region_name: std::option::Option<std::string::String>,
@@ -4399,7 +4399,7 @@ impl DirectoryVpcSettings {
 pub mod directory_vpc_settings {
 
     /// A builder for [`DirectoryVpcSettings`](crate::model::DirectoryVpcSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4719,7 +4719,7 @@ impl LdapsSettingInfo {
 pub mod ldaps_setting_info {
 
     /// A builder for [`LdapsSettingInfo`](crate::model::LdapsSettingInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ldaps_status: std::option::Option<crate::model::LdapsStatus>,
         pub(crate) ldaps_status_reason: std::option::Option<std::string::String>,
@@ -4928,7 +4928,7 @@ impl EventTopic {
 pub mod event_topic {
 
     /// A builder for [`EventTopic`](crate::model::EventTopic).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) topic_name: std::option::Option<std::string::String>,
@@ -5192,7 +5192,7 @@ impl DomainController {
 pub mod domain_controller {
 
     /// A builder for [`DomainController`](crate::model::DomainController).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) domain_controller_id: std::option::Option<std::string::String>,
@@ -5713,7 +5713,7 @@ impl std::fmt::Debug for DirectoryDescription {
 pub mod directory_description {
 
     /// A builder for [`DirectoryDescription`](crate::model::DirectoryDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6165,7 +6165,7 @@ impl RegionsInfo {
 pub mod regions_info {
 
     /// A builder for [`RegionsInfo`](crate::model::RegionsInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) primary_region: std::option::Option<std::string::String>,
         pub(crate) additional_regions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6274,7 +6274,7 @@ impl OwnerDirectoryDescription {
 pub mod owner_directory_description {
 
     /// A builder for [`OwnerDirectoryDescription`](crate::model::OwnerDirectoryDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) directory_id: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -6519,7 +6519,7 @@ impl DirectoryVpcSettingsDescription {
 pub mod directory_vpc_settings_description {
 
     /// A builder for [`DirectoryVpcSettingsDescription`](crate::model::DirectoryVpcSettingsDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6659,7 +6659,7 @@ impl DirectoryConnectSettingsDescription {
 pub mod directory_connect_settings_description {
 
     /// A builder for [`DirectoryConnectSettingsDescription`](crate::model::DirectoryConnectSettingsDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7099,7 +7099,7 @@ impl ConditionalForwarder {
 pub mod conditional_forwarder {
 
     /// A builder for [`ConditionalForwarder`](crate::model::ConditionalForwarder).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) remote_domain_name: std::option::Option<std::string::String>,
         pub(crate) dns_ip_addrs: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7285,7 +7285,7 @@ impl ClientAuthenticationSettingInfo {
 pub mod client_authentication_setting_info {
 
     /// A builder for [`ClientAuthenticationSettingInfo`](crate::model::ClientAuthenticationSettingInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ClientAuthenticationType>,
         pub(crate) status: std::option::Option<crate::model::ClientAuthenticationStatus>,
@@ -7509,7 +7509,7 @@ impl Certificate {
 pub mod certificate {
 
     /// A builder for [`Certificate`](crate::model::Certificate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::CertificateState>,
@@ -7677,7 +7677,7 @@ impl Computer {
 pub mod computer {
 
     /// A builder for [`Computer`](crate::model::Computer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) computer_id: std::option::Option<std::string::String>,
         pub(crate) computer_name: std::option::Option<std::string::String>,
@@ -7768,7 +7768,7 @@ impl Attribute {
 pub mod attribute {
 
     /// A builder for [`Attribute`](crate::model::Attribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -7859,7 +7859,7 @@ impl DirectoryConnectSettings {
 pub mod directory_connect_settings {
 
     /// A builder for [`DirectoryConnectSettings`](crate::model::DirectoryConnectSettings).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7981,7 +7981,7 @@ impl IpRoute {
 pub mod ip_route {
 
     /// A builder for [`IpRoute`](crate::model::IpRoute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_ip: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,

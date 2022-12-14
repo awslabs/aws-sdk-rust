@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod batch_get_record_input {
 
     /// A builder for [`BatchGetRecordInput`](crate::input::BatchGetRecordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifiers:
             std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
@@ -155,7 +155,7 @@ impl BatchGetRecordInput {
 pub mod delete_record_input {
 
     /// A builder for [`DeleteRecordInput`](crate::input::DeleteRecordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
         pub(crate) record_identifier_value_as_string: std::option::Option<std::string::String>,
@@ -381,7 +381,7 @@ impl DeleteRecordInput {
 pub mod get_record_input {
 
     /// A builder for [`GetRecordInput`](crate::input::GetRecordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
         pub(crate) record_identifier_value_as_string: std::option::Option<std::string::String>,
@@ -608,7 +608,7 @@ impl GetRecordInput {
 pub mod put_record_input {
 
     /// A builder for [`PutRecordInput`](crate::input::PutRecordInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
         pub(crate) record: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,

@@ -5,7 +5,7 @@
 /// [`associate_domain`](crate::client::Client::associate_domain).
 ///
 /// See [`crate::client::fluent_builders::AssociateDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateDomain {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateDomain {
 /// [`associate_website_authorization_provider`](crate::client::Client::associate_website_authorization_provider).
 ///
 /// See [`crate::client::fluent_builders::AssociateWebsiteAuthorizationProvider`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateWebsiteAuthorizationProvider {
     _private: (),
 }
@@ -75,7 +75,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateWebsiteAuthoriz
 /// [`associate_website_certificate_authority`](crate::client::Client::associate_website_certificate_authority).
 ///
 /// See [`crate::client::fluent_builders::AssociateWebsiteCertificateAuthority`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateWebsiteCertificateAuthority {
     _private: (),
 }
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateWebsiteCertific
 /// [`create_fleet`](crate::client::Client::create_fleet).
 ///
 /// See [`crate::client::fluent_builders::CreateFleet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateFleet {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFleet {
 /// [`delete_fleet`](crate::client::Client::delete_fleet).
 ///
 /// See [`crate::client::fluent_builders::DeleteFleet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFleet {
     _private: (),
 }
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFleet {
 /// [`describe_audit_stream_configuration`](crate::client::Client::describe_audit_stream_configuration).
 ///
 /// See [`crate::client::fluent_builders::DescribeAuditStreamConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAuditStreamConfiguration {
     _private: (),
 }
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAuditStreamConfi
 /// [`describe_company_network_configuration`](crate::client::Client::describe_company_network_configuration).
 ///
 /// See [`crate::client::fluent_builders::DescribeCompanyNetworkConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCompanyNetworkConfiguration {
     _private: (),
 }
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCompanyNetworkCo
 /// [`describe_device`](crate::client::Client::describe_device).
 ///
 /// See [`crate::client::fluent_builders::DescribeDevice`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDevice {
     _private: (),
 }
@@ -273,7 +273,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDevice {
 /// [`describe_device_policy_configuration`](crate::client::Client::describe_device_policy_configuration).
 ///
 /// See [`crate::client::fluent_builders::DescribeDevicePolicyConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDevicePolicyConfiguration {
     _private: (),
 }
@@ -307,7 +307,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDevicePolicyConf
 /// [`describe_domain`](crate::client::Client::describe_domain).
 ///
 /// See [`crate::client::fluent_builders::DescribeDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDomain {
     _private: (),
 }
@@ -339,7 +339,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomain {
 /// [`describe_fleet_metadata`](crate::client::Client::describe_fleet_metadata).
 ///
 /// See [`crate::client::fluent_builders::DescribeFleetMetadata`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeFleetMetadata {
     _private: (),
 }
@@ -373,7 +373,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFleetMetadata {
 /// [`describe_identity_provider_configuration`](crate::client::Client::describe_identity_provider_configuration).
 ///
 /// See [`crate::client::fluent_builders::DescribeIdentityProviderConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeIdentityProviderConfiguration {
     _private: (),
 }
@@ -409,7 +409,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIdentityProvider
 /// [`describe_website_certificate_authority`](crate::client::Client::describe_website_certificate_authority).
 ///
 /// See [`crate::client::fluent_builders::DescribeWebsiteCertificateAuthority`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeWebsiteCertificateAuthority {
     _private: (),
 }
@@ -443,7 +443,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWebsiteCertifica
 /// [`disassociate_domain`](crate::client::Client::disassociate_domain).
 ///
 /// See [`crate::client::fluent_builders::DisassociateDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateDomain {
     _private: (),
 }
@@ -477,7 +477,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateDomain {
 /// [`disassociate_website_authorization_provider`](crate::client::Client::disassociate_website_authorization_provider).
 ///
 /// See [`crate::client::fluent_builders::DisassociateWebsiteAuthorizationProvider`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateWebsiteAuthorizationProvider {
     _private: (),
 }
@@ -515,7 +515,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateWebsiteAutho
 /// [`disassociate_website_certificate_authority`](crate::client::Client::disassociate_website_certificate_authority).
 ///
 /// See [`crate::client::fluent_builders::DisassociateWebsiteCertificateAuthority`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateWebsiteCertificateAuthority {
     _private: (),
 }
@@ -551,7 +551,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateWebsiteCerti
 /// [`list_devices`](crate::client::Client::list_devices).
 ///
 /// See [`crate::client::fluent_builders::ListDevices`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDevices {
     _private: (),
 }
@@ -583,7 +583,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDevices {
 /// [`list_domains`](crate::client::Client::list_domains).
 ///
 /// See [`crate::client::fluent_builders::ListDomains`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDomains {
     _private: (),
 }
@@ -615,7 +615,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomains {
 /// [`list_fleets`](crate::client::Client::list_fleets).
 ///
 /// See [`crate::client::fluent_builders::ListFleets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFleets {
     _private: (),
 }
@@ -647,7 +647,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFleets {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -681,7 +681,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_website_authorization_providers`](crate::client::Client::list_website_authorization_providers).
 ///
 /// See [`crate::client::fluent_builders::ListWebsiteAuthorizationProviders`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWebsiteAuthorizationProviders {
     _private: (),
 }
@@ -715,7 +715,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWebsiteAuthorization
 /// [`list_website_certificate_authorities`](crate::client::Client::list_website_certificate_authorities).
 ///
 /// See [`crate::client::fluent_builders::ListWebsiteCertificateAuthorities`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWebsiteCertificateAuthorities {
     _private: (),
 }
@@ -749,7 +749,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWebsiteCertificateAu
 /// [`restore_domain_access`](crate::client::Client::restore_domain_access).
 ///
 /// See [`crate::client::fluent_builders::RestoreDomainAccess`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RestoreDomainAccess {
     _private: (),
 }
@@ -783,7 +783,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreDomainAccess {
 /// [`revoke_domain_access`](crate::client::Client::revoke_domain_access).
 ///
 /// See [`crate::client::fluent_builders::RevokeDomainAccess`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RevokeDomainAccess {
     _private: (),
 }
@@ -817,7 +817,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeDomainAccess {
 /// [`sign_out_user`](crate::client::Client::sign_out_user).
 ///
 /// See [`crate::client::fluent_builders::SignOutUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SignOutUser {
     _private: (),
 }
@@ -849,7 +849,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SignOutUser {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -881,7 +881,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -913,7 +913,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_audit_stream_configuration`](crate::client::Client::update_audit_stream_configuration).
 ///
 /// See [`crate::client::fluent_builders::UpdateAuditStreamConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAuditStreamConfiguration {
     _private: (),
 }
@@ -947,7 +947,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAuditStreamConfigu
 /// [`update_company_network_configuration`](crate::client::Client::update_company_network_configuration).
 ///
 /// See [`crate::client::fluent_builders::UpdateCompanyNetworkConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCompanyNetworkConfiguration {
     _private: (),
 }
@@ -981,7 +981,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCompanyNetworkConf
 /// [`update_device_policy_configuration`](crate::client::Client::update_device_policy_configuration).
 ///
 /// See [`crate::client::fluent_builders::UpdateDevicePolicyConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDevicePolicyConfiguration {
     _private: (),
 }
@@ -1015,7 +1015,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDevicePolicyConfig
 /// [`update_domain_metadata`](crate::client::Client::update_domain_metadata).
 ///
 /// See [`crate::client::fluent_builders::UpdateDomainMetadata`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDomainMetadata {
     _private: (),
 }
@@ -1049,7 +1049,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDomainMetadata {
 /// [`update_fleet_metadata`](crate::client::Client::update_fleet_metadata).
 ///
 /// See [`crate::client::fluent_builders::UpdateFleetMetadata`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFleetMetadata {
     _private: (),
 }
@@ -1083,7 +1083,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFleetMetadata {
 /// [`update_identity_provider_configuration`](crate::client::Client::update_identity_provider_configuration).
 ///
 /// See [`crate::client::fluent_builders::UpdateIdentityProviderConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateIdentityProviderConfiguration {
     _private: (),
 }

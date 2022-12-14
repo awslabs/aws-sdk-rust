@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_home_region_control_input {
 
     /// A builder for [`CreateHomeRegionControlInput`](crate::input::CreateHomeRegionControlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) home_region: std::option::Option<std::string::String>,
         pub(crate) target: std::option::Option<crate::model::Target>,
@@ -178,7 +178,7 @@ impl CreateHomeRegionControlInput {
 pub mod describe_home_region_controls_input {
 
     /// A builder for [`DescribeHomeRegionControlsInput`](crate::input::DescribeHomeRegionControlsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_id: std::option::Option<std::string::String>,
         pub(crate) home_region: std::option::Option<std::string::String>,
@@ -372,7 +372,7 @@ impl DescribeHomeRegionControlsInput {
 pub mod get_home_region_input {
 
     /// A builder for [`GetHomeRegionInput`](crate::input::GetHomeRegionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetHomeRegionInput`](crate::input::GetHomeRegionInput).

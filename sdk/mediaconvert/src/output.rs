@@ -17,7 +17,7 @@ impl UpdateQueueOutput {
 pub mod update_queue_output {
 
     /// A builder for [`UpdateQueueOutput`](crate::output::UpdateQueueOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue: std::option::Option<crate::model::Queue>,
     }
@@ -63,7 +63,7 @@ impl UpdatePresetOutput {
 pub mod update_preset_output {
 
     /// A builder for [`UpdatePresetOutput`](crate::output::UpdatePresetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) preset: std::option::Option<crate::model::Preset>,
     }
@@ -111,7 +111,7 @@ impl UpdateJobTemplateOutput {
 pub mod update_job_template_output {
 
     /// A builder for [`UpdateJobTemplateOutput`](crate::output::UpdateJobTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_template: std::option::Option<crate::model::JobTemplate>,
     }
@@ -152,7 +152,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -176,7 +176,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -210,7 +210,7 @@ impl PutPolicyOutput {
 pub mod put_policy_output {
 
     /// A builder for [`PutPolicyOutput`](crate::output::PutPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::Policy>,
     }
@@ -258,7 +258,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_tags: std::option::Option<crate::model::ResourceTags>,
     }
@@ -316,7 +316,7 @@ impl ListQueuesOutput {
 pub mod list_queues_output {
 
     /// A builder for [`ListQueuesOutput`](crate::output::ListQueuesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) queues: std::option::Option<std::vec::Vec<crate::model::Queue>>,
@@ -392,7 +392,7 @@ impl ListPresetsOutput {
 pub mod list_presets_output {
 
     /// A builder for [`ListPresetsOutput`](crate::output::ListPresetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) presets: std::option::Option<std::vec::Vec<crate::model::Preset>>,
@@ -468,7 +468,7 @@ impl ListJobTemplatesOutput {
 pub mod list_job_templates_output {
 
     /// A builder for [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_templates: std::option::Option<std::vec::Vec<crate::model::JobTemplate>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -544,7 +544,7 @@ impl ListJobsOutput {
 pub mod list_jobs_output {
 
     /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -613,7 +613,7 @@ impl GetQueueOutput {
 pub mod get_queue_output {
 
     /// A builder for [`GetQueueOutput`](crate::output::GetQueueOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue: std::option::Option<crate::model::Queue>,
     }
@@ -659,7 +659,7 @@ impl GetPresetOutput {
 pub mod get_preset_output {
 
     /// A builder for [`GetPresetOutput`](crate::output::GetPresetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) preset: std::option::Option<crate::model::Preset>,
     }
@@ -707,7 +707,7 @@ impl GetPolicyOutput {
 pub mod get_policy_output {
 
     /// A builder for [`GetPolicyOutput`](crate::output::GetPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::Policy>,
     }
@@ -755,7 +755,7 @@ impl GetJobTemplateOutput {
 pub mod get_job_template_output {
 
     /// A builder for [`GetJobTemplateOutput`](crate::output::GetJobTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_template: std::option::Option<crate::model::JobTemplate>,
     }
@@ -806,7 +806,7 @@ impl GetJobOutput {
 pub mod get_job_output {
 
     /// A builder for [`GetJobOutput`](crate::output::GetJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<crate::model::Job>,
     }
@@ -842,7 +842,7 @@ pub struct DisassociateCertificateOutput {}
 pub mod disassociate_certificate_output {
 
     /// A builder for [`DisassociateCertificateOutput`](crate::output::DisassociateCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateCertificateOutput`](crate::output::DisassociateCertificateOutput).
@@ -883,7 +883,7 @@ impl DescribeEndpointsOutput {
 pub mod describe_endpoints_output {
 
     /// A builder for [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -942,7 +942,7 @@ pub struct DeleteQueueOutput {}
 pub mod delete_queue_output {
 
     /// A builder for [`DeleteQueueOutput`](crate::output::DeleteQueueOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteQueueOutput`](crate::output::DeleteQueueOutput).
@@ -966,7 +966,7 @@ pub struct DeletePresetOutput {}
 pub mod delete_preset_output {
 
     /// A builder for [`DeletePresetOutput`](crate::output::DeletePresetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePresetOutput`](crate::output::DeletePresetOutput).
@@ -990,7 +990,7 @@ pub struct DeletePolicyOutput {}
 pub mod delete_policy_output {
 
     /// A builder for [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
@@ -1014,7 +1014,7 @@ pub struct DeleteJobTemplateOutput {}
 pub mod delete_job_template_output {
 
     /// A builder for [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput).
@@ -1048,7 +1048,7 @@ impl CreateQueueOutput {
 pub mod create_queue_output {
 
     /// A builder for [`CreateQueueOutput`](crate::output::CreateQueueOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queue: std::option::Option<crate::model::Queue>,
     }
@@ -1094,7 +1094,7 @@ impl CreatePresetOutput {
 pub mod create_preset_output {
 
     /// A builder for [`CreatePresetOutput`](crate::output::CreatePresetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) preset: std::option::Option<crate::model::Preset>,
     }
@@ -1142,7 +1142,7 @@ impl CreateJobTemplateOutput {
 pub mod create_job_template_output {
 
     /// A builder for [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_template: std::option::Option<crate::model::JobTemplate>,
     }
@@ -1193,7 +1193,7 @@ impl CreateJobOutput {
 pub mod create_job_output {
 
     /// A builder for [`CreateJobOutput`](crate::output::CreateJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<crate::model::Job>,
     }
@@ -1229,7 +1229,7 @@ pub struct CancelJobOutput {}
 pub mod cancel_job_output {
 
     /// A builder for [`CancelJobOutput`](crate::output::CancelJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CancelJobOutput`](crate::output::CancelJobOutput).
@@ -1253,7 +1253,7 @@ pub struct AssociateCertificateOutput {}
 pub mod associate_certificate_output {
 
     /// A builder for [`AssociateCertificateOutput`](crate::output::AssociateCertificateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateCertificateOutput`](crate::output::AssociateCertificateOutput).

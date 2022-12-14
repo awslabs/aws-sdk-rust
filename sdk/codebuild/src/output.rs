@@ -17,7 +17,7 @@ impl UpdateWebhookOutput {
 pub mod update_webhook_output {
 
     /// A builder for [`UpdateWebhookOutput`](crate::output::UpdateWebhookOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) webhook: std::option::Option<crate::model::Webhook>,
     }
@@ -65,7 +65,7 @@ impl UpdateReportGroupOutput {
 pub mod update_report_group_output {
 
     /// A builder for [`UpdateReportGroupOutput`](crate::output::UpdateReportGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_group: std::option::Option<crate::model::ReportGroup>,
     }
@@ -158,7 +158,7 @@ impl UpdateProjectVisibilityOutput {
 pub mod update_project_visibility_output {
 
     /// A builder for [`UpdateProjectVisibilityOutput`](crate::output::UpdateProjectVisibilityOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_arn: std::option::Option<std::string::String>,
         pub(crate) public_project_alias: std::option::Option<std::string::String>,
@@ -264,7 +264,7 @@ impl UpdateProjectOutput {
 pub mod update_project_output {
 
     /// A builder for [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<crate::model::Project>,
     }
@@ -312,7 +312,7 @@ impl StopBuildBatchOutput {
 pub mod stop_build_batch_output {
 
     /// A builder for [`StopBuildBatchOutput`](crate::output::StopBuildBatchOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) build_batch: std::option::Option<crate::model::BuildBatch>,
     }
@@ -367,7 +367,7 @@ impl StopBuildOutput {
 pub mod stop_build_output {
 
     /// A builder for [`StopBuildOutput`](crate::output::StopBuildOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) build_value: std::option::Option<crate::model::Build>,
     }
@@ -415,7 +415,7 @@ impl StartBuildBatchOutput {
 pub mod start_build_batch_output {
 
     /// A builder for [`StartBuildBatchOutput`](crate::output::StartBuildBatchOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) build_batch: std::option::Option<crate::model::BuildBatch>,
     }
@@ -470,7 +470,7 @@ impl StartBuildOutput {
 pub mod start_build_output {
 
     /// A builder for [`StartBuildOutput`](crate::output::StartBuildOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) build_value: std::option::Option<crate::model::Build>,
     }
@@ -518,7 +518,7 @@ impl RetryBuildBatchOutput {
 pub mod retry_build_batch_output {
 
     /// A builder for [`RetryBuildBatchOutput`](crate::output::RetryBuildBatchOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) build_batch: std::option::Option<crate::model::BuildBatch>,
     }
@@ -573,7 +573,7 @@ impl RetryBuildOutput {
 pub mod retry_build_output {
 
     /// A builder for [`RetryBuildOutput`](crate::output::RetryBuildOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) build_value: std::option::Option<crate::model::Build>,
     }
@@ -621,7 +621,7 @@ impl PutResourcePolicyOutput {
 pub mod put_resource_policy_output {
 
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -672,7 +672,7 @@ impl ListSourceCredentialsOutput {
 pub mod list_source_credentials_output {
 
     /// A builder for [`ListSourceCredentialsOutput`](crate::output::ListSourceCredentialsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_credentials_infos:
             std::option::Option<std::vec::Vec<crate::model::SourceCredentialsInfo>>,
@@ -740,7 +740,7 @@ impl ListSharedReportGroupsOutput {
 pub mod list_shared_report_groups_output {
 
     /// A builder for [`ListSharedReportGroupsOutput`](crate::output::ListSharedReportGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) report_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -816,7 +816,7 @@ impl ListSharedProjectsOutput {
 pub mod list_shared_projects_output {
 
     /// A builder for [`ListSharedProjectsOutput`](crate::output::ListSharedProjectsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) projects: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -892,7 +892,7 @@ impl ListReportsForReportGroupOutput {
 pub mod list_reports_for_report_group_output {
 
     /// A builder for [`ListReportsForReportGroupOutput`](crate::output::ListReportsForReportGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) reports: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -968,7 +968,7 @@ impl ListReportsOutput {
 pub mod list_reports_output {
 
     /// A builder for [`ListReportsOutput`](crate::output::ListReportsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) reports: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1044,7 +1044,7 @@ impl ListReportGroupsOutput {
 pub mod list_report_groups_output {
 
     /// A builder for [`ListReportGroupsOutput`](crate::output::ListReportGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) report_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1120,7 +1120,7 @@ impl ListProjectsOutput {
 pub mod list_projects_output {
 
     /// A builder for [`ListProjectsOutput`](crate::output::ListProjectsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) projects: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1189,7 +1189,7 @@ impl ListCuratedEnvironmentImagesOutput {
 pub mod list_curated_environment_images_output {
 
     /// A builder for [`ListCuratedEnvironmentImagesOutput`](crate::output::ListCuratedEnvironmentImagesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platforms: std::option::Option<std::vec::Vec<crate::model::EnvironmentPlatform>>,
     }
@@ -1253,7 +1253,7 @@ impl ListBuildsForProjectOutput {
 pub mod list_builds_for_project_output {
 
     /// A builder for [`ListBuildsForProjectOutput`](crate::output::ListBuildsForProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1329,7 +1329,7 @@ impl ListBuildsOutput {
 pub mod list_builds_output {
 
     /// A builder for [`ListBuildsOutput`](crate::output::ListBuildsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1405,7 +1405,7 @@ impl ListBuildBatchesForProjectOutput {
 pub mod list_build_batches_for_project_output {
 
     /// A builder for [`ListBuildBatchesForProjectOutput`](crate::output::ListBuildBatchesForProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1481,7 +1481,7 @@ impl ListBuildBatchesOutput {
 pub mod list_build_batches_output {
 
     /// A builder for [`ListBuildBatchesOutput`](crate::output::ListBuildBatchesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1540,7 +1540,7 @@ pub struct InvalidateProjectCacheOutput {}
 pub mod invalidate_project_cache_output {
 
     /// A builder for [`InvalidateProjectCacheOutput`](crate::output::InvalidateProjectCacheOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`InvalidateProjectCacheOutput`](crate::output::InvalidateProjectCacheOutput).
@@ -1574,7 +1574,7 @@ impl ImportSourceCredentialsOutput {
 pub mod import_source_credentials_output {
 
     /// A builder for [`ImportSourceCredentialsOutput`](crate::output::ImportSourceCredentialsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -1620,7 +1620,7 @@ impl GetResourcePolicyOutput {
 pub mod get_resource_policy_output {
 
     /// A builder for [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
@@ -1675,7 +1675,7 @@ impl GetReportGroupTrendOutput {
 pub mod get_report_group_trend_output {
 
     /// A builder for [`GetReportGroupTrendOutput`](crate::output::GetReportGroupTrendOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stats: std::option::Option<crate::model::ReportGroupTrendStats>,
         pub(crate) raw_data: std::option::Option<std::vec::Vec<crate::model::ReportWithRawData>>,
@@ -1754,7 +1754,7 @@ impl DescribeTestCasesOutput {
 pub mod describe_test_cases_output {
 
     /// A builder for [`DescribeTestCasesOutput`](crate::output::DescribeTestCasesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) test_cases: std::option::Option<std::vec::Vec<crate::model::TestCase>>,
@@ -1830,7 +1830,7 @@ impl DescribeCodeCoveragesOutput {
 pub mod describe_code_coverages_output {
 
     /// A builder for [`DescribeCodeCoveragesOutput`](crate::output::DescribeCodeCoveragesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) code_coverages: std::option::Option<std::vec::Vec<crate::model::CodeCoverage>>,
@@ -1889,7 +1889,7 @@ pub struct DeleteWebhookOutput {}
 pub mod delete_webhook_output {
 
     /// A builder for [`DeleteWebhookOutput`](crate::output::DeleteWebhookOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWebhookOutput`](crate::output::DeleteWebhookOutput).
@@ -1923,7 +1923,7 @@ impl DeleteSourceCredentialsOutput {
 pub mod delete_source_credentials_output {
 
     /// A builder for [`DeleteSourceCredentialsOutput`](crate::output::DeleteSourceCredentialsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -1959,7 +1959,7 @@ pub struct DeleteResourcePolicyOutput {}
 pub mod delete_resource_policy_output {
 
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
@@ -1983,7 +1983,7 @@ pub struct DeleteReportGroupOutput {}
 pub mod delete_report_group_output {
 
     /// A builder for [`DeleteReportGroupOutput`](crate::output::DeleteReportGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteReportGroupOutput`](crate::output::DeleteReportGroupOutput).
@@ -2007,7 +2007,7 @@ pub struct DeleteReportOutput {}
 pub mod delete_report_output {
 
     /// A builder for [`DeleteReportOutput`](crate::output::DeleteReportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteReportOutput`](crate::output::DeleteReportOutput).
@@ -2031,7 +2031,7 @@ pub struct DeleteProjectOutput {}
 pub mod delete_project_output {
 
     /// A builder for [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
@@ -2079,7 +2079,7 @@ impl DeleteBuildBatchOutput {
 pub mod delete_build_batch_output {
 
     /// A builder for [`DeleteBuildBatchOutput`](crate::output::DeleteBuildBatchOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_code: std::option::Option<std::string::String>,
         pub(crate) builds_deleted: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2170,7 +2170,7 @@ impl CreateWebhookOutput {
 pub mod create_webhook_output {
 
     /// A builder for [`CreateWebhookOutput`](crate::output::CreateWebhookOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) webhook: std::option::Option<crate::model::Webhook>,
     }
@@ -2218,7 +2218,7 @@ impl CreateReportGroupOutput {
 pub mod create_report_group_output {
 
     /// A builder for [`CreateReportGroupOutput`](crate::output::CreateReportGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_group: std::option::Option<crate::model::ReportGroup>,
     }
@@ -2269,7 +2269,7 @@ impl CreateProjectOutput {
 pub mod create_project_output {
 
     /// A builder for [`CreateProjectOutput`](crate::output::CreateProjectOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project: std::option::Option<crate::model::Project>,
     }
@@ -2324,7 +2324,7 @@ impl BatchGetReportsOutput {
 pub mod batch_get_reports_output {
 
     /// A builder for [`BatchGetReportsOutput`](crate::output::BatchGetReportsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reports: std::option::Option<std::vec::Vec<crate::model::Report>>,
         pub(crate) reports_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2409,7 +2409,7 @@ impl BatchGetReportGroupsOutput {
 pub mod batch_get_report_groups_output {
 
     /// A builder for [`BatchGetReportGroupsOutput`](crate::output::BatchGetReportGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_groups: std::option::Option<std::vec::Vec<crate::model::ReportGroup>>,
         pub(crate) report_groups_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2494,7 +2494,7 @@ impl BatchGetProjectsOutput {
 pub mod batch_get_projects_output {
 
     /// A builder for [`BatchGetProjectsOutput`](crate::output::BatchGetProjectsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) projects: std::option::Option<std::vec::Vec<crate::model::Project>>,
         pub(crate) projects_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2579,7 +2579,7 @@ impl BatchGetBuildsOutput {
 pub mod batch_get_builds_output {
 
     /// A builder for [`BatchGetBuildsOutput`](crate::output::BatchGetBuildsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) builds: std::option::Option<std::vec::Vec<crate::model::Build>>,
         pub(crate) builds_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2664,7 +2664,7 @@ impl BatchGetBuildBatchesOutput {
 pub mod batch_get_build_batches_output {
 
     /// A builder for [`BatchGetBuildBatchesOutput`](crate::output::BatchGetBuildBatchesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) build_batches: std::option::Option<std::vec::Vec<crate::model::BuildBatch>>,
         pub(crate) build_batches_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2749,7 +2749,7 @@ impl BatchDeleteBuildsOutput {
 pub mod batch_delete_builds_output {
 
     /// A builder for [`BatchDeleteBuildsOutput`](crate::output::BatchDeleteBuildsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) builds_deleted: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) builds_not_deleted:

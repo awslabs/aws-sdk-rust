@@ -25,7 +25,7 @@ impl RealtimeContactAnalysisSegment {
 pub mod realtime_contact_analysis_segment {
 
     /// A builder for [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transcript: std::option::Option<crate::model::Transcript>,
         pub(crate) categories: std::option::Option<crate::model::Categories>,
@@ -104,7 +104,7 @@ impl Categories {
 pub mod categories {
 
     /// A builder for [`Categories`](crate::model::Categories).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) matched_categories: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) matched_details: std::option::Option<
@@ -190,7 +190,7 @@ impl CategoryDetails {
 pub mod category_details {
 
     /// A builder for [`CategoryDetails`](crate::model::CategoryDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) points_of_interest:
             std::option::Option<std::vec::Vec<crate::model::PointOfInterest>>,
@@ -255,7 +255,7 @@ impl PointOfInterest {
 pub mod point_of_interest {
 
     /// A builder for [`PointOfInterest`](crate::model::PointOfInterest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin_offset_millis: std::option::Option<i32>,
         pub(crate) end_offset_millis: std::option::Option<i32>,
@@ -364,7 +364,7 @@ impl Transcript {
 pub mod transcript {
 
     /// A builder for [`Transcript`](crate::model::Transcript).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) participant_id: std::option::Option<std::string::String>,
@@ -514,7 +514,7 @@ impl IssueDetected {
 pub mod issue_detected {
 
     /// A builder for [`IssueDetected`](crate::model::IssueDetected).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) character_offsets: std::option::Option<crate::model::CharacterOffsets>,
     }
@@ -572,7 +572,7 @@ impl CharacterOffsets {
 pub mod character_offsets {
 
     /// A builder for [`CharacterOffsets`](crate::model::CharacterOffsets).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin_offset_char: std::option::Option<i32>,
         pub(crate) end_offset_char: std::option::Option<i32>,

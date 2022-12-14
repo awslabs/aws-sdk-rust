@@ -222,7 +222,7 @@ impl SearchSchemaSummary {
 pub mod search_schema_summary {
 
     /// A builder for [`SearchSchemaSummary`](crate::model::SearchSchemaSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_name: std::option::Option<std::string::String>,
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -333,7 +333,7 @@ impl SearchSchemaVersionSummary {
 pub mod search_schema_version_summary {
 
     /// A builder for [`SearchSchemaVersionSummary`](crate::model::SearchSchemaVersionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) schema_version: std::option::Option<std::string::String>,
@@ -529,7 +529,7 @@ impl SchemaVersionSummary {
 pub mod schema_version_summary {
 
     /// A builder for [`SchemaVersionSummary`](crate::model::SchemaVersionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
         pub(crate) schema_name: std::option::Option<std::string::String>,
@@ -648,7 +648,7 @@ impl SchemaSummary {
 pub mod schema_summary {
 
     /// A builder for [`SchemaSummary`](crate::model::SchemaSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -782,7 +782,7 @@ impl RegistrySummary {
 pub mod registry_summary {
 
     /// A builder for [`RegistrySummary`](crate::model::RegistrySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_arn: std::option::Option<std::string::String>,
         pub(crate) registry_name: std::option::Option<std::string::String>,
@@ -913,7 +913,7 @@ impl DiscovererSummary {
 pub mod discoverer_summary {
 
     /// A builder for [`DiscovererSummary`](crate::model::DiscovererSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) discoverer_arn: std::option::Option<std::string::String>,
         pub(crate) discoverer_id: std::option::Option<std::string::String>,

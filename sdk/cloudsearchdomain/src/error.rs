@@ -39,7 +39,7 @@ impl std::error::Error for DocumentServiceException {}
 pub mod document_service_exception {
 
     /// A builder for [`DocumentServiceException`](crate::error::DocumentServiceException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
@@ -111,7 +111,7 @@ impl std::error::Error for SearchException {}
 pub mod search_exception {
 
     /// A builder for [`SearchException`](crate::error::SearchException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

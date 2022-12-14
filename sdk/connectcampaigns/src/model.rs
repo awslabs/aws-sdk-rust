@@ -18,7 +18,7 @@ impl AnswerMachineDetectionConfig {
 pub mod answer_machine_detection_config {
 
     /// A builder for [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enable_answer_machine_detection: std::option::Option<bool>,
     }
@@ -124,7 +124,7 @@ impl PredictiveDialerConfig {
 pub mod predictive_dialer_config {
 
     /// A builder for [`PredictiveDialerConfig`](crate::model::PredictiveDialerConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bandwidth_allocation: std::option::Option<f64>,
     }
@@ -172,7 +172,7 @@ impl ProgressiveDialerConfig {
 pub mod progressive_dialer_config {
 
     /// A builder for [`ProgressiveDialerConfig`](crate::model::ProgressiveDialerConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bandwidth_allocation: std::option::Option<f64>,
     }
@@ -341,7 +341,7 @@ impl InstanceOnboardingJobStatus {
 pub mod instance_onboarding_job_status {
 
     /// A builder for [`InstanceOnboardingJobStatus`](crate::model::InstanceOnboardingJobStatus).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_instance_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::InstanceOnboardingJobStatusCode>,
@@ -664,7 +664,7 @@ impl EncryptionConfig {
 pub mod encryption_config {
 
     /// A builder for [`EncryptionConfig`](crate::model::EncryptionConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) encryption_type: std::option::Option<crate::model::EncryptionType>,
@@ -838,7 +838,7 @@ impl FailedRequest {
 pub mod failed_request {
 
     /// A builder for [`FailedRequest`](crate::model::FailedRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1015,7 +1015,7 @@ impl SuccessfulRequest {
 pub mod successful_request {
 
     /// A builder for [`SuccessfulRequest`](crate::model::SuccessfulRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1110,7 +1110,7 @@ impl std::fmt::Debug for DialRequest {
 pub mod dial_request {
 
     /// A builder for [`DialRequest`](crate::model::DialRequest).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) phone_number: std::option::Option<std::string::String>,
@@ -1245,7 +1245,7 @@ impl CampaignSummary {
 pub mod campaign_summary {
 
     /// A builder for [`CampaignSummary`](crate::model::CampaignSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1332,7 +1332,7 @@ impl CampaignFilters {
 pub mod campaign_filters {
 
     /// A builder for [`CampaignFilters`](crate::model::CampaignFilters).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id_filter: std::option::Option<crate::model::InstanceIdFilter>,
     }
@@ -1390,7 +1390,7 @@ impl InstanceIdFilter {
 pub mod instance_id_filter {
 
     /// A builder for [`InstanceIdFilter`](crate::model::InstanceIdFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
         pub(crate) operator: std::option::Option<crate::model::InstanceIdFilterOperator>,
@@ -1554,7 +1554,7 @@ impl InstanceConfig {
 pub mod instance_config {
 
     /// A builder for [`InstanceConfig`](crate::model::InstanceConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_instance_id: std::option::Option<std::string::String>,
         pub(crate) service_linked_role_arn: std::option::Option<std::string::String>,
@@ -1644,7 +1644,7 @@ impl FailedCampaignStateResponse {
 pub mod failed_campaign_state_response {
 
     /// A builder for [`FailedCampaignStateResponse`](crate::model::FailedCampaignStateResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_id: std::option::Option<std::string::String>,
         pub(crate) failure_code:
@@ -1810,7 +1810,7 @@ impl SuccessfulCampaignStateResponse {
 pub mod successful_campaign_state_response {
 
     /// A builder for [`SuccessfulCampaignStateResponse`](crate::model::SuccessfulCampaignStateResponse).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::CampaignState>,
@@ -1919,7 +1919,7 @@ impl Campaign {
 pub mod campaign {
 
     /// A builder for [`Campaign`](crate::model::Campaign).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2089,7 +2089,7 @@ impl OutboundCallConfig {
 pub mod outbound_call_config {
 
     /// A builder for [`OutboundCallConfig`](crate::model::OutboundCallConfig).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_contact_flow_id: std::option::Option<std::string::String>,
         pub(crate) connect_source_phone_number: std::option::Option<std::string::String>,

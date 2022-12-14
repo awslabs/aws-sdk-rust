@@ -41,7 +41,7 @@ impl UpdateMeetingRoomConfiguration {
 pub mod update_meeting_room_configuration {
 
     /// A builder for [`UpdateMeetingRoomConfiguration`](crate::model::UpdateMeetingRoomConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_utilization_metrics_enabled: std::option::Option<bool>,
         pub(crate) end_of_meeting_reminder:
@@ -148,7 +148,7 @@ impl UpdateRequireCheckIn {
 pub mod update_require_check_in {
 
     /// A builder for [`UpdateRequireCheckIn`](crate::model::UpdateRequireCheckIn).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) release_after_minutes: std::option::Option<i32>,
         pub(crate) enabled: std::option::Option<bool>,
@@ -215,7 +215,7 @@ impl UpdateInstantBooking {
 pub mod update_instant_booking {
 
     /// A builder for [`UpdateInstantBooking`](crate::model::UpdateInstantBooking).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_minutes: std::option::Option<i32>,
         pub(crate) enabled: std::option::Option<bool>,
@@ -289,7 +289,7 @@ impl UpdateEndOfMeetingReminder {
 pub mod update_end_of_meeting_reminder {
 
     /// A builder for [`UpdateEndOfMeetingReminder`](crate::model::UpdateEndOfMeetingReminder).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reminder_at_minutes: std::option::Option<std::vec::Vec<i32>>,
         pub(crate) reminder_type: std::option::Option<crate::model::EndOfMeetingReminderType>,
@@ -779,7 +779,7 @@ impl std::fmt::Debug for SipAddress {
 pub mod sip_address {
 
     /// A builder for [`SipAddress`](crate::model::SipAddress).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) uri: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::SipType>,
@@ -951,7 +951,7 @@ impl std::fmt::Debug for PhoneNumber {
 pub mod phone_number {
 
     /// A builder for [`PhoneNumber`](crate::model::PhoneNumber).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) number: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::PhoneNumberType>,
@@ -1126,7 +1126,7 @@ impl MeetingSetting {
 pub mod meeting_setting {
 
     /// A builder for [`MeetingSetting`](crate::model::MeetingSetting).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) require_pin: std::option::Option<crate::model::RequirePin>,
     }
@@ -1293,7 +1293,7 @@ impl PstnDialIn {
 pub mod pstn_dial_in {
 
     /// A builder for [`PstnDialIn`](crate::model::PstnDialIn).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) country_code: std::option::Option<std::string::String>,
         pub(crate) phone_number: std::option::Option<std::string::String>,
@@ -1390,7 +1390,7 @@ impl IpDialIn {
 pub mod ip_dial_in {
 
     /// A builder for [`IpDialIn`](crate::model::IpDialIn).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
         pub(crate) comms_protocol: std::option::Option<crate::model::CommsProtocol>,
@@ -1691,7 +1691,7 @@ impl BusinessReportRecurrence {
 pub mod business_report_recurrence {
 
     /// A builder for [`BusinessReportRecurrence`](crate::model::BusinessReportRecurrence).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_date: std::option::Option<std::string::String>,
     }
@@ -1838,7 +1838,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2041,7 +2041,7 @@ impl Content {
 pub mod content {
 
     /// A builder for [`Content`](crate::model::Content).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text_list: std::option::Option<std::vec::Vec<crate::model::Text>>,
         pub(crate) ssml_list: std::option::Option<std::vec::Vec<crate::model::Ssml>>,
@@ -2155,7 +2155,7 @@ impl Audio {
 pub mod audio {
 
     /// A builder for [`Audio`](crate::model::Audio).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) locale: std::option::Option<crate::model::Locale>,
         pub(crate) location: std::option::Option<std::string::String>,
@@ -2307,7 +2307,7 @@ impl Ssml {
 pub mod ssml {
 
     /// A builder for [`Ssml`](crate::model::Ssml).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) locale: std::option::Option<crate::model::Locale>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2374,7 +2374,7 @@ impl Text {
 pub mod text {
 
     /// A builder for [`Text`](crate::model::Text).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) locale: std::option::Option<crate::model::Locale>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2441,7 +2441,7 @@ impl Filter {
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2545,7 +2545,7 @@ impl UserData {
 pub mod user_data {
 
     /// A builder for [`UserData`](crate::model::UserData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) first_name: std::option::Option<std::string::String>,
@@ -2777,7 +2777,7 @@ impl Sort {
 pub mod sort {
 
     /// A builder for [`Sort`](crate::model::Sort).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<crate::model::SortValue>,
@@ -2941,7 +2941,7 @@ impl SkillGroupData {
 pub mod skill_group_data {
 
     /// A builder for [`SkillGroupData`](crate::model::SkillGroupData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skill_group_arn: std::option::Option<std::string::String>,
         pub(crate) skill_group_name: std::option::Option<std::string::String>,
@@ -3054,7 +3054,7 @@ impl RoomData {
 pub mod room_data {
 
     /// A builder for [`RoomData`](crate::model::RoomData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_arn: std::option::Option<std::string::String>,
         pub(crate) room_name: std::option::Option<std::string::String>,
@@ -3221,7 +3221,7 @@ impl ProfileData {
 pub mod profile_data {
 
     /// A builder for [`ProfileData`](crate::model::ProfileData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_arn: std::option::Option<std::string::String>,
         pub(crate) profile_name: std::option::Option<std::string::String>,
@@ -3413,7 +3413,7 @@ impl NetworkProfileData {
 pub mod network_profile_data {
 
     /// A builder for [`NetworkProfileData`](crate::model::NetworkProfileData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_profile_arn: std::option::Option<std::string::String>,
         pub(crate) network_profile_name: std::option::Option<std::string::String>,
@@ -3824,7 +3824,7 @@ impl DeviceData {
 pub mod device_data {
 
     /// A builder for [`DeviceData`](crate::model::DeviceData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_arn: std::option::Option<std::string::String>,
         pub(crate) device_serial_number: std::option::Option<std::string::String>,
@@ -4055,7 +4055,7 @@ impl DeviceStatusInfo {
 pub mod device_status_info {
 
     /// A builder for [`DeviceStatusInfo`](crate::model::DeviceStatusInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_status_details:
             std::option::Option<std::vec::Vec<crate::model::DeviceStatusDetail>>,
@@ -4240,7 +4240,7 @@ impl DeviceStatusDetail {
 pub mod device_status_detail {
 
     /// A builder for [`DeviceStatusDetail`](crate::model::DeviceStatusDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature: std::option::Option<crate::model::Feature>,
         pub(crate) code: std::option::Option<crate::model::DeviceStatusDetailCode>,
@@ -4656,7 +4656,7 @@ impl std::fmt::Debug for ContactData {
 pub mod contact_data {
 
     /// A builder for [`ContactData`](crate::model::ContactData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -4821,7 +4821,7 @@ impl AddressBookData {
 pub mod address_book_data {
 
     /// A builder for [`AddressBookData`](crate::model::AddressBookData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address_book_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4903,7 +4903,7 @@ impl RoomSkillParameter {
 pub mod room_skill_parameter {
 
     /// A builder for [`RoomSkillParameter`](crate::model::RoomSkillParameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_key: std::option::Option<std::string::String>,
         pub(crate) parameter_value: std::option::Option<std::string::String>,
@@ -4969,7 +4969,7 @@ impl ConferencePreference {
 pub mod conference_preference {
 
     /// A builder for [`ConferencePreference`](crate::model::ConferencePreference).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_conference_provider_arn: std::option::Option<std::string::String>,
     }
@@ -5037,7 +5037,7 @@ impl SmartHomeAppliance {
 pub mod smart_home_appliance {
 
     /// A builder for [`SmartHomeAppliance`](crate::model::SmartHomeAppliance).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) friendly_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5157,7 +5157,7 @@ impl SkillsStoreSkill {
 pub mod skills_store_skill {
 
     /// A builder for [`SkillsStoreSkill`](crate::model::SkillsStoreSkill).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skill_id: std::option::Option<std::string::String>,
         pub(crate) skill_name: std::option::Option<std::string::String>,
@@ -5361,7 +5361,7 @@ impl SkillDetails {
 pub mod skill_details {
 
     /// A builder for [`SkillDetails`](crate::model::SkillDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_description: std::option::Option<std::string::String>,
         pub(crate) invocation_phrase: std::option::Option<std::string::String>,
@@ -5609,7 +5609,7 @@ impl DeveloperInfo {
 pub mod developer_info {
 
     /// A builder for [`DeveloperInfo`](crate::model::DeveloperInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) developer_name: std::option::Option<std::string::String>,
         pub(crate) privacy_policy: std::option::Option<std::string::String>,
@@ -5706,7 +5706,7 @@ impl Category {
 pub mod category {
 
     /// A builder for [`Category`](crate::model::Category).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_id: std::option::Option<i64>,
         pub(crate) category_name: std::option::Option<std::string::String>,
@@ -5797,7 +5797,7 @@ impl SkillSummary {
 pub mod skill_summary {
 
     /// A builder for [`SkillSummary`](crate::model::SkillSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skill_id: std::option::Option<std::string::String>,
         pub(crate) skill_name: std::option::Option<std::string::String>,
@@ -6294,7 +6294,7 @@ impl GatewaySummary {
 pub mod gateway_summary {
 
     /// A builder for [`GatewaySummary`](crate::model::GatewaySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6410,7 +6410,7 @@ impl GatewayGroupSummary {
 pub mod gateway_group_summary {
 
     /// A builder for [`GatewayGroupSummary`](crate::model::GatewayGroupSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6496,7 +6496,7 @@ impl DeviceEvent {
 pub mod device_event {
 
     /// A builder for [`DeviceEvent`](crate::model::DeviceEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::DeviceEventType>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -6699,7 +6699,7 @@ impl ConferenceProvider {
 pub mod conference_provider {
 
     /// A builder for [`ConferenceProvider`](crate::model::ConferenceProvider).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6868,7 +6868,7 @@ impl BusinessReportSchedule {
 pub mod business_report_schedule {
 
     /// A builder for [`BusinessReportSchedule`](crate::model::BusinessReportSchedule).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule_arn: std::option::Option<std::string::String>,
         pub(crate) schedule_name: std::option::Option<std::string::String>,
@@ -7049,7 +7049,7 @@ impl BusinessReport {
 pub mod business_report {
 
     /// A builder for [`BusinessReport`](crate::model::BusinessReport).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::BusinessReportStatus>,
         pub(crate) failure_code: std::option::Option<crate::model::BusinessReportFailureCode>,
@@ -7164,7 +7164,7 @@ impl BusinessReportS3Location {
 pub mod business_report_s3_location {
 
     /// A builder for [`BusinessReportS3Location`](crate::model::BusinessReportS3Location).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -7418,7 +7418,7 @@ impl BusinessReportContentRange {
 pub mod business_report_content_range {
 
     /// A builder for [`BusinessReportContentRange`](crate::model::BusinessReportContentRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interval: std::option::Option<crate::model::BusinessReportInterval>,
     }
@@ -7580,7 +7580,7 @@ impl SkillGroup {
 pub mod skill_group {
 
     /// A builder for [`SkillGroup`](crate::model::SkillGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skill_group_arn: std::option::Option<std::string::String>,
         pub(crate) skill_group_name: std::option::Option<std::string::String>,
@@ -7686,7 +7686,7 @@ impl Room {
 pub mod room {
 
     /// A builder for [`Room`](crate::model::Room).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_arn: std::option::Option<std::string::String>,
         pub(crate) room_name: std::option::Option<std::string::String>,
@@ -7885,7 +7885,7 @@ impl Profile {
 pub mod profile {
 
     /// A builder for [`Profile`](crate::model::Profile).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_arn: std::option::Option<std::string::String>,
         pub(crate) profile_name: std::option::Option<std::string::String>,
@@ -8140,7 +8140,7 @@ impl MeetingRoomConfiguration {
 pub mod meeting_room_configuration {
 
     /// A builder for [`MeetingRoomConfiguration`](crate::model::MeetingRoomConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_utilization_metrics_enabled: std::option::Option<bool>,
         pub(crate) end_of_meeting_reminder: std::option::Option<crate::model::EndOfMeetingReminder>,
@@ -8246,7 +8246,7 @@ impl RequireCheckIn {
 pub mod require_check_in {
 
     /// A builder for [`RequireCheckIn`](crate::model::RequireCheckIn).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) release_after_minutes: std::option::Option<i32>,
         pub(crate) enabled: std::option::Option<bool>,
@@ -8313,7 +8313,7 @@ impl InstantBooking {
 pub mod instant_booking {
 
     /// A builder for [`InstantBooking`](crate::model::InstantBooking).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_minutes: std::option::Option<i32>,
         pub(crate) enabled: std::option::Option<bool>,
@@ -8387,7 +8387,7 @@ impl EndOfMeetingReminder {
 pub mod end_of_meeting_reminder {
 
     /// A builder for [`EndOfMeetingReminder`](crate::model::EndOfMeetingReminder).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reminder_at_minutes: std::option::Option<std::vec::Vec<i32>>,
         pub(crate) reminder_type: std::option::Option<crate::model::EndOfMeetingReminderType>,
@@ -8550,7 +8550,7 @@ impl std::fmt::Debug for NetworkProfile {
 pub mod network_profile {
 
     /// A builder for [`NetworkProfile`](crate::model::NetworkProfile).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network_profile_arn: std::option::Option<std::string::String>,
         pub(crate) network_profile_name: std::option::Option<std::string::String>,
@@ -8766,7 +8766,7 @@ impl GatewayGroup {
 pub mod gateway_group {
 
     /// A builder for [`GatewayGroup`](crate::model::GatewayGroup).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8866,7 +8866,7 @@ impl Gateway {
 pub mod gateway {
 
     /// A builder for [`Gateway`](crate::model::Gateway).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -9033,7 +9033,7 @@ impl Device {
 pub mod device {
 
     /// A builder for [`Device`](crate::model::Device).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_arn: std::option::Option<std::string::String>,
         pub(crate) device_serial_number: std::option::Option<std::string::String>,
@@ -9222,7 +9222,7 @@ impl DeviceNetworkProfileInfo {
 pub mod device_network_profile_info {
 
     /// A builder for [`DeviceNetworkProfileInfo`](crate::model::DeviceNetworkProfileInfo).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_profile_arn: std::option::Option<std::string::String>,
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -9358,7 +9358,7 @@ impl std::fmt::Debug for Contact {
 pub mod contact {
 
     /// A builder for [`Contact`](crate::model::Contact).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -9523,7 +9523,7 @@ impl AddressBook {
 pub mod address_book {
 
     /// A builder for [`AddressBook`](crate::model::AddressBook).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address_book_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -9706,7 +9706,7 @@ impl CreateMeetingRoomConfiguration {
 pub mod create_meeting_room_configuration {
 
     /// A builder for [`CreateMeetingRoomConfiguration`](crate::model::CreateMeetingRoomConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_utilization_metrics_enabled: std::option::Option<bool>,
         pub(crate) end_of_meeting_reminder:
@@ -9813,7 +9813,7 @@ impl CreateRequireCheckIn {
 pub mod create_require_check_in {
 
     /// A builder for [`CreateRequireCheckIn`](crate::model::CreateRequireCheckIn).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) release_after_minutes: std::option::Option<i32>,
         pub(crate) enabled: std::option::Option<bool>,
@@ -9880,7 +9880,7 @@ impl CreateInstantBooking {
 pub mod create_instant_booking {
 
     /// A builder for [`CreateInstantBooking`](crate::model::CreateInstantBooking).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_minutes: std::option::Option<i32>,
         pub(crate) enabled: std::option::Option<bool>,
@@ -9954,7 +9954,7 @@ impl CreateEndOfMeetingReminder {
 pub mod create_end_of_meeting_reminder {
 
     /// A builder for [`CreateEndOfMeetingReminder`](crate::model::CreateEndOfMeetingReminder).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reminder_at_minutes: std::option::Option<std::vec::Vec<i32>>,
         pub(crate) reminder_type: std::option::Option<crate::model::EndOfMeetingReminderType>,

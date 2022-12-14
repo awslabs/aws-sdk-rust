@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod cancel_task_input {
 
     /// A builder for [`CancelTaskInput`](crate::input::CancelTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
     }
@@ -151,7 +151,7 @@ impl CancelTaskInput {
 pub mod create_task_input {
 
     /// A builder for [`CreateTaskInput`](crate::input::CreateTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) targets: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) command: std::option::Option<crate::model::Command>,
@@ -368,7 +368,7 @@ impl CreateTaskInput {
 pub mod describe_device_input {
 
     /// A builder for [`DescribeDeviceInput`](crate::input::DescribeDeviceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) managed_device_id: std::option::Option<std::string::String>,
     }
@@ -521,7 +521,7 @@ impl DescribeDeviceInput {
 pub mod describe_device_ec2_instances_input {
 
     /// A builder for [`DescribeDeviceEc2InstancesInput`](crate::input::DescribeDeviceEc2InstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) managed_device_id: std::option::Option<std::string::String>,
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -710,7 +710,7 @@ impl DescribeDeviceEc2InstancesInput {
 pub mod describe_execution_input {
 
     /// A builder for [`DescribeExecutionInput`](crate::input::DescribeExecutionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) managed_device_id: std::option::Option<std::string::String>,
@@ -897,7 +897,7 @@ impl DescribeExecutionInput {
 pub mod describe_task_input {
 
     /// A builder for [`DescribeTaskInput`](crate::input::DescribeTaskInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
     }
@@ -1043,7 +1043,7 @@ impl DescribeTaskInput {
 pub mod list_device_resources_input {
 
     /// A builder for [`ListDeviceResourcesInput`](crate::input::ListDeviceResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) managed_device_id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -1260,7 +1260,7 @@ impl ListDeviceResourcesInput {
 pub mod list_devices_input {
 
     /// A builder for [`ListDevicesInput`](crate::input::ListDevicesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1436,7 +1436,7 @@ impl ListDevicesInput {
 pub mod list_executions_input {
 
     /// A builder for [`ListExecutionsInput`](crate::input::ListExecutionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ExecutionState>,
@@ -1643,7 +1643,7 @@ impl ListExecutionsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1791,7 +1791,7 @@ impl ListTagsForResourceInput {
 pub mod list_tasks_input {
 
     /// A builder for [`ListTasksInput`](crate::input::ListTasksInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::TaskState>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1965,7 +1965,7 @@ impl ListTasksInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -2154,7 +2154,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,

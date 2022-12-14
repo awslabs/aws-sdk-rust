@@ -5,7 +5,7 @@
 /// [`batch_execute_statement`](crate::client::Client::batch_execute_statement).
 ///
 /// See [`crate::client::fluent_builders::BatchExecuteStatement`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchExecuteStatement {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchExecuteStatement {
 /// [`begin_transaction`](crate::client::Client::begin_transaction).
 ///
 /// See [`crate::client::fluent_builders::BeginTransaction`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BeginTransaction {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BeginTransaction {
 /// [`commit_transaction`](crate::client::Client::commit_transaction).
 ///
 /// See [`crate::client::fluent_builders::CommitTransaction`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CommitTransaction {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CommitTransaction {
 /// [`execute_sql`](crate::client::Client::execute_sql).
 ///
 /// See [`crate::client::fluent_builders::ExecuteSql`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExecuteSql {
     _private: (),
 }
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteSql {
 /// [`execute_statement`](crate::client::Client::execute_statement).
 ///
 /// See [`crate::client::fluent_builders::ExecuteStatement`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExecuteStatement {
     _private: (),
 }
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteStatement {
 /// [`rollback_transaction`](crate::client::Client::rollback_transaction).
 ///
 /// See [`crate::client::fluent_builders::RollbackTransaction`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RollbackTransaction {
     _private: (),
 }

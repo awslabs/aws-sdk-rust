@@ -5,7 +5,7 @@
 /// [`describe_job_execution`](crate::client::Client::describe_job_execution).
 ///
 /// See [`crate::client::fluent_builders::DescribeJobExecution`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeJobExecution {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJobExecution {
 /// [`get_pending_job_executions`](crate::client::Client::get_pending_job_executions).
 ///
 /// See [`crate::client::fluent_builders::GetPendingJobExecutions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPendingJobExecutions {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPendingJobExecutions 
 /// [`start_next_pending_job_execution`](crate::client::Client::start_next_pending_job_execution).
 ///
 /// See [`crate::client::fluent_builders::StartNextPendingJobExecution`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartNextPendingJobExecution {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartNextPendingJobExecu
 /// [`update_job_execution`](crate::client::Client::update_job_execution).
 ///
 /// See [`crate::client::fluent_builders::UpdateJobExecution`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateJobExecution {
     _private: (),
 }

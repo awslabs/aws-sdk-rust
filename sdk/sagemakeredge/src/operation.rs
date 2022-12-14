@@ -5,7 +5,7 @@
 /// [`get_deployments`](crate::client::Client::get_deployments).
 ///
 /// See [`crate::client::fluent_builders::GetDeployments`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDeployments {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeployments {
 /// [`get_device_registration`](crate::client::Client::get_device_registration).
 ///
 /// See [`crate::client::fluent_builders::GetDeviceRegistration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDeviceRegistration {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeviceRegistration {
 /// [`send_heartbeat`](crate::client::Client::send_heartbeat).
 ///
 /// See [`crate::client::fluent_builders::SendHeartbeat`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendHeartbeat {
     _private: (),
 }

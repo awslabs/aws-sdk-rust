@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_environment_ec2_input {
 
     /// A builder for [`CreateEnvironmentEc2Input`](crate::input::CreateEnvironmentEc2Input).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -344,7 +344,7 @@ impl CreateEnvironmentEc2Input {
 pub mod create_environment_membership_input {
 
     /// A builder for [`CreateEnvironmentMembershipInput`](crate::input::CreateEnvironmentMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
         pub(crate) user_arn: std::option::Option<std::string::String>,
@@ -528,7 +528,7 @@ impl CreateEnvironmentMembershipInput {
 pub mod delete_environment_input {
 
     /// A builder for [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
     }
@@ -678,7 +678,7 @@ impl DeleteEnvironmentInput {
 pub mod delete_environment_membership_input {
 
     /// A builder for [`DeleteEnvironmentMembershipInput`](crate::input::DeleteEnvironmentMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
         pub(crate) user_arn: std::option::Option<std::string::String>,
@@ -839,7 +839,7 @@ impl DeleteEnvironmentMembershipInput {
 pub mod describe_environment_memberships_input {
 
     /// A builder for [`DescribeEnvironmentMembershipsInput`](crate::input::DescribeEnvironmentMembershipsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -1057,7 +1057,7 @@ impl DescribeEnvironmentMembershipsInput {
 pub mod describe_environments_input {
 
     /// A builder for [`DescribeEnvironmentsInput`](crate::input::DescribeEnvironmentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1213,7 +1213,7 @@ impl DescribeEnvironmentsInput {
 pub mod describe_environment_status_input {
 
     /// A builder for [`DescribeEnvironmentStatusInput`](crate::input::DescribeEnvironmentStatusInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
     }
@@ -1365,7 +1365,7 @@ impl DescribeEnvironmentStatusInput {
 pub mod list_environments_input {
 
     /// A builder for [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1524,7 +1524,7 @@ impl ListEnvironmentsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1673,7 +1673,7 @@ impl ListTagsForResourceInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1847,7 +1847,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2021,7 +2021,7 @@ impl UntagResourceInput {
 pub mod update_environment_input {
 
     /// A builder for [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2239,7 +2239,7 @@ impl UpdateEnvironmentInput {
 pub mod update_environment_membership_input {
 
     /// A builder for [`UpdateEnvironmentMembershipInput`](crate::input::UpdateEnvironmentMembershipInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
         pub(crate) user_arn: std::option::Option<std::string::String>,

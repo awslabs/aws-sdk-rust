@@ -5,7 +5,7 @@
 /// [`associate_custom_domain`](crate::client::Client::associate_custom_domain).
 ///
 /// See [`crate::client::fluent_builders::AssociateCustomDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateCustomDomain {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateCustomDomain {
 /// [`create_auto_scaling_configuration`](crate::client::Client::create_auto_scaling_configuration).
 ///
 /// See [`crate::client::fluent_builders::CreateAutoScalingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAutoScalingConfiguration {
     _private: (),
 }
@@ -73,7 +73,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAutoScalingConfigu
 /// [`create_connection`](crate::client::Client::create_connection).
 ///
 /// See [`crate::client::fluent_builders::CreateConnection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateConnection {
     _private: (),
 }
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConnection {
 /// [`create_observability_configuration`](crate::client::Client::create_observability_configuration).
 ///
 /// See [`crate::client::fluent_builders::CreateObservabilityConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateObservabilityConfiguration {
     _private: (),
 }
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateObservabilityConfi
 /// [`create_service`](crate::client::Client::create_service).
 ///
 /// See [`crate::client::fluent_builders::CreateService`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateService {
     _private: (),
 }
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateService {
 /// [`create_vpc_connector`](crate::client::Client::create_vpc_connector).
 ///
 /// See [`crate::client::fluent_builders::CreateVpcConnector`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateVpcConnector {
     _private: (),
 }
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpcConnector {
 /// [`delete_auto_scaling_configuration`](crate::client::Client::delete_auto_scaling_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeleteAutoScalingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAutoScalingConfiguration {
     _private: (),
 }
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAutoScalingConfigu
 /// [`delete_connection`](crate::client::Client::delete_connection).
 ///
 /// See [`crate::client::fluent_builders::DeleteConnection`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConnection {
     _private: (),
 }
@@ -275,7 +275,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConnection {
 /// [`delete_observability_configuration`](crate::client::Client::delete_observability_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeleteObservabilityConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteObservabilityConfiguration {
     _private: (),
 }
@@ -309,7 +309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObservabilityConfi
 /// [`delete_service`](crate::client::Client::delete_service).
 ///
 /// See [`crate::client::fluent_builders::DeleteService`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteService {
     _private: (),
 }
@@ -341,7 +341,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteService {
 /// [`delete_vpc_connector`](crate::client::Client::delete_vpc_connector).
 ///
 /// See [`crate::client::fluent_builders::DeleteVpcConnector`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVpcConnector {
     _private: (),
 }
@@ -375,7 +375,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcConnector {
 /// [`describe_auto_scaling_configuration`](crate::client::Client::describe_auto_scaling_configuration).
 ///
 /// See [`crate::client::fluent_builders::DescribeAutoScalingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAutoScalingConfiguration {
     _private: (),
 }
@@ -409,7 +409,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAutoScalingConfi
 /// [`describe_custom_domains`](crate::client::Client::describe_custom_domains).
 ///
 /// See [`crate::client::fluent_builders::DescribeCustomDomains`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCustomDomains {
     _private: (),
 }
@@ -443,7 +443,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomDomains {
 /// [`describe_observability_configuration`](crate::client::Client::describe_observability_configuration).
 ///
 /// See [`crate::client::fluent_builders::DescribeObservabilityConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeObservabilityConfiguration {
     _private: (),
 }
@@ -477,7 +477,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeObservabilityCon
 /// [`describe_service`](crate::client::Client::describe_service).
 ///
 /// See [`crate::client::fluent_builders::DescribeService`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeService {
     _private: (),
 }
@@ -511,7 +511,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeService {
 /// [`describe_vpc_connector`](crate::client::Client::describe_vpc_connector).
 ///
 /// See [`crate::client::fluent_builders::DescribeVpcConnector`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeVpcConnector {
     _private: (),
 }
@@ -545,7 +545,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcConnector {
 /// [`disassociate_custom_domain`](crate::client::Client::disassociate_custom_domain).
 ///
 /// See [`crate::client::fluent_builders::DisassociateCustomDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateCustomDomain {
     _private: (),
 }
@@ -579,7 +579,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateCustomDomain
 /// [`list_auto_scaling_configurations`](crate::client::Client::list_auto_scaling_configurations).
 ///
 /// See [`crate::client::fluent_builders::ListAutoScalingConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAutoScalingConfigurations {
     _private: (),
 }
@@ -613,7 +613,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAutoScalingConfigura
 /// [`list_connections`](crate::client::Client::list_connections).
 ///
 /// See [`crate::client::fluent_builders::ListConnections`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListConnections {
     _private: (),
 }
@@ -647,7 +647,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConnections {
 /// [`list_observability_configurations`](crate::client::Client::list_observability_configurations).
 ///
 /// See [`crate::client::fluent_builders::ListObservabilityConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListObservabilityConfigurations {
     _private: (),
 }
@@ -681,7 +681,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObservabilityConfigu
 /// [`list_operations`](crate::client::Client::list_operations).
 ///
 /// See [`crate::client::fluent_builders::ListOperations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListOperations {
     _private: (),
 }
@@ -713,7 +713,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOperations {
 /// [`list_services`](crate::client::Client::list_services).
 ///
 /// See [`crate::client::fluent_builders::ListServices`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListServices {
     _private: (),
 }
@@ -745,7 +745,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServices {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -779,7 +779,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_vpc_connectors`](crate::client::Client::list_vpc_connectors).
 ///
 /// See [`crate::client::fluent_builders::ListVpcConnectors`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVpcConnectors {
     _private: (),
 }
@@ -813,7 +813,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVpcConnectors {
 /// [`pause_service`](crate::client::Client::pause_service).
 ///
 /// See [`crate::client::fluent_builders::PauseService`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PauseService {
     _private: (),
 }
@@ -845,7 +845,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PauseService {
 /// [`resume_service`](crate::client::Client::resume_service).
 ///
 /// See [`crate::client::fluent_builders::ResumeService`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ResumeService {
     _private: (),
 }
@@ -877,7 +877,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResumeService {
 /// [`start_deployment`](crate::client::Client::start_deployment).
 ///
 /// See [`crate::client::fluent_builders::StartDeployment`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartDeployment {
     _private: (),
 }
@@ -911,7 +911,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDeployment {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -943,7 +943,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -975,7 +975,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_service`](crate::client::Client::update_service).
 ///
 /// See [`crate::client::fluent_builders::UpdateService`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateService {
     _private: (),
 }

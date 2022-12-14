@@ -19,7 +19,7 @@ impl UpdateTimeToLiveOutput {
 pub mod update_time_to_live_output {
 
     /// A builder for [`UpdateTimeToLiveOutput`](crate::output::UpdateTimeToLiveOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_to_live_specification:
             std::option::Option<crate::model::TimeToLiveSpecification>,
@@ -77,7 +77,7 @@ impl UpdateTableReplicaAutoScalingOutput {
 pub mod update_table_replica_auto_scaling_output {
 
     /// A builder for [`UpdateTableReplicaAutoScalingOutput`](crate::output::UpdateTableReplicaAutoScalingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_auto_scaling_description:
             std::option::Option<crate::model::TableAutoScalingDescription>,
@@ -132,7 +132,7 @@ impl UpdateTableOutput {
 pub mod update_table_output {
 
     /// A builder for [`UpdateTableOutput`](crate::output::UpdateTableOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_description: std::option::Option<crate::model::TableDescription>,
     }
@@ -217,7 +217,7 @@ impl UpdateItemOutput {
 pub mod update_item_output {
 
     /// A builder for [`UpdateItemOutput`](crate::output::UpdateItemOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
@@ -338,7 +338,7 @@ impl UpdateGlobalTableSettingsOutput {
 pub mod update_global_table_settings_output {
 
     /// A builder for [`UpdateGlobalTableSettingsOutput`](crate::output::UpdateGlobalTableSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_table_name: std::option::Option<std::string::String>,
         pub(crate) replica_settings:
@@ -413,7 +413,7 @@ impl UpdateGlobalTableOutput {
 pub mod update_global_table_output {
 
     /// A builder for [`UpdateGlobalTableOutput`](crate::output::UpdateGlobalTableOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_table_description:
             std::option::Option<crate::model::GlobalTableDescription>,
@@ -484,7 +484,7 @@ impl UpdateContributorInsightsOutput {
 pub mod update_contributor_insights_output {
 
     /// A builder for [`UpdateContributorInsightsOutput`](crate::output::UpdateContributorInsightsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -566,7 +566,7 @@ impl UpdateContinuousBackupsOutput {
 pub mod update_continuous_backups_output {
 
     /// A builder for [`UpdateContinuousBackupsOutput`](crate::output::UpdateContinuousBackupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) continuous_backups_description:
             std::option::Option<crate::model::ContinuousBackupsDescription>,
@@ -611,7 +611,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -664,7 +664,7 @@ impl TransactWriteItemsOutput {
 pub mod transact_write_items_output {
 
     /// A builder for [`TransactWriteItemsOutput`](crate::output::TransactWriteItemsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) consumed_capacity:
             std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
@@ -766,7 +766,7 @@ impl TransactGetItemsOutput {
 pub mod transact_get_items_output {
 
     /// A builder for [`TransactGetItemsOutput`](crate::output::TransactGetItemsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) consumed_capacity:
             std::option::Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
@@ -837,7 +837,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -921,7 +921,7 @@ impl ScanOutput {
 pub mod scan_output {
 
     /// A builder for [`ScanOutput`](crate::output::ScanOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<
             std::vec::Vec<
@@ -1067,7 +1067,7 @@ impl RestoreTableToPointInTimeOutput {
 pub mod restore_table_to_point_in_time_output {
 
     /// A builder for [`RestoreTableToPointInTimeOutput`](crate::output::RestoreTableToPointInTimeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_description: std::option::Option<crate::model::TableDescription>,
     }
@@ -1118,7 +1118,7 @@ impl RestoreTableFromBackupOutput {
 pub mod restore_table_from_backup_output {
 
     /// A builder for [`RestoreTableFromBackupOutput`](crate::output::RestoreTableFromBackupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_description: std::option::Option<crate::model::TableDescription>,
     }
@@ -1219,7 +1219,7 @@ impl QueryOutput {
 pub mod query_output {
 
     /// A builder for [`QueryOutput`](crate::output::QueryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<
             std::vec::Vec<
@@ -1397,7 +1397,7 @@ impl PutItemOutput {
 pub mod put_item_output {
 
     /// A builder for [`PutItemOutput`](crate::output::PutItemOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
@@ -1513,7 +1513,7 @@ impl ListTagsOfResourceOutput {
 pub mod list_tags_of_resource_output {
 
     /// A builder for [`ListTagsOfResourceOutput`](crate::output::ListTagsOfResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1593,7 +1593,7 @@ impl ListTablesOutput {
 pub mod list_tables_output {
 
     /// A builder for [`ListTablesOutput`](crate::output::ListTablesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) last_evaluated_table_name: std::option::Option<std::string::String>,
@@ -1676,7 +1676,7 @@ impl ListImportsOutput {
 pub mod list_imports_output {
 
     /// A builder for [`ListImportsOutput`](crate::output::ListImportsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_summary_list:
             std::option::Option<std::vec::Vec<crate::model::ImportSummary>>,
@@ -1753,7 +1753,7 @@ impl ListGlobalTablesOutput {
 pub mod list_global_tables_output {
 
     /// A builder for [`ListGlobalTablesOutput`](crate::output::ListGlobalTablesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_tables: std::option::Option<std::vec::Vec<crate::model::GlobalTable>>,
         pub(crate) last_evaluated_global_table_name: std::option::Option<std::string::String>,
@@ -1835,7 +1835,7 @@ impl ListExportsOutput {
 pub mod list_exports_output {
 
     /// A builder for [`ListExportsOutput`](crate::output::ListExportsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_summaries:
             std::option::Option<std::vec::Vec<crate::model::ExportSummary>>,
@@ -1915,7 +1915,7 @@ impl ListContributorInsightsOutput {
 pub mod list_contributor_insights_output {
 
     /// A builder for [`ListContributorInsightsOutput`](crate::output::ListContributorInsightsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contributor_insights_summaries:
             std::option::Option<std::vec::Vec<crate::model::ContributorInsightsSummary>>,
@@ -1999,7 +1999,7 @@ impl ListBackupsOutput {
 pub mod list_backups_output {
 
     /// A builder for [`ListBackupsOutput`](crate::output::ListBackupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_summaries:
             std::option::Option<std::vec::Vec<crate::model::BackupSummary>>,
@@ -2078,7 +2078,7 @@ impl ImportTableOutput {
 pub mod import_table_output {
 
     /// A builder for [`ImportTableOutput`](crate::output::ImportTableOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_table_description:
             std::option::Option<crate::model::ImportTableDescription>,
@@ -2146,7 +2146,7 @@ impl GetItemOutput {
 pub mod get_item_output {
 
     /// A builder for [`GetItemOutput`](crate::output::GetItemOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) item: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
@@ -2226,7 +2226,7 @@ impl ExportTableToPointInTimeOutput {
 pub mod export_table_to_point_in_time_output {
 
     /// A builder for [`ExportTableToPointInTimeOutput`](crate::output::ExportTableToPointInTimeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_description: std::option::Option<crate::model::ExportDescription>,
     }
@@ -2284,7 +2284,7 @@ impl ExecuteTransactionOutput {
 pub mod execute_transaction_output {
 
     /// A builder for [`ExecuteTransactionOutput`](crate::output::ExecuteTransactionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) responses: std::option::Option<std::vec::Vec<crate::model::ItemResponse>>,
         pub(crate) consumed_capacity:
@@ -2396,7 +2396,7 @@ impl ExecuteStatementOutput {
 pub mod execute_statement_output {
 
     /// A builder for [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<
             std::vec::Vec<
@@ -2534,7 +2534,7 @@ impl EnableKinesisStreamingDestinationOutput {
 pub mod enable_kinesis_streaming_destination_output {
 
     /// A builder for [`EnableKinesisStreamingDestinationOutput`](crate::output::EnableKinesisStreamingDestinationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -2623,7 +2623,7 @@ impl DisableKinesisStreamingDestinationOutput {
 pub mod disable_kinesis_streaming_destination_output {
 
     /// A builder for [`DisableKinesisStreamingDestinationOutput`](crate::output::DisableKinesisStreamingDestinationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -2700,7 +2700,7 @@ impl DescribeTimeToLiveOutput {
 pub mod describe_time_to_live_output {
 
     /// A builder for [`DescribeTimeToLiveOutput`](crate::output::DescribeTimeToLiveOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_to_live_description:
             std::option::Option<crate::model::TimeToLiveDescription>,
@@ -2758,7 +2758,7 @@ impl DescribeTableReplicaAutoScalingOutput {
 pub mod describe_table_replica_auto_scaling_output {
 
     /// A builder for [`DescribeTableReplicaAutoScalingOutput`](crate::output::DescribeTableReplicaAutoScalingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_auto_scaling_description:
             std::option::Option<crate::model::TableAutoScalingDescription>,
@@ -2813,7 +2813,7 @@ impl DescribeTableOutput {
 pub mod describe_table_output {
 
     /// A builder for [`DescribeTableOutput`](crate::output::DescribeTableOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table: std::option::Option<crate::model::TableDescription>,
     }
@@ -2883,7 +2883,7 @@ impl DescribeLimitsOutput {
 pub mod describe_limits_output {
 
     /// A builder for [`DescribeLimitsOutput`](crate::output::DescribeLimitsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_max_read_capacity_units: std::option::Option<i64>,
         pub(crate) account_max_write_capacity_units: std::option::Option<i64>,
@@ -2989,7 +2989,7 @@ impl DescribeKinesisStreamingDestinationOutput {
 pub mod describe_kinesis_streaming_destination_output {
 
     /// A builder for [`DescribeKinesisStreamingDestinationOutput`](crate::output::DescribeKinesisStreamingDestinationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) kinesis_data_stream_destinations:
@@ -3064,7 +3064,7 @@ impl DescribeImportOutput {
 pub mod describe_import_output {
 
     /// A builder for [`DescribeImportOutput`](crate::output::DescribeImportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_table_description:
             std::option::Option<crate::model::ImportTableDescription>,
@@ -3129,7 +3129,7 @@ impl DescribeGlobalTableSettingsOutput {
 pub mod describe_global_table_settings_output {
 
     /// A builder for [`DescribeGlobalTableSettingsOutput`](crate::output::DescribeGlobalTableSettingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_table_name: std::option::Option<std::string::String>,
         pub(crate) replica_settings:
@@ -3204,7 +3204,7 @@ impl DescribeGlobalTableOutput {
 pub mod describe_global_table_output {
 
     /// A builder for [`DescribeGlobalTableOutput`](crate::output::DescribeGlobalTableOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_table_description:
             std::option::Option<crate::model::GlobalTableDescription>,
@@ -3259,7 +3259,7 @@ impl DescribeExportOutput {
 pub mod describe_export_output {
 
     /// A builder for [`DescribeExportOutput`](crate::output::DescribeExportOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_description: std::option::Option<crate::model::ExportDescription>,
     }
@@ -3310,7 +3310,7 @@ impl DescribeEndpointsOutput {
 pub mod describe_endpoints_output {
 
     /// A builder for [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
     }
@@ -3418,7 +3418,7 @@ impl DescribeContributorInsightsOutput {
 pub mod describe_contributor_insights_output {
 
     /// A builder for [`DescribeContributorInsightsOutput`](crate::output::DescribeContributorInsightsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -3569,7 +3569,7 @@ impl DescribeContinuousBackupsOutput {
 pub mod describe_continuous_backups_output {
 
     /// A builder for [`DescribeContinuousBackupsOutput`](crate::output::DescribeContinuousBackupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) continuous_backups_description:
             std::option::Option<crate::model::ContinuousBackupsDescription>,
@@ -3624,7 +3624,7 @@ impl DescribeBackupOutput {
 pub mod describe_backup_output {
 
     /// A builder for [`DescribeBackupOutput`](crate::output::DescribeBackupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_description: std::option::Option<crate::model::BackupDescription>,
     }
@@ -3675,7 +3675,7 @@ impl DeleteTableOutput {
 pub mod delete_table_output {
 
     /// A builder for [`DeleteTableOutput`](crate::output::DeleteTableOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_description: std::option::Option<crate::model::TableDescription>,
     }
@@ -3758,7 +3758,7 @@ impl DeleteItemOutput {
 pub mod delete_item_output {
 
     /// A builder for [`DeleteItemOutput`](crate::output::DeleteItemOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
@@ -3867,7 +3867,7 @@ impl DeleteBackupOutput {
 pub mod delete_backup_output {
 
     /// A builder for [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_description: std::option::Option<crate::model::BackupDescription>,
     }
@@ -3918,7 +3918,7 @@ impl CreateTableOutput {
 pub mod create_table_output {
 
     /// A builder for [`CreateTableOutput`](crate::output::CreateTableOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_description: std::option::Option<crate::model::TableDescription>,
     }
@@ -3971,7 +3971,7 @@ impl CreateGlobalTableOutput {
 pub mod create_global_table_output {
 
     /// A builder for [`CreateGlobalTableOutput`](crate::output::CreateGlobalTableOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_table_description:
             std::option::Option<crate::model::GlobalTableDescription>,
@@ -4026,7 +4026,7 @@ impl CreateBackupOutput {
 pub mod create_backup_output {
 
     /// A builder for [`CreateBackupOutput`](crate::output::CreateBackupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_details: std::option::Option<crate::model::BackupDetails>,
     }
@@ -4153,7 +4153,7 @@ impl BatchWriteItemOutput {
 pub mod batch_write_item_output {
 
     /// A builder for [`BatchWriteItemOutput`](crate::output::BatchWriteItemOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) unprocessed_items: std::option::Option<
             std::collections::HashMap<
@@ -4385,7 +4385,7 @@ impl BatchGetItemOutput {
 pub mod batch_get_item_output {
 
     /// A builder for [`BatchGetItemOutput`](crate::output::BatchGetItemOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) responses: std::option::Option<
             std::collections::HashMap<
@@ -4547,7 +4547,7 @@ impl BatchExecuteStatementOutput {
 pub mod batch_execute_statement_output {
 
     /// A builder for [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) responses:
             std::option::Option<std::vec::Vec<crate::model::BatchStatementResponse>>,

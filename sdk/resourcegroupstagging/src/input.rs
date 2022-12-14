@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod describe_report_creation_input {
 
     /// A builder for [`DescribeReportCreationInput`](crate::input::DescribeReportCreationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DescribeReportCreationInput`](crate::input::DescribeReportCreationInput).
@@ -133,7 +133,7 @@ impl DescribeReportCreationInput {
 pub mod get_compliance_summary_input {
 
     /// A builder for [`GetComplianceSummaryInput`](crate::input::GetComplianceSummaryInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_id_filters: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) region_filters: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -416,7 +416,7 @@ impl GetComplianceSummaryInput {
 pub mod get_resources_input {
 
     /// A builder for [`GetResourcesInput`](crate::input::GetResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
         pub(crate) tag_filters: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
@@ -719,7 +719,7 @@ impl GetResourcesInput {
 pub mod get_tag_keys_input {
 
     /// A builder for [`GetTagKeysInput`](crate::input::GetTagKeysInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
     }
@@ -867,7 +867,7 @@ impl GetTagKeysInput {
 pub mod get_tag_values_input {
 
     /// A builder for [`GetTagValuesInput`](crate::input::GetTagValuesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1027,7 +1027,7 @@ impl GetTagValuesInput {
 pub mod start_report_creation_input {
 
     /// A builder for [`StartReportCreationInput`](crate::input::StartReportCreationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
     }
@@ -1178,7 +1178,7 @@ impl StartReportCreationInput {
 pub mod tag_resources_input {
 
     /// A builder for [`TagResourcesInput`](crate::input::TagResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<
@@ -1363,7 +1363,7 @@ impl TagResourcesInput {
 pub mod untag_resources_input {
 
     /// A builder for [`UntagResourcesInput`](crate::input::UntagResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,

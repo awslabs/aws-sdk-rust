@@ -5,7 +5,7 @@
 /// [`associate_web_acl`](crate::client::Client::associate_web_acl).
 ///
 /// See [`crate::client::fluent_builders::AssociateWebACL`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateWebACL {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateWebACL {
 /// [`check_capacity`](crate::client::Client::check_capacity).
 ///
 /// See [`crate::client::fluent_builders::CheckCapacity`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CheckCapacity {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckCapacity {
 /// [`create_ip_set`](crate::client::Client::create_ip_set).
 ///
 /// See [`crate::client::fluent_builders::CreateIPSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateIPSet {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIPSet {
 /// [`create_regex_pattern_set`](crate::client::Client::create_regex_pattern_set).
 ///
 /// See [`crate::client::fluent_builders::CreateRegexPatternSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRegexPatternSet {
     _private: (),
 }
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRegexPatternSet {
 /// [`create_rule_group`](crate::client::Client::create_rule_group).
 ///
 /// See [`crate::client::fluent_builders::CreateRuleGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRuleGroup {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRuleGroup {
 /// [`create_web_acl`](crate::client::Client::create_web_acl).
 ///
 /// See [`crate::client::fluent_builders::CreateWebACL`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWebACL {
     _private: (),
 }
@@ -203,7 +203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWebACL {
 /// [`delete_firewall_manager_rule_groups`](crate::client::Client::delete_firewall_manager_rule_groups).
 ///
 /// See [`crate::client::fluent_builders::DeleteFirewallManagerRuleGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFirewallManagerRuleGroups {
     _private: (),
 }
@@ -237,7 +237,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFirewallManagerRul
 /// [`delete_ip_set`](crate::client::Client::delete_ip_set).
 ///
 /// See [`crate::client::fluent_builders::DeleteIPSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteIPSet {
     _private: (),
 }
@@ -269,7 +269,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIPSet {
 /// [`delete_logging_configuration`](crate::client::Client::delete_logging_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeleteLoggingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLoggingConfiguration {
     _private: (),
 }
@@ -303,7 +303,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoggingConfigurati
 /// [`delete_permission_policy`](crate::client::Client::delete_permission_policy).
 ///
 /// See [`crate::client::fluent_builders::DeletePermissionPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePermissionPolicy {
     _private: (),
 }
@@ -337,7 +337,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePermissionPolicy {
 /// [`delete_regex_pattern_set`](crate::client::Client::delete_regex_pattern_set).
 ///
 /// See [`crate::client::fluent_builders::DeleteRegexPatternSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRegexPatternSet {
     _private: (),
 }
@@ -371,7 +371,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRegexPatternSet {
 /// [`delete_rule_group`](crate::client::Client::delete_rule_group).
 ///
 /// See [`crate::client::fluent_builders::DeleteRuleGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRuleGroup {
     _private: (),
 }
@@ -405,7 +405,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRuleGroup {
 /// [`delete_web_acl`](crate::client::Client::delete_web_acl).
 ///
 /// See [`crate::client::fluent_builders::DeleteWebACL`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWebACL {
     _private: (),
 }
@@ -437,7 +437,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWebACL {
 /// [`describe_managed_rule_group`](crate::client::Client::describe_managed_rule_group).
 ///
 /// See [`crate::client::fluent_builders::DescribeManagedRuleGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeManagedRuleGroup {
     _private: (),
 }
@@ -471,7 +471,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeManagedRuleGroup
 /// [`disassociate_web_acl`](crate::client::Client::disassociate_web_acl).
 ///
 /// See [`crate::client::fluent_builders::DisassociateWebACL`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateWebACL {
     _private: (),
 }
@@ -505,7 +505,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateWebACL {
 /// [`generate_mobile_sdk_release_url`](crate::client::Client::generate_mobile_sdk_release_url).
 ///
 /// See [`crate::client::fluent_builders::GenerateMobileSdkReleaseUrl`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GenerateMobileSdkReleaseUrl {
     _private: (),
 }
@@ -539,7 +539,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateMobileSdkRelease
 /// [`get_ip_set`](crate::client::Client::get_ip_set).
 ///
 /// See [`crate::client::fluent_builders::GetIPSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetIPSet {
     _private: (),
 }
@@ -570,7 +570,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIPSet {
 /// [`get_logging_configuration`](crate::client::Client::get_logging_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetLoggingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLoggingConfiguration {
     _private: (),
 }
@@ -604,7 +604,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLoggingConfiguration 
 /// [`get_managed_rule_set`](crate::client::Client::get_managed_rule_set).
 ///
 /// See [`crate::client::fluent_builders::GetManagedRuleSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetManagedRuleSet {
     _private: (),
 }
@@ -638,7 +638,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetManagedRuleSet {
 /// [`get_mobile_sdk_release`](crate::client::Client::get_mobile_sdk_release).
 ///
 /// See [`crate::client::fluent_builders::GetMobileSdkRelease`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMobileSdkRelease {
     _private: (),
 }
@@ -672,7 +672,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMobileSdkRelease {
 /// [`get_permission_policy`](crate::client::Client::get_permission_policy).
 ///
 /// See [`crate::client::fluent_builders::GetPermissionPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPermissionPolicy {
     _private: (),
 }
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPermissionPolicy {
 /// [`get_rate_based_statement_managed_keys`](crate::client::Client::get_rate_based_statement_managed_keys).
 ///
 /// See [`crate::client::fluent_builders::GetRateBasedStatementManagedKeys`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRateBasedStatementManagedKeys {
     _private: (),
 }
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRateBasedStatementMan
 /// [`get_regex_pattern_set`](crate::client::Client::get_regex_pattern_set).
 ///
 /// See [`crate::client::fluent_builders::GetRegexPatternSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRegexPatternSet {
     _private: (),
 }
@@ -774,7 +774,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRegexPatternSet {
 /// [`get_rule_group`](crate::client::Client::get_rule_group).
 ///
 /// See [`crate::client::fluent_builders::GetRuleGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRuleGroup {
     _private: (),
 }
@@ -806,7 +806,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRuleGroup {
 /// [`get_sampled_requests`](crate::client::Client::get_sampled_requests).
 ///
 /// See [`crate::client::fluent_builders::GetSampledRequests`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSampledRequests {
     _private: (),
 }
@@ -840,7 +840,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSampledRequests {
 /// [`get_web_acl`](crate::client::Client::get_web_acl).
 ///
 /// See [`crate::client::fluent_builders::GetWebACL`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetWebACL {
     _private: (),
 }
@@ -871,7 +871,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWebACL {
 /// [`get_web_acl_for_resource`](crate::client::Client::get_web_acl_for_resource).
 ///
 /// See [`crate::client::fluent_builders::GetWebACLForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetWebACLForResource {
     _private: (),
 }
@@ -905,7 +905,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWebACLForResource {
 /// [`list_available_managed_rule_groups`](crate::client::Client::list_available_managed_rule_groups).
 ///
 /// See [`crate::client::fluent_builders::ListAvailableManagedRuleGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAvailableManagedRuleGroups {
     _private: (),
 }
@@ -939,7 +939,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAvailableManagedRule
 /// [`list_available_managed_rule_group_versions`](crate::client::Client::list_available_managed_rule_group_versions).
 ///
 /// See [`crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAvailableManagedRuleGroupVersions {
     _private: (),
 }
@@ -975,7 +975,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAvailableManagedRule
 /// [`list_ip_sets`](crate::client::Client::list_ip_sets).
 ///
 /// See [`crate::client::fluent_builders::ListIPSets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListIPSets {
     _private: (),
 }
@@ -1007,7 +1007,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIPSets {
 /// [`list_logging_configurations`](crate::client::Client::list_logging_configurations).
 ///
 /// See [`crate::client::fluent_builders::ListLoggingConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLoggingConfigurations {
     _private: (),
 }
@@ -1041,7 +1041,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLoggingConfiguration
 /// [`list_managed_rule_sets`](crate::client::Client::list_managed_rule_sets).
 ///
 /// See [`crate::client::fluent_builders::ListManagedRuleSets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListManagedRuleSets {
     _private: (),
 }
@@ -1075,7 +1075,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListManagedRuleSets {
 /// [`list_mobile_sdk_releases`](crate::client::Client::list_mobile_sdk_releases).
 ///
 /// See [`crate::client::fluent_builders::ListMobileSdkReleases`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMobileSdkReleases {
     _private: (),
 }
@@ -1109,7 +1109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMobileSdkReleases {
 /// [`list_regex_pattern_sets`](crate::client::Client::list_regex_pattern_sets).
 ///
 /// See [`crate::client::fluent_builders::ListRegexPatternSets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRegexPatternSets {
     _private: (),
 }
@@ -1143,7 +1143,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRegexPatternSets {
 /// [`list_resources_for_web_acl`](crate::client::Client::list_resources_for_web_acl).
 ///
 /// See [`crate::client::fluent_builders::ListResourcesForWebACL`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResourcesForWebACL {
     _private: (),
 }
@@ -1177,7 +1177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourcesForWebACL {
 /// [`list_rule_groups`](crate::client::Client::list_rule_groups).
 ///
 /// See [`crate::client::fluent_builders::ListRuleGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRuleGroups {
     _private: (),
 }
@@ -1209,7 +1209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRuleGroups {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -1243,7 +1243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_web_ac_ls`](crate::client::Client::list_web_ac_ls).
 ///
 /// See [`crate::client::fluent_builders::ListWebACLs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWebACLs {
     _private: (),
 }
@@ -1275,7 +1275,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWebACLs {
 /// [`put_logging_configuration`](crate::client::Client::put_logging_configuration).
 ///
 /// See [`crate::client::fluent_builders::PutLoggingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutLoggingConfiguration {
     _private: (),
 }
@@ -1309,7 +1309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLoggingConfiguration 
 /// [`put_managed_rule_set_versions`](crate::client::Client::put_managed_rule_set_versions).
 ///
 /// See [`crate::client::fluent_builders::PutManagedRuleSetVersions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutManagedRuleSetVersions {
     _private: (),
 }
@@ -1343,7 +1343,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutManagedRuleSetVersion
 /// [`put_permission_policy`](crate::client::Client::put_permission_policy).
 ///
 /// See [`crate::client::fluent_builders::PutPermissionPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutPermissionPolicy {
     _private: (),
 }
@@ -1377,7 +1377,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPermissionPolicy {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1409,7 +1409,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1441,7 +1441,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_ip_set`](crate::client::Client::update_ip_set).
 ///
 /// See [`crate::client::fluent_builders::UpdateIPSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateIPSet {
     _private: (),
 }
@@ -1473,7 +1473,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateIPSet {
 /// [`update_managed_rule_set_version_expiry_date`](crate::client::Client::update_managed_rule_set_version_expiry_date).
 ///
 /// See [`crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateManagedRuleSetVersionExpiryDate {
     _private: (),
 }
@@ -1511,7 +1511,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateManagedRuleSetVers
 /// [`update_regex_pattern_set`](crate::client::Client::update_regex_pattern_set).
 ///
 /// See [`crate::client::fluent_builders::UpdateRegexPatternSet`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRegexPatternSet {
     _private: (),
 }
@@ -1545,7 +1545,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRegexPatternSet {
 /// [`update_rule_group`](crate::client::Client::update_rule_group).
 ///
 /// See [`crate::client::fluent_builders::UpdateRuleGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRuleGroup {
     _private: (),
 }
@@ -1579,7 +1579,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRuleGroup {
 /// [`update_web_acl`](crate::client::Client::update_web_acl).
 ///
 /// See [`crate::client::fluent_builders::UpdateWebACL`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateWebACL {
     _private: (),
 }

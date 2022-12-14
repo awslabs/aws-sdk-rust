@@ -91,7 +91,7 @@ impl Version {
 pub mod version {
 
     /// A builder for [`Version`](crate::model::Version).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<std::string::String>,
@@ -497,7 +497,7 @@ impl ParameterDefinition {
 pub mod parameter_definition {
 
     /// A builder for [`ParameterDefinition`](crate::model::ParameterDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allowed_pattern: std::option::Option<std::string::String>,
         pub(crate) allowed_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -761,7 +761,7 @@ impl ApplicationPolicyStatement {
 pub mod application_policy_statement {
 
     /// A builder for [`ApplicationPolicyStatement`](crate::model::ApplicationPolicyStatement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) actions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) principal_org_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -895,7 +895,7 @@ impl VersionSummary {
 pub mod version_summary {
 
     /// A builder for [`VersionSummary`](crate::model::VersionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<std::string::String>,
@@ -1056,7 +1056,7 @@ impl ApplicationSummary {
 pub mod application_summary {
 
     /// A builder for [`ApplicationSummary`](crate::model::ApplicationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) author: std::option::Option<std::string::String>,
@@ -1230,7 +1230,7 @@ impl ApplicationDependencySummary {
 pub mod application_dependency_summary {
 
     /// A builder for [`ApplicationDependencySummary`](crate::model::ApplicationDependencySummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) semantic_version: std::option::Option<std::string::String>,
@@ -1398,7 +1398,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1465,7 +1465,7 @@ impl RollbackConfiguration {
 pub mod rollback_configuration {
 
     /// A builder for [`RollbackConfiguration`](crate::model::RollbackConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitoring_time_in_minutes: std::option::Option<i32>,
         pub(crate) rollback_triggers:
@@ -1542,7 +1542,7 @@ impl RollbackTrigger {
 pub mod rollback_trigger {
 
     /// A builder for [`RollbackTrigger`](crate::model::RollbackTrigger).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -1609,7 +1609,7 @@ impl ParameterValue {
 pub mod parameter_value {
 
     /// A builder for [`ParameterValue`](crate::model::ParameterValue).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,

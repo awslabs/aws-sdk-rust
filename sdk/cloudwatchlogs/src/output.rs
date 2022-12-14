@@ -7,7 +7,7 @@ pub struct UntagLogGroupOutput {}
 pub mod untag_log_group_output {
 
     /// A builder for [`UntagLogGroupOutput`](crate::output::UntagLogGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagLogGroupOutput`](crate::output::UntagLogGroupOutput).
@@ -41,7 +41,7 @@ impl TestMetricFilterOutput {
 pub mod test_metric_filter_output {
 
     /// A builder for [`TestMetricFilterOutput`](crate::output::TestMetricFilterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) matches:
             std::option::Option<std::vec::Vec<crate::model::MetricFilterMatchRecord>>,
@@ -89,7 +89,7 @@ pub struct TagLogGroupOutput {}
 pub mod tag_log_group_output {
 
     /// A builder for [`TagLogGroupOutput`](crate::output::TagLogGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagLogGroupOutput`](crate::output::TagLogGroupOutput).
@@ -123,7 +123,7 @@ impl StopQueryOutput {
 pub mod stop_query_output {
 
     /// A builder for [`StopQueryOutput`](crate::output::StopQueryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) success: std::option::Option<bool>,
     }
@@ -171,7 +171,7 @@ impl StartQueryOutput {
 pub mod start_query_output {
 
     /// A builder for [`StartQueryOutput`](crate::output::StartQueryOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
     }
@@ -209,7 +209,7 @@ pub struct PutSubscriptionFilterOutput {}
 pub mod put_subscription_filter_output {
 
     /// A builder for [`PutSubscriptionFilterOutput`](crate::output::PutSubscriptionFilterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutSubscriptionFilterOutput`](crate::output::PutSubscriptionFilterOutput).
@@ -233,7 +233,7 @@ pub struct PutRetentionPolicyOutput {}
 pub mod put_retention_policy_output {
 
     /// A builder for [`PutRetentionPolicyOutput`](crate::output::PutRetentionPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutRetentionPolicyOutput`](crate::output::PutRetentionPolicyOutput).
@@ -267,7 +267,7 @@ impl PutResourcePolicyOutput {
 pub mod put_resource_policy_output {
 
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_policy: std::option::Option<crate::model::ResourcePolicy>,
     }
@@ -318,7 +318,7 @@ impl PutQueryDefinitionOutput {
 pub mod put_query_definition_output {
 
     /// A builder for [`PutQueryDefinitionOutput`](crate::output::PutQueryDefinitionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_definition_id: std::option::Option<std::string::String>,
     }
@@ -359,7 +359,7 @@ pub struct PutMetricFilterOutput {}
 pub mod put_metric_filter_output {
 
     /// A builder for [`PutMetricFilterOutput`](crate::output::PutMetricFilterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutMetricFilterOutput`](crate::output::PutMetricFilterOutput).
@@ -402,7 +402,7 @@ impl PutLogEventsOutput {
 pub mod put_log_events_output {
 
     /// A builder for [`PutLogEventsOutput`](crate::output::PutLogEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_sequence_token: std::option::Option<std::string::String>,
         pub(crate) rejected_log_events_info:
@@ -462,7 +462,7 @@ pub struct PutDestinationPolicyOutput {}
 pub mod put_destination_policy_output {
 
     /// A builder for [`PutDestinationPolicyOutput`](crate::output::PutDestinationPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutDestinationPolicyOutput`](crate::output::PutDestinationPolicyOutput).
@@ -496,7 +496,7 @@ impl PutDestinationOutput {
 pub mod put_destination_output {
 
     /// A builder for [`PutDestinationOutput`](crate::output::PutDestinationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination: std::option::Option<crate::model::Destination>,
     }
@@ -551,7 +551,7 @@ impl ListTagsLogGroupOutput {
 pub mod list_tags_log_group_output {
 
     /// A builder for [`ListTagsLogGroupOutput`](crate::output::ListTagsLogGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -632,7 +632,7 @@ impl GetQueryResultsOutput {
 pub mod get_query_results_output {
 
     /// A builder for [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results:
             std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::ResultField>>>,
@@ -725,7 +725,7 @@ impl GetLogRecordOutput {
 pub mod get_log_record_output {
 
     /// A builder for [`GetLogRecordOutput`](crate::output::GetLogRecordOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_record: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -790,7 +790,7 @@ impl GetLogGroupFieldsOutput {
 pub mod get_log_group_fields_output {
 
     /// A builder for [`GetLogGroupFieldsOutput`](crate::output::GetLogGroupFieldsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_fields:
             std::option::Option<std::vec::Vec<crate::model::LogGroupField>>,
@@ -862,7 +862,7 @@ impl GetLogEventsOutput {
 pub mod get_log_events_output {
 
     /// A builder for [`GetLogEventsOutput`](crate::output::GetLogEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::OutputLogEvent>>,
         pub(crate) next_forward_token: std::option::Option<std::string::String>,
@@ -965,7 +965,7 @@ impl FilterLogEventsOutput {
 pub mod filter_log_events_output {
 
     /// A builder for [`FilterLogEventsOutput`](crate::output::FilterLogEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::FilteredLogEvent>>,
         pub(crate) searched_log_streams:
@@ -1048,7 +1048,7 @@ pub struct DisassociateKmsKeyOutput {}
 pub mod disassociate_kms_key_output {
 
     /// A builder for [`DisassociateKmsKeyOutput`](crate::output::DisassociateKmsKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateKmsKeyOutput`](crate::output::DisassociateKmsKeyOutput).
@@ -1089,7 +1089,7 @@ impl DescribeSubscriptionFiltersOutput {
 pub mod describe_subscription_filters_output {
 
     /// A builder for [`DescribeSubscriptionFiltersOutput`](crate::output::DescribeSubscriptionFiltersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_filters:
             std::option::Option<std::vec::Vec<crate::model::SubscriptionFilter>>,
@@ -1166,7 +1166,7 @@ impl DescribeResourcePoliciesOutput {
 pub mod describe_resource_policies_output {
 
     /// A builder for [`DescribeResourcePoliciesOutput`](crate::output::DescribeResourcePoliciesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_policies:
             std::option::Option<std::vec::Vec<crate::model::ResourcePolicy>>,
@@ -1243,7 +1243,7 @@ impl DescribeQueryDefinitionsOutput {
 pub mod describe_query_definitions_output {
 
     /// A builder for [`DescribeQueryDefinitionsOutput`](crate::output::DescribeQueryDefinitionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_definitions:
             std::option::Option<std::vec::Vec<crate::model::QueryDefinition>>,
@@ -1320,7 +1320,7 @@ impl DescribeQueriesOutput {
 pub mod describe_queries_output {
 
     /// A builder for [`DescribeQueriesOutput`](crate::output::DescribeQueriesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queries: std::option::Option<std::vec::Vec<crate::model::QueryInfo>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1396,7 +1396,7 @@ impl DescribeMetricFiltersOutput {
 pub mod describe_metric_filters_output {
 
     /// A builder for [`DescribeMetricFiltersOutput`](crate::output::DescribeMetricFiltersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_filters: std::option::Option<std::vec::Vec<crate::model::MetricFilter>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1472,7 +1472,7 @@ impl DescribeLogStreamsOutput {
 pub mod describe_log_streams_output {
 
     /// A builder for [`DescribeLogStreamsOutput`](crate::output::DescribeLogStreamsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_streams: std::option::Option<std::vec::Vec<crate::model::LogStream>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1550,7 +1550,7 @@ impl DescribeLogGroupsOutput {
 pub mod describe_log_groups_output {
 
     /// A builder for [`DescribeLogGroupsOutput`](crate::output::DescribeLogGroupsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_groups: std::option::Option<std::vec::Vec<crate::model::LogGroup>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1628,7 +1628,7 @@ impl DescribeExportTasksOutput {
 pub mod describe_export_tasks_output {
 
     /// A builder for [`DescribeExportTasksOutput`](crate::output::DescribeExportTasksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_tasks: std::option::Option<std::vec::Vec<crate::model::ExportTask>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1704,7 +1704,7 @@ impl DescribeDestinationsOutput {
 pub mod describe_destinations_output {
 
     /// A builder for [`DescribeDestinationsOutput`](crate::output::DescribeDestinationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::Destination>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1763,7 +1763,7 @@ pub struct DeleteSubscriptionFilterOutput {}
 pub mod delete_subscription_filter_output {
 
     /// A builder for [`DeleteSubscriptionFilterOutput`](crate::output::DeleteSubscriptionFilterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSubscriptionFilterOutput`](crate::output::DeleteSubscriptionFilterOutput).
@@ -1787,7 +1787,7 @@ pub struct DeleteRetentionPolicyOutput {}
 pub mod delete_retention_policy_output {
 
     /// A builder for [`DeleteRetentionPolicyOutput`](crate::output::DeleteRetentionPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRetentionPolicyOutput`](crate::output::DeleteRetentionPolicyOutput).
@@ -1811,7 +1811,7 @@ pub struct DeleteResourcePolicyOutput {}
 pub mod delete_resource_policy_output {
 
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
@@ -1845,7 +1845,7 @@ impl DeleteQueryDefinitionOutput {
 pub mod delete_query_definition_output {
 
     /// A builder for [`DeleteQueryDefinitionOutput`](crate::output::DeleteQueryDefinitionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) success: std::option::Option<bool>,
     }
@@ -1883,7 +1883,7 @@ pub struct DeleteMetricFilterOutput {}
 pub mod delete_metric_filter_output {
 
     /// A builder for [`DeleteMetricFilterOutput`](crate::output::DeleteMetricFilterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMetricFilterOutput`](crate::output::DeleteMetricFilterOutput).
@@ -1907,7 +1907,7 @@ pub struct DeleteLogStreamOutput {}
 pub mod delete_log_stream_output {
 
     /// A builder for [`DeleteLogStreamOutput`](crate::output::DeleteLogStreamOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLogStreamOutput`](crate::output::DeleteLogStreamOutput).
@@ -1931,7 +1931,7 @@ pub struct DeleteLogGroupOutput {}
 pub mod delete_log_group_output {
 
     /// A builder for [`DeleteLogGroupOutput`](crate::output::DeleteLogGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLogGroupOutput`](crate::output::DeleteLogGroupOutput).
@@ -1955,7 +1955,7 @@ pub struct DeleteDestinationOutput {}
 pub mod delete_destination_output {
 
     /// A builder for [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
@@ -1979,7 +1979,7 @@ pub struct CreateLogStreamOutput {}
 pub mod create_log_stream_output {
 
     /// A builder for [`CreateLogStreamOutput`](crate::output::CreateLogStreamOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateLogStreamOutput`](crate::output::CreateLogStreamOutput).
@@ -2003,7 +2003,7 @@ pub struct CreateLogGroupOutput {}
 pub mod create_log_group_output {
 
     /// A builder for [`CreateLogGroupOutput`](crate::output::CreateLogGroupOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CreateLogGroupOutput`](crate::output::CreateLogGroupOutput).
@@ -2037,7 +2037,7 @@ impl CreateExportTaskOutput {
 pub mod create_export_task_output {
 
     /// A builder for [`CreateExportTaskOutput`](crate::output::CreateExportTaskOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
     }
@@ -2075,7 +2075,7 @@ pub struct CancelExportTaskOutput {}
 pub mod cancel_export_task_output {
 
     /// A builder for [`CancelExportTaskOutput`](crate::output::CancelExportTaskOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CancelExportTaskOutput`](crate::output::CancelExportTaskOutput).
@@ -2099,7 +2099,7 @@ pub struct AssociateKmsKeyOutput {}
 pub mod associate_kms_key_output {
 
     /// A builder for [`AssociateKmsKeyOutput`](crate::output::AssociateKmsKeyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateKmsKeyOutput`](crate::output::AssociateKmsKeyOutput).

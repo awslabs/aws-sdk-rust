@@ -7,7 +7,7 @@ pub struct UpdateDeviceStateOutput {}
 pub mod update_device_state_output {
 
     /// A builder for [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput).
@@ -31,7 +31,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -65,7 +65,7 @@ impl UnclaimDeviceOutput {
 pub mod unclaim_device_output {
 
     /// A builder for [`UnclaimDeviceOutput`](crate::output::UnclaimDeviceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<std::string::String>,
     }
@@ -101,7 +101,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -141,7 +141,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -213,7 +213,7 @@ impl ListDevicesOutput {
 pub mod list_devices_output {
 
     /// A builder for [`ListDevicesOutput`](crate::output::ListDevicesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) devices: std::option::Option<std::vec::Vec<crate::model::DeviceDescription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -289,7 +289,7 @@ impl ListDeviceEventsOutput {
 pub mod list_device_events_output {
 
     /// A builder for [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::DeviceEvent>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -358,7 +358,7 @@ impl InvokeDeviceMethodOutput {
 pub mod invoke_device_method_output {
 
     /// A builder for [`InvokeDeviceMethodOutput`](crate::output::InvokeDeviceMethodOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_method_response: std::option::Option<std::string::String>,
     }
@@ -409,7 +409,7 @@ impl InitiateDeviceClaimOutput {
 pub mod initiate_device_claim_output {
 
     /// A builder for [`InitiateDeviceClaimOutput`](crate::output::InitiateDeviceClaimOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<std::string::String>,
     }
@@ -455,7 +455,7 @@ impl GetDeviceMethodsOutput {
 pub mod get_device_methods_output {
 
     /// A builder for [`GetDeviceMethodsOutput`](crate::output::GetDeviceMethodsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_methods: std::option::Option<std::vec::Vec<crate::model::DeviceMethod>>,
     }
@@ -512,7 +512,7 @@ impl FinalizeDeviceClaimOutput {
 pub mod finalize_device_claim_output {
 
     /// A builder for [`FinalizeDeviceClaimOutput`](crate::output::FinalizeDeviceClaimOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<std::string::String>,
     }
@@ -558,7 +558,7 @@ impl DescribeDeviceOutput {
 pub mod describe_device_output {
 
     /// A builder for [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_description: std::option::Option<crate::model::DeviceDescription>,
     }
@@ -616,7 +616,7 @@ impl ClaimDevicesByClaimCodeOutput {
 pub mod claim_devices_by_claim_code_output {
 
     /// A builder for [`ClaimDevicesByClaimCodeOutput`](crate::output::ClaimDevicesByClaimCodeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) claim_code: std::option::Option<std::string::String>,
         pub(crate) total: std::option::Option<i32>,

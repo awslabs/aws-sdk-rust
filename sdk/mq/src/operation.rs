@@ -5,7 +5,7 @@
 /// [`create_broker`](crate::client::Client::create_broker).
 ///
 /// See [`crate::client::fluent_builders::CreateBroker`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBroker {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBroker {
 /// [`create_configuration`](crate::client::Client::create_configuration).
 ///
 /// See [`crate::client::fluent_builders::CreateConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateConfiguration {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfiguration {
 /// [`create_tags`](crate::client::Client::create_tags).
 ///
 /// See [`crate::client::fluent_builders::CreateTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateTags {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTags {
 /// [`create_user`](crate::client::Client::create_user).
 ///
 /// See [`crate::client::fluent_builders::CreateUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateUser {
     _private: (),
 }
@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUser {
 /// [`delete_broker`](crate::client::Client::delete_broker).
 ///
 /// See [`crate::client::fluent_builders::DeleteBroker`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBroker {
     _private: (),
 }
@@ -167,7 +167,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBroker {
 /// [`delete_tags`](crate::client::Client::delete_tags).
 ///
 /// See [`crate::client::fluent_builders::DeleteTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTags {
     _private: (),
 }
@@ -199,7 +199,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTags {
 /// [`delete_user`](crate::client::Client::delete_user).
 ///
 /// See [`crate::client::fluent_builders::DeleteUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteUser {
     _private: (),
 }
@@ -231,7 +231,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUser {
 /// [`describe_broker`](crate::client::Client::describe_broker).
 ///
 /// See [`crate::client::fluent_builders::DescribeBroker`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBroker {
     _private: (),
 }
@@ -263,7 +263,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBroker {
 /// [`describe_broker_engine_types`](crate::client::Client::describe_broker_engine_types).
 ///
 /// See [`crate::client::fluent_builders::DescribeBrokerEngineTypes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBrokerEngineTypes {
     _private: (),
 }
@@ -297,7 +297,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBrokerEngineType
 /// [`describe_broker_instance_options`](crate::client::Client::describe_broker_instance_options).
 ///
 /// See [`crate::client::fluent_builders::DescribeBrokerInstanceOptions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBrokerInstanceOptions {
     _private: (),
 }
@@ -331,7 +331,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBrokerInstanceOp
 /// [`describe_configuration`](crate::client::Client::describe_configuration).
 ///
 /// See [`crate::client::fluent_builders::DescribeConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConfiguration {
     _private: (),
 }
@@ -365,7 +365,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConfiguration {
 /// [`describe_configuration_revision`](crate::client::Client::describe_configuration_revision).
 ///
 /// See [`crate::client::fluent_builders::DescribeConfigurationRevision`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeConfigurationRevision {
     _private: (),
 }
@@ -399,7 +399,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConfigurationRev
 /// [`describe_user`](crate::client::Client::describe_user).
 ///
 /// See [`crate::client::fluent_builders::DescribeUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeUser {
     _private: (),
 }
@@ -431,7 +431,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeUser {
 /// [`list_brokers`](crate::client::Client::list_brokers).
 ///
 /// See [`crate::client::fluent_builders::ListBrokers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBrokers {
     _private: (),
 }
@@ -463,7 +463,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBrokers {
 /// [`list_configuration_revisions`](crate::client::Client::list_configuration_revisions).
 ///
 /// See [`crate::client::fluent_builders::ListConfigurationRevisions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListConfigurationRevisions {
     _private: (),
 }
@@ -497,7 +497,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConfigurationRevisio
 /// [`list_configurations`](crate::client::Client::list_configurations).
 ///
 /// See [`crate::client::fluent_builders::ListConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListConfigurations {
     _private: (),
 }
@@ -531,7 +531,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConfigurations {
 /// [`list_tags`](crate::client::Client::list_tags).
 ///
 /// See [`crate::client::fluent_builders::ListTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTags {
     _private: (),
 }
@@ -562,7 +562,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTags {
 /// [`list_users`](crate::client::Client::list_users).
 ///
 /// See [`crate::client::fluent_builders::ListUsers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListUsers {
     _private: (),
 }
@@ -593,7 +593,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUsers {
 /// [`reboot_broker`](crate::client::Client::reboot_broker).
 ///
 /// See [`crate::client::fluent_builders::RebootBroker`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RebootBroker {
     _private: (),
 }
@@ -625,7 +625,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RebootBroker {
 /// [`update_broker`](crate::client::Client::update_broker).
 ///
 /// See [`crate::client::fluent_builders::UpdateBroker`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBroker {
     _private: (),
 }
@@ -657,7 +657,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBroker {
 /// [`update_configuration`](crate::client::Client::update_configuration).
 ///
 /// See [`crate::client::fluent_builders::UpdateConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateConfiguration {
     _private: (),
 }
@@ -691,7 +691,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConfiguration {
 /// [`update_user`](crate::client::Client::update_user).
 ///
 /// See [`crate::client::fluent_builders::UpdateUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateUser {
     _private: (),
 }

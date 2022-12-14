@@ -38,7 +38,7 @@ impl UpdateWorldTemplateOutput {
 pub mod update_world_template_output {
 
     /// A builder for [`UpdateWorldTemplateOutput`](crate::output::UpdateWorldTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -193,7 +193,7 @@ impl UpdateSimulationApplicationOutput {
 pub mod update_simulation_application_output {
 
     /// A builder for [`UpdateSimulationApplicationOutput`](crate::output::UpdateSimulationApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -426,7 +426,7 @@ impl UpdateRobotApplicationOutput {
 pub mod update_robot_application_output {
 
     /// A builder for [`UpdateRobotApplicationOutput`](crate::output::UpdateRobotApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -566,7 +566,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -590,7 +590,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -851,7 +851,7 @@ impl SyncDeploymentJobOutput {
 pub mod sync_deployment_job_output {
 
     /// A builder for [`SyncDeploymentJobOutput`](crate::output::SyncDeploymentJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) fleet: std::option::Option<std::string::String>,
@@ -1374,7 +1374,7 @@ impl StartSimulationJobBatchOutput {
 pub mod start_simulation_job_batch_output {
 
     /// A builder for [`StartSimulationJobBatchOutput`](crate::output::StartSimulationJobBatchOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::SimulationJobBatchStatus>,
@@ -1716,7 +1716,7 @@ pub struct RestartSimulationJobOutput {}
 pub mod restart_simulation_job_output {
 
     /// A builder for [`RestartSimulationJobOutput`](crate::output::RestartSimulationJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`RestartSimulationJobOutput`](crate::output::RestartSimulationJobOutput).
@@ -1760,7 +1760,7 @@ impl RegisterRobotOutput {
 pub mod register_robot_output {
 
     /// A builder for [`RegisterRobotOutput`](crate::output::RegisterRobotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet: std::option::Option<std::string::String>,
         pub(crate) robot: std::option::Option<std::string::String>,
@@ -1827,7 +1827,7 @@ impl ListWorldTemplatesOutput {
 pub mod list_world_templates_output {
 
     /// A builder for [`ListWorldTemplatesOutput`](crate::output::ListWorldTemplatesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_summaries:
             std::option::Option<std::vec::Vec<crate::model::TemplateSummary>>,
@@ -1904,7 +1904,7 @@ impl ListWorldsOutput {
 pub mod list_worlds_output {
 
     /// A builder for [`ListWorldsOutput`](crate::output::ListWorldsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) world_summaries: std::option::Option<std::vec::Vec<crate::model::WorldSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1983,7 +1983,7 @@ impl ListWorldGenerationJobsOutput {
 pub mod list_world_generation_jobs_output {
 
     /// A builder for [`ListWorldGenerationJobsOutput`](crate::output::ListWorldGenerationJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) world_generation_job_summaries:
             std::option::Option<std::vec::Vec<crate::model::WorldGenerationJobSummary>>,
@@ -2066,7 +2066,7 @@ impl ListWorldExportJobsOutput {
 pub mod list_world_export_jobs_output {
 
     /// A builder for [`ListWorldExportJobsOutput`](crate::output::ListWorldExportJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) world_export_job_summaries:
             std::option::Option<std::vec::Vec<crate::model::WorldExportJobSummary>>,
@@ -2143,7 +2143,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -2216,7 +2216,7 @@ impl ListSimulationJobsOutput {
 pub mod list_simulation_jobs_output {
 
     /// A builder for [`ListSimulationJobsOutput`](crate::output::ListSimulationJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation_job_summaries:
             std::option::Option<std::vec::Vec<crate::model::SimulationJobSummary>>,
@@ -2299,7 +2299,7 @@ impl ListSimulationJobBatchesOutput {
 pub mod list_simulation_job_batches_output {
 
     /// A builder for [`ListSimulationJobBatchesOutput`](crate::output::ListSimulationJobBatchesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation_job_batch_summaries:
             std::option::Option<std::vec::Vec<crate::model::SimulationJobBatchSummary>>,
@@ -2382,7 +2382,7 @@ impl ListSimulationApplicationsOutput {
 pub mod list_simulation_applications_output {
 
     /// A builder for [`ListSimulationApplicationsOutput`](crate::output::ListSimulationApplicationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation_application_summaries:
             std::option::Option<std::vec::Vec<crate::model::SimulationApplicationSummary>>,
@@ -2465,7 +2465,7 @@ impl ListRobotsOutput {
 pub mod list_robots_output {
 
     /// A builder for [`ListRobotsOutput`](crate::output::ListRobotsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) robots: std::option::Option<std::vec::Vec<crate::model::Robot>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2544,7 +2544,7 @@ impl ListRobotApplicationsOutput {
 pub mod list_robot_applications_output {
 
     /// A builder for [`ListRobotApplicationsOutput`](crate::output::ListRobotApplicationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) robot_application_summaries:
             std::option::Option<std::vec::Vec<crate::model::RobotApplicationSummary>>,
@@ -2627,7 +2627,7 @@ impl ListFleetsOutput {
 pub mod list_fleets_output {
 
     /// A builder for [`ListFleetsOutput`](crate::output::ListFleetsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_details: std::option::Option<std::vec::Vec<crate::model::Fleet>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2706,7 +2706,7 @@ impl ListDeploymentJobsOutput {
 pub mod list_deployment_jobs_output {
 
     /// A builder for [`ListDeploymentJobsOutput`](crate::output::ListDeploymentJobsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_jobs: std::option::Option<std::vec::Vec<crate::model::DeploymentJob>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2775,7 +2775,7 @@ impl GetWorldTemplateBodyOutput {
 pub mod get_world_template_body_output {
 
     /// A builder for [`GetWorldTemplateBodyOutput`](crate::output::GetWorldTemplateBodyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_body: std::option::Option<std::string::String>,
     }
@@ -2872,7 +2872,7 @@ impl DescribeWorldTemplateOutput {
 pub mod describe_world_template_output {
 
     /// A builder for [`DescribeWorldTemplateOutput`](crate::output::DescribeWorldTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -3250,7 +3250,7 @@ impl DescribeWorldGenerationJobOutput {
 pub mod describe_world_generation_job_output {
 
     /// A builder for [`DescribeWorldGenerationJobOutput`](crate::output::DescribeWorldGenerationJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::WorldGenerationJobStatus>,
@@ -3836,7 +3836,7 @@ impl DescribeWorldExportJobOutput {
 pub mod describe_world_export_job_output {
 
     /// A builder for [`DescribeWorldExportJobOutput`](crate::output::DescribeWorldExportJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::WorldExportJobStatus>,
@@ -4215,7 +4215,7 @@ impl DescribeWorldOutput {
 pub mod describe_world_output {
 
     /// A builder for [`DescribeWorldOutput`](crate::output::DescribeWorldOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) generation_job: std::option::Option<std::string::String>,
@@ -4547,7 +4547,7 @@ impl DescribeSimulationJobBatchOutput {
 pub mod describe_simulation_job_batch_output {
 
     /// A builder for [`DescribeSimulationJobBatchOutput`](crate::output::DescribeSimulationJobBatchOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::SimulationJobBatchStatus>,
@@ -5236,7 +5236,7 @@ impl DescribeSimulationJobOutput {
 pub mod describe_simulation_job_output {
 
     /// A builder for [`DescribeSimulationJobOutput`](crate::output::DescribeSimulationJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5864,7 +5864,7 @@ impl DescribeSimulationApplicationOutput {
 pub mod describe_simulation_application_output {
 
     /// A builder for [`DescribeSimulationApplicationOutput`](crate::output::DescribeSimulationApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6156,7 +6156,7 @@ impl DescribeRobotApplicationOutput {
 pub mod describe_robot_application_output {
 
     /// A builder for [`DescribeRobotApplicationOutput`](crate::output::DescribeRobotApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6417,7 +6417,7 @@ impl DescribeRobotOutput {
 pub mod describe_robot_output {
 
     /// A builder for [`DescribeRobotOutput`](crate::output::DescribeRobotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6661,7 +6661,7 @@ impl DescribeFleetOutput {
 pub mod describe_fleet_output {
 
     /// A builder for [`DescribeFleetOutput`](crate::output::DescribeFleetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6906,7 +6906,7 @@ impl DescribeDeploymentJobOutput {
 pub mod describe_deployment_job_output {
 
     /// A builder for [`DescribeDeploymentJobOutput`](crate::output::DescribeDeploymentJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) fleet: std::option::Option<std::string::String>,
@@ -7127,7 +7127,7 @@ impl DeregisterRobotOutput {
 pub mod deregister_robot_output {
 
     /// A builder for [`DeregisterRobotOutput`](crate::output::DeregisterRobotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet: std::option::Option<std::string::String>,
         pub(crate) robot: std::option::Option<std::string::String>,
@@ -7177,7 +7177,7 @@ pub struct DeleteWorldTemplateOutput {}
 pub mod delete_world_template_output {
 
     /// A builder for [`DeleteWorldTemplateOutput`](crate::output::DeleteWorldTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWorldTemplateOutput`](crate::output::DeleteWorldTemplateOutput).
@@ -7201,7 +7201,7 @@ pub struct DeleteSimulationApplicationOutput {}
 pub mod delete_simulation_application_output {
 
     /// A builder for [`DeleteSimulationApplicationOutput`](crate::output::DeleteSimulationApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSimulationApplicationOutput`](crate::output::DeleteSimulationApplicationOutput).
@@ -7225,7 +7225,7 @@ pub struct DeleteRobotApplicationOutput {}
 pub mod delete_robot_application_output {
 
     /// A builder for [`DeleteRobotApplicationOutput`](crate::output::DeleteRobotApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRobotApplicationOutput`](crate::output::DeleteRobotApplicationOutput).
@@ -7252,7 +7252,7 @@ pub struct DeleteRobotOutput {}
 pub mod delete_robot_output {
 
     /// A builder for [`DeleteRobotOutput`](crate::output::DeleteRobotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRobotOutput`](crate::output::DeleteRobotOutput).
@@ -7279,7 +7279,7 @@ pub struct DeleteFleetOutput {}
 pub mod delete_fleet_output {
 
     /// A builder for [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
@@ -7345,7 +7345,7 @@ impl CreateWorldTemplateOutput {
 pub mod create_world_template_output {
 
     /// A builder for [`CreateWorldTemplateOutput`](crate::output::CreateWorldTemplateOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -7680,7 +7680,7 @@ impl CreateWorldGenerationJobOutput {
 pub mod create_world_generation_job_output {
 
     /// A builder for [`CreateWorldGenerationJobOutput`](crate::output::CreateWorldGenerationJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::WorldGenerationJobStatus>,
@@ -8232,7 +8232,7 @@ impl CreateWorldExportJobOutput {
 pub mod create_world_export_job_output {
 
     /// A builder for [`CreateWorldExportJobOutput`](crate::output::CreateWorldExportJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::WorldExportJobStatus>,
@@ -8851,7 +8851,7 @@ impl CreateSimulationJobOutput {
 pub mod create_simulation_job_output {
 
     /// A builder for [`CreateSimulationJobOutput`](crate::output::CreateSimulationJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::SimulationJobStatus>,
@@ -9419,7 +9419,7 @@ impl CreateSimulationApplicationVersionOutput {
 pub mod create_simulation_application_version_output {
 
     /// A builder for [`CreateSimulationApplicationVersionOutput`](crate::output::CreateSimulationApplicationVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -9679,7 +9679,7 @@ impl CreateSimulationApplicationOutput {
 pub mod create_simulation_application_output {
 
     /// A builder for [`CreateSimulationApplicationOutput`](crate::output::CreateSimulationApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -9941,7 +9941,7 @@ impl CreateRobotApplicationVersionOutput {
 pub mod create_robot_application_version_output {
 
     /// A builder for [`CreateRobotApplicationVersionOutput`](crate::output::CreateRobotApplicationVersionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -10151,7 +10151,7 @@ impl CreateRobotApplicationOutput {
 pub mod create_robot_application_output {
 
     /// A builder for [`CreateRobotApplicationOutput`](crate::output::CreateRobotApplicationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -10372,7 +10372,7 @@ impl CreateRobotOutput {
 pub mod create_robot_output {
 
     /// A builder for [`CreateRobotOutput`](crate::output::CreateRobotOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -10534,7 +10534,7 @@ impl CreateFleetOutput {
 pub mod create_fleet_output {
 
     /// A builder for [`CreateFleetOutput`](crate::output::CreateFleetOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -10852,7 +10852,7 @@ impl CreateDeploymentJobOutput {
 pub mod create_deployment_job_output {
 
     /// A builder for [`CreateDeploymentJobOutput`](crate::output::CreateDeploymentJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) fleet: std::option::Option<std::string::String>,
@@ -11179,7 +11179,7 @@ pub struct CancelWorldGenerationJobOutput {}
 pub mod cancel_world_generation_job_output {
 
     /// A builder for [`CancelWorldGenerationJobOutput`](crate::output::CancelWorldGenerationJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CancelWorldGenerationJobOutput`](crate::output::CancelWorldGenerationJobOutput).
@@ -11203,7 +11203,7 @@ pub struct CancelWorldExportJobOutput {}
 pub mod cancel_world_export_job_output {
 
     /// A builder for [`CancelWorldExportJobOutput`](crate::output::CancelWorldExportJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CancelWorldExportJobOutput`](crate::output::CancelWorldExportJobOutput).
@@ -11227,7 +11227,7 @@ pub struct CancelSimulationJobBatchOutput {}
 pub mod cancel_simulation_job_batch_output {
 
     /// A builder for [`CancelSimulationJobBatchOutput`](crate::output::CancelSimulationJobBatchOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CancelSimulationJobBatchOutput`](crate::output::CancelSimulationJobBatchOutput).
@@ -11251,7 +11251,7 @@ pub struct CancelSimulationJobOutput {}
 pub mod cancel_simulation_job_output {
 
     /// A builder for [`CancelSimulationJobOutput`](crate::output::CancelSimulationJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CancelSimulationJobOutput`](crate::output::CancelSimulationJobOutput).
@@ -11278,7 +11278,7 @@ pub struct CancelDeploymentJobOutput {}
 pub mod cancel_deployment_job_output {
 
     /// A builder for [`CancelDeploymentJobOutput`](crate::output::CancelDeploymentJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`CancelDeploymentJobOutput`](crate::output::CancelDeploymentJobOutput).
@@ -11319,7 +11319,7 @@ impl BatchDescribeSimulationJobOutput {
 pub mod batch_describe_simulation_job_output {
 
     /// A builder for [`BatchDescribeSimulationJobOutput`](crate::output::BatchDescribeSimulationJobOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::SimulationJob>>,
         pub(crate) unprocessed_jobs: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11397,7 +11397,7 @@ impl BatchDeleteWorldsOutput {
 pub mod batch_delete_worlds_output {
 
     /// A builder for [`BatchDeleteWorldsOutput`](crate::output::BatchDeleteWorldsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) unprocessed_worlds: std::option::Option<std::vec::Vec<std::string::String>>,
     }

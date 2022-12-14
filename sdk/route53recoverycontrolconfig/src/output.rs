@@ -24,7 +24,7 @@ impl UpdateSafetyRuleOutput {
 pub mod update_safety_rule_output {
 
     /// A builder for [`UpdateSafetyRuleOutput`](crate::output::UpdateSafetyRuleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assertion_rule: std::option::Option<crate::model::AssertionRule>,
         pub(crate) gating_rule: std::option::Option<crate::model::GatingRule>,
@@ -90,7 +90,7 @@ impl UpdateRoutingControlOutput {
 pub mod update_routing_control_output {
 
     /// A builder for [`UpdateRoutingControlOutput`](crate::output::UpdateRoutingControlOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control: std::option::Option<crate::model::RoutingControl>,
     }
@@ -141,7 +141,7 @@ impl UpdateControlPanelOutput {
 pub mod update_control_panel_output {
 
     /// A builder for [`UpdateControlPanelOutput`](crate::output::UpdateControlPanelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel: std::option::Option<crate::model::ControlPanel>,
     }
@@ -182,7 +182,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -206,7 +206,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -244,7 +244,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -314,7 +314,7 @@ impl ListSafetyRulesOutput {
 pub mod list_safety_rules_output {
 
     /// A builder for [`ListSafetyRulesOutput`](crate::output::ListSafetyRulesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) safety_rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -390,7 +390,7 @@ impl ListRoutingControlsOutput {
 pub mod list_routing_controls_output {
 
     /// A builder for [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) routing_controls:
@@ -467,7 +467,7 @@ impl ListControlPanelsOutput {
 pub mod list_control_panels_output {
 
     /// A builder for [`ListControlPanelsOutput`](crate::output::ListControlPanelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panels: std::option::Option<std::vec::Vec<crate::model::ControlPanel>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -543,7 +543,7 @@ impl ListClustersOutput {
 pub mod list_clusters_output {
 
     /// A builder for [`ListClustersOutput`](crate::output::ListClustersOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -619,7 +619,7 @@ impl ListAssociatedRoute53HealthChecksOutput {
 pub mod list_associated_route53_health_checks_output {
 
     /// A builder for [`ListAssociatedRoute53HealthChecksOutput`](crate::output::ListAssociatedRoute53HealthChecksOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -695,7 +695,7 @@ impl DescribeSafetyRuleOutput {
 pub mod describe_safety_rule_output {
 
     /// A builder for [`DescribeSafetyRuleOutput`](crate::output::DescribeSafetyRuleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assertion_rule: std::option::Option<crate::model::AssertionRule>,
         pub(crate) gating_rule: std::option::Option<crate::model::GatingRule>,
@@ -761,7 +761,7 @@ impl DescribeRoutingControlOutput {
 pub mod describe_routing_control_output {
 
     /// A builder for [`DescribeRoutingControlOutput`](crate::output::DescribeRoutingControlOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control: std::option::Option<crate::model::RoutingControl>,
     }
@@ -812,7 +812,7 @@ impl DescribeControlPanelOutput {
 pub mod describe_control_panel_output {
 
     /// A builder for [`DescribeControlPanelOutput`](crate::output::DescribeControlPanelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel: std::option::Option<crate::model::ControlPanel>,
     }
@@ -863,7 +863,7 @@ impl DescribeClusterOutput {
 pub mod describe_cluster_output {
 
     /// A builder for [`DescribeClusterOutput`](crate::output::DescribeClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
     }
@@ -901,7 +901,7 @@ pub struct DeleteSafetyRuleOutput {}
 pub mod delete_safety_rule_output {
 
     /// A builder for [`DeleteSafetyRuleOutput`](crate::output::DeleteSafetyRuleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSafetyRuleOutput`](crate::output::DeleteSafetyRuleOutput).
@@ -925,7 +925,7 @@ pub struct DeleteRoutingControlOutput {}
 pub mod delete_routing_control_output {
 
     /// A builder for [`DeleteRoutingControlOutput`](crate::output::DeleteRoutingControlOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRoutingControlOutput`](crate::output::DeleteRoutingControlOutput).
@@ -949,7 +949,7 @@ pub struct DeleteControlPanelOutput {}
 pub mod delete_control_panel_output {
 
     /// A builder for [`DeleteControlPanelOutput`](crate::output::DeleteControlPanelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteControlPanelOutput`](crate::output::DeleteControlPanelOutput).
@@ -973,7 +973,7 @@ pub struct DeleteClusterOutput {}
 pub mod delete_cluster_output {
 
     /// A builder for [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
@@ -1014,7 +1014,7 @@ impl CreateSafetyRuleOutput {
 pub mod create_safety_rule_output {
 
     /// A builder for [`CreateSafetyRuleOutput`](crate::output::CreateSafetyRuleOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assertion_rule: std::option::Option<crate::model::AssertionRule>,
         pub(crate) gating_rule: std::option::Option<crate::model::GatingRule>,
@@ -1080,7 +1080,7 @@ impl CreateRoutingControlOutput {
 pub mod create_routing_control_output {
 
     /// A builder for [`CreateRoutingControlOutput`](crate::output::CreateRoutingControlOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control: std::option::Option<crate::model::RoutingControl>,
     }
@@ -1131,7 +1131,7 @@ impl CreateControlPanelOutput {
 pub mod create_control_panel_output {
 
     /// A builder for [`CreateControlPanelOutput`](crate::output::CreateControlPanelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel: std::option::Option<crate::model::ControlPanel>,
     }
@@ -1182,7 +1182,7 @@ impl CreateClusterOutput {
 pub mod create_cluster_output {
 
     /// A builder for [`CreateClusterOutput`](crate::output::CreateClusterOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
     }

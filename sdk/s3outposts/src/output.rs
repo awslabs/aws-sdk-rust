@@ -24,7 +24,7 @@ impl ListSharedEndpointsOutput {
 pub mod list_shared_endpoints_output {
 
     /// A builder for [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -100,7 +100,7 @@ impl ListEndpointsOutput {
 pub mod list_endpoints_output {
 
     /// A builder for [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -159,7 +159,7 @@ pub struct DeleteEndpointOutput {}
 pub mod delete_endpoint_output {
 
     /// A builder for [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
@@ -193,7 +193,7 @@ impl CreateEndpointOutput {
 pub mod create_endpoint_output {
 
     /// A builder for [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
     }

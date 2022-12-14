@@ -5,7 +5,7 @@
 /// [`add_tags`](crate::client::Client::add_tags).
 ///
 /// See [`crate::client::fluent_builders::AddTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AddTags {
     _private: (),
 }
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTags {
 /// [`apply_security_groups_to_load_balancer`](crate::client::Client::apply_security_groups_to_load_balancer).
 ///
 /// See [`crate::client::fluent_builders::ApplySecurityGroupsToLoadBalancer`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ApplySecurityGroupsToLoadBalancer {
     _private: (),
 }
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ApplySecurityGroupsToLoa
 /// [`attach_load_balancer_to_subnets`](crate::client::Client::attach_load_balancer_to_subnets).
 ///
 /// See [`crate::client::fluent_builders::AttachLoadBalancerToSubnets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AttachLoadBalancerToSubnets {
     _private: (),
 }
@@ -104,7 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachLoadBalancerToSubn
 /// [`configure_health_check`](crate::client::Client::configure_health_check).
 ///
 /// See [`crate::client::fluent_builders::ConfigureHealthCheck`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ConfigureHealthCheck {
     _private: (),
 }
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfigureHealthCheck {
 /// [`create_app_cookie_stickiness_policy`](crate::client::Client::create_app_cookie_stickiness_policy).
 ///
 /// See [`crate::client::fluent_builders::CreateAppCookieStickinessPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAppCookieStickinessPolicy {
     _private: (),
 }
@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAppCookieStickines
 /// [`create_lb_cookie_stickiness_policy`](crate::client::Client::create_lb_cookie_stickiness_policy).
 ///
 /// See [`crate::client::fluent_builders::CreateLBCookieStickinessPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLBCookieStickinessPolicy {
     _private: (),
 }
@@ -206,7 +206,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLBCookieStickiness
 /// [`create_load_balancer`](crate::client::Client::create_load_balancer).
 ///
 /// See [`crate::client::fluent_builders::CreateLoadBalancer`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLoadBalancer {
     _private: (),
 }
@@ -240,7 +240,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLoadBalancer {
 /// [`create_load_balancer_listeners`](crate::client::Client::create_load_balancer_listeners).
 ///
 /// See [`crate::client::fluent_builders::CreateLoadBalancerListeners`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLoadBalancerListeners {
     _private: (),
 }
@@ -274,7 +274,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLoadBalancerListen
 /// [`create_load_balancer_policy`](crate::client::Client::create_load_balancer_policy).
 ///
 /// See [`crate::client::fluent_builders::CreateLoadBalancerPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLoadBalancerPolicy {
     _private: (),
 }
@@ -308,7 +308,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLoadBalancerPolicy
 /// [`delete_load_balancer`](crate::client::Client::delete_load_balancer).
 ///
 /// See [`crate::client::fluent_builders::DeleteLoadBalancer`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLoadBalancer {
     _private: (),
 }
@@ -342,7 +342,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoadBalancer {
 /// [`delete_load_balancer_listeners`](crate::client::Client::delete_load_balancer_listeners).
 ///
 /// See [`crate::client::fluent_builders::DeleteLoadBalancerListeners`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLoadBalancerListeners {
     _private: (),
 }
@@ -376,7 +376,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoadBalancerListen
 /// [`delete_load_balancer_policy`](crate::client::Client::delete_load_balancer_policy).
 ///
 /// See [`crate::client::fluent_builders::DeleteLoadBalancerPolicy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLoadBalancerPolicy {
     _private: (),
 }
@@ -410,7 +410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoadBalancerPolicy
 /// [`deregister_instances_from_load_balancer`](crate::client::Client::deregister_instances_from_load_balancer).
 ///
 /// See [`crate::client::fluent_builders::DeregisterInstancesFromLoadBalancer`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeregisterInstancesFromLoadBalancer {
     _private: (),
 }
@@ -444,7 +444,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterInstancesFromL
 /// [`describe_account_limits`](crate::client::Client::describe_account_limits).
 ///
 /// See [`crate::client::fluent_builders::DescribeAccountLimits`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAccountLimits {
     _private: (),
 }
@@ -478,7 +478,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountLimits {
 /// [`describe_instance_health`](crate::client::Client::describe_instance_health).
 ///
 /// See [`crate::client::fluent_builders::DescribeInstanceHealth`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeInstanceHealth {
     _private: (),
 }
@@ -512,7 +512,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInstanceHealth {
 /// [`describe_load_balancer_attributes`](crate::client::Client::describe_load_balancer_attributes).
 ///
 /// See [`crate::client::fluent_builders::DescribeLoadBalancerAttributes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLoadBalancerAttributes {
     _private: (),
 }
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoadBalancerAttr
 /// [`describe_load_balancer_policies`](crate::client::Client::describe_load_balancer_policies).
 ///
 /// See [`crate::client::fluent_builders::DescribeLoadBalancerPolicies`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLoadBalancerPolicies {
     _private: (),
 }
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoadBalancerPoli
 /// [`describe_load_balancer_policy_types`](crate::client::Client::describe_load_balancer_policy_types).
 ///
 /// See [`crate::client::fluent_builders::DescribeLoadBalancerPolicyTypes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLoadBalancerPolicyTypes {
     _private: (),
 }
@@ -614,7 +614,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoadBalancerPoli
 /// [`describe_load_balancers`](crate::client::Client::describe_load_balancers).
 ///
 /// See [`crate::client::fluent_builders::DescribeLoadBalancers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLoadBalancers {
     _private: (),
 }
@@ -648,7 +648,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoadBalancers {
 /// [`describe_tags`](crate::client::Client::describe_tags).
 ///
 /// See [`crate::client::fluent_builders::DescribeTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTags {
     _private: (),
 }
@@ -680,7 +680,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTags {
 /// [`detach_load_balancer_from_subnets`](crate::client::Client::detach_load_balancer_from_subnets).
 ///
 /// See [`crate::client::fluent_builders::DetachLoadBalancerFromSubnets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DetachLoadBalancerFromSubnets {
     _private: (),
 }
@@ -714,7 +714,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachLoadBalancerFromSu
 /// [`disable_availability_zones_for_load_balancer`](crate::client::Client::disable_availability_zones_for_load_balancer).
 ///
 /// See [`crate::client::fluent_builders::DisableAvailabilityZonesForLoadBalancer`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisableAvailabilityZonesForLoadBalancer {
     _private: (),
 }
@@ -752,7 +752,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableAvailabilityZones
 /// [`enable_availability_zones_for_load_balancer`](crate::client::Client::enable_availability_zones_for_load_balancer).
 ///
 /// See [`crate::client::fluent_builders::EnableAvailabilityZonesForLoadBalancer`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct EnableAvailabilityZonesForLoadBalancer {
     _private: (),
 }
@@ -790,7 +790,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableAvailabilityZonesF
 /// [`modify_load_balancer_attributes`](crate::client::Client::modify_load_balancer_attributes).
 ///
 /// See [`crate::client::fluent_builders::ModifyLoadBalancerAttributes`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ModifyLoadBalancerAttributes {
     _private: (),
 }
@@ -824,7 +824,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyLoadBalancerAttrib
 /// [`register_instances_with_load_balancer`](crate::client::Client::register_instances_with_load_balancer).
 ///
 /// See [`crate::client::fluent_builders::RegisterInstancesWithLoadBalancer`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterInstancesWithLoadBalancer {
     _private: (),
 }
@@ -858,7 +858,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterInstancesWithLoa
 /// [`remove_tags`](crate::client::Client::remove_tags).
 ///
 /// See [`crate::client::fluent_builders::RemoveTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemoveTags {
     _private: (),
 }
@@ -890,7 +890,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTags {
 /// [`set_load_balancer_listener_ssl_certificate`](crate::client::Client::set_load_balancer_listener_ssl_certificate).
 ///
 /// See [`crate::client::fluent_builders::SetLoadBalancerListenerSSLCertificate`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetLoadBalancerListenerSSLCertificate {
     _private: (),
 }
@@ -926,7 +926,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetLoadBalancerListenerS
 /// [`set_load_balancer_policies_for_backend_server`](crate::client::Client::set_load_balancer_policies_for_backend_server).
 ///
 /// See [`crate::client::fluent_builders::SetLoadBalancerPoliciesForBackendServer`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetLoadBalancerPoliciesForBackendServer {
     _private: (),
 }
@@ -964,7 +964,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetLoadBalancerPoliciesF
 /// [`set_load_balancer_policies_of_listener`](crate::client::Client::set_load_balancer_policies_of_listener).
 ///
 /// See [`crate::client::fluent_builders::SetLoadBalancerPoliciesOfListener`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetLoadBalancerPoliciesOfListener {
     _private: (),
 }

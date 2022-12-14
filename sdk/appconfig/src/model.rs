@@ -85,7 +85,7 @@ impl InvalidConfigurationDetail {
 pub mod invalid_configuration_detail {
 
     /// A builder for [`InvalidConfigurationDetail`](crate::model::InvalidConfigurationDetail).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) constraint: std::option::Option<std::string::String>,
         pub(crate) location: std::option::Option<std::string::String>,
@@ -273,7 +273,7 @@ impl Parameter {
 pub mod parameter {
 
     /// A builder for [`Parameter`](crate::model::Parameter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) required: std::option::Option<bool>,
@@ -363,7 +363,7 @@ impl Action {
 pub mod action {
 
     /// A builder for [`Action`](crate::model::Action).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -581,7 +581,7 @@ impl Monitor {
 pub mod monitor {
 
     /// A builder for [`Monitor`](crate::model::Monitor).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_arn: std::option::Option<std::string::String>,
         pub(crate) alarm_role_arn: std::option::Option<std::string::String>,
@@ -944,7 +944,7 @@ impl std::fmt::Debug for Validator {
 pub mod validator {
 
     /// A builder for [`Validator`](crate::model::Validator).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ValidatorType>,
         pub(crate) content: std::option::Option<std::string::String>,
@@ -1127,7 +1127,7 @@ impl AppliedExtension {
 pub mod applied_extension {
 
     /// A builder for [`AppliedExtension`](crate::model::AppliedExtension).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) extension_id: std::option::Option<std::string::String>,
         pub(crate) extension_association_id: std::option::Option<std::string::String>,
@@ -1259,7 +1259,7 @@ impl DeploymentEvent {
 pub mod deployment_event {
 
     /// A builder for [`DeploymentEvent`](crate::model::DeploymentEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_type: std::option::Option<crate::model::DeploymentEventType>,
         pub(crate) triggered_by: std::option::Option<crate::model::TriggeredBy>,
@@ -1416,7 +1416,7 @@ impl ActionInvocation {
 pub mod action_invocation {
 
     /// A builder for [`ActionInvocation`](crate::model::ActionInvocation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) extension_identifier: std::option::Option<std::string::String>,
         pub(crate) action_name: std::option::Option<std::string::String>,
@@ -1909,7 +1909,7 @@ impl HostedConfigurationVersionSummary {
 pub mod hosted_configuration_version_summary {
 
     /// A builder for [`HostedConfigurationVersionSummary`](crate::model::HostedConfigurationVersionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) configuration_profile_id: std::option::Option<std::string::String>,
@@ -2039,7 +2039,7 @@ impl ExtensionSummary {
 pub mod extension_summary {
 
     /// A builder for [`ExtensionSummary`](crate::model::ExtensionSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2149,7 +2149,7 @@ impl ExtensionAssociationSummary {
 pub mod extension_association_summary {
 
     /// A builder for [`ExtensionAssociationSummary`](crate::model::ExtensionAssociationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) extension_arn: std::option::Option<std::string::String>,
@@ -2259,7 +2259,7 @@ impl Environment {
 pub mod environment {
 
     /// A builder for [`Environment`](crate::model::Environment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2431,7 +2431,7 @@ impl DeploymentStrategy {
 pub mod deployment_strategy {
 
     /// A builder for [`DeploymentStrategy`](crate::model::DeploymentStrategy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2644,7 +2644,7 @@ impl DeploymentSummary {
 pub mod deployment_summary {
 
     /// A builder for [`DeploymentSummary`](crate::model::DeploymentSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_number: std::option::Option<i32>,
         pub(crate) configuration_name: std::option::Option<std::string::String>,
@@ -2874,7 +2874,7 @@ impl ConfigurationProfileSummary {
 pub mod configuration_profile_summary {
 
     /// A builder for [`ConfigurationProfileSummary`](crate::model::ConfigurationProfileSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3012,7 +3012,7 @@ impl Application {
 pub mod application {
 
     /// A builder for [`Application`](crate::model::Application).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,

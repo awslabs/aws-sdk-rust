@@ -5,7 +5,7 @@
 /// [`create_domain`](crate::client::Client::create_domain).
 ///
 /// See [`crate::client::fluent_builders::CreateDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDomain {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDomain {
 /// [`delete_domain`](crate::client::Client::delete_domain).
 ///
 /// See [`crate::client::fluent_builders::DeleteDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDomain {
     _private: (),
 }
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDomain {
 /// [`delete_fraudster`](crate::client::Client::delete_fraudster).
 ///
 /// See [`crate::client::fluent_builders::DeleteFraudster`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFraudster {
     _private: (),
 }
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFraudster {
 /// [`delete_speaker`](crate::client::Client::delete_speaker).
 ///
 /// See [`crate::client::fluent_builders::DeleteSpeaker`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSpeaker {
     _private: (),
 }
@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSpeaker {
 /// [`describe_domain`](crate::client::Client::describe_domain).
 ///
 /// See [`crate::client::fluent_builders::DescribeDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDomain {
     _private: (),
 }
@@ -167,7 +167,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomain {
 /// [`describe_fraudster`](crate::client::Client::describe_fraudster).
 ///
 /// See [`crate::client::fluent_builders::DescribeFraudster`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeFraudster {
     _private: (),
 }
@@ -201,7 +201,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFraudster {
 /// [`describe_fraudster_registration_job`](crate::client::Client::describe_fraudster_registration_job).
 ///
 /// See [`crate::client::fluent_builders::DescribeFraudsterRegistrationJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeFraudsterRegistrationJob {
     _private: (),
 }
@@ -235,7 +235,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFraudsterRegistr
 /// [`describe_speaker`](crate::client::Client::describe_speaker).
 ///
 /// See [`crate::client::fluent_builders::DescribeSpeaker`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSpeaker {
     _private: (),
 }
@@ -269,7 +269,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSpeaker {
 /// [`describe_speaker_enrollment_job`](crate::client::Client::describe_speaker_enrollment_job).
 ///
 /// See [`crate::client::fluent_builders::DescribeSpeakerEnrollmentJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSpeakerEnrollmentJob {
     _private: (),
 }
@@ -303,7 +303,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSpeakerEnrollmen
 /// [`evaluate_session`](crate::client::Client::evaluate_session).
 ///
 /// See [`crate::client::fluent_builders::EvaluateSession`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct EvaluateSession {
     _private: (),
 }
@@ -337,7 +337,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EvaluateSession {
 /// [`list_domains`](crate::client::Client::list_domains).
 ///
 /// See [`crate::client::fluent_builders::ListDomains`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDomains {
     _private: (),
 }
@@ -369,7 +369,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomains {
 /// [`list_fraudster_registration_jobs`](crate::client::Client::list_fraudster_registration_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListFraudsterRegistrationJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFraudsterRegistrationJobs {
     _private: (),
 }
@@ -403,7 +403,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFraudsterRegistratio
 /// [`list_speaker_enrollment_jobs`](crate::client::Client::list_speaker_enrollment_jobs).
 ///
 /// See [`crate::client::fluent_builders::ListSpeakerEnrollmentJobs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSpeakerEnrollmentJobs {
     _private: (),
 }
@@ -437,7 +437,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSpeakerEnrollmentJob
 /// [`list_speakers`](crate::client::Client::list_speakers).
 ///
 /// See [`crate::client::fluent_builders::ListSpeakers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSpeakers {
     _private: (),
 }
@@ -469,7 +469,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSpeakers {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -503,7 +503,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`opt_out_speaker`](crate::client::Client::opt_out_speaker).
 ///
 /// See [`crate::client::fluent_builders::OptOutSpeaker`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct OptOutSpeaker {
     _private: (),
 }
@@ -535,7 +535,7 @@ impl aws_smithy_http::response::ParseStrictResponse for OptOutSpeaker {
 /// [`start_fraudster_registration_job`](crate::client::Client::start_fraudster_registration_job).
 ///
 /// See [`crate::client::fluent_builders::StartFraudsterRegistrationJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartFraudsterRegistrationJob {
     _private: (),
 }
@@ -569,7 +569,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartFraudsterRegistrati
 /// [`start_speaker_enrollment_job`](crate::client::Client::start_speaker_enrollment_job).
 ///
 /// See [`crate::client::fluent_builders::StartSpeakerEnrollmentJob`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartSpeakerEnrollmentJob {
     _private: (),
 }
@@ -603,7 +603,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSpeakerEnrollmentJo
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -635,7 +635,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -667,7 +667,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_domain`](crate::client::Client::update_domain).
 ///
 /// See [`crate::client::fluent_builders::UpdateDomain`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDomain {
     _private: (),
 }

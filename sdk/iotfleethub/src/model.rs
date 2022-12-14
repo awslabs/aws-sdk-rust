@@ -62,7 +62,7 @@ impl ApplicationSummary {
 pub mod application_summary {
 
     /// A builder for [`ApplicationSummary`](crate::model::ApplicationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) application_name: std::option::Option<std::string::String>,

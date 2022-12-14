@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod associate_license_input {
 
     /// A builder for [`AssociateLicenseInput`](crate::input::AssociateLicenseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) license_type: std::option::Option<crate::model::LicenseType>,
@@ -192,7 +192,7 @@ impl AssociateLicenseInput {
 pub mod create_workspace_input {
 
     /// A builder for [`CreateWorkspaceInput`](crate::input::CreateWorkspaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) account_access_type: std::option::Option<crate::model::AccountAccessType>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -599,7 +599,7 @@ impl CreateWorkspaceInput {
 pub mod create_workspace_api_key_input {
 
     /// A builder for [`CreateWorkspaceApiKeyInput`](crate::input::CreateWorkspaceApiKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_name: std::option::Option<std::string::String>,
         pub(crate) key_role: std::option::Option<std::string::String>,
@@ -805,7 +805,7 @@ impl CreateWorkspaceApiKeyInput {
 pub mod delete_workspace_input {
 
     /// A builder for [`DeleteWorkspaceInput`](crate::input::DeleteWorkspaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
     }
@@ -955,7 +955,7 @@ impl DeleteWorkspaceInput {
 pub mod delete_workspace_api_key_input {
 
     /// A builder for [`DeleteWorkspaceApiKeyInput`](crate::input::DeleteWorkspaceApiKeyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_name: std::option::Option<std::string::String>,
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -1139,7 +1139,7 @@ impl DeleteWorkspaceApiKeyInput {
 pub mod describe_workspace_input {
 
     /// A builder for [`DescribeWorkspaceInput`](crate::input::DescribeWorkspaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
     }
@@ -1291,7 +1291,7 @@ impl DescribeWorkspaceInput {
 pub mod describe_workspace_authentication_input {
 
     /// A builder for [`DescribeWorkspaceAuthenticationInput`](crate::input::DescribeWorkspaceAuthenticationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
     }
@@ -1443,7 +1443,7 @@ impl DescribeWorkspaceAuthenticationInput {
 pub mod disassociate_license_input {
 
     /// A builder for [`DisassociateLicenseInput`](crate::input::DisassociateLicenseInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) license_type: std::option::Option<crate::model::LicenseType>,
@@ -1630,7 +1630,7 @@ impl DisassociateLicenseInput {
 pub mod list_permissions_input {
 
     /// A builder for [`ListPermissionsInput`](crate::input::ListPermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1876,7 +1876,7 @@ impl ListPermissionsInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2024,7 +2024,7 @@ impl ListTagsForResourceInput {
 pub mod list_workspaces_input {
 
     /// A builder for [`ListWorkspacesInput`](crate::input::ListWorkspacesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2183,7 +2183,7 @@ impl ListWorkspacesInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -2372,7 +2372,7 @@ impl TagResourceInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2557,7 +2557,7 @@ impl UntagResourceInput {
 pub mod update_permissions_input {
 
     /// A builder for [`UpdatePermissionsInput`](crate::input::UpdatePermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_instruction_batch:
             std::option::Option<std::vec::Vec<crate::model::UpdateInstruction>>,
@@ -2745,7 +2745,7 @@ impl UpdatePermissionsInput {
 pub mod update_workspace_input {
 
     /// A builder for [`UpdateWorkspaceInput`](crate::input::UpdateWorkspaceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) account_access_type: std::option::Option<crate::model::AccountAccessType>,
         pub(crate) organization_role_name: std::option::Option<std::string::String>,
@@ -3115,7 +3115,7 @@ impl UpdateWorkspaceInput {
 pub mod update_workspace_authentication_input {
 
     /// A builder for [`UpdateWorkspaceAuthenticationInput`](crate::input::UpdateWorkspaceAuthenticationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) authentication_providers:

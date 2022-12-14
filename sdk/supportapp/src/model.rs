@@ -115,7 +115,7 @@ impl SlackWorkspaceConfiguration {
 pub mod slack_workspace_configuration {
 
     /// A builder for [`SlackWorkspaceConfiguration`](crate::model::SlackWorkspaceConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_id: std::option::Option<std::string::String>,
     }
@@ -214,7 +214,7 @@ impl SlackChannelConfiguration {
 pub mod slack_channel_configuration {
 
     /// A builder for [`SlackChannelConfiguration`](crate::model::SlackChannelConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_id: std::option::Option<std::string::String>,
         pub(crate) channel_id: std::option::Option<std::string::String>,

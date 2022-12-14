@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod add_lf_tags_to_resource_input {
 
     /// A builder for [`AddLfTagsToResourceInput`](crate::input::AddLfTagsToResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<crate::model::Resource>,
@@ -182,7 +182,7 @@ impl AddLfTagsToResourceInput {
 pub mod assume_decorated_role_with_saml_input {
 
     /// A builder for [`AssumeDecoratedRoleWithSamlInput`](crate::input::AssumeDecoratedRoleWithSamlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_assertion: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -365,7 +365,7 @@ impl AssumeDecoratedRoleWithSamlInput {
 pub mod batch_grant_permissions_input {
 
     /// A builder for [`BatchGrantPermissionsInput`](crate::input::BatchGrantPermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) entries:
@@ -531,7 +531,7 @@ impl BatchGrantPermissionsInput {
 pub mod batch_revoke_permissions_input {
 
     /// A builder for [`BatchRevokePermissionsInput`](crate::input::BatchRevokePermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) entries:
@@ -697,7 +697,7 @@ impl BatchRevokePermissionsInput {
 pub mod cancel_transaction_input {
 
     /// A builder for [`CancelTransactionInput`](crate::input::CancelTransactionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
     }
@@ -842,7 +842,7 @@ impl CancelTransactionInput {
 pub mod commit_transaction_input {
 
     /// A builder for [`CommitTransactionInput`](crate::input::CommitTransactionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
     }
@@ -987,7 +987,7 @@ impl CommitTransactionInput {
 pub mod create_data_cells_filter_input {
 
     /// A builder for [`CreateDataCellsFilterInput`](crate::input::CreateDataCellsFilterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_data: std::option::Option<crate::model::DataCellsFilter>,
     }
@@ -1134,7 +1134,7 @@ impl CreateDataCellsFilterInput {
 pub mod create_lf_tag_input {
 
     /// A builder for [`CreateLfTagInput`](crate::input::CreateLfTagInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) tag_key: std::option::Option<std::string::String>,
@@ -1307,7 +1307,7 @@ impl CreateLfTagInput {
 pub mod delete_data_cells_filter_input {
 
     /// A builder for [`DeleteDataCellsFilterInput`](crate::input::DeleteDataCellsFilterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_catalog_id: std::option::Option<std::string::String>,
         pub(crate) database_name: std::option::Option<std::string::String>,
@@ -1493,7 +1493,7 @@ impl DeleteDataCellsFilterInput {
 pub mod delete_lf_tag_input {
 
     /// A builder for [`DeleteLfTagInput`](crate::input::DeleteLfTagInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) tag_key: std::option::Option<std::string::String>,
@@ -1645,7 +1645,7 @@ impl DeleteLfTagInput {
 pub mod delete_objects_on_cancel_input {
 
     /// A builder for [`DeleteObjectsOnCancelInput`](crate::input::DeleteObjectsOnCancelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) database_name: std::option::Option<std::string::String>,
@@ -1852,7 +1852,7 @@ impl DeleteObjectsOnCancelInput {
 pub mod deregister_resource_input {
 
     /// A builder for [`DeregisterResourceInput`](crate::input::DeregisterResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -1994,7 +1994,7 @@ impl DeregisterResourceInput {
 pub mod describe_resource_input {
 
     /// A builder for [`DescribeResourceInput`](crate::input::DescribeResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2136,7 +2136,7 @@ impl DescribeResourceInput {
 pub mod describe_transaction_input {
 
     /// A builder for [`DescribeTransactionInput`](crate::input::DescribeTransactionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
     }
@@ -2281,7 +2281,7 @@ impl DescribeTransactionInput {
 pub mod extend_transaction_input {
 
     /// A builder for [`ExtendTransactionInput`](crate::input::ExtendTransactionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
     }
@@ -2426,7 +2426,7 @@ impl ExtendTransactionInput {
 pub mod get_data_lake_settings_input {
 
     /// A builder for [`GetDataLakeSettingsInput`](crate::input::GetDataLakeSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
     }
@@ -2570,7 +2570,7 @@ impl GetDataLakeSettingsInput {
 pub mod get_effective_permissions_for_path_input {
 
     /// A builder for [`GetEffectivePermissionsForPathInput`](crate::input::GetEffectivePermissionsForPathInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -2748,7 +2748,7 @@ impl GetEffectivePermissionsForPathInput {
 pub mod get_lf_tag_input {
 
     /// A builder for [`GetLfTagInput`](crate::input::GetLfTagInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) tag_key: std::option::Option<std::string::String>,
@@ -2898,7 +2898,7 @@ impl GetLfTagInput {
 pub mod get_query_state_input {
 
     /// A builder for [`GetQueryStateInput`](crate::input::GetQueryStateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
     }
@@ -3040,7 +3040,7 @@ impl GetQueryStateInput {
 pub mod get_query_statistics_input {
 
     /// A builder for [`GetQueryStatisticsInput`](crate::input::GetQueryStatisticsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
     }
@@ -3184,7 +3184,7 @@ impl GetQueryStatisticsInput {
 pub mod get_resource_lf_tags_input {
 
     /// A builder for [`GetResourceLfTagsInput`](crate::input::GetResourceLfTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<crate::model::Resource>,
@@ -3350,7 +3350,7 @@ impl GetResourceLfTagsInput {
 pub mod get_table_objects_input {
 
     /// A builder for [`GetTableObjectsInput`](crate::input::GetTableObjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) database_name: std::option::Option<std::string::String>,
@@ -3596,7 +3596,7 @@ impl GetTableObjectsInput {
 pub mod get_temporary_glue_partition_credentials_input {
 
     /// A builder for [`GetTemporaryGluePartitionCredentialsInput`](crate::input::GetTemporaryGluePartitionCredentialsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_arn: std::option::Option<std::string::String>,
         pub(crate) partition: std::option::Option<crate::model::PartitionValueList>,
@@ -3823,7 +3823,7 @@ impl GetTemporaryGluePartitionCredentialsInput {
 pub mod get_temporary_glue_table_credentials_input {
 
     /// A builder for [`GetTemporaryGlueTableCredentialsInput`](crate::input::GetTemporaryGlueTableCredentialsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_arn: std::option::Option<std::string::String>,
         pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -4035,7 +4035,7 @@ impl GetTemporaryGlueTableCredentialsInput {
 pub mod get_work_unit_results_input {
 
     /// A builder for [`GetWorkUnitResultsInput`](crate::input::GetWorkUnitResultsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
         pub(crate) work_unit_id: std::option::Option<i64>,
@@ -4215,7 +4215,7 @@ impl GetWorkUnitResultsInput {
 pub mod get_work_units_input {
 
     /// A builder for [`GetWorkUnitsInput`](crate::input::GetWorkUnitsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) page_size: std::option::Option<i32>,
@@ -4381,7 +4381,7 @@ impl GetWorkUnitsInput {
 pub mod grant_permissions_input {
 
     /// A builder for [`GrantPermissionsInput`](crate::input::GrantPermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) principal: std::option::Option<crate::model::DataLakePrincipal>,
@@ -4595,7 +4595,7 @@ impl GrantPermissionsInput {
 pub mod list_data_cells_filter_input {
 
     /// A builder for [`ListDataCellsFilterInput`](crate::input::ListDataCellsFilterInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table: std::option::Option<crate::model::TableResource>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -4766,7 +4766,7 @@ impl ListDataCellsFilterInput {
 pub mod list_lf_tags_input {
 
     /// A builder for [`ListLfTagsInput`](crate::input::ListLfTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) resource_share_type: std::option::Option<crate::model::ResourceShareType>,
@@ -4945,7 +4945,7 @@ impl ListLfTagsInput {
 pub mod list_permissions_input {
 
     /// A builder for [`ListPermissionsInput`](crate::input::ListPermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) principal: std::option::Option<crate::model::DataLakePrincipal>,
@@ -5168,7 +5168,7 @@ impl ListPermissionsInput {
 pub mod list_resources_input {
 
     /// A builder for [`ListResourcesInput`](crate::input::ListResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_condition_list:
             std::option::Option<std::vec::Vec<crate::model::FilterCondition>>,
@@ -5342,7 +5342,7 @@ impl ListResourcesInput {
 pub mod list_table_storage_optimizers_input {
 
     /// A builder for [`ListTableStorageOptimizersInput`](crate::input::ListTableStorageOptimizersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) database_name: std::option::Option<std::string::String>,
@@ -5549,7 +5549,7 @@ impl ListTableStorageOptimizersInput {
 pub mod list_transactions_input {
 
     /// A builder for [`ListTransactionsInput`](crate::input::ListTransactionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) status_filter: std::option::Option<crate::model::TransactionStatusFilter>,
@@ -5730,7 +5730,7 @@ impl ListTransactionsInput {
 pub mod put_data_lake_settings_input {
 
     /// A builder for [`PutDataLakeSettingsInput`](crate::input::PutDataLakeSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) data_lake_settings: std::option::Option<crate::model::DataLakeSettings>,
@@ -5889,7 +5889,7 @@ impl PutDataLakeSettingsInput {
 pub mod register_resource_input {
 
     /// A builder for [`RegisterResourceInput`](crate::input::RegisterResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) use_service_linked_role: std::option::Option<bool>,
@@ -6057,7 +6057,7 @@ impl RegisterResourceInput {
 pub mod remove_lf_tags_from_resource_input {
 
     /// A builder for [`RemoveLfTagsFromResourceInput`](crate::input::RemoveLfTagsFromResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) resource: std::option::Option<crate::model::Resource>,
@@ -6234,7 +6234,7 @@ impl RemoveLfTagsFromResourceInput {
 pub mod revoke_permissions_input {
 
     /// A builder for [`RevokePermissionsInput`](crate::input::RevokePermissionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) principal: std::option::Option<crate::model::DataLakePrincipal>,
@@ -6446,7 +6446,7 @@ impl RevokePermissionsInput {
 pub mod search_databases_by_lf_tags_input {
 
     /// A builder for [`SearchDatabasesByLfTagsInput`](crate::input::SearchDatabasesByLfTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -6635,7 +6635,7 @@ impl SearchDatabasesByLfTagsInput {
 pub mod search_tables_by_lf_tags_input {
 
     /// A builder for [`SearchTablesByLfTagsInput`](crate::input::SearchTablesByLfTagsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -6824,7 +6824,7 @@ impl SearchTablesByLfTagsInput {
 pub mod start_query_planning_input {
 
     /// A builder for [`StartQueryPlanningInput`](crate::input::StartQueryPlanningInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) query_planning_context: std::option::Option<crate::model::QueryPlanningContext>,
         pub(crate) query_string: std::option::Option<std::string::String>,
@@ -6991,7 +6991,7 @@ impl StartQueryPlanningInput {
 pub mod start_transaction_input {
 
     /// A builder for [`StartTransactionInput`](crate::input::StartTransactionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_type: std::option::Option<crate::model::TransactionType>,
     }
@@ -7136,7 +7136,7 @@ impl StartTransactionInput {
 pub mod update_lf_tag_input {
 
     /// A builder for [`UpdateLfTagInput`](crate::input::UpdateLfTagInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) tag_key: std::option::Option<std::string::String>,
@@ -7330,7 +7330,7 @@ impl UpdateLfTagInput {
 pub mod update_resource_input {
 
     /// A builder for [`UpdateResourceInput`](crate::input::UpdateResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -7482,7 +7482,7 @@ impl UpdateResourceInput {
 pub mod update_table_objects_input {
 
     /// A builder for [`UpdateTableObjectsInput`](crate::input::UpdateTableObjectsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) database_name: std::option::Option<std::string::String>,
@@ -7688,7 +7688,7 @@ impl UpdateTableObjectsInput {
 pub mod update_table_storage_optimizer_input {
 
     /// A builder for [`UpdateTableStorageOptimizerInput`](crate::input::UpdateTableStorageOptimizerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
         pub(crate) database_name: std::option::Option<std::string::String>,

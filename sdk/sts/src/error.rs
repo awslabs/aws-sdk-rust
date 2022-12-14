@@ -30,7 +30,7 @@ impl std::error::Error for RegionDisabledException {}
 pub mod region_disabled_exception {
 
     /// A builder for [`RegionDisabledException`](crate::error::RegionDisabledException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -91,7 +91,7 @@ impl std::error::Error for PackedPolicyTooLargeException {}
 pub mod packed_policy_too_large_exception {
 
     /// A builder for [`PackedPolicyTooLargeException`](crate::error::PackedPolicyTooLargeException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -151,7 +151,7 @@ impl std::error::Error for MalformedPolicyDocumentException {}
 pub mod malformed_policy_document_exception {
 
     /// A builder for [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -211,7 +211,7 @@ impl std::error::Error for InvalidAuthorizationMessageException {}
 pub mod invalid_authorization_message_exception {
 
     /// A builder for [`InvalidAuthorizationMessageException`](crate::error::InvalidAuthorizationMessageException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -271,7 +271,7 @@ impl std::error::Error for InvalidIdentityTokenException {}
 pub mod invalid_identity_token_exception {
 
     /// A builder for [`InvalidIdentityTokenException`](crate::error::InvalidIdentityTokenException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -332,7 +332,7 @@ impl std::error::Error for IdpRejectedClaimException {}
 pub mod idp_rejected_claim_exception {
 
     /// A builder for [`IdpRejectedClaimException`](crate::error::IdpRejectedClaimException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -399,7 +399,7 @@ impl std::error::Error for IdpCommunicationErrorException {}
 pub mod idp_communication_error_exception {
 
     /// A builder for [`IdpCommunicationErrorException`](crate::error::IdpCommunicationErrorException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
@@ -459,7 +459,7 @@ impl std::error::Error for ExpiredTokenException {}
 pub mod expired_token_exception {
 
     /// A builder for [`ExpiredTokenException`](crate::error::ExpiredTokenException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }

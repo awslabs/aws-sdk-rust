@@ -24,7 +24,7 @@ impl UpdateFlowSourceOutput {
 pub mod update_flow_source_output {
 
     /// A builder for [`UpdateFlowSourceOutput`](crate::output::UpdateFlowSourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) source: std::option::Option<crate::model::Source>,
@@ -91,7 +91,7 @@ impl UpdateFlowOutputOutput {
 pub mod update_flow_output_output {
 
     /// A builder for [`UpdateFlowOutputOutput`](crate::output::UpdateFlowOutputOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) output: std::option::Option<crate::model::Output>,
@@ -158,7 +158,7 @@ impl UpdateFlowMediaStreamOutput {
 pub mod update_flow_media_stream_output {
 
     /// A builder for [`UpdateFlowMediaStreamOutput`](crate::output::UpdateFlowMediaStreamOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) media_stream: std::option::Option<crate::model::MediaStream>,
@@ -228,7 +228,7 @@ impl UpdateFlowEntitlementOutput {
 pub mod update_flow_entitlement_output {
 
     /// A builder for [`UpdateFlowEntitlementOutput`](crate::output::UpdateFlowEntitlementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitlement: std::option::Option<crate::model::Entitlement>,
         pub(crate) flow_arn: std::option::Option<std::string::String>,
@@ -291,7 +291,7 @@ impl UpdateFlowOutput {
 pub mod update_flow_output {
 
     /// A builder for [`UpdateFlowOutput`](crate::output::UpdateFlowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow: std::option::Option<crate::model::Flow>,
     }
@@ -327,7 +327,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -351,7 +351,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -392,7 +392,7 @@ impl StopFlowOutput {
 pub mod stop_flow_output {
 
     /// A builder for [`StopFlowOutput`](crate::output::StopFlowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
@@ -459,7 +459,7 @@ impl StartFlowOutput {
 pub mod start_flow_output {
 
     /// A builder for [`StartFlowOutput`](crate::output::StartFlowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
@@ -526,7 +526,7 @@ impl RevokeFlowEntitlementOutput {
 pub mod revoke_flow_entitlement_output {
 
     /// A builder for [`RevokeFlowEntitlementOutput`](crate::output::RevokeFlowEntitlementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitlement_arn: std::option::Option<std::string::String>,
         pub(crate) flow_arn: std::option::Option<std::string::String>,
@@ -603,7 +603,7 @@ impl RemoveFlowVpcInterfaceOutput {
 pub mod remove_flow_vpc_interface_output {
 
     /// A builder for [`RemoveFlowVpcInterfaceOutput`](crate::output::RemoveFlowVpcInterfaceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) non_deleted_network_interface_ids:
@@ -698,7 +698,7 @@ impl RemoveFlowSourceOutput {
 pub mod remove_flow_source_output {
 
     /// A builder for [`RemoveFlowSourceOutput`](crate::output::RemoveFlowSourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
@@ -765,7 +765,7 @@ impl RemoveFlowOutputOutput {
 pub mod remove_flow_output_output {
 
     /// A builder for [`RemoveFlowOutputOutput`](crate::output::RemoveFlowOutputOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) output_arn: std::option::Option<std::string::String>,
@@ -832,7 +832,7 @@ impl RemoveFlowMediaStreamOutput {
 pub mod remove_flow_media_stream_output {
 
     /// A builder for [`RemoveFlowMediaStreamOutput`](crate::output::RemoveFlowMediaStreamOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) media_stream_name: std::option::Option<std::string::String>,
@@ -895,7 +895,7 @@ impl PurchaseOfferingOutput {
 pub mod purchase_offering_output {
 
     /// A builder for [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reservation: std::option::Option<crate::model::Reservation>,
     }
@@ -950,7 +950,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -1020,7 +1020,7 @@ impl ListReservationsOutput {
 pub mod list_reservations_output {
 
     /// A builder for [`ListReservationsOutput`](crate::output::ListReservationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) reservations: std::option::Option<std::vec::Vec<crate::model::Reservation>>,
@@ -1096,7 +1096,7 @@ impl ListOfferingsOutput {
 pub mod list_offerings_output {
 
     /// A builder for [`ListOfferingsOutput`](crate::output::ListOfferingsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) offerings: std::option::Option<std::vec::Vec<crate::model::Offering>>,
@@ -1172,7 +1172,7 @@ impl ListFlowsOutput {
 pub mod list_flows_output {
 
     /// A builder for [`ListFlowsOutput`](crate::output::ListFlowsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flows: std::option::Option<std::vec::Vec<crate::model::ListedFlow>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1248,7 +1248,7 @@ impl ListEntitlementsOutput {
 pub mod list_entitlements_output {
 
     /// A builder for [`ListEntitlementsOutput`](crate::output::ListEntitlementsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitlements:
             std::option::Option<std::vec::Vec<crate::model::ListedEntitlement>>,
@@ -1325,7 +1325,7 @@ impl GrantFlowEntitlementsOutput {
 pub mod grant_flow_entitlements_output {
 
     /// A builder for [`GrantFlowEntitlementsOutput`](crate::output::GrantFlowEntitlementsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
         pub(crate) flow_arn: std::option::Option<std::string::String>,
@@ -1394,7 +1394,7 @@ impl DescribeReservationOutput {
 pub mod describe_reservation_output {
 
     /// A builder for [`DescribeReservationOutput`](crate::output::DescribeReservationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reservation: std::option::Option<crate::model::Reservation>,
     }
@@ -1445,7 +1445,7 @@ impl DescribeOfferingOutput {
 pub mod describe_offering_output {
 
     /// A builder for [`DescribeOfferingOutput`](crate::output::DescribeOfferingOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offering: std::option::Option<crate::model::Offering>,
     }
@@ -1500,7 +1500,7 @@ impl DescribeFlowOutput {
 pub mod describe_flow_output {
 
     /// A builder for [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow: std::option::Option<crate::model::Flow>,
         pub(crate) messages: std::option::Option<crate::model::Messages>,
@@ -1567,7 +1567,7 @@ impl DeleteFlowOutput {
 pub mod delete_flow_output {
 
     /// A builder for [`DeleteFlowOutput`](crate::output::DeleteFlowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
@@ -1627,7 +1627,7 @@ impl CreateFlowOutput {
 pub mod create_flow_output {
 
     /// A builder for [`CreateFlowOutput`](crate::output::CreateFlowOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow: std::option::Option<crate::model::Flow>,
     }
@@ -1680,7 +1680,7 @@ impl AddFlowVpcInterfacesOutput {
 pub mod add_flow_vpc_interfaces_output {
 
     /// A builder for [`AddFlowVpcInterfacesOutput`](crate::output::AddFlowVpcInterfacesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterface>>,
@@ -1756,7 +1756,7 @@ impl AddFlowSourcesOutput {
 pub mod add_flow_sources_output {
 
     /// A builder for [`AddFlowSourcesOutput`](crate::output::AddFlowSourcesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
@@ -1832,7 +1832,7 @@ impl AddFlowOutputsOutput {
 pub mod add_flow_outputs_output {
 
     /// A builder for [`AddFlowOutputsOutput`](crate::output::AddFlowOutputsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
@@ -1908,7 +1908,7 @@ impl AddFlowMediaStreamsOutput {
 pub mod add_flow_media_streams_output {
 
     /// A builder for [`AddFlowMediaStreamsOutput`](crate::output::AddFlowMediaStreamsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) media_streams: std::option::Option<std::vec::Vec<crate::model::MediaStream>>,

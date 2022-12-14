@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod change_server_life_cycle_state_input {
 
     /// A builder for [`ChangeServerLifeCycleStateInput`](crate::input::ChangeServerLifeCycleStateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) life_cycle:
@@ -170,7 +170,7 @@ impl ChangeServerLifeCycleStateInput {
 pub mod create_launch_configuration_template_input {
 
     /// A builder for [`CreateLaunchConfigurationTemplateInput`](crate::input::CreateLaunchConfigurationTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
         pub(crate) tags: std::option::Option<
@@ -352,7 +352,7 @@ impl CreateLaunchConfigurationTemplateInput {
 pub mod create_replication_configuration_template_input {
 
     /// A builder for [`CreateReplicationConfigurationTemplateInput`](crate::input::CreateReplicationConfigurationTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) staging_area_subnet_id: std::option::Option<std::string::String>,
         pub(crate) associate_default_security_group: std::option::Option<bool>,
@@ -763,7 +763,7 @@ impl CreateReplicationConfigurationTemplateInput {
 pub mod delete_job_input {
 
     /// A builder for [`DeleteJobInput`](crate::input::DeleteJobInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
@@ -901,7 +901,7 @@ impl DeleteJobInput {
 pub mod delete_launch_configuration_template_input {
 
     /// A builder for [`DeleteLaunchConfigurationTemplateInput`](crate::input::DeleteLaunchConfigurationTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configuration_template_id: std::option::Option<std::string::String>,
     }
@@ -1049,7 +1049,7 @@ impl DeleteLaunchConfigurationTemplateInput {
 pub mod delete_replication_configuration_template_input {
 
     /// A builder for [`DeleteReplicationConfigurationTemplateInput`](crate::input::DeleteReplicationConfigurationTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_configuration_template_id: std::option::Option<std::string::String>,
     }
@@ -1197,7 +1197,7 @@ impl DeleteReplicationConfigurationTemplateInput {
 pub mod delete_source_server_input {
 
     /// A builder for [`DeleteSourceServerInput`](crate::input::DeleteSourceServerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
     }
@@ -1342,7 +1342,7 @@ impl DeleteSourceServerInput {
 pub mod delete_vcenter_client_input {
 
     /// A builder for [`DeleteVcenterClientInput`](crate::input::DeleteVcenterClientInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vcenter_client_id: std::option::Option<std::string::String>,
     }
@@ -1487,7 +1487,7 @@ impl DeleteVcenterClientInput {
 pub mod describe_job_log_items_input {
 
     /// A builder for [`DescribeJobLogItemsInput`](crate::input::DescribeJobLogItemsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1655,7 +1655,7 @@ impl DescribeJobLogItemsInput {
 pub mod describe_jobs_input {
 
     /// A builder for [`DescribeJobsInput`](crate::input::DescribeJobsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<crate::model::DescribeJobsRequestFilters>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -1822,7 +1822,7 @@ impl DescribeJobsInput {
 pub mod describe_launch_configuration_templates_input {
 
     /// A builder for [`DescribeLaunchConfigurationTemplatesInput`](crate::input::DescribeLaunchConfigurationTemplatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configuration_template_i_ds:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2001,7 +2001,7 @@ impl DescribeLaunchConfigurationTemplatesInput {
 pub mod describe_replication_configuration_templates_input {
 
     /// A builder for [`DescribeReplicationConfigurationTemplatesInput`](crate::input::DescribeReplicationConfigurationTemplatesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_configuration_template_i_ds:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2185,7 +2185,7 @@ impl DescribeReplicationConfigurationTemplatesInput {
 pub mod describe_source_servers_input {
 
     /// A builder for [`DescribeSourceServersInput`](crate::input::DescribeSourceServersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<crate::model::DescribeSourceServersRequestFilters>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2356,7 +2356,7 @@ impl DescribeSourceServersInput {
 pub mod describe_vcenter_clients_input {
 
     /// A builder for [`DescribeVcenterClientsInput`](crate::input::DescribeVcenterClientsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -2515,7 +2515,7 @@ impl DescribeVcenterClientsInput {
 pub mod disconnect_from_service_input {
 
     /// A builder for [`DisconnectFromServiceInput`](crate::input::DisconnectFromServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
     }
@@ -2662,7 +2662,7 @@ impl DisconnectFromServiceInput {
 pub mod finalize_cutover_input {
 
     /// A builder for [`FinalizeCutoverInput`](crate::input::FinalizeCutoverInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
     }
@@ -2805,7 +2805,7 @@ impl FinalizeCutoverInput {
 pub mod get_launch_configuration_input {
 
     /// A builder for [`GetLaunchConfigurationInput`](crate::input::GetLaunchConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
     }
@@ -2952,7 +2952,7 @@ impl GetLaunchConfigurationInput {
 pub mod get_replication_configuration_input {
 
     /// A builder for [`GetReplicationConfigurationInput`](crate::input::GetReplicationConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
     }
@@ -3096,7 +3096,7 @@ impl GetReplicationConfigurationInput {
 pub mod initialize_service_input {
 
     /// A builder for [`InitializeServiceInput`](crate::input::InitializeServiceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`InitializeServiceInput`](crate::input::InitializeServiceInput).
@@ -3210,7 +3210,7 @@ impl InitializeServiceInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -3358,7 +3358,7 @@ impl ListTagsForResourceInput {
 pub mod mark_as_archived_input {
 
     /// A builder for [`MarkAsArchivedInput`](crate::input::MarkAsArchivedInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
     }
@@ -3501,7 +3501,7 @@ impl MarkAsArchivedInput {
 pub mod retry_data_replication_input {
 
     /// A builder for [`RetryDataReplicationInput`](crate::input::RetryDataReplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
     }
@@ -3648,7 +3648,7 @@ impl RetryDataReplicationInput {
 pub mod start_cutover_input {
 
     /// A builder for [`StartCutoverInput`](crate::input::StartCutoverInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<
@@ -3834,7 +3834,7 @@ impl StartCutoverInput {
 pub mod start_replication_input {
 
     /// A builder for [`StartReplicationInput`](crate::input::StartReplicationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
     }
@@ -3979,7 +3979,7 @@ impl StartReplicationInput {
 pub mod start_test_input {
 
     /// A builder for [`StartTestInput`](crate::input::StartTestInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<
@@ -4163,7 +4163,7 @@ impl StartTestInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -4360,7 +4360,7 @@ impl TagResourceInput {
 pub mod terminate_target_instances_input {
 
     /// A builder for [`TerminateTargetInstancesInput`](crate::input::TerminateTargetInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<
@@ -4550,7 +4550,7 @@ impl TerminateTargetInstancesInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4743,7 +4743,7 @@ impl UntagResourceInput {
 pub mod update_launch_configuration_input {
 
     /// A builder for [`UpdateLaunchConfigurationInput`](crate::input::UpdateLaunchConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5003,7 +5003,7 @@ impl UpdateLaunchConfigurationInput {
 pub mod update_launch_configuration_template_input {
 
     /// A builder for [`UpdateLaunchConfigurationTemplateInput`](crate::input::UpdateLaunchConfigurationTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configuration_template_id: std::option::Option<std::string::String>,
         pub(crate) post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
@@ -5166,7 +5166,7 @@ impl UpdateLaunchConfigurationTemplateInput {
 pub mod update_replication_configuration_input {
 
     /// A builder for [`UpdateReplicationConfigurationInput`](crate::input::UpdateReplicationConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5605,7 +5605,7 @@ impl UpdateReplicationConfigurationInput {
 pub mod update_replication_configuration_template_input {
 
     /// A builder for [`UpdateReplicationConfigurationTemplateInput`](crate::input::UpdateReplicationConfigurationTemplateInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) replication_configuration_template_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6021,7 +6021,7 @@ impl UpdateReplicationConfigurationTemplateInput {
 pub mod update_source_server_replication_type_input {
 
     /// A builder for [`UpdateSourceServerReplicationTypeInput`](crate::input::UpdateSourceServerReplicationTypeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) replication_type: std::option::Option<crate::model::ReplicationType>,

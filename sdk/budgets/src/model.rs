@@ -40,7 +40,7 @@ impl std::fmt::Debug for Subscriber {
 pub mod subscriber {
 
     /// A builder for [`Subscriber`](crate::model::Subscriber).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) subscription_type: std::option::Option<crate::model::SubscriptionType>,
         pub(crate) address: std::option::Option<std::string::String>,
@@ -239,7 +239,7 @@ impl Notification {
 pub mod notification {
 
     /// A builder for [`Notification`](crate::model::Notification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notification_type: std::option::Option<crate::model::NotificationType>,
         pub(crate) comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
@@ -783,7 +783,7 @@ impl Action {
 pub mod action {
 
     /// A builder for [`Action`](crate::model::Action).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_id: std::option::Option<std::string::String>,
         pub(crate) budget_name: std::option::Option<std::string::String>,
@@ -1214,7 +1214,7 @@ impl Definition {
 pub mod definition {
 
     /// A builder for [`Definition`](crate::model::Definition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iam_action_definition: std::option::Option<crate::model::IamActionDefinition>,
         pub(crate) scp_action_definition: std::option::Option<crate::model::ScpActionDefinition>,
@@ -1309,7 +1309,7 @@ impl SsmActionDefinition {
 pub mod ssm_action_definition {
 
     /// A builder for [`SsmActionDefinition`](crate::model::SsmActionDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_sub_type: std::option::Option<crate::model::ActionSubType>,
         pub(crate) region: std::option::Option<std::string::String>,
@@ -1490,7 +1490,7 @@ impl ScpActionDefinition {
 pub mod scp_action_definition {
 
     /// A builder for [`ScpActionDefinition`](crate::model::ScpActionDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
         pub(crate) target_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1580,7 +1580,7 @@ impl IamActionDefinition {
 pub mod iam_action_definition {
 
     /// A builder for [`IamActionDefinition`](crate::model::IamActionDefinition).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
         pub(crate) roles: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1698,7 +1698,7 @@ impl ActionThreshold {
 pub mod action_threshold {
 
     /// A builder for [`ActionThreshold`](crate::model::ActionThreshold).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_threshold_value: std::option::Option<f64>,
         pub(crate) action_threshold_type: std::option::Option<crate::model::ThresholdType>,
@@ -1978,7 +1978,7 @@ impl Budget {
 pub mod budget {
 
     /// A builder for [`Budget`](crate::model::Budget).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) budget_name: std::option::Option<std::string::String>,
         pub(crate) budget_limit: std::option::Option<crate::model::Spend>,
@@ -2252,7 +2252,7 @@ impl AutoAdjustData {
 pub mod auto_adjust_data {
 
     /// A builder for [`AutoAdjustData`](crate::model::AutoAdjustData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_adjust_type: std::option::Option<crate::model::AutoAdjustType>,
         pub(crate) historical_options: std::option::Option<crate::model::HistoricalOptions>,
@@ -2356,7 +2356,7 @@ impl HistoricalOptions {
 pub mod historical_options {
 
     /// A builder for [`HistoricalOptions`](crate::model::HistoricalOptions).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) budget_adjustment_period: std::option::Option<i32>,
         pub(crate) look_back_available_periods: std::option::Option<i32>,
@@ -2649,7 +2649,7 @@ impl CalculatedSpend {
 pub mod calculated_spend {
 
     /// A builder for [`CalculatedSpend`](crate::model::CalculatedSpend).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) actual_spend: std::option::Option<crate::model::Spend>,
         pub(crate) forecasted_spend: std::option::Option<crate::model::Spend>,
@@ -2724,7 +2724,7 @@ impl Spend {
 pub mod spend {
 
     /// A builder for [`Spend`](crate::model::Spend).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) amount: std::option::Option<std::string::String>,
         pub(crate) unit: std::option::Option<std::string::String>,
@@ -2795,7 +2795,7 @@ impl TimePeriod {
 pub mod time_period {
 
     /// A builder for [`TimePeriod`](crate::model::TimePeriod).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end: std::option::Option<aws_smithy_types::DateTime>,
@@ -3052,7 +3052,7 @@ impl CostTypes {
 pub mod cost_types {
 
     /// A builder for [`CostTypes`](crate::model::CostTypes).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) include_tax: std::option::Option<bool>,
         pub(crate) include_subscription: std::option::Option<bool>,
@@ -3393,7 +3393,7 @@ impl BudgetPerformanceHistory {
 pub mod budget_performance_history {
 
     /// A builder for [`BudgetPerformanceHistory`](crate::model::BudgetPerformanceHistory).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) budget_name: std::option::Option<std::string::String>,
         pub(crate) budget_type: std::option::Option<crate::model::BudgetType>,
@@ -3553,7 +3553,7 @@ impl BudgetedAndActualAmounts {
 pub mod budgeted_and_actual_amounts {
 
     /// A builder for [`BudgetedAndActualAmounts`](crate::model::BudgetedAndActualAmounts).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) budgeted_amount: std::option::Option<crate::model::Spend>,
         pub(crate) actual_amount: std::option::Option<crate::model::Spend>,
@@ -3641,7 +3641,7 @@ impl BudgetNotificationsForAccount {
 pub mod budget_notifications_for_account {
 
     /// A builder for [`BudgetNotificationsForAccount`](crate::model::BudgetNotificationsForAccount).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notifications: std::option::Option<std::vec::Vec<crate::model::Notification>>,
         pub(crate) budget_name: std::option::Option<std::string::String>,
@@ -3733,7 +3733,7 @@ impl ActionHistory {
 pub mod action_history {
 
     /// A builder for [`ActionHistory`](crate::model::ActionHistory).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::ActionStatus>,
@@ -3836,7 +3836,7 @@ impl ActionHistoryDetails {
 pub mod action_history_details {
 
     /// A builder for [`ActionHistoryDetails`](crate::model::ActionHistoryDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) action: std::option::Option<crate::model::Action>,
@@ -4014,7 +4014,7 @@ impl NotificationWithSubscribers {
 pub mod notification_with_subscribers {
 
     /// A builder for [`NotificationWithSubscribers`](crate::model::NotificationWithSubscribers).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notification: std::option::Option<crate::model::Notification>,
         pub(crate) subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,

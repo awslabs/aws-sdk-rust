@@ -32,7 +32,7 @@ impl FailedS3Resource {
 pub mod failed_s3_resource {
 
     /// A builder for [`FailedS3Resource`](crate::model::FailedS3Resource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_item: std::option::Option<crate::model::S3Resource>,
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -117,7 +117,7 @@ impl S3Resource {
 pub mod s3_resource {
 
     /// A builder for [`S3Resource`](crate::model::S3Resource).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -193,7 +193,7 @@ impl S3ResourceClassificationUpdate {
 pub mod s3_resource_classification_update {
 
     /// A builder for [`S3ResourceClassificationUpdate`](crate::model::S3ResourceClassificationUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -279,7 +279,7 @@ impl ClassificationTypeUpdate {
 pub mod classification_type_update {
 
     /// A builder for [`ClassificationTypeUpdate`](crate::model::ClassificationTypeUpdate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) one_time: std::option::Option<crate::model::S3OneTimeClassificationType>,
         pub(crate) continuous: std::option::Option<crate::model::S3ContinuousClassificationType>,
@@ -538,7 +538,7 @@ impl S3ResourceClassification {
 pub mod s3_resource_classification {
 
     /// A builder for [`S3ResourceClassification`](crate::model::S3ResourceClassification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -620,7 +620,7 @@ impl ClassificationType {
 pub mod classification_type {
 
     /// A builder for [`ClassificationType`](crate::model::ClassificationType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) one_time: std::option::Option<crate::model::S3OneTimeClassificationType>,
         pub(crate) continuous: std::option::Option<crate::model::S3ContinuousClassificationType>,
@@ -686,7 +686,7 @@ impl MemberAccount {
 pub mod member_account {
 
     /// A builder for [`MemberAccount`](crate::model::MemberAccount).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }

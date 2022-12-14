@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod assume_role_input {
 
     /// A builder for [`AssumeRoleInput`](crate::input::AssumeRoleInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) role_session_name: std::option::Option<std::string::String>,
@@ -356,7 +356,7 @@ impl AssumeRoleInput {
 pub mod assume_role_with_saml_input {
 
     /// A builder for [`AssumeRoleWithSamlInput`](crate::input::AssumeRoleWithSamlInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) principal_arn: std::option::Option<std::string::String>,
@@ -599,7 +599,7 @@ impl AssumeRoleWithSamlInput {
 pub mod assume_role_with_web_identity_input {
 
     /// A builder for [`AssumeRoleWithWebIdentityInput`](crate::input::AssumeRoleWithWebIdentityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) role_session_name: std::option::Option<std::string::String>,
@@ -857,7 +857,7 @@ impl AssumeRoleWithWebIdentityInput {
 pub mod decode_authorization_message_input {
 
     /// A builder for [`DecodeAuthorizationMessageInput`](crate::input::DecodeAuthorizationMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encoded_message: std::option::Option<std::string::String>,
     }
@@ -1004,7 +1004,7 @@ impl DecodeAuthorizationMessageInput {
 pub mod get_access_key_info_input {
 
     /// A builder for [`GetAccessKeyInfoInput`](crate::input::GetAccessKeyInfoInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
     }
@@ -1151,7 +1151,7 @@ impl GetAccessKeyInfoInput {
 pub mod get_caller_identity_input {
 
     /// A builder for [`GetCallerIdentityInput`](crate::input::GetCallerIdentityInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`GetCallerIdentityInput`](crate::input::GetCallerIdentityInput).
@@ -1272,7 +1272,7 @@ impl GetCallerIdentityInput {
 pub mod get_federation_token_input {
 
     /// A builder for [`GetFederationTokenInput`](crate::input::GetFederationTokenInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -1519,7 +1519,7 @@ impl GetFederationTokenInput {
 pub mod get_session_token_input {
 
     /// A builder for [`GetSessionTokenInput`](crate::input::GetSessionTokenInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_seconds: std::option::Option<i32>,
         pub(crate) serial_number: std::option::Option<std::string::String>,

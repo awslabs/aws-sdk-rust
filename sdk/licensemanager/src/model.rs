@@ -18,7 +18,7 @@ impl OrganizationConfiguration {
 pub mod organization_configuration {
 
     /// A builder for [`OrganizationConfiguration`](crate::model::OrganizationConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enable_integration: std::option::Option<bool>,
     }
@@ -73,7 +73,7 @@ impl LicenseSpecification {
 pub mod license_specification {
 
     /// A builder for [`LicenseSpecification`](crate::model::LicenseSpecification).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_arn: std::option::Option<std::string::String>,
         pub(crate) ami_association_scope: std::option::Option<std::string::String>,
@@ -146,7 +146,7 @@ impl ReportFrequency {
 pub mod report_frequency {
 
     /// A builder for [`ReportFrequency`](crate::model::ReportFrequency).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<i32>,
         pub(crate) period: std::option::Option<crate::model::ReportFrequencyType>,
@@ -306,7 +306,7 @@ impl ReportContext {
 pub mod report_context {
 
     /// A builder for [`ReportContext`](crate::model::ReportContext).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_arns:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -501,7 +501,7 @@ impl ProductInformation {
 pub mod product_information {
 
     /// A builder for [`ProductInformation`](crate::model::ProductInformation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) product_information_filter_list:
@@ -625,7 +625,7 @@ impl ProductInformationFilter {
 pub mod product_information_filter {
 
     /// A builder for [`ProductInformationFilter`](crate::model::ProductInformationFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_information_filter_name: std::option::Option<std::string::String>,
         pub(crate) product_information_filter_value:
@@ -821,7 +821,7 @@ impl Tag {
 pub mod tag {
 
     /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1051,7 +1051,7 @@ impl LicenseConfigurationUsage {
 pub mod license_configuration_usage {
 
     /// A builder for [`LicenseConfigurationUsage`](crate::model::LicenseConfigurationUsage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
@@ -1289,7 +1289,7 @@ impl Filter {
 pub mod filter {
 
     /// A builder for [`Filter`](crate::model::Filter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1400,7 +1400,7 @@ impl TokenData {
 pub mod token_data {
 
     /// A builder for [`TokenData`](crate::model::TokenData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) token_id: std::option::Option<std::string::String>,
         pub(crate) token_type: std::option::Option<std::string::String>,
@@ -1576,7 +1576,7 @@ impl ResourceInventory {
 pub mod resource_inventory {
 
     /// A builder for [`ResourceInventory`](crate::model::ResourceInventory).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
@@ -1707,7 +1707,7 @@ impl InventoryFilter {
 pub mod inventory_filter {
 
     /// A builder for [`InventoryFilter`](crate::model::InventoryFilter).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) condition: std::option::Option<crate::model::InventoryFilterCondition>,
@@ -1984,7 +1984,7 @@ impl GrantedLicense {
 pub mod granted_license {
 
     /// A builder for [`GrantedLicense`](crate::model::GrantedLicense).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_arn: std::option::Option<std::string::String>,
         pub(crate) license_name: std::option::Option<std::string::String>,
@@ -2251,7 +2251,7 @@ impl ReceivedMetadata {
 pub mod received_metadata {
 
     /// A builder for [`ReceivedMetadata`](crate::model::ReceivedMetadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) received_status: std::option::Option<crate::model::ReceivedStatus>,
         pub(crate) received_status_reason: std::option::Option<std::string::String>,
@@ -2598,7 +2598,7 @@ impl Metadata {
 pub mod metadata {
 
     /// A builder for [`Metadata`](crate::model::Metadata).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -2674,7 +2674,7 @@ impl ConsumptionConfiguration {
 pub mod consumption_configuration {
 
     /// A builder for [`ConsumptionConfiguration`](crate::model::ConsumptionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) renew_type: std::option::Option<crate::model::RenewType>,
         pub(crate) provisional_configuration:
@@ -2766,7 +2766,7 @@ impl BorrowConfiguration {
 pub mod borrow_configuration {
 
     /// A builder for [`BorrowConfiguration`](crate::model::BorrowConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_early_check_in: std::option::Option<bool>,
         pub(crate) max_time_to_live_in_minutes: std::option::Option<i32>,
@@ -2826,7 +2826,7 @@ impl ProvisionalConfiguration {
 pub mod provisional_configuration {
 
     /// A builder for [`ProvisionalConfiguration`](crate::model::ProvisionalConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_time_to_live_in_minutes: std::option::Option<i32>,
     }
@@ -3004,7 +3004,7 @@ impl Entitlement {
 pub mod entitlement {
 
     /// A builder for [`Entitlement`](crate::model::Entitlement).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -3365,7 +3365,7 @@ impl DatetimeRange {
 pub mod datetime_range {
 
     /// A builder for [`DatetimeRange`](crate::model::DatetimeRange).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin: std::option::Option<std::string::String>,
         pub(crate) end: std::option::Option<std::string::String>,
@@ -3562,7 +3562,7 @@ impl IssuerDetails {
 pub mod issuer_details {
 
     /// A builder for [`IssuerDetails`](crate::model::IssuerDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) sign_key: std::option::Option<std::string::String>,
@@ -3700,7 +3700,7 @@ impl Grant {
 pub mod grant {
 
     /// A builder for [`Grant`](crate::model::Grant).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant_arn: std::option::Option<std::string::String>,
         pub(crate) grant_name: std::option::Option<std::string::String>,
@@ -3968,7 +3968,7 @@ impl License {
 pub mod license {
 
     /// A builder for [`License`](crate::model::License).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_arn: std::option::Option<std::string::String>,
         pub(crate) license_name: std::option::Option<std::string::String>,
@@ -4290,7 +4290,7 @@ impl ReportGenerator {
 pub mod report_generator {
 
     /// A builder for [`ReportGenerator`](crate::model::ReportGenerator).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_generator_name: std::option::Option<std::string::String>,
         pub(crate) report_type: std::option::Option<std::vec::Vec<crate::model::ReportType>>,
@@ -4540,7 +4540,7 @@ impl S3Location {
 pub mod s3_location {
 
     /// A builder for [`S3Location`](crate::model::S3Location).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) key_prefix: std::option::Option<std::string::String>,
@@ -4660,7 +4660,7 @@ impl LicenseConversionTask {
 pub mod license_conversion_task {
 
     /// A builder for [`LicenseConversionTask`](crate::model::LicenseConversionTask).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_conversion_task_id: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -4933,7 +4933,7 @@ impl LicenseConversionContext {
 pub mod license_conversion_context {
 
     /// A builder for [`LicenseConversionContext`](crate::model::LicenseConversionContext).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) usage_operation: std::option::Option<std::string::String>,
     }
@@ -5101,7 +5101,7 @@ impl LicenseConfiguration {
 pub mod license_configuration {
 
     /// A builder for [`LicenseConfiguration`](crate::model::LicenseConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_configuration_id: std::option::Option<std::string::String>,
         pub(crate) license_configuration_arn: std::option::Option<std::string::String>,
@@ -5393,7 +5393,7 @@ impl AutomatedDiscoveryInformation {
 pub mod automated_discovery_information {
 
     /// A builder for [`AutomatedDiscoveryInformation`](crate::model::AutomatedDiscoveryInformation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_run_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -5451,7 +5451,7 @@ impl ManagedResourceSummary {
 pub mod managed_resource_summary {
 
     /// A builder for [`ManagedResourceSummary`](crate::model::ManagedResourceSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) association_count: std::option::Option<i64>,
@@ -5521,7 +5521,7 @@ impl ConsumedLicenseSummary {
 pub mod consumed_license_summary {
 
     /// A builder for [`ConsumedLicenseSummary`](crate::model::ConsumedLicenseSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) consumed_licenses: std::option::Option<i64>,
@@ -5735,7 +5735,7 @@ impl LicenseOperationFailure {
 pub mod license_operation_failure {
 
     /// A builder for [`LicenseOperationFailure`](crate::model::LicenseOperationFailure).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
@@ -5922,7 +5922,7 @@ impl LicenseConfigurationAssociation {
 pub mod license_configuration_association {
 
     /// A builder for [`LicenseConfigurationAssociation`](crate::model::LicenseConfigurationAssociation).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
@@ -6030,7 +6030,7 @@ impl LicenseUsage {
 pub mod license_usage {
 
     /// A builder for [`LicenseUsage`](crate::model::LicenseUsage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitlement_usages:
             std::option::Option<std::vec::Vec<crate::model::EntitlementUsage>>,
@@ -6109,7 +6109,7 @@ impl EntitlementUsage {
 pub mod entitlement_usage {
 
     /// A builder for [`EntitlementUsage`](crate::model::EntitlementUsage).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) consumed_value: std::option::Option<std::string::String>,
@@ -6628,7 +6628,7 @@ impl Issuer {
 pub mod issuer {
 
     /// A builder for [`Issuer`](crate::model::Issuer).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) sign_key: std::option::Option<std::string::String>,
@@ -6702,7 +6702,7 @@ impl EntitlementData {
 pub mod entitlement_data {
 
     /// A builder for [`EntitlementData`](crate::model::EntitlementData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,

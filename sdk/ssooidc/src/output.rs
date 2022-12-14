@@ -52,7 +52,7 @@ impl StartDeviceAuthorizationOutput {
 pub mod start_device_authorization_output {
 
     /// A builder for [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_code: std::option::Option<std::string::String>,
         pub(crate) user_code: std::option::Option<std::string::String>,
@@ -201,7 +201,7 @@ impl RegisterClientOutput {
 pub mod register_client_output {
 
     /// A builder for [`RegisterClientOutput`](crate::output::RegisterClientOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) client_secret: std::option::Option<std::string::String>,
@@ -350,7 +350,7 @@ impl CreateTokenOutput {
 pub mod create_token_output {
 
     /// A builder for [`CreateTokenOutput`](crate::output::CreateTokenOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
         pub(crate) token_type: std::option::Option<std::string::String>,

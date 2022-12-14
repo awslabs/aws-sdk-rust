@@ -24,7 +24,7 @@ impl Identity {
 pub mod identity {
 
     /// A builder for [`Identity`](crate::model::Identity).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_ip: std::option::Option<std::string::String>,
         pub(crate) user_agent: std::option::Option<std::string::String>,

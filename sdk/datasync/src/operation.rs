@@ -5,7 +5,7 @@
 /// [`cancel_task_execution`](crate::client::Client::cancel_task_execution).
 ///
 /// See [`crate::client::fluent_builders::CancelTaskExecution`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelTaskExecution {
     _private: (),
 }
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelTaskExecution {
 /// [`create_agent`](crate::client::Client::create_agent).
 ///
 /// See [`crate::client::fluent_builders::CreateAgent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAgent {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAgent {
 /// [`create_location_efs`](crate::client::Client::create_location_efs).
 ///
 /// See [`crate::client::fluent_builders::CreateLocationEfs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLocationEfs {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationEfs {
 /// [`create_location_fsx_lustre`](crate::client::Client::create_location_fsx_lustre).
 ///
 /// See [`crate::client::fluent_builders::CreateLocationFsxLustre`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLocationFsxLustre {
     _private: (),
 }
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationFsxLustre 
 /// [`create_location_fsx_ontap`](crate::client::Client::create_location_fsx_ontap).
 ///
 /// See [`crate::client::fluent_builders::CreateLocationFsxOntap`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLocationFsxOntap {
     _private: (),
 }
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationFsxOntap {
 /// [`create_location_fsx_open_zfs`](crate::client::Client::create_location_fsx_open_zfs).
 ///
 /// See [`crate::client::fluent_builders::CreateLocationFsxOpenZfs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLocationFsxOpenZfs {
     _private: (),
 }
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationFsxOpenZfs
 /// [`create_location_fsx_windows`](crate::client::Client::create_location_fsx_windows).
 ///
 /// See [`crate::client::fluent_builders::CreateLocationFsxWindows`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLocationFsxWindows {
     _private: (),
 }
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationFsxWindows
 /// [`create_location_hdfs`](crate::client::Client::create_location_hdfs).
 ///
 /// See [`crate::client::fluent_builders::CreateLocationHdfs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLocationHdfs {
     _private: (),
 }
@@ -275,7 +275,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationHdfs {
 /// [`create_location_nfs`](crate::client::Client::create_location_nfs).
 ///
 /// See [`crate::client::fluent_builders::CreateLocationNfs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLocationNfs {
     _private: (),
 }
@@ -309,7 +309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationNfs {
 /// [`create_location_object_storage`](crate::client::Client::create_location_object_storage).
 ///
 /// See [`crate::client::fluent_builders::CreateLocationObjectStorage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLocationObjectStorage {
     _private: (),
 }
@@ -343,7 +343,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationObjectStor
 /// [`create_location_s3`](crate::client::Client::create_location_s3).
 ///
 /// See [`crate::client::fluent_builders::CreateLocationS3`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLocationS3 {
     _private: (),
 }
@@ -377,7 +377,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationS3 {
 /// [`create_location_smb`](crate::client::Client::create_location_smb).
 ///
 /// See [`crate::client::fluent_builders::CreateLocationSmb`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLocationSmb {
     _private: (),
 }
@@ -411,7 +411,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationSmb {
 /// [`create_task`](crate::client::Client::create_task).
 ///
 /// See [`crate::client::fluent_builders::CreateTask`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateTask {
     _private: (),
 }
@@ -443,7 +443,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTask {
 /// [`delete_agent`](crate::client::Client::delete_agent).
 ///
 /// See [`crate::client::fluent_builders::DeleteAgent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAgent {
     _private: (),
 }
@@ -475,7 +475,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAgent {
 /// [`delete_location`](crate::client::Client::delete_location).
 ///
 /// See [`crate::client::fluent_builders::DeleteLocation`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLocation {
     _private: (),
 }
@@ -507,7 +507,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLocation {
 /// [`delete_task`](crate::client::Client::delete_task).
 ///
 /// See [`crate::client::fluent_builders::DeleteTask`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTask {
     _private: (),
 }
@@ -539,7 +539,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTask {
 /// [`describe_agent`](crate::client::Client::describe_agent).
 ///
 /// See [`crate::client::fluent_builders::DescribeAgent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAgent {
     _private: (),
 }
@@ -571,7 +571,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAgent {
 /// [`describe_location_efs`](crate::client::Client::describe_location_efs).
 ///
 /// See [`crate::client::fluent_builders::DescribeLocationEfs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLocationEfs {
     _private: (),
 }
@@ -605,7 +605,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationEfs {
 /// [`describe_location_fsx_lustre`](crate::client::Client::describe_location_fsx_lustre).
 ///
 /// See [`crate::client::fluent_builders::DescribeLocationFsxLustre`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLocationFsxLustre {
     _private: (),
 }
@@ -639,7 +639,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationFsxLustr
 /// [`describe_location_fsx_ontap`](crate::client::Client::describe_location_fsx_ontap).
 ///
 /// See [`crate::client::fluent_builders::DescribeLocationFsxOntap`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLocationFsxOntap {
     _private: (),
 }
@@ -673,7 +673,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationFsxOntap
 /// [`describe_location_fsx_open_zfs`](crate::client::Client::describe_location_fsx_open_zfs).
 ///
 /// See [`crate::client::fluent_builders::DescribeLocationFsxOpenZfs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLocationFsxOpenZfs {
     _private: (),
 }
@@ -707,7 +707,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationFsxOpenZ
 /// [`describe_location_fsx_windows`](crate::client::Client::describe_location_fsx_windows).
 ///
 /// See [`crate::client::fluent_builders::DescribeLocationFsxWindows`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLocationFsxWindows {
     _private: (),
 }
@@ -741,7 +741,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationFsxWindo
 /// [`describe_location_hdfs`](crate::client::Client::describe_location_hdfs).
 ///
 /// See [`crate::client::fluent_builders::DescribeLocationHdfs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLocationHdfs {
     _private: (),
 }
@@ -775,7 +775,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationHdfs {
 /// [`describe_location_nfs`](crate::client::Client::describe_location_nfs).
 ///
 /// See [`crate::client::fluent_builders::DescribeLocationNfs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLocationNfs {
     _private: (),
 }
@@ -809,7 +809,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationNfs {
 /// [`describe_location_object_storage`](crate::client::Client::describe_location_object_storage).
 ///
 /// See [`crate::client::fluent_builders::DescribeLocationObjectStorage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLocationObjectStorage {
     _private: (),
 }
@@ -843,7 +843,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationObjectSt
 /// [`describe_location_s3`](crate::client::Client::describe_location_s3).
 ///
 /// See [`crate::client::fluent_builders::DescribeLocationS3`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLocationS3 {
     _private: (),
 }
@@ -877,7 +877,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationS3 {
 /// [`describe_location_smb`](crate::client::Client::describe_location_smb).
 ///
 /// See [`crate::client::fluent_builders::DescribeLocationSmb`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLocationSmb {
     _private: (),
 }
@@ -911,7 +911,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationSmb {
 /// [`describe_task`](crate::client::Client::describe_task).
 ///
 /// See [`crate::client::fluent_builders::DescribeTask`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTask {
     _private: (),
 }
@@ -943,7 +943,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTask {
 /// [`describe_task_execution`](crate::client::Client::describe_task_execution).
 ///
 /// See [`crate::client::fluent_builders::DescribeTaskExecution`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTaskExecution {
     _private: (),
 }
@@ -977,7 +977,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTaskExecution {
 /// [`list_agents`](crate::client::Client::list_agents).
 ///
 /// See [`crate::client::fluent_builders::ListAgents`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAgents {
     _private: (),
 }
@@ -1009,7 +1009,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAgents {
 /// [`list_locations`](crate::client::Client::list_locations).
 ///
 /// See [`crate::client::fluent_builders::ListLocations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLocations {
     _private: (),
 }
@@ -1041,7 +1041,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLocations {
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -1075,7 +1075,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_task_executions`](crate::client::Client::list_task_executions).
 ///
 /// See [`crate::client::fluent_builders::ListTaskExecutions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTaskExecutions {
     _private: (),
 }
@@ -1109,7 +1109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTaskExecutions {
 /// [`list_tasks`](crate::client::Client::list_tasks).
 ///
 /// See [`crate::client::fluent_builders::ListTasks`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTasks {
     _private: (),
 }
@@ -1140,7 +1140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTasks {
 /// [`start_task_execution`](crate::client::Client::start_task_execution).
 ///
 /// See [`crate::client::fluent_builders::StartTaskExecution`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartTaskExecution {
     _private: (),
 }
@@ -1174,7 +1174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartTaskExecution {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -1206,7 +1206,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -1238,7 +1238,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_agent`](crate::client::Client::update_agent).
 ///
 /// See [`crate::client::fluent_builders::UpdateAgent`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAgent {
     _private: (),
 }
@@ -1270,7 +1270,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAgent {
 /// [`update_location_hdfs`](crate::client::Client::update_location_hdfs).
 ///
 /// See [`crate::client::fluent_builders::UpdateLocationHdfs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLocationHdfs {
     _private: (),
 }
@@ -1304,7 +1304,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLocationHdfs {
 /// [`update_location_nfs`](crate::client::Client::update_location_nfs).
 ///
 /// See [`crate::client::fluent_builders::UpdateLocationNfs`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLocationNfs {
     _private: (),
 }
@@ -1338,7 +1338,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLocationNfs {
 /// [`update_location_object_storage`](crate::client::Client::update_location_object_storage).
 ///
 /// See [`crate::client::fluent_builders::UpdateLocationObjectStorage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLocationObjectStorage {
     _private: (),
 }
@@ -1372,7 +1372,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLocationObjectStor
 /// [`update_location_smb`](crate::client::Client::update_location_smb).
 ///
 /// See [`crate::client::fluent_builders::UpdateLocationSmb`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLocationSmb {
     _private: (),
 }
@@ -1406,7 +1406,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLocationSmb {
 /// [`update_task`](crate::client::Client::update_task).
 ///
 /// See [`crate::client::fluent_builders::UpdateTask`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateTask {
     _private: (),
 }
@@ -1438,7 +1438,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTask {
 /// [`update_task_execution`](crate::client::Client::update_task_execution).
 ///
 /// See [`crate::client::fluent_builders::UpdateTaskExecution`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateTaskExecution {
     _private: (),
 }

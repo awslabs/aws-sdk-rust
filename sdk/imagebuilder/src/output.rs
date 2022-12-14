@@ -31,7 +31,7 @@ impl UpdateInfrastructureConfigurationOutput {
 pub mod update_infrastructure_configuration_output {
 
     /// A builder for [`UpdateInfrastructureConfigurationOutput`](crate::output::UpdateInfrastructureConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -123,7 +123,7 @@ impl UpdateImagePipelineOutput {
 pub mod update_image_pipeline_output {
 
     /// A builder for [`UpdateImagePipelineOutput`](crate::output::UpdateImagePipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -212,7 +212,7 @@ impl UpdateDistributionConfigurationOutput {
 pub mod update_distribution_configuration_output {
 
     /// A builder for [`UpdateDistributionConfigurationOutput`](crate::output::UpdateDistributionConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -280,7 +280,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -304,7 +304,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -352,7 +352,7 @@ impl StartImagePipelineExecutionOutput {
 pub mod start_image_pipeline_execution_output {
 
     /// A builder for [`StartImagePipelineExecutionOutput`](crate::output::StartImagePipelineExecutionOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -434,7 +434,7 @@ impl PutImageRecipePolicyOutput {
 pub mod put_image_recipe_policy_output {
 
     /// A builder for [`PutImageRecipePolicyOutput`](crate::output::PutImageRecipePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_recipe_arn: std::option::Option<std::string::String>,
@@ -504,7 +504,7 @@ impl PutImagePolicyOutput {
 pub mod put_image_policy_output {
 
     /// A builder for [`PutImagePolicyOutput`](crate::output::PutImagePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_arn: std::option::Option<std::string::String>,
@@ -571,7 +571,7 @@ impl PutContainerRecipePolicyOutput {
 pub mod put_container_recipe_policy_output {
 
     /// A builder for [`PutContainerRecipePolicyOutput`](crate::output::PutContainerRecipePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) container_recipe_arn: std::option::Option<std::string::String>,
@@ -641,7 +641,7 @@ impl PutComponentPolicyOutput {
 pub mod put_component_policy_output {
 
     /// A builder for [`PutComponentPolicyOutput`](crate::output::PutComponentPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) component_arn: std::option::Option<std::string::String>,
@@ -708,7 +708,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -788,7 +788,7 @@ impl ListInfrastructureConfigurationsOutput {
 pub mod list_infrastructure_configurations_output {
 
     /// A builder for [`ListInfrastructureConfigurationsOutput`](crate::output::ListInfrastructureConfigurationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) infrastructure_configuration_summary_list:
@@ -920,7 +920,7 @@ impl ListImagesOutput {
 pub mod list_images_output {
 
     /// A builder for [`ListImagesOutput`](crate::output::ListImagesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_version_list:
@@ -1047,7 +1047,7 @@ impl ListImageRecipesOutput {
 pub mod list_image_recipes_output {
 
     /// A builder for [`ListImageRecipesOutput`](crate::output::ListImageRecipesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_recipe_summary_list:
@@ -1146,7 +1146,7 @@ impl ListImagePipelinesOutput {
 pub mod list_image_pipelines_output {
 
     /// A builder for [`ListImagePipelinesOutput`](crate::output::ListImagePipelinesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_pipeline_list:
@@ -1242,7 +1242,7 @@ impl ListImagePipelineImagesOutput {
 pub mod list_image_pipeline_images_output {
 
     /// A builder for [`ListImagePipelineImagesOutput`](crate::output::ListImagePipelineImagesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_summary_list:
@@ -1338,7 +1338,7 @@ impl ListImagePackagesOutput {
 pub mod list_image_packages_output {
 
     /// A builder for [`ListImagePackagesOutput`](crate::output::ListImagePackagesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_package_list:
@@ -1434,7 +1434,7 @@ impl ListImageBuildVersionsOutput {
 pub mod list_image_build_versions_output {
 
     /// A builder for [`ListImageBuildVersionsOutput`](crate::output::ListImageBuildVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_summary_list:
@@ -1533,7 +1533,7 @@ impl ListDistributionConfigurationsOutput {
 pub mod list_distribution_configurations_output {
 
     /// A builder for [`ListDistributionConfigurationsOutput`](crate::output::ListDistributionConfigurationsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) distribution_configuration_summary_list:
@@ -1640,7 +1640,7 @@ impl ListContainerRecipesOutput {
 pub mod list_container_recipes_output {
 
     /// A builder for [`ListContainerRecipesOutput`](crate::output::ListContainerRecipesOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) container_recipe_summary_list:
@@ -1765,7 +1765,7 @@ impl ListComponentsOutput {
 pub mod list_components_output {
 
     /// A builder for [`ListComponentsOutput`](crate::output::ListComponentsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) component_version_list:
@@ -1887,7 +1887,7 @@ impl ListComponentBuildVersionsOutput {
 pub mod list_component_build_versions_output {
 
     /// A builder for [`ListComponentBuildVersionsOutput`](crate::output::ListComponentBuildVersionsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) component_summary_list:
@@ -1983,7 +1983,7 @@ impl ImportVmImageOutput {
 pub mod import_vm_image_output {
 
     /// A builder for [`ImportVmImageOutput`](crate::output::ImportVmImageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_arn: std::option::Option<std::string::String>,
@@ -2069,7 +2069,7 @@ impl ImportComponentOutput {
 pub mod import_component_output {
 
     /// A builder for [`ImportComponentOutput`](crate::output::ImportComponentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -2157,7 +2157,7 @@ impl GetInfrastructureConfigurationOutput {
 pub mod get_infrastructure_configuration_output {
 
     /// A builder for [`GetInfrastructureConfigurationOutput`](crate::output::GetInfrastructureConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) infrastructure_configuration:
@@ -2231,7 +2231,7 @@ impl GetImageRecipePolicyOutput {
 pub mod get_image_recipe_policy_output {
 
     /// A builder for [`GetImageRecipePolicyOutput`](crate::output::GetImageRecipePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -2298,7 +2298,7 @@ impl GetImageRecipeOutput {
 pub mod get_image_recipe_output {
 
     /// A builder for [`GetImageRecipeOutput`](crate::output::GetImageRecipeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_recipe: std::option::Option<crate::model::ImageRecipe>,
@@ -2368,7 +2368,7 @@ impl GetImagePolicyOutput {
 pub mod get_image_policy_output {
 
     /// A builder for [`GetImagePolicyOutput`](crate::output::GetImagePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -2435,7 +2435,7 @@ impl GetImagePipelineOutput {
 pub mod get_image_pipeline_output {
 
     /// A builder for [`GetImagePipelineOutput`](crate::output::GetImagePipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_pipeline: std::option::Option<crate::model::ImagePipeline>,
@@ -2505,7 +2505,7 @@ impl GetImageOutput {
 pub mod get_image_output {
 
     /// A builder for [`GetImageOutput`](crate::output::GetImageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image: std::option::Option<crate::model::Image>,
@@ -2574,7 +2574,7 @@ impl GetDistributionConfigurationOutput {
 pub mod get_distribution_configuration_output {
 
     /// A builder for [`GetDistributionConfigurationOutput`](crate::output::GetDistributionConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) distribution_configuration:
@@ -2648,7 +2648,7 @@ impl GetContainerRecipePolicyOutput {
 pub mod get_container_recipe_policy_output {
 
     /// A builder for [`GetContainerRecipePolicyOutput`](crate::output::GetContainerRecipePolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -2715,7 +2715,7 @@ impl GetContainerRecipeOutput {
 pub mod get_container_recipe_output {
 
     /// A builder for [`GetContainerRecipeOutput`](crate::output::GetContainerRecipeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) container_recipe: std::option::Option<crate::model::ContainerRecipe>,
@@ -2785,7 +2785,7 @@ impl GetComponentPolicyOutput {
 pub mod get_component_policy_output {
 
     /// A builder for [`GetComponentPolicyOutput`](crate::output::GetComponentPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -2852,7 +2852,7 @@ impl GetComponentOutput {
 pub mod get_component_output {
 
     /// A builder for [`GetComponentOutput`](crate::output::GetComponentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) component: std::option::Option<crate::model::Component>,
@@ -2922,7 +2922,7 @@ impl DeleteInfrastructureConfigurationOutput {
 pub mod delete_infrastructure_configuration_output {
 
     /// A builder for [`DeleteInfrastructureConfigurationOutput`](crate::output::DeleteInfrastructureConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) infrastructure_configuration_arn: std::option::Option<std::string::String>,
@@ -2995,7 +2995,7 @@ impl DeleteImageRecipeOutput {
 pub mod delete_image_recipe_output {
 
     /// A builder for [`DeleteImageRecipeOutput`](crate::output::DeleteImageRecipeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_recipe_arn: std::option::Option<std::string::String>,
@@ -3065,7 +3065,7 @@ impl DeleteImagePipelineOutput {
 pub mod delete_image_pipeline_output {
 
     /// A builder for [`DeleteImagePipelineOutput`](crate::output::DeleteImagePipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_pipeline_arn: std::option::Option<std::string::String>,
@@ -3135,7 +3135,7 @@ impl DeleteImageOutput {
 pub mod delete_image_output {
 
     /// A builder for [`DeleteImageOutput`](crate::output::DeleteImageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_build_version_arn: std::option::Option<std::string::String>,
@@ -3205,7 +3205,7 @@ impl DeleteDistributionConfigurationOutput {
 pub mod delete_distribution_configuration_output {
 
     /// A builder for [`DeleteDistributionConfigurationOutput`](crate::output::DeleteDistributionConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) distribution_configuration_arn: std::option::Option<std::string::String>,
@@ -3278,7 +3278,7 @@ impl DeleteContainerRecipeOutput {
 pub mod delete_container_recipe_output {
 
     /// A builder for [`DeleteContainerRecipeOutput`](crate::output::DeleteContainerRecipeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) container_recipe_arn: std::option::Option<std::string::String>,
@@ -3348,7 +3348,7 @@ impl DeleteComponentOutput {
 pub mod delete_component_output {
 
     /// A builder for [`DeleteComponentOutput`](crate::output::DeleteComponentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) component_build_version_arn: std::option::Option<std::string::String>,
@@ -3428,7 +3428,7 @@ impl CreateInfrastructureConfigurationOutput {
 pub mod create_infrastructure_configuration_output {
 
     /// A builder for [`CreateInfrastructureConfigurationOutput`](crate::output::CreateInfrastructureConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -3520,7 +3520,7 @@ impl CreateImageRecipeOutput {
 pub mod create_image_recipe_output {
 
     /// A builder for [`CreateImageRecipeOutput`](crate::output::CreateImageRecipeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -3609,7 +3609,7 @@ impl CreateImagePipelineOutput {
 pub mod create_image_pipeline_output {
 
     /// A builder for [`CreateImagePipelineOutput`](crate::output::CreateImagePipelineOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -3698,7 +3698,7 @@ impl CreateImageOutput {
 pub mod create_image_output {
 
     /// A builder for [`CreateImageOutput`](crate::output::CreateImageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -3787,7 +3787,7 @@ impl CreateDistributionConfigurationOutput {
 pub mod create_distribution_configuration_output {
 
     /// A builder for [`CreateDistributionConfigurationOutput`](crate::output::CreateDistributionConfigurationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -3879,7 +3879,7 @@ impl CreateContainerRecipeOutput {
 pub mod create_container_recipe_output {
 
     /// A builder for [`CreateContainerRecipeOutput`](crate::output::CreateContainerRecipeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -3968,7 +3968,7 @@ impl CreateComponentOutput {
 pub mod create_component_output {
 
     /// A builder for [`CreateComponentOutput`](crate::output::CreateComponentOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -4060,7 +4060,7 @@ impl CancelImageCreationOutput {
 pub mod cancel_image_creation_output {
 
     /// A builder for [`CancelImageCreationOutput`](crate::output::CancelImageCreationOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,

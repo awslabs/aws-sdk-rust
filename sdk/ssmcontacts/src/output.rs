@@ -7,7 +7,7 @@ pub struct UpdateContactChannelOutput {}
 pub mod update_contact_channel_output {
 
     /// A builder for [`UpdateContactChannelOutput`](crate::output::UpdateContactChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateContactChannelOutput`](crate::output::UpdateContactChannelOutput).
@@ -31,7 +31,7 @@ pub struct UpdateContactOutput {}
 pub mod update_contact_output {
 
     /// A builder for [`UpdateContactOutput`](crate::output::UpdateContactOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateContactOutput`](crate::output::UpdateContactOutput).
@@ -55,7 +55,7 @@ pub struct UntagResourceOutput {}
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -79,7 +79,7 @@ pub struct TagResourceOutput {}
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -103,7 +103,7 @@ pub struct StopEngagementOutput {}
 pub mod stop_engagement_output {
 
     /// A builder for [`StopEngagementOutput`](crate::output::StopEngagementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`StopEngagementOutput`](crate::output::StopEngagementOutput).
@@ -137,7 +137,7 @@ impl StartEngagementOutput {
 pub mod start_engagement_output {
 
     /// A builder for [`StartEngagementOutput`](crate::output::StartEngagementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engagement_arn: std::option::Option<std::string::String>,
     }
@@ -178,7 +178,7 @@ pub struct SendActivationCodeOutput {}
 pub mod send_activation_code_output {
 
     /// A builder for [`SendActivationCodeOutput`](crate::output::SendActivationCodeOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`SendActivationCodeOutput`](crate::output::SendActivationCodeOutput).
@@ -202,7 +202,7 @@ pub struct PutContactPolicyOutput {}
 pub mod put_contact_policy_output {
 
     /// A builder for [`PutContactPolicyOutput`](crate::output::PutContactPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`PutContactPolicyOutput`](crate::output::PutContactPolicyOutput).
@@ -236,7 +236,7 @@ impl ListTagsForResourceOutput {
 pub mod list_tags_for_resource_output {
 
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -298,7 +298,7 @@ impl ListPagesByEngagementOutput {
 pub mod list_pages_by_engagement_output {
 
     /// A builder for [`ListPagesByEngagementOutput`](crate::output::ListPagesByEngagementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) pages: std::option::Option<std::vec::Vec<crate::model::Page>>,
@@ -374,7 +374,7 @@ impl ListPagesByContactOutput {
 pub mod list_pages_by_contact_output {
 
     /// A builder for [`ListPagesByContactOutput`](crate::output::ListPagesByContactOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) pages: std::option::Option<std::vec::Vec<crate::model::Page>>,
@@ -450,7 +450,7 @@ impl ListPageReceiptsOutput {
 pub mod list_page_receipts_output {
 
     /// A builder for [`ListPageReceiptsOutput`](crate::output::ListPageReceiptsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) receipts: std::option::Option<std::vec::Vec<crate::model::Receipt>>,
@@ -526,7 +526,7 @@ impl ListEngagementsOutput {
 pub mod list_engagements_output {
 
     /// A builder for [`ListEngagementsOutput`](crate::output::ListEngagementsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) engagements: std::option::Option<std::vec::Vec<crate::model::Engagement>>,
@@ -602,7 +602,7 @@ impl ListContactsOutput {
 pub mod list_contacts_output {
 
     /// A builder for [`ListContactsOutput`](crate::output::ListContactsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) contacts: std::option::Option<std::vec::Vec<crate::model::Contact>>,
@@ -678,7 +678,7 @@ impl ListContactChannelsOutput {
 pub mod list_contact_channels_output {
 
     /// A builder for [`ListContactChannelsOutput`](crate::output::ListContactChannelsOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) contact_channels:
@@ -755,7 +755,7 @@ impl GetContactPolicyOutput {
 pub mod get_contact_policy_output {
 
     /// A builder for [`GetContactPolicyOutput`](crate::output::GetContactPolicyOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -850,7 +850,7 @@ impl GetContactChannelOutput {
 pub mod get_contact_channel_output {
 
     /// A builder for [`GetContactChannelOutput`](crate::output::GetContactChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
         pub(crate) contact_channel_arn: std::option::Option<std::string::String>,
@@ -995,7 +995,7 @@ impl GetContactOutput {
 pub mod get_contact_output {
 
     /// A builder for [`GetContactOutput`](crate::output::GetContactOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
         pub(crate) alias: std::option::Option<std::string::String>,
@@ -1168,7 +1168,7 @@ impl DescribePageOutput {
 pub mod describe_page_output {
 
     /// A builder for [`DescribePageOutput`](crate::output::DescribePageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_arn: std::option::Option<std::string::String>,
         pub(crate) engagement_arn: std::option::Option<std::string::String>,
@@ -1429,7 +1429,7 @@ impl DescribeEngagementOutput {
 pub mod describe_engagement_output {
 
     /// A builder for [`DescribeEngagementOutput`](crate::output::DescribeEngagementOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
         pub(crate) engagement_arn: std::option::Option<std::string::String>,
@@ -1590,7 +1590,7 @@ pub struct DeleteContactChannelOutput {}
 pub mod delete_contact_channel_output {
 
     /// A builder for [`DeleteContactChannelOutput`](crate::output::DeleteContactChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteContactChannelOutput`](crate::output::DeleteContactChannelOutput).
@@ -1614,7 +1614,7 @@ pub struct DeleteContactOutput {}
 pub mod delete_contact_output {
 
     /// A builder for [`DeleteContactOutput`](crate::output::DeleteContactOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteContactOutput`](crate::output::DeleteContactOutput).
@@ -1638,7 +1638,7 @@ pub struct DeactivateContactChannelOutput {}
 pub mod deactivate_contact_channel_output {
 
     /// A builder for [`DeactivateContactChannelOutput`](crate::output::DeactivateContactChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`DeactivateContactChannelOutput`](crate::output::DeactivateContactChannelOutput).
@@ -1672,7 +1672,7 @@ impl CreateContactChannelOutput {
 pub mod create_contact_channel_output {
 
     /// A builder for [`CreateContactChannelOutput`](crate::output::CreateContactChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_channel_arn: std::option::Option<std::string::String>,
     }
@@ -1723,7 +1723,7 @@ impl CreateContactOutput {
 pub mod create_contact_output {
 
     /// A builder for [`CreateContactOutput`](crate::output::CreateContactOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
     }
@@ -1761,7 +1761,7 @@ pub struct ActivateContactChannelOutput {}
 pub mod activate_contact_channel_output {
 
     /// A builder for [`ActivateContactChannelOutput`](crate::output::ActivateContactChannelOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`ActivateContactChannelOutput`](crate::output::ActivateContactChannelOutput).
@@ -1785,7 +1785,7 @@ pub struct AcceptPageOutput {}
 pub mod accept_page_output {
 
     /// A builder for [`AcceptPageOutput`](crate::output::AcceptPageOutput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
         /// Consumes the builder and constructs a [`AcceptPageOutput`](crate::output::AcceptPageOutput).

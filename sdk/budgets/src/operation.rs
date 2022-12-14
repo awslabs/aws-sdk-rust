@@ -5,7 +5,7 @@
 /// [`create_budget`](crate::client::Client::create_budget).
 ///
 /// See [`crate::client::fluent_builders::CreateBudget`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBudget {
     _private: (),
 }
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBudget {
 /// [`create_budget_action`](crate::client::Client::create_budget_action).
 ///
 /// See [`crate::client::fluent_builders::CreateBudgetAction`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBudgetAction {
     _private: (),
 }
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBudgetAction {
 /// [`create_notification`](crate::client::Client::create_notification).
 ///
 /// See [`crate::client::fluent_builders::CreateNotification`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateNotification {
     _private: (),
 }
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNotification {
 /// [`create_subscriber`](crate::client::Client::create_subscriber).
 ///
 /// See [`crate::client::fluent_builders::CreateSubscriber`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSubscriber {
     _private: (),
 }
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSubscriber {
 /// [`delete_budget`](crate::client::Client::delete_budget).
 ///
 /// See [`crate::client::fluent_builders::DeleteBudget`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBudget {
     _private: (),
 }
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBudget {
 /// [`delete_budget_action`](crate::client::Client::delete_budget_action).
 ///
 /// See [`crate::client::fluent_builders::DeleteBudgetAction`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBudgetAction {
     _private: (),
 }
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBudgetAction {
 /// [`delete_notification`](crate::client::Client::delete_notification).
 ///
 /// See [`crate::client::fluent_builders::DeleteNotification`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteNotification {
     _private: (),
 }
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNotification {
 /// [`delete_subscriber`](crate::client::Client::delete_subscriber).
 ///
 /// See [`crate::client::fluent_builders::DeleteSubscriber`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSubscriber {
     _private: (),
 }
@@ -273,7 +273,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSubscriber {
 /// [`describe_budget`](crate::client::Client::describe_budget).
 ///
 /// See [`crate::client::fluent_builders::DescribeBudget`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBudget {
     _private: (),
 }
@@ -305,7 +305,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudget {
 /// [`describe_budget_action`](crate::client::Client::describe_budget_action).
 ///
 /// See [`crate::client::fluent_builders::DescribeBudgetAction`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBudgetAction {
     _private: (),
 }
@@ -339,7 +339,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetAction {
 /// [`describe_budget_action_histories`](crate::client::Client::describe_budget_action_histories).
 ///
 /// See [`crate::client::fluent_builders::DescribeBudgetActionHistories`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBudgetActionHistories {
     _private: (),
 }
@@ -373,7 +373,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetActionHist
 /// [`describe_budget_actions_for_account`](crate::client::Client::describe_budget_actions_for_account).
 ///
 /// See [`crate::client::fluent_builders::DescribeBudgetActionsForAccount`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBudgetActionsForAccount {
     _private: (),
 }
@@ -407,7 +407,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetActionsFor
 /// [`describe_budget_actions_for_budget`](crate::client::Client::describe_budget_actions_for_budget).
 ///
 /// See [`crate::client::fluent_builders::DescribeBudgetActionsForBudget`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBudgetActionsForBudget {
     _private: (),
 }
@@ -441,7 +441,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetActionsFor
 /// [`describe_budget_notifications_for_account`](crate::client::Client::describe_budget_notifications_for_account).
 ///
 /// See [`crate::client::fluent_builders::DescribeBudgetNotificationsForAccount`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBudgetNotificationsForAccount {
     _private: (),
 }
@@ -477,7 +477,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetNotificati
 /// [`describe_budget_performance_history`](crate::client::Client::describe_budget_performance_history).
 ///
 /// See [`crate::client::fluent_builders::DescribeBudgetPerformanceHistory`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBudgetPerformanceHistory {
     _private: (),
 }
@@ -511,7 +511,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetPerformanc
 /// [`describe_budgets`](crate::client::Client::describe_budgets).
 ///
 /// See [`crate::client::fluent_builders::DescribeBudgets`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBudgets {
     _private: (),
 }
@@ -545,7 +545,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgets {
 /// [`describe_notifications_for_budget`](crate::client::Client::describe_notifications_for_budget).
 ///
 /// See [`crate::client::fluent_builders::DescribeNotificationsForBudget`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeNotificationsForBudget {
     _private: (),
 }
@@ -579,7 +579,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNotificationsFor
 /// [`describe_subscribers_for_notification`](crate::client::Client::describe_subscribers_for_notification).
 ///
 /// See [`crate::client::fluent_builders::DescribeSubscribersForNotification`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSubscribersForNotification {
     _private: (),
 }
@@ -613,7 +613,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSubscribersForNo
 /// [`execute_budget_action`](crate::client::Client::execute_budget_action).
 ///
 /// See [`crate::client::fluent_builders::ExecuteBudgetAction`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExecuteBudgetAction {
     _private: (),
 }
@@ -647,7 +647,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteBudgetAction {
 /// [`update_budget`](crate::client::Client::update_budget).
 ///
 /// See [`crate::client::fluent_builders::UpdateBudget`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBudget {
     _private: (),
 }
@@ -679,7 +679,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBudget {
 /// [`update_budget_action`](crate::client::Client::update_budget_action).
 ///
 /// See [`crate::client::fluent_builders::UpdateBudgetAction`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBudgetAction {
     _private: (),
 }
@@ -713,7 +713,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBudgetAction {
 /// [`update_notification`](crate::client::Client::update_notification).
 ///
 /// See [`crate::client::fluent_builders::UpdateNotification`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateNotification {
     _private: (),
 }
@@ -747,7 +747,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNotification {
 /// [`update_subscriber`](crate::client::Client::update_subscriber).
 ///
 /// See [`crate::client::fluent_builders::UpdateSubscriber`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSubscriber {
     _private: (),
 }

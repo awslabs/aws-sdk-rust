@@ -5,7 +5,7 @@
 /// [`associate_phone_numbers_with_voice_connector`](crate::client::Client::associate_phone_numbers_with_voice_connector).
 ///
 /// See [`crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnector`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociatePhoneNumbersWithVoiceConnector {
     _private: (),
 }
@@ -43,7 +43,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociatePhoneNumbersWit
 /// [`associate_phone_numbers_with_voice_connector_group`](crate::client::Client::associate_phone_numbers_with_voice_connector_group).
 ///
 /// See [`crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnectorGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociatePhoneNumbersWithVoiceConnectorGroup {
     _private: (),
 }
@@ -82,7 +82,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`associate_phone_number_with_user`](crate::client::Client::associate_phone_number_with_user).
 ///
 /// See [`crate::client::fluent_builders::AssociatePhoneNumberWithUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociatePhoneNumberWithUser {
     _private: (),
 }
@@ -116,7 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociatePhoneNumberWith
 /// [`associate_signin_delegate_groups_with_account`](crate::client::Client::associate_signin_delegate_groups_with_account).
 ///
 /// See [`crate::client::fluent_builders::AssociateSigninDelegateGroupsWithAccount`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateSigninDelegateGroupsWithAccount {
     _private: (),
 }
@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateSigninDelegateG
 /// [`batch_create_attendee`](crate::client::Client::batch_create_attendee).
 ///
 /// See [`crate::client::fluent_builders::BatchCreateAttendee`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchCreateAttendee {
     _private: (),
 }
@@ -188,7 +188,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateAttendee {
 /// [`batch_create_channel_membership`](crate::client::Client::batch_create_channel_membership).
 ///
 /// See [`crate::client::fluent_builders::BatchCreateChannelMembership`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchCreateChannelMembership {
     _private: (),
 }
@@ -222,7 +222,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateChannelMember
 /// [`batch_create_room_membership`](crate::client::Client::batch_create_room_membership).
 ///
 /// See [`crate::client::fluent_builders::BatchCreateRoomMembership`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchCreateRoomMembership {
     _private: (),
 }
@@ -256,7 +256,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateRoomMembershi
 /// [`batch_delete_phone_number`](crate::client::Client::batch_delete_phone_number).
 ///
 /// See [`crate::client::fluent_builders::BatchDeletePhoneNumber`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchDeletePhoneNumber {
     _private: (),
 }
@@ -290,7 +290,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeletePhoneNumber {
 /// [`batch_suspend_user`](crate::client::Client::batch_suspend_user).
 ///
 /// See [`crate::client::fluent_builders::BatchSuspendUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchSuspendUser {
     _private: (),
 }
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchSuspendUser {
 /// [`batch_unsuspend_user`](crate::client::Client::batch_unsuspend_user).
 ///
 /// See [`crate::client::fluent_builders::BatchUnsuspendUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchUnsuspendUser {
     _private: (),
 }
@@ -358,7 +358,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUnsuspendUser {
 /// [`batch_update_phone_number`](crate::client::Client::batch_update_phone_number).
 ///
 /// See [`crate::client::fluent_builders::BatchUpdatePhoneNumber`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchUpdatePhoneNumber {
     _private: (),
 }
@@ -392,7 +392,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdatePhoneNumber {
 /// [`batch_update_user`](crate::client::Client::batch_update_user).
 ///
 /// See [`crate::client::fluent_builders::BatchUpdateUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchUpdateUser {
     _private: (),
 }
@@ -426,7 +426,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateUser {
 /// [`create_account`](crate::client::Client::create_account).
 ///
 /// See [`crate::client::fluent_builders::CreateAccount`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAccount {
     _private: (),
 }
@@ -458,7 +458,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccount {
 /// [`create_app_instance`](crate::client::Client::create_app_instance).
 ///
 /// See [`crate::client::fluent_builders::CreateAppInstance`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAppInstance {
     _private: (),
 }
@@ -492,7 +492,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAppInstance {
 /// [`create_app_instance_admin`](crate::client::Client::create_app_instance_admin).
 ///
 /// See [`crate::client::fluent_builders::CreateAppInstanceAdmin`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAppInstanceAdmin {
     _private: (),
 }
@@ -526,7 +526,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAppInstanceAdmin {
 /// [`create_app_instance_user`](crate::client::Client::create_app_instance_user).
 ///
 /// See [`crate::client::fluent_builders::CreateAppInstanceUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAppInstanceUser {
     _private: (),
 }
@@ -560,7 +560,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAppInstanceUser {
 /// [`create_attendee`](crate::client::Client::create_attendee).
 ///
 /// See [`crate::client::fluent_builders::CreateAttendee`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAttendee {
     _private: (),
 }
@@ -592,7 +592,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAttendee {
 /// [`create_bot`](crate::client::Client::create_bot).
 ///
 /// See [`crate::client::fluent_builders::CreateBot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBot {
     _private: (),
 }
@@ -623,7 +623,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBot {
 /// [`create_channel`](crate::client::Client::create_channel).
 ///
 /// See [`crate::client::fluent_builders::CreateChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateChannel {
     _private: (),
 }
@@ -655,7 +655,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChannel {
 /// [`create_channel_ban`](crate::client::Client::create_channel_ban).
 ///
 /// See [`crate::client::fluent_builders::CreateChannelBan`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateChannelBan {
     _private: (),
 }
@@ -689,7 +689,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChannelBan {
 /// [`create_channel_membership`](crate::client::Client::create_channel_membership).
 ///
 /// See [`crate::client::fluent_builders::CreateChannelMembership`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateChannelMembership {
     _private: (),
 }
@@ -723,7 +723,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChannelMembership 
 /// [`create_channel_moderator`](crate::client::Client::create_channel_moderator).
 ///
 /// See [`crate::client::fluent_builders::CreateChannelModerator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateChannelModerator {
     _private: (),
 }
@@ -757,7 +757,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChannelModerator {
 /// [`create_media_capture_pipeline`](crate::client::Client::create_media_capture_pipeline).
 ///
 /// See [`crate::client::fluent_builders::CreateMediaCapturePipeline`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMediaCapturePipeline {
     _private: (),
 }
@@ -791,7 +791,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMediaCapturePipeli
 /// [`create_meeting`](crate::client::Client::create_meeting).
 ///
 /// See [`crate::client::fluent_builders::CreateMeeting`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMeeting {
     _private: (),
 }
@@ -823,7 +823,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMeeting {
 /// [`create_meeting_dial_out`](crate::client::Client::create_meeting_dial_out).
 ///
 /// See [`crate::client::fluent_builders::CreateMeetingDialOut`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMeetingDialOut {
     _private: (),
 }
@@ -857,7 +857,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMeetingDialOut {
 /// [`create_meeting_with_attendees`](crate::client::Client::create_meeting_with_attendees).
 ///
 /// See [`crate::client::fluent_builders::CreateMeetingWithAttendees`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMeetingWithAttendees {
     _private: (),
 }
@@ -891,7 +891,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMeetingWithAttende
 /// [`create_phone_number_order`](crate::client::Client::create_phone_number_order).
 ///
 /// See [`crate::client::fluent_builders::CreatePhoneNumberOrder`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePhoneNumberOrder {
     _private: (),
 }
@@ -925,7 +925,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePhoneNumberOrder {
 /// [`create_proxy_session`](crate::client::Client::create_proxy_session).
 ///
 /// See [`crate::client::fluent_builders::CreateProxySession`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateProxySession {
     _private: (),
 }
@@ -959,7 +959,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProxySession {
 /// [`create_room`](crate::client::Client::create_room).
 ///
 /// See [`crate::client::fluent_builders::CreateRoom`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRoom {
     _private: (),
 }
@@ -991,7 +991,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRoom {
 /// [`create_room_membership`](crate::client::Client::create_room_membership).
 ///
 /// See [`crate::client::fluent_builders::CreateRoomMembership`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRoomMembership {
     _private: (),
 }
@@ -1025,7 +1025,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRoomMembership {
 /// [`create_sip_media_application`](crate::client::Client::create_sip_media_application).
 ///
 /// See [`crate::client::fluent_builders::CreateSipMediaApplication`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSipMediaApplication {
     _private: (),
 }
@@ -1059,7 +1059,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSipMediaApplicatio
 /// [`create_sip_media_application_call`](crate::client::Client::create_sip_media_application_call).
 ///
 /// See [`crate::client::fluent_builders::CreateSipMediaApplicationCall`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSipMediaApplicationCall {
     _private: (),
 }
@@ -1093,7 +1093,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSipMediaApplicatio
 /// [`create_sip_rule`](crate::client::Client::create_sip_rule).
 ///
 /// See [`crate::client::fluent_builders::CreateSipRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSipRule {
     _private: (),
 }
@@ -1125,7 +1125,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSipRule {
 /// [`create_user`](crate::client::Client::create_user).
 ///
 /// See [`crate::client::fluent_builders::CreateUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateUser {
     _private: (),
 }
@@ -1157,7 +1157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUser {
 /// [`create_voice_connector`](crate::client::Client::create_voice_connector).
 ///
 /// See [`crate::client::fluent_builders::CreateVoiceConnector`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateVoiceConnector {
     _private: (),
 }
@@ -1191,7 +1191,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVoiceConnector {
 /// [`create_voice_connector_group`](crate::client::Client::create_voice_connector_group).
 ///
 /// See [`crate::client::fluent_builders::CreateVoiceConnectorGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateVoiceConnectorGroup {
     _private: (),
 }
@@ -1225,7 +1225,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVoiceConnectorGrou
 /// [`delete_account`](crate::client::Client::delete_account).
 ///
 /// See [`crate::client::fluent_builders::DeleteAccount`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAccount {
     _private: (),
 }
@@ -1257,7 +1257,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccount {
 /// [`delete_app_instance`](crate::client::Client::delete_app_instance).
 ///
 /// See [`crate::client::fluent_builders::DeleteAppInstance`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAppInstance {
     _private: (),
 }
@@ -1291,7 +1291,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppInstance {
 /// [`delete_app_instance_admin`](crate::client::Client::delete_app_instance_admin).
 ///
 /// See [`crate::client::fluent_builders::DeleteAppInstanceAdmin`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAppInstanceAdmin {
     _private: (),
 }
@@ -1325,7 +1325,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppInstanceAdmin {
 /// [`delete_app_instance_streaming_configurations`](crate::client::Client::delete_app_instance_streaming_configurations).
 ///
 /// See [`crate::client::fluent_builders::DeleteAppInstanceStreamingConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAppInstanceStreamingConfigurations {
     _private: (),
 }
@@ -1363,7 +1363,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppInstanceStreami
 /// [`delete_app_instance_user`](crate::client::Client::delete_app_instance_user).
 ///
 /// See [`crate::client::fluent_builders::DeleteAppInstanceUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAppInstanceUser {
     _private: (),
 }
@@ -1397,7 +1397,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppInstanceUser {
 /// [`delete_attendee`](crate::client::Client::delete_attendee).
 ///
 /// See [`crate::client::fluent_builders::DeleteAttendee`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAttendee {
     _private: (),
 }
@@ -1429,7 +1429,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAttendee {
 /// [`delete_channel`](crate::client::Client::delete_channel).
 ///
 /// See [`crate::client::fluent_builders::DeleteChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteChannel {
     _private: (),
 }
@@ -1461,7 +1461,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannel {
 /// [`delete_channel_ban`](crate::client::Client::delete_channel_ban).
 ///
 /// See [`crate::client::fluent_builders::DeleteChannelBan`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteChannelBan {
     _private: (),
 }
@@ -1495,7 +1495,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannelBan {
 /// [`delete_channel_membership`](crate::client::Client::delete_channel_membership).
 ///
 /// See [`crate::client::fluent_builders::DeleteChannelMembership`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteChannelMembership {
     _private: (),
 }
@@ -1529,7 +1529,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannelMembership 
 /// [`delete_channel_message`](crate::client::Client::delete_channel_message).
 ///
 /// See [`crate::client::fluent_builders::DeleteChannelMessage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteChannelMessage {
     _private: (),
 }
@@ -1563,7 +1563,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannelMessage {
 /// [`delete_channel_moderator`](crate::client::Client::delete_channel_moderator).
 ///
 /// See [`crate::client::fluent_builders::DeleteChannelModerator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteChannelModerator {
     _private: (),
 }
@@ -1597,7 +1597,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannelModerator {
 /// [`delete_events_configuration`](crate::client::Client::delete_events_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeleteEventsConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEventsConfiguration {
     _private: (),
 }
@@ -1631,7 +1631,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEventsConfiguratio
 /// [`delete_media_capture_pipeline`](crate::client::Client::delete_media_capture_pipeline).
 ///
 /// See [`crate::client::fluent_builders::DeleteMediaCapturePipeline`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMediaCapturePipeline {
     _private: (),
 }
@@ -1665,7 +1665,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMediaCapturePipeli
 /// [`delete_meeting`](crate::client::Client::delete_meeting).
 ///
 /// See [`crate::client::fluent_builders::DeleteMeeting`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMeeting {
     _private: (),
 }
@@ -1697,7 +1697,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMeeting {
 /// [`delete_phone_number`](crate::client::Client::delete_phone_number).
 ///
 /// See [`crate::client::fluent_builders::DeletePhoneNumber`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePhoneNumber {
     _private: (),
 }
@@ -1731,7 +1731,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePhoneNumber {
 /// [`delete_proxy_session`](crate::client::Client::delete_proxy_session).
 ///
 /// See [`crate::client::fluent_builders::DeleteProxySession`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteProxySession {
     _private: (),
 }
@@ -1765,7 +1765,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProxySession {
 /// [`delete_room`](crate::client::Client::delete_room).
 ///
 /// See [`crate::client::fluent_builders::DeleteRoom`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRoom {
     _private: (),
 }
@@ -1797,7 +1797,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRoom {
 /// [`delete_room_membership`](crate::client::Client::delete_room_membership).
 ///
 /// See [`crate::client::fluent_builders::DeleteRoomMembership`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRoomMembership {
     _private: (),
 }
@@ -1831,7 +1831,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRoomMembership {
 /// [`delete_sip_media_application`](crate::client::Client::delete_sip_media_application).
 ///
 /// See [`crate::client::fluent_builders::DeleteSipMediaApplication`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSipMediaApplication {
     _private: (),
 }
@@ -1865,7 +1865,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSipMediaApplicatio
 /// [`delete_sip_rule`](crate::client::Client::delete_sip_rule).
 ///
 /// See [`crate::client::fluent_builders::DeleteSipRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSipRule {
     _private: (),
 }
@@ -1897,7 +1897,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSipRule {
 /// [`delete_voice_connector`](crate::client::Client::delete_voice_connector).
 ///
 /// See [`crate::client::fluent_builders::DeleteVoiceConnector`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVoiceConnector {
     _private: (),
 }
@@ -1931,7 +1931,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVoiceConnector {
 /// [`delete_voice_connector_emergency_calling_configuration`](crate::client::Client::delete_voice_connector_emergency_calling_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeleteVoiceConnectorEmergencyCallingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorEmergencyCallingConfiguration {
     _private: (),
 }
@@ -1969,7 +1969,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`delete_voice_connector_group`](crate::client::Client::delete_voice_connector_group).
 ///
 /// See [`crate::client::fluent_builders::DeleteVoiceConnectorGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorGroup {
     _private: (),
 }
@@ -2003,7 +2003,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVoiceConnectorGrou
 /// [`delete_voice_connector_origination`](crate::client::Client::delete_voice_connector_origination).
 ///
 /// See [`crate::client::fluent_builders::DeleteVoiceConnectorOrigination`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorOrigination {
     _private: (),
 }
@@ -2037,7 +2037,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVoiceConnectorOrig
 /// [`delete_voice_connector_proxy`](crate::client::Client::delete_voice_connector_proxy).
 ///
 /// See [`crate::client::fluent_builders::DeleteVoiceConnectorProxy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorProxy {
     _private: (),
 }
@@ -2071,7 +2071,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVoiceConnectorProx
 /// [`delete_voice_connector_streaming_configuration`](crate::client::Client::delete_voice_connector_streaming_configuration).
 ///
 /// See [`crate::client::fluent_builders::DeleteVoiceConnectorStreamingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorStreamingConfiguration {
     _private: (),
 }
@@ -2110,7 +2110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVoiceConnectorStre
 /// [`delete_voice_connector_termination`](crate::client::Client::delete_voice_connector_termination).
 ///
 /// See [`crate::client::fluent_builders::DeleteVoiceConnectorTermination`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorTermination {
     _private: (),
 }
@@ -2144,7 +2144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVoiceConnectorTerm
 /// [`delete_voice_connector_termination_credentials`](crate::client::Client::delete_voice_connector_termination_credentials).
 ///
 /// See [`crate::client::fluent_builders::DeleteVoiceConnectorTerminationCredentials`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorTerminationCredentials {
     _private: (),
 }
@@ -2183,7 +2183,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVoiceConnectorTerm
 /// [`describe_app_instance`](crate::client::Client::describe_app_instance).
 ///
 /// See [`crate::client::fluent_builders::DescribeAppInstance`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAppInstance {
     _private: (),
 }
@@ -2217,7 +2217,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppInstance {
 /// [`describe_app_instance_admin`](crate::client::Client::describe_app_instance_admin).
 ///
 /// See [`crate::client::fluent_builders::DescribeAppInstanceAdmin`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAppInstanceAdmin {
     _private: (),
 }
@@ -2251,7 +2251,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppInstanceAdmin
 /// [`describe_app_instance_user`](crate::client::Client::describe_app_instance_user).
 ///
 /// See [`crate::client::fluent_builders::DescribeAppInstanceUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAppInstanceUser {
     _private: (),
 }
@@ -2285,7 +2285,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppInstanceUser 
 /// [`describe_channel`](crate::client::Client::describe_channel).
 ///
 /// See [`crate::client::fluent_builders::DescribeChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeChannel {
     _private: (),
 }
@@ -2319,7 +2319,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannel {
 /// [`describe_channel_ban`](crate::client::Client::describe_channel_ban).
 ///
 /// See [`crate::client::fluent_builders::DescribeChannelBan`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeChannelBan {
     _private: (),
 }
@@ -2353,7 +2353,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannelBan {
 /// [`describe_channel_membership`](crate::client::Client::describe_channel_membership).
 ///
 /// See [`crate::client::fluent_builders::DescribeChannelMembership`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeChannelMembership {
     _private: (),
 }
@@ -2387,7 +2387,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannelMembershi
 /// [`describe_channel_membership_for_app_instance_user`](crate::client::Client::describe_channel_membership_for_app_instance_user).
 ///
 /// See [`crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeChannelMembershipForAppInstanceUser {
     _private: (),
 }
@@ -2428,7 +2428,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`describe_channel_moderated_by_app_instance_user`](crate::client::Client::describe_channel_moderated_by_app_instance_user).
 ///
 /// See [`crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeChannelModeratedByAppInstanceUser {
     _private: (),
 }
@@ -2467,7 +2467,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannelModerated
 /// [`describe_channel_moderator`](crate::client::Client::describe_channel_moderator).
 ///
 /// See [`crate::client::fluent_builders::DescribeChannelModerator`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeChannelModerator {
     _private: (),
 }
@@ -2501,7 +2501,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannelModerator
 /// [`disassociate_phone_number_from_user`](crate::client::Client::disassociate_phone_number_from_user).
 ///
 /// See [`crate::client::fluent_builders::DisassociatePhoneNumberFromUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociatePhoneNumberFromUser {
     _private: (),
 }
@@ -2535,7 +2535,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociatePhoneNumberF
 /// [`disassociate_phone_numbers_from_voice_connector`](crate::client::Client::disassociate_phone_numbers_from_voice_connector).
 ///
 /// See [`crate::client::fluent_builders::DisassociatePhoneNumbersFromVoiceConnector`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociatePhoneNumbersFromVoiceConnector {
     _private: (),
 }
@@ -2574,7 +2574,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociatePhoneNumbers
 /// [`disassociate_phone_numbers_from_voice_connector_group`](crate::client::Client::disassociate_phone_numbers_from_voice_connector_group).
 ///
 /// See [`crate::client::fluent_builders::DisassociatePhoneNumbersFromVoiceConnectorGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorGroup {
     _private: (),
 }
@@ -2612,7 +2612,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`disassociate_signin_delegate_groups_from_account`](crate::client::Client::disassociate_signin_delegate_groups_from_account).
 ///
 /// See [`crate::client::fluent_builders::DisassociateSigninDelegateGroupsFromAccount`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateSigninDelegateGroupsFromAccount {
     _private: (),
 }
@@ -2653,7 +2653,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`get_account`](crate::client::Client::get_account).
 ///
 /// See [`crate::client::fluent_builders::GetAccount`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAccount {
     _private: (),
 }
@@ -2685,7 +2685,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccount {
 /// [`get_account_settings`](crate::client::Client::get_account_settings).
 ///
 /// See [`crate::client::fluent_builders::GetAccountSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAccountSettings {
     _private: (),
 }
@@ -2719,7 +2719,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountSettings {
 /// [`get_app_instance_retention_settings`](crate::client::Client::get_app_instance_retention_settings).
 ///
 /// See [`crate::client::fluent_builders::GetAppInstanceRetentionSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAppInstanceRetentionSettings {
     _private: (),
 }
@@ -2753,7 +2753,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAppInstanceRetentionS
 /// [`get_app_instance_streaming_configurations`](crate::client::Client::get_app_instance_streaming_configurations).
 ///
 /// See [`crate::client::fluent_builders::GetAppInstanceStreamingConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAppInstanceStreamingConfigurations {
     _private: (),
 }
@@ -2789,7 +2789,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAppInstanceStreamingC
 /// [`get_attendee`](crate::client::Client::get_attendee).
 ///
 /// See [`crate::client::fluent_builders::GetAttendee`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAttendee {
     _private: (),
 }
@@ -2821,7 +2821,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAttendee {
 /// [`get_bot`](crate::client::Client::get_bot).
 ///
 /// See [`crate::client::fluent_builders::GetBot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBot {
     _private: (),
 }
@@ -2852,7 +2852,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBot {
 /// [`get_channel_message`](crate::client::Client::get_channel_message).
 ///
 /// See [`crate::client::fluent_builders::GetChannelMessage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetChannelMessage {
     _private: (),
 }
@@ -2886,7 +2886,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChannelMessage {
 /// [`get_events_configuration`](crate::client::Client::get_events_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetEventsConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEventsConfiguration {
     _private: (),
 }
@@ -2920,7 +2920,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEventsConfiguration {
 /// [`get_global_settings`](crate::client::Client::get_global_settings).
 ///
 /// See [`crate::client::fluent_builders::GetGlobalSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGlobalSettings {
     _private: (),
 }
@@ -2954,7 +2954,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGlobalSettings {
 /// [`get_media_capture_pipeline`](crate::client::Client::get_media_capture_pipeline).
 ///
 /// See [`crate::client::fluent_builders::GetMediaCapturePipeline`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMediaCapturePipeline {
     _private: (),
 }
@@ -2988,7 +2988,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMediaCapturePipeline 
 /// [`get_meeting`](crate::client::Client::get_meeting).
 ///
 /// See [`crate::client::fluent_builders::GetMeeting`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMeeting {
     _private: (),
 }
@@ -3020,7 +3020,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMeeting {
 /// [`get_messaging_session_endpoint`](crate::client::Client::get_messaging_session_endpoint).
 ///
 /// See [`crate::client::fluent_builders::GetMessagingSessionEndpoint`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMessagingSessionEndpoint {
     _private: (),
 }
@@ -3054,7 +3054,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMessagingSessionEndpo
 /// [`get_phone_number`](crate::client::Client::get_phone_number).
 ///
 /// See [`crate::client::fluent_builders::GetPhoneNumber`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPhoneNumber {
     _private: (),
 }
@@ -3086,7 +3086,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPhoneNumber {
 /// [`get_phone_number_order`](crate::client::Client::get_phone_number_order).
 ///
 /// See [`crate::client::fluent_builders::GetPhoneNumberOrder`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPhoneNumberOrder {
     _private: (),
 }
@@ -3120,7 +3120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPhoneNumberOrder {
 /// [`get_phone_number_settings`](crate::client::Client::get_phone_number_settings).
 ///
 /// See [`crate::client::fluent_builders::GetPhoneNumberSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPhoneNumberSettings {
     _private: (),
 }
@@ -3154,7 +3154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPhoneNumberSettings {
 /// [`get_proxy_session`](crate::client::Client::get_proxy_session).
 ///
 /// See [`crate::client::fluent_builders::GetProxySession`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetProxySession {
     _private: (),
 }
@@ -3188,7 +3188,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProxySession {
 /// [`get_retention_settings`](crate::client::Client::get_retention_settings).
 ///
 /// See [`crate::client::fluent_builders::GetRetentionSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRetentionSettings {
     _private: (),
 }
@@ -3222,7 +3222,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRetentionSettings {
 /// [`get_room`](crate::client::Client::get_room).
 ///
 /// See [`crate::client::fluent_builders::GetRoom`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRoom {
     _private: (),
 }
@@ -3253,7 +3253,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRoom {
 /// [`get_sip_media_application`](crate::client::Client::get_sip_media_application).
 ///
 /// See [`crate::client::fluent_builders::GetSipMediaApplication`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSipMediaApplication {
     _private: (),
 }
@@ -3287,7 +3287,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSipMediaApplication {
 /// [`get_sip_media_application_logging_configuration`](crate::client::Client::get_sip_media_application_logging_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetSipMediaApplicationLoggingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSipMediaApplicationLoggingConfiguration {
     _private: (),
 }
@@ -3326,7 +3326,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSipMediaApplicationLo
 /// [`get_sip_rule`](crate::client::Client::get_sip_rule).
 ///
 /// See [`crate::client::fluent_builders::GetSipRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSipRule {
     _private: (),
 }
@@ -3358,7 +3358,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSipRule {
 /// [`get_user`](crate::client::Client::get_user).
 ///
 /// See [`crate::client::fluent_builders::GetUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetUser {
     _private: (),
 }
@@ -3389,7 +3389,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUser {
 /// [`get_user_settings`](crate::client::Client::get_user_settings).
 ///
 /// See [`crate::client::fluent_builders::GetUserSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetUserSettings {
     _private: (),
 }
@@ -3423,7 +3423,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUserSettings {
 /// [`get_voice_connector`](crate::client::Client::get_voice_connector).
 ///
 /// See [`crate::client::fluent_builders::GetVoiceConnector`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetVoiceConnector {
     _private: (),
 }
@@ -3457,7 +3457,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVoiceConnector {
 /// [`get_voice_connector_emergency_calling_configuration`](crate::client::Client::get_voice_connector_emergency_calling_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetVoiceConnectorEmergencyCallingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetVoiceConnectorEmergencyCallingConfiguration {
     _private: (),
 }
@@ -3496,7 +3496,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`get_voice_connector_group`](crate::client::Client::get_voice_connector_group).
 ///
 /// See [`crate::client::fluent_builders::GetVoiceConnectorGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetVoiceConnectorGroup {
     _private: (),
 }
@@ -3530,7 +3530,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVoiceConnectorGroup {
 /// [`get_voice_connector_logging_configuration`](crate::client::Client::get_voice_connector_logging_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetVoiceConnectorLoggingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetVoiceConnectorLoggingConfiguration {
     _private: (),
 }
@@ -3566,7 +3566,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVoiceConnectorLogging
 /// [`get_voice_connector_origination`](crate::client::Client::get_voice_connector_origination).
 ///
 /// See [`crate::client::fluent_builders::GetVoiceConnectorOrigination`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetVoiceConnectorOrigination {
     _private: (),
 }
@@ -3600,7 +3600,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVoiceConnectorOrigina
 /// [`get_voice_connector_proxy`](crate::client::Client::get_voice_connector_proxy).
 ///
 /// See [`crate::client::fluent_builders::GetVoiceConnectorProxy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetVoiceConnectorProxy {
     _private: (),
 }
@@ -3634,7 +3634,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVoiceConnectorProxy {
 /// [`get_voice_connector_streaming_configuration`](crate::client::Client::get_voice_connector_streaming_configuration).
 ///
 /// See [`crate::client::fluent_builders::GetVoiceConnectorStreamingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetVoiceConnectorStreamingConfiguration {
     _private: (),
 }
@@ -3672,7 +3672,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVoiceConnectorStreami
 /// [`get_voice_connector_termination`](crate::client::Client::get_voice_connector_termination).
 ///
 /// See [`crate::client::fluent_builders::GetVoiceConnectorTermination`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetVoiceConnectorTermination {
     _private: (),
 }
@@ -3706,7 +3706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVoiceConnectorTermina
 /// [`get_voice_connector_termination_health`](crate::client::Client::get_voice_connector_termination_health).
 ///
 /// See [`crate::client::fluent_builders::GetVoiceConnectorTerminationHealth`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetVoiceConnectorTerminationHealth {
     _private: (),
 }
@@ -3740,7 +3740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVoiceConnectorTermina
 /// [`invite_users`](crate::client::Client::invite_users).
 ///
 /// See [`crate::client::fluent_builders::InviteUsers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct InviteUsers {
     _private: (),
 }
@@ -3772,7 +3772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InviteUsers {
 /// [`list_accounts`](crate::client::Client::list_accounts).
 ///
 /// See [`crate::client::fluent_builders::ListAccounts`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAccounts {
     _private: (),
 }
@@ -3804,7 +3804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccounts {
 /// [`list_app_instance_admins`](crate::client::Client::list_app_instance_admins).
 ///
 /// See [`crate::client::fluent_builders::ListAppInstanceAdmins`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppInstanceAdmins {
     _private: (),
 }
@@ -3838,7 +3838,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppInstanceAdmins {
 /// [`list_app_instances`](crate::client::Client::list_app_instances).
 ///
 /// See [`crate::client::fluent_builders::ListAppInstances`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppInstances {
     _private: (),
 }
@@ -3872,7 +3872,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppInstances {
 /// [`list_app_instance_users`](crate::client::Client::list_app_instance_users).
 ///
 /// See [`crate::client::fluent_builders::ListAppInstanceUsers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppInstanceUsers {
     _private: (),
 }
@@ -3906,7 +3906,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppInstanceUsers {
 /// [`list_attendees`](crate::client::Client::list_attendees).
 ///
 /// See [`crate::client::fluent_builders::ListAttendees`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAttendees {
     _private: (),
 }
@@ -3938,7 +3938,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAttendees {
 /// [`list_attendee_tags`](crate::client::Client::list_attendee_tags).
 ///
 /// See [`crate::client::fluent_builders::ListAttendeeTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAttendeeTags {
     _private: (),
 }
@@ -3972,7 +3972,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAttendeeTags {
 /// [`list_bots`](crate::client::Client::list_bots).
 ///
 /// See [`crate::client::fluent_builders::ListBots`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBots {
     _private: (),
 }
@@ -4003,7 +4003,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBots {
 /// [`list_channel_bans`](crate::client::Client::list_channel_bans).
 ///
 /// See [`crate::client::fluent_builders::ListChannelBans`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListChannelBans {
     _private: (),
 }
@@ -4037,7 +4037,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelBans {
 /// [`list_channel_memberships`](crate::client::Client::list_channel_memberships).
 ///
 /// See [`crate::client::fluent_builders::ListChannelMemberships`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListChannelMemberships {
     _private: (),
 }
@@ -4071,7 +4071,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelMemberships {
 /// [`list_channel_memberships_for_app_instance_user`](crate::client::Client::list_channel_memberships_for_app_instance_user).
 ///
 /// See [`crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListChannelMembershipsForAppInstanceUser {
     _private: (),
 }
@@ -4110,7 +4110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelMembershipsFo
 /// [`list_channel_messages`](crate::client::Client::list_channel_messages).
 ///
 /// See [`crate::client::fluent_builders::ListChannelMessages`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListChannelMessages {
     _private: (),
 }
@@ -4144,7 +4144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelMessages {
 /// [`list_channel_moderators`](crate::client::Client::list_channel_moderators).
 ///
 /// See [`crate::client::fluent_builders::ListChannelModerators`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListChannelModerators {
     _private: (),
 }
@@ -4178,7 +4178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelModerators {
 /// [`list_channels`](crate::client::Client::list_channels).
 ///
 /// See [`crate::client::fluent_builders::ListChannels`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListChannels {
     _private: (),
 }
@@ -4210,7 +4210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannels {
 /// [`list_channels_moderated_by_app_instance_user`](crate::client::Client::list_channels_moderated_by_app_instance_user).
 ///
 /// See [`crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListChannelsModeratedByAppInstanceUser {
     _private: (),
 }
@@ -4248,7 +4248,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelsModeratedByA
 /// [`list_media_capture_pipelines`](crate::client::Client::list_media_capture_pipelines).
 ///
 /// See [`crate::client::fluent_builders::ListMediaCapturePipelines`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMediaCapturePipelines {
     _private: (),
 }
@@ -4282,7 +4282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMediaCapturePipeline
 /// [`list_meetings`](crate::client::Client::list_meetings).
 ///
 /// See [`crate::client::fluent_builders::ListMeetings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMeetings {
     _private: (),
 }
@@ -4314,7 +4314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMeetings {
 /// [`list_meeting_tags`](crate::client::Client::list_meeting_tags).
 ///
 /// See [`crate::client::fluent_builders::ListMeetingTags`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMeetingTags {
     _private: (),
 }
@@ -4348,7 +4348,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMeetingTags {
 /// [`list_phone_number_orders`](crate::client::Client::list_phone_number_orders).
 ///
 /// See [`crate::client::fluent_builders::ListPhoneNumberOrders`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPhoneNumberOrders {
     _private: (),
 }
@@ -4382,7 +4382,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPhoneNumberOrders {
 /// [`list_phone_numbers`](crate::client::Client::list_phone_numbers).
 ///
 /// See [`crate::client::fluent_builders::ListPhoneNumbers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPhoneNumbers {
     _private: (),
 }
@@ -4416,7 +4416,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPhoneNumbers {
 /// [`list_proxy_sessions`](crate::client::Client::list_proxy_sessions).
 ///
 /// See [`crate::client::fluent_builders::ListProxySessions`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListProxySessions {
     _private: (),
 }
@@ -4450,7 +4450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProxySessions {
 /// [`list_room_memberships`](crate::client::Client::list_room_memberships).
 ///
 /// See [`crate::client::fluent_builders::ListRoomMemberships`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRoomMemberships {
     _private: (),
 }
@@ -4484,7 +4484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRoomMemberships {
 /// [`list_rooms`](crate::client::Client::list_rooms).
 ///
 /// See [`crate::client::fluent_builders::ListRooms`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRooms {
     _private: (),
 }
@@ -4515,7 +4515,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRooms {
 /// [`list_sip_media_applications`](crate::client::Client::list_sip_media_applications).
 ///
 /// See [`crate::client::fluent_builders::ListSipMediaApplications`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSipMediaApplications {
     _private: (),
 }
@@ -4549,7 +4549,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSipMediaApplications
 /// [`list_sip_rules`](crate::client::Client::list_sip_rules).
 ///
 /// See [`crate::client::fluent_builders::ListSipRules`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSipRules {
     _private: (),
 }
@@ -4581,7 +4581,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSipRules {
 /// [`list_supported_phone_number_countries`](crate::client::Client::list_supported_phone_number_countries).
 ///
 /// See [`crate::client::fluent_builders::ListSupportedPhoneNumberCountries`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSupportedPhoneNumberCountries {
     _private: (),
 }
@@ -4615,7 +4615,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSupportedPhoneNumber
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
 /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
 }
@@ -4649,7 +4649,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// [`list_users`](crate::client::Client::list_users).
 ///
 /// See [`crate::client::fluent_builders::ListUsers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListUsers {
     _private: (),
 }
@@ -4680,7 +4680,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUsers {
 /// [`list_voice_connector_groups`](crate::client::Client::list_voice_connector_groups).
 ///
 /// See [`crate::client::fluent_builders::ListVoiceConnectorGroups`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVoiceConnectorGroups {
     _private: (),
 }
@@ -4714,7 +4714,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVoiceConnectorGroups
 /// [`list_voice_connectors`](crate::client::Client::list_voice_connectors).
 ///
 /// See [`crate::client::fluent_builders::ListVoiceConnectors`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVoiceConnectors {
     _private: (),
 }
@@ -4748,7 +4748,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVoiceConnectors {
 /// [`list_voice_connector_termination_credentials`](crate::client::Client::list_voice_connector_termination_credentials).
 ///
 /// See [`crate::client::fluent_builders::ListVoiceConnectorTerminationCredentials`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVoiceConnectorTerminationCredentials {
     _private: (),
 }
@@ -4786,7 +4786,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVoiceConnectorTermin
 /// [`logout_user`](crate::client::Client::logout_user).
 ///
 /// See [`crate::client::fluent_builders::LogoutUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct LogoutUser {
     _private: (),
 }
@@ -4818,7 +4818,7 @@ impl aws_smithy_http::response::ParseStrictResponse for LogoutUser {
 /// [`put_app_instance_retention_settings`](crate::client::Client::put_app_instance_retention_settings).
 ///
 /// See [`crate::client::fluent_builders::PutAppInstanceRetentionSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutAppInstanceRetentionSettings {
     _private: (),
 }
@@ -4852,7 +4852,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAppInstanceRetentionS
 /// [`put_app_instance_streaming_configurations`](crate::client::Client::put_app_instance_streaming_configurations).
 ///
 /// See [`crate::client::fluent_builders::PutAppInstanceStreamingConfigurations`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutAppInstanceStreamingConfigurations {
     _private: (),
 }
@@ -4888,7 +4888,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAppInstanceStreamingC
 /// [`put_events_configuration`](crate::client::Client::put_events_configuration).
 ///
 /// See [`crate::client::fluent_builders::PutEventsConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutEventsConfiguration {
     _private: (),
 }
@@ -4922,7 +4922,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutEventsConfiguration {
 /// [`put_retention_settings`](crate::client::Client::put_retention_settings).
 ///
 /// See [`crate::client::fluent_builders::PutRetentionSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRetentionSettings {
     _private: (),
 }
@@ -4956,7 +4956,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRetentionSettings {
 /// [`put_sip_media_application_logging_configuration`](crate::client::Client::put_sip_media_application_logging_configuration).
 ///
 /// See [`crate::client::fluent_builders::PutSipMediaApplicationLoggingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutSipMediaApplicationLoggingConfiguration {
     _private: (),
 }
@@ -4995,7 +4995,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutSipMediaApplicationLo
 /// [`put_voice_connector_emergency_calling_configuration`](crate::client::Client::put_voice_connector_emergency_calling_configuration).
 ///
 /// See [`crate::client::fluent_builders::PutVoiceConnectorEmergencyCallingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutVoiceConnectorEmergencyCallingConfiguration {
     _private: (),
 }
@@ -5034,7 +5034,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// [`put_voice_connector_logging_configuration`](crate::client::Client::put_voice_connector_logging_configuration).
 ///
 /// See [`crate::client::fluent_builders::PutVoiceConnectorLoggingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutVoiceConnectorLoggingConfiguration {
     _private: (),
 }
@@ -5070,7 +5070,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutVoiceConnectorLogging
 /// [`put_voice_connector_origination`](crate::client::Client::put_voice_connector_origination).
 ///
 /// See [`crate::client::fluent_builders::PutVoiceConnectorOrigination`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutVoiceConnectorOrigination {
     _private: (),
 }
@@ -5104,7 +5104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutVoiceConnectorOrigina
 /// [`put_voice_connector_proxy`](crate::client::Client::put_voice_connector_proxy).
 ///
 /// See [`crate::client::fluent_builders::PutVoiceConnectorProxy`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutVoiceConnectorProxy {
     _private: (),
 }
@@ -5138,7 +5138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutVoiceConnectorProxy {
 /// [`put_voice_connector_streaming_configuration`](crate::client::Client::put_voice_connector_streaming_configuration).
 ///
 /// See [`crate::client::fluent_builders::PutVoiceConnectorStreamingConfiguration`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutVoiceConnectorStreamingConfiguration {
     _private: (),
 }
@@ -5176,7 +5176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutVoiceConnectorStreami
 /// [`put_voice_connector_termination`](crate::client::Client::put_voice_connector_termination).
 ///
 /// See [`crate::client::fluent_builders::PutVoiceConnectorTermination`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutVoiceConnectorTermination {
     _private: (),
 }
@@ -5210,7 +5210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutVoiceConnectorTermina
 /// [`put_voice_connector_termination_credentials`](crate::client::Client::put_voice_connector_termination_credentials).
 ///
 /// See [`crate::client::fluent_builders::PutVoiceConnectorTerminationCredentials`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutVoiceConnectorTerminationCredentials {
     _private: (),
 }
@@ -5248,7 +5248,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutVoiceConnectorTermina
 /// [`redact_channel_message`](crate::client::Client::redact_channel_message).
 ///
 /// See [`crate::client::fluent_builders::RedactChannelMessage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RedactChannelMessage {
     _private: (),
 }
@@ -5282,7 +5282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RedactChannelMessage {
 /// [`redact_conversation_message`](crate::client::Client::redact_conversation_message).
 ///
 /// See [`crate::client::fluent_builders::RedactConversationMessage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RedactConversationMessage {
     _private: (),
 }
@@ -5316,7 +5316,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RedactConversationMessag
 /// [`redact_room_message`](crate::client::Client::redact_room_message).
 ///
 /// See [`crate::client::fluent_builders::RedactRoomMessage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RedactRoomMessage {
     _private: (),
 }
@@ -5350,7 +5350,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RedactRoomMessage {
 /// [`regenerate_security_token`](crate::client::Client::regenerate_security_token).
 ///
 /// See [`crate::client::fluent_builders::RegenerateSecurityToken`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegenerateSecurityToken {
     _private: (),
 }
@@ -5384,7 +5384,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegenerateSecurityToken 
 /// [`reset_personal_pin`](crate::client::Client::reset_personal_pin).
 ///
 /// See [`crate::client::fluent_builders::ResetPersonalPIN`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ResetPersonalPIN {
     _private: (),
 }
@@ -5418,7 +5418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetPersonalPIN {
 /// [`restore_phone_number`](crate::client::Client::restore_phone_number).
 ///
 /// See [`crate::client::fluent_builders::RestorePhoneNumber`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RestorePhoneNumber {
     _private: (),
 }
@@ -5452,7 +5452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestorePhoneNumber {
 /// [`search_available_phone_numbers`](crate::client::Client::search_available_phone_numbers).
 ///
 /// See [`crate::client::fluent_builders::SearchAvailablePhoneNumbers`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchAvailablePhoneNumbers {
     _private: (),
 }
@@ -5486,7 +5486,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchAvailablePhoneNumb
 /// [`send_channel_message`](crate::client::Client::send_channel_message).
 ///
 /// See [`crate::client::fluent_builders::SendChannelMessage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendChannelMessage {
     _private: (),
 }
@@ -5520,7 +5520,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendChannelMessage {
 /// [`start_meeting_transcription`](crate::client::Client::start_meeting_transcription).
 ///
 /// See [`crate::client::fluent_builders::StartMeetingTranscription`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartMeetingTranscription {
     _private: (),
 }
@@ -5554,7 +5554,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartMeetingTranscriptio
 /// [`stop_meeting_transcription`](crate::client::Client::stop_meeting_transcription).
 ///
 /// See [`crate::client::fluent_builders::StopMeetingTranscription`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopMeetingTranscription {
     _private: (),
 }
@@ -5588,7 +5588,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopMeetingTranscription
 /// [`tag_attendee`](crate::client::Client::tag_attendee).
 ///
 /// See [`crate::client::fluent_builders::TagAttendee`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagAttendee {
     _private: (),
 }
@@ -5620,7 +5620,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagAttendee {
 /// [`tag_meeting`](crate::client::Client::tag_meeting).
 ///
 /// See [`crate::client::fluent_builders::TagMeeting`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagMeeting {
     _private: (),
 }
@@ -5652,7 +5652,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagMeeting {
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
 /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
 }
@@ -5684,7 +5684,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// [`untag_attendee`](crate::client::Client::untag_attendee).
 ///
 /// See [`crate::client::fluent_builders::UntagAttendee`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagAttendee {
     _private: (),
 }
@@ -5716,7 +5716,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagAttendee {
 /// [`untag_meeting`](crate::client::Client::untag_meeting).
 ///
 /// See [`crate::client::fluent_builders::UntagMeeting`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagMeeting {
     _private: (),
 }
@@ -5748,7 +5748,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagMeeting {
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
 /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
 }
@@ -5780,7 +5780,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// [`update_account`](crate::client::Client::update_account).
 ///
 /// See [`crate::client::fluent_builders::UpdateAccount`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAccount {
     _private: (),
 }
@@ -5812,7 +5812,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAccount {
 /// [`update_account_settings`](crate::client::Client::update_account_settings).
 ///
 /// See [`crate::client::fluent_builders::UpdateAccountSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAccountSettings {
     _private: (),
 }
@@ -5846,7 +5846,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAccountSettings {
 /// [`update_app_instance`](crate::client::Client::update_app_instance).
 ///
 /// See [`crate::client::fluent_builders::UpdateAppInstance`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAppInstance {
     _private: (),
 }
@@ -5880,7 +5880,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAppInstance {
 /// [`update_app_instance_user`](crate::client::Client::update_app_instance_user).
 ///
 /// See [`crate::client::fluent_builders::UpdateAppInstanceUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAppInstanceUser {
     _private: (),
 }
@@ -5914,7 +5914,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAppInstanceUser {
 /// [`update_bot`](crate::client::Client::update_bot).
 ///
 /// See [`crate::client::fluent_builders::UpdateBot`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBot {
     _private: (),
 }
@@ -5945,7 +5945,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBot {
 /// [`update_channel`](crate::client::Client::update_channel).
 ///
 /// See [`crate::client::fluent_builders::UpdateChannel`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateChannel {
     _private: (),
 }
@@ -5977,7 +5977,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateChannel {
 /// [`update_channel_message`](crate::client::Client::update_channel_message).
 ///
 /// See [`crate::client::fluent_builders::UpdateChannelMessage`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateChannelMessage {
     _private: (),
 }
@@ -6011,7 +6011,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateChannelMessage {
 /// [`update_channel_read_marker`](crate::client::Client::update_channel_read_marker).
 ///
 /// See [`crate::client::fluent_builders::UpdateChannelReadMarker`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateChannelReadMarker {
     _private: (),
 }
@@ -6045,7 +6045,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateChannelReadMarker 
 /// [`update_global_settings`](crate::client::Client::update_global_settings).
 ///
 /// See [`crate::client::fluent_builders::UpdateGlobalSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateGlobalSettings {
     _private: (),
 }
@@ -6079,7 +6079,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGlobalSettings {
 /// [`update_phone_number`](crate::client::Client::update_phone_number).
 ///
 /// See [`crate::client::fluent_builders::UpdatePhoneNumber`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePhoneNumber {
     _private: (),
 }
@@ -6113,7 +6113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePhoneNumber {
 /// [`update_phone_number_settings`](crate::client::Client::update_phone_number_settings).
 ///
 /// See [`crate::client::fluent_builders::UpdatePhoneNumberSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePhoneNumberSettings {
     _private: (),
 }
@@ -6147,7 +6147,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePhoneNumberSetting
 /// [`update_proxy_session`](crate::client::Client::update_proxy_session).
 ///
 /// See [`crate::client::fluent_builders::UpdateProxySession`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateProxySession {
     _private: (),
 }
@@ -6181,7 +6181,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProxySession {
 /// [`update_room`](crate::client::Client::update_room).
 ///
 /// See [`crate::client::fluent_builders::UpdateRoom`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRoom {
     _private: (),
 }
@@ -6213,7 +6213,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoom {
 /// [`update_room_membership`](crate::client::Client::update_room_membership).
 ///
 /// See [`crate::client::fluent_builders::UpdateRoomMembership`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRoomMembership {
     _private: (),
 }
@@ -6247,7 +6247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoomMembership {
 /// [`update_sip_media_application`](crate::client::Client::update_sip_media_application).
 ///
 /// See [`crate::client::fluent_builders::UpdateSipMediaApplication`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSipMediaApplication {
     _private: (),
 }
@@ -6281,7 +6281,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSipMediaApplicatio
 /// [`update_sip_media_application_call`](crate::client::Client::update_sip_media_application_call).
 ///
 /// See [`crate::client::fluent_builders::UpdateSipMediaApplicationCall`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSipMediaApplicationCall {
     _private: (),
 }
@@ -6315,7 +6315,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSipMediaApplicatio
 /// [`update_sip_rule`](crate::client::Client::update_sip_rule).
 ///
 /// See [`crate::client::fluent_builders::UpdateSipRule`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSipRule {
     _private: (),
 }
@@ -6347,7 +6347,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSipRule {
 /// [`update_user`](crate::client::Client::update_user).
 ///
 /// See [`crate::client::fluent_builders::UpdateUser`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateUser {
     _private: (),
 }
@@ -6379,7 +6379,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUser {
 /// [`update_user_settings`](crate::client::Client::update_user_settings).
 ///
 /// See [`crate::client::fluent_builders::UpdateUserSettings`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateUserSettings {
     _private: (),
 }
@@ -6413,7 +6413,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserSettings {
 /// [`update_voice_connector`](crate::client::Client::update_voice_connector).
 ///
 /// See [`crate::client::fluent_builders::UpdateVoiceConnector`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateVoiceConnector {
     _private: (),
 }
@@ -6447,7 +6447,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVoiceConnector {
 /// [`update_voice_connector_group`](crate::client::Client::update_voice_connector_group).
 ///
 /// See [`crate::client::fluent_builders::UpdateVoiceConnectorGroup`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateVoiceConnectorGroup {
     _private: (),
 }
@@ -6481,7 +6481,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVoiceConnectorGrou
 /// [`validate_e911_address`](crate::client::Client::validate_e911_address).
 ///
 /// See [`crate::client::fluent_builders::ValidateE911Address`] for more details about the operation.
-#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ValidateE911Address {
     _private: (),
 }
