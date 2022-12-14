@@ -63,6 +63,7 @@ pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 /// Re-exported types from supporting crates.
 pub mod types {
     pub use aws_smithy_http::result::SdkError;
+    pub use aws_smithy_types::error::display::DisplayErrorContext;
 }
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("appintegrations", PKG_VERSION);
