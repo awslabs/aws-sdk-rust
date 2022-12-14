@@ -30,9 +30,9 @@ async fn test_streaming_response_fails_when_eof_comes_before_content_length_reac
             "test",
         )))
         .region(Region::new("us-east-1"))
-        .endpoint_resolver(Endpoint::immutable(
-            format!("http://{server_addr}").parse().expect("valid URI"),
-        ))
+        .endpoint_resolver(
+            Endpoint::immutable(format!("http://{server_addr}")).expect("valid endpoint"),
+        )
         .build();
 
     let client = Client::new(&sdk_config);

@@ -104,9 +104,9 @@ async fn test_read_timeout() {
                 .read_timeout(Duration::from_millis(300))
                 .build(),
         )
-        .endpoint_resolver(Endpoint::immutable(
-            format!("http://{server_addr}").parse().expect("valid URI"),
-        ))
+        .endpoint_resolver(
+            Endpoint::immutable(format!("http://{server_addr}")).expect("valid endpoint"),
+        )
         .region(Some(Region::from_static("us-east-1")))
         .credentials_provider(SharedCredentialsProvider::new(Credentials::new(
             "test", "test", None, None, "test",
@@ -148,10 +148,13 @@ async fn test_connect_timeout() {
                 .connect_timeout(Duration::from_millis(300))
                 .build(),
         )
-        .endpoint_resolver(Endpoint::immutable(
-            // Emulate a connect timeout error by hitting an unroutable IP
-            "http://172.255.255.0:18104".parse().unwrap(),
-        ))
+        .endpoint_resolver(
+            Endpoint::immutable(
+                // Emulate a connect timeout error by hitting an unroutable IP
+                "http://172.255.255.0:18104",
+            )
+            .expect("valid endpoint"),
+        )
         .region(Some(Region::from_static("us-east-1")))
         .credentials_provider(SharedCredentialsProvider::new(Credentials::new(
             "test", "test", None, None, "test",

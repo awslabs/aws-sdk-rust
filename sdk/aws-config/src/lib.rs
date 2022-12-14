@@ -323,13 +323,14 @@ mod loader {
         ///
         /// Use a static endpoint for all services
         /// ```no_run
-        /// # async fn create_config() {
+        /// # async fn create_config() -> Result<(), aws_smithy_http::endpoint::error::InvalidEndpointError> {
         /// use aws_config::endpoint::Endpoint;
         ///
         /// let sdk_config = aws_config::from_env()
-        ///     .endpoint_resolver(Endpoint::immutable("http://localhost:1234".parse().expect("valid URI")))
+        ///     .endpoint_resolver(Endpoint::immutable("http://localhost:1234")?)
         ///     .load()
         ///     .await;
+        /// # Ok(())
         /// # }
         pub fn endpoint_resolver(
             mut self,

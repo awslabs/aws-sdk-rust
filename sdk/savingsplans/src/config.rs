@@ -376,14 +376,16 @@ impl Builder {
     ///
     /// # Examples
     /// ```no_run
+    /// # fn wrapper() -> Result<(), aws_smithy_http::endpoint::error::InvalidEndpointError> {
     /// use aws_types::region::Region;
     /// use aws_sdk_savingsplans::config::{Builder, Config};
     /// use aws_sdk_savingsplans::Endpoint;
     ///
     /// let config = aws_sdk_savingsplans::Config::builder()
-    ///     .endpoint_resolver(
-    ///         Endpoint::immutable("http://localhost:8080".parse().expect("valid URI"))
-    ///     ).build();
+    ///     .endpoint_resolver(Endpoint::immutable("http://localhost:8080")?)
+    ///     .build();
+    /// # Ok(())
+    /// # }
     /// ```
     pub fn endpoint_resolver(
         mut self,

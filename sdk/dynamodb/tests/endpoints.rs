@@ -14,9 +14,7 @@ async fn endpoints_can_be_overridden_globally() {
     let shared_config = aws_types::SdkConfig::builder()
         .region(Region::new("us-east-4"))
         .http_connector(conn)
-        .endpoint_resolver(Endpoint::immutable(
-            "http://localhost:8000".parse().unwrap(),
-        ))
+        .endpoint_resolver(Endpoint::immutable("http://localhost:8000").expect("valid endpoint"))
         .build();
     let conf = aws_sdk_dynamodb::config::Builder::from(&shared_config)
         .credentials_provider(Credentials::new("asdf", "asdf", None, None, "test"))
@@ -38,9 +36,7 @@ async fn endpoints_can_be_overridden_locally() {
         .build();
     let conf = aws_sdk_dynamodb::config::Builder::from(&shared_config)
         .credentials_provider(Credentials::new("asdf", "asdf", None, None, "test"))
-        .endpoint_resolver(Endpoint::immutable(
-            "http://localhost:8000".parse().unwrap(),
-        ))
+        .endpoint_resolver(Endpoint::immutable("http://localhost:8000").expect("valid endpoint"))
         .build();
     let svc = aws_sdk_dynamodb::Client::from_conf(conf);
     let _ = svc.list_tables().send().await;

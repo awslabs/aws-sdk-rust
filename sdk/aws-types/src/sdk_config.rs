@@ -90,13 +90,15 @@ impl Builder {
     ///
     /// # Examples
     /// ```
+    /// # fn wrapper() -> Result<(), aws_smithy_http::endpoint::error::InvalidEndpointError> {
     /// use std::sync::Arc;
     /// use aws_types::SdkConfig;
     /// use aws_smithy_http::endpoint::Endpoint;
-    /// use http::Uri;
     /// let config = SdkConfig::builder().endpoint_resolver(
-    ///     Endpoint::immutable(Uri::from_static("http://localhost:8080"))
+    ///     Endpoint::immutable("http://localhost:8080")?
     /// ).build();
+    /// # Ok(())
+    /// # }
     /// ```
     pub fn endpoint_resolver(
         mut self,

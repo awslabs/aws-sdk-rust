@@ -128,7 +128,9 @@ impl TokenMiddleware {
 
     async fn get_token(&self) -> Result<(Token, SystemTime), ImdsError> {
         let mut uri = Uri::from_static("/latest/api/token");
-        self.endpoint.set_endpoint(&mut uri, None);
+        self.endpoint
+            .set_endpoint(&mut uri, None)
+            .map_err(ImdsError::unexpected)?;
         let request = http::Request::builder()
             .header(
                 X_AWS_EC2_METADATA_TOKEN_TTL_SECONDS,

@@ -8,7 +8,7 @@
 use crate::profile::credentials::ProfileFileError;
 use aws_smithy_client::SdkError;
 use aws_smithy_http::body::SdkBody;
-use http::uri::InvalidUri;
+use aws_smithy_http::endpoint::error::InvalidEndpointError;
 use std::error::Error;
 use std::fmt;
 
@@ -174,7 +174,7 @@ impl Error for InvalidEndpointMode {}
 
 #[derive(Debug)]
 #[allow(clippy::enum_variant_names)]
-pub(super) enum BuildErrorKind {
+enum BuildErrorKind {
     /// The endpoint mode was invalid
     InvalidEndpointMode(InvalidEndpointMode),
 
@@ -182,13 +182,35 @@ pub(super) enum BuildErrorKind {
     InvalidProfile(ProfileFileError),
 
     /// The specified endpoint was not a valid URI
-    InvalidEndpointUri(InvalidUri),
+    InvalidEndpointUri(Box<dyn Error + Send + Sync + 'static>),
 }
 
 /// Error constructing IMDSv2 Client
 #[derive(Debug)]
 pub struct BuildError {
     kind: BuildErrorKind,
+}
+
+impl BuildError {
+    pub(super) fn invalid_endpoint_mode(source: InvalidEndpointMode) -> Self {
+        Self {
+            kind: BuildErrorKind::InvalidEndpointMode(source),
+        }
+    }
+
+    pub(super) fn invalid_profile(source: ProfileFileError) -> Self {
+        Self {
+            kind: BuildErrorKind::InvalidProfile(source),
+        }
+    }
+
+    pub(super) fn invalid_endpoint_uri(
+        source: impl Into<Box<dyn Error + Send + Sync + 'static>>,
+    ) -> Self {
+        Self {
+            kind: BuildErrorKind::InvalidEndpointUri(source.into()),
+        }
+    }
 }
 
 impl fmt::Display for BuildError {
@@ -209,14 +231,16 @@ impl Error for BuildError {
         match &self.kind {
             InvalidEndpointMode(e) => Some(e),
             InvalidProfile(e) => Some(e),
-            InvalidEndpointUri(e) => Some(e),
+            InvalidEndpointUri(e) => Some(e.as_ref()),
         }
     }
 }
 
-impl From<BuildErrorKind> for BuildError {
-    fn from(kind: BuildErrorKind) -> Self {
-        Self { kind }
+impl From<InvalidEndpointError> for BuildError {
+    fn from(err: InvalidEndpointError) -> Self {
+        Self {
+            kind: BuildErrorKind::InvalidEndpointUri(err.into()),
+        }
     }
 }
 

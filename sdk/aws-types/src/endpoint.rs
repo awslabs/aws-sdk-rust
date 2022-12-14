@@ -7,6 +7,7 @@
 
 use crate::region::{Region, SigningRegion};
 use crate::SigningService;
+use aws_smithy_http::endpoint::error::InvalidEndpointError;
 use aws_smithy_http::endpoint::{Endpoint, EndpointPrefix};
 use std::error::Error;
 use std::fmt::Debug;
@@ -43,8 +44,12 @@ impl AwsEndpoint {
     }
 
     /// Sets the endpoint on a given `uri` based on this endpoint
-    pub fn set_endpoint(&self, uri: &mut http::Uri, endpoint_prefix: Option<&EndpointPrefix>) {
-        self.endpoint.set_endpoint(uri, endpoint_prefix);
+    pub fn set_endpoint(
+        &self,
+        uri: &mut http::Uri,
+        endpoint_prefix: Option<&EndpointPrefix>,
+    ) -> Result<(), InvalidEndpointError> {
+        self.endpoint.set_endpoint(uri, endpoint_prefix)
     }
 }
 
@@ -71,12 +76,12 @@ pub type BoxError = Box<dyn Error + Send + Sync + 'static>;
 /// #     }
 /// # }
 /// # }
+/// # fn wrapper() -> Result<(), aws_smithy_http::endpoint::error::InvalidEndpointError> {
 /// use aws_smithy_http::endpoint::Endpoint;
-/// use http::Uri;
 /// let config = dynamodb::Config::builder()
-///     .endpoint(
-///         Endpoint::immutable(Uri::from_static("http://localhost:8080"))
-///     );
+///     .endpoint(Endpoint::immutable("http://localhost:8080")?);
+/// #     Ok(())
+/// # }
 /// ```
 /// Each AWS service generates their own implementation of `ResolveAwsEndpoint`.
 pub trait ResolveAwsEndpoint: Send + Sync + Debug {
