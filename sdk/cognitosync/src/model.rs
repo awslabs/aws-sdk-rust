@@ -382,7 +382,7 @@ impl Operation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["remove", "replace"]
     }
 }
@@ -578,7 +578,7 @@ impl StreamingStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -762,7 +762,7 @@ impl Platform {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ADM", "APNS", "APNS_SANDBOX", "GCM"]
     }
 }
@@ -1169,7 +1169,7 @@ impl BulkPublishStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "NOT_STARTED", "SUCCEEDED"]
     }
 }

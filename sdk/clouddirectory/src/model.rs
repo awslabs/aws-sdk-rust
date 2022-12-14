@@ -161,7 +161,7 @@ impl UpdateActionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE_OR_UPDATE", "DELETE"]
     }
 }
@@ -435,7 +435,7 @@ impl RequiredAttributeBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NOT_REQUIRED", "REQUIRED_ALWAYS"]
     }
 }
@@ -631,7 +631,7 @@ impl RuleType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BINARY_LENGTH",
             "NUMBER_COMPARISON",
@@ -844,7 +844,7 @@ impl FacetAttributeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BINARY", "BOOLEAN", "DATETIME", "NUMBER", "STRING", "VARIANT",
         ]
@@ -1770,7 +1770,7 @@ impl ObjectType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INDEX", "LEAF_NODE", "NODE", "POLICY"]
     }
 }
@@ -2625,7 +2625,7 @@ impl ConsistencyLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EVENTUAL", "SERIALIZABLE"]
     }
 }
@@ -2935,7 +2935,7 @@ impl RangeMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EXCLUSIVE",
             "FIRST",
@@ -3569,7 +3569,7 @@ impl DirectoryState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETED", "DISABLED", "ENABLED"]
     }
 }
@@ -3760,7 +3760,7 @@ impl FacetStyle {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DYNAMIC", "STATIC"]
     }
 }
@@ -4063,7 +4063,7 @@ impl BatchWriteExceptionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDeniedException",
             "DirectoryNotEnabledException",
@@ -7381,7 +7381,7 @@ impl BatchReadExceptionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDeniedException",
             "CannotListParentOfRootException",

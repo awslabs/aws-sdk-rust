@@ -167,7 +167,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
             "FIELD_VALIDATION_FAILED",
@@ -477,7 +477,7 @@ impl ShareStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCEPTED",
             "ASSOCIATED",
@@ -576,7 +576,7 @@ impl PermissionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONTRIBUTOR", "READONLY"]
     }
 }
@@ -1419,7 +1419,7 @@ impl Risk {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HIGH", "MEDIUM", "NONE", "NOT_APPLICABLE", "UNANSWERED"]
     }
 }
@@ -1526,7 +1526,7 @@ impl WorkloadImprovementStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETE",
             "IN_PROGRESS",
@@ -1624,7 +1624,7 @@ impl WorkloadEnvironment {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PREPRODUCTION", "PRODUCTION"]
     }
 }
@@ -1869,7 +1869,7 @@ impl ShareResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LENS", "WORKLOAD"]
     }
 }
@@ -1961,7 +1961,7 @@ impl ShareInvitationAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCEPT", "REJECT"]
     }
 }
@@ -2475,7 +2475,7 @@ impl LensStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CURRENT",
             "DELETED",
@@ -2573,7 +2573,7 @@ impl OrganizationSharingStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -3056,7 +3056,7 @@ impl AnswerReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ARCHITECTURE_CONSTRAINTS",
             "BUSINESS_PRIORITIES",
@@ -3288,7 +3288,7 @@ impl ChoiceReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ARCHITECTURE_CONSTRAINTS",
             "BUSINESS_PRIORITIES",
@@ -3389,7 +3389,7 @@ impl ChoiceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NOT_APPLICABLE", "SELECTED", "UNSELECTED"]
     }
 }
@@ -3816,7 +3816,7 @@ impl AdditionalResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HELPFUL_RESOURCE", "IMPROVEMENT_PLAN"]
     }
 }
@@ -4874,7 +4874,7 @@ impl NotificationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LENS_VERSION_DEPRECATED", "LENS_VERSION_UPGRADED"]
     }
 }
@@ -5961,7 +5961,7 @@ impl LensType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_OFFICIAL", "CUSTOM_SELF", "CUSTOM_SHARED"]
     }
 }
@@ -6056,7 +6056,7 @@ impl LensStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "DRAFT", "PUBLISHED"]
     }
 }
@@ -6512,7 +6512,7 @@ impl ImportLensStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "ERROR", "IN_PROGRESS"]
     }
 }
@@ -7034,7 +7034,7 @@ impl DifferenceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETED", "NEW", "UPDATED"]
     }
 }

@@ -1218,7 +1218,7 @@ impl MigrationTypeValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["cdc", "full-load", "full-load-and-cdc"]
     }
 }
@@ -1786,7 +1786,7 @@ impl StartReplicationTaskTypeValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["reload-target", "resume-processing", "start-replication"]
     }
 }
@@ -1878,7 +1878,7 @@ impl ReloadOptionValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["data-reload", "validate-only"]
     }
 }
@@ -2197,7 +2197,7 @@ impl RefreshSchemasStatusTypeValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["failed", "refreshing", "successful"]
     }
 }
@@ -5089,7 +5089,7 @@ impl TargetDbType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["multiple-databases", "specific-database"]
     }
 }
@@ -5386,7 +5386,7 @@ impl RedisAuthTypeValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["auth-role", "auth-token", "none"]
     }
 }
@@ -5478,7 +5478,7 @@ impl SslSecurityProtocolValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["plaintext", "ssl-encryption"]
     }
 }
@@ -5863,7 +5863,7 @@ impl NestingLevelValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["none", "one"]
     }
 }
@@ -6601,7 +6601,7 @@ impl SafeguardPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "exclusive-automatic-truncation",
             "rely-on-sql-server-replication-agent",
@@ -7926,7 +7926,7 @@ impl CharLengthSemantics {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["byte", "char", "default"]
     }
 }
@@ -8894,7 +8894,7 @@ impl PluginNameValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["no-preference", "pglogical", "test-decoding"]
     }
 }
@@ -9714,7 +9714,7 @@ impl EncryptionModeValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["sse-kms", "sse-s3"]
     }
 }
@@ -10585,7 +10585,7 @@ impl KafkaSecurityProtocol {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "plaintext",
             "sasl-ssl",
@@ -10682,7 +10682,7 @@ impl MessageFormatValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["json", "json-unformatted"]
     }
 }
@@ -11412,7 +11412,7 @@ impl AuthMechanismValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["default", "mongodb_cr", "scram_sha_1"]
     }
 }
@@ -11502,7 +11502,7 @@ impl AuthTypeValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["no", "password"]
     }
 }
@@ -12957,7 +12957,7 @@ impl CannedAclForObjectsValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "authenticated-read",
             "aws-exec-read",
@@ -13068,7 +13068,7 @@ impl DatePartitionDelimiterValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DASH", "NONE", "SLASH", "UNDERSCORE"]
     }
 }
@@ -13175,7 +13175,7 @@ impl DatePartitionSequenceValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DDMMYYYY", "MMYYYYDD", "YYYYMM", "YYYYMMDD", "YYYYMMDDHH"]
     }
 }
@@ -13267,7 +13267,7 @@ impl ParquetVersionValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["parquet-1-0", "parquet-2-0"]
     }
 }
@@ -13364,7 +13364,7 @@ impl EncodingTypeValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["plain", "plain-dictionary", "rle-dictionary"]
     }
 }
@@ -13454,7 +13454,7 @@ impl DataFormatValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["csv", "parquet"]
     }
 }
@@ -13546,7 +13546,7 @@ impl CompressionTypeValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["gzip", "none"]
     }
 }
@@ -13704,7 +13704,7 @@ impl DmsSslModeValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["none", "require", "verify-ca", "verify-full"]
     }
 }
@@ -13796,7 +13796,7 @@ impl ReplicationEndpointTypeValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["source", "target"]
     }
 }
@@ -15888,7 +15888,7 @@ impl ReleaseStatusValues {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["beta"]
     }
 }
@@ -17797,7 +17797,7 @@ impl CollectorStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "UNREGISTERED"]
     }
 }
@@ -17892,7 +17892,7 @@ impl VersionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OUTDATED", "UNSUPPORTED", "UP_TO_DATE"]
     }
 }
@@ -18131,7 +18131,7 @@ impl SourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["replication-instance"]
     }
 }
@@ -18708,7 +18708,7 @@ impl EndpointSettingTypeValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["boolean", "enum", "integer", "string"]
     }
 }

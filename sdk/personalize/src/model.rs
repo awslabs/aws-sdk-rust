@@ -798,7 +798,7 @@ impl Domain {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ECOMMERCE", "VIDEO_ON_DEMAND"]
     }
 }
@@ -1274,7 +1274,7 @@ impl RecipeProvider {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SERVICE"]
     }
 }
@@ -2126,7 +2126,7 @@ impl ImportMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL", "INCREMENTAL"]
     }
 }
@@ -3700,7 +3700,7 @@ impl TrainingMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL", "UPDATE"]
     }
 }
@@ -4105,7 +4105,7 @@ impl ObjectiveSensitivity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM", "OFF"]
     }
 }
@@ -7949,7 +7949,7 @@ impl IngestionMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "BULK", "PUT"]
     }
 }

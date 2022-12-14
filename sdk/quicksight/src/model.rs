@@ -117,7 +117,7 @@ impl ExceptionResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_SETTINGS",
             "DATA_SET",
@@ -545,7 +545,7 @@ impl IdentityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IAM", "QUICKSIGHT"]
     }
 }
@@ -650,7 +650,7 @@ impl UserRole {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADMIN",
             "AUTHOR",
@@ -970,7 +970,7 @@ impl ResourceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATION_FAILED",
             "CREATION_IN_PROGRESS",
@@ -2434,7 +2434,7 @@ impl AssignmentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "DRAFT", "ENABLED"]
     }
 }
@@ -5565,7 +5565,7 @@ impl Status {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -5811,7 +5811,7 @@ impl RowLevelPermissionFormatVersion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["VERSION_1", "VERSION_2"]
     }
 }
@@ -5903,7 +5903,7 @@ impl RowLevelPermissionPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DENY_ACCESS", "GRANT_ACCESS"]
     }
 }
@@ -6245,7 +6245,7 @@ impl GeoSpatialCountryCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["US"]
     }
 }
@@ -6337,7 +6337,7 @@ impl DataSetImportMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DIRECT_QUERY", "SPICE"]
     }
 }
@@ -6814,7 +6814,7 @@ impl JoinType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INNER", "LEFT", "OUTER", "RIGHT"]
     }
 }
@@ -7183,7 +7183,7 @@ impl ColumnTagName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COLUMN_DESCRIPTION", "COLUMN_GEOGRAPHIC_ROLE"]
     }
 }
@@ -7526,7 +7526,7 @@ impl GeoSpatialDataRole {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CITY",
             "COUNTRY",
@@ -7732,7 +7732,7 @@ impl ColumnDataType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DATETIME", "DECIMAL", "INTEGER", "STRING"]
     }
 }
@@ -8472,7 +8472,7 @@ impl InputColumnDataType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BIT", "BOOLEAN", "DATETIME", "DECIMAL", "INTEGER", "JSON", "STRING",
         ]
@@ -8702,7 +8702,7 @@ impl TextQualifier {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DOUBLE_QUOTE", "SINGLE_QUOTE"]
     }
 }
@@ -8812,7 +8812,7 @@ impl FileFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLF", "CSV", "ELF", "JSON", "TSV", "XLSX"]
     }
 }
@@ -9408,7 +9408,7 @@ impl DashboardUiState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COLLAPSED", "EXPANDED"]
     }
 }
@@ -9558,7 +9558,7 @@ impl DashboardBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -10737,7 +10737,7 @@ impl GroupFilterAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GROUP_NAME"]
     }
 }
@@ -10824,7 +10824,7 @@ impl GroupFilterOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["StartsWith"]
     }
 }
@@ -11073,7 +11073,7 @@ impl FolderType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SHARED"]
     }
 }
@@ -11261,7 +11261,7 @@ impl FolderFilterAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PARENT_FOLDER_ARN"]
     }
 }
@@ -11346,7 +11346,7 @@ impl FilterOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["StringEquals"]
     }
 }
@@ -11718,7 +11718,7 @@ impl DashboardFilterAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["QUICKSIGHT_USER"]
     }
 }
@@ -12070,7 +12070,7 @@ impl AnalysisFilterAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["QUICKSIGHT_USER"]
     }
 }
@@ -12467,7 +12467,7 @@ impl ThemeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "CUSTOM", "QUICKSIGHT"]
     }
 }
@@ -13106,7 +13106,7 @@ impl NamespaceErrorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INTERNAL_SERVICE_ERROR", "PERMISSION_DENIED"]
     }
 }
@@ -13191,7 +13191,7 @@ impl IdentityStore {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["QUICKSIGHT"]
     }
 }
@@ -13296,7 +13296,7 @@ impl NamespaceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATED",
             "CREATING",
@@ -13677,7 +13677,7 @@ impl IngestionRequestType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EDIT",
             "FULL_REFRESH",
@@ -13774,7 +13774,7 @@ impl IngestionRequestSource {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MANUAL", "SCHEDULED"]
     }
 }
@@ -14338,7 +14338,7 @@ impl IngestionErrorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_CAPACITY_LIMIT_EXCEEDED",
             "CONNECTION_FAILURE",
@@ -14493,7 +14493,7 @@ impl IngestionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
             "COMPLETED",
@@ -15338,7 +15338,7 @@ impl DataSourceErrorInfoType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
             "CONFLICT",
@@ -15552,7 +15552,7 @@ impl DataSourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADOBE_ANALYTICS",
             "AMAZON_ELASTICSEARCH",
@@ -16091,7 +16091,7 @@ impl EmbeddingIdentityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ANONYMOUS", "IAM", "QUICKSIGHT"]
     }
 }
@@ -17544,7 +17544,7 @@ impl ThemeErrorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INTERNAL_FAILURE"]
     }
 }
@@ -18643,7 +18643,7 @@ impl TemplateErrorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
             "DATA_SET_NOT_FOUND",
@@ -20312,7 +20312,7 @@ impl DashboardErrorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
             "COLUMN_GEOGRAPHIC_ROLE_MISMATCH",
@@ -20804,7 +20804,7 @@ impl AnalysisErrorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
             "COLUMN_GEOGRAPHIC_ROLE_MISMATCH",
@@ -21067,7 +21067,7 @@ impl Edition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENTERPRISE", "ENTERPRISE_AND_Q", "STANDARD"]
     }
 }
@@ -21303,7 +21303,7 @@ impl MemberType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ANALYSIS", "DASHBOARD", "DATASET"]
     }
 }
@@ -21393,7 +21393,7 @@ impl IngestionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL_REFRESH", "INCREMENTAL_REFRESH"]
     }
 }
@@ -21689,7 +21689,7 @@ impl AuthenticationMethodOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE_DIRECTORY", "IAM_AND_QUICKSIGHT", "IAM_ONLY"]
     }
 }

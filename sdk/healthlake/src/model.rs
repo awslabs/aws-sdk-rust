@@ -170,7 +170,7 @@ impl JobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "COMPLETED_WITH_ERRORS",
@@ -1192,7 +1192,7 @@ impl PreloadDataType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SYNTHEA"]
     }
 }
@@ -1415,7 +1415,7 @@ impl CmkType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_OWNED_KMS_KEY", "CUSTOMER_MANAGED_KMS_KEY"]
     }
 }
@@ -1500,7 +1500,7 @@ impl FhirVersion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["R4"]
     }
 }
@@ -1600,7 +1600,7 @@ impl DatastoreStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETED", "DELETING"]
     }
 }

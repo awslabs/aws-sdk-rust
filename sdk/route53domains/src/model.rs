@@ -305,7 +305,7 @@ impl OperationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADD_DNSSEC",
             "CHANGE_DOMAIN_OWNER",
@@ -2262,7 +2262,7 @@ impl ExtraParamName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AU_ID_NUMBER",
             "AU_ID_TYPE",
@@ -3628,7 +3628,7 @@ impl CountryCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AC", "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AN", "AO", "AQ", "AR", "AS", "AT",
             "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL",
@@ -3752,7 +3752,7 @@ impl ContactType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ASSOCIATION",
             "COMPANY",
@@ -4229,7 +4229,7 @@ impl OperationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ERROR", "FAILED", "IN_PROGRESS", "SUBMITTED", "SUCCESSFUL"]
     }
 }
@@ -4518,7 +4518,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
 }
@@ -4610,7 +4610,7 @@ impl ListDomainsAttributeName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DomainName", "Expiry"]
     }
 }
@@ -4832,7 +4832,7 @@ impl Operator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BEGINS_WITH", "GE", "LE"]
     }
 }
@@ -5240,7 +5240,7 @@ impl ReachabilityStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DONE", "EXPIRED", "PENDING"]
     }
 }
@@ -5504,7 +5504,7 @@ impl Transferable {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DONT_KNOW", "TRANSFERABLE", "UNTRANSFERABLE"]
     }
 }
@@ -5626,7 +5626,7 @@ impl DomainAvailability {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "AVAILABLE_PREORDER",

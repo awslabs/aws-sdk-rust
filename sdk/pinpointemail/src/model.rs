@@ -611,7 +611,7 @@ impl DimensionValueSource {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EMAIL_HEADER", "LINK_TAG", "MESSAGE_TAG"]
     }
 }
@@ -810,7 +810,7 @@ impl EventType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BOUNCE",
             "CLICK",
@@ -1752,7 +1752,7 @@ impl BehaviorOnMxFailure {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["REJECT_MESSAGE", "USE_DEFAULT_VALUE"]
     }
 }
@@ -2040,7 +2040,7 @@ impl TlsPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OPTIONAL", "REQUIRE"]
     }
 }
@@ -2270,7 +2270,7 @@ impl IdentityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DOMAIN", "EMAIL_ADDRESS", "MANAGED_DOMAIN"]
     }
 }
@@ -2878,7 +2878,7 @@ impl DeliverabilityTestStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "IN_PROGRESS"]
     }
 }
@@ -3141,7 +3141,7 @@ impl MailFromDomainStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING", "SUCCESS", "TEMPORARY_FAILURE"]
     }
 }
@@ -3408,7 +3408,7 @@ impl DkimStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
             "NOT_STARTED",
@@ -4199,7 +4199,7 @@ impl DeliverabilityDashboardAccountStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DISABLED", "PENDING_EXPIRATION"]
     }
 }
@@ -4424,7 +4424,7 @@ impl WarmupStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DONE", "IN_PROGRESS"]
     }
 }

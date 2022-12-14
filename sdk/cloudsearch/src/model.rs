@@ -339,7 +339,7 @@ impl OptionState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Active",
             "FailedToValidate",
@@ -708,7 +708,7 @@ impl PartitionInstanceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "search.2xlarge",
             "search.large",
@@ -977,7 +977,7 @@ impl TlsSecurityPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Policy-Min-TLS-1-0-2019-07", "Policy-Min-TLS-1-2-2019-07"]
     }
 }
@@ -1421,7 +1421,7 @@ impl SuggesterFuzzyMatching {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["high", "low", "none"]
     }
 }
@@ -3655,7 +3655,7 @@ impl IndexFieldType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "date",
             "date-array",
@@ -4703,7 +4703,7 @@ impl AlgorithmicStemming {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["full", "light", "minimal", "none"]
     }
 }
@@ -4960,7 +4960,7 @@ impl AnalysisSchemeLanguage {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ar", "bg", "ca", "cs", "da", "de", "el", "en", "es", "eu", "fa", "fi", "fr", "ga",
             "gl", "he", "hi", "hu", "hy", "id", "it", "ja", "ko", "lv", "mul", "nl", "no", "pt",

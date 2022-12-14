@@ -629,7 +629,7 @@ impl ScalingPolicyUpdateBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KeepExternalPolicies", "ReplaceExternalPolicies"]
     }
 }
@@ -721,7 +721,7 @@ impl PredictiveScalingMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ForecastAndScale", "ForecastOnly"]
     }
 }
@@ -830,7 +830,7 @@ impl PredictiveScalingMaxCapacityBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "SetForecastCapacityToMaxCapacity",
             "SetMaxCapacityAboveForecastCapacity",
@@ -1095,7 +1095,7 @@ impl MetricStatistic {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
     }
 }
@@ -1469,7 +1469,7 @@ impl LoadMetricType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALBTargetGroupRequestCount",
             "ASGTotalCPUUtilization",
@@ -2219,7 +2219,7 @@ impl ScalingMetricType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALBRequestCountPerTarget",
             "ASGAverageCPUUtilization",
@@ -2371,7 +2371,7 @@ impl ScalableDimension {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "autoscaling:autoScalingGroup:DesiredCapacity",
             "dynamodb:index:ReadCapacityUnits",
@@ -2485,7 +2485,7 @@ impl ServiceNamespace {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["autoscaling", "dynamodb", "ec2", "ecs", "rds"]
     }
 }
@@ -2834,7 +2834,7 @@ impl ForecastDataType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CapacityForecast",
             "LoadForecast",
@@ -3224,7 +3224,7 @@ impl ScalingPlanStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Active",
             "ActiveWithProblems",
@@ -3642,7 +3642,7 @@ impl ScalingStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "Inactive", "PartiallyActive"]
     }
 }
@@ -3838,7 +3838,7 @@ impl PolicyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TargetTrackingScaling"]
     }
 }

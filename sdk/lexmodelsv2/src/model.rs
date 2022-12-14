@@ -650,7 +650,7 @@ impl AudioRecognitionStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["UseSlotValuesAsCustomVocabulary"]
     }
 }
@@ -858,7 +858,7 @@ impl SlotValueResolutionStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Concatenation", "OriginalValue", "TopResolution"]
     }
 }
@@ -3172,7 +3172,7 @@ impl PromptAttempt {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Initial", "Retry1", "Retry2", "Retry3", "Retry4", "Retry5"]
     }
 }
@@ -3264,7 +3264,7 @@ impl MessageSelectionStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Ordered", "Random"]
     }
 }
@@ -3606,7 +3606,7 @@ impl ObfuscationSettingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DefaultObfuscation", "None"]
     }
 }
@@ -5175,7 +5175,7 @@ impl SlotShape {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["List", "Scalar"]
     }
 }
@@ -5401,7 +5401,7 @@ impl DialogActionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CloseIntent",
             "ConfirmIntent",
@@ -5683,7 +5683,7 @@ impl SlotConstraint {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Optional", "Required"]
     }
 }
@@ -7519,7 +7519,7 @@ impl ExportStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Completed", "Deleting", "Failed", "InProgress"]
     }
 }
@@ -7611,7 +7611,7 @@ impl ImportExportFileFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LexJson", "TSV"]
     }
 }
@@ -8612,7 +8612,7 @@ impl TranscriptFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Lex"]
     }
 }
@@ -8803,7 +8803,7 @@ impl BotRecommendationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Available",
             "Deleted",
@@ -8938,7 +8938,7 @@ impl BotLocaleStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Building",
             "Built",
@@ -9117,7 +9117,7 @@ impl VoiceEngine {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["neural", "standard"]
     }
 }
@@ -9217,7 +9217,7 @@ impl BotAliasStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Available", "Creating", "Deleting", "Failed"]
     }
 }
@@ -10161,7 +10161,7 @@ impl BotStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Available",
             "Creating",
@@ -10324,7 +10324,7 @@ impl ImportStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Completed", "Deleting", "Failed", "InProgress"]
     }
 }
@@ -10419,7 +10419,7 @@ impl MergeStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Append", "FailOnConflict", "Overwrite"]
     }
 }
@@ -11261,7 +11261,7 @@ impl AssociatedTranscriptFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IntentId", "SlotTypeId"]
     }
 }
@@ -11351,7 +11351,7 @@ impl SearchOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Ascending", "Descending"]
     }
 }
@@ -11641,7 +11641,7 @@ impl SlotTypeCategory {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Composite", "Custom", "Extended", "ExternalGrammar"]
     }
 }
@@ -11843,7 +11843,7 @@ impl SlotTypeFilterOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CO", "EQ"]
     }
 }
@@ -11935,7 +11935,7 @@ impl SlotTypeFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ExternalSourceType", "SlotTypeName"]
     }
 }
@@ -12103,7 +12103,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Ascending", "Descending"]
     }
 }
@@ -12195,7 +12195,7 @@ impl SlotTypeSortAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LastUpdatedDateTime", "SlotTypeName"]
     }
 }
@@ -12591,7 +12591,7 @@ impl SlotFilterOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CO", "EQ"]
     }
 }
@@ -12676,7 +12676,7 @@ impl SlotFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SlotName"]
     }
 }
@@ -12846,7 +12846,7 @@ impl SlotSortAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LastUpdatedDateTime", "SlotName"]
     }
 }
@@ -13342,7 +13342,7 @@ impl IntentFilterOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CO", "EQ"]
     }
 }
@@ -13427,7 +13427,7 @@ impl IntentFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IntentName"]
     }
 }
@@ -13597,7 +13597,7 @@ impl IntentSortAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IntentName", "LastUpdatedDateTime"]
     }
 }
@@ -13910,7 +13910,7 @@ impl ImportResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Bot", "BotLocale", "CustomVocabulary"]
     }
 }
@@ -14112,7 +14112,7 @@ impl ImportFilterOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CO", "EQ"]
     }
 }
@@ -14197,7 +14197,7 @@ impl ImportFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ImportResourceType"]
     }
 }
@@ -14362,7 +14362,7 @@ impl ImportSortAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LastUpdatedDateTime"]
     }
 }
@@ -14740,7 +14740,7 @@ impl ExportFilterOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CO", "EQ"]
     }
 }
@@ -14825,7 +14825,7 @@ impl ExportFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ExportResourceType"]
     }
 }
@@ -14990,7 +14990,7 @@ impl ExportSortAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LastUpdatedDateTime"]
     }
 }
@@ -15233,7 +15233,7 @@ impl BuiltInSlotTypeSortAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SlotTypeSignature"]
     }
 }
@@ -15476,7 +15476,7 @@ impl BuiltInIntentSortAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IntentSignature"]
     }
 }
@@ -15782,7 +15782,7 @@ impl BotVersionSortAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BotVersion"]
     }
 }
@@ -16145,7 +16145,7 @@ impl BotFilterOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CO", "EQ"]
     }
 }
@@ -16230,7 +16230,7 @@ impl BotFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BotName"]
     }
 }
@@ -16393,7 +16393,7 @@ impl BotSortAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BotName"]
     }
 }
@@ -16901,7 +16901,7 @@ impl BotLocaleFilterOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CO", "EQ"]
     }
 }
@@ -16988,7 +16988,7 @@ impl BotLocaleFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BotLocaleName"]
     }
 }
@@ -17153,7 +17153,7 @@ impl BotLocaleSortAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BotLocaleName"]
     }
 }
@@ -17798,7 +17798,7 @@ impl TimeDimension {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Days", "Hours", "Weeks"]
     }
 }
@@ -18002,7 +18002,7 @@ impl AggregatedUtterancesFilterOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CO", "EQ"]
     }
 }
@@ -18089,7 +18089,7 @@ impl AggregatedUtterancesFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Utterance"]
     }
 }
@@ -18261,7 +18261,7 @@ impl AggregatedUtterancesSortAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HitCount", "MissedCount"]
     }
 }
@@ -18368,7 +18368,7 @@ impl CustomVocabularyStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Creating", "Deleting", "Exporting", "Importing", "Ready"]
     }
 }
@@ -19018,7 +19018,7 @@ impl Effect {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Allow", "Deny"]
     }
 }

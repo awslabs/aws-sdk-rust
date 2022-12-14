@@ -331,7 +331,7 @@ impl CostCategorySplitChargeRuleParameterType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOCATION_PERCENTAGES"]
     }
 }
@@ -428,7 +428,7 @@ impl CostCategorySplitChargeMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EVEN", "FIXED", "PROPORTIONAL"]
     }
 }
@@ -655,7 +655,7 @@ impl CostCategoryRuleType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INHERITED_VALUE", "REGULAR"]
     }
 }
@@ -838,7 +838,7 @@ impl CostCategoryInheritedValueDimensionName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LINKED_ACCOUNT_NAME", "TAG"]
     }
 }
@@ -1259,7 +1259,7 @@ impl MatchOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ABSENT",
             "CASE_INSENSITIVE",
@@ -1735,7 +1735,7 @@ impl Dimension {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AGREEMENT_END_DATE_TIME_AFTER",
             "AGREEMENT_END_DATE_TIME_BEFORE",
@@ -1855,7 +1855,7 @@ impl CostCategoryRuleVersion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CostCategoryExpression.v1"]
     }
 }
@@ -2120,7 +2120,7 @@ impl CostAllocationTagStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "Inactive"]
     }
 }
@@ -2311,7 +2311,7 @@ impl SubscriberStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONFIRMED", "DECLINED"]
     }
 }
@@ -2401,7 +2401,7 @@ impl SubscriberType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EMAIL", "SNS"]
     }
 }
@@ -2498,7 +2498,7 @@ impl AnomalySubscriptionFrequency {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAILY", "IMMEDIATE", "WEEKLY"]
     }
 }
@@ -2672,7 +2672,7 @@ impl AnomalyFeedbackType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NO", "PLANNED_ACTIVITY", "YES"]
     }
 }
@@ -3078,7 +3078,7 @@ impl CostCategoryStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPLIED", "PROCESSING"]
     }
 }
@@ -3165,7 +3165,7 @@ impl CostCategoryStatusComponent {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COST_EXPLORER"]
     }
 }
@@ -3358,7 +3358,7 @@ impl CostAllocationTagType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWSGenerated", "UserDefined"]
     }
 }
@@ -3739,7 +3739,7 @@ impl Granularity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAILY", "HOURLY", "MONTHLY"]
     }
 }
@@ -3854,7 +3854,7 @@ impl Metric {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AMORTIZED_COST",
             "BLENDED_COST",
@@ -4030,7 +4030,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
 }
@@ -4740,7 +4740,7 @@ impl SavingsPlansDataType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AMORTIZED_COMMITMENT",
             "ATTRIBUTES",
@@ -6085,7 +6085,7 @@ impl LookbackPeriodInDays {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SEVEN_DAYS", "SIXTY_DAYS", "THIRTY_DAYS"]
     }
 }
@@ -6195,7 +6195,7 @@ impl PaymentOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALL_UPFRONT",
             "HEAVY_UTILIZATION",
@@ -6292,7 +6292,7 @@ impl TermInYears {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ONE_YEAR", "THREE_YEARS"]
     }
 }
@@ -6389,7 +6389,7 @@ impl SupportedSavingsPlansType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPUTE_SP", "EC2_INSTANCE_SP", "SAGEMAKER_SP"]
     }
 }
@@ -6479,7 +6479,7 @@ impl AccountScope {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LINKED", "PAYER"]
     }
 }
@@ -7010,7 +7010,7 @@ impl GroupDefinitionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COST_CATEGORY", "DIMENSION", "TAG"]
     }
 }
@@ -7182,7 +7182,7 @@ impl RecommendationTarget {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CROSS_INSTANCE_FAMILY", "SAME_INSTANCE_FAMILY"]
     }
 }
@@ -7552,7 +7552,7 @@ impl FindingReasonCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CPU_OVER_PROVISIONED",
             "CPU_UNDER_PROVISIONED",
@@ -8031,7 +8031,7 @@ impl PlatformDifference {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "HYPERVISOR",
             "INSTANCE_STORE_AVAILABILITY",
@@ -9102,7 +9102,7 @@ impl RightsizingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MODIFY", "TERMINATE"]
     }
 }
@@ -12516,7 +12516,7 @@ impl OfferingClass {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONVERTIBLE", "STANDARD"]
     }
 }
@@ -13430,7 +13430,7 @@ impl Context {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COST_AND_USAGE", "RESERVATIONS", "SAVINGS_PLANS"]
     }
 }
@@ -14243,7 +14243,7 @@ impl MonitorDimension {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SERVICE"]
     }
 }
@@ -14333,7 +14333,7 @@ impl MonitorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CUSTOM", "DIMENSIONAL"]
     }
 }
@@ -15048,7 +15048,7 @@ impl NumericOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BETWEEN",
             "EQUAL",

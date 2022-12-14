@@ -277,7 +277,7 @@ impl ConfigurationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -595,7 +595,7 @@ impl FormatConfigKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JPEGQuality"]
     }
 }
@@ -685,7 +685,7 @@ impl Format {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JPEG", "PNG"]
     }
 }
@@ -855,7 +855,7 @@ impl ImageSelectorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
     }
 }
@@ -947,7 +947,7 @@ impl UpdateDataRetentionOperation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DECREASE_DATA_RETENTION", "INCREASE_DATA_RETENTION"]
     }
 }
@@ -1340,7 +1340,7 @@ impl Status {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "UPDATING"]
     }
 }
@@ -1508,7 +1508,7 @@ impl ComparisonOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BEGINS_WITH"]
     }
 }
@@ -1794,7 +1794,7 @@ impl ChannelType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL_MESH", "SINGLE_MASTER"]
     }
 }
@@ -2046,7 +2046,7 @@ impl ChannelProtocol {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HTTPS", "WSS"]
     }
 }
@@ -2220,7 +2220,7 @@ impl ChannelRole {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MASTER", "VIEWER"]
     }
 }
@@ -2340,7 +2340,7 @@ impl ApiName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "GET_CLIP",
             "GET_DASH_STREAMING_SESSION_URL",

@@ -167,7 +167,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "cannotParse",
             "fieldValidationFailed",
@@ -516,7 +516,7 @@ impl EnabledType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -916,7 +916,7 @@ impl PortalStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "Incomplete", "Pending"]
     }
 }
@@ -1001,7 +1001,7 @@ impl BrowserType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Chrome"]
     }
 }
@@ -1086,7 +1086,7 @@ impl RendererType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AppStream"]
     }
 }
@@ -1673,7 +1673,7 @@ impl IdentityProviderType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Facebook",
             "Google",

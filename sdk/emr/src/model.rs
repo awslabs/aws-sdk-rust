@@ -80,7 +80,7 @@ impl IdentityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GROUP", "USER"]
     }
 }
@@ -349,7 +349,7 @@ impl ExecutionEngineType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EMR"]
     }
 }
@@ -596,7 +596,7 @@ impl PlacementGroupStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLUSTER", "NONE", "PARTITION", "SPREAD"]
     }
 }
@@ -691,7 +691,7 @@ impl InstanceRoleType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CORE", "MASTER", "TASK"]
     }
 }
@@ -993,7 +993,7 @@ impl ComputeLimitsUnitType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["InstanceFleetUnits", "Instances", "VCPU"]
     }
 }
@@ -1238,7 +1238,7 @@ impl RepoUpgradeOnBoot {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "SECURITY"]
     }
 }
@@ -1330,7 +1330,7 @@ impl ScaleDownBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TERMINATE_AT_INSTANCE_HOUR", "TERMINATE_AT_TASK_COMPLETION"]
     }
 }
@@ -2300,7 +2300,7 @@ impl ActionOnFailure {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCEL_AND_WAIT",
             "CONTINUE",
@@ -3552,7 +3552,7 @@ impl OnDemandCapacityReservationPreference {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["none", "open"]
     }
 }
@@ -3643,7 +3643,7 @@ impl OnDemandCapacityReservationUsageStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["use-capacity-reservations-first"]
     }
 }
@@ -3730,7 +3730,7 @@ impl OnDemandProvisioningAllocationStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["lowest-price"]
     }
 }
@@ -3961,7 +3961,7 @@ impl SpotProvisioningAllocationStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["capacity-optimized"]
     }
 }
@@ -4053,7 +4053,7 @@ impl SpotProvisioningTimeoutAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SWITCH_TO_ON_DEMAND", "TERMINATE_CLUSTER"]
     }
 }
@@ -4636,7 +4636,7 @@ impl InstanceFleetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CORE", "MASTER", "TASK"]
     }
 }
@@ -5702,7 +5702,7 @@ impl Unit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BITS",
             "BITS_PER_SECOND",
@@ -5835,7 +5835,7 @@ impl Statistic {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVERAGE", "MAXIMUM", "MINIMUM", "SAMPLE_COUNT", "SUM"]
     }
 }
@@ -5937,7 +5937,7 @@ impl ComparisonOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "GREATER_THAN",
             "GREATER_THAN_OR_EQUAL",
@@ -6223,7 +6223,7 @@ impl AdjustmentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CHANGE_IN_CAPACITY",
             "EXACT_CAPACITY",
@@ -6317,7 +6317,7 @@ impl MarketType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ON_DEMAND", "SPOT"]
     }
 }
@@ -7043,7 +7043,7 @@ impl AutoScalingPolicyStateChangeReasonCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLEANUP_FAILURE", "PROVISION_FAILURE", "USER_REQUEST"]
     }
 }
@@ -7155,7 +7155,7 @@ impl AutoScalingPolicyState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ATTACHED",
             "ATTACHING",
@@ -7443,7 +7443,7 @@ impl ReconfigurationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MERGE", "OVERWRITE"]
     }
 }
@@ -8174,7 +8174,7 @@ impl AuthMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IAM", "SSO"]
     }
 }
@@ -8803,7 +8803,7 @@ impl StepStateChangeReasonCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE"]
     }
 }
@@ -8918,7 +8918,7 @@ impl StepState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
             "CANCEL_PENDING",
@@ -9574,7 +9574,7 @@ impl NotebookExecutionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
             "FAILING",
@@ -10370,7 +10370,7 @@ impl InstanceStateChangeReasonCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BOOTSTRAP_FAILURE",
             "CLUSTER_TERMINATED",
@@ -10481,7 +10481,7 @@ impl InstanceState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWAITING_FULFILLMENT",
             "BOOTSTRAPPING",
@@ -10584,7 +10584,7 @@ impl InstanceGroupType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CORE", "MASTER", "TASK"]
     }
 }
@@ -11536,7 +11536,7 @@ impl InstanceGroupStateChangeReasonCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CLUSTER_TERMINATED",
             "INSTANCE_FAILURE",
@@ -11678,7 +11678,7 @@ impl InstanceGroupState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ARRESTED",
             "BOOTSTRAPPING",
@@ -12649,7 +12649,7 @@ impl InstanceFleetStateChangeReasonCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CLUSTER_TERMINATED",
             "INSTANCE_FAILURE",
@@ -12771,7 +12771,7 @@ impl InstanceFleetState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BOOTSTRAPPING",
             "PROVISIONING",
@@ -13347,7 +13347,7 @@ impl ClusterStateChangeReasonCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALL_STEPS_COMPLETED",
             "BOOTSTRAP_FAILURE",
@@ -13471,7 +13471,7 @@ impl ClusterState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BOOTSTRAPPING",
             "RUNNING",
@@ -15775,7 +15775,7 @@ impl StepExecutionState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
             "COMPLETED",
@@ -16777,7 +16777,7 @@ impl JobFlowExecutionState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BOOTSTRAPPING",
             "COMPLETED",
@@ -17643,7 +17643,7 @@ impl InstanceCollectionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INSTANCE_FLEET", "INSTANCE_GROUP"]
     }
 }
@@ -18182,7 +18182,7 @@ impl CancelStepsRequestStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "SUBMITTED"]
     }
 }
@@ -18274,7 +18274,7 @@ impl StepCancellationOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SEND_INTERRUPT", "TERMINATE_PROCESS"]
     }
 }

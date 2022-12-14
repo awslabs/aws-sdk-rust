@@ -464,7 +464,7 @@ impl BgpStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["down", "unknown", "up"]
     }
 }
@@ -569,7 +569,7 @@ impl BgpPeerState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["available", "deleted", "deleting", "pending", "verifying"]
     }
 }
@@ -659,7 +659,7 @@ impl AddressFamily {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ipv4", "ipv6"]
     }
 }
@@ -839,7 +839,7 @@ impl VirtualInterfaceState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "available",
             "confirming",
@@ -1089,7 +1089,7 @@ impl HasLogicalRedundancy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["no", "unknown", "yes"]
     }
 }
@@ -1794,7 +1794,7 @@ impl ConnectionState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "available",
             "deleted",
@@ -1919,7 +1919,7 @@ impl LagState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "available",
             "deleted",
@@ -2461,7 +2461,7 @@ impl GatewayType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["transitGateway", "virtualPrivateGateway"]
     }
 }
@@ -2568,7 +2568,7 @@ impl DirectConnectGatewayAssociationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "associated",
             "associating",
@@ -2885,7 +2885,7 @@ impl DirectConnectGatewayState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["available", "deleted", "deleting", "pending"]
     }
 }
@@ -4419,7 +4419,7 @@ impl LoaContentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["application/pdf"]
     }
 }
@@ -5487,7 +5487,7 @@ impl InterconnectState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "available",
             "deleted",
@@ -5914,7 +5914,7 @@ impl DirectConnectGatewayAttachmentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PrivateVirtualInterface", "TransitVirtualInterface"]
     }
 }
@@ -6016,7 +6016,7 @@ impl DirectConnectGatewayAttachmentState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["attached", "attaching", "detached", "detaching"]
     }
 }
@@ -6379,7 +6379,7 @@ impl DirectConnectGatewayAssociationProposalState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["accepted", "deleted", "requested"]
     }
 }
@@ -6474,7 +6474,7 @@ impl NniPartnerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["nonPartner", "v1", "v2"]
     }
 }

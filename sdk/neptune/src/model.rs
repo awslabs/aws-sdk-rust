@@ -1822,7 +1822,7 @@ impl ApplyMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["immediate", "pending-reboot"]
     }
 }
@@ -6979,7 +6979,7 @@ impl SourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "db-cluster",
             "db-cluster-snapshot",

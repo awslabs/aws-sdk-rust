@@ -708,7 +708,7 @@ impl StatusValues {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
 }
@@ -800,7 +800,7 @@ impl ProvisionTargetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL_PROVISIONED_ACCOUNTS", "AWS_ACCOUNT"]
     }
 }
@@ -900,7 +900,7 @@ impl ProvisioningStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "LATEST_PERMISSION_SET_NOT_PROVISIONED",
             "LATEST_PERMISSION_SET_PROVISIONED",
@@ -1428,7 +1428,7 @@ impl PrincipalType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GROUP", "USER"]
     }
 }
@@ -1794,7 +1794,7 @@ impl InstanceAccessControlAttributeConfigurationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATION_FAILED", "CREATION_IN_PROGRESS", "ENABLED"]
     }
 }
@@ -2112,7 +2112,7 @@ impl TargetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_ACCOUNT"]
     }
 }

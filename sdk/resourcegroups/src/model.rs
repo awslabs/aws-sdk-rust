@@ -301,7 +301,7 @@ impl QueryType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOUDFORMATION_STACK_1_0", "TAG_FILTERS_1_0"]
     }
 }
@@ -721,7 +721,7 @@ impl QueryErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CLOUDFORMATION_STACK_INACTIVE",
             "CLOUDFORMATION_STACK_NOT_EXISTING",
@@ -1223,7 +1223,7 @@ impl GroupFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["configuration-type", "resource-type"]
     }
 }
@@ -1455,7 +1455,7 @@ impl ResourceStatusValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PENDING"]
     }
 }
@@ -1629,7 +1629,7 @@ impl ResourceFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["resource-type"]
     }
 }
@@ -1873,7 +1873,7 @@ impl GroupConfigurationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["UPDATE_COMPLETE", "UPDATE_FAILED", "UPDATING"]
     }
 }

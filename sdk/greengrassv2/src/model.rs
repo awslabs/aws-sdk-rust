@@ -167,7 +167,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
             "FIELD_VALIDATION_FAILED",
@@ -566,7 +566,7 @@ impl VendorGuidance {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "DISCONTINUED"]
     }
 }
@@ -1097,7 +1097,7 @@ impl InstalledComponentLifecycleState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BROKEN",
             "ERRORED",
@@ -1198,7 +1198,7 @@ impl InstalledComponentTopologyFilter {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "ROOT"]
     }
 }
@@ -1575,7 +1575,7 @@ impl EffectiveDeploymentExecutionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
             "COMPLETED",
@@ -1875,7 +1875,7 @@ impl DeploymentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CANCELED", "COMPLETED", "FAILED", "INACTIVE"]
     }
 }
@@ -1967,7 +1967,7 @@ impl DeploymentHistoryFilter {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "LATEST_ONLY"]
     }
 }
@@ -2180,7 +2180,7 @@ impl CoreDeviceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "UNHEALTHY"]
     }
 }
@@ -2644,7 +2644,7 @@ impl ComponentVisibilityScope {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRIVATE", "PUBLIC"]
     }
 }
@@ -3191,7 +3191,7 @@ impl IoTJobAbortAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANCEL"]
     }
 }
@@ -3293,7 +3293,7 @@ impl IoTJobExecutionFailureType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "FAILED", "REJECTED", "TIMED_OUT"]
     }
 }
@@ -3952,7 +3952,7 @@ impl DeploymentComponentUpdatePolicyAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NOTIFY_COMPONENTS", "SKIP_NOTIFY_COMPONENTS"]
     }
 }
@@ -4044,7 +4044,7 @@ impl DeploymentFailureHandlingPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DO_NOTHING", "ROLLBACK"]
     }
 }
@@ -4517,7 +4517,7 @@ impl RecipeOutputFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JSON", "YAML"]
     }
 }
@@ -4809,7 +4809,7 @@ impl CloudComponentState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DEPLOYABLE",
             "DEPRECATED",
@@ -5806,7 +5806,7 @@ impl LambdaFilesystemPermission {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ro", "rw"]
     }
 }
@@ -6027,7 +6027,7 @@ impl LambdaIsolationMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GreengrassContainer", "NoContainer"]
     }
 }
@@ -6119,7 +6119,7 @@ impl LambdaInputPayloadEncodingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["binary", "json"]
     }
 }
@@ -6305,7 +6305,7 @@ impl LambdaEventSourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IOT_CORE", "PUB_SUB"]
     }
 }
@@ -6502,7 +6502,7 @@ impl ComponentDependencyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HARD", "SOFT"]
     }
 }

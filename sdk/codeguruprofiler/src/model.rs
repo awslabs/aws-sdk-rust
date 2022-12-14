@@ -80,7 +80,7 @@ impl FeedbackType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Negative", "Positive"]
     }
 }
@@ -165,7 +165,7 @@ impl ActionGroup {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["agentPermissions"]
     }
 }
@@ -418,7 +418,7 @@ impl EventPublisher {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AnomalyDetection"]
     }
 }
@@ -561,7 +561,7 @@ impl OrderBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TimestampAscending", "TimestampDescending"]
     }
 }
@@ -658,7 +658,7 @@ impl AggregationPeriod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["P1D", "PT1H", "PT5M"]
     }
 }
@@ -1274,7 +1274,7 @@ impl MetricType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AggregatedRelativeTotalTime"]
     }
 }
@@ -2000,7 +2000,7 @@ impl AgentParameterField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "MaxStackDepth",
             "MemoryUsageLimitPercent",
@@ -2139,7 +2139,7 @@ impl MetadataField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AgentId",
             "AwsRequestId",
@@ -2720,7 +2720,7 @@ impl ComputePlatform {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWSLambda", "Default"]
     }
 }

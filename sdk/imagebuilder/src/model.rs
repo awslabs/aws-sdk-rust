@@ -314,7 +314,7 @@ impl PipelineStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -525,7 +525,7 @@ impl PipelineExecutionStartCondition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE",
             "EXPRESSION_MATCH_ONLY",
@@ -1411,7 +1411,7 @@ impl DiskImageFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RAW", "VHD", "VMDK"]
     }
 }
@@ -1786,7 +1786,7 @@ impl ContainerRepositoryService {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ECR"]
     }
 }
@@ -2934,7 +2934,7 @@ impl BuildType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IMPORT", "SCHEDULED", "USER_INITIATED"]
     }
 }
@@ -3024,7 +3024,7 @@ impl Platform {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Linux", "Windows"]
     }
 }
@@ -3114,7 +3114,7 @@ impl ImageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AMI", "DOCKER"]
     }
 }
@@ -3209,7 +3209,7 @@ impl Ownership {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Amazon", "Self", "Shared"]
     }
 }
@@ -4713,7 +4713,7 @@ impl ImageStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "BUILDING",
@@ -5312,7 +5312,7 @@ impl ContainerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DOCKER"]
     }
 }
@@ -5742,7 +5742,7 @@ impl ComponentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BUILD", "TEST"]
     }
 }
@@ -6216,7 +6216,7 @@ impl ComponentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEPRECATED"]
     }
 }
@@ -6301,7 +6301,7 @@ impl ComponentFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SHELL"]
     }
 }
@@ -7714,7 +7714,7 @@ impl EbsVolumeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["gp2", "gp3", "io1", "io2", "sc1", "st1", "standard"]
     }
 }

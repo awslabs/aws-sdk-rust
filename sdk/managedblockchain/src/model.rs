@@ -80,7 +80,7 @@ impl VoteValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NO", "YES"]
     }
 }
@@ -896,7 +896,7 @@ impl ProposalStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTION_FAILED",
             "APPROVED",
@@ -1191,7 +1191,7 @@ impl NodeStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "CREATE_FAILED",
@@ -1513,7 +1513,7 @@ impl NetworkStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "CREATE_FAILED",
@@ -1609,7 +1609,7 @@ impl Framework {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ETHEREUM", "HYPERLEDGER_FABRIC"]
     }
 }
@@ -1942,7 +1942,7 @@ impl MemberStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "CREATE_FAILED",
@@ -2254,7 +2254,7 @@ impl InvitationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCEPTED", "ACCEPTING", "EXPIRED", "PENDING", "REJECTED"]
     }
 }
@@ -3346,7 +3346,7 @@ impl StateDbType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CouchDB", "LevelDB"]
     }
 }
@@ -4175,7 +4175,7 @@ impl ThresholdComparator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO"]
     }
 }
@@ -4499,7 +4499,7 @@ impl Edition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STANDARD", "STARTER"]
     }
 }

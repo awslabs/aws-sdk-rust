@@ -581,7 +581,7 @@ impl StudioEncryptionConfigurationKeyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_OWNED_KEY", "CUSTOMER_MANAGED_KEY"]
     }
 }
@@ -767,7 +767,7 @@ impl StudioStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWS_SSO_ACCESS_DENIED",
             "AWS_SSO_CONFIGURATION_REPAIRED",
@@ -906,7 +906,7 @@ impl StudioState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
             "CREATE_IN_PROGRESS",
@@ -1078,7 +1078,7 @@ impl StudioPersona {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ADMINISTRATOR"]
     }
 }
@@ -1847,7 +1847,7 @@ impl StudioComponentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE_DIRECTORY",
             "COMPUTE_FARM",
@@ -1955,7 +1955,7 @@ impl StudioComponentSubtype {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AMAZON_FSX_FOR_LUSTRE",
             "AMAZON_FSX_FOR_WINDOWS",
@@ -2112,7 +2112,7 @@ impl StudioComponentStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE_DIRECTORY_ALREADY_EXISTS",
             "ENCRYPTION_KEY_ACCESS_DENIED",
@@ -2264,7 +2264,7 @@ impl StudioComponentState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
             "CREATE_IN_PROGRESS",
@@ -2585,7 +2585,7 @@ impl StudioComponentInitializationScriptRunContext {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SYSTEM_INITIALIZATION", "USER_INITIALIZATION"]
     }
 }
@@ -2677,7 +2677,7 @@ impl LaunchProfilePlatform {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LINUX", "WINDOWS"]
     }
 }
@@ -3918,7 +3918,7 @@ impl StreamingSessionStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR",
             "AMI_VALIDATION_ERROR",
@@ -4072,7 +4072,7 @@ impl StreamingSessionState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
             "CREATE_IN_PROGRESS",
@@ -4408,7 +4408,7 @@ impl StreamingSessionStreamStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "INTERNAL_ERROR",
             "NETWORK_CONNECTION_ERROR",
@@ -4527,7 +4527,7 @@ impl StreamingSessionStreamState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
             "CREATE_IN_PROGRESS",
@@ -4681,7 +4681,7 @@ impl StreamingInstanceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "g3.4xlarge",
             "g3s.xlarge",
@@ -5174,7 +5174,7 @@ impl StreamingImageStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
             "INTERNAL_ERROR",
@@ -5304,7 +5304,7 @@ impl StreamingImageState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
             "CREATE_IN_PROGRESS",
@@ -5488,7 +5488,7 @@ impl StreamingImageEncryptionConfigurationKeyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CUSTOMER_MANAGED_KEY"]
     }
 }
@@ -5705,7 +5705,7 @@ impl LaunchProfilePersona {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["USER"]
     }
 }
@@ -7401,7 +7401,7 @@ impl LaunchProfileValidationStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "VALIDATION_FAILED_INTERNAL_SERVER_ERROR",
             "VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY",
@@ -7522,7 +7522,7 @@ impl LaunchProfileValidationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "VALIDATION_FAILED",
             "VALIDATION_FAILED_INTERNAL_SERVER_ERROR",
@@ -7642,7 +7642,7 @@ impl LaunchProfileValidationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT",
             "VALIDATE_NETWORK_ACL_ASSOCIATION",
@@ -8034,7 +8034,7 @@ impl StreamingSessionStorageMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["UPLOAD"]
     }
 }
@@ -8201,7 +8201,7 @@ impl StreamingClipboardMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -8378,7 +8378,7 @@ impl LaunchProfileStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ENCRYPTION_KEY_ACCESS_DENIED",
             "ENCRYPTION_KEY_NOT_FOUND",
@@ -8516,7 +8516,7 @@ impl LaunchProfileState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
             "CREATE_IN_PROGRESS",

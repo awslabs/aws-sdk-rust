@@ -1394,7 +1394,7 @@ impl RegistryAliasStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "PENDING", "REJECTED"]
     }
 }
@@ -2098,7 +2098,7 @@ impl ImageFailureCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ImageNotFound",
             "ImageReferencedByManifestList",
@@ -2297,7 +2297,7 @@ impl LayerFailureCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["InvalidLayerDigest", "MissingLayerDigest"]
     }
 }
@@ -2507,7 +2507,7 @@ impl LayerAvailability {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "UNAVAILABLE"]
     }
 }

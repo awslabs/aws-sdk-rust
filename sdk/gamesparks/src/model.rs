@@ -346,7 +346,7 @@ impl StageState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETING"]
     }
 }
@@ -950,7 +950,7 @@ impl Operation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ADD", "REMOVE", "REPLACE"]
     }
 }
@@ -1270,7 +1270,7 @@ impl GameState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETING"]
     }
 }
@@ -1636,7 +1636,7 @@ impl ResultCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INVALID_ROLE_FAILURE", "SUCCESS", "UNSPECIFIED_FAILURE"]
     }
 }
@@ -1736,7 +1736,7 @@ impl DeploymentState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "IN_PROGRESS", "PENDING"]
     }
 }
@@ -1826,7 +1826,7 @@ impl DeploymentAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEPLOY", "UNDEPLOY"]
     }
 }
@@ -2632,7 +2632,7 @@ impl GeneratedCodeJobState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "IN_PROGRESS", "PENDING"]
     }
 }

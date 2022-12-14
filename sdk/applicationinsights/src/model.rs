@@ -278,7 +278,7 @@ impl Tier {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE_DIRECTORY",
             "CUSTOM",
@@ -607,7 +607,7 @@ impl DiscoveryType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT_BASED", "RESOURCE_GROUP_BASED"]
     }
 }
@@ -1099,7 +1099,7 @@ impl FeedbackValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NOT_SPECIFIED", "NOT_USEFUL", "USEFUL"]
     }
 }
@@ -1184,7 +1184,7 @@ impl FeedbackKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INSIGHTS_FEEDBACK"]
     }
 }
@@ -1284,7 +1284,7 @@ impl SeverityLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["High", "Informative", "Low", "Medium"]
     }
 }
@@ -1384,7 +1384,7 @@ impl Status {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IGNORE", "PENDING", "RECURRING", "RESOLVED"]
     }
 }
@@ -1662,7 +1662,7 @@ impl ConfigurationEventResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CLOUDFORMATION",
             "CLOUDWATCH_ALARM",
@@ -1764,7 +1764,7 @@ impl ConfigurationEventStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ERROR", "INFO", "WARN"]
     }
 }
@@ -2073,7 +2073,7 @@ impl OsType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LINUX", "WINDOWS"]
     }
 }
@@ -3285,7 +3285,7 @@ impl CloudWatchEventSource {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CODE_DEPLOY", "EC2", "HEALTH", "RDS"]
     }
 }
@@ -3380,7 +3380,7 @@ impl LogFilter {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ERROR", "INFO", "WARN"]
     }
 }
@@ -3465,7 +3465,7 @@ impl GroupingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT_BASED"]
     }
 }

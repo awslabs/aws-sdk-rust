@@ -167,7 +167,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
             "FIELD_VALIDATION_FAILED",
@@ -519,7 +519,7 @@ impl WorkspaceStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATING",
@@ -1108,7 +1108,7 @@ impl RuleGroupsNamespaceStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATING",
@@ -1515,7 +1515,7 @@ impl LoggingConfigurationStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATING",
@@ -1867,7 +1867,7 @@ impl AlertManagerDefinitionStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATING",

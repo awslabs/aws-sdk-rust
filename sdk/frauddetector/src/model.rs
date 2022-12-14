@@ -245,7 +245,7 @@ impl Language {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DETECTORPL"]
     }
 }
@@ -342,7 +342,7 @@ impl ModelVersionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE", "TRAINING_CANCELLED"]
     }
 }
@@ -437,7 +437,7 @@ impl ModelTypeEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_TAKEOVER_INSIGHTS",
             "ONLINE_FRAUD_INSIGHTS",
@@ -761,7 +761,7 @@ impl DetectorVersionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DRAFT", "INACTIVE"]
     }
 }
@@ -853,7 +853,7 @@ impl RuleExecutionMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL_MATCHED", "FIRST_MATCHED"]
     }
 }
@@ -1141,7 +1141,7 @@ impl ModelEndpointStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASSOCIATED", "DISSOCIATED"]
     }
 }
@@ -1373,7 +1373,7 @@ impl ModelOutputDataFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPLICATION_JSONLINES", "TEXT_CSV"]
     }
 }
@@ -1612,7 +1612,7 @@ impl ModelInputDataFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPLICATION_JSON", "TEXT_CSV"]
     }
 }
@@ -1697,7 +1697,7 @@ impl ModelSource {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SAGEMAKER"]
     }
 }
@@ -1787,7 +1787,7 @@ impl EventIngestion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -2408,7 +2408,7 @@ impl DataSource {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EVENT", "EXTERNAL_MODEL_SCORE", "MODEL_SCORE"]
     }
 }
@@ -2508,7 +2508,7 @@ impl DataType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BOOLEAN", "FLOAT", "INTEGER", "STRING"]
     }
 }
@@ -3187,7 +3187,7 @@ impl UnlabeledEventsTreatment {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FRAUD", "IGNORE", "LEGIT"]
     }
 }
@@ -3279,7 +3279,7 @@ impl TrainingDataSourceEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EXTERNAL_EVENTS", "INGESTED_EVENTS"]
     }
 }
@@ -6434,7 +6434,7 @@ impl AsyncJobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
             "CANCEL_IN_PROGRESS",

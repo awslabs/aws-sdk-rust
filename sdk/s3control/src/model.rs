@@ -135,7 +135,7 @@ impl JobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Active",
             "Cancelled",
@@ -241,7 +241,7 @@ impl RequestedJobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Cancelled", "Ready"]
     }
 }
@@ -1131,7 +1131,7 @@ impl OutputSchemaVersion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["V_1"]
     }
 }
@@ -1221,7 +1221,7 @@ impl Format {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CSV", "Parquet"]
     }
 }
@@ -2357,7 +2357,7 @@ impl BucketVersioningStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Enabled", "Suspended"]
     }
 }
@@ -2447,7 +2447,7 @@ impl MfaDelete {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -3150,7 +3150,7 @@ impl TransitionStorageClass {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DEEP_ARCHIVE",
             "GLACIER",
@@ -3344,7 +3344,7 @@ impl ExpirationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -4115,7 +4115,7 @@ impl ObjectLambdaTransformationConfigurationAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GetObject", "HeadObject", "ListObjects", "ListObjectsV2"]
     }
 }
@@ -4217,7 +4217,7 @@ impl ObjectLambdaAllowedFeature {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "GetObject-PartNumber",
             "GetObject-Range",
@@ -4859,7 +4859,7 @@ impl MultiRegionAccessPointStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATING",
             "DELETING",
@@ -5374,7 +5374,7 @@ impl OperationName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "LambdaInvoke",
             "S3DeleteObjectTagging",
@@ -5785,7 +5785,7 @@ impl NetworkOrigin {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Internet", "VPC"]
     }
 }
@@ -6136,7 +6136,7 @@ impl MfaDeleteStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -7130,7 +7130,7 @@ impl AsyncOperationName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CreateMultiRegionAccessPoint",
             "DeleteMultiRegionAccessPoint",
@@ -7876,7 +7876,7 @@ impl GeneratedManifestFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["S3InventoryReport_CSV_20211130"]
     }
 }
@@ -8310,7 +8310,7 @@ impl ReplicationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "NONE", "REPLICA"]
     }
 }
@@ -8890,7 +8890,7 @@ impl JobReportScope {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AllTasks", "FailedTasksOnly"]
     }
 }
@@ -8975,7 +8975,7 @@ impl JobReportFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Report_CSV_20180820"]
     }
 }
@@ -9619,7 +9619,7 @@ impl S3ObjectLockRetentionMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLIANCE", "GOVERNANCE"]
     }
 }
@@ -9827,7 +9827,7 @@ impl S3ObjectLockLegalHoldStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OFF", "ON"]
     }
 }
@@ -10003,7 +10003,7 @@ impl S3GlacierJobTier {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BULK", "STANDARD"]
     }
 }
@@ -10364,7 +10364,7 @@ impl S3CannedAccessControlList {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "authenticated-read",
             "aws-exec-read",
@@ -10642,7 +10642,7 @@ impl S3Permission {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL_CONTROL", "READ", "READ_ACP", "WRITE", "WRITE_ACP"]
     }
 }
@@ -10837,7 +10837,7 @@ impl S3GranteeTypeIdentifier {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["emailAddress", "id", "uri"]
     }
 }
@@ -11500,7 +11500,7 @@ impl S3ChecksumAlgorithm {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CRC32", "CRC32C", "SHA1", "SHA256"]
     }
 }
@@ -11590,7 +11590,7 @@ impl S3ObjectLockMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLIANCE", "GOVERNANCE"]
     }
 }
@@ -11705,7 +11705,7 @@ impl S3StorageClass {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DEEP_ARCHIVE",
             "GLACIER",
@@ -12097,7 +12097,7 @@ impl S3SseAlgorithm {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AES256", "KMS"]
     }
 }
@@ -12189,7 +12189,7 @@ impl S3MetadataDirective {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COPY", "REPLACE"]
     }
 }
@@ -12514,7 +12514,7 @@ impl JobManifestFieldName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Bucket", "Ignore", "Key", "VersionId"]
     }
 }
@@ -12606,7 +12606,7 @@ impl JobManifestFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "S3BatchOperations_CSV_20180820",
             "S3InventoryReport_CSV_20161130",
@@ -12819,7 +12819,7 @@ impl BucketLocationConstraint {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EU",
             "ap-northeast-1",
@@ -12931,7 +12931,7 @@ impl BucketCannedAcl {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "authenticated-read",
             "private",

@@ -155,7 +155,7 @@ impl DefinitionLanguage {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GRAPHQL"]
     }
 }
@@ -723,7 +723,7 @@ impl DeploymentTarget {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOUD", "GREENGRASS"]
     }
 }
@@ -845,7 +845,7 @@ impl SystemInstanceDeploymentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BOOTSTRAP",
             "DELETED_IN_TARGET",
@@ -1178,7 +1178,7 @@ impl SystemTemplateFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FLOW_TEMPLATE_ID"]
     }
 }
@@ -1362,7 +1362,7 @@ impl SystemInstanceFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GREENGRASS_GROUP_NAME", "STATUS", "SYSTEM_TEMPLATE_ID"]
     }
 }
@@ -1536,7 +1536,7 @@ impl FlowTemplateFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEVICE_MODEL_ID"]
     }
 }
@@ -1811,7 +1811,7 @@ impl FlowExecutionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ABORTED", "FAILED", "RUNNING", "SUCCEEDED"]
     }
 }
@@ -2082,7 +2082,7 @@ impl EntityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTION",
             "CAPABILITY",
@@ -2280,7 +2280,7 @@ impl EntityFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "NAME",
             "NAMESPACE",
@@ -2573,7 +2573,7 @@ impl FlowExecutionEventType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACKNOWLEDGE_TASK_MESSAGE",
             "ACTIVITY_FAILED",
@@ -2686,7 +2686,7 @@ impl UploadStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
 }
@@ -3244,7 +3244,7 @@ impl NamespaceDeletionStatusErrorCodes {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["VALIDATION_FAILED"]
     }
 }
@@ -3341,7 +3341,7 @@ impl NamespaceDeletionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
 }

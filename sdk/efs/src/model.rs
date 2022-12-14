@@ -155,7 +155,7 @@ impl ThroughputMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["bursting", "provisioned"]
     }
 }
@@ -245,7 +245,7 @@ impl PerformanceMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["generalPurpose", "maxIO"]
     }
 }
@@ -473,7 +473,7 @@ impl LifeCycleState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "available",
             "creating",
@@ -660,7 +660,7 @@ impl TransitionToPrimaryStorageClassRules {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AFTER_1_ACCESS"]
     }
 }
@@ -767,7 +767,7 @@ impl TransitionToIaRules {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AFTER_14_DAYS",
             "AFTER_30_DAYS",
@@ -952,7 +952,7 @@ impl Status {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "DISABLING", "ENABLED", "ENABLING"]
     }
 }
@@ -1129,7 +1129,7 @@ impl Resource {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FILE_SYSTEM", "MOUNT_TARGET"]
     }
 }
@@ -1219,7 +1219,7 @@ impl ResourceIdType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LONG_ID", "SHORT_ID"]
     }
 }
@@ -1630,7 +1630,7 @@ impl ReplicationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETING", "ENABLED", "ENABLING", "ERROR"]
     }
 }

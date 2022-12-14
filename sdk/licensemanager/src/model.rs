@@ -301,7 +301,7 @@ impl ReportFrequencyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAY", "MONTH", "WEEK"]
     }
 }
@@ -459,7 +459,7 @@ impl ReportType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "LicenseConfigurationSummaryReport",
             "LicenseConfigurationUsageReport",
@@ -848,7 +848,7 @@ impl LicenseConfigurationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DISABLED"]
     }
 }
@@ -1048,7 +1048,7 @@ impl GrantStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "DELETED",
@@ -1330,7 +1330,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EC2_AMI",
             "EC2_HOST",
@@ -1983,7 +1983,7 @@ impl InventoryFilterCondition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BEGINS_WITH", "CONTAINS", "EQUALS", "NOT_EQUALS"]
     }
 }
@@ -2583,7 +2583,7 @@ impl AllowedOperation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CheckInLicense",
             "CheckoutBorrowLicense",
@@ -2711,7 +2711,7 @@ impl ReceivedStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "DELETED",
@@ -3136,7 +3136,7 @@ impl RenewType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Monthly", "None", "Weekly"]
     }
 }
@@ -3509,7 +3509,7 @@ impl EntitlementUnit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Bits",
             "Bits/Second",
@@ -3727,7 +3727,7 @@ impl LicenseStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "DEACTIVATED",
@@ -5219,7 +5219,7 @@ impl LicenseConversionTaskStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
 }
@@ -6036,7 +6036,7 @@ impl LicenseCountingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Core", "Instance", "Socket", "vCPU"]
     }
 }
@@ -6808,7 +6808,7 @@ impl EntitlementDataUnit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Bits",
             "Bits/Second",
@@ -6928,7 +6928,7 @@ impl LicenseDeletionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETED", "PENDING_DELETE"]
     }
 }
@@ -7013,7 +7013,7 @@ impl TokenType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["REFRESH_TOKEN"]
     }
 }
@@ -7276,7 +7276,7 @@ impl CheckoutType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PERPETUAL", "PROVISIONAL"]
     }
 }
@@ -7363,7 +7363,7 @@ impl DigitalSignatureMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JWT_PS384"]
     }
 }

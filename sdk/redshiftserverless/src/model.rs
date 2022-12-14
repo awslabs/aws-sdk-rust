@@ -764,7 +764,7 @@ impl WorkgroupStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "CREATING", "DELETING", "MODIFYING"]
     }
 }
@@ -1207,7 +1207,7 @@ impl UsageLimitBreachAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["deactivate", "emit-metric", "log"]
     }
 }
@@ -1302,7 +1302,7 @@ impl UsageLimitPeriod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["daily", "monthly", "weekly"]
     }
 }
@@ -1394,7 +1394,7 @@ impl UsageLimitUsageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["cross-region-datasharing", "serverless-compute"]
     }
 }
@@ -2038,7 +2038,7 @@ impl SnapshotStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "CANCELLED",
@@ -2431,7 +2431,7 @@ impl NamespaceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "MODIFYING"]
     }
 }
@@ -2526,7 +2526,7 @@ impl LogExport {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["connectionlog", "useractivitylog", "userlog"]
     }
 }

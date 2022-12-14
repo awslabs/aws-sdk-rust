@@ -192,7 +192,7 @@ impl SanitizationWarningReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DISALLOWED_ATTRIBUTE_REMOVED",
             "DISALLOWED_ELEMENT_REMOVED",
@@ -507,7 +507,7 @@ impl DayOfWeek {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FRIDAY",
             "MONDAY",
@@ -1015,7 +1015,7 @@ impl AuthenticationStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LDAP", "SIMPLE"]
     }
 }
@@ -1469,7 +1469,7 @@ impl ChangeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE", "DELETE", "UPDATE"]
     }
 }
@@ -1836,7 +1836,7 @@ impl EngineType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVEMQ", "RABBITMQ"]
     }
 }
@@ -2141,7 +2141,7 @@ impl DeploymentMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE_STANDBY_MULTI_AZ",
             "CLUSTER_MULTI_AZ",
@@ -2255,7 +2255,7 @@ impl BrokerState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATION_FAILED",
             "CREATION_IN_PROGRESS",
@@ -2661,7 +2661,7 @@ impl BrokerStorageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EBS", "EFS"]
     }
 }

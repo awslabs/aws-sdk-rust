@@ -445,7 +445,7 @@ impl ShareStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NOT_SHARED", "SHARED_BY_ME", "SHARED_WITH_ME"]
     }
 }
@@ -615,7 +615,7 @@ impl RuleTypeOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FORWARD", "RECURSIVE", "SYSTEM"]
     }
 }
@@ -717,7 +717,7 @@ impl ResolverRuleStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "DELETING", "FAILED", "UPDATING"]
     }
 }
@@ -1302,7 +1302,7 @@ impl ResolverEndpointStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTION_NEEDED",
             "AUTO_RECOVERING",
@@ -1401,7 +1401,7 @@ impl ResolverEndpointDirection {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INBOUND", "OUTBOUND"]
     }
 }
@@ -1651,7 +1651,7 @@ impl ResolverDnssecValidationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "DISABLING", "ENABLED", "ENABLING"]
     }
 }
@@ -1741,7 +1741,7 @@ impl Validation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLE", "ENABLE"]
     }
 }
@@ -1995,7 +1995,7 @@ impl ResolverAutodefinedReverseStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "DISABLING", "ENABLED", "ENABLING"]
     }
 }
@@ -2087,7 +2087,7 @@ impl AutodefinedReverseFlag {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLE", "ENABLE"]
     }
 }
@@ -2508,7 +2508,7 @@ impl FirewallRuleGroupAssociationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "DELETING", "UPDATING"]
     }
 }
@@ -2600,7 +2600,7 @@ impl MutationProtectionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -3031,7 +3031,7 @@ impl BlockOverrideDnsType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CNAME"]
     }
 }
@@ -3126,7 +3126,7 @@ impl BlockResponse {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NODATA", "NXDOMAIN", "OVERRIDE"]
     }
 }
@@ -3221,7 +3221,7 @@ impl Action {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALERT", "ALLOW", "BLOCK"]
     }
 }
@@ -3328,7 +3328,7 @@ impl FirewallDomainListStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETE",
             "COMPLETE_IMPORT_FAILED",
@@ -3431,7 +3431,7 @@ impl FirewallDomainUpdateOperation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ADD", "REMOVE", "REPLACE"]
     }
 }
@@ -3661,7 +3661,7 @@ impl FirewallFailOpenStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -4348,7 +4348,7 @@ impl ResolverRuleAssociationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "CREATING", "DELETING", "FAILED", "OVERRIDDEN"]
     }
 }
@@ -4740,7 +4740,7 @@ impl ResolverQueryLogConfigStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATED", "CREATING", "DELETING", "FAILED"]
     }
 }
@@ -4830,7 +4830,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
 }
@@ -5187,7 +5187,7 @@ impl ResolverQueryLogConfigAssociationError {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
             "DESTINATION_NOT_FOUND",
@@ -5299,7 +5299,7 @@ impl ResolverQueryLogConfigAssociationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTION_NEEDED", "ACTIVE", "CREATING", "DELETING", "FAILED"]
     }
 }
@@ -5616,7 +5616,7 @@ impl IpAddressStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ATTACHED",
             "ATTACHING",
@@ -6018,7 +6018,7 @@ impl FirewallDomainImportOperation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["REPLACE"]
     }
 }
@@ -6388,7 +6388,7 @@ impl FirewallRuleGroupStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "DELETING", "UPDATING"]
     }
 }

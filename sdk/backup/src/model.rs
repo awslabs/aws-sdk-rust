@@ -1478,7 +1478,7 @@ impl BackupVaultEvent {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BACKUP_JOB_COMPLETED",
             "BACKUP_JOB_EXPIRED",
@@ -1926,7 +1926,7 @@ impl RestoreJobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ABORTED", "COMPLETED", "FAILED", "PENDING", "RUNNING"]
     }
 }
@@ -2806,7 +2806,7 @@ impl RecoveryPointStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "DELETING", "EXPIRED", "PARTIAL"]
     }
 }
@@ -4127,7 +4127,7 @@ impl CopyJobState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "CREATED", "FAILED", "RUNNING"]
     }
 }
@@ -5528,7 +5528,7 @@ impl BackupJobState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ABORTED",
             "ABORTING",
@@ -6199,7 +6199,7 @@ impl ConditionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STRINGEQUALS"]
     }
 }
@@ -6699,7 +6699,7 @@ impl StorageClass {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COLD", "DELETED", "WARM"]
     }
 }

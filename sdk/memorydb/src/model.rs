@@ -353,7 +353,7 @@ impl AuthenticationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["no-password", "password"]
     }
 }
@@ -527,7 +527,7 @@ impl InputAuthenticationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["password"]
     }
 }
@@ -1839,7 +1839,7 @@ impl AzStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["multiaz", "singleaz"]
     }
 }
@@ -2424,7 +2424,7 @@ impl ServiceUpdateStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["available", "complete", "in-progress", "scheduled"]
     }
 }
@@ -4148,7 +4148,7 @@ impl ServiceUpdateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["security-update"]
     }
 }
@@ -4537,7 +4537,7 @@ impl SourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "acl",
             "cluster",

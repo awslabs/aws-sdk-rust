@@ -483,7 +483,7 @@ impl SamlConfigurationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONFIGURED", "NOT_CONFIGURED"]
     }
 }
@@ -575,7 +575,7 @@ impl AuthenticationProviderTypes {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_SSO", "SAML"]
     }
 }
@@ -710,7 +710,7 @@ impl WorkspaceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATING",
@@ -809,7 +809,7 @@ impl NotificationDestinationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SNS"]
     }
 }
@@ -986,7 +986,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
             "FIELD_VALIDATION_FAILED",
@@ -1658,7 +1658,7 @@ impl LicenseType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENTERPRISE", "ENTERPRISE_FREE_TRIAL"]
     }
 }
@@ -1748,7 +1748,7 @@ impl PermissionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CUSTOMER_MANAGED", "SERVICE_MANAGED"]
     }
 }
@@ -1868,7 +1868,7 @@ impl DataSourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AMAZON_OPENSEARCH_SERVICE",
             "ATHENA",
@@ -1969,7 +1969,7 @@ impl AccountAccessType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CURRENT_ACCOUNT", "ORGANIZATION"]
     }
 }
@@ -2343,7 +2343,7 @@ impl UserType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SSO_GROUP", "SSO_USER"]
     }
 }
@@ -2438,7 +2438,7 @@ impl Role {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ADMIN", "EDITOR", "VIEWER"]
     }
 }
@@ -2528,7 +2528,7 @@ impl UpdateAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ADD", "REVOKE"]
     }
 }

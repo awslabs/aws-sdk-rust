@@ -157,7 +157,7 @@ impl MigrationStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE_NEW", "UPDATE_EXISTING"]
     }
 }
@@ -302,7 +302,7 @@ impl Locale {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "de-DE", "en-AU", "en-GB", "en-IN", "en-US", "es-419", "es-ES", "es-US", "fr-CA",
             "fr-FR", "it-IT", "ja-JP", "ko-KR",
@@ -400,7 +400,7 @@ impl ImportStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "FAILED", "IN_PROGRESS"]
     }
 }
@@ -490,7 +490,7 @@ impl MergeStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAIL_ON_CONFLICT", "OVERWRITE_LATEST"]
     }
 }
@@ -585,7 +585,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BOT", "INTENT", "SLOT_TYPE"]
     }
 }
@@ -852,7 +852,7 @@ impl SlotValueSelectionStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ORIGINAL_VALUE", "TOP_RESOLUTION"]
     }
 }
@@ -1445,7 +1445,7 @@ impl FulfillmentActivityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CodeHook", "ReturnIntent"]
     }
 }
@@ -1725,7 +1725,7 @@ impl ContentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CustomPayload", "PlainText", "SSML"]
     }
 }
@@ -2435,7 +2435,7 @@ impl ObfuscationSetting {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT_OBFUSCATION", "NONE"]
     }
 }
@@ -2525,7 +2525,7 @@ impl SlotConstraint {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Optional", "Required"]
     }
 }
@@ -2841,7 +2841,7 @@ impl Destination {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOUDWATCH_LOGS", "S3"]
     }
 }
@@ -2931,7 +2931,7 @@ impl LogType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUDIO", "TEXT"]
     }
 }
@@ -3239,7 +3239,7 @@ impl Status {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BUILDING",
             "FAILED",
@@ -3413,7 +3413,7 @@ impl ProcessBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BUILD", "SAVE"]
     }
 }
@@ -3731,7 +3731,7 @@ impl StatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Detected", "Missed"]
     }
 }
@@ -4197,7 +4197,7 @@ impl MigrationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "IN_PROGRESS"]
     }
 }
@@ -4287,7 +4287,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
 }
@@ -4379,7 +4379,7 @@ impl MigrationSortAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MIGRATION_DATE_TIME", "V1_BOT_NAME"]
     }
 }
@@ -4623,7 +4623,7 @@ impl MigrationAlertType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ERROR", "WARN"]
     }
 }
@@ -4859,7 +4859,7 @@ impl ExportStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "READY"]
     }
 }
@@ -4949,7 +4949,7 @@ impl ExportType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALEXA_SKILLS_KIT", "LEX"]
     }
 }
@@ -5699,7 +5699,7 @@ impl ChannelStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATED", "FAILED", "IN_PROGRESS"]
     }
 }
@@ -5799,7 +5799,7 @@ impl ChannelType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Facebook", "Kik", "Slack", "Twilio-Sms"]
     }
 }
@@ -6180,7 +6180,7 @@ impl ReferenceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Bot", "BotAlias", "BotChannel", "Intent"]
     }
 }

@@ -167,7 +167,7 @@ impl SubscriptionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EMAIL", "SNS"]
     }
 }
@@ -414,7 +414,7 @@ impl NotificationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALARM", "OK"]
     }
 }
@@ -504,7 +504,7 @@ impl ThresholdType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ABSOLUTE_VALUE", "PERCENTAGE"]
     }
 }
@@ -605,7 +605,7 @@ impl ComparisonOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EQUAL_TO", "GREATER_THAN", "LESS_THAN"]
     }
 }
@@ -695,7 +695,7 @@ impl NotificationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTUAL", "FORECASTED"]
     }
 }
@@ -1090,7 +1090,7 @@ impl ActionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EXECUTION_FAILURE",
             "EXECUTION_IN_PROGRESS",
@@ -1191,7 +1191,7 @@ impl ApprovalModel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTOMATIC", "MANUAL"]
     }
 }
@@ -1492,7 +1492,7 @@ impl ActionSubType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STOP_EC2_INSTANCES", "STOP_RDS_INSTANCES"]
     }
 }
@@ -1891,7 +1891,7 @@ impl ActionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPLY_IAM_POLICY", "APPLY_SCP_POLICY", "RUN_SSM_DOCUMENTS"]
     }
 }
@@ -2594,7 +2594,7 @@ impl AutoAdjustType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FORECAST", "HISTORICAL"]
     }
 }
@@ -2706,7 +2706,7 @@ impl BudgetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COST",
             "RI_COVERAGE",
@@ -3055,7 +3055,7 @@ impl TimeUnit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ANNUALLY", "DAILY", "MONTHLY", "QUARTERLY"]
     }
 }
@@ -3458,7 +3458,7 @@ impl ExecutionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "APPROVE_BUDGET_ACTION",
             "RESET_BUDGET_ACTION",
@@ -4167,7 +4167,7 @@ impl EventType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_ACTION",
             "DELETE_ACTION",

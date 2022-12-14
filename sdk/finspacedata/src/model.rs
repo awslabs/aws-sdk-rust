@@ -80,7 +80,7 @@ impl ApiAccess {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -170,7 +170,7 @@ impl UserType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APP_USER", "SUPER_USER"]
     }
 }
@@ -287,7 +287,7 @@ impl ApplicationPermission {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessNotebooks",
             "CreateDataset",
@@ -699,7 +699,7 @@ impl ColumnDataType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BIGINT", "BINARY", "BOOLEAN", "CHAR", "DATE", "DATETIME", "DOUBLE", "FLOAT",
             "INTEGER", "SMALLINT", "STRING", "TINYINT",
@@ -792,7 +792,7 @@ impl DatasetKind {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NON_TABULAR", "TABULAR"]
     }
 }
@@ -1194,7 +1194,7 @@ impl PermissionGroupMembershipStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION_IN_PROGRESS",
             "ADDITION_SUCCESS",
@@ -1293,7 +1293,7 @@ impl UserStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATING", "DISABLED", "ENABLED"]
     }
 }
@@ -2665,7 +2665,7 @@ impl ExportFileFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELIMITED_TEXT", "PARQUET"]
     }
 }
@@ -2906,7 +2906,7 @@ impl ErrorCategory {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
             "CANCELLED",
@@ -3035,7 +3035,7 @@ impl DataViewStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
             "FAILED",
@@ -4031,7 +4031,7 @@ impl IngestionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING", "RUNNING", "STOP_REQUESTED", "SUCCESS"]
     }
 }
@@ -4126,7 +4126,7 @@ impl ChangeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPEND", "MODIFY", "REPLACE"]
     }
 }
@@ -4216,7 +4216,7 @@ impl LocationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INGESTION", "SAGEMAKER"]
     }
 }
@@ -4619,7 +4619,7 @@ impl DatasetStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING", "RUNNING", "SUCCESS"]
     }
 }

@@ -504,7 +504,7 @@ impl PriceClass {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PriceClass_100", "PriceClass_200", "PriceClass_All"]
     }
 }
@@ -2466,7 +2466,7 @@ impl ReferrerPolicyList {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "no-referrer",
             "no-referrer-when-downgrade",
@@ -2648,7 +2648,7 @@ impl FrameOptionsList {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DENY", "SAMEORIGIN"]
     }
 }
@@ -3401,7 +3401,7 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsValues {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALL", "DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT",
         ]
@@ -4684,7 +4684,7 @@ impl OriginRequestPolicyQueryStringBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["all", "none", "whitelist"]
     }
 }
@@ -4972,7 +4972,7 @@ impl OriginRequestPolicyCookieBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["all", "none", "whitelist"]
     }
 }
@@ -5270,7 +5270,7 @@ impl OriginRequestPolicyHeaderBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "allViewer",
             "allViewerAndWhitelistCloudFront",
@@ -5639,7 +5639,7 @@ impl OriginAccessControlOriginTypes {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["s3"]
     }
 }
@@ -5736,7 +5736,7 @@ impl OriginAccessControlSigningBehaviors {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["always", "never", "no-override"]
     }
 }
@@ -5823,7 +5823,7 @@ impl OriginAccessControlSigningProtocols {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["sigv4"]
     }
 }
@@ -6373,7 +6373,7 @@ impl FunctionStage {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEVELOPMENT", "LIVE"]
     }
 }
@@ -6536,7 +6536,7 @@ impl FunctionRuntime {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["cloudfront-js-1.0"]
     }
 }
@@ -7635,7 +7635,7 @@ impl Format {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["URLEncoded"]
     }
 }
@@ -8366,7 +8366,7 @@ impl IcpRecordalStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPROVED", "PENDING", "SUSPENDED"]
     }
 }
@@ -8982,7 +8982,7 @@ impl HttpVersion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["http1.1", "http2", "http2and3", "http3"]
     }
 }
@@ -9272,7 +9272,7 @@ impl GeoRestrictionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["blacklist", "none", "whitelist"]
     }
 }
@@ -9728,7 +9728,7 @@ impl CertificateSource {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["acm", "cloudfront", "iam"]
     }
 }
@@ -9845,7 +9845,7 @@ impl MinimumProtocolVersion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "SSLv3",
             "TLSv1",
@@ -9948,7 +9948,7 @@ impl SslSupportMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["sni-only", "static-ip", "vip"]
     }
 }
@@ -11533,7 +11533,7 @@ impl ItemSelection {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["all", "none", "whitelist"]
     }
 }
@@ -11795,7 +11795,7 @@ impl EventType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "origin-request",
             "origin-response",
@@ -12349,7 +12349,7 @@ impl Method {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     }
 }
@@ -12446,7 +12446,7 @@ impl ViewerProtocolPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["allow-all", "https-only", "redirect-to-https"]
     }
 }
@@ -14450,7 +14450,7 @@ impl SslProtocol {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SSLv3", "TLSv1", "TLSv1.1", "TLSv1.2"]
     }
 }
@@ -14547,7 +14547,7 @@ impl OriginProtocolPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["http-only", "https-only", "match-viewer"]
     }
 }
@@ -15908,7 +15908,7 @@ impl CachePolicyQueryStringBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["all", "allExcept", "none", "whitelist"]
     }
 }
@@ -16115,7 +16115,7 @@ impl CachePolicyCookieBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["all", "allExcept", "none", "whitelist"]
     }
 }
@@ -16301,7 +16301,7 @@ impl CachePolicyHeaderBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["none", "whitelist"]
     }
 }
@@ -17404,7 +17404,7 @@ impl ResponseHeadersPolicyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["custom", "managed"]
     }
 }
@@ -18108,7 +18108,7 @@ impl OriginRequestPolicyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["custom", "managed"]
     }
 }
@@ -21191,7 +21191,7 @@ impl CachePolicyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["custom", "managed"]
     }
 }
@@ -21419,7 +21419,7 @@ impl RealtimeMetricsSubscriptionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }

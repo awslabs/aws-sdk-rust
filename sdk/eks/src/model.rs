@@ -480,7 +480,7 @@ impl ErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
             "AdmissionRequestDenied",
@@ -771,7 +771,7 @@ impl UpdateParamType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AddonVersion",
             "ClusterLogging",
@@ -915,7 +915,7 @@ impl UpdateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AddonUpdate",
             "AssociateEncryptionConfig",
@@ -1024,7 +1024,7 @@ impl UpdateStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Cancelled", "Failed", "InProgress", "Successful"]
     }
 }
@@ -1612,7 +1612,7 @@ impl TaintEffect {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NO_EXECUTE", "NO_SCHEDULE", "PREFER_NO_SCHEDULE"]
     }
 }
@@ -1970,7 +1970,7 @@ impl LogType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "api",
             "audit",
@@ -2253,7 +2253,7 @@ impl ResolveConflicts {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "OVERWRITE", "PRESERVE"]
     }
 }
@@ -3130,7 +3130,7 @@ impl ClusterIssueCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
             "ClusterUnreachable",
@@ -3583,7 +3583,7 @@ impl ClusterStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE", "CREATING", "DELETING", "FAILED", "PENDING", "UPDATING",
         ]
@@ -3884,7 +3884,7 @@ impl IpFamily {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ipv4", "ipv6"]
     }
 }
@@ -4294,7 +4294,7 @@ impl ConnectorConfigProvider {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AKS",
             "ANTHOS",
@@ -5420,7 +5420,7 @@ impl NodegroupIssueCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
             "AsgInstanceLaunchFailures",
@@ -5707,7 +5707,7 @@ impl AmiTypes {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AL2_ARM_64",
             "AL2_x86_64",
@@ -5890,7 +5890,7 @@ impl CapacityTypes {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ON_DEMAND", "SPOT"]
     }
 }
@@ -6005,7 +6005,7 @@ impl NodegroupStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATE_FAILED",
@@ -6511,7 +6511,7 @@ impl ConfigStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING"]
     }
 }
@@ -6888,7 +6888,7 @@ impl FargateProfileStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATE_FAILED",
@@ -7877,7 +7877,7 @@ impl AddonIssueCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
             "AdmissionRequestDenied",
@@ -8006,7 +8006,7 @@ impl AddonStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATE_FAILED",

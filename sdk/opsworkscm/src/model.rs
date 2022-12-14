@@ -763,7 +763,7 @@ impl ServerStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BACKING_UP",
             "CONNECTION_LOST",
@@ -869,7 +869,7 @@ impl MaintenanceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "SUCCESS"]
     }
 }
@@ -1137,7 +1137,7 @@ impl NodeAssociationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCESS"]
     }
 }
@@ -1935,7 +1935,7 @@ impl BackupStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETING", "FAILED", "IN_PROGRESS", "OK"]
     }
 }
@@ -2025,7 +2025,7 @@ impl BackupType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTOMATED", "MANUAL"]
     }
 }

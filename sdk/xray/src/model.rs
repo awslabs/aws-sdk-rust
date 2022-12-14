@@ -1612,7 +1612,7 @@ impl EncryptionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KMS", "NONE"]
     }
 }
@@ -1702,7 +1702,7 @@ impl EncryptionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "UPDATING"]
     }
 }
@@ -4244,7 +4244,7 @@ impl SamplingStrategyName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FixedRate", "PartialScan"]
     }
 }
@@ -4334,7 +4334,7 @@ impl TimeRangeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Event", "TraceId"]
     }
 }
@@ -6888,7 +6888,7 @@ impl InsightState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CLOSED"]
     }
 }
@@ -6973,7 +6973,7 @@ impl InsightCategory {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAULT"]
     }
 }

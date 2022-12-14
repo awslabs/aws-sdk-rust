@@ -527,7 +527,7 @@ impl AlarmStateName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACKNOWLEDGED",
             "ACTIVE",
@@ -1552,7 +1552,7 @@ impl TriggerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SNOOZE_TIMEOUT"]
     }
 }
@@ -1637,7 +1637,7 @@ impl EventType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STATE_CHANGE"]
     }
 }
@@ -2282,7 +2282,7 @@ impl CustomerActionName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACKNOWLEDGE", "DISABLE", "ENABLE", "RESET", "SNOOZE"]
     }
 }
@@ -2558,7 +2558,7 @@ impl ComparisonOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EQUAL",
             "GREATER",
@@ -2771,7 +2771,7 @@ impl ErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "InternalFailureException",
             "InvalidRequestException",

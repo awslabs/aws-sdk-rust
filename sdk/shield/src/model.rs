@@ -157,7 +157,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FIELD_VALIDATION_FAILED", "OTHER"]
     }
 }
@@ -247,7 +247,7 @@ impl AutoRenew {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -359,7 +359,7 @@ impl ProtectedResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "APPLICATION_LOAD_BALANCER",
             "CLASSIC_LOAD_BALANCER",
@@ -463,7 +463,7 @@ impl ProtectionGroupPattern {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "ARBITRARY", "BY_RESOURCE_TYPE"]
     }
 }
@@ -560,7 +560,7 @@ impl ProtectionGroupAggregation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MAX", "MEAN", "SUM"]
     }
 }
@@ -1246,7 +1246,7 @@ impl ApplicationLayerAutomaticResponseStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -2181,7 +2181,7 @@ impl SubscriptionState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }
@@ -2958,7 +2958,7 @@ impl ProactiveEngagementStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED", "PENDING"]
     }
 }
@@ -3762,7 +3762,7 @@ impl Unit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BITS", "BYTES", "PACKETS", "REQUESTS"]
     }
 }
@@ -3959,7 +3959,7 @@ impl AttackPropertyIdentifier {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DESTINATION_URL",
             "REFERRER",
@@ -4058,7 +4058,7 @@ impl AttackLayer {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPLICATION", "NETWORK"]
     }
 }
@@ -4525,7 +4525,7 @@ impl SubResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IP", "URL"]
     }
 }

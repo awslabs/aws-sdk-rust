@@ -515,7 +515,7 @@ impl FilterConditionString {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IS", "IS_NOT"]
     }
 }
@@ -1674,7 +1674,7 @@ impl State {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "Deleted"]
     }
 }
@@ -3924,7 +3924,7 @@ impl TimePointGranularity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "SPECIFIC"]
     }
 }
@@ -4016,7 +4016,7 @@ impl TimeSeriesGranularity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "SPECIFIC"]
     }
 }
@@ -4295,7 +4295,7 @@ impl Domain {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CUSTOM",
             "EC2_CAPACITY",
@@ -4398,7 +4398,7 @@ impl DatasetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ITEM_METADATA", "RELATED_TIME_SERIES", "TARGET_TIME_SERIES"]
     }
 }
@@ -4933,7 +4933,7 @@ impl OptimizationMetric {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AverageWeightedQuantileLoss",
             "MAPE",
@@ -5031,7 +5031,7 @@ impl AutoMlOverrideStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AccuracyOptimized", "LatencyOptimized"]
     }
 }
@@ -5740,7 +5740,7 @@ impl EvaluationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPUTED", "SUMMARY"]
     }
 }
@@ -6112,7 +6112,7 @@ impl AttributeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["float", "geolocation", "integer", "string", "timestamp"]
     }
 }
@@ -6404,7 +6404,7 @@ impl Condition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EQUALS", "GREATER_THAN", "LESS_THAN", "NOT_EQUALS"]
     }
 }
@@ -6629,7 +6629,7 @@ impl Operation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ADD", "DIVIDE", "MULTIPLY", "SUBTRACT"]
     }
 }
@@ -7669,7 +7669,7 @@ impl FeaturizationMethodName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["filling"]
     }
 }
@@ -8672,7 +8672,7 @@ impl ScalingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Auto", "Linear", "Logarithmic", "ReverseLogarithmic"]
     }
 }
@@ -9779,7 +9779,7 @@ impl DayOfWeek {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FRIDAY",
             "MONDAY",
@@ -9927,7 +9927,7 @@ impl Month {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "APRIL",
             "AUGUST",

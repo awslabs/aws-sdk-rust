@@ -955,7 +955,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWS::ACM::Certificate",
             "AWS::AccessAnalyzer::Analyzer",
@@ -2598,7 +2598,7 @@ impl ResourceValueType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RESOURCE_ID"]
     }
 }
@@ -2685,7 +2685,7 @@ impl RemediationTargetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SSM_DOCUMENT"]
     }
 }
@@ -3219,7 +3219,7 @@ impl MaximumExecutionFrequency {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "One_Hour",
             "Six_Hours",
@@ -3325,7 +3325,7 @@ impl OrganizationConfigRuleTriggerTypeNoSn {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ConfigurationItemChangeNotification",
             "OversizedConfigurationItemChangeNotification",
@@ -3735,7 +3735,7 @@ impl OrganizationConfigRuleTriggerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ConfigurationItemChangeNotification",
             "OversizedConfigurationItemChangeNotification",
@@ -4225,7 +4225,7 @@ impl ComplianceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLIANT",
             "INSUFFICIENT_DATA",
@@ -5864,7 +5864,7 @@ impl ConfigRuleState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETING", "DELETING_RESULTS", "EVALUATING"]
     }
 }
@@ -6377,7 +6377,7 @@ impl MessageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ConfigurationItemChangeNotification",
             "ConfigurationSnapshotDeliveryCompleted",
@@ -6467,7 +6467,7 @@ impl EventSource {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["aws.config"]
     }
 }
@@ -6562,7 +6562,7 @@ impl Owner {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS", "CUSTOM_LAMBDA", "CUSTOM_POLICY"]
     }
 }
@@ -7248,7 +7248,7 @@ impl SortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SCORE"]
     }
 }
@@ -7338,7 +7338,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
 }
@@ -8451,7 +8451,7 @@ impl ConfigurationItemStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "OK",
             "ResourceDeleted",
@@ -8549,7 +8549,7 @@ impl ChronologicalOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Forward", "Reverse"]
     }
 }
@@ -8891,7 +8891,7 @@ impl OrganizationResourceDetailedStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
             "CREATE_IN_PROGRESS",
@@ -9378,7 +9378,7 @@ impl MemberAccountRuleStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
             "CREATE_IN_PROGRESS",
@@ -9789,7 +9789,7 @@ impl ConformancePackComplianceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLIANT", "INSUFFICIENT_DATA", "NON_COMPLIANT"]
     }
 }
@@ -10929,7 +10929,7 @@ impl ResourceCountGroupKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT_ID", "AWS_REGION", "RESOURCE_TYPE"]
     }
 }
@@ -11295,7 +11295,7 @@ impl AggregateConformancePackComplianceSummaryGroupKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT_ID", "AWS_REGION"]
     }
 }
@@ -11541,7 +11541,7 @@ impl ConfigRuleComplianceSummaryGroupKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT_ID", "AWS_REGION"]
     }
 }
@@ -12217,7 +12217,7 @@ impl RemediationExecutionStepState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING", "SUCCEEDED"]
     }
 }
@@ -12319,7 +12319,7 @@ impl RemediationExecutionState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "QUEUED", "SUCCEEDED"]
     }
 }
@@ -12728,7 +12728,7 @@ impl OrganizationResourceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
             "CREATE_IN_PROGRESS",
@@ -13318,7 +13318,7 @@ impl OrganizationRuleStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
             "CREATE_IN_PROGRESS",
@@ -14277,7 +14277,7 @@ impl DeliveryStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Failure", "Not_Applicable", "Success"]
     }
 }
@@ -14819,7 +14819,7 @@ impl ConformancePackState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_COMPLETE",
             "CREATE_FAILED",
@@ -15634,7 +15634,7 @@ impl RecorderStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Failure", "Pending", "Success"]
     }
 }
@@ -15947,7 +15947,7 @@ impl AggregatedSourceStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "OUTDATED", "SUCCEEDED"]
     }
 }
@@ -16039,7 +16039,7 @@ impl AggregatedSourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT", "ORGANIZATION"]
     }
 }

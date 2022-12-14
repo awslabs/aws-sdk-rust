@@ -167,7 +167,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "cannotParse",
             "fieldValidationFailed",
@@ -626,7 +626,7 @@ impl ReplicationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AGENT_BASED", "SNAPSHOT_SHIPPING"]
     }
 }
@@ -1641,7 +1641,7 @@ impl LifeCycleState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CUTOVER",
             "CUTTING_OVER",
@@ -2752,7 +2752,7 @@ impl DataReplicationErrorString {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AGENT_NOT_SEEN",
             "FAILED_TO_ATTACH_STAGING_DISKS",
@@ -3070,7 +3070,7 @@ impl DataReplicationInitiationStepStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
             "IN_PROGRESS",
@@ -3233,7 +3233,7 @@ impl DataReplicationInitiationStepName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ATTACH_STAGING_DISKS",
             "AUTHENTICATE_WITH_SERVICE",
@@ -3387,7 +3387,7 @@ impl DataReplicationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BACKLOG",
             "CONTINUOUS",
@@ -3736,7 +3736,7 @@ impl FirstBoot {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STOPPED", "SUCCEEDED", "UNKNOWN", "WAITING"]
     }
 }
@@ -3828,7 +3828,7 @@ impl ReplicationConfigurationDataPlaneRouting {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRIVATE_IP", "PUBLIC_IP"]
     }
 }
@@ -3920,7 +3920,7 @@ impl ReplicationConfigurationEbsEncryption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CUSTOM", "DEFAULT"]
     }
 }
@@ -4193,7 +4193,7 @@ impl ReplicationConfigurationReplicatedDiskStagingDiskType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTO", "GP2", "GP3", "IO1", "IO2", "SC1", "ST1", "STANDARD"]
     }
 }
@@ -4290,7 +4290,7 @@ impl ReplicationConfigurationDefaultLargeStagingDiskType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GP2", "GP3", "ST1"]
     }
 }
@@ -4798,7 +4798,7 @@ impl SsmParameterStoreParameterType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STRING"]
     }
 }
@@ -4890,7 +4890,7 @@ impl PostLaunchActionsDeploymentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CUTOVER_ONLY", "TEST_AND_CUTOVER"]
     }
 }
@@ -4980,7 +4980,7 @@ impl BootMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LEGACY_BIOS", "UEFI"]
     }
 }
@@ -5127,7 +5127,7 @@ impl TargetInstanceTypeRightSizingMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BASIC", "NONE"]
     }
 }
@@ -5219,7 +5219,7 @@ impl LaunchDisposition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STARTED", "STOPPED"]
     }
 }
@@ -5389,7 +5389,7 @@ impl ChangeServerLifeCycleStateSourceServerLifecycleState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CUTOVER", "READY_FOR_CUTOVER", "READY_FOR_TEST"]
     }
 }
@@ -6140,7 +6140,7 @@ impl PostLaunchActionExecutionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCESS"]
     }
 }
@@ -6230,7 +6230,7 @@ impl SsmDocumentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTOMATION", "COMMAND"]
     }
 }
@@ -6335,7 +6335,7 @@ impl LaunchStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "LAUNCHED", "PENDING", "TERMINATED"]
     }
 }
@@ -6430,7 +6430,7 @@ impl JobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "PENDING", "STARTED"]
     }
 }
@@ -6530,7 +6530,7 @@ impl InitiatedBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DIAGNOSTIC", "START_CUTOVER", "START_TEST", "TERMINATE"]
     }
 }
@@ -6620,7 +6620,7 @@ impl JobType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LAUNCH", "TERMINATE"]
     }
 }
@@ -8044,7 +8044,7 @@ impl JobLogEvent {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CLEANUP_END",
             "CLEANUP_FAIL",

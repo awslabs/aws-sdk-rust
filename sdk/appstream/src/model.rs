@@ -527,7 +527,7 @@ impl PreferredProtocol {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TCP", "UDP"]
     }
 }
@@ -692,7 +692,7 @@ impl AccessEndpointType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STREAMING"]
     }
 }
@@ -961,7 +961,7 @@ impl Permission {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -1076,7 +1076,7 @@ impl Action {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CLIPBOARD_COPY_FROM_LOCAL_DEVICE",
             "CLIPBOARD_COPY_TO_LOCAL_DEVICE",
@@ -1255,7 +1255,7 @@ impl StackErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INTERNAL_SERVICE_ERROR", "STORAGE_CONNECTOR_ERROR"]
     }
 }
@@ -1462,7 +1462,7 @@ impl StorageConnectorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GOOGLE_DRIVE", "HOMEFOLDERS", "ONE_DRIVE"]
     }
 }
@@ -1680,7 +1680,7 @@ impl StackAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_ENDPOINTS",
             "EMBED_HOST_DOMAINS",
@@ -2758,7 +2758,7 @@ impl PlatformType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AMAZON_LINUX2",
             "WINDOWS",
@@ -2853,7 +2853,7 @@ impl StreamView {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APP", "DESKTOP"]
     }
 }
@@ -3295,7 +3295,7 @@ impl FleetErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DOMAIN_JOIN_ERROR_ACCESS_DENIED",
             "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED",
@@ -3519,7 +3519,7 @@ impl FleetState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RUNNING", "STARTING", "STOPPED", "STOPPING"]
     }
 }
@@ -3729,7 +3729,7 @@ impl FleetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALWAYS_ON", "ELASTIC", "ON_DEMAND"]
     }
 }
@@ -3843,7 +3843,7 @@ impl FleetAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DOMAIN_JOIN_INFO",
             "IAM_ROLE_ARN",
@@ -4308,7 +4308,7 @@ impl AppVisibility {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "ASSOCIATED"]
     }
 }
@@ -5022,7 +5022,7 @@ impl ApplicationAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LAUNCH_PARAMETERS", "WORKING_DIRECTORY"]
     }
 }
@@ -5981,7 +5981,7 @@ impl ImageBuilderStateChangeReasonCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IMAGE_UNAVAILABLE", "INTERNAL_ERROR"]
     }
 }
@@ -6118,7 +6118,7 @@ impl ImageBuilderState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DELETING",
             "FAILED",
@@ -6285,7 +6285,7 @@ impl AuthenticationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["API", "SAML", "USERPOOL"]
     }
 }
@@ -6975,7 +6975,7 @@ impl UsageReportExecutionErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
             "INTERNAL_SERVICE_ERROR",
@@ -7066,7 +7066,7 @@ impl UsageReportSchedule {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAILY"]
     }
 }
@@ -7417,7 +7417,7 @@ impl SessionConnectionState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONNECTED", "NOT_CONNECTED"]
     }
 }
@@ -7512,7 +7512,7 @@ impl SessionState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "EXPIRED", "PENDING"]
     }
 }
@@ -8117,7 +8117,7 @@ impl ImageStateChangeReasonCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "IMAGE_BUILDER_NOT_AVAILABLE",
             "IMAGE_COPY_FAILURE",
@@ -8216,7 +8216,7 @@ impl VisibilityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRIVATE", "PUBLIC", "SHARED"]
     }
 }
@@ -8331,7 +8331,7 @@ impl ImageState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "COPYING",
@@ -8898,7 +8898,7 @@ impl MessageAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RESEND", "SUPPRESS"]
     }
 }
@@ -9106,7 +9106,7 @@ impl UserStackAssociationErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DIRECTORY_NOT_FOUND",
             "INTERNAL_ERROR",

@@ -916,7 +916,7 @@ impl StabilityStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STABILIZING", "STEADY_STATE"]
     }
 }
@@ -1076,7 +1076,7 @@ impl ScaleUnit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PERCENT"]
     }
 }
@@ -1636,7 +1636,7 @@ impl AssignPublicIp {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -1841,7 +1841,7 @@ impl LaunchType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EC2", "EXTERNAL", "FARGATE"]
     }
 }
@@ -2806,7 +2806,7 @@ impl PropagateTags {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "SERVICE", "TASK_DEFINITION"]
     }
 }
@@ -3045,7 +3045,7 @@ impl DeploymentControllerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CODE_DEPLOY", "ECS", "EXTERNAL"]
     }
 }
@@ -3137,7 +3137,7 @@ impl SchedulingStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAEMON", "REPLICA"]
     }
 }
@@ -3312,7 +3312,7 @@ impl PlacementStrategyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["binpack", "random", "spread"]
     }
 }
@@ -3484,7 +3484,7 @@ impl PlacementConstraintType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["distinctInstance", "memberOf"]
     }
 }
@@ -4186,7 +4186,7 @@ impl DeploymentRolloutState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "IN_PROGRESS"]
     }
 }
@@ -5361,7 +5361,7 @@ impl InstanceHealthCheckState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IMPAIRED", "INITIALIZING", "INSUFFICIENT_DATA", "OK"]
     }
 }
@@ -5448,7 +5448,7 @@ impl InstanceHealthCheckType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONTAINER_RUNTIME"]
     }
 }
@@ -5850,7 +5850,7 @@ impl TargetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["container-instance"]
     }
 }
@@ -5962,7 +5962,7 @@ impl AgentUpdateStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED", "PENDING", "STAGED", "STAGING", "UPDATED", "UPDATING",
         ]
@@ -6336,7 +6336,7 @@ impl ContainerInstanceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "DEREGISTERING",
@@ -7208,7 +7208,7 @@ impl ClusterSettingName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["containerInsights"]
     }
 }
@@ -7671,7 +7671,7 @@ impl ExecuteCommandLogging {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT", "NONE", "OVERRIDE"]
     }
 }
@@ -8113,7 +8113,7 @@ impl CapacityProviderUpdateStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DELETE_COMPLETE",
             "DELETE_FAILED",
@@ -8342,7 +8342,7 @@ impl ManagedTerminationProtection {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -8574,7 +8574,7 @@ impl ManagedScalingStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -8666,7 +8666,7 @@ impl CapacityProviderStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }
@@ -8979,7 +8979,7 @@ impl ManagedAgentName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ExecuteCommandAgent"]
     }
 }
@@ -9455,7 +9455,7 @@ impl TransportProtocol {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["tcp", "udp"]
     }
 }
@@ -10657,7 +10657,7 @@ impl TaskStopCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EssentialContainerExited",
             "TaskFailedToStart",
@@ -11382,7 +11382,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GPU", "InferenceAccelerator"]
     }
 }
@@ -11553,7 +11553,7 @@ impl EnvironmentFileType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["s3"]
     }
 }
@@ -11723,7 +11723,7 @@ impl HealthStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "UNHEALTHY", "UNKNOWN"]
     }
 }
@@ -12465,7 +12465,7 @@ impl Connectivity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONNECTED", "DISCONNECTED"]
     }
 }
@@ -13528,7 +13528,7 @@ impl ProxyConfigurationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPMESH"]
     }
 }
@@ -13623,7 +13623,7 @@ impl IpcMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["host", "none", "task"]
     }
 }
@@ -13713,7 +13713,7 @@ impl PidMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["host", "task"]
     }
 }
@@ -13808,7 +13808,7 @@ impl Compatibility {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EC2", "EXTERNAL", "FARGATE"]
     }
 }
@@ -14014,7 +14014,7 @@ impl OsFamily {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "LINUX",
             "WINDOWS_SERVER_2004_CORE",
@@ -14113,7 +14113,7 @@ impl CpuArchitecture {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ARM64", "X86_64"]
     }
 }
@@ -14285,7 +14285,7 @@ impl TaskDefinitionPlacementConstraintType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["memberOf"]
     }
 }
@@ -14377,7 +14377,7 @@ impl TaskDefinitionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }
@@ -15087,7 +15087,7 @@ impl EfsAuthorizationConfigIam {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -15179,7 +15179,7 @@ impl EfsTransitEncryption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -15454,7 +15454,7 @@ impl Scope {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["shared", "task"]
     }
 }
@@ -15613,7 +15613,7 @@ impl NetworkMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["awsvpc", "bridge", "host", "none"]
     }
 }
@@ -17331,7 +17331,7 @@ impl FirelensConfigurationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["fluentbit", "fluentd"]
     }
 }
@@ -17977,7 +17977,7 @@ impl LogDriver {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "awsfirelens",
             "awslogs",
@@ -18237,7 +18237,7 @@ impl UlimitName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "core",
             "cpu",
@@ -18542,7 +18542,7 @@ impl ContainerCondition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "HEALTHY", "START", "SUCCESS"]
     }
 }
@@ -19106,7 +19106,7 @@ impl DeviceCgroupPermission {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["mknod", "read", "write"]
     }
 }
@@ -19751,7 +19751,7 @@ impl PlatformDeviceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GPU"]
     }
 }
@@ -19954,7 +19954,7 @@ impl SettingName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "awsvpcTrunking",
             "containerInsights",
@@ -20055,7 +20055,7 @@ impl DesiredStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PENDING", "RUNNING", "STOPPED"]
     }
 }
@@ -20145,7 +20145,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
 }
@@ -20242,7 +20242,7 @@ impl TaskDefinitionFamilyStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "ALL", "INACTIVE"]
     }
 }
@@ -20422,7 +20422,7 @@ impl TaskSetField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TAGS"]
     }
 }
@@ -20507,7 +20507,7 @@ impl TaskField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TAGS"]
     }
 }
@@ -20594,7 +20594,7 @@ impl TaskDefinitionField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TAGS"]
     }
 }
@@ -20679,7 +20679,7 @@ impl ServiceField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TAGS"]
     }
 }
@@ -20771,7 +20771,7 @@ impl ContainerInstanceField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONTAINER_INSTANCE_HEALTH", "TAGS"]
     }
 }
@@ -20876,7 +20876,7 @@ impl ClusterField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ATTACHMENTS",
             "CONFIGURATIONS",
@@ -20969,7 +20969,7 @@ impl CapacityProviderField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TAGS"]
     }
 }

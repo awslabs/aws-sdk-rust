@@ -105,7 +105,7 @@ impl ErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BadRequest",
             "Forbidden",
@@ -790,7 +790,7 @@ impl MediaPipelineStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Failed",
             "InProgress",
@@ -1028,7 +1028,7 @@ impl ConcatenationSinkType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["S3Bucket"]
     }
 }
@@ -1648,7 +1648,7 @@ impl ArtifactsConcatenationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -2071,7 +2071,7 @@ impl AudioArtifactsConcatenationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Enabled"]
     }
 }
@@ -2158,7 +2158,7 @@ impl ConcatenationSourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MediaCapturePipeline"]
     }
 }
@@ -2652,7 +2652,7 @@ impl AudioChannelsOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Mono", "Stereo"]
     }
 }
@@ -2739,7 +2739,7 @@ impl LiveConnectorSinkType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RTMP"]
     }
 }
@@ -3480,7 +3480,7 @@ impl PresenterPosition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BottomLeft", "BottomRight", "TopLeft", "TopRight"]
     }
 }
@@ -3577,7 +3577,7 @@ impl ContentShareLayoutOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Horizontal", "PresenterOnly", "Vertical"]
     }
 }
@@ -3667,7 +3667,7 @@ impl ResolutionOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FHD", "HD"]
     }
 }
@@ -3752,7 +3752,7 @@ impl LayoutOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GridView"]
     }
 }
@@ -3844,7 +3844,7 @@ impl LiveConnectorMuxType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AudioWithActiveSpeakerVideo", "AudioWithCompositedVideo"]
     }
 }
@@ -3931,7 +3931,7 @@ impl LiveConnectorSourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ChimeSdkMeeting"]
     }
 }
@@ -4586,7 +4586,7 @@ impl ContentMuxType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ContentOnly"]
     }
 }
@@ -4676,7 +4676,7 @@ impl ArtifactsState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -4842,7 +4842,7 @@ impl VideoMuxType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["VideoOnly"]
     }
 }
@@ -4995,7 +4995,7 @@ impl AudioMuxType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AudioOnly",
             "AudioWithActiveSpeakerVideo",
@@ -5086,7 +5086,7 @@ impl MediaPipelineSinkType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["S3Bucket"]
     }
 }
@@ -5173,7 +5173,7 @@ impl MediaPipelineSourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ChimeSdkMeeting"]
     }
 }

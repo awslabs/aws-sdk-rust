@@ -75,7 +75,7 @@ impl ServiceCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ssm-incidents"]
     }
 }
@@ -180,7 +180,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "INCIDENT_RECORD",
             "REPLICATION_SET",
@@ -563,7 +563,7 @@ impl VariableType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INCIDENT_RECORD_ARN", "INVOLVED_RESOURCES"]
     }
 }
@@ -653,7 +653,7 @@ impl SsmTargetAccount {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IMPACTED_ACCOUNT", "RESPONSE_PLAN_OWNER_ACCOUNT"]
     }
 }
@@ -1207,7 +1207,7 @@ impl ItemType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ANALYSIS",
             "ATTACHMENT",
@@ -1452,7 +1452,7 @@ impl IncidentRecordStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OPEN", "RESOLVED"]
     }
 }
@@ -1804,7 +1804,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
 }
@@ -1891,7 +1891,7 @@ impl TimelineEventSort {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EVENT_TIME"]
     }
 }
@@ -3281,7 +3281,7 @@ impl ReplicationSetStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
     }
 }
@@ -3508,7 +3508,7 @@ impl RegionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "FAILED"]
     }
 }

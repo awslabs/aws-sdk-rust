@@ -86,7 +86,7 @@ impl StreamProcessorParameterToDelete {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ConnectedHomeMinConfidence", "RegionsOfInterest"]
     }
 }
@@ -777,7 +777,7 @@ impl ProjectVersionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COPYING_COMPLETED",
             "COPYING_FAILED",
@@ -1491,7 +1491,7 @@ impl SegmentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SHOT", "TECHNICAL_CUE"]
     }
 }
@@ -1896,7 +1896,7 @@ impl FaceAttributes {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "DEFAULT"]
     }
 }
@@ -2240,7 +2240,7 @@ impl QualityFilter {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTO", "HIGH", "LOW", "MEDIUM", "NONE"]
     }
 }
@@ -2423,7 +2423,7 @@ impl OrientationCorrection {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ROTATE_0", "ROTATE_180", "ROTATE_270", "ROTATE_90"]
     }
 }
@@ -2897,7 +2897,7 @@ impl EmotionName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ANGRY",
             "CALM",
@@ -3402,7 +3402,7 @@ impl LandmarkType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "chinBottom",
             "eyeLeft",
@@ -3758,7 +3758,7 @@ impl KnownGenderType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Female", "Male", "Nonbinary", "Unlisted"]
     }
 }
@@ -3948,7 +3948,7 @@ impl StreamProcessorStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED", "RUNNING", "STARTING", "STOPPED", "STOPPING", "UPDATING",
         ]
@@ -5234,7 +5234,7 @@ impl GenderType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Female", "Male"]
     }
 }
@@ -5575,7 +5575,7 @@ impl Reason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EXCEEDS_MAX_FACES",
             "EXTREME_POSE",
@@ -5751,7 +5751,7 @@ impl Attribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "DEFAULT"]
     }
 }
@@ -6167,7 +6167,7 @@ impl TextTypes {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LINE", "WORD"]
     }
 }
@@ -6435,7 +6435,7 @@ impl VideoColorRange {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL", "LIMITED"]
     }
 }
@@ -6530,7 +6530,7 @@ impl VideoJobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
 }
@@ -7166,7 +7166,7 @@ impl TechnicalCueType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BlackFrames",
             "ColorBars",
@@ -7558,7 +7558,7 @@ impl PersonTrackingSortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INDEX", "TIMESTAMP"]
     }
 }
@@ -7990,7 +7990,7 @@ impl LabelDetectionSortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NAME", "TIMESTAMP"]
     }
 }
@@ -8187,7 +8187,7 @@ impl FaceSearchSortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INDEX", "TIMESTAMP"]
     }
 }
@@ -8531,7 +8531,7 @@ impl ContentModerationSortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NAME", "TIMESTAMP"]
     }
 }
@@ -8891,7 +8891,7 @@ impl CelebrityRecognitionSortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ID", "TIMESTAMP"]
     }
 }
@@ -9690,7 +9690,7 @@ impl ProtectiveEquipmentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FACE_COVER", "HAND_COVER", "HEAD_COVER"]
     }
 }
@@ -9790,7 +9790,7 @@ impl BodyPart {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FACE", "HEAD", "LEFT_HAND", "RIGHT_HAND"]
     }
 }
@@ -10281,7 +10281,7 @@ impl ContentClassifier {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FreeOfAdultContent",
             "FreeOfPersonallyIdentifiableInformation",
@@ -12533,7 +12533,7 @@ impl DatasetStatusMessageCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLIENT_ERROR", "SERVICE_ERROR", "SUCCESS"]
     }
 }
@@ -12648,7 +12648,7 @@ impl DatasetStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_COMPLETE",
             "CREATE_FAILED",
@@ -12746,7 +12746,7 @@ impl DatasetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TEST", "TRAIN"]
     }
 }
@@ -12841,7 +12841,7 @@ impl ProjectStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATED", "CREATING", "DELETING"]
     }
 }

@@ -391,7 +391,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNTS_ALREADY_ASSOCIATED",
             "ACCOUNTS_NOT_ASSOCIATED",
@@ -775,7 +775,7 @@ impl PricingRuleType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISCOUNT", "MARKUP"]
     }
 }
@@ -865,7 +865,7 @@ impl PricingRuleScope {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GLOBAL", "SERVICE"]
     }
 }
@@ -1316,7 +1316,7 @@ impl CustomLineItemRelationship {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CHILD", "PARENT"]
     }
 }
@@ -1633,7 +1633,7 @@ impl AssociateResourceErrorReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ILLEGAL_CUSTOMLINEITEM",
             "INTERNAL_SERVER_EXCEPTION",
@@ -2149,7 +2149,7 @@ impl CurrencyCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CNY", "USD"]
     }
 }
@@ -2351,7 +2351,7 @@ impl CustomLineItemType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREDIT", "FEE"]
     }
 }
@@ -3375,7 +3375,7 @@ impl BillingGroupStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "PRIMARY_ACCOUNT_MISSING"]
     }
 }

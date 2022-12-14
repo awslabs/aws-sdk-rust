@@ -80,7 +80,7 @@ impl Reaction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ThumbsDown", "ThumbsUp"]
     }
 }
@@ -456,7 +456,7 @@ impl RepositoryAssociationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Associated",
             "Associating",
@@ -567,7 +567,7 @@ impl ProviderType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Bitbucket",
             "CodeCommit",
@@ -888,7 +888,7 @@ impl Severity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Critical", "High", "Info", "Low", "Medium"]
     }
 }
@@ -1175,7 +1175,7 @@ impl RecommendationCategory {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWSBestPractices",
             "AWSCloudFormationIssues",
@@ -1996,7 +1996,7 @@ impl VendorName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GitHub", "GitLab", "NativeS3"]
     }
 }
@@ -2755,7 +2755,7 @@ impl Type {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PullRequest", "RepositoryAnalysis"]
     }
 }
@@ -2855,7 +2855,7 @@ impl JobState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Completed", "Deleting", "Failed", "Pending"]
     }
 }
@@ -3401,7 +3401,7 @@ impl EncryptionOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_OWNED_CMK", "CUSTOMER_MANAGED_CMK"]
     }
 }
@@ -4091,7 +4091,7 @@ impl ConfigFileState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Absent", "Present", "PresentWithErrors"]
     }
 }
@@ -4181,7 +4181,7 @@ impl AnalysisType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CodeQuality", "Security"]
     }
 }

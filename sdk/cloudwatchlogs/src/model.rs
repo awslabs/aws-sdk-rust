@@ -353,7 +353,7 @@ impl Distribution {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ByLogStream", "Random"]
     }
 }
@@ -861,7 +861,7 @@ impl StandardUnit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Bits",
             "Bits/Second",
@@ -1347,7 +1347,7 @@ impl QueryStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Cancelled",
             "Complete",
@@ -2845,7 +2845,7 @@ impl OrderBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LastEventTime", "LogStreamName"]
     }
 }
@@ -3519,7 +3519,7 @@ impl ExportTaskStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
             "COMPLETED",

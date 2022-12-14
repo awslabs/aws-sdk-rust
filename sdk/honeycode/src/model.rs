@@ -92,7 +92,7 @@ impl TableDataImportJobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "IN_PROGRESS", "SUBMITTED"]
     }
 }
@@ -415,7 +415,7 @@ impl ImportDataCharacterEncoding {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ISO-8859-1",
             "US-ASCII",
@@ -648,7 +648,7 @@ impl ImportSourceDataFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELIMITED_TEXT"]
     }
 }
@@ -1171,7 +1171,7 @@ impl Format {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNTING",
             "AUTO",
@@ -2000,7 +2000,7 @@ impl ErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
             "FILE_EMPTY_ERROR",
@@ -2472,7 +2472,7 @@ impl UpsertAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPENDED", "UPDATED"]
     }
 }

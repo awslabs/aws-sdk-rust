@@ -242,7 +242,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
             "FIELD_VALIDATION_FAILED",
@@ -432,7 +432,7 @@ impl DeviceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWAITING_PROVISIONING",
             "DELETING",
@@ -908,7 +908,7 @@ impl ConnectionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DHCP", "STATIC_IP"]
     }
 }
@@ -1334,7 +1334,7 @@ impl PackageImportJobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING", "SUCCEEDED"]
     }
 }
@@ -1430,7 +1430,7 @@ impl PackageImportJobType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MARKETPLACE_NODE_PACKAGE_VERSION", "NODE_PACKAGE_VERSION"]
     }
 }
@@ -1800,7 +1800,7 @@ impl NodeCategory {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BUSINESS_LOGIC", "MEDIA_SINK", "MEDIA_SOURCE", "ML_MODEL"]
     }
 }
@@ -2064,7 +2064,7 @@ impl NodeFromTemplateJobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING", "SUCCEEDED"]
     }
 }
@@ -2149,7 +2149,7 @@ impl TemplateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RTSP_CAMERA_STREAM"]
     }
 }
@@ -2737,7 +2737,7 @@ impl DeviceAggregatedStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWAITING_PROVISIONING",
             "DELETING",
@@ -2943,7 +2943,7 @@ impl UpdateProgress {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "DOWNLOADING",
@@ -3041,7 +3041,7 @@ impl DeviceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PANORAMA_APPLIANCE", "PANORAMA_APPLIANCE_DEVELOPER_KIT"]
     }
 }
@@ -3131,7 +3131,7 @@ impl DeviceBrand {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_PANORAMA", "LENOVO"]
     }
 }
@@ -3221,7 +3221,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
 }
@@ -3323,7 +3323,7 @@ impl ListDevicesSortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATED_TIME",
             "DEVICE_AGGREGATED_STATUS",
@@ -3740,7 +3740,7 @@ impl ApplicationInstanceHealthStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ERROR", "NOT_AVAILABLE", "RUNNING"]
     }
 }
@@ -3877,7 +3877,7 @@ impl ApplicationInstanceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DEPLOYMENT_ERROR",
             "DEPLOYMENT_FAILED",
@@ -4004,7 +4004,7 @@ impl StatusFilter {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DEPLOYMENT_ERROR",
             "DEPLOYMENT_FAILED",
@@ -4296,7 +4296,7 @@ impl NodeInstanceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ERROR", "NOT_AVAILABLE", "RUNNING"]
     }
 }
@@ -4499,7 +4499,7 @@ impl PackageVersionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DELETING",
             "FAILED",
@@ -4688,7 +4688,7 @@ impl JobResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PACKAGE"]
     }
 }
@@ -5713,7 +5713,7 @@ impl PortType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BOOLEAN", "FLOAT32", "INT32", "MEDIA", "STRING"]
     }
 }
@@ -6231,7 +6231,7 @@ impl NetworkConnectionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONNECTED", "CONNECTING", "NOT_CONNECTED"]
     }
 }
@@ -6436,7 +6436,7 @@ impl DeviceConnectionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWAITING_CREDENTIALS",
             "ERROR",
@@ -6676,7 +6676,7 @@ impl JobType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OTA"]
     }
 }

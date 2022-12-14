@@ -267,7 +267,7 @@ impl ChildPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ABANDON", "REQUEST_CANCEL", "TERMINATE"]
     }
 }
@@ -3066,7 +3066,7 @@ impl DecisionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CancelTimer",
             "CancelWorkflowExecution",
@@ -5322,7 +5322,7 @@ impl StartLambdaFunctionFailedCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASSUME_ROLE_FAILED"]
     }
 }
@@ -5570,7 +5570,7 @@ impl ScheduleLambdaFunctionFailedCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ID_ALREADY_IN_USE",
             "LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED",
@@ -5760,7 +5760,7 @@ impl LambdaFunctionTimeoutType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["START_TO_CLOSE"]
     }
 }
@@ -6537,7 +6537,7 @@ impl StartChildWorkflowExecutionFailedCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CHILD_CREATION_RATE_EXCEEDED",
             "DEFAULT_CHILD_POLICY_UNDEFINED",
@@ -6755,7 +6755,7 @@ impl CancelTimerFailedCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED", "TIMER_ID_UNKNOWN"]
     }
 }
@@ -6971,7 +6971,7 @@ impl StartTimerFailedCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "OPEN_TIMERS_LIMIT_EXCEEDED",
             "OPERATION_NOT_PERMITTED",
@@ -7189,7 +7189,7 @@ impl RequestCancelActivityTaskFailedCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVITY_ID_UNKNOWN", "OPERATION_NOT_PERMITTED"]
     }
 }
@@ -7495,7 +7495,7 @@ impl ScheduleActivityTaskFailedCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVITY_CREATION_RATE_EXCEEDED",
             "ACTIVITY_ID_ALREADY_IN_USE",
@@ -7789,7 +7789,7 @@ impl RequestCancelExternalWorkflowExecutionFailedCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "OPERATION_NOT_PERMITTED",
             "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED",
@@ -8354,7 +8354,7 @@ impl SignalExternalWorkflowExecutionFailedCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "OPERATION_NOT_PERMITTED",
             "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED",
@@ -9098,7 +9098,7 @@ impl WorkflowExecutionTimeoutType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["START_TO_CLOSE"]
     }
 }
@@ -10366,7 +10366,7 @@ impl RecordMarkerFailedCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED"]
     }
 }
@@ -11025,7 +11025,7 @@ impl ActivityTaskTimeoutType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "HEARTBEAT",
             "SCHEDULE_TO_CLOSE",
@@ -11789,7 +11789,7 @@ impl DecisionTaskTimeoutType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["START_TO_CLOSE"]
     }
 }
@@ -12274,7 +12274,7 @@ impl WorkflowExecutionCancelRequestedCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CHILD_POLICY_APPLIED"]
     }
 }
@@ -12516,7 +12516,7 @@ impl WorkflowExecutionTerminatedCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CHILD_POLICY_APPLIED",
             "EVENT_LIMIT_EXCEEDED",
@@ -12746,7 +12746,7 @@ impl ContinueAsNewWorkflowExecutionFailedCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED",
             "DEFAULT_CHILD_POLICY_UNDEFINED",
@@ -13277,7 +13277,7 @@ impl CancelWorkflowExecutionFailedCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED", "UNHANDLED_DECISION"]
     }
 }
@@ -13651,7 +13651,7 @@ impl FailWorkflowExecutionFailedCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED", "UNHANDLED_DECISION"]
     }
 }
@@ -13946,7 +13946,7 @@ impl CompleteWorkflowExecutionFailedCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED", "UNHANDLED_DECISION"]
     }
 }
@@ -14761,7 +14761,7 @@ impl EventType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ActivityTaskCancelRequested",
             "ActivityTaskCanceled",
@@ -15055,7 +15055,7 @@ impl RegistrationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEPRECATED", "REGISTERED"]
     }
 }
@@ -15442,7 +15442,7 @@ impl CloseStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
             "COMPLETED",
@@ -15539,7 +15539,7 @@ impl ExecutionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOSED", "OPEN"]
     }
 }

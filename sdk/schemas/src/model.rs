@@ -80,7 +80,7 @@ impl Type {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JSONSchemaDraft4", "OpenApi3"]
     }
 }
@@ -170,7 +170,7 @@ impl DiscovererState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STARTED", "STOPPED"]
     }
 }
@@ -499,7 +499,7 @@ impl CodeGenerationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE_COMPLETE", "CREATE_FAILED", "CREATE_IN_PROGRESS"]
     }
 }

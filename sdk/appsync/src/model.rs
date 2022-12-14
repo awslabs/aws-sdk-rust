@@ -220,7 +220,7 @@ impl TypeDefinitionFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JSON", "SDL"]
     }
 }
@@ -908,7 +908,7 @@ impl ConflictDetectionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "VERSION"]
     }
 }
@@ -1010,7 +1010,7 @@ impl ConflictHandlerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTOMERGE", "LAMBDA", "NONE", "OPTIMISTIC_CONCURRENCY"]
     }
 }
@@ -1164,7 +1164,7 @@ impl ResolverKind {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PIPELINE", "UNIT"]
     }
 }
@@ -2126,7 +2126,7 @@ impl AuthenticationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AMAZON_COGNITO_USER_POOLS",
             "API_KEY",
@@ -2343,7 +2343,7 @@ impl DefaultAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "DENY"]
     }
 }
@@ -2595,7 +2595,7 @@ impl FieldLogLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "ERROR", "NONE"]
     }
 }
@@ -3677,7 +3677,7 @@ impl RelationalDatabaseSourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RDS_HTTP_ENDPOINT"]
     }
 }
@@ -4016,7 +4016,7 @@ impl AuthorizationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_IAM"]
     }
 }
@@ -4576,7 +4576,7 @@ impl DataSourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AMAZON_DYNAMODB",
             "AMAZON_ELASTICSEARCH",
@@ -5121,7 +5121,7 @@ impl ApiCacheStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "CREATING", "DELETING", "FAILED", "MODIFYING"]
     }
 }
@@ -5276,7 +5276,7 @@ impl ApiCacheType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "LARGE",
             "LARGE_12X",
@@ -5384,7 +5384,7 @@ impl ApiCachingBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL_REQUEST_CACHING", "PER_RESOLVER_CACHING"]
     }
 }
@@ -5494,7 +5494,7 @@ impl SchemaStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "DELETING",
@@ -5591,7 +5591,7 @@ impl OutputType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JSON", "SDL"]
     }
 }
@@ -5829,7 +5829,7 @@ impl AssociationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "PROCESSING", "SUCCESS"]
     }
 }

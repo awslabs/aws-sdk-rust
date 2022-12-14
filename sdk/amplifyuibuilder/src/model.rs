@@ -1538,7 +1538,7 @@ impl FixedPosition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["first"]
     }
 }
@@ -1635,7 +1635,7 @@ impl FormButtonsPosition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["bottom", "top", "top_and_bottom"]
     }
 }
@@ -2757,7 +2757,7 @@ impl FormDataSourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Custom", "DataStore"]
     }
 }
@@ -3002,7 +3002,7 @@ impl FormActionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["create", "update"]
     }
 }
@@ -5882,7 +5882,7 @@ impl SortDirection {
         &self.0
     }
     /// Returns all the `&str` representations of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
 }
@@ -7735,7 +7735,7 @@ impl TokenProviders {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["figma"]
     }
 }

@@ -95,7 +95,7 @@ impl State {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "ERROR", "UPDATING"]
     }
 }
@@ -268,7 +268,7 @@ impl ParentEntityUpdateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETE", "UPDATE"]
     }
 }
@@ -610,7 +610,7 @@ impl PropertyUpdateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE", "DELETE", "UPDATE"]
     }
 }
@@ -1496,7 +1496,7 @@ impl Type {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BOOLEAN",
             "DOUBLE",
@@ -1602,7 +1602,7 @@ impl ComponentUpdateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE", "DELETE", "UPDATE"]
     }
 }
@@ -1924,7 +1924,7 @@ impl Scope {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENTITY", "WORKSPACE"]
     }
 }
@@ -2693,7 +2693,7 @@ impl ErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INTERNAL_FAILURE", "VALIDATION_ERROR"]
     }
 }
@@ -3478,7 +3478,7 @@ impl OrderByTime {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
 }
@@ -3643,7 +3643,7 @@ impl InterpolationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LINEAR"]
     }
 }

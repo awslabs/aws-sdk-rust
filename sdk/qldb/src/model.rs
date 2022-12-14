@@ -80,7 +80,7 @@ impl PermissionsMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOW_ALL", "STANDARD"]
     }
 }
@@ -306,7 +306,7 @@ impl EncryptionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENABLED", "KMS_KEY_INACCESSIBLE", "UPDATING"]
     }
 }
@@ -406,7 +406,7 @@ impl LedgerState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETED", "DELETING"]
     }
 }
@@ -933,7 +933,7 @@ impl OutputFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ION_BINARY", "ION_TEXT", "JSON"]
     }
 }
@@ -1262,7 +1262,7 @@ impl S3ObjectEncryptionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NO_ENCRYPTION", "SSE_KMS", "SSE_S3"]
     }
 }
@@ -1357,7 +1357,7 @@ impl ExportStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "COMPLETED", "IN_PROGRESS"]
     }
 }
@@ -1722,7 +1722,7 @@ impl ErrorCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IAM_PERMISSION_REVOKED", "KINESIS_STREAM_NOT_FOUND"]
     }
 }
@@ -1827,7 +1827,7 @@ impl StreamStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CANCELED", "COMPLETED", "FAILED", "IMPAIRED"]
     }
 }

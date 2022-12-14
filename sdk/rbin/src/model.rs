@@ -82,7 +82,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INVALID_PAGE_TOKEN", "INVALID_PARAMETER_VALUE"]
     }
 }
@@ -169,7 +169,7 @@ impl ResourceNotFoundExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RULE_NOT_FOUND"]
     }
 }
@@ -259,7 +259,7 @@ impl RuleStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["available", "pending"]
     }
 }
@@ -430,7 +430,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EBS_SNAPSHOT", "EC2_IMAGE"]
     }
 }
@@ -595,7 +595,7 @@ impl RetentionPeriodUnit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAYS"]
     }
 }
@@ -682,7 +682,7 @@ impl ServiceQuotaExceededExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SERVICE_QUOTA_EXCEEDED"]
     }
 }

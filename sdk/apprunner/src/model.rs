@@ -746,7 +746,7 @@ impl EgressType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT", "VPC"]
     }
 }
@@ -1150,7 +1150,7 @@ impl HealthCheckProtocol {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HTTP", "TCP"]
     }
 }
@@ -1738,7 +1738,7 @@ impl ImageRepositoryType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ECR", "ECR_PUBLIC"]
     }
 }
@@ -2358,7 +2358,7 @@ impl Runtime {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CORRETTO_11",
             "CORRETTO_8",
@@ -2457,7 +2457,7 @@ impl ConfigurationSource {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["API", "REPOSITORY"]
     }
 }
@@ -2630,7 +2630,7 @@ impl SourceCodeVersionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BRANCH"]
     }
 }
@@ -2740,7 +2740,7 @@ impl ServiceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
             "DELETED",
@@ -3153,7 +3153,7 @@ impl VpcConnectorStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }
@@ -3656,7 +3656,7 @@ impl OperationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
             "IN_PROGRESS",
@@ -3769,7 +3769,7 @@ impl OperationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_SERVICE",
             "DELETE_SERVICE",
@@ -4147,7 +4147,7 @@ impl ConnectionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETED", "ERROR", "PENDING_HANDSHAKE"]
     }
 }
@@ -4232,7 +4232,7 @@ impl ProviderType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GITHUB"]
     }
 }
@@ -4490,7 +4490,7 @@ impl CustomDomainAssociationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "BINDING_CERTIFICATE",
@@ -4713,7 +4713,7 @@ impl CertificateValidationRecordStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING_VALIDATION", "SUCCESS"]
     }
 }
@@ -5039,7 +5039,7 @@ impl ObservabilityConfigurationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }
@@ -5182,7 +5182,7 @@ impl TracingVendor {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWSXRAY"]
     }
 }
@@ -5551,7 +5551,7 @@ impl AutoScalingConfigurationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }

@@ -100,7 +100,7 @@ impl RouteState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE", "CREATING", "DELETING", "FAILED", "INACTIVE", "UPDATING",
         ]
@@ -194,7 +194,7 @@ impl RouteActivationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }
@@ -983,7 +983,7 @@ impl ErrorResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "API_GATEWAY",
             "APPLICATION",
@@ -1143,7 +1143,7 @@ impl ErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "INVALID_RESOURCE_STATE",
             "NOT_AUTHORIZED",
@@ -1256,7 +1256,7 @@ impl ServiceState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "FAILED"]
     }
 }
@@ -1476,7 +1476,7 @@ impl ServiceEndpointType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LAMBDA", "URL"]
     }
 }
@@ -2041,7 +2041,7 @@ impl HttpMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     }
 }
@@ -2131,7 +2131,7 @@ impl RouteType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT", "URI_PATH"]
     }
 }
@@ -2744,7 +2744,7 @@ impl EnvironmentState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "FAILED"]
     }
 }
@@ -2831,7 +2831,7 @@ impl NetworkFabricType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TRANSIT_GATEWAY"]
     }
 }
@@ -3302,7 +3302,7 @@ impl ApplicationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
     }
 }
@@ -3575,7 +3575,7 @@ impl ApiGatewayEndpointType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRIVATE", "REGIONAL"]
     }
 }
@@ -3660,7 +3660,7 @@ impl ProxyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["API_GATEWAY"]
     }
 }

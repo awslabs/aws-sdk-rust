@@ -486,7 +486,7 @@ impl ProviderType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Bitbucket", "GitHub", "GitHubEnterpriseServer"]
     }
 }
@@ -760,7 +760,7 @@ impl ConnectionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "ERROR", "PENDING"]
     }
 }

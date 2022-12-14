@@ -295,7 +295,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_ADD_OPTED_OUT_NUMBER",
             "CANNOT_PARSE",
@@ -450,7 +450,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "account",
             "configuration-set",
@@ -666,7 +666,7 @@ impl ConflictExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DELETION_PROTECTION_ENABLED",
             "DESTINATION_PHONE_NUMBER_NOT_VERIFIED",
@@ -782,7 +782,7 @@ impl AccessDeniedExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT_DISABLED", "INSUFFICIENT_ACCOUNT_REPUTATION"]
     }
 }
@@ -872,7 +872,7 @@ impl MessageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PROMOTIONAL", "TRANSACTIONAL"]
     }
 }
@@ -967,7 +967,7 @@ impl PoolStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING"]
     }
 }
@@ -1067,7 +1067,7 @@ impl NumberType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LONG_CODE", "SHORT_CODE", "TEN_DLC", "TOLL_FREE"]
     }
 }
@@ -1157,7 +1157,7 @@ impl NumberCapability {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SMS", "VOICE"]
     }
 }
@@ -1262,7 +1262,7 @@ impl NumberStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "ASSOCIATING",
@@ -1881,7 +1881,7 @@ impl EventType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALL",
             "TEXT_ALL",
@@ -2094,7 +2094,7 @@ impl ServiceQuotaExceededExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONFIGURATION_SETS_PER_ACCOUNT",
             "DAILY_DESTINATION_CALL_LIMIT",
@@ -2558,7 +2558,7 @@ impl VoiceId {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AMY",
             "ASTRID",
@@ -2710,7 +2710,7 @@ impl VoiceMessageBodyTextType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SSML", "TEXT"]
     }
 }
@@ -2802,7 +2802,7 @@ impl DestinationCountryParameterKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IN_ENTITY_ID", "IN_TEMPLATE_ID"]
     }
 }
@@ -2899,7 +2899,7 @@ impl RequestableNumberType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LONG_CODE", "TEN_DLC", "TOLL_FREE"]
     }
 }
@@ -2994,7 +2994,7 @@ impl KeywordAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTOMATIC_RESPONSE", "OPT_IN", "OPT_OUT"]
     }
 }
@@ -3307,7 +3307,7 @@ impl PoolOriginationIdentitiesFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["iso-country-code", "number-capability"]
     }
 }
@@ -3515,7 +3515,7 @@ impl SpendLimitName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "TEXT_MESSAGE_MONTHLY_SPEND_LIMIT",
             "VOICE_MESSAGE_MONTHLY_SPEND_LIMIT",
@@ -3855,7 +3855,7 @@ impl SenderIdFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["iso-country-code", "message-type", "sender-id"]
     }
 }
@@ -4417,7 +4417,7 @@ impl PoolFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "deletion-protection-enabled",
             "message-type",
@@ -5045,7 +5045,7 @@ impl PhoneNumberFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "deletion-protection-enabled",
             "iso-country-code",
@@ -5434,7 +5434,7 @@ impl OptedOutFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["end-user-opted-out"]
     }
 }
@@ -5709,7 +5709,7 @@ impl KeywordFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["keyword-action"]
     }
 }
@@ -6078,7 +6078,7 @@ impl ConfigurationSetFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "default-message-type",
             "default-sender-id",
@@ -6281,7 +6281,7 @@ impl AccountLimitName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONFIGURATION_SETS",
             "OPT_OUT_LISTS",
@@ -6451,7 +6451,7 @@ impl AccountAttributeName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT_TIER"]
     }
 }

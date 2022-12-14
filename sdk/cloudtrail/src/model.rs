@@ -1102,7 +1102,7 @@ impl EventDataStoreStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATED", "ENABLED", "PENDING_DELETION"]
     }
 }
@@ -1342,7 +1342,7 @@ impl ImportStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "FAILED",
@@ -1728,7 +1728,7 @@ impl InsightType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ApiCallRateInsight", "ApiErrorRateInsight"]
     }
 }
@@ -2204,7 +2204,7 @@ impl ReadWriteType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["All", "ReadOnly", "WriteOnly"]
     }
 }
@@ -2603,7 +2603,7 @@ impl EventCategory {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["insight"]
     }
 }
@@ -2806,7 +2806,7 @@ impl LookupAttributeKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessKeyId",
             "EventId",
@@ -3205,7 +3205,7 @@ impl QueryStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
             "FAILED",
@@ -3727,7 +3727,7 @@ impl ImportFailureStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "RETRY", "SUCCEEDED"]
     }
 }
@@ -4781,7 +4781,7 @@ impl DestinationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_SERVICE", "EVENT_DATA_STORE"]
     }
 }

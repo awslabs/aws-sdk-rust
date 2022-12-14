@@ -268,7 +268,7 @@ impl TargetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT"]
     }
 }

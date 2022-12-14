@@ -334,7 +334,7 @@ impl ScalableDimension {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "appstream:fleet:DesiredCapacity",
             "cassandra:table:ReadCapacityUnits",
@@ -505,7 +505,7 @@ impl ServiceNamespace {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "appstream",
             "cassandra",
@@ -1282,7 +1282,7 @@ impl MetricStatistic {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
     }
 }
@@ -1736,7 +1736,7 @@ impl MetricType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALBRequestCountPerTarget",
             "AppStreamAverageCapacityUtilization",
@@ -2104,7 +2104,7 @@ impl MetricAggregationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Average", "Maximum", "Minimum"]
     }
 }
@@ -2316,7 +2316,7 @@ impl AdjustmentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ChangeInCapacity",
             "ExactCapacity",
@@ -2410,7 +2410,7 @@ impl PolicyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["StepScaling", "TargetTrackingScaling"]
     }
 }
@@ -3880,7 +3880,7 @@ impl ScalingActivityStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Failed",
             "InProgress",

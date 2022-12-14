@@ -97,7 +97,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
             "ENCRYPTION_KEY_ERROR",
@@ -208,7 +208,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "asset",
             "domain",
@@ -655,7 +655,7 @@ impl ExternalConnectionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Available"]
     }
 }
@@ -755,7 +755,7 @@ impl PackageFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["maven", "npm", "nuget", "pypi"]
     }
 }
@@ -1096,7 +1096,7 @@ impl PackageVersionErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALREADY_EXISTS",
             "MISMATCHED_REVISION",
@@ -1293,7 +1293,7 @@ impl PackageVersionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Archived",
             "Deleted",
@@ -1699,7 +1699,7 @@ impl AllowUpstream {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "BLOCK"]
     }
 }
@@ -1789,7 +1789,7 @@ impl AllowPublish {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "BLOCK"]
     }
 }
@@ -2246,7 +2246,7 @@ impl PackageVersionOriginType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EXTERNAL", "INTERNAL", "UNKNOWN"]
     }
 }
@@ -2414,7 +2414,7 @@ impl PackageVersionSortType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PUBLISHED_TIME"]
     }
 }
@@ -2773,7 +2773,7 @@ impl HashAlgorithm {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MD5", "SHA-1", "SHA-256", "SHA-512"]
     }
 }
@@ -3174,7 +3174,7 @@ impl DomainStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "Deleted"]
     }
 }

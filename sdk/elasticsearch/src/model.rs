@@ -499,7 +499,7 @@ impl PackageStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "COPYING",
@@ -593,7 +593,7 @@ impl PackageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TXT-DICTIONARY"]
     }
 }
@@ -1562,7 +1562,7 @@ impl AutoTuneState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DISABLED",
             "DISABLED_AND_ROLLBACK_COMPLETE",
@@ -1956,7 +1956,7 @@ impl TimeUnit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HOURS"]
     }
 }
@@ -2048,7 +2048,7 @@ impl RollbackOnDisable {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT_ROLLBACK", "NO_ROLLBACK"]
     }
 }
@@ -2140,7 +2140,7 @@ impl AutoTuneDesiredState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -2461,7 +2461,7 @@ impl OptionState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "Processing", "RequiresIndexDocuments"]
     }
 }
@@ -3167,7 +3167,7 @@ impl TlsSecurityPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Policy-Min-TLS-1-0-2019-07", "Policy-Min-TLS-1-2-2019-07"]
     }
 }
@@ -3464,7 +3464,7 @@ impl LogType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AUDIT_LOGS",
             "ES_APPLICATION_LOGS",
@@ -4823,7 +4823,7 @@ impl VolumeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["gp2", "gp3", "io1", "standard"]
     }
 }
@@ -5335,7 +5335,7 @@ impl EsWarmPartitionInstanceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ultrawarm1.large.elasticsearch",
             "ultrawarm1.medium.elasticsearch",
@@ -5718,7 +5718,7 @@ impl EsPartitionInstanceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "c4.2xlarge.elasticsearch",
             "c4.4xlarge.elasticsearch",
@@ -6744,7 +6744,7 @@ impl DeploymentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "ELIGIBLE",
@@ -7123,7 +7123,7 @@ impl InboundCrossClusterSearchConnectionStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "APPROVED",
             "DELETED",
@@ -7640,7 +7640,7 @@ impl DomainPackageStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "ASSOCIATING",
@@ -7814,7 +7814,7 @@ impl EngineType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Elasticsearch", "OpenSearch"]
     }
 }
@@ -7914,7 +7914,7 @@ impl UpgradeStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
             "IN_PROGRESS",
@@ -8014,7 +8014,7 @@ impl UpgradeStep {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRE_UPGRADE_CHECK", "SNAPSHOT", "UPGRADE"]
     }
 }
@@ -9082,7 +9082,7 @@ impl ReservedElasticsearchInstancePaymentOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL_UPFRONT", "NO_UPFRONT", "PARTIAL_UPFRONT"]
     }
 }
@@ -9507,7 +9507,7 @@ impl DescribePackagesFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PackageID", "PackageName", "PackageStatus"]
     }
 }
@@ -9923,7 +9923,7 @@ impl OutboundCrossClusterSearchConnectionStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "DELETED",
@@ -11856,7 +11856,7 @@ impl OverallChangeStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "PENDING", "PROCESSING"]
     }
 }
@@ -12222,7 +12222,7 @@ impl ScheduledAutoTuneSeverityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM"]
     }
 }
@@ -12314,7 +12314,7 @@ impl ScheduledAutoTuneActionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JVM_HEAP_SIZE_TUNING", "JVM_YOUNG_GEN_TUNING"]
     }
 }
@@ -12399,7 +12399,7 @@ impl AutoTuneType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SCHEDULED_ACTION"]
     }
 }

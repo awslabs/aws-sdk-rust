@@ -263,7 +263,7 @@ impl HomeDirectoryType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LOGICAL", "PATH"]
     }
 }
@@ -513,7 +513,7 @@ impl Protocol {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AS2", "FTP", "FTPS", "SFTP"]
     }
 }
@@ -726,7 +726,7 @@ impl EndpointType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PUBLIC", "VPC", "VPC_ENDPOINT"]
     }
 }
@@ -1226,7 +1226,7 @@ impl As2Transport {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HTTP"]
     }
 }
@@ -1316,7 +1316,7 @@ impl SetStatOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT", "ENABLE_NO_OP"]
     }
 }
@@ -1413,7 +1413,7 @@ impl TlsSessionResumptionMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED", "ENFORCED"]
     }
 }
@@ -1746,7 +1746,7 @@ impl MdnResponse {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "SYNC"]
     }
 }
@@ -1856,7 +1856,7 @@ impl MdnSigningAlg {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT", "NONE", "SHA1", "SHA256", "SHA384", "SHA512"]
     }
 }
@@ -1961,7 +1961,7 @@ impl SigningAlg {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "SHA1", "SHA256", "SHA384", "SHA512"]
     }
 }
@@ -2056,7 +2056,7 @@ impl EncryptionAlg {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AES128_CBC", "AES192_CBC", "AES256_CBC"]
     }
 }
@@ -2146,7 +2146,7 @@ impl CompressionEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ZLIB"]
     }
 }
@@ -2238,7 +2238,7 @@ impl AgreementStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }
@@ -2403,7 +2403,7 @@ impl CustomStepStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILURE", "SUCCESS"]
     }
 }
@@ -3015,7 +3015,7 @@ impl State {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "OFFLINE",
             "ONLINE",
@@ -3129,7 +3129,7 @@ impl IdentityProviderType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "API_GATEWAY",
             "AWS_DIRECTORY_SERVICE",
@@ -3224,7 +3224,7 @@ impl Domain {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EFS", "S3"]
     }
 }
@@ -3432,7 +3432,7 @@ impl ProfileType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LOCAL", "PARTNER"]
     }
 }
@@ -3842,7 +3842,7 @@ impl ExecutionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "EXCEPTION",
@@ -4673,7 +4673,7 @@ impl CertificateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CERTIFICATE", "CERTIFICATE_WITH_PRIVATE_KEY"]
     }
 }
@@ -4770,7 +4770,7 @@ impl CertificateStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE", "PENDING_ROTATION"]
     }
 }
@@ -4862,7 +4862,7 @@ impl CertificateUsageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENCRYPTION", "SIGNING"]
     }
 }
@@ -6233,7 +6233,7 @@ impl OverwriteExisting {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FALSE", "TRUE"]
     }
 }
@@ -6491,7 +6491,7 @@ impl WorkflowStepType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COPY", "CUSTOM", "DELETE", "TAG"]
     }
 }
@@ -8749,7 +8749,7 @@ impl ExecutionErrorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALREADY_EXISTS",
             "BAD_REQUEST",

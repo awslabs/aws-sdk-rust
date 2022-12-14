@@ -167,7 +167,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "cannotParse",
             "fieldValidationFailed",
@@ -442,7 +442,7 @@ impl SegmentReferenceResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EXPERIMENT", "LAUNCH"]
     }
 }
@@ -1447,7 +1447,7 @@ impl ProjectStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "UPDATING"]
     }
 }
@@ -1945,7 +1945,7 @@ impl EventType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["aws.evidently.custom", "aws.evidently.evaluation"]
     }
 }
@@ -2786,7 +2786,7 @@ impl LaunchStopDesiredState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "COMPLETED"]
     }
 }
@@ -3577,7 +3577,7 @@ impl LaunchType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["aws.evidently.splits"]
     }
 }
@@ -4082,7 +4082,7 @@ impl LaunchStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "COMPLETED", "CREATED", "RUNNING", "UPDATING"]
     }
 }
@@ -5048,7 +5048,7 @@ impl FeatureEvaluationStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL_RULES", "DEFAULT_VARIATION"]
     }
 }
@@ -5138,7 +5138,7 @@ impl FeatureStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "UPDATING"]
     }
 }
@@ -5730,7 +5730,7 @@ impl VariationValueType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BOOLEAN", "DOUBLE", "LONG", "STRING"]
     }
 }
@@ -5900,7 +5900,7 @@ impl ExperimentStopDesiredState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "COMPLETED"]
     }
 }
@@ -6108,7 +6108,7 @@ impl ExperimentReportName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BayesianInference"]
     }
 }
@@ -6350,7 +6350,7 @@ impl ExperimentResultResponseType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ConfidenceIntervalLowerBound",
             "ConfidenceIntervalUpperBound",
@@ -6458,7 +6458,7 @@ impl ExperimentResultRequestType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BaseStat",
             "ConfidenceInterval",
@@ -6550,7 +6550,7 @@ impl ExperimentBaseStat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Mean"]
     }
 }
@@ -7190,7 +7190,7 @@ impl ExperimentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["aws.evidently.onlineab"]
     }
 }
@@ -7367,7 +7367,7 @@ impl ChangeDirectionEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DECREASE", "INCREASE"]
     }
 }
@@ -7727,7 +7727,7 @@ impl ExperimentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "COMPLETED", "CREATED", "RUNNING", "UPDATING"]
     }
 }

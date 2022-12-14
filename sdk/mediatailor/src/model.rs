@@ -175,7 +175,7 @@ impl Type {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DASH", "HLS"]
     }
 }
@@ -660,7 +660,7 @@ impl AccessType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["S3_SIGV4", "SECRETS_MANAGER_ACCESS_TOKEN"]
     }
 }
@@ -1155,7 +1155,7 @@ impl ChannelState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RUNNING", "STOPPED"]
     }
 }
@@ -1787,7 +1787,7 @@ impl OriginManifestType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MULTI_PERIOD", "SINGLE_PERIOD"]
     }
 }
@@ -2111,7 +2111,7 @@ impl Mode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BEHIND_LIVE_EDGE", "OFF"]
     }
 }
@@ -3281,7 +3281,7 @@ impl Operator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EQUALS"]
     }
 }
@@ -4847,7 +4847,7 @@ impl ScheduleEntryType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FILLER_SLATE", "PROGRAM"]
     }
 }
@@ -5295,7 +5295,7 @@ impl MessageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SPLICE_INSERT"]
     }
 }
@@ -5607,7 +5607,7 @@ impl RelativePosition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AFTER_PROGRAM", "BEFORE_PROGRAM"]
     }
 }
@@ -5697,7 +5697,7 @@ impl Tier {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BASIC", "STANDARD"]
     }
 }
@@ -5787,7 +5787,7 @@ impl PlaybackMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LINEAR", "LOOP"]
     }
 }

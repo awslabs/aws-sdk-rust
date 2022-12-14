@@ -439,7 +439,7 @@ impl RrType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "A", "AAAA", "CAA", "CNAME", "DS", "MX", "NAPTR", "NS", "PTR", "SOA", "SPF", "SRV",
             "TXT",
@@ -1485,7 +1485,7 @@ impl Statistic {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
     }
 }
@@ -1587,7 +1587,7 @@ impl ComparisonOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "GreaterThanOrEqualToThreshold",
             "GreaterThanThreshold",
@@ -2451,7 +2451,7 @@ impl InsufficientDataHealthStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Healthy", "LastKnownStatus", "Unhealthy"]
     }
 }
@@ -2787,7 +2787,7 @@ impl CloudWatchRegion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "af-south-1",
             "ap-east-1",
@@ -2940,7 +2940,7 @@ impl HealthCheckRegion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ap-northeast-1",
             "ap-southeast-1",
@@ -3069,7 +3069,7 @@ impl HealthCheckType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CALCULATED",
             "CLOUDWATCH_METRIC",
@@ -3180,7 +3180,7 @@ impl ResettableElementName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ChildHealthChecks",
             "FullyQualifiedDomainName",
@@ -3489,7 +3489,7 @@ impl VpcRegion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "af-south-1",
             "ap-east-1",
@@ -3982,7 +3982,7 @@ impl TagResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["healthcheck", "hostedzone"]
     }
 }
@@ -6136,7 +6136,7 @@ impl ResourceRecordSetFailover {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRIMARY", "SECONDARY"]
     }
 }
@@ -6491,7 +6491,7 @@ impl ResourceRecordSetRegion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "af-south-1",
             "ap-east-1",
@@ -7392,7 +7392,7 @@ impl ReusableDelegationSetLimitType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MAX_ZONES_BY_REUSABLE_DELEGATION_SET"]
     }
 }
@@ -7578,7 +7578,7 @@ impl HostedZoneLimitType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MAX_RRSETS_BY_ZONE", "MAX_VPCS_ASSOCIATED_BY_ZONE"]
     }
 }
@@ -8837,7 +8837,7 @@ impl ChangeStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INSYNC", "PENDING"]
     }
 }
@@ -9056,7 +9056,7 @@ impl AccountLimitType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "MAX_HEALTH_CHECKS_BY_OWNER",
             "MAX_HOSTED_ZONES_BY_OWNER",
@@ -9465,7 +9465,7 @@ impl ChangeAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE", "DELETE", "UPSERT"]
     }
 }
@@ -9667,7 +9667,7 @@ impl CidrCollectionChangeAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETE_IF_EXISTS", "PUT"]
     }
 }

@@ -95,7 +95,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Application",
             "Configuration",
@@ -300,7 +300,7 @@ impl InvalidParameterProblem {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Corrupted", "Expired", "PollIntervalNotSatisfied"]
     }
 }
@@ -386,7 +386,7 @@ impl BadRequestReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["InvalidParameters"]
     }
 }

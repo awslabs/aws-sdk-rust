@@ -347,7 +347,7 @@ impl ChannelType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BASIC", "STANDARD"]
     }
 }
@@ -439,7 +439,7 @@ impl ChannelLatencyMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LOW", "NORMAL"]
     }
 }
@@ -816,7 +816,7 @@ impl StreamHealth {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "STARVING", "UNKNOWN"]
     }
 }
@@ -906,7 +906,7 @@ impl StreamState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LIVE", "OFFLINE"]
     }
 }
@@ -1345,7 +1345,7 @@ impl RecordingConfigurationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATE_FAILED", "CREATING"]
     }
 }
@@ -2593,7 +2593,7 @@ impl RecordingMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "INTERVAL"]
     }
 }

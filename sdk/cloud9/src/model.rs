@@ -249,7 +249,7 @@ impl Permissions {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["owner", "read-only", "read-write"]
     }
 }
@@ -341,7 +341,7 @@ impl MemberPermissions {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["read-only", "read-write"]
     }
 }
@@ -433,7 +433,7 @@ impl ManagedCredentialsAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLE", "ENABLE"]
     }
 }
@@ -625,7 +625,7 @@ impl EnvironmentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "connecting",
             "creating",
@@ -1086,7 +1086,7 @@ impl ManagedCredentialsStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DISABLED_BY_COLLABORATOR",
             "DISABLED_BY_DEFAULT",
@@ -1334,7 +1334,7 @@ impl EnvironmentLifecycleStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATED",
             "CREATE_FAILED",
@@ -1430,7 +1430,7 @@ impl ConnectionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONNECT_SSH", "CONNECT_SSM"]
     }
 }
@@ -1520,7 +1520,7 @@ impl EnvironmentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ec2", "ssh"]
     }
 }

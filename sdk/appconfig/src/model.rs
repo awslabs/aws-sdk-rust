@@ -249,7 +249,7 @@ impl BadRequestReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["InvalidConfiguration"]
     }
 }
@@ -567,7 +567,7 @@ impl ActionPoint {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ON_DEPLOYMENT_BAKING",
             "ON_DEPLOYMENT_COMPLETE",
@@ -753,7 +753,7 @@ impl EnvironmentState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DEPLOYING",
             "READY_FOR_DEPLOYMENT",
@@ -848,7 +848,7 @@ impl ReplicateTo {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "SSM_DOCUMENT"]
     }
 }
@@ -938,7 +938,7 @@ impl GrowthType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EXPONENTIAL", "LINEAR"]
     }
 }
@@ -1103,7 +1103,7 @@ impl ValidatorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JSON_SCHEMA", "LAMBDA"]
     }
 }
@@ -1680,7 +1680,7 @@ impl TriggeredBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPCONFIG", "CLOUDWATCH_ALARM", "INTERNAL_ERROR", "USER"]
     }
 }
@@ -1792,7 +1792,7 @@ impl DeploymentEventType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BAKE_TIME_STARTED",
             "DEPLOYMENT_COMPLETED",
@@ -1909,7 +1909,7 @@ impl DeploymentState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BAKING",
             "COMPLETE",
@@ -3311,7 +3311,7 @@ impl BytesMeasure {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KILOBYTES"]
     }
 }

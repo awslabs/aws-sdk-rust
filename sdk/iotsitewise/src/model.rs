@@ -241,7 +241,7 @@ impl MonitorErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INTERNAL_FAILURE", "LIMIT_EXCEEDED", "VALIDATION_ERROR"]
     }
 }
@@ -346,7 +346,7 @@ impl PortalState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
     }
 }
@@ -666,7 +666,7 @@ impl ImageFileType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PNG"]
     }
 }
@@ -768,7 +768,7 @@ impl CapabilitySyncStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IN_SYNC", "OUT_OF_SYNC", "SYNC_FAILED", "UNKNOWN"]
     }
 }
@@ -860,7 +860,7 @@ impl PropertyNotificationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -1216,7 +1216,7 @@ impl DetailedErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "INCOMPATIBLE_COMPUTE_LOCATION",
             "INCOMPATIBLE_FORWARDING_CONFIGURATION",
@@ -1309,7 +1309,7 @@ impl ErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INTERNAL_FAILURE", "VALIDATION_ERROR"]
     }
 }
@@ -1419,7 +1419,7 @@ impl AssetModelState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATING",
@@ -2119,7 +2119,7 @@ impl ComputeLocation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOUD", "EDGE"]
     }
 }
@@ -2834,7 +2834,7 @@ impl ForwardingConfigState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -3119,7 +3119,7 @@ impl PropertyDataType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BOOLEAN", "DOUBLE", "INTEGER", "STRING", "STRUCT"]
     }
 }
@@ -3397,7 +3397,7 @@ impl AssetState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
     }
 }
@@ -3487,7 +3487,7 @@ impl Permission {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ADMINISTRATOR", "VIEWER"]
     }
 }
@@ -4273,7 +4273,7 @@ impl ConfigurationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "UPDATE_FAILED", "UPDATE_IN_PROGRESS"]
     }
 }
@@ -4456,7 +4456,7 @@ impl DisassociatedDataStorageState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -4691,7 +4691,7 @@ impl StorageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MULTI_LAYER_STORAGE", "SITEWISE_DEFAULT_STORAGE"]
     }
 }
@@ -4839,7 +4839,7 @@ impl LoggingLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ERROR", "INFO", "OFF"]
     }
 }
@@ -4929,7 +4929,7 @@ impl EncryptionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KMS_BASED_ENCRYPTION", "SITEWISE_DEFAULT_ENCRYPTION"]
     }
 }
@@ -5242,7 +5242,7 @@ impl ListTimeSeriesType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASSOCIATED", "DISASSOCIATED"]
     }
 }
@@ -6445,7 +6445,7 @@ impl JobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
             "COMPLETED",
@@ -6569,7 +6569,7 @@ impl ListBulkImportJobsFilter {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALL",
             "CANCELLED",
@@ -6981,7 +6981,7 @@ impl TraversalDirection {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CHILD", "PARENT"]
     }
 }
@@ -7308,7 +7308,7 @@ impl ListAssetsFilter {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "TOP_LEVEL"]
     }
 }
@@ -7492,7 +7492,7 @@ impl AssetRelationshipType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HIERARCHY"]
     }
 }
@@ -7658,7 +7658,7 @@ impl TraversalType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PATH_TO_ROOT"]
     }
 }
@@ -8100,7 +8100,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PORTAL", "PROJECT"]
     }
 }
@@ -8195,7 +8195,7 @@ impl IdentityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GROUP", "IAM", "USER"]
     }
 }
@@ -8558,7 +8558,7 @@ impl Quality {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BAD", "GOOD", "UNCERTAIN"]
     }
 }
@@ -8746,7 +8746,7 @@ impl TimeOrdering {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
 }
@@ -9109,7 +9109,7 @@ impl AggregateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVERAGE",
             "COUNT",
@@ -9206,7 +9206,7 @@ impl AuthMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IAM", "SSO"]
     }
 }
@@ -9576,7 +9576,7 @@ impl ColumnName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALIAS",
             "ASSET_ID",
@@ -11124,7 +11124,7 @@ impl BatchPutAssetPropertyValueErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDeniedException",
             "ConflictingOperationException",
@@ -11591,7 +11591,7 @@ impl BatchGetAssetPropertyValueHistoryErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDeniedException",
             "InvalidRequestException",
@@ -11687,7 +11687,7 @@ impl BatchEntryCompletionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ERROR", "SUCCESS"]
     }
 }
@@ -12418,7 +12418,7 @@ impl BatchGetAssetPropertyValueErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDeniedException",
             "InvalidRequestException",
@@ -13038,7 +13038,7 @@ impl BatchGetAssetPropertyAggregatesErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDeniedException",
             "InvalidRequestException",
@@ -13691,7 +13691,7 @@ impl AssetErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INTERNAL_FAILURE"]
     }
 }

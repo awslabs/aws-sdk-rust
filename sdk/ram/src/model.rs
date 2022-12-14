@@ -372,7 +372,7 @@ impl ResourceShareFeatureSet {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATED_FROM_POLICY", "PROMOTING_TO_STANDARD", "STANDARD"]
     }
 }
@@ -555,7 +555,7 @@ impl ResourceShareStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "DELETING", "FAILED", "PENDING"]
     }
 }
@@ -1216,7 +1216,7 @@ impl ResourceShareAssociationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ASSOCIATED",
             "ASSOCIATING",
@@ -1314,7 +1314,7 @@ impl ResourceShareAssociationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRINCIPAL", "RESOURCE"]
     }
 }
@@ -1416,7 +1416,7 @@ impl ResourceShareInvitationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCEPTED", "EXPIRED", "PENDING", "REJECTED"]
     }
 }
@@ -1625,7 +1625,7 @@ impl ResourceRegionScope {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GLOBAL", "REGIONAL"]
     }
 }
@@ -1722,7 +1722,7 @@ impl ResourceRegionScopeFilter {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "GLOBAL", "REGIONAL"]
     }
 }
@@ -2303,7 +2303,7 @@ impl ResourceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "LIMIT_EXCEEDED",
@@ -2399,7 +2399,7 @@ impl ResourceOwner {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OTHER-ACCOUNTS", "SELF"]
     }
 }

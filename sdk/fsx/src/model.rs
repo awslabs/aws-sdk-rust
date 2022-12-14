@@ -885,7 +885,7 @@ impl OpenZfsQuotaType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GROUP", "USER"]
     }
 }
@@ -1242,7 +1242,7 @@ impl OpenZfsCopyStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLONE", "FULL_COPY"]
     }
 }
@@ -1339,7 +1339,7 @@ impl OpenZfsDataCompressionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LZ4", "NONE", "ZSTD"]
     }
 }
@@ -2158,7 +2158,7 @@ impl SnapshotLifecycle {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "CREATING", "DELETING", "PENDING"]
     }
 }
@@ -3269,7 +3269,7 @@ impl DiskIopsConfigurationMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTOMATIC", "USER_PROVISIONED"]
     }
 }
@@ -3356,7 +3356,7 @@ impl OpenZfsDeploymentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SINGLE_AZ_1"]
     }
 }
@@ -3942,7 +3942,7 @@ impl OntapDeploymentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MULTI_AZ_1", "SINGLE_AZ_1"]
     }
 }
@@ -4675,7 +4675,7 @@ impl LustreAccessAuditLogLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ERROR_ONLY", "WARN_ERROR", "WARN_ONLY"]
     }
 }
@@ -4767,7 +4767,7 @@ impl DataCompressionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LZ4", "NONE"]
     }
 }
@@ -4857,7 +4857,7 @@ impl DriveCacheType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "READ"]
     }
 }
@@ -4959,7 +4959,7 @@ impl LustreDeploymentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PERSISTENT_1", "PERSISTENT_2", "SCRATCH_1", "SCRATCH_2"]
     }
 }
@@ -5342,7 +5342,7 @@ impl AutoImportPolicyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NEW", "NEW_CHANGED", "NEW_CHANGED_DELETED", "NONE"]
     }
 }
@@ -5454,7 +5454,7 @@ impl DataRepositoryLifecycle {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "CREATING",
@@ -6193,7 +6193,7 @@ impl WindowsAccessAuditLogLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DISABLED",
             "FAILURE_ONLY",
@@ -6437,7 +6437,7 @@ impl AliasLifecycle {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "CREATE_FAILED",
@@ -6535,7 +6535,7 @@ impl FileSystemMaintenanceOperation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BACKING_UP", "PATCHING"]
     }
 }
@@ -6632,7 +6632,7 @@ impl WindowsDeploymentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MULTI_AZ_1", "SINGLE_AZ_1", "SINGLE_AZ_2"]
     }
 }
@@ -6884,7 +6884,7 @@ impl StorageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HDD", "SSD"]
     }
 }
@@ -7056,7 +7056,7 @@ impl FileSystemLifecycle {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "CREATING",
@@ -7164,7 +7164,7 @@ impl FileSystemType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LUSTRE", "ONTAP", "OPENZFS", "WINDOWS"]
     }
 }
@@ -7269,7 +7269,7 @@ impl Status {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "FAILED",
@@ -7461,7 +7461,7 @@ impl AdministrativeActionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FILE_SYSTEM_ALIAS_ASSOCIATION",
             "FILE_SYSTEM_ALIAS_DISASSOCIATION",
@@ -7559,7 +7559,7 @@ impl VolumeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ONTAP", "OPENZFS"]
     }
 }
@@ -7969,7 +7969,7 @@ impl OntapVolumeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DP", "LS", "RW"]
     }
 }
@@ -8186,7 +8186,7 @@ impl TieringPolicyName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "AUTO", "NONE", "SNAPSHOT_ONLY"]
     }
 }
@@ -8281,7 +8281,7 @@ impl SecurityStyle {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MIXED", "NTFS", "UNIX"]
     }
 }
@@ -8378,7 +8378,7 @@ impl FlexCacheEndpointType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CACHE", "NONE", "ORIGIN"]
     }
 }
@@ -8493,7 +8493,7 @@ impl VolumeLifecycle {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "CREATED",
@@ -9378,7 +9378,7 @@ impl StorageVirtualMachineRootVolumeSecurityStyle {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MIXED", "NTFS", "UNIX"]
     }
 }
@@ -9480,7 +9480,7 @@ impl StorageVirtualMachineSubtype {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DEFAULT",
             "DP_DESTINATION",
@@ -9597,7 +9597,7 @@ impl StorageVirtualMachineLifecycle {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATED",
             "CREATING",
@@ -10210,7 +10210,7 @@ impl ServiceLimit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FILE_CACHE_COUNT",
             "FILE_SYSTEM_COUNT",
@@ -12249,7 +12249,7 @@ impl FileCacheLustreDeploymentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CACHE_1"]
     }
 }
@@ -12411,7 +12411,7 @@ impl FileCacheLifecycle {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "CREATING", "DELETING", "FAILED", "UPDATING"]
     }
 }
@@ -12496,7 +12496,7 @@ impl FileCacheType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LUSTRE"]
     }
 }
@@ -13401,7 +13401,7 @@ impl EventType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CHANGED", "DELETED", "NEW"]
     }
 }
@@ -13486,7 +13486,7 @@ impl NfsVersion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NFS3"]
     }
 }
@@ -13754,7 +13754,7 @@ impl RestoreOpenZfsVolumeOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETE_CLONED_VOLUMES", "DELETE_INTERMEDIATE_SNAPSHOTS"]
     }
 }
@@ -13931,7 +13931,7 @@ impl VolumeFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["file-system-id", "storage-virtual-machine-id"]
     }
 }
@@ -14105,7 +14105,7 @@ impl StorageVirtualMachineFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["file-system-id"]
     }
 }
@@ -14284,7 +14284,7 @@ impl SnapshotFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["file-system-id", "volume-id"]
     }
 }
@@ -14940,7 +14940,7 @@ impl ReportScope {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED_FILES_ONLY"]
     }
 }
@@ -15025,7 +15025,7 @@ impl ReportFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["REPORT_CSV_20191124"]
     }
 }
@@ -15320,7 +15320,7 @@ impl DataRepositoryTaskType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AUTO_RELEASE_DATA",
             "EXPORT_TO_REPOSITORY",
@@ -15437,7 +15437,7 @@ impl DataRepositoryTaskLifecycle {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
             "CANCELING",
@@ -15649,7 +15649,7 @@ impl DataRepositoryTaskFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "data-repository-association-id",
             "file-cache-id",
@@ -15853,7 +15853,7 @@ impl FilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "backup-type",
             "data-repository-type",
@@ -16381,7 +16381,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FILE_SYSTEM", "VOLUME"]
     }
 }
@@ -16574,7 +16574,7 @@ impl BackupType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTOMATIC", "AWS_BACKUP", "USER_INITIATED"]
     }
 }
@@ -16776,7 +16776,7 @@ impl BackupLifecycle {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "COPYING",
@@ -17027,7 +17027,7 @@ impl DeleteOpenZfsVolumeOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETE_CHILD_VOLUMES_AND_SNAPSHOTS"]
     }
 }
@@ -17577,7 +17577,7 @@ impl DeleteFileSystemOpenZfsOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETE_CHILD_VOLUMES_AND_SNAPSHOTS"]
     }
 }
@@ -18517,7 +18517,7 @@ impl ActiveDirectoryErrorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DOMAIN_NOT_FOUND",
             "INCOMPATIBLE_DOMAIN_MODE",

@@ -100,7 +100,7 @@ impl FlowStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Active",
             "Deleted",
@@ -440,7 +440,7 @@ impl OperatorPropertiesKeys {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONCAT_FORMAT",
             "DATA_TYPE",
@@ -581,7 +581,7 @@ impl TaskType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Arithmetic",
             "Filter",
@@ -1185,7 +1185,7 @@ impl Operator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
             "BETWEEN",
@@ -1394,7 +1394,7 @@ impl SapoDataConnectorOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
             "BETWEEN",
@@ -1568,7 +1568,7 @@ impl ZendeskConnectorOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
             "DIVISION",
@@ -1770,7 +1770,7 @@ impl VeevaConnectorOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
             "BETWEEN",
@@ -1944,7 +1944,7 @@ impl TrendmicroConnectorOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
             "DIVISION",
@@ -2136,7 +2136,7 @@ impl SlackConnectorOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
             "BETWEEN",
@@ -2308,7 +2308,7 @@ impl SingularConnectorOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
             "DIVISION",
@@ -2510,7 +2510,7 @@ impl ServiceNowConnectorOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
             "BETWEEN",
@@ -2719,7 +2719,7 @@ impl SalesforceConnectorOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
             "BETWEEN",
@@ -2923,7 +2923,7 @@ impl S3ConnectorOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
             "BETWEEN",
@@ -3106,7 +3106,7 @@ impl MarketoConnectorOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
             "BETWEEN",
@@ -3280,7 +3280,7 @@ impl InforNexusConnectorOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
             "BETWEEN",
@@ -3388,7 +3388,7 @@ impl GoogleAnalyticsConnectorOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BETWEEN", "PROJECTION"]
     }
 }
@@ -3545,7 +3545,7 @@ impl DynatraceConnectorOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
             "BETWEEN",
@@ -3718,7 +3718,7 @@ impl DatadogConnectorOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
             "BETWEEN",
@@ -3821,7 +3821,7 @@ impl AmplitudeConnectorOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BETWEEN"]
     }
 }
@@ -4585,7 +4585,7 @@ impl WriteOperationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETE", "INSERT", "UPDATE", "UPSERT"]
     }
 }
@@ -5661,7 +5661,7 @@ impl AggregationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["None", "SingleFile"]
     }
 }
@@ -5847,7 +5847,7 @@ impl PrefixFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAY", "HOUR", "MINUTE", "MONTH", "YEAR"]
     }
 }
@@ -5942,7 +5942,7 @@ impl PrefixType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FILENAME", "PATH", "PATH_AND_FILENAME"]
     }
 }
@@ -6037,7 +6037,7 @@ impl FileType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CSV", "JSON", "PARQUET"]
     }
 }
@@ -6964,7 +6964,7 @@ impl ConnectorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Amplitude",
             "CustomConnector",
@@ -8536,7 +8536,7 @@ impl S3InputFileType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CSV", "JSON"]
     }
 }
@@ -9315,7 +9315,7 @@ impl DataPullMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Complete", "Incremental"]
     }
 }
@@ -9410,7 +9410,7 @@ impl TriggerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Event", "OnDemand", "Scheduled"]
     }
 }
@@ -10768,7 +10768,7 @@ impl AuthenticationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APIKEY", "BASIC", "CUSTOM", "OAUTH2"]
     }
 }
@@ -13299,7 +13299,7 @@ impl OAuth2GrantType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTHORIZATION_CODE", "CLIENT_CREDENTIALS"]
     }
 }
@@ -14661,7 +14661,7 @@ impl ConnectionMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Private", "Public"]
     }
 }
@@ -14861,7 +14861,7 @@ impl ConnectorProvisioningType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LAMBDA"]
     }
 }
@@ -15477,7 +15477,7 @@ impl ExecutionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Error", "InProgress", "Successful"]
     }
 }
@@ -17185,7 +17185,7 @@ impl Operators {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
             "BETWEEN",
@@ -18298,7 +18298,7 @@ impl OAuth2CustomPropType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTH_URL", "TOKEN_URL"]
     }
 }
@@ -19761,7 +19761,7 @@ impl ScheduleFrequencyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BYMINUTE", "DAILY", "HOURLY", "MONTHLY", "ONCE", "WEEKLY"]
     }
 }
@@ -20268,7 +20268,7 @@ impl PrivateConnectionProvisioningFailureCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
             "CONNECTOR_AUTHENTICATION",
@@ -20371,7 +20371,7 @@ impl PrivateConnectionProvisioningStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATED", "FAILED", "PENDING"]
     }
 }

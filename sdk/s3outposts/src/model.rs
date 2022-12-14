@@ -362,7 +362,7 @@ impl EndpointAccessType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CustomerOwnedIp", "Private"]
     }
 }
@@ -515,7 +515,7 @@ impl EndpointStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Available", "Deleting", "Pending"]
     }
 }

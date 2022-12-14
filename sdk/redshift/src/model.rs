@@ -92,7 +92,7 @@ impl PartnerIntegrationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "ConnectionFailure", "Inactive", "RuntimeFailure"]
     }
 }
@@ -2002,7 +2002,7 @@ impl ReservedNodeExchangeStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
             "IN_PROGRESS",
@@ -2193,7 +2193,7 @@ impl AquaConfigurationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["auto", "disabled", "enabled"]
     }
 }
@@ -2288,7 +2288,7 @@ impl AquaStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["applying", "disabled", "enabled"]
     }
 }
@@ -2458,7 +2458,7 @@ impl ScheduleState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "FAILED", "MODIFYING"]
     }
 }
@@ -5630,7 +5630,7 @@ impl AuthorizationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Authorized", "Revoking"]
     }
 }
@@ -6501,7 +6501,7 @@ impl TableRestoreStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANCELED", "FAILED", "IN_PROGRESS", "PENDING", "SUCCEEDED"]
     }
 }
@@ -6823,7 +6823,7 @@ impl ParameterApplyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["dynamic", "static"]
     }
 }
@@ -7083,7 +7083,7 @@ impl DataShareStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "AUTHORIZED",
@@ -7546,7 +7546,7 @@ impl ReservedNodeOfferingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Regular", "Upgradable"]
     }
 }
@@ -7724,7 +7724,7 @@ impl UsageLimitBreachAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["disable", "emit-metric", "log"]
     }
 }
@@ -7819,7 +7819,7 @@ impl UsageLimitPeriod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["daily", "monthly", "weekly"]
     }
 }
@@ -7911,7 +7911,7 @@ impl UsageLimitLimitType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["data-scanned", "time"]
     }
 }
@@ -8008,7 +8008,7 @@ impl UsageLimitFeatureType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "concurrency-scaling",
             "cross-region-datasharing",
@@ -8188,7 +8188,7 @@ impl ScheduledActionState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DISABLED"]
     }
 }
@@ -9795,7 +9795,7 @@ impl ReservedNodeExchangeActionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["resize-cluster", "restore-cluster"]
     }
 }
@@ -9887,7 +9887,7 @@ impl LogDestinationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["cloudwatch", "s3"]
     }
 }
@@ -11049,7 +11049,7 @@ impl ScheduledActionFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["cluster-identifier", "iam-role"]
     }
 }
@@ -11146,7 +11146,7 @@ impl ScheduledActionTypeValues {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PauseCluster", "ResizeCluster", "ResumeCluster"]
     }
 }
@@ -11655,7 +11655,7 @@ impl Mode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["high-performance", "standard"]
     }
 }
@@ -11880,7 +11880,7 @@ impl OperatorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["between", "eq", "ge", "gt", "in", "le", "lt"]
     }
 }
@@ -11986,7 +11986,7 @@ impl NodeConfigurationOptionsFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EstimatedDiskUtilizationPercent",
             "Mode",
@@ -12086,7 +12086,7 @@ impl ActionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["recommend-node-config", "resize-cluster", "restore-cluster"]
     }
 }
@@ -12670,7 +12670,7 @@ impl SourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "cluster",
             "cluster-parameter-group",
@@ -13775,7 +13775,7 @@ impl DataShareStatusForProducer {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "AUTHORIZED",
@@ -13873,7 +13873,7 @@ impl DataShareStatusForConsumer {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "AVAILABLE"]
     }
 }
@@ -14430,7 +14430,7 @@ impl SortByOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
 }
@@ -14527,7 +14527,7 @@ impl SnapshotAttributeToSortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE_TIME", "SOURCE_TYPE", "TOTAL_SIZE"]
     }
 }

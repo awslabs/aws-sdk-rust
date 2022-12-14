@@ -510,7 +510,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
 }
@@ -947,7 +947,7 @@ impl FailureCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLIENT_ERROR", "SERVER_FAULT"]
     }
 }
@@ -1052,7 +1052,7 @@ impl ChangeStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPLYING", "CANCELLED", "FAILED", "PREPARING", "SUCCEEDED"]
     }
 }

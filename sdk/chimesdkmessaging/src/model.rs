@@ -149,7 +149,7 @@ impl ErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
             "BadRequest",
@@ -345,7 +345,7 @@ impl ChannelMessageStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DENIED", "FAILED", "PENDING", "SENT"]
     }
 }
@@ -556,7 +556,7 @@ impl FallbackAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ABORT", "CONTINUE"]
     }
 }
@@ -777,7 +777,7 @@ impl InvocationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASYNC"]
     }
 }
@@ -867,7 +867,7 @@ impl ChannelMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RESTRICTED", "UNRESTRICTED"]
     }
 }
@@ -1196,7 +1196,7 @@ impl PushNotificationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT", "VOIP"]
     }
 }
@@ -1288,7 +1288,7 @@ impl ChannelMessagePersistenceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NON_PERSISTENT", "PERSISTENT"]
     }
 }
@@ -1380,7 +1380,7 @@ impl ChannelMessageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONTROL", "STANDARD"]
     }
 }
@@ -1631,7 +1631,7 @@ impl ChannelPrivacy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRIVATE", "PUBLIC"]
     }
 }
@@ -1838,7 +1838,7 @@ impl SearchFieldOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EQUALS", "INCLUDES"]
     }
 }
@@ -1923,7 +1923,7 @@ impl SearchFieldKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MEMBERS"]
     }
 }
@@ -2162,7 +2162,7 @@ impl AllowNotifications {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "FILTERED", "NONE"]
     }
 }
@@ -2949,7 +2949,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
 }
@@ -3236,7 +3236,7 @@ impl ChannelMembershipType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT", "HIDDEN"]
     }
 }

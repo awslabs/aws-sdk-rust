@@ -80,7 +80,7 @@ impl WorkGroupState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -747,7 +747,7 @@ impl S3AclOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BUCKET_OWNER_FULL_CONTROL"]
     }
 }
@@ -924,7 +924,7 @@ impl EncryptionOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CSE_KMS", "SSE_KMS", "SSE_S3"]
     }
 }
@@ -1019,7 +1019,7 @@ impl DataCatalogType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GLUE", "HIVE", "LAMBDA"]
     }
 }
@@ -1180,7 +1180,7 @@ impl ThrottleReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONCURRENT_QUERY_LIMIT_EXCEEDED"]
     }
 }
@@ -3674,7 +3674,7 @@ impl ColumnNullable {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NOT_NULL", "NULLABLE", "UNKNOWN"]
     }
 }
@@ -4665,7 +4665,7 @@ impl QueryExecutionState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "FAILED", "QUEUED", "RUNNING", "SUCCEEDED"]
     }
 }
@@ -4760,7 +4760,7 @@ impl StatementType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DDL", "DML", "UTILITY"]
     }
 }

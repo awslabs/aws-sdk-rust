@@ -1114,7 +1114,7 @@ impl EbsSnapshotPreservation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NO_RETENTION", "RETENTION_WITH_FINDING"]
     }
 }
@@ -1465,7 +1465,7 @@ impl ScanCriterionKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EC2_INSTANCE_TAG"]
     }
 }
@@ -1555,7 +1555,7 @@ impl Feedback {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NOT_USEFUL", "USEFUL"]
     }
 }
@@ -2057,7 +2057,7 @@ impl FilterAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ARCHIVE", "NOOP"]
     }
 }
@@ -2154,7 +2154,7 @@ impl FindingPublishingFrequency {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FIFTEEN_MINUTES", "ONE_HOUR", "SIX_HOURS"]
     }
 }
@@ -2362,7 +2362,7 @@ impl PublishingStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "PENDING_VERIFICATION",
             "PUBLISHING",
@@ -2452,7 +2452,7 @@ impl DestinationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["S3"]
     }
 }
@@ -2623,7 +2623,7 @@ impl AdminStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLE_IN_PROGRESS", "ENABLED"]
     }
 }
@@ -3113,7 +3113,7 @@ impl OrderBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
 }
@@ -3608,7 +3608,7 @@ impl DataSource {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CLOUD_TRAIL",
             "DNS_LOGS",
@@ -3914,7 +3914,7 @@ impl UsageStatisticType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "SUM_BY_ACCOUNT",
             "SUM_BY_DATA_SOURCE",
@@ -4036,7 +4036,7 @@ impl ThreatIntelSetStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVATING",
             "ACTIVE",
@@ -4156,7 +4156,7 @@ impl ThreatIntelSetFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALIEN_VAULT",
             "FIRE_EYE",
@@ -5153,7 +5153,7 @@ impl DataSourceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -5743,7 +5743,7 @@ impl IpSetStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVATING",
             "ACTIVE",
@@ -5861,7 +5861,7 @@ impl IpSetFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALIEN_VAULT",
             "FIRE_EYE",
@@ -6022,7 +6022,7 @@ impl FindingStatisticType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COUNT_BY_SEVERITY"]
     }
 }
@@ -13938,7 +13938,7 @@ impl DetectorStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -15041,7 +15041,7 @@ impl ScanResult {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLEAN", "INFECTED"]
     }
 }
@@ -15269,7 +15269,7 @@ impl ScanStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "RUNNING"]
     }
 }
@@ -15620,7 +15620,7 @@ impl CriterionKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_ID",
             "EC2_INSTANCE_ARN",

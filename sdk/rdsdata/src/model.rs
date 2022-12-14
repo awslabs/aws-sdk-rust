@@ -623,7 +623,7 @@ impl RecordsFormatType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JSON", "NONE"]
     }
 }
@@ -802,7 +802,7 @@ impl LongReturnType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LONG", "STRING"]
     }
 }
@@ -894,7 +894,7 @@ impl DecimalReturnType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DOUBLE_OR_LONG", "STRING"]
     }
 }
@@ -1131,7 +1131,7 @@ impl TypeHint {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DATE", "DECIMAL", "JSON", "TIME", "TIMESTAMP", "UUID"]
     }
 }

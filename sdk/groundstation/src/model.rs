@@ -736,7 +736,7 @@ impl EndpointStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["created", "creating", "deleted", "deleting", "failed"]
     }
 }
@@ -1435,7 +1435,7 @@ impl AngleUnits {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEGREE_ANGLE", "RADIAN"]
     }
 }
@@ -1580,7 +1580,7 @@ impl ContactStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "AWS_CANCELLED",
@@ -2144,7 +2144,7 @@ impl ConfigCapabilityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "antenna-downlink",
             "antenna-downlink-demod-decode",
@@ -2966,7 +2966,7 @@ impl EirpUnits {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["dBW"]
     }
 }
@@ -3142,7 +3142,7 @@ impl Polarization {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LEFT_HAND", "NONE", "RIGHT_HAND"]
     }
 }
@@ -3315,7 +3315,7 @@ impl FrequencyUnits {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GHz", "MHz", "kHz"]
     }
 }
@@ -3852,7 +3852,7 @@ impl BandwidthUnits {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GHz", "MHz", "kHz"]
     }
 }
@@ -4086,7 +4086,7 @@ impl Criticality {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PREFERRED", "REMOVED", "REQUIRED"]
     }
 }

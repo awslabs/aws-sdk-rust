@@ -167,7 +167,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "cannotParse",
             "fieldValidationFailed",
@@ -507,7 +507,7 @@ impl VehicleAssociationBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CreateIotThing", "ValidateIotThingExists"]
     }
 }
@@ -597,7 +597,7 @@ impl UpdateMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Merge", "Overwrite"]
     }
 }
@@ -1137,7 +1137,7 @@ impl NodeDataType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BOOLEAN",
             "BOOLEAN_ARRAY",
@@ -2295,7 +2295,7 @@ impl ManifestStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DRAFT"]
     }
 }
@@ -3109,7 +3109,7 @@ impl SignalDecoderType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CAN_SIGNAL", "OBD_SIGNAL"]
     }
 }
@@ -3608,7 +3608,7 @@ impl NetworkInterfaceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CAN_INTERFACE", "OBD_INTERFACE"]
     }
 }
@@ -3818,7 +3818,7 @@ impl NetworkInterfaceFailureReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CAN_NETWORK_INTERFACE_INFO_IS_NULL",
             "CONFLICTING_NETWORK_INTERFACE",
@@ -4042,7 +4042,7 @@ impl SignalDecoderFailureReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CAN_SIGNAL_INFO_IS_NULL",
             "CONFLICTING_SIGNAL",
@@ -4736,7 +4736,7 @@ impl CampaignStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATING", "RUNNING", "SUSPENDED", "WAITING_FOR_APPROVAL"]
     }
 }
@@ -5013,7 +5013,7 @@ impl TriggerMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALWAYS", "RISING_EDGE"]
     }
 }
@@ -5264,7 +5264,7 @@ impl Compression {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OFF", "SNAPPY"]
     }
 }
@@ -5354,7 +5354,7 @@ impl SpoolingMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OFF", "TO_DISK"]
     }
 }
@@ -5444,7 +5444,7 @@ impl DiagnosticsMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OFF", "SEND_ACTIVE_DTCS"]
     }
 }
@@ -5546,7 +5546,7 @@ impl UpdateCampaignAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPROVE", "RESUME", "SUSPEND", "UPDATE"]
     }
 }
@@ -5780,7 +5780,7 @@ impl RegistrationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "REGISTRATION_FAILURE",
             "REGISTRATION_PENDING",
@@ -5952,7 +5952,7 @@ impl LogType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ERROR", "OFF"]
     }
 }
@@ -6186,7 +6186,7 @@ impl VehicleState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATED", "DELETING", "HEALTHY", "READY", "SUSPENDED"]
     }
 }

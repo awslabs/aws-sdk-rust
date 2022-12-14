@@ -395,7 +395,7 @@ impl ReportVersioning {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE_NEW_REPORT", "OVERWRITE_REPORT"]
     }
 }
@@ -492,7 +492,7 @@ impl AdditionalArtifact {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ATHENA", "QUICKSIGHT", "REDSHIFT"]
     }
 }
@@ -702,7 +702,7 @@ impl AwsRegion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "af-south-1",
             "ap-east-1",
@@ -814,7 +814,7 @@ impl SchemaElement {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RESOURCES"]
     }
 }
@@ -911,7 +911,7 @@ impl CompressionFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GZIP", "Parquet", "ZIP"]
     }
 }
@@ -1001,7 +1001,7 @@ impl ReportFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Parquet", "textORcsv"]
     }
 }
@@ -1096,7 +1096,7 @@ impl TimeUnit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAILY", "HOURLY", "MONTHLY"]
     }
 }

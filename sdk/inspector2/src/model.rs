@@ -162,7 +162,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANNOT_PARSE", "FIELD_VALIDATION_FAILED", "OTHER"]
     }
 }
@@ -1383,7 +1383,7 @@ impl StringComparison {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EQUALS", "NOT_EQUALS", "PREFIX"]
     }
 }
@@ -1964,7 +1964,7 @@ impl MapComparison {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EQUALS"]
     }
 }
@@ -2054,7 +2054,7 @@ impl FilterAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "SUPPRESS"]
     }
 }
@@ -2209,7 +2209,7 @@ impl EcrRescanDuration {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAYS_180", "DAYS_30", "LIFETIME"]
     }
 }
@@ -2493,7 +2493,7 @@ impl Currency {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["USD"]
     }
 }
@@ -2588,7 +2588,7 @@ impl UsageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EC2_INSTANCE_HOURS", "ECR_INITIAL_SCAN", "ECR_RESCAN"]
     }
 }
@@ -2861,7 +2861,7 @@ impl RelationshipStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_SUSPENDED",
             "CANNOT_CREATE_DETECTOR_IN_ORG_MASTER",
@@ -3408,7 +3408,7 @@ impl FixAvailable {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NO", "PARTIAL", "YES"]
     }
 }
@@ -4214,7 +4214,7 @@ impl PackageManager {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BUNDLER",
             "CARGO",
@@ -4565,7 +4565,7 @@ impl NetworkProtocol {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TCP", "UDP"]
     }
 }
@@ -5771,7 +5771,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWS_EC2_INSTANCE",
             "AWS_ECR_CONTAINER_IMAGE",
@@ -5870,7 +5870,7 @@ impl FindingStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CLOSED", "SUPPRESSED"]
     }
 }
@@ -5980,7 +5980,7 @@ impl Severity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CRITICAL",
             "HIGH",
@@ -6210,7 +6210,7 @@ impl FindingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NETWORK_REACHABILITY", "PACKAGE_VULNERABILITY"]
     }
 }
@@ -6378,7 +6378,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
 }
@@ -6538,7 +6538,7 @@ impl SortField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWS_ACCOUNT_ID",
             "COMPONENT_TYPE",
@@ -8107,7 +8107,7 @@ impl AggregationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT",
             "AMI",
@@ -8547,7 +8547,7 @@ impl TitleSortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "CRITICAL", "HIGH"]
     }
 }
@@ -8639,7 +8639,7 @@ impl AggregationResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_EC2_INSTANCE", "AWS_ECR_CONTAINER_IMAGE"]
     }
 }
@@ -8849,7 +8849,7 @@ impl RepositorySortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AFFECTED_IMAGES", "ALL", "CRITICAL", "HIGH"]
     }
 }
@@ -9054,7 +9054,7 @@ impl PackageSortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "CRITICAL", "HIGH"]
     }
 }
@@ -9317,7 +9317,7 @@ impl ImageLayerSortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "CRITICAL", "HIGH"]
     }
 }
@@ -9541,7 +9541,7 @@ impl FindingTypeSortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "CRITICAL", "HIGH"]
     }
 }
@@ -9633,7 +9633,7 @@ impl AggregationFindingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NETWORK_REACHABILITY", "PACKAGE_VULNERABILITY"]
     }
 }
@@ -9933,7 +9933,7 @@ impl Ec2InstanceSortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "CRITICAL", "HIGH", "NETWORK_FINDINGS"]
     }
 }
@@ -10256,7 +10256,7 @@ impl AwsEcrContainerSortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "CRITICAL", "HIGH"]
     }
 }
@@ -10463,7 +10463,7 @@ impl AmiSortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AFFECTED_INSTANCES", "ALL", "CRITICAL", "HIGH"]
     }
 }
@@ -10685,7 +10685,7 @@ impl AccountSortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "CRITICAL", "HIGH"]
     }
 }
@@ -11123,7 +11123,7 @@ impl DelegatedAdminStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLE_IN_PROGRESS", "ENABLED"]
     }
 }
@@ -11303,7 +11303,7 @@ impl GroupKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_ID",
             "ECR_REPOSITORY_NAME",
@@ -11801,7 +11801,7 @@ impl CoverageMapComparison {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EQUALS"]
     }
 }
@@ -11971,7 +11971,7 @@ impl CoverageStringComparison {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EQUALS", "NOT_EQUALS"]
     }
 }
@@ -12450,7 +12450,7 @@ impl Ec2Platform {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LINUX", "UNKNOWN", "WINDOWS"]
     }
 }
@@ -12685,7 +12685,7 @@ impl EcrScanFrequency {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONTINUOUS_SCAN", "MANUAL", "SCAN_ON_PUSH"]
     }
 }
@@ -12926,7 +12926,7 @@ impl ScanStatusReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
             "EC2_INSTANCE_STOPPED",
@@ -13033,7 +13033,7 @@ impl ScanStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }
@@ -13123,7 +13123,7 @@ impl ScanType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NETWORK", "PACKAGE"]
     }
 }
@@ -13220,7 +13220,7 @@ impl CoverageResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWS_EC2_INSTANCE",
             "AWS_ECR_CONTAINER_IMAGE",
@@ -13402,7 +13402,7 @@ impl Operation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DISABLE_REPOSITORY",
             "DISABLE_SCANNING",
@@ -13497,7 +13497,7 @@ impl Service {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EC2", "ECR"]
     }
 }
@@ -13704,7 +13704,7 @@ impl ReportingErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BUCKET_NOT_FOUND",
             "INCOMPATIBLE_BUCKET_REGION",
@@ -13813,7 +13813,7 @@ impl ExternalReportStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
 }
@@ -14155,7 +14155,7 @@ impl EcrRescanDurationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING", "SUCCESS"]
     }
 }
@@ -14449,7 +14449,7 @@ impl ErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
             "ACCOUNT_IS_ISOLATED",
@@ -14649,7 +14649,7 @@ impl Status {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DISABLED",
             "DISABLING",
@@ -14844,7 +14844,7 @@ impl ResourceScanType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EC2", "ECR"]
     }
 }
@@ -14934,7 +14934,7 @@ impl ReportFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CSV", "JSON"]
     }
 }
@@ -15124,7 +15124,7 @@ impl FreeTrialInfoErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCESS_DENIED", "INTERNAL_ERROR"]
     }
 }
@@ -15416,7 +15416,7 @@ impl FreeTrialStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }
@@ -15506,7 +15506,7 @@ impl FreeTrialType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EC2", "ECR"]
     }
 }

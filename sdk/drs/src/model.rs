@@ -167,7 +167,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "cannotParse",
             "fieldValidationFailed",
@@ -407,7 +407,7 @@ impl PitPolicyRuleUnits {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAY", "HOUR", "MINUTE"]
     }
 }
@@ -499,7 +499,7 @@ impl ReplicationConfigurationDataPlaneRouting {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRIVATE_IP", "PUBLIC_IP"]
     }
 }
@@ -591,7 +591,7 @@ impl ReplicationConfigurationEbsEncryption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CUSTOM", "DEFAULT"]
     }
 }
@@ -896,7 +896,7 @@ impl ReplicationConfigurationReplicatedDiskStagingDiskType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTO", "GP2", "GP3", "IO1", "SC1", "ST1", "STANDARD"]
     }
 }
@@ -998,7 +998,7 @@ impl ReplicationConfigurationDefaultLargeStagingDiskType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTO", "GP2", "GP3", "ST1"]
     }
 }
@@ -1145,7 +1145,7 @@ impl TargetInstanceTypeRightSizingMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BASIC", "NONE"]
     }
 }
@@ -1237,7 +1237,7 @@ impl LaunchDisposition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STARTED", "STOPPED"]
     }
 }
@@ -1459,7 +1459,7 @@ impl ExtensionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EXTENDED", "EXTENSION_ERROR", "NOT_EXTENDED"]
     }
 }
@@ -2532,7 +2532,7 @@ impl LastLaunchType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DRILL", "RECOVERY"]
     }
 }
@@ -3000,7 +3000,7 @@ impl DataReplicationErrorString {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AGENT_NOT_SEEN",
             "FAILED_TO_ATTACH_STAGING_DISKS",
@@ -3316,7 +3316,7 @@ impl DataReplicationInitiationStepStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
             "IN_PROGRESS",
@@ -3479,7 +3479,7 @@ impl DataReplicationInitiationStepName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ATTACH_STAGING_DISKS",
             "AUTHENTICATE_WITH_SERVICE",
@@ -3623,7 +3623,7 @@ impl DataReplicationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BACKLOG",
             "CONTINUOUS",
@@ -3869,7 +3869,7 @@ impl LastLaunchResult {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "NOT_STARTED", "PENDING", "SUCCEEDED"]
     }
 }
@@ -4111,7 +4111,7 @@ impl RecoverySnapshotsOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
 }
@@ -4656,7 +4656,7 @@ impl LaunchStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "LAUNCHED", "PENDING", "TERMINATED"]
     }
 }
@@ -4751,7 +4751,7 @@ impl JobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "PENDING", "STARTED"]
     }
 }
@@ -4861,7 +4861,7 @@ impl InitiatedBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DIAGNOSTIC",
             "FAILBACK",
@@ -4963,7 +4963,7 @@ impl JobType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE_CONVERTED_SNAPSHOT", "LAUNCH", "TERMINATE"]
     }
 }
@@ -7002,7 +7002,7 @@ impl FailbackReplicationError {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AGENT_NOT_SEEN",
             "FAILBACK_CLIENT_NOT_SEEN",
@@ -7316,7 +7316,7 @@ impl RecoveryInstanceDataReplicationInitiationStepStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
             "IN_PROGRESS",
@@ -7437,7 +7437,7 @@ impl RecoveryInstanceDataReplicationInitiationStepName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETE_VOLUME_MAPPING",
             "CONFIGURE_REPLICATION_SOFTWARE",
@@ -7577,7 +7577,7 @@ impl RecoveryInstanceDataReplicationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BACKLOG",
             "CONTINUOUS",
@@ -8092,7 +8092,7 @@ impl FailbackState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FAILBACK_COMPLETED",
             "FAILBACK_ERROR",
@@ -8213,7 +8213,7 @@ impl Ec2InstanceState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "NOT_FOUND",
             "PENDING",
@@ -8918,7 +8918,7 @@ impl JobLogEvent {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CLEANUP_END",
             "CLEANUP_FAIL",

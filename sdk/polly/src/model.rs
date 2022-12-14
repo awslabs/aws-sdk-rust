@@ -435,7 +435,7 @@ impl VoiceId {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Aditi",
             "Amy",
@@ -599,7 +599,7 @@ impl TextType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ssml", "text"]
     }
 }
@@ -699,7 +699,7 @@ impl SpeechMarkType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["sentence", "ssml", "viseme", "word"]
     }
 }
@@ -799,7 +799,7 @@ impl OutputFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["json", "mp3", "ogg_vorbis", "pcm"]
     }
 }
@@ -1049,7 +1049,7 @@ impl LanguageCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "arb",
             "ca-ES",
@@ -1174,7 +1174,7 @@ impl Engine {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["neural", "standard"]
     }
 }
@@ -1658,7 +1658,7 @@ impl TaskStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["completed", "failed", "inProgress", "scheduled"]
     }
 }
@@ -2266,7 +2266,7 @@ impl Gender {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Female", "Male"]
     }
 }

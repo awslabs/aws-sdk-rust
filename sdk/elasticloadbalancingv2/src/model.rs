@@ -80,7 +80,7 @@ impl IpAddressType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["dualstack", "ipv4"]
     }
 }
@@ -1458,7 +1458,7 @@ impl RedirectActionStatusCodeEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HTTP_301", "HTTP_302"]
     }
 }
@@ -1825,7 +1825,7 @@ impl AuthenticateCognitoActionConditionalBehaviorEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["allow", "authenticate", "deny"]
     }
 }
@@ -2276,7 +2276,7 @@ impl AuthenticateOidcActionConditionalBehaviorEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["allow", "authenticate", "deny"]
     }
 }
@@ -2381,7 +2381,7 @@ impl ActionTypeEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "authenticate-cognito",
             "authenticate-oidc",
@@ -4260,7 +4260,7 @@ impl TargetGroupIpAddressTypeEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ipv4", "ipv6"]
     }
 }
@@ -4360,7 +4360,7 @@ impl TargetTypeEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["alb", "instance", "ip", "lambda"]
     }
 }
@@ -4558,7 +4558,7 @@ impl ProtocolEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GENEVE", "HTTP", "HTTPS", "TCP", "TCP_UDP", "TLS", "UDP"]
     }
 }
@@ -5452,7 +5452,7 @@ impl TargetHealthReasonEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Elb.InitialHealthChecking",
             "Elb.InternalError",
@@ -5577,7 +5577,7 @@ impl TargetHealthStateEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "draining",
             "healthy",
@@ -6064,7 +6064,7 @@ impl LoadBalancerTypeEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["application", "gateway", "network"]
     }
 }
@@ -6589,7 +6589,7 @@ impl LoadBalancerStateEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["active", "active_impaired", "failed", "provisioning"]
     }
 }
@@ -6681,7 +6681,7 @@ impl LoadBalancerSchemeEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["internal", "internet-facing"]
     }
 }

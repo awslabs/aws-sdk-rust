@@ -155,7 +155,7 @@ impl ContentClassifier {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FreeOfAdultContent",
             "FreeOfPersonallyIdentifiableInformation",
@@ -471,7 +471,7 @@ impl HumanLoopStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
     }
 }
@@ -561,7 +561,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Ascending", "Descending"]
     }
 }

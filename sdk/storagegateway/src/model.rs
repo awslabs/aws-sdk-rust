@@ -479,7 +479,7 @@ impl ErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ActivationKeyExpired",
             "ActivationKeyInvalid",
@@ -714,7 +714,7 @@ impl SmbSecurityStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ClientSpecified", "MandatoryEncryption", "MandatorySigning"]
     }
 }
@@ -937,7 +937,7 @@ impl CaseSensitivity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CaseSensitive", "ClientSpecified"]
     }
 }
@@ -1054,7 +1054,7 @@ impl ObjectAcl {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "authenticated-read",
             "aws-exec-read",
@@ -1275,7 +1275,7 @@ impl GatewayCapacity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Large", "Medium", "Small"]
     }
 }
@@ -2409,7 +2409,7 @@ impl PoolStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED"]
     }
 }
@@ -2506,7 +2506,7 @@ impl RetentionLockType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLIANCE", "GOVERNANCE", "NONE"]
     }
 }
@@ -2596,7 +2596,7 @@ impl TapeStorageClass {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEEP_ARCHIVE", "GLACIER"]
     }
 }
@@ -3154,7 +3154,7 @@ impl HostEnvironment {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EC2", "HYPER-V", "KVM", "OTHER", "SNOWBALL", "VMWARE"]
     }
 }
@@ -3534,7 +3534,7 @@ impl FileShareType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NFS", "SMB"]
     }
 }
@@ -3745,7 +3745,7 @@ impl ActiveDirectoryStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
             "DETACHED",
@@ -7938,7 +7938,7 @@ impl AvailabilityMonitorTestStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "FAILED", "PENDING"]
     }
 }

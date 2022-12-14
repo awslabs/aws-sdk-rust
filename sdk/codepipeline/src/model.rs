@@ -942,7 +942,7 @@ impl ActionOwner {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS", "Custom", "ThirdParty"]
     }
 }
@@ -1052,7 +1052,7 @@ impl ActionCategory {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Approval", "Build", "Deploy", "Invoke", "Source", "Test"]
     }
 }
@@ -1212,7 +1212,7 @@ impl BlockerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Schedule"]
     }
 }
@@ -1488,7 +1488,7 @@ impl EncryptionKeyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KMS"]
     }
 }
@@ -1575,7 +1575,7 @@ impl ArtifactStoreType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["S3"]
     }
 }
@@ -2606,7 +2606,7 @@ impl ExecutorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JobWorker", "Lambda"]
     }
 }
@@ -3022,7 +3022,7 @@ impl StageRetryMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED_ACTIONS"]
     }
 }
@@ -3595,7 +3595,7 @@ impl WebhookAuthenticationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GITHUB_HMAC", "IP", "UNAUTHENTICATED"]
     }
 }
@@ -4100,7 +4100,7 @@ impl FailureType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ConfigurationError",
             "JobFailed",
@@ -4275,7 +4275,7 @@ impl ApprovalStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Approved", "Rejected"]
     }
 }
@@ -5252,7 +5252,7 @@ impl ArtifactLocationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["S3"]
     }
 }
@@ -6207,7 +6207,7 @@ impl TriggerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CloudWatchEvent",
             "CreatePipeline",
@@ -6449,7 +6449,7 @@ impl PipelineExecutionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Cancelled",
             "Failed",
@@ -6978,7 +6978,7 @@ impl ActionConfigurationPropertyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Boolean", "Number", "String"]
     }
 }
@@ -8088,7 +8088,7 @@ impl ActionExecutionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Abandoned", "Failed", "InProgress", "Succeeded"]
     }
 }
@@ -8839,7 +8839,7 @@ impl StageExecutionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Cancelled",
             "Failed",
@@ -10118,7 +10118,7 @@ impl StageTransitionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Inbound", "Outbound"]
     }
 }
@@ -10233,7 +10233,7 @@ impl JobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Created",
             "Dispatched",

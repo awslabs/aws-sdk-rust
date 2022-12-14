@@ -90,7 +90,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GROUP", "GROUP_MEMBERSHIP", "IDENTITY_STORE", "USER"]
     }
 }
@@ -1288,7 +1288,7 @@ impl ConflictExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONCURRENT_MODIFICATION", "UNIQUENESS_CONSTRAINT_VIOLATION"]
     }
 }

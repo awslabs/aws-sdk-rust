@@ -212,7 +212,7 @@ impl InvalidInputExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DUPLICATE_TAG_KEY",
             "IMMUTABLE_POLICY",
@@ -482,7 +482,7 @@ impl ConstraintViolationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_CANNOT_LEAVE_ORGANIZATION",
             "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA",
@@ -861,7 +861,7 @@ impl PolicyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AISERVICES_OPT_OUT_POLICY",
             "BACKUP_POLICY",
@@ -1297,7 +1297,7 @@ impl TargetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT", "ORGANIZATIONAL_UNIT", "ROOT"]
     }
 }
@@ -1615,7 +1615,7 @@ impl PolicyTypeStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENABLED", "PENDING_DISABLE", "PENDING_ENABLE"]
     }
 }
@@ -1800,7 +1800,7 @@ impl ParentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ORGANIZATIONAL_UNIT", "ROOT"]
     }
 }
@@ -2344,7 +2344,7 @@ impl HandshakeResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT",
             "EMAIL",
@@ -2457,7 +2457,7 @@ impl ActionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE",
             "APPROVE_ALL_FEATURES",
@@ -2572,7 +2572,7 @@ impl HandshakeState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCEPTED",
             "CANCELED",
@@ -2758,7 +2758,7 @@ impl HandshakePartyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT", "EMAIL", "ORGANIZATION"]
     }
 }
@@ -3231,7 +3231,7 @@ impl AccountJoinedMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATED", "INVITED"]
     }
 }
@@ -3326,7 +3326,7 @@ impl AccountStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "PENDING_CLOSURE", "SUSPENDED"]
     }
 }
@@ -3772,7 +3772,7 @@ impl CreateAccountFailureReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_LIMIT_EXCEEDED",
             "CONCURRENT_ACCOUNT_MODIFICATION",
@@ -3884,7 +3884,7 @@ impl CreateAccountState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
 }
@@ -4069,7 +4069,7 @@ impl ChildType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT", "ORGANIZATIONAL_UNIT"]
     }
 }
@@ -4480,7 +4480,7 @@ impl HandshakeConstraintViolationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
             "ALREADY_IN_AN_ORGANIZATION",
@@ -4810,7 +4810,7 @@ impl OrganizationFeatureSet {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "CONSOLIDATED_BILLING"]
     }
 }
@@ -5031,7 +5031,7 @@ impl EffectivePolicyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AISERVICES_OPT_OUT_POLICY", "BACKUP_POLICY", "TAG_POLICY"]
     }
 }
@@ -5122,7 +5122,7 @@ impl AccessDeniedForDependencyExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE"]
     }
 }
@@ -5214,7 +5214,7 @@ impl IamUserAccessToBilling {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "DENY"]
     }
 }

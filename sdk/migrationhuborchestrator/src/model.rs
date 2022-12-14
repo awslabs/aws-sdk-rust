@@ -286,7 +286,7 @@ impl StepGroupStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWAITING_DEPENDENCIES",
             "COMPLETED",
@@ -385,7 +385,7 @@ impl Owner {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_MANAGED", "CUSTOM"]
     }
 }
@@ -575,7 +575,7 @@ impl StepStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWAITING_DEPENDENCIES",
             "COMPLETED",
@@ -995,7 +995,7 @@ impl StepActionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTOMATED", "MANUAL"]
     }
 }
@@ -1281,7 +1281,7 @@ impl DataType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INTEGER", "STRING", "STRINGLIST", "STRINGMAP"]
     }
 }
@@ -1526,7 +1526,7 @@ impl TargetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "NONE", "SINGLE"]
     }
 }
@@ -1616,7 +1616,7 @@ impl RunEnvironment {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS", "ONPREMISE"]
     }
 }
@@ -2637,7 +2637,7 @@ impl PluginHealth {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "UNHEALTHY"]
     }
 }
@@ -2837,7 +2837,7 @@ impl TemplateStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATED"]
     }
 }
@@ -3084,7 +3084,7 @@ impl MigrationWorkflowStatusEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "CREATING",

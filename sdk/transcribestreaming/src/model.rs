@@ -130,7 +130,7 @@ impl LanguageCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "it-IT", "ja-JP",
             "ko-KR", "pt-BR", "zh-CN",
@@ -220,7 +220,7 @@ impl ContentRedactionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PII"]
     }
 }
@@ -307,7 +307,7 @@ impl ContentIdentificationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PII"]
     }
 }
@@ -404,7 +404,7 @@ impl PartialResultsStability {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["high", "low", "medium"]
     }
 }
@@ -501,7 +501,7 @@ impl VocabularyFilterMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["mask", "remove", "tag"]
     }
 }
@@ -1521,7 +1521,7 @@ impl ItemType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["pronunciation", "punctuation"]
     }
 }
@@ -1616,7 +1616,7 @@ impl MediaEncoding {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["flac", "ogg-opus", "pcm"]
     }
 }
@@ -1801,7 +1801,7 @@ impl MedicalContentIdentificationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PHI"]
     }
 }
@@ -2628,7 +2628,7 @@ impl Type {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONVERSATION", "DICTATION"]
     }
 }
@@ -2738,7 +2738,7 @@ impl Specialty {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CARDIOLOGY",
             "NEUROLOGY",

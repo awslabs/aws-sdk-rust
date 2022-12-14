@@ -674,7 +674,7 @@ impl SnsActionEncoding {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Base64", "UTF-8"]
     }
 }
@@ -911,7 +911,7 @@ impl StopScope {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RuleSet"]
     }
 }
@@ -1109,7 +1109,7 @@ impl InvocationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Event", "RequestResponse"]
     }
 }
@@ -1567,7 +1567,7 @@ impl TlsPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Optional", "Require"]
     }
 }
@@ -2200,7 +2200,7 @@ impl DimensionValueSource {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["emailHeader", "linkTag", "messageTag"]
     }
 }
@@ -2399,7 +2399,7 @@ impl EventType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "bounce",
             "click",
@@ -2503,7 +2503,7 @@ impl NotificationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Bounce", "Complaint", "Delivery"]
     }
 }
@@ -2595,7 +2595,7 @@ impl BehaviorOnMxFailure {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RejectMessage", "UseDefaultValue"]
     }
 }
@@ -3442,7 +3442,7 @@ impl BulkEmailStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccountDailyQuotaExceeded",
             "AccountSendingPaused",
@@ -4084,7 +4084,7 @@ impl DsnAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["delayed", "delivered", "expanded", "failed", "relayed"]
     }
 }
@@ -4194,7 +4194,7 @@ impl BounceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ContentRejected",
             "DoesNotExist",
@@ -4819,7 +4819,7 @@ impl ReceiptFilterPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Allow", "Block"]
     }
 }
@@ -4909,7 +4909,7 @@ impl IdentityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Domain", "EmailAddress"]
     }
 }
@@ -5455,7 +5455,7 @@ impl VerificationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Failed",
             "NotStarted",
@@ -5883,7 +5883,7 @@ impl CustomMailFromStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Failed", "Pending", "Success", "TemporaryFailure"]
     }
 }
@@ -6211,7 +6211,7 @@ impl ConfigurationSetAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "deliveryOptions",
             "eventDestinations",

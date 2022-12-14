@@ -450,7 +450,7 @@ impl BackupState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE_IN_PROGRESS", "DELETED", "PENDING_DELETION", "READY"]
     }
 }
@@ -1132,7 +1132,7 @@ impl ClusterState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATE_IN_PROGRESS",
@@ -1448,7 +1448,7 @@ impl HsmState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATE_IN_PROGRESS",
@@ -1619,7 +1619,7 @@ impl BackupRetentionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAYS"]
     }
 }
@@ -1704,7 +1704,7 @@ impl BackupPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT"]
     }
 }

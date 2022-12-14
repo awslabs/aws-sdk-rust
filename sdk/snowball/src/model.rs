@@ -80,7 +80,7 @@ impl ShipmentState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RECEIVED", "RETURNED"]
     }
 }
@@ -205,7 +205,7 @@ impl SnowballCapacity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "NoPreference",
             "T100",
@@ -315,7 +315,7 @@ impl ShippingOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EXPRESS", "NEXT_DAY", "SECOND_DAY", "STANDARD"]
     }
 }
@@ -571,7 +571,7 @@ impl StorageUnit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TB"]
     }
 }
@@ -1285,7 +1285,7 @@ impl TransferOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EXPORT", "IMPORT", "LOCAL_USE"]
     }
 }
@@ -1377,7 +1377,7 @@ impl DeviceServiceName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NFS_ON_DEVICE_SERVICE", "S3_ON_DEVICE_SERVICE"]
     }
 }
@@ -1709,7 +1709,7 @@ impl JobState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Cancelled",
             "Complete",
@@ -2125,7 +2125,7 @@ impl SnowballType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EDGE", "EDGE_C", "EDGE_CG", "EDGE_S", "SNC1_HDD", "SNC1_SSD", "STANDARD", "V3_5C",
         ]
@@ -2219,7 +2219,7 @@ impl LongTermPricingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OneYear", "ThreeYear"]
     }
 }
@@ -2495,7 +2495,7 @@ impl JobType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EXPORT", "IMPORT", "LOCAL_USE"]
     }
 }
@@ -2796,7 +2796,7 @@ impl ClusterState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AwaitingQuorum",
             "Cancelled",
@@ -2904,7 +2904,7 @@ impl ShippingLabelStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Failed", "InProgress", "Succeeded", "TimedOut"]
     }
 }
@@ -3534,7 +3534,7 @@ impl RemoteManagement {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INSTALLED_AUTOSTART", "INSTALLED_ONLY"]
     }
 }

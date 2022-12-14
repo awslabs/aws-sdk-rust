@@ -1790,7 +1790,7 @@ impl SegmentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DIMENSIONAL", "IMPORT"]
     }
 }
@@ -1969,7 +1969,7 @@ impl Include {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "ANY", "NONE"]
     }
 }
@@ -2205,7 +2205,7 @@ impl Type {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "ANY", "NONE"]
     }
 }
@@ -2300,7 +2300,7 @@ impl SourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "ANY", "NONE"]
     }
 }
@@ -2850,7 +2850,7 @@ impl AttributeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AFTER",
             "BEFORE",
@@ -3347,7 +3347,7 @@ impl DimensionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EXCLUSIVE", "INCLUSIVE"]
     }
 }
@@ -3740,7 +3740,7 @@ impl RecencyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }
@@ -3840,7 +3840,7 @@ impl Duration {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAY_14", "DAY_30", "DAY_7", "HR_24"]
     }
 }
@@ -4097,7 +4097,7 @@ impl Format {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CSV", "JSON"]
     }
 }
@@ -5551,7 +5551,7 @@ impl Action {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEEP_LINK", "OPEN_APP", "URL"]
     }
 }
@@ -7277,7 +7277,7 @@ impl DayOfWeek {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FRIDAY",
             "MONDAY",
@@ -7482,7 +7482,7 @@ impl State {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CANCELLED",
@@ -7898,7 +7898,7 @@ impl FilterType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENDPOINT", "SYSTEM"]
     }
 }
@@ -9203,7 +9203,7 @@ impl MessageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PROMOTIONAL", "TRANSACTIONAL"]
     }
 }
@@ -10497,7 +10497,7 @@ impl Operator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "ANY"]
     }
 }
@@ -10898,7 +10898,7 @@ impl EndpointTypesElement {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADM",
             "APNS",
@@ -11779,7 +11779,7 @@ impl Layout {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BOTTOM_BANNER",
             "CAROUSEL",
@@ -12256,7 +12256,7 @@ impl ButtonAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOSE", "DEEP_LINK", "LINK"]
     }
 }
@@ -12610,7 +12610,7 @@ impl Alignment {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CENTER", "LEFT", "RIGHT"]
     }
 }
@@ -14048,7 +14048,7 @@ impl ChannelType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADM",
             "APNS",
@@ -16071,7 +16071,7 @@ impl CampaignStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "DELETED",
@@ -16402,7 +16402,7 @@ impl Frequency {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DAILY",
             "EVENT",
@@ -17855,7 +17855,7 @@ impl Mode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELIVERY", "FILTER"]
     }
 }
@@ -22473,7 +22473,7 @@ impl DeliveryStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DUPLICATE",
             "OPT_OUT",
@@ -30173,7 +30173,7 @@ impl TemplateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EMAIL", "INAPP", "PUSH", "SMS", "VOICE"]
     }
 }
@@ -31940,7 +31940,7 @@ impl JobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "COMPLETING",

@@ -190,7 +190,7 @@ impl QueueAttributeName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "All",
             "ApproximateNumberOfMessages",
@@ -1144,7 +1144,7 @@ impl MessageSystemAttributeNameForSends {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWSTraceHeader"]
     }
 }
@@ -1704,7 +1704,7 @@ impl MessageSystemAttributeName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWSTraceHeader",
             "ApproximateFirstReceiveTimestamp",

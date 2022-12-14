@@ -162,7 +162,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FIELD_VALIDATION_FAILED", "OTHER", "UNKNOWN_OPERATION"]
     }
 }
@@ -247,7 +247,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ROOM"]
     }
 }
@@ -415,7 +415,7 @@ impl FallbackResult {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "DENY"]
     }
 }
@@ -719,7 +719,7 @@ impl ChatTokenCapability {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETE_MESSAGE", "DISCONNECT_USER", "SEND_MESSAGE"]
     }
 }

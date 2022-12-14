@@ -562,7 +562,7 @@ impl ArtifactStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPROVED", "IN_PROGRESS", "REJECTED"]
     }
 }
@@ -657,7 +657,7 @@ impl ParticipantRole {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AGENT", "CUSTOMER", "SYSTEM"]
     }
 }
@@ -787,7 +787,7 @@ impl ChatItemType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ATTACHMENT",
             "CHAT_ENDED",
@@ -990,7 +990,7 @@ impl SortKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
 }
@@ -1080,7 +1080,7 @@ impl ScanDirection {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BACKWARD", "FORWARD"]
     }
 }
@@ -1334,7 +1334,7 @@ impl ConnectionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONNECTION_CREDENTIALS", "WEBSOCKET"]
     }
 }

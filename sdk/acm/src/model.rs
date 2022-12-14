@@ -151,7 +151,7 @@ impl CertificateTransparencyLoggingPreference {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -422,7 +422,7 @@ impl ValidationMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DNS", "EMAIL"]
     }
 }
@@ -1059,7 +1059,7 @@ impl RenewalEligibility {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ELIGIBLE", "INELIGIBLE"]
     }
 }
@@ -1201,7 +1201,7 @@ impl ExtendedKeyUsageName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ANY",
             "CODE_SIGNING",
@@ -1349,7 +1349,7 @@ impl KeyUsageName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ANY",
             "CERTIFICATE_SIGNING",
@@ -1476,7 +1476,7 @@ impl KeyAlgorithm {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EC_prime256v1",
             "EC_secp384r1",
@@ -1579,7 +1579,7 @@ impl CertificateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AMAZON_ISSUED", "IMPORTED", "PRIVATE"]
     }
 }
@@ -1696,7 +1696,7 @@ impl CertificateStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EXPIRED",
             "FAILED",
@@ -1794,7 +1794,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
 }
@@ -1879,7 +1879,7 @@ impl SortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATED_AT"]
     }
 }
@@ -3148,7 +3148,7 @@ impl FailureReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDITIONAL_VERIFICATION_REQUIRED",
             "CAA_ERROR",
@@ -3546,7 +3546,7 @@ impl RecordType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CNAME"]
     }
 }
@@ -3641,7 +3641,7 @@ impl DomainStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING_VALIDATION", "SUCCESS"]
     }
 }
@@ -3741,7 +3741,7 @@ impl RenewalStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
             "PENDING_AUTO_RENEWAL",
@@ -3876,7 +3876,7 @@ impl RevocationReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AFFILIATION_CHANGED",
             "A_A_COMPROMISE",

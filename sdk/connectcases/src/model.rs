@@ -1231,7 +1231,7 @@ impl FieldNamespace {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Custom", "System"]
     }
 }
@@ -1336,7 +1336,7 @@ impl FieldType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Boolean", "DateTime", "Number", "SingleSelect", "Text"]
     }
 }
@@ -2001,7 +2001,7 @@ impl DomainStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "CreationFailed", "CreationInProgress"]
     }
 }
@@ -2463,7 +2463,7 @@ impl Order {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Asc", "Desc"]
     }
 }
@@ -3113,7 +3113,7 @@ impl CommentBodyTextType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Text/Plain"]
     }
 }
@@ -3301,7 +3301,7 @@ impl RelatedItemType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Comment", "Contact"]
     }
 }

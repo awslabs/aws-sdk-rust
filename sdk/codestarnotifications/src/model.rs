@@ -80,7 +80,7 @@ impl DetailType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BASIC", "FULL"]
     }
 }
@@ -266,7 +266,7 @@ impl NotificationRuleStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -488,7 +488,7 @@ impl TargetStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "DEACTIVATED",
@@ -669,7 +669,7 @@ impl ListTargetsFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TARGET_ADDRESS", "TARGET_STATUS", "TARGET_TYPE"]
     }
 }
@@ -924,7 +924,7 @@ impl ListNotificationRulesFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATED_BY", "EVENT_TYPE_ID", "RESOURCE", "TARGET_ADDRESS"]
     }
 }
@@ -1218,7 +1218,7 @@ impl ListEventTypesFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RESOURCE_TYPE", "SERVICE_NAME"]
     }
 }

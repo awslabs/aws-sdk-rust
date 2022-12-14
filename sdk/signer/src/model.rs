@@ -448,7 +448,7 @@ impl ImageFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JSON", "JSONDetached", "JSONEmbedded"]
     }
 }
@@ -619,7 +619,7 @@ impl HashAlgorithm {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SHA1", "SHA256"]
     }
 }
@@ -711,7 +711,7 @@ impl EncryptionAlgorithm {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ECDSA", "RSA"]
     }
 }
@@ -881,7 +881,7 @@ impl ValidityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAYS", "MONTHS", "YEARS"]
     }
 }
@@ -1357,7 +1357,7 @@ impl SigningProfileStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "Canceled", "Revoked"]
     }
 }
@@ -2019,7 +2019,7 @@ impl Category {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWSIoT"]
     }
 }
@@ -2450,7 +2450,7 @@ impl SigningStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Failed", "InProgress", "Succeeded"]
     }
 }

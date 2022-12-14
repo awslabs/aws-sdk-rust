@@ -554,7 +554,7 @@ impl HypervisorState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ERROR", "OFFLINE", "ONLINE", "PENDING"]
     }
 }
@@ -861,7 +861,7 @@ impl GatewayType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BACKUP_VM"]
     }
 }

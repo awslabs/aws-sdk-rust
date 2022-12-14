@@ -254,7 +254,7 @@ impl InputStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "UPDATING"]
     }
 }
@@ -757,7 +757,7 @@ impl EvaluationMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BATCH", "SERIAL"]
     }
 }
@@ -874,7 +874,7 @@ impl DetectorModelVersionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVATING",
             "ACTIVE",
@@ -2359,7 +2359,7 @@ impl PayloadType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JSON", "STRING"]
     }
 }
@@ -3915,7 +3915,7 @@ impl AlarmModelVersionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVATING", "ACTIVE", "FAILED", "INACTIVE"]
     }
 }
@@ -5572,7 +5572,7 @@ impl ComparisonOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EQUAL",
             "GREATER",
@@ -5955,7 +5955,7 @@ impl LoggingLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEBUG", "ERROR", "INFO"]
     }
 }
@@ -7501,7 +7501,7 @@ impl AnalysisResultLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ERROR", "INFO", "WARNING"]
     }
 }
@@ -7677,7 +7677,7 @@ impl AnalysisStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "FAILED", "RUNNING"]
     }
 }

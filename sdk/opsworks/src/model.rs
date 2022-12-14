@@ -80,7 +80,7 @@ impl RootDeviceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ebs", "instance-store"]
     }
 }
@@ -379,7 +379,7 @@ impl SourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["archive", "git", "s3", "svn"]
     }
 }
@@ -619,7 +619,7 @@ impl StackAttributesKeys {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Color"]
     }
 }
@@ -2059,7 +2059,7 @@ impl CloudWatchLogsEncoding {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ascii",
             "big5",
@@ -2244,7 +2244,7 @@ impl CloudWatchLogsInitialPosition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["end_of_file", "start_of_file"]
     }
 }
@@ -2336,7 +2336,7 @@ impl CloudWatchLogsTimeZone {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LOCAL", "UTC"]
     }
 }
@@ -2543,7 +2543,7 @@ impl LayerAttributesKeys {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BundlerVersion",
             "EcsClusterArn",
@@ -2659,7 +2659,7 @@ impl Architecture {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["i386", "x86_64"]
     }
 }
@@ -2749,7 +2749,7 @@ impl AutoScalingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["load", "timer"]
     }
 }
@@ -2946,7 +2946,7 @@ impl AppAttributesKeys {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AutoBundleOnDeploy",
             "AwsFlowRubySettings",
@@ -3161,7 +3161,7 @@ impl AppType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "aws-flow-ruby",
             "java",
@@ -7832,7 +7832,7 @@ impl LayerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "aws-flow-ruby",
             "custom",
@@ -8970,7 +8970,7 @@ impl VirtualizationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["hvm", "paravirtual"]
     }
 }
@@ -9417,7 +9417,7 @@ impl VolumeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["gp2", "io1", "standard"]
     }
 }
@@ -10589,7 +10589,7 @@ impl DeploymentCommandName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "configure",
             "deploy",

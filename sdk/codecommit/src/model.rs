@@ -1006,7 +1006,7 @@ impl MergeOptionTypeEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAST_FORWARD_MERGE", "SQUASH_MERGE", "THREE_WAY_MERGE"]
     }
 }
@@ -1098,7 +1098,7 @@ impl PullRequestStatusEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOSED", "OPEN"]
     }
 }
@@ -1188,7 +1188,7 @@ impl ApprovalState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPROVE", "REVOKE"]
     }
 }
@@ -2043,7 +2043,7 @@ impl RepositoryTriggerEventEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "all",
             "createReference",
@@ -2143,7 +2143,7 @@ impl FileModeTypeEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EXECUTABLE", "NORMAL", "SYMLINK"]
     }
 }
@@ -2339,7 +2339,7 @@ impl RelativeFileVersionEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AFTER", "BEFORE"]
     }
 }
@@ -2429,7 +2429,7 @@ impl OverrideStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OVERRIDE", "REVOKE"]
     }
 }
@@ -2909,7 +2909,7 @@ impl ReplacementTypeEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "KEEP_BASE",
             "KEEP_DESTINATION",
@@ -3016,7 +3016,7 @@ impl ConflictResolutionStrategyTypeEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCEPT_DESTINATION", "ACCEPT_SOURCE", "AUTOMERGE", "NONE"]
     }
 }
@@ -3108,7 +3108,7 @@ impl ConflictDetailLevelTypeEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FILE_LEVEL", "LINE_LEVEL"]
     }
 }
@@ -3279,7 +3279,7 @@ impl OrderEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ascending", "descending"]
     }
 }
@@ -3369,7 +3369,7 @@ impl SortByEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["lastModifiedDate", "repositoryName"]
     }
 }
@@ -4132,7 +4132,7 @@ impl ChangeTypeEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["A", "D", "M"]
     }
 }
@@ -4431,7 +4431,7 @@ impl ObjectTypeEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DIRECTORY", "FILE", "GIT_LINK", "SYMBOLIC_LINK"]
     }
 }
@@ -7627,7 +7627,7 @@ impl PullRequestEventType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "PULL_REQUEST_APPROVAL_RULE_CREATED",
             "PULL_REQUEST_APPROVAL_RULE_DELETED",

@@ -90,7 +90,7 @@ impl MacAlgorithmSpec {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "HMAC_SHA_224",
             "HMAC_SHA_256",
@@ -227,7 +227,7 @@ impl SigningAlgorithmSpec {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ECDSA_SHA_256",
             "ECDSA_SHA_384",
@@ -328,7 +328,7 @@ impl MessageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DIGEST", "RAW"]
     }
 }
@@ -524,7 +524,7 @@ impl KeyState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Creating",
             "Disabled",
@@ -1457,7 +1457,7 @@ impl MultiRegionKeyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRIMARY", "REPLICA"]
     }
 }
@@ -1559,7 +1559,7 @@ impl EncryptionAlgorithmSpec {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "RSAES_OAEP_SHA_1",
             "RSAES_OAEP_SHA_256",
@@ -1709,7 +1709,7 @@ impl KeySpec {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ECC_NIST_P256",
             "ECC_NIST_P384",
@@ -1871,7 +1871,7 @@ impl CustomerMasterKeySpec {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ECC_NIST_P256",
             "ECC_NIST_P384",
@@ -1975,7 +1975,7 @@ impl KeyManagerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS", "CUSTOMER"]
     }
 }
@@ -2067,7 +2067,7 @@ impl ExpirationModelType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KEY_MATERIAL_DOES_NOT_EXPIRE", "KEY_MATERIAL_EXPIRES"]
     }
 }
@@ -2162,7 +2162,7 @@ impl OriginType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_CLOUDHSM", "AWS_KMS", "EXTERNAL"]
     }
 }
@@ -2257,7 +2257,7 @@ impl KeyUsageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENCRYPT_DECRYPT", "GENERATE_VERIFY_MAC", "SIGN_VERIFY"]
     }
 }
@@ -2786,7 +2786,7 @@ impl GrantOperation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CreateGrant",
             "Decrypt",
@@ -3107,7 +3107,7 @@ impl WrappingKeySpec {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RSA_2048"]
     }
 }
@@ -3202,7 +3202,7 @@ impl AlgorithmSpec {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RSAES_OAEP_SHA_1", "RSAES_OAEP_SHA_256", "RSAES_PKCS1_V1_5"]
     }
 }
@@ -3292,7 +3292,7 @@ impl DataKeySpec {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AES_128", "AES_256"]
     }
 }
@@ -3412,7 +3412,7 @@ impl DataKeyPairSpec {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ECC_NIST_P256",
             "ECC_NIST_P384",
@@ -3819,7 +3819,7 @@ impl ConnectionErrorCodeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CLUSTER_NOT_FOUND",
             "INSUFFICIENT_CLOUDHSM_HSMS",
@@ -3937,7 +3937,7 @@ impl ConnectionStateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONNECTED",
             "CONNECTING",

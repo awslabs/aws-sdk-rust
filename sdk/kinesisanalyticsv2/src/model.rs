@@ -721,7 +721,7 @@ impl ApplicationMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INTERACTIVE", "STREAMING"]
     }
 }
@@ -1728,7 +1728,7 @@ impl ArtifactType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEPENDENCY_JAR", "UDF"]
     }
 }
@@ -2150,7 +2150,7 @@ impl LogLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEBUG", "ERROR", "INFO", "WARN"]
     }
 }
@@ -2898,7 +2898,7 @@ impl ConfigurationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CUSTOM", "DEFAULT"]
     }
 }
@@ -3099,7 +3099,7 @@ impl MetricsLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPLICATION", "OPERATOR", "PARALLELISM", "TASK"]
     }
 }
@@ -3624,7 +3624,7 @@ impl ApplicationRestoreType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "RESTORE_FROM_CUSTOM_SNAPSHOT",
             "RESTORE_FROM_LATEST_SNAPSHOT",
@@ -4032,7 +4032,7 @@ impl CodeContentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PLAINTEXT", "ZIPFILE"]
     }
 }
@@ -4904,7 +4904,7 @@ impl RecordFormatType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CSV", "JSON"]
     }
 }
@@ -5974,7 +5974,7 @@ impl InputStartingPosition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LAST_STOPPED_POINT", "NOW", "TRIM_HORIZON"]
     }
 }
@@ -6489,7 +6489,7 @@ impl ApplicationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AUTOSCALING",
             "DELETING",
@@ -6618,7 +6618,7 @@ impl RuntimeEnvironment {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FLINK-1_11",
             "FLINK-1_13",
@@ -10738,7 +10738,7 @@ impl SnapshotStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATING", "DELETING", "FAILED", "READY"]
     }
 }
@@ -11196,7 +11196,7 @@ impl UrlType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FLINK_DASHBOARD_URL", "ZEPPELIN_UI_URL"]
     }
 }

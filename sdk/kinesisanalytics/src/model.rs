@@ -1035,7 +1035,7 @@ impl RecordFormatType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CSV", "JSON"]
     }
 }
@@ -2694,7 +2694,7 @@ impl InputStartingPosition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LAST_STOPPED_POINT", "NOW", "TRIM_HORIZON"]
     }
 }
@@ -2913,7 +2913,7 @@ impl ApplicationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DELETING", "READY", "RUNNING", "STARTING", "STOPPING", "UPDATING",
         ]

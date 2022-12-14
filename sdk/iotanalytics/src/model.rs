@@ -3732,7 +3732,7 @@ impl ComputeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACU_1", "ACU_2"]
     }
 }
@@ -4497,7 +4497,7 @@ impl LoggingLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ERROR"]
     }
 }
@@ -4837,7 +4837,7 @@ impl ReprocessingStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "FAILED", "RUNNING", "SUCCEEDED"]
     }
 }
@@ -5438,7 +5438,7 @@ impl FileFormatType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JSON", "PARQUET"]
     }
 }
@@ -5533,7 +5533,7 @@ impl DatastoreStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING"]
     }
 }
@@ -6286,7 +6286,7 @@ impl DatasetActionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONTAINER", "QUERY"]
     }
 }
@@ -6381,7 +6381,7 @@ impl DatasetStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING"]
     }
 }
@@ -6703,7 +6703,7 @@ impl DatasetContentState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATING", "FAILED", "SUCCEEDED"]
     }
 }
@@ -6976,7 +6976,7 @@ impl ChannelStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING"]
     }
 }

@@ -90,7 +90,7 @@ impl VpcLinkStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "FAILED", "PENDING"]
     }
 }
@@ -315,7 +315,7 @@ impl Op {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["add", "copy", "move", "remove", "replace", "test"]
     }
 }
@@ -508,7 +508,7 @@ impl QuotaPeriodType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAY", "MONTH", "WEEK"]
     }
 }
@@ -1283,7 +1283,7 @@ impl UnauthorizedCacheControlHeaderStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FAIL_WITH_403",
             "SUCCEED_WITHOUT_RESPONSE_HEADER",
@@ -1394,7 +1394,7 @@ impl CacheClusterStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "CREATE_IN_PROGRESS",
@@ -1520,7 +1520,7 @@ impl CacheClusterSize {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["0.5", "1.6", "118", "13.5", "237", "28.4", "58.2", "6.1"]
     }
 }
@@ -1708,7 +1708,7 @@ impl EndpointType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EDGE", "PRIVATE", "REGIONAL"]
     }
 }
@@ -1798,7 +1798,7 @@ impl ApiKeySourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTHORIZER", "HEADER"]
     }
 }
@@ -2921,7 +2921,7 @@ impl ContentHandlingStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONVERT_TO_BINARY", "CONVERT_TO_TEXT"]
     }
 }
@@ -3011,7 +3011,7 @@ impl ConnectionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INTERNET", "VPC_LINK"]
     }
 }
@@ -3116,7 +3116,7 @@ impl IntegrationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS", "AWS_PROXY", "HTTP", "HTTP_PROXY", "MOCK"]
     }
 }
@@ -3432,7 +3432,7 @@ impl GatewayResponseType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
             "API_CONFIGURATION_ERROR",
@@ -3654,7 +3654,7 @@ impl SecurityPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TLS_1_0", "TLS_1_2"]
     }
 }
@@ -3759,7 +3759,7 @@ impl DomainNameStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "PENDING",
@@ -4045,7 +4045,7 @@ impl DocumentationPartType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "API",
             "AUTHORIZER",
@@ -4231,7 +4231,7 @@ impl AuthorizerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COGNITO_USER_POOLS", "REQUEST", "TOKEN"]
     }
 }
@@ -4321,7 +4321,7 @@ impl PutMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["merge", "overwrite"]
     }
 }
@@ -4406,7 +4406,7 @@ impl ApiKeysFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["csv"]
     }
 }
@@ -7403,7 +7403,7 @@ impl LocationStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DOCUMENTED", "UNDOCUMENTED"]
     }
 }

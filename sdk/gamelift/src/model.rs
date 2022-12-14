@@ -1090,7 +1090,7 @@ impl FlexMatchMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STANDALONE", "WITH_QUEUE"]
     }
 }
@@ -1180,7 +1180,7 @@ impl BackfillMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTOMATIC", "MANUAL"]
     }
 }
@@ -1756,7 +1756,7 @@ impl PriorityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COST", "DESTINATION", "LATENCY", "LOCATION"]
     }
 }
@@ -2607,7 +2607,7 @@ impl PlayerSessionCreationPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCEPT_ALL", "DENY_ALL"]
     }
 }
@@ -2694,7 +2694,7 @@ impl GameSessionStatusReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INTERRUPTED"]
     }
 }
@@ -2801,7 +2801,7 @@ impl GameSessionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVATING", "ACTIVE", "ERROR", "TERMINATED", "TERMINATING"]
     }
 }
@@ -2891,7 +2891,7 @@ impl ProtectionPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FullProtection", "NoProtection"]
     }
 }
@@ -3370,7 +3370,7 @@ impl GameServerGroupAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["REPLACE_INSTANCE_TYPES"]
     }
 }
@@ -3487,7 +3487,7 @@ impl GameServerGroupStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVATING",
             "ACTIVE",
@@ -3587,7 +3587,7 @@ impl GameServerProtectionPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL_PROTECTION", "NO_PROTECTION"]
     }
 }
@@ -3684,7 +3684,7 @@ impl BalancingStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ON_DEMAND_ONLY", "SPOT_ONLY", "SPOT_PREFERRED"]
     }
 }
@@ -4288,7 +4288,7 @@ impl GameServerGroupInstanceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "c4.2xlarge",
             "c4.4xlarge",
@@ -4780,7 +4780,7 @@ impl GameServerUtilizationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "UTILIZED"]
     }
 }
@@ -4867,7 +4867,7 @@ impl GameServerClaimStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLAIMED"]
     }
 }
@@ -4954,7 +4954,7 @@ impl GameServerHealthCheck {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HEALTHY"]
     }
 }
@@ -5172,7 +5172,7 @@ impl IpProtocol {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TCP", "UDP"]
     }
 }
@@ -5589,7 +5589,7 @@ impl OperatingSystem {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AMAZON_LINUX", "AMAZON_LINUX_2", "WINDOWS_2012"]
     }
 }
@@ -5684,7 +5684,7 @@ impl BuildStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "INITIALIZED", "READY"]
     }
 }
@@ -6094,7 +6094,7 @@ impl RoutingStrategyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SIMPLE", "TERMINAL"]
     }
 }
@@ -7009,7 +7009,7 @@ impl GameSessionPlacementState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "FAILED", "FULFILLED", "PENDING", "TIMED_OUT"]
     }
 }
@@ -7094,7 +7094,7 @@ impl FleetAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTO_SCALING"]
     }
 }
@@ -8137,7 +8137,7 @@ impl MatchmakingConfigurationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
             "COMPLETED",
@@ -8472,7 +8472,7 @@ impl PolicyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RuleBased", "TargetBased"]
     }
 }
@@ -8607,7 +8607,7 @@ impl MetricName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ActivatingGameSessions",
             "ActiveGameSessions",
@@ -8725,7 +8725,7 @@ impl ComparisonOperatorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "GreaterThanOrEqualToThreshold",
             "GreaterThanThreshold",
@@ -8827,7 +8827,7 @@ impl ScalingAdjustmentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ChangeInCapacity",
             "ExactCapacity",
@@ -8921,7 +8921,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
 }
@@ -10103,7 +10103,7 @@ impl LocationUpdateStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PENDING_UPDATE"]
     }
 }
@@ -10220,7 +10220,7 @@ impl ScalingStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "DELETED",
@@ -10706,7 +10706,7 @@ impl PlayerSessionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "COMPLETED", "RESERVED", "TIMEDOUT"]
     }
 }
@@ -11285,7 +11285,7 @@ impl InstanceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "PENDING", "TERMINATING"]
     }
 }
@@ -11935,7 +11935,7 @@ impl Ec2InstanceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "c3.2xlarge",
             "c3.4xlarge",
@@ -12392,7 +12392,7 @@ impl GameServerInstanceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DRAINING", "SPOT_TERMINATING"]
     }
 }
@@ -13235,7 +13235,7 @@ impl FleetStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVATING",
             "ACTIVE",
@@ -13892,7 +13892,7 @@ impl EventCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FLEET_ACTIVATION_FAILED",
             "FLEET_ACTIVATION_FAILED_NO_INSTANCES",
@@ -14737,7 +14737,7 @@ impl CertificateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "GENERATED"]
     }
 }
@@ -14827,7 +14827,7 @@ impl FleetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ON_DEMAND", "SPOT"]
     }
 }
@@ -15044,7 +15044,7 @@ impl GameServerGroupDeleteOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FORCE_DELETE", "RETAIN", "SAFE_DELETE"]
     }
 }
@@ -15438,7 +15438,7 @@ impl AcceptanceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCEPT", "REJECT"]
     }
 }

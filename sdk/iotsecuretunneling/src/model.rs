@@ -244,7 +244,7 @@ impl ClientMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "DESTINATION", "SOURCE"]
     }
 }
@@ -556,7 +556,7 @@ impl TunnelStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOSED", "OPEN"]
     }
 }
@@ -1020,7 +1020,7 @@ impl ConnectionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONNECTED", "DISCONNECTED"]
     }
 }

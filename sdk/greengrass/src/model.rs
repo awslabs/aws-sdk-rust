@@ -219,7 +219,7 @@ impl Telemetry {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Off", "On"]
     }
 }
@@ -1204,7 +1204,7 @@ impl DeploymentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ForceResetDeployment",
             "NewDeployment",
@@ -1772,7 +1772,7 @@ impl ConfigurationSyncStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["InSync", "OutOfSync"]
     }
 }
@@ -2690,7 +2690,7 @@ impl Permission {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ro", "rw"]
     }
 }
@@ -3339,7 +3339,7 @@ impl LoggerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWSCloudWatch", "FileSystem"]
     }
 }
@@ -3444,7 +3444,7 @@ impl LoggerLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEBUG", "ERROR", "FATAL", "INFO", "WARN"]
     }
 }
@@ -3534,7 +3534,7 @@ impl LoggerComponent {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GreengrassSystem", "Lambda"]
     }
 }
@@ -4629,7 +4629,7 @@ impl FunctionIsolationMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GreengrassContainer", "NoContainer"]
     }
 }
@@ -4719,7 +4719,7 @@ impl EncodingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["binary", "json"]
     }
 }
@@ -5515,7 +5515,7 @@ impl BulkDeploymentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Completed",
             "Failed",
@@ -5719,7 +5719,7 @@ impl UpdateTargetsOperatingSystem {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["amazon_linux", "openwrt", "raspbian", "ubuntu"]
     }
 }
@@ -5821,7 +5821,7 @@ impl UpdateTargetsArchitecture {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["aarch64", "armv6l", "armv7l", "x86_64"]
     }
 }
@@ -5943,7 +5943,7 @@ impl UpdateAgentLogLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DEBUG", "ERROR", "FATAL", "INFO", "NONE", "TRACE", "VERBOSE", "WARN",
         ]
@@ -6035,7 +6035,7 @@ impl SoftwareToUpdate {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["core", "ota_agent"]
     }
 }

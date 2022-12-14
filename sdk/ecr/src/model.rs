@@ -167,7 +167,7 @@ impl LifecyclePolicyPreviewStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "EXPIRED", "FAILED", "IN_PROGRESS"]
     }
 }
@@ -362,7 +362,7 @@ impl ScanStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "COMPLETE",
@@ -768,7 +768,7 @@ impl RepositoryFilterType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PREFIX_MATCH"]
     }
 }
@@ -1183,7 +1183,7 @@ impl ScanningRepositoryFilterType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["WILDCARD"]
     }
 }
@@ -1278,7 +1278,7 @@ impl ScanFrequency {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONTINUOUS_SCAN", "MANUAL", "SCAN_ON_PUSH"]
     }
 }
@@ -1368,7 +1368,7 @@ impl ScanType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BASIC", "ENHANCED"]
     }
 }
@@ -1460,7 +1460,7 @@ impl ImageTagMutability {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IMMUTABLE", "MUTABLE"]
     }
 }
@@ -1815,7 +1815,7 @@ impl TagStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ANY", "TAGGED", "UNTAGGED"]
     }
 }
@@ -2166,7 +2166,7 @@ impl ImageActionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EXPIRE"]
     }
 }
@@ -2737,7 +2737,7 @@ impl EncryptionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AES256", "KMS"]
     }
 }
@@ -5182,7 +5182,7 @@ impl FindingSeverity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CRITICAL",
             "HIGH",
@@ -5900,7 +5900,7 @@ impl ReplicationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "FAILED", "IN_PROGRESS"]
     }
 }
@@ -6097,7 +6097,7 @@ impl ScanningConfigurationFailureCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["REPOSITORY_NOT_FOUND"]
     }
 }
@@ -6476,7 +6476,7 @@ impl ImageFailureCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ImageNotFound",
             "ImageReferencedByManifestList",
@@ -6675,7 +6675,7 @@ impl LayerFailureCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["InvalidLayerDigest", "MissingLayerDigest"]
     }
 }
@@ -6885,7 +6885,7 @@ impl LayerAvailability {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "UNAVAILABLE"]
     }
 }

@@ -90,7 +90,7 @@ impl Status {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "Failed", "Inactive", "Pending"]
     }
 }
@@ -182,7 +182,7 @@ impl InferredWorkloadTypesPreference {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "Inactive"]
     }
 }
@@ -274,7 +274,7 @@ impl EnhancedInfrastructureMetrics {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "Inactive"]
     }
 }
@@ -499,7 +499,7 @@ impl ScopeName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AccountId", "Organization", "ResourceArn"]
     }
 }
@@ -604,7 +604,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AutoScalingGroup",
             "EbsVolume",
@@ -1159,7 +1159,7 @@ impl Currency {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CNY", "USD"]
     }
 }
@@ -1261,7 +1261,7 @@ impl RecommendationSourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AutoScalingGroup",
             "EbsVolume",
@@ -1541,7 +1541,7 @@ impl FindingReasonCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MemoryOverprovisioned", "MemoryUnderprovisioned"]
     }
 }
@@ -1641,7 +1641,7 @@ impl Finding {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "NotOptimized",
             "Optimized",
@@ -2331,7 +2331,7 @@ impl CurrentPerformanceRisk {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["High", "Low", "Medium", "VeryLow"]
     }
 }
@@ -2678,7 +2678,7 @@ impl LambdaFunctionMemoryMetricStatistic {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Expected", "LowerBound", "UpperBound"]
     }
 }
@@ -2765,7 +2765,7 @@ impl LambdaFunctionMemoryMetricName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Duration"]
     }
 }
@@ -2875,7 +2875,7 @@ impl LambdaFunctionRecommendationFindingReasonCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Inconclusive",
             "InsufficientData",
@@ -2977,7 +2977,7 @@ impl LambdaFunctionRecommendationFinding {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NotOptimized", "Optimized", "Unavailable"]
     }
 }
@@ -3198,7 +3198,7 @@ impl LambdaFunctionMetricStatistic {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Average", "Maximum"]
     }
 }
@@ -3290,7 +3290,7 @@ impl LambdaFunctionMetricName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Duration", "Memory"]
     }
 }
@@ -3500,7 +3500,7 @@ impl LambdaFunctionRecommendationFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Finding", "FindingReasonCode"]
     }
 }
@@ -3807,7 +3807,7 @@ impl EnrollmentFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Status"]
     }
 }
@@ -4216,7 +4216,7 @@ impl MetricName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Cpu",
             "DISK_READ_BYTES_PER_SECOND",
@@ -4418,7 +4418,7 @@ impl CpuVendorArchitecture {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_ARM64", "CURRENT"]
     }
 }
@@ -4508,7 +4508,7 @@ impl MetricStatistic {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Average", "Maximum"]
     }
 }
@@ -5297,7 +5297,7 @@ impl InferredWorkloadType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AmazonEmr",
             "ApacheCassandra",
@@ -5937,7 +5937,7 @@ impl MigrationEffort {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["High", "Low", "Medium", "VeryLow"]
     }
 }
@@ -6049,7 +6049,7 @@ impl PlatformDifference {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Architecture",
             "Hypervisor",
@@ -6457,7 +6457,7 @@ impl InstanceRecommendationFindingReasonCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CPUOverprovisioned",
             "CPUUnderprovisioned",
@@ -6766,7 +6766,7 @@ impl FilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Finding", "FindingReasonCodes", "RecommendationSourceType"]
     }
 }
@@ -7577,7 +7577,7 @@ impl EbsMetricName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "VolumeReadBytesPerSecond",
             "VolumeReadOpsPerSecond",
@@ -7672,7 +7672,7 @@ impl EbsFinding {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NotOptimized", "Optimized"]
     }
 }
@@ -7850,7 +7850,7 @@ impl EbsFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Finding"]
     }
 }
@@ -8784,7 +8784,7 @@ impl FileFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Csv"]
     }
 }
@@ -9070,7 +9070,7 @@ impl ExportableLambdaFunctionField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccountId",
             "CurrentConfigurationMemorySize",
@@ -9437,7 +9437,7 @@ impl ExportableInstanceField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccountId",
             "CurrentInstanceType",
@@ -9796,7 +9796,7 @@ impl ExportableVolumeField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccountId",
             "CurrentConfigurationVolumeBaselineIOPS",
@@ -10175,7 +10175,7 @@ impl ExportableAutoScalingGroupField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccountId",
             "AutoScalingGroupArn",
@@ -10522,7 +10522,7 @@ impl JobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Complete", "Failed", "InProgress", "Queued"]
     }
 }
@@ -10778,7 +10778,7 @@ impl JobFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JobStatus", "ResourceType"]
     }
 }
@@ -10874,7 +10874,7 @@ impl RecommendationPreferenceName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EnhancedInfrastructureMetrics", "InferredWorkloadTypes"]
     }
 }

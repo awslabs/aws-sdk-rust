@@ -634,7 +634,7 @@ impl RetentionIntervalUnitValues {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAYS", "MONTHS", "WEEKS", "YEARS"]
     }
 }
@@ -989,7 +989,7 @@ impl EventTypeValues {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["shareSnapshot"]
     }
 }
@@ -1076,7 +1076,7 @@ impl EventSourceValues {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MANAGED_CWE"]
     }
 }
@@ -2782,7 +2782,7 @@ impl IntervalUnitValues {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HOURS"]
     }
 }
@@ -2872,7 +2872,7 @@ impl LocationValues {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOUD", "OUTPOST_LOCAL"]
     }
 }
@@ -2964,7 +2964,7 @@ impl ResourceLocationValues {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOUD", "OUTPOST"]
     }
 }
@@ -3056,7 +3056,7 @@ impl ResourceTypeValues {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INSTANCE", "VOLUME"]
     }
 }
@@ -3151,7 +3151,7 @@ impl PolicyTypeValues {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EBS_SNAPSHOT_MANAGEMENT",
             "EVENT_BASED_POLICY",
@@ -3247,7 +3247,7 @@ impl SettablePolicyStateValues {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -3618,7 +3618,7 @@ impl GettablePolicyStateValues {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED", "ERROR"]
     }
 }

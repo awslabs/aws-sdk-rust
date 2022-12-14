@@ -75,7 +75,7 @@ impl StorageClass {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TEMPORAL"]
     }
 }
@@ -167,7 +167,7 @@ impl UploadAvailability {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STANDARD", "STREAMING"]
     }
 }
@@ -415,7 +415,7 @@ impl ItemType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FOLDER", "OBJECT"]
     }
 }

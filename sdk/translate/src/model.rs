@@ -97,7 +97,7 @@ impl ParallelDataStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
     }
 }
@@ -272,7 +272,7 @@ impl ParallelDataFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CSV", "TMX", "TSV"]
     }
 }
@@ -454,7 +454,7 @@ impl Profanity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MASK"]
     }
 }
@@ -544,7 +544,7 @@ impl Formality {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FORMAL", "INFORMAL"]
     }
 }
@@ -893,7 +893,7 @@ impl JobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "COMPLETED_WITH_ERROR",
@@ -1144,7 +1144,7 @@ impl EncryptionKeyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KMS"]
     }
 }
@@ -2376,7 +2376,7 @@ impl TerminologyDataFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CSV", "TMX", "TSV"]
     }
 }
@@ -2466,7 +2466,7 @@ impl Directionality {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MULTI", "UNI"]
     }
 }
@@ -3015,7 +3015,7 @@ impl DisplayLanguageCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "de", "en", "es", "fr", "it", "ja", "ko", "pt", "zh", "zh-TW",
         ]
@@ -3438,7 +3438,7 @@ impl MergeStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OVERWRITE"]
     }
 }

@@ -399,7 +399,7 @@ impl ParameterExceptionField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AND_STATEMENT",
             "ASSOCIABLE_RESOURCE",
@@ -761,7 +761,7 @@ impl ResponseContentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPLICATION_JSON", "TEXT_HTML", "TEXT_PLAIN"]
     }
 }
@@ -3032,7 +3032,7 @@ impl TextTransformationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BASE64_DECODE",
             "BASE64_DECODE_EXT",
@@ -3566,7 +3566,7 @@ impl OversizeHandling {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONTINUE", "MATCH", "NO_MATCH"]
     }
 }
@@ -3661,7 +3661,7 @@ impl MapMatchScope {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "KEY", "VALUE"]
     }
 }
@@ -4379,7 +4379,7 @@ impl BodyParsingFallbackBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EVALUATE_AS_STRING", "MATCH", "NO_MATCH"]
     }
 }
@@ -4474,7 +4474,7 @@ impl JsonMatchScope {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "KEY", "VALUE"]
     }
 }
@@ -5097,7 +5097,7 @@ impl LabelMatchScope {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LABEL", "NAMESPACE"]
     }
 }
@@ -5625,7 +5625,7 @@ impl PayloadType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FORM_ENCODED", "JSON"]
     }
 }
@@ -6246,7 +6246,7 @@ impl FallbackBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MATCH", "NO_MATCH"]
     }
 }
@@ -6338,7 +6338,7 @@ impl RateBasedStatementAggregateKeyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FORWARDED_IP", "IP"]
     }
 }
@@ -6804,7 +6804,7 @@ impl ForwardedIpPosition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ANY", "FIRST", "LAST"]
     }
 }
@@ -8314,7 +8314,7 @@ impl CountryCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AT", "AU", "AW",
             "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN",
@@ -8578,7 +8578,7 @@ impl ComparisonOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EQ", "GE", "GT", "LE", "LT", "NE"]
     }
 }
@@ -8879,7 +8879,7 @@ impl SensitivityLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HIGH", "LOW"]
     }
 }
@@ -9222,7 +9222,7 @@ impl PositionalConstraint {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONTAINS",
             "CONTAINS_WORD",
@@ -9393,7 +9393,7 @@ impl Scope {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOUDFRONT", "REGIONAL"]
     }
 }
@@ -9967,7 +9967,7 @@ impl FilterBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DROP", "KEEP"]
     }
 }
@@ -10373,7 +10373,7 @@ impl ActionValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "BLOCK", "CAPTCHA", "COUNT", "EXCLUDED_AS_COUNT"]
     }
 }
@@ -10465,7 +10465,7 @@ impl FilterRequirement {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MEETS_ALL", "MEETS_ANY"]
     }
 }
@@ -10920,7 +10920,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "API_GATEWAY",
             "APPLICATION_LOAD_BALANCER",
@@ -11231,7 +11231,7 @@ impl Platform {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ANDROID", "IOS"]
     }
 }
@@ -13074,7 +13074,7 @@ impl FailureReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TOKEN_EXPIRED", "TOKEN_MISSING"]
     }
 }
@@ -14075,7 +14075,7 @@ impl IpAddressVersion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IPV4", "IPV6"]
     }
 }

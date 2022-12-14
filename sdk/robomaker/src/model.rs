@@ -283,7 +283,7 @@ impl RenderingEngineType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OGRE"]
     }
 }
@@ -466,7 +466,7 @@ impl RobotSoftwareSuiteVersionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Dashing", "Foxy", "Kinetic", "Melodic"]
     }
 }
@@ -563,7 +563,7 @@ impl RobotSoftwareSuiteType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["General", "ROS", "ROS2"]
     }
 }
@@ -738,7 +738,7 @@ impl SimulationSoftwareSuiteType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Gazebo", "RosbagPlay", "SimulationRuntime"]
     }
 }
@@ -951,7 +951,7 @@ impl Architecture {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ARM64", "ARMHF", "X86_64"]
     }
 }
@@ -1263,7 +1263,7 @@ impl DeploymentJobErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BadLambdaAssociated",
             "BadPermissionError",
@@ -1889,7 +1889,7 @@ impl DeploymentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Canceled",
             "Failed",
@@ -2224,7 +2224,7 @@ impl ComputeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CPU", "GPU_AND_CPU"]
     }
 }
@@ -2356,7 +2356,7 @@ impl SimulationJobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Canceled",
             "Completed",
@@ -3249,7 +3249,7 @@ impl DataSourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Archive", "File", "Prefix"]
     }
 }
@@ -3765,7 +3765,7 @@ impl ExitBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAIL", "RESTART"]
     }
 }
@@ -4094,7 +4094,7 @@ impl UploadBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["UPLOAD_ON_TERMINATE", "UPLOAD_ROLLING_AUTO_REMOVE"]
     }
 }
@@ -4790,7 +4790,7 @@ impl FailureBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Continue", "Fail"]
     }
 }
@@ -5344,7 +5344,7 @@ impl SimulationJobErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BadPermissionsCloudwatchLogs",
             "BadPermissionsRobotApplication",
@@ -5463,7 +5463,7 @@ impl SimulationJobBatchErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["InternalServiceError"]
     }
 }
@@ -5673,7 +5673,7 @@ impl SimulationJobBatchStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Canceled",
             "Canceling",
@@ -6585,7 +6585,7 @@ impl WorldGenerationJobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Canceled",
             "Canceling",
@@ -7010,7 +7010,7 @@ impl WorldExportJobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Canceled",
             "Canceling",
@@ -7944,7 +7944,7 @@ impl RobotStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Available",
             "Deploying",
@@ -9021,7 +9021,7 @@ impl WorldGenerationJobErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AllWorldGenerationFailed",
             "InternalServiceError",
@@ -9140,7 +9140,7 @@ impl WorldExportJobErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
             "InternalServiceError",
@@ -10306,7 +10306,7 @@ impl RobotDeploymentStep {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DownloadingExtracting",
             "ExecutingDownloadCondition",

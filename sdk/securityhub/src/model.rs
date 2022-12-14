@@ -80,7 +80,7 @@ impl ControlStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -172,7 +172,7 @@ impl AutoEnableStandards {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT", "NONE"]
     }
 }
@@ -3769,7 +3769,7 @@ impl StringFilterComparison {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EQUALS", "NOT_EQUALS", "PREFIX", "PREFIX_NOT_EQUALS"]
     }
 }
@@ -4175,7 +4175,7 @@ impl DateRangeUnit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAYS"]
     }
 }
@@ -4385,7 +4385,7 @@ impl MapFilterComparison {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EQUALS", "NOT_EQUALS"]
     }
 }
@@ -4528,7 +4528,7 @@ impl RecordState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "ARCHIVED"]
     }
 }
@@ -4768,7 +4768,7 @@ impl AdminStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLE_IN_PROGRESS", "ENABLED"]
     }
 }
@@ -7012,7 +7012,7 @@ impl SeverityLabel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CRITICAL", "HIGH", "INFORMATIONAL", "LOW", "MEDIUM"]
     }
 }
@@ -9284,7 +9284,7 @@ impl VulnerabilityFixAvailable {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NO", "PARTIAL", "YES"]
     }
 }
@@ -10177,7 +10177,7 @@ impl WorkflowStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NEW", "NOTIFIED", "RESOLVED", "SUPPRESSED"]
     }
 }
@@ -10285,7 +10285,7 @@ impl WorkflowState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASSIGNED", "DEFERRED", "IN_PROGRESS", "NEW", "RESOLVED"]
     }
 }
@@ -10387,7 +10387,7 @@ impl VerificationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BENIGN_POSITIVE",
             "FALSE_POSITIVE",
@@ -10723,7 +10723,7 @@ impl ComplianceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "NOT_AVAILABLE", "PASSED", "WARNING"]
     }
 }
@@ -60606,7 +60606,7 @@ impl AwsIamAccessKeyStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "Inactive"]
     }
 }
@@ -62169,7 +62169,7 @@ impl AwsS3BucketNotificationConfigurationS3KeyFilterRuleName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Prefix", "Suffix"]
     }
 }
@@ -76715,7 +76715,7 @@ impl Partition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["aws", "aws-cn", "aws-us-gov"]
     }
 }
@@ -76995,7 +76995,7 @@ impl ThreatIntelIndicatorCategory {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BACKDOOR",
             "CARD_STEALER",
@@ -77139,7 +77139,7 @@ impl ThreatIntelIndicatorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DOMAIN",
             "EMAIL_ADDRESS",
@@ -78332,7 +78332,7 @@ impl NetworkDirection {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IN", "OUT"]
     }
 }
@@ -78542,7 +78542,7 @@ impl MalwareState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OBSERVED", "REMOVAL_FAILED", "REMOVED"]
     }
 }
@@ -78697,7 +78697,7 @@ impl MalwareType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADWARE",
             "BLENDED_THREAT",
@@ -79230,7 +79230,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["asc", "desc"]
     }
 }
@@ -79591,7 +79591,7 @@ impl StatusReasonCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INTERNAL_ERROR", "NO_AVAILABLE_CONFIGURATION_RECORDER"]
     }
 }
@@ -79696,7 +79696,7 @@ impl StandardsStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETING", "FAILED", "INCOMPLETE", "PENDING", "READY"]
     }
 }
@@ -80062,7 +80062,7 @@ impl SeverityRating {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CRITICAL", "HIGH", "LOW", "MEDIUM"]
     }
 }
@@ -80552,7 +80552,7 @@ impl IntegrationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "RECEIVE_FINDINGS_FROM_SECURITY_HUB",
             "SEND_FINDINGS_TO_SECURITY_HUB",

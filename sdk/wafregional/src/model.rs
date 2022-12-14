@@ -92,7 +92,7 @@ impl ParameterExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ILLEGAL_ARGUMENT",
             "ILLEGAL_COMBINATION",
@@ -281,7 +281,7 @@ impl ParameterExceptionField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BYTE_MATCH_FIELD_TYPE",
             "BYTE_MATCH_POSITIONAL_CONSTRAINT",
@@ -730,7 +730,7 @@ impl TextTransformation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CMD_LINE",
             "COMPRESS_WHITE_SPACE",
@@ -978,7 +978,7 @@ impl MatchFieldType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALL_QUERY_ARGS",
             "BODY",
@@ -1076,7 +1076,7 @@ impl ChangeAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETE", "INSERT"]
     }
 }
@@ -1250,7 +1250,7 @@ impl WafActionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "BLOCK", "COUNT"]
     }
 }
@@ -1741,7 +1741,7 @@ impl WafRuleType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GROUP", "RATE_BASED", "REGULAR"]
     }
 }
@@ -1895,7 +1895,7 @@ impl WafOverrideActionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COUNT", "NONE"]
     }
 }
@@ -2728,7 +2728,7 @@ impl ComparisonOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EQ", "GE", "GT", "LE", "LT", "NE"]
     }
 }
@@ -3116,7 +3116,7 @@ impl PredicateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ByteMatch",
             "GeoMatch",
@@ -3858,7 +3858,7 @@ impl IpSetDescriptorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IPV4", "IPV6"]
     }
 }
@@ -5355,7 +5355,7 @@ impl GeoMatchConstraintValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AT", "AU", "AW",
             "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN",
@@ -5461,7 +5461,7 @@ impl GeoMatchConstraintType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Country"]
     }
 }
@@ -6062,7 +6062,7 @@ impl PositionalConstraint {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONTAINS",
             "CONTAINS_WORD",
@@ -7059,7 +7059,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["API_GATEWAY", "APPLICATION_LOAD_BALANCER"]
     }
 }
@@ -9271,7 +9271,7 @@ impl RateKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IP"]
     }
 }
@@ -9600,7 +9600,7 @@ impl ChangeTokenStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INSYNC", "PENDING", "PROVISIONED"]
     }
 }
@@ -9834,7 +9834,7 @@ impl MigrationErrorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ENTITY_NOT_FOUND",
             "ENTITY_NOT_SUPPORTED",

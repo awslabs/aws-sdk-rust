@@ -192,7 +192,7 @@ impl EventTypeCategory {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "accountNotification",
             "investigation",
@@ -699,7 +699,7 @@ impl EventStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["closed", "open", "upcoming"]
     }
 }
@@ -794,7 +794,7 @@ impl EventScopeCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT_SPECIFIC", "NONE", "PUBLIC"]
     }
 }
@@ -2808,7 +2808,7 @@ impl EventAggregateField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["eventTypeCategory"]
     }
 }
@@ -3356,7 +3356,7 @@ impl EntityStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IMPAIRED", "UNIMPAIRED", "UNKNOWN"]
     }
 }

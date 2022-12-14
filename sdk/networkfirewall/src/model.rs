@@ -599,7 +599,7 @@ impl EncryptionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_OWNED_KMS_KEY", "CUSTOMER_KMS"]
     }
 }
@@ -764,7 +764,7 @@ impl ResourceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETING"]
     }
 }
@@ -854,7 +854,7 @@ impl RuleGroupType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STATEFUL", "STATELESS"]
     }
 }
@@ -1131,7 +1131,7 @@ impl RuleOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT_ACTION_ORDER", "STRICT_ORDER"]
     }
 }
@@ -2293,7 +2293,7 @@ impl TcpFlag {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACK", "CWR", "ECE", "FIN", "PSH", "RST", "SYN", "URG"]
     }
 }
@@ -2977,7 +2977,7 @@ impl StatefulRuleDirection {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ANY", "FORWARD"]
     }
 }
@@ -3154,7 +3154,7 @@ impl StatefulRuleProtocol {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DCERPC", "DHCP", "DNS", "FTP", "HTTP", "ICMP", "IKEV2", "IMAP", "IP", "KRB5", "MSN",
             "NTP", "SMB", "SMTP", "SSH", "TCP", "TFTP", "TLS", "UDP",
@@ -3252,7 +3252,7 @@ impl StatefulAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALERT", "DROP", "PASS"]
     }
 }
@@ -3478,7 +3478,7 @@ impl GeneratedRulesType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOWLIST", "DENYLIST"]
     }
 }
@@ -3568,7 +3568,7 @@ impl TargetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HTTP_HOST", "TLS_SNI"]
     }
 }
@@ -4258,7 +4258,7 @@ impl LogDestinationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CloudWatchLogs", "KinesisDataFirehose", "S3"]
     }
 }
@@ -4348,7 +4348,7 @@ impl LogType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALERT", "FLOW"]
     }
 }
@@ -5282,7 +5282,7 @@ impl OverrideAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DROP_TO_ALERT"]
     }
 }
@@ -5524,7 +5524,7 @@ impl ResourceManagedType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_MANAGED_DOMAIN_LISTS", "AWS_MANAGED_THREAT_SIGNATURES"]
     }
 }
@@ -5616,7 +5616,7 @@ impl ResourceManagedStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT", "MANAGED"]
     }
 }
@@ -6499,7 +6499,7 @@ impl PerObjectSyncStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CAPACITY_CONSTRAINED", "IN_SYNC", "PENDING"]
     }
 }
@@ -6697,7 +6697,7 @@ impl AttachmentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATING", "DELETING", "READY", "SCALING"]
     }
 }
@@ -6794,7 +6794,7 @@ impl ConfigurationSyncState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CAPACITY_CONSTRAINED", "IN_SYNC", "PENDING"]
     }
 }
@@ -6891,7 +6891,7 @@ impl FirewallStatusValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETING", "PROVISIONING", "READY"]
     }
 }

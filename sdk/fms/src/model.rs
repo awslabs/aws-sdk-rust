@@ -830,7 +830,7 @@ impl CustomerPolicyScopeIdType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT", "ORG_UNIT"]
     }
 }
@@ -1341,7 +1341,7 @@ impl FirewallDeploymentModel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CENTRALIZED", "DISTRIBUTED"]
     }
 }
@@ -1532,7 +1532,7 @@ impl SecurityServiceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DNS_FIREWALL",
             "NETWORK_FIREWALL",
@@ -2021,7 +2021,7 @@ impl ThirdPartyFirewall {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PALO_ALTO_NETWORKS_CLOUD_NGFW"]
     }
 }
@@ -2658,7 +2658,7 @@ impl DependentServiceName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWSCONFIG", "AWSSHIELD_ADVANCED", "AWSVPC", "AWSWAF"]
     }
 }
@@ -2853,7 +2853,7 @@ impl PolicyComplianceStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLIANT", "NON_COMPLIANT"]
     }
 }
@@ -5131,7 +5131,7 @@ impl TargetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CARRIER_GATEWAY",
             "EGRESS_ONLY_INTERNET_GATEWAY",
@@ -5237,7 +5237,7 @@ impl DestinationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IPV4", "IPV6", "PREFIX_LIST"]
     }
 }
@@ -9619,7 +9619,7 @@ impl RuleOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT_ACTION_ORDER", "STRICT_ORDER"]
     }
 }
@@ -10948,7 +10948,7 @@ impl RemediationActionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MODIFY", "REMOVE"]
     }
 }
@@ -11130,7 +11130,7 @@ impl MarketplaceSubscriptionOnboardingStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "NOT_COMPLETE", "NO_SUBSCRIPTION"]
     }
 }
@@ -11237,7 +11237,7 @@ impl ThirdPartyFirewallAssociationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "NOT_EXIST",
             "OFFBOARDING",
@@ -11850,7 +11850,7 @@ impl ViolationReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BLACK_HOLE_ROUTE_DETECTED",
             "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET",
@@ -11986,7 +11986,7 @@ impl AccountRoleStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATING",
             "DELETED",

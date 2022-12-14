@@ -120,7 +120,7 @@ impl NoSuchEntityErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ASSESSMENT_RUN_DOES_NOT_EXIST",
             "ASSESSMENT_TARGET_DOES_NOT_EXIST",
@@ -569,7 +569,7 @@ impl InvalidInputErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN",
             "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN",
@@ -754,7 +754,7 @@ impl AccessDeniedErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED_TO_ASSESSMENT_RUN",
             "ACCESS_DENIED_TO_ASSESSMENT_TARGET",
@@ -868,7 +868,7 @@ impl InspectorEvent {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ASSESSMENT_RUN_COMPLETED",
             "ASSESSMENT_RUN_STARTED",
@@ -993,7 +993,7 @@ impl LimitExceededErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ASSESSMENT_RUN_LIMIT_EXCEEDED",
             "ASSESSMENT_TARGET_LIMIT_EXCEEDED",
@@ -1089,7 +1089,7 @@ impl StopAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SKIP_EVALUATION", "START_EVALUATION"]
     }
 }
@@ -1189,7 +1189,7 @@ impl InvalidCrossAccountRoleErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP",
             "ROLE_DOES_NOT_HAVE_CORRECT_POLICY",
@@ -1535,7 +1535,7 @@ impl FailedItemErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
             "DUPLICATE_ARN",
@@ -1847,7 +1847,7 @@ impl AgentHealth {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "UNHEALTHY", "UNKNOWN"]
     }
 }
@@ -2369,7 +2369,7 @@ impl Severity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["High", "Informational", "Low", "Medium", "Undefined"]
     }
 }
@@ -3157,7 +3157,7 @@ impl AssessmentRunState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
             "COLLECTING_DATA",
@@ -3576,7 +3576,7 @@ impl AgentHealthCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "IDLE",
             "RUNNING",
@@ -3998,7 +3998,7 @@ impl ScopeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INSTANCE_ID", "RULES_PACKAGE_ARN"]
     }
 }
@@ -4088,7 +4088,7 @@ impl PreviewStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "WORK_IN_PROGRESS"]
     }
 }
@@ -4173,7 +4173,7 @@ impl Locale {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EN_US"]
     }
 }
@@ -4268,7 +4268,7 @@ impl ReportStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "WORK_IN_PROGRESS"]
     }
 }
@@ -4358,7 +4358,7 @@ impl ReportType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FINDING", "FULL"]
     }
 }
@@ -4448,7 +4448,7 @@ impl ReportFileFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HTML", "PDF"]
     }
 }
@@ -5944,7 +5944,7 @@ impl AssetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ec2-instance"]
     }
 }
@@ -7292,7 +7292,7 @@ impl AssessmentRunNotificationSnsStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
             "INTERNAL_ERROR",

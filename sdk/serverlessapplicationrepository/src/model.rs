@@ -371,7 +371,7 @@ impl Capability {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CAPABILITY_AUTO_EXPAND",
             "CAPABILITY_IAM",
@@ -1439,7 +1439,7 @@ impl Status {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "EXPIRED", "PREPARING"]
     }
 }

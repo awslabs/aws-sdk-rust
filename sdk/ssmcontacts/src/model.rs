@@ -167,7 +167,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
             "FIELD_VALIDATION_FAILED",
@@ -1143,7 +1143,7 @@ impl ReceiptType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELIVERED", "ERROR", "READ", "SENT", "STOP"]
     }
 }
@@ -1593,7 +1593,7 @@ impl ContactType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ESCALATION", "PERSONAL"]
     }
 }
@@ -1867,7 +1867,7 @@ impl ActivationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVATED", "NOT_ACTIVATED"]
     }
 }
@@ -1962,7 +1962,7 @@ impl ChannelType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EMAIL", "SMS", "VOICE"]
     }
 }
@@ -2054,7 +2054,7 @@ impl AcceptCodeValidation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENFORCE", "IGNORE"]
     }
 }
@@ -2144,7 +2144,7 @@ impl AcceptType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELIVERED", "READ"]
     }
 }

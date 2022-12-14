@@ -185,7 +185,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
             "FIELD_VALIDATION_FAILED",
@@ -429,7 +429,7 @@ impl OptInStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -872,7 +872,7 @@ impl UpdateResourceCollectionAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ADD", "REMOVE"]
     }
 }
@@ -1087,7 +1087,7 @@ impl EventSourceOptInStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -1883,7 +1883,7 @@ impl ServiceName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "API_GATEWAY",
             "APPLICATION_ELB",
@@ -2375,7 +2375,7 @@ impl InsightStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOSED", "ONGOING"]
     }
 }
@@ -2470,7 +2470,7 @@ impl InsightSeverity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM"]
     }
 }
@@ -2884,7 +2884,7 @@ impl InsightType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PROACTIVE", "REACTIVE"]
     }
 }
@@ -3428,7 +3428,7 @@ impl InsightFeedbackOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALERT_TOO_SENSITIVE",
             "DATA_INCORRECT",
@@ -4300,7 +4300,7 @@ impl Locale {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DE_DE", "EN_GB", "EN_US", "ES_ES", "FR_FR", "IT_IT", "JA_JP", "KO_KR", "PT_BR",
             "ZH_CN", "ZH_TW",
@@ -5563,7 +5563,7 @@ impl NotificationMessageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CLOSED_INSIGHT",
             "NEW_ASSOCIATION",
@@ -5820,7 +5820,7 @@ impl ResourcePermission {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL_PERMISSION", "MISSING_PERMISSION"]
     }
 }
@@ -5997,7 +5997,7 @@ impl ResourceTypeFilter {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LOG_GROUPS"]
     }
 }
@@ -6410,7 +6410,7 @@ impl EventClass {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONFIG_CHANGE",
             "DEPLOYMENT",
@@ -6506,7 +6506,7 @@ impl EventDataSource {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_CLOUD_TRAIL", "AWS_CODE_DEPLOY"]
     }
 }
@@ -7293,7 +7293,7 @@ impl LogAnomalyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BLOCK_FORMAT",
             "FORMAT",
@@ -7821,7 +7821,7 @@ impl AnomalyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CAUSAL", "CONTEXTUAL"]
     }
 }
@@ -9305,7 +9305,7 @@ impl CloudWatchMetricDataStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Complete", "InternalError", "PartialData"]
     }
 }
@@ -9505,7 +9505,7 @@ impl CloudWatchMetricsStat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Average",
             "Maximum",
@@ -9841,7 +9841,7 @@ impl AnomalyStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOSED", "ONGOING"]
     }
 }
@@ -9936,7 +9936,7 @@ impl AnomalySeverity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM"]
     }
 }
@@ -10770,7 +10770,7 @@ impl ResourceCollectionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_CLOUD_FORMATION", "AWS_SERVICE", "AWS_TAGS"]
     }
 }
@@ -11081,7 +11081,7 @@ impl CostEstimationServiceResourceState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }
@@ -11173,7 +11173,7 @@ impl CostEstimationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "ONGOING"]
     }
 }
@@ -12079,7 +12079,7 @@ impl OrganizationResourceCollectionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWS_ACCOUNT",
             "AWS_CLOUD_FORMATION",

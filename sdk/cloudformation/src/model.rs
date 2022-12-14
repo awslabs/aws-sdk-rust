@@ -85,7 +85,7 @@ impl Capability {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CAPABILITY_AUTO_EXPAND",
             "CAPABILITY_IAM",
@@ -371,7 +371,7 @@ impl CallAs {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELEGATED_ADMIN", "SELF"]
     }
 }
@@ -542,7 +542,7 @@ impl PermissionModels {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SELF_MANAGED", "SERVICE_MANAGED"]
     }
 }
@@ -809,7 +809,7 @@ impl AccountFilterType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DIFFERENCE", "INTERSECTION", "NONE", "UNION"]
     }
 }
@@ -1126,7 +1126,7 @@ impl RegionConcurrencyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PARALLEL", "SEQUENTIAL"]
     }
 }
@@ -1628,7 +1628,7 @@ impl ThirdPartyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HOOK", "MODULE", "RESOURCE"]
     }
 }
@@ -1720,7 +1720,7 @@ impl ResourceSignalStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILURE", "SUCCESS"]
     }
 }
@@ -1815,7 +1815,7 @@ impl RegistryType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HOOK", "MODULE", "RESOURCE"]
     }
 }
@@ -2063,7 +2063,7 @@ impl HandlerErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
             "AlreadyExists",
@@ -2182,7 +2182,7 @@ impl OperationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "PENDING", "SUCCESS"]
     }
 }
@@ -2481,7 +2481,7 @@ impl DeprecatedStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEPRECATED", "LIVE"]
     }
 }
@@ -2944,7 +2944,7 @@ impl IdentityProvider {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_Marketplace", "Bitbucket", "GitHub"]
     }
 }
@@ -3186,7 +3186,7 @@ impl Category {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVATED", "AWS_TYPES", "REGISTERED", "THIRD_PARTY"]
     }
 }
@@ -3281,7 +3281,7 @@ impl ProvisioningType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULLY_MUTABLE", "IMMUTABLE", "NON_PROVISIONABLE"]
     }
 }
@@ -3371,7 +3371,7 @@ impl Visibility {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRIVATE", "PUBLIC"]
     }
 }
@@ -3468,7 +3468,7 @@ impl RegistrationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "FAILED", "IN_PROGRESS"]
     }
 }
@@ -3847,7 +3847,7 @@ impl StackDriftStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DRIFTED", "IN_SYNC", "NOT_CHECKED", "UNKNOWN"]
     }
 }
@@ -3937,7 +3937,7 @@ impl StackSetStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED"]
     }
 }
@@ -4251,7 +4251,7 @@ impl StackSetOperationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
             "QUEUED",
@@ -4360,7 +4360,7 @@ impl StackSetOperationAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE", "DELETE", "DETECT_DRIFT", "UPDATE"]
     }
 }
@@ -4775,7 +4775,7 @@ impl AccountGateStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "SKIPPED", "SUCCEEDED"]
     }
 }
@@ -4882,7 +4882,7 @@ impl StackSetOperationResultStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "FAILED", "PENDING", "RUNNING", "SUCCEEDED"]
     }
 }
@@ -5476,7 +5476,7 @@ impl StackStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_COMPLETE",
             "CREATE_FAILED",
@@ -6043,7 +6043,7 @@ impl StackResourceDriftStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETED", "IN_SYNC", "MODIFIED", "NOT_CHECKED"]
     }
 }
@@ -6233,7 +6233,7 @@ impl ResourceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_COMPLETE",
             "CREATE_FAILED",
@@ -6778,7 +6778,7 @@ impl StackInstanceDetailedStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
             "FAILED",
@@ -6882,7 +6882,7 @@ impl StackInstanceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CURRENT", "INOPERABLE", "OUTDATED"]
     }
 }
@@ -7047,7 +7047,7 @@ impl StackInstanceFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DETAILED_STATUS"]
     }
 }
@@ -7564,7 +7564,7 @@ impl ChangeSetStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_COMPLETE",
             "CREATE_IN_PROGRESS",
@@ -7683,7 +7683,7 @@ impl ExecutionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "EXECUTE_COMPLETE",
@@ -8129,7 +8129,7 @@ impl TemplateStage {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Original", "Processed"]
     }
 }
@@ -8721,7 +8721,7 @@ impl DifferenceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ADD", "NOT_EQUAL", "REMOVE"]
     }
 }
@@ -9031,7 +9031,7 @@ impl TypeTestsStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "NOT_TESTED", "PASSED"]
     }
 }
@@ -9849,7 +9849,7 @@ impl StackSetDriftDetectionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "FAILED",
@@ -9952,7 +9952,7 @@ impl StackSetDriftStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DRIFTED", "IN_SYNC", "NOT_CHECKED"]
     }
 }
@@ -12774,7 +12774,7 @@ impl HookFailureMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAIL", "WARN"]
     }
 }
@@ -12861,7 +12861,7 @@ impl HookInvocationPoint {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRE_PROVISION"]
     }
 }
@@ -12961,7 +12961,7 @@ impl HookStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "HOOK_COMPLETE_FAILED",
             "HOOK_COMPLETE_SUCCEEDED",
@@ -13063,7 +13063,7 @@ impl StackDriftDetectionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DETECTION_COMPLETE",
             "DETECTION_FAILED",
@@ -13157,7 +13157,7 @@ impl PublisherStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["UNVERIFIED", "VERIFIED"]
     }
 }
@@ -13254,7 +13254,7 @@ impl ChangeSetHooksStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PLANNED", "PLANNING", "UNAVAILABLE"]
     }
 }
@@ -13787,7 +13787,7 @@ impl ChangeAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Add", "Dynamic", "Import", "Modify", "Remove"]
     }
 }
@@ -13872,7 +13872,7 @@ impl HookTargetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RESOURCE"]
     }
 }
@@ -14500,7 +14500,7 @@ impl ChangeSource {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Automatic",
             "DirectModification",
@@ -14596,7 +14596,7 @@ impl EvaluationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Dynamic", "Static"]
     }
 }
@@ -14794,7 +14794,7 @@ impl RequiresRecreation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Always", "Conditionally", "Never"]
     }
 }
@@ -14906,7 +14906,7 @@ impl ResourceAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CreationPolicy",
             "DeletionPolicy",
@@ -15008,7 +15008,7 @@ impl Replacement {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Conditional", "False", "True"]
     }
 }
@@ -15093,7 +15093,7 @@ impl ChangeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Resource"]
     }
 }
@@ -15274,7 +15274,7 @@ impl OnFailure {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETE", "DO_NOTHING", "ROLLBACK"]
     }
 }
@@ -15491,7 +15491,7 @@ impl ChangeSetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE", "IMPORT", "UPDATE"]
     }
 }
@@ -16034,7 +16034,7 @@ impl VersionBump {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MAJOR", "MINOR"]
     }
 }

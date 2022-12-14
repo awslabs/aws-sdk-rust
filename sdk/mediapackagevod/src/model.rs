@@ -923,7 +923,7 @@ impl StreamOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ORIGINAL",
             "VIDEO_BITRATE_ASCENDING",
@@ -1506,7 +1506,7 @@ impl AdMarkers {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "PASSTHROUGH", "SCTE35_ENHANCED"]
     }
 }
@@ -1706,7 +1706,7 @@ impl EncryptionMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AES_128", "SAMPLE_AES"]
     }
 }
@@ -1997,7 +1997,7 @@ impl SegmentTemplateFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "NUMBER_WITH_DURATION",
             "NUMBER_WITH_TIMELINE",
@@ -2088,7 +2088,7 @@ impl PeriodTriggersElement {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ADS"]
     }
 }
@@ -2405,7 +2405,7 @@ impl ScteMarkersSource {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MANIFEST", "SEGMENTS"]
     }
 }
@@ -2495,7 +2495,7 @@ impl Profile {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HBBTV_1_5", "NONE"]
     }
 }
@@ -2585,7 +2585,7 @@ impl ManifestLayout {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPACT", "FULL"]
     }
 }

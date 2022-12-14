@@ -80,7 +80,7 @@ impl Origination {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "DENY"]
     }
 }
@@ -394,7 +394,7 @@ impl StreamOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ORIGINAL",
             "VIDEO_BITRATE_ASCENDING",
@@ -849,7 +849,7 @@ impl PresetSpeke20Video {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "PRESET-VIDEO-1",
             "PRESET-VIDEO-2",
@@ -967,7 +967,7 @@ impl PresetSpeke20Audio {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "PRESET-AUDIO-1",
             "PRESET-AUDIO-2",
@@ -1387,7 +1387,7 @@ impl PlaylistType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EVENT", "NONE", "VOD"]
     }
 }
@@ -1635,7 +1635,7 @@ impl EncryptionMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AES_128", "SAMPLE_AES"]
     }
 }
@@ -1744,7 +1744,7 @@ impl AdsOnDeliveryRestrictions {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BOTH", "NONE", "RESTRICTED", "UNRESTRICTED"]
     }
 }
@@ -1878,7 +1878,7 @@ impl AdTriggersElement {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BREAK",
             "DISTRIBUTOR_ADVERTISEMENT",
@@ -1987,7 +1987,7 @@ impl AdMarkers {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DATERANGE", "NONE", "PASSTHROUGH", "SCTE35_ENHANCED"]
     }
 }
@@ -2508,7 +2508,7 @@ impl UtcTiming {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HTTP-HEAD", "HTTP-ISO", "HTTP-XSDATE", "NONE"]
     }
 }
@@ -2605,7 +2605,7 @@ impl SegmentTemplateFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "NUMBER_WITH_DURATION",
             "NUMBER_WITH_TIMELINE",
@@ -2709,7 +2709,7 @@ impl Profile {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DVB_DASH_2014", "HBBTV_1_5", "HYBRIDCAST", "NONE"]
     }
 }
@@ -2796,7 +2796,7 @@ impl PeriodTriggersElement {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ADS"]
     }
 }
@@ -2886,7 +2886,7 @@ impl ManifestLayout {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPACT", "FULL"]
     }
 }
@@ -3631,7 +3631,7 @@ impl CmafEncryptionMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AES_CTR", "SAMPLE_AES"]
     }
 }
@@ -5148,7 +5148,7 @@ impl Status {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
 }

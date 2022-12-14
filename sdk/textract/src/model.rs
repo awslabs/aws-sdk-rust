@@ -590,7 +590,7 @@ impl FeatureType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FORMS", "QUERIES", "TABLES"]
     }
 }
@@ -1605,7 +1605,7 @@ impl JobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "PARTIAL_SUCCESS", "SUCCEEDED"]
     }
 }
@@ -2213,7 +2213,7 @@ impl SelectionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NOT_SELECTED", "SELECTED"]
     }
 }
@@ -2308,7 +2308,7 @@ impl EntityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COLUMN_HEADER", "KEY", "VALUE"]
     }
 }
@@ -2506,7 +2506,7 @@ impl RelationshipType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ANSWER",
             "CHILD",
@@ -2603,7 +2603,7 @@ impl TextType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HANDWRITING", "PRINTED"]
     }
 }
@@ -2738,7 +2738,7 @@ impl BlockType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CELL",
             "KEY_VALUE_SET",
@@ -3267,7 +3267,7 @@ impl ValueType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DATE"]
     }
 }
@@ -3659,7 +3659,7 @@ impl ContentClassifier {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FreeOfAdultContent",
             "FreeOfPersonallyIdentifiableInformation",

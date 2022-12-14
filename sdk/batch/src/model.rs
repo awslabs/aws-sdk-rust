@@ -367,7 +367,7 @@ impl JqState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -1273,7 +1273,7 @@ impl CrType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EC2", "FARGATE", "FARGATE_SPOT", "SPOT"]
     }
 }
@@ -1653,7 +1653,7 @@ impl CrUpdateAllocationStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BEST_FIT_PROGRESSIVE", "SPOT_CAPACITY_OPTIMIZED"]
     }
 }
@@ -1743,7 +1743,7 @@ impl CeState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -2103,7 +2103,7 @@ impl RetryAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EXIT", "RETRY"]
     }
 }
@@ -3133,7 +3133,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GPU", "MEMORY", "VCPU"]
     }
 }
@@ -3378,7 +3378,7 @@ impl ArrayJobDependency {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["N_TO_N", "SEQUENTIAL"]
     }
 }
@@ -3523,7 +3523,7 @@ impl PlatformCapability {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EC2", "FARGATE"]
     }
 }
@@ -4572,7 +4572,7 @@ impl AssignPublicIp {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -5103,7 +5103,7 @@ impl LogDriver {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "awslogs",
             "fluentd",
@@ -5680,7 +5680,7 @@ impl DeviceCgroupPermission {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MKNOD", "READ", "WRITE"]
     }
 }
@@ -6320,7 +6320,7 @@ impl EfsAuthorizationConfigIam {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -6412,7 +6412,7 @@ impl EfsTransitEncryption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -6567,7 +6567,7 @@ impl JobDefinitionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["container", "multinode"]
     }
 }
@@ -7278,7 +7278,7 @@ impl JobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
             "PENDING",
@@ -9817,7 +9817,7 @@ impl JqStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATING", "DELETED", "DELETING", "INVALID", "UPDATING", "VALID",
         ]
@@ -11332,7 +11332,7 @@ impl CrAllocationStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BEST_FIT",
             "BEST_FIT_PROGRESSIVE",
@@ -11446,7 +11446,7 @@ impl CeStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATING", "DELETED", "DELETING", "INVALID", "UPDATING", "VALID",
         ]
@@ -11538,7 +11538,7 @@ impl CeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MANAGED", "UNMANAGED"]
     }
 }

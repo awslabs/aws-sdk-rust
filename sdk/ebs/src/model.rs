@@ -132,7 +132,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONFLICTING_BLOCK_UPDATE",
             "INVALID_BLOCK",
@@ -236,7 +236,7 @@ impl ServiceQuotaExceededExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEPENDENCY_SERVICE_QUOTA_EXCEEDED"]
     }
 }
@@ -332,7 +332,7 @@ impl ResourceNotFoundExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEPENDENCY_RESOURCE_NOT_FOUND", "SNAPSHOT_NOT_FOUND"]
     }
 }
@@ -433,7 +433,7 @@ impl RequestThrottledExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_THROTTLED",
             "DEPENDENCY_REQUEST_THROTTLED",
@@ -529,7 +529,7 @@ impl AccessDeniedExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEPENDENCY_ACCESS_DENIED", "UNAUTHORIZED_ACCOUNT"]
     }
 }
@@ -699,7 +699,7 @@ impl Status {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["completed", "error", "pending"]
     }
 }
@@ -786,7 +786,7 @@ impl ChecksumAlgorithm {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SHA256"]
     }
 }
@@ -1049,7 +1049,7 @@ impl ChecksumAggregationMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LINEAR"]
     }
 }

@@ -111,7 +111,7 @@ impl ThrottleReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CallerRateLimitExceeded",
             "ConcurrentInvocationLimitExceeded",
@@ -404,7 +404,7 @@ impl FunctionUrlAuthType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_IAM", "NONE"]
     }
 }
@@ -738,7 +738,7 @@ impl Architecture {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["arm64", "x86_64"]
     }
 }
@@ -1100,7 +1100,7 @@ impl PackageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Image", "Zip"]
     }
 }
@@ -1314,7 +1314,7 @@ impl LastUpdateStatusReasonCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EniLimitExceeded",
             "ImageAccessDenied",
@@ -1420,7 +1420,7 @@ impl LastUpdateStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Failed", "InProgress", "Successful"]
     }
 }
@@ -1565,7 +1565,7 @@ impl StateReasonCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Creating",
             "EniLimitExceeded",
@@ -1679,7 +1679,7 @@ impl State {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "Failed", "Inactive", "Pending"]
     }
 }
@@ -1949,7 +1949,7 @@ impl TracingMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "PassThrough"]
     }
 }
@@ -2506,7 +2506,7 @@ impl Runtime {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "dotnet6",
             "dotnetcore1.0",
@@ -2959,7 +2959,7 @@ impl FunctionResponseType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ReportBatchItemFailures"]
     }
 }
@@ -3128,7 +3128,7 @@ impl EndPointType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KAFKA_BOOTSTRAP_SERVERS"]
     }
 }
@@ -3370,7 +3370,7 @@ impl SourceAccessType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BASIC_AUTH",
             "CLIENT_CERTIFICATE_TLS_AUTH",
@@ -3595,7 +3595,7 @@ impl EventSourcePosition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AT_TIMESTAMP", "LATEST", "TRIM_HORIZON"]
     }
 }
@@ -3928,7 +3928,7 @@ impl CodeSigningPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Enforce", "Warn"]
     }
 }
@@ -4171,7 +4171,7 @@ impl ProvisionedConcurrencyStatusEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "READY"]
     }
 }
@@ -5975,7 +5975,7 @@ impl FunctionVersion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL"]
     }
 }
@@ -7086,7 +7086,7 @@ impl LogType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["None", "Tail"]
     }
 }
@@ -7181,7 +7181,7 @@ impl InvocationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DryRun", "Event", "RequestResponse"]
     }
 }

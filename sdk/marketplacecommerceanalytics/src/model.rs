@@ -86,7 +86,7 @@ impl SupportDataSetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "customer_support_contacts_data",
             "test_customer_support_contacts_data",
@@ -354,7 +354,7 @@ impl DataSetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "customer_profile_by_geography",
             "customer_profile_by_industry",

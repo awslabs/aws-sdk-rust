@@ -470,7 +470,7 @@ impl DeploymentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAIL", "SUCCESS"]
     }
 }
@@ -560,7 +560,7 @@ impl ModelState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEPLOY", "UNDEPLOY"]
     }
 }
@@ -1245,7 +1245,7 @@ impl ChecksumType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SHA1"]
     }
 }
@@ -1337,7 +1337,7 @@ impl FailureHandlingPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DO_NOTHING", "ROLLBACK_ON_FAILURE"]
     }
 }
@@ -1422,7 +1422,7 @@ impl DeploymentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Model"]
     }
 }

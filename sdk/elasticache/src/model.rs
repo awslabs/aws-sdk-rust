@@ -849,7 +849,7 @@ impl DataTieringStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["disabled", "enabled"]
     }
 }
@@ -1123,7 +1123,7 @@ impl LogDeliveryConfigurationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["active", "disabling", "enabling", "error", "modifying"]
     }
 }
@@ -1213,7 +1213,7 @@ impl LogFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["json", "text"]
     }
 }
@@ -1511,7 +1511,7 @@ impl DestinationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["cloudwatch-logs", "kinesis-firehose"]
     }
 }
@@ -1601,7 +1601,7 @@ impl LogType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["engine-log", "slow-log"]
     }
 }
@@ -1766,7 +1766,7 @@ impl MultiAzStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["disabled", "enabled"]
     }
 }
@@ -1868,7 +1868,7 @@ impl AutomaticFailoverStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["disabled", "disabling", "enabled", "enabling"]
     }
 }
@@ -2726,7 +2726,7 @@ impl AuthTokenUpdateStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ROTATING", "SETTING"]
     }
 }
@@ -2931,7 +2931,7 @@ impl PendingAutomaticFailoverStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["disabled", "enabled"]
     }
 }
@@ -6727,7 +6727,7 @@ impl AuthenticationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["no-password", "password"]
     }
 }
@@ -7062,7 +7062,7 @@ impl AuthTokenUpdateStrategyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETE", "ROTATE", "SET"]
     }
 }
@@ -7527,7 +7527,7 @@ impl AzMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["cross-az", "single-az"]
     }
 }
@@ -9168,7 +9168,7 @@ impl NodeUpdateInitiatedBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["customer", "system"]
     }
 }
@@ -9278,7 +9278,7 @@ impl NodeUpdateStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "complete",
             "in-progress",
@@ -9737,7 +9737,7 @@ impl SlaMet {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["n/a", "no", "yes"]
     }
 }
@@ -9864,7 +9864,7 @@ impl UpdateActionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "complete",
             "in-progress",
@@ -9961,7 +9961,7 @@ impl ServiceUpdateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["security-update"]
     }
 }
@@ -10058,7 +10058,7 @@ impl ServiceUpdateStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["available", "cancelled", "expired"]
     }
 }
@@ -10160,7 +10160,7 @@ impl ServiceUpdateSeverity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["critical", "important", "low", "medium"]
     }
 }
@@ -12444,7 +12444,7 @@ impl SourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "cache-cluster",
             "cache-parameter-group",
@@ -12944,7 +12944,7 @@ impl ChangeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["immediate", "requires-reboot"]
     }
 }
@@ -13659,7 +13659,7 @@ impl OutpostMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["cross-outpost", "single-outpost"]
     }
 }

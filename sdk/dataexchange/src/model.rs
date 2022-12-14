@@ -80,7 +80,7 @@ impl ExceptionCause {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["InsufficientS3BucketPolicy", "S3AccessDenied"]
     }
 }
@@ -185,7 +185,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASSET", "DATA_SET", "EVENT_ACTION", "JOB", "REVISION"]
     }
 }
@@ -695,7 +695,7 @@ impl ServerSideEncryptionTypes {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AES256", "aws:kms"]
     }
 }
@@ -840,7 +840,7 @@ impl Origin {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENTITLED", "OWNED"]
     }
 }
@@ -935,7 +935,7 @@ impl AssetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["API_GATEWAY_API", "REDSHIFT_DATA_SHARE", "S3_SNAPSHOT"]
     }
 }
@@ -1373,7 +1373,7 @@ impl ProtocolType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["REST"]
     }
 }
@@ -2056,7 +2056,7 @@ impl Type {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EXPORT_ASSETS_TO_S3",
             "EXPORT_ASSET_TO_SIGNED_URL",
@@ -2174,7 +2174,7 @@ impl State {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
             "COMPLETED",
@@ -2459,7 +2459,7 @@ impl JobErrorResourceTypes {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASSET", "DATA_SET", "REVISION"]
     }
 }
@@ -2560,7 +2560,7 @@ impl JobErrorLimitName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Amazon Redshift datashare assets per revision",
             "Asset size in GB",
@@ -2920,7 +2920,7 @@ impl Code {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED_EXCEPTION",
             "INTERNAL_SERVER_EXCEPTION",
@@ -6576,7 +6576,7 @@ impl LimitName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Amazon API Gateway API assets per revision",
             "Amazon Redshift datashare assets per import job from Redshift",

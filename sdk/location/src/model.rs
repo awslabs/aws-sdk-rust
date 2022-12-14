@@ -93,7 +93,7 @@ impl ValidationExceptionReason {
         &self.0
     }
     /// Returns all the `&str` representations of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CannotParse",
             "FieldValidationFailed",
@@ -723,7 +723,7 @@ impl BatchItemErrorCode {
         &self.0
     }
     /// Returns all the `&str` representations of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDeniedError",
             "ConflictError",
@@ -1276,7 +1276,7 @@ impl PricingPlan {
         &self.0
     }
     /// Returns all the `&str` representations of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "MobileAssetManagement",
             "MobileAssetTracking",
@@ -1311,7 +1311,7 @@ impl PositionFiltering {
         &self.0
     }
     /// Returns all the `&str` representations of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AccuracyBased", "DistanceBased", "TimeBased"]
     }
 }
@@ -1480,7 +1480,7 @@ impl DistanceUnit {
         &self.0
     }
     /// Returns all the `&str` representations of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Kilometers", "Miles"]
     }
 }
@@ -1706,7 +1706,7 @@ impl RouteMatrixErrorCode {
         &self.0
     }
     /// Returns all the `&str` representations of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DeparturePositionNotFound",
             "DestinationPositionNotFound",
@@ -1972,7 +1972,7 @@ impl VehicleWeightUnit {
         &self.0
     }
     /// Returns all the `&str` representations of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Kilograms", "Pounds"]
     }
 }
@@ -2182,7 +2182,7 @@ impl DimensionUnit {
         &self.0
     }
     /// Returns all the `&str` representations of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Feet", "Meters"]
     }
 }
@@ -2304,7 +2304,7 @@ impl TravelMode {
         &self.0
     }
     /// Returns all the `&str` representations of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Car", "Truck", "Walking"]
     }
 }
@@ -4965,7 +4965,7 @@ impl IntendedUse {
         &self.0
     }
     /// Returns all the `&str` representations of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SingleUse", "Storage"]
     }
 }

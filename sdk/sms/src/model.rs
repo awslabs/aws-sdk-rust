@@ -80,7 +80,7 @@ impl LicenseType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS", "BYOL"]
     }
 }
@@ -645,7 +645,7 @@ impl VmManagerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HYPERV-MANAGER", "SCVMM", "VSPHERE"]
     }
 }
@@ -808,7 +808,7 @@ impl ServerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["VIRTUAL_MACHINE"]
     }
 }
@@ -1535,7 +1535,7 @@ impl AppLaunchStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONFIGURATION_INVALID",
             "CONFIGURATION_IN_PROGRESS",
@@ -1643,7 +1643,7 @@ impl AppLaunchConfigurationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONFIGURED", "NOT_CONFIGURED"]
     }
 }
@@ -1805,7 +1805,7 @@ impl AppReplicationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONFIGURATION_INVALID",
             "CONFIGURATION_IN_PROGRESS",
@@ -1914,7 +1914,7 @@ impl AppReplicationConfigurationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONFIGURED", "NOT_CONFIGURED"]
     }
 }
@@ -2024,7 +2024,7 @@ impl AppStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATING",
@@ -2459,7 +2459,7 @@ impl ScriptType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["POWERSHELL_SCRIPT", "SHELL_SCRIPT"]
     }
 }
@@ -2679,7 +2679,7 @@ impl ServerValidationStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["USERDATA"]
     }
 }
@@ -3063,7 +3063,7 @@ impl AppValidationStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SSM"]
     }
 }
@@ -4140,7 +4140,7 @@ impl ValidationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
             "IN_PROGRESS",
@@ -4253,7 +4253,7 @@ impl ServerCatalogStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "DELETED",
@@ -4733,7 +4733,7 @@ impl ReplicationRunType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTOMATIC", "ON_DEMAND"]
     }
 }
@@ -4850,7 +4850,7 @@ impl ReplicationRunState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "COMPLETED",
@@ -5451,7 +5451,7 @@ impl ReplicationJobState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "COMPLETED",
@@ -5827,7 +5827,7 @@ impl ConnectorCapability {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "HYPERV-MANAGER",
             "SCVMM",
@@ -5923,7 +5923,7 @@ impl ConnectorStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "UNHEALTHY"]
     }
 }
@@ -6383,7 +6383,7 @@ impl OutputFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JSON", "YAML"]
     }
 }

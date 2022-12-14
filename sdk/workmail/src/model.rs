@@ -193,7 +193,7 @@ impl MobileDeviceAccessRuleEffect {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "DENY"]
     }
 }
@@ -462,7 +462,7 @@ impl AccessEffect {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "DENY"]
     }
 }
@@ -554,7 +554,7 @@ impl ImpersonationRoleType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL_ACCESS", "READ_ONLY"]
     }
 }
@@ -972,7 +972,7 @@ impl RetentionAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETE", "NONE", "PERMANENTLY_DELETE"]
     }
 }
@@ -1077,7 +1077,7 @@ impl FolderName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DELETED_ITEMS",
             "DRAFTS",
@@ -1178,7 +1178,7 @@ impl PermissionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL_ACCESS", "SEND_AS", "SEND_ON_BEHALF"]
     }
 }
@@ -1270,7 +1270,7 @@ impl AccessControlRuleEffect {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "DENY"]
     }
 }
@@ -1566,7 +1566,7 @@ impl UserRole {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RESOURCE", "SYSTEM_USER", "USER"]
     }
 }
@@ -1661,7 +1661,7 @@ impl EntityState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETED", "DISABLED", "ENABLED"]
     }
 }
@@ -1932,7 +1932,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EQUIPMENT", "ROOM"]
     }
 }
@@ -2097,7 +2097,7 @@ impl MemberType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GROUP", "USER"]
     }
 }
@@ -3330,7 +3330,7 @@ impl MailboxExportJobState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "COMPLETED", "FAILED", "RUNNING"]
     }
 }
@@ -4143,7 +4143,7 @@ impl AvailabilityProviderType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EWS", "LAMBDA"]
     }
 }
@@ -4704,7 +4704,7 @@ impl DnsRecordVerificationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING", "VERIFIED"]
     }
 }

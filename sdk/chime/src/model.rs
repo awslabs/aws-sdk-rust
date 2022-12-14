@@ -149,7 +149,7 @@ impl ErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
             "BadRequest",
@@ -1158,7 +1158,7 @@ impl VoiceConnectorAwsRegion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["us-east-1", "us-west-2"]
     }
 }
@@ -1829,7 +1829,7 @@ impl InviteStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Accepted", "Failed", "Pending"]
     }
 }
@@ -1926,7 +1926,7 @@ impl RegistrationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Registered", "Suspended", "Unregistered"]
     }
 }
@@ -2016,7 +2016,7 @@ impl UserType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PrivateUser", "SharedDevice"]
     }
 }
@@ -2116,7 +2116,7 @@ impl License {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Basic", "Plus", "Pro", "ProTrial"]
     }
 }
@@ -2529,7 +2529,7 @@ impl SipRuleTriggerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RequestUriHostname", "ToPhoneNumber"]
     }
 }
@@ -3049,7 +3049,7 @@ impl RoomMembershipRole {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Administrator", "Member"]
     }
 }
@@ -3282,7 +3282,7 @@ impl MemberType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Bot", "User", "Webhook"]
     }
 }
@@ -3954,7 +3954,7 @@ impl GeoMatchLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AreaCode", "Country"]
     }
 }
@@ -4046,7 +4046,7 @@ impl NumberSelectionBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AvoidSticky", "PreferSticky"]
     }
 }
@@ -4214,7 +4214,7 @@ impl Capability {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SMS", "Voice"]
     }
 }
@@ -4311,7 +4311,7 @@ impl ProxySessionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Closed", "InProgress", "Open"]
     }
 }
@@ -4748,7 +4748,7 @@ impl CallingNameStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Unassigned",
             "UpdateFailed",
@@ -4961,7 +4961,7 @@ impl PhoneNumberAssociationName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccountId",
             "SipRuleId",
@@ -5244,7 +5244,7 @@ impl PhoneNumberStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AcquireFailed",
             "AcquireInProgress",
@@ -5350,7 +5350,7 @@ impl PhoneNumberProductType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BusinessCalling",
             "SipMediaApplicationDialIn",
@@ -5444,7 +5444,7 @@ impl PhoneNumberType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Local", "TollFree"]
     }
 }
@@ -5644,7 +5644,7 @@ impl ChannelMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RESTRICTED", "UNRESTRICTED"]
     }
 }
@@ -5953,7 +5953,7 @@ impl BotType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ChatBot"]
     }
 }
@@ -6425,7 +6425,7 @@ impl AccountStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "Suspended"]
     }
 }
@@ -6525,7 +6525,7 @@ impl AccountType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EnterpriseDirectory",
             "EnterpriseLWA",
@@ -6977,7 +6977,7 @@ impl TranscribeMedicalContentIdentificationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PHI"]
     }
 }
@@ -7094,7 +7094,7 @@ impl TranscribeMedicalRegion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ap-southeast-2",
             "auto",
@@ -7194,7 +7194,7 @@ impl TranscribeMedicalType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONVERSATION", "DICTATION"]
     }
 }
@@ -7306,7 +7306,7 @@ impl TranscribeMedicalSpecialty {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CARDIOLOGY",
             "NEUROLOGY",
@@ -7400,7 +7400,7 @@ impl TranscribeMedicalLanguageCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["en-US"]
     }
 }
@@ -7816,7 +7816,7 @@ impl TranscribeContentRedactionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PII"]
     }
 }
@@ -7903,7 +7903,7 @@ impl TranscribeContentIdentificationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PII"]
     }
 }
@@ -8000,7 +8000,7 @@ impl TranscribePartialResultsStability {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["high", "low", "medium"]
     }
 }
@@ -8140,7 +8140,7 @@ impl TranscribeRegion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ap-northeast-1",
             "ap-northeast-2",
@@ -8250,7 +8250,7 @@ impl TranscribeVocabularyFilterMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["mask", "remove", "tag"]
     }
 }
@@ -8392,7 +8392,7 @@ impl TranscribeLanguageCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "it-IT", "ja-JP",
             "ko-KR", "pt-BR", "zh-CN",
@@ -8487,7 +8487,7 @@ impl ChannelMessagePersistenceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NON_PERSISTENT", "PERSISTENT"]
     }
 }
@@ -8579,7 +8579,7 @@ impl ChannelMessageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONTROL", "STANDARD"]
     }
 }
@@ -9079,7 +9079,7 @@ impl NotificationTarget {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EventBridge", "SNS", "SQS"]
     }
 }
@@ -9530,7 +9530,7 @@ impl OriginationRouteProtocol {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TCP", "UDP"]
     }
 }
@@ -10322,7 +10322,7 @@ impl AppInstanceDataType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Channel", "ChannelMessage"]
     }
 }
@@ -10898,7 +10898,7 @@ impl OrderedPhoneNumberStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Acquired", "Failed", "Processing"]
     }
 }
@@ -11000,7 +11000,7 @@ impl PhoneNumberOrderStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Failed", "Partial", "Processing", "Successful"]
     }
 }
@@ -11943,7 +11943,7 @@ impl ContentMuxType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ContentOnly"]
     }
 }
@@ -12033,7 +12033,7 @@ impl ArtifactsState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -12199,7 +12199,7 @@ impl VideoMuxType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["VideoOnly"]
     }
 }
@@ -12347,7 +12347,7 @@ impl AudioMuxType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AudioOnly", "AudioWithActiveSpeakerVideo"]
     }
 }
@@ -12587,7 +12587,7 @@ impl MediaPipelineSinkType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["S3Bucket"]
     }
 }
@@ -12694,7 +12694,7 @@ impl MediaPipelineStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Failed",
             "InProgress",
@@ -12787,7 +12787,7 @@ impl MediaPipelineSourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ChimeSdkMeeting"]
     }
 }
@@ -13096,7 +13096,7 @@ impl ChannelPrivacy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRIVATE", "PUBLIC"]
     }
 }
@@ -13543,7 +13543,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
 }
@@ -13807,7 +13807,7 @@ impl ChannelMembershipType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT", "HIDDEN"]
     }
 }
@@ -14484,7 +14484,7 @@ impl EmailStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Failed", "NotSent", "Sent"]
     }
 }

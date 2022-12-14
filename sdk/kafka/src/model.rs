@@ -264,7 +264,7 @@ impl ClientBroker {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PLAINTEXT", "TLS", "TLS_PLAINTEXT"]
     }
 }
@@ -1506,7 +1506,7 @@ impl EnhancedMonitoring {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DEFAULT",
             "PER_BROKER",
@@ -2383,7 +2383,7 @@ impl NodeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BROKER"]
     }
 }
@@ -2839,7 +2839,7 @@ impl KafkaVersionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DEPRECATED"]
     }
 }
@@ -3129,7 +3129,7 @@ impl ConfigurationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETE_FAILED", "DELETING"]
     }
 }
@@ -4422,7 +4422,7 @@ impl BrokerAzDistribution {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT"]
     }
 }
@@ -4617,7 +4617,7 @@ impl ClusterState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATING",
@@ -4716,7 +4716,7 @@ impl ClusterType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PROVISIONED", "SERVERLESS"]
     }
 }

@@ -2278,7 +2278,7 @@ impl ActivityStreamPolicyStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["locked", "locking-policy", "unlocked", "unlocking-policy"]
     }
 }
@@ -2368,7 +2368,7 @@ impl AutomationMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["all-paused", "full"]
     }
 }
@@ -2460,7 +2460,7 @@ impl ActivityStreamMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["async", "sync"]
     }
 }
@@ -2562,7 +2562,7 @@ impl ActivityStreamStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["started", "starting", "stopped", "stopping"]
     }
 }
@@ -3419,7 +3419,7 @@ impl ReplicaMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["mounted", "open-read-only"]
     }
 }
@@ -7734,7 +7734,7 @@ impl WriteForwardingStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["disabled", "disabling", "enabled", "enabling", "unknown"]
     }
 }
@@ -9316,7 +9316,7 @@ impl ApplyMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["immediate", "pending-reboot"]
     }
 }
@@ -10107,7 +10107,7 @@ impl FailoverStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["cancelling", "failing-over", "pending"]
     }
 }
@@ -10660,7 +10660,7 @@ impl TargetHealthReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AUTH_FAILURE",
             "CONNECTION_FAILED",
@@ -10761,7 +10761,7 @@ impl TargetState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "REGISTERING", "UNAVAILABLE"]
     }
 }
@@ -10856,7 +10856,7 @@ impl TargetRole {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["READ_ONLY", "READ_WRITE", "UNKNOWN"]
     }
 }
@@ -10951,7 +10951,7 @@ impl TargetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RDS_INSTANCE", "RDS_SERVERLESS_ENDPOINT", "TRACKED_CLUSTER"]
     }
 }
@@ -14241,7 +14241,7 @@ impl DbProxyEndpointTargetRole {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["READ_ONLY", "READ_WRITE"]
     }
 }
@@ -14353,7 +14353,7 @@ impl DbProxyEndpointStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "available",
             "creating",
@@ -14982,7 +14982,7 @@ impl IamAuthMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED", "REQUIRED"]
     }
 }
@@ -15067,7 +15067,7 @@ impl AuthScheme {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SECRETS"]
     }
 }
@@ -15192,7 +15192,7 @@ impl DbProxyStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "available",
             "creating",
@@ -16102,7 +16102,7 @@ impl CustomEngineVersionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["available", "inactive", "inactive-except-restore"]
     }
 }
@@ -16408,7 +16408,7 @@ impl AuditPolicyState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["locked", "unlocked"]
     }
 }
@@ -19962,7 +19962,7 @@ impl SourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "custom-engine-version",
             "db-cluster",
@@ -22533,7 +22533,7 @@ impl EngineFamily {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MYSQL", "POSTGRESQL", "SQLSERVER"]
     }
 }

@@ -85,7 +85,7 @@ impl ErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "INTERNAL_ERROR",
             "INVALID_GRAPH_ARN",
@@ -181,7 +181,7 @@ impl DatasourcePackage {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DETECTIVE_CORE", "EKS_AUDIT"]
     }
 }
@@ -959,7 +959,7 @@ impl DatasourcePackageIngestState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "STARTED", "STOPPED"]
     }
 }
@@ -1127,7 +1127,7 @@ impl InvitationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INVITATION", "ORGANIZATION"]
     }
 }
@@ -1219,7 +1219,7 @@ impl MemberDisabledReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["VOLUME_TOO_HIGH", "VOLUME_UNKNOWN"]
     }
 }
@@ -1324,7 +1324,7 @@ impl MemberStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCEPTED_BUT_DISABLED",
             "ENABLED",

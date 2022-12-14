@@ -80,7 +80,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ORDER", "OUTPOST"]
     }
 }
@@ -746,7 +746,7 @@ impl MaximumSupportedWeightLbs {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "MAX_1400_LBS",
             "MAX_1600_LBS",
@@ -897,7 +897,7 @@ impl OpticalStandard {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "OPTIC_1000BASE_LX",
             "OPTIC_1000BASE_SX",
@@ -1003,7 +1003,7 @@ impl FiberOpticCableType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MULTI_MODE", "SINGLE_MODE"]
     }
 }
@@ -1133,7 +1133,7 @@ impl UplinkCount {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "UPLINK_COUNT_1",
             "UPLINK_COUNT_12",
@@ -1244,7 +1244,7 @@ impl UplinkGbps {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["UPLINK_100G", "UPLINK_10G", "UPLINK_1G", "UPLINK_40G"]
     }
 }
@@ -1334,7 +1334,7 @@ impl PowerFeedDrop {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ABOVE_RACK", "BELOW_RACK"]
     }
 }
@@ -1434,7 +1434,7 @@ impl PowerConnector {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AH530P7W", "AH532P6W", "IEC309", "L6_30P"]
     }
 }
@@ -1524,7 +1524,7 @@ impl PowerPhase {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SINGLE_PHASE", "THREE_PHASE"]
     }
 }
@@ -1619,7 +1619,7 @@ impl PowerDrawKva {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["POWER_10_KVA", "POWER_15_KVA", "POWER_5_KVA"]
     }
 }
@@ -1982,7 +1982,7 @@ impl AddressType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OPERATING_ADDRESS", "SHIPPING_ADDRESS"]
     }
 }
@@ -2388,7 +2388,7 @@ impl SupportedHardwareType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RACK", "SERVER"]
     }
 }
@@ -2750,7 +2750,7 @@ impl LineItemStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BUILDING",
             "CANCELLED",
@@ -2889,7 +2889,7 @@ impl OrderStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
             "COMPLETED",
@@ -2990,7 +2990,7 @@ impl OrderType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OUTPOST", "REPLACEMENT"]
     }
 }
@@ -3291,7 +3291,7 @@ impl SupportedStorageEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EBS", "S3"]
     }
 }
@@ -3478,7 +3478,7 @@ impl CatalogItemStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DISCONTINUED"]
     }
 }
@@ -3568,7 +3568,7 @@ impl CatalogItemClass {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RACK", "SERVER"]
     }
 }
@@ -3907,7 +3907,7 @@ impl AssetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPUTE"]
     }
 }
@@ -4289,7 +4289,7 @@ impl PaymentOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL_UPFRONT", "NO_UPFRONT", "PARTIAL_UPFRONT"]
     }
 }
@@ -4734,7 +4734,7 @@ impl ShipmentCarrier {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DBS", "DHL", "FEDEX", "UPS"]
     }
 }
@@ -4998,7 +4998,7 @@ impl PaymentTerm {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["THREE_YEARS"]
     }
 }

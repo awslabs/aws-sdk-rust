@@ -814,7 +814,7 @@ impl NoEncryptionConfig {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NoEncryption"]
     }
 }
@@ -921,7 +921,7 @@ impl CompressionFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GZIP", "HADOOP_SNAPPY", "Snappy", "UNCOMPRESSED", "ZIP"]
     }
 }
@@ -1092,7 +1092,7 @@ impl HttpEndpointS3BackupMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AllData", "FailedDataOnly"]
     }
 }
@@ -1523,7 +1523,7 @@ impl ProcessorParameterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BufferIntervalInSeconds",
             "BufferSizeInMBs",
@@ -1633,7 +1633,7 @@ impl ProcessorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AppendDelimiterToRecord",
             "Lambda",
@@ -1903,7 +1903,7 @@ impl ContentEncoding {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GZIP", "NONE"]
     }
 }
@@ -2435,7 +2435,7 @@ impl SplunkS3BackupMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AllEvents", "FailedEventsOnly"]
     }
 }
@@ -2580,7 +2580,7 @@ impl HecEndpointType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Event", "Raw"]
     }
 }
@@ -3127,7 +3127,7 @@ impl AmazonopensearchserviceIndexRotationPeriod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NoRotation", "OneDay", "OneHour", "OneMonth", "OneWeek"]
     }
 }
@@ -3675,7 +3675,7 @@ impl ElasticsearchIndexRotationPeriod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NoRotation", "OneDay", "OneHour", "OneMonth", "OneWeek"]
     }
 }
@@ -4065,7 +4065,7 @@ impl RedshiftS3BackupMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -5380,7 +5380,7 @@ impl OrcFormatVersion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["V0_11", "V0_12"]
     }
 }
@@ -5475,7 +5475,7 @@ impl OrcCompression {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "SNAPPY", "ZLIB"]
     }
 }
@@ -5734,7 +5734,7 @@ impl ParquetWriterVersion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["V1", "V2"]
     }
 }
@@ -5831,7 +5831,7 @@ impl ParquetCompression {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GZIP", "SNAPPY", "UNCOMPRESSED"]
     }
 }
@@ -6436,7 +6436,7 @@ impl S3BackupMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -6692,7 +6692,7 @@ impl KeyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_OWNED_CMK", "CUSTOMER_MANAGED_CMK"]
     }
 }
@@ -6935,7 +6935,7 @@ impl DeliveryStreamType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DirectPut", "KinesisStreamAsSource"]
     }
 }
@@ -9060,7 +9060,7 @@ impl AmazonopensearchserviceS3BackupMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AllDocuments", "FailedDocumentsOnly"]
     }
 }
@@ -9520,7 +9520,7 @@ impl ElasticsearchS3BackupMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AllDocuments", "FailedDocumentsOnly"]
     }
 }
@@ -10706,7 +10706,7 @@ impl DeliveryStreamFailureType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_ENI_FAILED",
             "CREATE_KMS_GRANT_FAILED",
@@ -10834,7 +10834,7 @@ impl DeliveryStreamEncryptionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DISABLED",
             "DISABLING",
@@ -10948,7 +10948,7 @@ impl DeliveryStreamStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATING",

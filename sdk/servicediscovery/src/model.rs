@@ -381,7 +381,7 @@ impl HealthCheckType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HTTP", "HTTPS", "TCP"]
     }
 }
@@ -860,7 +860,7 @@ impl RecordType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["A", "AAAA", "CNAME", "SRV"]
     }
 }
@@ -1407,7 +1407,7 @@ impl CustomHealthStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "UNHEALTHY"]
     }
 }
@@ -2296,7 +2296,7 @@ impl RoutingPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MULTIVALUE", "WEIGHTED"]
     }
 }
@@ -2391,7 +2391,7 @@ impl ServiceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DNS", "DNS_HTTP", "HTTP"]
     }
 }
@@ -2616,7 +2616,7 @@ impl FilterCondition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BETWEEN", "EQ", "IN"]
     }
 }
@@ -2703,7 +2703,7 @@ impl ServiceFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NAMESPACE_ID"]
     }
 }
@@ -2905,7 +2905,7 @@ impl OperationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAIL", "PENDING", "SUBMITTED", "SUCCESS"]
     }
 }
@@ -3198,7 +3198,7 @@ impl OperationFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "NAMESPACE_ID",
             "SERVICE_ID",
@@ -3767,7 +3767,7 @@ impl NamespaceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DNS_PRIVATE", "DNS_PUBLIC", "HTTP"]
     }
 }
@@ -4048,7 +4048,7 @@ impl NamespaceFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TYPE"]
     }
 }
@@ -5278,7 +5278,7 @@ impl OperationTargetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INSTANCE", "NAMESPACE", "SERVICE"]
     }
 }
@@ -5388,7 +5388,7 @@ impl OperationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_NAMESPACE",
             "DELETE_NAMESPACE",
@@ -5794,7 +5794,7 @@ impl HealthStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "UNHEALTHY", "UNKNOWN"]
     }
 }
@@ -6461,7 +6461,7 @@ impl HealthStatusFilter {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "HEALTHY", "HEALTHY_OR_ELSE_ALL", "UNHEALTHY"]
     }
 }
@@ -6548,7 +6548,7 @@ impl ServiceTypeOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HTTP"]
     }
 }

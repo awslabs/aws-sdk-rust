@@ -155,7 +155,7 @@ impl ClientVersion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["5.1", "5.3"]
     }
 }
@@ -252,7 +252,7 @@ impl SubscriptionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRODUCTION"]
     }
 }
@@ -367,7 +367,7 @@ impl HsmStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DEGRADED",
             "PENDING",
@@ -472,7 +472,7 @@ impl CloudHsmObjectState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEGRADED", "READY", "UPDATING"]
     }
 }

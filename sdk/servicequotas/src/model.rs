@@ -494,7 +494,7 @@ impl RequestStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "APPROVED",
             "CASE_CLOSED",
@@ -1256,7 +1256,7 @@ impl ErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DEPENDENCY_ACCESS_DENIED_ERROR",
             "DEPENDENCY_SERVICE_ERROR",
@@ -1454,7 +1454,7 @@ impl PeriodUnit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DAY",
             "HOUR",
@@ -1702,7 +1702,7 @@ impl ServiceQuotaTemplateAssociationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASSOCIATED", "DISASSOCIATED"]
     }
 }

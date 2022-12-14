@@ -156,7 +156,7 @@ impl ServiceName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["S3"]
     }
 }
@@ -348,7 +348,7 @@ impl UnAuthenticatedElement {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE_AND_UPDATE", "DELETE", "READ"]
     }
 }
@@ -445,7 +445,7 @@ impl AuthenticatedElement {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE_AND_UPDATE", "DELETE", "READ"]
     }
 }
@@ -1220,7 +1220,7 @@ impl DeliveryMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EMAIL", "SMS"]
     }
 }
@@ -1413,7 +1413,7 @@ impl AdditionalConstraintsElement {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "REQUIRE_DIGIT",
             "REQUIRE_LOWERCASE",
@@ -2055,7 +2055,7 @@ impl OAuthScopesElement {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWS_COGNITO_SIGNIN_USER_ADMIN",
             "EMAIL",
@@ -2151,7 +2151,7 @@ impl OAuthGrantType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CODE", "IMPLICIT"]
     }
 }
@@ -2400,7 +2400,7 @@ impl MfaTypesElement {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SMS", "TOTP"]
     }
 }
@@ -2495,7 +2495,7 @@ impl MfaMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OFF", "ON", "OPTIONAL"]
     }
 }
@@ -2684,7 +2684,7 @@ impl Service {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COGNITO"]
     }
 }
@@ -2829,7 +2829,7 @@ impl AuthResources {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IDENTITY_POOL_AND_USER_POOL", "USER_POOL_ONLY"]
     }
 }
@@ -3402,7 +3402,7 @@ impl Mode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AMAZON_COGNITO_USER_POOLS",
             "API_KEY",
@@ -3567,7 +3567,7 @@ impl ResolutionStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTOMERGE", "LAMBDA", "NONE", "OPTIMISTIC_CONCURRENCY"]
     }
 }
@@ -4561,7 +4561,7 @@ impl SignInMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EMAIL",
             "EMAIL_AND_PHONE_NUMBER",
@@ -4733,7 +4733,7 @@ impl RequiredSignUpAttributesElement {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDRESS",
             "BIRTHDATE",
@@ -5387,7 +5387,7 @@ impl Status {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LATEST", "STALE"]
     }
 }

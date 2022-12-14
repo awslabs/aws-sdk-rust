@@ -115,7 +115,7 @@ impl StorageClass {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DEEP_ARCHIVE",
             "GLACIER",
@@ -217,7 +217,7 @@ impl ServerSideEncryption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AES256", "aws:kms"]
     }
 }
@@ -303,7 +303,7 @@ impl RequestCharged {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["requester"]
     }
 }
@@ -405,7 +405,7 @@ impl ReplicationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "FAILED", "PENDING", "REPLICA"]
     }
 }
@@ -497,7 +497,7 @@ impl ObjectLockLegalHoldStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OFF", "ON"]
     }
 }
@@ -587,7 +587,7 @@ impl ObjectLockMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLIANCE", "GOVERNANCE"]
     }
 }
@@ -845,7 +845,7 @@ impl RequestPayer {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["requester"]
     }
 }
@@ -947,7 +947,7 @@ impl ChecksumAlgorithm {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CRC32", "CRC32C", "SHA1", "SHA256"]
     }
 }
@@ -1962,7 +1962,7 @@ impl QuoteFields {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALWAYS", "ASNEEDED"]
     }
 }
@@ -2258,7 +2258,7 @@ impl JsonType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DOCUMENT", "LINES"]
     }
 }
@@ -2353,7 +2353,7 @@ impl CompressionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BZIP2", "GZIP", "NONE"]
     }
 }
@@ -2678,7 +2678,7 @@ impl FileHeaderInfo {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IGNORE", "NONE", "USE"]
     }
 }
@@ -2818,7 +2818,7 @@ impl ExpressionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SQL"]
     }
 }
@@ -3683,7 +3683,7 @@ impl Permission {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL_CONTROL", "READ", "READ_ACP", "WRITE", "WRITE_ACP"]
     }
 }
@@ -3968,7 +3968,7 @@ impl Type {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AmazonCustomerByEmail", "CanonicalUser", "Group"]
     }
 }
@@ -4083,7 +4083,7 @@ impl ObjectCannedAcl {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "authenticated-read",
             "aws-exec-read",
@@ -4408,7 +4408,7 @@ impl Tier {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Bulk", "Expedited", "Standard"]
     }
 }
@@ -4495,7 +4495,7 @@ impl RestoreRequestType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SELECT"]
     }
 }
@@ -4872,7 +4872,7 @@ impl ObjectLockRetentionMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLIANCE", "GOVERNANCE"]
     }
 }
@@ -5201,7 +5201,7 @@ impl ObjectLockEnabled {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Enabled"]
     }
 }
@@ -5893,7 +5893,7 @@ impl Protocol {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["http", "https"]
     }
 }
@@ -6360,7 +6360,7 @@ impl BucketVersioningStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Enabled", "Suspended"]
     }
 }
@@ -6450,7 +6450,7 @@ impl MfaDelete {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -6593,7 +6593,7 @@ impl Payer {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BucketOwner", "Requester"]
     }
 }
@@ -7120,7 +7120,7 @@ impl DeleteMarkerReplicationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -7556,7 +7556,7 @@ impl MetricsStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -7729,7 +7729,7 @@ impl ReplicationTimeStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -7928,7 +7928,7 @@ impl OwnerOverride {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Destination"]
     }
 }
@@ -8078,7 +8078,7 @@ impl ExistingObjectReplicationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -8327,7 +8327,7 @@ impl ReplicaModificationsStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -8477,7 +8477,7 @@ impl SseKmsEncryptedObjectsStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -8569,7 +8569,7 @@ impl ReplicationRuleStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -8968,7 +8968,7 @@ impl ObjectOwnership {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BucketOwnerEnforced",
             "BucketOwnerPreferred",
@@ -9583,7 +9583,7 @@ impl FilterRuleName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["prefix", "suffix"]
     }
 }
@@ -9611,7 +9611,7 @@ impl Event {
         &self.0
     }
     /// Returns all the `&str` representations of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "s3:IntelligentTiering",
             "s3:LifecycleExpiration:*",
@@ -10510,7 +10510,7 @@ impl BucketLogsPermission {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL_CONTROL", "READ", "WRITE"]
     }
 }
@@ -11202,7 +11202,7 @@ impl TransitionStorageClass {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DEEP_ARCHIVE",
             "GLACIER",
@@ -11397,7 +11397,7 @@ impl ExpirationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -12074,7 +12074,7 @@ impl InventoryFrequency {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Daily", "Weekly"]
     }
 }
@@ -12221,7 +12221,7 @@ impl InventoryOptionalField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BucketKeyStatus",
             "ChecksumAlgorithm",
@@ -12327,7 +12327,7 @@ impl InventoryIncludedObjectVersions {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["All", "Current"]
     }
 }
@@ -12850,7 +12850,7 @@ impl InventoryFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CSV", "ORC", "Parquet"]
     }
 }
@@ -13151,7 +13151,7 @@ impl IntelligentTieringAccessTier {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ARCHIVE_ACCESS", "DEEP_ARCHIVE_ACCESS"]
     }
 }
@@ -13243,7 +13243,7 @@ impl IntelligentTieringStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -14487,7 +14487,7 @@ impl AnalyticsS3ExportFileFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CSV"]
     }
 }
@@ -14574,7 +14574,7 @@ impl StorageClassAnalysisSchemaVersion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["V_1"]
     }
 }
@@ -14824,7 +14824,7 @@ impl BucketCannedAcl {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "authenticated-read",
             "private",
@@ -14979,7 +14979,7 @@ impl BucketAccelerateStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Enabled", "Suspended"]
     }
 }
@@ -15353,7 +15353,7 @@ impl EncodingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["url"]
     }
 }
@@ -15864,7 +15864,7 @@ impl ObjectVersionStorageClass {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STANDARD"]
     }
 }
@@ -16202,7 +16202,7 @@ impl ObjectStorageClass {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DEEP_ARCHIVE",
             "GLACIER",
@@ -16567,7 +16567,7 @@ impl ArchiveStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ARCHIVE_ACCESS", "DEEP_ARCHIVE_ACCESS"]
     }
 }
@@ -16652,7 +16652,7 @@ impl ChecksumMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENABLED"]
     }
 }
@@ -17221,7 +17221,7 @@ impl ObjectAttributes {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Checksum",
             "ETag",
@@ -17317,7 +17317,7 @@ impl MfaDeleteStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -17579,7 +17579,7 @@ impl BucketLocationConstraint {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EU",
             "af-south-1",
@@ -20808,7 +20808,7 @@ impl TaggingDirective {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COPY", "REPLACE"]
     }
 }
@@ -20900,7 +20900,7 @@ impl MetadataDirective {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COPY", "REPLACE"]
     }
 }

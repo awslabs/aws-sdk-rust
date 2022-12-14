@@ -1714,7 +1714,7 @@ impl StorageClass {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["REDUCED_REDUNDANCY", "STANDARD", "STANDARD_IA"]
     }
 }
@@ -1897,7 +1897,7 @@ impl Permission {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL_CONTROL", "READ", "READ_ACP", "WRITE", "WRITE_ACP"]
     }
 }
@@ -2130,7 +2130,7 @@ impl Type {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AmazonCustomerByEmail", "CanonicalUser", "Group"]
     }
 }
@@ -2245,7 +2245,7 @@ impl CannedAcl {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "authenticated-read",
             "aws-exec-read",
@@ -2441,7 +2441,7 @@ impl EncryptionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AES256", "aws:kms"]
     }
 }
@@ -2858,7 +2858,7 @@ impl QuoteFields {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALWAYS", "ASNEEDED"]
     }
 }
@@ -2943,7 +2943,7 @@ impl ExpressionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SQL"]
     }
 }
@@ -3261,7 +3261,7 @@ impl FileHeaderInfo {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IGNORE", "NONE", "USE"]
     }
 }
@@ -3491,7 +3491,7 @@ impl StatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Failed", "InProgress", "Succeeded"]
     }
 }
@@ -3586,7 +3586,7 @@ impl ActionCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ArchiveRetrieval", "InventoryRetrieval", "Select"]
     }
 }

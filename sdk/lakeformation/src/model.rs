@@ -85,7 +85,7 @@ impl OptimizerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "COMPACTION", "GARBAGE_COLLECTION"]
     }
 }
@@ -488,7 +488,7 @@ impl TransactionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["READ_AND_WRITE", "READ_ONLY"]
     }
 }
@@ -1528,7 +1528,7 @@ impl Permission {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALL",
             "ALTER",
@@ -1959,7 +1959,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DATABASE", "TABLE"]
     }
 }
@@ -3350,7 +3350,7 @@ impl TransactionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ABORTED", "ACTIVE", "COMMITTED", "COMMIT_IN_PROGRESS"]
     }
 }
@@ -3457,7 +3457,7 @@ impl TransactionStatusFilter {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ABORTED", "ACTIVE", "ALL", "COMMITTED", "COMPLETED"]
     }
 }
@@ -3975,7 +3975,7 @@ impl ComparisonOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BEGINS_WITH",
             "BETWEEN",
@@ -4082,7 +4082,7 @@ impl FieldNameString {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LAST_MODIFIED", "RESOURCE_ARN", "ROLE_ARN"]
     }
 }
@@ -4434,7 +4434,7 @@ impl DataLakeResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CATALOG",
             "DATABASE",
@@ -4535,7 +4535,7 @@ impl ResourceShareType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "FOREIGN"]
     }
 }
@@ -5034,7 +5034,7 @@ impl PermissionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CELL_FILTER_PERMISSION", "COLUMN_PERMISSION"]
     }
 }
@@ -5673,7 +5673,7 @@ impl QueryStateString {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ERROR",
             "EXPIRED",

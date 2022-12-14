@@ -452,7 +452,7 @@ impl HandlerErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
             "AlreadyExists",
@@ -578,7 +578,7 @@ impl OperationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCEL_COMPLETE",
             "CANCEL_IN_PROGRESS",
@@ -680,7 +680,7 @@ impl Operation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE", "DELETE", "UPDATE"]
     }
 }

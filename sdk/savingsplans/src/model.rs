@@ -444,7 +444,7 @@ impl SavingsPlanOfferingPropertyKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["instanceFamily", "region"]
     }
 }
@@ -534,7 +534,7 @@ impl CurrencyCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CNY", "USD"]
     }
 }
@@ -631,7 +631,7 @@ impl SavingsPlanPaymentOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["All Upfront", "No Upfront", "Partial Upfront"]
     }
 }
@@ -726,7 +726,7 @@ impl SavingsPlanType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Compute", "EC2Instance", "SageMaker"]
     }
 }
@@ -828,7 +828,7 @@ impl SavingsPlanProductType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EC2", "Fargate", "Lambda", "SageMaker"]
     }
 }
@@ -1007,7 +1007,7 @@ impl SavingsPlanOfferingFilterAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["instanceFamily", "region"]
     }
 }
@@ -1417,7 +1417,7 @@ impl SavingsPlanRateServiceCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWSLambda",
             "AmazonEC2",
@@ -1520,7 +1520,7 @@ impl SavingsPlanRateUnit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Hrs", "Lambda-GB-Second", "Request"]
     }
 }
@@ -1886,7 +1886,7 @@ impl SavingsPlanRateFilterAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "instanceFamily",
             "instanceType",
@@ -2456,7 +2456,7 @@ impl SavingsPlanState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "active",
             "payment-failed",
@@ -2677,7 +2677,7 @@ impl SavingsPlansFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "commitment",
             "ec2-instance-family",
@@ -3089,7 +3089,7 @@ impl SavingsPlanRatePropertyKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "instanceFamily",
             "instanceType",
@@ -3304,7 +3304,7 @@ impl SavingsPlanRateFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "instanceType",
             "operation",

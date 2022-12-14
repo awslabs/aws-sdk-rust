@@ -297,7 +297,7 @@ impl WebhookBuildType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BUILD", "BUILD_BATCH"]
     }
 }
@@ -699,7 +699,7 @@ impl WebhookFilterType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTOR_ACCOUNT_ID",
             "BASE_REF",
@@ -1134,7 +1134,7 @@ impl ReportGroupStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETING"]
     }
 }
@@ -1576,7 +1576,7 @@ impl ReportPackagingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "ZIP"]
     }
 }
@@ -1668,7 +1668,7 @@ impl ReportExportConfigType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NO_EXPORT", "S3"]
     }
 }
@@ -1758,7 +1758,7 @@ impl ReportType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CODE_COVERAGE", "TEST"]
     }
 }
@@ -1861,7 +1861,7 @@ impl ProjectVisibilityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRIVATE", "PUBLIC_READ"]
     }
 }
@@ -2959,7 +2959,7 @@ impl BatchReportModeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["REPORT_AGGREGATED_BATCH", "REPORT_INDIVIDUAL_BUILDS"]
     }
 }
@@ -3277,7 +3277,7 @@ impl FileSystemType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EFS"]
     }
 }
@@ -3745,7 +3745,7 @@ impl BucketOwnerAccess {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL", "NONE", "READ_ONLY"]
     }
 }
@@ -3837,7 +3837,7 @@ impl LogsConfigStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -4699,7 +4699,7 @@ impl ImagePullCredentialsType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CODEBUILD", "SERVICE_ROLE"]
     }
 }
@@ -4879,7 +4879,7 @@ impl CredentialProviderType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SECRETS_MANAGER"]
     }
 }
@@ -5102,7 +5102,7 @@ impl EnvironmentVariableType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PARAMETER_STORE", "PLAINTEXT", "SECRETS_MANAGER"]
     }
 }
@@ -5202,7 +5202,7 @@ impl ComputeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BUILD_GENERAL1_2XLARGE",
             "BUILD_GENERAL1_LARGE",
@@ -5312,7 +5312,7 @@ impl EnvironmentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ARM_CONTAINER",
             "LINUX_CONTAINER",
@@ -5681,7 +5681,7 @@ impl CacheMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "LOCAL_CUSTOM_CACHE",
             "LOCAL_DOCKER_LAYER_CACHE",
@@ -5780,7 +5780,7 @@ impl CacheType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LOCAL", "NO_CACHE", "S3"]
     }
 }
@@ -6451,7 +6451,7 @@ impl ArtifactPackaging {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "ZIP"]
     }
 }
@@ -6543,7 +6543,7 @@ impl ArtifactNamespace {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BUILD_ID", "NONE"]
     }
 }
@@ -6638,7 +6638,7 @@ impl ArtifactsType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CODEPIPELINE", "NO_ARTIFACTS", "S3"]
     }
 }
@@ -7546,7 +7546,7 @@ impl SourceAuthType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OAUTH"]
     }
 }
@@ -7716,7 +7716,7 @@ impl SourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BITBUCKET",
             "CODECOMMIT",
@@ -9218,7 +9218,7 @@ impl StatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FAILED",
             "FAULT",
@@ -10238,7 +10238,7 @@ impl BuildBatchPhaseType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMBINE_ARTIFACTS",
             "DOWNLOAD_BATCHSPEC",
@@ -12345,7 +12345,7 @@ impl BuildPhaseType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BUILD",
             "COMPLETED",
@@ -12449,7 +12449,7 @@ impl RetryBuildBatchType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RETRY_ALL_BUILDS", "RETRY_FAILED_BUILDS"]
     }
 }
@@ -12642,7 +12642,7 @@ impl AuthType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BASIC_AUTH", "OAUTH", "PERSONAL_ACCESS_TOKEN"]
     }
 }
@@ -12737,7 +12737,7 @@ impl ServerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BITBUCKET", "GITHUB", "GITHUB_ENTERPRISE"]
     }
 }
@@ -12829,7 +12829,7 @@ impl SharedResourceSortByType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ARN", "MODIFIED_TIME"]
     }
 }
@@ -12919,7 +12919,7 @@ impl SortOrderType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
 }
@@ -13082,7 +13082,7 @@ impl ReportStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DELETING",
             "FAILED",
@@ -13185,7 +13185,7 @@ impl ReportGroupSortByType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATED_TIME", "LAST_MODIFIED_TIME", "NAME"]
     }
 }
@@ -13282,7 +13282,7 @@ impl ProjectSortByType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATED_TIME", "LAST_MODIFIED_TIME", "NAME"]
     }
 }
@@ -13690,7 +13690,7 @@ impl LanguageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ANDROID", "BASE", "DOCKER", "DOTNET", "GOLANG", "JAVA", "NODE_JS", "PHP", "PYTHON",
             "RUBY",
@@ -13793,7 +13793,7 @@ impl PlatformType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AMAZON_LINUX", "DEBIAN", "UBUNTU", "WINDOWS_SERVER"]
     }
 }
@@ -14145,7 +14145,7 @@ impl ReportGroupTrendFieldType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BRANCHES_COVERED",
             "BRANCHES_MISSED",
@@ -14794,7 +14794,7 @@ impl ReportCodeCoverageSortByType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FILE_PATH", "LINE_COVERAGE_PERCENTAGE"]
     }
 }

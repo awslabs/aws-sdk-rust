@@ -326,7 +326,7 @@ impl ConfirmationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Confirmed", "Denied", "None"]
     }
 }
@@ -436,7 +436,7 @@ impl IntentState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Failed",
             "Fulfilled",
@@ -682,7 +682,7 @@ impl Shape {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Composite", "List", "Scalar"]
     }
 }
@@ -1089,7 +1089,7 @@ impl SentimentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MIXED", "NEGATIVE", "NEUTRAL", "POSITIVE"]
     }
 }
@@ -2155,7 +2155,7 @@ impl StyleType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Default", "SpellByLetter", "SpellByWord"]
     }
 }
@@ -2265,7 +2265,7 @@ impl DialogActionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Close",
             "ConfirmIntent",
@@ -2679,7 +2679,7 @@ impl MessageContentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CustomPayload", "ImageResponseCard", "PlainText", "SSML"]
     }
 }

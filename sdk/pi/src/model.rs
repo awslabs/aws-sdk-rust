@@ -175,7 +175,7 @@ impl ServiceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DOCDB", "RDS"]
     }
 }
@@ -1434,7 +1434,7 @@ impl FeatureStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DISABLED",
             "DISABLED_PENDING_REBOOT",
@@ -1686,7 +1686,7 @@ impl DetailStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "PROCESSING", "UNAVAILABLE"]
     }
 }

@@ -324,7 +324,7 @@ impl ByoipCidrState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADVERTISING",
             "DEPROVISIONED",
@@ -565,7 +565,7 @@ impl ClientAffinity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "SOURCE_IP"]
     }
 }
@@ -655,7 +655,7 @@ impl Protocol {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TCP", "UDP"]
     }
 }
@@ -1190,7 +1190,7 @@ impl HealthCheckProtocol {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HTTP", "HTTPS", "TCP"]
     }
 }
@@ -1448,7 +1448,7 @@ impl HealthState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "INITIAL", "UNHEALTHY"]
     }
 }
@@ -2113,7 +2113,7 @@ impl CustomRoutingAcceleratorStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEPLOYED", "IN_PROGRESS"]
     }
 }
@@ -2314,7 +2314,7 @@ impl IpAddressFamily {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IPv4", "IPv6"]
     }
 }
@@ -2404,7 +2404,7 @@ impl IpAddressType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DUAL_STACK", "IPV4"]
     }
 }
@@ -3006,7 +3006,7 @@ impl AcceleratorStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEPLOYED", "IN_PROGRESS"]
     }
 }
@@ -3488,7 +3488,7 @@ impl CustomRoutingDestinationTrafficState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "DENY"]
     }
 }
@@ -3839,7 +3839,7 @@ impl CustomRoutingProtocol {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TCP", "UDP"]
     }
 }

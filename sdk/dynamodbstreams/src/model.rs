@@ -211,7 +211,7 @@ impl ShardIteratorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AFTER_SEQUENCE_NUMBER",
             "AT_SEQUENCE_NUMBER",
@@ -900,7 +900,7 @@ impl StreamViewType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KEYS_ONLY", "NEW_AND_OLD_IMAGES", "NEW_IMAGE", "OLD_IMAGE"]
     }
 }
@@ -1185,7 +1185,7 @@ impl OperationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INSERT", "MODIFY", "REMOVE"]
     }
 }
@@ -1893,7 +1893,7 @@ impl KeyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HASH", "RANGE"]
     }
 }
@@ -1993,7 +1993,7 @@ impl StreamStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "DISABLING", "ENABLED", "ENABLING"]
     }
 }

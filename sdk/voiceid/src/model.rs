@@ -444,7 +444,7 @@ impl ServerSideEncryptionUpdateStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "IN_PROGRESS"]
     }
 }
@@ -594,7 +594,7 @@ impl DomainStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "PENDING", "SUSPENDED"]
     }
 }
@@ -704,7 +704,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BATCH_JOB",
             "COMPLIANCE_CONSENT",
@@ -839,7 +839,7 @@ impl ConflictType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ANOTHER_ACTIVE_STREAM",
             "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT",
@@ -2004,7 +2004,7 @@ impl FraudDetectionAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAIL", "IGNORE"]
     }
 }
@@ -2096,7 +2096,7 @@ impl ExistingEnrollmentAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OVERWRITE", "SKIP"]
     }
 }
@@ -2203,7 +2203,7 @@ impl SpeakerEnrollmentJobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "COMPLETED_WITH_ERRORS",
@@ -2697,7 +2697,7 @@ impl DuplicateRegistrationAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["REGISTER_AS_NEW", "SKIP"]
     }
 }
@@ -2804,7 +2804,7 @@ impl FraudsterRegistrationJobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "COMPLETED_WITH_ERRORS",
@@ -3103,7 +3103,7 @@ impl SpeakerStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENROLLED", "EXPIRED", "OPTED_OUT", "PENDING"]
     }
 }
@@ -4230,7 +4230,7 @@ impl FraudDetectionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KNOWN_FRAUDSTER", "VOICE_SPOOFING"]
     }
 }
@@ -4327,7 +4327,7 @@ impl FraudDetectionDecision {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HIGH_RISK", "LOW_RISK", "NOT_ENOUGH_SPEECH"]
     }
 }
@@ -4776,7 +4776,7 @@ impl AuthenticationDecision {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCEPT",
             "NOT_ENOUGH_SPEECH",
@@ -4879,7 +4879,7 @@ impl StreamingStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENDED", "ONGOING", "PENDING_CONFIGURATION"]
     }
 }

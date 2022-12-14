@@ -167,7 +167,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CannotParse",
             "FieldValidationFailed",
@@ -1018,7 +1018,7 @@ impl AttachmentState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "CREATING",
@@ -1128,7 +1128,7 @@ impl AttachmentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONNECT",
             "SITE_TO_SITE_VPN",
@@ -1443,7 +1443,7 @@ impl SiteState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "PENDING", "UPDATING"]
     }
 }
@@ -1911,7 +1911,7 @@ impl LinkState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "PENDING", "UPDATING"]
     }
 }
@@ -2264,7 +2264,7 @@ impl GlobalNetworkState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "PENDING", "UPDATING"]
     }
 }
@@ -2700,7 +2700,7 @@ impl DeviceState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "PENDING", "UPDATING"]
     }
 }
@@ -3352,7 +3352,7 @@ impl CoreNetworkState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "CREATING", "DELETING", "UPDATING"]
     }
 }
@@ -3737,7 +3737,7 @@ impl ConnectionState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "PENDING", "UPDATING"]
     }
 }
@@ -4711,7 +4711,7 @@ impl RouteAnalysisCompletionReasonCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND",
             "CYCLIC_PATH_DETECTED",
@@ -4815,7 +4815,7 @@ impl RouteAnalysisCompletionResultCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONNECTED", "NOT_CONNECTED"]
     }
 }
@@ -5019,7 +5019,7 @@ impl RouteAnalysisStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "RUNNING"]
     }
 }
@@ -5746,7 +5746,7 @@ impl ChangeSetState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EXECUTING",
             "EXECUTION_SUCCEEDED",
@@ -5845,7 +5845,7 @@ impl CoreNetworkPolicyAlias {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LATEST", "LIVE"]
     }
 }
@@ -6136,7 +6136,7 @@ impl TransitGatewayRegistrationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETED", "DELETING", "FAILED", "PENDING"]
     }
 }
@@ -6498,7 +6498,7 @@ impl PeeringState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "CREATING", "DELETING", "FAILED"]
     }
 }
@@ -6583,7 +6583,7 @@ impl PeeringType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TRANSIT_GATEWAY"]
     }
 }
@@ -7251,7 +7251,7 @@ impl ConnectPeerState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "CREATING", "DELETING", "FAILED"]
     }
 }
@@ -7723,7 +7723,7 @@ impl TransitGatewayConnectPeerAssociationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETED", "DELETING", "PENDING"]
     }
 }
@@ -8225,7 +8225,7 @@ impl ConnectionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DOWN", "UP"]
     }
 }
@@ -8315,7 +8315,7 @@ impl ConnectionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BGP", "IPSEC"]
     }
 }
@@ -8556,7 +8556,7 @@ impl RouteType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PROPAGATED", "STATIC"]
     }
 }
@@ -8646,7 +8646,7 @@ impl RouteState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "BLACKHOLE"]
     }
 }
@@ -8912,7 +8912,7 @@ impl RouteTableType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CORE_NETWORK_SEGMENT", "TRANSIT_GATEWAY_ROUTE_TABLE"]
     }
 }
@@ -9870,7 +9870,7 @@ impl LinkAssociationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETED", "DELETING", "PENDING"]
     }
 }
@@ -10116,7 +10116,7 @@ impl CustomerGatewayAssociationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETED", "DELETING", "PENDING"]
     }
 }
@@ -10583,7 +10583,7 @@ impl ChangeAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ADD", "MODIFY", "REMOVE"]
     }
 }
@@ -10708,7 +10708,7 @@ impl ChangeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ATTACHMENT_MAPPING",
             "ATTACHMENT_POLICIES_CONFIGURATION",
@@ -11109,7 +11109,7 @@ impl ChangeStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "FAILED", "IN_PROGRESS", "NOT_STARTED"]
     }
 }
@@ -11355,7 +11355,7 @@ impl ConnectPeerAssociationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETED", "DELETING", "PENDING"]
     }
 }
@@ -11949,7 +11949,7 @@ impl TunnelProtocol {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GRE"]
     }
 }

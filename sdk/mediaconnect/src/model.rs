@@ -790,7 +790,7 @@ impl Protocol {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "cdi",
             "fujitsu-qos",
@@ -1163,7 +1163,7 @@ impl EncodingName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["jxsv", "pcm", "raw", "smpte291"]
     }
 }
@@ -1485,7 +1485,7 @@ impl KeyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["speke", "srt-password", "static-key"]
     }
 }
@@ -1580,7 +1580,7 @@ impl Algorithm {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["aes128", "aes192", "aes256"]
     }
 }
@@ -2770,7 +2770,7 @@ impl EncoderProfile {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["high", "main"]
     }
 }
@@ -3520,7 +3520,7 @@ impl MediaStreamType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ancillary-data", "audio", "video"]
     }
 }
@@ -3904,7 +3904,7 @@ impl Tcs {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BT2100LINHLG",
             "BT2100LINPQ",
@@ -4009,7 +4009,7 @@ impl ScanMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["interlace", "progressive", "progressive-segmented-frame"]
     }
 }
@@ -4104,7 +4104,7 @@ impl Range {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL", "FULLPROTECT", "NARROW"]
     }
 }
@@ -4219,7 +4219,7 @@ impl Colorimetry {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BT2020", "BT2100", "BT601", "BT709", "ST2065-1", "ST2065-3", "XYZ",
         ]
@@ -4773,7 +4773,7 @@ impl EntitlementStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -5386,7 +5386,7 @@ impl MaintenanceDay {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Friday",
             "Monday",
@@ -5664,7 +5664,7 @@ impl NetworkInterfaceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["efa", "ena"]
     }
 }
@@ -5779,7 +5779,7 @@ impl Status {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE", "DELETING", "ERROR", "STANDBY", "STARTING", "STOPPING", "UPDATING",
         ]
@@ -5992,7 +5992,7 @@ impl State {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -6140,7 +6140,7 @@ impl FailoverMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILOVER", "MERGE"]
     }
 }
@@ -6858,7 +6858,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Mbps_Outbound_Bandwidth"]
     }
 }
@@ -6958,7 +6958,7 @@ impl ReservationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CANCELED", "EXPIRED", "PROCESSING"]
     }
 }
@@ -7043,7 +7043,7 @@ impl PriceUnits {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HOURLY"]
     }
 }
@@ -7128,7 +7128,7 @@ impl DurationUnits {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MONTHS"]
     }
 }
@@ -7620,7 +7620,7 @@ impl SourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENTITLED", "OWNED"]
     }
 }

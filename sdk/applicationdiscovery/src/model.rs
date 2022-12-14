@@ -556,7 +556,7 @@ impl ImportStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DELETE_COMPLETE",
             "DELETE_FAILED",
@@ -762,7 +762,7 @@ impl ExportDataFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CSV", "GRAPHML"]
     }
 }
@@ -847,7 +847,7 @@ impl DataSource {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AGENT"]
     }
 }
@@ -1159,7 +1159,7 @@ impl OrderString {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
 }
@@ -1366,7 +1366,7 @@ impl ConfigurationItemType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPLICATION", "CONNECTION", "PROCESS", "SERVER"]
     }
 }
@@ -2516,7 +2516,7 @@ impl ImportTaskFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IMPORT_TASK_ID", "NAME", "STATUS"]
     }
 }
@@ -2830,7 +2830,7 @@ impl ExportStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
 }
@@ -3298,7 +3298,7 @@ impl ContinuousExportStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "ERROR",
@@ -3672,7 +3672,7 @@ impl AgentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BLACKLISTED",
             "HEALTHY",
@@ -4032,7 +4032,7 @@ impl BatchDeleteImportDataErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INTERNAL_SERVER_ERROR", "NOT_FOUND", "OVER_LIMIT"]
     }
 }

@@ -100,7 +100,7 @@ impl DialogState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ConfirmIntent",
             "ElicitIntent",
@@ -209,7 +209,7 @@ impl MessageFormatType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Composite", "CustomPayload", "PlainText", "SSML"]
     }
 }
@@ -777,7 +777,7 @@ impl FulfillmentState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Failed", "Fulfilled", "ReadyForFulfillment"]
     }
 }
@@ -882,7 +882,7 @@ impl DialogActionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Close",
             "ConfirmIntent",
@@ -985,7 +985,7 @@ impl ConfirmationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Confirmed", "Denied", "None"]
     }
 }
@@ -1676,7 +1676,7 @@ impl ContentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["application/vnd.amazonaws.card.generic"]
     }
 }

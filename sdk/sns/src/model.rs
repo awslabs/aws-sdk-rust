@@ -1093,7 +1093,7 @@ impl SmsSandboxPhoneNumberVerificationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Pending", "Verified"]
     }
 }
@@ -1461,7 +1461,7 @@ impl NumberCapability {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MMS", "SMS", "VOICE"]
     }
 }
@@ -1559,7 +1559,7 @@ impl RouteType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Premium", "Promotional", "Transactional"]
     }
 }
@@ -1802,7 +1802,7 @@ impl LanguageCodeString {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "de-DE", "en-GB", "en-US", "es-419", "es-ES", "fr-CA", "fr-FR", "it-IT", "ja-JP",
             "kr-KR", "pt-BR", "zh-CN", "zh-TW",

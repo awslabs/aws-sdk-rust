@@ -209,7 +209,7 @@ impl PhoneType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DESK_PHONE", "SOFT_PHONE"]
     }
 }
@@ -419,7 +419,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONTACT",
             "CONTACT_FLOW",
@@ -859,7 +859,7 @@ impl PropertyValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "INVALID_FORMAT",
             "NOT_SUPPORTED",
@@ -958,7 +958,7 @@ impl TaskTemplateStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }
@@ -1230,7 +1230,7 @@ impl TaskTemplateFieldType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BOOLEAN",
             "DATE_TIME",
@@ -2014,7 +2014,7 @@ impl Channel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CHAT", "TASK", "VOICE"]
     }
 }
@@ -2536,7 +2536,7 @@ impl QuickConnectType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PHONE_NUMBER", "QUEUE", "USER"]
     }
 }
@@ -2626,7 +2626,7 @@ impl QueueStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -3304,7 +3304,7 @@ impl EncryptionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KMS"]
     }
 }
@@ -3505,7 +3505,7 @@ impl StorageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "KINESIS_FIREHOSE",
             "KINESIS_STREAM",
@@ -3631,7 +3631,7 @@ impl InstanceStorageResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AGENT_EVENTS",
             "CALL_RECORDINGS",
@@ -3766,7 +3766,7 @@ impl InstanceAttributeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AUTO_RESOLVE_BEST_VOICES",
             "CONTACTFLOW_LOGS",
@@ -4072,7 +4072,7 @@ impl HoursOfOperationDays {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FRIDAY",
             "MONDAY",
@@ -4172,7 +4172,7 @@ impl ContactFlowModuleState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "ARCHIVED"]
     }
 }
@@ -4317,7 +4317,7 @@ impl ContactFlowState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "ARCHIVED"]
     }
 }
@@ -4502,7 +4502,7 @@ impl ReferenceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ATTACHMENT", "DATE", "EMAIL", "NUMBER", "STRING", "URL"]
     }
 }
@@ -4592,7 +4592,7 @@ impl AgentStatusState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -4682,7 +4682,7 @@ impl TrafficType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CAMPAIGN", "GENERAL"]
     }
 }
@@ -4981,7 +4981,7 @@ impl VoiceRecordingTrack {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "FROM_AGENT", "TO_AGENT"]
     }
 }
@@ -5398,7 +5398,7 @@ impl VocabularyState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATION_FAILED",
@@ -5590,7 +5590,7 @@ impl VocabularyLanguageCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ar-AE", "de-CH", "de-DE", "en-AB", "en-AU", "en-GB", "en-IE", "en-IN", "en-US",
             "en-WL", "es-ES", "es-US", "fr-CA", "fr-FR", "hi-IN", "it-IT", "ja-JP", "ko-KR",
@@ -6277,7 +6277,7 @@ impl HierarchyGroupMatchType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EXACT", "WITH_CHILD_GROUPS"]
     }
 }
@@ -6472,7 +6472,7 @@ impl StringComparisonType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONTAINS", "EXACT", "STARTS_WITH"]
     }
 }
@@ -8079,7 +8079,7 @@ impl SearchableQueueType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STANDARD"]
     }
 }
@@ -8350,7 +8350,7 @@ impl PhoneNumberType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DID", "TOLL_FREE"]
     }
 }
@@ -9617,7 +9617,7 @@ impl PhoneNumberCountryCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AN", "AO", "AQ", "AR", "AS", "AT", "AU",
             "AW", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN",
@@ -10013,7 +10013,7 @@ impl UseCaseType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONNECT_CAMPAIGNS", "RULES_EVALUATION"]
     }
 }
@@ -10969,7 +10969,7 @@ impl QueueType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AGENT", "STANDARD"]
     }
 }
@@ -11774,7 +11774,7 @@ impl SourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SALESFORCE", "ZENDESK"]
     }
 }
@@ -11884,7 +11884,7 @@ impl IntegrationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CASES_DOMAIN",
             "EVENT",
@@ -12213,7 +12213,7 @@ impl InstanceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATION_FAILED", "CREATION_IN_PROGRESS"]
     }
 }
@@ -12308,7 +12308,7 @@ impl DirectoryType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONNECT_MANAGED", "EXISTING_DIRECTORY", "SAML"]
     }
 }
@@ -13204,7 +13204,7 @@ impl ReferenceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APPROVED", "REJECTED"]
     }
 }
@@ -13546,7 +13546,7 @@ impl ContactFlowType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AGENT_HOLD",
             "AGENT_TRANSFER",
@@ -13897,7 +13897,7 @@ impl LexVersion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["V1", "V2"]
     }
 }
@@ -14110,7 +14110,7 @@ impl AgentStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CUSTOM", "OFFLINE", "ROUTABLE"]
     }
 }
@@ -14495,7 +14495,7 @@ impl Unit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COUNT", "PERCENT", "SECONDS"]
     }
 }
@@ -14590,7 +14590,7 @@ impl Statistic {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVG", "MAX", "SUM"]
     }
 }
@@ -14753,7 +14753,7 @@ impl Comparison {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LT"]
     }
 }
@@ -14968,7 +14968,7 @@ impl HistoricalMetricName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ABANDON_TIME",
             "AFTER_CONTACT_WORK_TIME",
@@ -15237,7 +15237,7 @@ impl Grouping {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CHANNEL", "QUEUE"]
     }
 }
@@ -16028,7 +16028,7 @@ impl ContactState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONNECTED",
             "CONNECTED_ONHOLD",
@@ -16150,7 +16150,7 @@ impl ContactInitiationMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "API",
             "CALLBACK",
@@ -17153,7 +17153,7 @@ impl CurrentMetricName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AGENTS_AFTER_CONTACT_WORK",
             "AGENTS_AVAILABLE",
@@ -19071,7 +19071,7 @@ impl PhoneNumberWorkflowStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLAIMED", "FAILED", "IN_PROGRESS"]
     }
 }
@@ -19901,7 +19901,7 @@ impl ContactFlowModuleStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PUBLISHED", "SAVED"]
     }
 }

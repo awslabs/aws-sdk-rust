@@ -358,7 +358,7 @@ impl MediaCapabilities {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["None", "Receive", "Send", "SendReceive"]
     }
 }
@@ -805,7 +805,7 @@ impl TranscribeMedicalContentIdentificationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PHI"]
     }
 }
@@ -922,7 +922,7 @@ impl TranscribeMedicalRegion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ap-southeast-2",
             "auto",
@@ -1022,7 +1022,7 @@ impl TranscribeMedicalType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONVERSATION", "DICTATION"]
     }
 }
@@ -1134,7 +1134,7 @@ impl TranscribeMedicalSpecialty {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CARDIOLOGY",
             "NEUROLOGY",
@@ -1228,7 +1228,7 @@ impl TranscribeMedicalLanguageCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["en-US"]
     }
 }
@@ -1771,7 +1771,7 @@ impl TranscribeLanguageCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "it-IT", "ja-JP",
             "ko-KR", "pt-BR", "zh-CN",
@@ -1861,7 +1861,7 @@ impl TranscribeContentRedactionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PII"]
     }
 }
@@ -1948,7 +1948,7 @@ impl TranscribeContentIdentificationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PII"]
     }
 }
@@ -2045,7 +2045,7 @@ impl TranscribePartialResultsStability {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["high", "low", "medium"]
     }
 }
@@ -2190,7 +2190,7 @@ impl TranscribeRegion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ap-northeast-1",
             "ap-northeast-2",
@@ -2301,7 +2301,7 @@ impl TranscribeVocabularyFilterMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["mask", "remove", "tag"]
     }
 }
@@ -2756,7 +2756,7 @@ impl MeetingFeatureStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "UNAVAILABLE"]
     }
 }

@@ -538,7 +538,7 @@ impl DataUploadFrequency {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PT10M", "PT15M", "PT1H", "PT30M", "PT5M"]
     }
 }
@@ -715,7 +715,7 @@ impl InferenceSchedulerStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PENDING", "RUNNING", "STOPPED", "STOPPING"]
     }
 }
@@ -812,7 +812,7 @@ impl IngestionJobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCESS"]
     }
 }
@@ -1481,7 +1481,7 @@ impl Monotonicity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DECREASING", "INCREASING", "STATIC"]
     }
 }
@@ -1573,7 +1573,7 @@ impl StatisticalIssueStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NO_ISSUE_DETECTED", "POTENTIAL_ISSUE_DETECTED"]
     }
 }
@@ -2141,7 +2141,7 @@ impl ModelStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCESS"]
     }
 }
@@ -2470,7 +2470,7 @@ impl LabelRating {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ANOMALY", "NEUTRAL", "NO_ANOMALY"]
     }
 }
@@ -2908,7 +2908,7 @@ impl LatestInferenceResult {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ANOMALOUS", "NORMAL"]
     }
 }
@@ -3322,7 +3322,7 @@ impl InferenceExecutionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCESS"]
     }
 }
@@ -3780,7 +3780,7 @@ impl DatasetStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATED", "INGESTION_IN_PROGRESS"]
     }
 }
@@ -4131,7 +4131,7 @@ impl TargetSamplingRate {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "PT10M", "PT10S", "PT15M", "PT15S", "PT1H", "PT1M", "PT1S", "PT30M", "PT30S", "PT5M",
             "PT5S",

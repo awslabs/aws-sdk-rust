@@ -406,7 +406,7 @@ impl FragmentSelectorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
     }
 }
@@ -621,7 +621,7 @@ impl ImageError {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MEDIA_ERROR", "NO_MEDIA"]
     }
 }
@@ -706,7 +706,7 @@ impl FormatConfigKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JPEGQuality"]
     }
 }
@@ -796,7 +796,7 @@ impl Format {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JPEG", "PNG"]
     }
 }
@@ -888,7 +888,7 @@ impl ImageSelectorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
     }
 }
@@ -980,7 +980,7 @@ impl HlsDisplayFragmentTimestamp {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALWAYS", "NEVER"]
     }
 }
@@ -1077,7 +1077,7 @@ impl HlsDiscontinuityMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALWAYS", "NEVER", "ON_DISCONTINUITY"]
     }
 }
@@ -1167,7 +1167,7 @@ impl ContainerFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FRAGMENTED_MP4", "MPEG_TS"]
     }
 }
@@ -1472,7 +1472,7 @@ impl HlsFragmentSelectorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
     }
 }
@@ -1567,7 +1567,7 @@ impl HlsPlaybackMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LIVE", "LIVE_REPLAY", "ON_DEMAND"]
     }
 }
@@ -1873,7 +1873,7 @@ impl DashFragmentSelectorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
     }
 }
@@ -1965,7 +1965,7 @@ impl DashDisplayFragmentNumber {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALWAYS", "NEVER"]
     }
 }
@@ -2057,7 +2057,7 @@ impl DashDisplayFragmentTimestamp {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALWAYS", "NEVER"]
     }
 }
@@ -2152,7 +2152,7 @@ impl DashPlaybackMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LIVE", "LIVE_REPLAY", "ON_DEMAND"]
     }
 }
@@ -2425,7 +2425,7 @@ impl ClipFragmentSelectorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
     }
 }

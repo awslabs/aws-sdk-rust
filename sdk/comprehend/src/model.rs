@@ -175,7 +175,7 @@ impl JobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "FAILED",
@@ -758,7 +758,7 @@ impl DocumentReadFeatureTypes {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FORMS", "TABLES"]
     }
 }
@@ -848,7 +848,7 @@ impl DocumentReadMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FORCE_DOCUMENT_READ_ACTION", "SERVICE_DEFAULT"]
     }
 }
@@ -940,7 +940,7 @@ impl DocumentReadAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TEXTRACT_ANALYZE_DOCUMENT", "TEXTRACT_DETECT_DOCUMENT_TEXT"]
     }
 }
@@ -1030,7 +1030,7 @@ impl InputFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ONE_DOC_PER_FILE", "ONE_DOC_PER_LINE"]
     }
 }
@@ -1170,7 +1170,7 @@ impl LanguageCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ar", "de", "en", "es", "fr", "hi", "it", "ja", "ko", "pt", "zh", "zh-TW",
         ]
@@ -1379,7 +1379,7 @@ impl PiiEntitiesDetectionMaskMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MASK", "REPLACE_WITH_PII_ENTITY_TYPE"]
     }
 }
@@ -1648,7 +1648,7 @@ impl PiiEntityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADDRESS",
             "AGE",
@@ -1778,7 +1778,7 @@ impl PiiEntitiesDetectionMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ONLY_OFFSETS", "ONLY_REDACTION"]
     }
 }
@@ -5159,7 +5159,7 @@ impl ModelStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DELETING",
             "IN_ERROR",
@@ -6577,7 +6577,7 @@ impl AugmentedManifestsDocumentTypeFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PLAIN_TEXT_DOCUMENT", "SEMI_STRUCTURED_DOCUMENT"]
     }
 }
@@ -6667,7 +6667,7 @@ impl Split {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TEST", "TRAIN"]
     }
 }
@@ -7046,7 +7046,7 @@ impl EntityRecognizerDataFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUGMENTED_MANIFEST", "COMPREHEND_CSV"]
     }
 }
@@ -8091,7 +8091,7 @@ impl EndpointStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATING", "DELETING", "FAILED", "IN_SERVICE", "UPDATING"]
     }
 }
@@ -9429,7 +9429,7 @@ impl DocumentClassifierMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MULTI_CLASS", "MULTI_LABEL"]
     }
 }
@@ -10136,7 +10136,7 @@ impl DocumentClassifierDataFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUGMENTED_MANIFEST", "COMPREHEND_CSV"]
     }
 }
@@ -11348,7 +11348,7 @@ impl SentimentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MIXED", "NEGATIVE", "NEUTRAL", "POSITIVE"]
     }
 }
@@ -11515,7 +11515,7 @@ impl TargetedSentimentEntityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ATTRIBUTE",
             "BOOK",
@@ -11921,7 +11921,7 @@ impl PartOfSpeechTagType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADJ", "ADP", "ADV", "AUX", "CCONJ", "CONJ", "DET", "INTJ", "NOUN", "NUM", "O", "PART",
             "PRON", "PROPN", "PUNCT", "SCONJ", "SYM", "VERB",
@@ -12036,7 +12036,7 @@ impl SyntaxLanguageCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["de", "en", "es", "fr", "it", "pt"]
     }
 }
@@ -12527,7 +12527,7 @@ impl EntityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMMERCIAL_ITEM",
             "DATE",

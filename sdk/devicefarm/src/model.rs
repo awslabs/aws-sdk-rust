@@ -661,7 +661,7 @@ impl UploadCategory {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CURATED", "PRIVATE"]
     }
 }
@@ -761,7 +761,7 @@ impl UploadStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "INITIALIZED", "PROCESSING", "SUCCEEDED"]
     }
 }
@@ -1001,7 +1001,7 @@ impl UploadType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ANDROID_APP",
             "APPIUM_JAVA_JUNIT_TEST_PACKAGE",
@@ -1915,7 +1915,7 @@ impl NetworkProfileType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CURATED", "PRIVATE"]
     }
 }
@@ -2882,7 +2882,7 @@ impl RuleOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CONTAINS",
             "EQUALS",
@@ -3036,7 +3036,7 @@ impl DeviceAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "APPIUM_VERSION",
             "ARN",
@@ -3140,7 +3140,7 @@ impl DevicePoolType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CURATED", "PRIVATE"]
     }
 }
@@ -3410,7 +3410,7 @@ impl InstanceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "IN_USE", "NOT_AVAILABLE", "PREPARING"]
     }
 }
@@ -5189,7 +5189,7 @@ impl DeviceFilterAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ARN",
             "AVAILABILITY",
@@ -5609,7 +5609,7 @@ impl ExecutionResultCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PARSING_FAILED", "VPC_ENDPOINT_SETUP_FAILED"]
     }
 }
@@ -5794,7 +5794,7 @@ impl BillingMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["METERED", "UNMETERED"]
     }
 }
@@ -6084,7 +6084,7 @@ impl ExecutionResult {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ERRORED", "FAILED", "PASSED", "PENDING", "SKIPPED", "STOPPED", "WARNED",
         ]
@@ -6211,7 +6211,7 @@ impl ExecutionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "PENDING",
@@ -6311,7 +6311,7 @@ impl DevicePlatform {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ANDROID", "IOS"]
     }
 }
@@ -6496,7 +6496,7 @@ impl TestType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "APPIUM_JAVA_JUNIT",
             "APPIUM_JAVA_TESTNG",
@@ -7238,7 +7238,7 @@ impl InteractionMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INTERACTIVE", "NO_VIDEO", "VIDEO_ONLY"]
     }
 }
@@ -7860,7 +7860,7 @@ impl DeviceAvailability {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "BUSY",
@@ -8125,7 +8125,7 @@ impl DeviceFormFactor {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PHONE", "TABLET"]
     }
 }
@@ -10062,7 +10062,7 @@ impl CurrencyCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["USD"]
     }
 }
@@ -10499,7 +10499,7 @@ impl RecurringChargeFrequency {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MONTHLY"]
     }
 }
@@ -10584,7 +10584,7 @@ impl OfferingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RECURRING"]
     }
 }
@@ -10681,7 +10681,7 @@ impl OfferingTransactionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PURCHASE", "RENEW", "SYSTEM"]
     }
 }
@@ -11775,7 +11775,7 @@ impl TestGridSessionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CLOSED", "ERRORED"]
     }
 }
@@ -11972,7 +11972,7 @@ impl TestGridSessionArtifactType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SELENIUM_LOG", "UNKNOWN", "VIDEO"]
     }
 }
@@ -12064,7 +12064,7 @@ impl TestGridSessionArtifactCategory {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LOG", "VIDEO"]
     }
 }
@@ -12998,7 +12998,7 @@ impl SampleType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CPU",
             "MEMORY",
@@ -13570,7 +13570,7 @@ impl ArtifactType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "APPIUM_JAVA_OUTPUT",
             "APPIUM_JAVA_XML_OUTPUT",
@@ -13694,7 +13694,7 @@ impl ArtifactCategory {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FILE", "LOG", "SCREENSHOT"]
     }
 }

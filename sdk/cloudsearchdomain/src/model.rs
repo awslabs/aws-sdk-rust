@@ -135,7 +135,7 @@ impl ContentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["application/json", "application/xml"]
     }
 }
@@ -1234,7 +1234,7 @@ impl QueryParser {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["dismax", "lucene", "simple", "structured"]
     }
 }

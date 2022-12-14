@@ -172,7 +172,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_ASSUME_ROLE",
             "CANNOT_PARSE",
@@ -834,7 +834,7 @@ impl NetworkResourceDefinitionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEVICE_IDENTIFIER", "RADIO_UNIT"]
     }
 }
@@ -941,7 +941,7 @@ impl NetworkSiteStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "CREATED",
@@ -1245,7 +1245,7 @@ impl AcknowledgmentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACKNOWLEDGED", "ACKNOWLEDGING", "UNACKNOWLEDGED"]
     }
 }
@@ -1631,7 +1631,7 @@ impl OrderFilterKeys {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NETWORK_SITE", "STATUS"]
     }
 }
@@ -1718,7 +1718,7 @@ impl NetworkSiteFilterKeys {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STATUS"]
     }
 }
@@ -1987,7 +1987,7 @@ impl NetworkStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "CREATED",
@@ -2080,7 +2080,7 @@ impl NetworkFilterKeys {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["STATUS"]
     }
 }
@@ -2681,7 +2681,7 @@ impl ElevationReference {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AGL", "AMSL"]
     }
 }
@@ -2766,7 +2766,7 @@ impl ElevationUnit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FEET"]
     }
 }
@@ -2861,7 +2861,7 @@ impl HealthStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HEALTHY", "INITIAL", "UNHEALTHY"]
     }
 }
@@ -2983,7 +2983,7 @@ impl NetworkResourceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "DELETED",
@@ -3079,7 +3079,7 @@ impl NetworkResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RADIO_UNIT"]
     }
 }
@@ -3171,7 +3171,7 @@ impl NetworkResourceFilterKeys {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ORDER", "STATUS"]
     }
 }
@@ -3490,7 +3490,7 @@ impl DeviceIdentifierStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }
@@ -3587,7 +3587,7 @@ impl DeviceIdentifierFilterKeys {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ORDER", "STATUS", "TRAFFIC_GROUP"]
     }
 }

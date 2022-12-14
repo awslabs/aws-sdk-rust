@@ -82,7 +82,7 @@ impl WebserverAccessMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRIVATE_ONLY", "PUBLIC_ONLY"]
     }
 }
@@ -435,7 +435,7 @@ impl LoggingLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CRITICAL", "DEBUG", "ERROR", "INFO", "WARNING"]
     }
 }
@@ -999,7 +999,7 @@ impl Unit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Bits",
             "Bits/Second",
@@ -2107,7 +2107,7 @@ impl UpdateStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING", "SUCCESS"]
     }
 }
@@ -2579,7 +2579,7 @@ impl EnvironmentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "CREATE_FAILED",

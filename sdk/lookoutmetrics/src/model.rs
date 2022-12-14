@@ -167,7 +167,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
             "FIELD_VALIDATION_FAILED",
@@ -422,7 +422,7 @@ impl FilterOperation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EQUALS"]
     }
 }
@@ -1909,7 +1909,7 @@ impl JsonFileCompression {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GZIP", "NONE"]
     }
 }
@@ -2168,7 +2168,7 @@ impl CsvFileCompression {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GZIP", "NONE"]
     }
 }
@@ -2268,7 +2268,7 @@ impl Frequency {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["P1D", "PT10M", "PT1H", "PT5M"]
     }
 }
@@ -2536,7 +2536,7 @@ impl AggregationFunction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVG", "SUM"]
     }
 }
@@ -3150,7 +3150,7 @@ impl SnsFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JSON", "LONG_TEXT", "SHORT_TEXT"]
     }
 }
@@ -4208,7 +4208,7 @@ impl RelationshipType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CAUSE_OF_INPUT_ANOMALY_GROUP",
             "EFFECT_OF_INPUT_ANOMALY_GROUP",
@@ -4568,7 +4568,7 @@ impl AnomalyDetectorStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVATING",
             "ACTIVE",
@@ -4924,7 +4924,7 @@ impl AlertStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }
@@ -5014,7 +5014,7 @@ impl AlertType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LAMBDA", "SNS"]
     }
 }
@@ -5772,7 +5772,7 @@ impl DataQualityMetricType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BACKTEST_INFERENCE_DATA_END_TIME_STAMP",
             "BACKTEST_INFERENCE_DATA_START_TIME_STAMP",
@@ -6900,7 +6900,7 @@ impl Confidence {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "NONE"]
     }
 }
@@ -7514,7 +7514,7 @@ impl AnomalyDetectorFailureType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVATION_FAILURE",
             "BACK_TEST_ACTIVATION_FAILURE",
@@ -7788,7 +7788,7 @@ impl AnomalyDetectionTaskStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "FAILED",

@@ -598,7 +598,7 @@ impl StorageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["QUOTA", "UNLIMITED"]
     }
 }
@@ -733,7 +733,7 @@ impl LocaleType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "de", "default", "en", "es", "fr", "ja", "ko", "pt_BR", "ru", "zh_CN", "zh_TW",
         ]
@@ -840,7 +840,7 @@ impl UserType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADMIN",
             "MINIMALUSER",
@@ -941,7 +941,7 @@ impl UserStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE", "PENDING"]
     }
 }
@@ -1031,7 +1031,7 @@ impl BooleanEnumType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FALSE", "TRUE"]
     }
 }
@@ -1133,7 +1133,7 @@ impl ResourceStateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "RECYCLED", "RECYCLING", "RESTORING"]
     }
 }
@@ -1220,7 +1220,7 @@ impl DocumentVersionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE"]
     }
 }
@@ -1325,7 +1325,7 @@ impl PrincipalType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ANONYMOUS", "GROUP", "INVITE", "ORGANIZATION", "USER"]
     }
 }
@@ -2097,7 +2097,7 @@ impl DocumentSourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ORIGINAL", "WITH_COMMENTS"]
     }
 }
@@ -2194,7 +2194,7 @@ impl DocumentThumbnailType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LARGE", "SMALL", "SMALL_HQ"]
     }
 }
@@ -2286,7 +2286,7 @@ impl DocumentStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INITIALIZED"]
     }
 }
@@ -2649,7 +2649,7 @@ impl ResourceCollectionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SHARED_WITH_ME"]
     }
 }
@@ -2894,7 +2894,7 @@ impl UserSortType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FULL_NAME",
             "STORAGE_LIMIT",
@@ -2990,7 +2990,7 @@ impl OrderType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
 }
@@ -3080,7 +3080,7 @@ impl UserFilterType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE_PENDING", "ALL"]
     }
 }
@@ -3354,7 +3354,7 @@ impl RolePermissionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DIRECT", "INHERITED"]
     }
 }
@@ -3454,7 +3454,7 @@ impl RoleType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONTRIBUTOR", "COOWNER", "OWNER", "VIEWER"]
     }
 }
@@ -3642,7 +3642,7 @@ impl SubscriptionProtocolType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HTTPS"]
     }
 }
@@ -3814,7 +3814,7 @@ impl FolderContentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "DOCUMENT", "FOLDER"]
     }
 }
@@ -3904,7 +3904,7 @@ impl ResourceSortType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DATE", "NAME"]
     }
 }
@@ -4220,7 +4220,7 @@ impl CommentVisibilityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PRIVATE", "PUBLIC"]
     }
 }
@@ -4317,7 +4317,7 @@ impl CommentStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETED", "DRAFT", "PUBLISHED"]
     }
 }
@@ -5100,7 +5100,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DOCUMENT", "FOLDER"]
     }
 }
@@ -5446,7 +5446,7 @@ impl ActivityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DOCUMENT_ANNOTATION_ADDED",
             "DOCUMENT_ANNOTATION_DELETED",
@@ -5565,7 +5565,7 @@ impl SubscriptionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL"]
     }
 }
@@ -5819,7 +5819,7 @@ impl ShareStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILURE", "SUCCESS"]
     }
 }

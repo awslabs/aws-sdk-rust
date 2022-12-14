@@ -221,7 +221,7 @@ impl TaskState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANCELED", "COMPLETED", "IN_PROGRESS"]
     }
 }
@@ -568,7 +568,7 @@ impl ExecutionState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
             "FAILED",
@@ -1546,7 +1546,7 @@ impl AttachmentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ATTACHED", "ATTACHING", "DETACHED", "DETACHING"]
     }
 }
@@ -1784,7 +1784,7 @@ impl InstanceStateName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "PENDING",
             "RUNNING",
@@ -2466,7 +2466,7 @@ impl IpAddressAssignment {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DHCP", "STATIC"]
     }
 }
@@ -2573,7 +2573,7 @@ impl PhysicalConnectorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["QSFP", "RJ45", "RJ45_2", "SFP_PLUS", "WIFI"]
     }
 }
@@ -2668,7 +2668,7 @@ impl UnlockState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LOCKED", "UNLOCKED", "UNLOCKING"]
     }
 }

@@ -75,7 +75,7 @@ impl LanguageCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["en"]
     }
 }
@@ -689,7 +689,7 @@ impl JobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "FAILED",
@@ -1515,7 +1515,7 @@ impl SnomedctTraitName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DIAGNOSIS", "NEGATION", "SIGN", "SYMPTOM"]
     }
 }
@@ -1912,7 +1912,7 @@ impl SnomedctRelationshipType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACUITY",
             "DIRECTION",
@@ -2031,7 +2031,7 @@ impl SnomedctAttributeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACUITY",
             "DIRECTION",
@@ -2135,7 +2135,7 @@ impl SnomedctEntityCategory {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ANATOMY", "MEDICAL_CONDITION", "TEST_TREATMENT_PROCEDURE"]
     }
 }
@@ -2237,7 +2237,7 @@ impl SnomedctEntityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DX_NAME", "PROCEDURE_NAME", "TEST_NAME", "TREATMENT_NAME"]
     }
 }
@@ -2764,7 +2764,7 @@ impl RxNormTraitName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NEGATION"]
     }
 }
@@ -3088,7 +3088,7 @@ impl RxNormAttributeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DOSAGE",
             "DURATION",
@@ -3186,7 +3186,7 @@ impl RxNormEntityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BRAND_NAME", "GENERIC_NAME"]
     }
 }
@@ -3273,7 +3273,7 @@ impl RxNormEntityCategory {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MEDICATION"]
     }
 }
@@ -3815,7 +3815,7 @@ impl Icd10CmTraitName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DIAGNOSIS", "NEGATION", "SIGN", "SYMPTOM"]
     }
 }
@@ -4160,7 +4160,7 @@ impl Icd10CmRelationshipType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OVERLAP", "SYSTEM_ORGAN_SITE"]
     }
 }
@@ -4252,7 +4252,7 @@ impl Icd10CmEntityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DX_NAME", "TIME_EXPRESSION"]
     }
 }
@@ -4369,7 +4369,7 @@ impl Icd10CmAttributeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACUITY",
             "DIRECTION",
@@ -4464,7 +4464,7 @@ impl Icd10CmEntityCategory {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MEDICAL_CONDITION"]
     }
 }
@@ -5125,7 +5125,7 @@ impl AttributeName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DIAGNOSIS", "NEGATION", "SIGN", "SYMPTOM"]
     }
 }
@@ -5235,7 +5235,7 @@ impl EntityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ANATOMY",
             "MEDICAL_CONDITION",
@@ -5417,7 +5417,7 @@ impl RelationshipType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACUITY",
             "ADMINISTERED_VIA",
@@ -5707,7 +5707,7 @@ impl EntitySubType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACUITY",
             "ADDRESS",

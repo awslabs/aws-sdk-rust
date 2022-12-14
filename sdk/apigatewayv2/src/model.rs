@@ -75,7 +75,7 @@ impl VpcLinkVersion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["V2"]
     }
 }
@@ -180,7 +180,7 @@ impl VpcLinkStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "FAILED", "INACTIVE", "PENDING"]
     }
 }
@@ -413,7 +413,7 @@ impl LoggingLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ERROR", "INFO", "OFF"]
     }
 }
@@ -648,7 +648,7 @@ impl AuthorizationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_IAM", "CUSTOM", "JWT", "NONE"]
     }
 }
@@ -740,7 +740,7 @@ impl ContentHandlingStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONVERT_TO_BINARY", "CONVERT_TO_TEXT"]
     }
 }
@@ -895,7 +895,7 @@ impl PassthroughBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NEVER", "WHEN_NO_MATCH", "WHEN_NO_TEMPLATES"]
     }
 }
@@ -1000,7 +1000,7 @@ impl IntegrationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS", "AWS_PROXY", "HTTP", "HTTP_PROXY", "MOCK"]
     }
 }
@@ -1090,7 +1090,7 @@ impl ConnectionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INTERNET", "VPC_LINK"]
     }
 }
@@ -1638,7 +1638,7 @@ impl SecurityPolicy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TLS_1_0", "TLS_1_2"]
     }
 }
@@ -1728,7 +1728,7 @@ impl EndpointType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EDGE", "REGIONAL"]
     }
 }
@@ -1828,7 +1828,7 @@ impl DomainNameStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "PENDING_CERTIFICATE_REIMPORT",
@@ -2025,7 +2025,7 @@ impl DeploymentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEPLOYED", "FAILED", "PENDING"]
     }
 }
@@ -2215,7 +2215,7 @@ impl AuthorizerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JWT", "REQUEST"]
     }
 }
@@ -2305,7 +2305,7 @@ impl ProtocolType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HTTP", "WEBSOCKET"]
     }
 }

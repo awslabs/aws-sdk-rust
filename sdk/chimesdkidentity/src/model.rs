@@ -149,7 +149,7 @@ impl ErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
             "BadRequest",
@@ -255,7 +255,7 @@ impl AllowMessages {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "NONE"]
     }
 }
@@ -505,7 +505,7 @@ impl AppInstanceUserEndpointType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["APNS", "APNS_SANDBOX", "GCM"]
     }
 }
@@ -1071,7 +1071,7 @@ impl EndpointStatusReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INVALID_DEVICE_TOKEN", "INVALID_PINPOINT_ARN"]
     }
 }
@@ -1161,7 +1161,7 @@ impl EndpointStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }

@@ -138,7 +138,7 @@ impl StreamMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ON_DEMAND", "PROVISIONED"]
     }
 }
@@ -223,7 +223,7 @@ impl ScalingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["UNIFORM_SCALING"]
     }
 }
@@ -313,7 +313,7 @@ impl EncryptionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KMS", "NONE"]
     }
 }
@@ -539,7 +539,7 @@ impl ConsumerStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING"]
     }
 }
@@ -1392,7 +1392,7 @@ impl ShardFilterType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AFTER_SHARD_ID",
             "AT_LATEST",
@@ -1506,7 +1506,7 @@ impl ShardIteratorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AFTER_SEQUENCE_NUMBER",
             "AT_SEQUENCE_NUMBER",
@@ -1907,7 +1907,7 @@ impl MetricsName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALL",
             "IncomingBytes",
@@ -2474,7 +2474,7 @@ impl StreamStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "UPDATING"]
     }
 }

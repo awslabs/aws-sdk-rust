@@ -361,7 +361,7 @@ impl QuantumTaskStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
             "CANCELLING",
@@ -588,7 +588,7 @@ impl SearchQuantumTasksFilterOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BETWEEN", "EQUAL", "GT", "GTE", "LT", "LTE"]
     }
 }
@@ -680,7 +680,7 @@ impl CancellationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANCELLED", "CANCELLING"]
     }
 }
@@ -1018,7 +1018,7 @@ impl JobPrimaryStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
             "CANCELLING",
@@ -1249,7 +1249,7 @@ impl SearchJobsFilterOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BETWEEN", "CONTAINS", "EQUAL", "GT", "GTE", "LT", "LTE"]
     }
 }
@@ -1677,7 +1677,7 @@ impl InstanceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ml.c4.2xlarge",
             "ml.c4.4xlarge",
@@ -2455,7 +2455,7 @@ impl CompressionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GZIP", "NONE"]
     }
 }
@@ -2691,7 +2691,7 @@ impl JobEventType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
             "COMPLETED",
@@ -2942,7 +2942,7 @@ impl DeviceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OFFLINE", "ONLINE", "RETIRED"]
     }
 }
@@ -3032,7 +3032,7 @@ impl DeviceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["QPU", "SIMULATOR"]
     }
 }

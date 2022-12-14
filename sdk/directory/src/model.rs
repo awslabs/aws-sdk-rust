@@ -80,7 +80,7 @@ impl SelectiveAuth {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -480,7 +480,7 @@ impl RadiusAuthenticationProtocol {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CHAP", "MS-CHAPv1", "MS-CHAPv2", "PAP"]
     }
 }
@@ -640,7 +640,7 @@ impl TargetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT"]
     }
 }
@@ -730,7 +730,7 @@ impl ShareMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HANDSHAKE", "ORGANIZATIONS"]
     }
 }
@@ -950,7 +950,7 @@ impl CertificateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ClientCertAuth", "ClientLDAPS"]
     }
 }
@@ -1354,7 +1354,7 @@ impl SchemaExtensionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CancelInProgress",
             "Cancelled",
@@ -1744,7 +1744,7 @@ impl IpRouteStatusMsg {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AddFailed",
             "Added",
@@ -2008,7 +2008,7 @@ impl CertificateState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DeregisterFailed",
             "Deregistered",
@@ -2478,7 +2478,7 @@ impl LdapsType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Client"]
     }
 }
@@ -2570,7 +2570,7 @@ impl ClientAuthenticationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SmartCard", "SmartCardOrPassword"]
     }
 }
@@ -2990,7 +2990,7 @@ impl TrustState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Created",
             "Creating",
@@ -3097,7 +3097,7 @@ impl TrustDirection {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["One-Way: Incoming", "One-Way: Outgoing", "Two-Way"]
     }
 }
@@ -3187,7 +3187,7 @@ impl TrustType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["External", "Forest"]
     }
 }
@@ -3443,7 +3443,7 @@ impl SnapshotStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Completed", "Creating", "Failed"]
     }
 }
@@ -3533,7 +3533,7 @@ impl SnapshotType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Auto", "Manual"]
     }
 }
@@ -3897,7 +3897,7 @@ impl ShareStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Deleted",
             "Deleting",
@@ -4305,7 +4305,7 @@ impl DirectoryConfigurationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Default", "Failed", "Requested", "Updated", "Updating"]
     }
 }
@@ -4770,7 +4770,7 @@ impl DirectoryStage {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Active",
             "Created",
@@ -4872,7 +4872,7 @@ impl RegionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Additional", "Primary"]
     }
 }
@@ -5076,7 +5076,7 @@ impl LdapsStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "EnableFailed", "Enabled", "Enabling"]
     }
 }
@@ -5314,7 +5314,7 @@ impl TopicStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Deleted", "Failed", "Registered", "Topic not found"]
     }
 }
@@ -5689,7 +5689,7 @@ impl DomainControllerStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Active",
             "Creating",
@@ -6684,7 +6684,7 @@ impl RadiusStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Completed", "Creating", "Failed"]
     }
 }
@@ -7108,7 +7108,7 @@ impl DirectoryType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADConnector",
             "MicrosoftAD",
@@ -7203,7 +7203,7 @@ impl DirectoryEdition {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Enterprise", "Standard"]
     }
 }
@@ -7293,7 +7293,7 @@ impl DirectorySize {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Large", "Small"]
     }
 }
@@ -7488,7 +7488,7 @@ impl ReplicationScope {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Domain"]
     }
 }
@@ -7684,7 +7684,7 @@ impl ClientAuthenticationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }

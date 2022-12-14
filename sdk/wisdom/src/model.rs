@@ -699,7 +699,7 @@ impl KnowledgeBaseStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATE_FAILED",
@@ -798,7 +798,7 @@ impl KnowledgeBaseType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CUSTOM", "EXTERNAL"]
     }
 }
@@ -1219,7 +1219,7 @@ impl ContentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATE_FAILED",
@@ -1474,7 +1474,7 @@ impl FilterOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EQUALS"]
     }
 }
@@ -1559,7 +1559,7 @@ impl FilterField {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NAME"]
     }
 }
@@ -2963,7 +2963,7 @@ impl Relevance {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HELPFUL", "NOT_HELPFUL"]
     }
 }
@@ -3053,7 +3053,7 @@ impl TargetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RECOMMENDATION", "RESULT"]
     }
 }
@@ -3489,7 +3489,7 @@ impl RecommendationSourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ISSUE_DETECTION", "OTHER", "RULE_EVALUATION"]
     }
 }
@@ -3576,7 +3576,7 @@ impl RecommendationTriggerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["QUERY"]
     }
 }
@@ -3807,7 +3807,7 @@ impl RecommendationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KNOWLEDGE_CONTENT"]
     }
 }
@@ -3902,7 +3902,7 @@ impl RelevanceLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM"]
     }
 }
@@ -4247,7 +4247,7 @@ impl AssistantStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATE_FAILED",
@@ -4339,7 +4339,7 @@ impl AssistantType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AGENT"]
     }
 }
@@ -5152,7 +5152,7 @@ impl AssociationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KNOWLEDGE_BASE"]
     }
 }

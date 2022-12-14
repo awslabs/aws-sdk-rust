@@ -374,7 +374,7 @@ impl LogLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "ERROR", "FATAL", "OFF"]
     }
 }
@@ -686,7 +686,7 @@ impl SyncExecutionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "SUCCEEDED", "TIMED_OUT"]
     }
 }
@@ -936,7 +936,7 @@ impl StateMachineType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EXPRESS", "STANDARD"]
     }
 }
@@ -1247,7 +1247,7 @@ impl ExecutionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ABORTED", "FAILED", "RUNNING", "SUCCEEDED", "TIMED_OUT"]
     }
 }
@@ -5727,7 +5727,7 @@ impl HistoryEventType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ActivityFailed",
             "ActivityScheduleFailed",
@@ -5875,7 +5875,7 @@ impl StateMachineStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETING"]
     }
 }

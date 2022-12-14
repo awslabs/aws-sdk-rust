@@ -245,7 +245,7 @@ impl StatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "Inactive"]
     }
 }
@@ -1193,7 +1193,7 @@ impl PermissionsBoundaryAttachmentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PermissionsBoundaryPolicy"]
     }
 }
@@ -1909,7 +1909,7 @@ impl PolicyEvaluationDecisionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["allowed", "explicitDeny", "implicitDeny"]
     }
 }
@@ -2228,7 +2228,7 @@ impl PolicySourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "aws-managed",
             "group",
@@ -2544,7 +2544,7 @@ impl ContextKeyTypeEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "binary",
             "binaryList",
@@ -2649,7 +2649,7 @@ impl GlobalEndpointTokenVersion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["v1Token", "v2Token"]
     }
 }
@@ -3368,7 +3368,7 @@ impl AssignmentStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Any", "Assigned", "Unassigned"]
     }
 }
@@ -4237,7 +4237,7 @@ impl PolicyOwnerEntityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GROUP", "ROLE", "USER"]
     }
 }
@@ -4327,7 +4327,7 @@ impl PolicyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INLINE", "MANAGED"]
     }
 }
@@ -4745,7 +4745,7 @@ impl PolicyUsageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PermissionsBoundary", "PermissionsPolicy"]
     }
 }
@@ -4840,7 +4840,7 @@ impl PolicyScopeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS", "All", "Local"]
     }
 }
@@ -5688,7 +5688,7 @@ impl EntityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWSManagedPolicy",
             "Group",
@@ -5987,7 +5987,7 @@ impl EncodingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PEM", "SSH"]
     }
 }
@@ -6259,7 +6259,7 @@ impl DeletionTaskStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "NOT_STARTED", "SUCCEEDED"]
     }
 }
@@ -6659,7 +6659,7 @@ impl JobStatusType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "IN_PROGRESS"]
     }
 }
@@ -7122,7 +7122,7 @@ impl AccessAdvisorUsageGranularityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTION_LEVEL", "SERVICE_LEVEL"]
     }
 }
@@ -7546,7 +7546,7 @@ impl SortKeyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "LAST_AUTHENTICATED_TIME_ASCENDING",
             "LAST_AUTHENTICATED_TIME_DESCENDING",
@@ -7735,7 +7735,7 @@ impl ReportFormatType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["text/csv"]
     }
 }
@@ -7949,7 +7949,7 @@ impl SummaryKeyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AccessKeysPerUserQuota",
             "AccountAccessKeysPresent",
@@ -9747,7 +9747,7 @@ impl ReportStateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "INPROGRESS", "STARTED"]
     }
 }

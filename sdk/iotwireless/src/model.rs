@@ -592,7 +592,7 @@ impl EventNotificationTopicStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -1266,7 +1266,7 @@ impl EventNotificationPartnerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Sidewalk"]
     }
 }
@@ -1371,7 +1371,7 @@ impl IdentifierType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DevEui",
             "GatewayEui",
@@ -1469,7 +1469,7 @@ impl PositionResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["WirelessDevice", "WirelessGateway"]
     }
 }
@@ -1554,7 +1554,7 @@ impl PartnerType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Sidewalk"]
     }
 }
@@ -1795,7 +1795,7 @@ impl LogLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ERROR", "INFO"]
     }
 }
@@ -1889,7 +1889,7 @@ impl WirelessDeviceFrameInfo {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -2057,7 +2057,7 @@ impl DlClass {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ClassB", "ClassC"]
     }
 }
@@ -2159,7 +2159,7 @@ impl SupportedRfRegion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AS923-1", "AU915", "EU868", "US915"]
     }
 }
@@ -2438,7 +2438,7 @@ impl WirelessGatewayEvent {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CUPS_Request", "Certificate"]
     }
 }
@@ -2525,7 +2525,7 @@ impl WirelessGatewayType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LoRaWAN"]
     }
 }
@@ -2819,7 +2819,7 @@ impl WirelessDeviceEvent {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Downlink_Data",
             "Join",
@@ -2917,7 +2917,7 @@ impl WirelessDeviceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LoRaWAN", "Sidewalk"]
     }
 }
@@ -3598,7 +3598,7 @@ impl ExpressionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["MqttTopic", "RuleName"]
     }
 }
@@ -4131,7 +4131,7 @@ impl MessageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CUSTOM_COMMAND_ID_GET",
             "CUSTOM_COMMAND_ID_NOTIFY",
@@ -4496,7 +4496,7 @@ impl DownlinkMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONCURRENT", "SEQUENTIAL", "USING_UPLINK_GATEWAY"]
     }
 }
@@ -4840,7 +4840,7 @@ impl PositionConfigurationFec {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "ROSE"]
     }
 }
@@ -4932,7 +4932,7 @@ impl PositionConfigurationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
 }
@@ -5296,7 +5296,7 @@ impl WirelessGatewayTaskDefinitionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["UPDATE"]
     }
 }
@@ -6134,7 +6134,7 @@ impl FuotaDeviceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FragAlgo_unsupported",
             "FragIndex_unsupported",
@@ -6442,7 +6442,7 @@ impl SigningAlg {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Ed25519", "P256r1"]
     }
 }
@@ -7106,7 +7106,7 @@ impl PositionSolverType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GNSS"]
     }
 }
@@ -7193,7 +7193,7 @@ impl PositionSolverProvider {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Semtech"]
     }
 }
@@ -7999,7 +7999,7 @@ impl EventNotificationResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SidewalkAccount", "WirelessDevice", "WirelessGateway"]
     }
 }
@@ -8592,7 +8592,7 @@ impl WirelessGatewayTaskStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "FAILED",
@@ -8689,7 +8689,7 @@ impl ConnectionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Connected", "Disconnected"]
     }
 }
@@ -8844,7 +8844,7 @@ impl WirelessGatewayIdType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GatewayEui", "ThingName", "WirelessGatewayId"]
     }
 }
@@ -9065,7 +9065,7 @@ impl DeviceState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Provisioned",
             "RegisteredNotSeen",
@@ -9175,7 +9175,7 @@ impl Event {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ack", "discovered", "lost", "nack", "passthrough"]
     }
 }
@@ -9270,7 +9270,7 @@ impl BatteryLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["critical", "low", "normal"]
     }
 }
@@ -10667,7 +10667,7 @@ impl WirelessDeviceIdType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DevEui",
             "SidewalkManufacturingSn",
@@ -11185,7 +11185,7 @@ impl WirelessGatewayServiceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CUPS", "LNS"]
     }
 }
@@ -11567,7 +11567,7 @@ impl FuotaTaskStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Delete_Waiting",
             "FuotaDone",

@@ -105,7 +105,7 @@ impl ConnectionState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AUTHORIZED",
             "AUTHORIZING",
@@ -1004,7 +1004,7 @@ impl ConnectionOAuthHttpMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GET", "POST", "PUT"]
     }
 }
@@ -1254,7 +1254,7 @@ impl ConnectionAuthorizationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["API_KEY", "BASIC", "OAUTH_CLIENT_CREDENTIALS"]
     }
 }
@@ -1364,7 +1364,7 @@ impl ArchiveState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
             "CREATING",
@@ -1463,7 +1463,7 @@ impl ApiDestinationState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }
@@ -1580,7 +1580,7 @@ impl ApiDestinationHttpMethod {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     }
 }
@@ -1765,7 +1765,7 @@ impl ReplayState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
             "CANCELLING",
@@ -3831,7 +3831,7 @@ impl PropagateTags {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TASK_DEFINITION"]
     }
 }
@@ -4006,7 +4006,7 @@ impl PlacementStrategyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["binpack", "random", "spread"]
     }
 }
@@ -4176,7 +4176,7 @@ impl PlacementConstraintType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["distinctInstance", "memberOf"]
     }
 }
@@ -4538,7 +4538,7 @@ impl AssignPublicIp {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -4633,7 +4633,7 @@ impl LaunchType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EC2", "EXTERNAL", "FARGATE"]
     }
 }
@@ -5209,7 +5209,7 @@ impl RuleState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -6591,7 +6591,7 @@ impl EventSourceState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "PENDING"]
     }
 }

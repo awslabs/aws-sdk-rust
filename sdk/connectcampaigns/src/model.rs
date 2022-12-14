@@ -321,7 +321,7 @@ impl CampaignState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Failed", "Initialized", "Paused", "Running", "Stopped"]
     }
 }
@@ -551,7 +551,7 @@ impl InstanceOnboardingJobFailureCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "EVENT_BRIDGE_ACCESS_DENIED",
             "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED",
@@ -655,7 +655,7 @@ impl InstanceOnboardingJobStatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
 }
@@ -838,7 +838,7 @@ impl EncryptionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KMS"]
     }
 }
@@ -1031,7 +1031,7 @@ impl FailureCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["InvalidInput", "RequestThrottled", "UnknownError"]
     }
 }
@@ -1586,7 +1586,7 @@ impl InstanceIdFilterOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Eq"]
     }
 }
@@ -1866,7 +1866,7 @@ impl GetCampaignStateBatchFailureCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ResourceNotFound", "UnknownError"]
     }
 }

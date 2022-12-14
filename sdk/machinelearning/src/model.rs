@@ -251,7 +251,7 @@ impl DetailsAttributes {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Algorithm", "PredictiveModelType"]
     }
 }
@@ -346,7 +346,7 @@ impl MlModelType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BINARY", "MULTICLASS", "REGRESSION"]
     }
 }
@@ -593,7 +593,7 @@ impl RealtimeEndpointStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "NONE", "READY", "UPDATING"]
     }
 }
@@ -725,7 +725,7 @@ impl EntityStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "DELETED", "FAILED", "INPROGRESS", "PENDING"]
     }
 }
@@ -1419,7 +1419,7 @@ impl TaggableResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BatchPrediction", "DataSource", "Evaluation", "MLModel"]
     }
 }
@@ -2087,7 +2087,7 @@ impl Algorithm {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["sgd"]
     }
 }
@@ -2187,7 +2187,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["asc", "dsc"]
     }
 }
@@ -2319,7 +2319,7 @@ impl MlModelFilterVariable {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Algorithm",
             "CreatedAt",
@@ -2882,7 +2882,7 @@ impl EvaluationFilterVariable {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CreatedAt",
             "DataSourceId",
@@ -3487,7 +3487,7 @@ impl DataSourceFilterVariable {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CreatedAt",
             "DataLocationS3",
@@ -4065,7 +4065,7 @@ impl BatchPredictionFilterVariable {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CreatedAt",
             "DataSourceId",

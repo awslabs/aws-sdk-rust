@@ -934,7 +934,7 @@ impl ClusterEndpointEncryptionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NONE", "TLS"]
     }
 }
@@ -1113,7 +1113,7 @@ impl SseStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "DISABLING", "ENABLED", "ENABLING"]
     }
 }
@@ -2071,7 +2071,7 @@ impl ChangeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IMMEDIATE", "REQUIRES_REBOOT"]
     }
 }
@@ -2166,7 +2166,7 @@ impl IsModifiable {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONDITIONAL", "FALSE", "TRUE"]
     }
 }
@@ -2331,7 +2331,7 @@ impl ParameterType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT", "NODE_TYPE_SPECIFIC"]
     }
 }
@@ -2544,7 +2544,7 @@ impl SourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLUSTER", "PARAMETER_GROUP", "SUBNET_GROUP"]
     }
 }

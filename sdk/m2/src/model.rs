@@ -167,7 +167,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "cannotParse",
             "fieldValidationFailed",
@@ -478,7 +478,7 @@ impl EngineType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["bluage", "microfocus"]
     }
 }
@@ -580,7 +580,7 @@ impl EnvironmentLifecycle {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Available", "Creating", "Deleting", "Failed"]
     }
 }
@@ -1479,7 +1479,7 @@ impl DeploymentLifecycle {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Deploying", "Failed", "Succeeded"]
     }
 }
@@ -1979,7 +1979,7 @@ impl DataSetTaskLifecycle {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Completed", "Creating", "Running"]
     }
 }
@@ -2316,7 +2316,7 @@ impl BatchJobExecutionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Cancelled",
             "Cancelling",
@@ -2421,7 +2421,7 @@ impl BatchJobType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JES2", "JES3", "VSE"]
     }
 }
@@ -2827,7 +2827,7 @@ impl ApplicationVersionLifecycle {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Available", "Creating", "Failed"]
     }
 }
@@ -4401,7 +4401,7 @@ impl ApplicationDeploymentLifecycle {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Deployed", "Deploying"]
     }
 }
@@ -4533,7 +4533,7 @@ impl ApplicationLifecycle {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Available",
             "Created",

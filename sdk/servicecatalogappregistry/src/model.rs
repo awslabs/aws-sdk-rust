@@ -484,7 +484,7 @@ impl SyncAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NO_ACTION", "START_SYNC"]
     }
 }
@@ -569,7 +569,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CFN_STACK"]
     }
 }
@@ -1477,7 +1477,7 @@ impl ResourceGroupState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_COMPLETE",
             "CREATE_FAILED",

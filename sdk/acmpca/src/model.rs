@@ -107,7 +107,7 @@ impl CertificateAuthorityStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATING",
@@ -556,7 +556,7 @@ impl S3ObjectAcl {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BUCKET_OWNER_FULL_CONTROL", "PUBLIC_READ"]
     }
 }
@@ -751,7 +751,7 @@ impl RevocationReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AFFILIATION_CHANGED",
             "A_A_COMPROMISE",
@@ -1028,7 +1028,7 @@ impl ActionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GetCertificate", "IssueCertificate", "ListPermissions"]
     }
 }
@@ -1505,7 +1505,7 @@ impl KeyStorageSecurityStandard {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "FIPS_140_2_LEVEL_2_OR_HIGHER",
             "FIPS_140_2_LEVEL_3_OR_HIGHER",
@@ -2820,7 +2820,7 @@ impl AccessMethodType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CA_REPOSITORY",
             "RESOURCE_PKI_MANIFEST",
@@ -3149,7 +3149,7 @@ impl SigningAlgorithm {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "SHA256WITHECDSA",
             "SHA256WITHRSA",
@@ -3256,7 +3256,7 @@ impl KeyAlgorithm {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["EC_prime256v1", "EC_secp384r1", "RSA_2048", "RSA_4096"]
     }
 }
@@ -3351,7 +3351,7 @@ impl FailureReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OTHER", "REQUEST_TIMED_OUT", "UNSUPPORTED_ALGORITHM"]
     }
 }
@@ -3443,7 +3443,7 @@ impl CertificateAuthorityType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ROOT", "SUBORDINATE"]
     }
 }
@@ -3533,7 +3533,7 @@ impl ResourceOwner {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OTHER_ACCOUNTS", "SELF"]
     }
 }
@@ -3787,7 +3787,7 @@ impl ValidityPeriodType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ABSOLUTE", "DAYS", "END_DATE", "MONTHS", "YEARS"]
     }
 }
@@ -4383,7 +4383,7 @@ impl ExtendedKeyUsageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CERTIFICATE_TRANSPARENCY",
             "CLIENT_AUTH",
@@ -4704,7 +4704,7 @@ impl PolicyQualifierId {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CPS"]
     }
 }
@@ -4801,7 +4801,7 @@ impl AuditReportStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATING", "FAILED", "SUCCESS"]
     }
 }
@@ -4893,7 +4893,7 @@ impl AuditReportResponseFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CSV", "JSON"]
     }
 }

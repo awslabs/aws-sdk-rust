@@ -336,7 +336,7 @@ impl ServiceActionDefinitionKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AssumeRole", "Name", "Parameters", "Version"]
     }
 }
@@ -543,7 +543,7 @@ impl ServiceActionDefinitionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SSM_AUTOMATION"]
     }
 }
@@ -638,7 +638,7 @@ impl Status {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "CREATING", "FAILED"]
     }
 }
@@ -934,7 +934,7 @@ impl ProvisioningArtifactGuidance {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEFAULT", "DEPRECATED"]
     }
 }
@@ -1031,7 +1031,7 @@ impl ProvisioningArtifactType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CLOUD_FORMATION_TEMPLATE",
             "MARKETPLACE_AMI",
@@ -1140,7 +1140,7 @@ impl RecordStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATED",
             "FAILED",
@@ -1236,7 +1236,7 @@ impl PropertyKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LAUNCH_ROLE", "OWNER"]
     }
 }
@@ -2349,7 +2349,7 @@ impl StackSetOperationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATE", "DELETE", "UPDATE"]
     }
 }
@@ -2939,7 +2939,7 @@ impl ProductType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOUD_FORMATION_TEMPLATE", "MARKETPLACE"]
     }
 }
@@ -3044,7 +3044,7 @@ impl ShareStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
             "COMPLETED_WITH_ERRORS",
@@ -3225,7 +3225,7 @@ impl OrganizationNodeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT", "ORGANIZATION", "ORGANIZATIONAL_UNIT"]
     }
 }
@@ -4220,7 +4220,7 @@ impl ProvisionedProductStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
             "ERROR",
@@ -4316,7 +4316,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
 }
@@ -4403,7 +4403,7 @@ impl ProvisionedProductViewFilterBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SearchQuery"]
     }
 }
@@ -4598,7 +4598,7 @@ impl AccessLevelFilterKey {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Account", "Role", "User"]
     }
 }
@@ -4683,7 +4683,7 @@ impl ProductSource {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT"]
     }
 }
@@ -4780,7 +4780,7 @@ impl ProductViewSortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CreationDate", "Title", "VersionCount"]
     }
 }
@@ -4882,7 +4882,7 @@ impl ProductViewFilterBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FullTextSearch", "Owner", "ProductType", "SourceProductId"]
     }
 }
@@ -5484,7 +5484,7 @@ impl PortfolioShareType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS_ORGANIZATIONS", "AWS_SERVICECATALOG", "IMPORTED"]
     }
 }
@@ -6146,7 +6146,7 @@ impl StackInstanceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CURRENT", "INOPERABLE", "OUTDATED"]
     }
 }
@@ -6853,7 +6853,7 @@ impl ProvisionedProductPlanType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOUDFORMATION"]
     }
 }
@@ -7019,7 +7019,7 @@ impl PrincipalType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IAM"]
     }
 }
@@ -7497,7 +7497,7 @@ impl AccessStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED", "UNDER_CHANGE"]
     }
 }
@@ -8710,7 +8710,7 @@ impl EvaluationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DYNAMIC", "STATIC"]
     }
 }
@@ -8908,7 +8908,7 @@ impl RequiresRecreation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALWAYS", "CONDITIONALLY", "NEVER"]
     }
 }
@@ -9020,7 +9020,7 @@ impl ResourceAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATIONPOLICY",
             "DELETIONPOLICY",
@@ -9122,7 +9122,7 @@ impl Replacement {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONDITIONAL", "FALSE", "TRUE"]
     }
 }
@@ -9217,7 +9217,7 @@ impl ChangeAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ADD", "MODIFY", "REMOVE"]
     }
 }
@@ -9722,7 +9722,7 @@ impl ProvisionedProductPlanStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
             "CREATE_IN_PROGRESS",
@@ -10452,7 +10452,7 @@ impl DescribePortfolioShareType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT",
             "ORGANIZATION",
@@ -10554,7 +10554,7 @@ impl CopyProductStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
 }
@@ -10833,7 +10833,7 @@ impl CopyOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CopyTags"]
     }
 }
@@ -10920,7 +10920,7 @@ impl ProvisioningArtifactPropertyName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Id"]
     }
 }
@@ -11179,7 +11179,7 @@ impl ServiceActionAssociationErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DUPLICATE_RESOURCE",
             "INTERNAL_FAILURE",

@@ -155,7 +155,7 @@ impl Format {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CSV", "PARQUET"]
     }
 }
@@ -250,7 +250,7 @@ impl ReportFrequency {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALL", "DAILY", "MONTHLY"]
     }
 }
@@ -638,7 +638,7 @@ impl S3BucketRegion {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["af-south-1", "ap-east-1", "eu-south-1", "me-south-1"]
     }
 }

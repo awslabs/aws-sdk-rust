@@ -187,7 +187,7 @@ impl ErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["InternalServiceException", "InvalidParameterException"]
     }
 }
@@ -829,7 +829,7 @@ impl TargetIdType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT", "OU", "ROOT"]
     }
 }
@@ -924,7 +924,7 @@ impl GroupByAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["REGION", "RESOURCE_TYPE", "TARGET_ID"]
     }
 }

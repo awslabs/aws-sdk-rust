@@ -254,7 +254,7 @@ impl RepositoryProvider {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BITBUCKET", "GITHUB", "GITHUB_ENTERPRISE"]
     }
 }
@@ -344,7 +344,7 @@ impl TemplateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENVIRONMENT", "SERVICE"]
     }
 }
@@ -705,7 +705,7 @@ impl TemplateVersionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DRAFT",
             "PUBLISHED",
@@ -1162,7 +1162,7 @@ impl ServiceTemplateSupportedComponentSourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DIRECTLY_DEFINED"]
     }
 }
@@ -1803,7 +1803,7 @@ impl Provisioning {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CUSTOMER_MANAGED"]
     }
 }
@@ -2393,7 +2393,7 @@ impl ServiceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATE_FAILED",
@@ -3115,7 +3115,7 @@ impl DeploymentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
             "CANCELLING",
@@ -3226,7 +3226,7 @@ impl DeploymentUpdateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CURRENT_VERSION", "MAJOR_VERSION", "MINOR_VERSION", "NONE"]
     }
 }
@@ -3426,7 +3426,7 @@ impl ProvisionedResourceEngine {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CLOUDFORMATION", "TERRAFORM"]
     }
 }
@@ -6895,7 +6895,7 @@ impl EnvironmentAccountConnectionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONNECTED", "PENDING", "REJECTED"]
     }
 }
@@ -7259,7 +7259,7 @@ impl EnvironmentAccountConnectionRequesterAccountType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENVIRONMENT_ACCOUNT", "MANAGEMENT_ACCOUNT"]
     }
 }
@@ -7969,7 +7969,7 @@ impl ComponentDeploymentUpdateType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CURRENT_VERSION", "NONE"]
     }
 }
@@ -8156,7 +8156,7 @@ impl ResourceDeploymentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
 }
@@ -8356,7 +8356,7 @@ impl SyncType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TEMPLATE_SYNC"]
     }
 }
@@ -8894,7 +8894,7 @@ impl ResourceSyncStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "INITIATED", "IN_PROGRESS", "SUCCEEDED"]
     }
 }
@@ -9231,7 +9231,7 @@ impl RepositorySyncStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "INITIATED", "IN_PROGRESS", "QUEUED", "SUCCEEDED"]
     }
 }

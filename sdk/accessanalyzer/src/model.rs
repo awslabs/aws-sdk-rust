@@ -167,7 +167,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "cannotParse",
             "fieldValidationFailed",
@@ -580,7 +580,7 @@ impl ReasonCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWS_SERVICE_ACCESS_DISABLED",
             "DELEGATED_ADMINISTRATOR_DEREGISTERED",
@@ -685,7 +685,7 @@ impl AnalyzerStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DISABLED", "FAILED"]
     }
 }
@@ -775,7 +775,7 @@ impl Type {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCOUNT", "ORGANIZATION"]
     }
 }
@@ -1838,7 +1838,7 @@ impl ValidatePolicyFindingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ERROR", "SECURITY_WARNING", "SUGGESTION", "WARNING"]
     }
 }
@@ -1953,7 +1953,7 @@ impl ValidatePolicyResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWS::IAM::AssumeRolePolicyDocument",
             "AWS::S3::AccessPoint",
@@ -2054,7 +2054,7 @@ impl PolicyType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "IDENTITY_POLICY",
             "RESOURCE_POLICY",
@@ -2188,7 +2188,7 @@ impl Locale {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DE", "EN", "ES", "FR", "IT", "JA", "KO", "PT_BR", "ZH_CN", "ZH_TW",
         ]
@@ -2282,7 +2282,7 @@ impl FindingStatusUpdate {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "ARCHIVED"]
     }
 }
@@ -2821,7 +2821,7 @@ impl JobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CANCELED", "FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
 }
@@ -3450,7 +3450,7 @@ impl FindingSourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BUCKET_ACL", "POLICY", "S3_ACCESS_POINT"]
     }
 }
@@ -3545,7 +3545,7 @@ impl FindingStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "ARCHIVED", "RESOLVED"]
     }
 }
@@ -3660,7 +3660,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWS::IAM::Role",
             "AWS::KMS::Key",
@@ -3836,7 +3836,7 @@ impl OrderBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
 }
@@ -4249,7 +4249,7 @@ impl AccessPreviewStatusReasonCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INTERNAL_ERROR", "INVALID_CONFIGURATION"]
     }
 }
@@ -4346,7 +4346,7 @@ impl AccessPreviewStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "CREATING", "FAILED"]
     }
 }
@@ -4883,7 +4883,7 @@ impl FindingChangeType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CHANGED", "NEW", "UNCHANGED"]
     }
 }
@@ -5663,7 +5663,7 @@ impl JobErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AUTHORIZATION_ERROR",
             "RESOURCE_NOT_FOUND_ERROR",
@@ -7451,7 +7451,7 @@ impl AclPermission {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FULL_CONTROL", "READ", "READ_ACP", "WRITE", "WRITE_ACP"]
     }
 }
@@ -8065,7 +8065,7 @@ impl KmsGrantOperation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CreateGrant",
             "Decrypt",

@@ -392,7 +392,7 @@ impl QualificationTypeStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Active", "Inactive"]
     }
 }
@@ -679,7 +679,7 @@ impl EventType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AssignmentAbandoned",
             "AssignmentAccepted",
@@ -789,7 +789,7 @@ impl NotificationTransport {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Email", "SNS", "SQS"]
     }
 }
@@ -997,7 +997,7 @@ impl NotifyWorkersFailureCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HardFailure", "SoftFailure"]
     }
 }
@@ -1256,7 +1256,7 @@ impl QualificationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Granted", "Revoked"]
     }
 }
@@ -1804,7 +1804,7 @@ impl ReviewActionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Cancelled", "Failed", "Intended", "Succeeded"]
     }
 }
@@ -2332,7 +2332,7 @@ impl ReviewPolicyLevel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Assignment", "HIT"]
     }
 }
@@ -2954,7 +2954,7 @@ impl HitReviewStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "MarkedForReview",
             "NotReviewed",
@@ -3240,7 +3240,7 @@ impl HitAccessActions {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Accept", "DiscoverPreviewAndAccept", "PreviewAndAccept"]
     }
 }
@@ -3370,7 +3370,7 @@ impl Comparator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DoesNotExist",
             "EqualTo",
@@ -3486,7 +3486,7 @@ impl HitStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Assignable",
             "Disposed",
@@ -3584,7 +3584,7 @@ impl ReviewableHitStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Reviewable", "Reviewing"]
     }
 }
@@ -4286,7 +4286,7 @@ impl AssignmentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Approved", "Rejected", "Submitted"]
     }
 }

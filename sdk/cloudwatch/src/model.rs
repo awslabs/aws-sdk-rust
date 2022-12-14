@@ -160,7 +160,7 @@ impl StateValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALARM", "INSUFFICIENT_DATA", "OK"]
     }
 }
@@ -439,7 +439,7 @@ impl MetricStreamOutputFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["json", "opentelemetry0.7"]
     }
 }
@@ -971,7 +971,7 @@ impl StandardUnit {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Bits",
             "Bits/Second",
@@ -1764,7 +1764,7 @@ impl ComparisonOperator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "GreaterThanOrEqualToThreshold",
             "GreaterThanThreshold",
@@ -1877,7 +1877,7 @@ impl Statistic {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
     }
 }
@@ -2813,7 +2813,7 @@ impl RecentlyActive {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PT3H"]
     }
 }
@@ -3752,7 +3752,7 @@ impl StatusCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Complete", "InternalError", "PartialData"]
     }
 }
@@ -3898,7 +3898,7 @@ impl ScanBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["TimestampAscending", "TimestampDescending"]
     }
 }
@@ -4813,7 +4813,7 @@ impl AnomalyDetectorStateValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PENDING_TRAINING", "TRAINED", "TRAINED_INSUFFICIENT_DATA"]
     }
 }
@@ -4905,7 +4905,7 @@ impl AnomalyDetectorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["METRIC_MATH", "SINGLE_METRIC"]
     }
 }
@@ -6185,7 +6185,7 @@ impl ActionsSuppressedBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Alarm", "ExtensionPeriod", "WaitPeriod"]
     }
 }
@@ -6275,7 +6275,7 @@ impl AlarmType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CompositeAlarm", "MetricAlarm"]
     }
 }
@@ -6537,7 +6537,7 @@ impl HistoryItemType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Action", "ConfigurationUpdate", "StateUpdate"]
     }
 }

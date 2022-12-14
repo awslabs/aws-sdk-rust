@@ -502,7 +502,7 @@ impl MappingRuleMatchType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Contains", "Equals", "NotEqual", "StartsWith"]
     }
 }
@@ -594,7 +594,7 @@ impl AmbiguousRoleResolutionType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AuthenticatedRole", "Deny"]
     }
 }
@@ -684,7 +684,7 @@ impl RoleMappingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Rules", "Token"]
     }
 }
@@ -1187,7 +1187,7 @@ impl ErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AccessDenied", "InternalServerError"]
     }
 }

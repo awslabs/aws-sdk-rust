@@ -270,7 +270,7 @@ impl TargetDestination {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWS Elastic BeanStalk",
             "AWS Fargate",
@@ -420,7 +420,7 @@ impl TransformationToolName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "App2Container",
             "Application Migration Service",
@@ -546,7 +546,7 @@ impl Strategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Refactor",
             "Rehost",
@@ -745,7 +745,7 @@ impl VersionControl {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["GITHUB", "GITHUB_ENTERPRISE"]
     }
 }
@@ -835,7 +835,7 @@ impl InclusionStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["excludeFromAssessment", "includeInAssessment"]
     }
 }
@@ -995,7 +995,7 @@ impl GroupName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ExternalId"]
     }
 }
@@ -1085,7 +1085,7 @@ impl OutputFormat {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Excel", "Json"]
     }
 }
@@ -1175,7 +1175,7 @@ impl DataSourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ApplicationDiscoveryService", "MPA"]
     }
 }
@@ -1544,7 +1544,7 @@ impl TargetDatabaseEngine {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWS PostgreSQL",
             "Amazon Aurora",
@@ -1715,7 +1715,7 @@ impl HomogeneousTargetDatabaseEngine {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["None specified"]
     }
 }
@@ -1920,7 +1920,7 @@ impl HeterogeneousTargetDatabaseEngine {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWS PostgreSQL",
             "Amazon Aurora",
@@ -2028,7 +2028,7 @@ impl DatabaseManagementPreference {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS-managed", "No preference", "Self-manage"]
     }
 }
@@ -2355,7 +2355,7 @@ impl NoPreferenceTargetDestination {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWS Elastic BeanStalk",
             "AWS Fargate",
@@ -2547,7 +2547,7 @@ impl SelfManageTargetDestination {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Amazon Elastic Cloud Compute (EC2)",
             "Amazon Elastic Container Service (ECS)",
@@ -2720,7 +2720,7 @@ impl AwsManagedTargetDestination {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AWS Elastic BeanStalk", "AWS Fargate", "None specified"]
     }
 }
@@ -3390,7 +3390,7 @@ impl AntipatternReportStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCESS"]
     }
 }
@@ -3953,7 +3953,7 @@ impl OsType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LINUX", "WINDOWS"]
     }
 }
@@ -4123,7 +4123,7 @@ impl Severity {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM"]
     }
 }
@@ -4240,7 +4240,7 @@ impl RunTimeAssessmentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "dataCollectionTaskFailed",
             "dataCollectionTaskPartialSuccess",
@@ -4546,7 +4546,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
 }
@@ -4651,7 +4651,7 @@ impl ServerCriteria {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DESTINATION",
             "NOT_DEFINED",
@@ -5052,7 +5052,7 @@ impl ImportFileTaskStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DeleteFailed",
             "DeleteInProgress",
@@ -5338,7 +5338,7 @@ impl CollectorHealth {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COLLECTOR_HEALTHY", "COLLECTOR_UNHEALTHY"]
     }
 }
@@ -5939,7 +5939,7 @@ impl ResourceSubType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Database", "DatabaseProcess", "Process"]
     }
 }
@@ -6049,7 +6049,7 @@ impl AppType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DotNetFramework",
             "IIS",
@@ -6311,7 +6311,7 @@ impl SrcCodeOrDbAnalysisStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ANALYSIS_FAILED",
             "ANALYSIS_STARTED",
@@ -6428,7 +6428,7 @@ impl ApplicationComponentCriteria {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "APP_NAME",
             "APP_TYPE",
@@ -6659,7 +6659,7 @@ impl StrategyRecommendation {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["notRecommended", "recommended", "viableOption"]
     }
 }
@@ -7007,7 +7007,7 @@ impl RecommendationReportStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCESS"]
     }
 }
@@ -7521,7 +7521,7 @@ impl ServerOsType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AmazonLinux",
             "EndOfSupportWindowsServer",
@@ -7886,7 +7886,7 @@ impl AssessmentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "FAILED", "IN_PROGRESS", "STOPPED"]
     }
 }

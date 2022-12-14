@@ -95,7 +95,7 @@ impl ResourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DATASET", "MODEL", "MODEL_PACKAGE_JOB", "PROJECT", "TRIAL"]
     }
 }
@@ -225,7 +225,7 @@ impl DatasetStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CREATE_COMPLETE",
             "CREATE_FAILED",
@@ -418,7 +418,7 @@ impl ModelHostingStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "HOSTED",
             "HOSTING_FAILED",
@@ -995,7 +995,7 @@ impl TargetPlatformAccelerator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["NVIDIA"]
     }
 }
@@ -1087,7 +1087,7 @@ impl TargetPlatformArch {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ARM64", "X86_64"]
     }
 }
@@ -1172,7 +1172,7 @@ impl TargetPlatformOs {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LINUX"]
     }
 }
@@ -1257,7 +1257,7 @@ impl TargetDevice {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["jetson_xavier"]
     }
 }
@@ -1762,7 +1762,7 @@ impl ModelStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DELETING",
             "HOSTED",
@@ -2116,7 +2116,7 @@ impl ModelPackagingJobStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATED", "FAILED", "RUNNING", "SUCCEEDED"]
     }
 }

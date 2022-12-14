@@ -167,7 +167,7 @@ impl ValidationExceptionReason {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "cannotParse",
             "fieldValidationFailed",
@@ -510,7 +510,7 @@ impl RoleType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PROCESS_OWNER", "RESOURCE_OWNER"]
     }
 }
@@ -681,7 +681,7 @@ impl AssessmentReportDestinationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["S3"]
     }
 }
@@ -1410,7 +1410,7 @@ impl SourceFrequency {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DAILY", "MONTHLY", "WEEKLY"]
     }
 }
@@ -1651,7 +1651,7 @@ impl KeywordInputType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["SELECT_FROM_LIST"]
     }
 }
@@ -1756,7 +1756,7 @@ impl SourceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AWS_API_Call",
             "AWS_Cloudtrail",
@@ -1854,7 +1854,7 @@ impl SourceSetUpOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Procedural_Controls_Mapping", "System_Controls_Mapping"]
     }
 }
@@ -1944,7 +1944,7 @@ impl ControlType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Custom", "Standard"]
     }
 }
@@ -2846,7 +2846,7 @@ impl DelegationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "IN_PROGRESS", "UNDER_REVIEW"]
     }
 }
@@ -3291,7 +3291,7 @@ impl ControlResponse {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AUTOMATE", "DEFER", "IGNORE", "MANUAL"]
     }
 }
@@ -3386,7 +3386,7 @@ impl ControlStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["INACTIVE", "REVIEWED", "UNDER_REVIEW"]
     }
 }
@@ -3481,7 +3481,7 @@ impl ControlSetStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "REVIEWED", "UNDER_REVIEW"]
     }
 }
@@ -4233,7 +4233,7 @@ impl AssessmentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
 }
@@ -4720,7 +4720,7 @@ impl ShareRequestStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "DECLINED",
@@ -4826,7 +4826,7 @@ impl ShareRequestAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACCEPT", "DECLINE", "REVOKE"]
     }
 }
@@ -4916,7 +4916,7 @@ impl ShareRequestType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["RECEIVED", "SENT"]
     }
 }
@@ -5470,7 +5470,7 @@ impl FrameworkType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Custom", "Standard"]
     }
 }
@@ -5728,7 +5728,7 @@ impl AccountStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE", "PENDING_ACTIVATION"]
     }
 }
@@ -7031,7 +7031,7 @@ impl AssessmentReportStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETE", "FAILED", "IN_PROGRESS"]
     }
 }
@@ -7549,7 +7549,7 @@ impl SettingAttribute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ALL",
             "DEFAULT_ASSESSMENT_REPORTS_DESTINATION",
@@ -9459,7 +9459,7 @@ impl ActionEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATE",
@@ -9573,7 +9573,7 @@ impl ObjectTypeEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ASSESSMENT",
             "ASSESSMENT_REPORT",

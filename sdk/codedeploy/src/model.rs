@@ -346,7 +346,7 @@ impl TagFilterType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KEY_AND_VALUE", "KEY_ONLY", "VALUE_ONLY"]
     }
 }
@@ -705,7 +705,7 @@ impl Ec2TagFilterType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KEY_AND_VALUE", "KEY_ONLY", "VALUE_ONLY"]
     }
 }
@@ -1431,7 +1431,7 @@ impl GreenFleetProvisioningAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COPY_AUTO_SCALING_GROUP", "DISCOVER_EXISTING"]
     }
 }
@@ -1617,7 +1617,7 @@ impl DeploymentReadyAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONTINUE_DEPLOYMENT", "STOP_DEPLOYMENT"]
     }
 }
@@ -1817,7 +1817,7 @@ impl InstanceAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["KEEP_ALIVE", "TERMINATE"]
     }
 }
@@ -1988,7 +1988,7 @@ impl DeploymentOption {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["WITHOUT_TRAFFIC_CONTROL", "WITH_TRAFFIC_CONTROL"]
     }
 }
@@ -2078,7 +2078,7 @@ impl DeploymentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BLUE_GREEN", "IN_PLACE"]
     }
 }
@@ -2170,7 +2170,7 @@ impl OutdatedInstancesStrategy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IGNORE", "UPDATE"]
     }
 }
@@ -2351,7 +2351,7 @@ impl AutoRollbackEvent {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DEPLOYMENT_FAILURE",
             "DEPLOYMENT_STOP_ON_ALARM",
@@ -2766,7 +2766,7 @@ impl TriggerEventType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DeploymentFailure",
             "DeploymentReady",
@@ -2942,7 +2942,7 @@ impl StopStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Pending", "Succeeded"]
     }
 }
@@ -3628,7 +3628,7 @@ impl BundleType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JSON", "YAML", "tar", "tgz", "zip"]
     }
 }
@@ -3730,7 +3730,7 @@ impl RevisionLocationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AppSpecContent", "GitHub", "S3", "String"]
     }
 }
@@ -3842,7 +3842,7 @@ impl LifecycleEventStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Failed",
             "InProgress",
@@ -3941,7 +3941,7 @@ impl RegistrationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Deregistered", "Registered"]
     }
 }
@@ -4031,7 +4031,7 @@ impl TargetFilterName {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ServerInstanceLabel", "TargetStatus"]
     }
 }
@@ -4242,7 +4242,7 @@ impl DeploymentStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Baking",
             "Created",
@@ -4341,7 +4341,7 @@ impl InstanceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Blue", "Green"]
     }
 }
@@ -4457,7 +4457,7 @@ impl InstanceStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Failed",
             "InProgress",
@@ -4562,7 +4562,7 @@ impl ListStateFilterAction {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["exclude", "ignore", "include"]
     }
 }
@@ -4652,7 +4652,7 @@ impl SortOrder {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ascending", "descending"]
     }
 }
@@ -4749,7 +4749,7 @@ impl ApplicationRevisionSortBy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["firstUsedTime", "lastUsedTime", "registerTime"]
     }
 }
@@ -5411,7 +5411,7 @@ impl TargetStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "Failed",
             "InProgress",
@@ -5867,7 +5867,7 @@ impl LifecycleErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ScriptFailed",
             "ScriptMissing",
@@ -6388,7 +6388,7 @@ impl TargetLabel {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Blue", "Green"]
     }
 }
@@ -7031,7 +7031,7 @@ impl DeploymentTargetType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CloudFormationTarget",
             "ECSTarget",
@@ -8003,7 +8003,7 @@ impl ComputePlatform {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ECS", "Lambda", "Server"]
     }
 }
@@ -8656,7 +8656,7 @@ impl TrafficRoutingType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AllAtOnce", "TimeBasedCanary", "TimeBasedLinear"]
     }
 }
@@ -8858,7 +8858,7 @@ impl MinimumHealthyHostsType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FLEET_PERCENT", "HOST_COUNT"]
     }
 }
@@ -9903,7 +9903,7 @@ impl FileExistsBehavior {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISALLOW", "OVERWRITE", "RETAIN"]
     }
 }
@@ -10246,7 +10246,7 @@ impl DeploymentCreator {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "CloudFormation",
             "CloudFormationRollback",
@@ -10802,7 +10802,7 @@ impl ErrorCode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "AGENT_ISSUE",
             "ALARM_ACTIVE",
@@ -11252,7 +11252,7 @@ impl DeploymentWaitType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["READY_WAIT", "TERMINATION_WAIT"]
     }
 }

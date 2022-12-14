@@ -95,7 +95,7 @@ impl ConnectorState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATING", "DELETING", "FAILED", "RUNNING", "UPDATING"]
     }
 }
@@ -1426,7 +1426,7 @@ impl CustomPluginContentType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["JAR", "ZIP"]
     }
 }
@@ -1538,7 +1538,7 @@ impl CustomPluginState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
             "CREATE_FAILED",
@@ -2752,7 +2752,7 @@ impl KafkaClusterEncryptionInTransitType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["PLAINTEXT", "TLS"]
     }
 }
@@ -2909,7 +2909,7 @@ impl KafkaClusterClientAuthenticationType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["IAM", "NONE"]
     }
 }

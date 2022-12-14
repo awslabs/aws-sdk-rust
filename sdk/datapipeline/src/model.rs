@@ -686,7 +686,7 @@ impl TaskStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["FAILED", "FALSE", "FINISHED"]
     }
 }
@@ -1098,7 +1098,7 @@ impl OperatorType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["BETWEEN", "EQ", "GE", "LE", "REF_EQ"]
     }
 }

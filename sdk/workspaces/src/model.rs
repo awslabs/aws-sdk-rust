@@ -571,7 +571,7 @@ impl Tenancy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEDICATED", "SHARED"]
     }
 }
@@ -773,7 +773,7 @@ impl TargetWorkspaceState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ADMIN_MAINTENANCE", "AVAILABLE"]
     }
 }
@@ -1046,7 +1046,7 @@ impl Compute {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "GRAPHICS",
             "GRAPHICSPRO",
@@ -1146,7 +1146,7 @@ impl RunningMode {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALWAYS_ON", "AUTO_STOP"]
     }
 }
@@ -1655,7 +1655,7 @@ impl AccessPropertyValue {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ALLOW", "DENY"]
     }
 }
@@ -1895,7 +1895,7 @@ impl ReconnectEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -1991,7 +1991,7 @@ impl DeletableSamlProperty {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME",
             "SAML_PROPERTIES_USER_ACCESS_URL",
@@ -2224,7 +2224,7 @@ impl SamlStatusEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DISABLED",
             "ENABLED",
@@ -2399,7 +2399,7 @@ impl LogUploadEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -2486,7 +2486,7 @@ impl DedicatedTenancySupportEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["ENABLED"]
     }
 }
@@ -2576,7 +2576,7 @@ impl Application {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["Microsoft_Office_2016", "Microsoft_Office_2019"]
     }
 }
@@ -2683,7 +2683,7 @@ impl WorkspaceImageIngestionProcess {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "BYOL_GRAPHICS",
             "BYOL_GRAPHICSPRO",
@@ -3912,7 +3912,7 @@ impl ConnectionState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CONNECTED", "DISCONNECTED", "UNKNOWN"]
     }
 }
@@ -4465,7 +4465,7 @@ impl ModificationStateEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["UPDATE_INITIATED", "UPDATE_IN_PROGRESS"]
     }
 }
@@ -4562,7 +4562,7 @@ impl ModificationResourceEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPUTE_TYPE", "ROOT_VOLUME", "USER_VOLUME"]
     }
 }
@@ -4727,7 +4727,7 @@ impl WorkspaceState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ADMIN_MAINTENANCE",
             "AVAILABLE",
@@ -5196,7 +5196,7 @@ impl WorkspaceImageRequiredTenancy {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DEDICATED", "DEFAULT"]
     }
 }
@@ -5293,7 +5293,7 @@ impl WorkspaceImageState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AVAILABLE", "ERROR", "PENDING"]
     }
 }
@@ -5443,7 +5443,7 @@ impl OperatingSystemType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["LINUX", "WINDOWS"]
     }
 }
@@ -5533,7 +5533,7 @@ impl ImageType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["OWNED", "SHARED"]
     }
 }
@@ -6325,7 +6325,7 @@ impl WorkspaceDirectoryState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DEREGISTERED",
             "DEREGISTERING",
@@ -6423,7 +6423,7 @@ impl WorkspaceDirectoryType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["AD_CONNECTOR", "SIMPLE_AD"]
     }
 }
@@ -7345,7 +7345,7 @@ impl AssociationStatus {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "ASSOCIATED_WITH_OWNER_ACCOUNT",
             "ASSOCIATED_WITH_SHARED_ACCOUNT",
@@ -7448,7 +7448,7 @@ impl ConnectionAliasState {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["CREATED", "CREATING", "DELETING"]
     }
 }
@@ -7925,7 +7925,7 @@ impl DedicatedTenancySupportResultEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
 }
@@ -8022,7 +8022,7 @@ impl DedicatedTenancyModificationStateEnum {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "PENDING"]
     }
 }
@@ -8132,7 +8132,7 @@ impl ClientDeviceType {
         }
     }
     /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
+    pub const fn values() -> &'static [&'static str] {
         &[
             "DeviceTypeAndroid",
             "DeviceTypeIos",
