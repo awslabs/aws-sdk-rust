@@ -6,8 +6,6 @@
 
 //! Base Middleware Stack
 
-pub use aws_smithy_client::retry::Config as RetryConfig;
-
 use aws_endpoint::AwsEndpointStage;
 use aws_http::auth::CredentialsStage;
 use aws_http::recursion_detection::RecursionDetectionStage;

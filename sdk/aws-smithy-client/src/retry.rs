@@ -44,9 +44,11 @@ where
 
 /// Retry Policy Configuration
 ///
-/// Without specific use cases, users should generally rely on the default values set by `[Config::default]`(Config::default).`
+/// Without specific use cases, users should generally rely on the default values set
+/// by [`Config::default`](Config::default).
 ///
-/// Currently these fields are private and no setters provided. As needed, this configuration will become user-modifiable in the future..
+/// Currently these fields are private and no setters provided. As needed, this configuration
+/// will become user-modifiable in the future.
 #[derive(Clone, Debug)]
 pub struct Config {
     initial_retry_tokens: usize,
