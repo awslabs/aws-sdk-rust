@@ -76,6 +76,8 @@ where
             Poll::Pending => {
                 if let Some(generator) = me.generator.as_mut().as_pin_mut() {
                     if generator.poll(cx).is_ready() {
+                        // if the generator returned ready we MUST NOT poll it again—doing so
+                        // will cause a panic.
                         me.generator.set(None);
                     }
                 }
@@ -144,10 +146,7 @@ where
 #[cfg(test)]
 mod test {
     use crate::future::fn_stream::{FnStream, TryFlatMap};
-    use futures_util::task::noop_waker_ref;
-    use std::future::Future;
     use std::sync::{Arc, Mutex};
-    use std::task::Context;
     use std::time::Duration;
     use tokio_stream::StreamExt;
 
@@ -185,15 +184,9 @@ mod test {
             })
         });
         assert_eq!(stream.next().await, Some("blah"));
-        let mut fut = Box::pin(stream.next());
-        assert!(fut
-            .as_mut()
-            .poll(&mut Context::from_waker(noop_waker_ref()))
-            .is_pending());
-        assert!(fut
-            .as_mut()
-            .poll(&mut Context::from_waker(noop_waker_ref()))
-            .is_pending());
+        let mut test_stream = tokio_test::task::spawn(stream);
+        assert!(test_stream.poll_next().is_pending());
+        assert!(test_stream.poll_next().is_pending());
     }
 
     /// Tests that the generator will not advance until demand exists

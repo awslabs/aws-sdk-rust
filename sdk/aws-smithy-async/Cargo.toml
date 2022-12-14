@@ -18,6 +18,7 @@ futures-util = "0.3.16"
 
 [dev-dependencies]
 tokio = { version = "1.8.4", features = ["rt", "macros", "test-util"] }
+tokio-test = "0.4.2"
 
 [package.metadata.docs.rs]
 all-features = true
