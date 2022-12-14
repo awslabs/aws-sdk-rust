@@ -58,36 +58,56 @@ pub use error_meta::Error;
 #[doc(inline)]
 pub use config::Config;
 
-mod aws_endpoint;
 /// Client and fluent builders for calling the service.
 pub mod client;
+
 /// Configuration for the service.
 pub mod config;
-mod ec2_query_errors;
-/// All error types that operations can return.
-pub mod error;
+
 mod error_meta;
-mod idempotency_token;
+
 /// Input structures for operations.
 pub mod input;
-/// Generated accessors for nested fields
-pub mod lens;
-pub mod middleware;
+
 /// Data structures used by operation inputs/outputs.
 pub mod model;
-mod no_credentials;
+
 /// All operations that this crate can perform.
 pub mod operation;
-mod operation_deser;
-mod operation_ser;
+
 /// Output structures for operations.
 pub mod output;
-/// Paginators for the service
-pub mod paginator;
-mod query_ser;
+
 /// Data primitives referenced by other data types.
 pub mod types;
+
+mod aws_endpoint;
+
+/// All error types that operations can return.
+pub mod error;
+
+mod idempotency_token;
+
+pub mod middleware;
+
+mod no_credentials;
+
+mod operation_deser;
+
+mod operation_ser;
+
+/// Paginators for the service
+pub mod paginator;
+
+/// Generated accessors for nested fields
+mod lens;
+
+mod query_ser;
+
 mod xml_deser;
+
+mod ec2_query_errors;
+
 /// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 static API_METADATA: aws_http::user_agent::ApiMetadata =
