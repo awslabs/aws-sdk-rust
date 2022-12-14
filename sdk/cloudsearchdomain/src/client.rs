@@ -192,12 +192,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -218,12 +216,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>Retrieves a cursor value you can use to page through large result sets. Use the <code>size</code> parameter to control the number of hits to include in each response. You can specify either the <code>cursor</code> or <code>start</code> parameter in a request; they are mutually exclusive. To get the first cursor, set the cursor value to <code>initial</code>. In subsequent requests, specify the cursor value returned in the hits section of the response. </p>
@@ -507,12 +503,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -533,12 +527,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>Specifies the string for which you want to get suggestions.</p>
@@ -606,12 +598,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -632,12 +622,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>A batch of documents formatted in JSON or HTML.</p>

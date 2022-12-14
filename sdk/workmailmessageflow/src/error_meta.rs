@@ -39,14 +39,16 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetRawMessageContentError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetRawMessageContentErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetRawMessageContentErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::GetRawMessageContentErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetRawMessageContentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -60,23 +62,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutRawMessageContentError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutRawMessageContentErrorKind::InvalidContentLocation(inner) => {
-                    Error::InvalidContentLocation(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::PutRawMessageContentErrorKind::InvalidContentLocation(inner) => {
+                        Error::InvalidContentLocation(inner)
+                    }
+                    crate::error::PutRawMessageContentErrorKind::MessageFrozen(inner) => {
+                        Error::MessageFrozen(inner)
+                    }
+                    crate::error::PutRawMessageContentErrorKind::MessageRejected(inner) => {
+                        Error::MessageRejected(inner)
+                    }
+                    crate::error::PutRawMessageContentErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::PutRawMessageContentErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::PutRawMessageContentErrorKind::MessageFrozen(inner) => {
-                    Error::MessageFrozen(inner)
-                }
-                crate::error::PutRawMessageContentErrorKind::MessageRejected(inner) => {
-                    Error::MessageRejected(inner)
-                }
-                crate::error::PutRawMessageContentErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::PutRawMessageContentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }

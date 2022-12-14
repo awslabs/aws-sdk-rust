@@ -2,20 +2,20 @@
 pub fn add_headers_start_medical_stream_transcription(
     input: &crate::input::StartMedicalStreamTranscriptionInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_1) = &input.language_code {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "language_code",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "language_code",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-language-code", header_value);
         }
@@ -27,13 +27,13 @@ pub fn add_headers_start_medical_stream_transcription(
             let header_value = formatted_4;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "media_sample_rate_hertz",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "media_sample_rate_hertz",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-sample-rate", header_value);
         }
@@ -44,13 +44,13 @@ pub fn add_headers_start_medical_stream_transcription(
             let header_value = formatted_6;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "media_encoding",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "media_encoding",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-media-encoding", header_value);
         }
@@ -61,13 +61,13 @@ pub fn add_headers_start_medical_stream_transcription(
             let header_value = formatted_8;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "vocabulary_name",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "vocabulary_name",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-vocabulary-name", header_value);
         }
@@ -78,13 +78,13 @@ pub fn add_headers_start_medical_stream_transcription(
             let header_value = formatted_10;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "specialty",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "specialty",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-specialty", header_value);
         }
@@ -95,13 +95,13 @@ pub fn add_headers_start_medical_stream_transcription(
             let header_value = formatted_12;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "r#type",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "r#type",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-type", header_value);
         }
@@ -113,13 +113,13 @@ pub fn add_headers_start_medical_stream_transcription(
             let header_value = formatted_13;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "show_speaker_label",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "show_speaker_label",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-show-speaker-label", header_value);
         }
@@ -130,13 +130,13 @@ pub fn add_headers_start_medical_stream_transcription(
             let header_value = formatted_15;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "session_id",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "session_id",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-session-id", header_value);
         }
@@ -149,13 +149,13 @@ pub fn add_headers_start_medical_stream_transcription(
             let header_value = formatted_16;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "enable_channel_identification",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "enable_channel_identification",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header(
                 "x-amzn-transcribe-enable-channel-identification",
@@ -170,13 +170,13 @@ pub fn add_headers_start_medical_stream_transcription(
             let header_value = formatted_18;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "number_of_channels",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "number_of_channels",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-number-of-channels", header_value);
         }
@@ -187,13 +187,13 @@ pub fn add_headers_start_medical_stream_transcription(
             let header_value = formatted_20;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "content_identification_type",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "content_identification_type",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header(
                 "x-amzn-transcribe-content-identification-type",
@@ -207,20 +207,20 @@ pub fn add_headers_start_medical_stream_transcription(
 pub fn add_headers_start_stream_transcription(
     input: &crate::input::StartStreamTranscriptionInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_21) = &input.language_code {
         let formatted_22 = inner_21.as_str();
         if !formatted_22.is_empty() {
             let header_value = formatted_22;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "language_code",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "language_code",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-language-code", header_value);
         }
@@ -232,13 +232,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_24;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "media_sample_rate_hertz",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "media_sample_rate_hertz",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-sample-rate", header_value);
         }
@@ -249,13 +249,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_26;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "media_encoding",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "media_encoding",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-media-encoding", header_value);
         }
@@ -266,13 +266,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_28;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "vocabulary_name",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "vocabulary_name",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-vocabulary-name", header_value);
         }
@@ -283,13 +283,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_30;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "session_id",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "session_id",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-session-id", header_value);
         }
@@ -300,13 +300,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_32;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "vocabulary_filter_name",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "vocabulary_filter_name",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-vocabulary-filter-name", header_value);
         }
@@ -317,13 +317,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_34;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "vocabulary_filter_method",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "vocabulary_filter_method",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-vocabulary-filter-method", header_value);
         }
@@ -335,13 +335,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_35;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "show_speaker_label",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "show_speaker_label",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-show-speaker-label", header_value);
         }
@@ -354,13 +354,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_36;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "enable_channel_identification",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "enable_channel_identification",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header(
                 "x-amzn-transcribe-enable-channel-identification",
@@ -375,13 +375,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_38;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "number_of_channels",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "number_of_channels",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-number-of-channels", header_value);
         }
@@ -394,13 +394,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_39;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "enable_partial_results_stabilization",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "enable_partial_results_stabilization",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header(
                 "x-amzn-transcribe-enable-partial-results-stabilization",
@@ -414,13 +414,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_41;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "partial_results_stability",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "partial_results_stability",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-partial-results-stability", header_value);
         }
@@ -431,13 +431,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_43;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "content_identification_type",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "content_identification_type",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header(
                 "x-amzn-transcribe-content-identification-type",
@@ -451,13 +451,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_45;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "content_redaction_type",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "content_redaction_type",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-content-redaction-type", header_value);
         }
@@ -468,13 +468,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_47;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "pii_entity_types",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "pii_entity_types",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-pii-entity-types", header_value);
         }
@@ -485,13 +485,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_49;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "language_model_name",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "language_model_name",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-language-model-name", header_value);
         }
@@ -503,13 +503,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_50;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "identify_language",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "identify_language",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-identify-language", header_value);
         }
@@ -520,13 +520,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_52;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "language_options",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "language_options",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-language-options", header_value);
         }
@@ -537,13 +537,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_54;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "preferred_language",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "preferred_language",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-preferred-language", header_value);
         }
@@ -554,13 +554,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_56;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "vocabulary_names",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "vocabulary_names",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-vocabulary-names", header_value);
         }
@@ -571,13 +571,13 @@ pub fn add_headers_start_stream_transcription(
             let header_value = formatted_58;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "vocabulary_filter_names",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "vocabulary_filter_names",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-transcribe-vocabulary-filter-names", header_value);
         }
@@ -605,9 +605,10 @@ pub(crate) fn deser_header_start_medical_stream_transcription_start_medical_stre
         .iter();
     let var_59 = aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
     if var_59.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_59.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_59.len()
+        )))
     } else {
         let mut var_59 = var_59;
         Ok(var_59.pop())
@@ -642,9 +643,10 @@ pub(crate) fn deser_header_start_medical_stream_transcription_start_medical_stre
     let headers = header_map.get_all("x-amzn-transcribe-sample-rate").iter();
     let var_60 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_60.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_60.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_60.len()
+        )))
     } else {
         let mut var_60 = var_60;
         Ok(var_60.pop())
@@ -659,9 +661,10 @@ pub(crate) fn deser_header_start_medical_stream_transcription_start_medical_stre
         .iter();
     let var_61 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_61.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_61.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_61.len()
+        )))
     } else {
         let mut var_61 = var_61;
         Ok(var_61.pop())
@@ -696,9 +699,10 @@ pub(crate) fn deser_header_start_medical_stream_transcription_start_medical_stre
         .iter();
     let var_62 = aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
     if var_62.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_62.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_62.len()
+        )))
     } else {
         let mut var_62 = var_62;
         Ok(var_62.pop())
@@ -784,9 +788,10 @@ pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription
         .iter();
     let var_63 = aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
     if var_63.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_63.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_63.len()
+        )))
     } else {
         let mut var_63 = var_63;
         Ok(var_63.pop())
@@ -801,9 +806,10 @@ pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription
         .iter();
     let var_64 = aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
     if var_64.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_64.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_64.len()
+        )))
     } else {
         let mut var_64 = var_64;
         Ok(var_64.pop())
@@ -818,9 +824,10 @@ pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription
         .iter();
     let var_65 = aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
     if var_65.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_65.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_65.len()
+        )))
     } else {
         let mut var_65 = var_65;
         Ok(var_65.pop())
@@ -879,9 +886,10 @@ pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription
     let headers = header_map.get_all("x-amzn-transcribe-sample-rate").iter();
     let var_66 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_66.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_66.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_66.len()
+        )))
     } else {
         let mut var_66 = var_66;
         Ok(var_66.pop())
@@ -896,9 +904,10 @@ pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription
         .iter();
     let var_67 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_67.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_67.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_67.len()
+        )))
     } else {
         let mut var_67 = var_67;
         Ok(var_67.pop())
@@ -969,9 +978,10 @@ pub(crate) fn deser_header_start_stream_transcription_start_stream_transcription
         .iter();
     let var_68 = aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
     if var_68.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_68.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_68.len()
+        )))
     } else {
         let mut var_68 = var_68;
         Ok(var_68.pop())

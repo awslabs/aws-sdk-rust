@@ -907,12 +907,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -933,12 +931,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon DocumentDB event notification subscription that you want to add a source identifier to.</p>
@@ -1012,12 +1008,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -1038,12 +1032,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name .</p>
@@ -1109,12 +1101,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -1135,12 +1125,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to.</p>
@@ -1223,12 +1211,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -1249,12 +1235,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier or Amazon Resource Name (ARN) for the source cluster parameter group.</p>
@@ -1397,12 +1381,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -1423,12 +1405,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the cluster snapshot to copy. This parameter is not case sensitive.</p>
@@ -1600,12 +1580,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -1626,12 +1604,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `AvailabilityZones`.
@@ -2016,12 +1992,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -2042,12 +2016,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster parameter group.</p>
@@ -2151,12 +2123,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -2177,12 +2147,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the cluster snapshot. This parameter is stored as a lowercase string.</p>
@@ -2288,12 +2256,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -2314,12 +2280,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
@@ -2544,12 +2508,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -2570,12 +2532,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The name for the subnet group. This value is stored as a lowercase string.</p>
@@ -2680,12 +2640,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -2706,12 +2664,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the subscription.</p>
@@ -2868,12 +2824,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -2894,12 +2848,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The cluster identifier of the new global cluster.</p>
@@ -3021,12 +2973,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3047,12 +2997,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The cluster identifier for the cluster to be deleted. This parameter isn't case sensitive.</p>
@@ -3157,12 +3105,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3183,12 +3129,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster parameter group.</p>
@@ -3254,12 +3198,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3280,12 +3222,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the cluster snapshot to delete.</p>
@@ -3339,12 +3279,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3365,12 +3303,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The instance identifier for the instance to be deleted. This parameter isn't case sensitive.</p>
@@ -3429,12 +3365,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3455,12 +3389,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the database subnet group to delete.</p> <note>
@@ -3519,12 +3451,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3545,12 +3475,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon DocumentDB event notification subscription that you want to delete.</p>
@@ -3601,12 +3529,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3627,12 +3553,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The cluster identifier of the global cluster being deleted.</p>
@@ -3681,12 +3605,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3707,12 +3629,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Create a paginator for this request
@@ -3824,12 +3744,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3850,12 +3768,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Create a paginator for this request
@@ -3965,12 +3881,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3991,12 +3905,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Create a paginator for this request
@@ -4113,12 +4025,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -4139,12 +4049,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Create a paginator for this request
@@ -4259,12 +4167,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -4287,12 +4193,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the cluster snapshot to describe the attributes for.</p>
@@ -4344,12 +4248,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -4370,12 +4272,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Create a paginator for this request
@@ -4554,12 +4454,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -4580,12 +4478,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Create a paginator for this request
@@ -4747,12 +4643,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -4773,12 +4667,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Create a paginator for this request
@@ -4892,12 +4784,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -4918,12 +4808,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Create a paginator for this request
@@ -5021,12 +4909,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -5049,12 +4935,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster parameter group family to return the engine parameter information for.</p>
@@ -5144,12 +5028,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -5170,12 +5052,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The type of source that is generating the events.</p>
@@ -5240,12 +5120,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -5266,12 +5144,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Create a paginator for this request
@@ -5458,12 +5334,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -5484,12 +5358,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Create a paginator for this request
@@ -5587,12 +5459,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -5613,12 +5483,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Create a paginator for this request
@@ -5714,12 +5582,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -5742,12 +5608,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Create a paginator for this request
@@ -5894,12 +5758,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -5920,12 +5782,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Create a paginator for this request
@@ -6038,12 +5898,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -6064,12 +5922,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>A cluster identifier to force a failover for. This parameter is not case sensitive.</p>
@@ -6144,12 +6000,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -6170,12 +6024,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon DocumentDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>
@@ -6241,12 +6093,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -6267,12 +6117,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The cluster identifier for the cluster that is being modified. This parameter is not case sensitive.</p>
@@ -6548,12 +6396,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -6574,12 +6420,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster parameter group to modify.</p>
@@ -6649,12 +6493,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -6675,12 +6517,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the cluster snapshot to modify the attributes for.</p>
@@ -6785,12 +6625,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -6811,12 +6649,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The instance identifier. This value is stored as a lowercase string.</p>
@@ -7032,12 +6868,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -7058,12 +6892,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The name for the subnet group. This value is stored as a lowercase string. You can't modify the default subnet group. </p>
@@ -7149,12 +6981,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -7175,12 +7005,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon DocumentDB event notification subscription.</p>
@@ -7283,12 +7111,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -7309,12 +7135,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the global cluster being modified. This parameter isn't case-sensitive.</p>
@@ -7406,12 +7230,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -7432,12 +7254,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
@@ -7508,12 +7328,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -7534,12 +7352,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The cluster identifier to detach from the Amazon DocumentDB global cluster. </p>
@@ -7603,12 +7419,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -7631,12 +7445,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon DocumentDB event notification subscription that you want to remove a source identifier from.</p>
@@ -7698,12 +7510,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -7724,12 +7534,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon DocumentDB resource that the tags are removed from. This value is an Amazon Resource Name (ARN).</p>
@@ -7796,12 +7604,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -7822,12 +7628,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster parameter group to reset.</p>
@@ -7908,12 +7712,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -7934,12 +7736,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `AvailabilityZones`.
@@ -8186,12 +7986,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -8212,12 +8010,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the new cluster to be created.</p>
@@ -8488,12 +8284,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -8514,12 +8308,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the cluster to restart. Example: <code>docdb-2019-05-28-15-24-52</code> </p>
@@ -8568,12 +8360,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -8594,12 +8384,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the cluster to stop. Example: <code>docdb-2019-05-28-15-24-52</code> </p>

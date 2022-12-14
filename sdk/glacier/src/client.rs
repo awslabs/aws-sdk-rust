@@ -583,12 +583,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -609,12 +607,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -682,12 +678,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -708,12 +702,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
@@ -769,12 +761,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -795,12 +785,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -884,12 +872,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -910,12 +896,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -1003,12 +987,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -1029,12 +1011,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
@@ -1108,12 +1088,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -1134,12 +1112,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
@@ -1202,12 +1178,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -1228,12 +1202,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -1302,12 +1274,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -1328,12 +1298,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -1390,12 +1358,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -1416,12 +1382,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
@@ -1479,12 +1443,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -1505,12 +1467,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
@@ -1571,12 +1531,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -1597,12 +1555,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
@@ -1670,12 +1626,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -1696,12 +1650,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
@@ -1757,12 +1709,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -1783,12 +1733,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID. </p>
@@ -1841,12 +1789,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -1867,12 +1813,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -1962,12 +1906,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -1988,12 +1930,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -2057,12 +1997,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -2083,12 +2021,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -2147,12 +2083,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -2173,12 +2107,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -2234,12 +2166,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -2260,12 +2190,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -2341,12 +2269,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -2367,12 +2293,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
@@ -2463,12 +2387,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -2489,12 +2411,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
@@ -2569,12 +2489,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -2595,12 +2513,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Create a paginator for this request
@@ -2706,12 +2622,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -2732,12 +2646,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Create a paginator for this request
@@ -2822,12 +2734,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -2848,12 +2758,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Create a paginator for this request
@@ -2945,12 +2853,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -2971,12 +2877,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
@@ -3022,12 +2926,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3048,12 +2950,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -3112,12 +3012,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3138,12 +3036,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// Create a paginator for this request
@@ -3215,12 +3111,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3241,12 +3135,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID. </p>
@@ -3292,12 +3184,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3318,12 +3208,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -3397,12 +3285,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3423,12 +3309,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
@@ -3487,12 +3371,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3513,12 +3395,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -3595,12 +3475,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3621,12 +3499,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -3704,12 +3580,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3730,12 +3604,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the vault.</p>
@@ -3838,12 +3710,10 @@ pub mod fluent_builders {
             let operation = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             Ok(crate::operation::customize::CustomizableOperation { handle, operation })
         }
 
@@ -3864,12 +3734,10 @@ pub mod fluent_builders {
             let op = self
                 .inner
                 .build()
-                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
                 .make_operation(&self.handle.conf)
                 .await
-                .map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                })?;
+                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>

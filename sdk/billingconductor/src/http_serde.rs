@@ -2,20 +2,20 @@
 pub fn add_headers_create_billing_group(
     input: &crate::input::CreateBillingGroupInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_1) = &input.client_token {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "client_token",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "client_token",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("X-Amzn-Client-Token", header_value);
         }
@@ -26,20 +26,20 @@ pub fn add_headers_create_billing_group(
 pub fn add_headers_create_custom_line_item(
     input: &crate::input::CreateCustomLineItemInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_3) = &input.client_token {
         let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "client_token",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "client_token",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("X-Amzn-Client-Token", header_value);
         }
@@ -50,20 +50,20 @@ pub fn add_headers_create_custom_line_item(
 pub fn add_headers_create_pricing_plan(
     input: &crate::input::CreatePricingPlanInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_5) = &input.client_token {
         let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "client_token",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "client_token",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("X-Amzn-Client-Token", header_value);
         }
@@ -74,20 +74,20 @@ pub fn add_headers_create_pricing_plan(
 pub fn add_headers_create_pricing_rule(
     input: &crate::input::CreatePricingRuleInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_7) = &input.client_token {
         let formatted_8 = inner_7.as_str();
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "client_token",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "client_token",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("X-Amzn-Client-Token", header_value);
         }
@@ -101,9 +101,10 @@ pub(crate) fn deser_header_associate_accounts_internal_server_exception_retry_af
     let headers = header_map.get_all("Retry-After").iter();
     let var_9 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_9.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_9.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_9.len()
+        )))
     } else {
         let mut var_9 = var_9;
         Ok(var_9.pop())
@@ -116,9 +117,10 @@ pub(crate) fn deser_header_associate_accounts_throttling_exception_retry_after_s
     let headers = header_map.get_all("Retry-After").iter();
     let var_10 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_10.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_10.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_10.len()
+        )))
     } else {
         let mut var_10 = var_10;
         Ok(var_10.pop())
@@ -131,9 +133,10 @@ pub(crate) fn deser_header_associate_pricing_rules_internal_server_exception_ret
     let headers = header_map.get_all("Retry-After").iter();
     let var_11 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_11.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_11.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_11.len()
+        )))
     } else {
         let mut var_11 = var_11;
         Ok(var_11.pop())
@@ -146,9 +149,10 @@ pub(crate) fn deser_header_associate_pricing_rules_throttling_exception_retry_af
     let headers = header_map.get_all("Retry-After").iter();
     let var_12 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_12.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_12.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_12.len()
+        )))
     } else {
         let mut var_12 = var_12;
         Ok(var_12.pop())
@@ -161,9 +165,10 @@ pub(crate) fn deser_header_batch_associate_resources_to_custom_line_item_interna
     let headers = header_map.get_all("Retry-After").iter();
     let var_13 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_13.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_13.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_13.len()
+        )))
     } else {
         let mut var_13 = var_13;
         Ok(var_13.pop())
@@ -176,9 +181,10 @@ pub(crate) fn deser_header_batch_associate_resources_to_custom_line_item_throttl
     let headers = header_map.get_all("Retry-After").iter();
     let var_14 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_14.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_14.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_14.len()
+        )))
     } else {
         let mut var_14 = var_14;
         Ok(var_14.pop())
@@ -191,9 +197,10 @@ pub(crate) fn deser_header_batch_disassociate_resources_from_custom_line_item_in
     let headers = header_map.get_all("Retry-After").iter();
     let var_15 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_15.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_15.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_15.len()
+        )))
     } else {
         let mut var_15 = var_15;
         Ok(var_15.pop())
@@ -206,9 +213,10 @@ pub(crate) fn deser_header_batch_disassociate_resources_from_custom_line_item_th
     let headers = header_map.get_all("Retry-After").iter();
     let var_16 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_16.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_16.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_16.len()
+        )))
     } else {
         let mut var_16 = var_16;
         Ok(var_16.pop())
@@ -221,9 +229,10 @@ pub(crate) fn deser_header_create_billing_group_internal_server_exception_retry_
     let headers = header_map.get_all("Retry-After").iter();
     let var_17 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_17.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_17.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_17.len()
+        )))
     } else {
         let mut var_17 = var_17;
         Ok(var_17.pop())
@@ -236,9 +245,10 @@ pub(crate) fn deser_header_create_billing_group_throttling_exception_retry_after
     let headers = header_map.get_all("Retry-After").iter();
     let var_18 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_18.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_18.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_18.len()
+        )))
     } else {
         let mut var_18 = var_18;
         Ok(var_18.pop())
@@ -251,9 +261,10 @@ pub(crate) fn deser_header_create_custom_line_item_internal_server_exception_ret
     let headers = header_map.get_all("Retry-After").iter();
     let var_19 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_19.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_19.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_19.len()
+        )))
     } else {
         let mut var_19 = var_19;
         Ok(var_19.pop())
@@ -266,9 +277,10 @@ pub(crate) fn deser_header_create_custom_line_item_throttling_exception_retry_af
     let headers = header_map.get_all("Retry-After").iter();
     let var_20 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_20.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_20.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_20.len()
+        )))
     } else {
         let mut var_20 = var_20;
         Ok(var_20.pop())
@@ -281,9 +293,10 @@ pub(crate) fn deser_header_create_pricing_plan_internal_server_exception_retry_a
     let headers = header_map.get_all("Retry-After").iter();
     let var_21 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_21.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_21.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_21.len()
+        )))
     } else {
         let mut var_21 = var_21;
         Ok(var_21.pop())
@@ -296,9 +309,10 @@ pub(crate) fn deser_header_create_pricing_plan_throttling_exception_retry_after_
     let headers = header_map.get_all("Retry-After").iter();
     let var_22 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_22.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_22.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_22.len()
+        )))
     } else {
         let mut var_22 = var_22;
         Ok(var_22.pop())
@@ -311,9 +325,10 @@ pub(crate) fn deser_header_create_pricing_rule_internal_server_exception_retry_a
     let headers = header_map.get_all("Retry-After").iter();
     let var_23 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_23.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_23.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_23.len()
+        )))
     } else {
         let mut var_23 = var_23;
         Ok(var_23.pop())
@@ -326,9 +341,10 @@ pub(crate) fn deser_header_create_pricing_rule_throttling_exception_retry_after_
     let headers = header_map.get_all("Retry-After").iter();
     let var_24 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_24.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_24.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_24.len()
+        )))
     } else {
         let mut var_24 = var_24;
         Ok(var_24.pop())
@@ -341,9 +357,10 @@ pub(crate) fn deser_header_delete_billing_group_internal_server_exception_retry_
     let headers = header_map.get_all("Retry-After").iter();
     let var_25 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_25.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_25.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_25.len()
+        )))
     } else {
         let mut var_25 = var_25;
         Ok(var_25.pop())
@@ -356,9 +373,10 @@ pub(crate) fn deser_header_delete_billing_group_throttling_exception_retry_after
     let headers = header_map.get_all("Retry-After").iter();
     let var_26 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_26.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_26.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_26.len()
+        )))
     } else {
         let mut var_26 = var_26;
         Ok(var_26.pop())
@@ -371,9 +389,10 @@ pub(crate) fn deser_header_delete_custom_line_item_internal_server_exception_ret
     let headers = header_map.get_all("Retry-After").iter();
     let var_27 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_27.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_27.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_27.len()
+        )))
     } else {
         let mut var_27 = var_27;
         Ok(var_27.pop())
@@ -386,9 +405,10 @@ pub(crate) fn deser_header_delete_custom_line_item_throttling_exception_retry_af
     let headers = header_map.get_all("Retry-After").iter();
     let var_28 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_28.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_28.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_28.len()
+        )))
     } else {
         let mut var_28 = var_28;
         Ok(var_28.pop())
@@ -401,9 +421,10 @@ pub(crate) fn deser_header_delete_pricing_plan_internal_server_exception_retry_a
     let headers = header_map.get_all("Retry-After").iter();
     let var_29 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_29.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_29.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_29.len()
+        )))
     } else {
         let mut var_29 = var_29;
         Ok(var_29.pop())
@@ -416,9 +437,10 @@ pub(crate) fn deser_header_delete_pricing_plan_throttling_exception_retry_after_
     let headers = header_map.get_all("Retry-After").iter();
     let var_30 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_30.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_30.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_30.len()
+        )))
     } else {
         let mut var_30 = var_30;
         Ok(var_30.pop())
@@ -431,9 +453,10 @@ pub(crate) fn deser_header_delete_pricing_rule_internal_server_exception_retry_a
     let headers = header_map.get_all("Retry-After").iter();
     let var_31 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_31.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_31.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_31.len()
+        )))
     } else {
         let mut var_31 = var_31;
         Ok(var_31.pop())
@@ -446,9 +469,10 @@ pub(crate) fn deser_header_delete_pricing_rule_throttling_exception_retry_after_
     let headers = header_map.get_all("Retry-After").iter();
     let var_32 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_32.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_32.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_32.len()
+        )))
     } else {
         let mut var_32 = var_32;
         Ok(var_32.pop())
@@ -461,9 +485,10 @@ pub(crate) fn deser_header_disassociate_accounts_internal_server_exception_retry
     let headers = header_map.get_all("Retry-After").iter();
     let var_33 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_33.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_33.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_33.len()
+        )))
     } else {
         let mut var_33 = var_33;
         Ok(var_33.pop())
@@ -476,9 +501,10 @@ pub(crate) fn deser_header_disassociate_accounts_throttling_exception_retry_afte
     let headers = header_map.get_all("Retry-After").iter();
     let var_34 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_34.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_34.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_34.len()
+        )))
     } else {
         let mut var_34 = var_34;
         Ok(var_34.pop())
@@ -491,9 +517,10 @@ pub(crate) fn deser_header_disassociate_pricing_rules_internal_server_exception_
     let headers = header_map.get_all("Retry-After").iter();
     let var_35 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_35.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_35.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_35.len()
+        )))
     } else {
         let mut var_35 = var_35;
         Ok(var_35.pop())
@@ -506,9 +533,10 @@ pub(crate) fn deser_header_disassociate_pricing_rules_throttling_exception_retry
     let headers = header_map.get_all("Retry-After").iter();
     let var_36 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_36.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_36.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_36.len()
+        )))
     } else {
         let mut var_36 = var_36;
         Ok(var_36.pop())
@@ -521,9 +549,10 @@ pub(crate) fn deser_header_list_account_associations_internal_server_exception_r
     let headers = header_map.get_all("Retry-After").iter();
     let var_37 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_37.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_37.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_37.len()
+        )))
     } else {
         let mut var_37 = var_37;
         Ok(var_37.pop())
@@ -536,9 +565,10 @@ pub(crate) fn deser_header_list_account_associations_throttling_exception_retry_
     let headers = header_map.get_all("Retry-After").iter();
     let var_38 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_38.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_38.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_38.len()
+        )))
     } else {
         let mut var_38 = var_38;
         Ok(var_38.pop())
@@ -551,9 +581,10 @@ pub(crate) fn deser_header_list_billing_group_cost_reports_internal_server_excep
     let headers = header_map.get_all("Retry-After").iter();
     let var_39 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_39.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_39.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_39.len()
+        )))
     } else {
         let mut var_39 = var_39;
         Ok(var_39.pop())
@@ -566,9 +597,10 @@ pub(crate) fn deser_header_list_billing_group_cost_reports_throttling_exception_
     let headers = header_map.get_all("Retry-After").iter();
     let var_40 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_40.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_40.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_40.len()
+        )))
     } else {
         let mut var_40 = var_40;
         Ok(var_40.pop())
@@ -581,9 +613,10 @@ pub(crate) fn deser_header_list_billing_groups_internal_server_exception_retry_a
     let headers = header_map.get_all("Retry-After").iter();
     let var_41 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_41.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_41.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_41.len()
+        )))
     } else {
         let mut var_41 = var_41;
         Ok(var_41.pop())
@@ -596,9 +629,10 @@ pub(crate) fn deser_header_list_billing_groups_throttling_exception_retry_after_
     let headers = header_map.get_all("Retry-After").iter();
     let var_42 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_42.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_42.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_42.len()
+        )))
     } else {
         let mut var_42 = var_42;
         Ok(var_42.pop())
@@ -611,9 +645,10 @@ pub(crate) fn deser_header_list_custom_line_items_internal_server_exception_retr
     let headers = header_map.get_all("Retry-After").iter();
     let var_43 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_43.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_43.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_43.len()
+        )))
     } else {
         let mut var_43 = var_43;
         Ok(var_43.pop())
@@ -626,9 +661,10 @@ pub(crate) fn deser_header_list_custom_line_items_throttling_exception_retry_aft
     let headers = header_map.get_all("Retry-After").iter();
     let var_44 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_44.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_44.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_44.len()
+        )))
     } else {
         let mut var_44 = var_44;
         Ok(var_44.pop())
@@ -641,9 +677,10 @@ pub(crate) fn deser_header_list_pricing_plans_internal_server_exception_retry_af
     let headers = header_map.get_all("Retry-After").iter();
     let var_45 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_45.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_45.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_45.len()
+        )))
     } else {
         let mut var_45 = var_45;
         Ok(var_45.pop())
@@ -656,9 +693,10 @@ pub(crate) fn deser_header_list_pricing_plans_throttling_exception_retry_after_s
     let headers = header_map.get_all("Retry-After").iter();
     let var_46 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_46.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_46.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_46.len()
+        )))
     } else {
         let mut var_46 = var_46;
         Ok(var_46.pop())
@@ -671,9 +709,10 @@ pub(crate) fn deser_header_list_pricing_plans_associated_with_pricing_rule_inter
     let headers = header_map.get_all("Retry-After").iter();
     let var_47 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_47.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_47.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_47.len()
+        )))
     } else {
         let mut var_47 = var_47;
         Ok(var_47.pop())
@@ -686,9 +725,10 @@ pub(crate) fn deser_header_list_pricing_plans_associated_with_pricing_rule_throt
     let headers = header_map.get_all("Retry-After").iter();
     let var_48 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_48.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_48.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_48.len()
+        )))
     } else {
         let mut var_48 = var_48;
         Ok(var_48.pop())
@@ -701,9 +741,10 @@ pub(crate) fn deser_header_list_pricing_rules_internal_server_exception_retry_af
     let headers = header_map.get_all("Retry-After").iter();
     let var_49 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_49.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_49.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_49.len()
+        )))
     } else {
         let mut var_49 = var_49;
         Ok(var_49.pop())
@@ -716,9 +757,10 @@ pub(crate) fn deser_header_list_pricing_rules_throttling_exception_retry_after_s
     let headers = header_map.get_all("Retry-After").iter();
     let var_50 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_50.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_50.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_50.len()
+        )))
     } else {
         let mut var_50 = var_50;
         Ok(var_50.pop())
@@ -731,9 +773,10 @@ pub(crate) fn deser_header_list_pricing_rules_associated_to_pricing_plan_interna
     let headers = header_map.get_all("Retry-After").iter();
     let var_51 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_51.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_51.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_51.len()
+        )))
     } else {
         let mut var_51 = var_51;
         Ok(var_51.pop())
@@ -746,9 +789,10 @@ pub(crate) fn deser_header_list_pricing_rules_associated_to_pricing_plan_throttl
     let headers = header_map.get_all("Retry-After").iter();
     let var_52 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_52.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_52.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_52.len()
+        )))
     } else {
         let mut var_52 = var_52;
         Ok(var_52.pop())
@@ -761,9 +805,10 @@ pub(crate) fn deser_header_list_resources_associated_to_custom_line_item_interna
     let headers = header_map.get_all("Retry-After").iter();
     let var_53 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_53.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_53.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_53.len()
+        )))
     } else {
         let mut var_53 = var_53;
         Ok(var_53.pop())
@@ -776,9 +821,10 @@ pub(crate) fn deser_header_list_resources_associated_to_custom_line_item_throttl
     let headers = header_map.get_all("Retry-After").iter();
     let var_54 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_54.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_54.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_54.len()
+        )))
     } else {
         let mut var_54 = var_54;
         Ok(var_54.pop())
@@ -791,9 +837,10 @@ pub(crate) fn deser_header_list_tags_for_resource_internal_server_exception_retr
     let headers = header_map.get_all("Retry-After").iter();
     let var_55 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_55.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_55.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_55.len()
+        )))
     } else {
         let mut var_55 = var_55;
         Ok(var_55.pop())
@@ -806,9 +853,10 @@ pub(crate) fn deser_header_list_tags_for_resource_throttling_exception_retry_aft
     let headers = header_map.get_all("Retry-After").iter();
     let var_56 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_56.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_56.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_56.len()
+        )))
     } else {
         let mut var_56 = var_56;
         Ok(var_56.pop())
@@ -821,9 +869,10 @@ pub(crate) fn deser_header_tag_resource_internal_server_exception_retry_after_se
     let headers = header_map.get_all("Retry-After").iter();
     let var_57 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_57.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_57.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_57.len()
+        )))
     } else {
         let mut var_57 = var_57;
         Ok(var_57.pop())
@@ -836,9 +885,10 @@ pub(crate) fn deser_header_tag_resource_throttling_exception_retry_after_seconds
     let headers = header_map.get_all("Retry-After").iter();
     let var_58 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_58.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_58.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_58.len()
+        )))
     } else {
         let mut var_58 = var_58;
         Ok(var_58.pop())
@@ -851,9 +901,10 @@ pub(crate) fn deser_header_untag_resource_internal_server_exception_retry_after_
     let headers = header_map.get_all("Retry-After").iter();
     let var_59 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_59.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_59.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_59.len()
+        )))
     } else {
         let mut var_59 = var_59;
         Ok(var_59.pop())
@@ -866,9 +917,10 @@ pub(crate) fn deser_header_untag_resource_throttling_exception_retry_after_secon
     let headers = header_map.get_all("Retry-After").iter();
     let var_60 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_60.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_60.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_60.len()
+        )))
     } else {
         let mut var_60 = var_60;
         Ok(var_60.pop())
@@ -881,9 +933,10 @@ pub(crate) fn deser_header_update_billing_group_internal_server_exception_retry_
     let headers = header_map.get_all("Retry-After").iter();
     let var_61 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_61.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_61.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_61.len()
+        )))
     } else {
         let mut var_61 = var_61;
         Ok(var_61.pop())
@@ -896,9 +949,10 @@ pub(crate) fn deser_header_update_billing_group_throttling_exception_retry_after
     let headers = header_map.get_all("Retry-After").iter();
     let var_62 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_62.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_62.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_62.len()
+        )))
     } else {
         let mut var_62 = var_62;
         Ok(var_62.pop())
@@ -911,9 +965,10 @@ pub(crate) fn deser_header_update_custom_line_item_internal_server_exception_ret
     let headers = header_map.get_all("Retry-After").iter();
     let var_63 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_63.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_63.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_63.len()
+        )))
     } else {
         let mut var_63 = var_63;
         Ok(var_63.pop())
@@ -926,9 +981,10 @@ pub(crate) fn deser_header_update_custom_line_item_throttling_exception_retry_af
     let headers = header_map.get_all("Retry-After").iter();
     let var_64 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_64.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_64.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_64.len()
+        )))
     } else {
         let mut var_64 = var_64;
         Ok(var_64.pop())
@@ -941,9 +997,10 @@ pub(crate) fn deser_header_update_pricing_plan_internal_server_exception_retry_a
     let headers = header_map.get_all("Retry-After").iter();
     let var_65 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_65.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_65.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_65.len()
+        )))
     } else {
         let mut var_65 = var_65;
         Ok(var_65.pop())
@@ -956,9 +1013,10 @@ pub(crate) fn deser_header_update_pricing_plan_throttling_exception_retry_after_
     let headers = header_map.get_all("Retry-After").iter();
     let var_66 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_66.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_66.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_66.len()
+        )))
     } else {
         let mut var_66 = var_66;
         Ok(var_66.pop())
@@ -971,9 +1029,10 @@ pub(crate) fn deser_header_update_pricing_rule_internal_server_exception_retry_a
     let headers = header_map.get_all("Retry-After").iter();
     let var_67 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_67.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_67.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_67.len()
+        )))
     } else {
         let mut var_67 = var_67;
         Ok(var_67.pop())
@@ -986,9 +1045,10 @@ pub(crate) fn deser_header_update_pricing_rule_throttling_exception_retry_after_
     let headers = header_map.get_all("Retry-After").iter();
     let var_68 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_68.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_68.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_68.len()
+        )))
     } else {
         let mut var_68 = var_68;
         Ok(var_68.pop())

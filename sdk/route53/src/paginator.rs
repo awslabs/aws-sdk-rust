@@ -64,9 +64,10 @@ impl ListCidrBlocksPaginator {
         aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder.build().map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                }) {
+                let mut input = match builder
+                    .build()
+                    .map_err(aws_smithy_http::result::SdkError::construction_failure)
+                {
                     Ok(input) => input,
                     Err(e) => {
                         let _ = tx.send(Err(e)).await;
@@ -74,9 +75,11 @@ impl ListCidrBlocksPaginator {
                     }
                 };
                 loop {
-                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
-                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                    }) {
+                    let op = match input
+                        .make_operation(&handle.conf)
+                        .await
+                        .map_err(aws_smithy_http::result::SdkError::construction_failure)
+                    {
                         Ok(op) => op,
                         Err(e) => {
                             let _ = tx.send(Err(e)).await;
@@ -179,9 +182,10 @@ impl ListCidrCollectionsPaginator {
         aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder.build().map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                }) {
+                let mut input = match builder
+                    .build()
+                    .map_err(aws_smithy_http::result::SdkError::construction_failure)
+                {
                     Ok(input) => input,
                     Err(e) => {
                         let _ = tx.send(Err(e)).await;
@@ -189,9 +193,11 @@ impl ListCidrCollectionsPaginator {
                     }
                 };
                 loop {
-                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
-                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                    }) {
+                    let op = match input
+                        .make_operation(&handle.conf)
+                        .await
+                        .map_err(aws_smithy_http::result::SdkError::construction_failure)
+                    {
                         Ok(op) => op,
                         Err(e) => {
                             let _ = tx.send(Err(e)).await;
@@ -294,9 +300,10 @@ impl ListCidrLocationsPaginator {
         aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder.build().map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                }) {
+                let mut input = match builder
+                    .build()
+                    .map_err(aws_smithy_http::result::SdkError::construction_failure)
+                {
                     Ok(input) => input,
                     Err(e) => {
                         let _ = tx.send(Err(e)).await;
@@ -304,9 +311,11 @@ impl ListCidrLocationsPaginator {
                     }
                 };
                 loop {
-                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
-                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                    }) {
+                    let op = match input
+                        .make_operation(&handle.conf)
+                        .await
+                        .map_err(aws_smithy_http::result::SdkError::construction_failure)
+                    {
                         Ok(op) => op,
                         Err(e) => {
                             let _ = tx.send(Err(e)).await;
@@ -409,9 +418,10 @@ impl ListHealthChecksPaginator {
         aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder.build().map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                }) {
+                let mut input = match builder
+                    .build()
+                    .map_err(aws_smithy_http::result::SdkError::construction_failure)
+                {
                     Ok(input) => input,
                     Err(e) => {
                         let _ = tx.send(Err(e)).await;
@@ -419,9 +429,11 @@ impl ListHealthChecksPaginator {
                     }
                 };
                 loop {
-                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
-                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                    }) {
+                    let op = match input
+                        .make_operation(&handle.conf)
+                        .await
+                        .map_err(aws_smithy_http::result::SdkError::construction_failure)
+                    {
                         Ok(op) => op,
                         Err(e) => {
                             let _ = tx.send(Err(e)).await;
@@ -524,9 +536,10 @@ impl ListHostedZonesPaginator {
         aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder.build().map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                }) {
+                let mut input = match builder
+                    .build()
+                    .map_err(aws_smithy_http::result::SdkError::construction_failure)
+                {
                     Ok(input) => input,
                     Err(e) => {
                         let _ = tx.send(Err(e)).await;
@@ -534,9 +547,11 @@ impl ListHostedZonesPaginator {
                     }
                 };
                 loop {
-                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
-                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                    }) {
+                    let op = match input
+                        .make_operation(&handle.conf)
+                        .await
+                        .map_err(aws_smithy_http::result::SdkError::construction_failure)
+                    {
                         Ok(op) => op,
                         Err(e) => {
                             let _ = tx.send(Err(e)).await;
@@ -639,9 +654,10 @@ impl ListQueryLoggingConfigsPaginator {
         aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder.build().map_err(|err| {
-                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                }) {
+                let mut input = match builder
+                    .build()
+                    .map_err(aws_smithy_http::result::SdkError::construction_failure)
+                {
                     Ok(input) => input,
                     Err(e) => {
                         let _ = tx.send(Err(e)).await;
@@ -649,9 +665,11 @@ impl ListQueryLoggingConfigsPaginator {
                     }
                 };
                 loop {
-                    let op = match input.make_operation(&handle.conf).await.map_err(|err| {
-                        aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-                    }) {
+                    let op = match input
+                        .make_operation(&handle.conf)
+                        .await
+                        .map_err(aws_smithy_http::result::SdkError::construction_failure)
+                    {
                         Ok(op) => op,
                         Err(e) => {
                             let _ = tx.send(Err(e)).await;

@@ -25,8 +25,8 @@ struct RequestTimeoutError {
 }
 
 impl RequestTimeoutError {
-    pub fn new_boxed(kind: &'static str, duration: Duration) -> Box<Self> {
-        Box::new(Self { kind, duration })
+    pub fn new(kind: &'static str, duration: Duration) -> Self {
+        Self { kind, duration }
     }
 }
 
@@ -195,8 +195,8 @@ where
         };
         match future.poll(cx) {
             Poll::Ready(Ok(response)) => Poll::Ready(response),
-            Poll::Ready(Err(_timeout)) => Poll::Ready(Err(SdkError::TimeoutError(
-                RequestTimeoutError::new_boxed(kind, *duration),
+            Poll::Ready(Err(_timeout)) => Poll::Ready(Err(SdkError::timeout_error(
+                RequestTimeoutError::new(kind, *duration),
             ))),
             Poll::Pending => Poll::Pending,
         }
@@ -262,7 +262,7 @@ mod test {
         let err: SdkError<Box<dyn std::error::Error + 'static>> =
             svc.ready().await.unwrap().call(op).await.unwrap_err();
 
-        assert_eq!(format!("{:?}", err), "TimeoutError(RequestTimeoutError { kind: \"operation timeout (all attempts including retries)\", duration: 250ms })");
+        assert_eq!(format!("{:?}", err), "TimeoutError(TimeoutError { source: RequestTimeoutError { kind: \"operation timeout (all attempts including retries)\", duration: 250ms } })");
         assert_elapsed!(now, Duration::from_secs_f32(0.25));
     }
 }

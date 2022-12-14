@@ -64,23 +64,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AcceptMatchError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AcceptMatchErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::AcceptMatchErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::AcceptMatchErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::AcceptMatchErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::AcceptMatchErrorKind::UnsupportedRegionException(inner) => {
+                        Error::UnsupportedRegionException(inner)
+                    }
+                    crate::error::AcceptMatchErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::AcceptMatchErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::AcceptMatchErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::AcceptMatchErrorKind::UnsupportedRegionException(inner) => {
-                    Error::UnsupportedRegionException(inner)
-                }
-                crate::error::AcceptMatchErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -91,29 +93,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ClaimGameServerError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ClaimGameServerErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ClaimGameServerErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::ClaimGameServerErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::ClaimGameServerErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::ClaimGameServerErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::ClaimGameServerErrorKind::OutOfCapacityException(inner) => {
+                        Error::OutOfCapacityException(inner)
+                    }
+                    crate::error::ClaimGameServerErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::ClaimGameServerErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ClaimGameServerErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
-                }
-                crate::error::ClaimGameServerErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::ClaimGameServerErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::ClaimGameServerErrorKind::OutOfCapacityException(inner) => {
-                    Error::OutOfCapacityException(inner)
-                }
-                crate::error::ClaimGameServerErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::ClaimGameServerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -124,29 +128,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAliasError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateAliasErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateAliasErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::CreateAliasErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::CreateAliasErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::CreateAliasErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::CreateAliasErrorKind::TaggingFailedException(inner) => {
+                        Error::TaggingFailedException(inner)
+                    }
+                    crate::error::CreateAliasErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::CreateAliasErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateAliasErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
-                }
-                crate::error::CreateAliasErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::CreateAliasErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CreateAliasErrorKind::TaggingFailedException(inner) => {
-                    Error::TaggingFailedException(inner)
-                }
-                crate::error::CreateAliasErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::CreateAliasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -157,26 +163,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateBuildError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateBuildErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateBuildErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::CreateBuildErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::CreateBuildErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::CreateBuildErrorKind::TaggingFailedException(inner) => {
+                        Error::TaggingFailedException(inner)
+                    }
+                    crate::error::CreateBuildErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::CreateBuildErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateBuildErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
-                }
-                crate::error::CreateBuildErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::CreateBuildErrorKind::TaggingFailedException(inner) => {
-                    Error::TaggingFailedException(inner)
-                }
-                crate::error::CreateBuildErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::CreateBuildErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -187,35 +195,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateFleetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateFleetErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateFleetErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::CreateFleetErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::CreateFleetErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::CreateFleetErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::CreateFleetErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::CreateFleetErrorKind::TaggingFailedException(inner) => {
+                        Error::TaggingFailedException(inner)
+                    }
+                    crate::error::CreateFleetErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::CreateFleetErrorKind::UnsupportedRegionException(inner) => {
+                        Error::UnsupportedRegionException(inner)
+                    }
+                    crate::error::CreateFleetErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateFleetErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
-                }
-                crate::error::CreateFleetErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::CreateFleetErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CreateFleetErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::CreateFleetErrorKind::TaggingFailedException(inner) => {
-                    Error::TaggingFailedException(inner)
-                }
-                crate::error::CreateFleetErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::CreateFleetErrorKind::UnsupportedRegionException(inner) => {
-                    Error::UnsupportedRegionException(inner)
-                }
-                crate::error::CreateFleetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -229,29 +239,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateFleetLocationsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateFleetLocationsErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateFleetLocationsErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::CreateFleetLocationsErrorKind::InvalidFleetStatusException(
+                        inner,
+                    ) => Error::InvalidFleetStatusException(inner),
+                    crate::error::CreateFleetLocationsErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::CreateFleetLocationsErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::CreateFleetLocationsErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::CreateFleetLocationsErrorKind::UnsupportedRegionException(
+                        inner,
+                    ) => Error::UnsupportedRegionException(inner),
+                    crate::error::CreateFleetLocationsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateFleetLocationsErrorKind::InvalidFleetStatusException(inner) => {
-                    Error::InvalidFleetStatusException(inner)
-                }
-                crate::error::CreateFleetLocationsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::CreateFleetLocationsErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::CreateFleetLocationsErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::CreateFleetLocationsErrorKind::UnsupportedRegionException(inner) => {
-                    Error::UnsupportedRegionException(inner)
-                }
-                crate::error::CreateFleetLocationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -265,26 +277,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateGameServerGroupError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateGameServerGroupErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateGameServerGroupErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::CreateGameServerGroupErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::CreateGameServerGroupErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::CreateGameServerGroupErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::CreateGameServerGroupErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::CreateGameServerGroupErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateGameServerGroupErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
-                }
-                crate::error::CreateGameServerGroupErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::CreateGameServerGroupErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CreateGameServerGroupErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::CreateGameServerGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -297,7 +311,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateGameSessionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CreateGameSessionErrorKind::ConflictException(inner) => {
                     Error::ConflictException(inner)
                 }
@@ -348,29 +365,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateGameSessionQueueError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateGameSessionQueueErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateGameSessionQueueErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::CreateGameSessionQueueErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::CreateGameSessionQueueErrorKind::LimitExceededException(
+                        inner,
+                    ) => Error::LimitExceededException(inner),
+                    crate::error::CreateGameSessionQueueErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::CreateGameSessionQueueErrorKind::TaggingFailedException(
+                        inner,
+                    ) => Error::TaggingFailedException(inner),
+                    crate::error::CreateGameSessionQueueErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::CreateGameSessionQueueErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateGameSessionQueueErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::CreateGameSessionQueueErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CreateGameSessionQueueErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::CreateGameSessionQueueErrorKind::TaggingFailedException(inner) => {
-                    Error::TaggingFailedException(inner)
-                }
-                crate::error::CreateGameSessionQueueErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::CreateGameSessionQueueErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -388,7 +407,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateMatchmakingConfigurationErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
                 crate::error::CreateMatchmakingConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::CreateMatchmakingConfigurationErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
@@ -410,23 +429,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateMatchmakingRuleSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateMatchmakingRuleSetErrorKind::InternalServiceException(
-                    inner,
-                ) => Error::InternalServiceException(inner),
-                crate::error::CreateMatchmakingRuleSetErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateMatchmakingRuleSetErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::CreateMatchmakingRuleSetErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::CreateMatchmakingRuleSetErrorKind::TaggingFailedException(
+                        inner,
+                    ) => Error::TaggingFailedException(inner),
+                    crate::error::CreateMatchmakingRuleSetErrorKind::UnsupportedRegionException(
+                        inner,
+                    ) => Error::UnsupportedRegionException(inner),
+                    crate::error::CreateMatchmakingRuleSetErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateMatchmakingRuleSetErrorKind::TaggingFailedException(inner) => {
-                    Error::TaggingFailedException(inner)
-                }
-                crate::error::CreateMatchmakingRuleSetErrorKind::UnsupportedRegionException(
-                    inner,
-                ) => Error::UnsupportedRegionException(inner),
-                crate::error::CreateMatchmakingRuleSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -439,7 +460,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreatePlayerSessionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CreatePlayerSessionErrorKind::GameSessionFullException(inner) => {
                     Error::GameSessionFullException(inner)
                 }
@@ -478,7 +502,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreatePlayerSessionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CreatePlayerSessionsErrorKind::GameSessionFullException(inner) => {
                     Error::GameSessionFullException(inner)
                 }
@@ -514,26 +541,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateScriptError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateScriptErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateScriptErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::CreateScriptErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::CreateScriptErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::CreateScriptErrorKind::TaggingFailedException(inner) => {
+                        Error::TaggingFailedException(inner)
+                    }
+                    crate::error::CreateScriptErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::CreateScriptErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateScriptErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
-                }
-                crate::error::CreateScriptErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::CreateScriptErrorKind::TaggingFailedException(inner) => {
-                    Error::TaggingFailedException(inner)
-                }
-                crate::error::CreateScriptErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::CreateScriptErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -547,7 +576,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateVpcPeeringAuthorizationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CreateVpcPeeringAuthorizationErrorKind::InternalServiceException(
                     inner,
                 ) => Error::InternalServiceException(inner),
@@ -577,23 +609,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateVpcPeeringConnectionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateVpcPeeringConnectionErrorKind::InternalServiceException(
-                    inner,
-                ) => Error::InternalServiceException(inner),
-                crate::error::CreateVpcPeeringConnectionErrorKind::InvalidRequestException(
-                    inner,
-                ) => Error::InvalidRequestException(inner),
-                crate::error::CreateVpcPeeringConnectionErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateVpcPeeringConnectionErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::CreateVpcPeeringConnectionErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::CreateVpcPeeringConnectionErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::CreateVpcPeeringConnectionErrorKind::UnauthorizedException(
+                        inner,
+                    ) => Error::UnauthorizedException(inner),
+                    crate::error::CreateVpcPeeringConnectionErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateVpcPeeringConnectionErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::CreateVpcPeeringConnectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -604,26 +638,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAliasError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteAliasErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteAliasErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::DeleteAliasErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DeleteAliasErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DeleteAliasErrorKind::TaggingFailedException(inner) => {
+                        Error::TaggingFailedException(inner)
+                    }
+                    crate::error::DeleteAliasErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DeleteAliasErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteAliasErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DeleteAliasErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DeleteAliasErrorKind::TaggingFailedException(inner) => {
-                    Error::TaggingFailedException(inner)
-                }
-                crate::error::DeleteAliasErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DeleteAliasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -634,26 +670,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteBuildError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteBuildErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteBuildErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::DeleteBuildErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DeleteBuildErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DeleteBuildErrorKind::TaggingFailedException(inner) => {
+                        Error::TaggingFailedException(inner)
+                    }
+                    crate::error::DeleteBuildErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DeleteBuildErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteBuildErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DeleteBuildErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DeleteBuildErrorKind::TaggingFailedException(inner) => {
-                    Error::TaggingFailedException(inner)
-                }
-                crate::error::DeleteBuildErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DeleteBuildErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -664,29 +702,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFleetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteFleetErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteFleetErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::DeleteFleetErrorKind::InvalidFleetStatusException(inner) => {
+                        Error::InvalidFleetStatusException(inner)
+                    }
+                    crate::error::DeleteFleetErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DeleteFleetErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DeleteFleetErrorKind::TaggingFailedException(inner) => {
+                        Error::TaggingFailedException(inner)
+                    }
+                    crate::error::DeleteFleetErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DeleteFleetErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteFleetErrorKind::InvalidFleetStatusException(inner) => {
-                    Error::InvalidFleetStatusException(inner)
-                }
-                crate::error::DeleteFleetErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DeleteFleetErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DeleteFleetErrorKind::TaggingFailedException(inner) => {
-                    Error::TaggingFailedException(inner)
-                }
-                crate::error::DeleteFleetErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DeleteFleetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -700,26 +740,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteFleetLocationsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteFleetLocationsErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteFleetLocationsErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::DeleteFleetLocationsErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DeleteFleetLocationsErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DeleteFleetLocationsErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DeleteFleetLocationsErrorKind::UnsupportedRegionException(
+                        inner,
+                    ) => Error::UnsupportedRegionException(inner),
+                    crate::error::DeleteFleetLocationsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteFleetLocationsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DeleteFleetLocationsErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DeleteFleetLocationsErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DeleteFleetLocationsErrorKind::UnsupportedRegionException(inner) => {
-                    Error::UnsupportedRegionException(inner)
-                }
-                crate::error::DeleteFleetLocationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -733,23 +775,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteGameServerGroupError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteGameServerGroupErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteGameServerGroupErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::DeleteGameServerGroupErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::DeleteGameServerGroupErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DeleteGameServerGroupErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DeleteGameServerGroupErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteGameServerGroupErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DeleteGameServerGroupErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DeleteGameServerGroupErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DeleteGameServerGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -763,26 +807,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteGameSessionQueueError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteGameSessionQueueErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteGameSessionQueueErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::DeleteGameSessionQueueErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::DeleteGameSessionQueueErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DeleteGameSessionQueueErrorKind::TaggingFailedException(
+                        inner,
+                    ) => Error::TaggingFailedException(inner),
+                    crate::error::DeleteGameSessionQueueErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DeleteGameSessionQueueErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteGameSessionQueueErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DeleteGameSessionQueueErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DeleteGameSessionQueueErrorKind::TaggingFailedException(inner) => {
-                    Error::TaggingFailedException(inner)
-                }
-                crate::error::DeleteGameSessionQueueErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DeleteGameSessionQueueErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -800,7 +846,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteMatchmakingConfigurationErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
                 crate::error::DeleteMatchmakingConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DeleteMatchmakingConfigurationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -821,26 +867,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteMatchmakingRuleSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteMatchmakingRuleSetErrorKind::InternalServiceException(
-                    inner,
-                ) => Error::InternalServiceException(inner),
-                crate::error::DeleteMatchmakingRuleSetErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteMatchmakingRuleSetErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::DeleteMatchmakingRuleSetErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::DeleteMatchmakingRuleSetErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DeleteMatchmakingRuleSetErrorKind::TaggingFailedException(
+                        inner,
+                    ) => Error::TaggingFailedException(inner),
+                    crate::error::DeleteMatchmakingRuleSetErrorKind::UnsupportedRegionException(
+                        inner,
+                    ) => Error::UnsupportedRegionException(inner),
+                    crate::error::DeleteMatchmakingRuleSetErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteMatchmakingRuleSetErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DeleteMatchmakingRuleSetErrorKind::TaggingFailedException(inner) => {
-                    Error::TaggingFailedException(inner)
-                }
-                crate::error::DeleteMatchmakingRuleSetErrorKind::UnsupportedRegionException(
-                    inner,
-                ) => Error::UnsupportedRegionException(inner),
-                crate::error::DeleteMatchmakingRuleSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -853,23 +901,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteScalingPolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteScalingPolicyErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteScalingPolicyErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::DeleteScalingPolicyErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DeleteScalingPolicyErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DeleteScalingPolicyErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DeleteScalingPolicyErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteScalingPolicyErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DeleteScalingPolicyErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DeleteScalingPolicyErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DeleteScalingPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -880,26 +930,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteScriptError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteScriptErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteScriptErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::DeleteScriptErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DeleteScriptErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DeleteScriptErrorKind::TaggingFailedException(inner) => {
+                        Error::TaggingFailedException(inner)
+                    }
+                    crate::error::DeleteScriptErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DeleteScriptErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteScriptErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DeleteScriptErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DeleteScriptErrorKind::TaggingFailedException(inner) => {
-                    Error::TaggingFailedException(inner)
-                }
-                crate::error::DeleteScriptErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DeleteScriptErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -913,7 +965,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteVpcPeeringAuthorizationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DeleteVpcPeeringAuthorizationErrorKind::InternalServiceException(
                     inner,
                 ) => Error::InternalServiceException(inner),
@@ -943,23 +998,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteVpcPeeringConnectionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteVpcPeeringConnectionErrorKind::InternalServiceException(
-                    inner,
-                ) => Error::InternalServiceException(inner),
-                crate::error::DeleteVpcPeeringConnectionErrorKind::InvalidRequestException(
-                    inner,
-                ) => Error::InvalidRequestException(inner),
-                crate::error::DeleteVpcPeeringConnectionErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteVpcPeeringConnectionErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::DeleteVpcPeeringConnectionErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::DeleteVpcPeeringConnectionErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DeleteVpcPeeringConnectionErrorKind::UnauthorizedException(
+                        inner,
+                    ) => Error::UnauthorizedException(inner),
+                    crate::error::DeleteVpcPeeringConnectionErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteVpcPeeringConnectionErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DeleteVpcPeeringConnectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -973,23 +1030,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeregisterGameServerError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeregisterGameServerErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeregisterGameServerErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::DeregisterGameServerErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DeregisterGameServerErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DeregisterGameServerErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DeregisterGameServerErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeregisterGameServerErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DeregisterGameServerErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DeregisterGameServerErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DeregisterGameServerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1000,23 +1059,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeAliasError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeAliasErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeAliasErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::DescribeAliasErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DescribeAliasErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DescribeAliasErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DescribeAliasErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeAliasErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DescribeAliasErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DescribeAliasErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DescribeAliasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1027,23 +1088,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeBuildError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeBuildErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeBuildErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::DescribeBuildErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DescribeBuildErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DescribeBuildErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DescribeBuildErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeBuildErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DescribeBuildErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DescribeBuildErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DescribeBuildErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1057,7 +1120,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeEC2InstanceLimitsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeEC2InstanceLimitsErrorKind::InternalServiceException(
                     inner,
                 ) => Error::InternalServiceException(inner),
@@ -1087,23 +1153,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetAttributesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeFleetAttributesErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeFleetAttributesErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::DescribeFleetAttributesErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::DescribeFleetAttributesErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DescribeFleetAttributesErrorKind::UnauthorizedException(
+                        inner,
+                    ) => Error::UnauthorizedException(inner),
+                    crate::error::DescribeFleetAttributesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeFleetAttributesErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DescribeFleetAttributesErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DescribeFleetAttributesErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DescribeFleetAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1117,23 +1185,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetCapacityError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeFleetCapacityErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeFleetCapacityErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::DescribeFleetCapacityErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::DescribeFleetCapacityErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DescribeFleetCapacityErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DescribeFleetCapacityErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeFleetCapacityErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DescribeFleetCapacityErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DescribeFleetCapacityErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DescribeFleetCapacityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1146,23 +1216,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetEventsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeFleetEventsErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeFleetEventsErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::DescribeFleetEventsErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DescribeFleetEventsErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DescribeFleetEventsErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DescribeFleetEventsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeFleetEventsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DescribeFleetEventsErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DescribeFleetEventsErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DescribeFleetEventsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1180,7 +1252,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeFleetLocationAttributesErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
                 crate::error::DescribeFleetLocationAttributesErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DescribeFleetLocationAttributesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -1201,7 +1273,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetLocationCapacityError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeFleetLocationCapacityErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
                 crate::error::DescribeFleetLocationCapacityErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DescribeFleetLocationCapacityErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -1226,7 +1298,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeFleetLocationUtilizationErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
                 crate::error::DescribeFleetLocationUtilizationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DescribeFleetLocationUtilizationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -1247,23 +1319,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetPortSettingsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeFleetPortSettingsErrorKind::InternalServiceException(
-                    inner,
-                ) => Error::InternalServiceException(inner),
-                crate::error::DescribeFleetPortSettingsErrorKind::InvalidRequestException(
-                    inner,
-                ) => Error::InvalidRequestException(inner),
-                crate::error::DescribeFleetPortSettingsErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeFleetPortSettingsErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::DescribeFleetPortSettingsErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::DescribeFleetPortSettingsErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DescribeFleetPortSettingsErrorKind::UnauthorizedException(
+                        inner,
+                    ) => Error::UnauthorizedException(inner),
+                    crate::error::DescribeFleetPortSettingsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeFleetPortSettingsErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DescribeFleetPortSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1277,23 +1351,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetUtilizationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeFleetUtilizationErrorKind::InternalServiceException(
-                    inner,
-                ) => Error::InternalServiceException(inner),
-                crate::error::DescribeFleetUtilizationErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeFleetUtilizationErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::DescribeFleetUtilizationErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::DescribeFleetUtilizationErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DescribeFleetUtilizationErrorKind::UnauthorizedException(
+                        inner,
+                    ) => Error::UnauthorizedException(inner),
+                    crate::error::DescribeFleetUtilizationErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeFleetUtilizationErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DescribeFleetUtilizationErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DescribeFleetUtilizationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1306,23 +1382,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeGameServerError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeGameServerErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeGameServerErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::DescribeGameServerErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DescribeGameServerErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DescribeGameServerErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DescribeGameServerErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeGameServerErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DescribeGameServerErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DescribeGameServerErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DescribeGameServerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1336,23 +1414,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeGameServerGroupError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeGameServerGroupErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeGameServerGroupErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::DescribeGameServerGroupErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::DescribeGameServerGroupErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DescribeGameServerGroupErrorKind::UnauthorizedException(
+                        inner,
+                    ) => Error::UnauthorizedException(inner),
+                    crate::error::DescribeGameServerGroupErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeGameServerGroupErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DescribeGameServerGroupErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DescribeGameServerGroupErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DescribeGameServerGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1366,7 +1446,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeGameServerInstancesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeGameServerInstancesErrorKind::InternalServiceException(
                     inner,
                 ) => Error::InternalServiceException(inner),
@@ -1396,7 +1479,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionDetailsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeGameSessionDetailsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
                 crate::error::DescribeGameSessionDetailsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DescribeGameSessionDetailsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -1418,7 +1501,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionPlacementError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeGameSessionPlacementErrorKind::InternalServiceException(
                     inner,
                 ) => Error::InternalServiceException(inner),
@@ -1448,23 +1534,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionQueuesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeGameSessionQueuesErrorKind::InternalServiceException(
-                    inner,
-                ) => Error::InternalServiceException(inner),
-                crate::error::DescribeGameSessionQueuesErrorKind::InvalidRequestException(
-                    inner,
-                ) => Error::InvalidRequestException(inner),
-                crate::error::DescribeGameSessionQueuesErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeGameSessionQueuesErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::DescribeGameSessionQueuesErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::DescribeGameSessionQueuesErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DescribeGameSessionQueuesErrorKind::UnauthorizedException(
+                        inner,
+                    ) => Error::UnauthorizedException(inner),
+                    crate::error::DescribeGameSessionQueuesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeGameSessionQueuesErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DescribeGameSessionQueuesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1478,7 +1566,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeGameSessionsErrorKind::InternalServiceException(inner) => {
                     Error::InternalServiceException(inner)
                 }
@@ -1513,26 +1604,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeInstancesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeInstancesErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeInstancesErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::DescribeInstancesErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DescribeInstancesErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DescribeInstancesErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DescribeInstancesErrorKind::UnsupportedRegionException(inner) => {
+                        Error::UnsupportedRegionException(inner)
+                    }
+                    crate::error::DescribeInstancesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeInstancesErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DescribeInstancesErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DescribeInstancesErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DescribeInstancesErrorKind::UnsupportedRegionException(inner) => {
-                    Error::UnsupportedRegionException(inner)
-                }
-                crate::error::DescribeInstancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1545,20 +1638,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeMatchmakingErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeMatchmakingErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::DescribeMatchmakingErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DescribeMatchmakingErrorKind::UnsupportedRegionException(
+                        inner,
+                    ) => Error::UnsupportedRegionException(inner),
+                    crate::error::DescribeMatchmakingErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeMatchmakingErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DescribeMatchmakingErrorKind::UnsupportedRegionException(inner) => {
-                    Error::UnsupportedRegionException(inner)
-                }
-                crate::error::DescribeMatchmakingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1576,7 +1671,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeMatchmakingConfigurationsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
                 crate::error::DescribeMatchmakingConfigurationsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DescribeMatchmakingConfigurationsErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
@@ -1595,7 +1690,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingRuleSetsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeMatchmakingRuleSetsErrorKind::InternalServiceException(
                     inner,
                 ) => Error::InternalServiceException(inner),
@@ -1625,23 +1723,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribePlayerSessionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribePlayerSessionsErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribePlayerSessionsErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::DescribePlayerSessionsErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::DescribePlayerSessionsErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DescribePlayerSessionsErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DescribePlayerSessionsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribePlayerSessionsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DescribePlayerSessionsErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DescribePlayerSessionsErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DescribePlayerSessionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1655,7 +1755,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeRuntimeConfigurationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeRuntimeConfigurationErrorKind::InternalServiceException(
                     inner,
                 ) => Error::InternalServiceException(inner),
@@ -1685,26 +1788,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeScalingPoliciesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeScalingPoliciesErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeScalingPoliciesErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::DescribeScalingPoliciesErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::DescribeScalingPoliciesErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DescribeScalingPoliciesErrorKind::UnauthorizedException(
+                        inner,
+                    ) => Error::UnauthorizedException(inner),
+                    crate::error::DescribeScalingPoliciesErrorKind::UnsupportedRegionException(
+                        inner,
+                    ) => Error::UnsupportedRegionException(inner),
+                    crate::error::DescribeScalingPoliciesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeScalingPoliciesErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DescribeScalingPoliciesErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DescribeScalingPoliciesErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DescribeScalingPoliciesErrorKind::UnsupportedRegionException(
-                    inner,
-                ) => Error::UnsupportedRegionException(inner),
-                crate::error::DescribeScalingPoliciesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1715,23 +1820,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeScriptError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeScriptErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeScriptErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::DescribeScriptErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DescribeScriptErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DescribeScriptErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DescribeScriptErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeScriptErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DescribeScriptErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DescribeScriptErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DescribeScriptErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1749,7 +1856,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeVpcPeeringAuthorizationsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
                 crate::error::DescribeVpcPeeringAuthorizationsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DescribeVpcPeeringAuthorizationsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
@@ -1768,7 +1875,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeVpcPeeringConnectionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeVpcPeeringConnectionsErrorKind::InternalServiceException(
                     inner,
                 ) => Error::InternalServiceException(inner),
@@ -1798,23 +1908,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetGameSessionLogUrlError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetGameSessionLogUrlErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetGameSessionLogUrlErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::GetGameSessionLogUrlErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::GetGameSessionLogUrlErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::GetGameSessionLogUrlErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::GetGameSessionLogUrlErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetGameSessionLogUrlErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::GetGameSessionLogUrlErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::GetGameSessionLogUrlErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::GetGameSessionLogUrlErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1827,23 +1939,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetInstanceAccessError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetInstanceAccessErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetInstanceAccessErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::GetInstanceAccessErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::GetInstanceAccessErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::GetInstanceAccessErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::GetInstanceAccessErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetInstanceAccessErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::GetInstanceAccessErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::GetInstanceAccessErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::GetInstanceAccessErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1854,20 +1968,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAliasesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListAliasesErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListAliasesErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::ListAliasesErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::ListAliasesErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::ListAliasesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListAliasesErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::ListAliasesErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::ListAliasesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1878,20 +1994,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListBuildsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListBuildsErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListBuildsErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::ListBuildsErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::ListBuildsErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::ListBuildsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListBuildsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::ListBuildsErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::ListBuildsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1902,23 +2020,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListFleetsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListFleetsErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListFleetsErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::ListFleetsErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::ListFleetsErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::ListFleetsErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::ListFleetsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListFleetsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::ListFleetsErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::ListFleetsErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::ListFleetsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1932,20 +2052,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListGameServerGroupsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListGameServerGroupsErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListGameServerGroupsErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::ListGameServerGroupsErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::ListGameServerGroupsErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::ListGameServerGroupsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListGameServerGroupsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::ListGameServerGroupsErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::ListGameServerGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1956,20 +2078,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListGameServersError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListGameServersErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListGameServersErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::ListGameServersErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::ListGameServersErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::ListGameServersErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListGameServersErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::ListGameServersErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::ListGameServersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1980,20 +2104,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListScriptsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListScriptsErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListScriptsErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::ListScriptsErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::ListScriptsErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::ListScriptsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListScriptsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::ListScriptsErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::ListScriptsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2006,23 +2132,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsForResourceErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListTagsForResourceErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::TaggingFailedException(inner) => {
+                        Error::TaggingFailedException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListTagsForResourceErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::TaggingFailedException(inner) => {
-                    Error::TaggingFailedException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2035,23 +2163,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutScalingPolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutScalingPolicyErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::PutScalingPolicyErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::PutScalingPolicyErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::PutScalingPolicyErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::PutScalingPolicyErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::PutScalingPolicyErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::PutScalingPolicyErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::PutScalingPolicyErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::PutScalingPolicyErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::PutScalingPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2064,26 +2194,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RegisterGameServerError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RegisterGameServerErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::RegisterGameServerErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::RegisterGameServerErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::RegisterGameServerErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::RegisterGameServerErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::RegisterGameServerErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::RegisterGameServerErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::RegisterGameServerErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
-                }
-                crate::error::RegisterGameServerErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::RegisterGameServerErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::RegisterGameServerErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::RegisterGameServerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2097,23 +2229,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RequestUploadCredentialsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RequestUploadCredentialsErrorKind::InternalServiceException(
-                    inner,
-                ) => Error::InternalServiceException(inner),
-                crate::error::RequestUploadCredentialsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::RequestUploadCredentialsErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::RequestUploadCredentialsErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::RequestUploadCredentialsErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::RequestUploadCredentialsErrorKind::UnauthorizedException(
+                        inner,
+                    ) => Error::UnauthorizedException(inner),
+                    crate::error::RequestUploadCredentialsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::RequestUploadCredentialsErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::RequestUploadCredentialsErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::RequestUploadCredentialsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2124,26 +2258,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ResolveAliasError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ResolveAliasErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ResolveAliasErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::ResolveAliasErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::ResolveAliasErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::ResolveAliasErrorKind::TerminalRoutingStrategyException(
+                        inner,
+                    ) => Error::TerminalRoutingStrategyException(inner),
+                    crate::error::ResolveAliasErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::ResolveAliasErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ResolveAliasErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::ResolveAliasErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::ResolveAliasErrorKind::TerminalRoutingStrategyException(inner) => {
-                    Error::TerminalRoutingStrategyException(inner)
-                }
-                crate::error::ResolveAliasErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::ResolveAliasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2157,23 +2293,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ResumeGameServerGroupError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ResumeGameServerGroupErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ResumeGameServerGroupErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::ResumeGameServerGroupErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::ResumeGameServerGroupErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::ResumeGameServerGroupErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::ResumeGameServerGroupErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ResumeGameServerGroupErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::ResumeGameServerGroupErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::ResumeGameServerGroupErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::ResumeGameServerGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2186,29 +2324,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SearchGameSessionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SearchGameSessionsErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SearchGameSessionsErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::SearchGameSessionsErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::SearchGameSessionsErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::SearchGameSessionsErrorKind::TerminalRoutingStrategyException(
+                        inner,
+                    ) => Error::TerminalRoutingStrategyException(inner),
+                    crate::error::SearchGameSessionsErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::SearchGameSessionsErrorKind::UnsupportedRegionException(
+                        inner,
+                    ) => Error::UnsupportedRegionException(inner),
+                    crate::error::SearchGameSessionsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::SearchGameSessionsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::SearchGameSessionsErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::SearchGameSessionsErrorKind::TerminalRoutingStrategyException(
-                    inner,
-                ) => Error::TerminalRoutingStrategyException(inner),
-                crate::error::SearchGameSessionsErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::SearchGameSessionsErrorKind::UnsupportedRegionException(inner) => {
-                    Error::UnsupportedRegionException(inner)
-                }
-                crate::error::SearchGameSessionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2221,26 +2361,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartFleetActionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StartFleetActionsErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StartFleetActionsErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::StartFleetActionsErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::StartFleetActionsErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::StartFleetActionsErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::StartFleetActionsErrorKind::UnsupportedRegionException(inner) => {
+                        Error::UnsupportedRegionException(inner)
+                    }
+                    crate::error::StartFleetActionsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::StartFleetActionsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::StartFleetActionsErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::StartFleetActionsErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::StartFleetActionsErrorKind::UnsupportedRegionException(inner) => {
-                    Error::UnsupportedRegionException(inner)
-                }
-                crate::error::StartFleetActionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2254,23 +2396,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartGameSessionPlacementError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StartGameSessionPlacementErrorKind::InternalServiceException(
-                    inner,
-                ) => Error::InternalServiceException(inner),
-                crate::error::StartGameSessionPlacementErrorKind::InvalidRequestException(
-                    inner,
-                ) => Error::InvalidRequestException(inner),
-                crate::error::StartGameSessionPlacementErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StartGameSessionPlacementErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::StartGameSessionPlacementErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::StartGameSessionPlacementErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::StartGameSessionPlacementErrorKind::UnauthorizedException(
+                        inner,
+                    ) => Error::UnauthorizedException(inner),
+                    crate::error::StartGameSessionPlacementErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::StartGameSessionPlacementErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::StartGameSessionPlacementErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2283,23 +2427,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartMatchBackfillError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StartMatchBackfillErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StartMatchBackfillErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::StartMatchBackfillErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::StartMatchBackfillErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::StartMatchBackfillErrorKind::UnsupportedRegionException(
+                        inner,
+                    ) => Error::UnsupportedRegionException(inner),
+                    crate::error::StartMatchBackfillErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::StartMatchBackfillErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::StartMatchBackfillErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::StartMatchBackfillErrorKind::UnsupportedRegionException(inner) => {
-                    Error::UnsupportedRegionException(inner)
-                }
-                crate::error::StartMatchBackfillErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2312,23 +2458,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartMatchmakingError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StartMatchmakingErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StartMatchmakingErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::StartMatchmakingErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::StartMatchmakingErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::StartMatchmakingErrorKind::UnsupportedRegionException(inner) => {
+                        Error::UnsupportedRegionException(inner)
+                    }
+                    crate::error::StartMatchmakingErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::StartMatchmakingErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::StartMatchmakingErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::StartMatchmakingErrorKind::UnsupportedRegionException(inner) => {
-                    Error::UnsupportedRegionException(inner)
-                }
-                crate::error::StartMatchmakingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2341,26 +2489,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StopFleetActionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StopFleetActionsErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StopFleetActionsErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::StopFleetActionsErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::StopFleetActionsErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::StopFleetActionsErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::StopFleetActionsErrorKind::UnsupportedRegionException(inner) => {
+                        Error::UnsupportedRegionException(inner)
+                    }
+                    crate::error::StopFleetActionsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::StopFleetActionsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::StopFleetActionsErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::StopFleetActionsErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::StopFleetActionsErrorKind::UnsupportedRegionException(inner) => {
-                    Error::UnsupportedRegionException(inner)
-                }
-                crate::error::StopFleetActionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2374,23 +2524,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StopGameSessionPlacementError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StopGameSessionPlacementErrorKind::InternalServiceException(
-                    inner,
-                ) => Error::InternalServiceException(inner),
-                crate::error::StopGameSessionPlacementErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StopGameSessionPlacementErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::StopGameSessionPlacementErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::StopGameSessionPlacementErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::StopGameSessionPlacementErrorKind::UnauthorizedException(
+                        inner,
+                    ) => Error::UnauthorizedException(inner),
+                    crate::error::StopGameSessionPlacementErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::StopGameSessionPlacementErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::StopGameSessionPlacementErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::StopGameSessionPlacementErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2401,23 +2553,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StopMatchmakingError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StopMatchmakingErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StopMatchmakingErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::StopMatchmakingErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::StopMatchmakingErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::StopMatchmakingErrorKind::UnsupportedRegionException(inner) => {
+                        Error::UnsupportedRegionException(inner)
+                    }
+                    crate::error::StopMatchmakingErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::StopMatchmakingErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::StopMatchmakingErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::StopMatchmakingErrorKind::UnsupportedRegionException(inner) => {
-                    Error::UnsupportedRegionException(inner)
-                }
-                crate::error::StopMatchmakingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2431,23 +2585,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SuspendGameServerGroupError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SuspendGameServerGroupErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SuspendGameServerGroupErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::SuspendGameServerGroupErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::SuspendGameServerGroupErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::SuspendGameServerGroupErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::SuspendGameServerGroupErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::SuspendGameServerGroupErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::SuspendGameServerGroupErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::SuspendGameServerGroupErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::SuspendGameServerGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2458,23 +2614,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagResourceErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::TagResourceErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::TaggingFailedException(inner) => {
+                        Error::TaggingFailedException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::TagResourceErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::TagResourceErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::TagResourceErrorKind::TaggingFailedException(inner) => {
-                    Error::TaggingFailedException(inner)
-                }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2485,23 +2643,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagResourceErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UntagResourceErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::TaggingFailedException(inner) => {
+                        Error::TaggingFailedException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UntagResourceErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::UntagResourceErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::UntagResourceErrorKind::TaggingFailedException(inner) => {
-                    Error::TaggingFailedException(inner)
-                }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2512,23 +2672,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateAliasError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateAliasErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateAliasErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::UpdateAliasErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::UpdateAliasErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::UpdateAliasErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::UpdateAliasErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateAliasErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::UpdateAliasErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::UpdateAliasErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::UpdateAliasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2539,23 +2701,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateBuildError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateBuildErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateBuildErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::UpdateBuildErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::UpdateBuildErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::UpdateBuildErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::UpdateBuildErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateBuildErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::UpdateBuildErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::UpdateBuildErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::UpdateBuildErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2569,32 +2733,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateFleetAttributesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateFleetAttributesErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateFleetAttributesErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::UpdateFleetAttributesErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::UpdateFleetAttributesErrorKind::InvalidFleetStatusException(
+                        inner,
+                    ) => Error::InvalidFleetStatusException(inner),
+                    crate::error::UpdateFleetAttributesErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::UpdateFleetAttributesErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::UpdateFleetAttributesErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::UpdateFleetAttributesErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::UpdateFleetAttributesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateFleetAttributesErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
-                }
-                crate::error::UpdateFleetAttributesErrorKind::InvalidFleetStatusException(
-                    inner,
-                ) => Error::InvalidFleetStatusException(inner),
-                crate::error::UpdateFleetAttributesErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::UpdateFleetAttributesErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::UpdateFleetAttributesErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::UpdateFleetAttributesErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::UpdateFleetAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2607,35 +2773,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateFleetCapacityError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateFleetCapacityErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateFleetCapacityErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::UpdateFleetCapacityErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::UpdateFleetCapacityErrorKind::InvalidFleetStatusException(
+                        inner,
+                    ) => Error::InvalidFleetStatusException(inner),
+                    crate::error::UpdateFleetCapacityErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::UpdateFleetCapacityErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::UpdateFleetCapacityErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::UpdateFleetCapacityErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::UpdateFleetCapacityErrorKind::UnsupportedRegionException(
+                        inner,
+                    ) => Error::UnsupportedRegionException(inner),
+                    crate::error::UpdateFleetCapacityErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateFleetCapacityErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
-                }
-                crate::error::UpdateFleetCapacityErrorKind::InvalidFleetStatusException(inner) => {
-                    Error::InvalidFleetStatusException(inner)
-                }
-                crate::error::UpdateFleetCapacityErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::UpdateFleetCapacityErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::UpdateFleetCapacityErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::UpdateFleetCapacityErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::UpdateFleetCapacityErrorKind::UnsupportedRegionException(inner) => {
-                    Error::UnsupportedRegionException(inner)
-                }
-                crate::error::UpdateFleetCapacityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2649,32 +2817,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateFleetPortSettingsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateFleetPortSettingsErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateFleetPortSettingsErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::UpdateFleetPortSettingsErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::UpdateFleetPortSettingsErrorKind::InvalidFleetStatusException(
+                        inner,
+                    ) => Error::InvalidFleetStatusException(inner),
+                    crate::error::UpdateFleetPortSettingsErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::UpdateFleetPortSettingsErrorKind::LimitExceededException(
+                        inner,
+                    ) => Error::LimitExceededException(inner),
+                    crate::error::UpdateFleetPortSettingsErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::UpdateFleetPortSettingsErrorKind::UnauthorizedException(
+                        inner,
+                    ) => Error::UnauthorizedException(inner),
+                    crate::error::UpdateFleetPortSettingsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateFleetPortSettingsErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
-                }
-                crate::error::UpdateFleetPortSettingsErrorKind::InvalidFleetStatusException(
-                    inner,
-                ) => Error::InvalidFleetStatusException(inner),
-                crate::error::UpdateFleetPortSettingsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::UpdateFleetPortSettingsErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::UpdateFleetPortSettingsErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::UpdateFleetPortSettingsErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::UpdateFleetPortSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2687,23 +2857,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateGameServerError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateGameServerErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateGameServerErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::UpdateGameServerErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::UpdateGameServerErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::UpdateGameServerErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::UpdateGameServerErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateGameServerErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::UpdateGameServerErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::UpdateGameServerErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::UpdateGameServerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2717,23 +2889,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateGameServerGroupError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateGameServerGroupErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateGameServerGroupErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::UpdateGameServerGroupErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::UpdateGameServerGroupErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::UpdateGameServerGroupErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::UpdateGameServerGroupErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateGameServerGroupErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::UpdateGameServerGroupErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::UpdateGameServerGroupErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::UpdateGameServerGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2746,29 +2920,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateGameSessionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateGameSessionErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateGameSessionErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::UpdateGameSessionErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::UpdateGameSessionErrorKind::InvalidGameSessionStatusException(
+                        inner,
+                    ) => Error::InvalidGameSessionStatusException(inner),
+                    crate::error::UpdateGameSessionErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::UpdateGameSessionErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::UpdateGameSessionErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::UpdateGameSessionErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateGameSessionErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
-                }
-                crate::error::UpdateGameSessionErrorKind::InvalidGameSessionStatusException(
-                    inner,
-                ) => Error::InvalidGameSessionStatusException(inner),
-                crate::error::UpdateGameSessionErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::UpdateGameSessionErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::UpdateGameSessionErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::UpdateGameSessionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2782,23 +2958,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateGameSessionQueueError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateGameSessionQueueErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateGameSessionQueueErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::UpdateGameSessionQueueErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::UpdateGameSessionQueueErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::UpdateGameSessionQueueErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::UpdateGameSessionQueueErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateGameSessionQueueErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::UpdateGameSessionQueueErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::UpdateGameSessionQueueErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::UpdateGameSessionQueueErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2816,7 +2994,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateMatchmakingConfigurationErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
                 crate::error::UpdateMatchmakingConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::UpdateMatchmakingConfigurationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -2836,7 +3014,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateRuntimeConfigurationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::UpdateRuntimeConfigurationErrorKind::InternalServiceException(
                     inner,
                 ) => Error::InternalServiceException(inner),
@@ -2866,23 +3047,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateScriptError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateScriptErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateScriptErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::UpdateScriptErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::UpdateScriptErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::UpdateScriptErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::UpdateScriptErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateScriptErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::UpdateScriptErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::UpdateScriptErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::UpdateScriptErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2896,7 +3079,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ValidateMatchmakingRuleSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::ValidateMatchmakingRuleSetErrorKind::InternalServiceException(
                     inner,
                 ) => Error::InternalServiceException(inner),

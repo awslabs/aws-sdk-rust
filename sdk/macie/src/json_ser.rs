@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_associate_member_account_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateMemberAccountInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.member_account_id {
         object.key("memberAccountId").string(var_1.as_str());
     }
@@ -12,7 +12,7 @@ pub fn serialize_structure_crate_input_associate_member_account_input(
 pub fn serialize_structure_crate_input_associate_s3_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateS3ResourcesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_2) = &input.member_account_id {
         object.key("memberAccountId").string(var_2.as_str());
     }
@@ -36,7 +36,7 @@ pub fn serialize_structure_crate_input_associate_s3_resources_input(
 pub fn serialize_structure_crate_input_disassociate_member_account_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateMemberAccountInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_7) = &input.member_account_id {
         object.key("memberAccountId").string(var_7.as_str());
     }
@@ -46,7 +46,7 @@ pub fn serialize_structure_crate_input_disassociate_member_account_input(
 pub fn serialize_structure_crate_input_disassociate_s3_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateS3ResourcesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_8) = &input.member_account_id {
         object.key("memberAccountId").string(var_8.as_str());
     }
@@ -70,7 +70,7 @@ pub fn serialize_structure_crate_input_disassociate_s3_resources_input(
 pub fn serialize_structure_crate_input_list_member_accounts_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListMemberAccountsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_13) = &input.next_token {
         object.key("nextToken").string(var_13.as_str());
     }
@@ -86,7 +86,7 @@ pub fn serialize_structure_crate_input_list_member_accounts_input(
 pub fn serialize_structure_crate_input_list_s3_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListS3ResourcesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.member_account_id {
         object.key("memberAccountId").string(var_15.as_str());
     }
@@ -105,7 +105,7 @@ pub fn serialize_structure_crate_input_list_s3_resources_input(
 pub fn serialize_structure_crate_input_update_s3_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateS3ResourcesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_18) = &input.member_account_id {
         object.key("memberAccountId").string(var_18.as_str());
     }
@@ -129,7 +129,7 @@ pub fn serialize_structure_crate_input_update_s3_resources_input(
 pub fn serialize_structure_crate_model_s3_resource_classification(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3ResourceClassification,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_23) = &input.bucket_name {
         object.key("bucketName").string(var_23.as_str());
     }
@@ -150,7 +150,7 @@ pub fn serialize_structure_crate_model_s3_resource_classification(
 pub fn serialize_structure_crate_model_s3_resource(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3Resource,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_27) = &input.bucket_name {
         object.key("bucketName").string(var_27.as_str());
     }
@@ -163,7 +163,7 @@ pub fn serialize_structure_crate_model_s3_resource(
 pub fn serialize_structure_crate_model_s3_resource_classification_update(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3ResourceClassificationUpdate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_29) = &input.bucket_name {
         object.key("bucketName").string(var_29.as_str());
     }
@@ -184,7 +184,7 @@ pub fn serialize_structure_crate_model_s3_resource_classification_update(
 pub fn serialize_structure_crate_model_classification_type(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ClassificationType,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.one_time {
         object.key("oneTime").string(var_33.as_str());
     }
@@ -197,7 +197,7 @@ pub fn serialize_structure_crate_model_classification_type(
 pub fn serialize_structure_crate_model_classification_type_update(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ClassificationTypeUpdate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_35) = &input.one_time {
         object.key("oneTime").string(var_35.as_str());
     }

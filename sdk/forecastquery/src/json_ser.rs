@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_query_forecast_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::QueryForecastInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.forecast_arn {
         object.key("ForecastArn").string(var_1.as_str());
     }
@@ -30,7 +30,7 @@ pub fn serialize_structure_crate_input_query_forecast_input(
 pub fn serialize_structure_crate_input_query_what_if_forecast_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::QueryWhatIfForecastInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_9) = &input.what_if_forecast_arn {
         object.key("WhatIfForecastArn").string(var_9.as_str());
     }

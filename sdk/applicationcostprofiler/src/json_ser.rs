@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_import_application_usage_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ImportApplicationUsageInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.source_s3_location {
         let mut object_2 = object.key("sourceS3Location").start_object();
         crate::json_ser::serialize_structure_crate_model_source_s3_location(&mut object_2, var_1)?;
@@ -14,7 +14,7 @@ pub fn serialize_structure_crate_input_import_application_usage_input(
 pub fn serialize_structure_crate_input_put_report_definition_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutReportDefinitionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_3) = &input.destination_s3_location {
         let mut object_4 = object.key("destinationS3Location").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_4, var_3)?;
@@ -38,7 +38,7 @@ pub fn serialize_structure_crate_input_put_report_definition_input(
 pub fn serialize_structure_crate_input_update_report_definition_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateReportDefinitionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_9) = &input.destination_s3_location {
         let mut object_10 = object.key("destinationS3Location").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_10, var_9)?;
@@ -59,7 +59,7 @@ pub fn serialize_structure_crate_input_update_report_definition_input(
 pub fn serialize_structure_crate_model_source_s3_location(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SourceS3Location,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_14) = &input.bucket {
         object.key("bucket").string(var_14.as_str());
     }
@@ -75,7 +75,7 @@ pub fn serialize_structure_crate_model_source_s3_location(
 pub fn serialize_structure_crate_model_s3_location(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3Location,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_17) = &input.bucket {
         object.key("bucket").string(var_17.as_str());
     }

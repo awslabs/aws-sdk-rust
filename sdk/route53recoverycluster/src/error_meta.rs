@@ -46,7 +46,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetRoutingControlStateError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetRoutingControlStateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException(inner) => Error::EndpointTemporarilyUnavailableException(inner),
                 crate::error::GetRoutingControlStateErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -67,7 +67,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListRoutingControlsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListRoutingControlsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::ListRoutingControlsErrorKind::EndpointTemporarilyUnavailableException(inner) => Error::EndpointTemporarilyUnavailableException(inner),
                 crate::error::ListRoutingControlsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -89,7 +89,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateRoutingControlStateError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateRoutingControlStateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::UpdateRoutingControlStateErrorKind::ConflictException(inner) => Error::ConflictException(inner),
                 crate::error::UpdateRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException(inner) => Error::EndpointTemporarilyUnavailableException(inner),
@@ -112,7 +112,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateRoutingControlStatesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateRoutingControlStatesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::UpdateRoutingControlStatesErrorKind::ConflictException(inner) => Error::ConflictException(inner),
                 crate::error::UpdateRoutingControlStatesErrorKind::EndpointTemporarilyUnavailableException(inner) => Error::EndpointTemporarilyUnavailableException(inner),

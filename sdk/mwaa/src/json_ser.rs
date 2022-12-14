@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_environment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateEnvironmentInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.airflow_configuration_options {
         let mut object_2 = object.key("AirflowConfigurationOptions").start_object();
         for (key_3, value_4) in var_1 {
@@ -101,7 +101,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
 pub fn serialize_structure_crate_input_publish_metrics_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PublishMetricsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.metric_data {
         let mut array_29 = object.key("MetricData").start_array();
         for item_30 in var_28 {
@@ -122,7 +122,7 @@ pub fn serialize_structure_crate_input_publish_metrics_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.tags {
         let mut object_33 = object.key("Tags").start_object();
         for (key_34, value_35) in var_32 {
@@ -138,7 +138,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_environment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateEnvironmentInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_36) = &input.airflow_configuration_options {
         let mut object_37 = object.key("AirflowConfigurationOptions").start_object();
         for (key_38, value_39) in var_36 {
@@ -225,7 +225,7 @@ pub fn serialize_structure_crate_input_update_environment_input(
 pub fn serialize_structure_crate_model_logging_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LoggingConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_58) = &input.dag_processing_logs {
         let mut object_59 = object.key("DagProcessingLogs").start_object();
         crate::json_ser::serialize_structure_crate_model_module_logging_configuration_input(
@@ -272,7 +272,7 @@ pub fn serialize_structure_crate_model_logging_configuration_input(
 pub fn serialize_structure_crate_model_network_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NetworkConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_68) = &input.subnet_ids {
         let mut array_69 = object.key("SubnetIds").start_array();
         for item_70 in var_68 {
@@ -297,7 +297,7 @@ pub fn serialize_structure_crate_model_network_configuration(
 pub fn serialize_structure_crate_model_metric_datum(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MetricDatum,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_74) = &input.metric_name {
         object.key("MetricName").string(var_74.as_str());
     }
@@ -340,7 +340,7 @@ pub fn serialize_structure_crate_model_metric_datum(
 pub fn serialize_structure_crate_model_update_network_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateNetworkConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_84) = &input.security_group_ids {
         let mut array_85 = object.key("SecurityGroupIds").start_array();
         for item_86 in var_84 {
@@ -356,7 +356,7 @@ pub fn serialize_structure_crate_model_update_network_configuration_input(
 pub fn serialize_structure_crate_model_module_logging_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ModuleLoggingConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_87) = &input.enabled {
         object.key("Enabled").boolean(*var_87);
     }
@@ -369,7 +369,7 @@ pub fn serialize_structure_crate_model_module_logging_configuration_input(
 pub fn serialize_structure_crate_model_dimension(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Dimension,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_89) = &input.name {
         object.key("Name").string(var_89.as_str());
     }
@@ -382,7 +382,7 @@ pub fn serialize_structure_crate_model_dimension(
 pub fn serialize_structure_crate_model_statistic_set(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StatisticSet,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_91) = &input.sample_count {
         object.key("SampleCount").number(
             #[allow(clippy::useless_conversion)]

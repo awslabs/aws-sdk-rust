@@ -12,7 +12,7 @@ pub use partition::Partition;
 pub use partition::PartitionResolver;
 use std::collections::HashMap;
 
-use aws_smithy_http::endpoint::Error as EndpointError;
+use aws_smithy_http::endpoint::error::ResolveEndpointError;
 use aws_smithy_http::endpoint::{apply_endpoint, EndpointPrefix, ResolveEndpoint};
 use aws_smithy_http::middleware::MapRequest;
 use aws_smithy_http::operation::Request;
@@ -54,19 +54,18 @@ impl EndpointShim {
 }
 
 impl ResolveEndpoint<Params> for EndpointShim {
-    fn resolve_endpoint(
-        &self,
-        params: &Params,
-    ) -> Result<SmithyEndpoint, aws_smithy_http::endpoint::Error> {
+    fn resolve_endpoint(&self, params: &Params) -> Result<SmithyEndpoint, ResolveEndpointError> {
         let aws_endpoint = self
             .0
             .resolve_endpoint(
                 params
                     .region
                     .as_ref()
-                    .ok_or_else(|| EndpointError::message("no region in params"))?,
+                    .ok_or_else(|| ResolveEndpointError::message("no region in params"))?,
             )
-            .map_err(|err| EndpointError::message("failure resolving endpoint").with_cause(err))?;
+            .map_err(|err| {
+                ResolveEndpointError::message("failure resolving endpoint").with_source(err)
+            })?;
         let uri = aws_endpoint.endpoint().uri();
         let mut auth_scheme =
             HashMap::from([("name".to_string(), Document::String("sigv4".into()))]);
@@ -134,7 +133,7 @@ impl MapRequest for AwsEndpointStage {
                     // its place
                     return Err(AwsEndpointStageError::EndpointResolutionError(std::mem::replace(
                         e,
-                        aws_smithy_http::endpoint::Error::message("the original error was directly returned")
+                        ResolveEndpointError::message("the original error was directly returned")
                     ).into()));
                 }
             };

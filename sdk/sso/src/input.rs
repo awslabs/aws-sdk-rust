@@ -45,8 +45,10 @@ pub mod get_role_credentials_input {
         /// Consumes the builder and constructs a [`GetRoleCredentialsInput`](crate::input::GetRoleCredentialsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRoleCredentialsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetRoleCredentialsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetRoleCredentialsInput {
                 role_name: self.role_name,
                 account_id: self.account_id,
@@ -68,20 +70,20 @@ impl GetRoleCredentialsInput {
             crate::operation::GetRoleCredentials,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRoleCredentialsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/federation/credentials").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetRoleCredentialsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_1) = &_input.role_name {
                     query.push_kv("role_name", &aws_smithy_http::query::fmt_string(&inner_1));
@@ -95,8 +97,10 @@ impl GetRoleCredentialsInput {
             fn update_http_builder(
                 input: &crate::input::GetRoleCredentialsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -220,8 +224,10 @@ pub mod list_account_roles_input {
         /// Consumes the builder and constructs a [`ListAccountRolesInput`](crate::input::ListAccountRolesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAccountRolesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListAccountRolesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListAccountRolesInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -244,20 +250,20 @@ impl ListAccountRolesInput {
             crate::operation::ListAccountRoles,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAccountRolesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/assignment/roles").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListAccountRolesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_3) = &_input.next_token {
                     query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_3));
@@ -277,8 +283,10 @@ impl ListAccountRolesInput {
             fn update_http_builder(
                 input: &crate::input::ListAccountRolesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -391,7 +399,7 @@ pub mod list_accounts_input {
         /// Consumes the builder and constructs a [`ListAccountsInput`](crate::input::ListAccountsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAccountsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListAccountsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListAccountsInput {
                 next_token: self.next_token,
@@ -414,20 +422,20 @@ impl ListAccountsInput {
             crate::operation::ListAccounts,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAccountsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/assignment/accounts").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListAccountsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_6) = &_input.next_token {
                     query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_6));
@@ -444,8 +452,10 @@ impl ListAccountsInput {
             fn update_http_builder(
                 input: &crate::input::ListAccountsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -536,7 +546,8 @@ pub mod logout_input {
         /// Consumes the builder and constructs a [`LogoutInput`](crate::input::LogoutInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::LogoutInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::LogoutInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::LogoutInput {
                 access_token: self.access_token,
             })
@@ -556,13 +567,13 @@ impl LogoutInput {
             crate::operation::Logout,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::LogoutInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/logout").expect("formatting should succeed");
                 Ok(())
             }
@@ -570,8 +581,10 @@ impl LogoutInput {
             fn update_http_builder(
                 input: &crate::input::LogoutInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_logout(input, builder)?;

@@ -72,7 +72,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CancelImageCreationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CancelImageCreationErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
                 crate::error::CancelImageCreationErrorKind::ClientException(inner) => Error::ClientException(inner),
                 crate::error::CancelImageCreationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
@@ -93,7 +93,10 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateComponentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CreateComponentErrorKind::CallRateLimitExceededException(inner) => {
                     Error::CallRateLimitExceededException(inner)
                 }
@@ -144,7 +147,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateContainerRecipeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateContainerRecipeErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
                 crate::error::CreateContainerRecipeErrorKind::ClientException(inner) => Error::ClientException(inner),
                 crate::error::CreateContainerRecipeErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
@@ -175,7 +178,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateDistributionConfigurationErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
                 crate::error::CreateDistributionConfigurationErrorKind::ClientException(inner) => Error::ClientException(inner),
                 crate::error::CreateDistributionConfigurationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
@@ -199,38 +202,40 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateImageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateImageErrorKind::CallRateLimitExceededException(inner) => {
-                    Error::CallRateLimitExceededException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateImageErrorKind::CallRateLimitExceededException(inner) => {
+                        Error::CallRateLimitExceededException(inner)
+                    }
+                    crate::error::CreateImageErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::CreateImageErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::CreateImageErrorKind::IdempotentParameterMismatchException(
+                        inner,
+                    ) => Error::IdempotentParameterMismatchException(inner),
+                    crate::error::CreateImageErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::CreateImageErrorKind::ResourceInUseException(inner) => {
+                        Error::ResourceInUseException(inner)
+                    }
+                    crate::error::CreateImageErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::CreateImageErrorKind::ServiceQuotaExceededException(inner) => {
+                        Error::ServiceQuotaExceededException(inner)
+                    }
+                    crate::error::CreateImageErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::CreateImageErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateImageErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
-                }
-                crate::error::CreateImageErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::CreateImageErrorKind::IdempotentParameterMismatchException(inner) => {
-                    Error::IdempotentParameterMismatchException(inner)
-                }
-                crate::error::CreateImageErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::CreateImageErrorKind::ResourceInUseException(inner) => {
-                    Error::ResourceInUseException(inner)
-                }
-                crate::error::CreateImageErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::CreateImageErrorKind::ServiceQuotaExceededException(inner) => {
-                    Error::ServiceQuotaExceededException(inner)
-                }
-                crate::error::CreateImageErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::CreateImageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -243,7 +248,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateImagePipelineError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateImagePipelineErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
                 crate::error::CreateImagePipelineErrorKind::ClientException(inner) => Error::ClientException(inner),
                 crate::error::CreateImagePipelineErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
@@ -268,7 +273,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateImageRecipeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CreateImageRecipeErrorKind::CallRateLimitExceededException(inner) => {
                     Error::CallRateLimitExceededException(inner)
                 }
@@ -323,7 +331,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateInfrastructureConfigurationErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
                 crate::error::CreateInfrastructureConfigurationErrorKind::ClientException(inner) => Error::ClientException(inner),
                 crate::error::CreateInfrastructureConfigurationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
@@ -346,32 +354,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteComponentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteComponentErrorKind::CallRateLimitExceededException(inner) => {
-                    Error::CallRateLimitExceededException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteComponentErrorKind::CallRateLimitExceededException(
+                        inner,
+                    ) => Error::CallRateLimitExceededException(inner),
+                    crate::error::DeleteComponentErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::DeleteComponentErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::DeleteComponentErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DeleteComponentErrorKind::ResourceDependencyException(inner) => {
+                        Error::ResourceDependencyException(inner)
+                    }
+                    crate::error::DeleteComponentErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::DeleteComponentErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::DeleteComponentErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteComponentErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
-                }
-                crate::error::DeleteComponentErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::DeleteComponentErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DeleteComponentErrorKind::ResourceDependencyException(inner) => {
-                    Error::ResourceDependencyException(inner)
-                }
-                crate::error::DeleteComponentErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::DeleteComponentErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::DeleteComponentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -385,7 +395,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteContainerRecipeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DeleteContainerRecipeErrorKind::CallRateLimitExceededException(
                     inner,
                 ) => Error::CallRateLimitExceededException(inner),
@@ -428,7 +441,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteDistributionConfigurationErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
                 crate::error::DeleteDistributionConfigurationErrorKind::ClientException(inner) => Error::ClientException(inner),
                 crate::error::DeleteDistributionConfigurationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
@@ -448,32 +461,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteImageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteImageErrorKind::CallRateLimitExceededException(inner) => {
-                    Error::CallRateLimitExceededException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteImageErrorKind::CallRateLimitExceededException(inner) => {
+                        Error::CallRateLimitExceededException(inner)
+                    }
+                    crate::error::DeleteImageErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::DeleteImageErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::DeleteImageErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DeleteImageErrorKind::ResourceDependencyException(inner) => {
+                        Error::ResourceDependencyException(inner)
+                    }
+                    crate::error::DeleteImageErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::DeleteImageErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::DeleteImageErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteImageErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
-                }
-                crate::error::DeleteImageErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::DeleteImageErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DeleteImageErrorKind::ResourceDependencyException(inner) => {
-                    Error::ResourceDependencyException(inner)
-                }
-                crate::error::DeleteImageErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::DeleteImageErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::DeleteImageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -486,32 +501,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteImagePipelineError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteImagePipelineErrorKind::CallRateLimitExceededException(
-                    inner,
-                ) => Error::CallRateLimitExceededException(inner),
-                crate::error::DeleteImagePipelineErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteImagePipelineErrorKind::CallRateLimitExceededException(
+                        inner,
+                    ) => Error::CallRateLimitExceededException(inner),
+                    crate::error::DeleteImagePipelineErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::DeleteImagePipelineErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::DeleteImagePipelineErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DeleteImagePipelineErrorKind::ResourceDependencyException(
+                        inner,
+                    ) => Error::ResourceDependencyException(inner),
+                    crate::error::DeleteImagePipelineErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::DeleteImagePipelineErrorKind::ServiceUnavailableException(
+                        inner,
+                    ) => Error::ServiceUnavailableException(inner),
+                    crate::error::DeleteImagePipelineErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteImagePipelineErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::DeleteImagePipelineErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DeleteImagePipelineErrorKind::ResourceDependencyException(inner) => {
-                    Error::ResourceDependencyException(inner)
-                }
-                crate::error::DeleteImagePipelineErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::DeleteImagePipelineErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::DeleteImagePipelineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -524,32 +541,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteImageRecipeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteImageRecipeErrorKind::CallRateLimitExceededException(inner) => {
-                    Error::CallRateLimitExceededException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteImageRecipeErrorKind::CallRateLimitExceededException(
+                        inner,
+                    ) => Error::CallRateLimitExceededException(inner),
+                    crate::error::DeleteImageRecipeErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::DeleteImageRecipeErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::DeleteImageRecipeErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DeleteImageRecipeErrorKind::ResourceDependencyException(
+                        inner,
+                    ) => Error::ResourceDependencyException(inner),
+                    crate::error::DeleteImageRecipeErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::DeleteImageRecipeErrorKind::ServiceUnavailableException(
+                        inner,
+                    ) => Error::ServiceUnavailableException(inner),
+                    crate::error::DeleteImageRecipeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteImageRecipeErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
-                }
-                crate::error::DeleteImageRecipeErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::DeleteImageRecipeErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DeleteImageRecipeErrorKind::ResourceDependencyException(inner) => {
-                    Error::ResourceDependencyException(inner)
-                }
-                crate::error::DeleteImageRecipeErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::DeleteImageRecipeErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::DeleteImageRecipeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -567,7 +586,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteInfrastructureConfigurationErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
                 crate::error::DeleteInfrastructureConfigurationErrorKind::ClientException(inner) => Error::ClientException(inner),
                 crate::error::DeleteInfrastructureConfigurationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
@@ -587,29 +606,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetComponentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetComponentErrorKind::CallRateLimitExceededException(inner) => {
-                    Error::CallRateLimitExceededException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetComponentErrorKind::CallRateLimitExceededException(inner) => {
+                        Error::CallRateLimitExceededException(inner)
+                    }
+                    crate::error::GetComponentErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::GetComponentErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::GetComponentErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::GetComponentErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::GetComponentErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::GetComponentErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetComponentErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
-                }
-                crate::error::GetComponentErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::GetComponentErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::GetComponentErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::GetComponentErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::GetComponentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -622,29 +643,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetComponentPolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetComponentPolicyErrorKind::CallRateLimitExceededException(
-                    inner,
-                ) => Error::CallRateLimitExceededException(inner),
-                crate::error::GetComponentPolicyErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetComponentPolicyErrorKind::CallRateLimitExceededException(
+                        inner,
+                    ) => Error::CallRateLimitExceededException(inner),
+                    crate::error::GetComponentPolicyErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::GetComponentPolicyErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::GetComponentPolicyErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::GetComponentPolicyErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::GetComponentPolicyErrorKind::ServiceUnavailableException(
+                        inner,
+                    ) => Error::ServiceUnavailableException(inner),
+                    crate::error::GetComponentPolicyErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetComponentPolicyErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::GetComponentPolicyErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::GetComponentPolicyErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::GetComponentPolicyErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::GetComponentPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -657,29 +680,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetContainerRecipeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetContainerRecipeErrorKind::CallRateLimitExceededException(
-                    inner,
-                ) => Error::CallRateLimitExceededException(inner),
-                crate::error::GetContainerRecipeErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetContainerRecipeErrorKind::CallRateLimitExceededException(
+                        inner,
+                    ) => Error::CallRateLimitExceededException(inner),
+                    crate::error::GetContainerRecipeErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::GetContainerRecipeErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::GetContainerRecipeErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::GetContainerRecipeErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::GetContainerRecipeErrorKind::ServiceUnavailableException(
+                        inner,
+                    ) => Error::ServiceUnavailableException(inner),
+                    crate::error::GetContainerRecipeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetContainerRecipeErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::GetContainerRecipeErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::GetContainerRecipeErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::GetContainerRecipeErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::GetContainerRecipeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -693,7 +718,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetContainerRecipePolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::GetContainerRecipePolicyErrorKind::CallRateLimitExceededException(
                     inner,
                 ) => Error::CallRateLimitExceededException(inner),
@@ -729,7 +757,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetDistributionConfigurationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetDistributionConfigurationErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
                 crate::error::GetDistributionConfigurationErrorKind::ClientException(inner) => Error::ClientException(inner),
                 crate::error::GetDistributionConfigurationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
@@ -748,29 +776,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetImageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetImageErrorKind::CallRateLimitExceededException(inner) => {
-                    Error::CallRateLimitExceededException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetImageErrorKind::CallRateLimitExceededException(inner) => {
+                        Error::CallRateLimitExceededException(inner)
+                    }
+                    crate::error::GetImageErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::GetImageErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::GetImageErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::GetImageErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::GetImageErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::GetImageErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetImageErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
-                }
-                crate::error::GetImageErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::GetImageErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::GetImageErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::GetImageErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::GetImageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -783,29 +813,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetImagePipelineError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetImagePipelineErrorKind::CallRateLimitExceededException(inner) => {
-                    Error::CallRateLimitExceededException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetImagePipelineErrorKind::CallRateLimitExceededException(
+                        inner,
+                    ) => Error::CallRateLimitExceededException(inner),
+                    crate::error::GetImagePipelineErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::GetImagePipelineErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::GetImagePipelineErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::GetImagePipelineErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::GetImagePipelineErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::GetImagePipelineErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetImagePipelineErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
-                }
-                crate::error::GetImagePipelineErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::GetImagePipelineErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::GetImagePipelineErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::GetImagePipelineErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::GetImagePipelineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -816,29 +848,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetImagePolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetImagePolicyErrorKind::CallRateLimitExceededException(inner) => {
-                    Error::CallRateLimitExceededException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetImagePolicyErrorKind::CallRateLimitExceededException(
+                        inner,
+                    ) => Error::CallRateLimitExceededException(inner),
+                    crate::error::GetImagePolicyErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::GetImagePolicyErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::GetImagePolicyErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::GetImagePolicyErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::GetImagePolicyErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::GetImagePolicyErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetImagePolicyErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::GetImagePolicyErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::GetImagePolicyErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::GetImagePolicyErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::GetImagePolicyErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::GetImagePolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -849,29 +883,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetImageRecipeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetImageRecipeErrorKind::CallRateLimitExceededException(inner) => {
-                    Error::CallRateLimitExceededException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetImageRecipeErrorKind::CallRateLimitExceededException(
+                        inner,
+                    ) => Error::CallRateLimitExceededException(inner),
+                    crate::error::GetImageRecipeErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::GetImageRecipeErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::GetImageRecipeErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::GetImageRecipeErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::GetImageRecipeErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::GetImageRecipeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetImageRecipeErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
-                }
-                crate::error::GetImageRecipeErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::GetImageRecipeErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::GetImageRecipeErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::GetImageRecipeErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::GetImageRecipeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -885,29 +921,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetImageRecipePolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetImageRecipePolicyErrorKind::CallRateLimitExceededException(
-                    inner,
-                ) => Error::CallRateLimitExceededException(inner),
-                crate::error::GetImageRecipePolicyErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetImageRecipePolicyErrorKind::CallRateLimitExceededException(
+                        inner,
+                    ) => Error::CallRateLimitExceededException(inner),
+                    crate::error::GetImageRecipePolicyErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::GetImageRecipePolicyErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::GetImageRecipePolicyErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::GetImageRecipePolicyErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::GetImageRecipePolicyErrorKind::ServiceUnavailableException(
+                        inner,
+                    ) => Error::ServiceUnavailableException(inner),
+                    crate::error::GetImageRecipePolicyErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetImageRecipePolicyErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::GetImageRecipePolicyErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::GetImageRecipePolicyErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::GetImageRecipePolicyErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::GetImageRecipePolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -925,7 +963,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetInfrastructureConfigurationErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
                 crate::error::GetInfrastructureConfigurationErrorKind::ClientException(inner) => Error::ClientException(inner),
                 crate::error::GetInfrastructureConfigurationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
@@ -944,7 +982,10 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ImportComponentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::ImportComponentErrorKind::CallRateLimitExceededException(inner) => {
                     Error::CallRateLimitExceededException(inner)
                 }
@@ -989,20 +1030,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ImportVmImageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ImportVmImageErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ImportVmImageErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::ImportVmImageErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::ImportVmImageErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::ImportVmImageErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ImportVmImageErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::ImportVmImageErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::ImportVmImageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1016,7 +1059,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListComponentBuildVersionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListComponentBuildVersionsErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
                 crate::error::ListComponentBuildVersionsErrorKind::ClientException(inner) => Error::ClientException(inner),
                 crate::error::ListComponentBuildVersionsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
@@ -1036,32 +1079,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListComponentsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListComponentsErrorKind::CallRateLimitExceededException(inner) => {
-                    Error::CallRateLimitExceededException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListComponentsErrorKind::CallRateLimitExceededException(
+                        inner,
+                    ) => Error::CallRateLimitExceededException(inner),
+                    crate::error::ListComponentsErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::ListComponentsErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::ListComponentsErrorKind::InvalidPaginationTokenException(
+                        inner,
+                    ) => Error::InvalidPaginationTokenException(inner),
+                    crate::error::ListComponentsErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::ListComponentsErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::ListComponentsErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::ListComponentsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListComponentsErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
-                }
-                crate::error::ListComponentsErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::ListComponentsErrorKind::InvalidPaginationTokenException(inner) => {
-                    Error::InvalidPaginationTokenException(inner)
-                }
-                crate::error::ListComponentsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::ListComponentsErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::ListComponentsErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::ListComponentsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1075,7 +1120,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListContainerRecipesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::ListContainerRecipesErrorKind::CallRateLimitExceededException(
                     inner,
                 ) => Error::CallRateLimitExceededException(inner),
@@ -1118,7 +1166,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListDistributionConfigurationsErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
                 crate::error::ListDistributionConfigurationsErrorKind::ClientException(inner) => Error::ClientException(inner),
                 crate::error::ListDistributionConfigurationsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
@@ -1141,7 +1189,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListImageBuildVersionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::ListImageBuildVersionsErrorKind::CallRateLimitExceededException(
                     inner,
                 ) => Error::CallRateLimitExceededException(inner),
@@ -1179,35 +1230,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListImagePackagesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListImagePackagesErrorKind::CallRateLimitExceededException(inner) => {
-                    Error::CallRateLimitExceededException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListImagePackagesErrorKind::CallRateLimitExceededException(
+                        inner,
+                    ) => Error::CallRateLimitExceededException(inner),
+                    crate::error::ListImagePackagesErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::ListImagePackagesErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::ListImagePackagesErrorKind::InvalidPaginationTokenException(
+                        inner,
+                    ) => Error::InvalidPaginationTokenException(inner),
+                    crate::error::ListImagePackagesErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::ListImagePackagesErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::ListImagePackagesErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::ListImagePackagesErrorKind::ServiceUnavailableException(
+                        inner,
+                    ) => Error::ServiceUnavailableException(inner),
+                    crate::error::ListImagePackagesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListImagePackagesErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
-                }
-                crate::error::ListImagePackagesErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::ListImagePackagesErrorKind::InvalidPaginationTokenException(
-                    inner,
-                ) => Error::InvalidPaginationTokenException(inner),
-                crate::error::ListImagePackagesErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::ListImagePackagesErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::ListImagePackagesErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::ListImagePackagesErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::ListImagePackagesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1221,7 +1274,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListImagePipelineImagesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::ListImagePipelineImagesErrorKind::CallRateLimitExceededException(
                     inner,
                 ) => Error::CallRateLimitExceededException(inner),
@@ -1262,32 +1318,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListImagePipelinesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListImagePipelinesErrorKind::CallRateLimitExceededException(
-                    inner,
-                ) => Error::CallRateLimitExceededException(inner),
-                crate::error::ListImagePipelinesErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListImagePipelinesErrorKind::CallRateLimitExceededException(
+                        inner,
+                    ) => Error::CallRateLimitExceededException(inner),
+                    crate::error::ListImagePipelinesErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::ListImagePipelinesErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::ListImagePipelinesErrorKind::InvalidPaginationTokenException(
+                        inner,
+                    ) => Error::InvalidPaginationTokenException(inner),
+                    crate::error::ListImagePipelinesErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::ListImagePipelinesErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::ListImagePipelinesErrorKind::ServiceUnavailableException(
+                        inner,
+                    ) => Error::ServiceUnavailableException(inner),
+                    crate::error::ListImagePipelinesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListImagePipelinesErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::ListImagePipelinesErrorKind::InvalidPaginationTokenException(
-                    inner,
-                ) => Error::InvalidPaginationTokenException(inner),
-                crate::error::ListImagePipelinesErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::ListImagePipelinesErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::ListImagePipelinesErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::ListImagePipelinesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1300,32 +1358,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListImageRecipesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListImageRecipesErrorKind::CallRateLimitExceededException(inner) => {
-                    Error::CallRateLimitExceededException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListImageRecipesErrorKind::CallRateLimitExceededException(
+                        inner,
+                    ) => Error::CallRateLimitExceededException(inner),
+                    crate::error::ListImageRecipesErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::ListImageRecipesErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::ListImageRecipesErrorKind::InvalidPaginationTokenException(
+                        inner,
+                    ) => Error::InvalidPaginationTokenException(inner),
+                    crate::error::ListImageRecipesErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::ListImageRecipesErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::ListImageRecipesErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::ListImageRecipesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListImageRecipesErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
-                }
-                crate::error::ListImageRecipesErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::ListImageRecipesErrorKind::InvalidPaginationTokenException(inner) => {
-                    Error::InvalidPaginationTokenException(inner)
-                }
-                crate::error::ListImageRecipesErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::ListImageRecipesErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::ListImageRecipesErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::ListImageRecipesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1336,32 +1396,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListImagesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListImagesErrorKind::CallRateLimitExceededException(inner) => {
-                    Error::CallRateLimitExceededException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListImagesErrorKind::CallRateLimitExceededException(inner) => {
+                        Error::CallRateLimitExceededException(inner)
+                    }
+                    crate::error::ListImagesErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::ListImagesErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::ListImagesErrorKind::InvalidPaginationTokenException(inner) => {
+                        Error::InvalidPaginationTokenException(inner)
+                    }
+                    crate::error::ListImagesErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::ListImagesErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::ListImagesErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::ListImagesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListImagesErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
-                }
-                crate::error::ListImagesErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::ListImagesErrorKind::InvalidPaginationTokenException(inner) => {
-                    Error::InvalidPaginationTokenException(inner)
-                }
-                crate::error::ListImagesErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::ListImagesErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::ListImagesErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::ListImagesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1379,7 +1441,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListInfrastructureConfigurationsErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
                 crate::error::ListInfrastructureConfigurationsErrorKind::ClientException(inner) => Error::ClientException(inner),
                 crate::error::ListInfrastructureConfigurationsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
@@ -1401,20 +1463,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsForResourceErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListTagsForResourceErrorKind::InvalidParameterException(
+                        inner,
+                    ) => Error::InvalidParameterException(inner),
+                    crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::ListTagsForResourceErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1427,35 +1491,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutComponentPolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutComponentPolicyErrorKind::CallRateLimitExceededException(
-                    inner,
-                ) => Error::CallRateLimitExceededException(inner),
-                crate::error::PutComponentPolicyErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::PutComponentPolicyErrorKind::CallRateLimitExceededException(
+                        inner,
+                    ) => Error::CallRateLimitExceededException(inner),
+                    crate::error::PutComponentPolicyErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::PutComponentPolicyErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::PutComponentPolicyErrorKind::InvalidParameterValueException(
+                        inner,
+                    ) => Error::InvalidParameterValueException(inner),
+                    crate::error::PutComponentPolicyErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::PutComponentPolicyErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::PutComponentPolicyErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::PutComponentPolicyErrorKind::ServiceUnavailableException(
+                        inner,
+                    ) => Error::ServiceUnavailableException(inner),
+                    crate::error::PutComponentPolicyErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::PutComponentPolicyErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::PutComponentPolicyErrorKind::InvalidParameterValueException(
-                    inner,
-                ) => Error::InvalidParameterValueException(inner),
-                crate::error::PutComponentPolicyErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::PutComponentPolicyErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::PutComponentPolicyErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::PutComponentPolicyErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::PutComponentPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1469,7 +1535,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutContainerRecipePolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::PutContainerRecipePolicyErrorKind::CallRateLimitExceededException(
                     inner,
                 ) => Error::CallRateLimitExceededException(inner),
@@ -1508,35 +1577,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PutImagePolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutImagePolicyErrorKind::CallRateLimitExceededException(inner) => {
-                    Error::CallRateLimitExceededException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::PutImagePolicyErrorKind::CallRateLimitExceededException(
+                        inner,
+                    ) => Error::CallRateLimitExceededException(inner),
+                    crate::error::PutImagePolicyErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::PutImagePolicyErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::PutImagePolicyErrorKind::InvalidParameterValueException(
+                        inner,
+                    ) => Error::InvalidParameterValueException(inner),
+                    crate::error::PutImagePolicyErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::PutImagePolicyErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::PutImagePolicyErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::PutImagePolicyErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::PutImagePolicyErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::PutImagePolicyErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
-                }
-                crate::error::PutImagePolicyErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::PutImagePolicyErrorKind::InvalidParameterValueException(inner) => {
-                    Error::InvalidParameterValueException(inner)
-                }
-                crate::error::PutImagePolicyErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::PutImagePolicyErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::PutImagePolicyErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::PutImagePolicyErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::PutImagePolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1550,35 +1621,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutImageRecipePolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutImageRecipePolicyErrorKind::CallRateLimitExceededException(
-                    inner,
-                ) => Error::CallRateLimitExceededException(inner),
-                crate::error::PutImageRecipePolicyErrorKind::ClientException(inner) => {
-                    Error::ClientException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::PutImageRecipePolicyErrorKind::CallRateLimitExceededException(
+                        inner,
+                    ) => Error::CallRateLimitExceededException(inner),
+                    crate::error::PutImageRecipePolicyErrorKind::ClientException(inner) => {
+                        Error::ClientException(inner)
+                    }
+                    crate::error::PutImageRecipePolicyErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::PutImageRecipePolicyErrorKind::InvalidParameterValueException(
+                        inner,
+                    ) => Error::InvalidParameterValueException(inner),
+                    crate::error::PutImageRecipePolicyErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::PutImageRecipePolicyErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::PutImageRecipePolicyErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::PutImageRecipePolicyErrorKind::ServiceUnavailableException(
+                        inner,
+                    ) => Error::ServiceUnavailableException(inner),
+                    crate::error::PutImageRecipePolicyErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::PutImageRecipePolicyErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::PutImageRecipePolicyErrorKind::InvalidParameterValueException(
-                    inner,
-                ) => Error::InvalidParameterValueException(inner),
-                crate::error::PutImageRecipePolicyErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::PutImageRecipePolicyErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::PutImageRecipePolicyErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::PutImageRecipePolicyErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::PutImageRecipePolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1592,7 +1665,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartImagePipelineExecutionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::StartImagePipelineExecutionErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
                 crate::error::StartImagePipelineExecutionErrorKind::ClientException(inner) => Error::ClientException(inner),
                 crate::error::StartImagePipelineExecutionErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
@@ -1614,20 +1687,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagResourceErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::TagResourceErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::TagResourceErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1638,20 +1713,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagResourceErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UntagResourceErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::UntagResourceErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1669,7 +1746,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateDistributionConfigurationErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
                 crate::error::UpdateDistributionConfigurationErrorKind::ClientException(inner) => Error::ClientException(inner),
                 crate::error::UpdateDistributionConfigurationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
@@ -1693,7 +1770,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateImagePipelineError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateImagePipelineErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
                 crate::error::UpdateImagePipelineErrorKind::ClientException(inner) => Error::ClientException(inner),
                 crate::error::UpdateImagePipelineErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
@@ -1721,7 +1798,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateInfrastructureConfigurationErrorKind::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
                 crate::error::UpdateInfrastructureConfigurationErrorKind::ClientException(inner) => Error::ClientException(inner),
                 crate::error::UpdateInfrastructureConfigurationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),

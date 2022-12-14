@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_delete_service_quota_increase_request_from_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteServiceQuotaIncreaseRequestFromTemplateInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.service_code {
         object.key("ServiceCode").string(var_1.as_str());
     }
@@ -18,7 +18,7 @@ pub fn serialize_structure_crate_input_delete_service_quota_increase_request_fro
 pub fn serialize_structure_crate_input_get_aws_default_service_quota_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetAwsDefaultServiceQuotaInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_4) = &input.service_code {
         object.key("ServiceCode").string(var_4.as_str());
     }
@@ -31,7 +31,7 @@ pub fn serialize_structure_crate_input_get_aws_default_service_quota_input(
 pub fn serialize_structure_crate_input_get_requested_service_quota_change_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetRequestedServiceQuotaChangeInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_6) = &input.request_id {
         object.key("RequestId").string(var_6.as_str());
     }
@@ -41,7 +41,7 @@ pub fn serialize_structure_crate_input_get_requested_service_quota_change_input(
 pub fn serialize_structure_crate_input_get_service_quota_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetServiceQuotaInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_7) = &input.service_code {
         object.key("ServiceCode").string(var_7.as_str());
     }
@@ -54,7 +54,7 @@ pub fn serialize_structure_crate_input_get_service_quota_input(
 pub fn serialize_structure_crate_input_get_service_quota_increase_request_from_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetServiceQuotaIncreaseRequestFromTemplateInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_9) = &input.service_code {
         object.key("ServiceCode").string(var_9.as_str());
     }
@@ -70,7 +70,7 @@ pub fn serialize_structure_crate_input_get_service_quota_increase_request_from_t
 pub fn serialize_structure_crate_input_list_aws_default_service_quotas_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListAwsDefaultServiceQuotasInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_12) = &input.service_code {
         object.key("ServiceCode").string(var_12.as_str());
     }
@@ -89,7 +89,7 @@ pub fn serialize_structure_crate_input_list_aws_default_service_quotas_input(
 pub fn serialize_structure_crate_input_list_requested_service_quota_change_history_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListRequestedServiceQuotaChangeHistoryInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.service_code {
         object.key("ServiceCode").string(var_15.as_str());
     }
@@ -111,7 +111,7 @@ pub fn serialize_structure_crate_input_list_requested_service_quota_change_histo
 pub fn serialize_structure_crate_input_list_requested_service_quota_change_history_by_quota_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListRequestedServiceQuotaChangeHistoryByQuotaInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_19) = &input.service_code {
         object.key("ServiceCode").string(var_19.as_str());
     }
@@ -136,7 +136,7 @@ pub fn serialize_structure_crate_input_list_requested_service_quota_change_histo
 pub fn serialize_structure_crate_input_list_service_quota_increase_requests_in_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListServiceQuotaIncreaseRequestsInTemplateInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_24) = &input.service_code {
         object.key("ServiceCode").string(var_24.as_str());
     }
@@ -158,7 +158,7 @@ pub fn serialize_structure_crate_input_list_service_quota_increase_requests_in_t
 pub fn serialize_structure_crate_input_list_service_quotas_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListServiceQuotasInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.service_code {
         object.key("ServiceCode").string(var_28.as_str());
     }
@@ -177,7 +177,7 @@ pub fn serialize_structure_crate_input_list_service_quotas_input(
 pub fn serialize_structure_crate_input_list_services_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListServicesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_31) = &input.next_token {
         object.key("NextToken").string(var_31.as_str());
     }
@@ -193,7 +193,7 @@ pub fn serialize_structure_crate_input_list_services_input(
 pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.resource_arn {
         object.key("ResourceARN").string(var_33.as_str());
     }
@@ -203,7 +203,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
 pub fn serialize_structure_crate_input_put_service_quota_increase_request_into_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutServiceQuotaIncreaseRequestIntoTemplateInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_34) = &input.quota_code {
         object.key("QuotaCode").string(var_34.as_str());
     }
@@ -225,7 +225,7 @@ pub fn serialize_structure_crate_input_put_service_quota_increase_request_into_t
 pub fn serialize_structure_crate_input_request_service_quota_increase_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RequestServiceQuotaIncreaseInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_38) = &input.service_code {
         object.key("ServiceCode").string(var_38.as_str());
     }
@@ -244,7 +244,7 @@ pub fn serialize_structure_crate_input_request_service_quota_increase_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_41) = &input.resource_arn {
         object.key("ResourceARN").string(var_41.as_str());
     }
@@ -265,7 +265,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_46) = &input.resource_arn {
         object.key("ResourceARN").string(var_46.as_str());
     }
@@ -284,7 +284,7 @@ pub fn serialize_structure_crate_input_untag_resource_input(
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_50) = &input.key {
         object.key("Key").string(var_50.as_str());
     }

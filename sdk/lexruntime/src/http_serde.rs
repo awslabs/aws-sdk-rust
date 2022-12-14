@@ -2,20 +2,20 @@
 pub fn add_headers_post_content(
     input: &crate::input::PostContentInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_1) = &input.session_attributes {
         let formatted_2 = aws_smithy_types::base64::encode(&inner_1);
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "session_attributes",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "session_attributes",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err,
+                            &"*** Sensitive Data Redacted ***", err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-lex-session-attributes", header_value);
         }
@@ -26,13 +26,13 @@ pub fn add_headers_post_content(
             let header_value = formatted_4;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "request_attributes",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "request_attributes",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err,
+                            &"*** Sensitive Data Redacted ***", err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-lex-request-attributes", header_value);
         }
@@ -43,13 +43,13 @@ pub fn add_headers_post_content(
             let header_value = formatted_6;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "content_type",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "content_type",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("Content-Type", header_value);
         }
@@ -60,13 +60,13 @@ pub fn add_headers_post_content(
             let header_value = formatted_8;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "accept",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "accept",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("Accept", header_value);
         }
@@ -77,13 +77,13 @@ pub fn add_headers_post_content(
             let header_value = formatted_10;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "active_contexts",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "active_contexts",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err,
+                            &"*** Sensitive Data Redacted ***", err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-lex-active-contexts", header_value);
         }
@@ -94,20 +94,20 @@ pub fn add_headers_post_content(
 pub fn add_headers_put_session(
     input: &crate::input::PutSessionInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_11) = &input.accept {
         let formatted_12 = inner_11.as_str();
         if !formatted_12.is_empty() {
             let header_value = formatted_12;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "accept",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "accept",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("Accept", header_value);
         }
@@ -147,12 +147,10 @@ pub(crate) fn deser_header_post_content_post_content_output_active_contexts(
         .iter()
         .map(|s| {
             aws_smithy_types::base64::decode(s)
-                .map_err(|_| {
-                    aws_smithy_http::header::ParseError::new_with_message("failed to decode base64")
-                })
+                .map_err(|_| aws_smithy_http::header::ParseError::new("failed to decode base64"))
                 .and_then(|bytes| {
                     String::from_utf8(bytes).map_err(|_| {
-                        aws_smithy_http::header::ParseError::new_with_message(
+                        aws_smithy_http::header::ParseError::new(
                             "base64 encoded data was not valid utf-8",
                         )
                     })
@@ -161,9 +159,10 @@ pub(crate) fn deser_header_post_content_post_content_output_active_contexts(
         .collect();
     let var_13 = var_13?;
     if var_13.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_13.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_13.len()
+        )))
     } else {
         let mut var_13 = var_13;
         Ok(var_13.pop())
@@ -182,12 +181,10 @@ pub(crate) fn deser_header_post_content_post_content_output_alternative_intents(
         .iter()
         .map(|s| {
             aws_smithy_types::base64::decode(s)
-                .map_err(|_| {
-                    aws_smithy_http::header::ParseError::new_with_message("failed to decode base64")
-                })
+                .map_err(|_| aws_smithy_http::header::ParseError::new("failed to decode base64"))
                 .and_then(|bytes| {
                     String::from_utf8(bytes).map_err(|_| {
-                        aws_smithy_http::header::ParseError::new_with_message(
+                        aws_smithy_http::header::ParseError::new(
                             "base64 encoded data was not valid utf-8",
                         )
                     })
@@ -196,9 +193,10 @@ pub(crate) fn deser_header_post_content_post_content_output_alternative_intents(
         .collect();
     let var_14 = var_14?;
     if var_14.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_14.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_14.len()
+        )))
     } else {
         let mut var_14 = var_14;
         Ok(var_14.pop())
@@ -317,12 +315,10 @@ pub(crate) fn deser_header_post_content_post_content_output_nlu_intent_confidenc
         .iter()
         .map(|s| {
             aws_smithy_types::base64::decode(s)
-                .map_err(|_| {
-                    aws_smithy_http::header::ParseError::new_with_message("failed to decode base64")
-                })
+                .map_err(|_| aws_smithy_http::header::ParseError::new("failed to decode base64"))
                 .and_then(|bytes| {
                     String::from_utf8(bytes).map_err(|_| {
-                        aws_smithy_http::header::ParseError::new_with_message(
+                        aws_smithy_http::header::ParseError::new(
                             "base64 encoded data was not valid utf-8",
                         )
                     })
@@ -331,9 +327,10 @@ pub(crate) fn deser_header_post_content_post_content_output_nlu_intent_confidenc
         .collect();
     let var_15 = var_15?;
     if var_15.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_15.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_15.len()
+        )))
     } else {
         let mut var_15 = var_15;
         Ok(var_15.pop())
@@ -362,12 +359,10 @@ pub(crate) fn deser_header_post_content_post_content_output_session_attributes(
         .iter()
         .map(|s| {
             aws_smithy_types::base64::decode(s)
-                .map_err(|_| {
-                    aws_smithy_http::header::ParseError::new_with_message("failed to decode base64")
-                })
+                .map_err(|_| aws_smithy_http::header::ParseError::new("failed to decode base64"))
                 .and_then(|bytes| {
                     String::from_utf8(bytes).map_err(|_| {
-                        aws_smithy_http::header::ParseError::new_with_message(
+                        aws_smithy_http::header::ParseError::new(
                             "base64 encoded data was not valid utf-8",
                         )
                     })
@@ -376,9 +371,10 @@ pub(crate) fn deser_header_post_content_post_content_output_session_attributes(
         .collect();
     let var_16 = var_16?;
     if var_16.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_16.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_16.len()
+        )))
     } else {
         let mut var_16 = var_16;
         Ok(var_16.pop())
@@ -417,12 +413,10 @@ pub(crate) fn deser_header_post_content_post_content_output_slots(
         .iter()
         .map(|s| {
             aws_smithy_types::base64::decode(s)
-                .map_err(|_| {
-                    aws_smithy_http::header::ParseError::new_with_message("failed to decode base64")
-                })
+                .map_err(|_| aws_smithy_http::header::ParseError::new("failed to decode base64"))
                 .and_then(|bytes| {
                     String::from_utf8(bytes).map_err(|_| {
-                        aws_smithy_http::header::ParseError::new_with_message(
+                        aws_smithy_http::header::ParseError::new(
                             "base64 encoded data was not valid utf-8",
                         )
                     })
@@ -431,9 +425,10 @@ pub(crate) fn deser_header_post_content_post_content_output_slots(
         .collect();
     let var_17 = var_17?;
     if var_17.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_17.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_17.len()
+        )))
     } else {
         let mut var_17 = var_17;
         Ok(var_17.pop())
@@ -472,12 +467,10 @@ pub(crate) fn deser_header_put_session_put_session_output_active_contexts(
         .iter()
         .map(|s| {
             aws_smithy_types::base64::decode(s)
-                .map_err(|_| {
-                    aws_smithy_http::header::ParseError::new_with_message("failed to decode base64")
-                })
+                .map_err(|_| aws_smithy_http::header::ParseError::new("failed to decode base64"))
                 .and_then(|bytes| {
                     String::from_utf8(bytes).map_err(|_| {
-                        aws_smithy_http::header::ParseError::new_with_message(
+                        aws_smithy_http::header::ParseError::new(
                             "base64 encoded data was not valid utf-8",
                         )
                     })
@@ -486,9 +479,10 @@ pub(crate) fn deser_header_put_session_put_session_output_active_contexts(
         .collect();
     let var_18 = var_18?;
     if var_18.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_18.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_18.len()
+        )))
     } else {
         let mut var_18 = var_18;
         Ok(var_18.pop())
@@ -575,12 +569,10 @@ pub(crate) fn deser_header_put_session_put_session_output_session_attributes(
         .iter()
         .map(|s| {
             aws_smithy_types::base64::decode(s)
-                .map_err(|_| {
-                    aws_smithy_http::header::ParseError::new_with_message("failed to decode base64")
-                })
+                .map_err(|_| aws_smithy_http::header::ParseError::new("failed to decode base64"))
                 .and_then(|bytes| {
                     String::from_utf8(bytes).map_err(|_| {
-                        aws_smithy_http::header::ParseError::new_with_message(
+                        aws_smithy_http::header::ParseError::new(
                             "base64 encoded data was not valid utf-8",
                         )
                     })
@@ -589,9 +581,10 @@ pub(crate) fn deser_header_put_session_put_session_output_session_attributes(
         .collect();
     let var_19 = var_19?;
     if var_19.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_19.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_19.len()
+        )))
     } else {
         let mut var_19 = var_19;
         Ok(var_19.pop())
@@ -630,12 +623,10 @@ pub(crate) fn deser_header_put_session_put_session_output_slots(
         .iter()
         .map(|s| {
             aws_smithy_types::base64::decode(s)
-                .map_err(|_| {
-                    aws_smithy_http::header::ParseError::new_with_message("failed to decode base64")
-                })
+                .map_err(|_| aws_smithy_http::header::ParseError::new("failed to decode base64"))
                 .and_then(|bytes| {
                     String::from_utf8(bytes).map_err(|_| {
-                        aws_smithy_http::header::ParseError::new_with_message(
+                        aws_smithy_http::header::ParseError::new(
                             "base64 encoded data was not valid utf-8",
                         )
                     })
@@ -644,9 +635,10 @@ pub(crate) fn deser_header_put_session_put_session_output_slots(
         .collect();
     let var_20 = var_20?;
     if var_20.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_20.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_20.len()
+        )))
     } else {
         let mut var_20 = var_20;
         Ok(var_20.pop())

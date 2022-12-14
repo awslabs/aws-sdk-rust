@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_start_next_pending_job_execution_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartNextPendingJobExecutionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.status_details {
         let mut object_2 = object.key("statusDetails").start_object();
         for (key_3, value_4) in var_1 {
@@ -24,7 +24,7 @@ pub fn serialize_structure_crate_input_start_next_pending_job_execution_input(
 pub fn serialize_structure_crate_input_update_job_execution_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateJobExecutionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_6) = &input.execution_number {
         object.key("executionNumber").number(
             #[allow(clippy::useless_conversion)]

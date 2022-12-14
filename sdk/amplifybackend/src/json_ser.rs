@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_clone_backend_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CloneBackendInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.target_environment_name {
         object.key("targetEnvironmentName").string(var_1.as_str());
     }
@@ -12,7 +12,7 @@ pub fn serialize_structure_crate_input_clone_backend_input(
 pub fn serialize_structure_crate_input_create_backend_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateBackendInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_2) = &input.app_id {
         object.key("appId").string(var_2.as_str());
     }
@@ -36,7 +36,7 @@ pub fn serialize_structure_crate_input_create_backend_input(
 pub fn serialize_structure_crate_input_create_backend_api_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateBackendApiInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_8) = &input.backend_environment_name {
         object.key("backendEnvironmentName").string(var_8.as_str());
     }
@@ -57,7 +57,7 @@ pub fn serialize_structure_crate_input_create_backend_api_input(
 pub fn serialize_structure_crate_input_create_backend_auth_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateBackendAuthInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_12) = &input.backend_environment_name {
         object.key("backendEnvironmentName").string(var_12.as_str());
     }
@@ -78,7 +78,7 @@ pub fn serialize_structure_crate_input_create_backend_auth_input(
 pub fn serialize_structure_crate_input_create_backend_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateBackendConfigInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_16) = &input.backend_manager_app_id {
         object.key("backendManagerAppId").string(var_16.as_str());
     }
@@ -88,7 +88,7 @@ pub fn serialize_structure_crate_input_create_backend_config_input(
 pub fn serialize_structure_crate_input_create_backend_storage_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateBackendStorageInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_17) = &input.backend_environment_name {
         object.key("backendEnvironmentName").string(var_17.as_str());
     }
@@ -109,7 +109,7 @@ pub fn serialize_structure_crate_input_create_backend_storage_input(
 pub fn serialize_structure_crate_input_delete_backend_api_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteBackendApiInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_21) = &input.resource_config {
         let mut object_22 = object.key("resourceConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_api_resource_config(
@@ -127,7 +127,7 @@ pub fn serialize_structure_crate_input_delete_backend_api_input(
 pub fn serialize_structure_crate_input_delete_backend_auth_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteBackendAuthInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_24) = &input.resource_name {
         object.key("resourceName").string(var_24.as_str());
     }
@@ -137,7 +137,7 @@ pub fn serialize_structure_crate_input_delete_backend_auth_input(
 pub fn serialize_structure_crate_input_delete_backend_storage_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteBackendStorageInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_25) = &input.resource_name {
         object.key("resourceName").string(var_25.as_str());
     }
@@ -150,7 +150,7 @@ pub fn serialize_structure_crate_input_delete_backend_storage_input(
 pub fn serialize_structure_crate_input_generate_backend_api_models_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GenerateBackendApiModelsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_27) = &input.resource_name {
         object.key("resourceName").string(var_27.as_str());
     }
@@ -160,7 +160,7 @@ pub fn serialize_structure_crate_input_generate_backend_api_models_input(
 pub fn serialize_structure_crate_input_get_backend_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetBackendInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.backend_environment_name {
         object.key("backendEnvironmentName").string(var_28.as_str());
     }
@@ -170,7 +170,7 @@ pub fn serialize_structure_crate_input_get_backend_input(
 pub fn serialize_structure_crate_input_get_backend_api_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetBackendApiInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_29) = &input.resource_config {
         let mut object_30 = object.key("resourceConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_api_resource_config(
@@ -188,7 +188,7 @@ pub fn serialize_structure_crate_input_get_backend_api_input(
 pub fn serialize_structure_crate_input_get_backend_api_models_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetBackendApiModelsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.resource_name {
         object.key("resourceName").string(var_32.as_str());
     }
@@ -198,7 +198,7 @@ pub fn serialize_structure_crate_input_get_backend_api_models_input(
 pub fn serialize_structure_crate_input_get_backend_auth_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetBackendAuthInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.resource_name {
         object.key("resourceName").string(var_33.as_str());
     }
@@ -208,7 +208,7 @@ pub fn serialize_structure_crate_input_get_backend_auth_input(
 pub fn serialize_structure_crate_input_get_backend_storage_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetBackendStorageInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_34) = &input.resource_name {
         object.key("resourceName").string(var_34.as_str());
     }
@@ -218,7 +218,7 @@ pub fn serialize_structure_crate_input_get_backend_storage_input(
 pub fn serialize_structure_crate_input_import_backend_auth_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ImportBackendAuthInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_35) = &input.identity_pool_id {
         object.key("identityPoolId").string(var_35.as_str());
     }
@@ -237,7 +237,7 @@ pub fn serialize_structure_crate_input_import_backend_auth_input(
 pub fn serialize_structure_crate_input_import_backend_storage_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ImportBackendStorageInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_39) = &input.bucket_name {
         object.key("bucketName").string(var_39.as_str());
     }
@@ -250,7 +250,7 @@ pub fn serialize_structure_crate_input_import_backend_storage_input(
 pub fn serialize_structure_crate_input_list_backend_jobs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListBackendJobsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_41) = &input.job_id {
         object.key("jobId").string(var_41.as_str());
     }
@@ -275,7 +275,7 @@ pub fn serialize_structure_crate_input_list_backend_jobs_input(
 pub fn serialize_structure_crate_input_list_s3_buckets_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListS3BucketsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_45) = &input.next_token {
         object.key("nextToken").string(var_45.as_str());
     }
@@ -285,7 +285,7 @@ pub fn serialize_structure_crate_input_list_s3_buckets_input(
 pub fn serialize_structure_crate_input_remove_all_backends_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RemoveAllBackendsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.clean_amplify_app {
         object
             .key("cleanAmplifyApp")
@@ -297,7 +297,7 @@ pub fn serialize_structure_crate_input_remove_all_backends_input(
 pub fn serialize_structure_crate_input_update_backend_api_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateBackendApiInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_46) = &input.resource_config {
         let mut object_47 = object.key("resourceConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_api_resource_config(
@@ -315,7 +315,7 @@ pub fn serialize_structure_crate_input_update_backend_api_input(
 pub fn serialize_structure_crate_input_update_backend_auth_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateBackendAuthInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_49) = &input.resource_config {
         let mut object_50 = object.key("resourceConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_update_backend_auth_resource_config(
@@ -333,7 +333,7 @@ pub fn serialize_structure_crate_input_update_backend_auth_input(
 pub fn serialize_structure_crate_input_update_backend_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateBackendConfigInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_52) = &input.login_auth_config {
         let mut object_53 = object.key("loginAuthConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_login_auth_config_req_obj(
@@ -348,7 +348,7 @@ pub fn serialize_structure_crate_input_update_backend_config_input(
 pub fn serialize_structure_crate_input_update_backend_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateBackendJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_54) = &input.operation {
         object.key("operation").string(var_54.as_str());
     }
@@ -361,7 +361,7 @@ pub fn serialize_structure_crate_input_update_backend_job_input(
 pub fn serialize_structure_crate_input_update_backend_storage_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateBackendStorageInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_56) = &input.resource_config {
         let mut object_57 = object.key("resourceConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_update_backend_storage_resource_config(
@@ -379,7 +379,7 @@ pub fn serialize_structure_crate_input_update_backend_storage_input(
 pub fn serialize_structure_crate_model_resource_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResourceConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     let (_, _) = (object, input);
     Ok(())
 }
@@ -387,7 +387,7 @@ pub fn serialize_structure_crate_model_resource_config(
 pub fn serialize_structure_crate_model_backend_api_resource_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BackendApiResourceConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_59) = &input.additional_auth_types {
         let mut array_60 = object.key("additionalAuthTypes").start_array();
         for item_61 in var_59 {
@@ -433,7 +433,7 @@ pub fn serialize_structure_crate_model_backend_api_resource_config(
 pub fn serialize_structure_crate_model_create_backend_auth_resource_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateBackendAuthResourceConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_70) = &input.auth_resources {
         object.key("authResources").string(var_70.as_str());
     }
@@ -462,7 +462,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_resource_config(
 pub fn serialize_structure_crate_model_create_backend_storage_resource_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateBackendStorageResourceConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_76) = &input.bucket_name {
         object.key("bucketName").string(var_76.as_str());
     }
@@ -483,7 +483,7 @@ pub fn serialize_structure_crate_model_create_backend_storage_resource_config(
 pub fn serialize_structure_crate_model_update_backend_auth_resource_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateBackendAuthResourceConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_80) = &input.auth_resources {
         object.key("authResources").string(var_80.as_str());
     }
@@ -512,7 +512,7 @@ pub fn serialize_structure_crate_model_update_backend_auth_resource_config(
 pub fn serialize_structure_crate_model_login_auth_config_req_obj(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LoginAuthConfigReqObj,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_86) = &input.aws_cognito_identity_pool_id {
         object
             .key("aws_cognito_identity_pool_id")
@@ -535,7 +535,7 @@ pub fn serialize_structure_crate_model_login_auth_config_req_obj(
 pub fn serialize_structure_crate_model_update_backend_storage_resource_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateBackendStorageResourceConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_90) = &input.permissions {
         let mut object_91 = object.key("permissions").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_storage_permissions(
@@ -553,7 +553,7 @@ pub fn serialize_structure_crate_model_update_backend_storage_resource_config(
 pub fn serialize_structure_crate_model_backend_api_auth_type(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BackendApiAuthType,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_93) = &input.mode {
         object.key("mode").string(var_93.as_str());
     }
@@ -571,7 +571,7 @@ pub fn serialize_structure_crate_model_backend_api_auth_type(
 pub fn serialize_structure_crate_model_backend_api_conflict_resolution(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BackendApiConflictResolution,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_96) = &input.resolution_strategy {
         object.key("resolutionStrategy").string(var_96.as_str());
     }
@@ -581,7 +581,7 @@ pub fn serialize_structure_crate_model_backend_api_conflict_resolution(
 pub fn serialize_structure_crate_model_create_backend_auth_identity_pool_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateBackendAuthIdentityPoolConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_97) = &input.identity_pool_name {
         object.key("identityPoolName").string(var_97.as_str());
     }
@@ -596,7 +596,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_identity_pool_config(
 pub fn serialize_structure_crate_model_create_backend_auth_user_pool_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateBackendAuthUserPoolConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_98) = &input.forgot_password {
         let mut object_99 = object.key("forgotPassword").start_object();
         crate::json_ser::serialize_structure_crate_model_create_backend_auth_forgot_password_config(&mut object_99, var_98)?;
@@ -649,7 +649,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_user_pool_config(
 pub fn serialize_structure_crate_model_backend_storage_permissions(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BackendStoragePermissions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_113) = &input.authenticated {
         let mut array_114 = object.key("authenticated").start_array();
         for item_115 in var_113 {
@@ -674,7 +674,7 @@ pub fn serialize_structure_crate_model_backend_storage_permissions(
 pub fn serialize_structure_crate_model_update_backend_auth_identity_pool_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateBackendAuthIdentityPoolConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.unauthenticated_login {
         object
             .key("unauthenticatedLogin")
@@ -686,7 +686,7 @@ pub fn serialize_structure_crate_model_update_backend_auth_identity_pool_config(
 pub fn serialize_structure_crate_model_update_backend_auth_user_pool_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateBackendAuthUserPoolConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_119) = &input.forgot_password {
         let mut object_120 = object.key("forgotPassword").start_object();
         crate::json_ser::serialize_structure_crate_model_update_backend_auth_forgot_password_config(&mut object_120, var_119)?;
@@ -724,7 +724,7 @@ pub fn serialize_structure_crate_model_update_backend_auth_user_pool_config(
 pub fn serialize_structure_crate_model_backend_api_app_sync_auth_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BackendApiAppSyncAuthSettings,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_129) = &input.cognito_user_pool_id {
         object.key("cognitoUserPoolId").string(var_129.as_str());
     }
@@ -758,7 +758,7 @@ pub fn serialize_structure_crate_model_backend_api_app_sync_auth_settings(
 pub fn serialize_structure_crate_model_create_backend_auth_forgot_password_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateBackendAuthForgotPasswordConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_136) = &input.delivery_method {
         object.key("deliveryMethod").string(var_136.as_str());
     }
@@ -778,7 +778,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_forgot_password_confi
 pub fn serialize_structure_crate_model_create_backend_auth_mfa_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateBackendAuthMfaConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_141) = &input.mfa_mode {
         object.key("MFAMode").string(var_141.as_str());
     }
@@ -793,7 +793,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_mfa_config(
 pub fn serialize_structure_crate_model_create_backend_auth_o_auth_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateBackendAuthOAuthConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_144) = &input.domain_prefix {
         object.key("domainPrefix").string(var_144.as_str());
     }
@@ -841,7 +841,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_o_auth_config(
 pub fn serialize_structure_crate_model_create_backend_auth_password_policy_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateBackendAuthPasswordPolicyConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_157) = &input.additional_constraints {
         let mut array_158 = object.key("additionalConstraints").start_array();
         for item_159 in var_157 {
@@ -863,7 +863,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_password_policy_confi
 pub fn serialize_structure_crate_model_create_backend_auth_verification_message_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateBackendAuthVerificationMessageConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_160) = &input.delivery_method {
         object.key("deliveryMethod").string(var_160.as_str());
     }
@@ -883,7 +883,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_verification_message_
 pub fn serialize_structure_crate_model_update_backend_auth_forgot_password_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateBackendAuthForgotPasswordConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_165) = &input.delivery_method {
         object.key("deliveryMethod").string(var_165.as_str());
     }
@@ -903,7 +903,7 @@ pub fn serialize_structure_crate_model_update_backend_auth_forgot_password_confi
 pub fn serialize_structure_crate_model_update_backend_auth_mfa_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateBackendAuthMfaConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_170) = &input.mfa_mode {
         object.key("MFAMode").string(var_170.as_str());
     }
@@ -918,7 +918,7 @@ pub fn serialize_structure_crate_model_update_backend_auth_mfa_config(
 pub fn serialize_structure_crate_model_update_backend_auth_o_auth_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateBackendAuthOAuthConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_173) = &input.domain_prefix {
         object.key("domainPrefix").string(var_173.as_str());
     }
@@ -966,7 +966,7 @@ pub fn serialize_structure_crate_model_update_backend_auth_o_auth_config(
 pub fn serialize_structure_crate_model_update_backend_auth_password_policy_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateBackendAuthPasswordPolicyConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_186) = &input.additional_constraints {
         let mut array_187 = object.key("additionalConstraints").start_array();
         for item_188 in var_186 {
@@ -988,7 +988,7 @@ pub fn serialize_structure_crate_model_update_backend_auth_password_policy_confi
 pub fn serialize_structure_crate_model_update_backend_auth_verification_message_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateBackendAuthVerificationMessageConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_189) = &input.delivery_method {
         object.key("deliveryMethod").string(var_189.as_str());
     }
@@ -1008,7 +1008,7 @@ pub fn serialize_structure_crate_model_update_backend_auth_verification_message_
 pub fn serialize_structure_crate_model_email_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EmailSettings,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_194) = &input.email_message {
         object.key("emailMessage").string(var_194.as_str());
     }
@@ -1021,7 +1021,7 @@ pub fn serialize_structure_crate_model_email_settings(
 pub fn serialize_structure_crate_model_sms_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SmsSettings,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_196) = &input.sms_message {
         object.key("smsMessage").string(var_196.as_str());
     }
@@ -1031,7 +1031,7 @@ pub fn serialize_structure_crate_model_sms_settings(
 pub fn serialize_structure_crate_model_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Settings,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_197) = &input.mfa_types {
         let mut array_198 = object.key("mfaTypes").start_array();
         for item_199 in var_197 {
@@ -1050,7 +1050,7 @@ pub fn serialize_structure_crate_model_settings(
 pub fn serialize_structure_crate_model_social_provider_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SocialProviderSettings,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_201) = &input.facebook {
         let mut object_202 = object.key("Facebook").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_auth_social_provider_config(
@@ -1089,7 +1089,7 @@ pub fn serialize_structure_crate_model_social_provider_settings(
 pub fn serialize_structure_crate_model_backend_auth_social_provider_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BackendAuthSocialProviderConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_209) = &input.client_id {
         object.key("client_id").string(var_209.as_str());
     }
@@ -1102,7 +1102,7 @@ pub fn serialize_structure_crate_model_backend_auth_social_provider_config(
 pub fn serialize_structure_crate_model_backend_auth_apple_provider_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BackendAuthAppleProviderConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_211) = &input.client_id {
         object.key("client_id").string(var_211.as_str());
     }

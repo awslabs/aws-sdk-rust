@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use crate::body::SdkBody;
+use crate::byte_stream::{error::Error, error::ErrorKind, ByteStream};
 use bytes::Bytes;
 use futures_core::ready;
 use http::HeaderMap;
@@ -14,10 +16,6 @@ use std::task::{Context, Poll};
 use tokio::fs::File;
 use tokio::io::{self, AsyncReadExt, AsyncSeekExt};
 use tokio_util::io::ReaderStream;
-
-use crate::body::SdkBody;
-
-use super::{ByteStream, Error};
 
 // 4KB corresponds to the default buffer size used by Tokio's ReaderStream
 const DEFAULT_BUFFER_SIZE: usize = 4096;
@@ -181,19 +179,13 @@ impl FsBuilder {
         // notify users when file/chunk is smaller than expected.
         let file_length = self.get_file_size().await?;
         if offset > file_length {
-            return Err(Error(Box::new(io::Error::new(
-                io::ErrorKind::InvalidInput,
-                "offset must be less than or equal to file size but was greater than",
-            ))));
+            return Err(ErrorKind::OffsetLargerThanFileSize.into());
         }
 
         let length = match self.length {
             Some(Length::Exact(length)) => {
                 if length > file_length - offset {
-                    return Err(Error(Box::new(io::Error::new(
-                        io::ErrorKind::InvalidInput,
-                        "Length::Exact was larger than file size minus read offset",
-                    ))));
+                    return Err(ErrorKind::LengthLargerThanFileSizeMinusReadOffset.into());
                 }
                 length
             }
@@ -217,10 +209,7 @@ impl FsBuilder {
         } else if let Some(mut file) = self.file {
             // When starting from a `File`, we need to do our own seeking
             if offset != 0 {
-                let _s = file
-                    .seek(std::io::SeekFrom::Start(offset))
-                    .await
-                    .map_err(|err| Error(err.into()))?;
+                let _s = file.seek(std::io::SeekFrom::Start(offset)).await?;
             }
 
             let body = SdkBody::from_dyn(http_body::combinators::BoxBody::new(
@@ -234,13 +223,12 @@ impl FsBuilder {
     }
 
     async fn get_file_size(&self) -> Result<u64, Error> {
-        match self.path.as_ref() {
+        Ok(match self.path.as_ref() {
             Some(path) => tokio::fs::metadata(path).await,
             // If it's not path-based then it's file-based
             None => self.file.as_ref().unwrap().metadata().await,
         }
-        .map(|metadata| metadata.len())
-        .map_err(|err| Error(err.into()))
+        .map(|metadata| metadata.len())?)
     }
 }
 

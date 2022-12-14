@@ -45,29 +45,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CompleteSnapshotError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CompleteSnapshotErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CompleteSnapshotErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::CompleteSnapshotErrorKind::InternalServerException(inner) => {
+                        Error::InternalServerException(inner)
+                    }
+                    crate::error::CompleteSnapshotErrorKind::RequestThrottledException(inner) => {
+                        Error::RequestThrottledException(inner)
+                    }
+                    crate::error::CompleteSnapshotErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::CompleteSnapshotErrorKind::ServiceQuotaExceededException(
+                        inner,
+                    ) => Error::ServiceQuotaExceededException(inner),
+                    crate::error::CompleteSnapshotErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::CompleteSnapshotErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CompleteSnapshotErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
-                }
-                crate::error::CompleteSnapshotErrorKind::RequestThrottledException(inner) => {
-                    Error::RequestThrottledException(inner)
-                }
-                crate::error::CompleteSnapshotErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::CompleteSnapshotErrorKind::ServiceQuotaExceededException(inner) => {
-                    Error::ServiceQuotaExceededException(inner)
-                }
-                crate::error::CompleteSnapshotErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::CompleteSnapshotErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -80,29 +82,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetSnapshotBlockError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetSnapshotBlockErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetSnapshotBlockErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::GetSnapshotBlockErrorKind::InternalServerException(inner) => {
+                        Error::InternalServerException(inner)
+                    }
+                    crate::error::GetSnapshotBlockErrorKind::RequestThrottledException(inner) => {
+                        Error::RequestThrottledException(inner)
+                    }
+                    crate::error::GetSnapshotBlockErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::GetSnapshotBlockErrorKind::ServiceQuotaExceededException(
+                        inner,
+                    ) => Error::ServiceQuotaExceededException(inner),
+                    crate::error::GetSnapshotBlockErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::GetSnapshotBlockErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetSnapshotBlockErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
-                }
-                crate::error::GetSnapshotBlockErrorKind::RequestThrottledException(inner) => {
-                    Error::RequestThrottledException(inner)
-                }
-                crate::error::GetSnapshotBlockErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::GetSnapshotBlockErrorKind::ServiceQuotaExceededException(inner) => {
-                    Error::ServiceQuotaExceededException(inner)
-                }
-                crate::error::GetSnapshotBlockErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::GetSnapshotBlockErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -115,29 +119,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListChangedBlocksError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListChangedBlocksErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListChangedBlocksErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::ListChangedBlocksErrorKind::InternalServerException(inner) => {
+                        Error::InternalServerException(inner)
+                    }
+                    crate::error::ListChangedBlocksErrorKind::RequestThrottledException(inner) => {
+                        Error::RequestThrottledException(inner)
+                    }
+                    crate::error::ListChangedBlocksErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::ListChangedBlocksErrorKind::ServiceQuotaExceededException(
+                        inner,
+                    ) => Error::ServiceQuotaExceededException(inner),
+                    crate::error::ListChangedBlocksErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::ListChangedBlocksErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListChangedBlocksErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
-                }
-                crate::error::ListChangedBlocksErrorKind::RequestThrottledException(inner) => {
-                    Error::RequestThrottledException(inner)
-                }
-                crate::error::ListChangedBlocksErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::ListChangedBlocksErrorKind::ServiceQuotaExceededException(inner) => {
-                    Error::ServiceQuotaExceededException(inner)
-                }
-                crate::error::ListChangedBlocksErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListChangedBlocksErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -150,29 +156,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListSnapshotBlocksError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListSnapshotBlocksErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListSnapshotBlocksErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::ListSnapshotBlocksErrorKind::InternalServerException(inner) => {
+                        Error::InternalServerException(inner)
+                    }
+                    crate::error::ListSnapshotBlocksErrorKind::RequestThrottledException(inner) => {
+                        Error::RequestThrottledException(inner)
+                    }
+                    crate::error::ListSnapshotBlocksErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::ListSnapshotBlocksErrorKind::ServiceQuotaExceededException(
+                        inner,
+                    ) => Error::ServiceQuotaExceededException(inner),
+                    crate::error::ListSnapshotBlocksErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::ListSnapshotBlocksErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListSnapshotBlocksErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
-                }
-                crate::error::ListSnapshotBlocksErrorKind::RequestThrottledException(inner) => {
-                    Error::RequestThrottledException(inner)
-                }
-                crate::error::ListSnapshotBlocksErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::ListSnapshotBlocksErrorKind::ServiceQuotaExceededException(inner) => {
-                    Error::ServiceQuotaExceededException(inner)
-                }
-                crate::error::ListSnapshotBlocksErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListSnapshotBlocksErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -185,29 +193,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutSnapshotBlockError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutSnapshotBlockErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::PutSnapshotBlockErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::PutSnapshotBlockErrorKind::InternalServerException(inner) => {
+                        Error::InternalServerException(inner)
+                    }
+                    crate::error::PutSnapshotBlockErrorKind::RequestThrottledException(inner) => {
+                        Error::RequestThrottledException(inner)
+                    }
+                    crate::error::PutSnapshotBlockErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::PutSnapshotBlockErrorKind::ServiceQuotaExceededException(
+                        inner,
+                    ) => Error::ServiceQuotaExceededException(inner),
+                    crate::error::PutSnapshotBlockErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::PutSnapshotBlockErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::PutSnapshotBlockErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
-                }
-                crate::error::PutSnapshotBlockErrorKind::RequestThrottledException(inner) => {
-                    Error::RequestThrottledException(inner)
-                }
-                crate::error::PutSnapshotBlockErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::PutSnapshotBlockErrorKind::ServiceQuotaExceededException(inner) => {
-                    Error::ServiceQuotaExceededException(inner)
-                }
-                crate::error::PutSnapshotBlockErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::PutSnapshotBlockErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -218,35 +228,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartSnapshotError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StartSnapshotErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StartSnapshotErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::StartSnapshotErrorKind::ConcurrentLimitExceededException(
+                        inner,
+                    ) => Error::ConcurrentLimitExceededException(inner),
+                    crate::error::StartSnapshotErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::StartSnapshotErrorKind::InternalServerException(inner) => {
+                        Error::InternalServerException(inner)
+                    }
+                    crate::error::StartSnapshotErrorKind::RequestThrottledException(inner) => {
+                        Error::RequestThrottledException(inner)
+                    }
+                    crate::error::StartSnapshotErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::StartSnapshotErrorKind::ServiceQuotaExceededException(inner) => {
+                        Error::ServiceQuotaExceededException(inner)
+                    }
+                    crate::error::StartSnapshotErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::StartSnapshotErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::StartSnapshotErrorKind::ConcurrentLimitExceededException(inner) => {
-                    Error::ConcurrentLimitExceededException(inner)
-                }
-                crate::error::StartSnapshotErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
-                }
-                crate::error::StartSnapshotErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
-                }
-                crate::error::StartSnapshotErrorKind::RequestThrottledException(inner) => {
-                    Error::RequestThrottledException(inner)
-                }
-                crate::error::StartSnapshotErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::StartSnapshotErrorKind::ServiceQuotaExceededException(inner) => {
-                    Error::ServiceQuotaExceededException(inner)
-                }
-                crate::error::StartSnapshotErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::StartSnapshotErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }

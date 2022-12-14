@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_associate_node_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateNodeInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.server_name {
         object.key("ServerName").string(var_1.as_str());
     }
@@ -29,7 +29,7 @@ pub fn serialize_structure_crate_input_associate_node_input(
 pub fn serialize_structure_crate_input_create_backup_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateBackupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_7) = &input.server_name {
         object.key("ServerName").string(var_7.as_str());
     }
@@ -53,7 +53,7 @@ pub fn serialize_structure_crate_input_create_backup_input(
 pub fn serialize_structure_crate_input_create_server_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateServerInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_13) = &input.associate_public_ip_address {
         object.key("AssociatePublicIpAddress").boolean(*var_13);
     }
@@ -159,7 +159,7 @@ pub fn serialize_structure_crate_input_create_server_input(
 pub fn serialize_structure_crate_input_delete_backup_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteBackupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_44) = &input.backup_id {
         object.key("BackupId").string(var_44.as_str());
     }
@@ -169,7 +169,7 @@ pub fn serialize_structure_crate_input_delete_backup_input(
 pub fn serialize_structure_crate_input_delete_server_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteServerInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_45) = &input.server_name {
         object.key("ServerName").string(var_45.as_str());
     }
@@ -179,7 +179,7 @@ pub fn serialize_structure_crate_input_delete_server_input(
 pub fn serialize_structure_crate_input_describe_backups_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeBackupsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_46) = &input.backup_id {
         object.key("BackupId").string(var_46.as_str());
     }
@@ -201,7 +201,7 @@ pub fn serialize_structure_crate_input_describe_backups_input(
 pub fn serialize_structure_crate_input_describe_events_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeEventsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_50) = &input.server_name {
         object.key("ServerName").string(var_50.as_str());
     }
@@ -220,7 +220,7 @@ pub fn serialize_structure_crate_input_describe_events_input(
 pub fn serialize_structure_crate_input_describe_node_association_status_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeNodeAssociationStatusInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_53) = &input.node_association_status_token {
         object
             .key("NodeAssociationStatusToken")
@@ -235,7 +235,7 @@ pub fn serialize_structure_crate_input_describe_node_association_status_input(
 pub fn serialize_structure_crate_input_describe_servers_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeServersInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_55) = &input.server_name {
         object.key("ServerName").string(var_55.as_str());
     }
@@ -254,7 +254,7 @@ pub fn serialize_structure_crate_input_describe_servers_input(
 pub fn serialize_structure_crate_input_disassociate_node_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateNodeInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_58) = &input.server_name {
         object.key("ServerName").string(var_58.as_str());
     }
@@ -281,7 +281,7 @@ pub fn serialize_structure_crate_input_disassociate_node_input(
 pub fn serialize_structure_crate_input_export_server_engine_attribute_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ExportServerEngineAttributeInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_64) = &input.export_attribute_name {
         object.key("ExportAttributeName").string(var_64.as_str());
     }
@@ -308,7 +308,7 @@ pub fn serialize_structure_crate_input_export_server_engine_attribute_input(
 pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_70) = &input.resource_arn {
         object.key("ResourceArn").string(var_70.as_str());
     }
@@ -327,7 +327,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
 pub fn serialize_structure_crate_input_restore_server_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RestoreServerInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_73) = &input.backup_id {
         object.key("BackupId").string(var_73.as_str());
     }
@@ -346,7 +346,7 @@ pub fn serialize_structure_crate_input_restore_server_input(
 pub fn serialize_structure_crate_input_start_maintenance_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartMaintenanceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_77) = &input.server_name {
         object.key("ServerName").string(var_77.as_str());
     }
@@ -370,7 +370,7 @@ pub fn serialize_structure_crate_input_start_maintenance_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_82) = &input.resource_arn {
         object.key("ResourceArn").string(var_82.as_str());
     }
@@ -391,7 +391,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_87) = &input.resource_arn {
         object.key("ResourceArn").string(var_87.as_str());
     }
@@ -410,7 +410,7 @@ pub fn serialize_structure_crate_input_untag_resource_input(
 pub fn serialize_structure_crate_input_update_server_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateServerInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_91) = &input.disable_automated_backup {
         object.key("DisableAutomatedBackup").boolean(*var_91);
     }
@@ -437,7 +437,7 @@ pub fn serialize_structure_crate_input_update_server_input(
 pub fn serialize_structure_crate_input_update_server_engine_attributes_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateServerEngineAttributesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_96) = &input.server_name {
         object.key("ServerName").string(var_96.as_str());
     }
@@ -453,7 +453,7 @@ pub fn serialize_structure_crate_input_update_server_engine_attributes_input(
 pub fn serialize_structure_crate_model_engine_attribute(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EngineAttribute,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_99) = &input.name {
         object.key("Name").string(var_99.as_str());
     }
@@ -466,7 +466,7 @@ pub fn serialize_structure_crate_model_engine_attribute(
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_101) = &input.key {
         object.key("Key").string(var_101.as_str());
     }

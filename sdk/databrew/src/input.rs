@@ -45,7 +45,7 @@ pub mod batch_delete_recipe_version_input {
             self,
         ) -> Result<
             crate::input::BatchDeleteRecipeVersionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::BatchDeleteRecipeVersionInput {
                 name: self.name,
@@ -67,29 +67,31 @@ impl BatchDeleteRecipeVersionInput {
             crate::operation::BatchDeleteRecipeVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchDeleteRecipeVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_1,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -103,8 +105,10 @@ impl BatchDeleteRecipeVersionInput {
             fn update_http_builder(
                 input: &crate::input::BatchDeleteRecipeVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -286,7 +290,7 @@ pub mod create_dataset_input {
         /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::input::CreateDatasetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDatasetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateDatasetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateDatasetInput {
                 name: self.name,
@@ -312,13 +316,13 @@ impl CreateDatasetInput {
             crate::operation::CreateDataset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateDatasetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/datasets").expect("formatting should succeed");
                 Ok(())
             }
@@ -326,8 +330,10 @@ impl CreateDatasetInput {
             fn update_http_builder(
                 input: &crate::input::CreateDatasetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -628,8 +634,10 @@ pub mod create_profile_job_input {
         /// Consumes the builder and constructs a [`CreateProfileJobInput`](crate::input::CreateProfileJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateProfileJobInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateProfileJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateProfileJobInput {
                 dataset_name: self.dataset_name,
                 encryption_key_arn: self.encryption_key_arn,
@@ -662,13 +670,13 @@ impl CreateProfileJobInput {
             crate::operation::CreateProfileJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateProfileJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/profileJobs").expect("formatting should succeed");
                 Ok(())
             }
@@ -676,8 +684,10 @@ impl CreateProfileJobInput {
             fn update_http_builder(
                 input: &crate::input::CreateProfileJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -851,7 +861,7 @@ pub mod create_project_input {
         /// Consumes the builder and constructs a [`CreateProjectInput`](crate::input::CreateProjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateProjectInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateProjectInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateProjectInput {
                 dataset_name: self.dataset_name,
@@ -877,13 +887,13 @@ impl CreateProjectInput {
             crate::operation::CreateProject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateProjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/projects").expect("formatting should succeed");
                 Ok(())
             }
@@ -891,8 +901,10 @@ impl CreateProjectInput {
             fn update_http_builder(
                 input: &crate::input::CreateProjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1053,7 +1065,7 @@ pub mod create_recipe_input {
         /// Consumes the builder and constructs a [`CreateRecipeInput`](crate::input::CreateRecipeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateRecipeInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateRecipeInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateRecipeInput {
                 description: self.description,
@@ -1077,13 +1089,13 @@ impl CreateRecipeInput {
             crate::operation::CreateRecipe,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateRecipeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/recipes").expect("formatting should succeed");
                 Ok(())
             }
@@ -1091,8 +1103,10 @@ impl CreateRecipeInput {
             fn update_http_builder(
                 input: &crate::input::CreateRecipeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1414,7 +1428,7 @@ pub mod create_recipe_job_input {
         /// Consumes the builder and constructs a [`CreateRecipeJobInput`](crate::input::CreateRecipeJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateRecipeJobInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateRecipeJobInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateRecipeJobInput {
                 dataset_name: self.dataset_name,
@@ -1449,13 +1463,13 @@ impl CreateRecipeJobInput {
             crate::operation::CreateRecipeJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateRecipeJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/recipeJobs").expect("formatting should succeed");
                 Ok(())
             }
@@ -1463,8 +1477,10 @@ impl CreateRecipeJobInput {
             fn update_http_builder(
                 input: &crate::input::CreateRecipeJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1636,7 +1652,7 @@ pub mod create_ruleset_input {
         /// Consumes the builder and constructs a [`CreateRulesetInput`](crate::input::CreateRulesetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateRulesetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateRulesetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateRulesetInput {
                 name: self.name,
@@ -1661,13 +1677,13 @@ impl CreateRulesetInput {
             crate::operation::CreateRuleset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateRulesetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/rulesets").expect("formatting should succeed");
                 Ok(())
             }
@@ -1675,8 +1691,10 @@ impl CreateRulesetInput {
             fn update_http_builder(
                 input: &crate::input::CreateRulesetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1840,7 +1858,7 @@ pub mod create_schedule_input {
         /// Consumes the builder and constructs a [`CreateScheduleInput`](crate::input::CreateScheduleInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateScheduleInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateScheduleInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateScheduleInput {
                 job_names: self.job_names,
@@ -1864,13 +1882,13 @@ impl CreateScheduleInput {
             crate::operation::CreateSchedule,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateScheduleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/schedules").expect("formatting should succeed");
                 Ok(())
             }
@@ -1878,8 +1896,10 @@ impl CreateScheduleInput {
             fn update_http_builder(
                 input: &crate::input::CreateScheduleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1981,7 +2001,7 @@ pub mod delete_dataset_input {
         /// Consumes the builder and constructs a [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDatasetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteDatasetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteDatasetInput { name: self.name })
         }
@@ -2000,29 +2020,31 @@ impl DeleteDatasetInput {
             crate::operation::DeleteDataset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDatasetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.name;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_2,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/datasets/{Name}", Name = name).expect("formatting should succeed");
                 Ok(())
@@ -2031,8 +2053,10 @@ impl DeleteDatasetInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDatasetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2120,7 +2144,8 @@ pub mod delete_job_input {
         /// Consumes the builder and constructs a [`DeleteJobInput`](crate::input::DeleteJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteJobInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::DeleteJobInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::DeleteJobInput { name: self.name })
         }
     }
@@ -2138,29 +2163,31 @@ impl DeleteJobInput {
             crate::operation::DeleteJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.name;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_3,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/jobs/{Name}", Name = name).expect("formatting should succeed");
                 Ok(())
@@ -2169,8 +2196,10 @@ impl DeleteJobInput {
             fn update_http_builder(
                 input: &crate::input::DeleteJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2256,7 +2285,7 @@ pub mod delete_project_input {
         /// Consumes the builder and constructs a [`DeleteProjectInput`](crate::input::DeleteProjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteProjectInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteProjectInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteProjectInput { name: self.name })
         }
@@ -2275,29 +2304,31 @@ impl DeleteProjectInput {
             crate::operation::DeleteProject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteProjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.name;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_4,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/projects/{Name}", Name = name).expect("formatting should succeed");
                 Ok(())
@@ -2306,8 +2337,10 @@ impl DeleteProjectInput {
             fn update_http_builder(
                 input: &crate::input::DeleteProjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2409,8 +2442,10 @@ pub mod delete_recipe_version_input {
         /// Consumes the builder and constructs a [`DeleteRecipeVersionInput`](crate::input::DeleteRecipeVersionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteRecipeVersionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteRecipeVersionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteRecipeVersionInput {
                 name: self.name,
                 recipe_version: self.recipe_version,
@@ -2431,46 +2466,50 @@ impl DeleteRecipeVersionInput {
             crate::operation::DeleteRecipeVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteRecipeVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.name;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_5,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_6 = &_input.recipe_version;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "recipe_version",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "recipe_version",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let recipe_version = aws_smithy_http::label::fmt_string(
                     input_6,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if recipe_version.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "recipe_version",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "recipe_version",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2485,8 +2524,10 @@ impl DeleteRecipeVersionInput {
             fn update_http_builder(
                 input: &crate::input::DeleteRecipeVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2574,7 +2615,7 @@ pub mod delete_ruleset_input {
         /// Consumes the builder and constructs a [`DeleteRulesetInput`](crate::input::DeleteRulesetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteRulesetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteRulesetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteRulesetInput { name: self.name })
         }
@@ -2593,29 +2634,31 @@ impl DeleteRulesetInput {
             crate::operation::DeleteRuleset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteRulesetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.name;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_7,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/rulesets/{Name}", Name = name).expect("formatting should succeed");
                 Ok(())
@@ -2624,8 +2667,10 @@ impl DeleteRulesetInput {
             fn update_http_builder(
                 input: &crate::input::DeleteRulesetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2713,7 +2758,7 @@ pub mod delete_schedule_input {
         /// Consumes the builder and constructs a [`DeleteScheduleInput`](crate::input::DeleteScheduleInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteScheduleInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteScheduleInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteScheduleInput { name: self.name })
         }
@@ -2732,29 +2777,31 @@ impl DeleteScheduleInput {
             crate::operation::DeleteSchedule,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteScheduleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_8 = &_input.name;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_8,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/schedules/{Name}", Name = name)
                     .expect("formatting should succeed");
@@ -2764,8 +2811,10 @@ impl DeleteScheduleInput {
             fn update_http_builder(
                 input: &crate::input::DeleteScheduleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2853,7 +2902,7 @@ pub mod describe_dataset_input {
         /// Consumes the builder and constructs a [`DescribeDatasetInput`](crate::input::DescribeDatasetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDatasetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeDatasetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeDatasetInput { name: self.name })
         }
@@ -2872,29 +2921,31 @@ impl DescribeDatasetInput {
             crate::operation::DescribeDataset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDatasetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.name;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_9,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/datasets/{Name}", Name = name).expect("formatting should succeed");
                 Ok(())
@@ -2903,8 +2954,10 @@ impl DescribeDatasetInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDatasetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2992,7 +3045,7 @@ pub mod describe_job_input {
         /// Consumes the builder and constructs a [`DescribeJobInput`](crate::input::DescribeJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeJobInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeJobInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeJobInput { name: self.name })
         }
@@ -3011,29 +3064,31 @@ impl DescribeJobInput {
             crate::operation::DescribeJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_10 = &_input.name;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_10,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/jobs/{Name}", Name = name).expect("formatting should succeed");
                 Ok(())
@@ -3042,8 +3097,10 @@ impl DescribeJobInput {
             fn update_http_builder(
                 input: &crate::input::DescribeJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3142,7 +3199,7 @@ pub mod describe_job_run_input {
         /// Consumes the builder and constructs a [`DescribeJobRunInput`](crate::input::DescribeJobRunInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeJobRunInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeJobRunInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeJobRunInput {
                 name: self.name,
@@ -3164,46 +3221,50 @@ impl DescribeJobRunInput {
             crate::operation::DescribeJobRun,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeJobRunInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_11 = &_input.name;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_11 = input_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_11,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_12 = &_input.run_id;
-                let input_12 = input_12.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "run_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_12 = input_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "run_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let run_id = aws_smithy_http::label::fmt_string(
                     input_12,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if run_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "run_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "run_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3218,8 +3279,10 @@ impl DescribeJobRunInput {
             fn update_http_builder(
                 input: &crate::input::DescribeJobRunInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3307,7 +3370,7 @@ pub mod describe_project_input {
         /// Consumes the builder and constructs a [`DescribeProjectInput`](crate::input::DescribeProjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeProjectInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeProjectInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeProjectInput { name: self.name })
         }
@@ -3326,29 +3389,31 @@ impl DescribeProjectInput {
             crate::operation::DescribeProject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeProjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_13 = &_input.name;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_13 = input_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_13,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/projects/{Name}", Name = name).expect("formatting should succeed");
                 Ok(())
@@ -3357,8 +3422,10 @@ impl DescribeProjectInput {
             fn update_http_builder(
                 input: &crate::input::DescribeProjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3460,7 +3527,7 @@ pub mod describe_recipe_input {
         /// Consumes the builder and constructs a [`DescribeRecipeInput`](crate::input::DescribeRecipeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeRecipeInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeRecipeInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeRecipeInput {
                 name: self.name,
@@ -3482,29 +3549,31 @@ impl DescribeRecipeInput {
             crate::operation::DescribeRecipe,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeRecipeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_14 = &_input.name;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_14 = input_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_14,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/recipes/{Name}", Name = name).expect("formatting should succeed");
                 Ok(())
@@ -3512,7 +3581,7 @@ impl DescribeRecipeInput {
             fn uri_query(
                 _input: &crate::input::DescribeRecipeInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_15) = &_input.recipe_version {
                     query.push_kv(
@@ -3526,8 +3595,10 @@ impl DescribeRecipeInput {
             fn update_http_builder(
                 input: &crate::input::DescribeRecipeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3616,7 +3687,7 @@ pub mod describe_ruleset_input {
         /// Consumes the builder and constructs a [`DescribeRulesetInput`](crate::input::DescribeRulesetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeRulesetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeRulesetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeRulesetInput { name: self.name })
         }
@@ -3635,29 +3706,31 @@ impl DescribeRulesetInput {
             crate::operation::DescribeRuleset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeRulesetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_16 = &_input.name;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_16 = input_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_16,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/rulesets/{Name}", Name = name).expect("formatting should succeed");
                 Ok(())
@@ -3666,8 +3739,10 @@ impl DescribeRulesetInput {
             fn update_http_builder(
                 input: &crate::input::DescribeRulesetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3755,8 +3830,10 @@ pub mod describe_schedule_input {
         /// Consumes the builder and constructs a [`DescribeScheduleInput`](crate::input::DescribeScheduleInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeScheduleInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeScheduleInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeScheduleInput { name: self.name })
         }
     }
@@ -3774,29 +3851,31 @@ impl DescribeScheduleInput {
             crate::operation::DescribeSchedule,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeScheduleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_17 = &_input.name;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_17 = input_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_17,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/schedules/{Name}", Name = name)
                     .expect("formatting should succeed");
@@ -3806,8 +3885,10 @@ impl DescribeScheduleInput {
             fn update_http_builder(
                 input: &crate::input::DescribeScheduleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3906,7 +3987,7 @@ pub mod list_datasets_input {
         /// Consumes the builder and constructs a [`ListDatasetsInput`](crate::input::ListDatasetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDatasetsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListDatasetsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListDatasetsInput {
                 max_results: self.max_results,
@@ -3928,20 +4009,20 @@ impl ListDatasetsInput {
             crate::operation::ListDatasets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDatasetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/datasets").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListDatasetsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_18) = &_input.max_results {
                     query.push_kv(
@@ -3958,8 +4039,10 @@ impl ListDatasetsInput {
             fn update_http_builder(
                 input: &crate::input::ListDatasetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4070,7 +4153,7 @@ pub mod list_job_runs_input {
         /// Consumes the builder and constructs a [`ListJobRunsInput`](crate::input::ListJobRunsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListJobRunsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListJobRunsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListJobRunsInput {
                 name: self.name,
@@ -4093,29 +4176,31 @@ impl ListJobRunsInput {
             crate::operation::ListJobRuns,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListJobRunsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_20 = &_input.name;
-                let input_20 = input_20.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_20 = input_20.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_20,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/jobs/{Name}/jobRuns", Name = name)
                     .expect("formatting should succeed");
@@ -4124,7 +4209,7 @@ impl ListJobRunsInput {
             fn uri_query(
                 _input: &crate::input::ListJobRunsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_21) = &_input.max_results {
                     query.push_kv(
@@ -4141,8 +4226,10 @@ impl ListJobRunsInput {
             fn update_http_builder(
                 input: &crate::input::ListJobRunsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4264,7 +4351,8 @@ pub mod list_jobs_input {
         /// Consumes the builder and constructs a [`ListJobsInput`](crate::input::ListJobsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListJobsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListJobsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListJobsInput {
                 dataset_name: self.dataset_name,
                 max_results: self.max_results,
@@ -4287,20 +4375,20 @@ impl ListJobsInput {
             crate::operation::ListJobs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListJobsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/jobs").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListJobsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_23) = &_input.dataset_name {
                     query.push_kv(
@@ -4329,8 +4417,10 @@ impl ListJobsInput {
             fn update_http_builder(
                 input: &crate::input::ListJobsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4427,7 +4517,7 @@ pub mod list_projects_input {
         /// Consumes the builder and constructs a [`ListProjectsInput`](crate::input::ListProjectsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListProjectsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListProjectsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListProjectsInput {
                 next_token: self.next_token,
@@ -4449,20 +4539,20 @@ impl ListProjectsInput {
             crate::operation::ListProjects,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListProjectsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/projects").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListProjectsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_27) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_27));
@@ -4479,8 +4569,10 @@ impl ListProjectsInput {
             fn update_http_builder(
                 input: &crate::input::ListProjectsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4596,7 +4688,7 @@ pub mod list_recipes_input {
         /// Consumes the builder and constructs a [`ListRecipesInput`](crate::input::ListRecipesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRecipesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListRecipesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListRecipesInput {
                 max_results: self.max_results,
@@ -4619,20 +4711,20 @@ impl ListRecipesInput {
             crate::operation::ListRecipes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRecipesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/recipes").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListRecipesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_29) = &_input.max_results {
                     query.push_kv(
@@ -4655,8 +4747,10 @@ impl ListRecipesInput {
             fn update_http_builder(
                 input: &crate::input::ListRecipesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4767,8 +4861,10 @@ pub mod list_recipe_versions_input {
         /// Consumes the builder and constructs a [`ListRecipeVersionsInput`](crate::input::ListRecipeVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRecipeVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListRecipeVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListRecipeVersionsInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -4790,20 +4886,20 @@ impl ListRecipeVersionsInput {
             crate::operation::ListRecipeVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRecipeVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/recipeVersions").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListRecipeVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_32) = &_input.max_results {
                     query.push_kv(
@@ -4823,8 +4919,10 @@ impl ListRecipeVersionsInput {
             fn update_http_builder(
                 input: &crate::input::ListRecipeVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4935,7 +5033,7 @@ pub mod list_rulesets_input {
         /// Consumes the builder and constructs a [`ListRulesetsInput`](crate::input::ListRulesetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRulesetsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListRulesetsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListRulesetsInput {
                 target_arn: self.target_arn,
@@ -4958,20 +5056,20 @@ impl ListRulesetsInput {
             crate::operation::ListRulesets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRulesetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/rulesets").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListRulesetsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_35) = &_input.target_arn {
                     query.push_kv("targetArn", &aws_smithy_http::query::fmt_string(&inner_35));
@@ -4991,8 +5089,10 @@ impl ListRulesetsInput {
             fn update_http_builder(
                 input: &crate::input::ListRulesetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5103,7 +5203,7 @@ pub mod list_schedules_input {
         /// Consumes the builder and constructs a [`ListSchedulesInput`](crate::input::ListSchedulesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSchedulesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListSchedulesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListSchedulesInput {
                 job_name: self.job_name,
@@ -5126,20 +5226,20 @@ impl ListSchedulesInput {
             crate::operation::ListSchedules,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListSchedulesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/schedules").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListSchedulesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_38) = &_input.job_name {
                     query.push_kv("jobName", &aws_smithy_http::query::fmt_string(&inner_38));
@@ -5159,8 +5259,10 @@ impl ListSchedulesInput {
             fn update_http_builder(
                 input: &crate::input::ListSchedulesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5249,8 +5351,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -5270,29 +5374,31 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_41 = &_input.resource_arn;
-                let input_41 = input_41.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_41 = input_41.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
                     input_41,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -5302,8 +5408,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -5402,7 +5510,7 @@ pub mod publish_recipe_input {
         /// Consumes the builder and constructs a [`PublishRecipeInput`](crate::input::PublishRecipeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PublishRecipeInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PublishRecipeInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PublishRecipeInput {
                 description: self.description,
@@ -5424,29 +5532,31 @@ impl PublishRecipeInput {
             crate::operation::PublishRecipe,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PublishRecipeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_42 = &_input.name;
-                let input_42 = input_42.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_42 = input_42.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_42,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/recipes/{Name}/publishRecipe", Name = name)
                     .expect("formatting should succeed");
@@ -5456,8 +5566,10 @@ impl PublishRecipeInput {
             fn update_http_builder(
                 input: &crate::input::PublishRecipeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5625,7 +5737,7 @@ pub mod send_project_session_action_input {
             self,
         ) -> Result<
             crate::input::SendProjectSessionActionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::SendProjectSessionActionInput {
                 preview: self.preview.unwrap_or_default(),
@@ -5651,29 +5763,31 @@ impl SendProjectSessionActionInput {
             crate::operation::SendProjectSessionAction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendProjectSessionActionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_43 = &_input.name;
-                let input_43 = input_43.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_43 = input_43.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_43,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5687,8 +5801,10 @@ impl SendProjectSessionActionInput {
             fn update_http_builder(
                 input: &crate::input::SendProjectSessionActionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5792,7 +5908,7 @@ pub mod start_job_run_input {
         /// Consumes the builder and constructs a [`StartJobRunInput`](crate::input::StartJobRunInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartJobRunInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::StartJobRunInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::StartJobRunInput { name: self.name })
         }
@@ -5811,29 +5927,31 @@ impl StartJobRunInput {
             crate::operation::StartJobRun,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartJobRunInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_44 = &_input.name;
-                let input_44 = input_44.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_44 = input_44.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_44,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/jobs/{Name}/startJobRun", Name = name)
                     .expect("formatting should succeed");
@@ -5843,8 +5961,10 @@ impl StartJobRunInput {
             fn update_http_builder(
                 input: &crate::input::StartJobRunInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5943,8 +6063,10 @@ pub mod start_project_session_input {
         /// Consumes the builder and constructs a [`StartProjectSessionInput`](crate::input::StartProjectSessionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartProjectSessionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StartProjectSessionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StartProjectSessionInput {
                 name: self.name,
                 assume_control: self.assume_control.unwrap_or_default(),
@@ -5965,29 +6087,31 @@ impl StartProjectSessionInput {
             crate::operation::StartProjectSession,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartProjectSessionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_45 = &_input.name;
-                let input_45 = input_45.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_45 = input_45.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_45,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/projects/{Name}/startProjectSession", Name = name)
                     .expect("formatting should succeed");
@@ -5997,8 +6121,10 @@ impl StartProjectSessionInput {
             fn update_http_builder(
                 input: &crate::input::StartProjectSessionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -6111,7 +6237,8 @@ pub mod stop_job_run_input {
         /// Consumes the builder and constructs a [`StopJobRunInput`](crate::input::StopJobRunInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StopJobRunInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::StopJobRunInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::StopJobRunInput {
                 name: self.name,
                 run_id: self.run_id,
@@ -6132,46 +6259,50 @@ impl StopJobRunInput {
             crate::operation::StopJobRun,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StopJobRunInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_46 = &_input.name;
-                let input_46 = input_46.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_46 = input_46.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_46,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_47 = &_input.run_id;
-                let input_47 = input_47.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "run_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_47 = input_47.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "run_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let run_id = aws_smithy_http::label::fmt_string(
                     input_47,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if run_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "run_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "run_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -6186,8 +6317,10 @@ impl StopJobRunInput {
             fn update_http_builder(
                 input: &crate::input::StopJobRunInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6303,7 +6436,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -6325,29 +6458,31 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_48 = &_input.resource_arn;
-                let input_48 = input_48.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_48 = input_48.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
                     input_48,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -6357,8 +6492,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6480,7 +6617,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -6502,29 +6639,31 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_49 = &_input.resource_arn;
-                let input_49 = input_49.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_49 = input_49.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
                     input_49,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -6533,7 +6672,7 @@ impl UntagResourceInput {
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_50) = &_input.tag_keys {
                     for inner_51 in inner_50 {
@@ -6546,8 +6685,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6686,7 +6827,7 @@ pub mod update_dataset_input {
         /// Consumes the builder and constructs a [`UpdateDatasetInput`](crate::input::UpdateDatasetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateDatasetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateDatasetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateDatasetInput {
                 name: self.name,
@@ -6711,29 +6852,31 @@ impl UpdateDatasetInput {
             crate::operation::UpdateDataset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateDatasetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_52 = &_input.name;
-                let input_52 = input_52.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_52 = input_52.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_52,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/datasets/{Name}", Name = name).expect("formatting should succeed");
                 Ok(())
@@ -6742,8 +6885,10 @@ impl UpdateDatasetInput {
             fn update_http_builder(
                 input: &crate::input::UpdateDatasetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -7005,8 +7150,10 @@ pub mod update_profile_job_input {
         /// Consumes the builder and constructs a [`UpdateProfileJobInput`](crate::input::UpdateProfileJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateProfileJobInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateProfileJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateProfileJobInput {
                 configuration: self.configuration,
                 encryption_key_arn: self.encryption_key_arn,
@@ -7037,29 +7184,31 @@ impl UpdateProfileJobInput {
             crate::operation::UpdateProfileJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateProfileJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_53 = &_input.name;
-                let input_53 = input_53.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_53 = input_53.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_53,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/profileJobs/{Name}", Name = name)
                     .expect("formatting should succeed");
@@ -7069,8 +7218,10 @@ impl UpdateProfileJobInput {
             fn update_http_builder(
                 input: &crate::input::UpdateProfileJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -7194,7 +7345,7 @@ pub mod update_project_input {
         /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::input::UpdateProjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateProjectInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateProjectInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateProjectInput {
                 sample: self.sample,
@@ -7217,29 +7368,31 @@ impl UpdateProjectInput {
             crate::operation::UpdateProject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateProjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_54 = &_input.name;
-                let input_54 = input_54.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_54 = input_54.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_54,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/projects/{Name}", Name = name).expect("formatting should succeed");
                 Ok(())
@@ -7248,8 +7401,10 @@ impl UpdateProjectInput {
             fn update_http_builder(
                 input: &crate::input::UpdateProjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -7382,7 +7537,7 @@ pub mod update_recipe_input {
         /// Consumes the builder and constructs a [`UpdateRecipeInput`](crate::input::UpdateRecipeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateRecipeInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateRecipeInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateRecipeInput {
                 description: self.description,
@@ -7405,29 +7560,31 @@ impl UpdateRecipeInput {
             crate::operation::UpdateRecipe,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateRecipeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_55 = &_input.name;
-                let input_55 = input_55.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_55 = input_55.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_55,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/recipes/{Name}", Name = name).expect("formatting should succeed");
                 Ok(())
@@ -7436,8 +7593,10 @@ impl UpdateRecipeInput {
             fn update_http_builder(
                 input: &crate::input::UpdateRecipeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -7695,7 +7854,7 @@ pub mod update_recipe_job_input {
         /// Consumes the builder and constructs a [`UpdateRecipeJobInput`](crate::input::UpdateRecipeJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateRecipeJobInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateRecipeJobInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateRecipeJobInput {
                 encryption_key_arn: self.encryption_key_arn,
@@ -7726,29 +7885,31 @@ impl UpdateRecipeJobInput {
             crate::operation::UpdateRecipeJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateRecipeJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_56 = &_input.name;
-                let input_56 = input_56.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_56 = input_56.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_56,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/recipeJobs/{Name}", Name = name)
                     .expect("formatting should succeed");
@@ -7758,8 +7919,10 @@ impl UpdateRecipeJobInput {
             fn update_http_builder(
                 input: &crate::input::UpdateRecipeJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -7892,7 +8055,7 @@ pub mod update_ruleset_input {
         /// Consumes the builder and constructs a [`UpdateRulesetInput`](crate::input::UpdateRulesetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateRulesetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateRulesetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateRulesetInput {
                 name: self.name,
@@ -7915,29 +8078,31 @@ impl UpdateRulesetInput {
             crate::operation::UpdateRuleset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateRulesetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_57 = &_input.name;
-                let input_57 = input_57.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_57 = input_57.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_57,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/rulesets/{Name}", Name = name).expect("formatting should succeed");
                 Ok(())
@@ -7946,8 +8111,10 @@ impl UpdateRulesetInput {
             fn update_http_builder(
                 input: &crate::input::UpdateRulesetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -8083,7 +8250,7 @@ pub mod update_schedule_input {
         /// Consumes the builder and constructs a [`UpdateScheduleInput`](crate::input::UpdateScheduleInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateScheduleInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateScheduleInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateScheduleInput {
                 job_names: self.job_names,
@@ -8106,29 +8273,31 @@ impl UpdateScheduleInput {
             crate::operation::UpdateSchedule,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateScheduleInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_58 = &_input.name;
-                let input_58 = input_58.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_58 = input_58.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_58,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/schedules/{Name}", Name = name)
                     .expect("formatting should succeed");
@@ -8138,8 +8307,10 @@ impl UpdateScheduleInput {
             fn update_http_builder(
                 input: &crate::input::UpdateScheduleInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))

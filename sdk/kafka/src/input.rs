@@ -45,7 +45,7 @@ pub mod batch_associate_scram_secret_input {
             self,
         ) -> Result<
             crate::input::BatchAssociateScramSecretInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::BatchAssociateScramSecretInput {
                 cluster_arn: self.cluster_arn,
@@ -67,29 +67,31 @@ impl BatchAssociateScramSecretInput {
             crate::operation::BatchAssociateScramSecret,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchAssociateScramSecretInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.cluster_arn;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_arn = aws_smithy_http::label::fmt_string(
                     input_1,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -103,8 +105,10 @@ impl BatchAssociateScramSecretInput {
             fn update_http_builder(
                 input: &crate::input::BatchAssociateScramSecretInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -230,7 +234,7 @@ pub mod batch_disassociate_scram_secret_input {
             self,
         ) -> Result<
             crate::input::BatchDisassociateScramSecretInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::BatchDisassociateScramSecretInput {
                 cluster_arn: self.cluster_arn,
@@ -252,29 +256,31 @@ impl BatchDisassociateScramSecretInput {
             crate::operation::BatchDisassociateScramSecret,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchDisassociateScramSecretInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.cluster_arn;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_arn = aws_smithy_http::label::fmt_string(
                     input_2,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -288,8 +294,10 @@ impl BatchDisassociateScramSecretInput {
             fn update_http_builder(
                 input: &crate::input::BatchDisassociateScramSecretInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))
@@ -541,7 +549,7 @@ pub mod create_cluster_input {
         /// Consumes the builder and constructs a [`CreateClusterInput`](crate::input::CreateClusterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateClusterInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateClusterInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateClusterInput {
                 broker_node_group_info: self.broker_node_group_info,
@@ -572,13 +580,13 @@ impl CreateClusterInput {
             crate::operation::CreateCluster,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateClusterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/clusters").expect("formatting should succeed");
                 Ok(())
             }
@@ -586,8 +594,10 @@ impl CreateClusterInput {
             fn update_http_builder(
                 input: &crate::input::CreateClusterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -745,7 +755,7 @@ pub mod create_cluster_v2_input {
         /// Consumes the builder and constructs a [`CreateClusterV2Input`](crate::input::CreateClusterV2Input).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateClusterV2Input, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateClusterV2Input, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateClusterV2Input {
                 cluster_name: self.cluster_name,
@@ -769,13 +779,13 @@ impl CreateClusterV2Input {
             crate::operation::CreateClusterV2,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateClusterV2Input,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/api/v2/clusters").expect("formatting should succeed");
                 Ok(())
             }
@@ -783,8 +793,10 @@ impl CreateClusterV2Input {
             fn update_http_builder(
                 input: &crate::input::CreateClusterV2Input,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -939,8 +951,10 @@ pub mod create_configuration_input {
         /// Consumes the builder and constructs a [`CreateConfigurationInput`](crate::input::CreateConfigurationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateConfigurationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateConfigurationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateConfigurationInput {
                 description: self.description,
                 kafka_versions: self.kafka_versions,
@@ -963,13 +977,13 @@ impl CreateConfigurationInput {
             crate::operation::CreateConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/configurations").expect("formatting should succeed");
                 Ok(())
             }
@@ -977,8 +991,10 @@ impl CreateConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::CreateConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1094,7 +1110,7 @@ pub mod delete_cluster_input {
         /// Consumes the builder and constructs a [`DeleteClusterInput`](crate::input::DeleteClusterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteClusterInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteClusterInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteClusterInput {
                 cluster_arn: self.cluster_arn,
@@ -1116,29 +1132,31 @@ impl DeleteClusterInput {
             crate::operation::DeleteCluster,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteClusterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.cluster_arn;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_arn = aws_smithy_http::label::fmt_string(
                     input_3,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1151,7 +1169,7 @@ impl DeleteClusterInput {
             fn uri_query(
                 _input: &crate::input::DeleteClusterInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_4) = &_input.current_version {
                     query.push_kv(
@@ -1165,8 +1183,10 @@ impl DeleteClusterInput {
             fn update_http_builder(
                 input: &crate::input::DeleteClusterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1255,8 +1275,10 @@ pub mod delete_configuration_input {
         /// Consumes the builder and constructs a [`DeleteConfigurationInput`](crate::input::DeleteConfigurationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteConfigurationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteConfigurationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteConfigurationInput { arn: self.arn })
         }
     }
@@ -1274,29 +1296,31 @@ impl DeleteConfigurationInput {
             crate::operation::DeleteConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.arn;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let arn = aws_smithy_http::label::fmt_string(
                     input_5,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v1/configurations/{Arn}", Arn = arn)
                     .expect("formatting should succeed");
@@ -1306,8 +1330,10 @@ impl DeleteConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1395,7 +1421,7 @@ pub mod describe_cluster_input {
         /// Consumes the builder and constructs a [`DescribeClusterInput`](crate::input::DescribeClusterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeClusterInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeClusterInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeClusterInput {
                 cluster_arn: self.cluster_arn,
@@ -1416,29 +1442,31 @@ impl DescribeClusterInput {
             crate::operation::DescribeCluster,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeClusterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.cluster_arn;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_arn = aws_smithy_http::label::fmt_string(
                     input_6,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1452,8 +1480,10 @@ impl DescribeClusterInput {
             fn update_http_builder(
                 input: &crate::input::DescribeClusterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1546,7 +1576,7 @@ pub mod describe_cluster_operation_input {
             self,
         ) -> Result<
             crate::input::DescribeClusterOperationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeClusterOperationInput {
                 cluster_operation_arn: self.cluster_operation_arn,
@@ -1567,29 +1597,31 @@ impl DescribeClusterOperationInput {
             crate::operation::DescribeClusterOperation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeClusterOperationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.cluster_operation_arn;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_operation_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_operation_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_operation_arn = aws_smithy_http::label::fmt_string(
                     input_7,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_operation_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_operation_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_operation_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1603,8 +1635,10 @@ impl DescribeClusterOperationInput {
             fn update_http_builder(
                 input: &crate::input::DescribeClusterOperationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1692,8 +1726,10 @@ pub mod describe_cluster_v2_input {
         /// Consumes the builder and constructs a [`DescribeClusterV2Input`](crate::input::DescribeClusterV2Input).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeClusterV2Input, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeClusterV2Input,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeClusterV2Input {
                 cluster_arn: self.cluster_arn,
             })
@@ -1713,29 +1749,31 @@ impl DescribeClusterV2Input {
             crate::operation::DescribeClusterV2,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeClusterV2Input,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_8 = &_input.cluster_arn;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_arn = aws_smithy_http::label::fmt_string(
                     input_8,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1749,8 +1787,10 @@ impl DescribeClusterV2Input {
             fn update_http_builder(
                 input: &crate::input::DescribeClusterV2Input,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1838,8 +1878,10 @@ pub mod describe_configuration_input {
         /// Consumes the builder and constructs a [`DescribeConfigurationInput`](crate::input::DescribeConfigurationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeConfigurationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeConfigurationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeConfigurationInput { arn: self.arn })
         }
     }
@@ -1857,29 +1899,31 @@ impl DescribeConfigurationInput {
             crate::operation::DescribeConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.arn;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let arn = aws_smithy_http::label::fmt_string(
                     input_9,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v1/configurations/{Arn}", Arn = arn)
                     .expect("formatting should succeed");
@@ -1889,8 +1933,10 @@ impl DescribeConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DescribeConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1991,7 +2037,7 @@ pub mod describe_configuration_revision_input {
             self,
         ) -> Result<
             crate::input::DescribeConfigurationRevisionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeConfigurationRevisionInput {
                 arn: self.arn,
@@ -2013,38 +2059,42 @@ impl DescribeConfigurationRevisionInput {
             crate::operation::DescribeConfigurationRevision,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeConfigurationRevisionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_10 = &_input.arn;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let arn = aws_smithy_http::label::fmt_string(
                     input_10,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_11 = &_input.revision;
                 let mut revision_encoder = aws_smithy_types::primitive::Encoder::from(*input_11);
                 let revision = revision_encoder.encode();
                 if revision.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "revision",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "revision",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2059,8 +2109,10 @@ impl DescribeConfigurationRevisionInput {
             fn update_http_builder(
                 input: &crate::input::DescribeConfigurationRevisionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2148,8 +2200,10 @@ pub mod get_bootstrap_brokers_input {
         /// Consumes the builder and constructs a [`GetBootstrapBrokersInput`](crate::input::GetBootstrapBrokersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBootstrapBrokersInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetBootstrapBrokersInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetBootstrapBrokersInput {
                 cluster_arn: self.cluster_arn,
             })
@@ -2169,29 +2223,31 @@ impl GetBootstrapBrokersInput {
             crate::operation::GetBootstrapBrokers,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBootstrapBrokersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_12 = &_input.cluster_arn;
-                let input_12 = input_12.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_12 = input_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_arn = aws_smithy_http::label::fmt_string(
                     input_12,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2205,8 +2261,10 @@ impl GetBootstrapBrokersInput {
             fn update_http_builder(
                 input: &crate::input::GetBootstrapBrokersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -2296,7 +2354,7 @@ pub mod get_compatible_kafka_versions_input {
             self,
         ) -> Result<
             crate::input::GetCompatibleKafkaVersionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetCompatibleKafkaVersionsInput {
                 cluster_arn: self.cluster_arn,
@@ -2317,20 +2375,20 @@ impl GetCompatibleKafkaVersionsInput {
             crate::operation::GetCompatibleKafkaVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetCompatibleKafkaVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/compatible-kafka-versions").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetCompatibleKafkaVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_13) = &_input.cluster_arn {
                     query.push_kv("clusterArn", &aws_smithy_http::query::fmt_string(&inner_13));
@@ -2341,8 +2399,10 @@ impl GetCompatibleKafkaVersionsInput {
             fn update_http_builder(
                 input: &crate::input::GetCompatibleKafkaVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2453,8 +2513,10 @@ pub mod list_cluster_operations_input {
         /// Consumes the builder and constructs a [`ListClusterOperationsInput`](crate::input::ListClusterOperationsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListClusterOperationsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListClusterOperationsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListClusterOperationsInput {
                 cluster_arn: self.cluster_arn,
                 max_results: self.max_results.unwrap_or_default(),
@@ -2476,29 +2538,31 @@ impl ListClusterOperationsInput {
             crate::operation::ListClusterOperations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListClusterOperationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_14 = &_input.cluster_arn;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_14 = input_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_arn = aws_smithy_http::label::fmt_string(
                     input_14,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2511,7 +2575,7 @@ impl ListClusterOperationsInput {
             fn uri_query(
                 _input: &crate::input::ListClusterOperationsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -2528,8 +2592,10 @@ impl ListClusterOperationsInput {
             fn update_http_builder(
                 input: &crate::input::ListClusterOperationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2643,7 +2709,7 @@ pub mod list_clusters_input {
         /// Consumes the builder and constructs a [`ListClustersInput`](crate::input::ListClustersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListClustersInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListClustersInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListClustersInput {
                 cluster_name_filter: self.cluster_name_filter,
@@ -2666,20 +2732,20 @@ impl ListClustersInput {
             crate::operation::ListClusters,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListClustersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/clusters").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListClustersInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_16) = &_input.cluster_name_filter {
                     query.push_kv(
@@ -2702,8 +2768,10 @@ impl ListClustersInput {
             fn update_http_builder(
                 input: &crate::input::ListClustersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2831,7 +2899,7 @@ pub mod list_clusters_v2_input {
         /// Consumes the builder and constructs a [`ListClustersV2Input`](crate::input::ListClustersV2Input).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListClustersV2Input, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListClustersV2Input, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListClustersV2Input {
                 cluster_name_filter: self.cluster_name_filter,
@@ -2855,20 +2923,20 @@ impl ListClustersV2Input {
             crate::operation::ListClustersV2,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListClustersV2Input,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/api/v2/clusters").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListClustersV2Input,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_18) = &_input.cluster_name_filter {
                     query.push_kv(
@@ -2897,8 +2965,10 @@ impl ListClustersV2Input {
             fn update_http_builder(
                 input: &crate::input::ListClustersV2Input,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3011,7 +3081,7 @@ pub mod list_configuration_revisions_input {
             self,
         ) -> Result<
             crate::input::ListConfigurationRevisionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListConfigurationRevisionsInput {
                 arn: self.arn,
@@ -3034,29 +3104,31 @@ impl ListConfigurationRevisionsInput {
             crate::operation::ListConfigurationRevisions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListConfigurationRevisionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_21 = &_input.arn;
-                let input_21 = input_21.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_21 = input_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let arn = aws_smithy_http::label::fmt_string(
                     input_21,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v1/configurations/{Arn}/revisions", Arn = arn)
                     .expect("formatting should succeed");
@@ -3065,7 +3137,7 @@ impl ListConfigurationRevisionsInput {
             fn uri_query(
                 _input: &crate::input::ListConfigurationRevisionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -3082,8 +3154,10 @@ impl ListConfigurationRevisionsInput {
             fn update_http_builder(
                 input: &crate::input::ListConfigurationRevisionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3183,8 +3257,10 @@ pub mod list_configurations_input {
         /// Consumes the builder and constructs a [`ListConfigurationsInput`](crate::input::ListConfigurationsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListConfigurationsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListConfigurationsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListConfigurationsInput {
                 max_results: self.max_results.unwrap_or_default(),
                 next_token: self.next_token,
@@ -3205,20 +3281,20 @@ impl ListConfigurationsInput {
             crate::operation::ListConfigurations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListConfigurationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/configurations").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListConfigurationsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -3235,8 +3311,10 @@ impl ListConfigurationsInput {
             fn update_http_builder(
                 input: &crate::input::ListConfigurationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3336,8 +3414,10 @@ pub mod list_kafka_versions_input {
         /// Consumes the builder and constructs a [`ListKafkaVersionsInput`](crate::input::ListKafkaVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListKafkaVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListKafkaVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListKafkaVersionsInput {
                 max_results: self.max_results.unwrap_or_default(),
                 next_token: self.next_token,
@@ -3358,20 +3438,20 @@ impl ListKafkaVersionsInput {
             crate::operation::ListKafkaVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListKafkaVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/kafka-versions").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListKafkaVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -3388,8 +3468,10 @@ impl ListKafkaVersionsInput {
             fn update_http_builder(
                 input: &crate::input::ListKafkaVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3500,7 +3582,8 @@ pub mod list_nodes_input {
         /// Consumes the builder and constructs a [`ListNodesInput`](crate::input::ListNodesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListNodesInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListNodesInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListNodesInput {
                 cluster_arn: self.cluster_arn,
                 max_results: self.max_results.unwrap_or_default(),
@@ -3522,29 +3605,31 @@ impl ListNodesInput {
             crate::operation::ListNodes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListNodesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_25 = &_input.cluster_arn;
-                let input_25 = input_25.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_25 = input_25.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_arn = aws_smithy_http::label::fmt_string(
                     input_25,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3557,7 +3642,7 @@ impl ListNodesInput {
             fn uri_query(
                 _input: &crate::input::ListNodesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -3574,8 +3659,10 @@ impl ListNodesInput {
             fn update_http_builder(
                 input: &crate::input::ListNodesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3684,8 +3771,10 @@ pub mod list_scram_secrets_input {
         /// Consumes the builder and constructs a [`ListScramSecretsInput`](crate::input::ListScramSecretsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListScramSecretsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListScramSecretsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListScramSecretsInput {
                 cluster_arn: self.cluster_arn,
                 max_results: self.max_results.unwrap_or_default(),
@@ -3707,29 +3796,31 @@ impl ListScramSecretsInput {
             crate::operation::ListScramSecrets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListScramSecretsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_27 = &_input.cluster_arn;
-                let input_27 = input_27.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_27 = input_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_arn = aws_smithy_http::label::fmt_string(
                     input_27,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3742,7 +3833,7 @@ impl ListScramSecretsInput {
             fn uri_query(
                 _input: &crate::input::ListScramSecretsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if _input.max_results != 0 {
                     query.push_kv(
@@ -3759,8 +3850,10 @@ impl ListScramSecretsInput {
             fn update_http_builder(
                 input: &crate::input::ListScramSecretsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3849,8 +3942,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -3870,29 +3965,31 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_29 = &_input.resource_arn;
-                let input_29 = input_29.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_29 = input_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
                     input_29,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v1/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -3902,8 +3999,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -4011,7 +4110,7 @@ pub mod reboot_broker_input {
         /// Consumes the builder and constructs a [`RebootBrokerInput`](crate::input::RebootBrokerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RebootBrokerInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::RebootBrokerInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::RebootBrokerInput {
                 broker_ids: self.broker_ids,
@@ -4033,29 +4132,31 @@ impl RebootBrokerInput {
             crate::operation::RebootBroker,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RebootBrokerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_30 = &_input.cluster_arn;
-                let input_30 = input_30.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_30 = input_30.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_arn = aws_smithy_http::label::fmt_string(
                     input_30,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4069,8 +4170,10 @@ impl RebootBrokerInput {
             fn update_http_builder(
                 input: &crate::input::RebootBrokerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -4200,7 +4303,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -4222,29 +4325,31 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_31 = &_input.resource_arn;
-                let input_31 = input_31.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_31 = input_31.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
                     input_31,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v1/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -4254,8 +4359,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4389,7 +4496,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -4411,29 +4518,31 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_32 = &_input.resource_arn;
-                let input_32 = input_32.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_32 = input_32.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
                     input_32,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v1/tags/{ResourceArn}", ResourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -4442,7 +4551,7 @@ impl UntagResourceInput {
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_33) = &_input.tag_keys {
                     for inner_34 in inner_33 {
@@ -4455,8 +4564,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4573,8 +4684,10 @@ pub mod update_broker_count_input {
         /// Consumes the builder and constructs a [`UpdateBrokerCountInput`](crate::input::UpdateBrokerCountInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateBrokerCountInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateBrokerCountInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateBrokerCountInput {
                 cluster_arn: self.cluster_arn,
                 current_version: self.current_version,
@@ -4598,29 +4711,31 @@ impl UpdateBrokerCountInput {
             crate::operation::UpdateBrokerCount,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateBrokerCountInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_35 = &_input.cluster_arn;
-                let input_35 = input_35.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_35 = input_35.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_arn = aws_smithy_http::label::fmt_string(
                     input_35,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4634,8 +4749,10 @@ impl UpdateBrokerCountInput {
             fn update_http_builder(
                 input: &crate::input::UpdateBrokerCountInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -4775,8 +4892,10 @@ pub mod update_broker_storage_input {
         /// Consumes the builder and constructs a [`UpdateBrokerStorageInput`](crate::input::UpdateBrokerStorageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateBrokerStorageInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateBrokerStorageInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateBrokerStorageInput {
                 cluster_arn: self.cluster_arn,
                 current_version: self.current_version,
@@ -4798,29 +4917,31 @@ impl UpdateBrokerStorageInput {
             crate::operation::UpdateBrokerStorage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateBrokerStorageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_36 = &_input.cluster_arn;
-                let input_36 = input_36.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_36 = input_36.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_arn = aws_smithy_http::label::fmt_string(
                     input_36,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4834,8 +4955,10 @@ impl UpdateBrokerStorageInput {
             fn update_http_builder(
                 input: &crate::input::UpdateBrokerStorageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -4965,8 +5088,10 @@ pub mod update_broker_type_input {
         /// Consumes the builder and constructs a [`UpdateBrokerTypeInput`](crate::input::UpdateBrokerTypeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateBrokerTypeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateBrokerTypeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateBrokerTypeInput {
                 cluster_arn: self.cluster_arn,
                 current_version: self.current_version,
@@ -4988,29 +5113,31 @@ impl UpdateBrokerTypeInput {
             crate::operation::UpdateBrokerType,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateBrokerTypeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_37 = &_input.cluster_arn;
-                let input_37 = input_37.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_37 = input_37.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_arn = aws_smithy_http::label::fmt_string(
                     input_37,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5024,8 +5151,10 @@ impl UpdateBrokerTypeInput {
             fn update_http_builder(
                 input: &crate::input::UpdateBrokerTypeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5157,7 +5286,7 @@ pub mod update_cluster_configuration_input {
             self,
         ) -> Result<
             crate::input::UpdateClusterConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateClusterConfigurationInput {
                 cluster_arn: self.cluster_arn,
@@ -5180,29 +5309,31 @@ impl UpdateClusterConfigurationInput {
             crate::operation::UpdateClusterConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateClusterConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_38 = &_input.cluster_arn;
-                let input_38 = input_38.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_38 = input_38.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_arn = aws_smithy_http::label::fmt_string(
                     input_38,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5216,8 +5347,10 @@ impl UpdateClusterConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateClusterConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5365,7 +5498,7 @@ pub mod update_cluster_kafka_version_input {
             self,
         ) -> Result<
             crate::input::UpdateClusterKafkaVersionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateClusterKafkaVersionInput {
                 cluster_arn: self.cluster_arn,
@@ -5389,29 +5522,31 @@ impl UpdateClusterKafkaVersionInput {
             crate::operation::UpdateClusterKafkaVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateClusterKafkaVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_39 = &_input.cluster_arn;
-                let input_39 = input_39.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_39 = input_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_arn = aws_smithy_http::label::fmt_string(
                     input_39,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5425,8 +5560,10 @@ impl UpdateClusterKafkaVersionInput {
             fn update_http_builder(
                 input: &crate::input::UpdateClusterKafkaVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5563,8 +5700,10 @@ pub mod update_configuration_input {
         /// Consumes the builder and constructs a [`UpdateConfigurationInput`](crate::input::UpdateConfigurationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateConfigurationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateConfigurationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateConfigurationInput {
                 arn: self.arn,
                 description: self.description,
@@ -5586,29 +5725,31 @@ impl UpdateConfigurationInput {
             crate::operation::UpdateConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_40 = &_input.arn;
-                let input_40 = input_40.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_40 = input_40.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let arn = aws_smithy_http::label::fmt_string(
                     input_40,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v1/configurations/{Arn}", Arn = arn)
                     .expect("formatting should succeed");
@@ -5618,8 +5759,10 @@ impl UpdateConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5749,8 +5892,10 @@ pub mod update_connectivity_input {
         /// Consumes the builder and constructs a [`UpdateConnectivityInput`](crate::input::UpdateConnectivityInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateConnectivityInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateConnectivityInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateConnectivityInput {
                 cluster_arn: self.cluster_arn,
                 connectivity_info: self.connectivity_info,
@@ -5772,29 +5917,31 @@ impl UpdateConnectivityInput {
             crate::operation::UpdateConnectivity,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateConnectivityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_41 = &_input.cluster_arn;
-                let input_41 = input_41.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_41 = input_41.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_arn = aws_smithy_http::label::fmt_string(
                     input_41,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5808,8 +5955,10 @@ impl UpdateConnectivityInput {
             fn update_http_builder(
                 input: &crate::input::UpdateConnectivityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -5967,8 +6116,10 @@ pub mod update_monitoring_input {
         /// Consumes the builder and constructs a [`UpdateMonitoringInput`](crate::input::UpdateMonitoringInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateMonitoringInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateMonitoringInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateMonitoringInput {
                 cluster_arn: self.cluster_arn,
                 current_version: self.current_version,
@@ -5992,29 +6143,31 @@ impl UpdateMonitoringInput {
             crate::operation::UpdateMonitoring,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateMonitoringInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_42 = &_input.cluster_arn;
-                let input_42 = input_42.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_42 = input_42.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_arn = aws_smithy_http::label::fmt_string(
                     input_42,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -6028,8 +6181,10 @@ impl UpdateMonitoringInput {
             fn update_http_builder(
                 input: &crate::input::UpdateMonitoringInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -6173,7 +6328,7 @@ pub mod update_security_input {
         /// Consumes the builder and constructs a [`UpdateSecurityInput`](crate::input::UpdateSecurityInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateSecurityInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateSecurityInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateSecurityInput {
                 client_authentication: self.client_authentication,
@@ -6197,29 +6352,31 @@ impl UpdateSecurityInput {
             crate::operation::UpdateSecurity,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateSecurityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_43 = &_input.cluster_arn;
-                let input_43 = input_43.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_43 = input_43.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "cluster_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let cluster_arn = aws_smithy_http::label::fmt_string(
                     input_43,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if cluster_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "cluster_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "cluster_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -6233,8 +6390,10 @@ impl UpdateSecurityInput {
             fn update_http_builder(
                 input: &crate::input::UpdateSecurityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PATCH").uri(uri))

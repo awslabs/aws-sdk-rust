@@ -19,6 +19,7 @@ use std::time::Duration;
 
 use crate::meta::credentials::LazyCachingCredentialsProvider;
 use crate::provider_config::ProviderConfig;
+use aws_smithy_types::error::display::DisplayErrorContext;
 use tracing::Instrument;
 
 /// Credentials provider that uses credentials provided by another provider to assume a role
@@ -253,21 +254,20 @@ impl Inner {
                 );
                 super::util::into_credentials(assumed.credentials, "AssumeRoleProvider")
             }
-            Err(SdkError::ServiceError { err, raw }) => {
-                match err.kind {
+            Err(SdkError::ServiceError(ref context))
+                if matches!(
+                    context.err().kind,
                     AssumeRoleErrorKind::RegionDisabledException(_)
-                    | AssumeRoleErrorKind::MalformedPolicyDocumentException(_) => {
-                        return Err(CredentialsError::invalid_configuration(
-                            SdkError::ServiceError { err, raw },
-                        ))
-                    }
-                    _ => {}
-                }
-                tracing::warn!(error = ?err.message(), "STS refused to grant assume role");
-                Err(CredentialsError::provider_error(SdkError::ServiceError {
-                    err,
-                    raw,
-                }))
+                        | AssumeRoleErrorKind::MalformedPolicyDocumentException(_)
+                ) =>
+            {
+                Err(CredentialsError::invalid_configuration(
+                    assumed.err().unwrap(),
+                ))
+            }
+            Err(SdkError::ServiceError(ref context)) => {
+                tracing::warn!(error = %DisplayErrorContext(context.err()), "STS refused to grant assume role");
+                Err(CredentialsError::provider_error(assumed.err().unwrap()))
             }
             Err(err) => Err(CredentialsError::provider_error(err)),
         }

@@ -107,8 +107,10 @@ pub mod create_gateway_route_input {
         /// Consumes the builder and constructs a [`CreateGatewayRouteInput`](crate::input::CreateGatewayRouteInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateGatewayRouteInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateGatewayRouteInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateGatewayRouteInput {
                 gateway_route_name: self.gateway_route_name,
                 mesh_name: self.mesh_name,
@@ -134,7 +136,7 @@ impl CreateGatewayRouteInput {
             crate::operation::CreateGatewayRoute,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -143,40 +145,44 @@ impl CreateGatewayRouteInput {
             fn uri_base(
                 _input: &crate::input::CreateGatewayRouteInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.mesh_name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_1,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_2 = &_input.virtual_gateway_name;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_gateway_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_gateway_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_gateway_name = aws_smithy_http::label::fmt_string(
                     input_2,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_gateway_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_gateway_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_gateway_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes", meshName = mesh_name, virtualGatewayName = virtual_gateway_name).expect("formatting should succeed");
                 Ok(())
@@ -184,7 +190,7 @@ impl CreateGatewayRouteInput {
             fn uri_query(
                 _input: &crate::input::CreateGatewayRouteInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_3) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_3));
@@ -195,8 +201,10 @@ impl CreateGatewayRouteInput {
             fn update_http_builder(
                 input: &crate::input::CreateGatewayRouteInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -341,7 +349,8 @@ pub mod create_mesh_input {
         /// Consumes the builder and constructs a [`CreateMeshInput`](crate::input::CreateMeshInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateMeshInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::CreateMeshInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::CreateMeshInput {
                 mesh_name: self.mesh_name,
                 spec: self.spec,
@@ -364,7 +373,7 @@ impl CreateMeshInput {
             crate::operation::CreateMesh,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -373,7 +382,7 @@ impl CreateMeshInput {
             fn uri_base(
                 _input: &crate::input::CreateMeshInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v20190125/meshes").expect("formatting should succeed");
                 Ok(())
             }
@@ -381,8 +390,10 @@ impl CreateMeshInput {
             fn update_http_builder(
                 input: &crate::input::CreateMeshInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -562,7 +573,7 @@ pub mod create_route_input {
         /// Consumes the builder and constructs a [`CreateRouteInput`](crate::input::CreateRouteInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateRouteInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateRouteInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateRouteInput {
                 route_name: self.route_name,
@@ -589,7 +600,7 @@ impl CreateRouteInput {
             crate::operation::CreateRoute,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -598,40 +609,44 @@ impl CreateRouteInput {
             fn uri_base(
                 _input: &crate::input::CreateRouteInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.mesh_name;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_4,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_5 = &_input.virtual_router_name;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_router_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_router_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_router_name = aws_smithy_http::label::fmt_string(
                     input_5,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_router_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_router_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_router_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -645,7 +660,7 @@ impl CreateRouteInput {
             fn uri_query(
                 _input: &crate::input::CreateRouteInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_6) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_6));
@@ -656,8 +671,10 @@ impl CreateRouteInput {
             fn update_http_builder(
                 input: &crate::input::CreateRouteInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -830,8 +847,10 @@ pub mod create_virtual_gateway_input {
         /// Consumes the builder and constructs a [`CreateVirtualGatewayInput`](crate::input::CreateVirtualGatewayInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateVirtualGatewayInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateVirtualGatewayInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateVirtualGatewayInput {
                 virtual_gateway_name: self.virtual_gateway_name,
                 mesh_name: self.mesh_name,
@@ -856,7 +875,7 @@ impl CreateVirtualGatewayInput {
             crate::operation::CreateVirtualGateway,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -865,23 +884,25 @@ impl CreateVirtualGatewayInput {
             fn uri_base(
                 _input: &crate::input::CreateVirtualGatewayInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.mesh_name;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_7,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -894,7 +915,7 @@ impl CreateVirtualGatewayInput {
             fn uri_query(
                 _input: &crate::input::CreateVirtualGatewayInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_8) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_8));
@@ -905,8 +926,10 @@ impl CreateVirtualGatewayInput {
             fn update_http_builder(
                 input: &crate::input::CreateVirtualGatewayInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1081,8 +1104,10 @@ pub mod create_virtual_node_input {
         /// Consumes the builder and constructs a [`CreateVirtualNodeInput`](crate::input::CreateVirtualNodeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateVirtualNodeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateVirtualNodeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateVirtualNodeInput {
                 virtual_node_name: self.virtual_node_name,
                 mesh_name: self.mesh_name,
@@ -1107,7 +1132,7 @@ impl CreateVirtualNodeInput {
             crate::operation::CreateVirtualNode,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1116,23 +1141,25 @@ impl CreateVirtualNodeInput {
             fn uri_base(
                 _input: &crate::input::CreateVirtualNodeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_9 = &_input.mesh_name;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_9,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1145,7 +1172,7 @@ impl CreateVirtualNodeInput {
             fn uri_query(
                 _input: &crate::input::CreateVirtualNodeInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_10) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_10));
@@ -1156,8 +1183,10 @@ impl CreateVirtualNodeInput {
             fn update_http_builder(
                 input: &crate::input::CreateVirtualNodeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1330,8 +1359,10 @@ pub mod create_virtual_router_input {
         /// Consumes the builder and constructs a [`CreateVirtualRouterInput`](crate::input::CreateVirtualRouterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateVirtualRouterInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateVirtualRouterInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateVirtualRouterInput {
                 virtual_router_name: self.virtual_router_name,
                 mesh_name: self.mesh_name,
@@ -1356,7 +1387,7 @@ impl CreateVirtualRouterInput {
             crate::operation::CreateVirtualRouter,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1365,23 +1396,25 @@ impl CreateVirtualRouterInput {
             fn uri_base(
                 _input: &crate::input::CreateVirtualRouterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_11 = &_input.mesh_name;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_11 = input_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_11,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1394,7 +1427,7 @@ impl CreateVirtualRouterInput {
             fn uri_query(
                 _input: &crate::input::CreateVirtualRouterInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_12) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_12));
@@ -1405,8 +1438,10 @@ impl CreateVirtualRouterInput {
             fn update_http_builder(
                 input: &crate::input::CreateVirtualRouterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1579,8 +1614,10 @@ pub mod create_virtual_service_input {
         /// Consumes the builder and constructs a [`CreateVirtualServiceInput`](crate::input::CreateVirtualServiceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateVirtualServiceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateVirtualServiceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateVirtualServiceInput {
                 virtual_service_name: self.virtual_service_name,
                 mesh_name: self.mesh_name,
@@ -1605,7 +1642,7 @@ impl CreateVirtualServiceInput {
             crate::operation::CreateVirtualService,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1614,23 +1651,25 @@ impl CreateVirtualServiceInput {
             fn uri_base(
                 _input: &crate::input::CreateVirtualServiceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_13 = &_input.mesh_name;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_13 = input_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_13,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1643,7 +1682,7 @@ impl CreateVirtualServiceInput {
             fn uri_query(
                 _input: &crate::input::CreateVirtualServiceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_14) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_14));
@@ -1654,8 +1693,10 @@ impl CreateVirtualServiceInput {
             fn update_http_builder(
                 input: &crate::input::CreateVirtualServiceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1799,8 +1840,10 @@ pub mod delete_gateway_route_input {
         /// Consumes the builder and constructs a [`DeleteGatewayRouteInput`](crate::input::DeleteGatewayRouteInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteGatewayRouteInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteGatewayRouteInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteGatewayRouteInput {
                 gateway_route_name: self.gateway_route_name,
                 mesh_name: self.mesh_name,
@@ -1823,63 +1866,69 @@ impl DeleteGatewayRouteInput {
             crate::operation::DeleteGatewayRoute,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteGatewayRouteInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_15 = &_input.mesh_name;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_15 = input_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_15,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_16 = &_input.virtual_gateway_name;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_gateway_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_16 = input_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_gateway_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_gateway_name = aws_smithy_http::label::fmt_string(
                     input_16,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_gateway_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_gateway_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_gateway_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_17 = &_input.gateway_route_name;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "gateway_route_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_17 = input_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "gateway_route_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let gateway_route_name = aws_smithy_http::label::fmt_string(
                     input_17,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if gateway_route_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "gateway_route_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "gateway_route_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes/{gatewayRouteName}", meshName = mesh_name, virtualGatewayName = virtual_gateway_name, gatewayRouteName = gateway_route_name).expect("formatting should succeed");
                 Ok(())
@@ -1887,7 +1936,7 @@ impl DeleteGatewayRouteInput {
             fn uri_query(
                 _input: &crate::input::DeleteGatewayRouteInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_18) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_18));
@@ -1898,8 +1947,10 @@ impl DeleteGatewayRouteInput {
             fn update_http_builder(
                 input: &crate::input::DeleteGatewayRouteInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1988,7 +2039,8 @@ pub mod delete_mesh_input {
         /// Consumes the builder and constructs a [`DeleteMeshInput`](crate::input::DeleteMeshInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteMeshInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::DeleteMeshInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::DeleteMeshInput {
                 mesh_name: self.mesh_name,
             })
@@ -2008,29 +2060,31 @@ impl DeleteMeshInput {
             crate::operation::DeleteMesh,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteMeshInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_19 = &_input.mesh_name;
-                let input_19 = input_19.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_19 = input_19.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_19,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20190125/meshes/{meshName}", meshName = mesh_name)
                     .expect("formatting should succeed");
@@ -2040,8 +2094,10 @@ impl DeleteMeshInput {
             fn update_http_builder(
                 input: &crate::input::DeleteMeshInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2165,7 +2221,7 @@ pub mod delete_route_input {
         /// Consumes the builder and constructs a [`DeleteRouteInput`](crate::input::DeleteRouteInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteRouteInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteRouteInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteRouteInput {
                 route_name: self.route_name,
@@ -2189,63 +2245,69 @@ impl DeleteRouteInput {
             crate::operation::DeleteRoute,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteRouteInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_20 = &_input.mesh_name;
-                let input_20 = input_20.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_20 = input_20.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_20,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_21 = &_input.virtual_router_name;
-                let input_21 = input_21.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_router_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_21 = input_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_router_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_router_name = aws_smithy_http::label::fmt_string(
                     input_21,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_router_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_router_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_router_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_22 = &_input.route_name;
-                let input_22 = input_22.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "route_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_22 = input_22.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "route_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let route_name = aws_smithy_http::label::fmt_string(
                     input_22,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if route_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "route_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "route_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}", meshName = mesh_name, virtualRouterName = virtual_router_name, routeName = route_name).expect("formatting should succeed");
                 Ok(())
@@ -2253,7 +2315,7 @@ impl DeleteRouteInput {
             fn uri_query(
                 _input: &crate::input::DeleteRouteInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_23) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_23));
@@ -2264,8 +2326,10 @@ impl DeleteRouteInput {
             fn update_http_builder(
                 input: &crate::input::DeleteRouteInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2379,8 +2443,10 @@ pub mod delete_virtual_gateway_input {
         /// Consumes the builder and constructs a [`DeleteVirtualGatewayInput`](crate::input::DeleteVirtualGatewayInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteVirtualGatewayInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteVirtualGatewayInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteVirtualGatewayInput {
                 virtual_gateway_name: self.virtual_gateway_name,
                 mesh_name: self.mesh_name,
@@ -2402,46 +2468,50 @@ impl DeleteVirtualGatewayInput {
             crate::operation::DeleteVirtualGateway,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteVirtualGatewayInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_24 = &_input.mesh_name;
-                let input_24 = input_24.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_24 = input_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_24,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_25 = &_input.virtual_gateway_name;
-                let input_25 = input_25.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_gateway_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_25 = input_25.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_gateway_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_gateway_name = aws_smithy_http::label::fmt_string(
                     input_25,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_gateway_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_gateway_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_gateway_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2455,7 +2525,7 @@ impl DeleteVirtualGatewayInput {
             fn uri_query(
                 _input: &crate::input::DeleteVirtualGatewayInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_26) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_26));
@@ -2466,8 +2536,10 @@ impl DeleteVirtualGatewayInput {
             fn update_http_builder(
                 input: &crate::input::DeleteVirtualGatewayInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2581,8 +2653,10 @@ pub mod delete_virtual_node_input {
         /// Consumes the builder and constructs a [`DeleteVirtualNodeInput`](crate::input::DeleteVirtualNodeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteVirtualNodeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteVirtualNodeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteVirtualNodeInput {
                 virtual_node_name: self.virtual_node_name,
                 mesh_name: self.mesh_name,
@@ -2604,46 +2678,50 @@ impl DeleteVirtualNodeInput {
             crate::operation::DeleteVirtualNode,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteVirtualNodeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_27 = &_input.mesh_name;
-                let input_27 = input_27.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_27 = input_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_27,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_28 = &_input.virtual_node_name;
-                let input_28 = input_28.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_node_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_28 = input_28.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_node_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_node_name = aws_smithy_http::label::fmt_string(
                     input_28,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_node_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_node_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_node_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2657,7 +2735,7 @@ impl DeleteVirtualNodeInput {
             fn uri_query(
                 _input: &crate::input::DeleteVirtualNodeInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_29) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_29));
@@ -2668,8 +2746,10 @@ impl DeleteVirtualNodeInput {
             fn update_http_builder(
                 input: &crate::input::DeleteVirtualNodeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2783,8 +2863,10 @@ pub mod delete_virtual_router_input {
         /// Consumes the builder and constructs a [`DeleteVirtualRouterInput`](crate::input::DeleteVirtualRouterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteVirtualRouterInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteVirtualRouterInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteVirtualRouterInput {
                 virtual_router_name: self.virtual_router_name,
                 mesh_name: self.mesh_name,
@@ -2806,46 +2888,50 @@ impl DeleteVirtualRouterInput {
             crate::operation::DeleteVirtualRouter,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteVirtualRouterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_30 = &_input.mesh_name;
-                let input_30 = input_30.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_30 = input_30.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_30,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_31 = &_input.virtual_router_name;
-                let input_31 = input_31.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_router_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_31 = input_31.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_router_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_router_name = aws_smithy_http::label::fmt_string(
                     input_31,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_router_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_router_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_router_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2859,7 +2945,7 @@ impl DeleteVirtualRouterInput {
             fn uri_query(
                 _input: &crate::input::DeleteVirtualRouterInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_32) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_32));
@@ -2870,8 +2956,10 @@ impl DeleteVirtualRouterInput {
             fn update_http_builder(
                 input: &crate::input::DeleteVirtualRouterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2985,8 +3073,10 @@ pub mod delete_virtual_service_input {
         /// Consumes the builder and constructs a [`DeleteVirtualServiceInput`](crate::input::DeleteVirtualServiceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteVirtualServiceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteVirtualServiceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteVirtualServiceInput {
                 virtual_service_name: self.virtual_service_name,
                 mesh_name: self.mesh_name,
@@ -3008,46 +3098,50 @@ impl DeleteVirtualServiceInput {
             crate::operation::DeleteVirtualService,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteVirtualServiceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_33 = &_input.mesh_name;
-                let input_33 = input_33.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_33 = input_33.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_33,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_34 = &_input.virtual_service_name;
-                let input_34 = input_34.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_service_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_34 = input_34.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_service_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_service_name = aws_smithy_http::label::fmt_string(
                     input_34,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_service_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_service_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_service_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3061,7 +3155,7 @@ impl DeleteVirtualServiceInput {
             fn uri_query(
                 _input: &crate::input::DeleteVirtualServiceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_35) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_35));
@@ -3072,8 +3166,10 @@ impl DeleteVirtualServiceInput {
             fn update_http_builder(
                 input: &crate::input::DeleteVirtualServiceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3201,8 +3297,10 @@ pub mod describe_gateway_route_input {
         /// Consumes the builder and constructs a [`DescribeGatewayRouteInput`](crate::input::DescribeGatewayRouteInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeGatewayRouteInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeGatewayRouteInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeGatewayRouteInput {
                 gateway_route_name: self.gateway_route_name,
                 mesh_name: self.mesh_name,
@@ -3225,63 +3323,69 @@ impl DescribeGatewayRouteInput {
             crate::operation::DescribeGatewayRoute,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeGatewayRouteInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_36 = &_input.mesh_name;
-                let input_36 = input_36.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_36 = input_36.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_36,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_37 = &_input.virtual_gateway_name;
-                let input_37 = input_37.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_gateway_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_37 = input_37.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_gateway_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_gateway_name = aws_smithy_http::label::fmt_string(
                     input_37,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_gateway_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_gateway_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_gateway_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_38 = &_input.gateway_route_name;
-                let input_38 = input_38.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "gateway_route_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_38 = input_38.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "gateway_route_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let gateway_route_name = aws_smithy_http::label::fmt_string(
                     input_38,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if gateway_route_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "gateway_route_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "gateway_route_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes/{gatewayRouteName}", meshName = mesh_name, virtualGatewayName = virtual_gateway_name, gatewayRouteName = gateway_route_name).expect("formatting should succeed");
                 Ok(())
@@ -3289,7 +3393,7 @@ impl DescribeGatewayRouteInput {
             fn uri_query(
                 _input: &crate::input::DescribeGatewayRouteInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_39) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_39));
@@ -3300,8 +3404,10 @@ impl DescribeGatewayRouteInput {
             fn update_http_builder(
                 input: &crate::input::DescribeGatewayRouteInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3401,7 +3507,7 @@ pub mod describe_mesh_input {
         /// Consumes the builder and constructs a [`DescribeMeshInput`](crate::input::DescribeMeshInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeMeshInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeMeshInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeMeshInput {
                 mesh_name: self.mesh_name,
@@ -3423,29 +3529,31 @@ impl DescribeMeshInput {
             crate::operation::DescribeMesh,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeMeshInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_40 = &_input.mesh_name;
-                let input_40 = input_40.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_40 = input_40.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_40,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20190125/meshes/{meshName}", meshName = mesh_name)
                     .expect("formatting should succeed");
@@ -3454,7 +3562,7 @@ impl DescribeMeshInput {
             fn uri_query(
                 _input: &crate::input::DescribeMeshInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_41) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_41));
@@ -3465,8 +3573,10 @@ impl DescribeMeshInput {
             fn update_http_builder(
                 input: &crate::input::DescribeMeshInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3591,7 +3701,7 @@ pub mod describe_route_input {
         /// Consumes the builder and constructs a [`DescribeRouteInput`](crate::input::DescribeRouteInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeRouteInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeRouteInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeRouteInput {
                 route_name: self.route_name,
@@ -3615,63 +3725,69 @@ impl DescribeRouteInput {
             crate::operation::DescribeRoute,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeRouteInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_42 = &_input.mesh_name;
-                let input_42 = input_42.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_42 = input_42.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_42,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_43 = &_input.virtual_router_name;
-                let input_43 = input_43.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_router_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_43 = input_43.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_router_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_router_name = aws_smithy_http::label::fmt_string(
                     input_43,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_router_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_router_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_router_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_44 = &_input.route_name;
-                let input_44 = input_44.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "route_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_44 = input_44.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "route_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let route_name = aws_smithy_http::label::fmt_string(
                     input_44,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if route_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "route_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "route_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}", meshName = mesh_name, virtualRouterName = virtual_router_name, routeName = route_name).expect("formatting should succeed");
                 Ok(())
@@ -3679,7 +3795,7 @@ impl DescribeRouteInput {
             fn uri_query(
                 _input: &crate::input::DescribeRouteInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_45) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_45));
@@ -3690,8 +3806,10 @@ impl DescribeRouteInput {
             fn update_http_builder(
                 input: &crate::input::DescribeRouteInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3805,8 +3923,10 @@ pub mod describe_virtual_gateway_input {
         /// Consumes the builder and constructs a [`DescribeVirtualGatewayInput`](crate::input::DescribeVirtualGatewayInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeVirtualGatewayInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeVirtualGatewayInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeVirtualGatewayInput {
                 virtual_gateway_name: self.virtual_gateway_name,
                 mesh_name: self.mesh_name,
@@ -3828,46 +3948,50 @@ impl DescribeVirtualGatewayInput {
             crate::operation::DescribeVirtualGateway,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeVirtualGatewayInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_46 = &_input.mesh_name;
-                let input_46 = input_46.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_46 = input_46.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_46,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_47 = &_input.virtual_gateway_name;
-                let input_47 = input_47.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_gateway_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_47 = input_47.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_gateway_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_gateway_name = aws_smithy_http::label::fmt_string(
                     input_47,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_gateway_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_gateway_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_gateway_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3881,7 +4005,7 @@ impl DescribeVirtualGatewayInput {
             fn uri_query(
                 _input: &crate::input::DescribeVirtualGatewayInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_48) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_48));
@@ -3892,8 +4016,10 @@ impl DescribeVirtualGatewayInput {
             fn update_http_builder(
                 input: &crate::input::DescribeVirtualGatewayInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4007,8 +4133,10 @@ pub mod describe_virtual_node_input {
         /// Consumes the builder and constructs a [`DescribeVirtualNodeInput`](crate::input::DescribeVirtualNodeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeVirtualNodeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeVirtualNodeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeVirtualNodeInput {
                 virtual_node_name: self.virtual_node_name,
                 mesh_name: self.mesh_name,
@@ -4030,46 +4158,50 @@ impl DescribeVirtualNodeInput {
             crate::operation::DescribeVirtualNode,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeVirtualNodeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_49 = &_input.mesh_name;
-                let input_49 = input_49.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_49 = input_49.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_49,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_50 = &_input.virtual_node_name;
-                let input_50 = input_50.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_node_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_50 = input_50.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_node_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_node_name = aws_smithy_http::label::fmt_string(
                     input_50,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_node_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_node_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_node_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4083,7 +4215,7 @@ impl DescribeVirtualNodeInput {
             fn uri_query(
                 _input: &crate::input::DescribeVirtualNodeInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_51) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_51));
@@ -4094,8 +4226,10 @@ impl DescribeVirtualNodeInput {
             fn update_http_builder(
                 input: &crate::input::DescribeVirtualNodeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4209,8 +4343,10 @@ pub mod describe_virtual_router_input {
         /// Consumes the builder and constructs a [`DescribeVirtualRouterInput`](crate::input::DescribeVirtualRouterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeVirtualRouterInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeVirtualRouterInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeVirtualRouterInput {
                 virtual_router_name: self.virtual_router_name,
                 mesh_name: self.mesh_name,
@@ -4232,46 +4368,50 @@ impl DescribeVirtualRouterInput {
             crate::operation::DescribeVirtualRouter,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeVirtualRouterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_52 = &_input.mesh_name;
-                let input_52 = input_52.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_52 = input_52.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_52,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_53 = &_input.virtual_router_name;
-                let input_53 = input_53.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_router_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_53 = input_53.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_router_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_router_name = aws_smithy_http::label::fmt_string(
                     input_53,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_router_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_router_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_router_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4285,7 +4425,7 @@ impl DescribeVirtualRouterInput {
             fn uri_query(
                 _input: &crate::input::DescribeVirtualRouterInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_54) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_54));
@@ -4296,8 +4436,10 @@ impl DescribeVirtualRouterInput {
             fn update_http_builder(
                 input: &crate::input::DescribeVirtualRouterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4411,8 +4553,10 @@ pub mod describe_virtual_service_input {
         /// Consumes the builder and constructs a [`DescribeVirtualServiceInput`](crate::input::DescribeVirtualServiceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeVirtualServiceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeVirtualServiceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeVirtualServiceInput {
                 virtual_service_name: self.virtual_service_name,
                 mesh_name: self.mesh_name,
@@ -4434,46 +4578,50 @@ impl DescribeVirtualServiceInput {
             crate::operation::DescribeVirtualService,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeVirtualServiceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_55 = &_input.mesh_name;
-                let input_55 = input_55.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_55 = input_55.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_55,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_56 = &_input.virtual_service_name;
-                let input_56 = input_56.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_service_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_56 = input_56.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_service_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_service_name = aws_smithy_http::label::fmt_string(
                     input_56,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_service_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_service_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_service_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4487,7 +4635,7 @@ impl DescribeVirtualServiceInput {
             fn uri_query(
                 _input: &crate::input::DescribeVirtualServiceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_57) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_57));
@@ -4498,8 +4646,10 @@ impl DescribeVirtualServiceInput {
             fn update_http_builder(
                 input: &crate::input::DescribeVirtualServiceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4635,8 +4785,10 @@ pub mod list_gateway_routes_input {
         /// Consumes the builder and constructs a [`ListGatewayRoutesInput`](crate::input::ListGatewayRoutesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListGatewayRoutesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListGatewayRoutesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListGatewayRoutesInput {
                 mesh_name: self.mesh_name,
                 virtual_gateway_name: self.virtual_gateway_name,
@@ -4660,46 +4812,50 @@ impl ListGatewayRoutesInput {
             crate::operation::ListGatewayRoutes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListGatewayRoutesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_58 = &_input.mesh_name;
-                let input_58 = input_58.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_58 = input_58.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_58,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_59 = &_input.virtual_gateway_name;
-                let input_59 = input_59.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_gateway_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_59 = input_59.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_gateway_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_gateway_name = aws_smithy_http::label::fmt_string(
                     input_59,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_gateway_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_gateway_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_gateway_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes", meshName = mesh_name, virtualGatewayName = virtual_gateway_name).expect("formatting should succeed");
                 Ok(())
@@ -4707,7 +4863,7 @@ impl ListGatewayRoutesInput {
             fn uri_query(
                 _input: &crate::input::ListGatewayRoutesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_60) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_60));
@@ -4727,8 +4883,10 @@ impl ListGatewayRoutesInput {
             fn update_http_builder(
                 input: &crate::input::ListGatewayRoutesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4832,7 +4990,8 @@ pub mod list_meshes_input {
         /// Consumes the builder and constructs a [`ListMeshesInput`](crate::input::ListMeshesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListMeshesInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListMeshesInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListMeshesInput {
                 next_token: self.next_token,
                 limit: self.limit,
@@ -4853,20 +5012,20 @@ impl ListMeshesInput {
             crate::operation::ListMeshes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListMeshesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v20190125/meshes").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListMeshesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_63) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_63));
@@ -4883,8 +5042,10 @@ impl ListMeshesInput {
             fn update_http_builder(
                 input: &crate::input::ListMeshesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5020,7 +5181,8 @@ pub mod list_routes_input {
         /// Consumes the builder and constructs a [`ListRoutesInput`](crate::input::ListRoutesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRoutesInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListRoutesInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListRoutesInput {
                 mesh_name: self.mesh_name,
                 virtual_router_name: self.virtual_router_name,
@@ -5044,46 +5206,50 @@ impl ListRoutesInput {
             crate::operation::ListRoutes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRoutesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_65 = &_input.mesh_name;
-                let input_65 = input_65.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_65 = input_65.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_65,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_66 = &_input.virtual_router_name;
-                let input_66 = input_66.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_router_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_66 = input_66.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_router_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_router_name = aws_smithy_http::label::fmt_string(
                     input_66,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_router_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_router_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_router_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5097,7 +5263,7 @@ impl ListRoutesInput {
             fn uri_query(
                 _input: &crate::input::ListRoutesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_67) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_67));
@@ -5117,8 +5283,10 @@ impl ListRoutesInput {
             fn update_http_builder(
                 input: &crate::input::ListRoutesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5229,8 +5397,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
                 next_token: self.next_token,
@@ -5252,20 +5422,20 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v20190125/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListTagsForResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_70) = &_input.resource_arn {
                     query.push_kv(
@@ -5288,8 +5458,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5411,8 +5583,10 @@ pub mod list_virtual_gateways_input {
         /// Consumes the builder and constructs a [`ListVirtualGatewaysInput`](crate::input::ListVirtualGatewaysInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListVirtualGatewaysInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListVirtualGatewaysInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListVirtualGatewaysInput {
                 mesh_name: self.mesh_name,
                 next_token: self.next_token,
@@ -5435,29 +5609,31 @@ impl ListVirtualGatewaysInput {
             crate::operation::ListVirtualGateways,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListVirtualGatewaysInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_73 = &_input.mesh_name;
-                let input_73 = input_73.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_73 = input_73.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_73,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5470,7 +5646,7 @@ impl ListVirtualGatewaysInput {
             fn uri_query(
                 _input: &crate::input::ListVirtualGatewaysInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_74) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_74));
@@ -5490,8 +5666,10 @@ impl ListVirtualGatewaysInput {
             fn update_http_builder(
                 input: &crate::input::ListVirtualGatewaysInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5613,8 +5791,10 @@ pub mod list_virtual_nodes_input {
         /// Consumes the builder and constructs a [`ListVirtualNodesInput`](crate::input::ListVirtualNodesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListVirtualNodesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListVirtualNodesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListVirtualNodesInput {
                 mesh_name: self.mesh_name,
                 next_token: self.next_token,
@@ -5637,29 +5817,31 @@ impl ListVirtualNodesInput {
             crate::operation::ListVirtualNodes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListVirtualNodesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_77 = &_input.mesh_name;
-                let input_77 = input_77.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_77 = input_77.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_77,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5672,7 +5854,7 @@ impl ListVirtualNodesInput {
             fn uri_query(
                 _input: &crate::input::ListVirtualNodesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_78) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_78));
@@ -5692,8 +5874,10 @@ impl ListVirtualNodesInput {
             fn update_http_builder(
                 input: &crate::input::ListVirtualNodesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5815,8 +5999,10 @@ pub mod list_virtual_routers_input {
         /// Consumes the builder and constructs a [`ListVirtualRoutersInput`](crate::input::ListVirtualRoutersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListVirtualRoutersInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListVirtualRoutersInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListVirtualRoutersInput {
                 mesh_name: self.mesh_name,
                 next_token: self.next_token,
@@ -5839,29 +6025,31 @@ impl ListVirtualRoutersInput {
             crate::operation::ListVirtualRouters,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListVirtualRoutersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_81 = &_input.mesh_name;
-                let input_81 = input_81.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_81 = input_81.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_81,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5874,7 +6062,7 @@ impl ListVirtualRoutersInput {
             fn uri_query(
                 _input: &crate::input::ListVirtualRoutersInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_82) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_82));
@@ -5894,8 +6082,10 @@ impl ListVirtualRoutersInput {
             fn update_http_builder(
                 input: &crate::input::ListVirtualRoutersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6017,8 +6207,10 @@ pub mod list_virtual_services_input {
         /// Consumes the builder and constructs a [`ListVirtualServicesInput`](crate::input::ListVirtualServicesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListVirtualServicesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListVirtualServicesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListVirtualServicesInput {
                 mesh_name: self.mesh_name,
                 next_token: self.next_token,
@@ -6041,29 +6233,31 @@ impl ListVirtualServicesInput {
             crate::operation::ListVirtualServices,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListVirtualServicesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_85 = &_input.mesh_name;
-                let input_85 = input_85.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_85 = input_85.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_85,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -6076,7 +6270,7 @@ impl ListVirtualServicesInput {
             fn uri_query(
                 _input: &crate::input::ListVirtualServicesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_86) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_86));
@@ -6096,8 +6290,10 @@ impl ListVirtualServicesInput {
             fn update_http_builder(
                 input: &crate::input::ListVirtualServicesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6206,7 +6402,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -6228,20 +6424,20 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v20190125/tag").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::TagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_89) = &_input.resource_arn {
                     query.push_kv(
@@ -6255,8 +6451,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6379,7 +6577,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -6401,20 +6599,20 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v20190125/untag").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_90) = &_input.resource_arn {
                     query.push_kv(
@@ -6428,8 +6626,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6596,8 +6796,10 @@ pub mod update_gateway_route_input {
         /// Consumes the builder and constructs a [`UpdateGatewayRouteInput`](crate::input::UpdateGatewayRouteInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateGatewayRouteInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateGatewayRouteInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateGatewayRouteInput {
                 gateway_route_name: self.gateway_route_name,
                 mesh_name: self.mesh_name,
@@ -6622,7 +6824,7 @@ impl UpdateGatewayRouteInput {
             crate::operation::UpdateGatewayRoute,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -6631,57 +6833,63 @@ impl UpdateGatewayRouteInput {
             fn uri_base(
                 _input: &crate::input::UpdateGatewayRouteInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_91 = &_input.mesh_name;
-                let input_91 = input_91.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_91 = input_91.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_91,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_92 = &_input.virtual_gateway_name;
-                let input_92 = input_92.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_gateway_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_92 = input_92.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_gateway_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_gateway_name = aws_smithy_http::label::fmt_string(
                     input_92,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_gateway_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_gateway_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_gateway_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_93 = &_input.gateway_route_name;
-                let input_93 = input_93.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "gateway_route_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_93 = input_93.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "gateway_route_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let gateway_route_name = aws_smithy_http::label::fmt_string(
                     input_93,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if gateway_route_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "gateway_route_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "gateway_route_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes/{gatewayRouteName}", meshName = mesh_name, virtualGatewayName = virtual_gateway_name, gatewayRouteName = gateway_route_name).expect("formatting should succeed");
                 Ok(())
@@ -6689,7 +6897,7 @@ impl UpdateGatewayRouteInput {
             fn uri_query(
                 _input: &crate::input::UpdateGatewayRouteInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_94) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_94));
@@ -6700,8 +6908,10 @@ impl UpdateGatewayRouteInput {
             fn update_http_builder(
                 input: &crate::input::UpdateGatewayRouteInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6826,7 +7036,8 @@ pub mod update_mesh_input {
         /// Consumes the builder and constructs a [`UpdateMeshInput`](crate::input::UpdateMeshInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateMeshInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::UpdateMeshInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::UpdateMeshInput {
                 mesh_name: self.mesh_name,
                 spec: self.spec,
@@ -6848,7 +7059,7 @@ impl UpdateMeshInput {
             crate::operation::UpdateMesh,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -6857,23 +7068,25 @@ impl UpdateMeshInput {
             fn uri_base(
                 _input: &crate::input::UpdateMeshInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_95 = &_input.mesh_name;
-                let input_95 = input_95.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_95 = input_95.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_95,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20190125/meshes/{meshName}", meshName = mesh_name)
                     .expect("formatting should succeed");
@@ -6883,8 +7096,10 @@ impl UpdateMeshInput {
             fn update_http_builder(
                 input: &crate::input::UpdateMeshInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -7044,7 +7259,7 @@ pub mod update_route_input {
         /// Consumes the builder and constructs a [`UpdateRouteInput`](crate::input::UpdateRouteInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateRouteInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateRouteInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateRouteInput {
                 route_name: self.route_name,
@@ -7070,7 +7285,7 @@ impl UpdateRouteInput {
             crate::operation::UpdateRoute,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -7079,57 +7294,63 @@ impl UpdateRouteInput {
             fn uri_base(
                 _input: &crate::input::UpdateRouteInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_96 = &_input.mesh_name;
-                let input_96 = input_96.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_96 = input_96.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_96,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_97 = &_input.virtual_router_name;
-                let input_97 = input_97.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_router_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_97 = input_97.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_router_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_router_name = aws_smithy_http::label::fmt_string(
                     input_97,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_router_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_router_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_router_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_98 = &_input.route_name;
-                let input_98 = input_98.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "route_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_98 = input_98.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "route_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let route_name = aws_smithy_http::label::fmt_string(
                     input_98,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if route_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "route_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "route_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}", meshName = mesh_name, virtualRouterName = virtual_router_name, routeName = route_name).expect("formatting should succeed");
                 Ok(())
@@ -7137,7 +7358,7 @@ impl UpdateRouteInput {
             fn uri_query(
                 _input: &crate::input::UpdateRouteInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_99) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_99));
@@ -7148,8 +7369,10 @@ impl UpdateRouteInput {
             fn update_http_builder(
                 input: &crate::input::UpdateRouteInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7302,8 +7525,10 @@ pub mod update_virtual_gateway_input {
         /// Consumes the builder and constructs a [`UpdateVirtualGatewayInput`](crate::input::UpdateVirtualGatewayInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateVirtualGatewayInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateVirtualGatewayInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateVirtualGatewayInput {
                 virtual_gateway_name: self.virtual_gateway_name,
                 mesh_name: self.mesh_name,
@@ -7327,7 +7552,7 @@ impl UpdateVirtualGatewayInput {
             crate::operation::UpdateVirtualGateway,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -7336,40 +7561,44 @@ impl UpdateVirtualGatewayInput {
             fn uri_base(
                 _input: &crate::input::UpdateVirtualGatewayInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_100 = &_input.mesh_name;
-                let input_100 = input_100.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_100 = input_100.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_100,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_101 = &_input.virtual_gateway_name;
-                let input_101 = input_101.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_gateway_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_101 = input_101.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_gateway_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_gateway_name = aws_smithy_http::label::fmt_string(
                     input_101,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_gateway_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_gateway_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_gateway_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -7383,7 +7612,7 @@ impl UpdateVirtualGatewayInput {
             fn uri_query(
                 _input: &crate::input::UpdateVirtualGatewayInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_102) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_102));
@@ -7394,8 +7623,10 @@ impl UpdateVirtualGatewayInput {
             fn update_http_builder(
                 input: &crate::input::UpdateVirtualGatewayInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7550,8 +7781,10 @@ pub mod update_virtual_node_input {
         /// Consumes the builder and constructs a [`UpdateVirtualNodeInput`](crate::input::UpdateVirtualNodeInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateVirtualNodeInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateVirtualNodeInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateVirtualNodeInput {
                 virtual_node_name: self.virtual_node_name,
                 mesh_name: self.mesh_name,
@@ -7575,7 +7808,7 @@ impl UpdateVirtualNodeInput {
             crate::operation::UpdateVirtualNode,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -7584,40 +7817,44 @@ impl UpdateVirtualNodeInput {
             fn uri_base(
                 _input: &crate::input::UpdateVirtualNodeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_103 = &_input.mesh_name;
-                let input_103 = input_103.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_103 = input_103.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_103,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_104 = &_input.virtual_node_name;
-                let input_104 = input_104.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_node_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_104 = input_104.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_node_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_node_name = aws_smithy_http::label::fmt_string(
                     input_104,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_node_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_node_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_node_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -7631,7 +7868,7 @@ impl UpdateVirtualNodeInput {
             fn uri_query(
                 _input: &crate::input::UpdateVirtualNodeInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_105) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_105));
@@ -7642,8 +7879,10 @@ impl UpdateVirtualNodeInput {
             fn update_http_builder(
                 input: &crate::input::UpdateVirtualNodeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7796,8 +8035,10 @@ pub mod update_virtual_router_input {
         /// Consumes the builder and constructs a [`UpdateVirtualRouterInput`](crate::input::UpdateVirtualRouterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateVirtualRouterInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateVirtualRouterInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateVirtualRouterInput {
                 virtual_router_name: self.virtual_router_name,
                 mesh_name: self.mesh_name,
@@ -7821,7 +8062,7 @@ impl UpdateVirtualRouterInput {
             crate::operation::UpdateVirtualRouter,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -7830,40 +8071,44 @@ impl UpdateVirtualRouterInput {
             fn uri_base(
                 _input: &crate::input::UpdateVirtualRouterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_106 = &_input.mesh_name;
-                let input_106 = input_106.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_106 = input_106.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_106,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_107 = &_input.virtual_router_name;
-                let input_107 = input_107.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_router_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_107 = input_107.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_router_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_router_name = aws_smithy_http::label::fmt_string(
                     input_107,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_router_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_router_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_router_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -7877,7 +8122,7 @@ impl UpdateVirtualRouterInput {
             fn uri_query(
                 _input: &crate::input::UpdateVirtualRouterInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_108) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_108));
@@ -7888,8 +8133,10 @@ impl UpdateVirtualRouterInput {
             fn update_http_builder(
                 input: &crate::input::UpdateVirtualRouterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -8042,8 +8289,10 @@ pub mod update_virtual_service_input {
         /// Consumes the builder and constructs a [`UpdateVirtualServiceInput`](crate::input::UpdateVirtualServiceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateVirtualServiceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateVirtualServiceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateVirtualServiceInput {
                 virtual_service_name: self.virtual_service_name,
                 mesh_name: self.mesh_name,
@@ -8067,7 +8316,7 @@ impl UpdateVirtualServiceInput {
             crate::operation::UpdateVirtualService,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -8076,40 +8325,44 @@ impl UpdateVirtualServiceInput {
             fn uri_base(
                 _input: &crate::input::UpdateVirtualServiceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_109 = &_input.mesh_name;
-                let input_109 = input_109.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_109 = input_109.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "mesh_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mesh_name = aws_smithy_http::label::fmt_string(
                     input_109,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if mesh_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "mesh_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "mesh_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_110 = &_input.virtual_service_name;
-                let input_110 = input_110.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_service_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_110 = input_110.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "virtual_service_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let virtual_service_name = aws_smithy_http::label::fmt_string(
                     input_110,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if virtual_service_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "virtual_service_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "virtual_service_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -8123,7 +8376,7 @@ impl UpdateVirtualServiceInput {
             fn uri_query(
                 _input: &crate::input::UpdateVirtualServiceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_111) = &_input.mesh_owner {
                     query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_111));
@@ -8134,8 +8387,10 @@ impl UpdateVirtualServiceInput {
             fn update_http_builder(
                 input: &crate::input::UpdateVirtualServiceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;

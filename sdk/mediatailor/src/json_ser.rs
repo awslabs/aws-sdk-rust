@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_configure_logs_for_playback_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ConfigureLogsForPlaybackConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     {
         object.key("PercentEnabled").number(
             #[allow(clippy::useless_conversion)]
@@ -20,7 +20,7 @@ pub fn serialize_structure_crate_input_configure_logs_for_playback_configuration
 pub fn serialize_structure_crate_input_create_channel_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateChannelInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_2) = &input.filler_slate {
         let mut object_3 = object.key("FillerSlate").start_object();
         crate::json_ser::serialize_structure_crate_model_slate_source(&mut object_3, var_2)?;
@@ -61,7 +61,7 @@ pub fn serialize_structure_crate_input_create_channel_input(
 pub fn serialize_structure_crate_input_create_live_source_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLiveSourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_14) = &input.http_package_configurations {
         let mut array_15 = object.key("HttpPackageConfigurations").start_array();
         for item_16 in var_14 {
@@ -91,7 +91,7 @@ pub fn serialize_structure_crate_input_create_live_source_input(
 pub fn serialize_structure_crate_input_create_prefetch_schedule_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreatePrefetchScheduleInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_22) = &input.consumption {
         let mut object_23 = object.key("Consumption").start_object();
         crate::json_ser::serialize_structure_crate_model_prefetch_consumption(
@@ -117,7 +117,7 @@ pub fn serialize_structure_crate_input_create_prefetch_schedule_input(
 pub fn serialize_structure_crate_input_create_program_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateProgramInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_27) = &input.ad_breaks {
         let mut array_28 = object.key("AdBreaks").start_array();
         for item_29 in var_27 {
@@ -152,7 +152,7 @@ pub fn serialize_structure_crate_input_create_program_input(
 pub fn serialize_structure_crate_input_create_source_location_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateSourceLocationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_36) = &input.access_configuration {
         let mut object_37 = object.key("AccessConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_access_configuration(
@@ -208,7 +208,7 @@ pub fn serialize_structure_crate_input_create_source_location_input(
 pub fn serialize_structure_crate_input_create_vod_source_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateVodSourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_50) = &input.http_package_configurations {
         let mut array_51 = object.key("HttpPackageConfigurations").start_array();
         for item_52 in var_50 {
@@ -238,7 +238,7 @@ pub fn serialize_structure_crate_input_create_vod_source_input(
 pub fn serialize_structure_crate_input_list_prefetch_schedules_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListPrefetchSchedulesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.max_results != 0 {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -257,7 +257,7 @@ pub fn serialize_structure_crate_input_list_prefetch_schedules_input(
 pub fn serialize_structure_crate_input_put_channel_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutChannelPolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_60) = &input.policy {
         object.key("Policy").string(var_60.as_str());
     }
@@ -267,7 +267,7 @@ pub fn serialize_structure_crate_input_put_channel_policy_input(
 pub fn serialize_structure_crate_input_put_playback_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutPlaybackConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_61) = &input.ad_decision_server_url {
         object.key("AdDecisionServerUrl").string(var_61.as_str());
     }
@@ -358,7 +358,7 @@ pub fn serialize_structure_crate_input_put_playback_configuration_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_89) = &input.tags {
         let mut object_90 = object.key("tags").start_object();
         for (key_91, value_92) in var_89 {
@@ -374,7 +374,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_channel_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateChannelInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_93) = &input.filler_slate {
         let mut object_94 = object.key("FillerSlate").start_object();
         crate::json_ser::serialize_structure_crate_model_slate_source(&mut object_94, var_93)?;
@@ -400,7 +400,7 @@ pub fn serialize_structure_crate_input_update_channel_input(
 pub fn serialize_structure_crate_input_update_live_source_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateLiveSourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_99) = &input.http_package_configurations {
         let mut array_100 = object.key("HttpPackageConfigurations").start_array();
         for item_101 in var_99 {
@@ -421,7 +421,7 @@ pub fn serialize_structure_crate_input_update_live_source_input(
 pub fn serialize_structure_crate_input_update_source_location_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateSourceLocationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_103) = &input.access_configuration {
         let mut object_104 = object.key("AccessConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_access_configuration(
@@ -468,7 +468,7 @@ pub fn serialize_structure_crate_input_update_source_location_input(
 pub fn serialize_structure_crate_input_update_vod_source_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateVodSourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_113) = &input.http_package_configurations {
         let mut array_114 = object.key("HttpPackageConfigurations").start_array();
         for item_115 in var_113 {
@@ -489,7 +489,7 @@ pub fn serialize_structure_crate_input_update_vod_source_input(
 pub fn serialize_structure_crate_model_slate_source(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SlateSource,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_117) = &input.source_location_name {
         object.key("SourceLocationName").string(var_117.as_str());
     }
@@ -502,7 +502,7 @@ pub fn serialize_structure_crate_model_slate_source(
 pub fn serialize_structure_crate_model_request_output_item(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RequestOutputItem,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_119) = &input.dash_playlist_settings {
         let mut object_120 = object.key("DashPlaylistSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_dash_playlist_settings(
@@ -531,7 +531,7 @@ pub fn serialize_structure_crate_model_request_output_item(
 pub fn serialize_structure_crate_model_http_package_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HttpPackageConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_125) = &input.path {
         object.key("Path").string(var_125.as_str());
     }
@@ -547,7 +547,7 @@ pub fn serialize_structure_crate_model_http_package_configuration(
 pub fn serialize_structure_crate_model_prefetch_consumption(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PrefetchConsumption,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_128) = &input.avail_matching_criteria {
         let mut array_129 = object.key("AvailMatchingCriteria").start_array();
         for item_130 in var_128 {
@@ -578,7 +578,7 @@ pub fn serialize_structure_crate_model_prefetch_consumption(
 pub fn serialize_structure_crate_model_prefetch_retrieval(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PrefetchRetrieval,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_134) = &input.dynamic_variables {
         let mut object_135 = object.key("DynamicVariables").start_object();
         for (key_136, value_137) in var_134 {
@@ -604,7 +604,7 @@ pub fn serialize_structure_crate_model_prefetch_retrieval(
 pub fn serialize_structure_crate_model_ad_break(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AdBreak,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_140) = &input.message_type {
         object.key("MessageType").string(var_140.as_str());
     }
@@ -633,7 +633,7 @@ pub fn serialize_structure_crate_model_ad_break(
 pub fn serialize_structure_crate_model_schedule_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ScheduleConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_145) = &input.transition {
         let mut object_146 = object.key("Transition").start_object();
         crate::json_ser::serialize_structure_crate_model_transition(&mut object_146, var_145)?;
@@ -645,7 +645,7 @@ pub fn serialize_structure_crate_model_schedule_configuration(
 pub fn serialize_structure_crate_model_access_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AccessConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_147) = &input.access_type {
         object.key("AccessType").string(var_147.as_str());
     }
@@ -662,7 +662,7 @@ pub fn serialize_structure_crate_model_access_configuration(
 pub fn serialize_structure_crate_model_default_segment_delivery_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DefaultSegmentDeliveryConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_150) = &input.base_url {
         object.key("BaseUrl").string(var_150.as_str());
     }
@@ -672,7 +672,7 @@ pub fn serialize_structure_crate_model_default_segment_delivery_configuration(
 pub fn serialize_structure_crate_model_http_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HttpConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_151) = &input.base_url {
         object.key("BaseUrl").string(var_151.as_str());
     }
@@ -682,7 +682,7 @@ pub fn serialize_structure_crate_model_http_configuration(
 pub fn serialize_structure_crate_model_segment_delivery_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SegmentDeliveryConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_152) = &input.base_url {
         object.key("BaseUrl").string(var_152.as_str());
     }
@@ -695,7 +695,7 @@ pub fn serialize_structure_crate_model_segment_delivery_configuration(
 pub fn serialize_structure_crate_model_avail_suppression(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AvailSuppression,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_154) = &input.mode {
         object.key("Mode").string(var_154.as_str());
     }
@@ -708,7 +708,7 @@ pub fn serialize_structure_crate_model_avail_suppression(
 pub fn serialize_structure_crate_model_bumper(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Bumper,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_156) = &input.end_url {
         object.key("EndUrl").string(var_156.as_str());
     }
@@ -721,7 +721,7 @@ pub fn serialize_structure_crate_model_bumper(
 pub fn serialize_structure_crate_model_cdn_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CdnConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_158) = &input.ad_segment_url_prefix {
         object.key("AdSegmentUrlPrefix").string(var_158.as_str());
     }
@@ -736,7 +736,7 @@ pub fn serialize_structure_crate_model_cdn_configuration(
 pub fn serialize_structure_crate_model_dash_configuration_for_put(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DashConfigurationForPut,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_160) = &input.mpd_location {
         object.key("MpdLocation").string(var_160.as_str());
     }
@@ -749,7 +749,7 @@ pub fn serialize_structure_crate_model_dash_configuration_for_put(
 pub fn serialize_structure_crate_model_live_pre_roll_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LivePreRollConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_162) = &input.ad_decision_server_url {
         object.key("AdDecisionServerUrl").string(var_162.as_str());
     }
@@ -765,7 +765,7 @@ pub fn serialize_structure_crate_model_live_pre_roll_configuration(
 pub fn serialize_structure_crate_model_manifest_processing_rules(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ManifestProcessingRules,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_163) = &input.ad_marker_passthrough {
         let mut object_164 = object.key("AdMarkerPassthrough").start_object();
         crate::json_ser::serialize_structure_crate_model_ad_marker_passthrough(
@@ -780,7 +780,7 @@ pub fn serialize_structure_crate_model_manifest_processing_rules(
 pub fn serialize_structure_crate_model_dash_playlist_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DashPlaylistSettings,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.manifest_window_seconds != 0 {
         object.key("ManifestWindowSeconds").number(
             #[allow(clippy::useless_conversion)]
@@ -811,7 +811,7 @@ pub fn serialize_structure_crate_model_dash_playlist_settings(
 pub fn serialize_structure_crate_model_hls_playlist_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HlsPlaylistSettings,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.manifest_window_seconds != 0 {
         object.key("ManifestWindowSeconds").number(
             #[allow(clippy::useless_conversion)]
@@ -824,7 +824,7 @@ pub fn serialize_structure_crate_model_hls_playlist_settings(
 pub fn serialize_structure_crate_model_avail_matching_criteria(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AvailMatchingCriteria,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_165) = &input.dynamic_variable {
         object.key("DynamicVariable").string(var_165.as_str());
     }
@@ -837,7 +837,7 @@ pub fn serialize_structure_crate_model_avail_matching_criteria(
 pub fn serialize_structure_crate_model_splice_insert_message(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SpliceInsertMessage,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.avail_num != 0 {
         object.key("AvailNum").number(
             #[allow(clippy::useless_conversion)]
@@ -868,7 +868,7 @@ pub fn serialize_structure_crate_model_splice_insert_message(
 pub fn serialize_structure_crate_model_transition(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Transition,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.duration_millis != 0 {
         object.key("DurationMillis").number(
             #[allow(clippy::useless_conversion)]
@@ -896,7 +896,7 @@ pub fn serialize_structure_crate_model_transition(
 pub fn serialize_structure_crate_model_secrets_manager_access_token_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SecretsManagerAccessTokenConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_170) = &input.header_name {
         object.key("HeaderName").string(var_170.as_str());
     }
@@ -912,7 +912,7 @@ pub fn serialize_structure_crate_model_secrets_manager_access_token_configuratio
 pub fn serialize_structure_crate_model_ad_marker_passthrough(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AdMarkerPassthrough,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.enabled {
         object.key("Enabled").boolean(input.enabled);
     }

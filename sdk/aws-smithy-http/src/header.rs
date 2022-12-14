@@ -5,49 +5,50 @@
 
 //! Utilities for parsing information from headers
 
+use aws_smithy_types::date_time::Format;
+use aws_smithy_types::primitive::Parse;
+use aws_smithy_types::DateTime;
+use http::header::{HeaderMap, HeaderName, HeaderValue, ValueIter};
 use std::borrow::Cow;
 use std::convert::TryFrom;
 use std::error::Error;
 use std::fmt;
-use std::fmt::{Display, Formatter};
 use std::str::FromStr;
 
-use http::header::{HeaderMap, HeaderName, HeaderValue, ValueIter};
-
-use aws_smithy_types::date_time::Format;
-use aws_smithy_types::primitive::Parse;
-use aws_smithy_types::DateTime;
-
-#[derive(Debug, Eq, PartialEq)]
-#[non_exhaustive]
+#[derive(Debug)]
 pub struct ParseError {
-    message: Option<Cow<'static, str>>,
+    message: Cow<'static, str>,
+    source: Option<Box<dyn Error + Send + Sync + 'static>>,
 }
 
 impl ParseError {
-    #[allow(clippy::new_without_default)]
-    pub fn new() -> Self {
-        Self { message: None }
-    }
-
-    pub fn new_with_message(message: impl Into<Cow<'static, str>>) -> Self {
+    /// Create a new parse error with the given `message`
+    pub fn new(message: impl Into<Cow<'static, str>>) -> Self {
         Self {
-            message: Some(message.into()),
+            message: message.into(),
+            source: None,
+        }
+    }
+
+    fn with_source(self, source: impl Into<Box<dyn Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            source: Some(source.into()),
+            ..self
         }
     }
 }
 
-impl Display for ParseError {
-    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
-        write!(f, "Output failed to parse in headers")?;
-        if let Some(message) = &self.message {
-            write!(f, ". {}", message)?;
-        }
-        Ok(())
+impl fmt::Display for ParseError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "output failed to parse in headers: {}", self.message)
     }
 }
 
-impl Error for ParseError {}
+impl Error for ParseError {
+    fn source(&self) -> Option<&(dyn Error + 'static)> {
+        self.source.as_ref().map(|err| err.as_ref() as _)
+    }
+}
 
 /// Read all the dates from the header map at `key` according the `format`
 ///
@@ -61,10 +62,10 @@ pub fn many_dates(
     for header in values {
         let mut header = header
             .to_str()
-            .map_err(|_| ParseError::new_with_message("header was not valid utf-8 string"))?;
+            .map_err(|_| ParseError::new("header was not valid utf-8 string"))?;
         while !header.is_empty() {
             let (v, next) = DateTime::read(header, format, ',').map_err(|err| {
-                ParseError::new_with_message(format!("header could not be parsed as date: {}", err))
+                ParseError::new(format!("header could not be parsed as date: {}", err))
             })?;
             out.push(v);
             header = next;
@@ -86,23 +87,21 @@ pub fn headers_for_prefix<'a>(
         .map(move |h| (&h.as_str()[key.len()..], h))
 }
 
-pub fn read_many_from_str<T: FromStr>(
-    values: ValueIter<HeaderValue>,
-) -> Result<Vec<T>, ParseError> {
+pub fn read_many_from_str<T: FromStr>(values: ValueIter<HeaderValue>) -> Result<Vec<T>, ParseError>
+where
+    T::Err: Error + Send + Sync + 'static,
+{
     read_many(values, |v: &str| {
-        v.parse()
-            .map_err(|_err| ParseError::new_with_message("failed during FromString conversion"))
+        v.parse().map_err(|err| {
+            ParseError::new("failed during `FromString` conversion").with_source(err)
+        })
     })
 }
 
 pub fn read_many_primitive<T: Parse>(values: ValueIter<HeaderValue>) -> Result<Vec<T>, ParseError> {
     read_many(values, |v: &str| {
-        T::parse_smithy_primitive(v).map_err(|primitive| {
-            ParseError::new_with_message(format!(
-                "failed reading a list of primitives: {}",
-                primitive
-            ))
-        })
+        T::parse_smithy_primitive(v)
+            .map_err(|err| ParseError::new("failed reading a list of primitives").with_source(err))
     })
 }
 
@@ -126,20 +125,21 @@ fn read_many<T>(
 /// Read exactly one or none from a headers iterator
 ///
 /// This function does not perform comma splitting like `read_many`
-pub fn one_or_none<T: FromStr>(
-    mut values: ValueIter<HeaderValue>,
-) -> Result<Option<T>, ParseError> {
+pub fn one_or_none<T: FromStr>(mut values: ValueIter<HeaderValue>) -> Result<Option<T>, ParseError>
+where
+    T::Err: Error + Send + Sync + 'static,
+{
     let first = match values.next() {
         Some(v) => v,
         None => return Ok(None),
     };
-    let value = std::str::from_utf8(first.as_bytes())
-        .map_err(|_| ParseError::new_with_message("invalid utf-8"))?;
+    let value =
+        std::str::from_utf8(first.as_bytes()).map_err(|_| ParseError::new("invalid utf-8"))?;
     match values.next() {
         None => T::from_str(value.trim())
-            .map_err(|_| ParseError::new())
+            .map_err(|err| ParseError::new("failed to parse string").with_source(err))
             .map(Some),
-        Some(_) => Err(ParseError::new_with_message(
+        Some(_) => Err(ParseError::new(
             "expected a single value but found multiple",
         )),
     }
@@ -231,7 +231,7 @@ mod parse_multi_header {
         let next_delim = input.iter().position(|&b| b == b',').unwrap_or(input.len());
         let (first, next) = input.split_at(next_delim);
         let first = std::str::from_utf8(first)
-            .map_err(|_| ParseError::new_with_message("header was not valid utf8"))?;
+            .map_err(|_| ParseError::new("header was not valid utf-8"))?;
         Ok((Cow::Borrowed(first), then_comma(next).unwrap()))
     }
 
@@ -241,10 +241,10 @@ mod parse_multi_header {
         for index in 0..input.len() {
             match input[index] {
                 b'"' if index == 0 || input[index - 1] != b'\\' => {
-                    let mut inner =
-                        Cow::Borrowed(std::str::from_utf8(&input[0..index]).map_err(|_| {
-                            ParseError::new_with_message("header was not valid utf8")
-                        })?);
+                    let mut inner = Cow::Borrowed(
+                        std::str::from_utf8(&input[0..index])
+                            .map_err(|_| ParseError::new("header was not valid utf-8"))?,
+                    );
                     inner = replace(inner, "\\\"", "\"");
                     inner = replace(inner, "\\\\", "\\");
                     let rest = then_comma(&input[(index + 1)..])?;
@@ -253,7 +253,7 @@ mod parse_multi_header {
                 _ => {}
             }
         }
-        Err(ParseError::new_with_message(
+        Err(ParseError::new(
             "header value had quoted value without end quote",
         ))
     }
@@ -264,7 +264,7 @@ mod parse_multi_header {
         } else if s.starts_with(b",") {
             Ok(&s[1..])
         } else {
-            Err(ParseError::new_with_message("expected delimiter `,`"))
+            Err(ParseError::new("expected delimiter `,`"))
         }
     }
 }
@@ -337,6 +337,7 @@ mod test {
     };
 
     use super::quote_header_value;
+    use aws_smithy_types::error::display::DisplayErrorContext;
 
     #[test]
     fn put_on_request_if_absent() {
@@ -388,13 +389,18 @@ mod test {
                 .expect("valid"),
             vec![0.0, f32::INFINITY, f32::NEG_INFINITY, 5555.5]
         );
-        assert_eq!(
-            read_many_primitive::<f32>(test_request.headers().get_all("X-Float-Error").iter())
-                .expect_err("invalid"),
-            ParseError::new_with_message(
-                "failed reading a list of primitives: failed to parse input as f32"
+        let message = format!(
+            "{}",
+            DisplayErrorContext(
+                read_many_primitive::<f32>(test_request.headers().get_all("X-Float-Error").iter())
+                    .expect_err("invalid")
             )
-        )
+        );
+        let expected = "output failed to parse in headers: failed reading a list of primitives: failed to parse input as f32";
+        assert!(
+            message.starts_with(expected),
+            "expected '{message}' to start with '{expected}'"
+        );
     }
 
     #[test]

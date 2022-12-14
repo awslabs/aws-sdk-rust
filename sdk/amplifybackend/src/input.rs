@@ -51,7 +51,7 @@ pub mod clone_backend_input {
         /// Consumes the builder and constructs a [`CloneBackendInput`](crate::input::CloneBackendInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CloneBackendInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CloneBackendInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CloneBackendInput {
                 app_id: self.app_id,
@@ -74,46 +74,50 @@ impl CloneBackendInput {
             crate::operation::CloneBackend,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CloneBackendInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.app_id;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_1,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_2 = &_input.backend_environment_name;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backend_environment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let backend_environment_name = aws_smithy_http::label::fmt_string(
                     input_2,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backend_environment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backend_environment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -128,8 +132,10 @@ impl CloneBackendInput {
             fn update_http_builder(
                 input: &crate::input::CloneBackendInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -284,7 +290,7 @@ pub mod create_backend_input {
         /// Consumes the builder and constructs a [`CreateBackendInput`](crate::input::CreateBackendInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateBackendInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateBackendInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateBackendInput {
                 app_id: self.app_id,
@@ -309,13 +315,13 @@ impl CreateBackendInput {
             crate::operation::CreateBackend,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateBackendInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/backend").expect("formatting should succeed");
                 Ok(())
             }
@@ -323,8 +329,10 @@ impl CreateBackendInput {
             fn update_http_builder(
                 input: &crate::input::CreateBackendInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -468,8 +476,10 @@ pub mod create_backend_api_input {
         /// Consumes the builder and constructs a [`CreateBackendApiInput`](crate::input::CreateBackendApiInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateBackendApiInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateBackendApiInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateBackendApiInput {
                 app_id: self.app_id,
                 backend_environment_name: self.backend_environment_name,
@@ -492,29 +502,31 @@ impl CreateBackendApiInput {
             crate::operation::CreateBackendAPI,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateBackendApiInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.app_id;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_3,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/backend/{AppId}/api", AppId = app_id)
                     .expect("formatting should succeed");
@@ -524,8 +536,10 @@ impl CreateBackendApiInput {
             fn update_http_builder(
                 input: &crate::input::CreateBackendApiInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -673,8 +687,10 @@ pub mod create_backend_auth_input {
         /// Consumes the builder and constructs a [`CreateBackendAuthInput`](crate::input::CreateBackendAuthInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateBackendAuthInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateBackendAuthInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateBackendAuthInput {
                 app_id: self.app_id,
                 backend_environment_name: self.backend_environment_name,
@@ -697,29 +713,31 @@ impl CreateBackendAuthInput {
             crate::operation::CreateBackendAuth,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateBackendAuthInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_4 = &_input.app_id;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_4,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/backend/{AppId}/auth", AppId = app_id)
                     .expect("formatting should succeed");
@@ -729,8 +747,10 @@ impl CreateBackendAuthInput {
             fn update_http_builder(
                 input: &crate::input::CreateBackendAuthInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -846,8 +866,10 @@ pub mod create_backend_config_input {
         /// Consumes the builder and constructs a [`CreateBackendConfigInput`](crate::input::CreateBackendConfigInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateBackendConfigInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateBackendConfigInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateBackendConfigInput {
                 app_id: self.app_id,
                 backend_manager_app_id: self.backend_manager_app_id,
@@ -868,29 +890,31 @@ impl CreateBackendConfigInput {
             crate::operation::CreateBackendConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateBackendConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.app_id;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_5,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/backend/{AppId}/config", AppId = app_id)
                     .expect("formatting should succeed");
@@ -900,8 +924,10 @@ impl CreateBackendConfigInput {
             fn update_http_builder(
                 input: &crate::input::CreateBackendConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1049,8 +1075,10 @@ pub mod create_backend_storage_input {
         /// Consumes the builder and constructs a [`CreateBackendStorageInput`](crate::input::CreateBackendStorageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateBackendStorageInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateBackendStorageInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateBackendStorageInput {
                 app_id: self.app_id,
                 backend_environment_name: self.backend_environment_name,
@@ -1073,29 +1101,31 @@ impl CreateBackendStorageInput {
             crate::operation::CreateBackendStorage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateBackendStorageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.app_id;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_6,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/backend/{AppId}/storage", AppId = app_id)
                     .expect("formatting should succeed");
@@ -1105,8 +1135,10 @@ impl CreateBackendStorageInput {
             fn update_http_builder(
                 input: &crate::input::CreateBackendStorageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1210,7 +1242,7 @@ pub mod create_token_input {
         /// Consumes the builder and constructs a [`CreateTokenInput`](crate::input::CreateTokenInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateTokenInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateTokenInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateTokenInput {
                 app_id: self.app_id,
@@ -1231,29 +1263,31 @@ impl CreateTokenInput {
             crate::operation::CreateToken,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateTokenInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.app_id;
-                let input_7 = input_7.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_7 = input_7.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_7,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/backend/{AppId}/challenge", AppId = app_id)
                     .expect("formatting should succeed");
@@ -1263,8 +1297,10 @@ impl CreateTokenInput {
             fn update_http_builder(
                 input: &crate::input::CreateTokenInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1366,7 +1402,7 @@ pub mod delete_backend_input {
         /// Consumes the builder and constructs a [`DeleteBackendInput`](crate::input::DeleteBackendInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBackendInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteBackendInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteBackendInput {
                 app_id: self.app_id,
@@ -1388,46 +1424,50 @@ impl DeleteBackendInput {
             crate::operation::DeleteBackend,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBackendInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_8 = &_input.app_id;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_8,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_9 = &_input.backend_environment_name;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backend_environment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let backend_environment_name = aws_smithy_http::label::fmt_string(
                     input_9,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backend_environment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backend_environment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1442,8 +1482,10 @@ impl DeleteBackendInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBackendInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1573,8 +1615,10 @@ pub mod delete_backend_api_input {
         /// Consumes the builder and constructs a [`DeleteBackendApiInput`](crate::input::DeleteBackendApiInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBackendApiInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteBackendApiInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteBackendApiInput {
                 app_id: self.app_id,
                 backend_environment_name: self.backend_environment_name,
@@ -1597,46 +1641,50 @@ impl DeleteBackendApiInput {
             crate::operation::DeleteBackendAPI,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBackendApiInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_10 = &_input.app_id;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_10,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_11 = &_input.backend_environment_name;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_11 = input_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backend_environment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let backend_environment_name = aws_smithy_http::label::fmt_string(
                     input_11,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backend_environment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backend_environment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1651,8 +1699,10 @@ impl DeleteBackendApiInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBackendApiInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1782,8 +1832,10 @@ pub mod delete_backend_auth_input {
         /// Consumes the builder and constructs a [`DeleteBackendAuthInput`](crate::input::DeleteBackendAuthInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBackendAuthInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteBackendAuthInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteBackendAuthInput {
                 app_id: self.app_id,
                 backend_environment_name: self.backend_environment_name,
@@ -1805,46 +1857,50 @@ impl DeleteBackendAuthInput {
             crate::operation::DeleteBackendAuth,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBackendAuthInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_12 = &_input.app_id;
-                let input_12 = input_12.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_12 = input_12.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_12,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_13 = &_input.backend_environment_name;
-                let input_13 = input_13.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_13 = input_13.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backend_environment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let backend_environment_name = aws_smithy_http::label::fmt_string(
                     input_13,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backend_environment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backend_environment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1859,8 +1915,10 @@ impl DeleteBackendAuthInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBackendAuthInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2004,8 +2062,10 @@ pub mod delete_backend_storage_input {
         /// Consumes the builder and constructs a [`DeleteBackendStorageInput`](crate::input::DeleteBackendStorageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBackendStorageInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteBackendStorageInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteBackendStorageInput {
                 app_id: self.app_id,
                 backend_environment_name: self.backend_environment_name,
@@ -2028,46 +2088,50 @@ impl DeleteBackendStorageInput {
             crate::operation::DeleteBackendStorage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteBackendStorageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_14 = &_input.app_id;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_14 = input_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_14,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_15 = &_input.backend_environment_name;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_15 = input_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backend_environment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let backend_environment_name = aws_smithy_http::label::fmt_string(
                     input_15,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backend_environment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backend_environment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2082,8 +2146,10 @@ impl DeleteBackendStorageInput {
             fn update_http_builder(
                 input: &crate::input::DeleteBackendStorageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2198,7 +2264,7 @@ pub mod delete_token_input {
         /// Consumes the builder and constructs a [`DeleteTokenInput`](crate::input::DeleteTokenInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteTokenInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteTokenInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteTokenInput {
                 app_id: self.app_id,
@@ -2220,46 +2286,50 @@ impl DeleteTokenInput {
             crate::operation::DeleteToken,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteTokenInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_16 = &_input.app_id;
-                let input_16 = input_16.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_16 = input_16.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_16,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_17 = &_input.session_id;
-                let input_17 = input_17.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "session_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_17 = input_17.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "session_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let session_id = aws_smithy_http::label::fmt_string(
                     input_17,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if session_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "session_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "session_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2274,8 +2344,10 @@ impl DeleteTokenInput {
             fn update_http_builder(
                 input: &crate::input::DeleteTokenInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2393,7 +2465,7 @@ pub mod generate_backend_api_models_input {
             self,
         ) -> Result<
             crate::input::GenerateBackendApiModelsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GenerateBackendApiModelsInput {
                 app_id: self.app_id,
@@ -2416,46 +2488,50 @@ impl GenerateBackendApiModelsInput {
             crate::operation::GenerateBackendAPIModels,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GenerateBackendApiModelsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_18 = &_input.app_id;
-                let input_18 = input_18.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_18 = input_18.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_18,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_19 = &_input.backend_environment_name;
-                let input_19 = input_19.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_19 = input_19.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backend_environment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let backend_environment_name = aws_smithy_http::label::fmt_string(
                     input_19,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backend_environment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backend_environment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2470,8 +2546,10 @@ impl GenerateBackendApiModelsInput {
             fn update_http_builder(
                 input: &crate::input::GenerateBackendApiModelsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2589,7 +2667,8 @@ pub mod get_backend_input {
         /// Consumes the builder and constructs a [`GetBackendInput`](crate::input::GetBackendInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBackendInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetBackendInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetBackendInput {
                 app_id: self.app_id,
                 backend_environment_name: self.backend_environment_name,
@@ -2610,29 +2689,31 @@ impl GetBackendInput {
             crate::operation::GetBackend,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBackendInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_20 = &_input.app_id;
-                let input_20 = input_20.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_20 = input_20.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_20,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/backend/{AppId}/details", AppId = app_id)
                     .expect("formatting should succeed");
@@ -2642,8 +2723,10 @@ impl GetBackendInput {
             fn update_http_builder(
                 input: &crate::input::GetBackendInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2787,7 +2870,7 @@ pub mod get_backend_api_input {
         /// Consumes the builder and constructs a [`GetBackendApiInput`](crate::input::GetBackendApiInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBackendApiInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetBackendApiInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetBackendApiInput {
                 app_id: self.app_id,
@@ -2811,46 +2894,50 @@ impl GetBackendApiInput {
             crate::operation::GetBackendAPI,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBackendApiInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_21 = &_input.app_id;
-                let input_21 = input_21.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_21 = input_21.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_21,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_22 = &_input.backend_environment_name;
-                let input_22 = input_22.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_22 = input_22.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backend_environment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let backend_environment_name = aws_smithy_http::label::fmt_string(
                     input_22,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backend_environment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backend_environment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -2865,8 +2952,10 @@ impl GetBackendApiInput {
             fn update_http_builder(
                 input: &crate::input::GetBackendApiInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2996,8 +3085,10 @@ pub mod get_backend_api_models_input {
         /// Consumes the builder and constructs a [`GetBackendApiModelsInput`](crate::input::GetBackendApiModelsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBackendApiModelsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetBackendApiModelsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetBackendApiModelsInput {
                 app_id: self.app_id,
                 backend_environment_name: self.backend_environment_name,
@@ -3019,46 +3110,50 @@ impl GetBackendApiModelsInput {
             crate::operation::GetBackendAPIModels,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBackendApiModelsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_23 = &_input.app_id;
-                let input_23 = input_23.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_23 = input_23.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_23,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_24 = &_input.backend_environment_name;
-                let input_24 = input_24.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_24 = input_24.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backend_environment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let backend_environment_name = aws_smithy_http::label::fmt_string(
                     input_24,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backend_environment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backend_environment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3073,8 +3168,10 @@ impl GetBackendApiModelsInput {
             fn update_http_builder(
                 input: &crate::input::GetBackendApiModelsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3206,7 +3303,7 @@ pub mod get_backend_auth_input {
         /// Consumes the builder and constructs a [`GetBackendAuthInput`](crate::input::GetBackendAuthInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBackendAuthInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetBackendAuthInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetBackendAuthInput {
                 app_id: self.app_id,
@@ -3229,46 +3326,50 @@ impl GetBackendAuthInput {
             crate::operation::GetBackendAuth,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBackendAuthInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_25 = &_input.app_id;
-                let input_25 = input_25.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_25 = input_25.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_25,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_26 = &_input.backend_environment_name;
-                let input_26 = input_26.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_26 = input_26.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backend_environment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let backend_environment_name = aws_smithy_http::label::fmt_string(
                     input_26,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backend_environment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backend_environment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3283,8 +3384,10 @@ impl GetBackendAuthInput {
             fn update_http_builder(
                 input: &crate::input::GetBackendAuthInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3411,7 +3514,7 @@ pub mod get_backend_job_input {
         /// Consumes the builder and constructs a [`GetBackendJobInput`](crate::input::GetBackendJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBackendJobInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetBackendJobInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetBackendJobInput {
                 app_id: self.app_id,
@@ -3434,63 +3537,69 @@ impl GetBackendJobInput {
             crate::operation::GetBackendJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBackendJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_27 = &_input.app_id;
-                let input_27 = input_27.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_27 = input_27.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_27,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_28 = &_input.backend_environment_name;
-                let input_28 = input_28.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_28 = input_28.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backend_environment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let backend_environment_name = aws_smithy_http::label::fmt_string(
                     input_28,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backend_environment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backend_environment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_29 = &_input.job_id;
-                let input_29 = input_29.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_29 = input_29.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "job_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let job_id = aws_smithy_http::label::fmt_string(
                     input_29,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "job_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3506,8 +3615,10 @@ impl GetBackendJobInput {
             fn update_http_builder(
                 input: &crate::input::GetBackendJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3623,8 +3734,10 @@ pub mod get_backend_storage_input {
         /// Consumes the builder and constructs a [`GetBackendStorageInput`](crate::input::GetBackendStorageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBackendStorageInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetBackendStorageInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetBackendStorageInput {
                 app_id: self.app_id,
                 backend_environment_name: self.backend_environment_name,
@@ -3646,46 +3759,50 @@ impl GetBackendStorageInput {
             crate::operation::GetBackendStorage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetBackendStorageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_30 = &_input.app_id;
-                let input_30 = input_30.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_30 = input_30.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_30,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_31 = &_input.backend_environment_name;
-                let input_31 = input_31.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_31 = input_31.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backend_environment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let backend_environment_name = aws_smithy_http::label::fmt_string(
                     input_31,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backend_environment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backend_environment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3700,8 +3817,10 @@ impl GetBackendStorageInput {
             fn update_http_builder(
                 input: &crate::input::GetBackendStorageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3814,7 +3933,8 @@ pub mod get_token_input {
         /// Consumes the builder and constructs a [`GetTokenInput`](crate::input::GetTokenInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetTokenInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetTokenInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetTokenInput {
                 app_id: self.app_id,
                 session_id: self.session_id,
@@ -3835,46 +3955,50 @@ impl GetTokenInput {
             crate::operation::GetToken,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetTokenInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_32 = &_input.app_id;
-                let input_32 = input_32.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_32 = input_32.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_32,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_33 = &_input.session_id;
-                let input_33 = input_33.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "session_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_33 = input_33.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "session_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let session_id = aws_smithy_http::label::fmt_string(
                     input_33,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if session_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "session_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "session_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -3889,8 +4013,10 @@ impl GetTokenInput {
             fn update_http_builder(
                 input: &crate::input::GetTokenInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -4043,8 +4169,10 @@ pub mod import_backend_auth_input {
         /// Consumes the builder and constructs a [`ImportBackendAuthInput`](crate::input::ImportBackendAuthInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ImportBackendAuthInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ImportBackendAuthInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ImportBackendAuthInput {
                 app_id: self.app_id,
                 backend_environment_name: self.backend_environment_name,
@@ -4069,46 +4197,50 @@ impl ImportBackendAuthInput {
             crate::operation::ImportBackendAuth,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ImportBackendAuthInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_34 = &_input.app_id;
-                let input_34 = input_34.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_34 = input_34.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_34,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_35 = &_input.backend_environment_name;
-                let input_35 = input_35.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_35 = input_35.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backend_environment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let backend_environment_name = aws_smithy_http::label::fmt_string(
                     input_35,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backend_environment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backend_environment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4123,8 +4255,10 @@ impl ImportBackendAuthInput {
             fn update_http_builder(
                 input: &crate::input::ImportBackendAuthInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4265,8 +4399,10 @@ pub mod import_backend_storage_input {
         /// Consumes the builder and constructs a [`ImportBackendStorageInput`](crate::input::ImportBackendStorageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ImportBackendStorageInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ImportBackendStorageInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ImportBackendStorageInput {
                 app_id: self.app_id,
                 backend_environment_name: self.backend_environment_name,
@@ -4289,46 +4425,50 @@ impl ImportBackendStorageInput {
             crate::operation::ImportBackendStorage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ImportBackendStorageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_36 = &_input.app_id;
-                let input_36 = input_36.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_36 = input_36.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_36,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_37 = &_input.backend_environment_name;
-                let input_37 = input_37.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_37 = input_37.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backend_environment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let backend_environment_name = aws_smithy_http::label::fmt_string(
                     input_37,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backend_environment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backend_environment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4343,8 +4483,10 @@ impl ImportBackendStorageInput {
             fn update_http_builder(
                 input: &crate::input::ImportBackendStorageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4517,7 +4659,7 @@ pub mod list_backend_jobs_input {
         /// Consumes the builder and constructs a [`ListBackendJobsInput`](crate::input::ListBackendJobsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListBackendJobsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListBackendJobsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListBackendJobsInput {
                 app_id: self.app_id,
@@ -4544,46 +4686,50 @@ impl ListBackendJobsInput {
             crate::operation::ListBackendJobs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListBackendJobsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_38 = &_input.app_id;
-                let input_38 = input_38.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_38 = input_38.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_38,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_39 = &_input.backend_environment_name;
-                let input_39 = input_39.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_39 = input_39.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backend_environment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let backend_environment_name = aws_smithy_http::label::fmt_string(
                     input_39,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backend_environment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backend_environment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -4598,8 +4744,10 @@ impl ListBackendJobsInput {
             fn update_http_builder(
                 input: &crate::input::ListBackendJobsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4701,7 +4849,7 @@ pub mod list_s3_buckets_input {
         /// Consumes the builder and constructs a [`ListS3BucketsInput`](crate::input::ListS3BucketsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListS3BucketsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListS3BucketsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListS3BucketsInput {
                 next_token: self.next_token,
@@ -4722,13 +4870,13 @@ impl ListS3BucketsInput {
             crate::operation::ListS3Buckets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListS3BucketsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/s3Buckets").expect("formatting should succeed");
                 Ok(())
             }
@@ -4736,8 +4884,10 @@ impl ListS3BucketsInput {
             fn update_http_builder(
                 input: &crate::input::ListS3BucketsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4850,8 +5000,10 @@ pub mod remove_all_backends_input {
         /// Consumes the builder and constructs a [`RemoveAllBackendsInput`](crate::input::RemoveAllBackendsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RemoveAllBackendsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::RemoveAllBackendsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::RemoveAllBackendsInput {
                 app_id: self.app_id,
                 clean_amplify_app: self.clean_amplify_app.unwrap_or_default(),
@@ -4872,29 +5024,31 @@ impl RemoveAllBackendsInput {
             crate::operation::RemoveAllBackends,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RemoveAllBackendsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_40 = &_input.app_id;
-                let input_40 = input_40.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_40 = input_40.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_40,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/backend/{AppId}/remove", AppId = app_id)
                     .expect("formatting should succeed");
@@ -4904,8 +5058,10 @@ impl RemoveAllBackendsInput {
             fn update_http_builder(
                 input: &crate::input::RemoveAllBackendsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5007,8 +5163,10 @@ pub mod remove_backend_config_input {
         /// Consumes the builder and constructs a [`RemoveBackendConfigInput`](crate::input::RemoveBackendConfigInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RemoveBackendConfigInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::RemoveBackendConfigInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::RemoveBackendConfigInput {
                 app_id: self.app_id,
             })
@@ -5028,29 +5186,31 @@ impl RemoveBackendConfigInput {
             crate::operation::RemoveBackendConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RemoveBackendConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_41 = &_input.app_id;
-                let input_41 = input_41.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_41 = input_41.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_41,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/backend/{AppId}/config/remove", AppId = app_id)
                     .expect("formatting should succeed");
@@ -5060,8 +5220,10 @@ impl RemoveBackendConfigInput {
             fn update_http_builder(
                 input: &crate::input::RemoveBackendConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5191,8 +5353,10 @@ pub mod update_backend_api_input {
         /// Consumes the builder and constructs a [`UpdateBackendApiInput`](crate::input::UpdateBackendApiInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateBackendApiInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateBackendApiInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateBackendApiInput {
                 app_id: self.app_id,
                 backend_environment_name: self.backend_environment_name,
@@ -5215,46 +5379,50 @@ impl UpdateBackendApiInput {
             crate::operation::UpdateBackendAPI,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateBackendApiInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_42 = &_input.app_id;
-                let input_42 = input_42.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_42 = input_42.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_42,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_43 = &_input.backend_environment_name;
-                let input_43 = input_43.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_43 = input_43.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backend_environment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let backend_environment_name = aws_smithy_http::label::fmt_string(
                     input_43,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backend_environment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backend_environment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5269,8 +5437,10 @@ impl UpdateBackendApiInput {
             fn update_http_builder(
                 input: &crate::input::UpdateBackendApiInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5418,8 +5588,10 @@ pub mod update_backend_auth_input {
         /// Consumes the builder and constructs a [`UpdateBackendAuthInput`](crate::input::UpdateBackendAuthInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateBackendAuthInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateBackendAuthInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateBackendAuthInput {
                 app_id: self.app_id,
                 backend_environment_name: self.backend_environment_name,
@@ -5442,46 +5614,50 @@ impl UpdateBackendAuthInput {
             crate::operation::UpdateBackendAuth,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateBackendAuthInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_44 = &_input.app_id;
-                let input_44 = input_44.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_44 = input_44.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_44,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_45 = &_input.backend_environment_name;
-                let input_45 = input_45.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_45 = input_45.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backend_environment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let backend_environment_name = aws_smithy_http::label::fmt_string(
                     input_45,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backend_environment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backend_environment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5496,8 +5672,10 @@ impl UpdateBackendAuthInput {
             fn update_http_builder(
                 input: &crate::input::UpdateBackendAuthInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5613,8 +5791,10 @@ pub mod update_backend_config_input {
         /// Consumes the builder and constructs a [`UpdateBackendConfigInput`](crate::input::UpdateBackendConfigInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateBackendConfigInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateBackendConfigInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateBackendConfigInput {
                 app_id: self.app_id,
                 login_auth_config: self.login_auth_config,
@@ -5635,29 +5815,31 @@ impl UpdateBackendConfigInput {
             crate::operation::UpdateBackendConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateBackendConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_46 = &_input.app_id;
-                let input_46 = input_46.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_46 = input_46.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_46,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/backend/{AppId}/config/update", AppId = app_id)
                     .expect("formatting should succeed");
@@ -5667,8 +5849,10 @@ impl UpdateBackendConfigInput {
             fn update_http_builder(
                 input: &crate::input::UpdateBackendConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5817,8 +6001,10 @@ pub mod update_backend_job_input {
         /// Consumes the builder and constructs a [`UpdateBackendJobInput`](crate::input::UpdateBackendJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateBackendJobInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateBackendJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateBackendJobInput {
                 app_id: self.app_id,
                 backend_environment_name: self.backend_environment_name,
@@ -5842,63 +6028,69 @@ impl UpdateBackendJobInput {
             crate::operation::UpdateBackendJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateBackendJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_47 = &_input.app_id;
-                let input_47 = input_47.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_47 = input_47.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_47,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_48 = &_input.backend_environment_name;
-                let input_48 = input_48.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_48 = input_48.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backend_environment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let backend_environment_name = aws_smithy_http::label::fmt_string(
                     input_48,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backend_environment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backend_environment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_49 = &_input.job_id;
-                let input_49 = input_49.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_49 = input_49.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "job_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let job_id = aws_smithy_http::label::fmt_string(
                     input_49,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if job_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "job_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "job_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -5914,8 +6106,10 @@ impl UpdateBackendJobInput {
             fn update_http_builder(
                 input: &crate::input::UpdateBackendJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6063,8 +6257,10 @@ pub mod update_backend_storage_input {
         /// Consumes the builder and constructs a [`UpdateBackendStorageInput`](crate::input::UpdateBackendStorageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateBackendStorageInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateBackendStorageInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateBackendStorageInput {
                 app_id: self.app_id,
                 backend_environment_name: self.backend_environment_name,
@@ -6087,46 +6283,50 @@ impl UpdateBackendStorageInput {
             crate::operation::UpdateBackendStorage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateBackendStorageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_50 = &_input.app_id;
-                let input_50 = input_50.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_50 = input_50.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let app_id = aws_smithy_http::label::fmt_string(
                     input_50,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if app_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "app_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "app_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_51 = &_input.backend_environment_name;
-                let input_51 = input_51.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_51 = input_51.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "backend_environment_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let backend_environment_name = aws_smithy_http::label::fmt_string(
                     input_51,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if backend_environment_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "backend_environment_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "backend_environment_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -6141,8 +6341,10 @@ impl UpdateBackendStorageInput {
             fn update_http_builder(
                 input: &crate::input::UpdateBackendStorageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

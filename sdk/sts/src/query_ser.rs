@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_policy_descriptor_type(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::PolicyDescriptorType,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("arn");
     if let Some(var_2) = &input.arn {
@@ -16,7 +16,7 @@ pub fn serialize_structure_crate_model_policy_descriptor_type(
 pub fn serialize_structure_crate_model_tag(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("Key");
     if let Some(var_4) = &input.key {

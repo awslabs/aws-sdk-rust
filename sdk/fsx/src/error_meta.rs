@@ -127,20 +127,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::AssociateFileSystemAliasesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AssociateFileSystemAliasesErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::AssociateFileSystemAliasesErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::AssociateFileSystemAliasesErrorKind::FileSystemNotFound(
+                        inner,
+                    ) => Error::FileSystemNotFound(inner),
+                    crate::error::AssociateFileSystemAliasesErrorKind::InternalServerError(
+                        inner,
+                    ) => Error::InternalServerError(inner),
+                    crate::error::AssociateFileSystemAliasesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::AssociateFileSystemAliasesErrorKind::FileSystemNotFound(inner) => {
-                    Error::FileSystemNotFound(inner)
-                }
-                crate::error::AssociateFileSystemAliasesErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::AssociateFileSystemAliasesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -154,26 +156,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CancelDataRepositoryTaskError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CancelDataRepositoryTaskErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CancelDataRepositoryTaskErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::CancelDataRepositoryTaskErrorKind::DataRepositoryTaskEnded(
+                        inner,
+                    ) => Error::DataRepositoryTaskEnded(inner),
+                    crate::error::CancelDataRepositoryTaskErrorKind::DataRepositoryTaskNotFound(
+                        inner,
+                    ) => Error::DataRepositoryTaskNotFound(inner),
+                    crate::error::CancelDataRepositoryTaskErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::CancelDataRepositoryTaskErrorKind::UnsupportedOperation(
+                        inner,
+                    ) => Error::UnsupportedOperation(inner),
+                    crate::error::CancelDataRepositoryTaskErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CancelDataRepositoryTaskErrorKind::DataRepositoryTaskEnded(inner) => {
-                    Error::DataRepositoryTaskEnded(inner)
-                }
-                crate::error::CancelDataRepositoryTaskErrorKind::DataRepositoryTaskNotFound(
-                    inner,
-                ) => Error::DataRepositoryTaskNotFound(inner),
-                crate::error::CancelDataRepositoryTaskErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::CancelDataRepositoryTaskErrorKind::UnsupportedOperation(inner) => {
-                    Error::UnsupportedOperation(inner)
-                }
-                crate::error::CancelDataRepositoryTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -184,7 +188,10 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CopyBackupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CopyBackupErrorKind::BackupNotFound(inner) => {
                     Error::BackupNotFound(inner)
                 }
@@ -230,7 +237,10 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateBackupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CreateBackupErrorKind::BackupInProgress(inner) => {
                     Error::BackupInProgress(inner)
                 }
@@ -274,7 +284,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateDataRepositoryAssociationErrorKind::BadRequest(inner) => Error::BadRequest(inner),
                 crate::error::CreateDataRepositoryAssociationErrorKind::FileSystemNotFound(inner) => Error::FileSystemNotFound(inner),
                 crate::error::CreateDataRepositoryAssociationErrorKind::IncompatibleParameterError(inner) => Error::IncompatibleParameterError(inner),
@@ -296,7 +306,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateDataRepositoryTaskError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CreateDataRepositoryTaskErrorKind::BadRequest(inner) => {
                     Error::BadRequest(inner)
                 }
@@ -332,32 +345,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateFileCacheError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateFileCacheErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateFileCacheErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::CreateFileCacheErrorKind::IncompatibleParameterError(inner) => {
+                        Error::IncompatibleParameterError(inner)
+                    }
+                    crate::error::CreateFileCacheErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::CreateFileCacheErrorKind::InvalidNetworkSettings(inner) => {
+                        Error::InvalidNetworkSettings(inner)
+                    }
+                    crate::error::CreateFileCacheErrorKind::InvalidPerUnitStorageThroughput(
+                        inner,
+                    ) => Error::InvalidPerUnitStorageThroughput(inner),
+                    crate::error::CreateFileCacheErrorKind::MissingFileCacheConfiguration(
+                        inner,
+                    ) => Error::MissingFileCacheConfiguration(inner),
+                    crate::error::CreateFileCacheErrorKind::ServiceLimitExceeded(inner) => {
+                        Error::ServiceLimitExceeded(inner)
+                    }
+                    crate::error::CreateFileCacheErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateFileCacheErrorKind::IncompatibleParameterError(inner) => {
-                    Error::IncompatibleParameterError(inner)
-                }
-                crate::error::CreateFileCacheErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::CreateFileCacheErrorKind::InvalidNetworkSettings(inner) => {
-                    Error::InvalidNetworkSettings(inner)
-                }
-                crate::error::CreateFileCacheErrorKind::InvalidPerUnitStorageThroughput(inner) => {
-                    Error::InvalidPerUnitStorageThroughput(inner)
-                }
-                crate::error::CreateFileCacheErrorKind::MissingFileCacheConfiguration(inner) => {
-                    Error::MissingFileCacheConfiguration(inner)
-                }
-                crate::error::CreateFileCacheErrorKind::ServiceLimitExceeded(inner) => {
-                    Error::ServiceLimitExceeded(inner)
-                }
-                crate::error::CreateFileCacheErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -370,41 +385,43 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateFileSystemError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateFileSystemErrorKind::ActiveDirectoryError(inner) => {
-                    Error::ActiveDirectoryError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateFileSystemErrorKind::ActiveDirectoryError(inner) => {
+                        Error::ActiveDirectoryError(inner)
+                    }
+                    crate::error::CreateFileSystemErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::CreateFileSystemErrorKind::IncompatibleParameterError(inner) => {
+                        Error::IncompatibleParameterError(inner)
+                    }
+                    crate::error::CreateFileSystemErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::CreateFileSystemErrorKind::InvalidExportPath(inner) => {
+                        Error::InvalidExportPath(inner)
+                    }
+                    crate::error::CreateFileSystemErrorKind::InvalidImportPath(inner) => {
+                        Error::InvalidImportPath(inner)
+                    }
+                    crate::error::CreateFileSystemErrorKind::InvalidNetworkSettings(inner) => {
+                        Error::InvalidNetworkSettings(inner)
+                    }
+                    crate::error::CreateFileSystemErrorKind::InvalidPerUnitStorageThroughput(
+                        inner,
+                    ) => Error::InvalidPerUnitStorageThroughput(inner),
+                    crate::error::CreateFileSystemErrorKind::MissingFileSystemConfiguration(
+                        inner,
+                    ) => Error::MissingFileSystemConfiguration(inner),
+                    crate::error::CreateFileSystemErrorKind::ServiceLimitExceeded(inner) => {
+                        Error::ServiceLimitExceeded(inner)
+                    }
+                    crate::error::CreateFileSystemErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateFileSystemErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
-                }
-                crate::error::CreateFileSystemErrorKind::IncompatibleParameterError(inner) => {
-                    Error::IncompatibleParameterError(inner)
-                }
-                crate::error::CreateFileSystemErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::CreateFileSystemErrorKind::InvalidExportPath(inner) => {
-                    Error::InvalidExportPath(inner)
-                }
-                crate::error::CreateFileSystemErrorKind::InvalidImportPath(inner) => {
-                    Error::InvalidImportPath(inner)
-                }
-                crate::error::CreateFileSystemErrorKind::InvalidNetworkSettings(inner) => {
-                    Error::InvalidNetworkSettings(inner)
-                }
-                crate::error::CreateFileSystemErrorKind::InvalidPerUnitStorageThroughput(inner) => {
-                    Error::InvalidPerUnitStorageThroughput(inner)
-                }
-                crate::error::CreateFileSystemErrorKind::MissingFileSystemConfiguration(inner) => {
-                    Error::MissingFileSystemConfiguration(inner)
-                }
-                crate::error::CreateFileSystemErrorKind::ServiceLimitExceeded(inner) => {
-                    Error::ServiceLimitExceeded(inner)
-                }
-                crate::error::CreateFileSystemErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -418,7 +435,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateFileSystemFromBackupError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateFileSystemFromBackupErrorKind::ActiveDirectoryError(inner) => Error::ActiveDirectoryError(inner),
                 crate::error::CreateFileSystemFromBackupErrorKind::BackupNotFound(inner) => Error::BackupNotFound(inner),
                 crate::error::CreateFileSystemFromBackupErrorKind::BadRequest(inner) => Error::BadRequest(inner),
@@ -440,23 +457,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateSnapshotError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateSnapshotErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateSnapshotErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::CreateSnapshotErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::CreateSnapshotErrorKind::ServiceLimitExceeded(inner) => {
+                        Error::ServiceLimitExceeded(inner)
+                    }
+                    crate::error::CreateSnapshotErrorKind::VolumeNotFound(inner) => {
+                        Error::VolumeNotFound(inner)
+                    }
+                    crate::error::CreateSnapshotErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateSnapshotErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::CreateSnapshotErrorKind::ServiceLimitExceeded(inner) => {
-                    Error::ServiceLimitExceeded(inner)
-                }
-                crate::error::CreateSnapshotErrorKind::VolumeNotFound(inner) => {
-                    Error::VolumeNotFound(inner)
-                }
-                crate::error::CreateSnapshotErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -470,7 +489,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateStorageVirtualMachineError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CreateStorageVirtualMachineErrorKind::ActiveDirectoryError(inner) => {
                     Error::ActiveDirectoryError(inner)
                 }
@@ -506,7 +528,10 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateVolumeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CreateVolumeErrorKind::BadRequest(inner) => Error::BadRequest(inner),
                 crate::error::CreateVolumeErrorKind::FileSystemNotFound(inner) => {
                     Error::FileSystemNotFound(inner)
@@ -546,7 +571,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateVolumeFromBackupError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CreateVolumeFromBackupErrorKind::BackupNotFound(inner) => {
                     Error::BackupNotFound(inner)
                 }
@@ -585,7 +613,10 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteBackupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DeleteBackupErrorKind::BackupBeingCopied(inner) => {
                     Error::BackupBeingCopied(inner)
                 }
@@ -626,7 +657,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteDataRepositoryAssociationErrorKind::BadRequest(inner) => Error::BadRequest(inner),
                 crate::error::DeleteDataRepositoryAssociationErrorKind::DataRepositoryAssociationNotFound(inner) => Error::DataRepositoryAssociationNotFound(inner),
                 crate::error::DeleteDataRepositoryAssociationErrorKind::IncompatibleParameterError(inner) => Error::IncompatibleParameterError(inner),
@@ -644,26 +675,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFileCacheError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteFileCacheErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteFileCacheErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::DeleteFileCacheErrorKind::FileCacheNotFound(inner) => {
+                        Error::FileCacheNotFound(inner)
+                    }
+                    crate::error::DeleteFileCacheErrorKind::IncompatibleParameterError(inner) => {
+                        Error::IncompatibleParameterError(inner)
+                    }
+                    crate::error::DeleteFileCacheErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DeleteFileCacheErrorKind::ServiceLimitExceeded(inner) => {
+                        Error::ServiceLimitExceeded(inner)
+                    }
+                    crate::error::DeleteFileCacheErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteFileCacheErrorKind::FileCacheNotFound(inner) => {
-                    Error::FileCacheNotFound(inner)
-                }
-                crate::error::DeleteFileCacheErrorKind::IncompatibleParameterError(inner) => {
-                    Error::IncompatibleParameterError(inner)
-                }
-                crate::error::DeleteFileCacheErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::DeleteFileCacheErrorKind::ServiceLimitExceeded(inner) => {
-                    Error::ServiceLimitExceeded(inner)
-                }
-                crate::error::DeleteFileCacheErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -676,26 +709,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteFileSystemError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteFileSystemErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteFileSystemErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::DeleteFileSystemErrorKind::FileSystemNotFound(inner) => {
+                        Error::FileSystemNotFound(inner)
+                    }
+                    crate::error::DeleteFileSystemErrorKind::IncompatibleParameterError(inner) => {
+                        Error::IncompatibleParameterError(inner)
+                    }
+                    crate::error::DeleteFileSystemErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DeleteFileSystemErrorKind::ServiceLimitExceeded(inner) => {
+                        Error::ServiceLimitExceeded(inner)
+                    }
+                    crate::error::DeleteFileSystemErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteFileSystemErrorKind::FileSystemNotFound(inner) => {
-                    Error::FileSystemNotFound(inner)
-                }
-                crate::error::DeleteFileSystemErrorKind::IncompatibleParameterError(inner) => {
-                    Error::IncompatibleParameterError(inner)
-                }
-                crate::error::DeleteFileSystemErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::DeleteFileSystemErrorKind::ServiceLimitExceeded(inner) => {
-                    Error::ServiceLimitExceeded(inner)
-                }
-                crate::error::DeleteFileSystemErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -706,20 +741,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteSnapshotError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteSnapshotErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteSnapshotErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::DeleteSnapshotErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DeleteSnapshotErrorKind::SnapshotNotFound(inner) => {
+                        Error::SnapshotNotFound(inner)
+                    }
+                    crate::error::DeleteSnapshotErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteSnapshotErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::DeleteSnapshotErrorKind::SnapshotNotFound(inner) => {
-                    Error::SnapshotNotFound(inner)
-                }
-                crate::error::DeleteSnapshotErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -733,7 +770,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteStorageVirtualMachineError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteStorageVirtualMachineErrorKind::BadRequest(inner) => Error::BadRequest(inner),
                 crate::error::DeleteStorageVirtualMachineErrorKind::IncompatibleParameterError(inner) => Error::IncompatibleParameterError(inner),
                 crate::error::DeleteStorageVirtualMachineErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
@@ -750,7 +787,10 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteVolumeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DeleteVolumeErrorKind::BadRequest(inner) => Error::BadRequest(inner),
                 crate::error::DeleteVolumeErrorKind::IncompatibleParameterError(inner) => {
                     Error::IncompatibleParameterError(inner)
@@ -775,26 +815,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeBackupsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeBackupsErrorKind::BackupNotFound(inner) => {
-                    Error::BackupNotFound(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeBackupsErrorKind::BackupNotFound(inner) => {
+                        Error::BackupNotFound(inner)
+                    }
+                    crate::error::DescribeBackupsErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::DescribeBackupsErrorKind::FileSystemNotFound(inner) => {
+                        Error::FileSystemNotFound(inner)
+                    }
+                    crate::error::DescribeBackupsErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DescribeBackupsErrorKind::VolumeNotFound(inner) => {
+                        Error::VolumeNotFound(inner)
+                    }
+                    crate::error::DescribeBackupsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeBackupsErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
-                }
-                crate::error::DescribeBackupsErrorKind::FileSystemNotFound(inner) => {
-                    Error::FileSystemNotFound(inner)
-                }
-                crate::error::DescribeBackupsErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::DescribeBackupsErrorKind::VolumeNotFound(inner) => {
-                    Error::VolumeNotFound(inner)
-                }
-                crate::error::DescribeBackupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -813,7 +855,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeDataRepositoryAssociationsErrorKind::BadRequest(inner) => Error::BadRequest(inner),
                 crate::error::DescribeDataRepositoryAssociationsErrorKind::DataRepositoryAssociationNotFound(inner) => Error::DataRepositoryAssociationNotFound(inner),
                 crate::error::DescribeDataRepositoryAssociationsErrorKind::FileSystemNotFound(inner) => Error::FileSystemNotFound(inner),
@@ -834,7 +876,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeDataRepositoryTasksError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeDataRepositoryTasksErrorKind::BadRequest(inner) => {
                     Error::BadRequest(inner)
                 }
@@ -863,20 +908,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeFileCachesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeFileCachesErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeFileCachesErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::DescribeFileCachesErrorKind::FileCacheNotFound(inner) => {
+                        Error::FileCacheNotFound(inner)
+                    }
+                    crate::error::DescribeFileCachesErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DescribeFileCachesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeFileCachesErrorKind::FileCacheNotFound(inner) => {
-                    Error::FileCacheNotFound(inner)
-                }
-                crate::error::DescribeFileCachesErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::DescribeFileCachesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -890,20 +937,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeFileSystemAliasesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeFileSystemAliasesErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeFileSystemAliasesErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::DescribeFileSystemAliasesErrorKind::FileSystemNotFound(inner) => {
+                        Error::FileSystemNotFound(inner)
+                    }
+                    crate::error::DescribeFileSystemAliasesErrorKind::InternalServerError(
+                        inner,
+                    ) => Error::InternalServerError(inner),
+                    crate::error::DescribeFileSystemAliasesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeFileSystemAliasesErrorKind::FileSystemNotFound(inner) => {
-                    Error::FileSystemNotFound(inner)
-                }
-                crate::error::DescribeFileSystemAliasesErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::DescribeFileSystemAliasesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -916,20 +965,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeFileSystemsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeFileSystemsErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeFileSystemsErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::DescribeFileSystemsErrorKind::FileSystemNotFound(inner) => {
+                        Error::FileSystemNotFound(inner)
+                    }
+                    crate::error::DescribeFileSystemsErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DescribeFileSystemsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeFileSystemsErrorKind::FileSystemNotFound(inner) => {
-                    Error::FileSystemNotFound(inner)
-                }
-                crate::error::DescribeFileSystemsErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::DescribeFileSystemsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -942,20 +993,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeSnapshotsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeSnapshotsErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeSnapshotsErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::DescribeSnapshotsErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DescribeSnapshotsErrorKind::SnapshotNotFound(inner) => {
+                        Error::SnapshotNotFound(inner)
+                    }
+                    crate::error::DescribeSnapshotsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeSnapshotsErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::DescribeSnapshotsErrorKind::SnapshotNotFound(inner) => {
-                    Error::SnapshotNotFound(inner)
-                }
-                crate::error::DescribeSnapshotsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -973,7 +1026,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeStorageVirtualMachinesErrorKind::BadRequest(inner) => Error::BadRequest(inner),
                 crate::error::DescribeStorageVirtualMachinesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeStorageVirtualMachinesErrorKind::StorageVirtualMachineNotFound(inner) => Error::StorageVirtualMachineNotFound(inner),
@@ -989,20 +1042,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeVolumesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeVolumesErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeVolumesErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::DescribeVolumesErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DescribeVolumesErrorKind::VolumeNotFound(inner) => {
+                        Error::VolumeNotFound(inner)
+                    }
+                    crate::error::DescribeVolumesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeVolumesErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::DescribeVolumesErrorKind::VolumeNotFound(inner) => {
-                    Error::VolumeNotFound(inner)
-                }
-                crate::error::DescribeVolumesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1016,20 +1071,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DisassociateFileSystemAliasesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DisassociateFileSystemAliasesErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DisassociateFileSystemAliasesErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::DisassociateFileSystemAliasesErrorKind::FileSystemNotFound(
+                        inner,
+                    ) => Error::FileSystemNotFound(inner),
+                    crate::error::DisassociateFileSystemAliasesErrorKind::InternalServerError(
+                        inner,
+                    ) => Error::InternalServerError(inner),
+                    crate::error::DisassociateFileSystemAliasesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DisassociateFileSystemAliasesErrorKind::FileSystemNotFound(inner) => {
-                    Error::FileSystemNotFound(inner)
-                }
-                crate::error::DisassociateFileSystemAliasesErrorKind::InternalServerError(
-                    inner,
-                ) => Error::InternalServerError(inner),
-                crate::error::DisassociateFileSystemAliasesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1042,26 +1099,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsForResourceErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListTagsForResourceErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::NotServiceResourceError(inner) => {
+                        Error::NotServiceResourceError(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::ResourceDoesNotSupportTagging(
+                        inner,
+                    ) => Error::ResourceDoesNotSupportTagging(inner),
+                    crate::error::ListTagsForResourceErrorKind::ResourceNotFound(inner) => {
+                        Error::ResourceNotFound(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListTagsForResourceErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::NotServiceResourceError(inner) => {
-                    Error::NotServiceResourceError(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::ResourceDoesNotSupportTagging(
-                    inner,
-                ) => Error::ResourceDoesNotSupportTagging(inner),
-                crate::error::ListTagsForResourceErrorKind::ResourceNotFound(inner) => {
-                    Error::ResourceNotFound(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1075,7 +1134,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ReleaseFileSystemNfsV3LocksError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::ReleaseFileSystemNfsV3LocksErrorKind::BadRequest(inner) => {
                     Error::BadRequest(inner)
                 }
@@ -1108,20 +1170,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RestoreVolumeFromSnapshotError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RestoreVolumeFromSnapshotErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::RestoreVolumeFromSnapshotErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::RestoreVolumeFromSnapshotErrorKind::InternalServerError(
+                        inner,
+                    ) => Error::InternalServerError(inner),
+                    crate::error::RestoreVolumeFromSnapshotErrorKind::VolumeNotFound(inner) => {
+                        Error::VolumeNotFound(inner)
+                    }
+                    crate::error::RestoreVolumeFromSnapshotErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::RestoreVolumeFromSnapshotErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::RestoreVolumeFromSnapshotErrorKind::VolumeNotFound(inner) => {
-                    Error::VolumeNotFound(inner)
-                }
-                crate::error::RestoreVolumeFromSnapshotErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1132,7 +1196,10 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::TagResourceErrorKind::BadRequest(inner) => Error::BadRequest(inner),
                 crate::error::TagResourceErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
@@ -1160,7 +1227,10 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::UntagResourceErrorKind::BadRequest(inner) => Error::BadRequest(inner),
                 crate::error::UntagResourceErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
@@ -1195,7 +1265,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateDataRepositoryAssociationErrorKind::BadRequest(inner) => Error::BadRequest(inner),
                 crate::error::UpdateDataRepositoryAssociationErrorKind::DataRepositoryAssociationNotFound(inner) => Error::DataRepositoryAssociationNotFound(inner),
                 crate::error::UpdateDataRepositoryAssociationErrorKind::IncompatibleParameterError(inner) => Error::IncompatibleParameterError(inner),
@@ -1213,32 +1283,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateFileCacheError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateFileCacheErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateFileCacheErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::UpdateFileCacheErrorKind::FileCacheNotFound(inner) => {
+                        Error::FileCacheNotFound(inner)
+                    }
+                    crate::error::UpdateFileCacheErrorKind::IncompatibleParameterError(inner) => {
+                        Error::IncompatibleParameterError(inner)
+                    }
+                    crate::error::UpdateFileCacheErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::UpdateFileCacheErrorKind::MissingFileCacheConfiguration(
+                        inner,
+                    ) => Error::MissingFileCacheConfiguration(inner),
+                    crate::error::UpdateFileCacheErrorKind::ServiceLimitExceeded(inner) => {
+                        Error::ServiceLimitExceeded(inner)
+                    }
+                    crate::error::UpdateFileCacheErrorKind::UnsupportedOperation(inner) => {
+                        Error::UnsupportedOperation(inner)
+                    }
+                    crate::error::UpdateFileCacheErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateFileCacheErrorKind::FileCacheNotFound(inner) => {
-                    Error::FileCacheNotFound(inner)
-                }
-                crate::error::UpdateFileCacheErrorKind::IncompatibleParameterError(inner) => {
-                    Error::IncompatibleParameterError(inner)
-                }
-                crate::error::UpdateFileCacheErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::UpdateFileCacheErrorKind::MissingFileCacheConfiguration(inner) => {
-                    Error::MissingFileCacheConfiguration(inner)
-                }
-                crate::error::UpdateFileCacheErrorKind::ServiceLimitExceeded(inner) => {
-                    Error::ServiceLimitExceeded(inner)
-                }
-                crate::error::UpdateFileCacheErrorKind::UnsupportedOperation(inner) => {
-                    Error::UnsupportedOperation(inner)
-                }
-                crate::error::UpdateFileCacheErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1251,32 +1323,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateFileSystemError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateFileSystemErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateFileSystemErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::UpdateFileSystemErrorKind::FileSystemNotFound(inner) => {
+                        Error::FileSystemNotFound(inner)
+                    }
+                    crate::error::UpdateFileSystemErrorKind::IncompatibleParameterError(inner) => {
+                        Error::IncompatibleParameterError(inner)
+                    }
+                    crate::error::UpdateFileSystemErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::UpdateFileSystemErrorKind::MissingFileSystemConfiguration(
+                        inner,
+                    ) => Error::MissingFileSystemConfiguration(inner),
+                    crate::error::UpdateFileSystemErrorKind::ServiceLimitExceeded(inner) => {
+                        Error::ServiceLimitExceeded(inner)
+                    }
+                    crate::error::UpdateFileSystemErrorKind::UnsupportedOperation(inner) => {
+                        Error::UnsupportedOperation(inner)
+                    }
+                    crate::error::UpdateFileSystemErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateFileSystemErrorKind::FileSystemNotFound(inner) => {
-                    Error::FileSystemNotFound(inner)
-                }
-                crate::error::UpdateFileSystemErrorKind::IncompatibleParameterError(inner) => {
-                    Error::IncompatibleParameterError(inner)
-                }
-                crate::error::UpdateFileSystemErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::UpdateFileSystemErrorKind::MissingFileSystemConfiguration(inner) => {
-                    Error::MissingFileSystemConfiguration(inner)
-                }
-                crate::error::UpdateFileSystemErrorKind::ServiceLimitExceeded(inner) => {
-                    Error::ServiceLimitExceeded(inner)
-                }
-                crate::error::UpdateFileSystemErrorKind::UnsupportedOperation(inner) => {
-                    Error::UnsupportedOperation(inner)
-                }
-                crate::error::UpdateFileSystemErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1287,20 +1361,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateSnapshotError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateSnapshotErrorKind::BadRequest(inner) => {
-                    Error::BadRequest(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateSnapshotErrorKind::BadRequest(inner) => {
+                        Error::BadRequest(inner)
+                    }
+                    crate::error::UpdateSnapshotErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::UpdateSnapshotErrorKind::SnapshotNotFound(inner) => {
+                        Error::SnapshotNotFound(inner)
+                    }
+                    crate::error::UpdateSnapshotErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateSnapshotErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::UpdateSnapshotErrorKind::SnapshotNotFound(inner) => {
-                    Error::SnapshotNotFound(inner)
-                }
-                crate::error::UpdateSnapshotErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1314,7 +1390,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateStorageVirtualMachineError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateStorageVirtualMachineErrorKind::BadRequest(inner) => Error::BadRequest(inner),
                 crate::error::UpdateStorageVirtualMachineErrorKind::IncompatibleParameterError(inner) => Error::IncompatibleParameterError(inner),
                 crate::error::UpdateStorageVirtualMachineErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
@@ -1332,7 +1408,10 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateVolumeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::UpdateVolumeErrorKind::BadRequest(inner) => Error::BadRequest(inner),
                 crate::error::UpdateVolumeErrorKind::IncompatibleParameterError(inner) => {
                     Error::IncompatibleParameterError(inner)

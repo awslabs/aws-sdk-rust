@@ -40,7 +40,7 @@ pub mod disable_control_input {
         /// Consumes the builder and constructs a [`DisableControlInput`](crate::input::DisableControlInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DisableControlInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DisableControlInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DisableControlInput {
                 control_identifier: self.control_identifier,
@@ -62,13 +62,13 @@ impl DisableControlInput {
             crate::operation::DisableControl,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisableControlInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/disable-control").expect("formatting should succeed");
                 Ok(())
             }
@@ -76,8 +76,10 @@ impl DisableControlInput {
             fn update_http_builder(
                 input: &crate::input::DisableControlInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -196,7 +198,7 @@ pub mod enable_control_input {
         /// Consumes the builder and constructs a [`EnableControlInput`](crate::input::EnableControlInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::EnableControlInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::EnableControlInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::EnableControlInput {
                 control_identifier: self.control_identifier,
@@ -218,13 +220,13 @@ impl EnableControlInput {
             crate::operation::EnableControl,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::EnableControlInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/enable-control").expect("formatting should succeed");
                 Ok(())
             }
@@ -232,8 +234,10 @@ impl EnableControlInput {
             fn update_http_builder(
                 input: &crate::input::EnableControlInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -338,8 +342,10 @@ pub mod get_control_operation_input {
         /// Consumes the builder and constructs a [`GetControlOperationInput`](crate::input::GetControlOperationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetControlOperationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetControlOperationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetControlOperationInput {
                 operation_identifier: self.operation_identifier,
             })
@@ -359,13 +365,13 @@ impl GetControlOperationInput {
             crate::operation::GetControlOperation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetControlOperationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/get-control-operation").expect("formatting should succeed");
                 Ok(())
             }
@@ -373,8 +379,10 @@ impl GetControlOperationInput {
             fn update_http_builder(
                 input: &crate::input::GetControlOperationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -501,8 +509,10 @@ pub mod list_enabled_controls_input {
         /// Consumes the builder and constructs a [`ListEnabledControlsInput`](crate::input::ListEnabledControlsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListEnabledControlsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListEnabledControlsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListEnabledControlsInput {
                 target_identifier: self.target_identifier,
                 next_token: self.next_token,
@@ -524,13 +534,13 @@ impl ListEnabledControlsInput {
             crate::operation::ListEnabledControls,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListEnabledControlsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/list-enabled-controls").expect("formatting should succeed");
                 Ok(())
             }
@@ -538,8 +548,10 @@ impl ListEnabledControlsInput {
             fn update_http_builder(
                 input: &crate::input::ListEnabledControlsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

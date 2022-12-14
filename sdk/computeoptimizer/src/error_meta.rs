@@ -53,7 +53,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteRecommendationPreferencesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::DeleteRecommendationPreferencesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::DeleteRecommendationPreferencesErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -81,7 +81,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeRecommendationExportJobsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::DescribeRecommendationExportJobsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::DescribeRecommendationExportJobsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -113,7 +113,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ExportAutoScalingGroupRecommendationsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::ExportAutoScalingGroupRecommendationsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::ExportAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -141,7 +141,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ExportEBSVolumeRecommendationsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::ExportEBSVolumeRecommendationsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::ExportEBSVolumeRecommendationsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -169,7 +169,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ExportEC2InstanceRecommendationsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::ExportEC2InstanceRecommendationsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::ExportEC2InstanceRecommendationsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -201,7 +201,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ExportLambdaFunctionRecommendationsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::ExportLambdaFunctionRecommendationsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::ExportLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -230,7 +230,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetAutoScalingGroupRecommendationsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetAutoScalingGroupRecommendationsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::GetAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -254,7 +254,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetEBSVolumeRecommendationsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetEBSVolumeRecommendationsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetEBSVolumeRecommendationsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::GetEBSVolumeRecommendationsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -278,7 +278,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetEC2InstanceRecommendationsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetEC2InstanceRecommendationsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetEC2InstanceRecommendationsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::GetEC2InstanceRecommendationsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -310,7 +310,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetEC2RecommendationProjectedMetricsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetEC2RecommendationProjectedMetricsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::GetEC2RecommendationProjectedMetricsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -342,7 +342,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetEffectiveRecommendationPreferencesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetEffectiveRecommendationPreferencesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::GetEffectiveRecommendationPreferencesErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -365,29 +365,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetEnrollmentStatusError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetEnrollmentStatusErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetEnrollmentStatusErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::GetEnrollmentStatusErrorKind::InternalServerException(inner) => {
+                        Error::InternalServerException(inner)
+                    }
+                    crate::error::GetEnrollmentStatusErrorKind::InvalidParameterValueException(
+                        inner,
+                    ) => Error::InvalidParameterValueException(inner),
+                    crate::error::GetEnrollmentStatusErrorKind::MissingAuthenticationToken(
+                        inner,
+                    ) => Error::MissingAuthenticationToken(inner),
+                    crate::error::GetEnrollmentStatusErrorKind::ServiceUnavailableException(
+                        inner,
+                    ) => Error::ServiceUnavailableException(inner),
+                    crate::error::GetEnrollmentStatusErrorKind::ThrottlingException(inner) => {
+                        Error::ThrottlingException(inner)
+                    }
+                    crate::error::GetEnrollmentStatusErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetEnrollmentStatusErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
-                }
-                crate::error::GetEnrollmentStatusErrorKind::InvalidParameterValueException(
-                    inner,
-                ) => Error::InvalidParameterValueException(inner),
-                crate::error::GetEnrollmentStatusErrorKind::MissingAuthenticationToken(inner) => {
-                    Error::MissingAuthenticationToken(inner)
-                }
-                crate::error::GetEnrollmentStatusErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::GetEnrollmentStatusErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::GetEnrollmentStatusErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -409,7 +411,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetEnrollmentStatusesForOrganizationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetEnrollmentStatusesForOrganizationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::GetEnrollmentStatusesForOrganizationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -435,7 +437,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetLambdaFunctionRecommendationsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetLambdaFunctionRecommendationsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::GetLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -459,7 +461,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetRecommendationPreferencesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetRecommendationPreferencesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetRecommendationPreferencesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::GetRecommendationPreferencesErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -483,7 +485,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetRecommendationSummariesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetRecommendationSummariesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetRecommendationSummariesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::GetRecommendationSummariesErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -506,7 +508,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutRecommendationPreferencesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::PutRecommendationPreferencesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::PutRecommendationPreferencesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::PutRecommendationPreferencesErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -530,7 +532,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateEnrollmentStatusError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::UpdateEnrollmentStatusErrorKind::AccessDeniedException(inner) => {
                     Error::AccessDeniedException(inner)
                 }

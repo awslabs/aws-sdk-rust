@@ -26,8 +26,10 @@ pub mod get_latest_configuration_input {
         /// Consumes the builder and constructs a [`GetLatestConfigurationInput`](crate::input::GetLatestConfigurationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetLatestConfigurationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetLatestConfigurationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetLatestConfigurationInput {
                 configuration_token: self.configuration_token,
             })
@@ -47,20 +49,20 @@ impl GetLatestConfigurationInput {
             crate::operation::GetLatestConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetLatestConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/configuration").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetLatestConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_1) = &_input.configuration_token {
                     query.push_kv(
@@ -74,8 +76,10 @@ impl GetLatestConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::GetLatestConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -214,7 +218,7 @@ pub mod start_configuration_session_input {
             self,
         ) -> Result<
             crate::input::StartConfigurationSessionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StartConfigurationSessionInput {
                 application_identifier: self.application_identifier,
@@ -239,13 +243,13 @@ impl StartConfigurationSessionInput {
             crate::operation::StartConfigurationSession,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartConfigurationSessionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/configurationsessions").expect("formatting should succeed");
                 Ok(())
             }
@@ -253,8 +257,10 @@ impl StartConfigurationSessionInput {
             fn update_http_builder(
                 input: &crate::input::StartConfigurationSessionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

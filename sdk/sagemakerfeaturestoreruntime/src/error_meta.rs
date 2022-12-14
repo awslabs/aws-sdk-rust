@@ -34,23 +34,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchGetRecordError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::BatchGetRecordErrorKind::AccessForbidden(inner) => {
-                    Error::AccessForbidden(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::BatchGetRecordErrorKind::AccessForbidden(inner) => {
+                        Error::AccessForbidden(inner)
+                    }
+                    crate::error::BatchGetRecordErrorKind::InternalFailure(inner) => {
+                        Error::InternalFailure(inner)
+                    }
+                    crate::error::BatchGetRecordErrorKind::ServiceUnavailable(inner) => {
+                        Error::ServiceUnavailable(inner)
+                    }
+                    crate::error::BatchGetRecordErrorKind::ValidationError(inner) => {
+                        Error::ValidationError(inner)
+                    }
+                    crate::error::BatchGetRecordErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::BatchGetRecordErrorKind::InternalFailure(inner) => {
-                    Error::InternalFailure(inner)
-                }
-                crate::error::BatchGetRecordErrorKind::ServiceUnavailable(inner) => {
-                    Error::ServiceUnavailable(inner)
-                }
-                crate::error::BatchGetRecordErrorKind::ValidationError(inner) => {
-                    Error::ValidationError(inner)
-                }
-                crate::error::BatchGetRecordErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -61,23 +63,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteRecordError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteRecordErrorKind::AccessForbidden(inner) => {
-                    Error::AccessForbidden(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteRecordErrorKind::AccessForbidden(inner) => {
+                        Error::AccessForbidden(inner)
+                    }
+                    crate::error::DeleteRecordErrorKind::InternalFailure(inner) => {
+                        Error::InternalFailure(inner)
+                    }
+                    crate::error::DeleteRecordErrorKind::ServiceUnavailable(inner) => {
+                        Error::ServiceUnavailable(inner)
+                    }
+                    crate::error::DeleteRecordErrorKind::ValidationError(inner) => {
+                        Error::ValidationError(inner)
+                    }
+                    crate::error::DeleteRecordErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteRecordErrorKind::InternalFailure(inner) => {
-                    Error::InternalFailure(inner)
-                }
-                crate::error::DeleteRecordErrorKind::ServiceUnavailable(inner) => {
-                    Error::ServiceUnavailable(inner)
-                }
-                crate::error::DeleteRecordErrorKind::ValidationError(inner) => {
-                    Error::ValidationError(inner)
-                }
-                crate::error::DeleteRecordErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -88,26 +92,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRecordError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetRecordErrorKind::AccessForbidden(inner) => {
-                    Error::AccessForbidden(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetRecordErrorKind::AccessForbidden(inner) => {
+                        Error::AccessForbidden(inner)
+                    }
+                    crate::error::GetRecordErrorKind::InternalFailure(inner) => {
+                        Error::InternalFailure(inner)
+                    }
+                    crate::error::GetRecordErrorKind::ResourceNotFound(inner) => {
+                        Error::ResourceNotFound(inner)
+                    }
+                    crate::error::GetRecordErrorKind::ServiceUnavailable(inner) => {
+                        Error::ServiceUnavailable(inner)
+                    }
+                    crate::error::GetRecordErrorKind::ValidationError(inner) => {
+                        Error::ValidationError(inner)
+                    }
+                    crate::error::GetRecordErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetRecordErrorKind::InternalFailure(inner) => {
-                    Error::InternalFailure(inner)
-                }
-                crate::error::GetRecordErrorKind::ResourceNotFound(inner) => {
-                    Error::ResourceNotFound(inner)
-                }
-                crate::error::GetRecordErrorKind::ServiceUnavailable(inner) => {
-                    Error::ServiceUnavailable(inner)
-                }
-                crate::error::GetRecordErrorKind::ValidationError(inner) => {
-                    Error::ValidationError(inner)
-                }
-                crate::error::GetRecordErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -118,23 +124,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PutRecordError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutRecordErrorKind::AccessForbidden(inner) => {
-                    Error::AccessForbidden(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::PutRecordErrorKind::AccessForbidden(inner) => {
+                        Error::AccessForbidden(inner)
+                    }
+                    crate::error::PutRecordErrorKind::InternalFailure(inner) => {
+                        Error::InternalFailure(inner)
+                    }
+                    crate::error::PutRecordErrorKind::ServiceUnavailable(inner) => {
+                        Error::ServiceUnavailable(inner)
+                    }
+                    crate::error::PutRecordErrorKind::ValidationError(inner) => {
+                        Error::ValidationError(inner)
+                    }
+                    crate::error::PutRecordErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::PutRecordErrorKind::InternalFailure(inner) => {
-                    Error::InternalFailure(inner)
-                }
-                crate::error::PutRecordErrorKind::ServiceUnavailable(inner) => {
-                    Error::ServiceUnavailable(inner)
-                }
-                crate::error::PutRecordErrorKind::ValidationError(inner) => {
-                    Error::ValidationError(inner)
-                }
-                crate::error::PutRecordErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }

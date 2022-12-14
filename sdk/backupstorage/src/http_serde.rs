@@ -33,9 +33,10 @@ pub(crate) fn deser_header_get_chunk_get_chunk_output_length(
     let headers = header_map.get_all("x-amz-data-length").iter();
     let var_1 = aws_smithy_http::header::read_many_primitive::<i64>(headers)?;
     if var_1.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_1.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_1.len()
+        )))
     } else {
         let mut var_1 = var_1;
         Ok(var_1.pop())
@@ -79,9 +80,10 @@ pub(crate) fn deser_header_get_object_metadata_get_object_metadata_output_metada
     let headers = header_map.get_all("x-amz-data-length").iter();
     let var_2 = aws_smithy_http::header::read_many_primitive::<i64>(headers)?;
     if var_2.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_2.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_2.len()
+        )))
     } else {
         let mut var_2 = var_2;
         Ok(var_2.pop())

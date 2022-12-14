@@ -60,7 +60,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::AssociateTeamMemberError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::AssociateTeamMemberErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::AssociateTeamMemberErrorKind::InvalidServiceRoleException(inner) => Error::InvalidServiceRoleException(inner),
                 crate::error::AssociateTeamMemberErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
@@ -80,32 +80,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateProjectError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateProjectErrorKind::ConcurrentModificationException(inner) => {
-                    Error::ConcurrentModificationException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateProjectErrorKind::ConcurrentModificationException(
+                        inner,
+                    ) => Error::ConcurrentModificationException(inner),
+                    crate::error::CreateProjectErrorKind::InvalidServiceRoleException(inner) => {
+                        Error::InvalidServiceRoleException(inner)
+                    }
+                    crate::error::CreateProjectErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::CreateProjectErrorKind::ProjectAlreadyExistsException(inner) => {
+                        Error::ProjectAlreadyExistsException(inner)
+                    }
+                    crate::error::CreateProjectErrorKind::ProjectConfigurationException(inner) => {
+                        Error::ProjectConfigurationException(inner)
+                    }
+                    crate::error::CreateProjectErrorKind::ProjectCreationFailedException(inner) => {
+                        Error::ProjectCreationFailedException(inner)
+                    }
+                    crate::error::CreateProjectErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::CreateProjectErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateProjectErrorKind::InvalidServiceRoleException(inner) => {
-                    Error::InvalidServiceRoleException(inner)
-                }
-                crate::error::CreateProjectErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CreateProjectErrorKind::ProjectAlreadyExistsException(inner) => {
-                    Error::ProjectAlreadyExistsException(inner)
-                }
-                crate::error::CreateProjectErrorKind::ProjectConfigurationException(inner) => {
-                    Error::ProjectConfigurationException(inner)
-                }
-                crate::error::CreateProjectErrorKind::ProjectCreationFailedException(inner) => {
-                    Error::ProjectCreationFailedException(inner)
-                }
-                crate::error::CreateProjectErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::CreateProjectErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -118,17 +120,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateUserProfileError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateUserProfileErrorKind::UserProfileAlreadyExistsException(
-                    inner,
-                ) => Error::UserProfileAlreadyExistsException(inner),
-                crate::error::CreateUserProfileErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateUserProfileErrorKind::UserProfileAlreadyExistsException(
+                        inner,
+                    ) => Error::UserProfileAlreadyExistsException(inner),
+                    crate::error::CreateUserProfileErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::CreateUserProfileErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateUserProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -139,20 +143,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteProjectError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteProjectErrorKind::ConcurrentModificationException(inner) => {
-                    Error::ConcurrentModificationException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteProjectErrorKind::ConcurrentModificationException(
+                        inner,
+                    ) => Error::ConcurrentModificationException(inner),
+                    crate::error::DeleteProjectErrorKind::InvalidServiceRoleException(inner) => {
+                        Error::InvalidServiceRoleException(inner)
+                    }
+                    crate::error::DeleteProjectErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::DeleteProjectErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteProjectErrorKind::InvalidServiceRoleException(inner) => {
-                    Error::InvalidServiceRoleException(inner)
-                }
-                crate::error::DeleteProjectErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::DeleteProjectErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -165,14 +171,16 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteUserProfileError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteUserProfileErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteUserProfileErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::DeleteUserProfileErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteUserProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -183,26 +191,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeProjectError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeProjectErrorKind::ConcurrentModificationException(inner) => {
-                    Error::ConcurrentModificationException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeProjectErrorKind::ConcurrentModificationException(
+                        inner,
+                    ) => Error::ConcurrentModificationException(inner),
+                    crate::error::DescribeProjectErrorKind::InvalidServiceRoleException(inner) => {
+                        Error::InvalidServiceRoleException(inner)
+                    }
+                    crate::error::DescribeProjectErrorKind::ProjectConfigurationException(
+                        inner,
+                    ) => Error::ProjectConfigurationException(inner),
+                    crate::error::DescribeProjectErrorKind::ProjectNotFoundException(inner) => {
+                        Error::ProjectNotFoundException(inner)
+                    }
+                    crate::error::DescribeProjectErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::DescribeProjectErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeProjectErrorKind::InvalidServiceRoleException(inner) => {
-                    Error::InvalidServiceRoleException(inner)
-                }
-                crate::error::DescribeProjectErrorKind::ProjectConfigurationException(inner) => {
-                    Error::ProjectConfigurationException(inner)
-                }
-                crate::error::DescribeProjectErrorKind::ProjectNotFoundException(inner) => {
-                    Error::ProjectNotFoundException(inner)
-                }
-                crate::error::DescribeProjectErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::DescribeProjectErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -215,17 +225,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeUserProfileError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeUserProfileErrorKind::UserProfileNotFoundException(inner) => {
-                    Error::UserProfileNotFoundException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeUserProfileErrorKind::UserProfileNotFoundException(
+                        inner,
+                    ) => Error::UserProfileNotFoundException(inner),
+                    crate::error::DescribeUserProfileErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::DescribeUserProfileErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeUserProfileErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::DescribeUserProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -239,7 +251,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DisassociateTeamMemberError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DisassociateTeamMemberErrorKind::ConcurrentModificationException(
                     inner,
                 ) => Error::ConcurrentModificationException(inner),
@@ -266,17 +281,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListProjectsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListProjectsErrorKind::InvalidNextTokenException(inner) => {
-                    Error::InvalidNextTokenException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListProjectsErrorKind::InvalidNextTokenException(inner) => {
+                        Error::InvalidNextTokenException(inner)
+                    }
+                    crate::error::ListProjectsErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::ListProjectsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListProjectsErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListProjectsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -287,20 +304,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListResourcesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListResourcesErrorKind::InvalidNextTokenException(inner) => {
-                    Error::InvalidNextTokenException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListResourcesErrorKind::InvalidNextTokenException(inner) => {
+                        Error::InvalidNextTokenException(inner)
+                    }
+                    crate::error::ListResourcesErrorKind::ProjectNotFoundException(inner) => {
+                        Error::ProjectNotFoundException(inner)
+                    }
+                    crate::error::ListResourcesErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::ListResourcesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListResourcesErrorKind::ProjectNotFoundException(inner) => {
-                    Error::ProjectNotFoundException(inner)
-                }
-                crate::error::ListResourcesErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListResourcesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -313,20 +332,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListTagsForProjectError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsForProjectErrorKind::InvalidNextTokenException(inner) => {
-                    Error::InvalidNextTokenException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListTagsForProjectErrorKind::InvalidNextTokenException(inner) => {
+                        Error::InvalidNextTokenException(inner)
+                    }
+                    crate::error::ListTagsForProjectErrorKind::ProjectNotFoundException(inner) => {
+                        Error::ProjectNotFoundException(inner)
+                    }
+                    crate::error::ListTagsForProjectErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::ListTagsForProjectErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListTagsForProjectErrorKind::ProjectNotFoundException(inner) => {
-                    Error::ProjectNotFoundException(inner)
-                }
-                crate::error::ListTagsForProjectErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListTagsForProjectErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -337,20 +358,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTeamMembersError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTeamMembersErrorKind::InvalidNextTokenException(inner) => {
-                    Error::InvalidNextTokenException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListTeamMembersErrorKind::InvalidNextTokenException(inner) => {
+                        Error::InvalidNextTokenException(inner)
+                    }
+                    crate::error::ListTeamMembersErrorKind::ProjectNotFoundException(inner) => {
+                        Error::ProjectNotFoundException(inner)
+                    }
+                    crate::error::ListTeamMembersErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::ListTeamMembersErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListTeamMembersErrorKind::ProjectNotFoundException(inner) => {
-                    Error::ProjectNotFoundException(inner)
-                }
-                crate::error::ListTeamMembersErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListTeamMembersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -363,17 +386,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListUserProfilesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListUserProfilesErrorKind::InvalidNextTokenException(inner) => {
-                    Error::InvalidNextTokenException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListUserProfilesErrorKind::InvalidNextTokenException(inner) => {
+                        Error::InvalidNextTokenException(inner)
+                    }
+                    crate::error::ListUserProfilesErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::ListUserProfilesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListUserProfilesErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListUserProfilesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -384,23 +409,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagProjectError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagProjectErrorKind::ConcurrentModificationException(inner) => {
-                    Error::ConcurrentModificationException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::TagProjectErrorKind::ConcurrentModificationException(inner) => {
+                        Error::ConcurrentModificationException(inner)
+                    }
+                    crate::error::TagProjectErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::TagProjectErrorKind::ProjectNotFoundException(inner) => {
+                        Error::ProjectNotFoundException(inner)
+                    }
+                    crate::error::TagProjectErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::TagProjectErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::TagProjectErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::TagProjectErrorKind::ProjectNotFoundException(inner) => {
-                    Error::ProjectNotFoundException(inner)
-                }
-                crate::error::TagProjectErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::TagProjectErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -411,23 +438,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagProjectError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagProjectErrorKind::ConcurrentModificationException(inner) => {
-                    Error::ConcurrentModificationException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UntagProjectErrorKind::ConcurrentModificationException(inner) => {
+                        Error::ConcurrentModificationException(inner)
+                    }
+                    crate::error::UntagProjectErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::UntagProjectErrorKind::ProjectNotFoundException(inner) => {
+                        Error::ProjectNotFoundException(inner)
+                    }
+                    crate::error::UntagProjectErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::UntagProjectErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UntagProjectErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::UntagProjectErrorKind::ProjectNotFoundException(inner) => {
-                    Error::ProjectNotFoundException(inner)
-                }
-                crate::error::UntagProjectErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::UntagProjectErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -438,17 +467,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateProjectError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateProjectErrorKind::ProjectNotFoundException(inner) => {
-                    Error::ProjectNotFoundException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateProjectErrorKind::ProjectNotFoundException(inner) => {
+                        Error::ProjectNotFoundException(inner)
+                    }
+                    crate::error::UpdateProjectErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::UpdateProjectErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateProjectErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::UpdateProjectErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -461,32 +492,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateTeamMemberError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateTeamMemberErrorKind::ConcurrentModificationException(inner) => {
-                    Error::ConcurrentModificationException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateTeamMemberErrorKind::ConcurrentModificationException(
+                        inner,
+                    ) => Error::ConcurrentModificationException(inner),
+                    crate::error::UpdateTeamMemberErrorKind::InvalidServiceRoleException(inner) => {
+                        Error::InvalidServiceRoleException(inner)
+                    }
+                    crate::error::UpdateTeamMemberErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::UpdateTeamMemberErrorKind::ProjectConfigurationException(
+                        inner,
+                    ) => Error::ProjectConfigurationException(inner),
+                    crate::error::UpdateTeamMemberErrorKind::ProjectNotFoundException(inner) => {
+                        Error::ProjectNotFoundException(inner)
+                    }
+                    crate::error::UpdateTeamMemberErrorKind::TeamMemberNotFoundException(inner) => {
+                        Error::TeamMemberNotFoundException(inner)
+                    }
+                    crate::error::UpdateTeamMemberErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::UpdateTeamMemberErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateTeamMemberErrorKind::InvalidServiceRoleException(inner) => {
-                    Error::InvalidServiceRoleException(inner)
-                }
-                crate::error::UpdateTeamMemberErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::UpdateTeamMemberErrorKind::ProjectConfigurationException(inner) => {
-                    Error::ProjectConfigurationException(inner)
-                }
-                crate::error::UpdateTeamMemberErrorKind::ProjectNotFoundException(inner) => {
-                    Error::ProjectNotFoundException(inner)
-                }
-                crate::error::UpdateTeamMemberErrorKind::TeamMemberNotFoundException(inner) => {
-                    Error::TeamMemberNotFoundException(inner)
-                }
-                crate::error::UpdateTeamMemberErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::UpdateTeamMemberErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -499,17 +532,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateUserProfileError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateUserProfileErrorKind::UserProfileNotFoundException(inner) => {
-                    Error::UserProfileNotFoundException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateUserProfileErrorKind::UserProfileNotFoundException(
+                        inner,
+                    ) => Error::UserProfileNotFoundException(inner),
+                    crate::error::UpdateUserProfileErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::UpdateUserProfileErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateUserProfileErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::UpdateUserProfileErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }

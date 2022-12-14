@@ -2,20 +2,20 @@
 pub fn add_headers_put_session(
     input: &crate::input::PutSessionInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_1) = &input.response_content_type {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "response_content_type",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "response_content_type",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("ResponseContentType", header_value);
         }
@@ -26,20 +26,20 @@ pub fn add_headers_put_session(
 pub fn add_headers_recognize_utterance(
     input: &crate::input::RecognizeUtteranceInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_3) = &input.session_state {
         let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "session_state",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "session_state",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err,
+                            &"*** Sensitive Data Redacted ***", err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-lex-session-state", header_value);
         }
@@ -50,13 +50,13 @@ pub fn add_headers_recognize_utterance(
             let header_value = formatted_6;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "request_attributes",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "request_attributes",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err,
+                            &"*** Sensitive Data Redacted ***", err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-lex-request-attributes", header_value);
         }
@@ -67,13 +67,13 @@ pub fn add_headers_recognize_utterance(
             let header_value = formatted_8;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "request_content_type",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "request_content_type",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("Content-Type", header_value);
         }
@@ -84,13 +84,13 @@ pub fn add_headers_recognize_utterance(
             let header_value = formatted_10;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "response_content_type",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "response_content_type",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("Response-Content-Type", header_value);
         }

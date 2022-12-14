@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_application_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateApplicationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.api_gateway_proxy {
         let mut object_2 = object.key("ApiGatewayProxy").start_object();
         crate::json_ser::serialize_structure_crate_model_api_gateway_proxy_input(
@@ -38,7 +38,7 @@ pub fn serialize_structure_crate_input_create_application_input(
 pub fn serialize_structure_crate_input_create_environment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateEnvironmentInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_11) = &input.client_token {
         object.key("ClientToken").string(var_11.as_str());
     }
@@ -66,7 +66,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
 pub fn serialize_structure_crate_input_create_route_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateRouteInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_19) = &input.client_token {
         object.key("ClientToken").string(var_19.as_str());
     }
@@ -107,7 +107,7 @@ pub fn serialize_structure_crate_input_create_route_input(
 pub fn serialize_structure_crate_input_create_service_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateServiceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_30) = &input.client_token {
         object.key("ClientToken").string(var_30.as_str());
     }
@@ -154,7 +154,7 @@ pub fn serialize_structure_crate_input_create_service_input(
 pub fn serialize_structure_crate_input_put_resource_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutResourcePolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_43) = &input.policy {
         object.key("Policy").string(var_43.as_str());
     }
@@ -167,7 +167,7 @@ pub fn serialize_structure_crate_input_put_resource_policy_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_45) = &input.tags {
         let mut object_46 = object.key("Tags").start_object();
         for (key_47, value_48) in var_45 {
@@ -183,7 +183,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_route_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRouteInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_49) = &input.activation_state {
         object.key("ActivationState").string(var_49.as_str());
     }
@@ -193,7 +193,7 @@ pub fn serialize_structure_crate_input_update_route_input(
 pub fn serialize_structure_crate_model_api_gateway_proxy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ApiGatewayProxyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_50) = &input.endpoint_type {
         object.key("EndpointType").string(var_50.as_str());
     }
@@ -206,7 +206,7 @@ pub fn serialize_structure_crate_model_api_gateway_proxy_input(
 pub fn serialize_structure_crate_model_default_route_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DefaultRouteInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_52) = &input.activation_state {
         object.key("ActivationState").string(var_52.as_str());
     }
@@ -216,7 +216,7 @@ pub fn serialize_structure_crate_model_default_route_input(
 pub fn serialize_structure_crate_model_uri_path_route_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UriPathRouteInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_53) = &input.source_path {
         object.key("SourcePath").string(var_53.as_str());
     }
@@ -241,7 +241,7 @@ pub fn serialize_structure_crate_model_uri_path_route_input(
 pub fn serialize_structure_crate_model_lambda_endpoint_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LambdaEndpointInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_59) = &input.arn {
         object.key("Arn").string(var_59.as_str());
     }
@@ -251,7 +251,7 @@ pub fn serialize_structure_crate_model_lambda_endpoint_input(
 pub fn serialize_structure_crate_model_url_endpoint_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UrlEndpointInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_60) = &input.url {
         object.key("Url").string(var_60.as_str());
     }

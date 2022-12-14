@@ -5,6 +5,7 @@
 
 use aws_config::SdkConfig;
 use aws_sdk_s3::{Client, Credentials, Endpoint, Region};
+use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::credentials::SharedCredentialsProvider;
 use bytes::BytesMut;
 use std::future::Future;
@@ -14,9 +15,6 @@ use tracing::debug;
 
 // test will hang forever with the default (single-threaded) test executor
 #[tokio::test(flavor = "multi_thread")]
-#[should_panic(
-    expected = "error reading a body from connection: end of file before message length reached"
-)]
 async fn test_streaming_response_fails_when_eof_comes_before_content_length_reached() {
     // We spawn a faulty server that will close the connection after
     // writing half of the response body.
@@ -50,7 +48,13 @@ async fn test_streaming_response_fails_when_eof_comes_before_content_length_reac
 
     // Should panic here when the body is read with an "UnexpectedEof" error
     if let Err(e) = res.body.collect().await {
-        panic!("{e}")
+        let message = format!("{}", DisplayErrorContext(e));
+        let expected =
+            "error reading a body from connection: end of file before message length reached";
+        assert!(
+            message.contains(expected),
+            "Expected `{message}` to contain `{expected}`"
+        );
     }
 }
 

@@ -599,13 +599,15 @@ pub mod select_object_content_output {
         /// Consumes the builder and constructs a [`SelectObjectContentOutput`](crate::output::SelectObjectContentOutput).
         pub fn build(
             self,
-        ) -> Result<crate::output::SelectObjectContentOutput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::output::SelectObjectContentOutput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(
                 crate::output::SelectObjectContentOutput {
                     payload: self.payload
-                        .ok_or(
-                            aws_smithy_http::operation::BuildError::MissingField { field: "payload", details: "payload was not specified but it is required when building SelectObjectContentOutput" }
+                        .ok_or_else(||
+                            aws_smithy_http::operation::error::BuildError::missing_field("payload", "payload was not specified but it is required when building SelectObjectContentOutput")
                         )?
                     ,
                 }

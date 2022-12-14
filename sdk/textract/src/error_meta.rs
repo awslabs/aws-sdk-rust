@@ -61,7 +61,10 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AnalyzeDocumentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::AnalyzeDocumentErrorKind::AccessDeniedException(inner) => {
                     Error::AccessDeniedException(inner)
                 }
@@ -106,7 +109,10 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AnalyzeExpenseError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::AnalyzeExpenseErrorKind::AccessDeniedException(inner) => {
                     Error::AccessDeniedException(inner)
                 }
@@ -148,38 +154,40 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AnalyzeIDError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AnalyzeIDErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::AnalyzeIDErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::AnalyzeIDErrorKind::BadDocumentException(inner) => {
+                        Error::BadDocumentException(inner)
+                    }
+                    crate::error::AnalyzeIDErrorKind::DocumentTooLargeException(inner) => {
+                        Error::DocumentTooLargeException(inner)
+                    }
+                    crate::error::AnalyzeIDErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::AnalyzeIDErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::AnalyzeIDErrorKind::InvalidS3ObjectException(inner) => {
+                        Error::InvalidS3ObjectException(inner)
+                    }
+                    crate::error::AnalyzeIDErrorKind::ProvisionedThroughputExceededException(
+                        inner,
+                    ) => Error::ProvisionedThroughputExceededException(inner),
+                    crate::error::AnalyzeIDErrorKind::ThrottlingException(inner) => {
+                        Error::ThrottlingException(inner)
+                    }
+                    crate::error::AnalyzeIDErrorKind::UnsupportedDocumentException(inner) => {
+                        Error::UnsupportedDocumentException(inner)
+                    }
+                    crate::error::AnalyzeIDErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::AnalyzeIDErrorKind::BadDocumentException(inner) => {
-                    Error::BadDocumentException(inner)
-                }
-                crate::error::AnalyzeIDErrorKind::DocumentTooLargeException(inner) => {
-                    Error::DocumentTooLargeException(inner)
-                }
-                crate::error::AnalyzeIDErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::AnalyzeIDErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::AnalyzeIDErrorKind::InvalidS3ObjectException(inner) => {
-                    Error::InvalidS3ObjectException(inner)
-                }
-                crate::error::AnalyzeIDErrorKind::ProvisionedThroughputExceededException(inner) => {
-                    Error::ProvisionedThroughputExceededException(inner)
-                }
-                crate::error::AnalyzeIDErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::AnalyzeIDErrorKind::UnsupportedDocumentException(inner) => {
-                    Error::UnsupportedDocumentException(inner)
-                }
-                crate::error::AnalyzeIDErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -192,7 +200,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DetectDocumentTextError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DetectDocumentTextErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::DetectDocumentTextErrorKind::BadDocumentException(inner) => Error::BadDocumentException(inner),
                 crate::error::DetectDocumentTextErrorKind::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
@@ -216,7 +224,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetDocumentAnalysisError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetDocumentAnalysisErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetDocumentAnalysisErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::GetDocumentAnalysisErrorKind::InvalidJobIdException(inner) => Error::InvalidJobIdException(inner),
@@ -240,7 +248,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetDocumentTextDetectionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetDocumentTextDetectionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetDocumentTextDetectionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::GetDocumentTextDetectionErrorKind::InvalidJobIdException(inner) => Error::InvalidJobIdException(inner),
@@ -263,7 +271,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetExpenseAnalysisError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetExpenseAnalysisErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetExpenseAnalysisErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::GetExpenseAnalysisErrorKind::InvalidJobIdException(inner) => Error::InvalidJobIdException(inner),
@@ -287,7 +295,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartDocumentAnalysisError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::StartDocumentAnalysisErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::StartDocumentAnalysisErrorKind::BadDocumentException(inner) => Error::BadDocumentException(inner),
                 crate::error::StartDocumentAnalysisErrorKind::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
@@ -315,7 +323,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartDocumentTextDetectionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::StartDocumentTextDetectionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::StartDocumentTextDetectionErrorKind::BadDocumentException(inner) => Error::BadDocumentException(inner),
                 crate::error::StartDocumentTextDetectionErrorKind::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
@@ -343,7 +351,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartExpenseAnalysisError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::StartExpenseAnalysisErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::StartExpenseAnalysisErrorKind::BadDocumentException(inner) => Error::BadDocumentException(inner),
                 crate::error::StartExpenseAnalysisErrorKind::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),

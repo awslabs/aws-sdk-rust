@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_start_human_loop_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartHumanLoopInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.data_attributes {
         let mut object_2 = object.key("DataAttributes").start_object();
         crate::json_ser::serialize_structure_crate_model_human_loop_data_attributes(
@@ -28,7 +28,7 @@ pub fn serialize_structure_crate_input_start_human_loop_input(
 pub fn serialize_structure_crate_input_stop_human_loop_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StopHumanLoopInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_7) = &input.human_loop_name {
         object.key("HumanLoopName").string(var_7.as_str());
     }
@@ -38,7 +38,7 @@ pub fn serialize_structure_crate_input_stop_human_loop_input(
 pub fn serialize_structure_crate_model_human_loop_data_attributes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HumanLoopDataAttributes,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_8) = &input.content_classifiers {
         let mut array_9 = object.key("ContentClassifiers").start_array();
         for item_10 in var_8 {
@@ -54,7 +54,7 @@ pub fn serialize_structure_crate_model_human_loop_data_attributes(
 pub fn serialize_structure_crate_model_human_loop_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::HumanLoopInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_11) = &input.input_content {
         object.key("InputContent").string(var_11.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_get_compliance_summary_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetComplianceSummaryInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.target_id_filters {
         let mut array_2 = object.key("TargetIdFilters").start_array();
         for item_3 in var_1 {
@@ -63,7 +63,7 @@ pub fn serialize_structure_crate_input_get_compliance_summary_input(
 pub fn serialize_structure_crate_input_get_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResourcesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_18) = &input.pagination_token {
         object.key("PaginationToken").string(var_18.as_str());
     }
@@ -123,7 +123,7 @@ pub fn serialize_structure_crate_input_get_resources_input(
 pub fn serialize_structure_crate_input_get_tag_keys_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetTagKeysInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.pagination_token {
         object.key("PaginationToken").string(var_33.as_str());
     }
@@ -133,7 +133,7 @@ pub fn serialize_structure_crate_input_get_tag_keys_input(
 pub fn serialize_structure_crate_input_get_tag_values_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetTagValuesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_34) = &input.pagination_token {
         object.key("PaginationToken").string(var_34.as_str());
     }
@@ -146,7 +146,7 @@ pub fn serialize_structure_crate_input_get_tag_values_input(
 pub fn serialize_structure_crate_input_start_report_creation_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartReportCreationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_36) = &input.s3_bucket {
         object.key("S3Bucket").string(var_36.as_str());
     }
@@ -156,7 +156,7 @@ pub fn serialize_structure_crate_input_start_report_creation_input(
 pub fn serialize_structure_crate_input_tag_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourcesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_37) = &input.resource_arn_list {
         let mut array_38 = object.key("ResourceARNList").start_array();
         for item_39 in var_37 {
@@ -181,7 +181,7 @@ pub fn serialize_structure_crate_input_tag_resources_input(
 pub fn serialize_structure_crate_input_untag_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourcesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_44) = &input.resource_arn_list {
         let mut array_45 = object.key("ResourceARNList").start_array();
         for item_46 in var_44 {
@@ -206,7 +206,7 @@ pub fn serialize_structure_crate_input_untag_resources_input(
 pub fn serialize_structure_crate_model_tag_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TagFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_50) = &input.key {
         object.key("Key").string(var_50.as_str());
     }

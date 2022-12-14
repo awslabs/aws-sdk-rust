@@ -57,38 +57,40 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::BatchCreateAttendeeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::BatchCreateAttendeeErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::BatchCreateAttendeeErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::BatchCreateAttendeeErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::BatchCreateAttendeeErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::BatchCreateAttendeeErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::BatchCreateAttendeeErrorKind::ServiceFailureException(inner) => {
+                        Error::ServiceFailureException(inner)
+                    }
+                    crate::error::BatchCreateAttendeeErrorKind::ServiceUnavailableException(
+                        inner,
+                    ) => Error::ServiceUnavailableException(inner),
+                    crate::error::BatchCreateAttendeeErrorKind::ThrottlingException(inner) => {
+                        Error::ThrottlingException(inner)
+                    }
+                    crate::error::BatchCreateAttendeeErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::BatchCreateAttendeeErrorKind::UnprocessableEntityException(
+                        inner,
+                    ) => Error::UnprocessableEntityException(inner),
+                    crate::error::BatchCreateAttendeeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::BatchCreateAttendeeErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::BatchCreateAttendeeErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::BatchCreateAttendeeErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::BatchCreateAttendeeErrorKind::ServiceFailureException(inner) => {
-                    Error::ServiceFailureException(inner)
-                }
-                crate::error::BatchCreateAttendeeErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::BatchCreateAttendeeErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::BatchCreateAttendeeErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::BatchCreateAttendeeErrorKind::UnprocessableEntityException(inner) => {
-                    Error::UnprocessableEntityException(inner)
-                }
-                crate::error::BatchCreateAttendeeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -110,7 +112,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
                 crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::ConflictException(inner) => Error::ConflictException(inner),
                 crate::error::BatchUpdateAttendeeCapabilitiesExceptErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
@@ -129,38 +131,40 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAttendeeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateAttendeeErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateAttendeeErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::CreateAttendeeErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::CreateAttendeeErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::CreateAttendeeErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::CreateAttendeeErrorKind::ServiceFailureException(inner) => {
+                        Error::ServiceFailureException(inner)
+                    }
+                    crate::error::CreateAttendeeErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::CreateAttendeeErrorKind::ThrottlingException(inner) => {
+                        Error::ThrottlingException(inner)
+                    }
+                    crate::error::CreateAttendeeErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::CreateAttendeeErrorKind::UnprocessableEntityException(inner) => {
+                        Error::UnprocessableEntityException(inner)
+                    }
+                    crate::error::CreateAttendeeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateAttendeeErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::CreateAttendeeErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CreateAttendeeErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::CreateAttendeeErrorKind::ServiceFailureException(inner) => {
-                    Error::ServiceFailureException(inner)
-                }
-                crate::error::CreateAttendeeErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::CreateAttendeeErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::CreateAttendeeErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::CreateAttendeeErrorKind::UnprocessableEntityException(inner) => {
-                    Error::UnprocessableEntityException(inner)
-                }
-                crate::error::CreateAttendeeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -171,32 +175,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateMeetingError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateMeetingErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateMeetingErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::CreateMeetingErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::CreateMeetingErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::CreateMeetingErrorKind::ServiceFailureException(inner) => {
+                        Error::ServiceFailureException(inner)
+                    }
+                    crate::error::CreateMeetingErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::CreateMeetingErrorKind::ThrottlingException(inner) => {
+                        Error::ThrottlingException(inner)
+                    }
+                    crate::error::CreateMeetingErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::CreateMeetingErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateMeetingErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::CreateMeetingErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CreateMeetingErrorKind::ServiceFailureException(inner) => {
-                    Error::ServiceFailureException(inner)
-                }
-                crate::error::CreateMeetingErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::CreateMeetingErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::CreateMeetingErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::CreateMeetingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -210,7 +216,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateMeetingWithAttendeesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CreateMeetingWithAttendeesErrorKind::BadRequestException(inner) => {
                     Error::BadRequestException(inner)
                 }
@@ -246,32 +255,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAttendeeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteAttendeeErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteAttendeeErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::DeleteAttendeeErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::DeleteAttendeeErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DeleteAttendeeErrorKind::ServiceFailureException(inner) => {
+                        Error::ServiceFailureException(inner)
+                    }
+                    crate::error::DeleteAttendeeErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::DeleteAttendeeErrorKind::ThrottlingException(inner) => {
+                        Error::ThrottlingException(inner)
+                    }
+                    crate::error::DeleteAttendeeErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DeleteAttendeeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteAttendeeErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::DeleteAttendeeErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DeleteAttendeeErrorKind::ServiceFailureException(inner) => {
-                    Error::ServiceFailureException(inner)
-                }
-                crate::error::DeleteAttendeeErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::DeleteAttendeeErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::DeleteAttendeeErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DeleteAttendeeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -282,32 +293,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteMeetingError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteMeetingErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteMeetingErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::DeleteMeetingErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::DeleteMeetingErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DeleteMeetingErrorKind::ServiceFailureException(inner) => {
+                        Error::ServiceFailureException(inner)
+                    }
+                    crate::error::DeleteMeetingErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::DeleteMeetingErrorKind::ThrottlingException(inner) => {
+                        Error::ThrottlingException(inner)
+                    }
+                    crate::error::DeleteMeetingErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::DeleteMeetingErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteMeetingErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::DeleteMeetingErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DeleteMeetingErrorKind::ServiceFailureException(inner) => {
-                    Error::ServiceFailureException(inner)
-                }
-                crate::error::DeleteMeetingErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::DeleteMeetingErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::DeleteMeetingErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::DeleteMeetingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -318,32 +331,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAttendeeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetAttendeeErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetAttendeeErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::GetAttendeeErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::GetAttendeeErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::GetAttendeeErrorKind::ServiceFailureException(inner) => {
+                        Error::ServiceFailureException(inner)
+                    }
+                    crate::error::GetAttendeeErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::GetAttendeeErrorKind::ThrottlingException(inner) => {
+                        Error::ThrottlingException(inner)
+                    }
+                    crate::error::GetAttendeeErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::GetAttendeeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetAttendeeErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::GetAttendeeErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::GetAttendeeErrorKind::ServiceFailureException(inner) => {
-                    Error::ServiceFailureException(inner)
-                }
-                crate::error::GetAttendeeErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::GetAttendeeErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::GetAttendeeErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::GetAttendeeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -354,32 +369,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetMeetingError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetMeetingErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetMeetingErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::GetMeetingErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::GetMeetingErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::GetMeetingErrorKind::ServiceFailureException(inner) => {
+                        Error::ServiceFailureException(inner)
+                    }
+                    crate::error::GetMeetingErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::GetMeetingErrorKind::ThrottlingException(inner) => {
+                        Error::ThrottlingException(inner)
+                    }
+                    crate::error::GetMeetingErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::GetMeetingErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetMeetingErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::GetMeetingErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::GetMeetingErrorKind::ServiceFailureException(inner) => {
-                    Error::ServiceFailureException(inner)
-                }
-                crate::error::GetMeetingErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::GetMeetingErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::GetMeetingErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::GetMeetingErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -390,32 +407,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAttendeesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListAttendeesErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListAttendeesErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::ListAttendeesErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::ListAttendeesErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::ListAttendeesErrorKind::ServiceFailureException(inner) => {
+                        Error::ServiceFailureException(inner)
+                    }
+                    crate::error::ListAttendeesErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::ListAttendeesErrorKind::ThrottlingException(inner) => {
+                        Error::ThrottlingException(inner)
+                    }
+                    crate::error::ListAttendeesErrorKind::UnauthorizedException(inner) => {
+                        Error::UnauthorizedException(inner)
+                    }
+                    crate::error::ListAttendeesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListAttendeesErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::ListAttendeesErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::ListAttendeesErrorKind::ServiceFailureException(inner) => {
-                    Error::ServiceFailureException(inner)
-                }
-                crate::error::ListAttendeesErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::ListAttendeesErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::ListAttendeesErrorKind::UnauthorizedException(inner) => {
-                    Error::UnauthorizedException(inner)
-                }
-                crate::error::ListAttendeesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -428,14 +447,16 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -449,7 +470,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartMeetingTranscriptionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::StartMeetingTranscriptionErrorKind::BadRequestException(inner) => {
                     Error::BadRequestException(inner)
                 }
@@ -494,7 +518,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StopMeetingTranscriptionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::StopMeetingTranscriptionErrorKind::BadRequestException(inner) => {
                     Error::BadRequestException(inner)
                 }
@@ -533,20 +560,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagResourceErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::TagResourceErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
+                        Error::TooManyTagsException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
-                    Error::TooManyTagsException(inner)
-                }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -557,17 +586,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagResourceErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UntagResourceErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -581,7 +612,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateAttendeeCapabilitiesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::UpdateAttendeeCapabilitiesErrorKind::BadRequestException(inner) => {
                     Error::BadRequestException(inner)
                 }

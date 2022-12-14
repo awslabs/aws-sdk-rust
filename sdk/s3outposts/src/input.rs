@@ -80,7 +80,7 @@ pub mod create_endpoint_input {
         /// Consumes the builder and constructs a [`CreateEndpointInput`](crate::input::CreateEndpointInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateEndpointInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateEndpointInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateEndpointInput {
                 outpost_id: self.outpost_id,
@@ -105,13 +105,13 @@ impl CreateEndpointInput {
             crate::operation::CreateEndpoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateEndpointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/S3Outposts/CreateEndpoint").expect("formatting should succeed");
                 Ok(())
             }
@@ -119,8 +119,10 @@ impl CreateEndpointInput {
             fn update_http_builder(
                 input: &crate::input::CreateEndpointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -233,7 +235,7 @@ pub mod delete_endpoint_input {
         /// Consumes the builder and constructs a [`DeleteEndpointInput`](crate::input::DeleteEndpointInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteEndpointInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteEndpointInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteEndpointInput {
                 endpoint_id: self.endpoint_id,
@@ -255,20 +257,20 @@ impl DeleteEndpointInput {
             crate::operation::DeleteEndpoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteEndpointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/S3Outposts/DeleteEndpoint").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DeleteEndpointInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_1) = &_input.endpoint_id {
                     query.push_kv("endpointId", &aws_smithy_http::query::fmt_string(&inner_1));
@@ -282,8 +284,10 @@ impl DeleteEndpointInput {
             fn update_http_builder(
                 input: &crate::input::DeleteEndpointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -383,7 +387,7 @@ pub mod list_endpoints_input {
         /// Consumes the builder and constructs a [`ListEndpointsInput`](crate::input::ListEndpointsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListEndpointsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListEndpointsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListEndpointsInput {
                 next_token: self.next_token,
@@ -405,20 +409,20 @@ impl ListEndpointsInput {
             crate::operation::ListEndpoints,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListEndpointsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/S3Outposts/ListEndpoints").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListEndpointsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_3) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_3));
@@ -435,8 +439,10 @@ impl ListEndpointsInput {
             fn update_http_builder(
                 input: &crate::input::ListEndpointsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -547,8 +553,10 @@ pub mod list_shared_endpoints_input {
         /// Consumes the builder and constructs a [`ListSharedEndpointsInput`](crate::input::ListSharedEndpointsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSharedEndpointsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListSharedEndpointsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListSharedEndpointsInput {
                 next_token: self.next_token,
                 max_results: self.max_results.unwrap_or_default(),
@@ -570,13 +578,13 @@ impl ListSharedEndpointsInput {
             crate::operation::ListSharedEndpoints,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListSharedEndpointsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/S3Outposts/ListSharedEndpoints")
                     .expect("formatting should succeed");
                 Ok(())
@@ -584,7 +592,7 @@ impl ListSharedEndpointsInput {
             fn uri_query(
                 _input: &crate::input::ListSharedEndpointsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_4) = &_input.next_token {
                     query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_4));
@@ -604,8 +612,10 @@ impl ListSharedEndpointsInput {
             fn update_http_builder(
                 input: &crate::input::ListSharedEndpointsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;

@@ -50,7 +50,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeEntitiesDetectionV2JobErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
                 crate::error::DescribeEntitiesDetectionV2JobErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DescribeEntitiesDetectionV2JobErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -70,7 +70,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeICD10CMInferenceJobError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeICD10CMInferenceJobErrorKind::InternalServerException(
                     inner,
                 ) => Error::InternalServerException(inner),
@@ -100,23 +103,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribePHIDetectionJobError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribePHIDetectionJobErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribePHIDetectionJobErrorKind::InternalServerException(
+                        inner,
+                    ) => Error::InternalServerException(inner),
+                    crate::error::DescribePHIDetectionJobErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::DescribePHIDetectionJobErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::DescribePHIDetectionJobErrorKind::TooManyRequestsException(
+                        inner,
+                    ) => Error::TooManyRequestsException(inner),
+                    crate::error::DescribePHIDetectionJobErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribePHIDetectionJobErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DescribePHIDetectionJobErrorKind::ResourceNotFoundException(
-                    inner,
-                ) => Error::ResourceNotFoundException(inner),
-                crate::error::DescribePHIDetectionJobErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::DescribePHIDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -130,7 +135,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeRxNormInferenceJobError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeRxNormInferenceJobErrorKind::InternalServerException(
                     inner,
                 ) => Error::InternalServerException(inner),
@@ -160,7 +168,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeSNOMEDCTInferenceJobError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeSNOMEDCTInferenceJobErrorKind::InternalServerException(
                     inner,
                 ) => Error::InternalServerException(inner),
@@ -187,29 +198,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DetectEntitiesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DetectEntitiesErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DetectEntitiesErrorKind::InternalServerException(inner) => {
+                        Error::InternalServerException(inner)
+                    }
+                    crate::error::DetectEntitiesErrorKind::InvalidEncodingException(inner) => {
+                        Error::InvalidEncodingException(inner)
+                    }
+                    crate::error::DetectEntitiesErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DetectEntitiesErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::DetectEntitiesErrorKind::TextSizeLimitExceededException(
+                        inner,
+                    ) => Error::TextSizeLimitExceededException(inner),
+                    crate::error::DetectEntitiesErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::DetectEntitiesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DetectEntitiesErrorKind::InvalidEncodingException(inner) => {
-                    Error::InvalidEncodingException(inner)
-                }
-                crate::error::DetectEntitiesErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DetectEntitiesErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::DetectEntitiesErrorKind::TextSizeLimitExceededException(inner) => {
-                    Error::TextSizeLimitExceededException(inner)
-                }
-                crate::error::DetectEntitiesErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::DetectEntitiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -222,29 +235,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DetectEntitiesV2Error, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DetectEntitiesV2ErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DetectEntitiesV2ErrorKind::InternalServerException(inner) => {
+                        Error::InternalServerException(inner)
+                    }
+                    crate::error::DetectEntitiesV2ErrorKind::InvalidEncodingException(inner) => {
+                        Error::InvalidEncodingException(inner)
+                    }
+                    crate::error::DetectEntitiesV2ErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DetectEntitiesV2ErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::DetectEntitiesV2ErrorKind::TextSizeLimitExceededException(
+                        inner,
+                    ) => Error::TextSizeLimitExceededException(inner),
+                    crate::error::DetectEntitiesV2ErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::DetectEntitiesV2ErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DetectEntitiesV2ErrorKind::InvalidEncodingException(inner) => {
-                    Error::InvalidEncodingException(inner)
-                }
-                crate::error::DetectEntitiesV2ErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DetectEntitiesV2ErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::DetectEntitiesV2ErrorKind::TextSizeLimitExceededException(inner) => {
-                    Error::TextSizeLimitExceededException(inner)
-                }
-                crate::error::DetectEntitiesV2ErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::DetectEntitiesV2ErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -255,29 +270,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DetectPHIError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DetectPHIErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DetectPHIErrorKind::InternalServerException(inner) => {
+                        Error::InternalServerException(inner)
+                    }
+                    crate::error::DetectPHIErrorKind::InvalidEncodingException(inner) => {
+                        Error::InvalidEncodingException(inner)
+                    }
+                    crate::error::DetectPHIErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DetectPHIErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::DetectPHIErrorKind::TextSizeLimitExceededException(inner) => {
+                        Error::TextSizeLimitExceededException(inner)
+                    }
+                    crate::error::DetectPHIErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::DetectPHIErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DetectPHIErrorKind::InvalidEncodingException(inner) => {
-                    Error::InvalidEncodingException(inner)
-                }
-                crate::error::DetectPHIErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DetectPHIErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::DetectPHIErrorKind::TextSizeLimitExceededException(inner) => {
-                    Error::TextSizeLimitExceededException(inner)
-                }
-                crate::error::DetectPHIErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::DetectPHIErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -288,29 +305,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::InferICD10CMError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::InferICD10CMErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::InferICD10CMErrorKind::InternalServerException(inner) => {
+                        Error::InternalServerException(inner)
+                    }
+                    crate::error::InferICD10CMErrorKind::InvalidEncodingException(inner) => {
+                        Error::InvalidEncodingException(inner)
+                    }
+                    crate::error::InferICD10CMErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::InferICD10CMErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::InferICD10CMErrorKind::TextSizeLimitExceededException(inner) => {
+                        Error::TextSizeLimitExceededException(inner)
+                    }
+                    crate::error::InferICD10CMErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::InferICD10CMErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::InferICD10CMErrorKind::InvalidEncodingException(inner) => {
-                    Error::InvalidEncodingException(inner)
-                }
-                crate::error::InferICD10CMErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::InferICD10CMErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::InferICD10CMErrorKind::TextSizeLimitExceededException(inner) => {
-                    Error::TextSizeLimitExceededException(inner)
-                }
-                crate::error::InferICD10CMErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::InferICD10CMErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -321,29 +340,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::InferRxNormError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::InferRxNormErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::InferRxNormErrorKind::InternalServerException(inner) => {
+                        Error::InternalServerException(inner)
+                    }
+                    crate::error::InferRxNormErrorKind::InvalidEncodingException(inner) => {
+                        Error::InvalidEncodingException(inner)
+                    }
+                    crate::error::InferRxNormErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::InferRxNormErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::InferRxNormErrorKind::TextSizeLimitExceededException(inner) => {
+                        Error::TextSizeLimitExceededException(inner)
+                    }
+                    crate::error::InferRxNormErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::InferRxNormErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::InferRxNormErrorKind::InvalidEncodingException(inner) => {
-                    Error::InvalidEncodingException(inner)
-                }
-                crate::error::InferRxNormErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::InferRxNormErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::InferRxNormErrorKind::TextSizeLimitExceededException(inner) => {
-                    Error::TextSizeLimitExceededException(inner)
-                }
-                crate::error::InferRxNormErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::InferRxNormErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -354,29 +375,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::InferSNOMEDCTError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::InferSNOMEDCTErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::InferSNOMEDCTErrorKind::InternalServerException(inner) => {
+                        Error::InternalServerException(inner)
+                    }
+                    crate::error::InferSNOMEDCTErrorKind::InvalidEncodingException(inner) => {
+                        Error::InvalidEncodingException(inner)
+                    }
+                    crate::error::InferSNOMEDCTErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::InferSNOMEDCTErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::InferSNOMEDCTErrorKind::TextSizeLimitExceededException(inner) => {
+                        Error::TextSizeLimitExceededException(inner)
+                    }
+                    crate::error::InferSNOMEDCTErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::InferSNOMEDCTErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::InferSNOMEDCTErrorKind::InvalidEncodingException(inner) => {
-                    Error::InvalidEncodingException(inner)
-                }
-                crate::error::InferSNOMEDCTErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::InferSNOMEDCTErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::InferSNOMEDCTErrorKind::TextSizeLimitExceededException(inner) => {
-                    Error::TextSizeLimitExceededException(inner)
-                }
-                crate::error::InferSNOMEDCTErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::InferSNOMEDCTErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -390,7 +413,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListEntitiesDetectionV2JobsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::ListEntitiesDetectionV2JobsErrorKind::InternalServerException(
                     inner,
                 ) => Error::InternalServerException(inner),
@@ -420,23 +446,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListICD10CMInferenceJobsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListICD10CMInferenceJobsErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListICD10CMInferenceJobsErrorKind::InternalServerException(
+                        inner,
+                    ) => Error::InternalServerException(inner),
+                    crate::error::ListICD10CMInferenceJobsErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::ListICD10CMInferenceJobsErrorKind::TooManyRequestsException(
+                        inner,
+                    ) => Error::TooManyRequestsException(inner),
+                    crate::error::ListICD10CMInferenceJobsErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::ListICD10CMInferenceJobsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListICD10CMInferenceJobsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::ListICD10CMInferenceJobsErrorKind::TooManyRequestsException(
-                    inner,
-                ) => Error::TooManyRequestsException(inner),
-                crate::error::ListICD10CMInferenceJobsErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListICD10CMInferenceJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -450,23 +478,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListPHIDetectionJobsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListPHIDetectionJobsErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListPHIDetectionJobsErrorKind::InternalServerException(inner) => {
+                        Error::InternalServerException(inner)
+                    }
+                    crate::error::ListPHIDetectionJobsErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::ListPHIDetectionJobsErrorKind::TooManyRequestsException(
+                        inner,
+                    ) => Error::TooManyRequestsException(inner),
+                    crate::error::ListPHIDetectionJobsErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::ListPHIDetectionJobsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListPHIDetectionJobsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::ListPHIDetectionJobsErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::ListPHIDetectionJobsErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListPHIDetectionJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -480,23 +510,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListRxNormInferenceJobsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListRxNormInferenceJobsErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListRxNormInferenceJobsErrorKind::InternalServerException(
+                        inner,
+                    ) => Error::InternalServerException(inner),
+                    crate::error::ListRxNormInferenceJobsErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::ListRxNormInferenceJobsErrorKind::TooManyRequestsException(
+                        inner,
+                    ) => Error::TooManyRequestsException(inner),
+                    crate::error::ListRxNormInferenceJobsErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::ListRxNormInferenceJobsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListRxNormInferenceJobsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::ListRxNormInferenceJobsErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::ListRxNormInferenceJobsErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListRxNormInferenceJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -510,23 +542,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListSNOMEDCTInferenceJobsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListSNOMEDCTInferenceJobsErrorKind::InternalServerException(
-                    inner,
-                ) => Error::InternalServerException(inner),
-                crate::error::ListSNOMEDCTInferenceJobsErrorKind::InvalidRequestException(
-                    inner,
-                ) => Error::InvalidRequestException(inner),
-                crate::error::ListSNOMEDCTInferenceJobsErrorKind::TooManyRequestsException(
-                    inner,
-                ) => Error::TooManyRequestsException(inner),
-                crate::error::ListSNOMEDCTInferenceJobsErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListSNOMEDCTInferenceJobsErrorKind::InternalServerException(
+                        inner,
+                    ) => Error::InternalServerException(inner),
+                    crate::error::ListSNOMEDCTInferenceJobsErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::ListSNOMEDCTInferenceJobsErrorKind::TooManyRequestsException(
+                        inner,
+                    ) => Error::TooManyRequestsException(inner),
+                    crate::error::ListSNOMEDCTInferenceJobsErrorKind::ValidationException(
+                        inner,
+                    ) => Error::ValidationException(inner),
+                    crate::error::ListSNOMEDCTInferenceJobsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListSNOMEDCTInferenceJobsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -540,7 +574,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartEntitiesDetectionV2JobError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::StartEntitiesDetectionV2JobErrorKind::InternalServerException(
                     inner,
                 ) => Error::InternalServerException(inner),
@@ -570,23 +607,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartICD10CMInferenceJobError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StartICD10CMInferenceJobErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StartICD10CMInferenceJobErrorKind::InternalServerException(
+                        inner,
+                    ) => Error::InternalServerException(inner),
+                    crate::error::StartICD10CMInferenceJobErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::StartICD10CMInferenceJobErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::StartICD10CMInferenceJobErrorKind::TooManyRequestsException(
+                        inner,
+                    ) => Error::TooManyRequestsException(inner),
+                    crate::error::StartICD10CMInferenceJobErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::StartICD10CMInferenceJobErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::StartICD10CMInferenceJobErrorKind::ResourceNotFoundException(
-                    inner,
-                ) => Error::ResourceNotFoundException(inner),
-                crate::error::StartICD10CMInferenceJobErrorKind::TooManyRequestsException(
-                    inner,
-                ) => Error::TooManyRequestsException(inner),
-                crate::error::StartICD10CMInferenceJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -600,23 +639,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartPHIDetectionJobError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StartPHIDetectionJobErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StartPHIDetectionJobErrorKind::InternalServerException(inner) => {
+                        Error::InternalServerException(inner)
+                    }
+                    crate::error::StartPHIDetectionJobErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::StartPHIDetectionJobErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::StartPHIDetectionJobErrorKind::TooManyRequestsException(
+                        inner,
+                    ) => Error::TooManyRequestsException(inner),
+                    crate::error::StartPHIDetectionJobErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::StartPHIDetectionJobErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::StartPHIDetectionJobErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::StartPHIDetectionJobErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::StartPHIDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -630,23 +671,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartRxNormInferenceJobError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StartRxNormInferenceJobErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StartRxNormInferenceJobErrorKind::InternalServerException(
+                        inner,
+                    ) => Error::InternalServerException(inner),
+                    crate::error::StartRxNormInferenceJobErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::StartRxNormInferenceJobErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::StartRxNormInferenceJobErrorKind::TooManyRequestsException(
+                        inner,
+                    ) => Error::TooManyRequestsException(inner),
+                    crate::error::StartRxNormInferenceJobErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::StartRxNormInferenceJobErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::StartRxNormInferenceJobErrorKind::ResourceNotFoundException(
-                    inner,
-                ) => Error::ResourceNotFoundException(inner),
-                crate::error::StartRxNormInferenceJobErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::StartRxNormInferenceJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -660,23 +703,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartSNOMEDCTInferenceJobError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StartSNOMEDCTInferenceJobErrorKind::InternalServerException(
-                    inner,
-                ) => Error::InternalServerException(inner),
-                crate::error::StartSNOMEDCTInferenceJobErrorKind::InvalidRequestException(
-                    inner,
-                ) => Error::InvalidRequestException(inner),
-                crate::error::StartSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(
-                    inner,
-                ) => Error::ResourceNotFoundException(inner),
-                crate::error::StartSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(
-                    inner,
-                ) => Error::TooManyRequestsException(inner),
-                crate::error::StartSNOMEDCTInferenceJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StartSNOMEDCTInferenceJobErrorKind::InternalServerException(
+                        inner,
+                    ) => Error::InternalServerException(inner),
+                    crate::error::StartSNOMEDCTInferenceJobErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::StartSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::StartSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(
+                        inner,
+                    ) => Error::TooManyRequestsException(inner),
+                    crate::error::StartSNOMEDCTInferenceJobErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -690,7 +735,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StopEntitiesDetectionV2JobError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::StopEntitiesDetectionV2JobErrorKind::InternalServerException(
                     inner,
                 ) => Error::InternalServerException(inner),
@@ -717,20 +765,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StopICD10CMInferenceJobError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StopICD10CMInferenceJobErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StopICD10CMInferenceJobErrorKind::InternalServerException(
+                        inner,
+                    ) => Error::InternalServerException(inner),
+                    crate::error::StopICD10CMInferenceJobErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::StopICD10CMInferenceJobErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::StopICD10CMInferenceJobErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::StopICD10CMInferenceJobErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::StopICD10CMInferenceJobErrorKind::ResourceNotFoundException(
-                    inner,
-                ) => Error::ResourceNotFoundException(inner),
-                crate::error::StopICD10CMInferenceJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -743,20 +793,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StopPHIDetectionJobError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StopPHIDetectionJobErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StopPHIDetectionJobErrorKind::InternalServerException(inner) => {
+                        Error::InternalServerException(inner)
+                    }
+                    crate::error::StopPHIDetectionJobErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::StopPHIDetectionJobErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::StopPHIDetectionJobErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::StopPHIDetectionJobErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::StopPHIDetectionJobErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::StopPHIDetectionJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -770,20 +822,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StopRxNormInferenceJobError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StopRxNormInferenceJobErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StopRxNormInferenceJobErrorKind::InternalServerException(
+                        inner,
+                    ) => Error::InternalServerException(inner),
+                    crate::error::StopRxNormInferenceJobErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::StopRxNormInferenceJobErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::StopRxNormInferenceJobErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::StopRxNormInferenceJobErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::StopRxNormInferenceJobErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::StopRxNormInferenceJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -797,23 +851,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StopSNOMEDCTInferenceJobError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StopSNOMEDCTInferenceJobErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StopSNOMEDCTInferenceJobErrorKind::InternalServerException(
+                        inner,
+                    ) => Error::InternalServerException(inner),
+                    crate::error::StopSNOMEDCTInferenceJobErrorKind::InvalidRequestException(
+                        inner,
+                    ) => Error::InvalidRequestException(inner),
+                    crate::error::StopSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::StopSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(
+                        inner,
+                    ) => Error::TooManyRequestsException(inner),
+                    crate::error::StopSNOMEDCTInferenceJobErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::StopSNOMEDCTInferenceJobErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::StopSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(
-                    inner,
-                ) => Error::ResourceNotFoundException(inner),
-                crate::error::StopSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(
-                    inner,
-                ) => Error::TooManyRequestsException(inner),
-                crate::error::StopSNOMEDCTInferenceJobErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }

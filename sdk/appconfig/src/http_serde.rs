@@ -2,7 +2,7 @@
 pub fn add_headers_create_extension(
     input: &crate::input::CreateExtensionInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_1) = &input.latest_version_number {
         let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_1);
         let formatted_2 = encoder.encode();
@@ -10,13 +10,13 @@ pub fn add_headers_create_extension(
             let header_value = formatted_2;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "latest_version_number",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "latest_version_number",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("Latest-Version-Number", header_value);
         }
@@ -27,20 +27,20 @@ pub fn add_headers_create_extension(
 pub fn add_headers_create_hosted_configuration_version(
     input: &crate::input::CreateHostedConfigurationVersionInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_3) = &input.description {
         let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "description",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "description",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("Description", header_value);
         }
@@ -51,13 +51,13 @@ pub fn add_headers_create_hosted_configuration_version(
             let header_value = formatted_6;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "content_type",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "content_type",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("Content-Type", header_value);
         }
@@ -69,13 +69,13 @@ pub fn add_headers_create_hosted_configuration_version(
             let header_value = formatted_8;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "latest_version_number",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "latest_version_number",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("Latest-Version-Number", header_value);
         }
@@ -140,9 +140,10 @@ pub(crate) fn deser_header_create_hosted_configuration_version_create_hosted_con
     let headers = header_map.get_all("Version-Number").iter();
     let var_9 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_9.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_9.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_9.len()
+        )))
     } else {
         let mut var_9 = var_9;
         Ok(var_9.pop())
@@ -237,9 +238,10 @@ pub(crate) fn deser_header_get_hosted_configuration_version_get_hosted_configura
     let headers = header_map.get_all("Version-Number").iter();
     let var_10 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_10.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_10.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_10.len()
+        )))
     } else {
         let mut var_10 = var_10;
         Ok(var_10.pop())

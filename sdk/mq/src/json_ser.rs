@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_broker_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateBrokerInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.authentication_strategy {
         object.key("authenticationStrategy").string(var_1.as_str());
     }
@@ -109,7 +109,7 @@ pub fn serialize_structure_crate_input_create_broker_input(
 pub fn serialize_structure_crate_input_create_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.authentication_strategy {
         object.key("authenticationStrategy").string(var_33.as_str());
     }
@@ -137,7 +137,7 @@ pub fn serialize_structure_crate_input_create_configuration_input(
 pub fn serialize_structure_crate_input_create_tags_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateTagsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_41) = &input.tags {
         let mut object_42 = object.key("tags").start_object();
         for (key_43, value_44) in var_41 {
@@ -153,7 +153,7 @@ pub fn serialize_structure_crate_input_create_tags_input(
 pub fn serialize_structure_crate_input_create_user_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateUserInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.console_access {
         object.key("consoleAccess").boolean(input.console_access);
     }
@@ -175,7 +175,7 @@ pub fn serialize_structure_crate_input_create_user_input(
 pub fn serialize_structure_crate_input_update_broker_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateBrokerInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_49) = &input.authentication_strategy {
         object.key("authenticationStrategy").string(var_49.as_str());
     }
@@ -228,7 +228,7 @@ pub fn serialize_structure_crate_input_update_broker_input(
 pub fn serialize_structure_crate_input_update_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_63) = &input.data {
         object.key("data").string(var_63.as_str());
     }
@@ -241,7 +241,7 @@ pub fn serialize_structure_crate_input_update_configuration_input(
 pub fn serialize_structure_crate_input_update_user_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateUserInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.console_access {
         object.key("consoleAccess").boolean(input.console_access);
     }
@@ -263,7 +263,7 @@ pub fn serialize_structure_crate_input_update_user_input(
 pub fn serialize_structure_crate_model_configuration_id(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ConfigurationId,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_69) = &input.id {
         object.key("id").string(var_69.as_str());
     }
@@ -279,7 +279,7 @@ pub fn serialize_structure_crate_model_configuration_id(
 pub fn serialize_structure_crate_model_encryption_options(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EncryptionOptions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_70) = &input.kms_key_id {
         object.key("kmsKeyId").string(var_70.as_str());
     }
@@ -294,7 +294,7 @@ pub fn serialize_structure_crate_model_encryption_options(
 pub fn serialize_structure_crate_model_ldap_server_metadata_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LdapServerMetadataInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_71) = &input.hosts {
         let mut array_72 = object.key("hosts").start_array();
         for item_73 in var_71 {
@@ -344,7 +344,7 @@ pub fn serialize_structure_crate_model_ldap_server_metadata_input(
 pub fn serialize_structure_crate_model_logs(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Logs,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.audit {
         object.key("audit").boolean(input.audit);
     }
@@ -357,7 +357,7 @@ pub fn serialize_structure_crate_model_logs(
 pub fn serialize_structure_crate_model_weekly_start_time(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WeeklyStartTime,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_82) = &input.day_of_week {
         object.key("dayOfWeek").string(var_82.as_str());
     }
@@ -373,7 +373,7 @@ pub fn serialize_structure_crate_model_weekly_start_time(
 pub fn serialize_structure_crate_model_user(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::User,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.console_access {
         object.key("consoleAccess").boolean(input.console_access);
     }

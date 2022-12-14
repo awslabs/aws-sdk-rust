@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_generate_data_set_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GenerateDataSetInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.data_set_type {
         object.key("dataSetType").string(var_1.as_str());
     }
@@ -38,7 +38,7 @@ pub fn serialize_structure_crate_input_generate_data_set_input(
 pub fn serialize_structure_crate_input_start_support_data_export_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartSupportDataExportInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_11) = &input.data_set_type {
         object.key("dataSetType").string(var_11.as_str());
     }

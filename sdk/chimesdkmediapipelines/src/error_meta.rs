@@ -46,7 +46,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateMediaCapturePipelineError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateMediaCapturePipelineErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
                 crate::error::CreateMediaCapturePipelineErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
                 crate::error::CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
@@ -73,7 +73,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateMediaConcatenationPipelineErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
                 crate::error::CreateMediaConcatenationPipelineErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
                 crate::error::CreateMediaConcatenationPipelineErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
@@ -100,7 +100,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateMediaLiveConnectorPipelineErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
                 crate::error::CreateMediaLiveConnectorPipelineErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
                 crate::error::CreateMediaLiveConnectorPipelineErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
@@ -123,7 +123,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteMediaCapturePipelineError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DeleteMediaCapturePipelineErrorKind::BadRequestException(inner) => {
                     Error::BadRequestException(inner)
                 }
@@ -161,32 +164,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteMediaPipelineError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteMediaPipelineErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteMediaPipelineErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::DeleteMediaPipelineErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::DeleteMediaPipelineErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DeleteMediaPipelineErrorKind::ServiceFailureException(inner) => {
+                        Error::ServiceFailureException(inner)
+                    }
+                    crate::error::DeleteMediaPipelineErrorKind::ServiceUnavailableException(
+                        inner,
+                    ) => Error::ServiceUnavailableException(inner),
+                    crate::error::DeleteMediaPipelineErrorKind::ThrottledClientException(inner) => {
+                        Error::ThrottledClientException(inner)
+                    }
+                    crate::error::DeleteMediaPipelineErrorKind::UnauthorizedClientException(
+                        inner,
+                    ) => Error::UnauthorizedClientException(inner),
+                    crate::error::DeleteMediaPipelineErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteMediaPipelineErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::DeleteMediaPipelineErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DeleteMediaPipelineErrorKind::ServiceFailureException(inner) => {
-                    Error::ServiceFailureException(inner)
-                }
-                crate::error::DeleteMediaPipelineErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::DeleteMediaPipelineErrorKind::ThrottledClientException(inner) => {
-                    Error::ThrottledClientException(inner)
-                }
-                crate::error::DeleteMediaPipelineErrorKind::UnauthorizedClientException(inner) => {
-                    Error::UnauthorizedClientException(inner)
-                }
-                crate::error::DeleteMediaPipelineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -200,32 +205,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetMediaCapturePipelineError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetMediaCapturePipelineErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetMediaCapturePipelineErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::GetMediaCapturePipelineErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::GetMediaCapturePipelineErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::GetMediaCapturePipelineErrorKind::ServiceFailureException(
+                        inner,
+                    ) => Error::ServiceFailureException(inner),
+                    crate::error::GetMediaCapturePipelineErrorKind::ServiceUnavailableException(
+                        inner,
+                    ) => Error::ServiceUnavailableException(inner),
+                    crate::error::GetMediaCapturePipelineErrorKind::ThrottledClientException(
+                        inner,
+                    ) => Error::ThrottledClientException(inner),
+                    crate::error::GetMediaCapturePipelineErrorKind::UnauthorizedClientException(
+                        inner,
+                    ) => Error::UnauthorizedClientException(inner),
+                    crate::error::GetMediaCapturePipelineErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetMediaCapturePipelineErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::GetMediaCapturePipelineErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::GetMediaCapturePipelineErrorKind::ServiceFailureException(inner) => {
-                    Error::ServiceFailureException(inner)
-                }
-                crate::error::GetMediaCapturePipelineErrorKind::ServiceUnavailableException(
-                    inner,
-                ) => Error::ServiceUnavailableException(inner),
-                crate::error::GetMediaCapturePipelineErrorKind::ThrottledClientException(inner) => {
-                    Error::ThrottledClientException(inner)
-                }
-                crate::error::GetMediaCapturePipelineErrorKind::UnauthorizedClientException(
-                    inner,
-                ) => Error::UnauthorizedClientException(inner),
-                crate::error::GetMediaCapturePipelineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -238,32 +245,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetMediaPipelineError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetMediaPipelineErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetMediaPipelineErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::GetMediaPipelineErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::GetMediaPipelineErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::GetMediaPipelineErrorKind::ServiceFailureException(inner) => {
+                        Error::ServiceFailureException(inner)
+                    }
+                    crate::error::GetMediaPipelineErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::GetMediaPipelineErrorKind::ThrottledClientException(inner) => {
+                        Error::ThrottledClientException(inner)
+                    }
+                    crate::error::GetMediaPipelineErrorKind::UnauthorizedClientException(inner) => {
+                        Error::UnauthorizedClientException(inner)
+                    }
+                    crate::error::GetMediaPipelineErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetMediaPipelineErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::GetMediaPipelineErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::GetMediaPipelineErrorKind::ServiceFailureException(inner) => {
-                    Error::ServiceFailureException(inner)
-                }
-                crate::error::GetMediaPipelineErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::GetMediaPipelineErrorKind::ThrottledClientException(inner) => {
-                    Error::ThrottledClientException(inner)
-                }
-                crate::error::GetMediaPipelineErrorKind::UnauthorizedClientException(inner) => {
-                    Error::UnauthorizedClientException(inner)
-                }
-                crate::error::GetMediaPipelineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -277,7 +286,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListMediaCapturePipelinesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListMediaCapturePipelinesErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
                 crate::error::ListMediaCapturePipelinesErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
                 crate::error::ListMediaCapturePipelinesErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
@@ -299,32 +308,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListMediaPipelinesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListMediaPipelinesErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListMediaPipelinesErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::ListMediaPipelinesErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::ListMediaPipelinesErrorKind::ResourceLimitExceededException(
+                        inner,
+                    ) => Error::ResourceLimitExceededException(inner),
+                    crate::error::ListMediaPipelinesErrorKind::ServiceFailureException(inner) => {
+                        Error::ServiceFailureException(inner)
+                    }
+                    crate::error::ListMediaPipelinesErrorKind::ServiceUnavailableException(
+                        inner,
+                    ) => Error::ServiceUnavailableException(inner),
+                    crate::error::ListMediaPipelinesErrorKind::ThrottledClientException(inner) => {
+                        Error::ThrottledClientException(inner)
+                    }
+                    crate::error::ListMediaPipelinesErrorKind::UnauthorizedClientException(
+                        inner,
+                    ) => Error::UnauthorizedClientException(inner),
+                    crate::error::ListMediaPipelinesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListMediaPipelinesErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::ListMediaPipelinesErrorKind::ResourceLimitExceededException(
-                    inner,
-                ) => Error::ResourceLimitExceededException(inner),
-                crate::error::ListMediaPipelinesErrorKind::ServiceFailureException(inner) => {
-                    Error::ServiceFailureException(inner)
-                }
-                crate::error::ListMediaPipelinesErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::ListMediaPipelinesErrorKind::ThrottledClientException(inner) => {
-                    Error::ThrottledClientException(inner)
-                }
-                crate::error::ListMediaPipelinesErrorKind::UnauthorizedClientException(inner) => {
-                    Error::UnauthorizedClientException(inner)
-                }
-                crate::error::ListMediaPipelinesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -337,32 +348,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsForResourceErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListTagsForResourceErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::ServiceFailureException(inner) => {
+                        Error::ServiceFailureException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::ServiceUnavailableException(
+                        inner,
+                    ) => Error::ServiceUnavailableException(inner),
+                    crate::error::ListTagsForResourceErrorKind::ThrottledClientException(inner) => {
+                        Error::ThrottledClientException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::UnauthorizedClientException(
+                        inner,
+                    ) => Error::UnauthorizedClientException(inner),
+                    crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListTagsForResourceErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::ServiceFailureException(inner) => {
-                    Error::ServiceFailureException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::ThrottledClientException(inner) => {
-                    Error::ThrottledClientException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::UnauthorizedClientException(inner) => {
-                    Error::UnauthorizedClientException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -373,32 +386,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagResourceErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::TagResourceErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::ServiceFailureException(inner) => {
+                        Error::ServiceFailureException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::ThrottledClientException(inner) => {
+                        Error::ThrottledClientException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::UnauthorizedClientException(inner) => {
+                        Error::UnauthorizedClientException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::TagResourceErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::TagResourceErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::TagResourceErrorKind::ServiceFailureException(inner) => {
-                    Error::ServiceFailureException(inner)
-                }
-                crate::error::TagResourceErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::TagResourceErrorKind::ThrottledClientException(inner) => {
-                    Error::ThrottledClientException(inner)
-                }
-                crate::error::TagResourceErrorKind::UnauthorizedClientException(inner) => {
-                    Error::UnauthorizedClientException(inner)
-                }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -409,32 +424,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagResourceErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UntagResourceErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::ServiceFailureException(inner) => {
+                        Error::ServiceFailureException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::ThrottledClientException(inner) => {
+                        Error::ThrottledClientException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::UnauthorizedClientException(inner) => {
+                        Error::UnauthorizedClientException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UntagResourceErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
-                }
-                crate::error::UntagResourceErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::UntagResourceErrorKind::ServiceFailureException(inner) => {
-                    Error::ServiceFailureException(inner)
-                }
-                crate::error::UntagResourceErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::UntagResourceErrorKind::ThrottledClientException(inner) => {
-                    Error::ThrottledClientException(inner)
-                }
-                crate::error::UntagResourceErrorKind::UnauthorizedClientException(inner) => {
-                    Error::UnauthorizedClientException(inner)
-                }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }

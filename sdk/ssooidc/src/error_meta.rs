@@ -55,44 +55,46 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateTokenError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateTokenErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateTokenErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::AuthorizationPendingException(inner) => {
+                        Error::AuthorizationPendingException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::ExpiredTokenException(inner) => {
+                        Error::ExpiredTokenException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::InternalServerException(inner) => {
+                        Error::InternalServerException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::InvalidClientException(inner) => {
+                        Error::InvalidClientException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::InvalidGrantException(inner) => {
+                        Error::InvalidGrantException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::InvalidScopeException(inner) => {
+                        Error::InvalidScopeException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::SlowDownException(inner) => {
+                        Error::SlowDownException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::UnauthorizedClientException(inner) => {
+                        Error::UnauthorizedClientException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::UnsupportedGrantTypeException(inner) => {
+                        Error::UnsupportedGrantTypeException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateTokenErrorKind::AuthorizationPendingException(inner) => {
-                    Error::AuthorizationPendingException(inner)
-                }
-                crate::error::CreateTokenErrorKind::ExpiredTokenException(inner) => {
-                    Error::ExpiredTokenException(inner)
-                }
-                crate::error::CreateTokenErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
-                }
-                crate::error::CreateTokenErrorKind::InvalidClientException(inner) => {
-                    Error::InvalidClientException(inner)
-                }
-                crate::error::CreateTokenErrorKind::InvalidGrantException(inner) => {
-                    Error::InvalidGrantException(inner)
-                }
-                crate::error::CreateTokenErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::CreateTokenErrorKind::InvalidScopeException(inner) => {
-                    Error::InvalidScopeException(inner)
-                }
-                crate::error::CreateTokenErrorKind::SlowDownException(inner) => {
-                    Error::SlowDownException(inner)
-                }
-                crate::error::CreateTokenErrorKind::UnauthorizedClientException(inner) => {
-                    Error::UnauthorizedClientException(inner)
-                }
-                crate::error::CreateTokenErrorKind::UnsupportedGrantTypeException(inner) => {
-                    Error::UnsupportedGrantTypeException(inner)
-                }
-                crate::error::CreateTokenErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -103,23 +105,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterClientError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RegisterClientErrorKind::InternalServerException(inner) => {
-                    Error::InternalServerException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::RegisterClientErrorKind::InternalServerException(inner) => {
+                        Error::InternalServerException(inner)
+                    }
+                    crate::error::RegisterClientErrorKind::InvalidClientMetadataException(
+                        inner,
+                    ) => Error::InvalidClientMetadataException(inner),
+                    crate::error::RegisterClientErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::RegisterClientErrorKind::InvalidScopeException(inner) => {
+                        Error::InvalidScopeException(inner)
+                    }
+                    crate::error::RegisterClientErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::RegisterClientErrorKind::InvalidClientMetadataException(inner) => {
-                    Error::InvalidClientMetadataException(inner)
-                }
-                crate::error::RegisterClientErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::RegisterClientErrorKind::InvalidScopeException(inner) => {
-                    Error::InvalidScopeException(inner)
-                }
-                crate::error::RegisterClientErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -133,7 +137,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartDeviceAuthorizationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::StartDeviceAuthorizationErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }

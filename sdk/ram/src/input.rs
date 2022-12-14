@@ -44,7 +44,7 @@ pub mod accept_resource_share_invitation_input {
             self,
         ) -> Result<
             crate::input::AcceptResourceShareInvitationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AcceptResourceShareInvitationInput {
                 resource_share_invitation_arn: self.resource_share_invitation_arn,
@@ -66,13 +66,13 @@ impl AcceptResourceShareInvitationInput {
             crate::operation::AcceptResourceShareInvitation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AcceptResourceShareInvitationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/acceptresourceshareinvitation")
                     .expect("formatting should succeed");
                 Ok(())
@@ -81,8 +81,10 @@ impl AcceptResourceShareInvitationInput {
             fn update_http_builder(
                 input: &crate::input::AcceptResourceShareInvitationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -261,8 +263,10 @@ pub mod associate_resource_share_input {
         /// Consumes the builder and constructs a [`AssociateResourceShareInput`](crate::input::AssociateResourceShareInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AssociateResourceShareInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::AssociateResourceShareInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::AssociateResourceShareInput {
                 resource_share_arn: self.resource_share_arn,
                 resource_arns: self.resource_arns,
@@ -285,13 +289,13 @@ impl AssociateResourceShareInput {
             crate::operation::AssociateResourceShare,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateResourceShareInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/associateresourceshare").expect("formatting should succeed");
                 Ok(())
             }
@@ -299,8 +303,10 @@ impl AssociateResourceShareInput {
             fn update_http_builder(
                 input: &crate::input::AssociateResourceShareInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -462,7 +468,7 @@ pub mod associate_resource_share_permission_input {
             self,
         ) -> Result<
             crate::input::AssociateResourceSharePermissionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateResourceSharePermissionInput {
                 resource_share_arn: self.resource_share_arn,
@@ -487,13 +493,13 @@ impl AssociateResourceSharePermissionInput {
             crate::operation::AssociateResourceSharePermission,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateResourceSharePermissionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/associateresourcesharepermission")
                     .expect("formatting should succeed");
                 Ok(())
@@ -502,8 +508,10 @@ impl AssociateResourceSharePermissionInput {
             fn update_http_builder(
                 input: &crate::input::AssociateResourceSharePermissionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -728,8 +736,10 @@ pub mod create_resource_share_input {
         /// Consumes the builder and constructs a [`CreateResourceShareInput`](crate::input::CreateResourceShareInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateResourceShareInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateResourceShareInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateResourceShareInput {
                 name: self.name,
                 resource_arns: self.resource_arns,
@@ -755,13 +765,13 @@ impl CreateResourceShareInput {
             crate::operation::CreateResourceShare,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateResourceShareInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/createresourceshare").expect("formatting should succeed");
                 Ok(())
             }
@@ -769,8 +779,10 @@ impl CreateResourceShareInput {
             fn update_http_builder(
                 input: &crate::input::CreateResourceShareInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -888,8 +900,10 @@ pub mod delete_resource_share_input {
         /// Consumes the builder and constructs a [`DeleteResourceShareInput`](crate::input::DeleteResourceShareInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteResourceShareInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteResourceShareInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteResourceShareInput {
                 resource_share_arn: self.resource_share_arn,
                 client_token: self.client_token,
@@ -910,20 +924,20 @@ impl DeleteResourceShareInput {
             crate::operation::DeleteResourceShare,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteResourceShareInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/deleteresourceshare").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DeleteResourceShareInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_1) = &_input.resource_share_arn {
                     query.push_kv(
@@ -940,8 +954,10 @@ impl DeleteResourceShareInput {
             fn update_http_builder(
                 input: &crate::input::DeleteResourceShareInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1108,7 +1124,7 @@ pub mod disassociate_resource_share_input {
             self,
         ) -> Result<
             crate::input::DisassociateResourceShareInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateResourceShareInput {
                 resource_share_arn: self.resource_share_arn,
@@ -1132,13 +1148,13 @@ impl DisassociateResourceShareInput {
             crate::operation::DisassociateResourceShare,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateResourceShareInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/disassociateresourceshare").expect("formatting should succeed");
                 Ok(())
             }
@@ -1146,8 +1162,10 @@ impl DisassociateResourceShareInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateResourceShareInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1283,7 +1301,7 @@ pub mod disassociate_resource_share_permission_input {
             self,
         ) -> Result<
             crate::input::DisassociateResourceSharePermissionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateResourceSharePermissionInput {
                 resource_share_arn: self.resource_share_arn,
@@ -1306,13 +1324,13 @@ impl DisassociateResourceSharePermissionInput {
             crate::operation::DisassociateResourceSharePermission,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateResourceSharePermissionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/disassociateresourcesharepermission")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1321,8 +1339,10 @@ impl DisassociateResourceSharePermissionInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateResourceSharePermissionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1413,7 +1433,7 @@ pub mod enable_sharing_with_aws_organization_input {
             self,
         ) -> Result<
             crate::input::EnableSharingWithAwsOrganizationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::EnableSharingWithAwsOrganizationInput {})
         }
@@ -1432,13 +1452,13 @@ impl EnableSharingWithAwsOrganizationInput {
             crate::operation::EnableSharingWithAwsOrganization,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::EnableSharingWithAwsOrganizationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/enablesharingwithawsorganization")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1447,8 +1467,10 @@ impl EnableSharingWithAwsOrganizationInput {
             fn update_http_builder(
                 input: &crate::input::EnableSharingWithAwsOrganizationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1550,7 +1572,7 @@ pub mod get_permission_input {
         /// Consumes the builder and constructs a [`GetPermissionInput`](crate::input::GetPermissionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPermissionInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetPermissionInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetPermissionInput {
                 permission_arn: self.permission_arn,
@@ -1572,13 +1594,13 @@ impl GetPermissionInput {
             crate::operation::GetPermission,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPermissionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getpermission").expect("formatting should succeed");
                 Ok(())
             }
@@ -1586,8 +1608,10 @@ impl GetPermissionInput {
             fn update_http_builder(
                 input: &crate::input::GetPermissionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1731,8 +1755,10 @@ pub mod get_resource_policies_input {
         /// Consumes the builder and constructs a [`GetResourcePoliciesInput`](crate::input::GetResourcePoliciesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetResourcePoliciesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetResourcePoliciesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetResourcePoliciesInput {
                 resource_arns: self.resource_arns,
                 principal: self.principal,
@@ -1755,13 +1781,13 @@ impl GetResourcePoliciesInput {
             crate::operation::GetResourcePolicies,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetResourcePoliciesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getresourcepolicies").expect("formatting should succeed");
                 Ok(())
             }
@@ -1769,8 +1795,10 @@ impl GetResourcePoliciesInput {
             fn update_http_builder(
                 input: &crate::input::GetResourcePoliciesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1975,7 +2003,7 @@ pub mod get_resource_share_associations_input {
             self,
         ) -> Result<
             crate::input::GetResourceShareAssociationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetResourceShareAssociationsInput {
                 association_type: self.association_type,
@@ -2002,13 +2030,13 @@ impl GetResourceShareAssociationsInput {
             crate::operation::GetResourceShareAssociations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetResourceShareAssociationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getresourceshareassociations").expect("formatting should succeed");
                 Ok(())
             }
@@ -2016,8 +2044,10 @@ impl GetResourceShareAssociationsInput {
             fn update_http_builder(
                 input: &crate::input::GetResourceShareAssociationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2175,7 +2205,7 @@ pub mod get_resource_share_invitations_input {
             self,
         ) -> Result<
             crate::input::GetResourceShareInvitationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetResourceShareInvitationsInput {
                 resource_share_invitation_arns: self.resource_share_invitation_arns,
@@ -2199,13 +2229,13 @@ impl GetResourceShareInvitationsInput {
             crate::operation::GetResourceShareInvitations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetResourceShareInvitationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getresourceshareinvitations").expect("formatting should succeed");
                 Ok(())
             }
@@ -2213,8 +2243,10 @@ impl GetResourceShareInvitationsInput {
             fn update_http_builder(
                 input: &crate::input::GetResourceShareInvitationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2427,8 +2459,10 @@ pub mod get_resource_shares_input {
         /// Consumes the builder and constructs a [`GetResourceSharesInput`](crate::input::GetResourceSharesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetResourceSharesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetResourceSharesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetResourceSharesInput {
                 resource_share_arns: self.resource_share_arns,
                 resource_share_status: self.resource_share_status,
@@ -2455,13 +2489,13 @@ impl GetResourceSharesInput {
             crate::operation::GetResourceShares,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetResourceSharesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getresourceshares").expect("formatting should succeed");
                 Ok(())
             }
@@ -2469,8 +2503,10 @@ impl GetResourceSharesInput {
             fn update_http_builder(
                 input: &crate::input::GetResourceSharesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2632,7 +2668,7 @@ pub mod list_pending_invitation_resources_input {
             self,
         ) -> Result<
             crate::input::ListPendingInvitationResourcesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListPendingInvitationResourcesInput {
                 resource_share_invitation_arn: self.resource_share_invitation_arn,
@@ -2656,13 +2692,13 @@ impl ListPendingInvitationResourcesInput {
             crate::operation::ListPendingInvitationResources,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPendingInvitationResourcesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listpendinginvitationresources")
                     .expect("formatting should succeed");
                 Ok(())
@@ -2671,8 +2707,10 @@ impl ListPendingInvitationResourcesInput {
             fn update_http_builder(
                 input: &crate::input::ListPendingInvitationResourcesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2798,7 +2836,7 @@ pub mod list_permissions_input {
         /// Consumes the builder and constructs a [`ListPermissionsInput`](crate::input::ListPermissionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPermissionsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListPermissionsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListPermissionsInput {
                 resource_type: self.resource_type,
@@ -2821,13 +2859,13 @@ impl ListPermissionsInput {
             crate::operation::ListPermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listpermissions").expect("formatting should succeed");
                 Ok(())
             }
@@ -2835,8 +2873,10 @@ impl ListPermissionsInput {
             fn update_http_builder(
                 input: &crate::input::ListPermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2963,8 +3003,10 @@ pub mod list_permission_versions_input {
         /// Consumes the builder and constructs a [`ListPermissionVersionsInput`](crate::input::ListPermissionVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPermissionVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListPermissionVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListPermissionVersionsInput {
                 permission_arn: self.permission_arn,
                 next_token: self.next_token,
@@ -2986,13 +3028,13 @@ impl ListPermissionVersionsInput {
             crate::operation::ListPermissionVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPermissionVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listpermissionversions").expect("formatting should succeed");
                 Ok(())
             }
@@ -3000,8 +3042,10 @@ impl ListPermissionVersionsInput {
             fn update_http_builder(
                 input: &crate::input::ListPermissionVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3225,7 +3269,7 @@ pub mod list_principals_input {
         /// Consumes the builder and constructs a [`ListPrincipalsInput`](crate::input::ListPrincipalsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPrincipalsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListPrincipalsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListPrincipalsInput {
                 resource_owner: self.resource_owner,
@@ -3252,13 +3296,13 @@ impl ListPrincipalsInput {
             crate::operation::ListPrincipals,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPrincipalsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listprincipals").expect("formatting should succeed");
                 Ok(())
             }
@@ -3266,8 +3310,10 @@ impl ListPrincipalsInput {
             fn update_http_builder(
                 input: &crate::input::ListPrincipalsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3499,7 +3545,7 @@ pub mod list_resources_input {
         /// Consumes the builder and constructs a [`ListResourcesInput`](crate::input::ListResourcesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListResourcesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListResourcesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListResourcesInput {
                 resource_owner: self.resource_owner,
@@ -3527,13 +3573,13 @@ impl ListResourcesInput {
             crate::operation::ListResources,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListResourcesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listresources").expect("formatting should succeed");
                 Ok(())
             }
@@ -3541,8 +3587,10 @@ impl ListResourcesInput {
             fn update_http_builder(
                 input: &crate::input::ListResourcesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3671,7 +3719,7 @@ pub mod list_resource_share_permissions_input {
             self,
         ) -> Result<
             crate::input::ListResourceSharePermissionsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListResourceSharePermissionsInput {
                 resource_share_arn: self.resource_share_arn,
@@ -3694,13 +3742,13 @@ impl ListResourceSharePermissionsInput {
             crate::operation::ListResourceSharePermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListResourceSharePermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listresourcesharepermissions").expect("formatting should succeed");
                 Ok(())
             }
@@ -3708,8 +3756,10 @@ impl ListResourceSharePermissionsInput {
             fn update_http_builder(
                 input: &crate::input::ListResourceSharePermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3851,8 +3901,10 @@ pub mod list_resource_types_input {
         /// Consumes the builder and constructs a [`ListResourceTypesInput`](crate::input::ListResourceTypesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListResourceTypesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListResourceTypesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListResourceTypesInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -3874,13 +3926,13 @@ impl ListResourceTypesInput {
             crate::operation::ListResourceTypes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListResourceTypesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/listresourcetypes").expect("formatting should succeed");
                 Ok(())
             }
@@ -3888,8 +3940,10 @@ impl ListResourceTypesInput {
             fn update_http_builder(
                 input: &crate::input::ListResourceTypesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3996,7 +4050,7 @@ pub mod promote_resource_share_created_from_policy_input {
             self,
         ) -> Result<
             crate::input::PromoteResourceShareCreatedFromPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PromoteResourceShareCreatedFromPolicyInput {
                 resource_share_arn: self.resource_share_arn,
@@ -4017,13 +4071,13 @@ impl PromoteResourceShareCreatedFromPolicyInput {
             crate::operation::PromoteResourceShareCreatedFromPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PromoteResourceShareCreatedFromPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/promoteresourcesharecreatedfrompolicy")
                     .expect("formatting should succeed");
                 Ok(())
@@ -4031,7 +4085,7 @@ impl PromoteResourceShareCreatedFromPolicyInput {
             fn uri_query(
                 _input: &crate::input::PromoteResourceShareCreatedFromPolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_3) = &_input.resource_share_arn {
                     query.push_kv(
@@ -4045,8 +4099,10 @@ impl PromoteResourceShareCreatedFromPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PromoteResourceShareCreatedFromPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4156,7 +4212,7 @@ pub mod reject_resource_share_invitation_input {
             self,
         ) -> Result<
             crate::input::RejectResourceShareInvitationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RejectResourceShareInvitationInput {
                 resource_share_invitation_arn: self.resource_share_invitation_arn,
@@ -4178,13 +4234,13 @@ impl RejectResourceShareInvitationInput {
             crate::operation::RejectResourceShareInvitation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RejectResourceShareInvitationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/rejectresourceshareinvitation")
                     .expect("formatting should succeed");
                 Ok(())
@@ -4193,8 +4249,10 @@ impl RejectResourceShareInvitationInput {
             fn update_http_builder(
                 input: &crate::input::RejectResourceShareInvitationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4318,7 +4376,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_share_arn: self.resource_share_arn,
@@ -4340,13 +4398,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/tagresource").expect("formatting should succeed");
                 Ok(())
             }
@@ -4354,8 +4412,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4480,7 +4540,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_share_arn: self.resource_share_arn,
@@ -4502,13 +4562,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/untagresource").expect("formatting should succeed");
                 Ok(())
             }
@@ -4516,8 +4576,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4657,8 +4719,10 @@ pub mod update_resource_share_input {
         /// Consumes the builder and constructs a [`UpdateResourceShareInput`](crate::input::UpdateResourceShareInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateResourceShareInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateResourceShareInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateResourceShareInput {
                 resource_share_arn: self.resource_share_arn,
                 name: self.name,
@@ -4681,13 +4745,13 @@ impl UpdateResourceShareInput {
             crate::operation::UpdateResourceShare,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateResourceShareInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/updateresourceshare").expect("formatting should succeed");
                 Ok(())
             }
@@ -4695,8 +4759,10 @@ impl UpdateResourceShareInput {
             fn update_http_builder(
                 input: &crate::input::UpdateResourceShareInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

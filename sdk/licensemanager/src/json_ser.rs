@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_accept_grant_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AcceptGrantInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.grant_arn {
         object.key("GrantArn").string(var_1.as_str());
     }
@@ -12,7 +12,7 @@ pub fn serialize_structure_crate_input_accept_grant_input(
 pub fn serialize_structure_crate_input_check_in_license_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CheckInLicenseInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_2) = &input.license_consumption_token {
         object.key("LicenseConsumptionToken").string(var_2.as_str());
     }
@@ -25,7 +25,7 @@ pub fn serialize_structure_crate_input_check_in_license_input(
 pub fn serialize_structure_crate_input_checkout_borrow_license_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CheckoutBorrowLicenseInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_4) = &input.license_arn {
         object.key("LicenseArn").string(var_4.as_str());
     }
@@ -69,7 +69,7 @@ pub fn serialize_structure_crate_input_checkout_borrow_license_input(
 pub fn serialize_structure_crate_input_checkout_license_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CheckoutLicenseInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_16) = &input.product_sku {
         object.key("ProductSKU").string(var_16.as_str());
     }
@@ -108,7 +108,7 @@ pub fn serialize_structure_crate_input_checkout_license_input(
 pub fn serialize_structure_crate_input_create_grant_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateGrantInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_26) = &input.client_token {
         object.key("ClientToken").string(var_26.as_str());
     }
@@ -145,7 +145,7 @@ pub fn serialize_structure_crate_input_create_grant_input(
 pub fn serialize_structure_crate_input_create_grant_version_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateGrantVersionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_36) = &input.client_token {
         object.key("ClientToken").string(var_36.as_str());
     }
@@ -179,7 +179,7 @@ pub fn serialize_structure_crate_input_create_grant_version_input(
 pub fn serialize_structure_crate_input_create_license_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLicenseInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_45) = &input.license_name {
         object.key("LicenseName").string(var_45.as_str());
     }
@@ -247,7 +247,7 @@ pub fn serialize_structure_crate_input_create_license_input(
 pub fn serialize_structure_crate_input_create_license_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLicenseConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_65) = &input.name {
         object.key("Name").string(var_65.as_str());
     }
@@ -309,7 +309,7 @@ pub fn serialize_structure_crate_input_create_license_configuration_input(
 pub fn serialize_structure_crate_input_create_license_conversion_task_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLicenseConversionTaskForResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_82) = &input.resource_arn {
         object.key("ResourceArn").string(var_82.as_str());
     }
@@ -335,7 +335,7 @@ pub fn serialize_structure_crate_input_create_license_conversion_task_for_resour
 pub fn serialize_structure_crate_input_create_license_manager_report_generator_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLicenseManagerReportGeneratorInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_87) = &input.report_generator_name {
         object.key("ReportGeneratorName").string(var_87.as_str());
     }
@@ -381,7 +381,7 @@ pub fn serialize_structure_crate_input_create_license_manager_report_generator_i
 pub fn serialize_structure_crate_input_create_license_version_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLicenseVersionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_101) = &input.license_arn {
         object.key("LicenseArn").string(var_101.as_str());
     }
@@ -455,7 +455,7 @@ pub fn serialize_structure_crate_input_create_license_version_input(
 pub fn serialize_structure_crate_input_create_token_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateTokenInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_122) = &input.license_arn {
         object.key("LicenseArn").string(var_122.as_str());
     }
@@ -492,7 +492,7 @@ pub fn serialize_structure_crate_input_create_token_input(
 pub fn serialize_structure_crate_input_delete_grant_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteGrantInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_131) = &input.grant_arn {
         object.key("GrantArn").string(var_131.as_str());
     }
@@ -508,7 +508,7 @@ pub fn serialize_structure_crate_input_delete_grant_input(
 pub fn serialize_structure_crate_input_delete_license_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteLicenseInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_134) = &input.license_arn {
         object.key("LicenseArn").string(var_134.as_str());
     }
@@ -521,7 +521,7 @@ pub fn serialize_structure_crate_input_delete_license_input(
 pub fn serialize_structure_crate_input_delete_license_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteLicenseConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_136) = &input.license_configuration_arn {
         object
             .key("LicenseConfigurationArn")
@@ -533,7 +533,7 @@ pub fn serialize_structure_crate_input_delete_license_configuration_input(
 pub fn serialize_structure_crate_input_delete_license_manager_report_generator_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteLicenseManagerReportGeneratorInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_137) = &input.license_manager_report_generator_arn {
         object
             .key("LicenseManagerReportGeneratorArn")
@@ -545,7 +545,7 @@ pub fn serialize_structure_crate_input_delete_license_manager_report_generator_i
 pub fn serialize_structure_crate_input_delete_token_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteTokenInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_138) = &input.token_id {
         object.key("TokenId").string(var_138.as_str());
     }
@@ -555,7 +555,7 @@ pub fn serialize_structure_crate_input_delete_token_input(
 pub fn serialize_structure_crate_input_extend_license_consumption_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ExtendLicenseConsumptionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_139) = &input.license_consumption_token {
         object
             .key("LicenseConsumptionToken")
@@ -570,7 +570,7 @@ pub fn serialize_structure_crate_input_extend_license_consumption_input(
 pub fn serialize_structure_crate_input_get_access_token_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetAccessTokenInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_140) = &input.token {
         object.key("Token").string(var_140.as_str());
     }
@@ -589,7 +589,7 @@ pub fn serialize_structure_crate_input_get_access_token_input(
 pub fn serialize_structure_crate_input_get_grant_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetGrantInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_144) = &input.grant_arn {
         object.key("GrantArn").string(var_144.as_str());
     }
@@ -602,7 +602,7 @@ pub fn serialize_structure_crate_input_get_grant_input(
 pub fn serialize_structure_crate_input_get_license_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetLicenseInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_146) = &input.license_arn {
         object.key("LicenseArn").string(var_146.as_str());
     }
@@ -615,7 +615,7 @@ pub fn serialize_structure_crate_input_get_license_input(
 pub fn serialize_structure_crate_input_get_license_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetLicenseConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_148) = &input.license_configuration_arn {
         object
             .key("LicenseConfigurationArn")
@@ -627,7 +627,7 @@ pub fn serialize_structure_crate_input_get_license_configuration_input(
 pub fn serialize_structure_crate_input_get_license_conversion_task_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetLicenseConversionTaskInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_149) = &input.license_conversion_task_id {
         object
             .key("LicenseConversionTaskId")
@@ -639,7 +639,7 @@ pub fn serialize_structure_crate_input_get_license_conversion_task_input(
 pub fn serialize_structure_crate_input_get_license_manager_report_generator_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetLicenseManagerReportGeneratorInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_150) = &input.license_manager_report_generator_arn {
         object
             .key("LicenseManagerReportGeneratorArn")
@@ -651,7 +651,7 @@ pub fn serialize_structure_crate_input_get_license_manager_report_generator_inpu
 pub fn serialize_structure_crate_input_get_license_usage_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetLicenseUsageInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_151) = &input.license_arn {
         object.key("LicenseArn").string(var_151.as_str());
     }
@@ -661,7 +661,7 @@ pub fn serialize_structure_crate_input_get_license_usage_input(
 pub fn serialize_structure_crate_input_list_associations_for_license_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListAssociationsForLicenseConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_152) = &input.license_configuration_arn {
         object
             .key("LicenseConfigurationArn")
@@ -682,7 +682,7 @@ pub fn serialize_structure_crate_input_list_associations_for_license_configurati
 pub fn serialize_structure_crate_input_list_distributed_grants_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListDistributedGrantsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_155) = &input.grant_arns {
         let mut array_156 = object.key("GrantArns").start_array();
         for item_157 in var_155 {
@@ -718,7 +718,7 @@ pub fn serialize_structure_crate_input_list_distributed_grants_input(
 pub fn serialize_structure_crate_input_list_failures_for_license_configuration_operations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListFailuresForLicenseConfigurationOperationsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_164) = &input.license_configuration_arn {
         object
             .key("LicenseConfigurationArn")
@@ -739,7 +739,7 @@ pub fn serialize_structure_crate_input_list_failures_for_license_configuration_o
 pub fn serialize_structure_crate_input_list_license_configurations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListLicenseConfigurationsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_167) = &input.license_configuration_arns {
         let mut array_168 = object.key("LicenseConfigurationArns").start_array();
         for item_169 in var_167 {
@@ -775,7 +775,7 @@ pub fn serialize_structure_crate_input_list_license_configurations_input(
 pub fn serialize_structure_crate_input_list_license_conversion_tasks_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListLicenseConversionTasksInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_176) = &input.next_token {
         object.key("NextToken").string(var_176.as_str());
     }
@@ -802,7 +802,7 @@ pub fn serialize_structure_crate_input_list_license_conversion_tasks_input(
 pub fn serialize_structure_crate_input_list_license_manager_report_generators_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListLicenseManagerReportGeneratorsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_182) = &input.filters {
         let mut array_183 = object.key("Filters").start_array();
         for item_184 in var_182 {
@@ -829,7 +829,7 @@ pub fn serialize_structure_crate_input_list_license_manager_report_generators_in
 pub fn serialize_structure_crate_input_list_licenses_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListLicensesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_188) = &input.license_arns {
         let mut array_189 = object.key("LicenseArns").start_array();
         for item_190 in var_188 {
@@ -865,7 +865,7 @@ pub fn serialize_structure_crate_input_list_licenses_input(
 pub fn serialize_structure_crate_input_list_license_specifications_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListLicenseSpecificationsForResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_197) = &input.resource_arn {
         object.key("ResourceArn").string(var_197.as_str());
     }
@@ -884,7 +884,7 @@ pub fn serialize_structure_crate_input_list_license_specifications_for_resource_
 pub fn serialize_structure_crate_input_list_license_versions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListLicenseVersionsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_200) = &input.license_arn {
         object.key("LicenseArn").string(var_200.as_str());
     }
@@ -903,7 +903,7 @@ pub fn serialize_structure_crate_input_list_license_versions_input(
 pub fn serialize_structure_crate_input_list_received_grants_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListReceivedGrantsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_203) = &input.grant_arns {
         let mut array_204 = object.key("GrantArns").start_array();
         for item_205 in var_203 {
@@ -939,7 +939,7 @@ pub fn serialize_structure_crate_input_list_received_grants_input(
 pub fn serialize_structure_crate_input_list_received_licenses_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListReceivedLicensesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_212) = &input.license_arns {
         let mut array_213 = object.key("LicenseArns").start_array();
         for item_214 in var_212 {
@@ -975,7 +975,7 @@ pub fn serialize_structure_crate_input_list_received_licenses_input(
 pub fn serialize_structure_crate_input_list_resource_inventory_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListResourceInventoryInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_221) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -1005,7 +1005,7 @@ pub fn serialize_structure_crate_input_list_resource_inventory_input(
 pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_227) = &input.resource_arn {
         object.key("ResourceArn").string(var_227.as_str());
     }
@@ -1015,7 +1015,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
 pub fn serialize_structure_crate_input_list_tokens_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTokensInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_228) = &input.token_ids {
         let mut array_229 = object.key("TokenIds").start_array();
         for item_230 in var_228 {
@@ -1051,7 +1051,7 @@ pub fn serialize_structure_crate_input_list_tokens_input(
 pub fn serialize_structure_crate_input_list_usage_for_license_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListUsageForLicenseConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_237) = &input.license_configuration_arn {
         object
             .key("LicenseConfigurationArn")
@@ -1083,7 +1083,7 @@ pub fn serialize_structure_crate_input_list_usage_for_license_configuration_inpu
 pub fn serialize_structure_crate_input_reject_grant_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RejectGrantInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_244) = &input.grant_arn {
         object.key("GrantArn").string(var_244.as_str());
     }
@@ -1093,7 +1093,7 @@ pub fn serialize_structure_crate_input_reject_grant_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_245) = &input.resource_arn {
         object.key("ResourceArn").string(var_245.as_str());
     }
@@ -1114,7 +1114,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_250) = &input.resource_arn {
         object.key("ResourceArn").string(var_250.as_str());
     }
@@ -1133,7 +1133,7 @@ pub fn serialize_structure_crate_input_untag_resource_input(
 pub fn serialize_structure_crate_input_update_license_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateLicenseConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_254) = &input.license_configuration_arn {
         object
             .key("LicenseConfigurationArn")
@@ -1191,7 +1191,7 @@ pub fn serialize_structure_crate_input_update_license_configuration_input(
 pub fn serialize_structure_crate_input_update_license_manager_report_generator_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateLicenseManagerReportGeneratorInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_268) = &input.license_manager_report_generator_arn {
         object
             .key("LicenseManagerReportGeneratorArn")
@@ -1234,7 +1234,7 @@ pub fn serialize_structure_crate_input_update_license_manager_report_generator_i
 pub fn serialize_structure_crate_input_update_license_specifications_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateLicenseSpecificationsForResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_279) = &input.resource_arn {
         object.key("ResourceArn").string(var_279.as_str());
     }
@@ -1272,7 +1272,7 @@ pub fn serialize_structure_crate_input_update_license_specifications_for_resourc
 pub fn serialize_structure_crate_input_update_service_settings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateServiceSettingsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_288) = &input.s3_bucket_arn {
         object.key("S3BucketArn").string(var_288.as_str());
     }
@@ -1296,7 +1296,7 @@ pub fn serialize_structure_crate_input_update_service_settings_input(
 pub fn serialize_structure_crate_model_entitlement_data(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EntitlementData,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_293) = &input.name {
         object.key("Name").string(var_293.as_str());
     }
@@ -1312,7 +1312,7 @@ pub fn serialize_structure_crate_model_entitlement_data(
 pub fn serialize_structure_crate_model_metadata(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Metadata,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_296) = &input.name {
         object.key("Name").string(var_296.as_str());
     }
@@ -1325,7 +1325,7 @@ pub fn serialize_structure_crate_model_metadata(
 pub fn serialize_structure_crate_model_issuer(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Issuer,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_298) = &input.name {
         object.key("Name").string(var_298.as_str());
     }
@@ -1338,7 +1338,7 @@ pub fn serialize_structure_crate_model_issuer(
 pub fn serialize_structure_crate_model_datetime_range(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DatetimeRange,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_300) = &input.begin {
         object.key("Begin").string(var_300.as_str());
     }
@@ -1351,7 +1351,7 @@ pub fn serialize_structure_crate_model_datetime_range(
 pub fn serialize_structure_crate_model_entitlement(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Entitlement,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_302) = &input.name {
         object.key("Name").string(var_302.as_str());
     }
@@ -1379,7 +1379,7 @@ pub fn serialize_structure_crate_model_entitlement(
 pub fn serialize_structure_crate_model_consumption_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ConsumptionConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_308) = &input.renew_type {
         object.key("RenewType").string(var_308.as_str());
     }
@@ -1405,7 +1405,7 @@ pub fn serialize_structure_crate_model_consumption_configuration(
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_313) = &input.key {
         object.key("Key").string(var_313.as_str());
     }
@@ -1418,7 +1418,7 @@ pub fn serialize_structure_crate_model_tag(
 pub fn serialize_structure_crate_model_product_information(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ProductInformation,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_315) = &input.resource_type {
         object.key("ResourceType").string(var_315.as_str());
     }
@@ -1442,7 +1442,7 @@ pub fn serialize_structure_crate_model_product_information(
 pub fn serialize_structure_crate_model_license_conversion_context(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LicenseConversionContext,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_320) = &input.usage_operation {
         object.key("UsageOperation").string(var_320.as_str());
     }
@@ -1452,7 +1452,7 @@ pub fn serialize_structure_crate_model_license_conversion_context(
 pub fn serialize_structure_crate_model_report_context(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ReportContext,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_321) = &input.license_configuration_arns {
         let mut array_322 = object.key("licenseConfigurationArns").start_array();
         for item_323 in var_321 {
@@ -1468,7 +1468,7 @@ pub fn serialize_structure_crate_model_report_context(
 pub fn serialize_structure_crate_model_report_frequency(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ReportFrequency,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_324) = &input.value {
         object.key("value").number(
             #[allow(clippy::useless_conversion)]
@@ -1484,7 +1484,7 @@ pub fn serialize_structure_crate_model_report_frequency(
 pub fn serialize_structure_crate_model_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Filter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_326) = &input.name {
         object.key("Name").string(var_326.as_str());
     }
@@ -1503,7 +1503,7 @@ pub fn serialize_structure_crate_model_filter(
 pub fn serialize_structure_crate_model_inventory_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::InventoryFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_330) = &input.name {
         object.key("Name").string(var_330.as_str());
     }
@@ -1519,7 +1519,7 @@ pub fn serialize_structure_crate_model_inventory_filter(
 pub fn serialize_structure_crate_model_license_specification(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LicenseSpecification,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_333) = &input.license_configuration_arn {
         object
             .key("LicenseConfigurationArn")
@@ -1534,7 +1534,7 @@ pub fn serialize_structure_crate_model_license_specification(
 pub fn serialize_structure_crate_model_organization_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::OrganizationConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     {
         object
             .key("EnableIntegration")
@@ -1546,7 +1546,7 @@ pub fn serialize_structure_crate_model_organization_configuration(
 pub fn serialize_structure_crate_model_provisional_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ProvisionalConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_335) = &input.max_time_to_live_in_minutes {
         object.key("MaxTimeToLiveInMinutes").number(
             #[allow(clippy::useless_conversion)]
@@ -1559,7 +1559,7 @@ pub fn serialize_structure_crate_model_provisional_configuration(
 pub fn serialize_structure_crate_model_borrow_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BorrowConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_336) = &input.allow_early_check_in {
         object.key("AllowEarlyCheckIn").boolean(*var_336);
     }
@@ -1575,7 +1575,7 @@ pub fn serialize_structure_crate_model_borrow_configuration(
 pub fn serialize_structure_crate_model_product_information_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ProductInformationFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_338) = &input.product_information_filter_name {
         object
             .key("ProductInformationFilterName")

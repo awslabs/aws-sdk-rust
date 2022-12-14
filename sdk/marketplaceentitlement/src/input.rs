@@ -79,7 +79,7 @@ pub mod get_entitlements_input {
         /// Consumes the builder and constructs a [`GetEntitlementsInput`](crate::input::GetEntitlementsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetEntitlementsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetEntitlementsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetEntitlementsInput {
                 product_code: self.product_code,
@@ -103,13 +103,13 @@ impl GetEntitlementsInput {
             crate::operation::GetEntitlements,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetEntitlementsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -117,8 +117,10 @@ impl GetEntitlementsInput {
             fn update_http_builder(
                 input: &crate::input::GetEntitlementsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

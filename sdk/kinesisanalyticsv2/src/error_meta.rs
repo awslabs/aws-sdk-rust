@@ -73,7 +73,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::InvalidApplicationConfigurationException(inner) => Error::InvalidApplicationConfigurationException(inner),
                 crate::error::AddApplicationCloudWatchLoggingOptionErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
@@ -94,29 +94,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::AddApplicationInputError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AddApplicationInputErrorKind::CodeValidationException(inner) => {
-                    Error::CodeValidationException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::AddApplicationInputErrorKind::CodeValidationException(inner) => {
+                        Error::CodeValidationException(inner)
+                    }
+                    crate::error::AddApplicationInputErrorKind::ConcurrentModificationException(
+                        inner,
+                    ) => Error::ConcurrentModificationException(inner),
+                    crate::error::AddApplicationInputErrorKind::InvalidArgumentException(inner) => {
+                        Error::InvalidArgumentException(inner)
+                    }
+                    crate::error::AddApplicationInputErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::AddApplicationInputErrorKind::ResourceInUseException(inner) => {
+                        Error::ResourceInUseException(inner)
+                    }
+                    crate::error::AddApplicationInputErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::AddApplicationInputErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::AddApplicationInputErrorKind::ConcurrentModificationException(
-                    inner,
-                ) => Error::ConcurrentModificationException(inner),
-                crate::error::AddApplicationInputErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::AddApplicationInputErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::AddApplicationInputErrorKind::ResourceInUseException(inner) => {
-                    Error::ResourceInUseException(inner)
-                }
-                crate::error::AddApplicationInputErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::AddApplicationInputErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -138,7 +140,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::AddApplicationInputProcessingConfigurationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::AddApplicationInputProcessingConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::AddApplicationInputProcessingConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
@@ -159,7 +161,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::AddApplicationOutputError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::AddApplicationOutputErrorKind::ConcurrentModificationException(
                     inner,
                 ) => Error::ConcurrentModificationException(inner),
@@ -196,7 +201,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::AddApplicationReferenceDataSourceErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::AddApplicationReferenceDataSourceErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::AddApplicationReferenceDataSourceErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
@@ -221,7 +226,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::AddApplicationVpcConfigurationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::AddApplicationVpcConfigurationErrorKind::InvalidApplicationConfigurationException(inner) => Error::InvalidApplicationConfigurationException(inner),
                 crate::error::AddApplicationVpcConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
@@ -241,35 +246,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateApplicationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateApplicationErrorKind::CodeValidationException(inner) => {
-                    Error::CodeValidationException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateApplicationErrorKind::CodeValidationException(inner) => {
+                        Error::CodeValidationException(inner)
+                    }
+                    crate::error::CreateApplicationErrorKind::ConcurrentModificationException(
+                        inner,
+                    ) => Error::ConcurrentModificationException(inner),
+                    crate::error::CreateApplicationErrorKind::InvalidArgumentException(inner) => {
+                        Error::InvalidArgumentException(inner)
+                    }
+                    crate::error::CreateApplicationErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::CreateApplicationErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::CreateApplicationErrorKind::ResourceInUseException(inner) => {
+                        Error::ResourceInUseException(inner)
+                    }
+                    crate::error::CreateApplicationErrorKind::TooManyTagsException(inner) => {
+                        Error::TooManyTagsException(inner)
+                    }
+                    crate::error::CreateApplicationErrorKind::UnsupportedOperationException(
+                        inner,
+                    ) => Error::UnsupportedOperationException(inner),
+                    crate::error::CreateApplicationErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateApplicationErrorKind::ConcurrentModificationException(
-                    inner,
-                ) => Error::ConcurrentModificationException(inner),
-                crate::error::CreateApplicationErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::CreateApplicationErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::CreateApplicationErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CreateApplicationErrorKind::ResourceInUseException(inner) => {
-                    Error::ResourceInUseException(inner)
-                }
-                crate::error::CreateApplicationErrorKind::TooManyTagsException(inner) => {
-                    Error::TooManyTagsException(inner)
-                }
-                crate::error::CreateApplicationErrorKind::UnsupportedOperationException(inner) => {
-                    Error::UnsupportedOperationException(inner)
-                }
-                crate::error::CreateApplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -283,7 +290,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateApplicationPresignedUrlError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CreateApplicationPresignedUrlErrorKind::InvalidArgumentException(
                     inner,
                 ) => Error::InvalidArgumentException(inner),
@@ -310,7 +320,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateApplicationSnapshotError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateApplicationSnapshotErrorKind::InvalidApplicationConfigurationException(inner) => Error::InvalidApplicationConfigurationException(inner),
                 crate::error::CreateApplicationSnapshotErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::CreateApplicationSnapshotErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
@@ -332,7 +342,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteApplicationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteApplicationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::DeleteApplicationErrorKind::InvalidApplicationConfigurationException(inner) => Error::InvalidApplicationConfigurationException(inner),
                 crate::error::DeleteApplicationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
@@ -362,7 +372,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::InvalidApplicationConfigurationException(inner) => Error::InvalidApplicationConfigurationException(inner),
                 crate::error::DeleteApplicationCloudWatchLoggingOptionErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
@@ -392,7 +402,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::DeleteApplicationInputProcessingConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
@@ -413,7 +423,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteApplicationOutputError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DeleteApplicationOutputErrorKind::ConcurrentModificationException(
                     inner,
                 ) => Error::ConcurrentModificationException(inner),
@@ -454,7 +467,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteApplicationReferenceDataSourceErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::DeleteApplicationReferenceDataSourceErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::DeleteApplicationReferenceDataSourceErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
@@ -475,7 +488,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteApplicationSnapshotError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DeleteApplicationSnapshotErrorKind::InvalidArgumentException(
                     inner,
                 ) => Error::InvalidArgumentException(inner),
@@ -512,7 +528,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteApplicationVpcConfigurationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::DeleteApplicationVpcConfigurationErrorKind::InvalidApplicationConfigurationException(inner) => Error::InvalidApplicationConfigurationException(inner),
                 crate::error::DeleteApplicationVpcConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
@@ -532,20 +548,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeApplicationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeApplicationErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeApplicationErrorKind::InvalidArgumentException(inner) => {
+                        Error::InvalidArgumentException(inner)
+                    }
+                    crate::error::DescribeApplicationErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::DescribeApplicationErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::DescribeApplicationErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeApplicationErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::DescribeApplicationErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::DescribeApplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -559,7 +577,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeApplicationSnapshotError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeApplicationSnapshotErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::DescribeApplicationSnapshotErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeApplicationSnapshotErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
@@ -578,7 +596,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeApplicationVersionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeApplicationVersionErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::DescribeApplicationVersionErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeApplicationVersionErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
@@ -596,7 +614,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DiscoverInputSchemaError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DiscoverInputSchemaErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::DiscoverInputSchemaErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DiscoverInputSchemaErrorKind::ResourceProvisionedThroughputExceededException(inner) => Error::ResourceProvisionedThroughputExceededException(inner),
@@ -617,14 +635,16 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListApplicationsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListApplicationsErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListApplicationsErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::ListApplicationsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListApplicationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -638,7 +658,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListApplicationSnapshotsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::ListApplicationSnapshotsErrorKind::InvalidArgumentException(
                     inner,
                 ) => Error::InvalidArgumentException(inner),
@@ -662,7 +685,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListApplicationVersionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::ListApplicationVersionsErrorKind::InvalidArgumentException(inner) => {
                     Error::InvalidArgumentException(inner)
                 }
@@ -688,20 +714,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsForResourceErrorKind::ConcurrentModificationException(
-                    inner,
-                ) => Error::ConcurrentModificationException(inner),
-                crate::error::ListTagsForResourceErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListTagsForResourceErrorKind::ConcurrentModificationException(
+                        inner,
+                    ) => Error::ConcurrentModificationException(inner),
+                    crate::error::ListTagsForResourceErrorKind::InvalidArgumentException(inner) => {
+                        Error::InvalidArgumentException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -714,29 +742,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RollbackApplicationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RollbackApplicationErrorKind::ConcurrentModificationException(
-                    inner,
-                ) => Error::ConcurrentModificationException(inner),
-                crate::error::RollbackApplicationErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::RollbackApplicationErrorKind::ConcurrentModificationException(
+                        inner,
+                    ) => Error::ConcurrentModificationException(inner),
+                    crate::error::RollbackApplicationErrorKind::InvalidArgumentException(inner) => {
+                        Error::InvalidArgumentException(inner)
+                    }
+                    crate::error::RollbackApplicationErrorKind::InvalidRequestException(inner) => {
+                        Error::InvalidRequestException(inner)
+                    }
+                    crate::error::RollbackApplicationErrorKind::ResourceInUseException(inner) => {
+                        Error::ResourceInUseException(inner)
+                    }
+                    crate::error::RollbackApplicationErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::RollbackApplicationErrorKind::UnsupportedOperationException(
+                        inner,
+                    ) => Error::UnsupportedOperationException(inner),
+                    crate::error::RollbackApplicationErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::RollbackApplicationErrorKind::InvalidRequestException(inner) => {
-                    Error::InvalidRequestException(inner)
-                }
-                crate::error::RollbackApplicationErrorKind::ResourceInUseException(inner) => {
-                    Error::ResourceInUseException(inner)
-                }
-                crate::error::RollbackApplicationErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::RollbackApplicationErrorKind::UnsupportedOperationException(
-                    inner,
-                ) => Error::UnsupportedOperationException(inner),
-                crate::error::RollbackApplicationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -749,7 +779,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartApplicationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::StartApplicationErrorKind::InvalidApplicationConfigurationException(inner) => Error::InvalidApplicationConfigurationException(inner),
                 crate::error::StartApplicationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::StartApplicationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
@@ -767,7 +797,7 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StopApplicationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::StopApplicationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::StopApplicationErrorKind::InvalidApplicationConfigurationException(inner) => Error::InvalidApplicationConfigurationException(inner),
                 crate::error::StopApplicationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
@@ -786,26 +816,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagResourceErrorKind::ConcurrentModificationException(inner) => {
-                    Error::ConcurrentModificationException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::TagResourceErrorKind::ConcurrentModificationException(inner) => {
+                        Error::ConcurrentModificationException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::InvalidArgumentException(inner) => {
+                        Error::InvalidArgumentException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::ResourceInUseException(inner) => {
+                        Error::ResourceInUseException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
+                        Error::TooManyTagsException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::TagResourceErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::TagResourceErrorKind::ResourceInUseException(inner) => {
-                    Error::ResourceInUseException(inner)
-                }
-                crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
-                    Error::TooManyTagsException(inner)
-                }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -816,26 +848,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagResourceErrorKind::ConcurrentModificationException(inner) => {
-                    Error::ConcurrentModificationException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UntagResourceErrorKind::ConcurrentModificationException(
+                        inner,
+                    ) => Error::ConcurrentModificationException(inner),
+                    crate::error::UntagResourceErrorKind::InvalidArgumentException(inner) => {
+                        Error::InvalidArgumentException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::ResourceInUseException(inner) => {
+                        Error::ResourceInUseException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::TooManyTagsException(inner) => {
+                        Error::TooManyTagsException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UntagResourceErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::UntagResourceErrorKind::ResourceInUseException(inner) => {
-                    Error::ResourceInUseException(inner)
-                }
-                crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::UntagResourceErrorKind::TooManyTagsException(inner) => {
-                    Error::TooManyTagsException(inner)
-                }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -848,7 +882,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateApplicationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateApplicationErrorKind::CodeValidationException(inner) => Error::CodeValidationException(inner),
                 crate::error::UpdateApplicationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::UpdateApplicationErrorKind::InvalidApplicationConfigurationException(inner) => Error::InvalidApplicationConfigurationException(inner),
@@ -880,7 +914,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateApplicationMaintenanceConfigurationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
                 crate::error::UpdateApplicationMaintenanceConfigurationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::UpdateApplicationMaintenanceConfigurationErrorKind::ResourceInUseException(inner) => Error::ResourceInUseException(inner),

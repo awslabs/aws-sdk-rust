@@ -37,29 +37,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetMediaError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetMediaErrorKind::ClientLimitExceededException(inner) => {
-                    Error::ClientLimitExceededException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetMediaErrorKind::ClientLimitExceededException(inner) => {
+                        Error::ClientLimitExceededException(inner)
+                    }
+                    crate::error::GetMediaErrorKind::ConnectionLimitExceededException(inner) => {
+                        Error::ConnectionLimitExceededException(inner)
+                    }
+                    crate::error::GetMediaErrorKind::InvalidArgumentException(inner) => {
+                        Error::InvalidArgumentException(inner)
+                    }
+                    crate::error::GetMediaErrorKind::InvalidEndpointException(inner) => {
+                        Error::InvalidEndpointException(inner)
+                    }
+                    crate::error::GetMediaErrorKind::NotAuthorizedException(inner) => {
+                        Error::NotAuthorizedException(inner)
+                    }
+                    crate::error::GetMediaErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::GetMediaErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetMediaErrorKind::ConnectionLimitExceededException(inner) => {
-                    Error::ConnectionLimitExceededException(inner)
-                }
-                crate::error::GetMediaErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::GetMediaErrorKind::InvalidEndpointException(inner) => {
-                    Error::InvalidEndpointException(inner)
-                }
-                crate::error::GetMediaErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::GetMediaErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::GetMediaErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }

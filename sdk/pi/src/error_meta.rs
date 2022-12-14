@@ -31,20 +31,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeDimensionKeysError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeDimensionKeysErrorKind::InternalServiceError(inner) => {
-                    Error::InternalServiceError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeDimensionKeysErrorKind::InternalServiceError(inner) => {
+                        Error::InternalServiceError(inner)
+                    }
+                    crate::error::DescribeDimensionKeysErrorKind::InvalidArgumentException(
+                        inner,
+                    ) => Error::InvalidArgumentException(inner),
+                    crate::error::DescribeDimensionKeysErrorKind::NotAuthorizedException(inner) => {
+                        Error::NotAuthorizedException(inner)
+                    }
+                    crate::error::DescribeDimensionKeysErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeDimensionKeysErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::DescribeDimensionKeysErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::DescribeDimensionKeysErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -58,20 +60,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetDimensionKeyDetailsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDimensionKeyDetailsErrorKind::InternalServiceError(inner) => {
-                    Error::InternalServiceError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetDimensionKeyDetailsErrorKind::InternalServiceError(inner) => {
+                        Error::InternalServiceError(inner)
+                    }
+                    crate::error::GetDimensionKeyDetailsErrorKind::InvalidArgumentException(
+                        inner,
+                    ) => Error::InvalidArgumentException(inner),
+                    crate::error::GetDimensionKeyDetailsErrorKind::NotAuthorizedException(
+                        inner,
+                    ) => Error::NotAuthorizedException(inner),
+                    crate::error::GetDimensionKeyDetailsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetDimensionKeyDetailsErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::GetDimensionKeyDetailsErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::GetDimensionKeyDetailsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -84,20 +88,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetResourceMetadataError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetResourceMetadataErrorKind::InternalServiceError(inner) => {
-                    Error::InternalServiceError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetResourceMetadataErrorKind::InternalServiceError(inner) => {
+                        Error::InternalServiceError(inner)
+                    }
+                    crate::error::GetResourceMetadataErrorKind::InvalidArgumentException(inner) => {
+                        Error::InvalidArgumentException(inner)
+                    }
+                    crate::error::GetResourceMetadataErrorKind::NotAuthorizedException(inner) => {
+                        Error::NotAuthorizedException(inner)
+                    }
+                    crate::error::GetResourceMetadataErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetResourceMetadataErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::GetResourceMetadataErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::GetResourceMetadataErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -110,20 +116,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetResourceMetricsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetResourceMetricsErrorKind::InternalServiceError(inner) => {
-                    Error::InternalServiceError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetResourceMetricsErrorKind::InternalServiceError(inner) => {
+                        Error::InternalServiceError(inner)
+                    }
+                    crate::error::GetResourceMetricsErrorKind::InvalidArgumentException(inner) => {
+                        Error::InvalidArgumentException(inner)
+                    }
+                    crate::error::GetResourceMetricsErrorKind::NotAuthorizedException(inner) => {
+                        Error::NotAuthorizedException(inner)
+                    }
+                    crate::error::GetResourceMetricsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetResourceMetricsErrorKind::InvalidArgumentException(inner) => {
-                    Error::InvalidArgumentException(inner)
-                }
-                crate::error::GetResourceMetricsErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::GetResourceMetricsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -141,7 +149,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListAvailableResourceDimensionsErrorKind::InternalServiceError(inner) => Error::InternalServiceError(inner),
                 crate::error::ListAvailableResourceDimensionsErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
                 crate::error::ListAvailableResourceDimensionsErrorKind::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
@@ -160,7 +168,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListAvailableResourceMetricsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::ListAvailableResourceMetricsErrorKind::InternalServiceError(
                     inner,
                 ) => Error::InternalServiceError(inner),

@@ -100,13 +100,13 @@ where
     let body = match read_body(body).await {
         Ok(body) => body,
         Err(err) => {
-            return Err(SdkError::ResponseError {
-                raw: operation::Response::from_parts(
+            return Err(SdkError::response_error(
+                err,
+                operation::Response::from_parts(
                     http::Response::from_parts(parts, SdkBody::taken()),
                     properties,
                 ),
-                err,
-            });
+            ));
         }
     };
 
@@ -139,6 +139,6 @@ fn sdk_result<T, E>(
 ) -> Result<SdkSuccess<T>, SdkError<E>> {
     match parsed {
         Ok(parsed) => Ok(SdkSuccess { raw, parsed }),
-        Err(err) => Err(SdkError::ServiceError { raw, err }),
+        Err(err) => Err(SdkError::service_error(err, raw)),
     }
 }

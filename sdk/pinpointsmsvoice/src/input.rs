@@ -26,8 +26,10 @@ pub mod create_configuration_set_input {
         /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateConfigurationSetInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateConfigurationSetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateConfigurationSetInput {
                 configuration_set_name: self.configuration_set_name,
             })
@@ -47,13 +49,13 @@ impl CreateConfigurationSetInput {
             crate::operation::CreateConfigurationSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateConfigurationSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/sms-voice/configuration-sets")
                     .expect("formatting should succeed");
                 Ok(())
@@ -62,8 +64,10 @@ impl CreateConfigurationSetInput {
             fn update_http_builder(
                 input: &crate::input::CreateConfigurationSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -203,7 +207,7 @@ pub mod create_configuration_set_event_destination_input {
             self,
         ) -> Result<
             crate::input::CreateConfigurationSetEventDestinationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateConfigurationSetEventDestinationInput {
                 configuration_set_name: self.configuration_set_name,
@@ -226,29 +230,31 @@ impl CreateConfigurationSetEventDestinationInput {
             crate::operation::CreateConfigurationSetEventDestination,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateConfigurationSetEventDestinationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.configuration_set_name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "configuration_set_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let configuration_set_name = aws_smithy_http::label::fmt_string(
                     input_1,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if configuration_set_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "configuration_set_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -262,8 +268,10 @@ impl CreateConfigurationSetEventDestinationInput {
             fn update_http_builder(
                 input: &crate::input::CreateConfigurationSetEventDestinationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -367,8 +375,10 @@ pub mod delete_configuration_set_input {
         /// Consumes the builder and constructs a [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteConfigurationSetInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteConfigurationSetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteConfigurationSetInput {
                 configuration_set_name: self.configuration_set_name,
             })
@@ -388,29 +398,31 @@ impl DeleteConfigurationSetInput {
             crate::operation::DeleteConfigurationSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteConfigurationSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.configuration_set_name;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "configuration_set_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let configuration_set_name = aws_smithy_http::label::fmt_string(
                     input_2,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if configuration_set_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "configuration_set_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -424,8 +436,10 @@ impl DeleteConfigurationSetInput {
             fn update_http_builder(
                 input: &crate::input::DeleteConfigurationSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -532,7 +546,7 @@ pub mod delete_configuration_set_event_destination_input {
             self,
         ) -> Result<
             crate::input::DeleteConfigurationSetEventDestinationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteConfigurationSetEventDestinationInput {
                 configuration_set_name: self.configuration_set_name,
@@ -554,46 +568,50 @@ impl DeleteConfigurationSetEventDestinationInput {
             crate::operation::DeleteConfigurationSetEventDestination,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteConfigurationSetEventDestinationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.configuration_set_name;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "configuration_set_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let configuration_set_name = aws_smithy_http::label::fmt_string(
                     input_3,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if configuration_set_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "configuration_set_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_4 = &_input.event_destination_name;
-                let input_4 = input_4.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "event_destination_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_4 = input_4.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "event_destination_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let event_destination_name = aws_smithy_http::label::fmt_string(
                     input_4,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if event_destination_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "event_destination_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "event_destination_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}", ConfigurationSetName = configuration_set_name, EventDestinationName = event_destination_name).expect("formatting should succeed");
                 Ok(())
@@ -602,8 +620,10 @@ impl DeleteConfigurationSetEventDestinationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteConfigurationSetEventDestinationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -696,7 +716,7 @@ pub mod get_configuration_set_event_destinations_input {
             self,
         ) -> Result<
             crate::input::GetConfigurationSetEventDestinationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetConfigurationSetEventDestinationsInput {
                 configuration_set_name: self.configuration_set_name,
@@ -717,29 +737,31 @@ impl GetConfigurationSetEventDestinationsInput {
             crate::operation::GetConfigurationSetEventDestinations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetConfigurationSetEventDestinationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.configuration_set_name;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "configuration_set_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let configuration_set_name = aws_smithy_http::label::fmt_string(
                     input_5,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if configuration_set_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "configuration_set_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -753,8 +775,10 @@ impl GetConfigurationSetEventDestinationsInput {
             fn update_http_builder(
                 input: &crate::input::GetConfigurationSetEventDestinationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -853,8 +877,10 @@ pub mod list_configuration_sets_input {
         /// Consumes the builder and constructs a [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListConfigurationSetsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListConfigurationSetsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListConfigurationSetsInput {
                 next_token: self.next_token,
                 page_size: self.page_size,
@@ -875,13 +901,13 @@ impl ListConfigurationSetsInput {
             crate::operation::ListConfigurationSets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListConfigurationSetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/sms-voice/configuration-sets")
                     .expect("formatting should succeed");
                 Ok(())
@@ -889,7 +915,7 @@ impl ListConfigurationSetsInput {
             fn uri_query(
                 _input: &crate::input::ListConfigurationSetsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_6) = &_input.next_token {
                     query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_6));
@@ -903,8 +929,10 @@ impl ListConfigurationSetsInput {
             fn update_http_builder(
                 input: &crate::input::ListConfigurationSetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1049,8 +1077,10 @@ pub mod send_voice_message_input {
         /// Consumes the builder and constructs a [`SendVoiceMessageInput`](crate::input::SendVoiceMessageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendVoiceMessageInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SendVoiceMessageInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SendVoiceMessageInput {
                 caller_id: self.caller_id,
                 configuration_set_name: self.configuration_set_name,
@@ -1074,13 +1104,13 @@ impl SendVoiceMessageInput {
             crate::operation::SendVoiceMessage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendVoiceMessageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/sms-voice/voice/message").expect("formatting should succeed");
                 Ok(())
             }
@@ -1088,8 +1118,10 @@ impl SendVoiceMessageInput {
             fn update_http_builder(
                 input: &crate::input::SendVoiceMessageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1227,7 +1259,7 @@ pub mod update_configuration_set_event_destination_input {
             self,
         ) -> Result<
             crate::input::UpdateConfigurationSetEventDestinationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateConfigurationSetEventDestinationInput {
                 configuration_set_name: self.configuration_set_name,
@@ -1250,46 +1282,50 @@ impl UpdateConfigurationSetEventDestinationInput {
             crate::operation::UpdateConfigurationSetEventDestination,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateConfigurationSetEventDestinationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_8 = &_input.configuration_set_name;
-                let input_8 = input_8.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_8 = input_8.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "configuration_set_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let configuration_set_name = aws_smithy_http::label::fmt_string(
                     input_8,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if configuration_set_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "configuration_set_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "configuration_set_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_9 = &_input.event_destination_name;
-                let input_9 = input_9.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "event_destination_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_9 = input_9.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "event_destination_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let event_destination_name = aws_smithy_http::label::fmt_string(
                     input_9,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if event_destination_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "event_destination_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "event_destination_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}", ConfigurationSetName = configuration_set_name, EventDestinationName = event_destination_name).expect("formatting should succeed");
                 Ok(())
@@ -1298,8 +1334,10 @@ impl UpdateConfigurationSetEventDestinationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateConfigurationSetEventDestinationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))

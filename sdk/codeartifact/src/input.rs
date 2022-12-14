@@ -77,7 +77,7 @@ pub mod associate_external_connection_input {
             self,
         ) -> Result<
             crate::input::AssociateExternalConnectionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AssociateExternalConnectionInput {
                 domain: self.domain,
@@ -101,13 +101,13 @@ impl AssociateExternalConnectionInput {
             crate::operation::AssociateExternalConnection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AssociateExternalConnectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository/external-connection")
                     .expect("formatting should succeed");
                 Ok(())
@@ -115,7 +115,7 @@ impl AssociateExternalConnectionInput {
             fn uri_query(
                 _input: &crate::input::AssociateExternalConnectionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_1) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_1));
@@ -141,8 +141,10 @@ impl AssociateExternalConnectionInput {
             fn update_http_builder(
                 input: &crate::input::AssociateExternalConnectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -394,8 +396,10 @@ pub mod copy_package_versions_input {
         /// Consumes the builder and constructs a [`CopyPackageVersionsInput`](crate::input::CopyPackageVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CopyPackageVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CopyPackageVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CopyPackageVersionsInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -425,20 +429,20 @@ impl CopyPackageVersionsInput {
             crate::operation::CopyPackageVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CopyPackageVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/versions/copy").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::CopyPackageVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_5) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_5));
@@ -476,8 +480,10 @@ impl CopyPackageVersionsInput {
             fn update_http_builder(
                 input: &crate::input::CopyPackageVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -618,7 +624,7 @@ pub mod create_domain_input {
         /// Consumes the builder and constructs a [`CreateDomainInput`](crate::input::CreateDomainInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDomainInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateDomainInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateDomainInput {
                 domain: self.domain,
@@ -641,20 +647,20 @@ impl CreateDomainInput {
             crate::operation::CreateDomain,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateDomainInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/domain").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::CreateDomainInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_12) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_12));
@@ -665,8 +671,10 @@ impl CreateDomainInput {
             fn update_http_builder(
                 input: &crate::input::CreateDomainInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -842,8 +850,10 @@ pub mod create_repository_input {
         /// Consumes the builder and constructs a [`CreateRepositoryInput`](crate::input::CreateRepositoryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateRepositoryInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateRepositoryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateRepositoryInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -868,20 +878,20 @@ impl CreateRepositoryInput {
             crate::operation::CreateRepository,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateRepositoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::CreateRepositoryInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_13) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_13));
@@ -901,8 +911,10 @@ impl CreateRepositoryInput {
             fn update_http_builder(
                 input: &crate::input::CreateRepositoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1016,7 +1028,7 @@ pub mod delete_domain_input {
         /// Consumes the builder and constructs a [`DeleteDomainInput`](crate::input::DeleteDomainInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDomainInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteDomainInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteDomainInput {
                 domain: self.domain,
@@ -1038,20 +1050,20 @@ impl DeleteDomainInput {
             crate::operation::DeleteDomain,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDomainInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/domain").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DeleteDomainInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_16) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_16));
@@ -1068,8 +1080,10 @@ impl DeleteDomainInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDomainInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1185,7 +1199,7 @@ pub mod delete_domain_permissions_policy_input {
             self,
         ) -> Result<
             crate::input::DeleteDomainPermissionsPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteDomainPermissionsPolicyInput {
                 domain: self.domain,
@@ -1208,20 +1222,20 @@ impl DeleteDomainPermissionsPolicyInput {
             crate::operation::DeleteDomainPermissionsPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDomainPermissionsPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/domain/permissions/policy").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DeleteDomainPermissionsPolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_18) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_18));
@@ -1244,8 +1258,10 @@ impl DeleteDomainPermissionsPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDomainPermissionsPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1436,8 +1452,10 @@ pub mod delete_package_versions_input {
         /// Consumes the builder and constructs a [`DeletePackageVersionsInput`](crate::input::DeletePackageVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeletePackageVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeletePackageVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeletePackageVersionsInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -1464,20 +1482,20 @@ impl DeletePackageVersionsInput {
             crate::operation::DeletePackageVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeletePackageVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/versions/delete").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DeletePackageVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_21) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_21));
@@ -1506,8 +1524,10 @@ impl DeletePackageVersionsInput {
             fn update_http_builder(
                 input: &crate::input::DeletePackageVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1634,8 +1654,10 @@ pub mod delete_repository_input {
         /// Consumes the builder and constructs a [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteRepositoryInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteRepositoryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteRepositoryInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -1657,20 +1679,20 @@ impl DeleteRepositoryInput {
             crate::operation::DeleteRepository,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteRepositoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DeleteRepositoryInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_27) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_27));
@@ -1690,8 +1712,10 @@ impl DeleteRepositoryInput {
             fn update_http_builder(
                 input: &crate::input::DeleteRepositoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1818,7 +1842,7 @@ pub mod delete_repository_permissions_policy_input {
             self,
         ) -> Result<
             crate::input::DeleteRepositoryPermissionsPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteRepositoryPermissionsPolicyInput {
                 domain: self.domain,
@@ -1842,13 +1866,13 @@ impl DeleteRepositoryPermissionsPolicyInput {
             crate::operation::DeleteRepositoryPermissionsPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteRepositoryPermissionsPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository/permissions/policies")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1856,7 +1880,7 @@ impl DeleteRepositoryPermissionsPolicyInput {
             fn uri_query(
                 _input: &crate::input::DeleteRepositoryPermissionsPolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_30) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_30));
@@ -1882,8 +1906,10 @@ impl DeleteRepositoryPermissionsPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteRepositoryPermissionsPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1983,7 +2009,7 @@ pub mod describe_domain_input {
         /// Consumes the builder and constructs a [`DescribeDomainInput`](crate::input::DescribeDomainInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeDomainInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeDomainInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeDomainInput {
                 domain: self.domain,
@@ -2005,20 +2031,20 @@ impl DescribeDomainInput {
             crate::operation::DescribeDomain,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeDomainInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/domain").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DescribeDomainInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_34) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_34));
@@ -2035,8 +2061,10 @@ impl DescribeDomainInput {
             fn update_http_builder(
                 input: &crate::input::DescribeDomainInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2193,7 +2221,7 @@ pub mod describe_package_input {
         /// Consumes the builder and constructs a [`DescribePackageInput`](crate::input::DescribePackageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribePackageInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribePackageInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribePackageInput {
                 domain: self.domain,
@@ -2219,20 +2247,20 @@ impl DescribePackageInput {
             crate::operation::DescribePackage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribePackageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DescribePackageInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_36) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_36));
@@ -2261,8 +2289,10 @@ impl DescribePackageInput {
             fn update_http_builder(
                 input: &crate::input::DescribePackageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2433,8 +2463,10 @@ pub mod describe_package_version_input {
         /// Consumes the builder and constructs a [`DescribePackageVersionInput`](crate::input::DescribePackageVersionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribePackageVersionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribePackageVersionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribePackageVersionInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -2460,20 +2492,20 @@ impl DescribePackageVersionInput {
             crate::operation::DescribePackageVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribePackageVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/version").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DescribePackageVersionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_42) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_42));
@@ -2505,8 +2537,10 @@ impl DescribePackageVersionInput {
             fn update_http_builder(
                 input: &crate::input::DescribePackageVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2617,8 +2651,10 @@ pub mod describe_repository_input {
         /// Consumes the builder and constructs a [`DescribeRepositoryInput`](crate::input::DescribeRepositoryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeRepositoryInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeRepositoryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeRepositoryInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -2640,20 +2676,20 @@ impl DescribeRepositoryInput {
             crate::operation::DescribeRepository,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeRepositoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DescribeRepositoryInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_49) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_49));
@@ -2673,8 +2709,10 @@ impl DescribeRepositoryInput {
             fn update_http_builder(
                 input: &crate::input::DescribeRepositoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -2801,7 +2839,7 @@ pub mod disassociate_external_connection_input {
             self,
         ) -> Result<
             crate::input::DisassociateExternalConnectionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DisassociateExternalConnectionInput {
                 domain: self.domain,
@@ -2825,13 +2863,13 @@ impl DisassociateExternalConnectionInput {
             crate::operation::DisassociateExternalConnection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisassociateExternalConnectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository/external-connection")
                     .expect("formatting should succeed");
                 Ok(())
@@ -2839,7 +2877,7 @@ impl DisassociateExternalConnectionInput {
             fn uri_query(
                 _input: &crate::input::DisassociateExternalConnectionInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_52) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_52));
@@ -2865,8 +2903,10 @@ impl DisassociateExternalConnectionInput {
             fn update_http_builder(
                 input: &crate::input::DisassociateExternalConnectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3085,8 +3125,10 @@ pub mod dispose_package_versions_input {
         /// Consumes the builder and constructs a [`DisposePackageVersionsInput`](crate::input::DisposePackageVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DisposePackageVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DisposePackageVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DisposePackageVersionsInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -3114,20 +3156,20 @@ impl DisposePackageVersionsInput {
             crate::operation::DisposePackageVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisposePackageVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/versions/dispose").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DisposePackageVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_56) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_56));
@@ -3156,8 +3198,10 @@ impl DisposePackageVersionsInput {
             fn update_http_builder(
                 input: &crate::input::DisposePackageVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3284,8 +3328,10 @@ pub mod get_authorization_token_input {
         /// Consumes the builder and constructs a [`GetAuthorizationTokenInput`](crate::input::GetAuthorizationTokenInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAuthorizationTokenInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetAuthorizationTokenInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetAuthorizationTokenInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -3307,20 +3353,20 @@ impl GetAuthorizationTokenInput {
             crate::operation::GetAuthorizationToken,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAuthorizationTokenInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/authorization-token").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetAuthorizationTokenInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_62) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_62));
@@ -3343,8 +3389,10 @@ impl GetAuthorizationTokenInput {
             fn update_http_builder(
                 input: &crate::input::GetAuthorizationTokenInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3446,7 +3494,7 @@ pub mod get_domain_permissions_policy_input {
             self,
         ) -> Result<
             crate::input::GetDomainPermissionsPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetDomainPermissionsPolicyInput {
                 domain: self.domain,
@@ -3468,20 +3516,20 @@ impl GetDomainPermissionsPolicyInput {
             crate::operation::GetDomainPermissionsPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetDomainPermissionsPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/domain/permissions/policy").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetDomainPermissionsPolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_65) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_65));
@@ -3498,8 +3546,10 @@ impl GetDomainPermissionsPolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetDomainPermissionsPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3695,8 +3745,10 @@ pub mod get_package_version_asset_input {
         /// Consumes the builder and constructs a [`GetPackageVersionAssetInput`](crate::input::GetPackageVersionAssetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPackageVersionAssetInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetPackageVersionAssetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetPackageVersionAssetInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -3724,20 +3776,20 @@ impl GetPackageVersionAssetInput {
             crate::operation::GetPackageVersionAsset,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPackageVersionAssetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/version/asset").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetPackageVersionAssetInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_67) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_67));
@@ -3775,8 +3827,10 @@ impl GetPackageVersionAssetInput {
             fn update_http_builder(
                 input: &crate::input::GetPackageVersionAssetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -3949,7 +4003,7 @@ pub mod get_package_version_readme_input {
             self,
         ) -> Result<
             crate::input::GetPackageVersionReadmeInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetPackageVersionReadmeInput {
                 domain: self.domain,
@@ -3976,20 +4030,20 @@ impl GetPackageVersionReadmeInput {
             crate::operation::GetPackageVersionReadme,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPackageVersionReadmeInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/version/readme").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetPackageVersionReadmeInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_76) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_76));
@@ -4021,8 +4075,10 @@ impl GetPackageVersionReadmeInput {
             fn update_http_builder(
                 input: &crate::input::GetPackageVersionReadmeInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4147,8 +4203,10 @@ pub mod get_repository_endpoint_input {
         /// Consumes the builder and constructs a [`GetRepositoryEndpointInput`](crate::input::GetRepositoryEndpointInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRepositoryEndpointInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetRepositoryEndpointInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetRepositoryEndpointInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -4171,20 +4229,20 @@ impl GetRepositoryEndpointInput {
             crate::operation::GetRepositoryEndpoint,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRepositoryEndpointInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository/endpoint").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::GetRepositoryEndpointInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_83) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_83));
@@ -4207,8 +4265,10 @@ impl GetRepositoryEndpointInput {
             fn update_http_builder(
                 input: &crate::input::GetRepositoryEndpointInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4321,7 +4381,7 @@ pub mod get_repository_permissions_policy_input {
             self,
         ) -> Result<
             crate::input::GetRepositoryPermissionsPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetRepositoryPermissionsPolicyInput {
                 domain: self.domain,
@@ -4344,13 +4404,13 @@ impl GetRepositoryPermissionsPolicyInput {
             crate::operation::GetRepositoryPermissionsPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRepositoryPermissionsPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository/permissions/policy")
                     .expect("formatting should succeed");
                 Ok(())
@@ -4358,7 +4418,7 @@ impl GetRepositoryPermissionsPolicyInput {
             fn uri_query(
                 _input: &crate::input::GetRepositoryPermissionsPolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_87) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_87));
@@ -4378,8 +4438,10 @@ impl GetRepositoryPermissionsPolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetRepositoryPermissionsPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4479,7 +4541,7 @@ pub mod list_domains_input {
         /// Consumes the builder and constructs a [`ListDomainsInput`](crate::input::ListDomainsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDomainsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListDomainsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListDomainsInput {
                 max_results: self.max_results,
@@ -4501,13 +4563,13 @@ impl ListDomainsInput {
             crate::operation::ListDomains,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDomainsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/domains").expect("formatting should succeed");
                 Ok(())
             }
@@ -4515,8 +4577,10 @@ impl ListDomainsInput {
             fn update_http_builder(
                 input: &crate::input::ListDomainsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4739,7 +4803,7 @@ pub mod list_packages_input {
         /// Consumes the builder and constructs a [`ListPackagesInput`](crate::input::ListPackagesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPackagesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListPackagesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListPackagesInput {
                 domain: self.domain,
@@ -4769,20 +4833,20 @@ impl ListPackagesInput {
             crate::operation::ListPackages,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPackagesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/packages").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListPackagesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_90) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_90));
@@ -4829,8 +4893,10 @@ impl ListPackagesInput {
             fn update_http_builder(
                 input: &crate::input::ListPackagesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5025,7 +5091,7 @@ pub mod list_package_version_assets_input {
             self,
         ) -> Result<
             crate::input::ListPackageVersionAssetsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListPackageVersionAssetsInput {
                 domain: self.domain,
@@ -5054,20 +5120,20 @@ impl ListPackageVersionAssetsInput {
             crate::operation::ListPackageVersionAssets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPackageVersionAssetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/version/assets").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListPackageVersionAssetsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_100) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_100));
@@ -5114,8 +5180,10 @@ impl ListPackageVersionAssetsInput {
             fn update_http_builder(
                 input: &crate::input::ListPackageVersionAssetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5299,7 +5367,7 @@ pub mod list_package_version_dependencies_input {
             self,
         ) -> Result<
             crate::input::ListPackageVersionDependenciesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListPackageVersionDependenciesInput {
                 domain: self.domain,
@@ -5327,13 +5395,13 @@ impl ListPackageVersionDependenciesInput {
             crate::operation::ListPackageVersionDependencies,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPackageVersionDependenciesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/version/dependencies")
                     .expect("formatting should succeed");
                 Ok(())
@@ -5341,7 +5409,7 @@ impl ListPackageVersionDependenciesInput {
             fn uri_query(
                 _input: &crate::input::ListPackageVersionDependenciesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_109) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_109));
@@ -5382,8 +5450,10 @@ impl ListPackageVersionDependenciesInput {
             fn update_http_builder(
                 input: &crate::input::ListPackageVersionDependenciesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5604,8 +5674,10 @@ pub mod list_package_versions_input {
         /// Consumes the builder and constructs a [`ListPackageVersionsInput`](crate::input::ListPackageVersionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPackageVersionsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListPackageVersionsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListPackageVersionsInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -5635,20 +5707,20 @@ impl ListPackageVersionsInput {
             crate::operation::ListPackageVersions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPackageVersionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/versions").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListPackageVersionsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_117) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_117));
@@ -5704,8 +5776,10 @@ impl ListPackageVersionsInput {
             fn update_http_builder(
                 input: &crate::input::ListPackageVersionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5819,8 +5893,10 @@ pub mod list_repositories_input {
         /// Consumes the builder and constructs a [`ListRepositoriesInput`](crate::input::ListRepositoriesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRepositoriesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListRepositoriesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListRepositoriesInput {
                 repository_prefix: self.repository_prefix,
                 max_results: self.max_results,
@@ -5842,20 +5918,20 @@ impl ListRepositoriesInput {
             crate::operation::ListRepositories,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRepositoriesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repositories").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListRepositoriesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_128) = &_input.repository_prefix {
                     query.push_kv(
@@ -5881,8 +5957,10 @@ impl ListRepositoriesInput {
             fn update_http_builder(
                 input: &crate::input::ListRepositoriesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6034,7 +6112,7 @@ pub mod list_repositories_in_domain_input {
             self,
         ) -> Result<
             crate::input::ListRepositoriesInDomainInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListRepositoriesInDomainInput {
                 domain: self.domain,
@@ -6060,20 +6138,20 @@ impl ListRepositoriesInDomainInput {
             crate::operation::ListRepositoriesInDomain,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRepositoriesInDomainInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/domain/repositories").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListRepositoriesInDomainInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_131) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_131));
@@ -6114,8 +6192,10 @@ impl ListRepositoriesInDomainInput {
             fn update_http_builder(
                 input: &crate::input::ListRepositoriesInDomainInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6204,8 +6284,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -6225,20 +6307,20 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/tags").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListTagsForResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_137) = &_input.resource_arn {
                     query.push_kv(
@@ -6252,8 +6334,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6383,7 +6467,7 @@ pub mod put_domain_permissions_policy_input {
             self,
         ) -> Result<
             crate::input::PutDomainPermissionsPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutDomainPermissionsPolicyInput {
                 domain: self.domain,
@@ -6407,13 +6491,13 @@ impl PutDomainPermissionsPolicyInput {
             crate::operation::PutDomainPermissionsPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutDomainPermissionsPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/domain/permissions/policy").expect("formatting should succeed");
                 Ok(())
             }
@@ -6421,8 +6505,10 @@ impl PutDomainPermissionsPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutDomainPermissionsPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -6609,7 +6695,7 @@ pub mod put_package_origin_configuration_input {
             self,
         ) -> Result<
             crate::input::PutPackageOriginConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutPackageOriginConfigurationInput {
                 domain: self.domain,
@@ -6636,20 +6722,20 @@ impl PutPackageOriginConfigurationInput {
             crate::operation::PutPackageOriginConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutPackageOriginConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::PutPackageOriginConfigurationInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_138) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_138));
@@ -6681,8 +6767,10 @@ impl PutPackageOriginConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::PutPackageOriginConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6836,7 +6924,7 @@ pub mod put_repository_permissions_policy_input {
             self,
         ) -> Result<
             crate::input::PutRepositoryPermissionsPolicyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::PutRepositoryPermissionsPolicyInput {
                 domain: self.domain,
@@ -6861,13 +6949,13 @@ impl PutRepositoryPermissionsPolicyInput {
             crate::operation::PutRepositoryPermissionsPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutRepositoryPermissionsPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository/permissions/policy")
                     .expect("formatting should succeed");
                 Ok(())
@@ -6875,7 +6963,7 @@ impl PutRepositoryPermissionsPolicyInput {
             fn uri_query(
                 _input: &crate::input::PutRepositoryPermissionsPolicyInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_144) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_144));
@@ -6898,8 +6986,10 @@ impl PutRepositoryPermissionsPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutRepositoryPermissionsPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7021,7 +7111,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -7043,20 +7133,20 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/tag").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::TagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_147) = &_input.resource_arn {
                     query.push_kv(
@@ -7070,8 +7160,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7194,7 +7286,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -7216,20 +7308,20 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/untag").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_148) = &_input.resource_arn {
                     query.push_kv(
@@ -7243,8 +7335,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7493,7 +7587,7 @@ pub mod update_package_versions_status_input {
             self,
         ) -> Result<
             crate::input::UpdatePackageVersionsStatusInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdatePackageVersionsStatusInput {
                 domain: self.domain,
@@ -7523,13 +7617,13 @@ impl UpdatePackageVersionsStatusInput {
             crate::operation::UpdatePackageVersionsStatus,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdatePackageVersionsStatusInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/package/versions/update_status")
                     .expect("formatting should succeed");
                 Ok(())
@@ -7537,7 +7631,7 @@ impl UpdatePackageVersionsStatusInput {
             fn uri_query(
                 _input: &crate::input::UpdatePackageVersionsStatusInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_149) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_149));
@@ -7569,8 +7663,10 @@ impl UpdatePackageVersionsStatusInput {
             fn update_http_builder(
                 input: &crate::input::UpdatePackageVersionsStatusInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7725,8 +7821,10 @@ pub mod update_repository_input {
         /// Consumes the builder and constructs a [`UpdateRepositoryInput`](crate::input::UpdateRepositoryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateRepositoryInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateRepositoryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateRepositoryInput {
                 domain: self.domain,
                 domain_owner: self.domain_owner,
@@ -7750,20 +7848,20 @@ impl UpdateRepositoryInput {
             crate::operation::UpdateRepository,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateRepositoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/repository").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::UpdateRepositoryInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_155) = &_input.domain {
                     query.push_kv("domain", &aws_smithy_http::query::fmt_string(&inner_155));
@@ -7786,8 +7884,10 @@ impl UpdateRepositoryInput {
             fn update_http_builder(
                 input: &crate::input::UpdateRepositoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;

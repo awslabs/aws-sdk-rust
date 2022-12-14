@@ -56,29 +56,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateIdentityPoolError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateIdentityPoolErrorKind::InternalErrorException(inner) => {
-                    Error::InternalErrorException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateIdentityPoolErrorKind::InternalErrorException(inner) => {
+                        Error::InternalErrorException(inner)
+                    }
+                    crate::error::CreateIdentityPoolErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::CreateIdentityPoolErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::CreateIdentityPoolErrorKind::NotAuthorizedException(inner) => {
+                        Error::NotAuthorizedException(inner)
+                    }
+                    crate::error::CreateIdentityPoolErrorKind::ResourceConflictException(inner) => {
+                        Error::ResourceConflictException(inner)
+                    }
+                    crate::error::CreateIdentityPoolErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::CreateIdentityPoolErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateIdentityPoolErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::CreateIdentityPoolErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CreateIdentityPoolErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::CreateIdentityPoolErrorKind::ResourceConflictException(inner) => {
-                    Error::ResourceConflictException(inner)
-                }
-                crate::error::CreateIdentityPoolErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::CreateIdentityPoolErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -91,20 +93,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteIdentitiesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteIdentitiesErrorKind::InternalErrorException(inner) => {
-                    Error::InternalErrorException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteIdentitiesErrorKind::InternalErrorException(inner) => {
+                        Error::InternalErrorException(inner)
+                    }
+                    crate::error::DeleteIdentitiesErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::DeleteIdentitiesErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::DeleteIdentitiesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteIdentitiesErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::DeleteIdentitiesErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::DeleteIdentitiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -117,26 +121,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteIdentityPoolError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteIdentityPoolErrorKind::InternalErrorException(inner) => {
-                    Error::InternalErrorException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteIdentityPoolErrorKind::InternalErrorException(inner) => {
+                        Error::InternalErrorException(inner)
+                    }
+                    crate::error::DeleteIdentityPoolErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::DeleteIdentityPoolErrorKind::NotAuthorizedException(inner) => {
+                        Error::NotAuthorizedException(inner)
+                    }
+                    crate::error::DeleteIdentityPoolErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::DeleteIdentityPoolErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::DeleteIdentityPoolErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteIdentityPoolErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::DeleteIdentityPoolErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::DeleteIdentityPoolErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::DeleteIdentityPoolErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::DeleteIdentityPoolErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -149,26 +155,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeIdentityError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeIdentityErrorKind::InternalErrorException(inner) => {
-                    Error::InternalErrorException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeIdentityErrorKind::InternalErrorException(inner) => {
+                        Error::InternalErrorException(inner)
+                    }
+                    crate::error::DescribeIdentityErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::DescribeIdentityErrorKind::NotAuthorizedException(inner) => {
+                        Error::NotAuthorizedException(inner)
+                    }
+                    crate::error::DescribeIdentityErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::DescribeIdentityErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::DescribeIdentityErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeIdentityErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::DescribeIdentityErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::DescribeIdentityErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::DescribeIdentityErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::DescribeIdentityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -182,26 +190,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeIdentityPoolError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeIdentityPoolErrorKind::InternalErrorException(inner) => {
-                    Error::InternalErrorException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeIdentityPoolErrorKind::InternalErrorException(inner) => {
+                        Error::InternalErrorException(inner)
+                    }
+                    crate::error::DescribeIdentityPoolErrorKind::InvalidParameterException(
+                        inner,
+                    ) => Error::InvalidParameterException(inner),
+                    crate::error::DescribeIdentityPoolErrorKind::NotAuthorizedException(inner) => {
+                        Error::NotAuthorizedException(inner)
+                    }
+                    crate::error::DescribeIdentityPoolErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::DescribeIdentityPoolErrorKind::TooManyRequestsException(
+                        inner,
+                    ) => Error::TooManyRequestsException(inner),
+                    crate::error::DescribeIdentityPoolErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeIdentityPoolErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::DescribeIdentityPoolErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::DescribeIdentityPoolErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::DescribeIdentityPoolErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::DescribeIdentityPoolErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -215,7 +225,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetCredentialsForIdentityError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetCredentialsForIdentityErrorKind::ExternalServiceException(inner) => Error::ExternalServiceException(inner),
                 crate::error::GetCredentialsForIdentityErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
                 crate::error::GetCredentialsForIdentityErrorKind::InvalidIdentityPoolConfigurationException(inner) => Error::InvalidIdentityPoolConfigurationException(inner),
@@ -236,35 +246,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetIdError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetIdErrorKind::ExternalServiceException(inner) => {
-                    Error::ExternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetIdErrorKind::ExternalServiceException(inner) => {
+                        Error::ExternalServiceException(inner)
+                    }
+                    crate::error::GetIdErrorKind::InternalErrorException(inner) => {
+                        Error::InternalErrorException(inner)
+                    }
+                    crate::error::GetIdErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::GetIdErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::GetIdErrorKind::NotAuthorizedException(inner) => {
+                        Error::NotAuthorizedException(inner)
+                    }
+                    crate::error::GetIdErrorKind::ResourceConflictException(inner) => {
+                        Error::ResourceConflictException(inner)
+                    }
+                    crate::error::GetIdErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::GetIdErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::GetIdErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetIdErrorKind::InternalErrorException(inner) => {
-                    Error::InternalErrorException(inner)
-                }
-                crate::error::GetIdErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::GetIdErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::GetIdErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::GetIdErrorKind::ResourceConflictException(inner) => {
-                    Error::ResourceConflictException(inner)
-                }
-                crate::error::GetIdErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::GetIdErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::GetIdErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -278,29 +290,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetIdentityPoolRolesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetIdentityPoolRolesErrorKind::InternalErrorException(inner) => {
-                    Error::InternalErrorException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetIdentityPoolRolesErrorKind::InternalErrorException(inner) => {
+                        Error::InternalErrorException(inner)
+                    }
+                    crate::error::GetIdentityPoolRolesErrorKind::InvalidParameterException(
+                        inner,
+                    ) => Error::InvalidParameterException(inner),
+                    crate::error::GetIdentityPoolRolesErrorKind::NotAuthorizedException(inner) => {
+                        Error::NotAuthorizedException(inner)
+                    }
+                    crate::error::GetIdentityPoolRolesErrorKind::ResourceConflictException(
+                        inner,
+                    ) => Error::ResourceConflictException(inner),
+                    crate::error::GetIdentityPoolRolesErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::GetIdentityPoolRolesErrorKind::TooManyRequestsException(
+                        inner,
+                    ) => Error::TooManyRequestsException(inner),
+                    crate::error::GetIdentityPoolRolesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetIdentityPoolRolesErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::GetIdentityPoolRolesErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::GetIdentityPoolRolesErrorKind::ResourceConflictException(inner) => {
-                    Error::ResourceConflictException(inner)
-                }
-                crate::error::GetIdentityPoolRolesErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::GetIdentityPoolRolesErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::GetIdentityPoolRolesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -311,32 +325,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetOpenIdTokenError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetOpenIdTokenErrorKind::ExternalServiceException(inner) => {
-                    Error::ExternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetOpenIdTokenErrorKind::ExternalServiceException(inner) => {
+                        Error::ExternalServiceException(inner)
+                    }
+                    crate::error::GetOpenIdTokenErrorKind::InternalErrorException(inner) => {
+                        Error::InternalErrorException(inner)
+                    }
+                    crate::error::GetOpenIdTokenErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::GetOpenIdTokenErrorKind::NotAuthorizedException(inner) => {
+                        Error::NotAuthorizedException(inner)
+                    }
+                    crate::error::GetOpenIdTokenErrorKind::ResourceConflictException(inner) => {
+                        Error::ResourceConflictException(inner)
+                    }
+                    crate::error::GetOpenIdTokenErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::GetOpenIdTokenErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::GetOpenIdTokenErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetOpenIdTokenErrorKind::InternalErrorException(inner) => {
-                    Error::InternalErrorException(inner)
-                }
-                crate::error::GetOpenIdTokenErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::GetOpenIdTokenErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::GetOpenIdTokenErrorKind::ResourceConflictException(inner) => {
-                    Error::ResourceConflictException(inner)
-                }
-                crate::error::GetOpenIdTokenErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::GetOpenIdTokenErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::GetOpenIdTokenErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -355,7 +371,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetOpenIdTokenForDeveloperIdentityErrorKind::DeveloperUserAlreadyRegisteredException(inner) => Error::DeveloperUserAlreadyRegisteredException(inner),
                 crate::error::GetOpenIdTokenForDeveloperIdentityErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
                 crate::error::GetOpenIdTokenForDeveloperIdentityErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -378,7 +394,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetPrincipalTagAttributeMapError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::GetPrincipalTagAttributeMapErrorKind::InternalErrorException(
                     inner,
                 ) => Error::InternalErrorException(inner),
@@ -408,26 +427,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListIdentitiesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListIdentitiesErrorKind::InternalErrorException(inner) => {
-                    Error::InternalErrorException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListIdentitiesErrorKind::InternalErrorException(inner) => {
+                        Error::InternalErrorException(inner)
+                    }
+                    crate::error::ListIdentitiesErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::ListIdentitiesErrorKind::NotAuthorizedException(inner) => {
+                        Error::NotAuthorizedException(inner)
+                    }
+                    crate::error::ListIdentitiesErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::ListIdentitiesErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::ListIdentitiesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListIdentitiesErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::ListIdentitiesErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::ListIdentitiesErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::ListIdentitiesErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::ListIdentitiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -440,26 +461,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListIdentityPoolsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListIdentityPoolsErrorKind::InternalErrorException(inner) => {
-                    Error::InternalErrorException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListIdentityPoolsErrorKind::InternalErrorException(inner) => {
+                        Error::InternalErrorException(inner)
+                    }
+                    crate::error::ListIdentityPoolsErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::ListIdentityPoolsErrorKind::NotAuthorizedException(inner) => {
+                        Error::NotAuthorizedException(inner)
+                    }
+                    crate::error::ListIdentityPoolsErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::ListIdentityPoolsErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::ListIdentityPoolsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListIdentityPoolsErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::ListIdentityPoolsErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::ListIdentityPoolsErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::ListIdentityPoolsErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::ListIdentityPoolsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -472,26 +495,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsForResourceErrorKind::InternalErrorException(inner) => {
-                    Error::InternalErrorException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListTagsForResourceErrorKind::InternalErrorException(inner) => {
+                        Error::InternalErrorException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::InvalidParameterException(
+                        inner,
+                    ) => Error::InvalidParameterException(inner),
+                    crate::error::ListTagsForResourceErrorKind::NotAuthorizedException(inner) => {
+                        Error::NotAuthorizedException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::ListTagsForResourceErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListTagsForResourceErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -505,29 +530,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::LookupDeveloperIdentityError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::LookupDeveloperIdentityErrorKind::InternalErrorException(inner) => {
-                    Error::InternalErrorException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::LookupDeveloperIdentityErrorKind::InternalErrorException(
+                        inner,
+                    ) => Error::InternalErrorException(inner),
+                    crate::error::LookupDeveloperIdentityErrorKind::InvalidParameterException(
+                        inner,
+                    ) => Error::InvalidParameterException(inner),
+                    crate::error::LookupDeveloperIdentityErrorKind::NotAuthorizedException(
+                        inner,
+                    ) => Error::NotAuthorizedException(inner),
+                    crate::error::LookupDeveloperIdentityErrorKind::ResourceConflictException(
+                        inner,
+                    ) => Error::ResourceConflictException(inner),
+                    crate::error::LookupDeveloperIdentityErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::LookupDeveloperIdentityErrorKind::TooManyRequestsException(
+                        inner,
+                    ) => Error::TooManyRequestsException(inner),
+                    crate::error::LookupDeveloperIdentityErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::LookupDeveloperIdentityErrorKind::InvalidParameterException(
-                    inner,
-                ) => Error::InvalidParameterException(inner),
-                crate::error::LookupDeveloperIdentityErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::LookupDeveloperIdentityErrorKind::ResourceConflictException(
-                    inner,
-                ) => Error::ResourceConflictException(inner),
-                crate::error::LookupDeveloperIdentityErrorKind::ResourceNotFoundException(
-                    inner,
-                ) => Error::ResourceNotFoundException(inner),
-                crate::error::LookupDeveloperIdentityErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::LookupDeveloperIdentityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -541,29 +568,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::MergeDeveloperIdentitiesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::MergeDeveloperIdentitiesErrorKind::InternalErrorException(inner) => {
-                    Error::InternalErrorException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::MergeDeveloperIdentitiesErrorKind::InternalErrorException(
+                        inner,
+                    ) => Error::InternalErrorException(inner),
+                    crate::error::MergeDeveloperIdentitiesErrorKind::InvalidParameterException(
+                        inner,
+                    ) => Error::InvalidParameterException(inner),
+                    crate::error::MergeDeveloperIdentitiesErrorKind::NotAuthorizedException(
+                        inner,
+                    ) => Error::NotAuthorizedException(inner),
+                    crate::error::MergeDeveloperIdentitiesErrorKind::ResourceConflictException(
+                        inner,
+                    ) => Error::ResourceConflictException(inner),
+                    crate::error::MergeDeveloperIdentitiesErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::MergeDeveloperIdentitiesErrorKind::TooManyRequestsException(
+                        inner,
+                    ) => Error::TooManyRequestsException(inner),
+                    crate::error::MergeDeveloperIdentitiesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::MergeDeveloperIdentitiesErrorKind::InvalidParameterException(
-                    inner,
-                ) => Error::InvalidParameterException(inner),
-                crate::error::MergeDeveloperIdentitiesErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::MergeDeveloperIdentitiesErrorKind::ResourceConflictException(
-                    inner,
-                ) => Error::ResourceConflictException(inner),
-                crate::error::MergeDeveloperIdentitiesErrorKind::ResourceNotFoundException(
-                    inner,
-                ) => Error::ResourceNotFoundException(inner),
-                crate::error::MergeDeveloperIdentitiesErrorKind::TooManyRequestsException(
-                    inner,
-                ) => Error::TooManyRequestsException(inner),
-                crate::error::MergeDeveloperIdentitiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -577,7 +606,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SetIdentityPoolRolesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::SetIdentityPoolRolesErrorKind::ConcurrentModificationException(
                     inner,
                 ) => Error::ConcurrentModificationException(inner),
@@ -616,7 +648,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SetPrincipalTagAttributeMapError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::SetPrincipalTagAttributeMapErrorKind::InternalErrorException(
                     inner,
                 ) => Error::InternalErrorException(inner),
@@ -646,26 +681,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagResourceErrorKind::InternalErrorException(inner) => {
-                    Error::InternalErrorException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::TagResourceErrorKind::InternalErrorException(inner) => {
+                        Error::InternalErrorException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::NotAuthorizedException(inner) => {
+                        Error::NotAuthorizedException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::TagResourceErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::TagResourceErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::TagResourceErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -679,29 +716,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UnlinkDeveloperIdentityError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UnlinkDeveloperIdentityErrorKind::InternalErrorException(inner) => {
-                    Error::InternalErrorException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UnlinkDeveloperIdentityErrorKind::InternalErrorException(
+                        inner,
+                    ) => Error::InternalErrorException(inner),
+                    crate::error::UnlinkDeveloperIdentityErrorKind::InvalidParameterException(
+                        inner,
+                    ) => Error::InvalidParameterException(inner),
+                    crate::error::UnlinkDeveloperIdentityErrorKind::NotAuthorizedException(
+                        inner,
+                    ) => Error::NotAuthorizedException(inner),
+                    crate::error::UnlinkDeveloperIdentityErrorKind::ResourceConflictException(
+                        inner,
+                    ) => Error::ResourceConflictException(inner),
+                    crate::error::UnlinkDeveloperIdentityErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::UnlinkDeveloperIdentityErrorKind::TooManyRequestsException(
+                        inner,
+                    ) => Error::TooManyRequestsException(inner),
+                    crate::error::UnlinkDeveloperIdentityErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UnlinkDeveloperIdentityErrorKind::InvalidParameterException(
-                    inner,
-                ) => Error::InvalidParameterException(inner),
-                crate::error::UnlinkDeveloperIdentityErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::UnlinkDeveloperIdentityErrorKind::ResourceConflictException(
-                    inner,
-                ) => Error::ResourceConflictException(inner),
-                crate::error::UnlinkDeveloperIdentityErrorKind::ResourceNotFoundException(
-                    inner,
-                ) => Error::ResourceNotFoundException(inner),
-                crate::error::UnlinkDeveloperIdentityErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::UnlinkDeveloperIdentityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -712,32 +751,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UnlinkIdentityError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UnlinkIdentityErrorKind::ExternalServiceException(inner) => {
-                    Error::ExternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UnlinkIdentityErrorKind::ExternalServiceException(inner) => {
+                        Error::ExternalServiceException(inner)
+                    }
+                    crate::error::UnlinkIdentityErrorKind::InternalErrorException(inner) => {
+                        Error::InternalErrorException(inner)
+                    }
+                    crate::error::UnlinkIdentityErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::UnlinkIdentityErrorKind::NotAuthorizedException(inner) => {
+                        Error::NotAuthorizedException(inner)
+                    }
+                    crate::error::UnlinkIdentityErrorKind::ResourceConflictException(inner) => {
+                        Error::ResourceConflictException(inner)
+                    }
+                    crate::error::UnlinkIdentityErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::UnlinkIdentityErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::UnlinkIdentityErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UnlinkIdentityErrorKind::InternalErrorException(inner) => {
-                    Error::InternalErrorException(inner)
-                }
-                crate::error::UnlinkIdentityErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::UnlinkIdentityErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::UnlinkIdentityErrorKind::ResourceConflictException(inner) => {
-                    Error::ResourceConflictException(inner)
-                }
-                crate::error::UnlinkIdentityErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::UnlinkIdentityErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::UnlinkIdentityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -748,26 +789,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagResourceErrorKind::InternalErrorException(inner) => {
-                    Error::InternalErrorException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UntagResourceErrorKind::InternalErrorException(inner) => {
+                        Error::InternalErrorException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::NotAuthorizedException(inner) => {
+                        Error::NotAuthorizedException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UntagResourceErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::UntagResourceErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::UntagResourceErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -780,35 +823,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateIdentityPoolError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateIdentityPoolErrorKind::ConcurrentModificationException(
-                    inner,
-                ) => Error::ConcurrentModificationException(inner),
-                crate::error::UpdateIdentityPoolErrorKind::InternalErrorException(inner) => {
-                    Error::InternalErrorException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateIdentityPoolErrorKind::ConcurrentModificationException(
+                        inner,
+                    ) => Error::ConcurrentModificationException(inner),
+                    crate::error::UpdateIdentityPoolErrorKind::InternalErrorException(inner) => {
+                        Error::InternalErrorException(inner)
+                    }
+                    crate::error::UpdateIdentityPoolErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::UpdateIdentityPoolErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::UpdateIdentityPoolErrorKind::NotAuthorizedException(inner) => {
+                        Error::NotAuthorizedException(inner)
+                    }
+                    crate::error::UpdateIdentityPoolErrorKind::ResourceConflictException(inner) => {
+                        Error::ResourceConflictException(inner)
+                    }
+                    crate::error::UpdateIdentityPoolErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::UpdateIdentityPoolErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::UpdateIdentityPoolErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateIdentityPoolErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::UpdateIdentityPoolErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::UpdateIdentityPoolErrorKind::NotAuthorizedException(inner) => {
-                    Error::NotAuthorizedException(inner)
-                }
-                crate::error::UpdateIdentityPoolErrorKind::ResourceConflictException(inner) => {
-                    Error::ResourceConflictException(inner)
-                }
-                crate::error::UpdateIdentityPoolErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::UpdateIdentityPoolErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::UpdateIdentityPoolErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }

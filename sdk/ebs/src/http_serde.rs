@@ -2,7 +2,7 @@
 pub fn add_headers_complete_snapshot(
     input: &crate::input::CompleteSnapshotInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_1) = &input.changed_blocks_count {
         let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_1);
         let formatted_2 = encoder.encode();
@@ -10,13 +10,13 @@ pub fn add_headers_complete_snapshot(
             let header_value = formatted_2;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "changed_blocks_count",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "changed_blocks_count",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-ChangedBlocksCount", header_value);
         }
@@ -27,13 +27,13 @@ pub fn add_headers_complete_snapshot(
             let header_value = formatted_4;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "checksum",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "checksum",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-Checksum", header_value);
         }
@@ -44,13 +44,13 @@ pub fn add_headers_complete_snapshot(
             let header_value = formatted_6;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "checksum_algorithm",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "checksum_algorithm",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-Checksum-Algorithm", header_value);
         }
@@ -61,13 +61,13 @@ pub fn add_headers_complete_snapshot(
             let header_value = formatted_8;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "checksum_aggregation_method",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "checksum_aggregation_method",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-Checksum-Aggregation-Method", header_value);
         }
@@ -78,7 +78,7 @@ pub fn add_headers_complete_snapshot(
 pub fn add_headers_put_snapshot_block(
     input: &crate::input::PutSnapshotBlockInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_9) = &input.data_length {
         let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_9);
         let formatted_10 = encoder.encode();
@@ -86,13 +86,13 @@ pub fn add_headers_put_snapshot_block(
             let header_value = formatted_10;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "data_length",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "data_length",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-Data-Length", header_value);
         }
@@ -104,13 +104,13 @@ pub fn add_headers_put_snapshot_block(
             let header_value = formatted_12;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "progress",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "progress",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-Progress", header_value);
         }
@@ -121,13 +121,13 @@ pub fn add_headers_put_snapshot_block(
             let header_value = formatted_14;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "checksum",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "checksum",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-Checksum", header_value);
         }
@@ -138,13 +138,13 @@ pub fn add_headers_put_snapshot_block(
             let header_value = formatted_16;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "checksum_algorithm",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "checksum_algorithm",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-Checksum-Algorithm", header_value);
         }
@@ -189,9 +189,10 @@ pub(crate) fn deser_header_get_snapshot_block_get_snapshot_block_output_data_len
     let headers = header_map.get_all("x-amz-Data-Length").iter();
     let var_17 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_17.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new_with_message(
-            format!("expected one item but found {}", var_17.len()),
-        ))
+        Err(aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_17.len()
+        )))
     } else {
         let mut var_17 = var_17;
         Ok(var_17.pop())

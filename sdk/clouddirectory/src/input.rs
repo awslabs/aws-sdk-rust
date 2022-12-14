@@ -75,8 +75,10 @@ pub mod add_facet_to_object_input {
         /// Consumes the builder and constructs a [`AddFacetToObjectInput`](crate::input::AddFacetToObjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AddFacetToObjectInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::AddFacetToObjectInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::AddFacetToObjectInput {
                 directory_arn: self.directory_arn,
                 schema_facet: self.schema_facet,
@@ -99,13 +101,13 @@ impl AddFacetToObjectInput {
             crate::operation::AddFacetToObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AddFacetToObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/object/facets")
                     .expect("formatting should succeed");
                 Ok(())
@@ -114,8 +116,10 @@ impl AddFacetToObjectInput {
             fn update_http_builder(
                 input: &crate::input::AddFacetToObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_add_facet_to_object(input, builder)?;
@@ -235,7 +239,7 @@ pub mod apply_schema_input {
         /// Consumes the builder and constructs a [`ApplySchemaInput`](crate::input::ApplySchemaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ApplySchemaInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ApplySchemaInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ApplySchemaInput {
                 published_schema_arn: self.published_schema_arn,
@@ -257,13 +261,13 @@ impl ApplySchemaInput {
             crate::operation::ApplySchema,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ApplySchemaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/schema/apply")
                     .expect("formatting should succeed");
                 Ok(())
@@ -272,8 +276,10 @@ impl ApplySchemaInput {
             fn update_http_builder(
                 input: &crate::input::ApplySchemaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_apply_schema(input, builder)?;
@@ -418,7 +424,7 @@ pub mod attach_object_input {
         /// Consumes the builder and constructs a [`AttachObjectInput`](crate::input::AttachObjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AttachObjectInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::AttachObjectInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::AttachObjectInput {
                 directory_arn: self.directory_arn,
@@ -442,13 +448,13 @@ impl AttachObjectInput {
             crate::operation::AttachObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AttachObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/object/attach")
                     .expect("formatting should succeed");
                 Ok(())
@@ -457,8 +463,10 @@ impl AttachObjectInput {
             fn update_http_builder(
                 input: &crate::input::AttachObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_attach_object(input, builder)?;
@@ -592,7 +600,7 @@ pub mod attach_policy_input {
         /// Consumes the builder and constructs a [`AttachPolicyInput`](crate::input::AttachPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AttachPolicyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::AttachPolicyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::AttachPolicyInput {
                 directory_arn: self.directory_arn,
@@ -615,13 +623,13 @@ impl AttachPolicyInput {
             crate::operation::AttachPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AttachPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/policy/attach")
                     .expect("formatting should succeed");
                 Ok(())
@@ -630,8 +638,10 @@ impl AttachPolicyInput {
             fn update_http_builder(
                 input: &crate::input::AttachPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_attach_policy(input, builder)?;
@@ -765,7 +775,7 @@ pub mod attach_to_index_input {
         /// Consumes the builder and constructs a [`AttachToIndexInput`](crate::input::AttachToIndexInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AttachToIndexInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::AttachToIndexInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::AttachToIndexInput {
                 directory_arn: self.directory_arn,
@@ -788,13 +798,13 @@ impl AttachToIndexInput {
             crate::operation::AttachToIndex,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AttachToIndexInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/index/attach")
                     .expect("formatting should succeed");
                 Ok(())
@@ -803,8 +813,10 @@ impl AttachToIndexInput {
             fn update_http_builder(
                 input: &crate::input::AttachToIndexInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_attach_to_index(input, builder)?;
@@ -976,7 +988,7 @@ pub mod attach_typed_link_input {
         /// Consumes the builder and constructs a [`AttachTypedLinkInput`](crate::input::AttachTypedLinkInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AttachTypedLinkInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::AttachTypedLinkInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::AttachTypedLinkInput {
                 directory_arn: self.directory_arn,
@@ -1001,13 +1013,13 @@ impl AttachTypedLinkInput {
             crate::operation::AttachTypedLink,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AttachTypedLinkInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/typedlink/attach")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1016,8 +1028,10 @@ impl AttachTypedLinkInput {
             fn update_http_builder(
                 input: &crate::input::AttachTypedLinkInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_attach_typed_link(input, builder)?;
@@ -1157,7 +1171,8 @@ pub mod batch_read_input {
         /// Consumes the builder and constructs a [`BatchReadInput`](crate::input::BatchReadInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchReadInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::BatchReadInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::BatchReadInput {
                 directory_arn: self.directory_arn,
                 operations: self.operations,
@@ -1179,13 +1194,13 @@ impl BatchReadInput {
             crate::operation::BatchRead,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchReadInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/batchread")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1194,8 +1209,10 @@ impl BatchReadInput {
             fn update_http_builder(
                 input: &crate::input::BatchReadInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_batch_read(input, builder)?;
@@ -1320,7 +1337,8 @@ pub mod batch_write_input {
         /// Consumes the builder and constructs a [`BatchWriteInput`](crate::input::BatchWriteInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchWriteInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::BatchWriteInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::BatchWriteInput {
                 directory_arn: self.directory_arn,
                 operations: self.operations,
@@ -1341,13 +1359,13 @@ impl BatchWriteInput {
             crate::operation::BatchWrite,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchWriteInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/batchwrite")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1356,8 +1374,10 @@ impl BatchWriteInput {
             fn update_http_builder(
                 input: &crate::input::BatchWriteInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_batch_write(input, builder)?;
@@ -1471,7 +1491,7 @@ pub mod create_directory_input {
         /// Consumes the builder and constructs a [`CreateDirectoryInput`](crate::input::CreateDirectoryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDirectoryInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateDirectoryInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateDirectoryInput {
                 name: self.name,
@@ -1493,13 +1513,13 @@ impl CreateDirectoryInput {
             crate::operation::CreateDirectory,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateDirectoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/directory/create")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1508,8 +1528,10 @@ impl CreateDirectoryInput {
             fn update_http_builder(
                 input: &crate::input::CreateDirectoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_create_directory(input, builder)?;
@@ -1695,7 +1717,7 @@ pub mod create_facet_input {
         /// Consumes the builder and constructs a [`CreateFacetInput`](crate::input::CreateFacetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateFacetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateFacetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateFacetInput {
                 schema_arn: self.schema_arn,
@@ -1720,13 +1742,13 @@ impl CreateFacetInput {
             crate::operation::CreateFacet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateFacetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/facet/create")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1735,8 +1757,10 @@ impl CreateFacetInput {
             fn update_http_builder(
                 input: &crate::input::CreateFacetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_create_facet(input, builder)?;
@@ -1899,7 +1923,7 @@ pub mod create_index_input {
         /// Consumes the builder and constructs a [`CreateIndexInput`](crate::input::CreateIndexInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateIndexInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateIndexInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateIndexInput {
                 directory_arn: self.directory_arn,
@@ -1924,13 +1948,13 @@ impl CreateIndexInput {
             crate::operation::CreateIndex,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateIndexInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/index")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1939,8 +1963,10 @@ impl CreateIndexInput {
             fn update_http_builder(
                 input: &crate::input::CreateIndexInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_create_index(input, builder)?;
@@ -2112,7 +2138,7 @@ pub mod create_object_input {
         /// Consumes the builder and constructs a [`CreateObjectInput`](crate::input::CreateObjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateObjectInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateObjectInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateObjectInput {
                 directory_arn: self.directory_arn,
@@ -2137,13 +2163,13 @@ impl CreateObjectInput {
             crate::operation::CreateObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/object")
                     .expect("formatting should succeed");
                 Ok(())
@@ -2152,8 +2178,10 @@ impl CreateObjectInput {
             fn update_http_builder(
                 input: &crate::input::CreateObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_create_object(input, builder)?;
@@ -2256,7 +2284,7 @@ pub mod create_schema_input {
         /// Consumes the builder and constructs a [`CreateSchemaInput`](crate::input::CreateSchemaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateSchemaInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateSchemaInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateSchemaInput { name: self.name })
         }
@@ -2275,13 +2303,13 @@ impl CreateSchemaInput {
             crate::operation::CreateSchema,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateSchemaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/schema/create")
                     .expect("formatting should succeed");
                 Ok(())
@@ -2290,8 +2318,10 @@ impl CreateSchemaInput {
             fn update_http_builder(
                 input: &crate::input::CreateSchemaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -2407,8 +2437,10 @@ pub mod create_typed_link_facet_input {
         /// Consumes the builder and constructs a [`CreateTypedLinkFacetInput`](crate::input::CreateTypedLinkFacetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateTypedLinkFacetInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateTypedLinkFacetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateTypedLinkFacetInput {
                 schema_arn: self.schema_arn,
                 facet: self.facet,
@@ -2429,13 +2461,13 @@ impl CreateTypedLinkFacetInput {
             crate::operation::CreateTypedLinkFacet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateTypedLinkFacetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/amazonclouddirectory/2017-01-11/typedlink/facet/create"
@@ -2447,8 +2479,10 @@ impl CreateTypedLinkFacetInput {
             fn update_http_builder(
                 input: &crate::input::CreateTypedLinkFacetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -2557,7 +2591,7 @@ pub mod delete_directory_input {
         /// Consumes the builder and constructs a [`DeleteDirectoryInput`](crate::input::DeleteDirectoryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDirectoryInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteDirectoryInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteDirectoryInput {
                 directory_arn: self.directory_arn,
@@ -2578,13 +2612,13 @@ impl DeleteDirectoryInput {
             crate::operation::DeleteDirectory,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteDirectoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/directory")
                     .expect("formatting should succeed");
                 Ok(())
@@ -2593,8 +2627,10 @@ impl DeleteDirectoryInput {
             fn update_http_builder(
                 input: &crate::input::DeleteDirectoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_delete_directory(input, builder)?;
@@ -2694,7 +2730,7 @@ pub mod delete_facet_input {
         /// Consumes the builder and constructs a [`DeleteFacetInput`](crate::input::DeleteFacetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteFacetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteFacetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteFacetInput {
                 schema_arn: self.schema_arn,
@@ -2716,13 +2752,13 @@ impl DeleteFacetInput {
             crate::operation::DeleteFacet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteFacetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/facet/delete")
                     .expect("formatting should succeed");
                 Ok(())
@@ -2731,8 +2767,10 @@ impl DeleteFacetInput {
             fn update_http_builder(
                 input: &crate::input::DeleteFacetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_delete_facet(input, builder)?;
@@ -2852,7 +2890,7 @@ pub mod delete_object_input {
         /// Consumes the builder and constructs a [`DeleteObjectInput`](crate::input::DeleteObjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteObjectInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteObjectInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteObjectInput {
                 directory_arn: self.directory_arn,
@@ -2874,13 +2912,13 @@ impl DeleteObjectInput {
             crate::operation::DeleteObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/object/delete")
                     .expect("formatting should succeed");
                 Ok(())
@@ -2889,8 +2927,10 @@ impl DeleteObjectInput {
             fn update_http_builder(
                 input: &crate::input::DeleteObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_delete_object(input, builder)?;
@@ -2993,7 +3033,7 @@ pub mod delete_schema_input {
         /// Consumes the builder and constructs a [`DeleteSchemaInput`](crate::input::DeleteSchemaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteSchemaInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteSchemaInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteSchemaInput {
                 schema_arn: self.schema_arn,
@@ -3014,13 +3054,13 @@ impl DeleteSchemaInput {
             crate::operation::DeleteSchema,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteSchemaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/schema")
                     .expect("formatting should succeed");
                 Ok(())
@@ -3029,8 +3069,10 @@ impl DeleteSchemaInput {
             fn update_http_builder(
                 input: &crate::input::DeleteSchemaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_delete_schema(input, builder)?;
@@ -3130,8 +3172,10 @@ pub mod delete_typed_link_facet_input {
         /// Consumes the builder and constructs a [`DeleteTypedLinkFacetInput`](crate::input::DeleteTypedLinkFacetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteTypedLinkFacetInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteTypedLinkFacetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteTypedLinkFacetInput {
                 schema_arn: self.schema_arn,
                 name: self.name,
@@ -3152,13 +3196,13 @@ impl DeleteTypedLinkFacetInput {
             crate::operation::DeleteTypedLinkFacet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteTypedLinkFacetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/amazonclouddirectory/2017-01-11/typedlink/facet/delete"
@@ -3170,8 +3214,10 @@ impl DeleteTypedLinkFacetInput {
             fn update_http_builder(
                 input: &crate::input::DeleteTypedLinkFacetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -3308,7 +3354,7 @@ pub mod detach_from_index_input {
         /// Consumes the builder and constructs a [`DetachFromIndexInput`](crate::input::DetachFromIndexInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DetachFromIndexInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DetachFromIndexInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DetachFromIndexInput {
                 directory_arn: self.directory_arn,
@@ -3331,13 +3377,13 @@ impl DetachFromIndexInput {
             crate::operation::DetachFromIndex,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DetachFromIndexInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/index/detach")
                     .expect("formatting should succeed");
                 Ok(())
@@ -3346,8 +3392,10 @@ impl DetachFromIndexInput {
             fn update_http_builder(
                 input: &crate::input::DetachFromIndexInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_detach_from_index(input, builder)?;
@@ -3478,7 +3526,7 @@ pub mod detach_object_input {
         /// Consumes the builder and constructs a [`DetachObjectInput`](crate::input::DetachObjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DetachObjectInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DetachObjectInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DetachObjectInput {
                 directory_arn: self.directory_arn,
@@ -3501,13 +3549,13 @@ impl DetachObjectInput {
             crate::operation::DetachObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DetachObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/object/detach")
                     .expect("formatting should succeed");
                 Ok(())
@@ -3516,8 +3564,10 @@ impl DetachObjectInput {
             fn update_http_builder(
                 input: &crate::input::DetachObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_detach_object(input, builder)?;
@@ -3651,7 +3701,7 @@ pub mod detach_policy_input {
         /// Consumes the builder and constructs a [`DetachPolicyInput`](crate::input::DetachPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DetachPolicyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DetachPolicyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DetachPolicyInput {
                 directory_arn: self.directory_arn,
@@ -3674,13 +3724,13 @@ impl DetachPolicyInput {
             crate::operation::DetachPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DetachPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/policy/detach")
                     .expect("formatting should succeed");
                 Ok(())
@@ -3689,8 +3739,10 @@ impl DetachPolicyInput {
             fn update_http_builder(
                 input: &crate::input::DetachPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_detach_policy(input, builder)?;
@@ -3810,7 +3862,7 @@ pub mod detach_typed_link_input {
         /// Consumes the builder and constructs a [`DetachTypedLinkInput`](crate::input::DetachTypedLinkInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DetachTypedLinkInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DetachTypedLinkInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DetachTypedLinkInput {
                 directory_arn: self.directory_arn,
@@ -3832,13 +3884,13 @@ impl DetachTypedLinkInput {
             crate::operation::DetachTypedLink,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DetachTypedLinkInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/typedlink/detach")
                     .expect("formatting should succeed");
                 Ok(())
@@ -3847,8 +3899,10 @@ impl DetachTypedLinkInput {
             fn update_http_builder(
                 input: &crate::input::DetachTypedLinkInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_detach_typed_link(input, builder)?;
@@ -3954,8 +4008,10 @@ pub mod disable_directory_input {
         /// Consumes the builder and constructs a [`DisableDirectoryInput`](crate::input::DisableDirectoryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DisableDirectoryInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DisableDirectoryInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DisableDirectoryInput {
                 directory_arn: self.directory_arn,
             })
@@ -3975,13 +4031,13 @@ impl DisableDirectoryInput {
             crate::operation::DisableDirectory,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisableDirectoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/directory/disable")
                     .expect("formatting should succeed");
                 Ok(())
@@ -3990,8 +4046,10 @@ impl DisableDirectoryInput {
             fn update_http_builder(
                 input: &crate::input::DisableDirectoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_disable_directory(input, builder)?;
@@ -4083,7 +4141,7 @@ pub mod enable_directory_input {
         /// Consumes the builder and constructs a [`EnableDirectoryInput`](crate::input::EnableDirectoryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::EnableDirectoryInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::EnableDirectoryInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::EnableDirectoryInput {
                 directory_arn: self.directory_arn,
@@ -4104,13 +4162,13 @@ impl EnableDirectoryInput {
             crate::operation::EnableDirectory,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::EnableDirectoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/directory/enable")
                     .expect("formatting should succeed");
                 Ok(())
@@ -4119,8 +4177,10 @@ impl EnableDirectoryInput {
             fn update_http_builder(
                 input: &crate::input::EnableDirectoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_enable_directory(input, builder)?;
@@ -4211,7 +4271,7 @@ pub mod get_applied_schema_version_input {
             self,
         ) -> Result<
             crate::input::GetAppliedSchemaVersionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetAppliedSchemaVersionInput {
                 schema_arn: self.schema_arn,
@@ -4232,13 +4292,13 @@ impl GetAppliedSchemaVersionInput {
             crate::operation::GetAppliedSchemaVersion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAppliedSchemaVersionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/amazonclouddirectory/2017-01-11/schema/getappliedschema"
@@ -4250,8 +4310,10 @@ impl GetAppliedSchemaVersionInput {
             fn update_http_builder(
                 input: &crate::input::GetAppliedSchemaVersionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4358,7 +4420,7 @@ pub mod get_directory_input {
         /// Consumes the builder and constructs a [`GetDirectoryInput`](crate::input::GetDirectoryInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDirectoryInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetDirectoryInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetDirectoryInput {
                 directory_arn: self.directory_arn,
@@ -4379,13 +4441,13 @@ impl GetDirectoryInput {
             crate::operation::GetDirectory,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetDirectoryInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/directory/get")
                     .expect("formatting should succeed");
                 Ok(())
@@ -4394,8 +4456,10 @@ impl GetDirectoryInput {
             fn update_http_builder(
                 input: &crate::input::GetDirectoryInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_directory(input, builder)?;
@@ -4495,7 +4559,8 @@ pub mod get_facet_input {
         /// Consumes the builder and constructs a [`GetFacetInput`](crate::input::GetFacetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetFacetInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetFacetInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetFacetInput {
                 schema_arn: self.schema_arn,
                 name: self.name,
@@ -4516,13 +4581,13 @@ impl GetFacetInput {
             crate::operation::GetFacet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetFacetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/facet")
                     .expect("formatting should succeed");
                 Ok(())
@@ -4531,8 +4596,10 @@ impl GetFacetInput {
             fn update_http_builder(
                 input: &crate::input::GetFacetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_facet(input, builder)?;
@@ -4684,8 +4751,10 @@ pub mod get_link_attributes_input {
         /// Consumes the builder and constructs a [`GetLinkAttributesInput`](crate::input::GetLinkAttributesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetLinkAttributesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetLinkAttributesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetLinkAttributesInput {
                 directory_arn: self.directory_arn,
                 typed_link_specifier: self.typed_link_specifier,
@@ -4708,13 +4777,13 @@ impl GetLinkAttributesInput {
             crate::operation::GetLinkAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetLinkAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/amazonclouddirectory/2017-01-11/typedlink/attributes/get"
@@ -4726,8 +4795,10 @@ impl GetLinkAttributesInput {
             fn update_http_builder(
                 input: &crate::input::GetLinkAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_link_attributes(input, builder)?;
@@ -4895,8 +4966,10 @@ pub mod get_object_attributes_input {
         /// Consumes the builder and constructs a [`GetObjectAttributesInput`](crate::input::GetObjectAttributesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetObjectAttributesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetObjectAttributesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetObjectAttributesInput {
                 directory_arn: self.directory_arn,
                 object_reference: self.object_reference,
@@ -4920,13 +4993,13 @@ impl GetObjectAttributesInput {
             crate::operation::GetObjectAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/amazonclouddirectory/2017-01-11/object/attributes/get"
@@ -4938,8 +5011,10 @@ impl GetObjectAttributesInput {
             fn update_http_builder(
                 input: &crate::input::GetObjectAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_object_attributes(input, builder)?;
@@ -5073,8 +5148,10 @@ pub mod get_object_information_input {
         /// Consumes the builder and constructs a [`GetObjectInformationInput`](crate::input::GetObjectInformationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetObjectInformationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetObjectInformationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetObjectInformationInput {
                 directory_arn: self.directory_arn,
                 object_reference: self.object_reference,
@@ -5096,13 +5173,13 @@ impl GetObjectInformationInput {
             crate::operation::GetObjectInformation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetObjectInformationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/amazonclouddirectory/2017-01-11/object/information"
@@ -5114,8 +5191,10 @@ impl GetObjectInformationInput {
             fn update_http_builder(
                 input: &crate::input::GetObjectInformationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -5221,7 +5300,7 @@ pub mod get_schema_as_json_input {
         /// Consumes the builder and constructs a [`GetSchemaAsJsonInput`](crate::input::GetSchemaAsJsonInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSchemaAsJsonInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetSchemaAsJsonInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetSchemaAsJsonInput {
                 schema_arn: self.schema_arn,
@@ -5242,13 +5321,13 @@ impl GetSchemaAsJsonInput {
             crate::operation::GetSchemaAsJson,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetSchemaAsJsonInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/schema/json")
                     .expect("formatting should succeed");
                 Ok(())
@@ -5257,8 +5336,10 @@ impl GetSchemaAsJsonInput {
             fn update_http_builder(
                 input: &crate::input::GetSchemaAsJsonInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_schema_as_json(input, builder)?;
@@ -5360,7 +5441,7 @@ pub mod get_typed_link_facet_information_input {
             self,
         ) -> Result<
             crate::input::GetTypedLinkFacetInformationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetTypedLinkFacetInformationInput {
                 schema_arn: self.schema_arn,
@@ -5382,13 +5463,13 @@ impl GetTypedLinkFacetInformationInput {
             crate::operation::GetTypedLinkFacetInformation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetTypedLinkFacetInformationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/amazonclouddirectory/2017-01-11/typedlink/facet/get"
@@ -5400,8 +5481,10 @@ impl GetTypedLinkFacetInformationInput {
             fn update_http_builder(
                 input: &crate::input::GetTypedLinkFacetInformationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_typed_link_facet_information(
@@ -5541,8 +5624,10 @@ pub mod list_applied_schema_arns_input {
         /// Consumes the builder and constructs a [`ListAppliedSchemaArnsInput`](crate::input::ListAppliedSchemaArnsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAppliedSchemaArnsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListAppliedSchemaArnsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListAppliedSchemaArnsInput {
                 directory_arn: self.directory_arn,
                 schema_arn: self.schema_arn,
@@ -5565,13 +5650,13 @@ impl ListAppliedSchemaArnsInput {
             crate::operation::ListAppliedSchemaArns,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAppliedSchemaArnsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/schema/applied")
                     .expect("formatting should succeed");
                 Ok(())
@@ -5580,8 +5665,10 @@ impl ListAppliedSchemaArnsInput {
             fn update_http_builder(
                 input: &crate::input::ListAppliedSchemaArnsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5738,8 +5825,10 @@ pub mod list_attached_indices_input {
         /// Consumes the builder and constructs a [`ListAttachedIndicesInput`](crate::input::ListAttachedIndicesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAttachedIndicesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListAttachedIndicesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListAttachedIndicesInput {
                 directory_arn: self.directory_arn,
                 target_reference: self.target_reference,
@@ -5763,13 +5852,13 @@ impl ListAttachedIndicesInput {
             crate::operation::ListAttachedIndices,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAttachedIndicesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/object/indices")
                     .expect("formatting should succeed");
                 Ok(())
@@ -5778,8 +5867,10 @@ impl ListAttachedIndicesInput {
             fn update_http_builder(
                 input: &crate::input::ListAttachedIndicesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_list_attached_indices(input, builder)?;
@@ -5895,7 +5986,7 @@ pub mod list_development_schema_arns_input {
             self,
         ) -> Result<
             crate::input::ListDevelopmentSchemaArnsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListDevelopmentSchemaArnsInput {
                 next_token: self.next_token,
@@ -5917,13 +6008,13 @@ impl ListDevelopmentSchemaArnsInput {
             crate::operation::ListDevelopmentSchemaArns,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDevelopmentSchemaArnsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/amazonclouddirectory/2017-01-11/schema/development"
@@ -5935,8 +6026,10 @@ impl ListDevelopmentSchemaArnsInput {
             fn update_http_builder(
                 input: &crate::input::ListDevelopmentSchemaArnsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6065,7 +6158,7 @@ pub mod list_directories_input {
         /// Consumes the builder and constructs a [`ListDirectoriesInput`](crate::input::ListDirectoriesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDirectoriesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListDirectoriesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListDirectoriesInput {
                 next_token: self.next_token,
@@ -6088,13 +6181,13 @@ impl ListDirectoriesInput {
             crate::operation::ListDirectories,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListDirectoriesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/directory/list")
                     .expect("formatting should succeed");
                 Ok(())
@@ -6103,8 +6196,10 @@ impl ListDirectoriesInput {
             fn update_http_builder(
                 input: &crate::input::ListDirectoriesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6239,8 +6334,10 @@ pub mod list_facet_attributes_input {
         /// Consumes the builder and constructs a [`ListFacetAttributesInput`](crate::input::ListFacetAttributesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListFacetAttributesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListFacetAttributesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListFacetAttributesInput {
                 schema_arn: self.schema_arn,
                 name: self.name,
@@ -6263,13 +6360,13 @@ impl ListFacetAttributesInput {
             crate::operation::ListFacetAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListFacetAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/facet/attributes")
                     .expect("formatting should succeed");
                 Ok(())
@@ -6278,8 +6375,10 @@ impl ListFacetAttributesInput {
             fn update_http_builder(
                 input: &crate::input::ListFacetAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_list_facet_attributes(input, builder)?;
@@ -6404,7 +6503,7 @@ pub mod list_facet_names_input {
         /// Consumes the builder and constructs a [`ListFacetNamesInput`](crate::input::ListFacetNamesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListFacetNamesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListFacetNamesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListFacetNamesInput {
                 schema_arn: self.schema_arn,
@@ -6427,13 +6526,13 @@ impl ListFacetNamesInput {
             crate::operation::ListFacetNames,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListFacetNamesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/facet/list")
                     .expect("formatting should succeed");
                 Ok(())
@@ -6442,8 +6541,10 @@ impl ListFacetNamesInput {
             fn update_http_builder(
                 input: &crate::input::ListFacetNamesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_list_facet_names(input, builder)?;
@@ -6641,8 +6742,10 @@ pub mod list_incoming_typed_links_input {
         /// Consumes the builder and constructs a [`ListIncomingTypedLinksInput`](crate::input::ListIncomingTypedLinksInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListIncomingTypedLinksInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListIncomingTypedLinksInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListIncomingTypedLinksInput {
                 directory_arn: self.directory_arn,
                 object_reference: self.object_reference,
@@ -6668,13 +6771,13 @@ impl ListIncomingTypedLinksInput {
             crate::operation::ListIncomingTypedLinks,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListIncomingTypedLinksInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/amazonclouddirectory/2017-01-11/typedlink/incoming"
@@ -6686,8 +6789,10 @@ impl ListIncomingTypedLinksInput {
             fn update_http_builder(
                 input: &crate::input::ListIncomingTypedLinksInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -6870,7 +6975,8 @@ pub mod list_index_input {
         /// Consumes the builder and constructs a [`ListIndexInput`](crate::input::ListIndexInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListIndexInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListIndexInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListIndexInput {
                 directory_arn: self.directory_arn,
                 ranges_on_indexed_values: self.ranges_on_indexed_values,
@@ -6895,13 +7001,13 @@ impl ListIndexInput {
             crate::operation::ListIndex,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListIndexInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/index/targets")
                     .expect("formatting should succeed");
                 Ok(())
@@ -6910,8 +7016,10 @@ impl ListIndexInput {
             fn update_http_builder(
                 input: &crate::input::ListIndexInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_list_index(input, builder)?;
@@ -7034,8 +7142,10 @@ pub mod list_managed_schema_arns_input {
         /// Consumes the builder and constructs a [`ListManagedSchemaArnsInput`](crate::input::ListManagedSchemaArnsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListManagedSchemaArnsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListManagedSchemaArnsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListManagedSchemaArnsInput {
                 schema_arn: self.schema_arn,
                 next_token: self.next_token,
@@ -7057,13 +7167,13 @@ impl ListManagedSchemaArnsInput {
             crate::operation::ListManagedSchemaArns,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListManagedSchemaArnsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/schema/managed")
                     .expect("formatting should succeed");
                 Ok(())
@@ -7072,8 +7182,10 @@ impl ListManagedSchemaArnsInput {
             fn update_http_builder(
                 input: &crate::input::ListManagedSchemaArnsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7244,8 +7356,10 @@ pub mod list_object_attributes_input {
         /// Consumes the builder and constructs a [`ListObjectAttributesInput`](crate::input::ListObjectAttributesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListObjectAttributesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListObjectAttributesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListObjectAttributesInput {
                 directory_arn: self.directory_arn,
                 object_reference: self.object_reference,
@@ -7270,13 +7384,13 @@ impl ListObjectAttributesInput {
             crate::operation::ListObjectAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListObjectAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/object/attributes")
                     .expect("formatting should succeed");
                 Ok(())
@@ -7285,8 +7399,10 @@ impl ListObjectAttributesInput {
             fn update_http_builder(
                 input: &crate::input::ListObjectAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -7445,8 +7561,10 @@ pub mod list_object_children_input {
         /// Consumes the builder and constructs a [`ListObjectChildrenInput`](crate::input::ListObjectChildrenInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListObjectChildrenInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListObjectChildrenInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListObjectChildrenInput {
                 directory_arn: self.directory_arn,
                 object_reference: self.object_reference,
@@ -7470,13 +7588,13 @@ impl ListObjectChildrenInput {
             crate::operation::ListObjectChildren,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListObjectChildrenInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/object/children")
                     .expect("formatting should succeed");
                 Ok(())
@@ -7485,8 +7603,10 @@ impl ListObjectChildrenInput {
             fn update_http_builder(
                 input: &crate::input::ListObjectChildrenInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_list_object_children(input, builder)?;
@@ -7628,8 +7748,10 @@ pub mod list_object_parent_paths_input {
         /// Consumes the builder and constructs a [`ListObjectParentPathsInput`](crate::input::ListObjectParentPathsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListObjectParentPathsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListObjectParentPathsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListObjectParentPathsInput {
                 directory_arn: self.directory_arn,
                 object_reference: self.object_reference,
@@ -7652,13 +7774,13 @@ impl ListObjectParentPathsInput {
             crate::operation::ListObjectParentPaths,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListObjectParentPathsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/amazonclouddirectory/2017-01-11/object/parentpaths"
@@ -7670,8 +7792,10 @@ impl ListObjectParentPathsInput {
             fn update_http_builder(
                 input: &crate::input::ListObjectParentPathsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -7844,8 +7968,10 @@ pub mod list_object_parents_input {
         /// Consumes the builder and constructs a [`ListObjectParentsInput`](crate::input::ListObjectParentsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListObjectParentsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListObjectParentsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListObjectParentsInput {
                 directory_arn: self.directory_arn,
                 object_reference: self.object_reference,
@@ -7872,13 +7998,13 @@ impl ListObjectParentsInput {
             crate::operation::ListObjectParents,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListObjectParentsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/object/parent")
                     .expect("formatting should succeed");
                 Ok(())
@@ -7887,8 +8013,10 @@ impl ListObjectParentsInput {
             fn update_http_builder(
                 input: &crate::input::ListObjectParentsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_list_object_parents(input, builder)?;
@@ -8044,8 +8172,10 @@ pub mod list_object_policies_input {
         /// Consumes the builder and constructs a [`ListObjectPoliciesInput`](crate::input::ListObjectPoliciesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListObjectPoliciesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListObjectPoliciesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListObjectPoliciesInput {
                 directory_arn: self.directory_arn,
                 object_reference: self.object_reference,
@@ -8069,13 +8199,13 @@ impl ListObjectPoliciesInput {
             crate::operation::ListObjectPolicies,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListObjectPoliciesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/object/policy")
                     .expect("formatting should succeed");
                 Ok(())
@@ -8084,8 +8214,10 @@ impl ListObjectPoliciesInput {
             fn update_http_builder(
                 input: &crate::input::ListObjectPoliciesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_list_object_policies(input, builder)?;
@@ -8283,8 +8415,10 @@ pub mod list_outgoing_typed_links_input {
         /// Consumes the builder and constructs a [`ListOutgoingTypedLinksInput`](crate::input::ListOutgoingTypedLinksInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListOutgoingTypedLinksInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListOutgoingTypedLinksInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListOutgoingTypedLinksInput {
                 directory_arn: self.directory_arn,
                 object_reference: self.object_reference,
@@ -8310,13 +8444,13 @@ impl ListOutgoingTypedLinksInput {
             crate::operation::ListOutgoingTypedLinks,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListOutgoingTypedLinksInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/amazonclouddirectory/2017-01-11/typedlink/outgoing"
@@ -8328,8 +8462,10 @@ impl ListOutgoingTypedLinksInput {
             fn update_http_builder(
                 input: &crate::input::ListOutgoingTypedLinksInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -8488,8 +8624,10 @@ pub mod list_policy_attachments_input {
         /// Consumes the builder and constructs a [`ListPolicyAttachmentsInput`](crate::input::ListPolicyAttachmentsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPolicyAttachmentsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListPolicyAttachmentsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListPolicyAttachmentsInput {
                 directory_arn: self.directory_arn,
                 policy_reference: self.policy_reference,
@@ -8513,13 +8651,13 @@ impl ListPolicyAttachmentsInput {
             crate::operation::ListPolicyAttachments,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPolicyAttachmentsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/policy/attachment")
                     .expect("formatting should succeed");
                 Ok(())
@@ -8528,8 +8666,10 @@ impl ListPolicyAttachmentsInput {
             fn update_http_builder(
                 input: &crate::input::ListPolicyAttachmentsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -8659,7 +8799,7 @@ pub mod list_published_schema_arns_input {
             self,
         ) -> Result<
             crate::input::ListPublishedSchemaArnsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListPublishedSchemaArnsInput {
                 schema_arn: self.schema_arn,
@@ -8682,13 +8822,13 @@ impl ListPublishedSchemaArnsInput {
             crate::operation::ListPublishedSchemaArns,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPublishedSchemaArnsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/schema/published")
                     .expect("formatting should succeed");
                 Ok(())
@@ -8697,8 +8837,10 @@ impl ListPublishedSchemaArnsInput {
             fn update_http_builder(
                 input: &crate::input::ListPublishedSchemaArnsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8824,8 +8966,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
                 next_token: self.next_token,
@@ -8847,13 +8991,13 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/tags")
                     .expect("formatting should succeed");
                 Ok(())
@@ -8862,8 +9006,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -9002,7 +9148,7 @@ pub mod list_typed_link_facet_attributes_input {
             self,
         ) -> Result<
             crate::input::ListTypedLinkFacetAttributesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListTypedLinkFacetAttributesInput {
                 schema_arn: self.schema_arn,
@@ -9026,13 +9172,13 @@ impl ListTypedLinkFacetAttributesInput {
             crate::operation::ListTypedLinkFacetAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTypedLinkFacetAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/amazonclouddirectory/2017-01-11/typedlink/facet/attributes"
@@ -9044,8 +9190,10 @@ impl ListTypedLinkFacetAttributesInput {
             fn update_http_builder(
                 input: &crate::input::ListTypedLinkFacetAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_list_typed_link_facet_attributes(
@@ -9173,7 +9321,7 @@ pub mod list_typed_link_facet_names_input {
             self,
         ) -> Result<
             crate::input::ListTypedLinkFacetNamesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListTypedLinkFacetNamesInput {
                 schema_arn: self.schema_arn,
@@ -9196,13 +9344,13 @@ impl ListTypedLinkFacetNamesInput {
             crate::operation::ListTypedLinkFacetNames,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTypedLinkFacetNamesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/amazonclouddirectory/2017-01-11/typedlink/facet/list"
@@ -9214,8 +9362,10 @@ impl ListTypedLinkFacetNamesInput {
             fn update_http_builder(
                 input: &crate::input::ListTypedLinkFacetNamesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -9360,7 +9510,7 @@ pub mod lookup_policy_input {
         /// Consumes the builder and constructs a [`LookupPolicyInput`](crate::input::LookupPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::LookupPolicyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::LookupPolicyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::LookupPolicyInput {
                 directory_arn: self.directory_arn,
@@ -9384,13 +9534,13 @@ impl LookupPolicyInput {
             crate::operation::LookupPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::LookupPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/policy/lookup")
                     .expect("formatting should succeed");
                 Ok(())
@@ -9399,8 +9549,10 @@ impl LookupPolicyInput {
             fn update_http_builder(
                 input: &crate::input::LookupPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_lookup_policy(input, builder)?;
@@ -9542,7 +9694,7 @@ pub mod publish_schema_input {
         /// Consumes the builder and constructs a [`PublishSchemaInput`](crate::input::PublishSchemaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PublishSchemaInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PublishSchemaInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PublishSchemaInput {
                 development_schema_arn: self.development_schema_arn,
@@ -9566,13 +9718,13 @@ impl PublishSchemaInput {
             crate::operation::PublishSchema,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PublishSchemaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/schema/publish")
                     .expect("formatting should succeed");
                 Ok(())
@@ -9581,8 +9733,10 @@ impl PublishSchemaInput {
             fn update_http_builder(
                 input: &crate::input::PublishSchemaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_publish_schema(input, builder)?;
@@ -9696,8 +9850,10 @@ pub mod put_schema_from_json_input {
         /// Consumes the builder and constructs a [`PutSchemaFromJsonInput`](crate::input::PutSchemaFromJsonInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutSchemaFromJsonInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutSchemaFromJsonInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutSchemaFromJsonInput {
                 schema_arn: self.schema_arn,
                 document: self.document,
@@ -9718,13 +9874,13 @@ impl PutSchemaFromJsonInput {
             crate::operation::PutSchemaFromJson,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutSchemaFromJsonInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/schema/json")
                     .expect("formatting should succeed");
                 Ok(())
@@ -9733,8 +9889,10 @@ impl PutSchemaFromJsonInput {
             fn update_http_builder(
                 input: &crate::input::PutSchemaFromJsonInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_put_schema_from_json(input, builder)?;
@@ -9868,8 +10026,10 @@ pub mod remove_facet_from_object_input {
         /// Consumes the builder and constructs a [`RemoveFacetFromObjectInput`](crate::input::RemoveFacetFromObjectInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RemoveFacetFromObjectInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::RemoveFacetFromObjectInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::RemoveFacetFromObjectInput {
                 directory_arn: self.directory_arn,
                 schema_facet: self.schema_facet,
@@ -9891,13 +10051,13 @@ impl RemoveFacetFromObjectInput {
             crate::operation::RemoveFacetFromObject,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RemoveFacetFromObjectInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/amazonclouddirectory/2017-01-11/object/facets/delete"
@@ -9909,8 +10069,10 @@ impl RemoveFacetFromObjectInput {
             fn update_http_builder(
                 input: &crate::input::RemoveFacetFromObjectInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -10036,7 +10198,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -10058,13 +10220,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/tags/add")
                     .expect("formatting should succeed");
                 Ok(())
@@ -10073,8 +10235,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -10196,7 +10360,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -10218,13 +10382,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/tags/remove")
                     .expect("formatting should succeed");
                 Ok(())
@@ -10233,8 +10397,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -10382,7 +10548,7 @@ pub mod update_facet_input {
         /// Consumes the builder and constructs a [`UpdateFacetInput`](crate::input::UpdateFacetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateFacetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateFacetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateFacetInput {
                 schema_arn: self.schema_arn,
@@ -10406,13 +10572,13 @@ impl UpdateFacetInput {
             crate::operation::UpdateFacet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateFacetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/facet")
                     .expect("formatting should succeed");
                 Ok(())
@@ -10421,8 +10587,10 @@ impl UpdateFacetInput {
             fn update_http_builder(
                 input: &crate::input::UpdateFacetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_update_facet(input, builder)?;
@@ -10563,8 +10731,10 @@ pub mod update_link_attributes_input {
         /// Consumes the builder and constructs a [`UpdateLinkAttributesInput`](crate::input::UpdateLinkAttributesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateLinkAttributesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateLinkAttributesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateLinkAttributesInput {
                 directory_arn: self.directory_arn,
                 typed_link_specifier: self.typed_link_specifier,
@@ -10586,13 +10756,13 @@ impl UpdateLinkAttributesInput {
             crate::operation::UpdateLinkAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateLinkAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/amazonclouddirectory/2017-01-11/typedlink/attributes/update"
@@ -10604,8 +10774,10 @@ impl UpdateLinkAttributesInput {
             fn update_http_builder(
                 input: &crate::input::UpdateLinkAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -10749,8 +10921,10 @@ pub mod update_object_attributes_input {
         /// Consumes the builder and constructs a [`UpdateObjectAttributesInput`](crate::input::UpdateObjectAttributesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateObjectAttributesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateObjectAttributesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateObjectAttributesInput {
                 directory_arn: self.directory_arn,
                 object_reference: self.object_reference,
@@ -10772,13 +10946,13 @@ impl UpdateObjectAttributesInput {
             crate::operation::UpdateObjectAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateObjectAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/object/update")
                     .expect("formatting should succeed");
                 Ok(())
@@ -10787,8 +10961,10 @@ impl UpdateObjectAttributesInput {
             fn update_http_builder(
                 input: &crate::input::UpdateObjectAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -10905,7 +11081,7 @@ pub mod update_schema_input {
         /// Consumes the builder and constructs a [`UpdateSchemaInput`](crate::input::UpdateSchemaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateSchemaInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateSchemaInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateSchemaInput {
                 schema_arn: self.schema_arn,
@@ -10927,13 +11103,13 @@ impl UpdateSchemaInput {
             crate::operation::UpdateSchema,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateSchemaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/schema/update")
                     .expect("formatting should succeed");
                 Ok(())
@@ -10942,8 +11118,10 @@ impl UpdateSchemaInput {
             fn update_http_builder(
                 input: &crate::input::UpdateSchemaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_update_schema(input, builder)?;
@@ -11102,8 +11280,10 @@ pub mod update_typed_link_facet_input {
         /// Consumes the builder and constructs a [`UpdateTypedLinkFacetInput`](crate::input::UpdateTypedLinkFacetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateTypedLinkFacetInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateTypedLinkFacetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateTypedLinkFacetInput {
                 schema_arn: self.schema_arn,
                 name: self.name,
@@ -11126,13 +11306,13 @@ impl UpdateTypedLinkFacetInput {
             crate::operation::UpdateTypedLinkFacet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateTypedLinkFacetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/amazonclouddirectory/2017-01-11/typedlink/facet")
                     .expect("formatting should succeed");
                 Ok(())
@@ -11141,8 +11321,10 @@ impl UpdateTypedLinkFacetInput {
             fn update_http_builder(
                 input: &crate::input::UpdateTypedLinkFacetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -11276,8 +11458,10 @@ pub mod upgrade_applied_schema_input {
         /// Consumes the builder and constructs a [`UpgradeAppliedSchemaInput`](crate::input::UpgradeAppliedSchemaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpgradeAppliedSchemaInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpgradeAppliedSchemaInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpgradeAppliedSchemaInput {
                 published_schema_arn: self.published_schema_arn,
                 directory_arn: self.directory_arn,
@@ -11299,13 +11483,13 @@ impl UpgradeAppliedSchemaInput {
             crate::operation::UpgradeAppliedSchema,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpgradeAppliedSchemaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/amazonclouddirectory/2017-01-11/schema/upgradeapplied"
@@ -11317,8 +11501,10 @@ impl UpgradeAppliedSchemaInput {
             fn update_http_builder(
                 input: &crate::input::UpgradeAppliedSchemaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -11464,8 +11650,10 @@ pub mod upgrade_published_schema_input {
         /// Consumes the builder and constructs a [`UpgradePublishedSchemaInput`](crate::input::UpgradePublishedSchemaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpgradePublishedSchemaInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpgradePublishedSchemaInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpgradePublishedSchemaInput {
                 development_schema_arn: self.development_schema_arn,
                 published_schema_arn: self.published_schema_arn,
@@ -11488,13 +11676,13 @@ impl UpgradePublishedSchemaInput {
             crate::operation::UpgradePublishedSchema,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpgradePublishedSchemaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(
                     output,
                     "/amazonclouddirectory/2017-01-11/schema/upgradepublished"
@@ -11506,8 +11694,10 @@ impl UpgradePublishedSchemaInput {
             fn update_http_builder(
                 input: &crate::input::UpgradePublishedSchemaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))

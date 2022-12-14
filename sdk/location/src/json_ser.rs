@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_associate_tracker_consumer_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateTrackerConsumerInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.consumer_arn {
         object.key("ConsumerArn").string(var_1.as_str());
     }
@@ -12,7 +12,7 @@ pub fn serialize_structure_crate_input_associate_tracker_consumer_input(
 pub fn serialize_structure_crate_input_batch_delete_device_position_history_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchDeleteDevicePositionHistoryInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_2) = &input.device_ids {
         let mut array_3 = object.key("DeviceIds").start_array();
         for item_4 in var_2 {
@@ -28,7 +28,7 @@ pub fn serialize_structure_crate_input_batch_delete_device_position_history_inpu
 pub fn serialize_structure_crate_input_batch_delete_geofence_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchDeleteGeofenceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_5) = &input.geofence_ids {
         let mut array_6 = object.key("GeofenceIds").start_array();
         for item_7 in var_5 {
@@ -44,7 +44,7 @@ pub fn serialize_structure_crate_input_batch_delete_geofence_input(
 pub fn serialize_structure_crate_input_batch_evaluate_geofences_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchEvaluateGeofencesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_8) = &input.device_position_updates {
         let mut array_9 = object.key("DevicePositionUpdates").start_array();
         for item_10 in var_8 {
@@ -65,7 +65,7 @@ pub fn serialize_structure_crate_input_batch_evaluate_geofences_input(
 pub fn serialize_structure_crate_input_batch_get_device_position_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchGetDevicePositionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_12) = &input.device_ids {
         let mut array_13 = object.key("DeviceIds").start_array();
         for item_14 in var_12 {
@@ -81,7 +81,7 @@ pub fn serialize_structure_crate_input_batch_get_device_position_input(
 pub fn serialize_structure_crate_input_batch_put_geofence_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchPutGeofenceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.entries {
         let mut array_16 = object.key("Entries").start_array();
         for item_17 in var_15 {
@@ -102,7 +102,7 @@ pub fn serialize_structure_crate_input_batch_put_geofence_input(
 pub fn serialize_structure_crate_input_batch_update_device_position_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchUpdateDevicePositionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_19) = &input.updates {
         let mut array_20 = object.key("Updates").start_array();
         for item_21 in var_19 {
@@ -123,7 +123,7 @@ pub fn serialize_structure_crate_input_batch_update_device_position_input(
 pub fn serialize_structure_crate_input_calculate_route_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CalculateRouteInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_23) = &input.car_mode_options {
         let mut object_24 = object.key("CarModeOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_calculate_route_car_mode_options(
@@ -205,7 +205,7 @@ pub fn serialize_structure_crate_input_calculate_route_input(
 pub fn serialize_structure_crate_input_calculate_route_matrix_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CalculateRouteMatrixInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_43) = &input.car_mode_options {
         let mut object_44 = object.key("CarModeOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_calculate_route_car_mode_options(
@@ -278,7 +278,7 @@ pub fn serialize_structure_crate_input_calculate_route_matrix_input(
 pub fn serialize_structure_crate_input_create_geofence_collection_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateGeofenceCollectionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_61) = &input.collection_name {
         object.key("CollectionName").string(var_61.as_str());
     }
@@ -309,7 +309,7 @@ pub fn serialize_structure_crate_input_create_geofence_collection_input(
 pub fn serialize_structure_crate_input_create_map_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateMapInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_70) = &input.configuration {
         let mut object_71 = object.key("Configuration").start_object();
         crate::json_ser::serialize_structure_crate_model_map_configuration(&mut object_71, var_70)?;
@@ -339,7 +339,7 @@ pub fn serialize_structure_crate_input_create_map_input(
 pub fn serialize_structure_crate_input_create_place_index_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreatePlaceIndexInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_79) = &input.data_source {
         object.key("DataSource").string(var_79.as_str());
     }
@@ -375,7 +375,7 @@ pub fn serialize_structure_crate_input_create_place_index_input(
 pub fn serialize_structure_crate_input_create_route_calculator_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateRouteCalculatorInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_89) = &input.calculator_name {
         object.key("CalculatorName").string(var_89.as_str());
     }
@@ -403,7 +403,7 @@ pub fn serialize_structure_crate_input_create_route_calculator_input(
 pub fn serialize_structure_crate_input_create_tracker_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateTrackerInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_97) = &input.description {
         object.key("Description").string(var_97.as_str());
     }
@@ -437,7 +437,7 @@ pub fn serialize_structure_crate_input_create_tracker_input(
 pub fn serialize_structure_crate_input_get_device_position_history_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetDevicePositionHistoryInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_107) = &input.end_time_exclusive {
         object
             .key("EndTimeExclusive")
@@ -463,7 +463,7 @@ pub fn serialize_structure_crate_input_get_device_position_history_input(
 pub fn serialize_structure_crate_input_list_device_positions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListDevicePositionsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_111) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -479,7 +479,7 @@ pub fn serialize_structure_crate_input_list_device_positions_input(
 pub fn serialize_structure_crate_input_list_geofence_collections_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListGeofenceCollectionsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_113) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -495,7 +495,7 @@ pub fn serialize_structure_crate_input_list_geofence_collections_input(
 pub fn serialize_structure_crate_input_list_geofences_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListGeofencesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_115) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -511,7 +511,7 @@ pub fn serialize_structure_crate_input_list_geofences_input(
 pub fn serialize_structure_crate_input_list_maps_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListMapsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_117) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -527,7 +527,7 @@ pub fn serialize_structure_crate_input_list_maps_input(
 pub fn serialize_structure_crate_input_list_place_indexes_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListPlaceIndexesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_119) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -543,7 +543,7 @@ pub fn serialize_structure_crate_input_list_place_indexes_input(
 pub fn serialize_structure_crate_input_list_route_calculators_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListRouteCalculatorsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_121) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -559,7 +559,7 @@ pub fn serialize_structure_crate_input_list_route_calculators_input(
 pub fn serialize_structure_crate_input_list_tracker_consumers_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTrackerConsumersInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_123) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -575,7 +575,7 @@ pub fn serialize_structure_crate_input_list_tracker_consumers_input(
 pub fn serialize_structure_crate_input_list_trackers_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTrackersInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_125) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -591,7 +591,7 @@ pub fn serialize_structure_crate_input_list_trackers_input(
 pub fn serialize_structure_crate_input_put_geofence_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutGeofenceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_127) = &input.geometry {
         let mut object_128 = object.key("Geometry").start_object();
         crate::json_ser::serialize_structure_crate_model_geofence_geometry(
@@ -606,7 +606,7 @@ pub fn serialize_structure_crate_input_put_geofence_input(
 pub fn serialize_structure_crate_input_search_place_index_for_position_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SearchPlaceIndexForPositionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_129) = &input.language {
         object.key("Language").string(var_129.as_str());
     }
@@ -634,7 +634,7 @@ pub fn serialize_structure_crate_input_search_place_index_for_position_input(
 pub fn serialize_structure_crate_input_search_place_index_for_suggestions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SearchPlaceIndexForSuggestionsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_133) = &input.bias_position {
         let mut array_134 = object.key("BiasPosition").start_array();
         for item_135 in var_133 {
@@ -686,7 +686,7 @@ pub fn serialize_structure_crate_input_search_place_index_for_suggestions_input(
 pub fn serialize_structure_crate_input_search_place_index_for_text_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SearchPlaceIndexForTextInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_145) = &input.bias_position {
         let mut array_146 = object.key("BiasPosition").start_array();
         for item_147 in var_145 {
@@ -738,7 +738,7 @@ pub fn serialize_structure_crate_input_search_place_index_for_text_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_156) = &input.tags {
         let mut object_157 = object.key("Tags").start_object();
         for (key_158, value_159) in var_156 {
@@ -754,7 +754,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_geofence_collection_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateGeofenceCollectionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_160) = &input.description {
         object.key("Description").string(var_160.as_str());
     }
@@ -770,7 +770,7 @@ pub fn serialize_structure_crate_input_update_geofence_collection_input(
 pub fn serialize_structure_crate_input_update_map_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateMapInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_163) = &input.description {
         object.key("Description").string(var_163.as_str());
     }
@@ -783,7 +783,7 @@ pub fn serialize_structure_crate_input_update_map_input(
 pub fn serialize_structure_crate_input_update_place_index_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdatePlaceIndexInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_165) = &input.data_source_configuration {
         let mut object_166 = object.key("DataSourceConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_data_source_configuration(
@@ -804,7 +804,7 @@ pub fn serialize_structure_crate_input_update_place_index_input(
 pub fn serialize_structure_crate_input_update_route_calculator_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRouteCalculatorInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_169) = &input.description {
         object.key("Description").string(var_169.as_str());
     }
@@ -817,7 +817,7 @@ pub fn serialize_structure_crate_input_update_route_calculator_input(
 pub fn serialize_structure_crate_input_update_tracker_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateTrackerInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_171) = &input.description {
         object.key("Description").string(var_171.as_str());
     }
@@ -836,7 +836,7 @@ pub fn serialize_structure_crate_input_update_tracker_input(
 pub fn serialize_structure_crate_model_device_position_update(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DevicePositionUpdate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_175) = &input.device_id {
         object.key("DeviceId").string(var_175.as_str());
     }
@@ -880,7 +880,7 @@ pub fn serialize_structure_crate_model_device_position_update(
 pub fn serialize_structure_crate_model_batch_put_geofence_request_entry(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BatchPutGeofenceRequestEntry,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_186) = &input.geofence_id {
         object.key("GeofenceId").string(var_186.as_str());
     }
@@ -898,7 +898,7 @@ pub fn serialize_structure_crate_model_batch_put_geofence_request_entry(
 pub fn serialize_structure_crate_model_calculate_route_car_mode_options(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CalculateRouteCarModeOptions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_189) = &input.avoid_ferries {
         object.key("AvoidFerries").boolean(*var_189);
     }
@@ -911,7 +911,7 @@ pub fn serialize_structure_crate_model_calculate_route_car_mode_options(
 pub fn serialize_structure_crate_model_calculate_route_truck_mode_options(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CalculateRouteTruckModeOptions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_191) = &input.avoid_ferries {
         object.key("AvoidFerries").boolean(*var_191);
     }
@@ -937,7 +937,7 @@ pub fn serialize_structure_crate_model_calculate_route_truck_mode_options(
 pub fn serialize_structure_crate_model_map_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MapConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_197) = &input.style {
         object.key("Style").string(var_197.as_str());
     }
@@ -947,7 +947,7 @@ pub fn serialize_structure_crate_model_map_configuration(
 pub fn serialize_structure_crate_model_data_source_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DataSourceConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_198) = &input.intended_use {
         object.key("IntendedUse").string(var_198.as_str());
     }
@@ -957,7 +957,7 @@ pub fn serialize_structure_crate_model_data_source_configuration(
 pub fn serialize_structure_crate_model_geofence_geometry(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GeofenceGeometry,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_199) = &input.polygon {
         let mut array_200 = object.key("Polygon").start_array();
         for item_201 in var_199 {
@@ -993,7 +993,7 @@ pub fn serialize_structure_crate_model_geofence_geometry(
 pub fn serialize_structure_crate_model_positional_accuracy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PositionalAccuracy,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_208) = &input.horizontal {
         object.key("Horizontal").number(
             #[allow(clippy::useless_conversion)]
@@ -1006,7 +1006,7 @@ pub fn serialize_structure_crate_model_positional_accuracy(
 pub fn serialize_structure_crate_model_truck_dimensions(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TruckDimensions,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_209) = &input.length {
         object.key("Length").number(
             #[allow(clippy::useless_conversion)]
@@ -1034,7 +1034,7 @@ pub fn serialize_structure_crate_model_truck_dimensions(
 pub fn serialize_structure_crate_model_truck_weight(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TruckWeight,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_213) = &input.total {
         object.key("Total").number(
             #[allow(clippy::useless_conversion)]
@@ -1050,7 +1050,7 @@ pub fn serialize_structure_crate_model_truck_weight(
 pub fn serialize_structure_crate_model_circle(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Circle,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_215) = &input.center {
         let mut array_216 = object.key("Center").start_array();
         for item_217 in var_215 {

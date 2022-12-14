@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_domain_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateDomainInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("Name").string(var_1.as_str());
     }
@@ -39,7 +39,7 @@ pub fn serialize_structure_crate_input_create_domain_input(
 pub fn serialize_structure_crate_input_delete_domain_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteDomainInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_10) = &input.domain_id {
         object.key("DomainId").string(var_10.as_str());
     }
@@ -49,7 +49,7 @@ pub fn serialize_structure_crate_input_delete_domain_input(
 pub fn serialize_structure_crate_input_delete_fraudster_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteFraudsterInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_11) = &input.domain_id {
         object.key("DomainId").string(var_11.as_str());
     }
@@ -62,7 +62,7 @@ pub fn serialize_structure_crate_input_delete_fraudster_input(
 pub fn serialize_structure_crate_input_delete_speaker_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteSpeakerInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_13) = &input.domain_id {
         object.key("DomainId").string(var_13.as_str());
     }
@@ -75,7 +75,7 @@ pub fn serialize_structure_crate_input_delete_speaker_input(
 pub fn serialize_structure_crate_input_describe_domain_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeDomainInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.domain_id {
         object.key("DomainId").string(var_15.as_str());
     }
@@ -85,7 +85,7 @@ pub fn serialize_structure_crate_input_describe_domain_input(
 pub fn serialize_structure_crate_input_describe_fraudster_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeFraudsterInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_16) = &input.domain_id {
         object.key("DomainId").string(var_16.as_str());
     }
@@ -98,7 +98,7 @@ pub fn serialize_structure_crate_input_describe_fraudster_input(
 pub fn serialize_structure_crate_input_describe_fraudster_registration_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeFraudsterRegistrationJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_18) = &input.domain_id {
         object.key("DomainId").string(var_18.as_str());
     }
@@ -111,7 +111,7 @@ pub fn serialize_structure_crate_input_describe_fraudster_registration_job_input
 pub fn serialize_structure_crate_input_describe_speaker_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeSpeakerInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_20) = &input.domain_id {
         object.key("DomainId").string(var_20.as_str());
     }
@@ -124,7 +124,7 @@ pub fn serialize_structure_crate_input_describe_speaker_input(
 pub fn serialize_structure_crate_input_describe_speaker_enrollment_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeSpeakerEnrollmentJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_22) = &input.domain_id {
         object.key("DomainId").string(var_22.as_str());
     }
@@ -137,7 +137,7 @@ pub fn serialize_structure_crate_input_describe_speaker_enrollment_job_input(
 pub fn serialize_structure_crate_input_evaluate_session_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::EvaluateSessionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_24) = &input.domain_id {
         object.key("DomainId").string(var_24.as_str());
     }
@@ -150,7 +150,7 @@ pub fn serialize_structure_crate_input_evaluate_session_input(
 pub fn serialize_structure_crate_input_list_domains_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListDomainsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_26) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -166,7 +166,7 @@ pub fn serialize_structure_crate_input_list_domains_input(
 pub fn serialize_structure_crate_input_list_fraudster_registration_jobs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListFraudsterRegistrationJobsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.domain_id {
         object.key("DomainId").string(var_28.as_str());
     }
@@ -188,7 +188,7 @@ pub fn serialize_structure_crate_input_list_fraudster_registration_jobs_input(
 pub fn serialize_structure_crate_input_list_speaker_enrollment_jobs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListSpeakerEnrollmentJobsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.domain_id {
         object.key("DomainId").string(var_32.as_str());
     }
@@ -210,7 +210,7 @@ pub fn serialize_structure_crate_input_list_speaker_enrollment_jobs_input(
 pub fn serialize_structure_crate_input_list_speakers_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListSpeakersInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_36) = &input.domain_id {
         object.key("DomainId").string(var_36.as_str());
     }
@@ -229,7 +229,7 @@ pub fn serialize_structure_crate_input_list_speakers_input(
 pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_39) = &input.resource_arn {
         object.key("ResourceArn").string(var_39.as_str());
     }
@@ -239,7 +239,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
 pub fn serialize_structure_crate_input_opt_out_speaker_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::OptOutSpeakerInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_40) = &input.domain_id {
         object.key("DomainId").string(var_40.as_str());
     }
@@ -252,7 +252,7 @@ pub fn serialize_structure_crate_input_opt_out_speaker_input(
 pub fn serialize_structure_crate_input_start_fraudster_registration_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartFraudsterRegistrationJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_42) = &input.client_token {
         object.key("ClientToken").string(var_42.as_str());
     }
@@ -292,7 +292,7 @@ pub fn serialize_structure_crate_input_start_fraudster_registration_job_input(
 pub fn serialize_structure_crate_input_start_speaker_enrollment_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartSpeakerEnrollmentJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_52) = &input.client_token {
         object.key("ClientToken").string(var_52.as_str());
     }
@@ -329,7 +329,7 @@ pub fn serialize_structure_crate_input_start_speaker_enrollment_job_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_62) = &input.resource_arn {
         object.key("ResourceArn").string(var_62.as_str());
     }
@@ -350,7 +350,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_67) = &input.resource_arn {
         object.key("ResourceArn").string(var_67.as_str());
     }
@@ -369,7 +369,7 @@ pub fn serialize_structure_crate_input_untag_resource_input(
 pub fn serialize_structure_crate_input_update_domain_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateDomainInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_71) = &input.domain_id {
         object.key("DomainId").string(var_71.as_str());
     }
@@ -395,7 +395,7 @@ pub fn serialize_structure_crate_input_update_domain_input(
 pub fn serialize_structure_crate_model_server_side_encryption_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ServerSideEncryptionConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_76) = &input.kms_key_id {
         object.key("KmsKeyId").string(var_76.as_str());
     }
@@ -405,7 +405,7 @@ pub fn serialize_structure_crate_model_server_side_encryption_configuration(
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_77) = &input.key {
         object.key("Key").string(var_77.as_str());
     }
@@ -418,7 +418,7 @@ pub fn serialize_structure_crate_model_tag(
 pub fn serialize_structure_crate_model_registration_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RegistrationConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_79) = &input.duplicate_registration_action {
         object
             .key("DuplicateRegistrationAction")
@@ -436,7 +436,7 @@ pub fn serialize_structure_crate_model_registration_config(
 pub fn serialize_structure_crate_model_input_data_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::InputDataConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_81) = &input.s3_uri {
         object.key("S3Uri").string(var_81.as_str());
     }
@@ -446,7 +446,7 @@ pub fn serialize_structure_crate_model_input_data_config(
 pub fn serialize_structure_crate_model_output_data_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::OutputDataConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_82) = &input.s3_uri {
         object.key("S3Uri").string(var_82.as_str());
     }
@@ -459,7 +459,7 @@ pub fn serialize_structure_crate_model_output_data_config(
 pub fn serialize_structure_crate_model_enrollment_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EnrollmentConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_84) = &input.existing_enrollment_action {
         object
             .key("ExistingEnrollmentAction")
@@ -479,7 +479,7 @@ pub fn serialize_structure_crate_model_enrollment_config(
 pub fn serialize_structure_crate_model_enrollment_job_fraud_detection_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EnrollmentJobFraudDetectionConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_87) = &input.fraud_detection_action {
         object.key("FraudDetectionAction").string(var_87.as_str());
     }

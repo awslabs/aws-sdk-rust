@@ -99,8 +99,10 @@ pub mod create_fhir_datastore_input {
         /// Consumes the builder and constructs a [`CreateFhirDatastoreInput`](crate::input::CreateFhirDatastoreInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateFhirDatastoreInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateFhirDatastoreInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateFhirDatastoreInput {
                 datastore_name: self.datastore_name,
                 datastore_type_version: self.datastore_type_version,
@@ -125,7 +127,7 @@ impl CreateFhirDatastoreInput {
             crate::operation::CreateFHIRDatastore,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -134,7 +136,7 @@ impl CreateFhirDatastoreInput {
             fn uri_base(
                 _input: &crate::input::CreateFhirDatastoreInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -142,8 +144,10 @@ impl CreateFhirDatastoreInput {
             fn update_http_builder(
                 input: &crate::input::CreateFhirDatastoreInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -250,8 +254,10 @@ pub mod delete_fhir_datastore_input {
         /// Consumes the builder and constructs a [`DeleteFhirDatastoreInput`](crate::input::DeleteFhirDatastoreInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteFhirDatastoreInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteFhirDatastoreInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteFhirDatastoreInput {
                 datastore_id: self.datastore_id,
             })
@@ -271,13 +277,13 @@ impl DeleteFhirDatastoreInput {
             crate::operation::DeleteFHIRDatastore,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteFhirDatastoreInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -285,8 +291,10 @@ impl DeleteFhirDatastoreInput {
             fn update_http_builder(
                 input: &crate::input::DeleteFhirDatastoreInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -393,8 +401,10 @@ pub mod describe_fhir_datastore_input {
         /// Consumes the builder and constructs a [`DescribeFhirDatastoreInput`](crate::input::DescribeFhirDatastoreInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeFhirDatastoreInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeFhirDatastoreInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeFhirDatastoreInput {
                 datastore_id: self.datastore_id,
             })
@@ -414,13 +424,13 @@ impl DescribeFhirDatastoreInput {
             crate::operation::DescribeFHIRDatastore,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeFhirDatastoreInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -428,8 +438,10 @@ impl DescribeFhirDatastoreInput {
             fn update_http_builder(
                 input: &crate::input::DescribeFhirDatastoreInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -549,8 +561,10 @@ pub mod describe_fhir_export_job_input {
         /// Consumes the builder and constructs a [`DescribeFhirExportJobInput`](crate::input::DescribeFhirExportJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeFhirExportJobInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeFhirExportJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeFhirExportJobInput {
                 datastore_id: self.datastore_id,
                 job_id: self.job_id,
@@ -571,13 +585,13 @@ impl DescribeFhirExportJobInput {
             crate::operation::DescribeFHIRExportJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeFhirExportJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -585,8 +599,10 @@ impl DescribeFhirExportJobInput {
             fn update_http_builder(
                 input: &crate::input::DescribeFhirExportJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -706,8 +722,10 @@ pub mod describe_fhir_import_job_input {
         /// Consumes the builder and constructs a [`DescribeFhirImportJobInput`](crate::input::DescribeFhirImportJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeFhirImportJobInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeFhirImportJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeFhirImportJobInput {
                 datastore_id: self.datastore_id,
                 job_id: self.job_id,
@@ -728,13 +746,13 @@ impl DescribeFhirImportJobInput {
             crate::operation::DescribeFHIRImportJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeFhirImportJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -742,8 +760,10 @@ impl DescribeFhirImportJobInput {
             fn update_http_builder(
                 input: &crate::input::DescribeFhirImportJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -877,8 +897,10 @@ pub mod list_fhir_datastores_input {
         /// Consumes the builder and constructs a [`ListFhirDatastoresInput`](crate::input::ListFhirDatastoresInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListFhirDatastoresInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListFhirDatastoresInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListFhirDatastoresInput {
                 filter: self.filter,
                 next_token: self.next_token,
@@ -900,13 +922,13 @@ impl ListFhirDatastoresInput {
             crate::operation::ListFHIRDatastores,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListFhirDatastoresInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -914,8 +936,10 @@ impl ListFhirDatastoresInput {
             fn update_http_builder(
                 input: &crate::input::ListFhirDatastoresInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1097,8 +1121,10 @@ pub mod list_fhir_export_jobs_input {
         /// Consumes the builder and constructs a [`ListFhirExportJobsInput`](crate::input::ListFhirExportJobsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListFhirExportJobsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListFhirExportJobsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListFhirExportJobsInput {
                 datastore_id: self.datastore_id,
                 next_token: self.next_token,
@@ -1124,13 +1150,13 @@ impl ListFhirExportJobsInput {
             crate::operation::ListFHIRExportJobs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListFhirExportJobsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1138,8 +1164,10 @@ impl ListFhirExportJobsInput {
             fn update_http_builder(
                 input: &crate::input::ListFhirExportJobsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1321,8 +1349,10 @@ pub mod list_fhir_import_jobs_input {
         /// Consumes the builder and constructs a [`ListFhirImportJobsInput`](crate::input::ListFhirImportJobsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListFhirImportJobsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListFhirImportJobsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListFhirImportJobsInput {
                 datastore_id: self.datastore_id,
                 next_token: self.next_token,
@@ -1348,13 +1378,13 @@ impl ListFhirImportJobsInput {
             crate::operation::ListFHIRImportJobs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListFhirImportJobsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1362,8 +1392,10 @@ impl ListFhirImportJobsInput {
             fn update_http_builder(
                 input: &crate::input::ListFhirImportJobsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1470,8 +1502,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -1491,13 +1525,13 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1505,8 +1539,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1665,8 +1701,10 @@ pub mod start_fhir_export_job_input {
         /// Consumes the builder and constructs a [`StartFhirExportJobInput`](crate::input::StartFhirExportJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartFhirExportJobInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StartFhirExportJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StartFhirExportJobInput {
                 job_name: self.job_name,
                 output_data_config: self.output_data_config,
@@ -1690,7 +1728,7 @@ impl StartFhirExportJobInput {
             crate::operation::StartFHIRExportJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1699,7 +1737,7 @@ impl StartFhirExportJobInput {
             fn uri_base(
                 _input: &crate::input::StartFhirExportJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1707,8 +1745,10 @@ impl StartFhirExportJobInput {
             fn update_http_builder(
                 input: &crate::input::StartFhirExportJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1879,8 +1919,10 @@ pub mod start_fhir_import_job_input {
         /// Consumes the builder and constructs a [`StartFhirImportJobInput`](crate::input::StartFhirImportJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartFhirImportJobInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StartFhirImportJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StartFhirImportJobInput {
                 job_name: self.job_name,
                 input_data_config: self.input_data_config,
@@ -1905,7 +1947,7 @@ impl StartFhirImportJobInput {
             crate::operation::StartFHIRImportJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1914,7 +1956,7 @@ impl StartFhirImportJobInput {
             fn uri_base(
                 _input: &crate::input::StartFhirImportJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1922,8 +1964,10 @@ impl StartFhirImportJobInput {
             fn update_http_builder(
                 input: &crate::input::StartFhirImportJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2050,7 +2094,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -2072,13 +2116,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2086,8 +2130,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2214,7 +2260,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -2236,13 +2282,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2250,8 +2296,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

@@ -6,6 +6,7 @@
 
 //! Functions for modifying requests and responses for the purposes of checksum validation
 
+use aws_smithy_http::operation::error::BuildError;
 use http::header::HeaderName;
 
 /// Errors related to constructing checksum-validated HTTP requests
@@ -44,7 +45,7 @@ pub(crate) fn add_checksum_calculation_to_request(
     request: &mut http::request::Request<aws_smithy_http::body::SdkBody>,
     property_bag: &mut aws_smithy_http::property_bag::PropertyBag,
     checksum_algorithm: aws_smithy_checksums::ChecksumAlgorithm,
-) -> Result<(), aws_smithy_http::operation::BuildError> {
+) -> Result<(), BuildError> {
     match request.body().bytes() {
         // Body is in-memory: read it and insert the checksum as a header.
         Some(data) => {
@@ -73,14 +74,16 @@ fn wrap_streaming_request_body_in_checksum_calculating_body(
     request: &mut http::request::Request<aws_smithy_http::body::SdkBody>,
     property_bag: &mut aws_smithy_http::property_bag::PropertyBag,
     checksum_algorithm: aws_smithy_checksums::ChecksumAlgorithm,
-) -> Result<(), aws_smithy_http::operation::BuildError> {
+) -> Result<(), BuildError> {
     use aws_http::content_encoding::{AwsChunkedBody, AwsChunkedBodyOptions};
     use aws_smithy_checksums::{body::calculate, http::HttpChecksum};
     use http_body::Body;
 
-    let original_body_size = request.body().size_hint().exact().ok_or_else(|| {
-        aws_smithy_http::operation::BuildError::Other(Box::new(Error::UnsizedRequestBody))
-    })?;
+    let original_body_size = request
+        .body()
+        .size_hint()
+        .exact()
+        .ok_or_else(|| BuildError::other(Error::UnsizedRequestBody))?;
 
     // Streaming request bodies with trailers require special signing
     property_bag.insert(aws_sig_auth::signer::SignableBody::StreamingUnsignedPayloadTrailer);
@@ -101,9 +104,10 @@ fn wrap_streaming_request_body_in_checksum_calculating_body(
         })
     };
 
-    let encoded_content_length = body.size_hint().exact().ok_or_else(|| {
-        aws_smithy_http::operation::BuildError::Other(Box::new(Error::UnsizedRequestBody))
-    })?;
+    let encoded_content_length = body
+        .size_hint()
+        .exact()
+        .ok_or_else(|| BuildError::other(Error::UnsizedRequestBody))?;
 
     let headers = request.headers_mut();
 
@@ -124,7 +128,7 @@ fn wrap_streaming_request_body_in_checksum_calculating_body(
     headers.insert(
         http::header::CONTENT_ENCODING,
         http::HeaderValue::from_str(aws_http::content_encoding::header_value::AWS_CHUNKED)
-            .map_err(|err| aws_smithy_http::operation::BuildError::Other(Box::new(err)))
+            .map_err(BuildError::other)
             .expect("\"aws-chunked\" will always be a valid HeaderValue"),
     );
 

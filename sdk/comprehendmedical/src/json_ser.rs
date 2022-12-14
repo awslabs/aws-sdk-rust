@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_describe_entities_detection_v2_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeEntitiesDetectionV2JobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.job_id {
         object.key("JobId").string(var_1.as_str());
     }
@@ -12,7 +12,7 @@ pub fn serialize_structure_crate_input_describe_entities_detection_v2_job_input(
 pub fn serialize_structure_crate_input_describe_icd10_cm_inference_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeIcd10CmInferenceJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_2) = &input.job_id {
         object.key("JobId").string(var_2.as_str());
     }
@@ -22,7 +22,7 @@ pub fn serialize_structure_crate_input_describe_icd10_cm_inference_job_input(
 pub fn serialize_structure_crate_input_describe_phi_detection_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribePhiDetectionJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_3) = &input.job_id {
         object.key("JobId").string(var_3.as_str());
     }
@@ -32,7 +32,7 @@ pub fn serialize_structure_crate_input_describe_phi_detection_job_input(
 pub fn serialize_structure_crate_input_describe_rx_norm_inference_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeRxNormInferenceJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_4) = &input.job_id {
         object.key("JobId").string(var_4.as_str());
     }
@@ -42,7 +42,7 @@ pub fn serialize_structure_crate_input_describe_rx_norm_inference_job_input(
 pub fn serialize_structure_crate_input_describe_snomedct_inference_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeSnomedctInferenceJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_5) = &input.job_id {
         object.key("JobId").string(var_5.as_str());
     }
@@ -52,7 +52,7 @@ pub fn serialize_structure_crate_input_describe_snomedct_inference_job_input(
 pub fn serialize_structure_crate_input_detect_entities_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DetectEntitiesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_6) = &input.text {
         object.key("Text").string(var_6.as_str());
     }
@@ -62,7 +62,7 @@ pub fn serialize_structure_crate_input_detect_entities_input(
 pub fn serialize_structure_crate_input_detect_entities_v2_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DetectEntitiesV2Input,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_7) = &input.text {
         object.key("Text").string(var_7.as_str());
     }
@@ -72,7 +72,7 @@ pub fn serialize_structure_crate_input_detect_entities_v2_input(
 pub fn serialize_structure_crate_input_detect_phi_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DetectPhiInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_8) = &input.text {
         object.key("Text").string(var_8.as_str());
     }
@@ -82,7 +82,7 @@ pub fn serialize_structure_crate_input_detect_phi_input(
 pub fn serialize_structure_crate_input_infer_icd10_cm_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::InferIcd10CmInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_9) = &input.text {
         object.key("Text").string(var_9.as_str());
     }
@@ -92,7 +92,7 @@ pub fn serialize_structure_crate_input_infer_icd10_cm_input(
 pub fn serialize_structure_crate_input_infer_rx_norm_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::InferRxNormInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_10) = &input.text {
         object.key("Text").string(var_10.as_str());
     }
@@ -102,7 +102,7 @@ pub fn serialize_structure_crate_input_infer_rx_norm_input(
 pub fn serialize_structure_crate_input_infer_snomedct_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::InferSnomedctInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_11) = &input.text {
         object.key("Text").string(var_11.as_str());
     }
@@ -112,7 +112,7 @@ pub fn serialize_structure_crate_input_infer_snomedct_input(
 pub fn serialize_structure_crate_input_list_entities_detection_v2_jobs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListEntitiesDetectionV2JobsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_12) = &input.filter {
         let mut object_13 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_comprehend_medical_async_job_filter(
@@ -136,7 +136,7 @@ pub fn serialize_structure_crate_input_list_entities_detection_v2_jobs_input(
 pub fn serialize_structure_crate_input_list_icd10_cm_inference_jobs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListIcd10CmInferenceJobsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_16) = &input.filter {
         let mut object_17 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_comprehend_medical_async_job_filter(
@@ -160,7 +160,7 @@ pub fn serialize_structure_crate_input_list_icd10_cm_inference_jobs_input(
 pub fn serialize_structure_crate_input_list_phi_detection_jobs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListPhiDetectionJobsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_20) = &input.filter {
         let mut object_21 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_comprehend_medical_async_job_filter(
@@ -184,7 +184,7 @@ pub fn serialize_structure_crate_input_list_phi_detection_jobs_input(
 pub fn serialize_structure_crate_input_list_rx_norm_inference_jobs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListRxNormInferenceJobsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_24) = &input.filter {
         let mut object_25 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_comprehend_medical_async_job_filter(
@@ -208,7 +208,7 @@ pub fn serialize_structure_crate_input_list_rx_norm_inference_jobs_input(
 pub fn serialize_structure_crate_input_list_snomedct_inference_jobs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListSnomedctInferenceJobsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.filter {
         let mut object_29 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_comprehend_medical_async_job_filter(
@@ -232,7 +232,7 @@ pub fn serialize_structure_crate_input_list_snomedct_inference_jobs_input(
 pub fn serialize_structure_crate_input_start_entities_detection_v2_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartEntitiesDetectionV2JobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.input_data_config {
         let mut object_33 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_input_data_config(&mut object_33, var_32)?;
@@ -267,7 +267,7 @@ pub fn serialize_structure_crate_input_start_entities_detection_v2_job_input(
 pub fn serialize_structure_crate_input_start_icd10_cm_inference_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartIcd10CmInferenceJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_41) = &input.input_data_config {
         let mut object_42 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_input_data_config(&mut object_42, var_41)?;
@@ -302,7 +302,7 @@ pub fn serialize_structure_crate_input_start_icd10_cm_inference_job_input(
 pub fn serialize_structure_crate_input_start_phi_detection_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartPhiDetectionJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_50) = &input.input_data_config {
         let mut object_51 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_input_data_config(&mut object_51, var_50)?;
@@ -337,7 +337,7 @@ pub fn serialize_structure_crate_input_start_phi_detection_job_input(
 pub fn serialize_structure_crate_input_start_rx_norm_inference_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartRxNormInferenceJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_59) = &input.input_data_config {
         let mut object_60 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_input_data_config(&mut object_60, var_59)?;
@@ -372,7 +372,7 @@ pub fn serialize_structure_crate_input_start_rx_norm_inference_job_input(
 pub fn serialize_structure_crate_input_start_snomedct_inference_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartSnomedctInferenceJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_68) = &input.input_data_config {
         let mut object_69 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_input_data_config(&mut object_69, var_68)?;
@@ -407,7 +407,7 @@ pub fn serialize_structure_crate_input_start_snomedct_inference_job_input(
 pub fn serialize_structure_crate_input_stop_entities_detection_v2_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StopEntitiesDetectionV2JobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_77) = &input.job_id {
         object.key("JobId").string(var_77.as_str());
     }
@@ -417,7 +417,7 @@ pub fn serialize_structure_crate_input_stop_entities_detection_v2_job_input(
 pub fn serialize_structure_crate_input_stop_icd10_cm_inference_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StopIcd10CmInferenceJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_78) = &input.job_id {
         object.key("JobId").string(var_78.as_str());
     }
@@ -427,7 +427,7 @@ pub fn serialize_structure_crate_input_stop_icd10_cm_inference_job_input(
 pub fn serialize_structure_crate_input_stop_phi_detection_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StopPhiDetectionJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_79) = &input.job_id {
         object.key("JobId").string(var_79.as_str());
     }
@@ -437,7 +437,7 @@ pub fn serialize_structure_crate_input_stop_phi_detection_job_input(
 pub fn serialize_structure_crate_input_stop_rx_norm_inference_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StopRxNormInferenceJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_80) = &input.job_id {
         object.key("JobId").string(var_80.as_str());
     }
@@ -447,7 +447,7 @@ pub fn serialize_structure_crate_input_stop_rx_norm_inference_job_input(
 pub fn serialize_structure_crate_input_stop_snomedct_inference_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StopSnomedctInferenceJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_81) = &input.job_id {
         object.key("JobId").string(var_81.as_str());
     }
@@ -457,7 +457,7 @@ pub fn serialize_structure_crate_input_stop_snomedct_inference_job_input(
 pub fn serialize_structure_crate_model_comprehend_medical_async_job_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ComprehendMedicalAsyncJobFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_82) = &input.job_name {
         object.key("JobName").string(var_82.as_str());
     }
@@ -480,7 +480,7 @@ pub fn serialize_structure_crate_model_comprehend_medical_async_job_filter(
 pub fn serialize_structure_crate_model_input_data_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::InputDataConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_86) = &input.s3_bucket {
         object.key("S3Bucket").string(var_86.as_str());
     }
@@ -493,7 +493,7 @@ pub fn serialize_structure_crate_model_input_data_config(
 pub fn serialize_structure_crate_model_output_data_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::OutputDataConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_88) = &input.s3_bucket {
         object.key("S3Bucket").string(var_88.as_str());
     }

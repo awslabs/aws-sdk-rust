@@ -87,13 +87,12 @@ async fn errors_are_retryable() {
             br#"{ "code": "LimitExceededException" }"#,
         ))
         .unwrap();
-    let err = op
-        .response_handler
-        .parse(&http_response)
-        .map_err(|e| SdkError::ServiceError {
-            err: e,
-            raw: operation::Response::new(http_response.map(SdkBody::from)),
-        });
+    let err = op.response_handler.parse(&http_response).map_err(|e| {
+        SdkError::service_error(
+            e,
+            operation::Response::new(http_response.map(SdkBody::from)),
+        )
+    });
     let retry_kind = op.retry_classifier.classify_retry(err.as_ref());
     assert_eq!(retry_kind, RetryKind::Error(ErrorKind::ThrottlingError));
 }
@@ -105,13 +104,12 @@ async fn unmodeled_errors_are_retryable() {
         .status(400)
         .body(Bytes::from_static(br#"{ "code": "ThrottlingException" }"#))
         .unwrap();
-    let err = op
-        .response_handler
-        .parse(&http_response)
-        .map_err(|e| SdkError::ServiceError {
-            err: e,
-            raw: operation::Response::new(http_response.map(SdkBody::from)),
-        });
+    let err = op.response_handler.parse(&http_response).map_err(|e| {
+        SdkError::service_error(
+            e,
+            operation::Response::new(http_response.map(SdkBody::from)),
+        )
+    });
     let retry_kind = op.retry_classifier.classify_retry(err.as_ref());
     assert_eq!(retry_kind, RetryKind::Error(ErrorKind::ThrottlingError));
 }

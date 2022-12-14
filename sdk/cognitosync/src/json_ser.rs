@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_register_device_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RegisterDeviceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.platform {
         object.key("Platform").string(var_1.as_str());
     }
@@ -15,7 +15,7 @@ pub fn serialize_structure_crate_input_register_device_input(
 pub fn serialize_structure_crate_input_set_cognito_events_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SetCognitoEventsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_3) = &input.events {
         let mut object_4 = object.key("Events").start_object();
         for (key_5, value_6) in var_3 {
@@ -31,7 +31,7 @@ pub fn serialize_structure_crate_input_set_cognito_events_input(
 pub fn serialize_structure_crate_input_set_identity_pool_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SetIdentityPoolConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_7) = &input.cognito_streams {
         let mut object_8 = object.key("CognitoStreams").start_object();
         crate::json_ser::serialize_structure_crate_model_cognito_streams(&mut object_8, var_7)?;
@@ -48,7 +48,7 @@ pub fn serialize_structure_crate_input_set_identity_pool_configuration_input(
 pub fn serialize_structure_crate_input_update_records_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRecordsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_11) = &input.device_id {
         object.key("DeviceId").string(var_11.as_str());
     }
@@ -75,7 +75,7 @@ pub fn serialize_structure_crate_input_update_records_input(
 pub fn serialize_structure_crate_model_cognito_streams(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CognitoStreams,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_17) = &input.stream_name {
         object.key("StreamName").string(var_17.as_str());
     }
@@ -91,7 +91,7 @@ pub fn serialize_structure_crate_model_cognito_streams(
 pub fn serialize_structure_crate_model_push_sync(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PushSync,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_20) = &input.application_arns {
         let mut array_21 = object.key("ApplicationArns").start_array();
         for item_22 in var_20 {
@@ -110,7 +110,7 @@ pub fn serialize_structure_crate_model_push_sync(
 pub fn serialize_structure_crate_model_record_patch(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RecordPatch,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_24) = &input.op {
         object.key("Op").string(var_24.as_str());
     }

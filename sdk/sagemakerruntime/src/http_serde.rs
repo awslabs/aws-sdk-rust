@@ -2,20 +2,20 @@
 pub fn add_headers_invoke_endpoint(
     input: &crate::input::InvokeEndpointInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_1) = &input.content_type {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "content_type",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "content_type",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("Content-Type", header_value);
         }
@@ -26,13 +26,13 @@ pub fn add_headers_invoke_endpoint(
             let header_value = formatted_4;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "accept",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "accept",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("Accept", header_value);
         }
@@ -43,13 +43,13 @@ pub fn add_headers_invoke_endpoint(
             let header_value = formatted_6;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "custom_attributes",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "custom_attributes",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err,
+                            &"*** Sensitive Data Redacted ***", err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("X-Amzn-SageMaker-Custom-Attributes", header_value);
         }
@@ -60,13 +60,13 @@ pub fn add_headers_invoke_endpoint(
             let header_value = formatted_8;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "target_model",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "target_model",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("X-Amzn-SageMaker-Target-Model", header_value);
         }
@@ -77,13 +77,13 @@ pub fn add_headers_invoke_endpoint(
             let header_value = formatted_10;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "target_variant",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "target_variant",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("X-Amzn-SageMaker-Target-Variant", header_value);
         }
@@ -94,13 +94,13 @@ pub fn add_headers_invoke_endpoint(
             let header_value = formatted_12;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "target_container_hostname",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "target_container_hostname",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("X-Amzn-SageMaker-Target-Container-Hostname", header_value);
         }
@@ -111,13 +111,13 @@ pub fn add_headers_invoke_endpoint(
             let header_value = formatted_14;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "inference_id",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "inference_id",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("X-Amzn-SageMaker-Inference-Id", header_value);
         }
@@ -128,13 +128,13 @@ pub fn add_headers_invoke_endpoint(
             let header_value = formatted_16;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "enable_explanations",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "enable_explanations",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("X-Amzn-SageMaker-Enable-Explanations", header_value);
         }
@@ -145,20 +145,20 @@ pub fn add_headers_invoke_endpoint(
 pub fn add_headers_invoke_endpoint_async(
     input: &crate::input::InvokeEndpointAsyncInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_17) = &input.content_type {
         let formatted_18 = inner_17.as_str();
         if !formatted_18.is_empty() {
             let header_value = formatted_18;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "content_type",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "content_type",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("X-Amzn-SageMaker-Content-Type", header_value);
         }
@@ -169,13 +169,13 @@ pub fn add_headers_invoke_endpoint_async(
             let header_value = formatted_20;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "accept",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "accept",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("X-Amzn-SageMaker-Accept", header_value);
         }
@@ -186,13 +186,13 @@ pub fn add_headers_invoke_endpoint_async(
             let header_value = formatted_22;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "custom_attributes",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "custom_attributes",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err,
+                            &"*** Sensitive Data Redacted ***", err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("X-Amzn-SageMaker-Custom-Attributes", header_value);
         }
@@ -203,13 +203,13 @@ pub fn add_headers_invoke_endpoint_async(
             let header_value = formatted_24;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "inference_id",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "inference_id",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("X-Amzn-SageMaker-Inference-Id", header_value);
         }
@@ -220,13 +220,13 @@ pub fn add_headers_invoke_endpoint_async(
             let header_value = formatted_26;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "input_location",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "input_location",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("X-Amzn-SageMaker-InputLocation", header_value);
         }
@@ -238,13 +238,13 @@ pub fn add_headers_invoke_endpoint_async(
             let header_value = formatted_28;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "request_ttl_seconds",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "request_ttl_seconds",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("X-Amzn-SageMaker-RequestTTLSeconds", header_value);
         }

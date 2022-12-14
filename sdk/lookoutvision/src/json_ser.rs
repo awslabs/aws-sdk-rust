@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_dataset_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateDatasetInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.dataset_source {
         let mut object_2 = object.key("DatasetSource").start_object();
         crate::json_ser::serialize_structure_crate_model_dataset_source(&mut object_2, var_1)?;
@@ -17,7 +17,7 @@ pub fn serialize_structure_crate_input_create_dataset_input(
 pub fn serialize_structure_crate_input_create_model_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateModelInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_4) = &input.description {
         object.key("Description").string(var_4.as_str());
     }
@@ -46,7 +46,7 @@ pub fn serialize_structure_crate_input_create_model_input(
 pub fn serialize_structure_crate_input_create_project_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateProjectInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_12) = &input.project_name {
         object.key("ProjectName").string(var_12.as_str());
     }
@@ -56,7 +56,7 @@ pub fn serialize_structure_crate_input_create_project_input(
 pub fn serialize_structure_crate_input_start_model_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartModelInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_13) = &input.max_inference_units {
         object.key("MaxInferenceUnits").number(
             #[allow(clippy::useless_conversion)]
@@ -75,7 +75,7 @@ pub fn serialize_structure_crate_input_start_model_input(
 pub fn serialize_structure_crate_input_start_model_packaging_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartModelPackagingJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.configuration {
         let mut object_16 = object.key("Configuration").start_object();
         crate::json_ser::serialize_structure_crate_model_model_packaging_configuration(
@@ -99,7 +99,7 @@ pub fn serialize_structure_crate_input_start_model_packaging_job_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_20) = &input.tags {
         let mut array_21 = object.key("Tags").start_array();
         for item_22 in var_20 {
@@ -117,7 +117,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_dataset_entries_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateDatasetEntriesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_24) = &input.changes {
         object
             .key("Changes")
@@ -129,7 +129,7 @@ pub fn serialize_structure_crate_input_update_dataset_entries_input(
 pub fn serialize_structure_crate_model_dataset_source(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DatasetSource,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_25) = &input.ground_truth_manifest {
         let mut object_26 = object.key("GroundTruthManifest").start_object();
         crate::json_ser::serialize_structure_crate_model_dataset_ground_truth_manifest(
@@ -144,7 +144,7 @@ pub fn serialize_structure_crate_model_dataset_source(
 pub fn serialize_structure_crate_model_output_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::OutputConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_27) = &input.s3_location {
         let mut object_28 = object.key("S3Location").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_28, var_27)?;
@@ -156,7 +156,7 @@ pub fn serialize_structure_crate_model_output_config(
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_29) = &input.key {
         object.key("Key").string(var_29.as_str());
     }
@@ -169,7 +169,7 @@ pub fn serialize_structure_crate_model_tag(
 pub fn serialize_structure_crate_model_model_packaging_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ModelPackagingConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_31) = &input.greengrass {
         let mut object_32 = object.key("Greengrass").start_object();
         crate::json_ser::serialize_structure_crate_model_greengrass_configuration(
@@ -184,7 +184,7 @@ pub fn serialize_structure_crate_model_model_packaging_configuration(
 pub fn serialize_structure_crate_model_dataset_ground_truth_manifest(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DatasetGroundTruthManifest,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.s3_object {
         let mut object_34 = object.key("S3Object").start_object();
         crate::json_ser::serialize_structure_crate_model_input_s3_object(&mut object_34, var_33)?;
@@ -196,7 +196,7 @@ pub fn serialize_structure_crate_model_dataset_ground_truth_manifest(
 pub fn serialize_structure_crate_model_s3_location(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3Location,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_35) = &input.bucket {
         object.key("Bucket").string(var_35.as_str());
     }
@@ -209,7 +209,7 @@ pub fn serialize_structure_crate_model_s3_location(
 pub fn serialize_structure_crate_model_greengrass_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GreengrassConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_37) = &input.compiler_options {
         object.key("CompilerOptions").string(var_37.as_str());
     }
@@ -252,7 +252,7 @@ pub fn serialize_structure_crate_model_greengrass_configuration(
 pub fn serialize_structure_crate_model_input_s3_object(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::InputS3Object,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_50) = &input.bucket {
         object.key("Bucket").string(var_50.as_str());
     }
@@ -268,7 +268,7 @@ pub fn serialize_structure_crate_model_input_s3_object(
 pub fn serialize_structure_crate_model_target_platform(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TargetPlatform,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_53) = &input.os {
         object.key("Os").string(var_53.as_str());
     }

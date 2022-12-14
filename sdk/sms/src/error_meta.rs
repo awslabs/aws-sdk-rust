@@ -55,26 +55,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAppError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateAppErrorKind::InternalError(inner) => {
-                    Error::InternalError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateAppErrorKind::InternalError(inner) => {
+                        Error::InternalError(inner)
+                    }
+                    crate::error::CreateAppErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::CreateAppErrorKind::MissingRequiredParameterException(inner) => {
+                        Error::MissingRequiredParameterException(inner)
+                    }
+                    crate::error::CreateAppErrorKind::OperationNotPermittedException(inner) => {
+                        Error::OperationNotPermittedException(inner)
+                    }
+                    crate::error::CreateAppErrorKind::UnauthorizedOperationException(inner) => {
+                        Error::UnauthorizedOperationException(inner)
+                    }
+                    crate::error::CreateAppErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateAppErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::CreateAppErrorKind::MissingRequiredParameterException(inner) => {
-                    Error::MissingRequiredParameterException(inner)
-                }
-                crate::error::CreateAppErrorKind::OperationNotPermittedException(inner) => {
-                    Error::OperationNotPermittedException(inner)
-                }
-                crate::error::CreateAppErrorKind::UnauthorizedOperationException(inner) => {
-                    Error::UnauthorizedOperationException(inner)
-                }
-                crate::error::CreateAppErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -88,7 +90,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateReplicationJobError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateReplicationJobErrorKind::InternalError(inner) => Error::InternalError(inner),
                 crate::error::CreateReplicationJobErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::CreateReplicationJobErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
@@ -110,26 +112,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAppError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteAppErrorKind::InternalError(inner) => {
-                    Error::InternalError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteAppErrorKind::InternalError(inner) => {
+                        Error::InternalError(inner)
+                    }
+                    crate::error::DeleteAppErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::DeleteAppErrorKind::MissingRequiredParameterException(inner) => {
+                        Error::MissingRequiredParameterException(inner)
+                    }
+                    crate::error::DeleteAppErrorKind::OperationNotPermittedException(inner) => {
+                        Error::OperationNotPermittedException(inner)
+                    }
+                    crate::error::DeleteAppErrorKind::UnauthorizedOperationException(inner) => {
+                        Error::UnauthorizedOperationException(inner)
+                    }
+                    crate::error::DeleteAppErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteAppErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::DeleteAppErrorKind::MissingRequiredParameterException(inner) => {
-                    Error::MissingRequiredParameterException(inner)
-                }
-                crate::error::DeleteAppErrorKind::OperationNotPermittedException(inner) => {
-                    Error::OperationNotPermittedException(inner)
-                }
-                crate::error::DeleteAppErrorKind::UnauthorizedOperationException(inner) => {
-                    Error::UnauthorizedOperationException(inner)
-                }
-                crate::error::DeleteAppErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -143,7 +147,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteAppLaunchConfigurationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteAppLaunchConfigurationErrorKind::InternalError(inner) => Error::InternalError(inner),
                 crate::error::DeleteAppLaunchConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::DeleteAppLaunchConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
@@ -168,7 +172,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteAppReplicationConfigurationErrorKind::InternalError(inner) => Error::InternalError(inner),
                 crate::error::DeleteAppReplicationConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::DeleteAppReplicationConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
@@ -193,7 +197,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteAppValidationConfigurationErrorKind::InternalError(inner) => Error::InternalError(inner),
                 crate::error::DeleteAppValidationConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::DeleteAppValidationConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
@@ -214,7 +218,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteReplicationJobError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DeleteReplicationJobErrorKind::InvalidParameterException(inner) => {
                     Error::InvalidParameterException(inner)
                 }
@@ -246,7 +253,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteServerCatalogError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DeleteServerCatalogErrorKind::InvalidParameterException(inner) => {
                     Error::InvalidParameterException(inner)
                 }
@@ -276,7 +286,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DisassociateConnectorError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DisassociateConnectorErrorKind::InvalidParameterException(inner) => {
                     Error::InvalidParameterException(inner)
                 }
@@ -305,26 +318,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GenerateChangeSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GenerateChangeSetErrorKind::InternalError(inner) => {
-                    Error::InternalError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GenerateChangeSetErrorKind::InternalError(inner) => {
+                        Error::InternalError(inner)
+                    }
+                    crate::error::GenerateChangeSetErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::GenerateChangeSetErrorKind::MissingRequiredParameterException(
+                        inner,
+                    ) => Error::MissingRequiredParameterException(inner),
+                    crate::error::GenerateChangeSetErrorKind::OperationNotPermittedException(
+                        inner,
+                    ) => Error::OperationNotPermittedException(inner),
+                    crate::error::GenerateChangeSetErrorKind::UnauthorizedOperationException(
+                        inner,
+                    ) => Error::UnauthorizedOperationException(inner),
+                    crate::error::GenerateChangeSetErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GenerateChangeSetErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::GenerateChangeSetErrorKind::MissingRequiredParameterException(
-                    inner,
-                ) => Error::MissingRequiredParameterException(inner),
-                crate::error::GenerateChangeSetErrorKind::OperationNotPermittedException(inner) => {
-                    Error::OperationNotPermittedException(inner)
-                }
-                crate::error::GenerateChangeSetErrorKind::UnauthorizedOperationException(inner) => {
-                    Error::UnauthorizedOperationException(inner)
-                }
-                crate::error::GenerateChangeSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -337,26 +352,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GenerateTemplateError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GenerateTemplateErrorKind::InternalError(inner) => {
-                    Error::InternalError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GenerateTemplateErrorKind::InternalError(inner) => {
+                        Error::InternalError(inner)
+                    }
+                    crate::error::GenerateTemplateErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::GenerateTemplateErrorKind::MissingRequiredParameterException(
+                        inner,
+                    ) => Error::MissingRequiredParameterException(inner),
+                    crate::error::GenerateTemplateErrorKind::OperationNotPermittedException(
+                        inner,
+                    ) => Error::OperationNotPermittedException(inner),
+                    crate::error::GenerateTemplateErrorKind::UnauthorizedOperationException(
+                        inner,
+                    ) => Error::UnauthorizedOperationException(inner),
+                    crate::error::GenerateTemplateErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GenerateTemplateErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::GenerateTemplateErrorKind::MissingRequiredParameterException(
-                    inner,
-                ) => Error::MissingRequiredParameterException(inner),
-                crate::error::GenerateTemplateErrorKind::OperationNotPermittedException(inner) => {
-                    Error::OperationNotPermittedException(inner)
-                }
-                crate::error::GenerateTemplateErrorKind::UnauthorizedOperationException(inner) => {
-                    Error::UnauthorizedOperationException(inner)
-                }
-                crate::error::GenerateTemplateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -367,7 +384,10 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAppError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::GetAppErrorKind::InternalError(inner) => Error::InternalError(inner),
                 crate::error::GetAppErrorKind::InvalidParameterException(inner) => {
                     Error::InvalidParameterException(inner)
@@ -398,7 +418,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetAppLaunchConfigurationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetAppLaunchConfigurationErrorKind::InternalError(inner) => Error::InternalError(inner),
                 crate::error::GetAppLaunchConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::GetAppLaunchConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
@@ -423,7 +443,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetAppReplicationConfigurationErrorKind::InternalError(inner) => Error::InternalError(inner),
                 crate::error::GetAppReplicationConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::GetAppReplicationConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
@@ -444,7 +464,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetAppValidationConfigurationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetAppValidationConfigurationErrorKind::InternalError(inner) => Error::InternalError(inner),
                 crate::error::GetAppValidationConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::GetAppValidationConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
@@ -465,7 +485,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetAppValidationOutputError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetAppValidationOutputErrorKind::InternalError(inner) => Error::InternalError(inner),
                 crate::error::GetAppValidationOutputErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::GetAppValidationOutputErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
@@ -483,14 +503,16 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetConnectorsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetConnectorsErrorKind::UnauthorizedOperationException(inner) => {
-                    Error::UnauthorizedOperationException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetConnectorsErrorKind::UnauthorizedOperationException(inner) => {
+                        Error::UnauthorizedOperationException(inner)
+                    }
+                    crate::error::GetConnectorsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetConnectorsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -503,7 +525,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetReplicationJobsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::GetReplicationJobsErrorKind::InvalidParameterException(inner) => {
                     Error::InvalidParameterException(inner)
                 }
@@ -529,7 +554,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetReplicationRunsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::GetReplicationRunsErrorKind::InvalidParameterException(inner) => {
                     Error::InvalidParameterException(inner)
                 }
@@ -553,23 +581,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetServersError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetServersErrorKind::InternalError(inner) => {
-                    Error::InternalError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetServersErrorKind::InternalError(inner) => {
+                        Error::InternalError(inner)
+                    }
+                    crate::error::GetServersErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::GetServersErrorKind::MissingRequiredParameterException(inner) => {
+                        Error::MissingRequiredParameterException(inner)
+                    }
+                    crate::error::GetServersErrorKind::UnauthorizedOperationException(inner) => {
+                        Error::UnauthorizedOperationException(inner)
+                    }
+                    crate::error::GetServersErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetServersErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::GetServersErrorKind::MissingRequiredParameterException(inner) => {
-                    Error::MissingRequiredParameterException(inner)
-                }
-                crate::error::GetServersErrorKind::UnauthorizedOperationException(inner) => {
-                    Error::UnauthorizedOperationException(inner)
-                }
-                crate::error::GetServersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -582,26 +612,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ImportAppCatalogError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ImportAppCatalogErrorKind::InternalError(inner) => {
-                    Error::InternalError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ImportAppCatalogErrorKind::InternalError(inner) => {
+                        Error::InternalError(inner)
+                    }
+                    crate::error::ImportAppCatalogErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::ImportAppCatalogErrorKind::MissingRequiredParameterException(
+                        inner,
+                    ) => Error::MissingRequiredParameterException(inner),
+                    crate::error::ImportAppCatalogErrorKind::OperationNotPermittedException(
+                        inner,
+                    ) => Error::OperationNotPermittedException(inner),
+                    crate::error::ImportAppCatalogErrorKind::UnauthorizedOperationException(
+                        inner,
+                    ) => Error::UnauthorizedOperationException(inner),
+                    crate::error::ImportAppCatalogErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ImportAppCatalogErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::ImportAppCatalogErrorKind::MissingRequiredParameterException(
-                    inner,
-                ) => Error::MissingRequiredParameterException(inner),
-                crate::error::ImportAppCatalogErrorKind::OperationNotPermittedException(inner) => {
-                    Error::OperationNotPermittedException(inner)
-                }
-                crate::error::ImportAppCatalogErrorKind::UnauthorizedOperationException(inner) => {
-                    Error::UnauthorizedOperationException(inner)
-                }
-                crate::error::ImportAppCatalogErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -614,7 +646,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ImportServerCatalogError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::ImportServerCatalogErrorKind::InvalidParameterException(inner) => {
                     Error::InvalidParameterException(inner)
                 }
@@ -644,26 +679,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::LaunchAppError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::LaunchAppErrorKind::InternalError(inner) => {
-                    Error::InternalError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::LaunchAppErrorKind::InternalError(inner) => {
+                        Error::InternalError(inner)
+                    }
+                    crate::error::LaunchAppErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::LaunchAppErrorKind::MissingRequiredParameterException(inner) => {
+                        Error::MissingRequiredParameterException(inner)
+                    }
+                    crate::error::LaunchAppErrorKind::OperationNotPermittedException(inner) => {
+                        Error::OperationNotPermittedException(inner)
+                    }
+                    crate::error::LaunchAppErrorKind::UnauthorizedOperationException(inner) => {
+                        Error::UnauthorizedOperationException(inner)
+                    }
+                    crate::error::LaunchAppErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::LaunchAppErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::LaunchAppErrorKind::MissingRequiredParameterException(inner) => {
-                    Error::MissingRequiredParameterException(inner)
-                }
-                crate::error::LaunchAppErrorKind::OperationNotPermittedException(inner) => {
-                    Error::OperationNotPermittedException(inner)
-                }
-                crate::error::LaunchAppErrorKind::UnauthorizedOperationException(inner) => {
-                    Error::UnauthorizedOperationException(inner)
-                }
-                crate::error::LaunchAppErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -674,26 +711,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAppsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListAppsErrorKind::InternalError(inner) => {
-                    Error::InternalError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListAppsErrorKind::InternalError(inner) => {
+                        Error::InternalError(inner)
+                    }
+                    crate::error::ListAppsErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::ListAppsErrorKind::MissingRequiredParameterException(inner) => {
+                        Error::MissingRequiredParameterException(inner)
+                    }
+                    crate::error::ListAppsErrorKind::OperationNotPermittedException(inner) => {
+                        Error::OperationNotPermittedException(inner)
+                    }
+                    crate::error::ListAppsErrorKind::UnauthorizedOperationException(inner) => {
+                        Error::UnauthorizedOperationException(inner)
+                    }
+                    crate::error::ListAppsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListAppsErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::ListAppsErrorKind::MissingRequiredParameterException(inner) => {
-                    Error::MissingRequiredParameterException(inner)
-                }
-                crate::error::ListAppsErrorKind::OperationNotPermittedException(inner) => {
-                    Error::OperationNotPermittedException(inner)
-                }
-                crate::error::ListAppsErrorKind::UnauthorizedOperationException(inner) => {
-                    Error::UnauthorizedOperationException(inner)
-                }
-                crate::error::ListAppsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -707,7 +746,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::NotifyAppValidationOutputError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::NotifyAppValidationOutputErrorKind::InternalError(inner) => Error::InternalError(inner),
                 crate::error::NotifyAppValidationOutputErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::NotifyAppValidationOutputErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
@@ -728,7 +767,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutAppLaunchConfigurationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::PutAppLaunchConfigurationErrorKind::InternalError(inner) => Error::InternalError(inner),
                 crate::error::PutAppLaunchConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::PutAppLaunchConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
@@ -753,7 +792,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::PutAppReplicationConfigurationErrorKind::InternalError(inner) => Error::InternalError(inner),
                 crate::error::PutAppReplicationConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::PutAppReplicationConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
@@ -774,7 +813,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutAppValidationConfigurationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::PutAppValidationConfigurationErrorKind::InternalError(inner) => Error::InternalError(inner),
                 crate::error::PutAppValidationConfigurationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::PutAppValidationConfigurationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
@@ -794,7 +833,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartAppReplicationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::StartAppReplicationErrorKind::InternalError(inner) => {
                     Error::InternalError(inner)
                 }
@@ -827,7 +869,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartOnDemandAppReplicationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::StartOnDemandAppReplicationErrorKind::InternalError(inner) => Error::InternalError(inner),
                 crate::error::StartOnDemandAppReplicationErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::StartOnDemandAppReplicationErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
@@ -848,7 +890,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartOnDemandReplicationRunError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::StartOnDemandReplicationRunErrorKind::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
                 crate::error::StartOnDemandReplicationRunErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::StartOnDemandReplicationRunErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
@@ -869,7 +911,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StopAppReplicationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::StopAppReplicationErrorKind::InternalError(inner) => {
                     Error::InternalError(inner)
                 }
@@ -899,26 +944,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TerminateAppError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TerminateAppErrorKind::InternalError(inner) => {
-                    Error::InternalError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::TerminateAppErrorKind::InternalError(inner) => {
+                        Error::InternalError(inner)
+                    }
+                    crate::error::TerminateAppErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::TerminateAppErrorKind::MissingRequiredParameterException(
+                        inner,
+                    ) => Error::MissingRequiredParameterException(inner),
+                    crate::error::TerminateAppErrorKind::OperationNotPermittedException(inner) => {
+                        Error::OperationNotPermittedException(inner)
+                    }
+                    crate::error::TerminateAppErrorKind::UnauthorizedOperationException(inner) => {
+                        Error::UnauthorizedOperationException(inner)
+                    }
+                    crate::error::TerminateAppErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::TerminateAppErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::TerminateAppErrorKind::MissingRequiredParameterException(inner) => {
-                    Error::MissingRequiredParameterException(inner)
-                }
-                crate::error::TerminateAppErrorKind::OperationNotPermittedException(inner) => {
-                    Error::OperationNotPermittedException(inner)
-                }
-                crate::error::TerminateAppErrorKind::UnauthorizedOperationException(inner) => {
-                    Error::UnauthorizedOperationException(inner)
-                }
-                crate::error::TerminateAppErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -929,26 +976,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateAppError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateAppErrorKind::InternalError(inner) => {
-                    Error::InternalError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateAppErrorKind::InternalError(inner) => {
+                        Error::InternalError(inner)
+                    }
+                    crate::error::UpdateAppErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::UpdateAppErrorKind::MissingRequiredParameterException(inner) => {
+                        Error::MissingRequiredParameterException(inner)
+                    }
+                    crate::error::UpdateAppErrorKind::OperationNotPermittedException(inner) => {
+                        Error::OperationNotPermittedException(inner)
+                    }
+                    crate::error::UpdateAppErrorKind::UnauthorizedOperationException(inner) => {
+                        Error::UnauthorizedOperationException(inner)
+                    }
+                    crate::error::UpdateAppErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateAppErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::UpdateAppErrorKind::MissingRequiredParameterException(inner) => {
-                    Error::MissingRequiredParameterException(inner)
-                }
-                crate::error::UpdateAppErrorKind::OperationNotPermittedException(inner) => {
-                    Error::OperationNotPermittedException(inner)
-                }
-                crate::error::UpdateAppErrorKind::UnauthorizedOperationException(inner) => {
-                    Error::UnauthorizedOperationException(inner)
-                }
-                crate::error::UpdateAppErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -962,7 +1011,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateReplicationJobError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::UpdateReplicationJobErrorKind::InternalError(inner) => {
                     Error::InternalError(inner)
                 }

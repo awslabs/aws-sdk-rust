@@ -45,7 +45,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
                 crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),

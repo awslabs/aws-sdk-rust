@@ -56,8 +56,10 @@ pub mod get_ice_server_config_input {
         /// Consumes the builder and constructs a [`GetIceServerConfigInput`](crate::input::GetIceServerConfigInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetIceServerConfigInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetIceServerConfigInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetIceServerConfigInput {
                 channel_arn: self.channel_arn,
                 client_id: self.client_id,
@@ -80,13 +82,13 @@ impl GetIceServerConfigInput {
             crate::operation::GetIceServerConfig,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetIceServerConfigInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/get-ice-server-config").expect("formatting should succeed");
                 Ok(())
             }
@@ -94,8 +96,10 @@ impl GetIceServerConfigInput {
             fn update_http_builder(
                 input: &crate::input::GetIceServerConfigInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -225,8 +229,10 @@ pub mod send_alexa_offer_to_master_input {
         /// Consumes the builder and constructs a [`SendAlexaOfferToMasterInput`](crate::input::SendAlexaOfferToMasterInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendAlexaOfferToMasterInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SendAlexaOfferToMasterInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SendAlexaOfferToMasterInput {
                 channel_arn: self.channel_arn,
                 sender_client_id: self.sender_client_id,
@@ -248,13 +254,13 @@ impl SendAlexaOfferToMasterInput {
             crate::operation::SendAlexaOfferToMaster,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendAlexaOfferToMasterInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/send-alexa-offer-to-master")
                     .expect("formatting should succeed");
                 Ok(())
@@ -263,8 +269,10 @@ impl SendAlexaOfferToMasterInput {
             fn update_http_builder(
                 input: &crate::input::SendAlexaOfferToMasterInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

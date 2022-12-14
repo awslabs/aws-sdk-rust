@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_associate_user_to_permission_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateUserToPermissionGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
@@ -12,7 +12,7 @@ pub fn serialize_structure_crate_input_associate_user_to_permission_group_input(
 pub fn serialize_structure_crate_input_create_changeset_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateChangesetInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_2) = &input.change_type {
         object.key("changeType").string(var_2.as_str());
     }
@@ -43,7 +43,7 @@ pub fn serialize_structure_crate_input_create_changeset_input(
 pub fn serialize_structure_crate_input_create_dataset_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateDatasetInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_12) = &input.alias {
         object.key("alias").string(var_12.as_str());
     }
@@ -86,7 +86,7 @@ pub fn serialize_structure_crate_input_create_dataset_input(
 pub fn serialize_structure_crate_input_create_data_view_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateDataViewInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_23) = &input.as_of_timestamp {
         object.key("asOfTimestamp").number(
             #[allow(clippy::useless_conversion)]
@@ -131,7 +131,7 @@ pub fn serialize_structure_crate_input_create_data_view_input(
 pub fn serialize_structure_crate_input_create_permission_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreatePermissionGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.application_permissions {
         let mut array_34 = object.key("applicationPermissions").start_array();
         for item_35 in var_33 {
@@ -156,7 +156,7 @@ pub fn serialize_structure_crate_input_create_permission_group_input(
 pub fn serialize_structure_crate_input_create_user_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateUserInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_39) = &input.api_access {
         object.key("ApiAccess").string(var_39.as_str());
     }
@@ -184,7 +184,7 @@ pub fn serialize_structure_crate_input_create_user_input(
 pub fn serialize_structure_crate_input_disable_user_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisableUserInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_46) = &input.client_token {
         object.key("clientToken").string(var_46.as_str());
     }
@@ -194,7 +194,7 @@ pub fn serialize_structure_crate_input_disable_user_input(
 pub fn serialize_structure_crate_input_enable_user_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::EnableUserInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_47) = &input.client_token {
         object.key("clientToken").string(var_47.as_str());
     }
@@ -204,7 +204,7 @@ pub fn serialize_structure_crate_input_enable_user_input(
 pub fn serialize_structure_crate_input_get_working_location_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetWorkingLocationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_48) = &input.location_type {
         object.key("locationType").string(var_48.as_str());
     }
@@ -214,7 +214,7 @@ pub fn serialize_structure_crate_input_get_working_location_input(
 pub fn serialize_structure_crate_input_reset_user_password_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ResetUserPasswordInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_49) = &input.client_token {
         object.key("clientToken").string(var_49.as_str());
     }
@@ -224,7 +224,7 @@ pub fn serialize_structure_crate_input_reset_user_password_input(
 pub fn serialize_structure_crate_input_update_changeset_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateChangesetInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_50) = &input.client_token {
         object.key("clientToken").string(var_50.as_str());
     }
@@ -252,7 +252,7 @@ pub fn serialize_structure_crate_input_update_changeset_input(
 pub fn serialize_structure_crate_input_update_dataset_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateDatasetInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_59) = &input.alias {
         object.key("alias").string(var_59.as_str());
     }
@@ -279,7 +279,7 @@ pub fn serialize_structure_crate_input_update_dataset_input(
 pub fn serialize_structure_crate_input_update_permission_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdatePermissionGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_66) = &input.application_permissions {
         let mut array_67 = object.key("applicationPermissions").start_array();
         for item_68 in var_66 {
@@ -304,7 +304,7 @@ pub fn serialize_structure_crate_input_update_permission_group_input(
 pub fn serialize_structure_crate_input_update_user_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateUserInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_72) = &input.api_access {
         object.key("apiAccess").string(var_72.as_str());
     }
@@ -329,7 +329,7 @@ pub fn serialize_structure_crate_input_update_user_input(
 pub fn serialize_structure_crate_model_dataset_owner_info(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DatasetOwnerInfo,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_78) = &input.name {
         object.key("name").string(var_78.as_str());
     }
@@ -345,7 +345,7 @@ pub fn serialize_structure_crate_model_dataset_owner_info(
 pub fn serialize_structure_crate_model_permission_group_params(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PermissionGroupParams,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_81) = &input.permission_group_id {
         object.key("permissionGroupId").string(var_81.as_str());
     }
@@ -369,7 +369,7 @@ pub fn serialize_structure_crate_model_permission_group_params(
 pub fn serialize_structure_crate_model_schema_union(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SchemaUnion,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_86) = &input.tabular_schema_config {
         let mut object_87 = object.key("tabularSchemaConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_schema_definition(&mut object_87, var_86)?;
@@ -381,7 +381,7 @@ pub fn serialize_structure_crate_model_schema_union(
 pub fn serialize_structure_crate_model_data_view_destination_type_params(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DataViewDestinationTypeParams,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_88) = &input.destination_type {
         object.key("destinationType").string(var_88.as_str());
     }
@@ -407,7 +407,7 @@ pub fn serialize_structure_crate_model_data_view_destination_type_params(
 pub fn serialize_structure_crate_model_resource_permission(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResourcePermission,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_94) = &input.permission {
         object.key("permission").string(var_94.as_str());
     }
@@ -417,7 +417,7 @@ pub fn serialize_structure_crate_model_resource_permission(
 pub fn serialize_structure_crate_model_schema_definition(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SchemaDefinition,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_95) = &input.columns {
         let mut array_96 = object.key("columns").start_array();
         for item_97 in var_95 {
@@ -447,7 +447,7 @@ pub fn serialize_structure_crate_model_schema_definition(
 pub fn serialize_structure_crate_model_column_definition(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ColumnDefinition,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_102) = &input.data_type {
         object.key("dataType").string(var_102.as_str());
     }

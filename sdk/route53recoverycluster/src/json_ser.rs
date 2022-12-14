@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_get_routing_control_state_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetRoutingControlStateInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.routing_control_arn {
         object.key("RoutingControlArn").string(var_1.as_str());
     }
@@ -12,7 +12,7 @@ pub fn serialize_structure_crate_input_get_routing_control_state_input(
 pub fn serialize_structure_crate_input_list_routing_controls_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListRoutingControlsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_2) = &input.control_panel_arn {
         object.key("ControlPanelArn").string(var_2.as_str());
     }
@@ -31,7 +31,7 @@ pub fn serialize_structure_crate_input_list_routing_controls_input(
 pub fn serialize_structure_crate_input_update_routing_control_state_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRoutingControlStateInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_5) = &input.routing_control_arn {
         object.key("RoutingControlArn").string(var_5.as_str());
     }
@@ -53,7 +53,7 @@ pub fn serialize_structure_crate_input_update_routing_control_state_input(
 pub fn serialize_structure_crate_input_update_routing_control_states_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRoutingControlStatesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_10) = &input.update_routing_control_state_entries {
         let mut array_11 = object.key("UpdateRoutingControlStateEntries").start_array();
         for item_12 in var_10 {
@@ -80,7 +80,7 @@ pub fn serialize_structure_crate_input_update_routing_control_states_input(
 pub fn serialize_structure_crate_model_update_routing_control_state_entry(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateRoutingControlStateEntry,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_17) = &input.routing_control_arn {
         object.key("RoutingControlArn").string(var_17.as_str());
     }

@@ -42,10 +42,10 @@ impl<E> From<SendOperationError> for SdkError<E> {
     fn from(err: SendOperationError) -> Self {
         match err {
             SendOperationError::RequestDispatchError(e) => {
-                aws_smithy_http::result::SdkError::DispatchFailure(e)
+                aws_smithy_http::result::SdkError::dispatch_failure(e)
             }
             SendOperationError::RequestConstructionError(e) => {
-                aws_smithy_http::result::SdkError::ConstructionFailure(e)
+                aws_smithy_http::result::SdkError::construction_failure(e)
             }
         }
     }

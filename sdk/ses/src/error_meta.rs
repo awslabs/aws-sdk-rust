@@ -135,20 +135,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CloneReceiptRuleSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CloneReceiptRuleSetErrorKind::AlreadyExistsException(inner) => {
-                    Error::AlreadyExistsException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CloneReceiptRuleSetErrorKind::AlreadyExistsException(inner) => {
+                        Error::AlreadyExistsException(inner)
+                    }
+                    crate::error::CloneReceiptRuleSetErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::CloneReceiptRuleSetErrorKind::RuleSetDoesNotExistException(
+                        inner,
+                    ) => Error::RuleSetDoesNotExistException(inner),
+                    crate::error::CloneReceiptRuleSetErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CloneReceiptRuleSetErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CloneReceiptRuleSetErrorKind::RuleSetDoesNotExistException(inner) => {
-                    Error::RuleSetDoesNotExistException(inner)
-                }
-                crate::error::CloneReceiptRuleSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -162,7 +164,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateConfigurationSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateConfigurationSetErrorKind::ConfigurationSetAlreadyExistsException(inner) => Error::ConfigurationSetAlreadyExistsException(inner),
                 crate::error::CreateConfigurationSetErrorKind::InvalidConfigurationSetException(inner) => Error::InvalidConfigurationSetException(inner),
                 crate::error::CreateConfigurationSetErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
@@ -189,7 +191,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateConfigurationSetEventDestinationErrorKind::ConfigurationSetDoesNotExistException(inner) => Error::ConfigurationSetDoesNotExistException(inner),
                 crate::error::CreateConfigurationSetEventDestinationErrorKind::EventDestinationAlreadyExistsException(inner) => Error::EventDestinationAlreadyExistsException(inner),
                 crate::error::CreateConfigurationSetEventDestinationErrorKind::InvalidCloudWatchDestinationException(inner) => Error::InvalidCloudWatchDestinationException(inner),
@@ -219,7 +221,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateConfigurationSetTrackingOptionsErrorKind::ConfigurationSetDoesNotExistException(inner) => Error::ConfigurationSetDoesNotExistException(inner),
                 crate::error::CreateConfigurationSetTrackingOptionsErrorKind::InvalidTrackingOptionsException(inner) => Error::InvalidTrackingOptionsException(inner),
                 crate::error::CreateConfigurationSetTrackingOptionsErrorKind::TrackingOptionsAlreadyExistsException(inner) => Error::TrackingOptionsAlreadyExistsException(inner),
@@ -246,7 +248,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailInvalidContentException(inner) => Error::CustomVerificationEmailInvalidContentException(inner),
                 crate::error::CreateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailTemplateAlreadyExistsException(inner) => Error::CustomVerificationEmailTemplateAlreadyExistsException(inner),
                 crate::error::CreateCustomVerificationEmailTemplateErrorKind::FromEmailAddressNotVerifiedException(inner) => Error::FromEmailAddressNotVerifiedException(inner),
@@ -265,17 +267,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateReceiptFilterError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateReceiptFilterErrorKind::AlreadyExistsException(inner) => {
-                    Error::AlreadyExistsException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateReceiptFilterErrorKind::AlreadyExistsException(inner) => {
+                        Error::AlreadyExistsException(inner)
+                    }
+                    crate::error::CreateReceiptFilterErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::CreateReceiptFilterErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateReceiptFilterErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CreateReceiptFilterErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -288,32 +292,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateReceiptRuleError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateReceiptRuleErrorKind::AlreadyExistsException(inner) => {
-                    Error::AlreadyExistsException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateReceiptRuleErrorKind::AlreadyExistsException(inner) => {
+                        Error::AlreadyExistsException(inner)
+                    }
+                    crate::error::CreateReceiptRuleErrorKind::InvalidLambdaFunctionException(
+                        inner,
+                    ) => Error::InvalidLambdaFunctionException(inner),
+                    crate::error::CreateReceiptRuleErrorKind::InvalidS3ConfigurationException(
+                        inner,
+                    ) => Error::InvalidS3ConfigurationException(inner),
+                    crate::error::CreateReceiptRuleErrorKind::InvalidSnsTopicException(inner) => {
+                        Error::InvalidSnsTopicException(inner)
+                    }
+                    crate::error::CreateReceiptRuleErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::CreateReceiptRuleErrorKind::RuleDoesNotExistException(inner) => {
+                        Error::RuleDoesNotExistException(inner)
+                    }
+                    crate::error::CreateReceiptRuleErrorKind::RuleSetDoesNotExistException(
+                        inner,
+                    ) => Error::RuleSetDoesNotExistException(inner),
+                    crate::error::CreateReceiptRuleErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateReceiptRuleErrorKind::InvalidLambdaFunctionException(inner) => {
-                    Error::InvalidLambdaFunctionException(inner)
-                }
-                crate::error::CreateReceiptRuleErrorKind::InvalidS3ConfigurationException(
-                    inner,
-                ) => Error::InvalidS3ConfigurationException(inner),
-                crate::error::CreateReceiptRuleErrorKind::InvalidSnsTopicException(inner) => {
-                    Error::InvalidSnsTopicException(inner)
-                }
-                crate::error::CreateReceiptRuleErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CreateReceiptRuleErrorKind::RuleDoesNotExistException(inner) => {
-                    Error::RuleDoesNotExistException(inner)
-                }
-                crate::error::CreateReceiptRuleErrorKind::RuleSetDoesNotExistException(inner) => {
-                    Error::RuleSetDoesNotExistException(inner)
-                }
-                crate::error::CreateReceiptRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -327,17 +333,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateReceiptRuleSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateReceiptRuleSetErrorKind::AlreadyExistsException(inner) => {
-                    Error::AlreadyExistsException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateReceiptRuleSetErrorKind::AlreadyExistsException(inner) => {
+                        Error::AlreadyExistsException(inner)
+                    }
+                    crate::error::CreateReceiptRuleSetErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::CreateReceiptRuleSetErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateReceiptRuleSetErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CreateReceiptRuleSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -348,20 +356,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateTemplateError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateTemplateErrorKind::AlreadyExistsException(inner) => {
-                    Error::AlreadyExistsException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateTemplateErrorKind::AlreadyExistsException(inner) => {
+                        Error::AlreadyExistsException(inner)
+                    }
+                    crate::error::CreateTemplateErrorKind::InvalidTemplateException(inner) => {
+                        Error::InvalidTemplateException(inner)
+                    }
+                    crate::error::CreateTemplateErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::CreateTemplateErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateTemplateErrorKind::InvalidTemplateException(inner) => {
-                    Error::InvalidTemplateException(inner)
-                }
-                crate::error::CreateTemplateErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CreateTemplateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -375,7 +385,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteConfigurationSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteConfigurationSetErrorKind::ConfigurationSetDoesNotExistException(inner) => Error::ConfigurationSetDoesNotExistException(inner),
                 crate::error::DeleteConfigurationSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
@@ -400,7 +410,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteConfigurationSetEventDestinationErrorKind::ConfigurationSetDoesNotExistException(inner) => Error::ConfigurationSetDoesNotExistException(inner),
                 crate::error::DeleteConfigurationSetEventDestinationErrorKind::EventDestinationDoesNotExistException(inner) => Error::EventDestinationDoesNotExistException(inner),
                 crate::error::DeleteConfigurationSetEventDestinationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -426,7 +436,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteConfigurationSetTrackingOptionsErrorKind::ConfigurationSetDoesNotExistException(inner) => Error::ConfigurationSetDoesNotExistException(inner),
                 crate::error::DeleteConfigurationSetTrackingOptionsErrorKind::TrackingOptionsDoesNotExistException(inner) => Error::TrackingOptionsDoesNotExistException(inner),
                 crate::error::DeleteConfigurationSetTrackingOptionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -452,11 +462,13 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteCustomVerificationEmailTemplateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteCustomVerificationEmailTemplateErrorKind::Unhandled(
+                        inner,
+                    ) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -467,11 +479,13 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteIdentityError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteIdentityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteIdentityErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -485,11 +499,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteIdentityPolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteIdentityPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteIdentityPolicyErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -502,11 +518,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteReceiptFilterError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteReceiptFilterErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteReceiptFilterErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -519,14 +537,16 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteReceiptRuleError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteReceiptRuleErrorKind::RuleSetDoesNotExistException(inner) => {
-                    Error::RuleSetDoesNotExistException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteReceiptRuleErrorKind::RuleSetDoesNotExistException(
+                        inner,
+                    ) => Error::RuleSetDoesNotExistException(inner),
+                    crate::error::DeleteReceiptRuleErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteReceiptRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -540,14 +560,16 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteReceiptRuleSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteReceiptRuleSetErrorKind::CannotDeleteException(inner) => {
-                    Error::CannotDeleteException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteReceiptRuleSetErrorKind::CannotDeleteException(inner) => {
+                        Error::CannotDeleteException(inner)
+                    }
+                    crate::error::DeleteReceiptRuleSetErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteReceiptRuleSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -558,11 +580,13 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteTemplateError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteTemplateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteTemplateErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -576,11 +600,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteVerifiedEmailAddressError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteVerifiedEmailAddressErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteVerifiedEmailAddressErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -594,11 +620,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeActiveReceiptRuleSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeActiveReceiptRuleSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeActiveReceiptRuleSetErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -612,7 +640,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeConfigurationSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeConfigurationSetErrorKind::ConfigurationSetDoesNotExistException(inner) => Error::ConfigurationSetDoesNotExistException(inner),
                 crate::error::DescribeConfigurationSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
@@ -628,17 +656,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeReceiptRuleError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeReceiptRuleErrorKind::RuleDoesNotExistException(inner) => {
-                    Error::RuleDoesNotExistException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeReceiptRuleErrorKind::RuleDoesNotExistException(
+                        inner,
+                    ) => Error::RuleDoesNotExistException(inner),
+                    crate::error::DescribeReceiptRuleErrorKind::RuleSetDoesNotExistException(
+                        inner,
+                    ) => Error::RuleSetDoesNotExistException(inner),
+                    crate::error::DescribeReceiptRuleErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeReceiptRuleErrorKind::RuleSetDoesNotExistException(inner) => {
-                    Error::RuleSetDoesNotExistException(inner)
-                }
-                crate::error::DescribeReceiptRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -652,14 +682,16 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeReceiptRuleSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeReceiptRuleSetErrorKind::RuleSetDoesNotExistException(
-                    inner,
-                ) => Error::RuleSetDoesNotExistException(inner),
-                crate::error::DescribeReceiptRuleSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeReceiptRuleSetErrorKind::RuleSetDoesNotExistException(
+                        inner,
+                    ) => Error::RuleSetDoesNotExistException(inner),
+                    crate::error::DescribeReceiptRuleSetErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -673,11 +705,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetAccountSendingEnabledError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetAccountSendingEnabledErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetAccountSendingEnabledErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -696,7 +730,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailTemplateDoesNotExistException(inner) => Error::CustomVerificationEmailTemplateDoesNotExistException(inner),
                 crate::error::GetCustomVerificationEmailTemplateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
@@ -713,11 +747,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetIdentityDkimAttributesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetIdentityDkimAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetIdentityDkimAttributesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -739,11 +775,13 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetIdentityMailFromDomainAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetIdentityMailFromDomainAttributesErrorKind::Unhandled(
+                        inner,
+                    ) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -761,11 +799,13 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetIdentityNotificationAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetIdentityNotificationAttributesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -778,11 +818,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetIdentityPoliciesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetIdentityPoliciesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetIdentityPoliciesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -800,11 +842,13 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetIdentityVerificationAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetIdentityVerificationAttributesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -815,11 +859,13 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSendQuotaError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetSendQuotaErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetSendQuotaErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -832,11 +878,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetSendStatisticsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetSendStatisticsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetSendStatisticsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -847,14 +895,16 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetTemplateError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetTemplateErrorKind::TemplateDoesNotExistException(inner) => {
-                    Error::TemplateDoesNotExistException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetTemplateErrorKind::TemplateDoesNotExistException(inner) => {
+                        Error::TemplateDoesNotExistException(inner)
+                    }
+                    crate::error::GetTemplateErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetTemplateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -868,11 +918,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListConfigurationSetsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListConfigurationSetsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListConfigurationSetsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -894,11 +946,13 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListCustomVerificationEmailTemplatesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListCustomVerificationEmailTemplatesErrorKind::Unhandled(
+                        inner,
+                    ) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -909,11 +963,13 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListIdentitiesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListIdentitiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListIdentitiesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -927,11 +983,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListIdentityPoliciesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListIdentityPoliciesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListIdentityPoliciesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -944,11 +1002,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListReceiptFiltersError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListReceiptFiltersErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListReceiptFiltersErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -961,11 +1021,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListReceiptRuleSetsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListReceiptRuleSetsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListReceiptRuleSetsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -976,11 +1038,13 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTemplatesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTemplatesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListTemplatesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -994,11 +1058,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListVerifiedEmailAddressesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListVerifiedEmailAddressesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListVerifiedEmailAddressesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1017,7 +1083,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::PutConfigurationSetDeliveryOptionsErrorKind::ConfigurationSetDoesNotExistException(inner) => Error::ConfigurationSetDoesNotExistException(inner),
                 crate::error::PutConfigurationSetDeliveryOptionsErrorKind::InvalidDeliveryOptionsException(inner) => Error::InvalidDeliveryOptionsException(inner),
                 crate::error::PutConfigurationSetDeliveryOptionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -1034,14 +1100,16 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutIdentityPolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutIdentityPolicyErrorKind::InvalidPolicyException(inner) => {
-                    Error::InvalidPolicyException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::PutIdentityPolicyErrorKind::InvalidPolicyException(inner) => {
+                        Error::InvalidPolicyException(inner)
+                    }
+                    crate::error::PutIdentityPolicyErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::PutIdentityPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1055,17 +1123,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ReorderReceiptRuleSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ReorderReceiptRuleSetErrorKind::RuleDoesNotExistException(inner) => {
-                    Error::RuleDoesNotExistException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ReorderReceiptRuleSetErrorKind::RuleDoesNotExistException(
+                        inner,
+                    ) => Error::RuleDoesNotExistException(inner),
+                    crate::error::ReorderReceiptRuleSetErrorKind::RuleSetDoesNotExistException(
+                        inner,
+                    ) => Error::RuleSetDoesNotExistException(inner),
+                    crate::error::ReorderReceiptRuleSetErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ReorderReceiptRuleSetErrorKind::RuleSetDoesNotExistException(
-                    inner,
-                ) => Error::RuleSetDoesNotExistException(inner),
-                crate::error::ReorderReceiptRuleSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1076,14 +1146,16 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SendBounceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SendBounceErrorKind::MessageRejected(inner) => {
-                    Error::MessageRejected(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SendBounceErrorKind::MessageRejected(inner) => {
+                        Error::MessageRejected(inner)
+                    }
+                    crate::error::SendBounceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::SendBounceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1097,7 +1169,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SendBulkTemplatedEmailError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::SendBulkTemplatedEmailErrorKind::AccountSendingPausedException(inner) => Error::AccountSendingPausedException(inner),
                 crate::error::SendBulkTemplatedEmailErrorKind::ConfigurationSetDoesNotExistException(inner) => Error::ConfigurationSetDoesNotExistException(inner),
                 crate::error::SendBulkTemplatedEmailErrorKind::ConfigurationSetSendingPausedException(inner) => Error::ConfigurationSetSendingPausedException(inner),
@@ -1119,7 +1191,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SendCustomVerificationEmailError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::SendCustomVerificationEmailErrorKind::ConfigurationSetDoesNotExistException(inner) => Error::ConfigurationSetDoesNotExistException(inner),
                 crate::error::SendCustomVerificationEmailErrorKind::CustomVerificationEmailTemplateDoesNotExistException(inner) => Error::CustomVerificationEmailTemplateDoesNotExistException(inner),
                 crate::error::SendCustomVerificationEmailErrorKind::FromEmailAddressNotVerifiedException(inner) => Error::FromEmailAddressNotVerifiedException(inner),
@@ -1137,26 +1209,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SendEmailError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SendEmailErrorKind::AccountSendingPausedException(inner) => {
-                    Error::AccountSendingPausedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SendEmailErrorKind::AccountSendingPausedException(inner) => {
+                        Error::AccountSendingPausedException(inner)
+                    }
+                    crate::error::SendEmailErrorKind::ConfigurationSetDoesNotExistException(
+                        inner,
+                    ) => Error::ConfigurationSetDoesNotExistException(inner),
+                    crate::error::SendEmailErrorKind::ConfigurationSetSendingPausedException(
+                        inner,
+                    ) => Error::ConfigurationSetSendingPausedException(inner),
+                    crate::error::SendEmailErrorKind::MailFromDomainNotVerifiedException(inner) => {
+                        Error::MailFromDomainNotVerifiedException(inner)
+                    }
+                    crate::error::SendEmailErrorKind::MessageRejected(inner) => {
+                        Error::MessageRejected(inner)
+                    }
+                    crate::error::SendEmailErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::SendEmailErrorKind::ConfigurationSetDoesNotExistException(inner) => {
-                    Error::ConfigurationSetDoesNotExistException(inner)
-                }
-                crate::error::SendEmailErrorKind::ConfigurationSetSendingPausedException(inner) => {
-                    Error::ConfigurationSetSendingPausedException(inner)
-                }
-                crate::error::SendEmailErrorKind::MailFromDomainNotVerifiedException(inner) => {
-                    Error::MailFromDomainNotVerifiedException(inner)
-                }
-                crate::error::SendEmailErrorKind::MessageRejected(inner) => {
-                    Error::MessageRejected(inner)
-                }
-                crate::error::SendEmailErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1167,26 +1241,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SendRawEmailError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SendRawEmailErrorKind::AccountSendingPausedException(inner) => {
-                    Error::AccountSendingPausedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SendRawEmailErrorKind::AccountSendingPausedException(inner) => {
+                        Error::AccountSendingPausedException(inner)
+                    }
+                    crate::error::SendRawEmailErrorKind::ConfigurationSetDoesNotExistException(
+                        inner,
+                    ) => Error::ConfigurationSetDoesNotExistException(inner),
+                    crate::error::SendRawEmailErrorKind::ConfigurationSetSendingPausedException(
+                        inner,
+                    ) => Error::ConfigurationSetSendingPausedException(inner),
+                    crate::error::SendRawEmailErrorKind::MailFromDomainNotVerifiedException(
+                        inner,
+                    ) => Error::MailFromDomainNotVerifiedException(inner),
+                    crate::error::SendRawEmailErrorKind::MessageRejected(inner) => {
+                        Error::MessageRejected(inner)
+                    }
+                    crate::error::SendRawEmailErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::SendRawEmailErrorKind::ConfigurationSetDoesNotExistException(
-                    inner,
-                ) => Error::ConfigurationSetDoesNotExistException(inner),
-                crate::error::SendRawEmailErrorKind::ConfigurationSetSendingPausedException(
-                    inner,
-                ) => Error::ConfigurationSetSendingPausedException(inner),
-                crate::error::SendRawEmailErrorKind::MailFromDomainNotVerifiedException(inner) => {
-                    Error::MailFromDomainNotVerifiedException(inner)
-                }
-                crate::error::SendRawEmailErrorKind::MessageRejected(inner) => {
-                    Error::MessageRejected(inner)
-                }
-                crate::error::SendRawEmailErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1199,7 +1275,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SendTemplatedEmailError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::SendTemplatedEmailErrorKind::AccountSendingPausedException(inner) => Error::AccountSendingPausedException(inner),
                 crate::error::SendTemplatedEmailErrorKind::ConfigurationSetDoesNotExistException(inner) => Error::ConfigurationSetDoesNotExistException(inner),
                 crate::error::SendTemplatedEmailErrorKind::ConfigurationSetSendingPausedException(inner) => Error::ConfigurationSetSendingPausedException(inner),
@@ -1221,7 +1297,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SetActiveReceiptRuleSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::SetActiveReceiptRuleSetErrorKind::RuleSetDoesNotExistException(
                     inner,
                 ) => Error::RuleSetDoesNotExistException(inner),
@@ -1242,11 +1321,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SetIdentityDkimEnabledError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SetIdentityDkimEnabledErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SetIdentityDkimEnabledErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1268,11 +1349,13 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SetIdentityFeedbackForwardingEnabledErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SetIdentityFeedbackForwardingEnabledErrorKind::Unhandled(
+                        inner,
+                    ) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1294,11 +1377,13 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SetIdentityHeadersInNotificationsEnabledErrorKind::Unhandled(
-                    inner,
-                ) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SetIdentityHeadersInNotificationsEnabledErrorKind::Unhandled(
+                        inner,
+                    ) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+                }
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1312,11 +1397,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SetIdentityMailFromDomainError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SetIdentityMailFromDomainErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SetIdentityMailFromDomainErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1330,11 +1417,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SetIdentityNotificationTopicError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SetIdentityNotificationTopicErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SetIdentityNotificationTopicErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1348,17 +1437,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SetReceiptRulePositionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SetReceiptRulePositionErrorKind::RuleDoesNotExistException(inner) => {
-                    Error::RuleDoesNotExistException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SetReceiptRulePositionErrorKind::RuleDoesNotExistException(
+                        inner,
+                    ) => Error::RuleDoesNotExistException(inner),
+                    crate::error::SetReceiptRulePositionErrorKind::RuleSetDoesNotExistException(
+                        inner,
+                    ) => Error::RuleSetDoesNotExistException(inner),
+                    crate::error::SetReceiptRulePositionErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::SetReceiptRulePositionErrorKind::RuleSetDoesNotExistException(
-                    inner,
-                ) => Error::RuleSetDoesNotExistException(inner),
-                crate::error::SetReceiptRulePositionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1371,7 +1462,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::TestRenderTemplateError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::TestRenderTemplateErrorKind::InvalidRenderingParameterException(
                     inner,
                 ) => Error::InvalidRenderingParameterException(inner),
@@ -1398,11 +1492,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateAccountSendingEnabledError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateAccountSendingEnabledErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateAccountSendingEnabledErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1424,7 +1520,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateConfigurationSetEventDestinationErrorKind::ConfigurationSetDoesNotExistException(inner) => Error::ConfigurationSetDoesNotExistException(inner),
                 crate::error::UpdateConfigurationSetEventDestinationErrorKind::EventDestinationDoesNotExistException(inner) => Error::EventDestinationDoesNotExistException(inner),
                 crate::error::UpdateConfigurationSetEventDestinationErrorKind::InvalidCloudWatchDestinationException(inner) => Error::InvalidCloudWatchDestinationException(inner),
@@ -1453,7 +1549,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateConfigurationSetReputationMetricsEnabledErrorKind::ConfigurationSetDoesNotExistException(inner) => Error::ConfigurationSetDoesNotExistException(inner),
                 crate::error::UpdateConfigurationSetReputationMetricsEnabledErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
@@ -1478,7 +1574,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateConfigurationSetSendingEnabledErrorKind::ConfigurationSetDoesNotExistException(inner) => Error::ConfigurationSetDoesNotExistException(inner),
                 crate::error::UpdateConfigurationSetSendingEnabledErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
             }
@@ -1503,7 +1599,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateConfigurationSetTrackingOptionsErrorKind::ConfigurationSetDoesNotExistException(inner) => Error::ConfigurationSetDoesNotExistException(inner),
                 crate::error::UpdateConfigurationSetTrackingOptionsErrorKind::InvalidTrackingOptionsException(inner) => Error::InvalidTrackingOptionsException(inner),
                 crate::error::UpdateConfigurationSetTrackingOptionsErrorKind::TrackingOptionsDoesNotExistException(inner) => Error::TrackingOptionsDoesNotExistException(inner),
@@ -1530,7 +1626,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailInvalidContentException(inner) => Error::CustomVerificationEmailInvalidContentException(inner),
                 crate::error::UpdateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailTemplateDoesNotExistException(inner) => Error::CustomVerificationEmailTemplateDoesNotExistException(inner),
                 crate::error::UpdateCustomVerificationEmailTemplateErrorKind::FromEmailAddressNotVerifiedException(inner) => Error::FromEmailAddressNotVerifiedException(inner),
@@ -1548,29 +1644,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateReceiptRuleError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateReceiptRuleErrorKind::InvalidLambdaFunctionException(inner) => {
-                    Error::InvalidLambdaFunctionException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateReceiptRuleErrorKind::InvalidLambdaFunctionException(
+                        inner,
+                    ) => Error::InvalidLambdaFunctionException(inner),
+                    crate::error::UpdateReceiptRuleErrorKind::InvalidS3ConfigurationException(
+                        inner,
+                    ) => Error::InvalidS3ConfigurationException(inner),
+                    crate::error::UpdateReceiptRuleErrorKind::InvalidSnsTopicException(inner) => {
+                        Error::InvalidSnsTopicException(inner)
+                    }
+                    crate::error::UpdateReceiptRuleErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::UpdateReceiptRuleErrorKind::RuleDoesNotExistException(inner) => {
+                        Error::RuleDoesNotExistException(inner)
+                    }
+                    crate::error::UpdateReceiptRuleErrorKind::RuleSetDoesNotExistException(
+                        inner,
+                    ) => Error::RuleSetDoesNotExistException(inner),
+                    crate::error::UpdateReceiptRuleErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateReceiptRuleErrorKind::InvalidS3ConfigurationException(
-                    inner,
-                ) => Error::InvalidS3ConfigurationException(inner),
-                crate::error::UpdateReceiptRuleErrorKind::InvalidSnsTopicException(inner) => {
-                    Error::InvalidSnsTopicException(inner)
-                }
-                crate::error::UpdateReceiptRuleErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::UpdateReceiptRuleErrorKind::RuleDoesNotExistException(inner) => {
-                    Error::RuleDoesNotExistException(inner)
-                }
-                crate::error::UpdateReceiptRuleErrorKind::RuleSetDoesNotExistException(inner) => {
-                    Error::RuleSetDoesNotExistException(inner)
-                }
-                crate::error::UpdateReceiptRuleErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1581,17 +1679,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateTemplateError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateTemplateErrorKind::InvalidTemplateException(inner) => {
-                    Error::InvalidTemplateException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateTemplateErrorKind::InvalidTemplateException(inner) => {
+                        Error::InvalidTemplateException(inner)
+                    }
+                    crate::error::UpdateTemplateErrorKind::TemplateDoesNotExistException(inner) => {
+                        Error::TemplateDoesNotExistException(inner)
+                    }
+                    crate::error::UpdateTemplateErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateTemplateErrorKind::TemplateDoesNotExistException(inner) => {
-                    Error::TemplateDoesNotExistException(inner)
-                }
-                crate::error::UpdateTemplateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1604,11 +1704,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::VerifyDomainDkimError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::VerifyDomainDkimErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::VerifyDomainDkimErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1622,11 +1724,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::VerifyDomainIdentityError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::VerifyDomainIdentityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::VerifyDomainIdentityErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1639,11 +1743,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::VerifyEmailAddressError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::VerifyEmailAddressErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::VerifyEmailAddressErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1656,11 +1762,13 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::VerifyEmailIdentityError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::VerifyEmailIdentityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::VerifyEmailIdentityErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }

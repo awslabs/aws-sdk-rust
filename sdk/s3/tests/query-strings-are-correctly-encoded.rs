@@ -97,11 +97,8 @@ async fn test_query_strings_are_correctly_encoded() {
             .prefix(char)
             .send()
             .await;
-        if let Err(SdkError::ServiceError {
-            err: ListObjectsV2Error { kind, .. },
-            ..
-        }) = res
-        {
+        if let Err(SdkError::ServiceError(context)) = res {
+            let ListObjectsV2Error { kind, .. } = context.err();
             match kind {
                 ListObjectsV2ErrorKind::Unhandled(e)
                     if e.to_string().contains("SignatureDoesNotMatch") =>

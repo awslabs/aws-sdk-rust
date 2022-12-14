@@ -97,7 +97,7 @@ pub mod create_chat_token_input {
         /// Consumes the builder and constructs a [`CreateChatTokenInput`](crate::input::CreateChatTokenInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateChatTokenInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateChatTokenInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateChatTokenInput {
                 room_identifier: self.room_identifier,
@@ -122,13 +122,13 @@ impl CreateChatTokenInput {
             crate::operation::CreateChatToken,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateChatTokenInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/CreateChatToken").expect("formatting should succeed");
                 Ok(())
             }
@@ -136,8 +136,10 @@ impl CreateChatTokenInput {
             fn update_http_builder(
                 input: &crate::input::CreateChatTokenInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -306,7 +308,8 @@ pub mod create_room_input {
         /// Consumes the builder and constructs a [`CreateRoomInput`](crate::input::CreateRoomInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateRoomInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::CreateRoomInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::CreateRoomInput {
                 name: self.name,
                 maximum_message_rate_per_second: self
@@ -332,13 +335,13 @@ impl CreateRoomInput {
             crate::operation::CreateRoom,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateRoomInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/CreateRoom").expect("formatting should succeed");
                 Ok(())
             }
@@ -346,8 +349,10 @@ impl CreateRoomInput {
             fn update_http_builder(
                 input: &crate::input::CreateRoomInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -474,7 +479,7 @@ pub mod delete_message_input {
         /// Consumes the builder and constructs a [`DeleteMessageInput`](crate::input::DeleteMessageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteMessageInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteMessageInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteMessageInput {
                 room_identifier: self.room_identifier,
@@ -497,13 +502,13 @@ impl DeleteMessageInput {
             crate::operation::DeleteMessage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteMessageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/DeleteMessage").expect("formatting should succeed");
                 Ok(())
             }
@@ -511,8 +516,10 @@ impl DeleteMessageInput {
             fn update_http_builder(
                 input: &crate::input::DeleteMessageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -614,7 +621,8 @@ pub mod delete_room_input {
         /// Consumes the builder and constructs a [`DeleteRoomInput`](crate::input::DeleteRoomInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteRoomInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::DeleteRoomInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::DeleteRoomInput {
                 identifier: self.identifier,
             })
@@ -634,13 +642,13 @@ impl DeleteRoomInput {
             crate::operation::DeleteRoom,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteRoomInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/DeleteRoom").expect("formatting should succeed");
                 Ok(())
             }
@@ -648,8 +656,10 @@ impl DeleteRoomInput {
             fn update_http_builder(
                 input: &crate::input::DeleteRoomInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -776,7 +786,7 @@ pub mod disconnect_user_input {
         /// Consumes the builder and constructs a [`DisconnectUserInput`](crate::input::DisconnectUserInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DisconnectUserInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DisconnectUserInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DisconnectUserInput {
                 room_identifier: self.room_identifier,
@@ -799,13 +809,13 @@ impl DisconnectUserInput {
             crate::operation::DisconnectUser,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DisconnectUserInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/DisconnectUser").expect("formatting should succeed");
                 Ok(())
             }
@@ -813,8 +823,10 @@ impl DisconnectUserInput {
             fn update_http_builder(
                 input: &crate::input::DisconnectUserInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -916,7 +928,8 @@ pub mod get_room_input {
         /// Consumes the builder and constructs a [`GetRoomInput`](crate::input::GetRoomInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRoomInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetRoomInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetRoomInput {
                 identifier: self.identifier,
             })
@@ -936,13 +949,13 @@ impl GetRoomInput {
             crate::operation::GetRoom,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRoomInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/GetRoom").expect("formatting should succeed");
                 Ok(())
             }
@@ -950,8 +963,10 @@ impl GetRoomInput {
             fn update_http_builder(
                 input: &crate::input::GetRoomInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1086,7 +1101,8 @@ pub mod list_rooms_input {
         /// Consumes the builder and constructs a [`ListRoomsInput`](crate::input::ListRoomsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRoomsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListRoomsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListRoomsInput {
                 name: self.name,
                 next_token: self.next_token,
@@ -1109,13 +1125,13 @@ impl ListRoomsInput {
             crate::operation::ListRooms,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRoomsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ListRooms").expect("formatting should succeed");
                 Ok(())
             }
@@ -1123,8 +1139,10 @@ impl ListRoomsInput {
             fn update_http_builder(
                 input: &crate::input::ListRoomsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1224,8 +1242,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -1245,29 +1265,31 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.resource_arn;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
                     input_1,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -1277,8 +1299,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -1408,7 +1432,8 @@ pub mod send_event_input {
         /// Consumes the builder and constructs a [`SendEventInput`](crate::input::SendEventInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendEventInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::SendEventInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::SendEventInput {
                 room_identifier: self.room_identifier,
                 event_name: self.event_name,
@@ -1430,13 +1455,13 @@ impl SendEventInput {
             crate::operation::SendEvent,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendEventInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/SendEvent").expect("formatting should succeed");
                 Ok(())
             }
@@ -1444,8 +1469,10 @@ impl SendEventInput {
             fn update_http_builder(
                 input: &crate::input::SendEventInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1573,7 +1600,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -1595,29 +1622,31 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.resource_arn;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
                     input_2,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -1627,8 +1656,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1750,7 +1781,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -1772,29 +1803,31 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.resource_arn;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let resource_arn = aws_smithy_http::label::fmt_string(
                     input_3,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if resource_arn.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "resource_arn",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "resource_arn",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
                     .expect("formatting should succeed");
@@ -1803,7 +1836,7 @@ impl UntagResourceInput {
             fn uri_query(
                 _input: &crate::input::UntagResourceInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_4) = &_input.tag_keys {
                     for inner_5 in inner_4 {
@@ -1816,8 +1849,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1956,7 +1991,8 @@ pub mod update_room_input {
         /// Consumes the builder and constructs a [`UpdateRoomInput`](crate::input::UpdateRoomInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateRoomInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::UpdateRoomInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::UpdateRoomInput {
                 identifier: self.identifier,
                 name: self.name,
@@ -1982,13 +2018,13 @@ impl UpdateRoomInput {
             crate::operation::UpdateRoom,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateRoomInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/UpdateRoom").expect("formatting should succeed");
                 Ok(())
             }
@@ -1996,8 +2032,10 @@ impl UpdateRoomInput {
             fn update_http_builder(
                 input: &crate::input::UpdateRoomInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

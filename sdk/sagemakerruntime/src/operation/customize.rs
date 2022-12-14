@@ -64,7 +64,7 @@ impl<O, Retry> CustomizableOperation<O, Retry> {
     /// Sends this operation's request
     pub async fn send<T, E>(self) -> Result<T, SdkError<E>>
     where
-        E: std::error::Error,
+        E: std::error::Error + 'static,
         O: aws_smithy_http::response::ParseHttpResponse<Output = Result<T, E>>
             + Send
             + Sync

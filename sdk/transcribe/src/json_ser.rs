@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_call_analytics_category_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateCallAnalyticsCategoryInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.category_name {
         object.key("CategoryName").string(var_1.as_str());
     }
@@ -23,7 +23,7 @@ pub fn serialize_structure_crate_input_create_call_analytics_category_input(
 pub fn serialize_structure_crate_input_create_language_model_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLanguageModelInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_6) = &input.language_code {
         object.key("LanguageCode").string(var_6.as_str());
     }
@@ -55,7 +55,7 @@ pub fn serialize_structure_crate_input_create_language_model_input(
 pub fn serialize_structure_crate_input_create_medical_vocabulary_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateMedicalVocabularyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.vocabulary_name {
         object.key("VocabularyName").string(var_15.as_str());
     }
@@ -82,7 +82,7 @@ pub fn serialize_structure_crate_input_create_medical_vocabulary_input(
 pub fn serialize_structure_crate_input_create_vocabulary_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateVocabularyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_22) = &input.vocabulary_name {
         object.key("VocabularyName").string(var_22.as_str());
     }
@@ -118,7 +118,7 @@ pub fn serialize_structure_crate_input_create_vocabulary_input(
 pub fn serialize_structure_crate_input_create_vocabulary_filter_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateVocabularyFilterInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.vocabulary_filter_name {
         object.key("VocabularyFilterName").string(var_32.as_str());
     }
@@ -156,7 +156,7 @@ pub fn serialize_structure_crate_input_create_vocabulary_filter_input(
 pub fn serialize_structure_crate_input_delete_call_analytics_category_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteCallAnalyticsCategoryInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_42) = &input.category_name {
         object.key("CategoryName").string(var_42.as_str());
     }
@@ -166,7 +166,7 @@ pub fn serialize_structure_crate_input_delete_call_analytics_category_input(
 pub fn serialize_structure_crate_input_delete_call_analytics_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteCallAnalyticsJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_43) = &input.call_analytics_job_name {
         object.key("CallAnalyticsJobName").string(var_43.as_str());
     }
@@ -176,7 +176,7 @@ pub fn serialize_structure_crate_input_delete_call_analytics_job_input(
 pub fn serialize_structure_crate_input_delete_language_model_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteLanguageModelInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_44) = &input.model_name {
         object.key("ModelName").string(var_44.as_str());
     }
@@ -186,7 +186,7 @@ pub fn serialize_structure_crate_input_delete_language_model_input(
 pub fn serialize_structure_crate_input_delete_medical_transcription_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteMedicalTranscriptionJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_45) = &input.medical_transcription_job_name {
         object
             .key("MedicalTranscriptionJobName")
@@ -198,7 +198,7 @@ pub fn serialize_structure_crate_input_delete_medical_transcription_job_input(
 pub fn serialize_structure_crate_input_delete_medical_vocabulary_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteMedicalVocabularyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_46) = &input.vocabulary_name {
         object.key("VocabularyName").string(var_46.as_str());
     }
@@ -208,7 +208,7 @@ pub fn serialize_structure_crate_input_delete_medical_vocabulary_input(
 pub fn serialize_structure_crate_input_delete_transcription_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteTranscriptionJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_47) = &input.transcription_job_name {
         object.key("TranscriptionJobName").string(var_47.as_str());
     }
@@ -218,7 +218,7 @@ pub fn serialize_structure_crate_input_delete_transcription_job_input(
 pub fn serialize_structure_crate_input_delete_vocabulary_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteVocabularyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_48) = &input.vocabulary_name {
         object.key("VocabularyName").string(var_48.as_str());
     }
@@ -228,7 +228,7 @@ pub fn serialize_structure_crate_input_delete_vocabulary_input(
 pub fn serialize_structure_crate_input_delete_vocabulary_filter_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteVocabularyFilterInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_49) = &input.vocabulary_filter_name {
         object.key("VocabularyFilterName").string(var_49.as_str());
     }
@@ -238,7 +238,7 @@ pub fn serialize_structure_crate_input_delete_vocabulary_filter_input(
 pub fn serialize_structure_crate_input_describe_language_model_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeLanguageModelInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_50) = &input.model_name {
         object.key("ModelName").string(var_50.as_str());
     }
@@ -248,7 +248,7 @@ pub fn serialize_structure_crate_input_describe_language_model_input(
 pub fn serialize_structure_crate_input_get_call_analytics_category_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetCallAnalyticsCategoryInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_51) = &input.category_name {
         object.key("CategoryName").string(var_51.as_str());
     }
@@ -258,7 +258,7 @@ pub fn serialize_structure_crate_input_get_call_analytics_category_input(
 pub fn serialize_structure_crate_input_get_call_analytics_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetCallAnalyticsJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_52) = &input.call_analytics_job_name {
         object.key("CallAnalyticsJobName").string(var_52.as_str());
     }
@@ -268,7 +268,7 @@ pub fn serialize_structure_crate_input_get_call_analytics_job_input(
 pub fn serialize_structure_crate_input_get_medical_transcription_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetMedicalTranscriptionJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_53) = &input.medical_transcription_job_name {
         object
             .key("MedicalTranscriptionJobName")
@@ -280,7 +280,7 @@ pub fn serialize_structure_crate_input_get_medical_transcription_job_input(
 pub fn serialize_structure_crate_input_get_medical_vocabulary_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetMedicalVocabularyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_54) = &input.vocabulary_name {
         object.key("VocabularyName").string(var_54.as_str());
     }
@@ -290,7 +290,7 @@ pub fn serialize_structure_crate_input_get_medical_vocabulary_input(
 pub fn serialize_structure_crate_input_get_transcription_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetTranscriptionJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_55) = &input.transcription_job_name {
         object.key("TranscriptionJobName").string(var_55.as_str());
     }
@@ -300,7 +300,7 @@ pub fn serialize_structure_crate_input_get_transcription_job_input(
 pub fn serialize_structure_crate_input_get_vocabulary_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetVocabularyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_56) = &input.vocabulary_name {
         object.key("VocabularyName").string(var_56.as_str());
     }
@@ -310,7 +310,7 @@ pub fn serialize_structure_crate_input_get_vocabulary_input(
 pub fn serialize_structure_crate_input_get_vocabulary_filter_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetVocabularyFilterInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_57) = &input.vocabulary_filter_name {
         object.key("VocabularyFilterName").string(var_57.as_str());
     }
@@ -320,7 +320,7 @@ pub fn serialize_structure_crate_input_get_vocabulary_filter_input(
 pub fn serialize_structure_crate_input_list_call_analytics_categories_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListCallAnalyticsCategoriesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_58) = &input.next_token {
         object.key("NextToken").string(var_58.as_str());
     }
@@ -336,7 +336,7 @@ pub fn serialize_structure_crate_input_list_call_analytics_categories_input(
 pub fn serialize_structure_crate_input_list_call_analytics_jobs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListCallAnalyticsJobsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_60) = &input.status {
         object.key("Status").string(var_60.as_str());
     }
@@ -358,7 +358,7 @@ pub fn serialize_structure_crate_input_list_call_analytics_jobs_input(
 pub fn serialize_structure_crate_input_list_language_models_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListLanguageModelsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_64) = &input.status_equals {
         object.key("StatusEquals").string(var_64.as_str());
     }
@@ -380,7 +380,7 @@ pub fn serialize_structure_crate_input_list_language_models_input(
 pub fn serialize_structure_crate_input_list_medical_transcription_jobs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListMedicalTranscriptionJobsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_68) = &input.status {
         object.key("Status").string(var_68.as_str());
     }
@@ -402,7 +402,7 @@ pub fn serialize_structure_crate_input_list_medical_transcription_jobs_input(
 pub fn serialize_structure_crate_input_list_medical_vocabularies_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListMedicalVocabulariesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_72) = &input.next_token {
         object.key("NextToken").string(var_72.as_str());
     }
@@ -424,7 +424,7 @@ pub fn serialize_structure_crate_input_list_medical_vocabularies_input(
 pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_76) = &input.resource_arn {
         object.key("ResourceArn").string(var_76.as_str());
     }
@@ -434,7 +434,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
 pub fn serialize_structure_crate_input_list_transcription_jobs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTranscriptionJobsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_77) = &input.status {
         object.key("Status").string(var_77.as_str());
     }
@@ -456,7 +456,7 @@ pub fn serialize_structure_crate_input_list_transcription_jobs_input(
 pub fn serialize_structure_crate_input_list_vocabularies_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListVocabulariesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_81) = &input.next_token {
         object.key("NextToken").string(var_81.as_str());
     }
@@ -478,7 +478,7 @@ pub fn serialize_structure_crate_input_list_vocabularies_input(
 pub fn serialize_structure_crate_input_list_vocabulary_filters_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListVocabularyFiltersInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_85) = &input.next_token {
         object.key("NextToken").string(var_85.as_str());
     }
@@ -497,7 +497,7 @@ pub fn serialize_structure_crate_input_list_vocabulary_filters_input(
 pub fn serialize_structure_crate_input_start_call_analytics_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartCallAnalyticsJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_88) = &input.call_analytics_job_name {
         object.key("CallAnalyticsJobName").string(var_88.as_str());
     }
@@ -545,7 +545,7 @@ pub fn serialize_structure_crate_input_start_call_analytics_job_input(
 pub fn serialize_structure_crate_input_start_medical_transcription_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartMedicalTranscriptionJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_100) = &input.medical_transcription_job_name {
         object
             .key("MedicalTranscriptionJobName")
@@ -624,7 +624,7 @@ pub fn serialize_structure_crate_input_start_medical_transcription_job_input(
 pub fn serialize_structure_crate_input_start_transcription_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartTranscriptionJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_122) = &input.transcription_job_name {
         object.key("TranscriptionJobName").string(var_122.as_str());
     }
@@ -742,7 +742,7 @@ pub fn serialize_structure_crate_input_start_transcription_job_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_159) = &input.resource_arn {
         object.key("ResourceArn").string(var_159.as_str());
     }
@@ -763,7 +763,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_164) = &input.resource_arn {
         object.key("ResourceArn").string(var_164.as_str());
     }
@@ -782,7 +782,7 @@ pub fn serialize_structure_crate_input_untag_resource_input(
 pub fn serialize_structure_crate_input_update_call_analytics_category_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateCallAnalyticsCategoryInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_168) = &input.category_name {
         object.key("CategoryName").string(var_168.as_str());
     }
@@ -803,7 +803,7 @@ pub fn serialize_structure_crate_input_update_call_analytics_category_input(
 pub fn serialize_structure_crate_input_update_medical_vocabulary_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateMedicalVocabularyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_173) = &input.vocabulary_name {
         object.key("VocabularyName").string(var_173.as_str());
     }
@@ -819,7 +819,7 @@ pub fn serialize_structure_crate_input_update_medical_vocabulary_input(
 pub fn serialize_structure_crate_input_update_vocabulary_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateVocabularyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_176) = &input.vocabulary_name {
         object.key("VocabularyName").string(var_176.as_str());
     }
@@ -844,7 +844,7 @@ pub fn serialize_structure_crate_input_update_vocabulary_input(
 pub fn serialize_structure_crate_input_update_vocabulary_filter_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateVocabularyFilterInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_182) = &input.vocabulary_filter_name {
         object.key("VocabularyFilterName").string(var_182.as_str());
     }
@@ -868,7 +868,7 @@ pub fn serialize_structure_crate_input_update_vocabulary_filter_input(
 pub fn serialize_union_crate_model_rule(
     object_5: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Rule,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::Rule::NonTalkTimeFilter(inner) => {
             let mut object_187 = object_5.key("NonTalkTimeFilter").start_object();
@@ -903,7 +903,9 @@ pub fn serialize_union_crate_model_rule(
             object_190.finish();
         }
         crate::model::Rule::Unknown => {
-            return Err(aws_smithy_http::operation::SerializationError::unknown_variant("Rule"))
+            return Err(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant("Rule"),
+            )
         }
     }
     Ok(())
@@ -912,7 +914,7 @@ pub fn serialize_union_crate_model_rule(
 pub fn serialize_structure_crate_model_input_data_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::InputDataConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_191) = &input.s3_uri {
         object.key("S3Uri").string(var_191.as_str());
     }
@@ -928,7 +930,7 @@ pub fn serialize_structure_crate_model_input_data_config(
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_194) = &input.key {
         object.key("Key").string(var_194.as_str());
     }
@@ -941,7 +943,7 @@ pub fn serialize_structure_crate_model_tag(
 pub fn serialize_structure_crate_model_media(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Media,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_196) = &input.media_file_uri {
         object.key("MediaFileUri").string(var_196.as_str());
     }
@@ -954,7 +956,7 @@ pub fn serialize_structure_crate_model_media(
 pub fn serialize_structure_crate_model_call_analytics_job_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CallAnalyticsJobSettings,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_198) = &input.vocabulary_name {
         object.key("VocabularyName").string(var_198.as_str());
     }
@@ -1006,7 +1008,7 @@ pub fn serialize_structure_crate_model_call_analytics_job_settings(
 pub fn serialize_structure_crate_model_channel_definition(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ChannelDefinition,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.channel_id != 0 {
         object.key("ChannelId").number(
             #[allow(clippy::useless_conversion)]
@@ -1022,7 +1024,7 @@ pub fn serialize_structure_crate_model_channel_definition(
 pub fn serialize_structure_crate_model_medical_transcription_setting(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MedicalTranscriptionSetting,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_213) = &input.show_speaker_labels {
         object.key("ShowSpeakerLabels").boolean(*var_213);
     }
@@ -1053,7 +1055,7 @@ pub fn serialize_structure_crate_model_medical_transcription_setting(
 pub fn serialize_structure_crate_model_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Settings,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_219) = &input.vocabulary_name {
         object.key("VocabularyName").string(var_219.as_str());
     }
@@ -1092,7 +1094,7 @@ pub fn serialize_structure_crate_model_settings(
 pub fn serialize_structure_crate_model_model_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ModelSettings,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_227) = &input.language_model_name {
         object.key("LanguageModelName").string(var_227.as_str());
     }
@@ -1102,7 +1104,7 @@ pub fn serialize_structure_crate_model_model_settings(
 pub fn serialize_structure_crate_model_job_execution_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::JobExecutionSettings,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_228) = &input.allow_deferred_execution {
         object.key("AllowDeferredExecution").boolean(*var_228);
     }
@@ -1115,7 +1117,7 @@ pub fn serialize_structure_crate_model_job_execution_settings(
 pub fn serialize_structure_crate_model_content_redaction(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ContentRedaction,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_230) = &input.redaction_type {
         object.key("RedactionType").string(var_230.as_str());
     }
@@ -1137,7 +1139,7 @@ pub fn serialize_structure_crate_model_content_redaction(
 pub fn serialize_structure_crate_model_subtitles(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Subtitles,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_235) = &input.formats {
         let mut array_236 = object.key("Formats").start_array();
         for item_237 in var_235 {
@@ -1159,7 +1161,7 @@ pub fn serialize_structure_crate_model_subtitles(
 pub fn serialize_structure_crate_model_language_id_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LanguageIdSettings,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_239) = &input.vocabulary_name {
         object.key("VocabularyName").string(var_239.as_str());
     }
@@ -1175,7 +1177,7 @@ pub fn serialize_structure_crate_model_language_id_settings(
 pub fn serialize_structure_crate_model_non_talk_time_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NonTalkTimeFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_242) = &input.threshold {
         object.key("Threshold").number(
             #[allow(clippy::useless_conversion)]
@@ -1207,7 +1209,7 @@ pub fn serialize_structure_crate_model_non_talk_time_filter(
 pub fn serialize_structure_crate_model_interruption_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::InterruptionFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_248) = &input.threshold {
         object.key("Threshold").number(
             #[allow(clippy::useless_conversion)]
@@ -1242,7 +1244,7 @@ pub fn serialize_structure_crate_model_interruption_filter(
 pub fn serialize_structure_crate_model_transcript_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TranscriptFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_255) = &input.transcript_filter_type {
         object.key("TranscriptFilterType").string(var_255.as_str());
     }
@@ -1283,7 +1285,7 @@ pub fn serialize_structure_crate_model_transcript_filter(
 pub fn serialize_structure_crate_model_sentiment_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SentimentFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_265) = &input.sentiments {
         let mut array_266 = object.key("Sentiments").start_array();
         for item_267 in var_265 {
@@ -1321,7 +1323,7 @@ pub fn serialize_structure_crate_model_sentiment_filter(
 pub fn serialize_structure_crate_model_absolute_time_range(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AbsoluteTimeRange,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_274) = &input.start_time {
         object.key("StartTime").number(
             #[allow(clippy::useless_conversion)]
@@ -1352,7 +1354,7 @@ pub fn serialize_structure_crate_model_absolute_time_range(
 pub fn serialize_structure_crate_model_relative_time_range(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RelativeTimeRange,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_278) = &input.start_percentage {
         object.key("StartPercentage").number(
             #[allow(clippy::useless_conversion)]

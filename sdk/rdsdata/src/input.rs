@@ -120,8 +120,10 @@ pub mod batch_execute_statement_input {
         /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchExecuteStatementInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::BatchExecuteStatementInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::BatchExecuteStatementInput {
                 resource_arn: self.resource_arn,
                 secret_arn: self.secret_arn,
@@ -147,13 +149,13 @@ impl BatchExecuteStatementInput {
             crate::operation::BatchExecuteStatement,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BatchExecuteStatementInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/BatchExecute").expect("formatting should succeed");
                 Ok(())
             }
@@ -161,8 +163,10 @@ impl BatchExecuteStatementInput {
             fn update_http_builder(
                 input: &crate::input::BatchExecuteStatementInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -299,8 +303,10 @@ pub mod begin_transaction_input {
         /// Consumes the builder and constructs a [`BeginTransactionInput`](crate::input::BeginTransactionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::BeginTransactionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::BeginTransactionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::BeginTransactionInput {
                 resource_arn: self.resource_arn,
                 secret_arn: self.secret_arn,
@@ -323,13 +329,13 @@ impl BeginTransactionInput {
             crate::operation::BeginTransaction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::BeginTransactionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/BeginTransaction").expect("formatting should succeed");
                 Ok(())
             }
@@ -337,8 +343,10 @@ impl BeginTransactionInput {
             fn update_http_builder(
                 input: &crate::input::BeginTransactionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -465,8 +473,10 @@ pub mod commit_transaction_input {
         /// Consumes the builder and constructs a [`CommitTransactionInput`](crate::input::CommitTransactionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CommitTransactionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CommitTransactionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CommitTransactionInput {
                 resource_arn: self.resource_arn,
                 secret_arn: self.secret_arn,
@@ -488,13 +498,13 @@ impl CommitTransactionInput {
             crate::operation::CommitTransaction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CommitTransactionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/CommitTransaction").expect("formatting should succeed");
                 Ok(())
             }
@@ -502,8 +512,10 @@ impl CommitTransactionInput {
             fn update_http_builder(
                 input: &crate::input::CommitTransactionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -662,7 +674,8 @@ pub mod execute_sql_input {
         /// Consumes the builder and constructs a [`ExecuteSqlInput`](crate::input::ExecuteSqlInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ExecuteSqlInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ExecuteSqlInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ExecuteSqlInput {
                 db_cluster_or_instance_arn: self.db_cluster_or_instance_arn,
                 aws_secret_store_arn: self.aws_secret_store_arn,
@@ -686,13 +699,13 @@ impl ExecuteSqlInput {
             crate::operation::ExecuteSql,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ExecuteSqlInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ExecuteSql").expect("formatting should succeed");
                 Ok(())
             }
@@ -700,8 +713,10 @@ impl ExecuteSqlInput {
             fn update_http_builder(
                 input: &crate::input::ExecuteSqlInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -949,8 +964,10 @@ pub mod execute_statement_input {
         /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::input::ExecuteStatementInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ExecuteStatementInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ExecuteStatementInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ExecuteStatementInput {
                 resource_arn: self.resource_arn,
                 secret_arn: self.secret_arn,
@@ -980,13 +997,13 @@ impl ExecuteStatementInput {
             crate::operation::ExecuteStatement,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ExecuteStatementInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/Execute").expect("formatting should succeed");
                 Ok(())
             }
@@ -994,8 +1011,10 @@ impl ExecuteStatementInput {
             fn update_http_builder(
                 input: &crate::input::ExecuteStatementInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1122,8 +1141,10 @@ pub mod rollback_transaction_input {
         /// Consumes the builder and constructs a [`RollbackTransactionInput`](crate::input::RollbackTransactionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RollbackTransactionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::RollbackTransactionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::RollbackTransactionInput {
                 resource_arn: self.resource_arn,
                 secret_arn: self.secret_arn,
@@ -1145,13 +1166,13 @@ impl RollbackTransactionInput {
             crate::operation::RollbackTransaction,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RollbackTransactionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/RollbackTransaction").expect("formatting should succeed");
                 Ok(())
             }
@@ -1159,8 +1180,10 @@ impl RollbackTransactionInput {
             fn update_http_builder(
                 input: &crate::input::RollbackTransactionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

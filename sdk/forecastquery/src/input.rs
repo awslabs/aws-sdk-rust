@@ -88,7 +88,7 @@ pub mod query_forecast_input {
         /// Consumes the builder and constructs a [`QueryForecastInput`](crate::input::QueryForecastInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::QueryForecastInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::QueryForecastInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::QueryForecastInput {
                 forecast_arn: self.forecast_arn,
@@ -113,13 +113,13 @@ impl QueryForecastInput {
             crate::operation::QueryForecast,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::QueryForecastInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -127,8 +127,10 @@ impl QueryForecastInput {
             fn update_http_builder(
                 input: &crate::input::QueryForecastInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -303,8 +305,10 @@ pub mod query_what_if_forecast_input {
         /// Consumes the builder and constructs a [`QueryWhatIfForecastInput`](crate::input::QueryWhatIfForecastInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::QueryWhatIfForecastInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::QueryWhatIfForecastInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::QueryWhatIfForecastInput {
                 what_if_forecast_arn: self.what_if_forecast_arn,
                 start_date: self.start_date,
@@ -328,13 +332,13 @@ impl QueryWhatIfForecastInput {
             crate::operation::QueryWhatIfForecast,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::QueryWhatIfForecastInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -342,8 +346,10 @@ impl QueryWhatIfForecastInput {
             fn update_http_builder(
                 input: &crate::input::QueryWhatIfForecastInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

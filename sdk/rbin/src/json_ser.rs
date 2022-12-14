@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_rule_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateRuleInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.description {
         object.key("Description").string(var_1.as_str());
     }
@@ -45,7 +45,7 @@ pub fn serialize_structure_crate_input_create_rule_input(
 pub fn serialize_structure_crate_input_list_rules_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListRulesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_13) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -78,7 +78,7 @@ pub fn serialize_structure_crate_input_list_rules_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_20) = &input.tags {
         let mut array_21 = object.key("Tags").start_array();
         for item_22 in var_20 {
@@ -96,7 +96,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_rule_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRuleInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_24) = &input.description {
         object.key("Description").string(var_24.as_str());
     }
@@ -128,7 +128,7 @@ pub fn serialize_structure_crate_input_update_rule_input(
 pub fn serialize_structure_crate_model_resource_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResourceTag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.resource_tag_key {
         object.key("ResourceTagKey").string(var_32.as_str());
     }
@@ -141,7 +141,7 @@ pub fn serialize_structure_crate_model_resource_tag(
 pub fn serialize_structure_crate_model_retention_period(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RetentionPeriod,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_34) = &input.retention_period_value {
         object.key("RetentionPeriodValue").number(
             #[allow(clippy::useless_conversion)]
@@ -157,7 +157,7 @@ pub fn serialize_structure_crate_model_retention_period(
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_36) = &input.key {
         object.key("Key").string(var_36.as_str());
     }

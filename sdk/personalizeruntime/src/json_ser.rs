@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_get_personalized_ranking_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetPersonalizedRankingInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.campaign_arn {
         object.key("campaignArn").string(var_1.as_str());
     }
@@ -45,7 +45,7 @@ pub fn serialize_structure_crate_input_get_personalized_ranking_input(
 pub fn serialize_structure_crate_input_get_recommendations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetRecommendationsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.campaign_arn {
         object.key("campaignArn").string(var_15.as_str());
     }
@@ -105,7 +105,7 @@ pub fn serialize_structure_crate_input_get_recommendations_input(
 pub fn serialize_structure_crate_model_promotion(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Promotion,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.name {
         object.key("name").string(var_32.as_str());
     }

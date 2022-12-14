@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_associate_assessment_report_evidence_folder_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateAssessmentReportEvidenceFolderInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.evidence_folder_id {
         object.key("evidenceFolderId").string(var_1.as_str());
     }
@@ -12,7 +12,7 @@ pub fn serialize_structure_crate_input_associate_assessment_report_evidence_fold
 pub fn serialize_structure_crate_input_batch_associate_assessment_report_evidence_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchAssociateAssessmentReportEvidenceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_2) = &input.evidence_folder_id {
         object.key("evidenceFolderId").string(var_2.as_str());
     }
@@ -31,7 +31,7 @@ pub fn serialize_structure_crate_input_batch_associate_assessment_report_evidenc
 pub fn serialize_structure_crate_input_batch_create_delegation_by_assessment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchCreateDelegationByAssessmentInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_6) = &input.create_delegation_requests {
         let mut array_7 = object.key("createDelegationRequests").start_array();
         for item_8 in var_6 {
@@ -52,7 +52,7 @@ pub fn serialize_structure_crate_input_batch_create_delegation_by_assessment_inp
 pub fn serialize_structure_crate_input_batch_delete_delegation_by_assessment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchDeleteDelegationByAssessmentInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_10) = &input.delegation_ids {
         let mut array_11 = object.key("delegationIds").start_array();
         for item_12 in var_10 {
@@ -68,7 +68,7 @@ pub fn serialize_structure_crate_input_batch_delete_delegation_by_assessment_inp
 pub fn serialize_structure_crate_input_batch_disassociate_assessment_report_evidence_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchDisassociateAssessmentReportEvidenceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_13) = &input.evidence_folder_id {
         object.key("evidenceFolderId").string(var_13.as_str());
     }
@@ -87,7 +87,7 @@ pub fn serialize_structure_crate_input_batch_disassociate_assessment_report_evid
 pub fn serialize_structure_crate_input_batch_import_evidence_to_assessment_control_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchImportEvidenceToAssessmentControlInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_17) = &input.manual_evidence {
         let mut array_18 = object.key("manualEvidence").start_array();
         for item_19 in var_17 {
@@ -108,7 +108,7 @@ pub fn serialize_structure_crate_input_batch_import_evidence_to_assessment_contr
 pub fn serialize_structure_crate_input_create_assessment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateAssessmentInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_21) = &input.assessment_reports_destination {
         let mut object_22 = object.key("assessmentReportsDestination").start_object();
         crate::json_ser::serialize_structure_crate_model_assessment_reports_destination(
@@ -157,7 +157,7 @@ pub fn serialize_structure_crate_input_create_assessment_input(
 pub fn serialize_structure_crate_input_create_assessment_framework_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateAssessmentFrameworkInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_36) = &input.compliance_type {
         object.key("complianceType").string(var_36.as_str());
     }
@@ -193,7 +193,7 @@ pub fn serialize_structure_crate_input_create_assessment_framework_input(
 pub fn serialize_structure_crate_input_create_assessment_report_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateAssessmentReportInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_47) = &input.description {
         object.key("description").string(var_47.as_str());
     }
@@ -206,7 +206,7 @@ pub fn serialize_structure_crate_input_create_assessment_report_input(
 pub fn serialize_structure_crate_input_create_control_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateControlInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_49) = &input.action_plan_instructions {
         object.key("actionPlanInstructions").string(var_49.as_str());
     }
@@ -251,7 +251,7 @@ pub fn serialize_structure_crate_input_create_control_input(
 pub fn serialize_structure_crate_input_deregister_organization_admin_account_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeregisterOrganizationAdminAccountInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_62) = &input.admin_account_id {
         object.key("adminAccountId").string(var_62.as_str());
     }
@@ -261,7 +261,7 @@ pub fn serialize_structure_crate_input_deregister_organization_admin_account_inp
 pub fn serialize_structure_crate_input_disassociate_assessment_report_evidence_folder_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateAssessmentReportEvidenceFolderInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_63) = &input.evidence_folder_id {
         object.key("evidenceFolderId").string(var_63.as_str());
     }
@@ -271,7 +271,7 @@ pub fn serialize_structure_crate_input_disassociate_assessment_report_evidence_f
 pub fn serialize_structure_crate_input_register_account_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RegisterAccountInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_64) = &input.delegated_admin_account {
         object.key("delegatedAdminAccount").string(var_64.as_str());
     }
@@ -284,7 +284,7 @@ pub fn serialize_structure_crate_input_register_account_input(
 pub fn serialize_structure_crate_input_register_organization_admin_account_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RegisterOrganizationAdminAccountInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_66) = &input.admin_account_id {
         object.key("adminAccountId").string(var_66.as_str());
     }
@@ -294,7 +294,7 @@ pub fn serialize_structure_crate_input_register_organization_admin_account_input
 pub fn serialize_structure_crate_input_start_assessment_framework_share_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartAssessmentFrameworkShareInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_67) = &input.comment {
         object.key("comment").string(var_67.as_str());
     }
@@ -310,7 +310,7 @@ pub fn serialize_structure_crate_input_start_assessment_framework_share_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_70) = &input.tags {
         let mut object_71 = object.key("tags").start_object();
         for (key_72, value_73) in var_70 {
@@ -326,7 +326,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_assessment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateAssessmentInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_74) = &input.assessment_description {
         object.key("assessmentDescription").string(var_74.as_str());
     }
@@ -363,7 +363,7 @@ pub fn serialize_structure_crate_input_update_assessment_input(
 pub fn serialize_structure_crate_input_update_assessment_control_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateAssessmentControlInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_84) = &input.comment_body {
         object.key("commentBody").string(var_84.as_str());
     }
@@ -376,7 +376,7 @@ pub fn serialize_structure_crate_input_update_assessment_control_input(
 pub fn serialize_structure_crate_input_update_assessment_control_set_status_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateAssessmentControlSetStatusInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_86) = &input.comment {
         object.key("comment").string(var_86.as_str());
     }
@@ -389,7 +389,7 @@ pub fn serialize_structure_crate_input_update_assessment_control_set_status_inpu
 pub fn serialize_structure_crate_input_update_assessment_framework_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateAssessmentFrameworkInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_88) = &input.compliance_type {
         object.key("complianceType").string(var_88.as_str());
     }
@@ -416,7 +416,7 @@ pub fn serialize_structure_crate_input_update_assessment_framework_input(
 pub fn serialize_structure_crate_input_update_assessment_framework_share_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateAssessmentFrameworkShareInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_95) = &input.action {
         object.key("action").string(var_95.as_str());
     }
@@ -429,7 +429,7 @@ pub fn serialize_structure_crate_input_update_assessment_framework_share_input(
 pub fn serialize_structure_crate_input_update_assessment_status_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateAssessmentStatusInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_97) = &input.status {
         object.key("status").string(var_97.as_str());
     }
@@ -439,7 +439,7 @@ pub fn serialize_structure_crate_input_update_assessment_status_input(
 pub fn serialize_structure_crate_input_update_control_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateControlInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_98) = &input.action_plan_instructions {
         object.key("actionPlanInstructions").string(var_98.as_str());
     }
@@ -475,7 +475,7 @@ pub fn serialize_structure_crate_input_update_control_input(
 pub fn serialize_structure_crate_input_update_settings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateSettingsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_107) = &input.default_assessment_reports_destination {
         let mut object_108 = object
             .key("defaultAssessmentReportsDestination")
@@ -509,7 +509,7 @@ pub fn serialize_structure_crate_input_update_settings_input(
 pub fn serialize_structure_crate_input_validate_assessment_report_integrity_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ValidateAssessmentReportIntegrityInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_115) = &input.s3_relative_path {
         object.key("s3RelativePath").string(var_115.as_str());
     }
@@ -519,7 +519,7 @@ pub fn serialize_structure_crate_input_validate_assessment_report_integrity_inpu
 pub fn serialize_structure_crate_model_create_delegation_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateDelegationRequest,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_116) = &input.comment {
         object.key("comment").string(var_116.as_str());
     }
@@ -538,7 +538,7 @@ pub fn serialize_structure_crate_model_create_delegation_request(
 pub fn serialize_structure_crate_model_manual_evidence(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ManualEvidence,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_120) = &input.s3_resource_path {
         object.key("s3ResourcePath").string(var_120.as_str());
     }
@@ -548,7 +548,7 @@ pub fn serialize_structure_crate_model_manual_evidence(
 pub fn serialize_structure_crate_model_assessment_reports_destination(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AssessmentReportsDestination,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_121) = &input.destination_type {
         object.key("destinationType").string(var_121.as_str());
     }
@@ -561,7 +561,7 @@ pub fn serialize_structure_crate_model_assessment_reports_destination(
 pub fn serialize_structure_crate_model_role(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Role,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_123) = &input.role_type {
         object.key("roleType").string(var_123.as_str());
     }
@@ -574,7 +574,7 @@ pub fn serialize_structure_crate_model_role(
 pub fn serialize_structure_crate_model_scope(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Scope,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_125) = &input.aws_accounts {
         let mut array_126 = object.key("awsAccounts").start_array();
         for item_127 in var_125 {
@@ -609,7 +609,7 @@ pub fn serialize_structure_crate_model_scope(
 pub fn serialize_structure_crate_model_create_assessment_framework_control_set(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateAssessmentFrameworkControlSet,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_133) = &input.name {
         object.key("name").string(var_133.as_str());
     }
@@ -630,7 +630,7 @@ pub fn serialize_structure_crate_model_create_assessment_framework_control_set(
 pub fn serialize_structure_crate_model_create_control_mapping_source(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateControlMappingSource,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_138) = &input.source_name {
         object.key("sourceName").string(var_138.as_str());
     }
@@ -660,7 +660,7 @@ pub fn serialize_structure_crate_model_create_control_mapping_source(
 pub fn serialize_structure_crate_model_update_assessment_framework_control_set(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateAssessmentFrameworkControlSet,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_146) = &input.id {
         object.key("id").string(var_146.as_str());
     }
@@ -684,7 +684,7 @@ pub fn serialize_structure_crate_model_update_assessment_framework_control_set(
 pub fn serialize_structure_crate_model_control_mapping_source(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ControlMappingSource,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_152) = &input.source_id {
         object.key("sourceId").string(var_152.as_str());
     }
@@ -717,7 +717,7 @@ pub fn serialize_structure_crate_model_control_mapping_source(
 pub fn serialize_structure_crate_model_aws_account(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsAccount,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_161) = &input.id {
         object.key("id").string(var_161.as_str());
     }
@@ -733,7 +733,7 @@ pub fn serialize_structure_crate_model_aws_account(
 pub fn serialize_structure_crate_model_aws_service(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AwsService,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_164) = &input.service_name {
         object.key("serviceName").string(var_164.as_str());
     }
@@ -743,7 +743,7 @@ pub fn serialize_structure_crate_model_aws_service(
 pub fn serialize_structure_crate_model_create_assessment_framework_control(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateAssessmentFrameworkControl,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_165) = &input.id {
         object.key("id").string(var_165.as_str());
     }
@@ -753,7 +753,7 @@ pub fn serialize_structure_crate_model_create_assessment_framework_control(
 pub fn serialize_structure_crate_model_source_keyword(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SourceKeyword,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_166) = &input.keyword_input_type {
         object.key("keywordInputType").string(var_166.as_str());
     }

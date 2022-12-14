@@ -26,7 +26,7 @@ pub mod delete_human_loop_input {
         /// Consumes the builder and constructs a [`DeleteHumanLoopInput`](crate::input::DeleteHumanLoopInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteHumanLoopInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteHumanLoopInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteHumanLoopInput {
                 human_loop_name: self.human_loop_name,
@@ -47,29 +47,31 @@ impl DeleteHumanLoopInput {
             crate::operation::DeleteHumanLoop,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteHumanLoopInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.human_loop_name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "human_loop_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "human_loop_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let human_loop_name = aws_smithy_http::label::fmt_string(
                     input_1,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if human_loop_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "human_loop_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "human_loop_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -83,8 +85,10 @@ impl DeleteHumanLoopInput {
             fn update_http_builder(
                 input: &crate::input::DeleteHumanLoopInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -175,8 +179,10 @@ pub mod describe_human_loop_input {
         /// Consumes the builder and constructs a [`DescribeHumanLoopInput`](crate::input::DescribeHumanLoopInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeHumanLoopInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeHumanLoopInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeHumanLoopInput {
                 human_loop_name: self.human_loop_name,
             })
@@ -196,29 +202,31 @@ impl DescribeHumanLoopInput {
             crate::operation::DescribeHumanLoop,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeHumanLoopInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.human_loop_name;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "human_loop_name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "human_loop_name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let human_loop_name = aws_smithy_http::label::fmt_string(
                     input_2,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if human_loop_name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "human_loop_name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "human_loop_name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -232,8 +240,10 @@ impl DescribeHumanLoopInput {
             fn update_http_builder(
                 input: &crate::input::DescribeHumanLoopInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -388,7 +398,7 @@ pub mod list_human_loops_input {
         /// Consumes the builder and constructs a [`ListHumanLoopsInput`](crate::input::ListHumanLoopsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListHumanLoopsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListHumanLoopsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListHumanLoopsInput {
                 creation_time_after: self.creation_time_after,
@@ -414,20 +424,20 @@ impl ListHumanLoopsInput {
             crate::operation::ListHumanLoops,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListHumanLoopsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/human-loops").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListHumanLoopsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_3) = &_input.creation_time_after {
                     query.push_kv(
@@ -471,8 +481,10 @@ impl ListHumanLoopsInput {
             fn update_http_builder(
                 input: &crate::input::ListHumanLoopsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -606,7 +618,7 @@ pub mod start_human_loop_input {
         /// Consumes the builder and constructs a [`StartHumanLoopInput`](crate::input::StartHumanLoopInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartHumanLoopInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::StartHumanLoopInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::StartHumanLoopInput {
                 human_loop_name: self.human_loop_name,
@@ -630,13 +642,13 @@ impl StartHumanLoopInput {
             crate::operation::StartHumanLoop,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartHumanLoopInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/human-loops").expect("formatting should succeed");
                 Ok(())
             }
@@ -644,8 +656,10 @@ impl StartHumanLoopInput {
             fn update_http_builder(
                 input: &crate::input::StartHumanLoopInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -750,7 +764,7 @@ pub mod stop_human_loop_input {
         /// Consumes the builder and constructs a [`StopHumanLoopInput`](crate::input::StopHumanLoopInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StopHumanLoopInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::StopHumanLoopInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::StopHumanLoopInput {
                 human_loop_name: self.human_loop_name,
@@ -771,13 +785,13 @@ impl StopHumanLoopInput {
             crate::operation::StopHumanLoop,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StopHumanLoopInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/human-loops/stop").expect("formatting should succeed");
                 Ok(())
             }
@@ -785,8 +799,10 @@ impl StopHumanLoopInput {
             fn update_http_builder(
                 input: &crate::input::StopHumanLoopInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

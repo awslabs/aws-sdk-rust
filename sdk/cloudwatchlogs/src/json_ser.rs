@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_associate_kms_key_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateKmsKeyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.log_group_name {
         object.key("logGroupName").string(var_1.as_str());
     }
@@ -15,7 +15,7 @@ pub fn serialize_structure_crate_input_associate_kms_key_input(
 pub fn serialize_structure_crate_input_cancel_export_task_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CancelExportTaskInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_3) = &input.task_id {
         object.key("taskId").string(var_3.as_str());
     }
@@ -25,7 +25,7 @@ pub fn serialize_structure_crate_input_cancel_export_task_input(
 pub fn serialize_structure_crate_input_create_export_task_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateExportTaskInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_4) = &input.task_name {
         object.key("taskName").string(var_4.as_str());
     }
@@ -59,7 +59,7 @@ pub fn serialize_structure_crate_input_create_export_task_input(
 pub fn serialize_structure_crate_input_create_log_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLogGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_11) = &input.log_group_name {
         object.key("logGroupName").string(var_11.as_str());
     }
@@ -81,7 +81,7 @@ pub fn serialize_structure_crate_input_create_log_group_input(
 pub fn serialize_structure_crate_input_create_log_stream_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLogStreamInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_17) = &input.log_group_name {
         object.key("logGroupName").string(var_17.as_str());
     }
@@ -94,7 +94,7 @@ pub fn serialize_structure_crate_input_create_log_stream_input(
 pub fn serialize_structure_crate_input_delete_destination_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteDestinationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_19) = &input.destination_name {
         object.key("destinationName").string(var_19.as_str());
     }
@@ -104,7 +104,7 @@ pub fn serialize_structure_crate_input_delete_destination_input(
 pub fn serialize_structure_crate_input_delete_log_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteLogGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_20) = &input.log_group_name {
         object.key("logGroupName").string(var_20.as_str());
     }
@@ -114,7 +114,7 @@ pub fn serialize_structure_crate_input_delete_log_group_input(
 pub fn serialize_structure_crate_input_delete_log_stream_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteLogStreamInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_21) = &input.log_group_name {
         object.key("logGroupName").string(var_21.as_str());
     }
@@ -127,7 +127,7 @@ pub fn serialize_structure_crate_input_delete_log_stream_input(
 pub fn serialize_structure_crate_input_delete_metric_filter_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteMetricFilterInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_23) = &input.log_group_name {
         object.key("logGroupName").string(var_23.as_str());
     }
@@ -140,7 +140,7 @@ pub fn serialize_structure_crate_input_delete_metric_filter_input(
 pub fn serialize_structure_crate_input_delete_query_definition_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteQueryDefinitionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_25) = &input.query_definition_id {
         object.key("queryDefinitionId").string(var_25.as_str());
     }
@@ -150,7 +150,7 @@ pub fn serialize_structure_crate_input_delete_query_definition_input(
 pub fn serialize_structure_crate_input_delete_resource_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteResourcePolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_26) = &input.policy_name {
         object.key("policyName").string(var_26.as_str());
     }
@@ -160,7 +160,7 @@ pub fn serialize_structure_crate_input_delete_resource_policy_input(
 pub fn serialize_structure_crate_input_delete_retention_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteRetentionPolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_27) = &input.log_group_name {
         object.key("logGroupName").string(var_27.as_str());
     }
@@ -170,7 +170,7 @@ pub fn serialize_structure_crate_input_delete_retention_policy_input(
 pub fn serialize_structure_crate_input_delete_subscription_filter_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteSubscriptionFilterInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.log_group_name {
         object.key("logGroupName").string(var_28.as_str());
     }
@@ -183,7 +183,7 @@ pub fn serialize_structure_crate_input_delete_subscription_filter_input(
 pub fn serialize_structure_crate_input_describe_destinations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeDestinationsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_30) = &input.destination_name_prefix {
         object.key("DestinationNamePrefix").string(var_30.as_str());
     }
@@ -202,7 +202,7 @@ pub fn serialize_structure_crate_input_describe_destinations_input(
 pub fn serialize_structure_crate_input_describe_export_tasks_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeExportTasksInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.task_id {
         object.key("taskId").string(var_33.as_str());
     }
@@ -224,7 +224,7 @@ pub fn serialize_structure_crate_input_describe_export_tasks_input(
 pub fn serialize_structure_crate_input_describe_log_groups_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeLogGroupsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_37) = &input.log_group_name_prefix {
         object.key("logGroupNamePrefix").string(var_37.as_str());
     }
@@ -243,7 +243,7 @@ pub fn serialize_structure_crate_input_describe_log_groups_input(
 pub fn serialize_structure_crate_input_describe_log_streams_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeLogStreamsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_40) = &input.log_group_name {
         object.key("logGroupName").string(var_40.as_str());
     }
@@ -271,7 +271,7 @@ pub fn serialize_structure_crate_input_describe_log_streams_input(
 pub fn serialize_structure_crate_input_describe_metric_filters_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeMetricFiltersInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_46) = &input.log_group_name {
         object.key("logGroupName").string(var_46.as_str());
     }
@@ -299,7 +299,7 @@ pub fn serialize_structure_crate_input_describe_metric_filters_input(
 pub fn serialize_structure_crate_input_describe_queries_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeQueriesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_52) = &input.log_group_name {
         object.key("logGroupName").string(var_52.as_str());
     }
@@ -321,7 +321,7 @@ pub fn serialize_structure_crate_input_describe_queries_input(
 pub fn serialize_structure_crate_input_describe_query_definitions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeQueryDefinitionsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_56) = &input.query_definition_name_prefix {
         object
             .key("queryDefinitionNamePrefix")
@@ -342,7 +342,7 @@ pub fn serialize_structure_crate_input_describe_query_definitions_input(
 pub fn serialize_structure_crate_input_describe_resource_policies_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeResourcePoliciesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_59) = &input.next_token {
         object.key("nextToken").string(var_59.as_str());
     }
@@ -358,7 +358,7 @@ pub fn serialize_structure_crate_input_describe_resource_policies_input(
 pub fn serialize_structure_crate_input_describe_subscription_filters_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeSubscriptionFiltersInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_61) = &input.log_group_name {
         object.key("logGroupName").string(var_61.as_str());
     }
@@ -380,7 +380,7 @@ pub fn serialize_structure_crate_input_describe_subscription_filters_input(
 pub fn serialize_structure_crate_input_disassociate_kms_key_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateKmsKeyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_65) = &input.log_group_name {
         object.key("logGroupName").string(var_65.as_str());
     }
@@ -390,7 +390,7 @@ pub fn serialize_structure_crate_input_disassociate_kms_key_input(
 pub fn serialize_structure_crate_input_filter_log_events_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::FilterLogEventsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_66) = &input.log_group_name {
         object.key("logGroupName").string(var_66.as_str());
     }
@@ -439,7 +439,7 @@ pub fn serialize_structure_crate_input_filter_log_events_input(
 pub fn serialize_structure_crate_input_get_log_events_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetLogEventsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_77) = &input.log_group_name {
         object.key("logGroupName").string(var_77.as_str());
     }
@@ -476,7 +476,7 @@ pub fn serialize_structure_crate_input_get_log_events_input(
 pub fn serialize_structure_crate_input_get_log_group_fields_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetLogGroupFieldsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_84) = &input.log_group_name {
         object.key("logGroupName").string(var_84.as_str());
     }
@@ -492,7 +492,7 @@ pub fn serialize_structure_crate_input_get_log_group_fields_input(
 pub fn serialize_structure_crate_input_get_log_record_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetLogRecordInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_86) = &input.log_record_pointer {
         object.key("logRecordPointer").string(var_86.as_str());
     }
@@ -502,7 +502,7 @@ pub fn serialize_structure_crate_input_get_log_record_input(
 pub fn serialize_structure_crate_input_get_query_results_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetQueryResultsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_87) = &input.query_id {
         object.key("queryId").string(var_87.as_str());
     }
@@ -512,7 +512,7 @@ pub fn serialize_structure_crate_input_get_query_results_input(
 pub fn serialize_structure_crate_input_list_tags_log_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsLogGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_88) = &input.log_group_name {
         object.key("logGroupName").string(var_88.as_str());
     }
@@ -522,7 +522,7 @@ pub fn serialize_structure_crate_input_list_tags_log_group_input(
 pub fn serialize_structure_crate_input_put_destination_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutDestinationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_89) = &input.destination_name {
         object.key("destinationName").string(var_89.as_str());
     }
@@ -538,7 +538,7 @@ pub fn serialize_structure_crate_input_put_destination_input(
 pub fn serialize_structure_crate_input_put_destination_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutDestinationPolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_92) = &input.destination_name {
         object.key("destinationName").string(var_92.as_str());
     }
@@ -554,7 +554,7 @@ pub fn serialize_structure_crate_input_put_destination_policy_input(
 pub fn serialize_structure_crate_input_put_log_events_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutLogEventsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_95) = &input.log_group_name {
         object.key("logGroupName").string(var_95.as_str());
     }
@@ -584,7 +584,7 @@ pub fn serialize_structure_crate_input_put_log_events_input(
 pub fn serialize_structure_crate_input_put_metric_filter_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutMetricFilterInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_102) = &input.log_group_name {
         object.key("logGroupName").string(var_102.as_str());
     }
@@ -614,7 +614,7 @@ pub fn serialize_structure_crate_input_put_metric_filter_input(
 pub fn serialize_structure_crate_input_put_query_definition_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutQueryDefinitionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_109) = &input.name {
         object.key("name").string(var_109.as_str());
     }
@@ -639,7 +639,7 @@ pub fn serialize_structure_crate_input_put_query_definition_input(
 pub fn serialize_structure_crate_input_put_resource_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutResourcePolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_115) = &input.policy_name {
         object.key("policyName").string(var_115.as_str());
     }
@@ -652,7 +652,7 @@ pub fn serialize_structure_crate_input_put_resource_policy_input(
 pub fn serialize_structure_crate_input_put_retention_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutRetentionPolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_117) = &input.log_group_name {
         object.key("logGroupName").string(var_117.as_str());
     }
@@ -668,7 +668,7 @@ pub fn serialize_structure_crate_input_put_retention_policy_input(
 pub fn serialize_structure_crate_input_put_subscription_filter_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutSubscriptionFilterInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_119) = &input.log_group_name {
         object.key("logGroupName").string(var_119.as_str());
     }
@@ -693,7 +693,7 @@ pub fn serialize_structure_crate_input_put_subscription_filter_input(
 pub fn serialize_structure_crate_input_start_query_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartQueryInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_125) = &input.log_group_name {
         object.key("logGroupName").string(var_125.as_str());
     }
@@ -733,7 +733,7 @@ pub fn serialize_structure_crate_input_start_query_input(
 pub fn serialize_structure_crate_input_stop_query_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StopQueryInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_133) = &input.query_id {
         object.key("queryId").string(var_133.as_str());
     }
@@ -743,7 +743,7 @@ pub fn serialize_structure_crate_input_stop_query_input(
 pub fn serialize_structure_crate_input_tag_log_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagLogGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_134) = &input.log_group_name {
         object.key("logGroupName").string(var_134.as_str());
     }
@@ -762,7 +762,7 @@ pub fn serialize_structure_crate_input_tag_log_group_input(
 pub fn serialize_structure_crate_input_test_metric_filter_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TestMetricFilterInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_139) = &input.filter_pattern {
         object.key("filterPattern").string(var_139.as_str());
     }
@@ -781,7 +781,7 @@ pub fn serialize_structure_crate_input_test_metric_filter_input(
 pub fn serialize_structure_crate_input_untag_log_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagLogGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_143) = &input.log_group_name {
         object.key("logGroupName").string(var_143.as_str());
     }
@@ -800,7 +800,7 @@ pub fn serialize_structure_crate_input_untag_log_group_input(
 pub fn serialize_structure_crate_model_input_log_event(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::InputLogEvent,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_147) = &input.timestamp {
         object.key("timestamp").number(
             #[allow(clippy::useless_conversion)]
@@ -816,7 +816,7 @@ pub fn serialize_structure_crate_model_input_log_event(
 pub fn serialize_structure_crate_model_metric_transformation(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MetricTransformation,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_149) = &input.metric_name {
         object.key("metricName").string(var_149.as_str());
     }

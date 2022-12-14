@@ -58,7 +58,7 @@ pub mod list_realtime_contact_analysis_segments_input {
             self,
         ) -> Result<
             crate::input::ListRealtimeContactAnalysisSegmentsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListRealtimeContactAnalysisSegmentsInput {
                 instance_id: self.instance_id,
@@ -82,13 +82,13 @@ impl ListRealtimeContactAnalysisSegmentsInput {
             crate::operation::ListRealtimeContactAnalysisSegments,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRealtimeContactAnalysisSegmentsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/realtime-contact-analysis/analysis-segments")
                     .expect("formatting should succeed");
                 Ok(())
@@ -97,8 +97,10 @@ impl ListRealtimeContactAnalysisSegmentsInput {
             fn update_http_builder(
                 input: &crate::input::ListRealtimeContactAnalysisSegmentsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

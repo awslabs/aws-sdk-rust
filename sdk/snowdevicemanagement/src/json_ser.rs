@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_task_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateTaskInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
@@ -38,7 +38,7 @@ pub fn serialize_structure_crate_input_create_task_input(
 pub fn serialize_structure_crate_input_describe_device_ec2_instances_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeDeviceEc2InstancesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_12) = &input.instance_ids {
         let mut array_13 = object.key("instanceIds").start_array();
         for item_14 in var_12 {
@@ -54,7 +54,7 @@ pub fn serialize_structure_crate_input_describe_device_ec2_instances_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.tags {
         let mut object_16 = object.key("tags").start_object();
         for (key_17, value_18) in var_15 {
@@ -70,7 +70,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_union_crate_model_command(
     object_3: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Command,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::Command::Unlock(inner) => {
             let mut object_19 = object_3.key("unlock").start_object();
@@ -83,7 +83,9 @@ pub fn serialize_union_crate_model_command(
             object_20.finish();
         }
         crate::model::Command::Unknown => {
-            return Err(aws_smithy_http::operation::SerializationError::unknown_variant("Command"))
+            return Err(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant("Command"),
+            )
         }
     }
     Ok(())
@@ -92,7 +94,7 @@ pub fn serialize_union_crate_model_command(
 pub fn serialize_structure_crate_model_unlock(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Unlock,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     let (_, _) = (object, input);
     Ok(())
 }
@@ -100,7 +102,7 @@ pub fn serialize_structure_crate_model_unlock(
 pub fn serialize_structure_crate_model_reboot(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Reboot,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     let (_, _) = (object, input);
     Ok(())
 }

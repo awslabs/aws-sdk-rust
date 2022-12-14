@@ -55,7 +55,7 @@ pub struct MessageStreamError {
 }
 
 #[derive(Debug)]
-pub enum MessageStreamErrorKind {
+enum MessageStreamErrorKind {
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 
@@ -83,11 +83,18 @@ impl MessageStreamError {
     }
 }
 
-impl StdError for MessageStreamError {}
+impl StdError for MessageStreamError {
+    fn source(&self) -> Option<&(dyn StdError + 'static)> {
+        match &self.kind {
+            MessageStreamErrorKind::Unhandled(source) => Some(source.as_ref() as _),
+        }
+    }
+}
+
 impl fmt::Display for MessageStreamError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match &self.kind {
-            MessageStreamErrorKind::Unhandled(inner) => std::fmt::Display::fmt(inner, f),
+            MessageStreamErrorKind::Unhandled(_) => write!(f, "message stream error"),
         }
     }
 }
@@ -137,29 +144,29 @@ impl<T, E: StdError + Send + Sync + 'static> Stream for MessageStreamAdapter<T, 
                         Ok(message) => self
                             .marshaller
                             .marshall(message)
-                            .map_err(|err| SdkError::ConstructionFailure(Box::new(err)))?,
+                            .map_err(SdkError::construction_failure)?,
                         Err(message) => self
                             .error_marshaller
                             .marshall(message)
-                            .map_err(|err| SdkError::ConstructionFailure(Box::new(err)))?,
+                            .map_err(SdkError::construction_failure)?,
                     };
                     let message = self
                         .signer
                         .sign(message)
-                        .map_err(|err| SdkError::ConstructionFailure(err))?;
+                        .map_err(SdkError::construction_failure)?;
                     let mut buffer = Vec::new();
                     message
                         .write_to(&mut buffer)
-                        .map_err(|err| SdkError::ConstructionFailure(Box::new(err)))?;
+                        .map_err(SdkError::construction_failure)?;
                     Poll::Ready(Some(Ok(Bytes::from(buffer))))
                 } else if !self.end_signal_sent {
                     self.end_signal_sent = true;
                     let mut buffer = Vec::new();
                     match self.signer.sign_empty() {
                         Some(sign) => {
-                            sign.map_err(|err| SdkError::ConstructionFailure(err))?
+                            sign.map_err(SdkError::construction_failure)?
                                 .write_to(&mut buffer)
-                                .map_err(|err| SdkError::ConstructionFailure(Box::new(err)))?;
+                                .map_err(SdkError::construction_failure)?;
                             Poll::Ready(Some(Ok(Bytes::from(buffer))))
                         }
                         None => Poll::Ready(None),

@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_certificate(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Certificate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("CertificateArn");
     if let Some(var_2) = &input.certificate_arn {
@@ -21,7 +21,7 @@ pub fn serialize_structure_crate_model_certificate(
 pub fn serialize_structure_crate_model_tag(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("Key");
     if let Some(var_6) = &input.key {
@@ -39,7 +39,7 @@ pub fn serialize_structure_crate_model_tag(
 pub fn serialize_structure_crate_model_action(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Action,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_9 = writer.prefix("Type");
     if let Some(var_10) = &input.r#type {
@@ -96,7 +96,7 @@ pub fn serialize_structure_crate_model_action(
 pub fn serialize_structure_crate_model_subnet_mapping(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::SubnetMapping,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_25 = writer.prefix("SubnetId");
     if let Some(var_26) = &input.subnet_id {
@@ -124,7 +124,7 @@ pub fn serialize_structure_crate_model_subnet_mapping(
 pub fn serialize_structure_crate_model_rule_condition(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::RuleCondition,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_33 = writer.prefix("Field");
     if let Some(var_34) = &input.field {
@@ -190,7 +190,7 @@ pub fn serialize_structure_crate_model_rule_condition(
 pub fn serialize_structure_crate_model_matcher(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Matcher,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_52 = writer.prefix("HttpCode");
     if let Some(var_53) = &input.http_code {
@@ -208,7 +208,7 @@ pub fn serialize_structure_crate_model_matcher(
 pub fn serialize_structure_crate_model_target_description(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TargetDescription,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_56 = writer.prefix("Id");
     if let Some(var_57) = &input.id {
@@ -234,7 +234,7 @@ pub fn serialize_structure_crate_model_target_description(
 pub fn serialize_structure_crate_model_load_balancer_attribute(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::LoadBalancerAttribute,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_62 = writer.prefix("Key");
     if let Some(var_63) = &input.key {
@@ -252,7 +252,7 @@ pub fn serialize_structure_crate_model_load_balancer_attribute(
 pub fn serialize_structure_crate_model_target_group_attribute(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TargetGroupAttribute,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_66 = writer.prefix("Key");
     if let Some(var_67) = &input.key {
@@ -270,7 +270,7 @@ pub fn serialize_structure_crate_model_target_group_attribute(
 pub fn serialize_structure_crate_model_rule_priority_pair(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::RulePriorityPair,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_70 = writer.prefix("RuleArn");
     if let Some(var_71) = &input.rule_arn {
@@ -291,7 +291,7 @@ pub fn serialize_structure_crate_model_rule_priority_pair(
 pub fn serialize_structure_crate_model_authenticate_oidc_action_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::AuthenticateOidcActionConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_74 = writer.prefix("Issuer");
     if let Some(var_75) = &input.issuer {
@@ -370,7 +370,7 @@ pub fn serialize_structure_crate_model_authenticate_oidc_action_config(
 pub fn serialize_structure_crate_model_authenticate_cognito_action_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::AuthenticateCognitoActionConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_102 = writer.prefix("UserPoolArn");
     if let Some(var_103) = &input.user_pool_arn {
@@ -429,7 +429,7 @@ pub fn serialize_structure_crate_model_authenticate_cognito_action_config(
 pub fn serialize_structure_crate_model_redirect_action_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::RedirectActionConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_122 = writer.prefix("Protocol");
     if let Some(var_123) = &input.protocol {
@@ -467,7 +467,7 @@ pub fn serialize_structure_crate_model_redirect_action_config(
 pub fn serialize_structure_crate_model_fixed_response_action_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::FixedResponseActionConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_134 = writer.prefix("MessageBody");
     if let Some(var_135) = &input.message_body {
@@ -490,7 +490,7 @@ pub fn serialize_structure_crate_model_fixed_response_action_config(
 pub fn serialize_structure_crate_model_forward_action_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ForwardActionConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_140 = writer.prefix("TargetGroups");
     if let Some(var_141) = &input.target_groups {
@@ -518,7 +518,7 @@ pub fn serialize_structure_crate_model_forward_action_config(
 pub fn serialize_structure_crate_model_host_header_condition_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::HostHeaderConditionConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_147 = writer.prefix("Values");
     if let Some(var_148) = &input.values {
@@ -537,7 +537,7 @@ pub fn serialize_structure_crate_model_host_header_condition_config(
 pub fn serialize_structure_crate_model_path_pattern_condition_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::PathPatternConditionConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_152 = writer.prefix("Values");
     if let Some(var_153) = &input.values {
@@ -556,7 +556,7 @@ pub fn serialize_structure_crate_model_path_pattern_condition_config(
 pub fn serialize_structure_crate_model_http_header_condition_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::HttpHeaderConditionConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_157 = writer.prefix("HttpHeaderName");
     if let Some(var_158) = &input.http_header_name {
@@ -580,7 +580,7 @@ pub fn serialize_structure_crate_model_http_header_condition_config(
 pub fn serialize_structure_crate_model_query_string_condition_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::QueryStringConditionConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_164 = writer.prefix("Values");
     if let Some(var_165) = &input.values {
@@ -601,7 +601,7 @@ pub fn serialize_structure_crate_model_query_string_condition_config(
 pub fn serialize_structure_crate_model_http_request_method_condition_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::HttpRequestMethodConditionConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_169 = writer.prefix("Values");
     if let Some(var_170) = &input.values {
@@ -620,7 +620,7 @@ pub fn serialize_structure_crate_model_http_request_method_condition_config(
 pub fn serialize_structure_crate_model_source_ip_condition_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::SourceIpConditionConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_174 = writer.prefix("Values");
     if let Some(var_175) = &input.values {
@@ -639,7 +639,7 @@ pub fn serialize_structure_crate_model_source_ip_condition_config(
 pub fn serialize_structure_crate_model_target_group_tuple(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TargetGroupTuple,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_179 = writer.prefix("TargetGroupArn");
     if let Some(var_180) = &input.target_group_arn {
@@ -660,7 +660,7 @@ pub fn serialize_structure_crate_model_target_group_tuple(
 pub fn serialize_structure_crate_model_target_group_stickiness_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TargetGroupStickinessConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_183 = writer.prefix("Enabled");
     if let Some(var_184) = &input.enabled {
@@ -681,7 +681,7 @@ pub fn serialize_structure_crate_model_target_group_stickiness_config(
 pub fn serialize_structure_crate_model_query_string_key_value_pair(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::QueryStringKeyValuePair,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_187 = writer.prefix("Key");
     if let Some(var_188) = &input.key {

@@ -47,7 +47,7 @@ pub mod create_home_region_control_input {
             self,
         ) -> Result<
             crate::input::CreateHomeRegionControlInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateHomeRegionControlInput {
                 home_region: self.home_region,
@@ -70,13 +70,13 @@ impl CreateHomeRegionControlInput {
             crate::operation::CreateHomeRegionControl,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateHomeRegionControlInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -84,8 +84,10 @@ impl CreateHomeRegionControlInput {
             fn update_http_builder(
                 input: &crate::input::CreateHomeRegionControlInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -240,7 +242,7 @@ pub mod describe_home_region_controls_input {
             self,
         ) -> Result<
             crate::input::DescribeHomeRegionControlsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeHomeRegionControlsInput {
                 control_id: self.control_id,
@@ -265,13 +267,13 @@ impl DescribeHomeRegionControlsInput {
             crate::operation::DescribeHomeRegionControls,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeHomeRegionControlsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -279,8 +281,10 @@ impl DescribeHomeRegionControlsInput {
             fn update_http_builder(
                 input: &crate::input::DescribeHomeRegionControlsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -374,7 +378,7 @@ pub mod get_home_region_input {
         /// Consumes the builder and constructs a [`GetHomeRegionInput`](crate::input::GetHomeRegionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetHomeRegionInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetHomeRegionInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetHomeRegionInput {})
         }
@@ -393,13 +397,13 @@ impl GetHomeRegionInput {
             crate::operation::GetHomeRegion,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetHomeRegionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -407,8 +411,10 @@ impl GetHomeRegionInput {
             fn update_http_builder(
                 input: &crate::input::GetHomeRegionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

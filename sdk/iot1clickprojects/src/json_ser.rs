@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_associate_device_with_placement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateDeviceWithPlacementInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.device_id {
         object.key("deviceId").string(var_1.as_str());
     }
@@ -12,7 +12,7 @@ pub fn serialize_structure_crate_input_associate_device_with_placement_input(
 pub fn serialize_structure_crate_input_create_placement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreatePlacementInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_2) = &input.attributes {
         let mut object_3 = object.key("attributes").start_object();
         for (key_4, value_5) in var_2 {
@@ -31,7 +31,7 @@ pub fn serialize_structure_crate_input_create_placement_input(
 pub fn serialize_structure_crate_input_create_project_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateProjectInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_7) = &input.description {
         object.key("description").string(var_7.as_str());
     }
@@ -58,7 +58,7 @@ pub fn serialize_structure_crate_input_create_project_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.tags {
         let mut object_16 = object.key("tags").start_object();
         for (key_17, value_18) in var_15 {
@@ -74,7 +74,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_placement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdatePlacementInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_19) = &input.attributes {
         let mut object_20 = object.key("attributes").start_object();
         for (key_21, value_22) in var_19 {
@@ -90,7 +90,7 @@ pub fn serialize_structure_crate_input_update_placement_input(
 pub fn serialize_structure_crate_input_update_project_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateProjectInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_23) = &input.description {
         object.key("description").string(var_23.as_str());
     }
@@ -108,7 +108,7 @@ pub fn serialize_structure_crate_input_update_project_input(
 pub fn serialize_structure_crate_model_placement_template(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PlacementTemplate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_26) = &input.default_attributes {
         let mut object_27 = object.key("defaultAttributes").start_object();
         for (key_28, value_29) in var_26 {
@@ -138,7 +138,7 @@ pub fn serialize_structure_crate_model_placement_template(
 pub fn serialize_structure_crate_model_device_template(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DeviceTemplate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_35) = &input.device_type {
         object.key("deviceType").string(var_35.as_str());
     }

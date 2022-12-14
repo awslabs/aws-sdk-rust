@@ -206,23 +206,26 @@ impl Client {
             .call(operation)
             .await
             .map_err(|err| match err {
-                SdkError::ConstructionFailure(err) => match err.downcast::<ImdsError>() {
-                    Ok(token_failure) => *token_failure,
-                    Err(other) => ImdsError::Unexpected(other),
+                SdkError::ConstructionFailure(_) if err.source().is_some() => {
+                    match err.into_source().map(|e| e.downcast::<ImdsError>()) {
+                        Ok(Ok(token_failure)) => *token_failure,
+                        Ok(Err(err)) => ImdsError::Unexpected(err),
+                        Err(err) => ImdsError::Unexpected(err.into()),
+                    }
+                }
+                SdkError::ConstructionFailure(_) => ImdsError::Unexpected(err.into()),
+                SdkError::ServiceError(context) => match context.err() {
+                    InnerImdsError::InvalidUtf8 => {
+                        ImdsError::Unexpected("IMDS returned invalid UTF-8".into())
+                    }
+                    InnerImdsError::BadStatus => ImdsError::ErrorResponse {
+                        response: context.into_raw().into_parts().0,
+                    },
                 },
-                SdkError::TimeoutError(err) => ImdsError::IoError(err),
-                SdkError::DispatchFailure(err) => ImdsError::IoError(err.into()),
-                SdkError::ResponseError { err, .. } => ImdsError::IoError(err),
-                SdkError::ServiceError {
-                    err: InnerImdsError::BadStatus,
-                    raw,
-                } => ImdsError::ErrorResponse {
-                    response: raw.into_parts().0,
-                },
-                SdkError::ServiceError {
-                    err: InnerImdsError::InvalidUtf8,
-                    ..
-                } => ImdsError::Unexpected("IMDS returned invalid UTF-8".into()),
+                SdkError::TimeoutError(_)
+                | SdkError::DispatchFailure(_)
+                | SdkError::ResponseError(_) => ImdsError::IoError(err.into()),
+                _ => ImdsError::Unexpected(err.into()),
             })
     }
 
@@ -735,9 +738,8 @@ impl<T, E> ClassifyRetry<SdkSuccess<T>, SdkError<E>> for ImdsResponseRetryClassi
     fn classify_retry(&self, response: Result<&SdkSuccess<T>, &SdkError<E>>) -> RetryKind {
         match response {
             Ok(_) => RetryKind::Unnecessary,
-            Err(SdkError::ResponseError { raw, .. }) | Err(SdkError::ServiceError { raw, .. }) => {
-                Self::classify(raw)
-            }
+            Err(SdkError::ResponseError(context)) => Self::classify(context.raw()),
+            Err(SdkError::ServiceError(context)) => Self::classify(context.raw()),
             _ => RetryKind::UnretryableFailure,
         }
     }
@@ -763,6 +765,21 @@ pub(crate) mod test {
     use std::io;
     use std::time::{Duration, UNIX_EPOCH};
     use tracing_test::traced_test;
+
+    macro_rules! assert_full_error_contains {
+        ($err:expr, $contains:expr) => {
+            let err = $err;
+            let message = format!(
+                "{}",
+                aws_smithy_types::error::display::DisplayErrorContext(&err)
+            );
+            assert!(
+                message.contains($contains),
+                "Error message '{message}' didn't contain text '{}'",
+                $contains
+            );
+        };
+    }
 
     const TOKEN_A: &str = "AQAEAFTNrA4eEGx0AQgJ1arIq_Cc-t4tWt3fB0Hd8RKhXlKc5ccvhg==";
     const TOKEN_B: &str = "alternatetoken==";
@@ -1027,7 +1044,7 @@ pub(crate) mod test {
         )]);
         let client = make_client(&connection).await;
         let err = client.get("/latest/metadata").await.expect_err("no token");
-        assert!(format!("{}", err).contains("forbidden"), "{}", err);
+        assert_full_error_contains!(err, "forbidden");
         connection.assert_requests_match(&[]);
     }
 
@@ -1050,10 +1067,10 @@ pub(crate) mod test {
         );
 
         // Emulate a failure to parse the response body (using an io error since it's easy to construct in a test)
-        let failure = SdkError::<()>::ResponseError {
-            err: Box::new(io::Error::new(io::ErrorKind::BrokenPipe, "fail to parse")),
-            raw: response_200(),
-        };
+        let failure = SdkError::<()>::response_error(
+            io::Error::new(io::ErrorKind::BrokenPipe, "fail to parse"),
+            response_200(),
+        );
         assert_eq!(
             RetryKind::UnretryableFailure,
             classifier.classify_retry(Err::<&SdkSuccess<()>, _>(&failure))
@@ -1069,7 +1086,7 @@ pub(crate) mod test {
         )]);
         let client = make_client(&connection).await;
         let err = client.get("/latest/metadata").await.expect_err("no token");
-        assert!(format!("{}", err).contains("Invalid Token"), "{}", err);
+        assert_full_error_contains!(err, "Invalid Token");
         connection.assert_requests_match(&[]);
     }
 
@@ -1090,7 +1107,7 @@ pub(crate) mod test {
         ]);
         let client = make_client(&connection).await;
         let err = client.get("/latest/metadata").await.expect_err("no token");
-        assert!(format!("{}", err).contains("invalid UTF-8"), "{}", err);
+        assert_full_error_contains!(err, "invalid UTF-8");
         connection.assert_requests_match(&[]);
     }
 
@@ -1099,6 +1116,7 @@ pub(crate) mod test {
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     async fn one_second_connect_timeout() {
         use crate::imds::client::ImdsError;
+        use aws_smithy_types::error::display::DisplayErrorContext;
         use std::time::SystemTime;
 
         let client = Client::builder()
@@ -1124,7 +1142,8 @@ pub(crate) mod test {
             time_elapsed
         );
         match resp {
-            ImdsError::FailedToLoadToken(err) if format!("{}", err).contains("timeout") => {} // ok,
+            ImdsError::FailedToLoadToken(err)
+                if format!("{}", DisplayErrorContext(&err)).contains("timeout") => {} // ok,
             other => panic!(
                 "wrong error, expected construction failure with TimedOutError inside: {}",
                 other
@@ -1182,12 +1201,7 @@ pub(crate) mod test {
                 test, test_case.docs
             ),
             (Err(substr), Err(err)) => {
-                assert!(
-                    format!("{}", err).contains(substr),
-                    "`{}` did not contain `{}`",
-                    err,
-                    substr
-                );
+                assert_full_error_contains!(err, substr);
                 return;
             }
             (Ok(_uri), Err(e)) => panic!(

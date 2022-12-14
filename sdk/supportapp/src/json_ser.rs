@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_slack_channel_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateSlackChannelConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.channel_id {
         object.key("channelId").string(var_1.as_str());
     }
@@ -35,7 +35,7 @@ pub fn serialize_structure_crate_input_create_slack_channel_configuration_input(
 pub fn serialize_structure_crate_input_delete_slack_channel_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteSlackChannelConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_9) = &input.channel_id {
         object.key("channelId").string(var_9.as_str());
     }
@@ -48,7 +48,7 @@ pub fn serialize_structure_crate_input_delete_slack_channel_configuration_input(
 pub fn serialize_structure_crate_input_delete_slack_workspace_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteSlackWorkspaceConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_11) = &input.team_id {
         object.key("teamId").string(var_11.as_str());
     }
@@ -58,7 +58,7 @@ pub fn serialize_structure_crate_input_delete_slack_workspace_configuration_inpu
 pub fn serialize_structure_crate_input_list_slack_channel_configurations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListSlackChannelConfigurationsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_12) = &input.next_token {
         object.key("nextToken").string(var_12.as_str());
     }
@@ -68,7 +68,7 @@ pub fn serialize_structure_crate_input_list_slack_channel_configurations_input(
 pub fn serialize_structure_crate_input_list_slack_workspace_configurations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListSlackWorkspaceConfigurationsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_13) = &input.next_token {
         object.key("nextToken").string(var_13.as_str());
     }
@@ -78,7 +78,7 @@ pub fn serialize_structure_crate_input_list_slack_workspace_configurations_input
 pub fn serialize_structure_crate_input_put_account_alias_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutAccountAliasInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_14) = &input.account_alias {
         object.key("accountAlias").string(var_14.as_str());
     }
@@ -88,7 +88,7 @@ pub fn serialize_structure_crate_input_put_account_alias_input(
 pub fn serialize_structure_crate_input_update_slack_channel_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateSlackChannelConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.channel_id {
         object.key("channelId").string(var_15.as_str());
     }

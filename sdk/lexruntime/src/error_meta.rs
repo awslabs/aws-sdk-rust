@@ -57,26 +57,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteSessionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteSessionErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteSessionErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::DeleteSessionErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::DeleteSessionErrorKind::InternalFailureException(inner) => {
+                        Error::InternalFailureException(inner)
+                    }
+                    crate::error::DeleteSessionErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::DeleteSessionErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::DeleteSessionErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteSessionErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
-                }
-                crate::error::DeleteSessionErrorKind::InternalFailureException(inner) => {
-                    Error::InternalFailureException(inner)
-                }
-                crate::error::DeleteSessionErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::DeleteSessionErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DeleteSessionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -87,23 +89,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSessionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetSessionErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetSessionErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::GetSessionErrorKind::InternalFailureException(inner) => {
+                        Error::InternalFailureException(inner)
+                    }
+                    crate::error::GetSessionErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::GetSessionErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::GetSessionErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetSessionErrorKind::InternalFailureException(inner) => {
-                    Error::InternalFailureException(inner)
-                }
-                crate::error::GetSessionErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::GetSessionErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::GetSessionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -114,44 +118,46 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PostContentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PostContentErrorKind::BadGatewayException(inner) => {
-                    Error::BadGatewayException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::PostContentErrorKind::BadGatewayException(inner) => {
+                        Error::BadGatewayException(inner)
+                    }
+                    crate::error::PostContentErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::PostContentErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::PostContentErrorKind::DependencyFailedException(inner) => {
+                        Error::DependencyFailedException(inner)
+                    }
+                    crate::error::PostContentErrorKind::InternalFailureException(inner) => {
+                        Error::InternalFailureException(inner)
+                    }
+                    crate::error::PostContentErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::PostContentErrorKind::LoopDetectedException(inner) => {
+                        Error::LoopDetectedException(inner)
+                    }
+                    crate::error::PostContentErrorKind::NotAcceptableException(inner) => {
+                        Error::NotAcceptableException(inner)
+                    }
+                    crate::error::PostContentErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::PostContentErrorKind::RequestTimeoutException(inner) => {
+                        Error::RequestTimeoutException(inner)
+                    }
+                    crate::error::PostContentErrorKind::UnsupportedMediaTypeException(inner) => {
+                        Error::UnsupportedMediaTypeException(inner)
+                    }
+                    crate::error::PostContentErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::PostContentErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
-                }
-                crate::error::PostContentErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
-                }
-                crate::error::PostContentErrorKind::DependencyFailedException(inner) => {
-                    Error::DependencyFailedException(inner)
-                }
-                crate::error::PostContentErrorKind::InternalFailureException(inner) => {
-                    Error::InternalFailureException(inner)
-                }
-                crate::error::PostContentErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::PostContentErrorKind::LoopDetectedException(inner) => {
-                    Error::LoopDetectedException(inner)
-                }
-                crate::error::PostContentErrorKind::NotAcceptableException(inner) => {
-                    Error::NotAcceptableException(inner)
-                }
-                crate::error::PostContentErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::PostContentErrorKind::RequestTimeoutException(inner) => {
-                    Error::RequestTimeoutException(inner)
-                }
-                crate::error::PostContentErrorKind::UnsupportedMediaTypeException(inner) => {
-                    Error::UnsupportedMediaTypeException(inner)
-                }
-                crate::error::PostContentErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -162,35 +168,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PostTextError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PostTextErrorKind::BadGatewayException(inner) => {
-                    Error::BadGatewayException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::PostTextErrorKind::BadGatewayException(inner) => {
+                        Error::BadGatewayException(inner)
+                    }
+                    crate::error::PostTextErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::PostTextErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::PostTextErrorKind::DependencyFailedException(inner) => {
+                        Error::DependencyFailedException(inner)
+                    }
+                    crate::error::PostTextErrorKind::InternalFailureException(inner) => {
+                        Error::InternalFailureException(inner)
+                    }
+                    crate::error::PostTextErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::PostTextErrorKind::LoopDetectedException(inner) => {
+                        Error::LoopDetectedException(inner)
+                    }
+                    crate::error::PostTextErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::PostTextErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::PostTextErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
-                }
-                crate::error::PostTextErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
-                }
-                crate::error::PostTextErrorKind::DependencyFailedException(inner) => {
-                    Error::DependencyFailedException(inner)
-                }
-                crate::error::PostTextErrorKind::InternalFailureException(inner) => {
-                    Error::InternalFailureException(inner)
-                }
-                crate::error::PostTextErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::PostTextErrorKind::LoopDetectedException(inner) => {
-                    Error::LoopDetectedException(inner)
-                }
-                crate::error::PostTextErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::PostTextErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -201,35 +209,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PutSessionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutSessionErrorKind::BadGatewayException(inner) => {
-                    Error::BadGatewayException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::PutSessionErrorKind::BadGatewayException(inner) => {
+                        Error::BadGatewayException(inner)
+                    }
+                    crate::error::PutSessionErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::PutSessionErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::PutSessionErrorKind::DependencyFailedException(inner) => {
+                        Error::DependencyFailedException(inner)
+                    }
+                    crate::error::PutSessionErrorKind::InternalFailureException(inner) => {
+                        Error::InternalFailureException(inner)
+                    }
+                    crate::error::PutSessionErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::PutSessionErrorKind::NotAcceptableException(inner) => {
+                        Error::NotAcceptableException(inner)
+                    }
+                    crate::error::PutSessionErrorKind::NotFoundException(inner) => {
+                        Error::NotFoundException(inner)
+                    }
+                    crate::error::PutSessionErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::PutSessionErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
-                }
-                crate::error::PutSessionErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
-                }
-                crate::error::PutSessionErrorKind::DependencyFailedException(inner) => {
-                    Error::DependencyFailedException(inner)
-                }
-                crate::error::PutSessionErrorKind::InternalFailureException(inner) => {
-                    Error::InternalFailureException(inner)
-                }
-                crate::error::PutSessionErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::PutSessionErrorKind::NotAcceptableException(inner) => {
-                    Error::NotAcceptableException(inner)
-                }
-                crate::error::PutSessionErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::PutSessionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }

@@ -54,7 +54,7 @@ pub mod add_custom_routing_endpoints_input {
             self,
         ) -> Result<
             crate::input::AddCustomRoutingEndpointsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AddCustomRoutingEndpointsInput {
                 endpoint_configurations: self.endpoint_configurations,
@@ -76,13 +76,13 @@ impl AddCustomRoutingEndpointsInput {
             crate::operation::AddCustomRoutingEndpoints,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AddCustomRoutingEndpointsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -90,8 +90,10 @@ impl AddCustomRoutingEndpointsInput {
             fn update_http_builder(
                 input: &crate::input::AddCustomRoutingEndpointsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -200,8 +202,10 @@ pub mod advertise_byoip_cidr_input {
         /// Consumes the builder and constructs a [`AdvertiseByoipCidrInput`](crate::input::AdvertiseByoipCidrInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::AdvertiseByoipCidrInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::AdvertiseByoipCidrInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::AdvertiseByoipCidrInput { cidr: self.cidr })
         }
     }
@@ -219,13 +223,13 @@ impl AdvertiseByoipCidrInput {
             crate::operation::AdvertiseByoipCidr,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AdvertiseByoipCidrInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -233,8 +237,10 @@ impl AdvertiseByoipCidrInput {
             fn update_http_builder(
                 input: &crate::input::AdvertiseByoipCidrInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -419,7 +425,7 @@ pub mod allow_custom_routing_traffic_input {
             self,
         ) -> Result<
             crate::input::AllowCustomRoutingTrafficInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::AllowCustomRoutingTrafficInput {
                 endpoint_group_arn: self.endpoint_group_arn,
@@ -444,13 +450,13 @@ impl AllowCustomRoutingTrafficInput {
             crate::operation::AllowCustomRoutingTraffic,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::AllowCustomRoutingTrafficInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -458,8 +464,10 @@ impl AllowCustomRoutingTrafficInput {
             fn update_http_builder(
                 input: &crate::input::AllowCustomRoutingTrafficInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -659,8 +667,10 @@ pub mod create_accelerator_input {
         /// Consumes the builder and constructs a [`CreateAcceleratorInput`](crate::input::CreateAcceleratorInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateAcceleratorInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateAcceleratorInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateAcceleratorInput {
                 name: self.name,
                 ip_address_type: self.ip_address_type,
@@ -685,7 +695,7 @@ impl CreateAcceleratorInput {
             crate::operation::CreateAccelerator,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
@@ -694,7 +704,7 @@ impl CreateAcceleratorInput {
             fn uri_base(
                 _input: &crate::input::CreateAcceleratorInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -702,8 +712,10 @@ impl CreateAcceleratorInput {
             fn update_http_builder(
                 input: &crate::input::CreateAcceleratorInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -903,7 +915,7 @@ pub mod create_custom_routing_accelerator_input {
             self,
         ) -> Result<
             crate::input::CreateCustomRoutingAcceleratorInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateCustomRoutingAcceleratorInput {
                 name: self.name,
@@ -929,7 +941,7 @@ impl CreateCustomRoutingAcceleratorInput {
             crate::operation::CreateCustomRoutingAccelerator,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
@@ -938,7 +950,7 @@ impl CreateCustomRoutingAcceleratorInput {
             fn uri_base(
                 _input: &crate::input::CreateCustomRoutingAcceleratorInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -946,8 +958,10 @@ impl CreateCustomRoutingAcceleratorInput {
             fn update_http_builder(
                 input: &crate::input::CreateCustomRoutingAcceleratorInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1109,7 +1123,7 @@ pub mod create_custom_routing_endpoint_group_input {
             self,
         ) -> Result<
             crate::input::CreateCustomRoutingEndpointGroupInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateCustomRoutingEndpointGroupInput {
                 listener_arn: self.listener_arn,
@@ -1133,7 +1147,7 @@ impl CreateCustomRoutingEndpointGroupInput {
             crate::operation::CreateCustomRoutingEndpointGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
@@ -1142,7 +1156,7 @@ impl CreateCustomRoutingEndpointGroupInput {
             fn uri_base(
                 _input: &crate::input::CreateCustomRoutingEndpointGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1150,8 +1164,10 @@ impl CreateCustomRoutingEndpointGroupInput {
             fn update_http_builder(
                 input: &crate::input::CreateCustomRoutingEndpointGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1298,7 +1314,7 @@ pub mod create_custom_routing_listener_input {
             self,
         ) -> Result<
             crate::input::CreateCustomRoutingListenerInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateCustomRoutingListenerInput {
                 accelerator_arn: self.accelerator_arn,
@@ -1321,7 +1337,7 @@ impl CreateCustomRoutingListenerInput {
             crate::operation::CreateCustomRoutingListener,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
@@ -1330,7 +1346,7 @@ impl CreateCustomRoutingListenerInput {
             fn uri_base(
                 _input: &crate::input::CreateCustomRoutingListenerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1338,8 +1354,10 @@ impl CreateCustomRoutingListenerInput {
             fn update_http_builder(
                 input: &crate::input::CreateCustomRoutingListenerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1598,8 +1616,10 @@ pub mod create_endpoint_group_input {
         /// Consumes the builder and constructs a [`CreateEndpointGroupInput`](crate::input::CreateEndpointGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateEndpointGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateEndpointGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateEndpointGroupInput {
                 listener_arn: self.listener_arn,
                 endpoint_group_region: self.endpoint_group_region,
@@ -1629,7 +1649,7 @@ impl CreateEndpointGroupInput {
             crate::operation::CreateEndpointGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
@@ -1638,7 +1658,7 @@ impl CreateEndpointGroupInput {
             fn uri_base(
                 _input: &crate::input::CreateEndpointGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1646,8 +1666,10 @@ impl CreateEndpointGroupInput {
             fn update_http_builder(
                 input: &crate::input::CreateEndpointGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1822,7 +1844,7 @@ pub mod create_listener_input {
         /// Consumes the builder and constructs a [`CreateListenerInput`](crate::input::CreateListenerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateListenerInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateListenerInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateListenerInput {
                 accelerator_arn: self.accelerator_arn,
@@ -1847,7 +1869,7 @@ impl CreateListenerInput {
             crate::operation::CreateListener,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
@@ -1856,7 +1878,7 @@ impl CreateListenerInput {
             fn uri_base(
                 _input: &crate::input::CreateListenerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1864,8 +1886,10 @@ impl CreateListenerInput {
             fn update_http_builder(
                 input: &crate::input::CreateListenerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1975,8 +1999,10 @@ pub mod delete_accelerator_input {
         /// Consumes the builder and constructs a [`DeleteAcceleratorInput`](crate::input::DeleteAcceleratorInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAcceleratorInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteAcceleratorInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteAcceleratorInput {
                 accelerator_arn: self.accelerator_arn,
             })
@@ -1996,13 +2022,13 @@ impl DeleteAcceleratorInput {
             crate::operation::DeleteAccelerator,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAcceleratorInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2010,8 +2036,10 @@ impl DeleteAcceleratorInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAcceleratorInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2123,7 +2151,7 @@ pub mod delete_custom_routing_accelerator_input {
             self,
         ) -> Result<
             crate::input::DeleteCustomRoutingAcceleratorInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteCustomRoutingAcceleratorInput {
                 accelerator_arn: self.accelerator_arn,
@@ -2144,13 +2172,13 @@ impl DeleteCustomRoutingAcceleratorInput {
             crate::operation::DeleteCustomRoutingAccelerator,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteCustomRoutingAcceleratorInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2158,8 +2186,10 @@ impl DeleteCustomRoutingAcceleratorInput {
             fn update_http_builder(
                 input: &crate::input::DeleteCustomRoutingAcceleratorInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2270,7 +2300,7 @@ pub mod delete_custom_routing_endpoint_group_input {
             self,
         ) -> Result<
             crate::input::DeleteCustomRoutingEndpointGroupInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteCustomRoutingEndpointGroupInput {
                 endpoint_group_arn: self.endpoint_group_arn,
@@ -2291,13 +2321,13 @@ impl DeleteCustomRoutingEndpointGroupInput {
             crate::operation::DeleteCustomRoutingEndpointGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteCustomRoutingEndpointGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2305,8 +2335,10 @@ impl DeleteCustomRoutingEndpointGroupInput {
             fn update_http_builder(
                 input: &crate::input::DeleteCustomRoutingEndpointGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2414,7 +2446,7 @@ pub mod delete_custom_routing_listener_input {
             self,
         ) -> Result<
             crate::input::DeleteCustomRoutingListenerInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteCustomRoutingListenerInput {
                 listener_arn: self.listener_arn,
@@ -2435,13 +2467,13 @@ impl DeleteCustomRoutingListenerInput {
             crate::operation::DeleteCustomRoutingListener,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteCustomRoutingListenerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2449,8 +2481,10 @@ impl DeleteCustomRoutingListenerInput {
             fn update_http_builder(
                 input: &crate::input::DeleteCustomRoutingListenerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2559,8 +2593,10 @@ pub mod delete_endpoint_group_input {
         /// Consumes the builder and constructs a [`DeleteEndpointGroupInput`](crate::input::DeleteEndpointGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteEndpointGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteEndpointGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteEndpointGroupInput {
                 endpoint_group_arn: self.endpoint_group_arn,
             })
@@ -2580,13 +2616,13 @@ impl DeleteEndpointGroupInput {
             crate::operation::DeleteEndpointGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteEndpointGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2594,8 +2630,10 @@ impl DeleteEndpointGroupInput {
             fn update_http_builder(
                 input: &crate::input::DeleteEndpointGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2702,7 +2740,7 @@ pub mod delete_listener_input {
         /// Consumes the builder and constructs a [`DeleteListenerInput`](crate::input::DeleteListenerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteListenerInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteListenerInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteListenerInput {
                 listener_arn: self.listener_arn,
@@ -2723,13 +2761,13 @@ impl DeleteListenerInput {
             crate::operation::DeleteListener,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteListenerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2737,8 +2775,10 @@ impl DeleteListenerInput {
             fn update_http_builder(
                 input: &crate::input::DeleteListenerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2921,7 +2961,7 @@ pub mod deny_custom_routing_traffic_input {
             self,
         ) -> Result<
             crate::input::DenyCustomRoutingTrafficInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DenyCustomRoutingTrafficInput {
                 endpoint_group_arn: self.endpoint_group_arn,
@@ -2946,13 +2986,13 @@ impl DenyCustomRoutingTrafficInput {
             crate::operation::DenyCustomRoutingTraffic,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DenyCustomRoutingTrafficInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2960,8 +3000,10 @@ impl DenyCustomRoutingTrafficInput {
             fn update_http_builder(
                 input: &crate::input::DenyCustomRoutingTrafficInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3070,8 +3112,10 @@ pub mod deprovision_byoip_cidr_input {
         /// Consumes the builder and constructs a [`DeprovisionByoipCidrInput`](crate::input::DeprovisionByoipCidrInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeprovisionByoipCidrInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeprovisionByoipCidrInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeprovisionByoipCidrInput { cidr: self.cidr })
         }
     }
@@ -3089,13 +3133,13 @@ impl DeprovisionByoipCidrInput {
             crate::operation::DeprovisionByoipCidr,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeprovisionByoipCidrInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3103,8 +3147,10 @@ impl DeprovisionByoipCidrInput {
             fn update_http_builder(
                 input: &crate::input::DeprovisionByoipCidrInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3216,8 +3262,10 @@ pub mod describe_accelerator_input {
         /// Consumes the builder and constructs a [`DescribeAcceleratorInput`](crate::input::DescribeAcceleratorInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeAcceleratorInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeAcceleratorInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeAcceleratorInput {
                 accelerator_arn: self.accelerator_arn,
             })
@@ -3237,13 +3285,13 @@ impl DescribeAcceleratorInput {
             crate::operation::DescribeAccelerator,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAcceleratorInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3251,8 +3299,10 @@ impl DescribeAcceleratorInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAcceleratorInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3364,7 +3414,7 @@ pub mod describe_accelerator_attributes_input {
             self,
         ) -> Result<
             crate::input::DescribeAcceleratorAttributesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeAcceleratorAttributesInput {
                 accelerator_arn: self.accelerator_arn,
@@ -3385,13 +3435,13 @@ impl DescribeAcceleratorAttributesInput {
             crate::operation::DescribeAcceleratorAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeAcceleratorAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3399,8 +3449,10 @@ impl DescribeAcceleratorAttributesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeAcceleratorAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3511,7 +3563,7 @@ pub mod describe_custom_routing_accelerator_input {
             self,
         ) -> Result<
             crate::input::DescribeCustomRoutingAcceleratorInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeCustomRoutingAcceleratorInput {
                 accelerator_arn: self.accelerator_arn,
@@ -3532,13 +3584,13 @@ impl DescribeCustomRoutingAcceleratorInput {
             crate::operation::DescribeCustomRoutingAccelerator,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeCustomRoutingAcceleratorInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3546,8 +3598,10 @@ impl DescribeCustomRoutingAcceleratorInput {
             fn update_http_builder(
                 input: &crate::input::DescribeCustomRoutingAcceleratorInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3658,7 +3712,7 @@ pub mod describe_custom_routing_accelerator_attributes_input {
             self,
         ) -> Result<
             crate::input::DescribeCustomRoutingAcceleratorAttributesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::DescribeCustomRoutingAcceleratorAttributesInput {
@@ -3681,13 +3735,13 @@ impl DescribeCustomRoutingAcceleratorAttributesInput {
             crate::operation::DescribeCustomRoutingAcceleratorAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeCustomRoutingAcceleratorAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3695,8 +3749,10 @@ impl DescribeCustomRoutingAcceleratorAttributesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeCustomRoutingAcceleratorAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3808,7 +3864,7 @@ pub mod describe_custom_routing_endpoint_group_input {
             self,
         ) -> Result<
             crate::input::DescribeCustomRoutingEndpointGroupInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeCustomRoutingEndpointGroupInput {
                 endpoint_group_arn: self.endpoint_group_arn,
@@ -3829,13 +3885,13 @@ impl DescribeCustomRoutingEndpointGroupInput {
             crate::operation::DescribeCustomRoutingEndpointGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeCustomRoutingEndpointGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3843,8 +3899,10 @@ impl DescribeCustomRoutingEndpointGroupInput {
             fn update_http_builder(
                 input: &crate::input::DescribeCustomRoutingEndpointGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3952,7 +4010,7 @@ pub mod describe_custom_routing_listener_input {
             self,
         ) -> Result<
             crate::input::DescribeCustomRoutingListenerInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeCustomRoutingListenerInput {
                 listener_arn: self.listener_arn,
@@ -3973,13 +4031,13 @@ impl DescribeCustomRoutingListenerInput {
             crate::operation::DescribeCustomRoutingListener,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeCustomRoutingListenerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3987,8 +4045,10 @@ impl DescribeCustomRoutingListenerInput {
             fn update_http_builder(
                 input: &crate::input::DescribeCustomRoutingListenerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4097,8 +4157,10 @@ pub mod describe_endpoint_group_input {
         /// Consumes the builder and constructs a [`DescribeEndpointGroupInput`](crate::input::DescribeEndpointGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeEndpointGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeEndpointGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeEndpointGroupInput {
                 endpoint_group_arn: self.endpoint_group_arn,
             })
@@ -4118,13 +4180,13 @@ impl DescribeEndpointGroupInput {
             crate::operation::DescribeEndpointGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeEndpointGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4132,8 +4194,10 @@ impl DescribeEndpointGroupInput {
             fn update_http_builder(
                 input: &crate::input::DescribeEndpointGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4242,8 +4306,10 @@ pub mod describe_listener_input {
         /// Consumes the builder and constructs a [`DescribeListenerInput`](crate::input::DescribeListenerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeListenerInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeListenerInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeListenerInput {
                 listener_arn: self.listener_arn,
             })
@@ -4263,13 +4329,13 @@ impl DescribeListenerInput {
             crate::operation::DescribeListener,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeListenerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4277,8 +4343,10 @@ impl DescribeListenerInput {
             fn update_http_builder(
                 input: &crate::input::DescribeListenerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4396,8 +4464,10 @@ pub mod list_accelerators_input {
         /// Consumes the builder and constructs a [`ListAcceleratorsInput`](crate::input::ListAcceleratorsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAcceleratorsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListAcceleratorsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListAcceleratorsInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -4418,13 +4488,13 @@ impl ListAcceleratorsInput {
             crate::operation::ListAccelerators,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListAcceleratorsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4432,8 +4502,10 @@ impl ListAcceleratorsInput {
             fn update_http_builder(
                 input: &crate::input::ListAcceleratorsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4551,7 +4623,7 @@ pub mod list_byoip_cidrs_input {
         /// Consumes the builder and constructs a [`ListByoipCidrsInput`](crate::input::ListByoipCidrsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListByoipCidrsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListByoipCidrsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListByoipCidrsInput {
                 max_results: self.max_results,
@@ -4573,13 +4645,13 @@ impl ListByoipCidrsInput {
             crate::operation::ListByoipCidrs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListByoipCidrsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4587,8 +4659,10 @@ impl ListByoipCidrsInput {
             fn update_http_builder(
                 input: &crate::input::ListByoipCidrsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4708,7 +4782,7 @@ pub mod list_custom_routing_accelerators_input {
             self,
         ) -> Result<
             crate::input::ListCustomRoutingAcceleratorsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListCustomRoutingAcceleratorsInput {
                 max_results: self.max_results,
@@ -4730,13 +4804,13 @@ impl ListCustomRoutingAcceleratorsInput {
             crate::operation::ListCustomRoutingAccelerators,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListCustomRoutingAcceleratorsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4744,8 +4818,10 @@ impl ListCustomRoutingAcceleratorsInput {
             fn update_http_builder(
                 input: &crate::input::ListCustomRoutingAcceleratorsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -4875,7 +4951,7 @@ pub mod list_custom_routing_endpoint_groups_input {
             self,
         ) -> Result<
             crate::input::ListCustomRoutingEndpointGroupsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListCustomRoutingEndpointGroupsInput {
                 listener_arn: self.listener_arn,
@@ -4898,13 +4974,13 @@ impl ListCustomRoutingEndpointGroupsInput {
             crate::operation::ListCustomRoutingEndpointGroups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListCustomRoutingEndpointGroupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -4912,8 +4988,10 @@ impl ListCustomRoutingEndpointGroupsInput {
             fn update_http_builder(
                 input: &crate::input::ListCustomRoutingEndpointGroupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5046,7 +5124,7 @@ pub mod list_custom_routing_listeners_input {
             self,
         ) -> Result<
             crate::input::ListCustomRoutingListenersInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListCustomRoutingListenersInput {
                 accelerator_arn: self.accelerator_arn,
@@ -5069,13 +5147,13 @@ impl ListCustomRoutingListenersInput {
             crate::operation::ListCustomRoutingListeners,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListCustomRoutingListenersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5083,8 +5161,10 @@ impl ListCustomRoutingListenersInput {
             fn update_http_builder(
                 input: &crate::input::ListCustomRoutingListenersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5231,7 +5311,7 @@ pub mod list_custom_routing_port_mappings_input {
             self,
         ) -> Result<
             crate::input::ListCustomRoutingPortMappingsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListCustomRoutingPortMappingsInput {
                 accelerator_arn: self.accelerator_arn,
@@ -5255,13 +5335,13 @@ impl ListCustomRoutingPortMappingsInput {
             crate::operation::ListCustomRoutingPortMappings,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListCustomRoutingPortMappingsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5269,8 +5349,10 @@ impl ListCustomRoutingPortMappingsInput {
             fn update_http_builder(
                 input: &crate::input::ListCustomRoutingPortMappingsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5414,7 +5496,7 @@ pub mod list_custom_routing_port_mappings_by_destination_input {
             self,
         ) -> Result<
             crate::input::ListCustomRoutingPortMappingsByDestinationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::ListCustomRoutingPortMappingsByDestinationInput {
@@ -5440,13 +5522,13 @@ impl ListCustomRoutingPortMappingsByDestinationInput {
             crate::operation::ListCustomRoutingPortMappingsByDestination,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListCustomRoutingPortMappingsByDestinationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5454,8 +5536,10 @@ impl ListCustomRoutingPortMappingsByDestinationInput {
             fn update_http_builder(
                 input: &crate::input::ListCustomRoutingPortMappingsByDestinationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5584,8 +5668,10 @@ pub mod list_endpoint_groups_input {
         /// Consumes the builder and constructs a [`ListEndpointGroupsInput`](crate::input::ListEndpointGroupsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListEndpointGroupsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListEndpointGroupsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListEndpointGroupsInput {
                 listener_arn: self.listener_arn,
                 max_results: self.max_results,
@@ -5607,13 +5693,13 @@ impl ListEndpointGroupsInput {
             crate::operation::ListEndpointGroups,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListEndpointGroupsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5621,8 +5707,10 @@ impl ListEndpointGroupsInput {
             fn update_http_builder(
                 input: &crate::input::ListEndpointGroupsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5754,7 +5842,7 @@ pub mod list_listeners_input {
         /// Consumes the builder and constructs a [`ListListenersInput`](crate::input::ListListenersInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListListenersInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListListenersInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListListenersInput {
                 accelerator_arn: self.accelerator_arn,
@@ -5777,13 +5865,13 @@ impl ListListenersInput {
             crate::operation::ListListeners,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListListenersInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5791,8 +5879,10 @@ impl ListListenersInput {
             fn update_http_builder(
                 input: &crate::input::ListListenersInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -5899,8 +5989,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -5920,13 +6012,13 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -5934,8 +6026,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6062,8 +6156,10 @@ pub mod provision_byoip_cidr_input {
         /// Consumes the builder and constructs a [`ProvisionByoipCidrInput`](crate::input::ProvisionByoipCidrInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ProvisionByoipCidrInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ProvisionByoipCidrInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ProvisionByoipCidrInput {
                 cidr: self.cidr,
                 cidr_authorization_context: self.cidr_authorization_context,
@@ -6084,13 +6180,13 @@ impl ProvisionByoipCidrInput {
             crate::operation::ProvisionByoipCidr,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ProvisionByoipCidrInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6098,8 +6194,10 @@ impl ProvisionByoipCidrInput {
             fn update_http_builder(
                 input: &crate::input::ProvisionByoipCidrInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6231,7 +6329,7 @@ pub mod remove_custom_routing_endpoints_input {
             self,
         ) -> Result<
             crate::input::RemoveCustomRoutingEndpointsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RemoveCustomRoutingEndpointsInput {
                 endpoint_ids: self.endpoint_ids,
@@ -6253,13 +6351,13 @@ impl RemoveCustomRoutingEndpointsInput {
             crate::operation::RemoveCustomRoutingEndpoints,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RemoveCustomRoutingEndpointsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6267,8 +6365,10 @@ impl RemoveCustomRoutingEndpointsInput {
             fn update_http_builder(
                 input: &crate::input::RemoveCustomRoutingEndpointsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6394,7 +6494,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -6416,13 +6516,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6430,8 +6530,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6558,7 +6660,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -6580,13 +6682,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6594,8 +6696,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6743,8 +6847,10 @@ pub mod update_accelerator_input {
         /// Consumes the builder and constructs a [`UpdateAcceleratorInput`](crate::input::UpdateAcceleratorInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateAcceleratorInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateAcceleratorInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateAcceleratorInput {
                 accelerator_arn: self.accelerator_arn,
                 name: self.name,
@@ -6767,13 +6873,13 @@ impl UpdateAcceleratorInput {
             crate::operation::UpdateAccelerator,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateAcceleratorInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6781,8 +6887,10 @@ impl UpdateAcceleratorInput {
             fn update_http_builder(
                 input: &crate::input::UpdateAcceleratorInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -6939,7 +7047,7 @@ pub mod update_accelerator_attributes_input {
             self,
         ) -> Result<
             crate::input::UpdateAcceleratorAttributesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateAcceleratorAttributesInput {
                 accelerator_arn: self.accelerator_arn,
@@ -6963,13 +7071,13 @@ impl UpdateAcceleratorAttributesInput {
             crate::operation::UpdateAcceleratorAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateAcceleratorAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -6977,8 +7085,10 @@ impl UpdateAcceleratorAttributesInput {
             fn update_http_builder(
                 input: &crate::input::UpdateAcceleratorAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7127,7 +7237,7 @@ pub mod update_custom_routing_accelerator_input {
             self,
         ) -> Result<
             crate::input::UpdateCustomRoutingAcceleratorInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateCustomRoutingAcceleratorInput {
                 accelerator_arn: self.accelerator_arn,
@@ -7151,13 +7261,13 @@ impl UpdateCustomRoutingAcceleratorInput {
             crate::operation::UpdateCustomRoutingAccelerator,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateCustomRoutingAcceleratorInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7165,8 +7275,10 @@ impl UpdateCustomRoutingAcceleratorInput {
             fn update_http_builder(
                 input: &crate::input::UpdateCustomRoutingAcceleratorInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7322,7 +7434,7 @@ pub mod update_custom_routing_accelerator_attributes_input {
             self,
         ) -> Result<
             crate::input::UpdateCustomRoutingAcceleratorAttributesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::UpdateCustomRoutingAcceleratorAttributesInput {
@@ -7348,13 +7460,13 @@ impl UpdateCustomRoutingAcceleratorAttributesInput {
             crate::operation::UpdateCustomRoutingAcceleratorAttributes,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateCustomRoutingAcceleratorAttributesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7362,8 +7474,10 @@ impl UpdateCustomRoutingAcceleratorAttributesInput {
             fn update_http_builder(
                 input: &crate::input::UpdateCustomRoutingAcceleratorAttributesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7493,7 +7607,7 @@ pub mod update_custom_routing_listener_input {
             self,
         ) -> Result<
             crate::input::UpdateCustomRoutingListenerInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateCustomRoutingListenerInput {
                 listener_arn: self.listener_arn,
@@ -7515,13 +7629,13 @@ impl UpdateCustomRoutingListenerInput {
             crate::operation::UpdateCustomRoutingListener,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateCustomRoutingListenerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7529,8 +7643,10 @@ impl UpdateCustomRoutingListenerInput {
             fn update_http_builder(
                 input: &crate::input::UpdateCustomRoutingListenerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7764,8 +7880,10 @@ pub mod update_endpoint_group_input {
         /// Consumes the builder and constructs a [`UpdateEndpointGroupInput`](crate::input::UpdateEndpointGroupInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateEndpointGroupInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateEndpointGroupInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateEndpointGroupInput {
                 endpoint_group_arn: self.endpoint_group_arn,
                 endpoint_configurations: self.endpoint_configurations,
@@ -7793,13 +7911,13 @@ impl UpdateEndpointGroupInput {
             crate::operation::UpdateEndpointGroup,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateEndpointGroupInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -7807,8 +7925,10 @@ impl UpdateEndpointGroupInput {
             fn update_http_builder(
                 input: &crate::input::UpdateEndpointGroupInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -7966,7 +8086,7 @@ pub mod update_listener_input {
         /// Consumes the builder and constructs a [`UpdateListenerInput`](crate::input::UpdateListenerInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateListenerInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UpdateListenerInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UpdateListenerInput {
                 listener_arn: self.listener_arn,
@@ -7990,13 +8110,13 @@ impl UpdateListenerInput {
             crate::operation::UpdateListener,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateListenerInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8004,8 +8124,10 @@ impl UpdateListenerInput {
             fn update_http_builder(
                 input: &crate::input::UpdateListenerInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -8112,8 +8234,10 @@ pub mod withdraw_byoip_cidr_input {
         /// Consumes the builder and constructs a [`WithdrawByoipCidrInput`](crate::input::WithdrawByoipCidrInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::WithdrawByoipCidrInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::WithdrawByoipCidrInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::WithdrawByoipCidrInput { cidr: self.cidr })
         }
     }
@@ -8131,13 +8255,13 @@ impl WithdrawByoipCidrInput {
             crate::operation::WithdrawByoipCidr,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::WithdrawByoipCidrInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -8145,8 +8269,10 @@ impl WithdrawByoipCidrInput {
             fn update_http_builder(
                 input: &crate::input::WithdrawByoipCidrInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

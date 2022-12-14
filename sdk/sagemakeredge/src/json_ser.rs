@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_get_deployments_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetDeploymentsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.device_fleet_name {
         object.key("DeviceFleetName").string(var_1.as_str());
     }
@@ -15,7 +15,7 @@ pub fn serialize_structure_crate_input_get_deployments_input(
 pub fn serialize_structure_crate_input_get_device_registration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetDeviceRegistrationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_3) = &input.device_fleet_name {
         object.key("DeviceFleetName").string(var_3.as_str());
     }
@@ -28,7 +28,7 @@ pub fn serialize_structure_crate_input_get_device_registration_input(
 pub fn serialize_structure_crate_input_send_heartbeat_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SendHeartbeatInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_5) = &input.agent_metrics {
         let mut array_6 = object.key("AgentMetrics").start_array();
         for item_7 in var_5 {
@@ -74,7 +74,7 @@ pub fn serialize_structure_crate_input_send_heartbeat_input(
 pub fn serialize_structure_crate_model_edge_metric(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EdgeMetric,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_18) = &input.dimension {
         object.key("Dimension").string(var_18.as_str());
     }
@@ -98,7 +98,7 @@ pub fn serialize_structure_crate_model_edge_metric(
 pub fn serialize_structure_crate_model_deployment_result(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DeploymentResult,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_21) = &input.deployment_name {
         object.key("DeploymentName").string(var_21.as_str());
     }
@@ -140,7 +140,7 @@ pub fn serialize_structure_crate_model_deployment_result(
 pub fn serialize_structure_crate_model_model(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Model,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_30) = &input.model_name {
         object.key("ModelName").string(var_30.as_str());
     }
@@ -177,7 +177,7 @@ pub fn serialize_structure_crate_model_model(
 pub fn serialize_structure_crate_model_deployment_model(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DeploymentModel,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_38) = &input.model_handle {
         object.key("ModelHandle").string(var_38.as_str());
     }

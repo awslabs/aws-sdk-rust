@@ -23,7 +23,7 @@ pub mod delete_lexicon_input {
         /// Consumes the builder and constructs a [`DeleteLexiconInput`](crate::input::DeleteLexiconInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteLexiconInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeleteLexiconInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeleteLexiconInput { name: self.name })
         }
@@ -42,29 +42,31 @@ impl DeleteLexiconInput {
             crate::operation::DeleteLexicon,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteLexiconInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.name;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_1,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v1/lexicons/{Name}", Name = name)
                     .expect("formatting should succeed");
@@ -74,8 +76,10 @@ impl DeleteLexiconInput {
             fn update_http_builder(
                 input: &crate::input::DeleteLexiconInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -202,7 +206,7 @@ pub mod describe_voices_input {
         /// Consumes the builder and constructs a [`DescribeVoicesInput`](crate::input::DescribeVoicesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeVoicesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeVoicesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeVoicesInput {
                 engine: self.engine,
@@ -228,20 +232,20 @@ impl DescribeVoicesInput {
             crate::operation::DescribeVoices,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeVoicesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/voices").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DescribeVoicesInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_2) = &_input.engine {
                     query.push_kv("Engine", &aws_smithy_http::query::fmt_string(&inner_2));
@@ -270,8 +274,10 @@ impl DescribeVoicesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeVoicesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -360,7 +366,8 @@ pub mod get_lexicon_input {
         /// Consumes the builder and constructs a [`GetLexiconInput`](crate::input::GetLexiconInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetLexiconInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetLexiconInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetLexiconInput { name: self.name })
         }
     }
@@ -378,29 +385,31 @@ impl GetLexiconInput {
             crate::operation::GetLexicon,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetLexiconInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.name;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_5,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v1/lexicons/{Name}", Name = name)
                     .expect("formatting should succeed");
@@ -410,8 +419,10 @@ impl GetLexiconInput {
             fn update_http_builder(
                 input: &crate::input::GetLexiconInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -499,8 +510,10 @@ pub mod get_speech_synthesis_task_input {
         /// Consumes the builder and constructs a [`GetSpeechSynthesisTaskInput`](crate::input::GetSpeechSynthesisTaskInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSpeechSynthesisTaskInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetSpeechSynthesisTaskInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetSpeechSynthesisTaskInput {
                 task_id: self.task_id,
             })
@@ -520,29 +533,31 @@ impl GetSpeechSynthesisTaskInput {
             crate::operation::GetSpeechSynthesisTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetSpeechSynthesisTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.task_id;
-                let input_6 = input_6.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "task_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_6 = input_6.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "task_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let task_id = aws_smithy_http::label::fmt_string(
                     input_6,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if task_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "task_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "task_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v1/synthesisTasks/{TaskId}", TaskId = task_id)
                     .expect("formatting should succeed");
@@ -552,8 +567,10 @@ impl GetSpeechSynthesisTaskInput {
             fn update_http_builder(
                 input: &crate::input::GetSpeechSynthesisTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -641,7 +658,7 @@ pub mod list_lexicons_input {
         /// Consumes the builder and constructs a [`ListLexiconsInput`](crate::input::ListLexiconsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListLexiconsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListLexiconsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListLexiconsInput {
                 next_token: self.next_token,
@@ -662,20 +679,20 @@ impl ListLexiconsInput {
             crate::operation::ListLexicons,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListLexiconsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/lexicons").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListLexiconsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_7) = &_input.next_token {
                     query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_7));
@@ -686,8 +703,10 @@ impl ListLexiconsInput {
             fn update_http_builder(
                 input: &crate::input::ListLexiconsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -800,7 +819,7 @@ pub mod list_speech_synthesis_tasks_input {
             self,
         ) -> Result<
             crate::input::ListSpeechSynthesisTasksInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListSpeechSynthesisTasksInput {
                 max_results: self.max_results,
@@ -823,20 +842,20 @@ impl ListSpeechSynthesisTasksInput {
             crate::operation::ListSpeechSynthesisTasks,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListSpeechSynthesisTasksInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/synthesisTasks").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::ListSpeechSynthesisTasksInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_8) = &_input.max_results {
                     query.push_kv(
@@ -856,8 +875,10 @@ impl ListSpeechSynthesisTasksInput {
             fn update_http_builder(
                 input: &crate::input::ListSpeechSynthesisTasksInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -957,7 +978,8 @@ pub mod put_lexicon_input {
         /// Consumes the builder and constructs a [`PutLexiconInput`](crate::input::PutLexiconInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutLexiconInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::PutLexiconInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::PutLexiconInput {
                 name: self.name,
                 content: self.content,
@@ -978,29 +1000,31 @@ impl PutLexiconInput {
             crate::operation::PutLexicon,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutLexiconInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_11 = &_input.name;
-                let input_11 = input_11.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_11 = input_11.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let name = aws_smithy_http::label::fmt_string(
                     input_11,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if name.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "name",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "name",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(output, "/v1/lexicons/{Name}", Name = name)
                     .expect("formatting should succeed");
@@ -1010,8 +1034,10 @@ impl PutLexiconInput {
             fn update_http_builder(
                 input: &crate::input::PutLexiconInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("PUT").uri(uri))
@@ -1276,7 +1302,7 @@ pub mod start_speech_synthesis_task_input {
             self,
         ) -> Result<
             crate::input::StartSpeechSynthesisTaskInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StartSpeechSynthesisTaskInput {
                 engine: self.engine,
@@ -1308,13 +1334,13 @@ impl StartSpeechSynthesisTaskInput {
             crate::operation::StartSpeechSynthesisTask,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartSpeechSynthesisTaskInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/synthesisTasks").expect("formatting should succeed");
                 Ok(())
             }
@@ -1322,8 +1348,10 @@ impl StartSpeechSynthesisTaskInput {
             fn update_http_builder(
                 input: &crate::input::StartSpeechSynthesisTaskInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1562,8 +1590,10 @@ pub mod synthesize_speech_input {
         /// Consumes the builder and constructs a [`SynthesizeSpeechInput`](crate::input::SynthesizeSpeechInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SynthesizeSpeechInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SynthesizeSpeechInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SynthesizeSpeechInput {
                 engine: self.engine,
                 language_code: self.language_code,
@@ -1591,20 +1621,20 @@ impl SynthesizeSpeechInput {
             crate::operation::SynthesizeSpeech,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SynthesizeSpeechInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/speech").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::SynthesizeSpeechInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_12) = &_input.engine {
                     query.push_kv("Engine", &aws_smithy_http::query::fmt_string(&inner_12));
@@ -1655,8 +1685,10 @@ impl SynthesizeSpeechInput {
             fn update_http_builder(
                 input: &crate::input::SynthesizeSpeechInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -1738,7 +1770,7 @@ impl SynthesizeSpeechInput {
         let (mut request, _) = self
             ._make_presigned_operation(config)
             .await
-            .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
             .into_request_response();
         {
             // Change signature type to query params and wire up presigning config
@@ -1771,13 +1803,13 @@ impl SynthesizeSpeechInput {
             crate::operation::SynthesizeSpeech,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SynthesizeSpeechInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/speech").expect("formatting should succeed");
                 Ok(())
             }
@@ -1785,8 +1817,10 @@ impl SynthesizeSpeechInput {
             fn update_http_builder(
                 input: &crate::input::SynthesizeSpeechInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

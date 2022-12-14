@@ -134,7 +134,7 @@ pub mod create_certificate_authority_input {
             self,
         ) -> Result<
             crate::input::CreateCertificateAuthorityInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateCertificateAuthorityInput {
                 certificate_authority_configuration: self.certificate_authority_configuration,
@@ -160,13 +160,13 @@ impl CreateCertificateAuthorityInput {
             crate::operation::CreateCertificateAuthority,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateCertificateAuthorityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -174,8 +174,10 @@ impl CreateCertificateAuthorityInput {
             fn update_http_builder(
                 input: &crate::input::CreateCertificateAuthorityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -323,7 +325,7 @@ pub mod create_certificate_authority_audit_report_input {
             self,
         ) -> Result<
             crate::input::CreateCertificateAuthorityAuditReportInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateCertificateAuthorityAuditReportInput {
                 certificate_authority_arn: self.certificate_authority_arn,
@@ -346,13 +348,13 @@ impl CreateCertificateAuthorityAuditReportInput {
             crate::operation::CreateCertificateAuthorityAuditReport,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateCertificateAuthorityAuditReportInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -360,8 +362,10 @@ impl CreateCertificateAuthorityAuditReportInput {
             fn update_http_builder(
                 input: &crate::input::CreateCertificateAuthorityAuditReportInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -517,8 +521,10 @@ pub mod create_permission_input {
         /// Consumes the builder and constructs a [`CreatePermissionInput`](crate::input::CreatePermissionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreatePermissionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreatePermissionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreatePermissionInput {
                 certificate_authority_arn: self.certificate_authority_arn,
                 principal: self.principal,
@@ -541,13 +547,13 @@ impl CreatePermissionInput {
             crate::operation::CreatePermission,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreatePermissionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -555,8 +561,10 @@ impl CreatePermissionInput {
             fn update_http_builder(
                 input: &crate::input::CreatePermissionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -684,7 +692,7 @@ pub mod delete_certificate_authority_input {
             self,
         ) -> Result<
             crate::input::DeleteCertificateAuthorityInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteCertificateAuthorityInput {
                 certificate_authority_arn: self.certificate_authority_arn,
@@ -706,13 +714,13 @@ impl DeleteCertificateAuthorityInput {
             crate::operation::DeleteCertificateAuthority,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteCertificateAuthorityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -720,8 +728,10 @@ impl DeleteCertificateAuthorityInput {
             fn update_http_builder(
                 input: &crate::input::DeleteCertificateAuthorityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -860,8 +870,10 @@ pub mod delete_permission_input {
         /// Consumes the builder and constructs a [`DeletePermissionInput`](crate::input::DeletePermissionInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeletePermissionInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeletePermissionInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeletePermissionInput {
                 certificate_authority_arn: self.certificate_authority_arn,
                 principal: self.principal,
@@ -883,13 +895,13 @@ impl DeletePermissionInput {
             crate::operation::DeletePermission,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeletePermissionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -897,8 +909,10 @@ impl DeletePermissionInput {
             fn update_http_builder(
                 input: &crate::input::DeletePermissionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1005,7 +1019,7 @@ pub mod delete_policy_input {
         /// Consumes the builder and constructs a [`DeletePolicyInput`](crate::input::DeletePolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeletePolicyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DeletePolicyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DeletePolicyInput {
                 resource_arn: self.resource_arn,
@@ -1026,13 +1040,13 @@ impl DeletePolicyInput {
             crate::operation::DeletePolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeletePolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1040,8 +1054,10 @@ impl DeletePolicyInput {
             fn update_http_builder(
                 input: &crate::input::DeletePolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1155,7 +1171,7 @@ pub mod describe_certificate_authority_input {
             self,
         ) -> Result<
             crate::input::DescribeCertificateAuthorityInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeCertificateAuthorityInput {
                 certificate_authority_arn: self.certificate_authority_arn,
@@ -1176,13 +1192,13 @@ impl DescribeCertificateAuthorityInput {
             crate::operation::DescribeCertificateAuthority,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeCertificateAuthorityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1190,8 +1206,10 @@ impl DescribeCertificateAuthorityInput {
             fn update_http_builder(
                 input: &crate::input::DescribeCertificateAuthorityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1318,7 +1336,7 @@ pub mod describe_certificate_authority_audit_report_input {
             self,
         ) -> Result<
             crate::input::DescribeCertificateAuthorityAuditReportInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeCertificateAuthorityAuditReportInput {
                 certificate_authority_arn: self.certificate_authority_arn,
@@ -1340,13 +1358,13 @@ impl DescribeCertificateAuthorityAuditReportInput {
             crate::operation::DescribeCertificateAuthorityAuditReport,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeCertificateAuthorityAuditReportInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1354,8 +1372,10 @@ impl DescribeCertificateAuthorityAuditReportInput {
             fn update_http_builder(
                 input: &crate::input::DescribeCertificateAuthorityAuditReportInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1482,7 +1502,7 @@ pub mod get_certificate_input {
         /// Consumes the builder and constructs a [`GetCertificateInput`](crate::input::GetCertificateInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetCertificateInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetCertificateInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetCertificateInput {
                 certificate_authority_arn: self.certificate_authority_arn,
@@ -1504,13 +1524,13 @@ impl GetCertificateInput {
             crate::operation::GetCertificate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetCertificateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1518,8 +1538,10 @@ impl GetCertificateInput {
             fn update_http_builder(
                 input: &crate::input::GetCertificateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1633,7 +1655,7 @@ pub mod get_certificate_authority_certificate_input {
             self,
         ) -> Result<
             crate::input::GetCertificateAuthorityCertificateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetCertificateAuthorityCertificateInput {
                 certificate_authority_arn: self.certificate_authority_arn,
@@ -1654,13 +1676,13 @@ impl GetCertificateAuthorityCertificateInput {
             crate::operation::GetCertificateAuthorityCertificate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetCertificateAuthorityCertificateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1668,8 +1690,10 @@ impl GetCertificateAuthorityCertificateInput {
             fn update_http_builder(
                 input: &crate::input::GetCertificateAuthorityCertificateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1782,7 +1806,7 @@ pub mod get_certificate_authority_csr_input {
             self,
         ) -> Result<
             crate::input::GetCertificateAuthorityCsrInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetCertificateAuthorityCsrInput {
                 certificate_authority_arn: self.certificate_authority_arn,
@@ -1803,13 +1827,13 @@ impl GetCertificateAuthorityCsrInput {
             crate::operation::GetCertificateAuthorityCsr,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetCertificateAuthorityCsrInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1817,8 +1841,10 @@ impl GetCertificateAuthorityCsrInput {
             fn update_http_builder(
                 input: &crate::input::GetCertificateAuthorityCsrInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1924,7 +1950,8 @@ pub mod get_policy_input {
         /// Consumes the builder and constructs a [`GetPolicyInput`](crate::input::GetPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPolicyInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetPolicyInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetPolicyInput {
                 resource_arn: self.resource_arn,
             })
@@ -1944,13 +1971,13 @@ impl GetPolicyInput {
             crate::operation::GetPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1958,8 +1985,10 @@ impl GetPolicyInput {
             fn update_http_builder(
                 input: &crate::input::GetPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2101,7 +2130,7 @@ pub mod import_certificate_authority_certificate_input {
             self,
         ) -> Result<
             crate::input::ImportCertificateAuthorityCertificateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ImportCertificateAuthorityCertificateInput {
                 certificate_authority_arn: self.certificate_authority_arn,
@@ -2124,13 +2153,13 @@ impl ImportCertificateAuthorityCertificateInput {
             crate::operation::ImportCertificateAuthorityCertificate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ImportCertificateAuthorityCertificateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2138,8 +2167,10 @@ impl ImportCertificateAuthorityCertificateInput {
             fn update_http_builder(
                 input: &crate::input::ImportCertificateAuthorityCertificateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2371,8 +2402,10 @@ pub mod issue_certificate_input {
         /// Consumes the builder and constructs a [`IssueCertificateInput`](crate::input::IssueCertificateInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::IssueCertificateInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::IssueCertificateInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::IssueCertificateInput {
                 api_passthrough: self.api_passthrough,
                 certificate_authority_arn: self.certificate_authority_arn,
@@ -2399,13 +2432,13 @@ impl IssueCertificateInput {
             crate::operation::IssueCertificate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::IssueCertificateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2413,8 +2446,10 @@ impl IssueCertificateInput {
             fn update_http_builder(
                 input: &crate::input::IssueCertificateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2548,7 +2583,7 @@ pub mod list_certificate_authorities_input {
             self,
         ) -> Result<
             crate::input::ListCertificateAuthoritiesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListCertificateAuthoritiesInput {
                 next_token: self.next_token,
@@ -2571,13 +2606,13 @@ impl ListCertificateAuthoritiesInput {
             crate::operation::ListCertificateAuthorities,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListCertificateAuthoritiesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2585,8 +2620,10 @@ impl ListCertificateAuthoritiesInput {
             fn update_http_builder(
                 input: &crate::input::ListCertificateAuthoritiesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2720,7 +2757,7 @@ pub mod list_permissions_input {
         /// Consumes the builder and constructs a [`ListPermissionsInput`](crate::input::ListPermissionsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPermissionsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListPermissionsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListPermissionsInput {
                 certificate_authority_arn: self.certificate_authority_arn,
@@ -2743,13 +2780,13 @@ impl ListPermissionsInput {
             crate::operation::ListPermissions,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListPermissionsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2757,8 +2794,10 @@ impl ListPermissionsInput {
             fn update_http_builder(
                 input: &crate::input::ListPermissionsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2892,7 +2931,8 @@ pub mod list_tags_input {
         /// Consumes the builder and constructs a [`ListTagsInput`](crate::input::ListTagsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::ListTagsInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::ListTagsInput {
                 certificate_authority_arn: self.certificate_authority_arn,
                 next_token: self.next_token,
@@ -2914,13 +2954,13 @@ impl ListTagsInput {
             crate::operation::ListTags,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2928,8 +2968,10 @@ impl ListTagsInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3046,7 +3088,8 @@ pub mod put_policy_input {
         /// Consumes the builder and constructs a [`PutPolicyInput`](crate::input::PutPolicyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutPolicyInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::PutPolicyInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::PutPolicyInput {
                 resource_arn: self.resource_arn,
                 policy: self.policy,
@@ -3067,13 +3110,13 @@ impl PutPolicyInput {
             crate::operation::PutPolicy,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutPolicyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3081,8 +3124,10 @@ impl PutPolicyInput {
             fn update_http_builder(
                 input: &crate::input::PutPolicyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3194,7 +3239,7 @@ pub mod restore_certificate_authority_input {
             self,
         ) -> Result<
             crate::input::RestoreCertificateAuthorityInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::RestoreCertificateAuthorityInput {
                 certificate_authority_arn: self.certificate_authority_arn,
@@ -3215,13 +3260,13 @@ impl RestoreCertificateAuthorityInput {
             crate::operation::RestoreCertificateAuthority,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RestoreCertificateAuthorityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3229,8 +3274,10 @@ impl RestoreCertificateAuthorityInput {
             fn update_http_builder(
                 input: &crate::input::RestoreCertificateAuthorityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3373,8 +3420,10 @@ pub mod revoke_certificate_input {
         /// Consumes the builder and constructs a [`RevokeCertificateInput`](crate::input::RevokeCertificateInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RevokeCertificateInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::RevokeCertificateInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::RevokeCertificateInput {
                 certificate_authority_arn: self.certificate_authority_arn,
                 certificate_serial: self.certificate_serial,
@@ -3396,13 +3445,13 @@ impl RevokeCertificateInput {
             crate::operation::RevokeCertificate,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RevokeCertificateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3410,8 +3459,10 @@ impl RevokeCertificateInput {
             fn update_http_builder(
                 input: &crate::input::RevokeCertificateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3545,7 +3596,7 @@ pub mod tag_certificate_authority_input {
             self,
         ) -> Result<
             crate::input::TagCertificateAuthorityInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::TagCertificateAuthorityInput {
                 certificate_authority_arn: self.certificate_authority_arn,
@@ -3567,13 +3618,13 @@ impl TagCertificateAuthorityInput {
             crate::operation::TagCertificateAuthority,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagCertificateAuthorityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3581,8 +3632,10 @@ impl TagCertificateAuthorityInput {
             fn update_http_builder(
                 input: &crate::input::TagCertificateAuthorityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3718,7 +3771,7 @@ pub mod untag_certificate_authority_input {
             self,
         ) -> Result<
             crate::input::UntagCertificateAuthorityInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UntagCertificateAuthorityInput {
                 certificate_authority_arn: self.certificate_authority_arn,
@@ -3740,13 +3793,13 @@ impl UntagCertificateAuthorityInput {
             crate::operation::UntagCertificateAuthority,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagCertificateAuthorityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3754,8 +3807,10 @@ impl UntagCertificateAuthorityInput {
             fn update_http_builder(
                 input: &crate::input::UntagCertificateAuthorityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3903,7 +3958,7 @@ pub mod update_certificate_authority_input {
             self,
         ) -> Result<
             crate::input::UpdateCertificateAuthorityInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateCertificateAuthorityInput {
                 certificate_authority_arn: self.certificate_authority_arn,
@@ -3926,13 +3981,13 @@ impl UpdateCertificateAuthorityInput {
             crate::operation::UpdateCertificateAuthority,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateCertificateAuthorityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3940,8 +3995,10 @@ impl UpdateCertificateAuthorityInput {
             fn update_http_builder(
                 input: &crate::input::UpdateCertificateAuthorityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

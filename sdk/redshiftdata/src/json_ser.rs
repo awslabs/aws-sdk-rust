@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_batch_execute_statement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::BatchExecuteStatementInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.sqls {
         let mut array_2 = object.key("Sqls").start_array();
         for item_3 in var_1 {
@@ -39,7 +39,7 @@ pub fn serialize_structure_crate_input_batch_execute_statement_input(
 pub fn serialize_structure_crate_input_cancel_statement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CancelStatementInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_11) = &input.id {
         object.key("Id").string(var_11.as_str());
     }
@@ -49,7 +49,7 @@ pub fn serialize_structure_crate_input_cancel_statement_input(
 pub fn serialize_structure_crate_input_describe_statement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeStatementInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_12) = &input.id {
         object.key("Id").string(var_12.as_str());
     }
@@ -59,7 +59,7 @@ pub fn serialize_structure_crate_input_describe_statement_input(
 pub fn serialize_structure_crate_input_describe_table_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeTableInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_13) = &input.cluster_identifier {
         object.key("ClusterIdentifier").string(var_13.as_str());
     }
@@ -99,7 +99,7 @@ pub fn serialize_structure_crate_input_describe_table_input(
 pub fn serialize_structure_crate_input_execute_statement_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ExecuteStatementInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_22) = &input.sql {
         object.key("Sql").string(var_22.as_str());
     }
@@ -144,7 +144,7 @@ pub fn serialize_structure_crate_input_execute_statement_input(
 pub fn serialize_structure_crate_input_get_statement_result_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetStatementResultInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_34) = &input.id {
         object.key("Id").string(var_34.as_str());
     }
@@ -157,7 +157,7 @@ pub fn serialize_structure_crate_input_get_statement_result_input(
 pub fn serialize_structure_crate_input_list_databases_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListDatabasesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_36) = &input.cluster_identifier {
         object.key("ClusterIdentifier").string(var_36.as_str());
     }
@@ -188,7 +188,7 @@ pub fn serialize_structure_crate_input_list_databases_input(
 pub fn serialize_structure_crate_input_list_schemas_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListSchemasInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_42) = &input.cluster_identifier {
         object.key("ClusterIdentifier").string(var_42.as_str());
     }
@@ -225,7 +225,7 @@ pub fn serialize_structure_crate_input_list_schemas_input(
 pub fn serialize_structure_crate_input_list_statements_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListStatementsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_50) = &input.next_token {
         object.key("NextToken").string(var_50.as_str());
     }
@@ -250,7 +250,7 @@ pub fn serialize_structure_crate_input_list_statements_input(
 pub fn serialize_structure_crate_input_list_tables_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTablesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_54) = &input.cluster_identifier {
         object.key("ClusterIdentifier").string(var_54.as_str());
     }
@@ -290,7 +290,7 @@ pub fn serialize_structure_crate_input_list_tables_input(
 pub fn serialize_structure_crate_model_sql_parameter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SqlParameter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_63) = &input.name {
         object.key("name").string(var_63.as_str());
     }

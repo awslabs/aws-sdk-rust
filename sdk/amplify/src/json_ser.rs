@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_app_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateAppInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.access_token {
         object.key("accessToken").string(var_1.as_str());
     }
@@ -100,7 +100,7 @@ pub fn serialize_structure_crate_input_create_app_input(
 pub fn serialize_structure_crate_input_create_backend_environment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateBackendEnvironmentInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.deployment_artifacts {
         object.key("deploymentArtifacts").string(var_32.as_str());
     }
@@ -116,7 +116,7 @@ pub fn serialize_structure_crate_input_create_backend_environment_input(
 pub fn serialize_structure_crate_input_create_branch_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateBranchInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_35) = &input.backend_environment_arn {
         object.key("backendEnvironmentArn").string(var_35.as_str());
     }
@@ -188,7 +188,7 @@ pub fn serialize_structure_crate_input_create_branch_input(
 pub fn serialize_structure_crate_input_create_deployment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateDeploymentInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_58) = &input.file_map {
         let mut object_59 = object.key("fileMap").start_object();
         for (key_60, value_61) in var_58 {
@@ -204,7 +204,7 @@ pub fn serialize_structure_crate_input_create_deployment_input(
 pub fn serialize_structure_crate_input_create_domain_association_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateDomainAssociationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_62) = &input.auto_sub_domain_creation_patterns {
         let mut array_63 = object.key("autoSubDomainCreationPatterns").start_array();
         for item_64 in var_62 {
@@ -243,7 +243,7 @@ pub fn serialize_structure_crate_input_create_domain_association_input(
 pub fn serialize_structure_crate_input_create_webhook_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateWebhookInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_72) = &input.branch_name {
         object.key("branchName").string(var_72.as_str());
     }
@@ -256,7 +256,7 @@ pub fn serialize_structure_crate_input_create_webhook_input(
 pub fn serialize_structure_crate_input_generate_access_logs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GenerateAccessLogsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_74) = &input.domain_name {
         object.key("domainName").string(var_74.as_str());
     }
@@ -276,7 +276,7 @@ pub fn serialize_structure_crate_input_generate_access_logs_input(
 pub fn serialize_structure_crate_input_start_deployment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartDeploymentInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_77) = &input.job_id {
         object.key("jobId").string(var_77.as_str());
     }
@@ -289,7 +289,7 @@ pub fn serialize_structure_crate_input_start_deployment_input(
 pub fn serialize_structure_crate_input_start_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_79) = &input.commit_id {
         object.key("commitId").string(var_79.as_str());
     }
@@ -316,7 +316,7 @@ pub fn serialize_structure_crate_input_start_job_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_85) = &input.tags {
         let mut object_86 = object.key("tags").start_object();
         for (key_87, value_88) in var_85 {
@@ -332,7 +332,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_app_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateAppInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_89) = &input.access_token {
         object.key("accessToken").string(var_89.as_str());
     }
@@ -421,7 +421,7 @@ pub fn serialize_structure_crate_input_update_app_input(
 pub fn serialize_structure_crate_input_update_branch_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateBranchInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_116) = &input.backend_environment_arn {
         object.key("backendEnvironmentArn").string(var_116.as_str());
     }
@@ -481,7 +481,7 @@ pub fn serialize_structure_crate_input_update_branch_input(
 pub fn serialize_structure_crate_input_update_domain_association_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateDomainAssociationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_134) = &input.auto_sub_domain_creation_patterns {
         let mut array_135 = object.key("autoSubDomainCreationPatterns").start_array();
         for item_136 in var_134 {
@@ -517,7 +517,7 @@ pub fn serialize_structure_crate_input_update_domain_association_input(
 pub fn serialize_structure_crate_input_update_webhook_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateWebhookInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_143) = &input.branch_name {
         object.key("branchName").string(var_143.as_str());
     }
@@ -530,7 +530,7 @@ pub fn serialize_structure_crate_input_update_webhook_input(
 pub fn serialize_structure_crate_model_auto_branch_creation_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AutoBranchCreationConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_145) = &input.stage {
         object.key("stage").string(var_145.as_str());
     }
@@ -575,7 +575,7 @@ pub fn serialize_structure_crate_model_auto_branch_creation_config(
 pub fn serialize_structure_crate_model_custom_rule(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CustomRule,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_158) = &input.source {
         object.key("source").string(var_158.as_str());
     }
@@ -594,7 +594,7 @@ pub fn serialize_structure_crate_model_custom_rule(
 pub fn serialize_structure_crate_model_sub_domain_setting(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SubDomainSetting,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_162) = &input.prefix {
         object.key("prefix").string(var_162.as_str());
     }

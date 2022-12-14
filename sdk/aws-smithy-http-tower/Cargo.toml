@@ -19,6 +19,10 @@ bytes = "1"
 http-body = "0.4.4"
 tracing = "0.1"
 
+[dependencies.aws-smithy-types]
+path = "../aws-smithy-types"
+version = "0.51.0"
+
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
 version = "0.51.0"

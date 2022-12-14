@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_associate_gateway_to_server_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateGatewayToServerInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.gateway_arn {
         object.key("GatewayArn").string(var_1.as_str());
     }
@@ -15,7 +15,7 @@ pub fn serialize_structure_crate_input_associate_gateway_to_server_input(
 pub fn serialize_structure_crate_input_create_gateway_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateGatewayInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_3) = &input.activation_key {
         object.key("ActivationKey").string(var_3.as_str());
     }
@@ -42,7 +42,7 @@ pub fn serialize_structure_crate_input_create_gateway_input(
 pub fn serialize_structure_crate_input_delete_gateway_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteGatewayInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_10) = &input.gateway_arn {
         object.key("GatewayArn").string(var_10.as_str());
     }
@@ -52,7 +52,7 @@ pub fn serialize_structure_crate_input_delete_gateway_input(
 pub fn serialize_structure_crate_input_delete_hypervisor_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteHypervisorInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_11) = &input.hypervisor_arn {
         object.key("HypervisorArn").string(var_11.as_str());
     }
@@ -62,7 +62,7 @@ pub fn serialize_structure_crate_input_delete_hypervisor_input(
 pub fn serialize_structure_crate_input_disassociate_gateway_from_server_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateGatewayFromServerInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_12) = &input.gateway_arn {
         object.key("GatewayArn").string(var_12.as_str());
     }
@@ -72,7 +72,7 @@ pub fn serialize_structure_crate_input_disassociate_gateway_from_server_input(
 pub fn serialize_structure_crate_input_get_gateway_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetGatewayInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_13) = &input.gateway_arn {
         object.key("GatewayArn").string(var_13.as_str());
     }
@@ -82,7 +82,7 @@ pub fn serialize_structure_crate_input_get_gateway_input(
 pub fn serialize_structure_crate_input_get_virtual_machine_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetVirtualMachineInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_14) = &input.resource_arn {
         object.key("ResourceArn").string(var_14.as_str());
     }
@@ -92,7 +92,7 @@ pub fn serialize_structure_crate_input_get_virtual_machine_input(
 pub fn serialize_structure_crate_input_import_hypervisor_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ImportHypervisorConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.name {
         object.key("Name").string(var_15.as_str());
     }
@@ -125,7 +125,7 @@ pub fn serialize_structure_crate_input_import_hypervisor_configuration_input(
 pub fn serialize_structure_crate_input_list_gateways_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListGatewaysInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_24) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -141,7 +141,7 @@ pub fn serialize_structure_crate_input_list_gateways_input(
 pub fn serialize_structure_crate_input_list_hypervisors_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListHypervisorsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_26) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -157,7 +157,7 @@ pub fn serialize_structure_crate_input_list_hypervisors_input(
 pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.resource_arn {
         object.key("ResourceArn").string(var_28.as_str());
     }
@@ -167,7 +167,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
 pub fn serialize_structure_crate_input_list_virtual_machines_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListVirtualMachinesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_29) = &input.hypervisor_arn {
         object.key("HypervisorArn").string(var_29.as_str());
     }
@@ -186,7 +186,7 @@ pub fn serialize_structure_crate_input_list_virtual_machines_input(
 pub fn serialize_structure_crate_input_put_maintenance_start_time_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutMaintenanceStartTimeInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.gateway_arn {
         object.key("GatewayArn").string(var_32.as_str());
     }
@@ -220,7 +220,7 @@ pub fn serialize_structure_crate_input_put_maintenance_start_time_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_37) = &input.resource_arn {
         object.key("ResourceARN").string(var_37.as_str());
     }
@@ -241,7 +241,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_test_hypervisor_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TestHypervisorConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_42) = &input.gateway_arn {
         object.key("GatewayArn").string(var_42.as_str());
     }
@@ -260,7 +260,7 @@ pub fn serialize_structure_crate_input_test_hypervisor_configuration_input(
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_46) = &input.resource_arn {
         object.key("ResourceARN").string(var_46.as_str());
     }
@@ -279,7 +279,7 @@ pub fn serialize_structure_crate_input_untag_resource_input(
 pub fn serialize_structure_crate_input_update_gateway_information_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateGatewayInformationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_50) = &input.gateway_arn {
         object.key("GatewayArn").string(var_50.as_str());
     }
@@ -292,7 +292,7 @@ pub fn serialize_structure_crate_input_update_gateway_information_input(
 pub fn serialize_structure_crate_input_update_gateway_software_now_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateGatewaySoftwareNowInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_52) = &input.gateway_arn {
         object.key("GatewayArn").string(var_52.as_str());
     }
@@ -302,7 +302,7 @@ pub fn serialize_structure_crate_input_update_gateway_software_now_input(
 pub fn serialize_structure_crate_input_update_hypervisor_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateHypervisorInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_53) = &input.hypervisor_arn {
         object.key("HypervisorArn").string(var_53.as_str());
     }
@@ -324,7 +324,7 @@ pub fn serialize_structure_crate_input_update_hypervisor_input(
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_58) = &input.key {
         object.key("Key").string(var_58.as_str());
     }

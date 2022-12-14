@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_configuration_set_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateConfigurationSetInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.configuration_set_name {
         object.key("ConfigurationSetName").string(var_1.as_str());
     }
@@ -12,7 +12,7 @@ pub fn serialize_structure_crate_input_create_configuration_set_input(
 pub fn serialize_structure_crate_input_create_configuration_set_event_destination_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateConfigurationSetEventDestinationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_2) = &input.event_destination {
         let mut object_3 = object.key("EventDestination").start_object();
         crate::json_ser::serialize_structure_crate_model_event_destination_definition(
@@ -30,7 +30,7 @@ pub fn serialize_structure_crate_input_create_configuration_set_event_destinatio
 pub fn serialize_structure_crate_input_send_voice_message_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SendVoiceMessageInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_5) = &input.caller_id {
         object.key("CallerId").string(var_5.as_str());
     }
@@ -57,7 +57,7 @@ pub fn serialize_structure_crate_input_send_voice_message_input(
 pub fn serialize_structure_crate_input_update_configuration_set_event_destination_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateConfigurationSetEventDestinationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_11) = &input.event_destination {
         let mut object_12 = object.key("EventDestination").start_object();
         crate::json_ser::serialize_structure_crate_model_event_destination_definition(
@@ -72,7 +72,7 @@ pub fn serialize_structure_crate_input_update_configuration_set_event_destinatio
 pub fn serialize_structure_crate_model_event_destination_definition(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EventDestinationDefinition,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_13) = &input.cloud_watch_logs_destination {
         let mut object_14 = object.key("CloudWatchLogsDestination").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logs_destination(
@@ -112,7 +112,7 @@ pub fn serialize_structure_crate_model_event_destination_definition(
 pub fn serialize_structure_crate_model_voice_message_content(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::VoiceMessageContent,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_22) = &input.call_instructions_message {
         let mut object_23 = object.key("CallInstructionsMessage").start_object();
         crate::json_ser::serialize_structure_crate_model_call_instructions_message_type(
@@ -140,7 +140,7 @@ pub fn serialize_structure_crate_model_voice_message_content(
 pub fn serialize_structure_crate_model_cloud_watch_logs_destination(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CloudWatchLogsDestination,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.iam_role_arn {
         object.key("IamRoleArn").string(var_28.as_str());
     }
@@ -153,7 +153,7 @@ pub fn serialize_structure_crate_model_cloud_watch_logs_destination(
 pub fn serialize_structure_crate_model_kinesis_firehose_destination(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::KinesisFirehoseDestination,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_30) = &input.delivery_stream_arn {
         object.key("DeliveryStreamArn").string(var_30.as_str());
     }
@@ -166,7 +166,7 @@ pub fn serialize_structure_crate_model_kinesis_firehose_destination(
 pub fn serialize_structure_crate_model_sns_destination(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SnsDestination,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.topic_arn {
         object.key("TopicArn").string(var_32.as_str());
     }
@@ -176,7 +176,7 @@ pub fn serialize_structure_crate_model_sns_destination(
 pub fn serialize_structure_crate_model_call_instructions_message_type(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CallInstructionsMessageType,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.text {
         object.key("Text").string(var_33.as_str());
     }
@@ -186,7 +186,7 @@ pub fn serialize_structure_crate_model_call_instructions_message_type(
 pub fn serialize_structure_crate_model_plain_text_message_type(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PlainTextMessageType,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_34) = &input.language_code {
         object.key("LanguageCode").string(var_34.as_str());
     }
@@ -202,7 +202,7 @@ pub fn serialize_structure_crate_model_plain_text_message_type(
 pub fn serialize_structure_crate_model_ssml_message_type(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SsmlMessageType,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_37) = &input.language_code {
         object.key("LanguageCode").string(var_37.as_str());
     }

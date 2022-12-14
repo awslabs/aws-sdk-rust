@@ -65,8 +65,10 @@ pub mod create_scaling_plan_input {
         /// Consumes the builder and constructs a [`CreateScalingPlanInput`](crate::input::CreateScalingPlanInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateScalingPlanInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateScalingPlanInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateScalingPlanInput {
                 scaling_plan_name: self.scaling_plan_name,
                 application_source: self.application_source,
@@ -88,13 +90,13 @@ impl CreateScalingPlanInput {
             crate::operation::CreateScalingPlan,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateScalingPlanInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -102,8 +104,10 @@ impl CreateScalingPlanInput {
             fn update_http_builder(
                 input: &crate::input::CreateScalingPlanInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -224,8 +228,10 @@ pub mod delete_scaling_plan_input {
         /// Consumes the builder and constructs a [`DeleteScalingPlanInput`](crate::input::DeleteScalingPlanInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteScalingPlanInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteScalingPlanInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteScalingPlanInput {
                 scaling_plan_name: self.scaling_plan_name,
                 scaling_plan_version: self.scaling_plan_version,
@@ -246,13 +252,13 @@ impl DeleteScalingPlanInput {
             crate::operation::DeleteScalingPlan,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteScalingPlanInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -260,8 +266,10 @@ impl DeleteScalingPlanInput {
             fn update_http_builder(
                 input: &crate::input::DeleteScalingPlanInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -406,7 +414,7 @@ pub mod describe_scaling_plan_resources_input {
             self,
         ) -> Result<
             crate::input::DescribeScalingPlanResourcesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeScalingPlanResourcesInput {
                 scaling_plan_name: self.scaling_plan_name,
@@ -430,13 +438,13 @@ impl DescribeScalingPlanResourcesInput {
             crate::operation::DescribeScalingPlanResources,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeScalingPlanResourcesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -444,8 +452,10 @@ impl DescribeScalingPlanResourcesInput {
             fn update_http_builder(
                 input: &crate::input::DescribeScalingPlanResourcesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -618,8 +628,10 @@ pub mod describe_scaling_plans_input {
         /// Consumes the builder and constructs a [`DescribeScalingPlansInput`](crate::input::DescribeScalingPlansInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeScalingPlansInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeScalingPlansInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeScalingPlansInput {
                 scaling_plan_names: self.scaling_plan_names,
                 scaling_plan_version: self.scaling_plan_version,
@@ -643,13 +655,13 @@ impl DescribeScalingPlansInput {
             crate::operation::DescribeScalingPlans,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeScalingPlansInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -657,8 +669,10 @@ impl DescribeScalingPlansInput {
             fn update_http_builder(
                 input: &crate::input::DescribeScalingPlansInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -878,7 +892,7 @@ pub mod get_scaling_plan_resource_forecast_data_input {
             self,
         ) -> Result<
             crate::input::GetScalingPlanResourceForecastDataInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::GetScalingPlanResourceForecastDataInput {
                 scaling_plan_name: self.scaling_plan_name,
@@ -906,13 +920,13 @@ impl GetScalingPlanResourceForecastDataInput {
             crate::operation::GetScalingPlanResourceForecastData,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetScalingPlanResourceForecastDataInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -920,8 +934,10 @@ impl GetScalingPlanResourceForecastDataInput {
             fn update_http_builder(
                 input: &crate::input::GetScalingPlanResourceForecastDataInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1080,8 +1096,10 @@ pub mod update_scaling_plan_input {
         /// Consumes the builder and constructs a [`UpdateScalingPlanInput`](crate::input::UpdateScalingPlanInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateScalingPlanInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateScalingPlanInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateScalingPlanInput {
                 scaling_plan_name: self.scaling_plan_name,
                 scaling_plan_version: self.scaling_plan_version,
@@ -1104,13 +1122,13 @@ impl UpdateScalingPlanInput {
             crate::operation::UpdateScalingPlan,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateScalingPlanInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1118,8 +1136,10 @@ impl UpdateScalingPlanInput {
             fn update_http_builder(
                 input: &crate::input::UpdateScalingPlanInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

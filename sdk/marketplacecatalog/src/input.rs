@@ -37,7 +37,7 @@ pub mod cancel_change_set_input {
         /// Consumes the builder and constructs a [`CancelChangeSetInput`](crate::input::CancelChangeSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CancelChangeSetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CancelChangeSetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CancelChangeSetInput {
                 catalog: self.catalog,
@@ -59,20 +59,20 @@ impl CancelChangeSetInput {
             crate::operation::CancelChangeSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CancelChangeSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/CancelChangeSet").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::CancelChangeSetInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_1) = &_input.catalog {
                     query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_1));
@@ -86,8 +86,10 @@ impl CancelChangeSetInput {
             fn update_http_builder(
                 input: &crate::input::CancelChangeSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -190,8 +192,10 @@ pub mod describe_change_set_input {
         /// Consumes the builder and constructs a [`DescribeChangeSetInput`](crate::input::DescribeChangeSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeChangeSetInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DescribeChangeSetInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DescribeChangeSetInput {
                 catalog: self.catalog,
                 change_set_id: self.change_set_id,
@@ -212,20 +216,20 @@ impl DescribeChangeSetInput {
             crate::operation::DescribeChangeSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeChangeSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/DescribeChangeSet").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DescribeChangeSetInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_3) = &_input.catalog {
                     query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_3));
@@ -239,8 +243,10 @@ impl DescribeChangeSetInput {
             fn update_http_builder(
                 input: &crate::input::DescribeChangeSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -340,7 +346,7 @@ pub mod describe_entity_input {
         /// Consumes the builder and constructs a [`DescribeEntityInput`](crate::input::DescribeEntityInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeEntityInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::DescribeEntityInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::DescribeEntityInput {
                 catalog: self.catalog,
@@ -362,20 +368,20 @@ impl DescribeEntityInput {
             crate::operation::DescribeEntity,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeEntityInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/DescribeEntity").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::DescribeEntityInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_5) = &_input.catalog {
                     query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_5));
@@ -389,8 +395,10 @@ impl DescribeEntityInput {
             fn update_http_builder(
                 input: &crate::input::DescribeEntityInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -532,7 +540,7 @@ pub mod list_change_sets_input {
         /// Consumes the builder and constructs a [`ListChangeSetsInput`](crate::input::ListChangeSetsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListChangeSetsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListChangeSetsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListChangeSetsInput {
                 catalog: self.catalog,
@@ -557,13 +565,13 @@ impl ListChangeSetsInput {
             crate::operation::ListChangeSets,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListChangeSetsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ListChangeSets").expect("formatting should succeed");
                 Ok(())
             }
@@ -571,8 +579,10 @@ impl ListChangeSetsInput {
             fn update_http_builder(
                 input: &crate::input::ListChangeSetsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -738,7 +748,7 @@ pub mod list_entities_input {
         /// Consumes the builder and constructs a [`ListEntitiesInput`](crate::input::ListEntitiesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListEntitiesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListEntitiesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListEntitiesInput {
                 catalog: self.catalog,
@@ -764,13 +774,13 @@ impl ListEntitiesInput {
             crate::operation::ListEntities,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListEntitiesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/ListEntities").expect("formatting should succeed");
                 Ok(())
             }
@@ -778,8 +788,10 @@ impl ListEntitiesInput {
             fn update_http_builder(
                 input: &crate::input::ListEntitiesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -929,7 +941,7 @@ pub mod start_change_set_input {
         /// Consumes the builder and constructs a [`StartChangeSetInput`](crate::input::StartChangeSetInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartChangeSetInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::StartChangeSetInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::StartChangeSetInput {
                 catalog: self.catalog,
@@ -953,7 +965,7 @@ impl StartChangeSetInput {
             crate::operation::StartChangeSet,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
@@ -962,7 +974,7 @@ impl StartChangeSetInput {
             fn uri_base(
                 _input: &crate::input::StartChangeSetInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/StartChangeSet").expect("formatting should succeed");
                 Ok(())
             }
@@ -970,8 +982,10 @@ impl StartChangeSetInput {
             fn update_http_builder(
                 input: &crate::input::StartChangeSetInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

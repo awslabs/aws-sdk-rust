@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_workflow_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateWorkflowInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.application_configuration_id {
         object
             .key("applicationConfigurationId")
@@ -52,7 +52,7 @@ pub fn serialize_structure_crate_input_create_workflow_input(
 pub fn serialize_structure_crate_input_create_workflow_step_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateWorkflowStepInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_17) = &input.description {
         object.key("description").string(var_17.as_str());
     }
@@ -125,7 +125,7 @@ pub fn serialize_structure_crate_input_create_workflow_step_input(
 pub fn serialize_structure_crate_input_create_workflow_step_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateWorkflowStepGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_37) = &input.description {
         object.key("description").string(var_37.as_str());
     }
@@ -159,7 +159,7 @@ pub fn serialize_structure_crate_input_create_workflow_step_group_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_46) = &input.tags {
         let mut object_47 = object.key("tags").start_object();
         for (key_48, value_49) in var_46 {
@@ -175,7 +175,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_workflow_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateWorkflowInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_50) = &input.description {
         object.key("description").string(var_50.as_str());
     }
@@ -208,7 +208,7 @@ pub fn serialize_structure_crate_input_update_workflow_input(
 pub fn serialize_structure_crate_input_update_workflow_step_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateWorkflowStepInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_60) = &input.description {
         object.key("description").string(var_60.as_str());
     }
@@ -284,7 +284,7 @@ pub fn serialize_structure_crate_input_update_workflow_step_input(
 pub fn serialize_structure_crate_input_update_workflow_step_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateWorkflowStepGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_81) = &input.description {
         object.key("description").string(var_81.as_str());
     }
@@ -315,7 +315,7 @@ pub fn serialize_structure_crate_input_update_workflow_step_group_input(
 pub fn serialize_union_crate_model_step_input(
     object_7: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StepInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::StepInput::IntegerValue(inner) => {
             object_7.key("integerValue").number(
@@ -346,7 +346,7 @@ pub fn serialize_union_crate_model_step_input(
         }
         crate::model::StepInput::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant("StepInput"),
+                aws_smithy_http::operation::error::SerializationError::unknown_variant("StepInput"),
             )
         }
     }
@@ -356,7 +356,7 @@ pub fn serialize_union_crate_model_step_input(
 pub fn serialize_structure_crate_model_workflow_step_output(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WorkflowStepOutput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_94) = &input.name {
         object.key("name").string(var_94.as_str());
     }
@@ -380,7 +380,7 @@ pub fn serialize_structure_crate_model_workflow_step_output(
 pub fn serialize_structure_crate_model_workflow_step_automation_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WorkflowStepAutomationConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_99) = &input.script_location_s3_bucket {
         object.key("scriptLocationS3Bucket").string(var_99.as_str());
     }
@@ -412,7 +412,7 @@ pub fn serialize_structure_crate_model_workflow_step_automation_configuration(
 pub fn serialize_union_crate_model_workflow_step_output_union(
     object_98: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WorkflowStepOutputUnion,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::WorkflowStepOutputUnion::IntegerValue(inner) => {
             object_98.key("integerValue").number(
@@ -434,7 +434,7 @@ pub fn serialize_union_crate_model_workflow_step_output_union(
         }
         crate::model::WorkflowStepOutputUnion::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "WorkflowStepOutputUnion",
                 ),
             )
@@ -446,7 +446,7 @@ pub fn serialize_union_crate_model_workflow_step_output_union(
 pub fn serialize_structure_crate_model_platform_script_key(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PlatformScriptKey,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_108) = &input.linux {
         object.key("linux").string(var_108.as_str());
     }
@@ -459,7 +459,7 @@ pub fn serialize_structure_crate_model_platform_script_key(
 pub fn serialize_structure_crate_model_platform_command(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PlatformCommand,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_110) = &input.linux {
         object.key("linux").string(var_110.as_str());
     }

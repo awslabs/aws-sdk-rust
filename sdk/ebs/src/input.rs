@@ -79,8 +79,10 @@ pub mod complete_snapshot_input {
         /// Consumes the builder and constructs a [`CompleteSnapshotInput`](crate::input::CompleteSnapshotInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CompleteSnapshotInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CompleteSnapshotInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CompleteSnapshotInput {
                 snapshot_id: self.snapshot_id,
                 changed_blocks_count: self.changed_blocks_count,
@@ -104,29 +106,31 @@ impl CompleteSnapshotInput {
             crate::operation::CompleteSnapshot,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CompleteSnapshotInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.snapshot_id;
-                let input_1 = input_1.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "snapshot_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let snapshot_id = aws_smithy_http::label::fmt_string(
                     input_1,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if snapshot_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "snapshot_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -140,8 +144,10 @@ impl CompleteSnapshotInput {
             fn update_http_builder(
                 input: &crate::input::CompleteSnapshotInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_complete_snapshot(input, builder)?;
@@ -256,8 +262,10 @@ pub mod get_snapshot_block_input {
         /// Consumes the builder and constructs a [`GetSnapshotBlockInput`](crate::input::GetSnapshotBlockInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSnapshotBlockInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetSnapshotBlockInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetSnapshotBlockInput {
                 snapshot_id: self.snapshot_id,
                 block_index: self.block_index,
@@ -279,44 +287,48 @@ impl GetSnapshotBlockInput {
             crate::operation::GetSnapshotBlock,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetSnapshotBlockInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.snapshot_id;
-                let input_2 = input_2.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "snapshot_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let snapshot_id = aws_smithy_http::label::fmt_string(
                     input_2,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if snapshot_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "snapshot_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_3 = &_input.block_index;
-                let input_3 = input_3.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "block_index",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "block_index",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mut block_index_encoder = aws_smithy_types::primitive::Encoder::from(*input_3);
                 let block_index = block_index_encoder.encode();
                 if block_index.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "block_index",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "block_index",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -330,7 +342,7 @@ impl GetSnapshotBlockInput {
             fn uri_query(
                 _input: &crate::input::GetSnapshotBlockInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_4) = &_input.block_token {
                     query.push_kv("blockToken", &aws_smithy_http::query::fmt_string(&inner_4));
@@ -341,8 +353,10 @@ impl GetSnapshotBlockInput {
             fn update_http_builder(
                 input: &crate::input::GetSnapshotBlockInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -499,8 +513,10 @@ pub mod list_changed_blocks_input {
         /// Consumes the builder and constructs a [`ListChangedBlocksInput`](crate::input::ListChangedBlocksInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListChangedBlocksInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListChangedBlocksInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListChangedBlocksInput {
                 first_snapshot_id: self.first_snapshot_id,
                 second_snapshot_id: self.second_snapshot_id,
@@ -524,29 +540,31 @@ impl ListChangedBlocksInput {
             crate::operation::ListChangedBlocks,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListChangedBlocksInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.second_snapshot_id;
-                let input_5 = input_5.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "second_snapshot_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_5 = input_5.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "second_snapshot_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let second_snapshot_id = aws_smithy_http::label::fmt_string(
                     input_5,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if second_snapshot_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "second_snapshot_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "second_snapshot_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -559,7 +577,7 @@ impl ListChangedBlocksInput {
             fn uri_query(
                 _input: &crate::input::ListChangedBlocksInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_6) = &_input.first_snapshot_id {
                     query.push_kv(
@@ -588,8 +606,10 @@ impl ListChangedBlocksInput {
             fn update_http_builder(
                 input: &crate::input::ListChangedBlocksInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -719,8 +739,10 @@ pub mod list_snapshot_blocks_input {
         /// Consumes the builder and constructs a [`ListSnapshotBlocksInput`](crate::input::ListSnapshotBlocksInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSnapshotBlocksInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListSnapshotBlocksInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListSnapshotBlocksInput {
                 snapshot_id: self.snapshot_id,
                 next_token: self.next_token,
@@ -743,29 +765,31 @@ impl ListSnapshotBlocksInput {
             crate::operation::ListSnapshotBlocks,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListSnapshotBlocksInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_10 = &_input.snapshot_id;
-                let input_10 = input_10.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "snapshot_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let snapshot_id = aws_smithy_http::label::fmt_string(
                     input_10,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if snapshot_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "snapshot_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -778,7 +802,7 @@ impl ListSnapshotBlocksInput {
             fn uri_query(
                 _input: &crate::input::ListSnapshotBlocksInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_11) = &_input.next_token {
                     query.push_kv("pageToken", &aws_smithy_http::query::fmt_string(&inner_11));
@@ -801,8 +825,10 @@ impl ListSnapshotBlocksInput {
             fn update_http_builder(
                 input: &crate::input::ListSnapshotBlocksInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -971,8 +997,10 @@ pub mod put_snapshot_block_input {
         /// Consumes the builder and constructs a [`PutSnapshotBlockInput`](crate::input::PutSnapshotBlockInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutSnapshotBlockInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutSnapshotBlockInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutSnapshotBlockInput {
                 snapshot_id: self.snapshot_id,
                 block_index: self.block_index,
@@ -998,44 +1026,48 @@ impl PutSnapshotBlockInput {
             crate::operation::PutSnapshotBlock,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutSnapshotBlockInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_14 = &_input.snapshot_id;
-                let input_14 = input_14.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_14 = input_14.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "snapshot_id",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let snapshot_id = aws_smithy_http::label::fmt_string(
                     input_14,
                     aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if snapshot_id.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "snapshot_id",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "snapshot_id",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 let input_15 = &_input.block_index;
-                let input_15 = input_15.as_ref().ok_or(
-                    aws_smithy_http::operation::BuildError::MissingField {
-                        field: "block_index",
-                        details: "cannot be empty or unset",
-                    },
-                )?;
+                let input_15 = input_15.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "block_index",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let mut block_index_encoder = aws_smithy_types::primitive::Encoder::from(*input_15);
                 let block_index = block_index_encoder.encode();
                 if block_index.is_empty() {
-                    return Err(aws_smithy_http::operation::BuildError::MissingField {
-                        field: "block_index",
-                        details: "cannot be empty or unset",
-                    });
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "block_index",
+                            "cannot be empty or unset",
+                        ),
+                    );
                 }
                 write!(
                     output,
@@ -1050,8 +1082,10 @@ impl PutSnapshotBlockInput {
             fn update_http_builder(
                 input: &crate::input::PutSnapshotBlockInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_put_snapshot_block(input, builder)?;
@@ -1284,7 +1318,7 @@ pub mod start_snapshot_input {
         /// Consumes the builder and constructs a [`StartSnapshotInput`](crate::input::StartSnapshotInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartSnapshotInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::StartSnapshotInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::StartSnapshotInput {
                 volume_size: self.volume_size,
@@ -1312,7 +1346,7 @@ impl StartSnapshotInput {
             crate::operation::StartSnapshot,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1321,7 +1355,7 @@ impl StartSnapshotInput {
             fn uri_base(
                 _input: &crate::input::StartSnapshotInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/snapshots").expect("formatting should succeed");
                 Ok(())
             }
@@ -1329,8 +1363,10 @@ impl StartSnapshotInput {
             fn update_http_builder(
                 input: &crate::input::StartSnapshotInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

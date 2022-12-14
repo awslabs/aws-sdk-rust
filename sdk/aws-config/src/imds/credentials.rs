@@ -13,6 +13,7 @@ use crate::imds::client::{ImdsError, LazyClient};
 use crate::json_credentials::{parse_json_credentials, JsonCredentials, RefreshableCredentials};
 use crate::provider_config::ProviderConfig;
 use aws_smithy_client::SdkError;
+use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::credentials::{future, CredentialsError, ProvideCredentials};
 use aws_types::os_shim_internal::Env;
 use aws_types::{credentials, Credentials};
@@ -137,9 +138,12 @@ impl ImdsCredentialsProvider {
                 );
                 Err(CredentialsError::not_loaded("received 404 from IMDS"))
             }
-            Err(ImdsError::FailedToLoadToken(SdkError::DispatchFailure(err))) => Err(
-                CredentialsError::not_loaded(format!("could not communicate with imds: {}", err)),
-            ),
+            Err(ImdsError::FailedToLoadToken(ref err @ SdkError::DispatchFailure(_))) => {
+                Err(CredentialsError::not_loaded(format!(
+                    "could not communicate with IMDS: {}",
+                    DisplayErrorContext(&err)
+                )))
+            }
             Err(other) => Err(CredentialsError::provider_error(other)),
         }
     }

@@ -146,7 +146,7 @@ pub mod create_slack_channel_configuration_input {
             self,
         ) -> Result<
             crate::input::CreateSlackChannelConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateSlackChannelConfigurationInput {
                 team_id: self.team_id,
@@ -174,13 +174,13 @@ impl CreateSlackChannelConfigurationInput {
             crate::operation::CreateSlackChannelConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateSlackChannelConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/create-slack-channel-configuration")
                     .expect("formatting should succeed");
                 Ok(())
@@ -189,8 +189,10 @@ impl CreateSlackChannelConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::CreateSlackChannelConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -279,8 +281,10 @@ pub mod delete_account_alias_input {
         /// Consumes the builder and constructs a [`DeleteAccountAliasInput`](crate::input::DeleteAccountAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAccountAliasInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteAccountAliasInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteAccountAliasInput {})
         }
     }
@@ -298,13 +302,13 @@ impl DeleteAccountAliasInput {
             crate::operation::DeleteAccountAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAccountAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/delete-account-alias").expect("formatting should succeed");
                 Ok(())
             }
@@ -312,8 +316,10 @@ impl DeleteAccountAliasInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAccountAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -414,7 +420,7 @@ pub mod delete_slack_channel_configuration_input {
             self,
         ) -> Result<
             crate::input::DeleteSlackChannelConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteSlackChannelConfigurationInput {
                 team_id: self.team_id,
@@ -436,13 +442,13 @@ impl DeleteSlackChannelConfigurationInput {
             crate::operation::DeleteSlackChannelConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteSlackChannelConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/delete-slack-channel-configuration")
                     .expect("formatting should succeed");
                 Ok(())
@@ -451,8 +457,10 @@ impl DeleteSlackChannelConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteSlackChannelConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -555,7 +563,7 @@ pub mod delete_slack_workspace_configuration_input {
             self,
         ) -> Result<
             crate::input::DeleteSlackWorkspaceConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DeleteSlackWorkspaceConfigurationInput {
                 team_id: self.team_id,
@@ -576,13 +584,13 @@ impl DeleteSlackWorkspaceConfigurationInput {
             crate::operation::DeleteSlackWorkspaceConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteSlackWorkspaceConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/delete-slack-workspace-configuration")
                     .expect("formatting should succeed");
                 Ok(())
@@ -591,8 +599,10 @@ impl DeleteSlackWorkspaceConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::DeleteSlackWorkspaceConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -681,7 +691,7 @@ pub mod get_account_alias_input {
         /// Consumes the builder and constructs a [`GetAccountAliasInput`](crate::input::GetAccountAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAccountAliasInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetAccountAliasInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetAccountAliasInput {})
         }
@@ -700,13 +710,13 @@ impl GetAccountAliasInput {
             crate::operation::GetAccountAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAccountAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/get-account-alias").expect("formatting should succeed");
                 Ok(())
             }
@@ -714,8 +724,10 @@ impl GetAccountAliasInput {
             fn update_http_builder(
                 input: &crate::input::GetAccountAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -805,7 +817,7 @@ pub mod list_slack_channel_configurations_input {
             self,
         ) -> Result<
             crate::input::ListSlackChannelConfigurationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListSlackChannelConfigurationsInput {
                 next_token: self.next_token,
@@ -826,13 +838,13 @@ impl ListSlackChannelConfigurationsInput {
             crate::operation::ListSlackChannelConfigurations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListSlackChannelConfigurationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/list-slack-channel-configurations")
                     .expect("formatting should succeed");
                 Ok(())
@@ -841,8 +853,10 @@ impl ListSlackChannelConfigurationsInput {
             fn update_http_builder(
                 input: &crate::input::ListSlackChannelConfigurationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -945,7 +959,7 @@ pub mod list_slack_workspace_configurations_input {
             self,
         ) -> Result<
             crate::input::ListSlackWorkspaceConfigurationsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListSlackWorkspaceConfigurationsInput {
                 next_token: self.next_token,
@@ -966,13 +980,13 @@ impl ListSlackWorkspaceConfigurationsInput {
             crate::operation::ListSlackWorkspaceConfigurations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListSlackWorkspaceConfigurationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/list-slack-workspace-configurations")
                     .expect("formatting should succeed");
                 Ok(())
@@ -981,8 +995,10 @@ impl ListSlackWorkspaceConfigurationsInput {
             fn update_http_builder(
                 input: &crate::input::ListSlackWorkspaceConfigurationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1086,7 +1102,7 @@ pub mod put_account_alias_input {
         /// Consumes the builder and constructs a [`PutAccountAliasInput`](crate::input::PutAccountAliasInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutAccountAliasInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::PutAccountAliasInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::PutAccountAliasInput {
                 account_alias: self.account_alias,
@@ -1107,13 +1123,13 @@ impl PutAccountAliasInput {
             crate::operation::PutAccountAlias,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutAccountAliasInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/put-account-alias").expect("formatting should succeed");
                 Ok(())
             }
@@ -1121,8 +1137,10 @@ impl PutAccountAliasInput {
             fn update_http_builder(
                 input: &crate::input::PutAccountAliasInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1347,7 +1365,7 @@ pub mod update_slack_channel_configuration_input {
             self,
         ) -> Result<
             crate::input::UpdateSlackChannelConfigurationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateSlackChannelConfigurationInput {
                 team_id: self.team_id,
@@ -1375,13 +1393,13 @@ impl UpdateSlackChannelConfigurationInput {
             crate::operation::UpdateSlackChannelConfiguration,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateSlackChannelConfigurationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/control/update-slack-channel-configuration")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1390,8 +1408,10 @@ impl UpdateSlackChannelConfigurationInput {
             fn update_http_builder(
                 input: &crate::input::UpdateSlackChannelConfigurationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

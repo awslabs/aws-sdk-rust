@@ -55,7 +55,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CountClosedWorkflowExecutionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CountClosedWorkflowExecutionsErrorKind::OperationNotPermittedFault(inner) => Error::OperationNotPermittedFault(inner),
                 crate::error::CountClosedWorkflowExecutionsErrorKind::UnknownResourceFault(inner) => Error::UnknownResourceFault(inner),
                 crate::error::CountClosedWorkflowExecutionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -73,7 +73,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CountOpenWorkflowExecutionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CountOpenWorkflowExecutionsErrorKind::OperationNotPermittedFault(
                     inner,
                 ) => Error::OperationNotPermittedFault(inner),
@@ -97,7 +100,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CountPendingActivityTasksError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CountPendingActivityTasksErrorKind::OperationNotPermittedFault(
                     inner,
                 ) => Error::OperationNotPermittedFault(inner),
@@ -121,7 +127,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CountPendingDecisionTasksError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CountPendingDecisionTasksErrorKind::OperationNotPermittedFault(
                     inner,
                 ) => Error::OperationNotPermittedFault(inner),
@@ -145,20 +154,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeprecateActivityTypeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeprecateActivityTypeErrorKind::OperationNotPermittedFault(inner) => {
-                    Error::OperationNotPermittedFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeprecateActivityTypeErrorKind::OperationNotPermittedFault(
+                        inner,
+                    ) => Error::OperationNotPermittedFault(inner),
+                    crate::error::DeprecateActivityTypeErrorKind::TypeDeprecatedFault(inner) => {
+                        Error::TypeDeprecatedFault(inner)
+                    }
+                    crate::error::DeprecateActivityTypeErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::DeprecateActivityTypeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeprecateActivityTypeErrorKind::TypeDeprecatedFault(inner) => {
-                    Error::TypeDeprecatedFault(inner)
-                }
-                crate::error::DeprecateActivityTypeErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
-                }
-                crate::error::DeprecateActivityTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -169,20 +180,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeprecateDomainError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeprecateDomainErrorKind::DomainDeprecatedFault(inner) => {
-                    Error::DomainDeprecatedFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeprecateDomainErrorKind::DomainDeprecatedFault(inner) => {
+                        Error::DomainDeprecatedFault(inner)
+                    }
+                    crate::error::DeprecateDomainErrorKind::OperationNotPermittedFault(inner) => {
+                        Error::OperationNotPermittedFault(inner)
+                    }
+                    crate::error::DeprecateDomainErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::DeprecateDomainErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeprecateDomainErrorKind::OperationNotPermittedFault(inner) => {
-                    Error::OperationNotPermittedFault(inner)
-                }
-                crate::error::DeprecateDomainErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
-                }
-                crate::error::DeprecateDomainErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -196,20 +209,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeprecateWorkflowTypeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeprecateWorkflowTypeErrorKind::OperationNotPermittedFault(inner) => {
-                    Error::OperationNotPermittedFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeprecateWorkflowTypeErrorKind::OperationNotPermittedFault(
+                        inner,
+                    ) => Error::OperationNotPermittedFault(inner),
+                    crate::error::DeprecateWorkflowTypeErrorKind::TypeDeprecatedFault(inner) => {
+                        Error::TypeDeprecatedFault(inner)
+                    }
+                    crate::error::DeprecateWorkflowTypeErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::DeprecateWorkflowTypeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeprecateWorkflowTypeErrorKind::TypeDeprecatedFault(inner) => {
-                    Error::TypeDeprecatedFault(inner)
-                }
-                crate::error::DeprecateWorkflowTypeErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
-                }
-                crate::error::DeprecateWorkflowTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -223,17 +238,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeActivityTypeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeActivityTypeErrorKind::OperationNotPermittedFault(inner) => {
-                    Error::OperationNotPermittedFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeActivityTypeErrorKind::OperationNotPermittedFault(
+                        inner,
+                    ) => Error::OperationNotPermittedFault(inner),
+                    crate::error::DescribeActivityTypeErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::DescribeActivityTypeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeActivityTypeErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
-                }
-                crate::error::DescribeActivityTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -244,17 +261,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeDomainError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeDomainErrorKind::OperationNotPermittedFault(inner) => {
-                    Error::OperationNotPermittedFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeDomainErrorKind::OperationNotPermittedFault(inner) => {
+                        Error::OperationNotPermittedFault(inner)
+                    }
+                    crate::error::DescribeDomainErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::DescribeDomainErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeDomainErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
-                }
-                crate::error::DescribeDomainErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -268,7 +287,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeWorkflowExecutionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeWorkflowExecutionErrorKind::OperationNotPermittedFault(
                     inner,
                 ) => Error::OperationNotPermittedFault(inner),
@@ -292,17 +314,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeWorkflowTypeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeWorkflowTypeErrorKind::OperationNotPermittedFault(inner) => {
-                    Error::OperationNotPermittedFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeWorkflowTypeErrorKind::OperationNotPermittedFault(
+                        inner,
+                    ) => Error::OperationNotPermittedFault(inner),
+                    crate::error::DescribeWorkflowTypeErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::DescribeWorkflowTypeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeWorkflowTypeErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
-                }
-                crate::error::DescribeWorkflowTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -316,7 +340,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetWorkflowExecutionHistoryError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::GetWorkflowExecutionHistoryErrorKind::OperationNotPermittedFault(
                     inner,
                 ) => Error::OperationNotPermittedFault(inner),
@@ -339,17 +366,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListActivityTypesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListActivityTypesErrorKind::OperationNotPermittedFault(inner) => {
-                    Error::OperationNotPermittedFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListActivityTypesErrorKind::OperationNotPermittedFault(inner) => {
+                        Error::OperationNotPermittedFault(inner)
+                    }
+                    crate::error::ListActivityTypesErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::ListActivityTypesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListActivityTypesErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
-                }
-                crate::error::ListActivityTypesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -363,7 +392,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListClosedWorkflowExecutionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::ListClosedWorkflowExecutionsErrorKind::OperationNotPermittedFault(
                     inner,
                 ) => Error::OperationNotPermittedFault(inner),
@@ -384,14 +416,16 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDomainsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListDomainsErrorKind::OperationNotPermittedFault(inner) => {
-                    Error::OperationNotPermittedFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListDomainsErrorKind::OperationNotPermittedFault(inner) => {
+                        Error::OperationNotPermittedFault(inner)
+                    }
+                    crate::error::ListDomainsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListDomainsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -405,7 +439,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListOpenWorkflowExecutionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::ListOpenWorkflowExecutionsErrorKind::OperationNotPermittedFault(
                     inner,
                 ) => Error::OperationNotPermittedFault(inner),
@@ -428,20 +465,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsForResourceErrorKind::LimitExceededFault(inner) => {
-                    Error::LimitExceededFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListTagsForResourceErrorKind::LimitExceededFault(inner) => {
+                        Error::LimitExceededFault(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::OperationNotPermittedFault(
+                        inner,
+                    ) => Error::OperationNotPermittedFault(inner),
+                    crate::error::ListTagsForResourceErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListTagsForResourceErrorKind::OperationNotPermittedFault(inner) => {
-                    Error::OperationNotPermittedFault(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -454,17 +493,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListWorkflowTypesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListWorkflowTypesErrorKind::OperationNotPermittedFault(inner) => {
-                    Error::OperationNotPermittedFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListWorkflowTypesErrorKind::OperationNotPermittedFault(inner) => {
+                        Error::OperationNotPermittedFault(inner)
+                    }
+                    crate::error::ListWorkflowTypesErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::ListWorkflowTypesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListWorkflowTypesErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
-                }
-                crate::error::ListWorkflowTypesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -477,20 +518,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PollForActivityTaskError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PollForActivityTaskErrorKind::LimitExceededFault(inner) => {
-                    Error::LimitExceededFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::PollForActivityTaskErrorKind::LimitExceededFault(inner) => {
+                        Error::LimitExceededFault(inner)
+                    }
+                    crate::error::PollForActivityTaskErrorKind::OperationNotPermittedFault(
+                        inner,
+                    ) => Error::OperationNotPermittedFault(inner),
+                    crate::error::PollForActivityTaskErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::PollForActivityTaskErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::PollForActivityTaskErrorKind::OperationNotPermittedFault(inner) => {
-                    Error::OperationNotPermittedFault(inner)
-                }
-                crate::error::PollForActivityTaskErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
-                }
-                crate::error::PollForActivityTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -503,20 +546,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PollForDecisionTaskError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PollForDecisionTaskErrorKind::LimitExceededFault(inner) => {
-                    Error::LimitExceededFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::PollForDecisionTaskErrorKind::LimitExceededFault(inner) => {
+                        Error::LimitExceededFault(inner)
+                    }
+                    crate::error::PollForDecisionTaskErrorKind::OperationNotPermittedFault(
+                        inner,
+                    ) => Error::OperationNotPermittedFault(inner),
+                    crate::error::PollForDecisionTaskErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::PollForDecisionTaskErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::PollForDecisionTaskErrorKind::OperationNotPermittedFault(inner) => {
-                    Error::OperationNotPermittedFault(inner)
-                }
-                crate::error::PollForDecisionTaskErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
-                }
-                crate::error::PollForDecisionTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -530,7 +575,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RecordActivityTaskHeartbeatError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::RecordActivityTaskHeartbeatErrorKind::OperationNotPermittedFault(
                     inner,
                 ) => Error::OperationNotPermittedFault(inner),
@@ -554,23 +602,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RegisterActivityTypeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RegisterActivityTypeErrorKind::LimitExceededFault(inner) => {
-                    Error::LimitExceededFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::RegisterActivityTypeErrorKind::LimitExceededFault(inner) => {
+                        Error::LimitExceededFault(inner)
+                    }
+                    crate::error::RegisterActivityTypeErrorKind::OperationNotPermittedFault(
+                        inner,
+                    ) => Error::OperationNotPermittedFault(inner),
+                    crate::error::RegisterActivityTypeErrorKind::TypeAlreadyExistsFault(inner) => {
+                        Error::TypeAlreadyExistsFault(inner)
+                    }
+                    crate::error::RegisterActivityTypeErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::RegisterActivityTypeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::RegisterActivityTypeErrorKind::OperationNotPermittedFault(inner) => {
-                    Error::OperationNotPermittedFault(inner)
-                }
-                crate::error::RegisterActivityTypeErrorKind::TypeAlreadyExistsFault(inner) => {
-                    Error::TypeAlreadyExistsFault(inner)
-                }
-                crate::error::RegisterActivityTypeErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
-                }
-                crate::error::RegisterActivityTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -581,23 +631,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterDomainError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RegisterDomainErrorKind::DomainAlreadyExistsFault(inner) => {
-                    Error::DomainAlreadyExistsFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::RegisterDomainErrorKind::DomainAlreadyExistsFault(inner) => {
+                        Error::DomainAlreadyExistsFault(inner)
+                    }
+                    crate::error::RegisterDomainErrorKind::LimitExceededFault(inner) => {
+                        Error::LimitExceededFault(inner)
+                    }
+                    crate::error::RegisterDomainErrorKind::OperationNotPermittedFault(inner) => {
+                        Error::OperationNotPermittedFault(inner)
+                    }
+                    crate::error::RegisterDomainErrorKind::TooManyTagsFault(inner) => {
+                        Error::TooManyTagsFault(inner)
+                    }
+                    crate::error::RegisterDomainErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::RegisterDomainErrorKind::LimitExceededFault(inner) => {
-                    Error::LimitExceededFault(inner)
-                }
-                crate::error::RegisterDomainErrorKind::OperationNotPermittedFault(inner) => {
-                    Error::OperationNotPermittedFault(inner)
-                }
-                crate::error::RegisterDomainErrorKind::TooManyTagsFault(inner) => {
-                    Error::TooManyTagsFault(inner)
-                }
-                crate::error::RegisterDomainErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -611,23 +663,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RegisterWorkflowTypeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RegisterWorkflowTypeErrorKind::LimitExceededFault(inner) => {
-                    Error::LimitExceededFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::RegisterWorkflowTypeErrorKind::LimitExceededFault(inner) => {
+                        Error::LimitExceededFault(inner)
+                    }
+                    crate::error::RegisterWorkflowTypeErrorKind::OperationNotPermittedFault(
+                        inner,
+                    ) => Error::OperationNotPermittedFault(inner),
+                    crate::error::RegisterWorkflowTypeErrorKind::TypeAlreadyExistsFault(inner) => {
+                        Error::TypeAlreadyExistsFault(inner)
+                    }
+                    crate::error::RegisterWorkflowTypeErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::RegisterWorkflowTypeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::RegisterWorkflowTypeErrorKind::OperationNotPermittedFault(inner) => {
-                    Error::OperationNotPermittedFault(inner)
-                }
-                crate::error::RegisterWorkflowTypeErrorKind::TypeAlreadyExistsFault(inner) => {
-                    Error::TypeAlreadyExistsFault(inner)
-                }
-                crate::error::RegisterWorkflowTypeErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
-                }
-                crate::error::RegisterWorkflowTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -645,7 +699,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::RequestCancelWorkflowExecutionErrorKind::OperationNotPermittedFault(inner) => Error::OperationNotPermittedFault(inner),
                 crate::error::RequestCancelWorkflowExecutionErrorKind::UnknownResourceFault(inner) => Error::UnknownResourceFault(inner),
                 crate::error::RequestCancelWorkflowExecutionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -663,7 +717,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RespondActivityTaskCanceledError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::RespondActivityTaskCanceledErrorKind::OperationNotPermittedFault(
                     inner,
                 ) => Error::OperationNotPermittedFault(inner),
@@ -687,7 +744,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RespondActivityTaskCompletedError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::RespondActivityTaskCompletedErrorKind::OperationNotPermittedFault(
                     inner,
                 ) => Error::OperationNotPermittedFault(inner),
@@ -711,7 +771,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RespondActivityTaskFailedError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::RespondActivityTaskFailedErrorKind::OperationNotPermittedFault(
                     inner,
                 ) => Error::OperationNotPermittedFault(inner),
@@ -735,7 +798,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RespondDecisionTaskCompletedError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::RespondDecisionTaskCompletedErrorKind::OperationNotPermittedFault(
                     inner,
                 ) => Error::OperationNotPermittedFault(inner),
@@ -759,17 +825,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SignalWorkflowExecutionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SignalWorkflowExecutionErrorKind::OperationNotPermittedFault(
-                    inner,
-                ) => Error::OperationNotPermittedFault(inner),
-                crate::error::SignalWorkflowExecutionErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SignalWorkflowExecutionErrorKind::OperationNotPermittedFault(
+                        inner,
+                    ) => Error::OperationNotPermittedFault(inner),
+                    crate::error::SignalWorkflowExecutionErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::SignalWorkflowExecutionErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::SignalWorkflowExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -783,7 +851,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartWorkflowExecutionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::StartWorkflowExecutionErrorKind::DefaultUndefinedFault(inner) => Error::DefaultUndefinedFault(inner),
                 crate::error::StartWorkflowExecutionErrorKind::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
                 crate::error::StartWorkflowExecutionErrorKind::OperationNotPermittedFault(inner) => Error::OperationNotPermittedFault(inner),
@@ -802,23 +870,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagResourceErrorKind::LimitExceededFault(inner) => {
-                    Error::LimitExceededFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::TagResourceErrorKind::LimitExceededFault(inner) => {
+                        Error::LimitExceededFault(inner)
+                    }
+                    crate::error::TagResourceErrorKind::OperationNotPermittedFault(inner) => {
+                        Error::OperationNotPermittedFault(inner)
+                    }
+                    crate::error::TagResourceErrorKind::TooManyTagsFault(inner) => {
+                        Error::TooManyTagsFault(inner)
+                    }
+                    crate::error::TagResourceErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::TagResourceErrorKind::OperationNotPermittedFault(inner) => {
-                    Error::OperationNotPermittedFault(inner)
-                }
-                crate::error::TagResourceErrorKind::TooManyTagsFault(inner) => {
-                    Error::TooManyTagsFault(inner)
-                }
-                crate::error::TagResourceErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
-                }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -832,7 +902,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::TerminateWorkflowExecutionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::TerminateWorkflowExecutionErrorKind::OperationNotPermittedFault(
                     inner,
                 ) => Error::OperationNotPermittedFault(inner),
@@ -856,20 +929,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UndeprecateActivityTypeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UndeprecateActivityTypeErrorKind::OperationNotPermittedFault(
-                    inner,
-                ) => Error::OperationNotPermittedFault(inner),
-                crate::error::UndeprecateActivityTypeErrorKind::TypeAlreadyExistsFault(inner) => {
-                    Error::TypeAlreadyExistsFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UndeprecateActivityTypeErrorKind::OperationNotPermittedFault(
+                        inner,
+                    ) => Error::OperationNotPermittedFault(inner),
+                    crate::error::UndeprecateActivityTypeErrorKind::TypeAlreadyExistsFault(
+                        inner,
+                    ) => Error::TypeAlreadyExistsFault(inner),
+                    crate::error::UndeprecateActivityTypeErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::UndeprecateActivityTypeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UndeprecateActivityTypeErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
-                }
-                crate::error::UndeprecateActivityTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -882,20 +957,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UndeprecateDomainError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UndeprecateDomainErrorKind::DomainAlreadyExistsFault(inner) => {
-                    Error::DomainAlreadyExistsFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UndeprecateDomainErrorKind::DomainAlreadyExistsFault(inner) => {
+                        Error::DomainAlreadyExistsFault(inner)
+                    }
+                    crate::error::UndeprecateDomainErrorKind::OperationNotPermittedFault(inner) => {
+                        Error::OperationNotPermittedFault(inner)
+                    }
+                    crate::error::UndeprecateDomainErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::UndeprecateDomainErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UndeprecateDomainErrorKind::OperationNotPermittedFault(inner) => {
-                    Error::OperationNotPermittedFault(inner)
-                }
-                crate::error::UndeprecateDomainErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
-                }
-                crate::error::UndeprecateDomainErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -909,20 +986,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UndeprecateWorkflowTypeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UndeprecateWorkflowTypeErrorKind::OperationNotPermittedFault(
-                    inner,
-                ) => Error::OperationNotPermittedFault(inner),
-                crate::error::UndeprecateWorkflowTypeErrorKind::TypeAlreadyExistsFault(inner) => {
-                    Error::TypeAlreadyExistsFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UndeprecateWorkflowTypeErrorKind::OperationNotPermittedFault(
+                        inner,
+                    ) => Error::OperationNotPermittedFault(inner),
+                    crate::error::UndeprecateWorkflowTypeErrorKind::TypeAlreadyExistsFault(
+                        inner,
+                    ) => Error::TypeAlreadyExistsFault(inner),
+                    crate::error::UndeprecateWorkflowTypeErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::UndeprecateWorkflowTypeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UndeprecateWorkflowTypeErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
-                }
-                crate::error::UndeprecateWorkflowTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -933,20 +1012,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagResourceErrorKind::LimitExceededFault(inner) => {
-                    Error::LimitExceededFault(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UntagResourceErrorKind::LimitExceededFault(inner) => {
+                        Error::LimitExceededFault(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::OperationNotPermittedFault(inner) => {
+                        Error::OperationNotPermittedFault(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::UnknownResourceFault(inner) => {
+                        Error::UnknownResourceFault(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UntagResourceErrorKind::OperationNotPermittedFault(inner) => {
-                    Error::OperationNotPermittedFault(inner)
-                }
-                crate::error::UntagResourceErrorKind::UnknownResourceFault(inner) => {
-                    Error::UnknownResourceFault(inner)
-                }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }

@@ -59,7 +59,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SendSerialConsoleSSHPublicKeyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::SendSerialConsoleSSHPublicKeyErrorKind::AuthException(inner) => Error::AuthException(inner),
                 crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(inner) => Error::Ec2InstanceNotFoundException(inner),
                 crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(inner) => Error::Ec2InstanceStateInvalidException(inner),
@@ -85,32 +85,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SendSSHPublicKeyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SendSSHPublicKeyErrorKind::AuthException(inner) => {
-                    Error::AuthException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SendSSHPublicKeyErrorKind::AuthException(inner) => {
+                        Error::AuthException(inner)
+                    }
+                    crate::error::SendSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(
+                        inner,
+                    ) => Error::Ec2InstanceNotFoundException(inner),
+                    crate::error::SendSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(
+                        inner,
+                    ) => Error::Ec2InstanceStateInvalidException(inner),
+                    crate::error::SendSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(
+                        inner,
+                    ) => Error::Ec2InstanceUnavailableException(inner),
+                    crate::error::SendSSHPublicKeyErrorKind::InvalidArgsException(inner) => {
+                        Error::InvalidArgsException(inner)
+                    }
+                    crate::error::SendSSHPublicKeyErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::SendSSHPublicKeyErrorKind::ThrottlingException(inner) => {
+                        Error::ThrottlingException(inner)
+                    }
+                    crate::error::SendSSHPublicKeyErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::SendSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(inner) => {
-                    Error::Ec2InstanceNotFoundException(inner)
-                }
-                crate::error::SendSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(
-                    inner,
-                ) => Error::Ec2InstanceStateInvalidException(inner),
-                crate::error::SendSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(inner) => {
-                    Error::Ec2InstanceUnavailableException(inner)
-                }
-                crate::error::SendSSHPublicKeyErrorKind::InvalidArgsException(inner) => {
-                    Error::InvalidArgsException(inner)
-                }
-                crate::error::SendSSHPublicKeyErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::SendSSHPublicKeyErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::SendSSHPublicKeyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }

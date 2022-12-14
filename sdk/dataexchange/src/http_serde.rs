@@ -2,20 +2,20 @@
 pub fn add_headers_send_api_asset(
     input: &crate::input::SendApiAssetInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_1) = &input.asset_id {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "asset_id",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "asset_id",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-dataexchange-asset-id", header_value);
         }
@@ -26,13 +26,13 @@ pub fn add_headers_send_api_asset(
             let header_value = formatted_4;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "data_set_id",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "data_set_id",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-dataexchange-data-set-id", header_value);
         }
@@ -43,13 +43,13 @@ pub fn add_headers_send_api_asset(
             let header_value = formatted_6;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "method",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "method",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-dataexchange-http-method", header_value);
         }
@@ -60,13 +60,13 @@ pub fn add_headers_send_api_asset(
             let header_value = formatted_8;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "path",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "path",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-dataexchange-path", header_value);
         }
@@ -77,13 +77,13 @@ pub fn add_headers_send_api_asset(
             let header_value = formatted_10;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "revision_id",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "revision_id",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amzn-dataexchange-revision-id", header_value);
         }
@@ -95,17 +95,19 @@ pub fn add_headers_send_api_asset(
                 "{}{}",
                 "x-amzn-dataexchange-header-", &k
             ))
-            .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                field: "request_headers",
-                details: format!("`{}` cannot be used as a header name: {}", k, err),
+            .map_err(|err| {
+                aws_smithy_http::operation::error::BuildError::invalid_field(
+                    "request_headers",
+                    format!("`{k}` cannot be used as a header name: {err}"),
+                )
             })?;
             let header_value = v.as_str();
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "request_headers",
-                        details: format!("`{}` cannot be used as a header value: {}", v, err,),
-                    }
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "request_headers",
+                        format!("`{}` cannot be used as a header value: {}", v, err),
+                    )
                 })?;
             builder = builder.header(header_name, header_value);
         }

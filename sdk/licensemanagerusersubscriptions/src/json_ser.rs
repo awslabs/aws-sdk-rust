@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_associate_user_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateUserInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.domain {
         object.key("Domain").string(var_1.as_str());
     }
@@ -23,7 +23,7 @@ pub fn serialize_structure_crate_input_associate_user_input(
 pub fn serialize_structure_crate_input_deregister_identity_provider_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeregisterIdentityProviderInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_6) = &input.identity_provider {
         let mut object_7 = object.key("IdentityProvider").start_object();
         crate::json_ser::serialize_union_crate_model_identity_provider(&mut object_7, var_6)?;
@@ -38,7 +38,7 @@ pub fn serialize_structure_crate_input_deregister_identity_provider_input(
 pub fn serialize_structure_crate_input_disassociate_user_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateUserInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_9) = &input.domain {
         object.key("Domain").string(var_9.as_str());
     }
@@ -59,7 +59,7 @@ pub fn serialize_structure_crate_input_disassociate_user_input(
 pub fn serialize_structure_crate_input_list_identity_providers_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListIdentityProvidersInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_14) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -75,7 +75,7 @@ pub fn serialize_structure_crate_input_list_identity_providers_input(
 pub fn serialize_structure_crate_input_list_instances_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListInstancesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_16) = &input.filters {
         let mut array_17 = object.key("Filters").start_array();
         for item_18 in var_16 {
@@ -102,7 +102,7 @@ pub fn serialize_structure_crate_input_list_instances_input(
 pub fn serialize_structure_crate_input_list_product_subscriptions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListProductSubscriptionsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_22) = &input.filters {
         let mut array_23 = object.key("Filters").start_array();
         for item_24 in var_22 {
@@ -137,7 +137,7 @@ pub fn serialize_structure_crate_input_list_product_subscriptions_input(
 pub fn serialize_structure_crate_input_list_user_associations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListUserAssociationsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_31) = &input.filters {
         let mut array_32 = object.key("Filters").start_array();
         for item_33 in var_31 {
@@ -172,7 +172,7 @@ pub fn serialize_structure_crate_input_list_user_associations_input(
 pub fn serialize_structure_crate_input_register_identity_provider_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RegisterIdentityProviderInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_40) = &input.identity_provider {
         let mut object_41 = object.key("IdentityProvider").start_object();
         crate::json_ser::serialize_union_crate_model_identity_provider(&mut object_41, var_40)?;
@@ -187,7 +187,7 @@ pub fn serialize_structure_crate_input_register_identity_provider_input(
 pub fn serialize_structure_crate_input_start_product_subscription_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartProductSubscriptionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_43) = &input.domain {
         object.key("Domain").string(var_43.as_str());
     }
@@ -208,7 +208,7 @@ pub fn serialize_structure_crate_input_start_product_subscription_input(
 pub fn serialize_structure_crate_input_stop_product_subscription_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StopProductSubscriptionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_48) = &input.domain {
         object.key("Domain").string(var_48.as_str());
     }
@@ -229,7 +229,7 @@ pub fn serialize_structure_crate_input_stop_product_subscription_input(
 pub fn serialize_union_crate_model_identity_provider(
     object_3: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::IdentityProvider,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::IdentityProvider::ActiveDirectoryIdentityProvider(inner) => {
             let mut object_53 = object_3
@@ -243,7 +243,9 @@ pub fn serialize_union_crate_model_identity_provider(
         }
         crate::model::IdentityProvider::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant("IdentityProvider"),
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                    "IdentityProvider",
+                ),
             )
         }
     }
@@ -253,7 +255,7 @@ pub fn serialize_union_crate_model_identity_provider(
 pub fn serialize_structure_crate_model_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Filter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_54) = &input.attribute {
         object.key("Attribute").string(var_54.as_str());
     }
@@ -269,7 +271,7 @@ pub fn serialize_structure_crate_model_filter(
 pub fn serialize_structure_crate_model_active_directory_identity_provider(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ActiveDirectoryIdentityProvider,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_57) = &input.directory_id {
         object.key("DirectoryId").string(var_57.as_str());
     }

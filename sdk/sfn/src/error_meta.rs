@@ -93,20 +93,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateActivityError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateActivityErrorKind::ActivityLimitExceeded(inner) => {
-                    Error::ActivityLimitExceeded(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateActivityErrorKind::ActivityLimitExceeded(inner) => {
+                        Error::ActivityLimitExceeded(inner)
+                    }
+                    crate::error::CreateActivityErrorKind::InvalidName(inner) => {
+                        Error::InvalidName(inner)
+                    }
+                    crate::error::CreateActivityErrorKind::TooManyTags(inner) => {
+                        Error::TooManyTags(inner)
+                    }
+                    crate::error::CreateActivityErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateActivityErrorKind::InvalidName(inner) => {
-                    Error::InvalidName(inner)
-                }
-                crate::error::CreateActivityErrorKind::TooManyTags(inner) => {
-                    Error::TooManyTags(inner)
-                }
-                crate::error::CreateActivityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -119,41 +121,43 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateStateMachineError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateStateMachineErrorKind::InvalidArn(inner) => {
-                    Error::InvalidArn(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateStateMachineErrorKind::InvalidArn(inner) => {
+                        Error::InvalidArn(inner)
+                    }
+                    crate::error::CreateStateMachineErrorKind::InvalidDefinition(inner) => {
+                        Error::InvalidDefinition(inner)
+                    }
+                    crate::error::CreateStateMachineErrorKind::InvalidLoggingConfiguration(
+                        inner,
+                    ) => Error::InvalidLoggingConfiguration(inner),
+                    crate::error::CreateStateMachineErrorKind::InvalidName(inner) => {
+                        Error::InvalidName(inner)
+                    }
+                    crate::error::CreateStateMachineErrorKind::InvalidTracingConfiguration(
+                        inner,
+                    ) => Error::InvalidTracingConfiguration(inner),
+                    crate::error::CreateStateMachineErrorKind::StateMachineAlreadyExists(inner) => {
+                        Error::StateMachineAlreadyExists(inner)
+                    }
+                    crate::error::CreateStateMachineErrorKind::StateMachineDeleting(inner) => {
+                        Error::StateMachineDeleting(inner)
+                    }
+                    crate::error::CreateStateMachineErrorKind::StateMachineLimitExceeded(inner) => {
+                        Error::StateMachineLimitExceeded(inner)
+                    }
+                    crate::error::CreateStateMachineErrorKind::StateMachineTypeNotSupported(
+                        inner,
+                    ) => Error::StateMachineTypeNotSupported(inner),
+                    crate::error::CreateStateMachineErrorKind::TooManyTags(inner) => {
+                        Error::TooManyTags(inner)
+                    }
+                    crate::error::CreateStateMachineErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateStateMachineErrorKind::InvalidDefinition(inner) => {
-                    Error::InvalidDefinition(inner)
-                }
-                crate::error::CreateStateMachineErrorKind::InvalidLoggingConfiguration(inner) => {
-                    Error::InvalidLoggingConfiguration(inner)
-                }
-                crate::error::CreateStateMachineErrorKind::InvalidName(inner) => {
-                    Error::InvalidName(inner)
-                }
-                crate::error::CreateStateMachineErrorKind::InvalidTracingConfiguration(inner) => {
-                    Error::InvalidTracingConfiguration(inner)
-                }
-                crate::error::CreateStateMachineErrorKind::StateMachineAlreadyExists(inner) => {
-                    Error::StateMachineAlreadyExists(inner)
-                }
-                crate::error::CreateStateMachineErrorKind::StateMachineDeleting(inner) => {
-                    Error::StateMachineDeleting(inner)
-                }
-                crate::error::CreateStateMachineErrorKind::StateMachineLimitExceeded(inner) => {
-                    Error::StateMachineLimitExceeded(inner)
-                }
-                crate::error::CreateStateMachineErrorKind::StateMachineTypeNotSupported(inner) => {
-                    Error::StateMachineTypeNotSupported(inner)
-                }
-                crate::error::CreateStateMachineErrorKind::TooManyTags(inner) => {
-                    Error::TooManyTags(inner)
-                }
-                crate::error::CreateStateMachineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -164,14 +168,16 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteActivityError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteActivityErrorKind::InvalidArn(inner) => {
-                    Error::InvalidArn(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteActivityErrorKind::InvalidArn(inner) => {
+                        Error::InvalidArn(inner)
+                    }
+                    crate::error::DeleteActivityErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteActivityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -184,14 +190,16 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteStateMachineError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteStateMachineErrorKind::InvalidArn(inner) => {
-                    Error::InvalidArn(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteStateMachineErrorKind::InvalidArn(inner) => {
+                        Error::InvalidArn(inner)
+                    }
+                    crate::error::DeleteStateMachineErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteStateMachineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -204,17 +212,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeActivityError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeActivityErrorKind::ActivityDoesNotExist(inner) => {
-                    Error::ActivityDoesNotExist(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeActivityErrorKind::ActivityDoesNotExist(inner) => {
+                        Error::ActivityDoesNotExist(inner)
+                    }
+                    crate::error::DescribeActivityErrorKind::InvalidArn(inner) => {
+                        Error::InvalidArn(inner)
+                    }
+                    crate::error::DescribeActivityErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeActivityErrorKind::InvalidArn(inner) => {
-                    Error::InvalidArn(inner)
-                }
-                crate::error::DescribeActivityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -227,17 +237,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeExecutionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeExecutionErrorKind::ExecutionDoesNotExist(inner) => {
-                    Error::ExecutionDoesNotExist(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeExecutionErrorKind::ExecutionDoesNotExist(inner) => {
+                        Error::ExecutionDoesNotExist(inner)
+                    }
+                    crate::error::DescribeExecutionErrorKind::InvalidArn(inner) => {
+                        Error::InvalidArn(inner)
+                    }
+                    crate::error::DescribeExecutionErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeExecutionErrorKind::InvalidArn(inner) => {
-                    Error::InvalidArn(inner)
-                }
-                crate::error::DescribeExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -251,17 +263,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeStateMachineError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeStateMachineErrorKind::InvalidArn(inner) => {
-                    Error::InvalidArn(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeStateMachineErrorKind::InvalidArn(inner) => {
+                        Error::InvalidArn(inner)
+                    }
+                    crate::error::DescribeStateMachineErrorKind::StateMachineDoesNotExist(
+                        inner,
+                    ) => Error::StateMachineDoesNotExist(inner),
+                    crate::error::DescribeStateMachineErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeStateMachineErrorKind::StateMachineDoesNotExist(inner) => {
-                    Error::StateMachineDoesNotExist(inner)
-                }
-                crate::error::DescribeStateMachineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -279,7 +293,10 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeStateMachineForExecutionErrorKind::ExecutionDoesNotExist(
                     inner,
                 ) => Error::ExecutionDoesNotExist(inner),
@@ -300,20 +317,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetActivityTaskError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetActivityTaskErrorKind::ActivityDoesNotExist(inner) => {
-                    Error::ActivityDoesNotExist(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetActivityTaskErrorKind::ActivityDoesNotExist(inner) => {
+                        Error::ActivityDoesNotExist(inner)
+                    }
+                    crate::error::GetActivityTaskErrorKind::ActivityWorkerLimitExceeded(inner) => {
+                        Error::ActivityWorkerLimitExceeded(inner)
+                    }
+                    crate::error::GetActivityTaskErrorKind::InvalidArn(inner) => {
+                        Error::InvalidArn(inner)
+                    }
+                    crate::error::GetActivityTaskErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetActivityTaskErrorKind::ActivityWorkerLimitExceeded(inner) => {
-                    Error::ActivityWorkerLimitExceeded(inner)
-                }
-                crate::error::GetActivityTaskErrorKind::InvalidArn(inner) => {
-                    Error::InvalidArn(inner)
-                }
-                crate::error::GetActivityTaskErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -326,20 +345,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetExecutionHistoryError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetExecutionHistoryErrorKind::ExecutionDoesNotExist(inner) => {
-                    Error::ExecutionDoesNotExist(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetExecutionHistoryErrorKind::ExecutionDoesNotExist(inner) => {
+                        Error::ExecutionDoesNotExist(inner)
+                    }
+                    crate::error::GetExecutionHistoryErrorKind::InvalidArn(inner) => {
+                        Error::InvalidArn(inner)
+                    }
+                    crate::error::GetExecutionHistoryErrorKind::InvalidToken(inner) => {
+                        Error::InvalidToken(inner)
+                    }
+                    crate::error::GetExecutionHistoryErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetExecutionHistoryErrorKind::InvalidArn(inner) => {
-                    Error::InvalidArn(inner)
-                }
-                crate::error::GetExecutionHistoryErrorKind::InvalidToken(inner) => {
-                    Error::InvalidToken(inner)
-                }
-                crate::error::GetExecutionHistoryErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -350,14 +371,16 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListActivitiesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListActivitiesErrorKind::InvalidToken(inner) => {
-                    Error::InvalidToken(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListActivitiesErrorKind::InvalidToken(inner) => {
+                        Error::InvalidToken(inner)
+                    }
+                    crate::error::ListActivitiesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListActivitiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -368,23 +391,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListExecutionsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListExecutionsErrorKind::InvalidArn(inner) => {
-                    Error::InvalidArn(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListExecutionsErrorKind::InvalidArn(inner) => {
+                        Error::InvalidArn(inner)
+                    }
+                    crate::error::ListExecutionsErrorKind::InvalidToken(inner) => {
+                        Error::InvalidToken(inner)
+                    }
+                    crate::error::ListExecutionsErrorKind::StateMachineDoesNotExist(inner) => {
+                        Error::StateMachineDoesNotExist(inner)
+                    }
+                    crate::error::ListExecutionsErrorKind::StateMachineTypeNotSupported(inner) => {
+                        Error::StateMachineTypeNotSupported(inner)
+                    }
+                    crate::error::ListExecutionsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListExecutionsErrorKind::InvalidToken(inner) => {
-                    Error::InvalidToken(inner)
-                }
-                crate::error::ListExecutionsErrorKind::StateMachineDoesNotExist(inner) => {
-                    Error::StateMachineDoesNotExist(inner)
-                }
-                crate::error::ListExecutionsErrorKind::StateMachineTypeNotSupported(inner) => {
-                    Error::StateMachineTypeNotSupported(inner)
-                }
-                crate::error::ListExecutionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -397,14 +422,16 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListStateMachinesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListStateMachinesErrorKind::InvalidToken(inner) => {
-                    Error::InvalidToken(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListStateMachinesErrorKind::InvalidToken(inner) => {
+                        Error::InvalidToken(inner)
+                    }
+                    crate::error::ListStateMachinesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListStateMachinesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -417,17 +444,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsForResourceErrorKind::InvalidArn(inner) => {
-                    Error::InvalidArn(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListTagsForResourceErrorKind::InvalidArn(inner) => {
+                        Error::InvalidArn(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::ResourceNotFound(inner) => {
+                        Error::ResourceNotFound(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListTagsForResourceErrorKind::ResourceNotFound(inner) => {
-                    Error::ResourceNotFound(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -438,20 +467,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SendTaskFailureError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SendTaskFailureErrorKind::InvalidToken(inner) => {
-                    Error::InvalidToken(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SendTaskFailureErrorKind::InvalidToken(inner) => {
+                        Error::InvalidToken(inner)
+                    }
+                    crate::error::SendTaskFailureErrorKind::TaskDoesNotExist(inner) => {
+                        Error::TaskDoesNotExist(inner)
+                    }
+                    crate::error::SendTaskFailureErrorKind::TaskTimedOut(inner) => {
+                        Error::TaskTimedOut(inner)
+                    }
+                    crate::error::SendTaskFailureErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::SendTaskFailureErrorKind::TaskDoesNotExist(inner) => {
-                    Error::TaskDoesNotExist(inner)
-                }
-                crate::error::SendTaskFailureErrorKind::TaskTimedOut(inner) => {
-                    Error::TaskTimedOut(inner)
-                }
-                crate::error::SendTaskFailureErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -464,20 +495,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SendTaskHeartbeatError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SendTaskHeartbeatErrorKind::InvalidToken(inner) => {
-                    Error::InvalidToken(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SendTaskHeartbeatErrorKind::InvalidToken(inner) => {
+                        Error::InvalidToken(inner)
+                    }
+                    crate::error::SendTaskHeartbeatErrorKind::TaskDoesNotExist(inner) => {
+                        Error::TaskDoesNotExist(inner)
+                    }
+                    crate::error::SendTaskHeartbeatErrorKind::TaskTimedOut(inner) => {
+                        Error::TaskTimedOut(inner)
+                    }
+                    crate::error::SendTaskHeartbeatErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::SendTaskHeartbeatErrorKind::TaskDoesNotExist(inner) => {
-                    Error::TaskDoesNotExist(inner)
-                }
-                crate::error::SendTaskHeartbeatErrorKind::TaskTimedOut(inner) => {
-                    Error::TaskTimedOut(inner)
-                }
-                crate::error::SendTaskHeartbeatErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -488,23 +521,25 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SendTaskSuccessError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SendTaskSuccessErrorKind::InvalidOutput(inner) => {
-                    Error::InvalidOutput(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SendTaskSuccessErrorKind::InvalidOutput(inner) => {
+                        Error::InvalidOutput(inner)
+                    }
+                    crate::error::SendTaskSuccessErrorKind::InvalidToken(inner) => {
+                        Error::InvalidToken(inner)
+                    }
+                    crate::error::SendTaskSuccessErrorKind::TaskDoesNotExist(inner) => {
+                        Error::TaskDoesNotExist(inner)
+                    }
+                    crate::error::SendTaskSuccessErrorKind::TaskTimedOut(inner) => {
+                        Error::TaskTimedOut(inner)
+                    }
+                    crate::error::SendTaskSuccessErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::SendTaskSuccessErrorKind::InvalidToken(inner) => {
-                    Error::InvalidToken(inner)
-                }
-                crate::error::SendTaskSuccessErrorKind::TaskDoesNotExist(inner) => {
-                    Error::TaskDoesNotExist(inner)
-                }
-                crate::error::SendTaskSuccessErrorKind::TaskTimedOut(inner) => {
-                    Error::TaskTimedOut(inner)
-                }
-                crate::error::SendTaskSuccessErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -515,32 +550,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartExecutionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StartExecutionErrorKind::ExecutionAlreadyExists(inner) => {
-                    Error::ExecutionAlreadyExists(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StartExecutionErrorKind::ExecutionAlreadyExists(inner) => {
+                        Error::ExecutionAlreadyExists(inner)
+                    }
+                    crate::error::StartExecutionErrorKind::ExecutionLimitExceeded(inner) => {
+                        Error::ExecutionLimitExceeded(inner)
+                    }
+                    crate::error::StartExecutionErrorKind::InvalidArn(inner) => {
+                        Error::InvalidArn(inner)
+                    }
+                    crate::error::StartExecutionErrorKind::InvalidExecutionInput(inner) => {
+                        Error::InvalidExecutionInput(inner)
+                    }
+                    crate::error::StartExecutionErrorKind::InvalidName(inner) => {
+                        Error::InvalidName(inner)
+                    }
+                    crate::error::StartExecutionErrorKind::StateMachineDeleting(inner) => {
+                        Error::StateMachineDeleting(inner)
+                    }
+                    crate::error::StartExecutionErrorKind::StateMachineDoesNotExist(inner) => {
+                        Error::StateMachineDoesNotExist(inner)
+                    }
+                    crate::error::StartExecutionErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::StartExecutionErrorKind::ExecutionLimitExceeded(inner) => {
-                    Error::ExecutionLimitExceeded(inner)
-                }
-                crate::error::StartExecutionErrorKind::InvalidArn(inner) => {
-                    Error::InvalidArn(inner)
-                }
-                crate::error::StartExecutionErrorKind::InvalidExecutionInput(inner) => {
-                    Error::InvalidExecutionInput(inner)
-                }
-                crate::error::StartExecutionErrorKind::InvalidName(inner) => {
-                    Error::InvalidName(inner)
-                }
-                crate::error::StartExecutionErrorKind::StateMachineDeleting(inner) => {
-                    Error::StateMachineDeleting(inner)
-                }
-                crate::error::StartExecutionErrorKind::StateMachineDoesNotExist(inner) => {
-                    Error::StateMachineDoesNotExist(inner)
-                }
-                crate::error::StartExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -553,29 +590,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartSyncExecutionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StartSyncExecutionErrorKind::InvalidArn(inner) => {
-                    Error::InvalidArn(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StartSyncExecutionErrorKind::InvalidArn(inner) => {
+                        Error::InvalidArn(inner)
+                    }
+                    crate::error::StartSyncExecutionErrorKind::InvalidExecutionInput(inner) => {
+                        Error::InvalidExecutionInput(inner)
+                    }
+                    crate::error::StartSyncExecutionErrorKind::InvalidName(inner) => {
+                        Error::InvalidName(inner)
+                    }
+                    crate::error::StartSyncExecutionErrorKind::StateMachineDeleting(inner) => {
+                        Error::StateMachineDeleting(inner)
+                    }
+                    crate::error::StartSyncExecutionErrorKind::StateMachineDoesNotExist(inner) => {
+                        Error::StateMachineDoesNotExist(inner)
+                    }
+                    crate::error::StartSyncExecutionErrorKind::StateMachineTypeNotSupported(
+                        inner,
+                    ) => Error::StateMachineTypeNotSupported(inner),
+                    crate::error::StartSyncExecutionErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::StartSyncExecutionErrorKind::InvalidExecutionInput(inner) => {
-                    Error::InvalidExecutionInput(inner)
-                }
-                crate::error::StartSyncExecutionErrorKind::InvalidName(inner) => {
-                    Error::InvalidName(inner)
-                }
-                crate::error::StartSyncExecutionErrorKind::StateMachineDeleting(inner) => {
-                    Error::StateMachineDeleting(inner)
-                }
-                crate::error::StartSyncExecutionErrorKind::StateMachineDoesNotExist(inner) => {
-                    Error::StateMachineDoesNotExist(inner)
-                }
-                crate::error::StartSyncExecutionErrorKind::StateMachineTypeNotSupported(inner) => {
-                    Error::StateMachineTypeNotSupported(inner)
-                }
-                crate::error::StartSyncExecutionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -586,7 +625,10 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StopExecutionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::StopExecutionErrorKind::ExecutionDoesNotExist(inner) => {
                     Error::ExecutionDoesNotExist(inner)
                 }
@@ -605,7 +647,10 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::TagResourceErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
                 crate::error::TagResourceErrorKind::ResourceNotFound(inner) => {
                     Error::ResourceNotFound(inner)
@@ -625,7 +670,10 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::UntagResourceErrorKind::InvalidArn(inner) => Error::InvalidArn(inner),
                 crate::error::UntagResourceErrorKind::ResourceNotFound(inner) => {
                     Error::ResourceNotFound(inner)
@@ -646,32 +694,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateStateMachineError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateStateMachineErrorKind::InvalidArn(inner) => {
-                    Error::InvalidArn(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateStateMachineErrorKind::InvalidArn(inner) => {
+                        Error::InvalidArn(inner)
+                    }
+                    crate::error::UpdateStateMachineErrorKind::InvalidDefinition(inner) => {
+                        Error::InvalidDefinition(inner)
+                    }
+                    crate::error::UpdateStateMachineErrorKind::InvalidLoggingConfiguration(
+                        inner,
+                    ) => Error::InvalidLoggingConfiguration(inner),
+                    crate::error::UpdateStateMachineErrorKind::InvalidTracingConfiguration(
+                        inner,
+                    ) => Error::InvalidTracingConfiguration(inner),
+                    crate::error::UpdateStateMachineErrorKind::MissingRequiredParameter(inner) => {
+                        Error::MissingRequiredParameter(inner)
+                    }
+                    crate::error::UpdateStateMachineErrorKind::StateMachineDeleting(inner) => {
+                        Error::StateMachineDeleting(inner)
+                    }
+                    crate::error::UpdateStateMachineErrorKind::StateMachineDoesNotExist(inner) => {
+                        Error::StateMachineDoesNotExist(inner)
+                    }
+                    crate::error::UpdateStateMachineErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateStateMachineErrorKind::InvalidDefinition(inner) => {
-                    Error::InvalidDefinition(inner)
-                }
-                crate::error::UpdateStateMachineErrorKind::InvalidLoggingConfiguration(inner) => {
-                    Error::InvalidLoggingConfiguration(inner)
-                }
-                crate::error::UpdateStateMachineErrorKind::InvalidTracingConfiguration(inner) => {
-                    Error::InvalidTracingConfiguration(inner)
-                }
-                crate::error::UpdateStateMachineErrorKind::MissingRequiredParameter(inner) => {
-                    Error::MissingRequiredParameter(inner)
-                }
-                crate::error::UpdateStateMachineErrorKind::StateMachineDeleting(inner) => {
-                    Error::StateMachineDeleting(inner)
-                }
-                crate::error::UpdateStateMachineErrorKind::StateMachineDoesNotExist(inner) => {
-                    Error::StateMachineDoesNotExist(inner)
-                }
-                crate::error::UpdateStateMachineErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }

@@ -40,7 +40,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateConfigurationSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CreateConfigurationSetErrorKind::AlreadyExistsException(inner) => {
                     Error::AlreadyExistsException(inner)
                 }
@@ -81,7 +84,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
                 crate::error::CreateConfigurationSetEventDestinationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
                 crate::error::CreateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
@@ -103,7 +106,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteConfigurationSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DeleteConfigurationSetErrorKind::BadRequestException(inner) => {
                     Error::BadRequestException(inner)
                 }
@@ -141,7 +147,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteConfigurationSetEventDestinationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
                 crate::error::DeleteConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::DeleteConfigurationSetEventDestinationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -169,7 +175,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetConfigurationSetEventDestinationsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
                 crate::error::GetConfigurationSetEventDestinationsErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::GetConfigurationSetEventDestinationsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -189,20 +195,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListConfigurationSetsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListConfigurationSetsErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListConfigurationSetsErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::ListConfigurationSetsErrorKind::InternalServiceErrorException(
+                        inner,
+                    ) => Error::InternalServiceErrorException(inner),
+                    crate::error::ListConfigurationSetsErrorKind::TooManyRequestsException(
+                        inner,
+                    ) => Error::TooManyRequestsException(inner),
+                    crate::error::ListConfigurationSetsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListConfigurationSetsErrorKind::InternalServiceErrorException(
-                    inner,
-                ) => Error::InternalServiceErrorException(inner),
-                crate::error::ListConfigurationSetsErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::ListConfigurationSetsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -215,20 +223,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SendVoiceMessageError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SendVoiceMessageErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SendVoiceMessageErrorKind::BadRequestException(inner) => {
+                        Error::BadRequestException(inner)
+                    }
+                    crate::error::SendVoiceMessageErrorKind::InternalServiceErrorException(
+                        inner,
+                    ) => Error::InternalServiceErrorException(inner),
+                    crate::error::SendVoiceMessageErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::SendVoiceMessageErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::SendVoiceMessageErrorKind::InternalServiceErrorException(inner) => {
-                    Error::InternalServiceErrorException(inner)
-                }
-                crate::error::SendVoiceMessageErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::SendVoiceMessageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -250,7 +260,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateConfigurationSetEventDestinationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
                 crate::error::UpdateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
                 crate::error::UpdateConfigurationSetEventDestinationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),

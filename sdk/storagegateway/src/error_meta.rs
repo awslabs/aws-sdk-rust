@@ -28,17 +28,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ActivateGatewayError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ActivateGatewayErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ActivateGatewayErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::ActivateGatewayErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::ActivateGatewayErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ActivateGatewayErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::ActivateGatewayErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -49,17 +51,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AddCacheError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AddCacheErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::AddCacheErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::AddCacheErrorKind::InvalidGatewayRequestException(inner) => {
+                        Error::InvalidGatewayRequestException(inner)
+                    }
+                    crate::error::AddCacheErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::AddCacheErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::AddCacheErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -72,17 +76,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::AddTagsToResourceError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AddTagsToResourceErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::AddTagsToResourceErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::AddTagsToResourceErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::AddTagsToResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::AddTagsToResourceErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::AddTagsToResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -93,17 +99,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AddUploadBufferError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AddUploadBufferErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::AddUploadBufferErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::AddUploadBufferErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::AddUploadBufferErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::AddUploadBufferErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::AddUploadBufferErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -116,17 +124,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::AddWorkingStorageError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AddWorkingStorageErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::AddWorkingStorageErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::AddWorkingStorageErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::AddWorkingStorageErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::AddWorkingStorageErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::AddWorkingStorageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -137,17 +147,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AssignTapePoolError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AssignTapePoolErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::AssignTapePoolErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::AssignTapePoolErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::AssignTapePoolErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::AssignTapePoolErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::AssignTapePoolErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -160,17 +172,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::AssociateFileSystemError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AssociateFileSystemErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::AssociateFileSystemErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::AssociateFileSystemErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::AssociateFileSystemErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::AssociateFileSystemErrorKind::InvalidGatewayRequestException(
-                    inner,
-                ) => Error::InvalidGatewayRequestException(inner),
-                crate::error::AssociateFileSystemErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -181,17 +195,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AttachVolumeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AttachVolumeErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::AttachVolumeErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::AttachVolumeErrorKind::InvalidGatewayRequestException(inner) => {
+                        Error::InvalidGatewayRequestException(inner)
+                    }
+                    crate::error::AttachVolumeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::AttachVolumeErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::AttachVolumeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -202,17 +218,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CancelArchivalError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CancelArchivalErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CancelArchivalErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::CancelArchivalErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::CancelArchivalErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CancelArchivalErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::CancelArchivalErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -223,17 +241,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CancelRetrievalError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CancelRetrievalErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CancelRetrievalErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::CancelRetrievalErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::CancelRetrievalErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CancelRetrievalErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::CancelRetrievalErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -247,7 +267,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateCachediSCSIVolumeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CreateCachediSCSIVolumeErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -270,17 +293,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateNFSFileShareError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateNFSFileShareErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateNFSFileShareErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::CreateNFSFileShareErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::CreateNFSFileShareErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateNFSFileShareErrorKind::InvalidGatewayRequestException(
-                    inner,
-                ) => Error::InvalidGatewayRequestException(inner),
-                crate::error::CreateNFSFileShareErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -293,17 +318,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateSMBFileShareError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateSMBFileShareErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateSMBFileShareErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::CreateSMBFileShareErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::CreateSMBFileShareErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateSMBFileShareErrorKind::InvalidGatewayRequestException(
-                    inner,
-                ) => Error::InvalidGatewayRequestException(inner),
-                crate::error::CreateSMBFileShareErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -314,20 +341,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateSnapshotError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateSnapshotErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateSnapshotErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::CreateSnapshotErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::CreateSnapshotErrorKind::ServiceUnavailableError(inner) => {
+                        Error::ServiceUnavailableError(inner)
+                    }
+                    crate::error::CreateSnapshotErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateSnapshotErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::CreateSnapshotErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
-                }
-                crate::error::CreateSnapshotErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -349,7 +378,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateSnapshotFromVolumeRecoveryPointErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::CreateSnapshotFromVolumeRecoveryPointErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::CreateSnapshotFromVolumeRecoveryPointErrorKind::ServiceUnavailableError(inner) => Error::ServiceUnavailableError(inner),
@@ -368,7 +397,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateStorediSCSIVolumeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CreateStorediSCSIVolumeErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -389,17 +421,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateTapePoolError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateTapePoolErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateTapePoolErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::CreateTapePoolErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::CreateTapePoolErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateTapePoolErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::CreateTapePoolErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -410,17 +444,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateTapesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateTapesErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateTapesErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::CreateTapesErrorKind::InvalidGatewayRequestException(inner) => {
+                        Error::InvalidGatewayRequestException(inner)
+                    }
+                    crate::error::CreateTapesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateTapesErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::CreateTapesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -434,7 +470,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateTapeWithBarcodeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::CreateTapeWithBarcodeErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -462,7 +501,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteAutomaticTapeCreationPolicyErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DeleteAutomaticTapeCreationPolicyErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DeleteAutomaticTapeCreationPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -480,7 +519,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteBandwidthRateLimitError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DeleteBandwidthRateLimitErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -504,7 +546,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteChapCredentialsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DeleteChapCredentialsErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -525,17 +570,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFileShareError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteFileShareErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteFileShareErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DeleteFileShareErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::DeleteFileShareErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteFileShareErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::DeleteFileShareErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -546,17 +593,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteGatewayError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteGatewayErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteGatewayErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DeleteGatewayErrorKind::InvalidGatewayRequestException(inner) => {
+                        Error::InvalidGatewayRequestException(inner)
+                    }
+                    crate::error::DeleteGatewayErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteGatewayErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::DeleteGatewayErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -570,7 +619,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteSnapshotScheduleError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DeleteSnapshotScheduleErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -591,17 +643,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteTapeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteTapeErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteTapeErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DeleteTapeErrorKind::InvalidGatewayRequestException(inner) => {
+                        Error::InvalidGatewayRequestException(inner)
+                    }
+                    crate::error::DeleteTapeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteTapeErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::DeleteTapeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -614,17 +668,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteTapeArchiveError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteTapeArchiveErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteTapeArchiveErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DeleteTapeArchiveErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::DeleteTapeArchiveErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteTapeArchiveErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::DeleteTapeArchiveErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -635,17 +691,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteTapePoolError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteTapePoolErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteTapePoolErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DeleteTapePoolErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::DeleteTapePoolErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteTapePoolErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::DeleteTapePoolErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -656,17 +714,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteVolumeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteVolumeErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteVolumeErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DeleteVolumeErrorKind::InvalidGatewayRequestException(inner) => {
+                        Error::InvalidGatewayRequestException(inner)
+                    }
+                    crate::error::DeleteVolumeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteVolumeErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::DeleteVolumeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -684,7 +744,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeAvailabilityMonitorTestErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeAvailabilityMonitorTestErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DescribeAvailabilityMonitorTestErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -702,7 +762,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeBandwidthRateLimitError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeBandwidthRateLimitErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeBandwidthRateLimitErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DescribeBandwidthRateLimitErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -725,7 +785,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeBandwidthRateLimitScheduleErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeBandwidthRateLimitScheduleErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DescribeBandwidthRateLimitScheduleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -740,17 +800,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeCacheError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeCacheErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeCacheErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DescribeCacheErrorKind::InvalidGatewayRequestException(inner) => {
+                        Error::InvalidGatewayRequestException(inner)
+                    }
+                    crate::error::DescribeCacheErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeCacheErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::DescribeCacheErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -764,7 +826,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeCachediSCSIVolumesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeCachediSCSIVolumesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeCachediSCSIVolumesErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DescribeCachediSCSIVolumesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -782,7 +844,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeChapCredentialsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeChapCredentialsErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -810,7 +875,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeFileSystemAssociationsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeFileSystemAssociationsErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DescribeFileSystemAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -828,7 +893,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeGatewayInformationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeGatewayInformationErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeGatewayInformationErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DescribeGatewayInformationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -846,7 +911,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeMaintenanceStartTimeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeMaintenanceStartTimeErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeMaintenanceStartTimeErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DescribeMaintenanceStartTimeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -864,7 +929,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeNFSFileSharesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeNFSFileSharesErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -888,7 +956,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeSMBFileSharesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeSMBFileSharesErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -911,17 +982,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeSMBSettingsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeSMBSettingsErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeSMBSettingsErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DescribeSMBSettingsErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::DescribeSMBSettingsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeSMBSettingsErrorKind::InvalidGatewayRequestException(
-                    inner,
-                ) => Error::InvalidGatewayRequestException(inner),
-                crate::error::DescribeSMBSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -935,7 +1008,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeSnapshotScheduleError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeSnapshotScheduleErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -959,7 +1035,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeStorediSCSIVolumesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeStorediSCSIVolumesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeStorediSCSIVolumesErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DescribeStorediSCSIVolumesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -977,17 +1053,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeTapeArchivesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeTapeArchivesErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeTapeArchivesErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DescribeTapeArchivesErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::DescribeTapeArchivesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeTapeArchivesErrorKind::InvalidGatewayRequestException(
-                    inner,
-                ) => Error::InvalidGatewayRequestException(inner),
-                crate::error::DescribeTapeArchivesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1001,7 +1079,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeTapeRecoveryPointsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DescribeTapeRecoveryPointsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::DescribeTapeRecoveryPointsErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::DescribeTapeRecoveryPointsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -1016,17 +1094,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeTapesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeTapesErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeTapesErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DescribeTapesErrorKind::InvalidGatewayRequestException(inner) => {
+                        Error::InvalidGatewayRequestException(inner)
+                    }
+                    crate::error::DescribeTapesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeTapesErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::DescribeTapesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1040,17 +1120,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeUploadBufferError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeUploadBufferErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeUploadBufferErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DescribeUploadBufferErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::DescribeUploadBufferErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeUploadBufferErrorKind::InvalidGatewayRequestException(
-                    inner,
-                ) => Error::InvalidGatewayRequestException(inner),
-                crate::error::DescribeUploadBufferErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1063,17 +1145,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeVTLDevicesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeVTLDevicesErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeVTLDevicesErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DescribeVTLDevicesErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::DescribeVTLDevicesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeVTLDevicesErrorKind::InvalidGatewayRequestException(
-                    inner,
-                ) => Error::InvalidGatewayRequestException(inner),
-                crate::error::DescribeVTLDevicesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1087,7 +1171,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeWorkingStorageError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeWorkingStorageErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -1108,17 +1195,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DetachVolumeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DetachVolumeErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DetachVolumeErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DetachVolumeErrorKind::InvalidGatewayRequestException(inner) => {
+                        Error::InvalidGatewayRequestException(inner)
+                    }
+                    crate::error::DetachVolumeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DetachVolumeErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::DetachVolumeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1129,17 +1218,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DisableGatewayError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DisableGatewayErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DisableGatewayErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::DisableGatewayErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::DisableGatewayErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DisableGatewayErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::DisableGatewayErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1153,7 +1244,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DisassociateFileSystemError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DisassociateFileSystemErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -1174,17 +1268,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::JoinDomainError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::JoinDomainErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::JoinDomainErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::JoinDomainErrorKind::InvalidGatewayRequestException(inner) => {
+                        Error::InvalidGatewayRequestException(inner)
+                    }
+                    crate::error::JoinDomainErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::JoinDomainErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::JoinDomainErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1202,7 +1298,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListAutomaticTapeCreationPoliciesErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::ListAutomaticTapeCreationPoliciesErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::ListAutomaticTapeCreationPoliciesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -1217,17 +1313,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListFileSharesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListFileSharesErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListFileSharesErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::ListFileSharesErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::ListFileSharesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListFileSharesErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::ListFileSharesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1241,7 +1339,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListFileSystemAssociationsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListFileSystemAssociationsErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::ListFileSystemAssociationsErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::ListFileSystemAssociationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -1256,17 +1354,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListGatewaysError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListGatewaysErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListGatewaysErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::ListGatewaysErrorKind::InvalidGatewayRequestException(inner) => {
+                        Error::InvalidGatewayRequestException(inner)
+                    }
+                    crate::error::ListGatewaysErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListGatewaysErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::ListGatewaysErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1277,17 +1377,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListLocalDisksError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListLocalDisksErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListLocalDisksErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::ListLocalDisksErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::ListLocalDisksErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListLocalDisksErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::ListLocalDisksErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1300,17 +1402,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsForResourceErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListTagsForResourceErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListTagsForResourceErrorKind::InvalidGatewayRequestException(
-                    inner,
-                ) => Error::InvalidGatewayRequestException(inner),
-                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1321,17 +1425,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTapePoolsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTapePoolsErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListTapePoolsErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::ListTapePoolsErrorKind::InvalidGatewayRequestException(inner) => {
+                        Error::InvalidGatewayRequestException(inner)
+                    }
+                    crate::error::ListTapePoolsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListTapePoolsErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::ListTapePoolsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1342,17 +1448,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTapesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTapesErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListTapesErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::ListTapesErrorKind::InvalidGatewayRequestException(inner) => {
+                        Error::InvalidGatewayRequestException(inner)
+                    }
+                    crate::error::ListTapesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListTapesErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::ListTapesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1366,17 +1474,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListVolumeInitiatorsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListVolumeInitiatorsErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListVolumeInitiatorsErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::ListVolumeInitiatorsErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::ListVolumeInitiatorsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListVolumeInitiatorsErrorKind::InvalidGatewayRequestException(
-                    inner,
-                ) => Error::InvalidGatewayRequestException(inner),
-                crate::error::ListVolumeInitiatorsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1390,7 +1500,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListVolumeRecoveryPointsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::ListVolumeRecoveryPointsErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -1411,17 +1524,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListVolumesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListVolumesErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListVolumesErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::ListVolumesErrorKind::InvalidGatewayRequestException(inner) => {
+                        Error::InvalidGatewayRequestException(inner)
+                    }
+                    crate::error::ListVolumesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListVolumesErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::ListVolumesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1434,17 +1549,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::NotifyWhenUploadedError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::NotifyWhenUploadedErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::NotifyWhenUploadedErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::NotifyWhenUploadedErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::NotifyWhenUploadedErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::NotifyWhenUploadedErrorKind::InvalidGatewayRequestException(
-                    inner,
-                ) => Error::InvalidGatewayRequestException(inner),
-                crate::error::NotifyWhenUploadedErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1455,17 +1572,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RefreshCacheError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RefreshCacheErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::RefreshCacheErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::RefreshCacheErrorKind::InvalidGatewayRequestException(inner) => {
+                        Error::InvalidGatewayRequestException(inner)
+                    }
+                    crate::error::RefreshCacheErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::RefreshCacheErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::RefreshCacheErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1479,7 +1598,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RemoveTagsFromResourceError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::RemoveTagsFromResourceErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -1500,17 +1622,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ResetCacheError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ResetCacheErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ResetCacheErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::ResetCacheErrorKind::InvalidGatewayRequestException(inner) => {
+                        Error::InvalidGatewayRequestException(inner)
+                    }
+                    crate::error::ResetCacheErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ResetCacheErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::ResetCacheErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1523,17 +1647,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RetrieveTapeArchiveError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RetrieveTapeArchiveErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::RetrieveTapeArchiveErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::RetrieveTapeArchiveErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::RetrieveTapeArchiveErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::RetrieveTapeArchiveErrorKind::InvalidGatewayRequestException(
-                    inner,
-                ) => Error::InvalidGatewayRequestException(inner),
-                crate::error::RetrieveTapeArchiveErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1547,7 +1673,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RetrieveTapeRecoveryPointError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::RetrieveTapeRecoveryPointErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::RetrieveTapeRecoveryPointErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::RetrieveTapeRecoveryPointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -1565,7 +1691,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SetLocalConsolePasswordError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::SetLocalConsolePasswordErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -1588,17 +1717,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::SetSMBGuestPasswordError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SetSMBGuestPasswordErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SetSMBGuestPasswordErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::SetSMBGuestPasswordErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::SetSMBGuestPasswordErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::SetSMBGuestPasswordErrorKind::InvalidGatewayRequestException(
-                    inner,
-                ) => Error::InvalidGatewayRequestException(inner),
-                crate::error::SetSMBGuestPasswordErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1609,17 +1740,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ShutdownGatewayError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ShutdownGatewayErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ShutdownGatewayErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::ShutdownGatewayErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::ShutdownGatewayErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ShutdownGatewayErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::ShutdownGatewayErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1633,7 +1766,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartAvailabilityMonitorTestError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::StartAvailabilityMonitorTestErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::StartAvailabilityMonitorTestErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::StartAvailabilityMonitorTestErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -1648,17 +1781,19 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartGatewayError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StartGatewayErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::StartGatewayErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::StartGatewayErrorKind::InvalidGatewayRequestException(inner) => {
+                        Error::InvalidGatewayRequestException(inner)
+                    }
+                    crate::error::StartGatewayErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::StartGatewayErrorKind::InvalidGatewayRequestException(inner) => {
-                    Error::InvalidGatewayRequestException(inner)
-                }
-                crate::error::StartGatewayErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1676,7 +1811,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateAutomaticTapeCreationPolicyErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::UpdateAutomaticTapeCreationPolicyErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::UpdateAutomaticTapeCreationPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -1694,7 +1829,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateBandwidthRateLimitError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::UpdateBandwidthRateLimitErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -1722,7 +1860,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateBandwidthRateLimitScheduleErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::UpdateBandwidthRateLimitScheduleErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::UpdateBandwidthRateLimitScheduleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -1740,7 +1878,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateChapCredentialsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::UpdateChapCredentialsErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -1764,7 +1905,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateFileSystemAssociationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateFileSystemAssociationErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::UpdateFileSystemAssociationErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::UpdateFileSystemAssociationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -1782,7 +1923,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateGatewayInformationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::UpdateGatewayInformationErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -1806,7 +1950,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateGatewaySoftwareNowError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::UpdateGatewaySoftwareNowErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -1830,7 +1977,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateMaintenanceStartTimeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateMaintenanceStartTimeErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::UpdateMaintenanceStartTimeErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::UpdateMaintenanceStartTimeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -1847,17 +1994,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateNFSFileShareError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateNFSFileShareErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateNFSFileShareErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::UpdateNFSFileShareErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::UpdateNFSFileShareErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateNFSFileShareErrorKind::InvalidGatewayRequestException(
-                    inner,
-                ) => Error::InvalidGatewayRequestException(inner),
-                crate::error::UpdateNFSFileShareErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1870,17 +2019,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateSMBFileShareError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateSMBFileShareErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateSMBFileShareErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::UpdateSMBFileShareErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::UpdateSMBFileShareErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateSMBFileShareErrorKind::InvalidGatewayRequestException(
-                    inner,
-                ) => Error::InvalidGatewayRequestException(inner),
-                crate::error::UpdateSMBFileShareErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1894,7 +2045,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateSMBFileShareVisibilityError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateSMBFileShareVisibilityErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::UpdateSMBFileShareVisibilityErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::UpdateSMBFileShareVisibilityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -1912,17 +2063,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateSMBLocalGroupsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateSMBLocalGroupsErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateSMBLocalGroupsErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::UpdateSMBLocalGroupsErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::UpdateSMBLocalGroupsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateSMBLocalGroupsErrorKind::InvalidGatewayRequestException(
-                    inner,
-                ) => Error::InvalidGatewayRequestException(inner),
-                crate::error::UpdateSMBLocalGroupsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1936,7 +2089,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateSMBSecurityStrategyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateSMBSecurityStrategyErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::UpdateSMBSecurityStrategyErrorKind::InvalidGatewayRequestException(inner) => Error::InvalidGatewayRequestException(inner),
                 crate::error::UpdateSMBSecurityStrategyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -1954,7 +2107,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateSnapshotScheduleError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::UpdateSnapshotScheduleErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }
@@ -1977,17 +2133,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateVTLDeviceTypeError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateVTLDeviceTypeErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateVTLDeviceTypeErrorKind::InternalServerError(inner) => {
+                        Error::InternalServerError(inner)
+                    }
+                    crate::error::UpdateVTLDeviceTypeErrorKind::InvalidGatewayRequestException(
+                        inner,
+                    ) => Error::InvalidGatewayRequestException(inner),
+                    crate::error::UpdateVTLDeviceTypeErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateVTLDeviceTypeErrorKind::InvalidGatewayRequestException(
-                    inner,
-                ) => Error::InvalidGatewayRequestException(inner),
-                crate::error::UpdateVTLDeviceTypeErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }

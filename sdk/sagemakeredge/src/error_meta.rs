@@ -22,14 +22,16 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDeploymentsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDeploymentsErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetDeploymentsErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::GetDeploymentsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetDeploymentsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -43,14 +45,16 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetDeviceRegistrationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDeviceRegistrationErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetDeviceRegistrationErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::GetDeviceRegistrationErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetDeviceRegistrationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -61,14 +65,16 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SendHeartbeatError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SendHeartbeatErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::SendHeartbeatErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::SendHeartbeatErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::SendHeartbeatErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }

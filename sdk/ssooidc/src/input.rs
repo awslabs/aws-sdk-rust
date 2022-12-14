@@ -121,7 +121,7 @@ pub mod create_token_input {
         /// Consumes the builder and constructs a [`CreateTokenInput`](crate::input::CreateTokenInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateTokenInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::CreateTokenInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::CreateTokenInput {
                 client_id: self.client_id,
@@ -149,13 +149,13 @@ impl CreateTokenInput {
             crate::operation::CreateToken,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateTokenInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/token").expect("formatting should succeed");
                 Ok(())
             }
@@ -163,8 +163,10 @@ impl CreateTokenInput {
             fn update_http_builder(
                 input: &crate::input::CreateTokenInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -298,7 +300,7 @@ pub mod register_client_input {
         /// Consumes the builder and constructs a [`RegisterClientInput`](crate::input::RegisterClientInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::RegisterClientInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::RegisterClientInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::RegisterClientInput {
                 client_name: self.client_name,
@@ -321,13 +323,13 @@ impl RegisterClientInput {
             crate::operation::RegisterClient,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::RegisterClientInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/client/register").expect("formatting should succeed");
                 Ok(())
             }
@@ -335,8 +337,10 @@ impl RegisterClientInput {
             fn update_http_builder(
                 input: &crate::input::RegisterClientInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -466,7 +470,7 @@ pub mod start_device_authorization_input {
             self,
         ) -> Result<
             crate::input::StartDeviceAuthorizationInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StartDeviceAuthorizationInput {
                 client_id: self.client_id,
@@ -489,13 +493,13 @@ impl StartDeviceAuthorizationInput {
             crate::operation::StartDeviceAuthorization,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartDeviceAuthorizationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/device_authorization").expect("formatting should succeed");
                 Ok(())
             }
@@ -503,8 +507,10 @@ impl StartDeviceAuthorizationInput {
             fn update_http_builder(
                 input: &crate::input::StartDeviceAuthorizationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_associate_firewall_rule_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateFirewallRuleGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.creator_request_id {
         object.key("CreatorRequestId").string(var_1.as_str());
     }
@@ -41,7 +41,7 @@ pub fn serialize_structure_crate_input_associate_firewall_rule_group_input(
 pub fn serialize_structure_crate_input_associate_resolver_endpoint_ip_address_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateResolverEndpointIpAddressInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_11) = &input.resolver_endpoint_id {
         object.key("ResolverEndpointId").string(var_11.as_str());
     }
@@ -56,7 +56,7 @@ pub fn serialize_structure_crate_input_associate_resolver_endpoint_ip_address_in
 pub fn serialize_structure_crate_input_associate_resolver_query_log_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateResolverQueryLogConfigInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_14) = &input.resolver_query_log_config_id {
         object
             .key("ResolverQueryLogConfigId")
@@ -71,7 +71,7 @@ pub fn serialize_structure_crate_input_associate_resolver_query_log_config_input
 pub fn serialize_structure_crate_input_associate_resolver_rule_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateResolverRuleInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_16) = &input.resolver_rule_id {
         object.key("ResolverRuleId").string(var_16.as_str());
     }
@@ -87,7 +87,7 @@ pub fn serialize_structure_crate_input_associate_resolver_rule_input(
 pub fn serialize_structure_crate_input_create_firewall_domain_list_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateFirewallDomainListInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_19) = &input.creator_request_id {
         object.key("CreatorRequestId").string(var_19.as_str());
     }
@@ -111,7 +111,7 @@ pub fn serialize_structure_crate_input_create_firewall_domain_list_input(
 pub fn serialize_structure_crate_input_create_firewall_rule_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateFirewallRuleInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_25) = &input.creator_request_id {
         object.key("CreatorRequestId").string(var_25.as_str());
     }
@@ -154,7 +154,7 @@ pub fn serialize_structure_crate_input_create_firewall_rule_input(
 pub fn serialize_structure_crate_input_create_firewall_rule_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateFirewallRuleGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_35) = &input.creator_request_id {
         object.key("CreatorRequestId").string(var_35.as_str());
     }
@@ -178,7 +178,7 @@ pub fn serialize_structure_crate_input_create_firewall_rule_group_input(
 pub fn serialize_structure_crate_input_create_resolver_endpoint_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateResolverEndpointInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_41) = &input.creator_request_id {
         object.key("CreatorRequestId").string(var_41.as_str());
     }
@@ -228,7 +228,7 @@ pub fn serialize_structure_crate_input_create_resolver_endpoint_input(
 pub fn serialize_structure_crate_input_create_resolver_query_log_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateResolverQueryLogConfigInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_55) = &input.name {
         object.key("Name").string(var_55.as_str());
     }
@@ -255,7 +255,7 @@ pub fn serialize_structure_crate_input_create_resolver_query_log_config_input(
 pub fn serialize_structure_crate_input_create_resolver_rule_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateResolverRuleInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_62) = &input.creator_request_id {
         object.key("CreatorRequestId").string(var_62.as_str());
     }
@@ -302,7 +302,7 @@ pub fn serialize_structure_crate_input_create_resolver_rule_input(
 pub fn serialize_structure_crate_input_delete_firewall_domain_list_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteFirewallDomainListInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_75) = &input.firewall_domain_list_id {
         object.key("FirewallDomainListId").string(var_75.as_str());
     }
@@ -312,7 +312,7 @@ pub fn serialize_structure_crate_input_delete_firewall_domain_list_input(
 pub fn serialize_structure_crate_input_delete_firewall_rule_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteFirewallRuleInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_76) = &input.firewall_rule_group_id {
         object.key("FirewallRuleGroupId").string(var_76.as_str());
     }
@@ -325,7 +325,7 @@ pub fn serialize_structure_crate_input_delete_firewall_rule_input(
 pub fn serialize_structure_crate_input_delete_firewall_rule_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteFirewallRuleGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_78) = &input.firewall_rule_group_id {
         object.key("FirewallRuleGroupId").string(var_78.as_str());
     }
@@ -335,7 +335,7 @@ pub fn serialize_structure_crate_input_delete_firewall_rule_group_input(
 pub fn serialize_structure_crate_input_delete_resolver_endpoint_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteResolverEndpointInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_79) = &input.resolver_endpoint_id {
         object.key("ResolverEndpointId").string(var_79.as_str());
     }
@@ -345,7 +345,7 @@ pub fn serialize_structure_crate_input_delete_resolver_endpoint_input(
 pub fn serialize_structure_crate_input_delete_resolver_query_log_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteResolverQueryLogConfigInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_80) = &input.resolver_query_log_config_id {
         object
             .key("ResolverQueryLogConfigId")
@@ -357,7 +357,7 @@ pub fn serialize_structure_crate_input_delete_resolver_query_log_config_input(
 pub fn serialize_structure_crate_input_delete_resolver_rule_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteResolverRuleInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_81) = &input.resolver_rule_id {
         object.key("ResolverRuleId").string(var_81.as_str());
     }
@@ -367,7 +367,7 @@ pub fn serialize_structure_crate_input_delete_resolver_rule_input(
 pub fn serialize_structure_crate_input_disassociate_firewall_rule_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateFirewallRuleGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_82) = &input.firewall_rule_group_association_id {
         object
             .key("FirewallRuleGroupAssociationId")
@@ -379,7 +379,7 @@ pub fn serialize_structure_crate_input_disassociate_firewall_rule_group_input(
 pub fn serialize_structure_crate_input_disassociate_resolver_endpoint_ip_address_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateResolverEndpointIpAddressInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_83) = &input.resolver_endpoint_id {
         object.key("ResolverEndpointId").string(var_83.as_str());
     }
@@ -394,7 +394,7 @@ pub fn serialize_structure_crate_input_disassociate_resolver_endpoint_ip_address
 pub fn serialize_structure_crate_input_disassociate_resolver_query_log_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateResolverQueryLogConfigInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_86) = &input.resolver_query_log_config_id {
         object
             .key("ResolverQueryLogConfigId")
@@ -409,7 +409,7 @@ pub fn serialize_structure_crate_input_disassociate_resolver_query_log_config_in
 pub fn serialize_structure_crate_input_disassociate_resolver_rule_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateResolverRuleInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_88) = &input.vpc_id {
         object.key("VPCId").string(var_88.as_str());
     }
@@ -422,7 +422,7 @@ pub fn serialize_structure_crate_input_disassociate_resolver_rule_input(
 pub fn serialize_structure_crate_input_get_firewall_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetFirewallConfigInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_90) = &input.resource_id {
         object.key("ResourceId").string(var_90.as_str());
     }
@@ -432,7 +432,7 @@ pub fn serialize_structure_crate_input_get_firewall_config_input(
 pub fn serialize_structure_crate_input_get_firewall_domain_list_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetFirewallDomainListInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_91) = &input.firewall_domain_list_id {
         object.key("FirewallDomainListId").string(var_91.as_str());
     }
@@ -442,7 +442,7 @@ pub fn serialize_structure_crate_input_get_firewall_domain_list_input(
 pub fn serialize_structure_crate_input_get_firewall_rule_group_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetFirewallRuleGroupInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_92) = &input.firewall_rule_group_id {
         object.key("FirewallRuleGroupId").string(var_92.as_str());
     }
@@ -452,7 +452,7 @@ pub fn serialize_structure_crate_input_get_firewall_rule_group_input(
 pub fn serialize_structure_crate_input_get_firewall_rule_group_association_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetFirewallRuleGroupAssociationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_93) = &input.firewall_rule_group_association_id {
         object
             .key("FirewallRuleGroupAssociationId")
@@ -464,7 +464,7 @@ pub fn serialize_structure_crate_input_get_firewall_rule_group_association_input
 pub fn serialize_structure_crate_input_get_firewall_rule_group_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetFirewallRuleGroupPolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_94) = &input.arn {
         object.key("Arn").string(var_94.as_str());
     }
@@ -474,7 +474,7 @@ pub fn serialize_structure_crate_input_get_firewall_rule_group_policy_input(
 pub fn serialize_structure_crate_input_get_resolver_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResolverConfigInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_95) = &input.resource_id {
         object.key("ResourceId").string(var_95.as_str());
     }
@@ -484,7 +484,7 @@ pub fn serialize_structure_crate_input_get_resolver_config_input(
 pub fn serialize_structure_crate_input_get_resolver_dnssec_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResolverDnssecConfigInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_96) = &input.resource_id {
         object.key("ResourceId").string(var_96.as_str());
     }
@@ -494,7 +494,7 @@ pub fn serialize_structure_crate_input_get_resolver_dnssec_config_input(
 pub fn serialize_structure_crate_input_get_resolver_endpoint_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResolverEndpointInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_97) = &input.resolver_endpoint_id {
         object.key("ResolverEndpointId").string(var_97.as_str());
     }
@@ -504,7 +504,7 @@ pub fn serialize_structure_crate_input_get_resolver_endpoint_input(
 pub fn serialize_structure_crate_input_get_resolver_query_log_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResolverQueryLogConfigInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_98) = &input.resolver_query_log_config_id {
         object
             .key("ResolverQueryLogConfigId")
@@ -516,7 +516,7 @@ pub fn serialize_structure_crate_input_get_resolver_query_log_config_input(
 pub fn serialize_structure_crate_input_get_resolver_query_log_config_association_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResolverQueryLogConfigAssociationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_99) = &input.resolver_query_log_config_association_id {
         object
             .key("ResolverQueryLogConfigAssociationId")
@@ -528,7 +528,7 @@ pub fn serialize_structure_crate_input_get_resolver_query_log_config_association
 pub fn serialize_structure_crate_input_get_resolver_query_log_config_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResolverQueryLogConfigPolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_100) = &input.arn {
         object.key("Arn").string(var_100.as_str());
     }
@@ -538,7 +538,7 @@ pub fn serialize_structure_crate_input_get_resolver_query_log_config_policy_inpu
 pub fn serialize_structure_crate_input_get_resolver_rule_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResolverRuleInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_101) = &input.resolver_rule_id {
         object.key("ResolverRuleId").string(var_101.as_str());
     }
@@ -548,7 +548,7 @@ pub fn serialize_structure_crate_input_get_resolver_rule_input(
 pub fn serialize_structure_crate_input_get_resolver_rule_association_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResolverRuleAssociationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_102) = &input.resolver_rule_association_id {
         object
             .key("ResolverRuleAssociationId")
@@ -560,7 +560,7 @@ pub fn serialize_structure_crate_input_get_resolver_rule_association_input(
 pub fn serialize_structure_crate_input_get_resolver_rule_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResolverRulePolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_103) = &input.arn {
         object.key("Arn").string(var_103.as_str());
     }
@@ -570,7 +570,7 @@ pub fn serialize_structure_crate_input_get_resolver_rule_policy_input(
 pub fn serialize_structure_crate_input_import_firewall_domains_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ImportFirewallDomainsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_104) = &input.firewall_domain_list_id {
         object.key("FirewallDomainListId").string(var_104.as_str());
     }
@@ -586,7 +586,7 @@ pub fn serialize_structure_crate_input_import_firewall_domains_input(
 pub fn serialize_structure_crate_input_list_firewall_configs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListFirewallConfigsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_107) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -602,7 +602,7 @@ pub fn serialize_structure_crate_input_list_firewall_configs_input(
 pub fn serialize_structure_crate_input_list_firewall_domain_lists_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListFirewallDomainListsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_109) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -618,7 +618,7 @@ pub fn serialize_structure_crate_input_list_firewall_domain_lists_input(
 pub fn serialize_structure_crate_input_list_firewall_domains_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListFirewallDomainsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_111) = &input.firewall_domain_list_id {
         object.key("FirewallDomainListId").string(var_111.as_str());
     }
@@ -637,7 +637,7 @@ pub fn serialize_structure_crate_input_list_firewall_domains_input(
 pub fn serialize_structure_crate_input_list_firewall_rule_group_associations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListFirewallRuleGroupAssociationsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_114) = &input.firewall_rule_group_id {
         object.key("FirewallRuleGroupId").string(var_114.as_str());
     }
@@ -668,7 +668,7 @@ pub fn serialize_structure_crate_input_list_firewall_rule_group_associations_inp
 pub fn serialize_structure_crate_input_list_firewall_rule_groups_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListFirewallRuleGroupsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_120) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -684,7 +684,7 @@ pub fn serialize_structure_crate_input_list_firewall_rule_groups_input(
 pub fn serialize_structure_crate_input_list_firewall_rules_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListFirewallRulesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_122) = &input.firewall_rule_group_id {
         object.key("FirewallRuleGroupId").string(var_122.as_str());
     }
@@ -712,7 +712,7 @@ pub fn serialize_structure_crate_input_list_firewall_rules_input(
 pub fn serialize_structure_crate_input_list_resolver_configs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListResolverConfigsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_127) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -728,7 +728,7 @@ pub fn serialize_structure_crate_input_list_resolver_configs_input(
 pub fn serialize_structure_crate_input_list_resolver_dnssec_configs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListResolverDnssecConfigsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_129) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -755,7 +755,7 @@ pub fn serialize_structure_crate_input_list_resolver_dnssec_configs_input(
 pub fn serialize_structure_crate_input_list_resolver_endpoint_ip_addresses_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListResolverEndpointIpAddressesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_135) = &input.resolver_endpoint_id {
         object.key("ResolverEndpointId").string(var_135.as_str());
     }
@@ -774,7 +774,7 @@ pub fn serialize_structure_crate_input_list_resolver_endpoint_ip_addresses_input
 pub fn serialize_structure_crate_input_list_resolver_endpoints_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListResolverEndpointsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_138) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -801,7 +801,7 @@ pub fn serialize_structure_crate_input_list_resolver_endpoints_input(
 pub fn serialize_structure_crate_input_list_resolver_query_log_config_associations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListResolverQueryLogConfigAssociationsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_144) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -834,7 +834,7 @@ pub fn serialize_structure_crate_input_list_resolver_query_log_config_associatio
 pub fn serialize_structure_crate_input_list_resolver_query_log_configs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListResolverQueryLogConfigsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_152) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -867,7 +867,7 @@ pub fn serialize_structure_crate_input_list_resolver_query_log_configs_input(
 pub fn serialize_structure_crate_input_list_resolver_rule_associations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListResolverRuleAssociationsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_160) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -894,7 +894,7 @@ pub fn serialize_structure_crate_input_list_resolver_rule_associations_input(
 pub fn serialize_structure_crate_input_list_resolver_rules_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListResolverRulesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_166) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -921,7 +921,7 @@ pub fn serialize_structure_crate_input_list_resolver_rules_input(
 pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_172) = &input.resource_arn {
         object.key("ResourceArn").string(var_172.as_str());
     }
@@ -940,7 +940,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
 pub fn serialize_structure_crate_input_put_firewall_rule_group_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutFirewallRuleGroupPolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_175) = &input.arn {
         object.key("Arn").string(var_175.as_str());
     }
@@ -955,7 +955,7 @@ pub fn serialize_structure_crate_input_put_firewall_rule_group_policy_input(
 pub fn serialize_structure_crate_input_put_resolver_query_log_config_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutResolverQueryLogConfigPolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_177) = &input.arn {
         object.key("Arn").string(var_177.as_str());
     }
@@ -970,7 +970,7 @@ pub fn serialize_structure_crate_input_put_resolver_query_log_config_policy_inpu
 pub fn serialize_structure_crate_input_put_resolver_rule_policy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutResolverRulePolicyInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_179) = &input.arn {
         object.key("Arn").string(var_179.as_str());
     }
@@ -983,7 +983,7 @@ pub fn serialize_structure_crate_input_put_resolver_rule_policy_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_181) = &input.resource_arn {
         object.key("ResourceArn").string(var_181.as_str());
     }
@@ -1004,7 +1004,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_186) = &input.resource_arn {
         object.key("ResourceArn").string(var_186.as_str());
     }
@@ -1023,7 +1023,7 @@ pub fn serialize_structure_crate_input_untag_resource_input(
 pub fn serialize_structure_crate_input_update_firewall_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateFirewallConfigInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_190) = &input.resource_id {
         object.key("ResourceId").string(var_190.as_str());
     }
@@ -1036,7 +1036,7 @@ pub fn serialize_structure_crate_input_update_firewall_config_input(
 pub fn serialize_structure_crate_input_update_firewall_domains_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateFirewallDomainsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_192) = &input.firewall_domain_list_id {
         object.key("FirewallDomainListId").string(var_192.as_str());
     }
@@ -1058,7 +1058,7 @@ pub fn serialize_structure_crate_input_update_firewall_domains_input(
 pub fn serialize_structure_crate_input_update_firewall_rule_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateFirewallRuleInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_197) = &input.firewall_rule_group_id {
         object.key("FirewallRuleGroupId").string(var_197.as_str());
     }
@@ -1098,7 +1098,7 @@ pub fn serialize_structure_crate_input_update_firewall_rule_input(
 pub fn serialize_structure_crate_input_update_firewall_rule_group_association_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateFirewallRuleGroupAssociationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_206) = &input.firewall_rule_group_association_id {
         object
             .key("FirewallRuleGroupAssociationId")
@@ -1122,7 +1122,7 @@ pub fn serialize_structure_crate_input_update_firewall_rule_group_association_in
 pub fn serialize_structure_crate_input_update_resolver_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateResolverConfigInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_210) = &input.resource_id {
         object.key("ResourceId").string(var_210.as_str());
     }
@@ -1137,7 +1137,7 @@ pub fn serialize_structure_crate_input_update_resolver_config_input(
 pub fn serialize_structure_crate_input_update_resolver_dnssec_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateResolverDnssecConfigInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_212) = &input.resource_id {
         object.key("ResourceId").string(var_212.as_str());
     }
@@ -1150,7 +1150,7 @@ pub fn serialize_structure_crate_input_update_resolver_dnssec_config_input(
 pub fn serialize_structure_crate_input_update_resolver_endpoint_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateResolverEndpointInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_214) = &input.resolver_endpoint_id {
         object.key("ResolverEndpointId").string(var_214.as_str());
     }
@@ -1163,7 +1163,7 @@ pub fn serialize_structure_crate_input_update_resolver_endpoint_input(
 pub fn serialize_structure_crate_input_update_resolver_rule_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateResolverRuleInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_216) = &input.resolver_rule_id {
         object.key("ResolverRuleId").string(var_216.as_str());
     }
@@ -1181,7 +1181,7 @@ pub fn serialize_structure_crate_input_update_resolver_rule_input(
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_219) = &input.key {
         object.key("Key").string(var_219.as_str());
     }
@@ -1194,7 +1194,7 @@ pub fn serialize_structure_crate_model_tag(
 pub fn serialize_structure_crate_model_ip_address_update(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::IpAddressUpdate,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_221) = &input.ip_id {
         object.key("IpId").string(var_221.as_str());
     }
@@ -1210,7 +1210,7 @@ pub fn serialize_structure_crate_model_ip_address_update(
 pub fn serialize_structure_crate_model_ip_address_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::IpAddressRequest,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_224) = &input.subnet_id {
         object.key("SubnetId").string(var_224.as_str());
     }
@@ -1223,7 +1223,7 @@ pub fn serialize_structure_crate_model_ip_address_request(
 pub fn serialize_structure_crate_model_target_address(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TargetAddress,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_226) = &input.ip {
         object.key("Ip").string(var_226.as_str());
     }
@@ -1239,7 +1239,7 @@ pub fn serialize_structure_crate_model_target_address(
 pub fn serialize_structure_crate_model_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Filter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_228) = &input.name {
         object.key("Name").string(var_228.as_str());
     }
@@ -1258,7 +1258,7 @@ pub fn serialize_structure_crate_model_filter(
 pub fn serialize_structure_crate_model_resolver_rule_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResolverRuleConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_232) = &input.name {
         object.key("Name").string(var_232.as_str());
     }

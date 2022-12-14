@@ -3,54 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use crate::endpoint::error::{InvalidEndpointError, InvalidEndpointErrorKind};
+use crate::operation::error::BuildError;
+use http::uri::{Authority, Uri};
 use std::borrow::Cow;
-use std::fmt::{Display, Formatter};
 use std::str::FromStr;
 
-use http::uri::{Authority, Uri};
+pub mod error;
 
-use crate::operation::BuildError;
-
-pub type Result = std::result::Result<aws_smithy_types::endpoint::Endpoint, Error>;
+pub type Result =
+    std::result::Result<aws_smithy_types::endpoint::Endpoint, error::ResolveEndpointError>;
 
 pub trait ResolveEndpoint<Params>: Send + Sync {
     fn resolve_endpoint(&self, params: &Params) -> Result;
-}
-
-/// Endpoint Resolution Error
-#[derive(Debug)]
-pub struct Error {
-    message: String,
-    extra: Option<Box<dyn std::error::Error + Send + Sync>>,
-}
-
-impl Error {
-    /// Create an [`Error`] with a message
-    pub fn message(message: impl Into<String>) -> Self {
-        Self {
-            message: message.into(),
-            extra: None,
-        }
-    }
-
-    pub fn with_cause(self, cause: impl Into<Box<dyn std::error::Error + Send + Sync>>) -> Self {
-        Self {
-            extra: Some(cause.into()),
-            ..self
-        }
-    }
-}
-
-impl Display for Error {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{}", self.message)
-    }
-}
-
-impl std::error::Error for Error {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        self.extra.as_ref().map(|err| err.as_ref() as _)
-    }
 }
 
 // TODO(endpoints 2.0): when `endpoint_url` is added, deprecate & delete `Endpoint`
@@ -73,11 +38,11 @@ impl EndpointPrefix {
         let prefix = prefix.into();
         match Authority::from_str(&prefix) {
             Ok(_) => Ok(EndpointPrefix(prefix)),
-            Err(err) => Err(BuildError::InvalidUri {
-                uri: prefix,
+            Err(err) => Err(BuildError::invalid_uri(
+                prefix,
+                "invalid prefix".into(),
                 err,
-                message: "invalid prefix".into(),
-            }),
+            )),
         }
     }
 
@@ -85,37 +50,6 @@ impl EndpointPrefix {
         &self.0
     }
 }
-
-#[non_exhaustive]
-#[derive(Debug, Eq, PartialEq, Clone)]
-pub enum InvalidEndpoint {
-    EndpointMustHaveAuthority,
-    EndpointMustHaveScheme,
-    FailedToConstructAuthority,
-    FailedToConstructUri,
-}
-
-impl Display for InvalidEndpoint {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        match self {
-            InvalidEndpoint::EndpointMustHaveAuthority => {
-                write!(f, "Endpoint must contain an authority")
-            }
-            InvalidEndpoint::EndpointMustHaveScheme => {
-                write!(f, "Endpoint must contain a valid scheme")
-            }
-            InvalidEndpoint::FailedToConstructAuthority => {
-                write!(
-                    f,
-                    "Endpoint must contain a valid authority when combined with endpoint prefix"
-                )
-            }
-            InvalidEndpoint::FailedToConstructUri => write!(f, "Failed to construct URI"),
-        }
-    }
-}
-
-impl std::error::Error for InvalidEndpoint {}
 
 /// Apply `endpoint` to `uri`
 ///
@@ -127,7 +61,7 @@ pub fn apply_endpoint(
     uri: &mut Uri,
     endpoint: &Uri,
     prefix: Option<&EndpointPrefix>,
-) -> std::result::Result<(), InvalidEndpoint> {
+) -> std::result::Result<(), InvalidEndpointError> {
     let prefix = prefix.map(|p| p.0.as_str()).unwrap_or("");
     let authority = endpoint
         .authority()
@@ -139,17 +73,17 @@ pub fn apply_endpoint(
     } else {
         Authority::from_str(authority)
     }
-    .map_err(|_| InvalidEndpoint::FailedToConstructAuthority)?;
+    .map_err(|_| InvalidEndpointErrorKind::FailedToConstructAuthority)?;
     let scheme = *endpoint
         .scheme()
         .as_ref()
-        .ok_or(InvalidEndpoint::EndpointMustHaveScheme)?;
+        .ok_or(InvalidEndpointErrorKind::EndpointMustHaveScheme)?;
     let new_uri = Uri::builder()
         .authority(authority)
         .scheme(scheme.clone())
         .path_and_query(Endpoint::merge_paths(endpoint, uri).as_ref())
         .build()
-        .map_err(|_| InvalidEndpoint::FailedToConstructUri)?;
+        .map_err(|_| InvalidEndpointErrorKind::FailedToConstructUri)?;
     *uri = new_uri;
     Ok(())
 }

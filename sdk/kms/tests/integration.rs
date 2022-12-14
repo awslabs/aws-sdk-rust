@@ -194,7 +194,7 @@ async fn generate_random_keystore_not_found() {
     let client = Client::new(conn.clone());
     let err = client.call(op).await.expect_err("key store doesn't exist");
     let inner = match err {
-        SdkError::ServiceError { err, .. } => err,
+        SdkError::ServiceError(context) => context.into_err(),
         other => panic!("Incorrect error received: {:}", other),
     };
     assert!(inner.is_custom_key_store_not_found_exception());

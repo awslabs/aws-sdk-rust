@@ -26,8 +26,10 @@ pub mod get_routing_control_state_input {
         /// Consumes the builder and constructs a [`GetRoutingControlStateInput`](crate::input::GetRoutingControlStateInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRoutingControlStateInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetRoutingControlStateInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetRoutingControlStateInput {
                 routing_control_arn: self.routing_control_arn,
             })
@@ -47,13 +49,13 @@ impl GetRoutingControlStateInput {
             crate::operation::GetRoutingControlState,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRoutingControlStateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -61,8 +63,10 @@ impl GetRoutingControlStateInput {
             fn update_http_builder(
                 input: &crate::input::GetRoutingControlStateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -196,8 +200,10 @@ pub mod list_routing_controls_input {
         /// Consumes the builder and constructs a [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRoutingControlsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListRoutingControlsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListRoutingControlsInput {
                 control_panel_arn: self.control_panel_arn,
                 next_token: self.next_token,
@@ -219,13 +225,13 @@ impl ListRoutingControlsInput {
             crate::operation::ListRoutingControls,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListRoutingControlsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -233,8 +239,10 @@ impl ListRoutingControlsInput {
             fn update_http_builder(
                 input: &crate::input::ListRoutingControlsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -383,7 +391,7 @@ pub mod update_routing_control_state_input {
             self,
         ) -> Result<
             crate::input::UpdateRoutingControlStateInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateRoutingControlStateInput {
                 routing_control_arn: self.routing_control_arn,
@@ -406,13 +414,13 @@ impl UpdateRoutingControlStateInput {
             crate::operation::UpdateRoutingControlState,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateRoutingControlStateInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -420,8 +428,10 @@ impl UpdateRoutingControlStateInput {
             fn update_http_builder(
                 input: &crate::input::UpdateRoutingControlStateInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -570,7 +580,7 @@ pub mod update_routing_control_states_input {
             self,
         ) -> Result<
             crate::input::UpdateRoutingControlStatesInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::UpdateRoutingControlStatesInput {
                 update_routing_control_state_entries: self.update_routing_control_state_entries,
@@ -592,13 +602,13 @@ impl UpdateRoutingControlStatesInput {
             crate::operation::UpdateRoutingControlStates,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UpdateRoutingControlStatesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -606,8 +616,10 @@ impl UpdateRoutingControlStatesInput {
             fn update_http_builder(
                 input: &crate::input::UpdateRoutingControlStatesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

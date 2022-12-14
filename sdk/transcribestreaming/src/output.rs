@@ -564,7 +564,7 @@ pub mod start_stream_transcription_output {
             self,
         ) -> Result<
             crate::output::StartStreamTranscriptionOutput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::output::StartStreamTranscriptionOutput {
@@ -581,8 +581,8 @@ pub mod start_stream_transcription_output {
                     session_id: self.session_id
                     ,
                     transcript_result_stream: self.transcript_result_stream
-                        .ok_or(
-                            aws_smithy_http::operation::BuildError::MissingField { field: "transcript_result_stream", details: "transcript_result_stream was not specified but it is required when building StartStreamTranscriptionOutput" }
+                        .ok_or_else(||
+                            aws_smithy_http::operation::error::BuildError::missing_field("transcript_result_stream", "transcript_result_stream was not specified but it is required when building StartStreamTranscriptionOutput")
                         )?
                     ,
                     vocabulary_filter_name: self.vocabulary_filter_name
@@ -962,7 +962,7 @@ pub mod start_medical_stream_transcription_output {
             self,
         ) -> Result<
             crate::output::StartMedicalStreamTranscriptionOutput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::output::StartMedicalStreamTranscriptionOutput {
@@ -986,8 +986,8 @@ pub mod start_medical_stream_transcription_output {
                     session_id: self.session_id
                     ,
                     transcript_result_stream: self.transcript_result_stream
-                        .ok_or(
-                            aws_smithy_http::operation::BuildError::MissingField { field: "transcript_result_stream", details: "transcript_result_stream was not specified but it is required when building StartMedicalStreamTranscriptionOutput" }
+                        .ok_or_else(||
+                            aws_smithy_http::operation::error::BuildError::missing_field("transcript_result_stream", "transcript_result_stream was not specified but it is required when building StartMedicalStreamTranscriptionOutput")
                         )?
                     ,
                     enable_channel_identification: self.enable_channel_identification

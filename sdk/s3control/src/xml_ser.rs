@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_access_point_input(
     input: &crate::input::CreateAccessPointInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.bucket {
@@ -27,7 +27,7 @@ pub fn serialize_structure_crate_input_create_access_point_input(
 pub fn serialize_structure_crate_input_create_access_point_for_object_lambda_input(
     input: &crate::input::CreateAccessPointForObjectLambdaInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_4) = &input.configuration {
@@ -43,7 +43,7 @@ pub fn serialize_structure_crate_input_create_access_point_for_object_lambda_inp
 
 pub fn serialize_member_com_amazonaws_s3control_synthetic_create_bucket_input_create_bucket_configuration(
     input: &crate::model::CreateBucketConfiguration,
-) -> std::result::Result<std::vec::Vec<u8>, aws_smithy_http::operation::SerializationError> {
+) -> std::result::Result<std::vec::Vec<u8>, aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -59,7 +59,7 @@ pub fn serialize_member_com_amazonaws_s3control_synthetic_create_bucket_input_cr
 pub fn serialize_structure_crate_input_create_job_input(
     input: &crate::input::CreateJobInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_5) = &input.client_request_token {
@@ -114,7 +114,7 @@ pub fn serialize_structure_crate_input_create_job_input(
 pub fn serialize_structure_crate_input_create_multi_region_access_point_input(
     input: &crate::input::CreateMultiRegionAccessPointInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_16) = &input.client_token {
@@ -135,7 +135,7 @@ pub fn serialize_structure_crate_input_create_multi_region_access_point_input(
 pub fn serialize_structure_crate_input_delete_multi_region_access_point_input(
     input: &crate::input::DeleteMultiRegionAccessPointInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_18) = &input.client_token {
@@ -156,7 +156,7 @@ pub fn serialize_structure_crate_input_delete_multi_region_access_point_input(
 pub fn serialize_structure_crate_input_put_access_point_configuration_for_object_lambda_input(
     input: &crate::input::PutAccessPointConfigurationForObjectLambdaInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_20) = &input.configuration {
@@ -173,7 +173,7 @@ pub fn serialize_structure_crate_input_put_access_point_configuration_for_object
 pub fn serialize_structure_crate_input_put_access_point_policy_input(
     input: &crate::input::PutAccessPointPolicyInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_21) = &input.policy {
@@ -187,7 +187,7 @@ pub fn serialize_structure_crate_input_put_access_point_policy_input(
 pub fn serialize_structure_crate_input_put_access_point_policy_for_object_lambda_input(
     input: &crate::input::PutAccessPointPolicyForObjectLambdaInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_22) = &input.policy {
@@ -200,7 +200,7 @@ pub fn serialize_structure_crate_input_put_access_point_policy_for_object_lambda
 
 pub fn serialize_member_com_amazonaws_s3control_synthetic_put_bucket_lifecycle_configuration_input_lifecycle_configuration(
     input: &crate::model::LifecycleConfiguration,
-) -> std::result::Result<std::vec::Vec<u8>, aws_smithy_http::operation::SerializationError> {
+) -> std::result::Result<std::vec::Vec<u8>, aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -216,7 +216,7 @@ pub fn serialize_member_com_amazonaws_s3control_synthetic_put_bucket_lifecycle_c
 pub fn serialize_structure_crate_input_put_bucket_policy_input(
     input: &crate::input::PutBucketPolicyInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_23) = &input.policy {
@@ -229,7 +229,7 @@ pub fn serialize_structure_crate_input_put_bucket_policy_input(
 
 pub fn serialize_member_com_amazonaws_s3control_synthetic_put_bucket_tagging_input_tagging(
     input: &crate::model::Tagging,
-) -> std::result::Result<std::vec::Vec<u8>, aws_smithy_http::operation::SerializationError> {
+) -> std::result::Result<std::vec::Vec<u8>, aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -244,7 +244,7 @@ pub fn serialize_member_com_amazonaws_s3control_synthetic_put_bucket_tagging_inp
 
 pub fn serialize_member_com_amazonaws_s3control_synthetic_put_bucket_versioning_input_versioning_configuration(
     input: &crate::model::VersioningConfiguration,
-) -> std::result::Result<std::vec::Vec<u8>, aws_smithy_http::operation::SerializationError> {
+) -> std::result::Result<std::vec::Vec<u8>, aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -260,7 +260,7 @@ pub fn serialize_member_com_amazonaws_s3control_synthetic_put_bucket_versioning_
 pub fn serialize_structure_crate_input_put_job_tagging_input(
     input: &crate::input::PutJobTaggingInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_24) = &input.tags {
@@ -279,7 +279,7 @@ pub fn serialize_structure_crate_input_put_job_tagging_input(
 pub fn serialize_structure_crate_input_put_multi_region_access_point_policy_input(
     input: &crate::input::PutMultiRegionAccessPointPolicyInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_26) = &input.client_token {
@@ -299,7 +299,7 @@ pub fn serialize_structure_crate_input_put_multi_region_access_point_policy_inpu
 
 pub fn serialize_member_com_amazonaws_s3control_synthetic_put_public_access_block_input_public_access_block_configuration(
     input: &crate::model::PublicAccessBlockConfiguration,
-) -> std::result::Result<std::vec::Vec<u8>, aws_smithy_http::operation::SerializationError> {
+) -> std::result::Result<std::vec::Vec<u8>, aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -317,7 +317,7 @@ pub fn serialize_member_com_amazonaws_s3control_synthetic_put_public_access_bloc
 pub fn serialize_structure_crate_input_put_storage_lens_configuration_input(
     input: &crate::input::PutStorageLensConfigurationInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_28) = &input.storage_lens_configuration {
@@ -346,7 +346,7 @@ pub fn serialize_structure_crate_input_put_storage_lens_configuration_input(
 pub fn serialize_structure_crate_input_put_storage_lens_configuration_tagging_input(
     input: &crate::input::PutStorageLensConfigurationTaggingInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_31) = &input.tags {
@@ -368,7 +368,7 @@ pub fn serialize_structure_crate_input_put_storage_lens_configuration_tagging_in
 pub fn serialize_structure_crate_model_public_access_block_configuration(
     input: &crate::model::PublicAccessBlockConfiguration,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.block_public_acls {
@@ -399,7 +399,7 @@ pub fn serialize_structure_crate_model_public_access_block_configuration(
 pub fn serialize_structure_crate_model_vpc_configuration(
     input: &crate::model::VpcConfiguration,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_33) = &input.vpc_id {
@@ -413,7 +413,7 @@ pub fn serialize_structure_crate_model_vpc_configuration(
 pub fn serialize_structure_crate_model_object_lambda_configuration(
     input: &crate::model::ObjectLambdaConfiguration,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_34) = &input.supporting_access_point {
@@ -451,7 +451,7 @@ pub fn serialize_structure_crate_model_object_lambda_configuration(
 pub fn serialize_structure_crate_model_create_bucket_configuration(
     input: &crate::model::CreateBucketConfiguration,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_39) = &input.location_constraint {
@@ -465,7 +465,7 @@ pub fn serialize_structure_crate_model_create_bucket_configuration(
 pub fn serialize_structure_crate_model_job_manifest(
     input: &crate::model::JobManifest,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_40) = &input.spec {
@@ -483,7 +483,7 @@ pub fn serialize_structure_crate_model_job_manifest(
 pub fn serialize_union_crate_model_job_manifest_generator(
     input: &crate::model::JobManifestGenerator,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     let mut scope_writer = writer.finish();
     match input {
         crate::model::JobManifestGenerator::S3JobManifestGenerator(inner) => {
@@ -495,7 +495,7 @@ pub fn serialize_union_crate_model_job_manifest_generator(
         }
         crate::model::JobManifestGenerator::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "JobManifestGenerator",
                 ),
             )
@@ -507,7 +507,7 @@ pub fn serialize_union_crate_model_job_manifest_generator(
 pub fn serialize_structure_crate_model_job_operation(
     input: &crate::model::JobOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_42) = &input.lambda_invoke {
@@ -580,7 +580,7 @@ pub fn serialize_structure_crate_model_job_operation(
 pub fn serialize_structure_crate_model_job_report(
     input: &crate::model::JobReport,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_51) = &input.bucket {
@@ -610,7 +610,7 @@ pub fn serialize_structure_crate_model_job_report(
 pub fn serialize_structure_crate_model_s3_tag(
     input: &crate::model::S3Tag,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_55) = &input.key {
@@ -628,7 +628,7 @@ pub fn serialize_structure_crate_model_s3_tag(
 pub fn serialize_structure_crate_model_create_multi_region_access_point_input(
     input: &crate::model::CreateMultiRegionAccessPointInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_57) = &input.name {
@@ -658,7 +658,7 @@ pub fn serialize_structure_crate_model_create_multi_region_access_point_input(
 pub fn serialize_structure_crate_model_delete_multi_region_access_point_input(
     input: &crate::model::DeleteMultiRegionAccessPointInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_61) = &input.name {
@@ -672,7 +672,7 @@ pub fn serialize_structure_crate_model_delete_multi_region_access_point_input(
 pub fn serialize_structure_crate_model_lifecycle_configuration(
     input: &crate::model::LifecycleConfiguration,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_62) = &input.rules {
@@ -694,7 +694,7 @@ pub fn serialize_structure_crate_model_lifecycle_configuration(
 pub fn serialize_structure_crate_model_tagging(
     input: &crate::model::Tagging,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_64) = &input.tag_set {
@@ -713,7 +713,7 @@ pub fn serialize_structure_crate_model_tagging(
 pub fn serialize_structure_crate_model_versioning_configuration(
     input: &crate::model::VersioningConfiguration,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_66) = &input.mfa_delete {
@@ -731,7 +731,7 @@ pub fn serialize_structure_crate_model_versioning_configuration(
 pub fn serialize_structure_crate_model_put_multi_region_access_point_policy_input(
     input: &crate::model::PutMultiRegionAccessPointPolicyInput,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_68) = &input.name {
@@ -749,7 +749,7 @@ pub fn serialize_structure_crate_model_put_multi_region_access_point_policy_inpu
 pub fn serialize_structure_crate_model_storage_lens_configuration(
     input: &crate::model::StorageLensConfiguration,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_70) = &input.id {
@@ -794,7 +794,7 @@ pub fn serialize_structure_crate_model_storage_lens_configuration(
 pub fn serialize_structure_crate_model_storage_lens_tag(
     input: &crate::model::StorageLensTag,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_77) = &input.key {
@@ -812,7 +812,7 @@ pub fn serialize_structure_crate_model_storage_lens_tag(
 pub fn serialize_structure_crate_model_object_lambda_transformation_configuration(
     input: &crate::model::ObjectLambdaTransformationConfiguration,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_79) = &input.actions {
@@ -838,7 +838,7 @@ pub fn serialize_structure_crate_model_object_lambda_transformation_configuratio
 pub fn serialize_structure_crate_model_job_manifest_spec(
     input: &crate::model::JobManifestSpec,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_82) = &input.format {
@@ -861,7 +861,7 @@ pub fn serialize_structure_crate_model_job_manifest_spec(
 pub fn serialize_structure_crate_model_job_manifest_location(
     input: &crate::model::JobManifestLocation,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_85) = &input.object_arn {
@@ -883,7 +883,7 @@ pub fn serialize_structure_crate_model_job_manifest_location(
 pub fn serialize_structure_crate_model_s3_job_manifest_generator(
     input: &crate::model::S3JobManifestGenerator,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_88) = &input.expected_bucket_owner {
@@ -921,7 +921,7 @@ pub fn serialize_structure_crate_model_s3_job_manifest_generator(
 pub fn serialize_structure_crate_model_lambda_invoke_operation(
     input: &crate::model::LambdaInvokeOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_92) = &input.function_arn {
@@ -935,7 +935,7 @@ pub fn serialize_structure_crate_model_lambda_invoke_operation(
 pub fn serialize_structure_crate_model_s3_copy_object_operation(
     input: &crate::model::S3CopyObjectOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_93) = &input.target_resource {
@@ -1044,7 +1044,7 @@ pub fn serialize_structure_crate_model_s3_copy_object_operation(
 pub fn serialize_structure_crate_model_s3_set_object_acl_operation(
     input: &crate::model::S3SetObjectAclOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_111) = &input.access_control_policy {
@@ -1061,7 +1061,7 @@ pub fn serialize_structure_crate_model_s3_set_object_acl_operation(
 pub fn serialize_structure_crate_model_s3_set_object_tagging_operation(
     input: &crate::model::S3SetObjectTaggingOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_112) = &input.tag_set {
@@ -1080,7 +1080,7 @@ pub fn serialize_structure_crate_model_s3_set_object_tagging_operation(
 pub fn serialize_structure_crate_model_s3_delete_object_tagging_operation(
     input: &crate::model::S3DeleteObjectTaggingOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     let _ = input;
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1091,7 +1091,7 @@ pub fn serialize_structure_crate_model_s3_delete_object_tagging_operation(
 pub fn serialize_structure_crate_model_s3_initiate_restore_object_operation(
     input: &crate::model::S3InitiateRestoreObjectOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_114) = &input.expiration_in_days {
@@ -1109,7 +1109,7 @@ pub fn serialize_structure_crate_model_s3_initiate_restore_object_operation(
 pub fn serialize_structure_crate_model_s3_set_object_legal_hold_operation(
     input: &crate::model::S3SetObjectLegalHoldOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_116) = &input.legal_hold {
@@ -1126,7 +1126,7 @@ pub fn serialize_structure_crate_model_s3_set_object_legal_hold_operation(
 pub fn serialize_structure_crate_model_s3_set_object_retention_operation(
     input: &crate::model::S3SetObjectRetentionOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_117) = &input.bypass_governance_retention {
@@ -1144,7 +1144,7 @@ pub fn serialize_structure_crate_model_s3_set_object_retention_operation(
 pub fn serialize_structure_crate_model_s3_replicate_object_operation(
     input: &crate::model::S3ReplicateObjectOperation,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     let _ = input;
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1155,7 +1155,7 @@ pub fn serialize_structure_crate_model_s3_replicate_object_operation(
 pub fn serialize_structure_crate_model_region(
     input: &crate::model::Region,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_119) = &input.bucket {
@@ -1169,7 +1169,7 @@ pub fn serialize_structure_crate_model_region(
 pub fn serialize_structure_crate_model_lifecycle_rule(
     input: &crate::model::LifecycleRule,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_120) = &input.expiration {
@@ -1236,7 +1236,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule(
 pub fn serialize_structure_crate_model_account_level(
     input: &crate::model::AccountLevel,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_130) = &input.activity_metrics {
@@ -1254,7 +1254,7 @@ pub fn serialize_structure_crate_model_account_level(
 pub fn serialize_structure_crate_model_include(
     input: &crate::model::Include,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_132) = &input.buckets {
@@ -1282,7 +1282,7 @@ pub fn serialize_structure_crate_model_include(
 pub fn serialize_structure_crate_model_exclude(
     input: &crate::model::Exclude,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_136) = &input.buckets {
@@ -1310,7 +1310,7 @@ pub fn serialize_structure_crate_model_exclude(
 pub fn serialize_structure_crate_model_storage_lens_data_export(
     input: &crate::model::StorageLensDataExport,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_140) = &input.s3_bucket_destination {
@@ -1331,7 +1331,7 @@ pub fn serialize_structure_crate_model_storage_lens_data_export(
 pub fn serialize_structure_crate_model_storage_lens_aws_org(
     input: &crate::model::StorageLensAwsOrg,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_142) = &input.arn {
@@ -1345,7 +1345,7 @@ pub fn serialize_structure_crate_model_storage_lens_aws_org(
 pub fn serialize_union_crate_model_object_lambda_content_transformation(
     input: &crate::model::ObjectLambdaContentTransformation,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     let mut scope_writer = writer.finish();
     match input {
         crate::model::ObjectLambdaContentTransformation::AwsLambda(inner) => {
@@ -1357,7 +1357,7 @@ pub fn serialize_union_crate_model_object_lambda_content_transformation(
         }
         crate::model::ObjectLambdaContentTransformation::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant(
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "ObjectLambdaContentTransformation",
                 ),
             )
@@ -1369,7 +1369,7 @@ pub fn serialize_union_crate_model_object_lambda_content_transformation(
 pub fn serialize_structure_crate_model_s3_manifest_output_location(
     input: &crate::model::S3ManifestOutputLocation,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_143) = &input.expected_manifest_bucket_owner {
@@ -1402,7 +1402,7 @@ pub fn serialize_structure_crate_model_s3_manifest_output_location(
 pub fn serialize_structure_crate_model_job_manifest_generator_filter(
     input: &crate::model::JobManifestGeneratorFilter,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_148) = &input.eligible_for_replication {
@@ -1441,7 +1441,7 @@ pub fn serialize_structure_crate_model_job_manifest_generator_filter(
 pub fn serialize_structure_crate_model_s3_grant(
     input: &crate::model::S3Grant,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_153) = &input.grantee {
@@ -1459,7 +1459,7 @@ pub fn serialize_structure_crate_model_s3_grant(
 pub fn serialize_structure_crate_model_s3_object_metadata(
     input: &crate::model::S3ObjectMetadata,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_155) = &input.cache_control {
@@ -1528,7 +1528,7 @@ pub fn serialize_structure_crate_model_s3_object_metadata(
 pub fn serialize_structure_crate_model_s3_access_control_policy(
     input: &crate::model::S3AccessControlPolicy,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_167) = &input.access_control_list {
@@ -1549,7 +1549,7 @@ pub fn serialize_structure_crate_model_s3_access_control_policy(
 pub fn serialize_structure_crate_model_s3_object_lock_legal_hold(
     input: &crate::model::S3ObjectLockLegalHold,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_169) = &input.status {
@@ -1563,7 +1563,7 @@ pub fn serialize_structure_crate_model_s3_object_lock_legal_hold(
 pub fn serialize_structure_crate_model_s3_retention(
     input: &crate::model::S3Retention,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_170) = &input.retain_until_date {
@@ -1585,7 +1585,7 @@ pub fn serialize_structure_crate_model_s3_retention(
 pub fn serialize_structure_crate_model_lifecycle_expiration(
     input: &crate::model::LifecycleExpiration,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_172) = &input.date {
@@ -1613,7 +1613,7 @@ pub fn serialize_structure_crate_model_lifecycle_expiration(
 pub fn serialize_structure_crate_model_lifecycle_rule_filter(
     input: &crate::model::LifecycleRuleFilter,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_173) = &input.prefix {
@@ -1638,7 +1638,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule_filter(
 pub fn serialize_structure_crate_model_transition(
     input: &crate::model::Transition,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_176) = &input.date {
@@ -1664,7 +1664,7 @@ pub fn serialize_structure_crate_model_transition(
 pub fn serialize_structure_crate_model_noncurrent_version_transition(
     input: &crate::model::NoncurrentVersionTransition,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.noncurrent_days != 0 {
@@ -1683,7 +1683,7 @@ pub fn serialize_structure_crate_model_noncurrent_version_transition(
 pub fn serialize_structure_crate_model_noncurrent_version_expiration(
     input: &crate::model::NoncurrentVersionExpiration,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.noncurrent_days != 0 {
@@ -1698,7 +1698,7 @@ pub fn serialize_structure_crate_model_noncurrent_version_expiration(
 pub fn serialize_structure_crate_model_abort_incomplete_multipart_upload(
     input: &crate::model::AbortIncompleteMultipartUpload,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.days_after_initiation != 0 {
@@ -1713,7 +1713,7 @@ pub fn serialize_structure_crate_model_abort_incomplete_multipart_upload(
 pub fn serialize_structure_crate_model_activity_metrics(
     input: &crate::model::ActivityMetrics,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.is_enabled {
@@ -1727,7 +1727,7 @@ pub fn serialize_structure_crate_model_activity_metrics(
 pub fn serialize_structure_crate_model_bucket_level(
     input: &crate::model::BucketLevel,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_179) = &input.activity_metrics {
@@ -1745,7 +1745,7 @@ pub fn serialize_structure_crate_model_bucket_level(
 pub fn serialize_structure_crate_model_s3_bucket_destination(
     input: &crate::model::S3BucketDestination,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_181) = &input.format {
@@ -1782,7 +1782,7 @@ pub fn serialize_structure_crate_model_s3_bucket_destination(
 pub fn serialize_structure_crate_model_cloud_watch_metrics(
     input: &crate::model::CloudWatchMetrics,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {
@@ -1796,7 +1796,7 @@ pub fn serialize_structure_crate_model_cloud_watch_metrics(
 pub fn serialize_structure_crate_model_aws_lambda_transformation(
     input: &crate::model::AwsLambdaTransformation,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_187) = &input.function_arn {
@@ -1814,7 +1814,7 @@ pub fn serialize_structure_crate_model_aws_lambda_transformation(
 pub fn serialize_structure_crate_model_generated_manifest_encryption(
     input: &crate::model::GeneratedManifestEncryption,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_189) = &input.sses3 {
@@ -1832,7 +1832,7 @@ pub fn serialize_structure_crate_model_generated_manifest_encryption(
 pub fn serialize_structure_crate_model_s3_grantee(
     input: &crate::model::S3Grantee,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_191) = &input.type_identifier {
@@ -1854,7 +1854,7 @@ pub fn serialize_structure_crate_model_s3_grantee(
 pub fn serialize_structure_crate_model_s3_access_control_list(
     input: &crate::model::S3AccessControlList,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_194) = &input.owner {
@@ -1880,7 +1880,7 @@ pub fn serialize_structure_crate_model_s3_access_control_list(
 pub fn serialize_structure_crate_model_lifecycle_rule_and_operator(
     input: &crate::model::LifecycleRuleAndOperator,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_197) = &input.prefix {
@@ -1903,7 +1903,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule_and_operator(
 pub fn serialize_structure_crate_model_prefix_level(
     input: &crate::model::PrefixLevel,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_200) = &input.storage_metrics {
@@ -1920,7 +1920,7 @@ pub fn serialize_structure_crate_model_prefix_level(
 pub fn serialize_structure_crate_model_storage_lens_data_export_encryption(
     input: &crate::model::StorageLensDataExportEncryption,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_201) = &input.sses3 {
@@ -1938,7 +1938,7 @@ pub fn serialize_structure_crate_model_storage_lens_data_export_encryption(
 pub fn serialize_structure_crate_model_sses3_encryption(
     input: &crate::model::Sses3Encryption,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     let _ = input;
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1949,7 +1949,7 @@ pub fn serialize_structure_crate_model_sses3_encryption(
 pub fn serialize_structure_crate_model_ssekms_encryption(
     input: &crate::model::SsekmsEncryption,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_203) = &input.key_id {
@@ -1963,7 +1963,7 @@ pub fn serialize_structure_crate_model_ssekms_encryption(
 pub fn serialize_structure_crate_model_s3_object_owner(
     input: &crate::model::S3ObjectOwner,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_204) = &input.id {
@@ -1981,7 +1981,7 @@ pub fn serialize_structure_crate_model_s3_object_owner(
 pub fn serialize_structure_crate_model_prefix_level_storage_metrics(
     input: &crate::model::PrefixLevelStorageMetrics,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.is_enabled {
@@ -1999,7 +1999,7 @@ pub fn serialize_structure_crate_model_prefix_level_storage_metrics(
 pub fn serialize_structure_crate_model_sses3(
     input: &crate::model::Sses3,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     let _ = input;
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2010,7 +2010,7 @@ pub fn serialize_structure_crate_model_sses3(
 pub fn serialize_structure_crate_model_ssekms(
     input: &crate::model::Ssekms,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_207) = &input.key_id {
@@ -2024,7 +2024,7 @@ pub fn serialize_structure_crate_model_ssekms(
 pub fn serialize_structure_crate_model_selection_criteria(
     input: &crate::model::SelectionCriteria,
     writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_208) = &input.delimiter {

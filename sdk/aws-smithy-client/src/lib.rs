@@ -176,6 +176,7 @@ where
     pub async fn call<O, T, E, Retry>(&self, input: Operation<O, Retry>) -> Result<T, SdkError<E>>
     where
         O: Send + Sync,
+        E: 'static,
         Retry: Send + Sync,
         R::Policy: bounds::SmithyRetryPolicy<O, T, E, Retry>,
         bounds::Parsed<<M as bounds::SmithyMiddleware<C>>::Service, O, Retry>:
@@ -194,6 +195,7 @@ where
     ) -> Result<SdkSuccess<T>, SdkError<E>>
     where
         O: Send + Sync,
+        E: 'static,
         Retry: Send + Sync,
         R::Policy: bounds::SmithyRetryPolicy<O, T, E, Retry>,
         // This bound is not _technically_ inferred by all the previous bounds, but in practice it

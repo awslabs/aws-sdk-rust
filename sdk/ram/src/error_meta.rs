@@ -94,7 +94,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::AcceptResourceShareInvitationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::AcceptResourceShareInvitationErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
                 crate::error::AcceptResourceShareInvitationErrorKind::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
                 crate::error::AcceptResourceShareInvitationErrorKind::MalformedArnException(inner) => Error::MalformedArnException(inner),
@@ -120,7 +120,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::AssociateResourceShareError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::AssociateResourceShareErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
                 crate::error::AssociateResourceShareErrorKind::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
                 crate::error::AssociateResourceShareErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -151,7 +151,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::AssociateResourceSharePermissionErrorKind::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
                 crate::error::AssociateResourceSharePermissionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::AssociateResourceSharePermissionErrorKind::MalformedArnException(inner) => Error::MalformedArnException(inner),
@@ -173,7 +173,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateResourceShareError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateResourceShareErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
                 crate::error::CreateResourceShareErrorKind::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
                 crate::error::CreateResourceShareErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -199,7 +199,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteResourceShareError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteResourceShareErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
                 crate::error::DeleteResourceShareErrorKind::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
                 crate::error::DeleteResourceShareErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -224,7 +224,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DisassociateResourceShareError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DisassociateResourceShareErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
                 crate::error::DisassociateResourceShareErrorKind::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
                 crate::error::DisassociateResourceShareErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -258,7 +258,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DisassociateResourceSharePermissionErrorKind::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
                 crate::error::DisassociateResourceSharePermissionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::DisassociateResourceSharePermissionErrorKind::InvalidStateTransitionException(inner) => Error::InvalidStateTransitionException(inner),
@@ -286,7 +286,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::EnableSharingWithAwsOrganizationErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::EnableSharingWithAwsOrganizationErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::EnableSharingWithAwsOrganizationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
@@ -302,29 +302,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPermissionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetPermissionErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetPermissionErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::GetPermissionErrorKind::MalformedArnException(inner) => {
+                        Error::MalformedArnException(inner)
+                    }
+                    crate::error::GetPermissionErrorKind::OperationNotPermittedException(inner) => {
+                        Error::OperationNotPermittedException(inner)
+                    }
+                    crate::error::GetPermissionErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::GetPermissionErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::GetPermissionErrorKind::UnknownResourceException(inner) => {
+                        Error::UnknownResourceException(inner)
+                    }
+                    crate::error::GetPermissionErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetPermissionErrorKind::MalformedArnException(inner) => {
-                    Error::MalformedArnException(inner)
-                }
-                crate::error::GetPermissionErrorKind::OperationNotPermittedException(inner) => {
-                    Error::OperationNotPermittedException(inner)
-                }
-                crate::error::GetPermissionErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::GetPermissionErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::GetPermissionErrorKind::UnknownResourceException(inner) => {
-                    Error::UnknownResourceException(inner)
-                }
-                crate::error::GetPermissionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -337,29 +339,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetResourcePoliciesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetResourcePoliciesErrorKind::InvalidNextTokenException(inner) => {
-                    Error::InvalidNextTokenException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetResourcePoliciesErrorKind::InvalidNextTokenException(
+                        inner,
+                    ) => Error::InvalidNextTokenException(inner),
+                    crate::error::GetResourcePoliciesErrorKind::InvalidParameterException(
+                        inner,
+                    ) => Error::InvalidParameterException(inner),
+                    crate::error::GetResourcePoliciesErrorKind::MalformedArnException(inner) => {
+                        Error::MalformedArnException(inner)
+                    }
+                    crate::error::GetResourcePoliciesErrorKind::ResourceArnNotFoundException(
+                        inner,
+                    ) => Error::ResourceArnNotFoundException(inner),
+                    crate::error::GetResourcePoliciesErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::GetResourcePoliciesErrorKind::ServiceUnavailableException(
+                        inner,
+                    ) => Error::ServiceUnavailableException(inner),
+                    crate::error::GetResourcePoliciesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetResourcePoliciesErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::GetResourcePoliciesErrorKind::MalformedArnException(inner) => {
-                    Error::MalformedArnException(inner)
-                }
-                crate::error::GetResourcePoliciesErrorKind::ResourceArnNotFoundException(inner) => {
-                    Error::ResourceArnNotFoundException(inner)
-                }
-                crate::error::GetResourcePoliciesErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::GetResourcePoliciesErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::GetResourcePoliciesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -373,7 +377,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetResourceShareAssociationsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetResourceShareAssociationsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::GetResourceShareAssociationsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::GetResourceShareAssociationsErrorKind::MalformedArnException(inner) => Error::MalformedArnException(inner),
@@ -396,7 +400,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetResourceShareInvitationsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetResourceShareInvitationsErrorKind::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
                 crate::error::GetResourceShareInvitationsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::GetResourceShareInvitationsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -419,29 +423,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetResourceSharesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetResourceSharesErrorKind::InvalidNextTokenException(inner) => {
-                    Error::InvalidNextTokenException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetResourceSharesErrorKind::InvalidNextTokenException(inner) => {
+                        Error::InvalidNextTokenException(inner)
+                    }
+                    crate::error::GetResourceSharesErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::GetResourceSharesErrorKind::MalformedArnException(inner) => {
+                        Error::MalformedArnException(inner)
+                    }
+                    crate::error::GetResourceSharesErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::GetResourceSharesErrorKind::ServiceUnavailableException(
+                        inner,
+                    ) => Error::ServiceUnavailableException(inner),
+                    crate::error::GetResourceSharesErrorKind::UnknownResourceException(inner) => {
+                        Error::UnknownResourceException(inner)
+                    }
+                    crate::error::GetResourceSharesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetResourceSharesErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::GetResourceSharesErrorKind::MalformedArnException(inner) => {
-                    Error::MalformedArnException(inner)
-                }
-                crate::error::GetResourceSharesErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::GetResourceSharesErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::GetResourceSharesErrorKind::UnknownResourceException(inner) => {
-                    Error::UnknownResourceException(inner)
-                }
-                crate::error::GetResourceSharesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -459,7 +465,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListPendingInvitationResourcesErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::ListPendingInvitationResourcesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::ListPendingInvitationResourcesErrorKind::MalformedArnException(inner) => Error::MalformedArnException(inner),
@@ -481,26 +487,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPermissionsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListPermissionsErrorKind::InvalidNextTokenException(inner) => {
-                    Error::InvalidNextTokenException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListPermissionsErrorKind::InvalidNextTokenException(inner) => {
+                        Error::InvalidNextTokenException(inner)
+                    }
+                    crate::error::ListPermissionsErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::ListPermissionsErrorKind::OperationNotPermittedException(
+                        inner,
+                    ) => Error::OperationNotPermittedException(inner),
+                    crate::error::ListPermissionsErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::ListPermissionsErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::ListPermissionsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListPermissionsErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::ListPermissionsErrorKind::OperationNotPermittedException(inner) => {
-                    Error::OperationNotPermittedException(inner)
-                }
-                crate::error::ListPermissionsErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::ListPermissionsErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::ListPermissionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -514,7 +522,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListPermissionVersionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::ListPermissionVersionsErrorKind::InvalidNextTokenException(inner) => {
                     Error::InvalidNextTokenException(inner)
                 }
@@ -550,29 +561,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPrincipalsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListPrincipalsErrorKind::InvalidNextTokenException(inner) => {
-                    Error::InvalidNextTokenException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListPrincipalsErrorKind::InvalidNextTokenException(inner) => {
+                        Error::InvalidNextTokenException(inner)
+                    }
+                    crate::error::ListPrincipalsErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::ListPrincipalsErrorKind::MalformedArnException(inner) => {
+                        Error::MalformedArnException(inner)
+                    }
+                    crate::error::ListPrincipalsErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::ListPrincipalsErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::ListPrincipalsErrorKind::UnknownResourceException(inner) => {
+                        Error::UnknownResourceException(inner)
+                    }
+                    crate::error::ListPrincipalsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListPrincipalsErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::ListPrincipalsErrorKind::MalformedArnException(inner) => {
-                    Error::MalformedArnException(inner)
-                }
-                crate::error::ListPrincipalsErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::ListPrincipalsErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::ListPrincipalsErrorKind::UnknownResourceException(inner) => {
-                    Error::UnknownResourceException(inner)
-                }
-                crate::error::ListPrincipalsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -583,32 +596,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListResourcesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListResourcesErrorKind::InvalidNextTokenException(inner) => {
-                    Error::InvalidNextTokenException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListResourcesErrorKind::InvalidNextTokenException(inner) => {
+                        Error::InvalidNextTokenException(inner)
+                    }
+                    crate::error::ListResourcesErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::ListResourcesErrorKind::InvalidResourceTypeException(inner) => {
+                        Error::InvalidResourceTypeException(inner)
+                    }
+                    crate::error::ListResourcesErrorKind::MalformedArnException(inner) => {
+                        Error::MalformedArnException(inner)
+                    }
+                    crate::error::ListResourcesErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::ListResourcesErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::ListResourcesErrorKind::UnknownResourceException(inner) => {
+                        Error::UnknownResourceException(inner)
+                    }
+                    crate::error::ListResourcesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListResourcesErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::ListResourcesErrorKind::InvalidResourceTypeException(inner) => {
-                    Error::InvalidResourceTypeException(inner)
-                }
-                crate::error::ListResourcesErrorKind::MalformedArnException(inner) => {
-                    Error::MalformedArnException(inner)
-                }
-                crate::error::ListResourcesErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::ListResourcesErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::ListResourcesErrorKind::UnknownResourceException(inner) => {
-                    Error::UnknownResourceException(inner)
-                }
-                crate::error::ListResourcesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -622,7 +637,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListResourceSharePermissionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListResourceSharePermissionsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
                 crate::error::ListResourceSharePermissionsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::ListResourceSharePermissionsErrorKind::MalformedArnException(inner) => Error::MalformedArnException(inner),
@@ -644,23 +659,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListResourceTypesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListResourceTypesErrorKind::InvalidNextTokenException(inner) => {
-                    Error::InvalidNextTokenException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListResourceTypesErrorKind::InvalidNextTokenException(inner) => {
+                        Error::InvalidNextTokenException(inner)
+                    }
+                    crate::error::ListResourceTypesErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::ListResourceTypesErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::ListResourceTypesErrorKind::ServiceUnavailableException(
+                        inner,
+                    ) => Error::ServiceUnavailableException(inner),
+                    crate::error::ListResourceTypesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListResourceTypesErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
-                }
-                crate::error::ListResourceTypesErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::ListResourceTypesErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::ListResourceTypesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -682,7 +699,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::PromoteResourceShareCreatedFromPolicyErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::PromoteResourceShareCreatedFromPolicyErrorKind::MalformedArnException(inner) => Error::MalformedArnException(inner),
                 crate::error::PromoteResourceShareCreatedFromPolicyErrorKind::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
@@ -706,7 +723,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RejectResourceShareInvitationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::RejectResourceShareInvitationErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
                 crate::error::RejectResourceShareInvitationErrorKind::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
                 crate::error::RejectResourceShareInvitationErrorKind::MalformedArnException(inner) => Error::MalformedArnException(inner),
@@ -729,35 +746,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagResourceErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::TagResourceErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::MalformedArnException(inner) => {
+                        Error::MalformedArnException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::ResourceArnNotFoundException(inner) => {
+                        Error::ResourceArnNotFoundException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::TagLimitExceededException(inner) => {
+                        Error::TagLimitExceededException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::TagPolicyViolationException(inner) => {
+                        Error::TagPolicyViolationException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::UnknownResourceException(inner) => {
+                        Error::UnknownResourceException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::TagResourceErrorKind::MalformedArnException(inner) => {
-                    Error::MalformedArnException(inner)
-                }
-                crate::error::TagResourceErrorKind::ResourceArnNotFoundException(inner) => {
-                    Error::ResourceArnNotFoundException(inner)
-                }
-                crate::error::TagResourceErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::TagResourceErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::TagResourceErrorKind::TagLimitExceededException(inner) => {
-                    Error::TagLimitExceededException(inner)
-                }
-                crate::error::TagResourceErrorKind::TagPolicyViolationException(inner) => {
-                    Error::TagPolicyViolationException(inner)
-                }
-                crate::error::TagResourceErrorKind::UnknownResourceException(inner) => {
-                    Error::UnknownResourceException(inner)
-                }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -768,20 +787,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagResourceErrorKind::InvalidParameterException(inner) => {
-                    Error::InvalidParameterException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UntagResourceErrorKind::InvalidParameterException(inner) => {
+                        Error::InvalidParameterException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::ServiceUnavailableException(inner) => {
+                        Error::ServiceUnavailableException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UntagResourceErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::UntagResourceErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -794,7 +815,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateResourceShareError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateResourceShareErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
                 crate::error::UpdateResourceShareErrorKind::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
                 crate::error::UpdateResourceShareErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),

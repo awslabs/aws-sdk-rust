@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_profile_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateProfileInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.duration_seconds {
         object.key("durationSeconds").number(
             #[allow(clippy::useless_conversion)]
@@ -56,7 +56,7 @@ pub fn serialize_structure_crate_input_create_profile_input(
 pub fn serialize_structure_crate_input_create_trust_anchor_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateTrustAnchorInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_16) = &input.enabled {
         object.key("enabled").boolean(*var_16);
     }
@@ -85,7 +85,7 @@ pub fn serialize_structure_crate_input_create_trust_anchor_input(
 pub fn serialize_structure_crate_input_import_crl_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ImportCrlInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_24) = &input.crl_data {
         object
             .key("crlData")
@@ -117,7 +117,7 @@ pub fn serialize_structure_crate_input_import_crl_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.resource_arn {
         object.key("resourceArn").string(var_32.as_str());
     }
@@ -138,7 +138,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_37) = &input.resource_arn {
         object.key("resourceArn").string(var_37.as_str());
     }
@@ -157,7 +157,7 @@ pub fn serialize_structure_crate_input_untag_resource_input(
 pub fn serialize_structure_crate_input_update_crl_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateCrlInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_41) = &input.crl_data {
         object
             .key("crlData")
@@ -172,7 +172,7 @@ pub fn serialize_structure_crate_input_update_crl_input(
 pub fn serialize_structure_crate_input_update_profile_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateProfileInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_43) = &input.duration_seconds {
         object.key("durationSeconds").number(
             #[allow(clippy::useless_conversion)]
@@ -209,7 +209,7 @@ pub fn serialize_structure_crate_input_update_profile_input(
 pub fn serialize_structure_crate_input_update_trust_anchor_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateTrustAnchorInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_52) = &input.name {
         object.key("name").string(var_52.as_str());
     }
@@ -224,7 +224,7 @@ pub fn serialize_structure_crate_input_update_trust_anchor_input(
 pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_55) = &input.key {
         object.key("key").string(var_55.as_str());
     }
@@ -237,7 +237,7 @@ pub fn serialize_structure_crate_model_tag(
 pub fn serialize_structure_crate_model_source(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Source,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_57) = &input.source_type {
         object.key("sourceType").string(var_57.as_str());
     }
@@ -252,7 +252,7 @@ pub fn serialize_structure_crate_model_source(
 pub fn serialize_union_crate_model_source_data(
     object_59: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SourceData,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::SourceData::X509CertificateData(inner) => {
             object_59.key("x509CertificateData").string(inner.as_str());
@@ -262,7 +262,9 @@ pub fn serialize_union_crate_model_source_data(
         }
         crate::model::SourceData::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant("SourceData"),
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                    "SourceData",
+                ),
             )
         }
     }

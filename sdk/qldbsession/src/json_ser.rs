@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_send_command_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SendCommandInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.session_token {
         object.key("SessionToken").string(var_1.as_str());
     }
@@ -65,7 +65,7 @@ pub fn serialize_structure_crate_input_send_command_input(
 pub fn serialize_structure_crate_model_start_session_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StartSessionRequest,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_16) = &input.ledger_name {
         object.key("LedgerName").string(var_16.as_str());
     }
@@ -75,7 +75,7 @@ pub fn serialize_structure_crate_model_start_session_request(
 pub fn serialize_structure_crate_model_start_transaction_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StartTransactionRequest,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     let (_, _) = (object, input);
     Ok(())
 }
@@ -83,7 +83,7 @@ pub fn serialize_structure_crate_model_start_transaction_request(
 pub fn serialize_structure_crate_model_end_session_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EndSessionRequest,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     let (_, _) = (object, input);
     Ok(())
 }
@@ -91,7 +91,7 @@ pub fn serialize_structure_crate_model_end_session_request(
 pub fn serialize_structure_crate_model_commit_transaction_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CommitTransactionRequest,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_17) = &input.transaction_id {
         object.key("TransactionId").string(var_17.as_str());
     }
@@ -106,7 +106,7 @@ pub fn serialize_structure_crate_model_commit_transaction_request(
 pub fn serialize_structure_crate_model_abort_transaction_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AbortTransactionRequest,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     let (_, _) = (object, input);
     Ok(())
 }
@@ -114,7 +114,7 @@ pub fn serialize_structure_crate_model_abort_transaction_request(
 pub fn serialize_structure_crate_model_execute_statement_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ExecuteStatementRequest,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_19) = &input.transaction_id {
         object.key("TransactionId").string(var_19.as_str());
     }
@@ -141,7 +141,7 @@ pub fn serialize_structure_crate_model_execute_statement_request(
 pub fn serialize_structure_crate_model_fetch_page_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::FetchPageRequest,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_25) = &input.transaction_id {
         object.key("TransactionId").string(var_25.as_str());
     }
@@ -154,7 +154,7 @@ pub fn serialize_structure_crate_model_fetch_page_request(
 pub fn serialize_structure_crate_model_value_holder(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ValueHolder,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_27) = &input.ion_binary {
         object
             .key("IonBinary")

@@ -73,32 +73,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AcceptGrantError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AcceptGrantErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::AcceptGrantErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::AcceptGrantErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::AcceptGrantErrorKind::InvalidParameterValueException(inner) => {
+                        Error::InvalidParameterValueException(inner)
+                    }
+                    crate::error::AcceptGrantErrorKind::RateLimitExceededException(inner) => {
+                        Error::RateLimitExceededException(inner)
+                    }
+                    crate::error::AcceptGrantErrorKind::ResourceLimitExceededException(inner) => {
+                        Error::ResourceLimitExceededException(inner)
+                    }
+                    crate::error::AcceptGrantErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::AcceptGrantErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::AcceptGrantErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::AcceptGrantErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::AcceptGrantErrorKind::InvalidParameterValueException(inner) => {
-                    Error::InvalidParameterValueException(inner)
-                }
-                crate::error::AcceptGrantErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::AcceptGrantErrorKind::ResourceLimitExceededException(inner) => {
-                    Error::ResourceLimitExceededException(inner)
-                }
-                crate::error::AcceptGrantErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::AcceptGrantErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::AcceptGrantErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -109,35 +111,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CheckInLicenseError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CheckInLicenseErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CheckInLicenseErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::CheckInLicenseErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::CheckInLicenseErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::CheckInLicenseErrorKind::InvalidParameterValueException(
+                        inner,
+                    ) => Error::InvalidParameterValueException(inner),
+                    crate::error::CheckInLicenseErrorKind::RateLimitExceededException(inner) => {
+                        Error::RateLimitExceededException(inner)
+                    }
+                    crate::error::CheckInLicenseErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::CheckInLicenseErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::CheckInLicenseErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::CheckInLicenseErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CheckInLicenseErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::CheckInLicenseErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
-                }
-                crate::error::CheckInLicenseErrorKind::InvalidParameterValueException(inner) => {
-                    Error::InvalidParameterValueException(inner)
-                }
-                crate::error::CheckInLicenseErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::CheckInLicenseErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::CheckInLicenseErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::CheckInLicenseErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::CheckInLicenseErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -151,7 +155,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CheckoutBorrowLicenseError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CheckoutBorrowLicenseErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::CheckoutBorrowLicenseErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
                 crate::error::CheckoutBorrowLicenseErrorKind::EntitlementNotAllowedException(inner) => Error::EntitlementNotAllowedException(inner),
@@ -175,7 +179,7 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CheckoutLicenseError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CheckoutLicenseErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::CheckoutLicenseErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
                 crate::error::CheckoutLicenseErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -198,32 +202,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateGrantError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateGrantErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateGrantErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::CreateGrantErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::CreateGrantErrorKind::InvalidParameterValueException(inner) => {
+                        Error::InvalidParameterValueException(inner)
+                    }
+                    crate::error::CreateGrantErrorKind::RateLimitExceededException(inner) => {
+                        Error::RateLimitExceededException(inner)
+                    }
+                    crate::error::CreateGrantErrorKind::ResourceLimitExceededException(inner) => {
+                        Error::ResourceLimitExceededException(inner)
+                    }
+                    crate::error::CreateGrantErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::CreateGrantErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::CreateGrantErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateGrantErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::CreateGrantErrorKind::InvalidParameterValueException(inner) => {
-                    Error::InvalidParameterValueException(inner)
-                }
-                crate::error::CreateGrantErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::CreateGrantErrorKind::ResourceLimitExceededException(inner) => {
-                    Error::ResourceLimitExceededException(inner)
-                }
-                crate::error::CreateGrantErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::CreateGrantErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::CreateGrantErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -236,32 +242,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateGrantVersionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateGrantVersionErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateGrantVersionErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::CreateGrantVersionErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::CreateGrantVersionErrorKind::InvalidParameterValueException(
+                        inner,
+                    ) => Error::InvalidParameterValueException(inner),
+                    crate::error::CreateGrantVersionErrorKind::RateLimitExceededException(
+                        inner,
+                    ) => Error::RateLimitExceededException(inner),
+                    crate::error::CreateGrantVersionErrorKind::ResourceLimitExceededException(
+                        inner,
+                    ) => Error::ResourceLimitExceededException(inner),
+                    crate::error::CreateGrantVersionErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::CreateGrantVersionErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::CreateGrantVersionErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateGrantVersionErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::CreateGrantVersionErrorKind::InvalidParameterValueException(
-                    inner,
-                ) => Error::InvalidParameterValueException(inner),
-                crate::error::CreateGrantVersionErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::CreateGrantVersionErrorKind::ResourceLimitExceededException(
-                    inner,
-                ) => Error::ResourceLimitExceededException(inner),
-                crate::error::CreateGrantVersionErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::CreateGrantVersionErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::CreateGrantVersionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -272,32 +280,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateLicenseError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateLicenseErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateLicenseErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::CreateLicenseErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::CreateLicenseErrorKind::InvalidParameterValueException(inner) => {
+                        Error::InvalidParameterValueException(inner)
+                    }
+                    crate::error::CreateLicenseErrorKind::RateLimitExceededException(inner) => {
+                        Error::RateLimitExceededException(inner)
+                    }
+                    crate::error::CreateLicenseErrorKind::RedirectException(inner) => {
+                        Error::RedirectException(inner)
+                    }
+                    crate::error::CreateLicenseErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::CreateLicenseErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::CreateLicenseErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateLicenseErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::CreateLicenseErrorKind::InvalidParameterValueException(inner) => {
-                    Error::InvalidParameterValueException(inner)
-                }
-                crate::error::CreateLicenseErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::CreateLicenseErrorKind::RedirectException(inner) => {
-                    Error::RedirectException(inner)
-                }
-                crate::error::CreateLicenseErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::CreateLicenseErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::CreateLicenseErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -311,7 +321,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateLicenseConfigurationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateLicenseConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::CreateLicenseConfigurationErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
                 crate::error::CreateLicenseConfigurationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -341,7 +351,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateLicenseConversionTaskForResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::CreateLicenseConversionTaskForResourceErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
                 crate::error::CreateLicenseConversionTaskForResourceErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -371,7 +381,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::CreateLicenseManagerReportGeneratorErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::CreateLicenseManagerReportGeneratorErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
                 crate::error::CreateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -395,35 +405,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateLicenseVersionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateLicenseVersionErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateLicenseVersionErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::CreateLicenseVersionErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::CreateLicenseVersionErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::CreateLicenseVersionErrorKind::RateLimitExceededException(
+                        inner,
+                    ) => Error::RateLimitExceededException(inner),
+                    crate::error::CreateLicenseVersionErrorKind::RedirectException(inner) => {
+                        Error::RedirectException(inner)
+                    }
+                    crate::error::CreateLicenseVersionErrorKind::ResourceNotFoundException(
+                        inner,
+                    ) => Error::ResourceNotFoundException(inner),
+                    crate::error::CreateLicenseVersionErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::CreateLicenseVersionErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::CreateLicenseVersionErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateLicenseVersionErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::CreateLicenseVersionErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
-                }
-                crate::error::CreateLicenseVersionErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::CreateLicenseVersionErrorKind::RedirectException(inner) => {
-                    Error::RedirectException(inner)
-                }
-                crate::error::CreateLicenseVersionErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::CreateLicenseVersionErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::CreateLicenseVersionErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::CreateLicenseVersionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -434,35 +446,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateTokenError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateTokenErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateTokenErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::RateLimitExceededException(inner) => {
+                        Error::RateLimitExceededException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::RedirectException(inner) => {
+                        Error::RedirectException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::ResourceLimitExceededException(inner) => {
+                        Error::ResourceLimitExceededException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::CreateTokenErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateTokenErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::CreateTokenErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::CreateTokenErrorKind::RedirectException(inner) => {
-                    Error::RedirectException(inner)
-                }
-                crate::error::CreateTokenErrorKind::ResourceLimitExceededException(inner) => {
-                    Error::ResourceLimitExceededException(inner)
-                }
-                crate::error::CreateTokenErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::CreateTokenErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::CreateTokenErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::CreateTokenErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -473,32 +487,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteGrantError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteGrantErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteGrantErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::DeleteGrantErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::DeleteGrantErrorKind::InvalidParameterValueException(inner) => {
+                        Error::InvalidParameterValueException(inner)
+                    }
+                    crate::error::DeleteGrantErrorKind::RateLimitExceededException(inner) => {
+                        Error::RateLimitExceededException(inner)
+                    }
+                    crate::error::DeleteGrantErrorKind::ResourceLimitExceededException(inner) => {
+                        Error::ResourceLimitExceededException(inner)
+                    }
+                    crate::error::DeleteGrantErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::DeleteGrantErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::DeleteGrantErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteGrantErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::DeleteGrantErrorKind::InvalidParameterValueException(inner) => {
-                    Error::InvalidParameterValueException(inner)
-                }
-                crate::error::DeleteGrantErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::DeleteGrantErrorKind::ResourceLimitExceededException(inner) => {
-                    Error::ResourceLimitExceededException(inner)
-                }
-                crate::error::DeleteGrantErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::DeleteGrantErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::DeleteGrantErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -509,35 +525,37 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteLicenseError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteLicenseErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteLicenseErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::DeleteLicenseErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::DeleteLicenseErrorKind::ConflictException(inner) => {
+                        Error::ConflictException(inner)
+                    }
+                    crate::error::DeleteLicenseErrorKind::InvalidParameterValueException(inner) => {
+                        Error::InvalidParameterValueException(inner)
+                    }
+                    crate::error::DeleteLicenseErrorKind::RateLimitExceededException(inner) => {
+                        Error::RateLimitExceededException(inner)
+                    }
+                    crate::error::DeleteLicenseErrorKind::RedirectException(inner) => {
+                        Error::RedirectException(inner)
+                    }
+                    crate::error::DeleteLicenseErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::DeleteLicenseErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::DeleteLicenseErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteLicenseErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::DeleteLicenseErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
-                }
-                crate::error::DeleteLicenseErrorKind::InvalidParameterValueException(inner) => {
-                    Error::InvalidParameterValueException(inner)
-                }
-                crate::error::DeleteLicenseErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::DeleteLicenseErrorKind::RedirectException(inner) => {
-                    Error::RedirectException(inner)
-                }
-                crate::error::DeleteLicenseErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::DeleteLicenseErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::DeleteLicenseErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -551,7 +569,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteLicenseConfigurationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteLicenseConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::DeleteLicenseConfigurationErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
                 crate::error::DeleteLicenseConfigurationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -580,7 +598,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteLicenseManagerReportGeneratorErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::DeleteLicenseManagerReportGeneratorErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
                 crate::error::DeleteLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -601,32 +619,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteTokenError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteTokenErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteTokenErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::DeleteTokenErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::DeleteTokenErrorKind::RateLimitExceededException(inner) => {
+                        Error::RateLimitExceededException(inner)
+                    }
+                    crate::error::DeleteTokenErrorKind::RedirectException(inner) => {
+                        Error::RedirectException(inner)
+                    }
+                    crate::error::DeleteTokenErrorKind::ResourceNotFoundException(inner) => {
+                        Error::ResourceNotFoundException(inner)
+                    }
+                    crate::error::DeleteTokenErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::DeleteTokenErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::DeleteTokenErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteTokenErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::DeleteTokenErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::DeleteTokenErrorKind::RedirectException(inner) => {
-                    Error::RedirectException(inner)
-                }
-                crate::error::DeleteTokenErrorKind::ResourceNotFoundException(inner) => {
-                    Error::ResourceNotFoundException(inner)
-                }
-                crate::error::DeleteTokenErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::DeleteTokenErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::DeleteTokenErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -640,7 +660,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ExtendLicenseConsumptionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::ExtendLicenseConsumptionErrorKind::AccessDeniedException(inner) => {
                     Error::AccessDeniedException(inner)
                 }
@@ -676,26 +699,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAccessTokenError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetAccessTokenErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetAccessTokenErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::GetAccessTokenErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::GetAccessTokenErrorKind::RateLimitExceededException(inner) => {
+                        Error::RateLimitExceededException(inner)
+                    }
+                    crate::error::GetAccessTokenErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::GetAccessTokenErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::GetAccessTokenErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetAccessTokenErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::GetAccessTokenErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::GetAccessTokenErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::GetAccessTokenErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::GetAccessTokenErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -706,32 +731,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetGrantError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetGrantErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetGrantErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::GetGrantErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::GetGrantErrorKind::InvalidParameterValueException(inner) => {
+                        Error::InvalidParameterValueException(inner)
+                    }
+                    crate::error::GetGrantErrorKind::RateLimitExceededException(inner) => {
+                        Error::RateLimitExceededException(inner)
+                    }
+                    crate::error::GetGrantErrorKind::ResourceLimitExceededException(inner) => {
+                        Error::ResourceLimitExceededException(inner)
+                    }
+                    crate::error::GetGrantErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::GetGrantErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::GetGrantErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetGrantErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::GetGrantErrorKind::InvalidParameterValueException(inner) => {
-                    Error::InvalidParameterValueException(inner)
-                }
-                crate::error::GetGrantErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::GetGrantErrorKind::ResourceLimitExceededException(inner) => {
-                    Error::ResourceLimitExceededException(inner)
-                }
-                crate::error::GetGrantErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::GetGrantErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::GetGrantErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -742,29 +769,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetLicenseError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetLicenseErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetLicenseErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::GetLicenseErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::GetLicenseErrorKind::InvalidParameterValueException(inner) => {
+                        Error::InvalidParameterValueException(inner)
+                    }
+                    crate::error::GetLicenseErrorKind::RateLimitExceededException(inner) => {
+                        Error::RateLimitExceededException(inner)
+                    }
+                    crate::error::GetLicenseErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::GetLicenseErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::GetLicenseErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetLicenseErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::GetLicenseErrorKind::InvalidParameterValueException(inner) => {
-                    Error::InvalidParameterValueException(inner)
-                }
-                crate::error::GetLicenseErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::GetLicenseErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::GetLicenseErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::GetLicenseErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -778,7 +807,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetLicenseConfigurationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::GetLicenseConfigurationErrorKind::AccessDeniedException(inner) => {
                     Error::AccessDeniedException(inner)
                 }
@@ -811,7 +843,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetLicenseConversionTaskError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::GetLicenseConversionTaskErrorKind::AccessDeniedException(inner) => {
                     Error::AccessDeniedException(inner)
                 }
@@ -848,7 +883,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetLicenseManagerReportGeneratorErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetLicenseManagerReportGeneratorErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
                 crate::error::GetLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -869,29 +904,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetLicenseUsageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetLicenseUsageErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetLicenseUsageErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::GetLicenseUsageErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::GetLicenseUsageErrorKind::InvalidParameterValueException(
+                        inner,
+                    ) => Error::InvalidParameterValueException(inner),
+                    crate::error::GetLicenseUsageErrorKind::RateLimitExceededException(inner) => {
+                        Error::RateLimitExceededException(inner)
+                    }
+                    crate::error::GetLicenseUsageErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::GetLicenseUsageErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::GetLicenseUsageErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetLicenseUsageErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::GetLicenseUsageErrorKind::InvalidParameterValueException(inner) => {
-                    Error::InvalidParameterValueException(inner)
-                }
-                crate::error::GetLicenseUsageErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::GetLicenseUsageErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::GetLicenseUsageErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::GetLicenseUsageErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -904,23 +941,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetServiceSettingsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetServiceSettingsErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetServiceSettingsErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::GetServiceSettingsErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::GetServiceSettingsErrorKind::RateLimitExceededException(
+                        inner,
+                    ) => Error::RateLimitExceededException(inner),
+                    crate::error::GetServiceSettingsErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::GetServiceSettingsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetServiceSettingsErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::GetServiceSettingsErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::GetServiceSettingsErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::GetServiceSettingsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -942,7 +981,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListAssociationsForLicenseConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::ListAssociationsForLicenseConfigurationErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
                 crate::error::ListAssociationsForLicenseConfigurationErrorKind::FilterLimitExceededException(inner) => Error::FilterLimitExceededException(inner),
@@ -964,7 +1003,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListDistributedGrantsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::ListDistributedGrantsErrorKind::AccessDeniedException(inner) => {
                     Error::AccessDeniedException(inner)
                 }
@@ -1011,7 +1053,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListFailuresForLicenseConfigurationOperationsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::ListFailuresForLicenseConfigurationOperationsErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
                 crate::error::ListFailuresForLicenseConfigurationOperationsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -1032,7 +1074,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListLicenseConfigurationsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListLicenseConfigurationsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::ListLicenseConfigurationsErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
                 crate::error::ListLicenseConfigurationsErrorKind::FilterLimitExceededException(inner) => Error::FilterLimitExceededException(inner),
@@ -1054,7 +1096,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListLicenseConversionTasksError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListLicenseConversionTasksErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::ListLicenseConversionTasksErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
                 crate::error::ListLicenseConversionTasksErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -1080,7 +1122,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListLicenseManagerReportGeneratorsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::ListLicenseManagerReportGeneratorsErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
                 crate::error::ListLicenseManagerReportGeneratorsErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -1101,29 +1143,31 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListLicensesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListLicensesErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListLicensesErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::ListLicensesErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::ListLicensesErrorKind::InvalidParameterValueException(inner) => {
+                        Error::InvalidParameterValueException(inner)
+                    }
+                    crate::error::ListLicensesErrorKind::RateLimitExceededException(inner) => {
+                        Error::RateLimitExceededException(inner)
+                    }
+                    crate::error::ListLicensesErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::ListLicensesErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::ListLicensesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListLicensesErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::ListLicensesErrorKind::InvalidParameterValueException(inner) => {
-                    Error::InvalidParameterValueException(inner)
-                }
-                crate::error::ListLicensesErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::ListLicensesErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::ListLicensesErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListLicensesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1145,7 +1189,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListLicenseSpecificationsForResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::ListLicenseSpecificationsForResourceErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
                 crate::error::ListLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -1165,26 +1209,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListLicenseVersionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListLicenseVersionsErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListLicenseVersionsErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::ListLicenseVersionsErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::ListLicenseVersionsErrorKind::InvalidParameterValueException(
+                        inner,
+                    ) => Error::InvalidParameterValueException(inner),
+                    crate::error::ListLicenseVersionsErrorKind::RateLimitExceededException(
+                        inner,
+                    ) => Error::RateLimitExceededException(inner),
+                    crate::error::ListLicenseVersionsErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::ListLicenseVersionsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListLicenseVersionsErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::ListLicenseVersionsErrorKind::InvalidParameterValueException(
-                    inner,
-                ) => Error::InvalidParameterValueException(inner),
-                crate::error::ListLicenseVersionsErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::ListLicenseVersionsErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::ListLicenseVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1197,32 +1243,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListReceivedGrantsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListReceivedGrantsErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListReceivedGrantsErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::ListReceivedGrantsErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::ListReceivedGrantsErrorKind::InvalidParameterValueException(
+                        inner,
+                    ) => Error::InvalidParameterValueException(inner),
+                    crate::error::ListReceivedGrantsErrorKind::RateLimitExceededException(
+                        inner,
+                    ) => Error::RateLimitExceededException(inner),
+                    crate::error::ListReceivedGrantsErrorKind::ResourceLimitExceededException(
+                        inner,
+                    ) => Error::ResourceLimitExceededException(inner),
+                    crate::error::ListReceivedGrantsErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::ListReceivedGrantsErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::ListReceivedGrantsErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListReceivedGrantsErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::ListReceivedGrantsErrorKind::InvalidParameterValueException(
-                    inner,
-                ) => Error::InvalidParameterValueException(inner),
-                crate::error::ListReceivedGrantsErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::ListReceivedGrantsErrorKind::ResourceLimitExceededException(
-                    inner,
-                ) => Error::ResourceLimitExceededException(inner),
-                crate::error::ListReceivedGrantsErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::ListReceivedGrantsErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListReceivedGrantsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1236,32 +1284,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListReceivedLicensesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListReceivedLicensesErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListReceivedLicensesErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::ListReceivedLicensesErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::ListReceivedLicensesErrorKind::InvalidParameterValueException(
+                        inner,
+                    ) => Error::InvalidParameterValueException(inner),
+                    crate::error::ListReceivedLicensesErrorKind::RateLimitExceededException(
+                        inner,
+                    ) => Error::RateLimitExceededException(inner),
+                    crate::error::ListReceivedLicensesErrorKind::ResourceLimitExceededException(
+                        inner,
+                    ) => Error::ResourceLimitExceededException(inner),
+                    crate::error::ListReceivedLicensesErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::ListReceivedLicensesErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::ListReceivedLicensesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListReceivedLicensesErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::ListReceivedLicensesErrorKind::InvalidParameterValueException(
-                    inner,
-                ) => Error::InvalidParameterValueException(inner),
-                crate::error::ListReceivedLicensesErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::ListReceivedLicensesErrorKind::ResourceLimitExceededException(
-                    inner,
-                ) => Error::ResourceLimitExceededException(inner),
-                crate::error::ListReceivedLicensesErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::ListReceivedLicensesErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListReceivedLicensesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1275,7 +1325,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListResourceInventoryError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::ListResourceInventoryErrorKind::AccessDeniedException(inner) => {
                     Error::AccessDeniedException(inner)
                 }
@@ -1313,26 +1366,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::InvalidParameterValueException(
+                        inner,
+                    ) => Error::InvalidParameterValueException(inner),
+                    crate::error::ListTagsForResourceErrorKind::RateLimitExceededException(
+                        inner,
+                    ) => Error::RateLimitExceededException(inner),
+                    crate::error::ListTagsForResourceErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListTagsForResourceErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::InvalidParameterValueException(
-                    inner,
-                ) => Error::InvalidParameterValueException(inner),
-                crate::error::ListTagsForResourceErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1343,26 +1398,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTokensError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTokensErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListTokensErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::ListTokensErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::ListTokensErrorKind::RateLimitExceededException(inner) => {
+                        Error::RateLimitExceededException(inner)
+                    }
+                    crate::error::ListTokensErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::ListTokensErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::ListTokensErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListTokensErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::ListTokensErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::ListTokensErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::ListTokensErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::ListTokensErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1380,7 +1437,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListUsageForLicenseConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::ListUsageForLicenseConfigurationErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
                 crate::error::ListUsageForLicenseConfigurationErrorKind::FilterLimitExceededException(inner) => Error::FilterLimitExceededException(inner),
@@ -1399,32 +1456,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RejectGrantError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RejectGrantErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::RejectGrantErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::RejectGrantErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::RejectGrantErrorKind::InvalidParameterValueException(inner) => {
+                        Error::InvalidParameterValueException(inner)
+                    }
+                    crate::error::RejectGrantErrorKind::RateLimitExceededException(inner) => {
+                        Error::RateLimitExceededException(inner)
+                    }
+                    crate::error::RejectGrantErrorKind::ResourceLimitExceededException(inner) => {
+                        Error::ResourceLimitExceededException(inner)
+                    }
+                    crate::error::RejectGrantErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::RejectGrantErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::RejectGrantErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::RejectGrantErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::RejectGrantErrorKind::InvalidParameterValueException(inner) => {
-                    Error::InvalidParameterValueException(inner)
-                }
-                crate::error::RejectGrantErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::RejectGrantErrorKind::ResourceLimitExceededException(inner) => {
-                    Error::ResourceLimitExceededException(inner)
-                }
-                crate::error::RejectGrantErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::RejectGrantErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::RejectGrantErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1435,26 +1494,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagResourceErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::TagResourceErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::InvalidParameterValueException(inner) => {
+                        Error::InvalidParameterValueException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::RateLimitExceededException(inner) => {
+                        Error::RateLimitExceededException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::TagResourceErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::TagResourceErrorKind::InvalidParameterValueException(inner) => {
-                    Error::InvalidParameterValueException(inner)
-                }
-                crate::error::TagResourceErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::TagResourceErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1465,26 +1526,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::AuthorizationException(inner) => {
+                        Error::AuthorizationException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::InvalidParameterValueException(inner) => {
+                        Error::InvalidParameterValueException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::RateLimitExceededException(inner) => {
+                        Error::RateLimitExceededException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::ServerInternalException(inner) => {
+                        Error::ServerInternalException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UntagResourceErrorKind::AuthorizationException(inner) => {
-                    Error::AuthorizationException(inner)
-                }
-                crate::error::UntagResourceErrorKind::InvalidParameterValueException(inner) => {
-                    Error::InvalidParameterValueException(inner)
-                }
-                crate::error::UntagResourceErrorKind::RateLimitExceededException(inner) => {
-                    Error::RateLimitExceededException(inner)
-                }
-                crate::error::UntagResourceErrorKind::ServerInternalException(inner) => {
-                    Error::ServerInternalException(inner)
-                }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1498,7 +1561,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateLicenseConfigurationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateLicenseConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::UpdateLicenseConfigurationErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
                 crate::error::UpdateLicenseConfigurationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -1528,7 +1591,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateLicenseManagerReportGeneratorErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::UpdateLicenseManagerReportGeneratorErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
                 crate::error::UpdateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -1560,7 +1623,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::UpdateLicenseSpecificationsForResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::UpdateLicenseSpecificationsForResourceErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
                 crate::error::UpdateLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -1583,7 +1646,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateServiceSettingsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::UpdateServiceSettingsErrorKind::AccessDeniedException(inner) => {
                     Error::AccessDeniedException(inner)
                 }

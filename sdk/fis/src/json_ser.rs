@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_experiment_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateExperimentTemplateInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.actions {
         let mut object_2 = object.key("actions").start_object();
         for (key_3, value_4) in var_1 {
@@ -65,7 +65,7 @@ pub fn serialize_structure_crate_input_create_experiment_template_input(
 pub fn serialize_structure_crate_input_start_experiment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartExperimentInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_24) = &input.client_token {
         object.key("clientToken").string(var_24.as_str());
     }
@@ -87,7 +87,7 @@ pub fn serialize_structure_crate_input_start_experiment_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_30) = &input.tags {
         let mut object_31 = object.key("tags").start_object();
         for (key_32, value_33) in var_30 {
@@ -103,7 +103,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_experiment_template_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateExperimentTemplateInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_34) = &input.actions {
         let mut object_35 = object.key("actions").start_object();
         for (key_36, value_37) in var_34 {
@@ -154,7 +154,7 @@ pub fn serialize_structure_crate_input_update_experiment_template_input(
 pub fn serialize_structure_crate_model_create_experiment_template_action_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateExperimentTemplateActionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_52) = &input.action_id {
         object.key("actionId").string(var_52.as_str());
     }
@@ -194,7 +194,7 @@ pub fn serialize_structure_crate_model_create_experiment_template_action_input(
 pub fn serialize_structure_crate_model_create_experiment_template_log_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateExperimentTemplateLogConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_65) = &input.cloud_watch_logs_configuration {
         let mut object_66 = object.key("cloudWatchLogsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_experiment_template_cloud_watch_logs_log_configuration_input(&mut object_66, var_65)?;
@@ -217,7 +217,7 @@ pub fn serialize_structure_crate_model_create_experiment_template_log_configurat
 pub fn serialize_structure_crate_model_create_experiment_template_stop_condition_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateExperimentTemplateStopConditionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_70) = &input.source {
         object.key("source").string(var_70.as_str());
     }
@@ -230,7 +230,7 @@ pub fn serialize_structure_crate_model_create_experiment_template_stop_condition
 pub fn serialize_structure_crate_model_create_experiment_template_target_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CreateExperimentTemplateTargetInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_72) = &input.resource_type {
         object.key("resourceType").string(var_72.as_str());
     }
@@ -281,7 +281,7 @@ pub fn serialize_structure_crate_model_create_experiment_template_target_input(
 pub fn serialize_structure_crate_model_update_experiment_template_action_input_item(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateExperimentTemplateActionInputItem,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_89) = &input.action_id {
         object.key("actionId").string(var_89.as_str());
     }
@@ -321,7 +321,7 @@ pub fn serialize_structure_crate_model_update_experiment_template_action_input_i
 pub fn serialize_structure_crate_model_update_experiment_template_log_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateExperimentTemplateLogConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_102) = &input.cloud_watch_logs_configuration {
         let mut object_103 = object.key("cloudWatchLogsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_experiment_template_cloud_watch_logs_log_configuration_input(&mut object_103, var_102)?;
@@ -344,7 +344,7 @@ pub fn serialize_structure_crate_model_update_experiment_template_log_configurat
 pub fn serialize_structure_crate_model_update_experiment_template_stop_condition_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateExperimentTemplateStopConditionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_107) = &input.source {
         object.key("source").string(var_107.as_str());
     }
@@ -357,7 +357,7 @@ pub fn serialize_structure_crate_model_update_experiment_template_stop_condition
 pub fn serialize_structure_crate_model_update_experiment_template_target_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::UpdateExperimentTemplateTargetInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_109) = &input.resource_type {
         object.key("resourceType").string(var_109.as_str());
     }
@@ -408,7 +408,7 @@ pub fn serialize_structure_crate_model_update_experiment_template_target_input(
 pub fn serialize_structure_crate_model_experiment_template_cloud_watch_logs_log_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_126) = &input.log_group_arn {
         object.key("logGroupArn").string(var_126.as_str());
     }
@@ -418,7 +418,7 @@ pub fn serialize_structure_crate_model_experiment_template_cloud_watch_logs_log_
 pub fn serialize_structure_crate_model_experiment_template_s3_log_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ExperimentTemplateS3LogConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_127) = &input.bucket_name {
         object.key("bucketName").string(var_127.as_str());
     }
@@ -431,7 +431,7 @@ pub fn serialize_structure_crate_model_experiment_template_s3_log_configuration_
 pub fn serialize_structure_crate_model_experiment_template_target_input_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ExperimentTemplateTargetInputFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_129) = &input.path {
         object.key("path").string(var_129.as_str());
     }

@@ -2,20 +2,20 @@
 pub fn add_headers_add_facet_to_object(
     input: &crate::input::AddFacetToObjectInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_1) = &input.directory_arn {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -26,20 +26,20 @@ pub fn add_headers_add_facet_to_object(
 pub fn add_headers_apply_schema(
     input: &crate::input::ApplySchemaInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_3) = &input.directory_arn {
         let formatted_4 = inner_3.as_str();
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -50,20 +50,20 @@ pub fn add_headers_apply_schema(
 pub fn add_headers_attach_object(
     input: &crate::input::AttachObjectInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_5) = &input.directory_arn {
         let formatted_6 = inner_5.as_str();
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -74,20 +74,20 @@ pub fn add_headers_attach_object(
 pub fn add_headers_attach_policy(
     input: &crate::input::AttachPolicyInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_7) = &input.directory_arn {
         let formatted_8 = inner_7.as_str();
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -98,20 +98,20 @@ pub fn add_headers_attach_policy(
 pub fn add_headers_attach_to_index(
     input: &crate::input::AttachToIndexInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_9) = &input.directory_arn {
         let formatted_10 = inner_9.as_str();
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -122,20 +122,20 @@ pub fn add_headers_attach_to_index(
 pub fn add_headers_attach_typed_link(
     input: &crate::input::AttachTypedLinkInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_11) = &input.directory_arn {
         let formatted_12 = inner_11.as_str();
         if !formatted_12.is_empty() {
             let header_value = formatted_12;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -146,20 +146,20 @@ pub fn add_headers_attach_typed_link(
 pub fn add_headers_batch_read(
     input: &crate::input::BatchReadInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_13) = &input.directory_arn {
         let formatted_14 = inner_13.as_str();
         if !formatted_14.is_empty() {
             let header_value = formatted_14;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -170,13 +170,13 @@ pub fn add_headers_batch_read(
             let header_value = formatted_16;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "consistency_level",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "consistency_level",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-consistency-level", header_value);
         }
@@ -187,20 +187,20 @@ pub fn add_headers_batch_read(
 pub fn add_headers_batch_write(
     input: &crate::input::BatchWriteInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_17) = &input.directory_arn {
         let formatted_18 = inner_17.as_str();
         if !formatted_18.is_empty() {
             let header_value = formatted_18;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -211,20 +211,20 @@ pub fn add_headers_batch_write(
 pub fn add_headers_create_directory(
     input: &crate::input::CreateDirectoryInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_19) = &input.schema_arn {
         let formatted_20 = inner_19.as_str();
         if !formatted_20.is_empty() {
             let header_value = formatted_20;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "schema_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "schema_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -235,20 +235,20 @@ pub fn add_headers_create_directory(
 pub fn add_headers_create_facet(
     input: &crate::input::CreateFacetInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_21) = &input.schema_arn {
         let formatted_22 = inner_21.as_str();
         if !formatted_22.is_empty() {
             let header_value = formatted_22;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "schema_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "schema_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -259,20 +259,20 @@ pub fn add_headers_create_facet(
 pub fn add_headers_create_index(
     input: &crate::input::CreateIndexInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_23) = &input.directory_arn {
         let formatted_24 = inner_23.as_str();
         if !formatted_24.is_empty() {
             let header_value = formatted_24;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -283,20 +283,20 @@ pub fn add_headers_create_index(
 pub fn add_headers_create_object(
     input: &crate::input::CreateObjectInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_25) = &input.directory_arn {
         let formatted_26 = inner_25.as_str();
         if !formatted_26.is_empty() {
             let header_value = formatted_26;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -307,20 +307,20 @@ pub fn add_headers_create_object(
 pub fn add_headers_create_typed_link_facet(
     input: &crate::input::CreateTypedLinkFacetInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_27) = &input.schema_arn {
         let formatted_28 = inner_27.as_str();
         if !formatted_28.is_empty() {
             let header_value = formatted_28;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "schema_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "schema_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -331,20 +331,20 @@ pub fn add_headers_create_typed_link_facet(
 pub fn add_headers_delete_directory(
     input: &crate::input::DeleteDirectoryInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_29) = &input.directory_arn {
         let formatted_30 = inner_29.as_str();
         if !formatted_30.is_empty() {
             let header_value = formatted_30;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -355,20 +355,20 @@ pub fn add_headers_delete_directory(
 pub fn add_headers_delete_facet(
     input: &crate::input::DeleteFacetInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_31) = &input.schema_arn {
         let formatted_32 = inner_31.as_str();
         if !formatted_32.is_empty() {
             let header_value = formatted_32;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "schema_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "schema_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -379,20 +379,20 @@ pub fn add_headers_delete_facet(
 pub fn add_headers_delete_object(
     input: &crate::input::DeleteObjectInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_33) = &input.directory_arn {
         let formatted_34 = inner_33.as_str();
         if !formatted_34.is_empty() {
             let header_value = formatted_34;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -403,20 +403,20 @@ pub fn add_headers_delete_object(
 pub fn add_headers_delete_schema(
     input: &crate::input::DeleteSchemaInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_35) = &input.schema_arn {
         let formatted_36 = inner_35.as_str();
         if !formatted_36.is_empty() {
             let header_value = formatted_36;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "schema_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "schema_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -427,20 +427,20 @@ pub fn add_headers_delete_schema(
 pub fn add_headers_delete_typed_link_facet(
     input: &crate::input::DeleteTypedLinkFacetInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_37) = &input.schema_arn {
         let formatted_38 = inner_37.as_str();
         if !formatted_38.is_empty() {
             let header_value = formatted_38;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "schema_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "schema_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -451,20 +451,20 @@ pub fn add_headers_delete_typed_link_facet(
 pub fn add_headers_detach_from_index(
     input: &crate::input::DetachFromIndexInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_39) = &input.directory_arn {
         let formatted_40 = inner_39.as_str();
         if !formatted_40.is_empty() {
             let header_value = formatted_40;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -475,20 +475,20 @@ pub fn add_headers_detach_from_index(
 pub fn add_headers_detach_object(
     input: &crate::input::DetachObjectInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_41) = &input.directory_arn {
         let formatted_42 = inner_41.as_str();
         if !formatted_42.is_empty() {
             let header_value = formatted_42;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -499,20 +499,20 @@ pub fn add_headers_detach_object(
 pub fn add_headers_detach_policy(
     input: &crate::input::DetachPolicyInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_43) = &input.directory_arn {
         let formatted_44 = inner_43.as_str();
         if !formatted_44.is_empty() {
             let header_value = formatted_44;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -523,20 +523,20 @@ pub fn add_headers_detach_policy(
 pub fn add_headers_detach_typed_link(
     input: &crate::input::DetachTypedLinkInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_45) = &input.directory_arn {
         let formatted_46 = inner_45.as_str();
         if !formatted_46.is_empty() {
             let header_value = formatted_46;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -547,20 +547,20 @@ pub fn add_headers_detach_typed_link(
 pub fn add_headers_disable_directory(
     input: &crate::input::DisableDirectoryInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_47) = &input.directory_arn {
         let formatted_48 = inner_47.as_str();
         if !formatted_48.is_empty() {
             let header_value = formatted_48;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -571,20 +571,20 @@ pub fn add_headers_disable_directory(
 pub fn add_headers_enable_directory(
     input: &crate::input::EnableDirectoryInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_49) = &input.directory_arn {
         let formatted_50 = inner_49.as_str();
         if !formatted_50.is_empty() {
             let header_value = formatted_50;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -595,20 +595,20 @@ pub fn add_headers_enable_directory(
 pub fn add_headers_get_directory(
     input: &crate::input::GetDirectoryInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_51) = &input.directory_arn {
         let formatted_52 = inner_51.as_str();
         if !formatted_52.is_empty() {
             let header_value = formatted_52;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -619,20 +619,20 @@ pub fn add_headers_get_directory(
 pub fn add_headers_get_facet(
     input: &crate::input::GetFacetInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_53) = &input.schema_arn {
         let formatted_54 = inner_53.as_str();
         if !formatted_54.is_empty() {
             let header_value = formatted_54;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "schema_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "schema_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -643,20 +643,20 @@ pub fn add_headers_get_facet(
 pub fn add_headers_get_link_attributes(
     input: &crate::input::GetLinkAttributesInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_55) = &input.directory_arn {
         let formatted_56 = inner_55.as_str();
         if !formatted_56.is_empty() {
             let header_value = formatted_56;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -667,20 +667,20 @@ pub fn add_headers_get_link_attributes(
 pub fn add_headers_get_object_attributes(
     input: &crate::input::GetObjectAttributesInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_57) = &input.directory_arn {
         let formatted_58 = inner_57.as_str();
         if !formatted_58.is_empty() {
             let header_value = formatted_58;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -691,13 +691,13 @@ pub fn add_headers_get_object_attributes(
             let header_value = formatted_60;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "consistency_level",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "consistency_level",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-consistency-level", header_value);
         }
@@ -708,20 +708,20 @@ pub fn add_headers_get_object_attributes(
 pub fn add_headers_get_object_information(
     input: &crate::input::GetObjectInformationInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_61) = &input.directory_arn {
         let formatted_62 = inner_61.as_str();
         if !formatted_62.is_empty() {
             let header_value = formatted_62;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -732,13 +732,13 @@ pub fn add_headers_get_object_information(
             let header_value = formatted_64;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "consistency_level",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "consistency_level",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-consistency-level", header_value);
         }
@@ -749,20 +749,20 @@ pub fn add_headers_get_object_information(
 pub fn add_headers_get_schema_as_json(
     input: &crate::input::GetSchemaAsJsonInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_65) = &input.schema_arn {
         let formatted_66 = inner_65.as_str();
         if !formatted_66.is_empty() {
             let header_value = formatted_66;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "schema_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "schema_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -773,20 +773,20 @@ pub fn add_headers_get_schema_as_json(
 pub fn add_headers_get_typed_link_facet_information(
     input: &crate::input::GetTypedLinkFacetInformationInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_67) = &input.schema_arn {
         let formatted_68 = inner_67.as_str();
         if !formatted_68.is_empty() {
             let header_value = formatted_68;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "schema_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "schema_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -797,20 +797,20 @@ pub fn add_headers_get_typed_link_facet_information(
 pub fn add_headers_list_attached_indices(
     input: &crate::input::ListAttachedIndicesInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_69) = &input.directory_arn {
         let formatted_70 = inner_69.as_str();
         if !formatted_70.is_empty() {
             let header_value = formatted_70;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -821,13 +821,13 @@ pub fn add_headers_list_attached_indices(
             let header_value = formatted_72;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "consistency_level",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "consistency_level",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-consistency-level", header_value);
         }
@@ -838,20 +838,20 @@ pub fn add_headers_list_attached_indices(
 pub fn add_headers_list_facet_attributes(
     input: &crate::input::ListFacetAttributesInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_73) = &input.schema_arn {
         let formatted_74 = inner_73.as_str();
         if !formatted_74.is_empty() {
             let header_value = formatted_74;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "schema_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "schema_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -862,20 +862,20 @@ pub fn add_headers_list_facet_attributes(
 pub fn add_headers_list_facet_names(
     input: &crate::input::ListFacetNamesInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_75) = &input.schema_arn {
         let formatted_76 = inner_75.as_str();
         if !formatted_76.is_empty() {
             let header_value = formatted_76;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "schema_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "schema_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -886,20 +886,20 @@ pub fn add_headers_list_facet_names(
 pub fn add_headers_list_incoming_typed_links(
     input: &crate::input::ListIncomingTypedLinksInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_77) = &input.directory_arn {
         let formatted_78 = inner_77.as_str();
         if !formatted_78.is_empty() {
             let header_value = formatted_78;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -910,20 +910,20 @@ pub fn add_headers_list_incoming_typed_links(
 pub fn add_headers_list_index(
     input: &crate::input::ListIndexInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_79) = &input.directory_arn {
         let formatted_80 = inner_79.as_str();
         if !formatted_80.is_empty() {
             let header_value = formatted_80;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -934,13 +934,13 @@ pub fn add_headers_list_index(
             let header_value = formatted_82;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "consistency_level",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "consistency_level",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-consistency-level", header_value);
         }
@@ -951,20 +951,20 @@ pub fn add_headers_list_index(
 pub fn add_headers_list_object_attributes(
     input: &crate::input::ListObjectAttributesInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_83) = &input.directory_arn {
         let formatted_84 = inner_83.as_str();
         if !formatted_84.is_empty() {
             let header_value = formatted_84;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -975,13 +975,13 @@ pub fn add_headers_list_object_attributes(
             let header_value = formatted_86;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "consistency_level",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "consistency_level",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-consistency-level", header_value);
         }
@@ -992,20 +992,20 @@ pub fn add_headers_list_object_attributes(
 pub fn add_headers_list_object_children(
     input: &crate::input::ListObjectChildrenInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_87) = &input.directory_arn {
         let formatted_88 = inner_87.as_str();
         if !formatted_88.is_empty() {
             let header_value = formatted_88;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -1016,13 +1016,13 @@ pub fn add_headers_list_object_children(
             let header_value = formatted_90;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "consistency_level",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "consistency_level",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-consistency-level", header_value);
         }
@@ -1033,20 +1033,20 @@ pub fn add_headers_list_object_children(
 pub fn add_headers_list_object_parent_paths(
     input: &crate::input::ListObjectParentPathsInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_91) = &input.directory_arn {
         let formatted_92 = inner_91.as_str();
         if !formatted_92.is_empty() {
             let header_value = formatted_92;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -1057,20 +1057,20 @@ pub fn add_headers_list_object_parent_paths(
 pub fn add_headers_list_object_parents(
     input: &crate::input::ListObjectParentsInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_93) = &input.directory_arn {
         let formatted_94 = inner_93.as_str();
         if !formatted_94.is_empty() {
             let header_value = formatted_94;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -1081,13 +1081,13 @@ pub fn add_headers_list_object_parents(
             let header_value = formatted_96;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "consistency_level",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "consistency_level",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-consistency-level", header_value);
         }
@@ -1098,20 +1098,20 @@ pub fn add_headers_list_object_parents(
 pub fn add_headers_list_object_policies(
     input: &crate::input::ListObjectPoliciesInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_97) = &input.directory_arn {
         let formatted_98 = inner_97.as_str();
         if !formatted_98.is_empty() {
             let header_value = formatted_98;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -1122,13 +1122,13 @@ pub fn add_headers_list_object_policies(
             let header_value = formatted_100;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "consistency_level",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "consistency_level",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-consistency-level", header_value);
         }
@@ -1139,20 +1139,20 @@ pub fn add_headers_list_object_policies(
 pub fn add_headers_list_outgoing_typed_links(
     input: &crate::input::ListOutgoingTypedLinksInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_101) = &input.directory_arn {
         let formatted_102 = inner_101.as_str();
         if !formatted_102.is_empty() {
             let header_value = formatted_102;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -1163,20 +1163,20 @@ pub fn add_headers_list_outgoing_typed_links(
 pub fn add_headers_list_policy_attachments(
     input: &crate::input::ListPolicyAttachmentsInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_103) = &input.directory_arn {
         let formatted_104 = inner_103.as_str();
         if !formatted_104.is_empty() {
             let header_value = formatted_104;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -1187,13 +1187,13 @@ pub fn add_headers_list_policy_attachments(
             let header_value = formatted_106;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "consistency_level",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "consistency_level",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-consistency-level", header_value);
         }
@@ -1204,20 +1204,20 @@ pub fn add_headers_list_policy_attachments(
 pub fn add_headers_list_typed_link_facet_attributes(
     input: &crate::input::ListTypedLinkFacetAttributesInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_107) = &input.schema_arn {
         let formatted_108 = inner_107.as_str();
         if !formatted_108.is_empty() {
             let header_value = formatted_108;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "schema_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "schema_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -1228,20 +1228,20 @@ pub fn add_headers_list_typed_link_facet_attributes(
 pub fn add_headers_list_typed_link_facet_names(
     input: &crate::input::ListTypedLinkFacetNamesInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_109) = &input.schema_arn {
         let formatted_110 = inner_109.as_str();
         if !formatted_110.is_empty() {
             let header_value = formatted_110;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "schema_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "schema_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -1252,20 +1252,20 @@ pub fn add_headers_list_typed_link_facet_names(
 pub fn add_headers_lookup_policy(
     input: &crate::input::LookupPolicyInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_111) = &input.directory_arn {
         let formatted_112 = inner_111.as_str();
         if !formatted_112.is_empty() {
             let header_value = formatted_112;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -1276,20 +1276,20 @@ pub fn add_headers_lookup_policy(
 pub fn add_headers_publish_schema(
     input: &crate::input::PublishSchemaInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_113) = &input.development_schema_arn {
         let formatted_114 = inner_113.as_str();
         if !formatted_114.is_empty() {
             let header_value = formatted_114;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "development_schema_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "development_schema_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -1300,20 +1300,20 @@ pub fn add_headers_publish_schema(
 pub fn add_headers_put_schema_from_json(
     input: &crate::input::PutSchemaFromJsonInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_115) = &input.schema_arn {
         let formatted_116 = inner_115.as_str();
         if !formatted_116.is_empty() {
             let header_value = formatted_116;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "schema_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "schema_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -1324,20 +1324,20 @@ pub fn add_headers_put_schema_from_json(
 pub fn add_headers_remove_facet_from_object(
     input: &crate::input::RemoveFacetFromObjectInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_117) = &input.directory_arn {
         let formatted_118 = inner_117.as_str();
         if !formatted_118.is_empty() {
             let header_value = formatted_118;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -1348,20 +1348,20 @@ pub fn add_headers_remove_facet_from_object(
 pub fn add_headers_update_facet(
     input: &crate::input::UpdateFacetInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_119) = &input.schema_arn {
         let formatted_120 = inner_119.as_str();
         if !formatted_120.is_empty() {
             let header_value = formatted_120;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "schema_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "schema_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -1372,20 +1372,20 @@ pub fn add_headers_update_facet(
 pub fn add_headers_update_link_attributes(
     input: &crate::input::UpdateLinkAttributesInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_121) = &input.directory_arn {
         let formatted_122 = inner_121.as_str();
         if !formatted_122.is_empty() {
             let header_value = formatted_122;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -1396,20 +1396,20 @@ pub fn add_headers_update_link_attributes(
 pub fn add_headers_update_object_attributes(
     input: &crate::input::UpdateObjectAttributesInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_123) = &input.directory_arn {
         let formatted_124 = inner_123.as_str();
         if !formatted_124.is_empty() {
             let header_value = formatted_124;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "directory_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "directory_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -1420,20 +1420,20 @@ pub fn add_headers_update_object_attributes(
 pub fn add_headers_update_schema(
     input: &crate::input::UpdateSchemaInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_125) = &input.schema_arn {
         let formatted_126 = inner_125.as_str();
         if !formatted_126.is_empty() {
             let header_value = formatted_126;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "schema_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "schema_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }
@@ -1444,20 +1444,20 @@ pub fn add_headers_update_schema(
 pub fn add_headers_update_typed_link_facet(
     input: &crate::input::UpdateTypedLinkFacetInput,
     mut builder: http::request::Builder,
-) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError> {
+) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_127) = &input.schema_arn {
         let formatted_128 = inner_127.as_str();
         if !formatted_128.is_empty() {
             let header_value = formatted_128;
             let header_value =
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                    aws_smithy_http::operation::BuildError::InvalidField {
-                        field: "schema_arn",
-                        details: format!(
+                    aws_smithy_http::operation::error::BuildError::invalid_field(
+                        "schema_arn",
+                        format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err,
+                            &header_value, err
                         ),
-                    }
+                    )
                 })?;
             builder = builder.header("x-amz-data-partition", header_value);
         }

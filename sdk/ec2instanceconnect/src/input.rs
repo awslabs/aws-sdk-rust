@@ -52,7 +52,7 @@ pub mod send_serial_console_ssh_public_key_input {
             self,
         ) -> Result<
             crate::input::SendSerialConsoleSshPublicKeyInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::SendSerialConsoleSshPublicKeyInput {
                 instance_id: self.instance_id,
@@ -75,13 +75,13 @@ impl SendSerialConsoleSshPublicKeyInput {
             crate::operation::SendSerialConsoleSSHPublicKey,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendSerialConsoleSshPublicKeyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -89,8 +89,10 @@ impl SendSerialConsoleSshPublicKeyInput {
             fn update_http_builder(
                 input: &crate::input::SendSerialConsoleSshPublicKeyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -238,8 +240,10 @@ pub mod send_ssh_public_key_input {
         /// Consumes the builder and constructs a [`SendSshPublicKeyInput`](crate::input::SendSshPublicKeyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendSshPublicKeyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::SendSshPublicKeyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::SendSshPublicKeyInput {
                 instance_id: self.instance_id,
                 instance_os_user: self.instance_os_user,
@@ -262,13 +266,13 @@ impl SendSshPublicKeyInput {
             crate::operation::SendSSHPublicKey,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SendSshPublicKeyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -276,8 +280,10 @@ impl SendSshPublicKeyInput {
             fn update_http_builder(
                 input: &crate::input::SendSshPublicKeyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

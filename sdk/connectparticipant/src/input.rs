@@ -59,7 +59,7 @@ pub mod complete_attachment_upload_input {
             self,
         ) -> Result<
             crate::input::CompleteAttachmentUploadInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CompleteAttachmentUploadInput {
                 attachment_ids: self.attachment_ids,
@@ -82,7 +82,7 @@ impl CompleteAttachmentUploadInput {
             crate::operation::CompleteAttachmentUpload,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -91,7 +91,7 @@ impl CompleteAttachmentUploadInput {
             fn uri_base(
                 _input: &crate::input::CompleteAttachmentUploadInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/participant/complete-attachment-upload")
                     .expect("formatting should succeed");
                 Ok(())
@@ -100,8 +100,10 @@ impl CompleteAttachmentUploadInput {
             fn update_http_builder(
                 input: &crate::input::CompleteAttachmentUploadInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -245,7 +247,7 @@ pub mod create_participant_connection_input {
             self,
         ) -> Result<
             crate::input::CreateParticipantConnectionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::CreateParticipantConnectionInput {
                 r#type: self.r#type,
@@ -268,13 +270,13 @@ impl CreateParticipantConnectionInput {
             crate::operation::CreateParticipantConnection,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::CreateParticipantConnectionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/participant/connection").expect("formatting should succeed");
                 Ok(())
             }
@@ -282,8 +284,10 @@ impl CreateParticipantConnectionInput {
             fn update_http_builder(
                 input: &crate::input::CreateParticipantConnectionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -400,8 +404,10 @@ pub mod disconnect_participant_input {
         /// Consumes the builder and constructs a [`DisconnectParticipantInput`](crate::input::DisconnectParticipantInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DisconnectParticipantInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DisconnectParticipantInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DisconnectParticipantInput {
                 client_token: self.client_token,
                 connection_token: self.connection_token,
@@ -422,7 +428,7 @@ impl DisconnectParticipantInput {
             crate::operation::DisconnectParticipant,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -431,7 +437,7 @@ impl DisconnectParticipantInput {
             fn uri_base(
                 _input: &crate::input::DisconnectParticipantInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/participant/disconnect").expect("formatting should succeed");
                 Ok(())
             }
@@ -439,8 +445,10 @@ impl DisconnectParticipantInput {
             fn update_http_builder(
                 input: &crate::input::DisconnectParticipantInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -563,7 +571,7 @@ pub mod get_attachment_input {
         /// Consumes the builder and constructs a [`GetAttachmentInput`](crate::input::GetAttachmentInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAttachmentInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetAttachmentInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetAttachmentInput {
                 attachment_id: self.attachment_id,
@@ -585,13 +593,13 @@ impl GetAttachmentInput {
             crate::operation::GetAttachment,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAttachmentInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/participant/attachment").expect("formatting should succeed");
                 Ok(())
             }
@@ -599,8 +607,10 @@ impl GetAttachmentInput {
             fn update_http_builder(
                 input: &crate::input::GetAttachmentInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_attachment(input, builder)?;
@@ -778,7 +788,7 @@ pub mod get_transcript_input {
         /// Consumes the builder and constructs a [`GetTranscriptInput`](crate::input::GetTranscriptInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetTranscriptInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetTranscriptInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetTranscriptInput {
                 contact_id: self.contact_id,
@@ -805,13 +815,13 @@ impl GetTranscriptInput {
             crate::operation::GetTranscript,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetTranscriptInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/participant/transcript").expect("formatting should succeed");
                 Ok(())
             }
@@ -819,8 +829,10 @@ impl GetTranscriptInput {
             fn update_http_builder(
                 input: &crate::input::GetTranscriptInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_get_transcript(input, builder)?;
@@ -967,7 +979,8 @@ pub mod send_event_input {
         /// Consumes the builder and constructs a [`SendEventInput`](crate::input::SendEventInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendEventInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::SendEventInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::SendEventInput {
                 content_type: self.content_type,
                 content: self.content,
@@ -990,7 +1003,7 @@ impl SendEventInput {
             crate::operation::SendEvent,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -999,7 +1012,7 @@ impl SendEventInput {
             fn uri_base(
                 _input: &crate::input::SendEventInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/participant/event").expect("formatting should succeed");
                 Ok(())
             }
@@ -1007,8 +1020,10 @@ impl SendEventInput {
             fn update_http_builder(
                 input: &crate::input::SendEventInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_send_event(input, builder)?;
@@ -1145,7 +1160,7 @@ pub mod send_message_input {
         /// Consumes the builder and constructs a [`SendMessageInput`](crate::input::SendMessageInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SendMessageInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::SendMessageInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::SendMessageInput {
                 content_type: self.content_type,
@@ -1169,7 +1184,7 @@ impl SendMessageInput {
             crate::operation::SendMessage,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1178,7 +1193,7 @@ impl SendMessageInput {
             fn uri_base(
                 _input: &crate::input::SendMessageInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/participant/message").expect("formatting should succeed");
                 Ok(())
             }
@@ -1186,8 +1201,10 @@ impl SendMessageInput {
             fn update_http_builder(
                 input: &crate::input::SendMessageInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_send_message(input, builder)?;
@@ -1340,8 +1357,10 @@ pub mod start_attachment_upload_input {
         /// Consumes the builder and constructs a [`StartAttachmentUploadInput`](crate::input::StartAttachmentUploadInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StartAttachmentUploadInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StartAttachmentUploadInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StartAttachmentUploadInput {
                 content_type: self.content_type,
                 attachment_size_in_bytes: self.attachment_size_in_bytes.unwrap_or_default(),
@@ -1365,7 +1384,7 @@ impl StartAttachmentUploadInput {
             crate::operation::StartAttachmentUpload,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -1374,7 +1393,7 @@ impl StartAttachmentUploadInput {
             fn uri_base(
                 _input: &crate::input::StartAttachmentUploadInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/participant/start-attachment-upload")
                     .expect("formatting should succeed");
                 Ok(())
@@ -1383,8 +1402,10 @@ impl StartAttachmentUploadInput {
             fn update_http_builder(
                 input: &crate::input::StartAttachmentUploadInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =

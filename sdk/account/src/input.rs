@@ -47,8 +47,10 @@ pub mod delete_alternate_contact_input {
         /// Consumes the builder and constructs a [`DeleteAlternateContactInput`](crate::input::DeleteAlternateContactInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAlternateContactInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteAlternateContactInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteAlternateContactInput {
                 alternate_contact_type: self.alternate_contact_type,
                 account_id: self.account_id,
@@ -69,13 +71,13 @@ impl DeleteAlternateContactInput {
             crate::operation::DeleteAlternateContact,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteAlternateContactInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/deleteAlternateContact").expect("formatting should succeed");
                 Ok(())
             }
@@ -83,8 +85,10 @@ impl DeleteAlternateContactInput {
             fn update_http_builder(
                 input: &crate::input::DeleteAlternateContactInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -212,8 +216,10 @@ pub mod get_alternate_contact_input {
         /// Consumes the builder and constructs a [`GetAlternateContactInput`](crate::input::GetAlternateContactInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAlternateContactInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetAlternateContactInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetAlternateContactInput {
                 alternate_contact_type: self.alternate_contact_type,
                 account_id: self.account_id,
@@ -234,13 +240,13 @@ impl GetAlternateContactInput {
             crate::operation::GetAlternateContact,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetAlternateContactInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getAlternateContact").expect("formatting should succeed");
                 Ok(())
             }
@@ -248,8 +254,10 @@ impl GetAlternateContactInput {
             fn update_http_builder(
                 input: &crate::input::GetAlternateContactInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -357,8 +365,10 @@ pub mod get_contact_information_input {
         /// Consumes the builder and constructs a [`GetContactInformationInput`](crate::input::GetContactInformationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetContactInformationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetContactInformationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetContactInformationInput {
                 account_id: self.account_id,
             })
@@ -378,13 +388,13 @@ impl GetContactInformationInput {
             crate::operation::GetContactInformation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetContactInformationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getContactInformation").expect("formatting should succeed");
                 Ok(())
             }
@@ -392,8 +402,10 @@ impl GetContactInformationInput {
             fn update_http_builder(
                 input: &crate::input::GetContactInformationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -568,8 +580,10 @@ pub mod put_alternate_contact_input {
         /// Consumes the builder and constructs a [`PutAlternateContactInput`](crate::input::PutAlternateContactInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutAlternateContactInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutAlternateContactInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutAlternateContactInput {
                 name: self.name,
                 title: self.title,
@@ -594,13 +608,13 @@ impl PutAlternateContactInput {
             crate::operation::PutAlternateContact,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutAlternateContactInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/putAlternateContact").expect("formatting should succeed");
                 Ok(())
             }
@@ -608,8 +622,10 @@ impl PutAlternateContactInput {
             fn update_http_builder(
                 input: &crate::input::PutAlternateContactInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -731,8 +747,10 @@ pub mod put_contact_information_input {
         /// Consumes the builder and constructs a [`PutContactInformationInput`](crate::input::PutContactInformationInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::PutContactInformationInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::PutContactInformationInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::PutContactInformationInput {
                 contact_information: self.contact_information,
                 account_id: self.account_id,
@@ -753,13 +771,13 @@ impl PutContactInformationInput {
             crate::operation::PutContactInformation,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::PutContactInformationInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/putContactInformation").expect("formatting should succeed");
                 Ok(())
             }
@@ -767,8 +785,10 @@ impl PutContactInformationInput {
             fn update_http_builder(
                 input: &crate::input::PutContactInformationInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

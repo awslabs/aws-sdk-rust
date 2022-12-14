@@ -39,23 +39,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateScalingPlanError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateScalingPlanErrorKind::ConcurrentUpdateException(inner) => {
-                    Error::ConcurrentUpdateException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::CreateScalingPlanErrorKind::ConcurrentUpdateException(inner) => {
+                        Error::ConcurrentUpdateException(inner)
+                    }
+                    crate::error::CreateScalingPlanErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::CreateScalingPlanErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::CreateScalingPlanErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::CreateScalingPlanErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::CreateScalingPlanErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
-                }
-                crate::error::CreateScalingPlanErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CreateScalingPlanErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::CreateScalingPlanErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -68,23 +70,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteScalingPlanError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteScalingPlanErrorKind::ConcurrentUpdateException(inner) => {
-                    Error::ConcurrentUpdateException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteScalingPlanErrorKind::ConcurrentUpdateException(inner) => {
+                        Error::ConcurrentUpdateException(inner)
+                    }
+                    crate::error::DeleteScalingPlanErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::DeleteScalingPlanErrorKind::ObjectNotFoundException(inner) => {
+                        Error::ObjectNotFoundException(inner)
+                    }
+                    crate::error::DeleteScalingPlanErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::DeleteScalingPlanErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteScalingPlanErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
-                }
-                crate::error::DeleteScalingPlanErrorKind::ObjectNotFoundException(inner) => {
-                    Error::ObjectNotFoundException(inner)
-                }
-                crate::error::DeleteScalingPlanErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::DeleteScalingPlanErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -98,7 +102,10 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeScalingPlanResourcesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::DescribeScalingPlanResourcesErrorKind::ConcurrentUpdateException(
                     inner,
                 ) => Error::ConcurrentUpdateException(inner),
@@ -128,23 +135,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeScalingPlansError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeScalingPlansErrorKind::ConcurrentUpdateException(inner) => {
-                    Error::ConcurrentUpdateException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DescribeScalingPlansErrorKind::ConcurrentUpdateException(
+                        inner,
+                    ) => Error::ConcurrentUpdateException(inner),
+                    crate::error::DescribeScalingPlansErrorKind::InternalServiceException(
+                        inner,
+                    ) => Error::InternalServiceException(inner),
+                    crate::error::DescribeScalingPlansErrorKind::InvalidNextTokenException(
+                        inner,
+                    ) => Error::InvalidNextTokenException(inner),
+                    crate::error::DescribeScalingPlansErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::DescribeScalingPlansErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DescribeScalingPlansErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
-                }
-                crate::error::DescribeScalingPlansErrorKind::InvalidNextTokenException(inner) => {
-                    Error::InvalidNextTokenException(inner)
-                }
-                crate::error::DescribeScalingPlansErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::DescribeScalingPlansErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -163,7 +172,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetScalingPlanResourceForecastDataErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
                 crate::error::GetScalingPlanResourceForecastDataErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::GetScalingPlanResourceForecastDataErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
@@ -180,23 +189,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateScalingPlanError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateScalingPlanErrorKind::ConcurrentUpdateException(inner) => {
-                    Error::ConcurrentUpdateException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UpdateScalingPlanErrorKind::ConcurrentUpdateException(inner) => {
+                        Error::ConcurrentUpdateException(inner)
+                    }
+                    crate::error::UpdateScalingPlanErrorKind::InternalServiceException(inner) => {
+                        Error::InternalServiceException(inner)
+                    }
+                    crate::error::UpdateScalingPlanErrorKind::ObjectNotFoundException(inner) => {
+                        Error::ObjectNotFoundException(inner)
+                    }
+                    crate::error::UpdateScalingPlanErrorKind::ValidationException(inner) => {
+                        Error::ValidationException(inner)
+                    }
+                    crate::error::UpdateScalingPlanErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UpdateScalingPlanErrorKind::InternalServiceException(inner) => {
-                    Error::InternalServiceException(inner)
-                }
-                crate::error::UpdateScalingPlanErrorKind::ObjectNotFoundException(inner) => {
-                    Error::ObjectNotFoundException(inner)
-                }
-                crate::error::UpdateScalingPlanErrorKind::ValidationException(inner) => {
-                    Error::ValidationException(inner)
-                }
-                crate::error::UpdateScalingPlanErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }

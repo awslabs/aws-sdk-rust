@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_describe_dimension_keys_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeDimensionKeysInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.service_type {
         object.key("ServiceType").string(var_1.as_str());
     }
@@ -71,7 +71,7 @@ pub fn serialize_structure_crate_input_describe_dimension_keys_input(
 pub fn serialize_structure_crate_input_get_dimension_key_details_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetDimensionKeyDetailsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_20) = &input.service_type {
         object.key("ServiceType").string(var_20.as_str());
     }
@@ -99,7 +99,7 @@ pub fn serialize_structure_crate_input_get_dimension_key_details_input(
 pub fn serialize_structure_crate_input_get_resource_metadata_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResourceMetadataInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_27) = &input.service_type {
         object.key("ServiceType").string(var_27.as_str());
     }
@@ -112,7 +112,7 @@ pub fn serialize_structure_crate_input_get_resource_metadata_input(
 pub fn serialize_structure_crate_input_get_resource_metrics_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResourceMetricsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_29) = &input.service_type {
         object.key("ServiceType").string(var_29.as_str());
     }
@@ -164,7 +164,7 @@ pub fn serialize_structure_crate_input_get_resource_metrics_input(
 pub fn serialize_structure_crate_input_list_available_resource_dimensions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListAvailableResourceDimensionsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_40) = &input.service_type {
         object.key("ServiceType").string(var_40.as_str());
     }
@@ -195,7 +195,7 @@ pub fn serialize_structure_crate_input_list_available_resource_dimensions_input(
 pub fn serialize_structure_crate_input_list_available_resource_metrics_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListAvailableResourceMetricsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_47) = &input.service_type {
         object.key("ServiceType").string(var_47.as_str());
     }
@@ -226,7 +226,7 @@ pub fn serialize_structure_crate_input_list_available_resource_metrics_input(
 pub fn serialize_structure_crate_model_dimension_group(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DimensionGroup,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_54) = &input.group {
         object.key("Group").string(var_54.as_str());
     }
@@ -251,7 +251,7 @@ pub fn serialize_structure_crate_model_dimension_group(
 pub fn serialize_structure_crate_model_metric_query(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MetricQuery,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_59) = &input.metric {
         object.key("Metric").string(var_59.as_str());
     }

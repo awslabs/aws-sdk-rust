@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_describe_accelerator_offerings_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeAcceleratorOfferingsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.accelerator_types {
         let mut array_2 = object.key("acceleratorTypes").start_array();
         for item_3 in var_1 {
@@ -21,7 +21,7 @@ pub fn serialize_structure_crate_input_describe_accelerator_offerings_input(
 pub fn serialize_structure_crate_input_describe_accelerators_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeAcceleratorsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_5) = &input.accelerator_ids {
         let mut array_6 = object.key("acceleratorIds").start_array();
         for item_7 in var_5 {
@@ -57,7 +57,7 @@ pub fn serialize_structure_crate_input_describe_accelerators_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_13) = &input.tags {
         let mut object_14 = object.key("tags").start_object();
         for (key_15, value_16) in var_13 {
@@ -73,7 +73,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_model_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Filter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_17) = &input.name {
         object.key("name").string(var_17.as_str());
     }

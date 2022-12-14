@@ -48,7 +48,8 @@ pub mod get_media_input {
         /// Consumes the builder and constructs a [`GetMediaInput`](crate::input::GetMediaInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetMediaInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::GetMediaInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::GetMediaInput {
                 stream_name: self.stream_name,
                 stream_arn: self.stream_arn,
@@ -70,13 +71,13 @@ impl GetMediaInput {
             crate::operation::GetMedia,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetMediaInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/getMedia").expect("formatting should succeed");
                 Ok(())
             }
@@ -84,8 +85,10 @@ impl GetMediaInput {
             fn update_http_builder(
                 input: &crate::input::GetMediaInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

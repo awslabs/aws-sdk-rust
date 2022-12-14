@@ -92,8 +92,10 @@ pub mod create_parallel_data_input {
         /// Consumes the builder and constructs a [`CreateParallelDataInput`](crate::input::CreateParallelDataInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateParallelDataInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::CreateParallelDataInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::CreateParallelDataInput {
                 name: self.name,
                 description: self.description,
@@ -118,7 +120,7 @@ impl CreateParallelDataInput {
             crate::operation::CreateParallelData,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -127,7 +129,7 @@ impl CreateParallelDataInput {
             fn uri_base(
                 _input: &crate::input::CreateParallelDataInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -135,8 +137,10 @@ impl CreateParallelDataInput {
             fn update_http_builder(
                 input: &crate::input::CreateParallelDataInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -243,8 +247,10 @@ pub mod delete_parallel_data_input {
         /// Consumes the builder and constructs a [`DeleteParallelDataInput`](crate::input::DeleteParallelDataInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteParallelDataInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteParallelDataInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteParallelDataInput { name: self.name })
         }
     }
@@ -262,13 +268,13 @@ impl DeleteParallelDataInput {
             crate::operation::DeleteParallelData,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteParallelDataInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -276,8 +282,10 @@ impl DeleteParallelDataInput {
             fn update_http_builder(
                 input: &crate::input::DeleteParallelDataInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -384,8 +392,10 @@ pub mod delete_terminology_input {
         /// Consumes the builder and constructs a [`DeleteTerminologyInput`](crate::input::DeleteTerminologyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteTerminologyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::DeleteTerminologyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::DeleteTerminologyInput { name: self.name })
         }
     }
@@ -403,13 +413,13 @@ impl DeleteTerminologyInput {
             crate::operation::DeleteTerminology,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DeleteTerminologyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -417,8 +427,10 @@ impl DeleteTerminologyInput {
             fn update_http_builder(
                 input: &crate::input::DeleteTerminologyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -527,7 +539,7 @@ pub mod describe_text_translation_job_input {
             self,
         ) -> Result<
             crate::input::DescribeTextTranslationJobInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::DescribeTextTranslationJobInput {
                 job_id: self.job_id,
@@ -548,13 +560,13 @@ impl DescribeTextTranslationJobInput {
             crate::operation::DescribeTextTranslationJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::DescribeTextTranslationJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -562,8 +574,10 @@ impl DescribeTextTranslationJobInput {
             fn update_http_builder(
                 input: &crate::input::DescribeTextTranslationJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -669,7 +683,7 @@ pub mod get_parallel_data_input {
         /// Consumes the builder and constructs a [`GetParallelDataInput`](crate::input::GetParallelDataInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetParallelDataInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetParallelDataInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetParallelDataInput { name: self.name })
         }
@@ -688,13 +702,13 @@ impl GetParallelDataInput {
             crate::operation::GetParallelData,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetParallelDataInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -702,8 +716,10 @@ impl GetParallelDataInput {
             fn update_http_builder(
                 input: &crate::input::GetParallelDataInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -832,7 +848,7 @@ pub mod get_terminology_input {
         /// Consumes the builder and constructs a [`GetTerminologyInput`](crate::input::GetTerminologyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetTerminologyInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::GetTerminologyInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::GetTerminologyInput {
                 name: self.name,
@@ -854,13 +870,13 @@ impl GetTerminologyInput {
             crate::operation::GetTerminology,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetTerminologyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -868,8 +884,10 @@ impl GetTerminologyInput {
             fn update_http_builder(
                 input: &crate::input::GetTerminologyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1048,8 +1066,10 @@ pub mod import_terminology_input {
         /// Consumes the builder and constructs a [`ImportTerminologyInput`](crate::input::ImportTerminologyInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ImportTerminologyInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ImportTerminologyInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ImportTerminologyInput {
                 name: self.name,
                 merge_strategy: self.merge_strategy,
@@ -1074,13 +1094,13 @@ impl ImportTerminologyInput {
             crate::operation::ImportTerminology,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ImportTerminologyInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1088,8 +1108,10 @@ impl ImportTerminologyInput {
             fn update_http_builder(
                 input: &crate::input::ImportTerminologyInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1221,7 +1243,7 @@ pub mod list_languages_input {
         /// Consumes the builder and constructs a [`ListLanguagesInput`](crate::input::ListLanguagesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListLanguagesInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::ListLanguagesInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::ListLanguagesInput {
                 display_language_code: self.display_language_code,
@@ -1244,13 +1266,13 @@ impl ListLanguagesInput {
             crate::operation::ListLanguages,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListLanguagesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1258,8 +1280,10 @@ impl ListLanguagesInput {
             fn update_http_builder(
                 input: &crate::input::ListLanguagesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1377,8 +1401,10 @@ pub mod list_parallel_data_input {
         /// Consumes the builder and constructs a [`ListParallelDataInput`](crate::input::ListParallelDataInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListParallelDataInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListParallelDataInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListParallelDataInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -1399,13 +1425,13 @@ impl ListParallelDataInput {
             crate::operation::ListParallelData,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListParallelDataInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1413,8 +1439,10 @@ impl ListParallelDataInput {
             fn update_http_builder(
                 input: &crate::input::ListParallelDataInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1521,8 +1549,10 @@ pub mod list_tags_for_resource_input {
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -1542,13 +1572,13 @@ impl ListTagsForResourceInput {
             crate::operation::ListTagsForResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1556,8 +1586,10 @@ impl ListTagsForResourceInput {
             fn update_http_builder(
                 input: &crate::input::ListTagsForResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1677,8 +1709,10 @@ pub mod list_terminologies_input {
         /// Consumes the builder and constructs a [`ListTerminologiesInput`](crate::input::ListTerminologiesInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTerminologiesInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::ListTerminologiesInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::ListTerminologiesInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -1699,13 +1733,13 @@ impl ListTerminologiesInput {
             crate::operation::ListTerminologies,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTerminologiesInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1713,8 +1747,10 @@ impl ListTerminologiesInput {
             fn update_http_builder(
                 input: &crate::input::ListTerminologiesInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -1848,7 +1884,7 @@ pub mod list_text_translation_jobs_input {
             self,
         ) -> Result<
             crate::input::ListTextTranslationJobsInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::ListTextTranslationJobsInput {
                 filter: self.filter,
@@ -1871,13 +1907,13 @@ impl ListTextTranslationJobsInput {
             crate::operation::ListTextTranslationJobs,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::ListTextTranslationJobsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -1885,8 +1921,10 @@ impl ListTextTranslationJobsInput {
             fn update_http_builder(
                 input: &crate::input::ListTextTranslationJobsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2156,7 +2194,7 @@ pub mod start_text_translation_job_input {
             self,
         ) -> Result<
             crate::input::StartTextTranslationJobInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(crate::input::StartTextTranslationJobInput {
                 job_name: self.job_name,
@@ -2186,7 +2224,7 @@ impl StartTextTranslationJobInput {
             crate::operation::StartTextTranslationJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -2195,7 +2233,7 @@ impl StartTextTranslationJobInput {
             fn uri_base(
                 _input: &crate::input::StartTextTranslationJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2203,8 +2241,10 @@ impl StartTextTranslationJobInput {
             fn update_http_builder(
                 input: &crate::input::StartTextTranslationJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2313,8 +2353,10 @@ pub mod stop_text_translation_job_input {
         /// Consumes the builder and constructs a [`StopTextTranslationJobInput`](crate::input::StopTextTranslationJobInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::StopTextTranslationJobInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::StopTextTranslationJobInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::StopTextTranslationJobInput {
                 job_id: self.job_id,
             })
@@ -2334,13 +2376,13 @@ impl StopTextTranslationJobInput {
             crate::operation::StopTextTranslationJob,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StopTextTranslationJobInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2348,8 +2390,10 @@ impl StopTextTranslationJobInput {
             fn update_http_builder(
                 input: &crate::input::StopTextTranslationJobInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2477,7 +2521,7 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
@@ -2499,13 +2543,13 @@ impl TagResourceInput {
             crate::operation::TagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2513,8 +2557,10 @@ impl TagResourceInput {
             fn update_http_builder(
                 input: &crate::input::TagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2689,7 +2735,7 @@ pub mod translate_text_input {
         /// Consumes the builder and constructs a [`TranslateTextInput`](crate::input::TranslateTextInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::TranslateTextInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::TranslateTextInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::TranslateTextInput {
                 text: self.text,
@@ -2714,13 +2760,13 @@ impl TranslateTextInput {
             crate::operation::TranslateText,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::TranslateTextInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2728,8 +2774,10 @@ impl TranslateTextInput {
             fn update_http_builder(
                 input: &crate::input::TranslateTextInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -2855,7 +2903,7 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
@@ -2877,13 +2925,13 @@ impl UntagResourceInput {
             crate::operation::UntagResource,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -2891,8 +2939,10 @@ impl UntagResourceInput {
             fn update_http_builder(
                 input: &crate::input::UntagResourceInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -3035,8 +3085,10 @@ pub mod update_parallel_data_input {
         /// Consumes the builder and constructs a [`UpdateParallelDataInput`](crate::input::UpdateParallelDataInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateParallelDataInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::UpdateParallelDataInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::UpdateParallelDataInput {
                 name: self.name,
                 description: self.description,
@@ -3059,7 +3111,7 @@ impl UpdateParallelDataInput {
             crate::operation::UpdateParallelData,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
@@ -3068,7 +3120,7 @@ impl UpdateParallelDataInput {
             fn uri_base(
                 _input: &crate::input::UpdateParallelDataInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
@@ -3076,8 +3128,10 @@ impl UpdateParallelDataInput {
             fn update_http_builder(
                 input: &crate::input::UpdateParallelDataInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

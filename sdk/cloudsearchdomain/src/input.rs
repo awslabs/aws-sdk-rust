@@ -272,7 +272,8 @@ pub mod search_input {
         /// Consumes the builder and constructs a [`SearchInput`](crate::input::SearchInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SearchInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::SearchInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::SearchInput {
                 cursor: self.cursor,
                 expr: self.expr,
@@ -305,20 +306,20 @@ impl SearchInput {
             crate::operation::Search,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SearchInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2013-01-01/search").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::SearchInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("format", "sdk");
                 query.push_kv("pretty", "true");
@@ -379,8 +380,10 @@ impl SearchInput {
             fn update_http_builder(
                 input: &crate::input::SearchInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -489,7 +492,8 @@ pub mod suggest_input {
         /// Consumes the builder and constructs a [`SuggestInput`](crate::input::SuggestInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::SuggestInput, aws_smithy_http::operation::BuildError> {
+        ) -> Result<crate::input::SuggestInput, aws_smithy_http::operation::error::BuildError>
+        {
             Ok(crate::input::SuggestInput {
                 query: self.query,
                 suggester: self.suggester,
@@ -511,20 +515,20 @@ impl SuggestInput {
             crate::operation::Suggest,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::SuggestInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2013-01-01/suggest").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::SuggestInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("format", "sdk");
                 query.push_kv("pretty", "true");
@@ -546,8 +550,10 @@ impl SuggestInput {
             fn update_http_builder(
                 input: &crate::input::SuggestInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -659,7 +665,7 @@ pub mod upload_documents_input {
         /// Consumes the builder and constructs a [`UploadDocumentsInput`](crate::input::UploadDocumentsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::UploadDocumentsInput, aws_smithy_http::operation::BuildError>
+        ) -> Result<crate::input::UploadDocumentsInput, aws_smithy_http::operation::error::BuildError>
         {
             Ok(crate::input::UploadDocumentsInput {
                 documents: self.documents.unwrap_or_default(),
@@ -681,20 +687,20 @@ impl UploadDocumentsInput {
             crate::operation::UploadDocuments,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::UploadDocumentsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/2013-01-01/documents/batch").expect("formatting should succeed");
                 Ok(())
             }
             fn uri_query(
                 _input: &crate::input::UploadDocumentsInput,
                 mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("format", "sdk");
                 Ok(())
@@ -703,8 +709,10 @@ impl UploadDocumentsInput {
             fn update_http_builder(
                 input: &crate::input::UploadDocumentsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;

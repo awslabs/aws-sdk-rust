@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_campaign_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateCampaignInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.connect_instance_id {
         object.key("connectInstanceId").string(var_1.as_str());
     }
@@ -37,7 +37,7 @@ pub fn serialize_structure_crate_input_create_campaign_input(
 pub fn serialize_structure_crate_input_get_campaign_state_batch_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetCampaignStateBatchInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_11) = &input.campaign_ids {
         let mut array_12 = object.key("campaignIds").start_array();
         for item_13 in var_11 {
@@ -53,7 +53,7 @@ pub fn serialize_structure_crate_input_get_campaign_state_batch_input(
 pub fn serialize_structure_crate_input_list_campaigns_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListCampaignsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_14) = &input.filters {
         let mut object_15 = object.key("filters").start_object();
         crate::json_ser::serialize_structure_crate_model_campaign_filters(&mut object_15, var_14)?;
@@ -74,7 +74,7 @@ pub fn serialize_structure_crate_input_list_campaigns_input(
 pub fn serialize_structure_crate_input_put_dial_request_batch_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::PutDialRequestBatchInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_18) = &input.dial_requests {
         let mut array_19 = object.key("dialRequests").start_array();
         for item_20 in var_18 {
@@ -95,7 +95,7 @@ pub fn serialize_structure_crate_input_put_dial_request_batch_input(
 pub fn serialize_structure_crate_input_start_instance_onboarding_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartInstanceOnboardingJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_22) = &input.encryption_config {
         let mut object_23 = object.key("encryptionConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_encryption_config(&mut object_23, var_22)?;
@@ -107,7 +107,7 @@ pub fn serialize_structure_crate_input_start_instance_onboarding_job_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_24) = &input.tags {
         let mut object_25 = object.key("tags").start_object();
         for (key_26, value_27) in var_24 {
@@ -123,7 +123,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_campaign_dialer_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateCampaignDialerConfigInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.dialer_config {
         let mut object_29 = object.key("dialerConfig").start_object();
         crate::json_ser::serialize_union_crate_model_dialer_config(&mut object_29, var_28)?;
@@ -135,7 +135,7 @@ pub fn serialize_structure_crate_input_update_campaign_dialer_config_input(
 pub fn serialize_structure_crate_input_update_campaign_name_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateCampaignNameInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_30) = &input.name {
         object.key("name").string(var_30.as_str());
     }
@@ -145,7 +145,7 @@ pub fn serialize_structure_crate_input_update_campaign_name_input(
 pub fn serialize_structure_crate_input_update_campaign_outbound_call_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateCampaignOutboundCallConfigInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_31) = &input.answer_machine_detection_config {
         let mut object_32 = object.key("answerMachineDetectionConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_answer_machine_detection_config(
@@ -168,7 +168,7 @@ pub fn serialize_structure_crate_input_update_campaign_outbound_call_config_inpu
 pub fn serialize_union_crate_model_dialer_config(
     object_3: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DialerConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::DialerConfig::ProgressiveDialerConfig(inner) => {
             let mut object_35 = object_3.key("progressiveDialerConfig").start_object();
@@ -188,7 +188,9 @@ pub fn serialize_union_crate_model_dialer_config(
         }
         crate::model::DialerConfig::Unknown => {
             return Err(
-                aws_smithy_http::operation::SerializationError::unknown_variant("DialerConfig"),
+                aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                    "DialerConfig",
+                ),
             )
         }
     }
@@ -198,7 +200,7 @@ pub fn serialize_union_crate_model_dialer_config(
 pub fn serialize_structure_crate_model_outbound_call_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::OutboundCallConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_37) = &input.connect_contact_flow_id {
         object.key("connectContactFlowId").string(var_37.as_str());
     }
@@ -224,7 +226,7 @@ pub fn serialize_structure_crate_model_outbound_call_config(
 pub fn serialize_structure_crate_model_campaign_filters(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::CampaignFilters,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_42) = &input.instance_id_filter {
         let mut object_43 = object.key("instanceIdFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_instance_id_filter(
@@ -239,7 +241,7 @@ pub fn serialize_structure_crate_model_campaign_filters(
 pub fn serialize_structure_crate_model_dial_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DialRequest,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_44) = &input.client_token {
         object.key("clientToken").string(var_44.as_str());
     }
@@ -266,7 +268,7 @@ pub fn serialize_structure_crate_model_dial_request(
 pub fn serialize_structure_crate_model_encryption_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EncryptionConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     {
         object.key("enabled").boolean(input.enabled);
     }
@@ -282,7 +284,7 @@ pub fn serialize_structure_crate_model_encryption_config(
 pub fn serialize_structure_crate_model_answer_machine_detection_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AnswerMachineDetectionConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_53) = &input.enable_answer_machine_detection {
         object.key("enableAnswerMachineDetection").boolean(*var_53);
     }
@@ -292,7 +294,7 @@ pub fn serialize_structure_crate_model_answer_machine_detection_config(
 pub fn serialize_structure_crate_model_progressive_dialer_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ProgressiveDialerConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_54) = &input.bandwidth_allocation {
         object.key("bandwidthAllocation").number(
             #[allow(clippy::useless_conversion)]
@@ -305,7 +307,7 @@ pub fn serialize_structure_crate_model_progressive_dialer_config(
 pub fn serialize_structure_crate_model_predictive_dialer_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::PredictiveDialerConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_55) = &input.bandwidth_allocation {
         object.key("bandwidthAllocation").number(
             #[allow(clippy::useless_conversion)]
@@ -318,7 +320,7 @@ pub fn serialize_structure_crate_model_predictive_dialer_config(
 pub fn serialize_structure_crate_model_instance_id_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::InstanceIdFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_56) = &input.value {
         object.key("value").string(var_56.as_str());
     }

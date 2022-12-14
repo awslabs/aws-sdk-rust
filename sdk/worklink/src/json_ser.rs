@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_associate_domain_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateDomainInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.acm_certificate_arn {
         object.key("AcmCertificateArn").string(var_1.as_str());
     }
@@ -21,7 +21,7 @@ pub fn serialize_structure_crate_input_associate_domain_input(
 pub fn serialize_structure_crate_input_associate_website_authorization_provider_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateWebsiteAuthorizationProviderInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_5) = &input.authorization_provider_type {
         object
             .key("AuthorizationProviderType")
@@ -39,7 +39,7 @@ pub fn serialize_structure_crate_input_associate_website_authorization_provider_
 pub fn serialize_structure_crate_input_associate_website_certificate_authority_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::AssociateWebsiteCertificateAuthorityInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_8) = &input.certificate {
         object.key("Certificate").string(var_8.as_str());
     }
@@ -55,7 +55,7 @@ pub fn serialize_structure_crate_input_associate_website_certificate_authority_i
 pub fn serialize_structure_crate_input_create_fleet_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateFleetInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_11) = &input.display_name {
         object.key("DisplayName").string(var_11.as_str());
     }
@@ -80,7 +80,7 @@ pub fn serialize_structure_crate_input_create_fleet_input(
 pub fn serialize_structure_crate_input_delete_fleet_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteFleetInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_18) = &input.fleet_arn {
         object.key("FleetArn").string(var_18.as_str());
     }
@@ -90,7 +90,7 @@ pub fn serialize_structure_crate_input_delete_fleet_input(
 pub fn serialize_structure_crate_input_describe_audit_stream_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeAuditStreamConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_19) = &input.fleet_arn {
         object.key("FleetArn").string(var_19.as_str());
     }
@@ -100,7 +100,7 @@ pub fn serialize_structure_crate_input_describe_audit_stream_configuration_input
 pub fn serialize_structure_crate_input_describe_company_network_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeCompanyNetworkConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_20) = &input.fleet_arn {
         object.key("FleetArn").string(var_20.as_str());
     }
@@ -110,7 +110,7 @@ pub fn serialize_structure_crate_input_describe_company_network_configuration_in
 pub fn serialize_structure_crate_input_describe_device_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeDeviceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_21) = &input.device_id {
         object.key("DeviceId").string(var_21.as_str());
     }
@@ -123,7 +123,7 @@ pub fn serialize_structure_crate_input_describe_device_input(
 pub fn serialize_structure_crate_input_describe_device_policy_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeDevicePolicyConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_23) = &input.fleet_arn {
         object.key("FleetArn").string(var_23.as_str());
     }
@@ -133,7 +133,7 @@ pub fn serialize_structure_crate_input_describe_device_policy_configuration_inpu
 pub fn serialize_structure_crate_input_describe_domain_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeDomainInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_24) = &input.domain_name {
         object.key("DomainName").string(var_24.as_str());
     }
@@ -146,7 +146,7 @@ pub fn serialize_structure_crate_input_describe_domain_input(
 pub fn serialize_structure_crate_input_describe_fleet_metadata_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeFleetMetadataInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_26) = &input.fleet_arn {
         object.key("FleetArn").string(var_26.as_str());
     }
@@ -156,7 +156,7 @@ pub fn serialize_structure_crate_input_describe_fleet_metadata_input(
 pub fn serialize_structure_crate_input_describe_identity_provider_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeIdentityProviderConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_27) = &input.fleet_arn {
         object.key("FleetArn").string(var_27.as_str());
     }
@@ -166,7 +166,7 @@ pub fn serialize_structure_crate_input_describe_identity_provider_configuration_
 pub fn serialize_structure_crate_input_describe_website_certificate_authority_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeWebsiteCertificateAuthorityInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.fleet_arn {
         object.key("FleetArn").string(var_28.as_str());
     }
@@ -179,7 +179,7 @@ pub fn serialize_structure_crate_input_describe_website_certificate_authority_in
 pub fn serialize_structure_crate_input_disassociate_domain_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateDomainInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_30) = &input.domain_name {
         object.key("DomainName").string(var_30.as_str());
     }
@@ -192,7 +192,7 @@ pub fn serialize_structure_crate_input_disassociate_domain_input(
 pub fn serialize_structure_crate_input_disassociate_website_authorization_provider_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateWebsiteAuthorizationProviderInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.authorization_provider_id {
         object
             .key("AuthorizationProviderId")
@@ -207,7 +207,7 @@ pub fn serialize_structure_crate_input_disassociate_website_authorization_provid
 pub fn serialize_structure_crate_input_disassociate_website_certificate_authority_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateWebsiteCertificateAuthorityInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_34) = &input.fleet_arn {
         object.key("FleetArn").string(var_34.as_str());
     }
@@ -220,7 +220,7 @@ pub fn serialize_structure_crate_input_disassociate_website_certificate_authorit
 pub fn serialize_structure_crate_input_list_devices_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListDevicesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_36) = &input.fleet_arn {
         object.key("FleetArn").string(var_36.as_str());
     }
@@ -239,7 +239,7 @@ pub fn serialize_structure_crate_input_list_devices_input(
 pub fn serialize_structure_crate_input_list_domains_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListDomainsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_39) = &input.fleet_arn {
         object.key("FleetArn").string(var_39.as_str());
     }
@@ -258,7 +258,7 @@ pub fn serialize_structure_crate_input_list_domains_input(
 pub fn serialize_structure_crate_input_list_fleets_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListFleetsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_42) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
@@ -274,7 +274,7 @@ pub fn serialize_structure_crate_input_list_fleets_input(
 pub fn serialize_structure_crate_input_list_website_authorization_providers_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListWebsiteAuthorizationProvidersInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_44) = &input.fleet_arn {
         object.key("FleetArn").string(var_44.as_str());
     }
@@ -293,7 +293,7 @@ pub fn serialize_structure_crate_input_list_website_authorization_providers_inpu
 pub fn serialize_structure_crate_input_list_website_certificate_authorities_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListWebsiteCertificateAuthoritiesInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_47) = &input.fleet_arn {
         object.key("FleetArn").string(var_47.as_str());
     }
@@ -312,7 +312,7 @@ pub fn serialize_structure_crate_input_list_website_certificate_authorities_inpu
 pub fn serialize_structure_crate_input_restore_domain_access_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RestoreDomainAccessInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_50) = &input.domain_name {
         object.key("DomainName").string(var_50.as_str());
     }
@@ -325,7 +325,7 @@ pub fn serialize_structure_crate_input_restore_domain_access_input(
 pub fn serialize_structure_crate_input_revoke_domain_access_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RevokeDomainAccessInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_52) = &input.domain_name {
         object.key("DomainName").string(var_52.as_str());
     }
@@ -338,7 +338,7 @@ pub fn serialize_structure_crate_input_revoke_domain_access_input(
 pub fn serialize_structure_crate_input_sign_out_user_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SignOutUserInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_54) = &input.fleet_arn {
         object.key("FleetArn").string(var_54.as_str());
     }
@@ -351,7 +351,7 @@ pub fn serialize_structure_crate_input_sign_out_user_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_56) = &input.tags {
         let mut object_57 = object.key("Tags").start_object();
         for (key_58, value_59) in var_56 {
@@ -367,7 +367,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_audit_stream_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateAuditStreamConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_60) = &input.audit_stream_arn {
         object.key("AuditStreamArn").string(var_60.as_str());
     }
@@ -380,7 +380,7 @@ pub fn serialize_structure_crate_input_update_audit_stream_configuration_input(
 pub fn serialize_structure_crate_input_update_company_network_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateCompanyNetworkConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_62) = &input.fleet_arn {
         object.key("FleetArn").string(var_62.as_str());
     }
@@ -411,7 +411,7 @@ pub fn serialize_structure_crate_input_update_company_network_configuration_inpu
 pub fn serialize_structure_crate_input_update_device_policy_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateDevicePolicyConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_70) = &input.device_ca_certificate {
         object.key("DeviceCaCertificate").string(var_70.as_str());
     }
@@ -424,7 +424,7 @@ pub fn serialize_structure_crate_input_update_device_policy_configuration_input(
 pub fn serialize_structure_crate_input_update_domain_metadata_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateDomainMetadataInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_72) = &input.display_name {
         object.key("DisplayName").string(var_72.as_str());
     }
@@ -440,7 +440,7 @@ pub fn serialize_structure_crate_input_update_domain_metadata_input(
 pub fn serialize_structure_crate_input_update_fleet_metadata_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateFleetMetadataInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_75) = &input.display_name {
         object.key("DisplayName").string(var_75.as_str());
     }
@@ -456,7 +456,7 @@ pub fn serialize_structure_crate_input_update_fleet_metadata_input(
 pub fn serialize_structure_crate_input_update_identity_provider_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateIdentityProviderConfigurationInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_78) = &input.fleet_arn {
         object.key("FleetArn").string(var_78.as_str());
     }

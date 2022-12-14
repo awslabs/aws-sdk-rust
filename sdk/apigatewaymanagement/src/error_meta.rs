@@ -33,20 +33,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteConnectionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteConnectionErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::DeleteConnectionErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::DeleteConnectionErrorKind::GoneException(inner) => {
+                        Error::GoneException(inner)
+                    }
+                    crate::error::DeleteConnectionErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::DeleteConnectionErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::DeleteConnectionErrorKind::GoneException(inner) => {
-                    Error::GoneException(inner)
-                }
-                crate::error::DeleteConnectionErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::DeleteConnectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -57,20 +59,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetConnectionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetConnectionErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetConnectionErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::GetConnectionErrorKind::GoneException(inner) => {
+                        Error::GoneException(inner)
+                    }
+                    crate::error::GetConnectionErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::GetConnectionErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetConnectionErrorKind::GoneException(inner) => {
-                    Error::GoneException(inner)
-                }
-                crate::error::GetConnectionErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::GetConnectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -83,23 +87,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PostToConnectionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PostToConnectionErrorKind::ForbiddenException(inner) => {
-                    Error::ForbiddenException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::PostToConnectionErrorKind::ForbiddenException(inner) => {
+                        Error::ForbiddenException(inner)
+                    }
+                    crate::error::PostToConnectionErrorKind::GoneException(inner) => {
+                        Error::GoneException(inner)
+                    }
+                    crate::error::PostToConnectionErrorKind::LimitExceededException(inner) => {
+                        Error::LimitExceededException(inner)
+                    }
+                    crate::error::PostToConnectionErrorKind::PayloadTooLargeException(inner) => {
+                        Error::PayloadTooLargeException(inner)
+                    }
+                    crate::error::PostToConnectionErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::PostToConnectionErrorKind::GoneException(inner) => {
-                    Error::GoneException(inner)
-                }
-                crate::error::PostToConnectionErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::PostToConnectionErrorKind::PayloadTooLargeException(inner) => {
-                    Error::PayloadTooLargeException(inner)
-                }
-                crate::error::PostToConnectionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }

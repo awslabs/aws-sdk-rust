@@ -75,7 +75,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::AssociateServiceQuotaTemplateError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::AssociateServiceQuotaTemplateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::AssociateServiceQuotaTemplateErrorKind::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
                 crate::error::AssociateServiceQuotaTemplateErrorKind::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
@@ -107,7 +107,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
                 crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
@@ -136,7 +136,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::DisassociateServiceQuotaTemplateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::DisassociateServiceQuotaTemplateErrorKind::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
                 crate::error::DisassociateServiceQuotaTemplateErrorKind::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
@@ -168,7 +168,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetAssociationForServiceQuotaTemplateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetAssociationForServiceQuotaTemplateErrorKind::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
                 crate::error::GetAssociationForServiceQuotaTemplateErrorKind::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
@@ -192,26 +192,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetAWSDefaultServiceQuotaError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetAWSDefaultServiceQuotaErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetAWSDefaultServiceQuotaErrorKind::AccessDeniedException(
+                        inner,
+                    ) => Error::AccessDeniedException(inner),
+                    crate::error::GetAWSDefaultServiceQuotaErrorKind::IllegalArgumentException(
+                        inner,
+                    ) => Error::IllegalArgumentException(inner),
+                    crate::error::GetAWSDefaultServiceQuotaErrorKind::NoSuchResourceException(
+                        inner,
+                    ) => Error::NoSuchResourceException(inner),
+                    crate::error::GetAWSDefaultServiceQuotaErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::GetAWSDefaultServiceQuotaErrorKind::TooManyRequestsException(
+                        inner,
+                    ) => Error::TooManyRequestsException(inner),
+                    crate::error::GetAWSDefaultServiceQuotaErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetAWSDefaultServiceQuotaErrorKind::IllegalArgumentException(
-                    inner,
-                ) => Error::IllegalArgumentException(inner),
-                crate::error::GetAWSDefaultServiceQuotaErrorKind::NoSuchResourceException(
-                    inner,
-                ) => Error::NoSuchResourceException(inner),
-                crate::error::GetAWSDefaultServiceQuotaErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::GetAWSDefaultServiceQuotaErrorKind::TooManyRequestsException(
-                    inner,
-                ) => Error::TooManyRequestsException(inner),
-                crate::error::GetAWSDefaultServiceQuotaErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -229,7 +231,10 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context
+                .into_err()
+                .kind
+            {
                 crate::error::GetRequestedServiceQuotaChangeErrorKind::AccessDeniedException(
                     inner,
                 ) => Error::AccessDeniedException(inner),
@@ -259,26 +264,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetServiceQuotaError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetServiceQuotaErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::GetServiceQuotaErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::GetServiceQuotaErrorKind::IllegalArgumentException(inner) => {
+                        Error::IllegalArgumentException(inner)
+                    }
+                    crate::error::GetServiceQuotaErrorKind::NoSuchResourceException(inner) => {
+                        Error::NoSuchResourceException(inner)
+                    }
+                    crate::error::GetServiceQuotaErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::GetServiceQuotaErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::GetServiceQuotaErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::GetServiceQuotaErrorKind::IllegalArgumentException(inner) => {
-                    Error::IllegalArgumentException(inner)
-                }
-                crate::error::GetServiceQuotaErrorKind::NoSuchResourceException(inner) => {
-                    Error::NoSuchResourceException(inner)
-                }
-                crate::error::GetServiceQuotaErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::GetServiceQuotaErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::GetServiceQuotaErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -300,7 +307,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::GetServiceQuotaIncreaseRequestFromTemplateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetServiceQuotaIncreaseRequestFromTemplateErrorKind::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
                 crate::error::GetServiceQuotaIncreaseRequestFromTemplateErrorKind::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
@@ -325,7 +332,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListAWSDefaultServiceQuotasError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListAWSDefaultServiceQuotasErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::ListAWSDefaultServiceQuotasErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
                 crate::error::ListAWSDefaultServiceQuotasErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
@@ -355,7 +362,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListRequestedServiceQuotaChangeHistoryErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::ListRequestedServiceQuotaChangeHistoryErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
                 crate::error::ListRequestedServiceQuotaChangeHistoryErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
@@ -385,7 +392,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
                 crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::InvalidPaginationTokenException(inner) => Error::InvalidPaginationTokenException(inner),
@@ -415,7 +422,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::ListServiceQuotaIncreaseRequestsInTemplateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::ListServiceQuotaIncreaseRequestsInTemplateErrorKind::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
                 crate::error::ListServiceQuotaIncreaseRequestsInTemplateErrorKind::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
@@ -438,29 +445,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListServiceQuotasError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListServiceQuotasErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListServiceQuotasErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::ListServiceQuotasErrorKind::IllegalArgumentException(inner) => {
+                        Error::IllegalArgumentException(inner)
+                    }
+                    crate::error::ListServiceQuotasErrorKind::InvalidPaginationTokenException(
+                        inner,
+                    ) => Error::InvalidPaginationTokenException(inner),
+                    crate::error::ListServiceQuotasErrorKind::NoSuchResourceException(inner) => {
+                        Error::NoSuchResourceException(inner)
+                    }
+                    crate::error::ListServiceQuotasErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::ListServiceQuotasErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::ListServiceQuotasErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListServiceQuotasErrorKind::IllegalArgumentException(inner) => {
-                    Error::IllegalArgumentException(inner)
-                }
-                crate::error::ListServiceQuotasErrorKind::InvalidPaginationTokenException(
-                    inner,
-                ) => Error::InvalidPaginationTokenException(inner),
-                crate::error::ListServiceQuotasErrorKind::NoSuchResourceException(inner) => {
-                    Error::NoSuchResourceException(inner)
-                }
-                crate::error::ListServiceQuotasErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::ListServiceQuotasErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::ListServiceQuotasErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -471,26 +480,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListServicesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListServicesErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListServicesErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::ListServicesErrorKind::IllegalArgumentException(inner) => {
+                        Error::IllegalArgumentException(inner)
+                    }
+                    crate::error::ListServicesErrorKind::InvalidPaginationTokenException(inner) => {
+                        Error::InvalidPaginationTokenException(inner)
+                    }
+                    crate::error::ListServicesErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::ListServicesErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::ListServicesErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListServicesErrorKind::IllegalArgumentException(inner) => {
-                    Error::IllegalArgumentException(inner)
-                }
-                crate::error::ListServicesErrorKind::InvalidPaginationTokenException(inner) => {
-                    Error::InvalidPaginationTokenException(inner)
-                }
-                crate::error::ListServicesErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::ListServicesErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::ListServicesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -503,26 +514,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::IllegalArgumentException(inner) => {
+                        Error::IllegalArgumentException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::NoSuchResourceException(inner) => {
+                        Error::NoSuchResourceException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::ListTagsForResourceErrorKind::IllegalArgumentException(inner) => {
-                    Error::IllegalArgumentException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::NoSuchResourceException(inner) => {
-                    Error::NoSuchResourceException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -544,7 +557,7 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::AwsServiceAccessNotEnabledException(inner) => Error::AwsServiceAccessNotEnabledException(inner),
                 crate::error::PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
@@ -570,7 +583,7 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RequestServiceQuotaIncreaseError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
                 crate::error::RequestServiceQuotaIncreaseErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::RequestServiceQuotaIncreaseErrorKind::DependencyAccessDeniedException(inner) => Error::DependencyAccessDeniedException(inner),
                 crate::error::RequestServiceQuotaIncreaseErrorKind::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
@@ -592,32 +605,34 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagResourceErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::TagResourceErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::IllegalArgumentException(inner) => {
+                        Error::IllegalArgumentException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::NoSuchResourceException(inner) => {
+                        Error::NoSuchResourceException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::TagPolicyViolationException(inner) => {
+                        Error::TagPolicyViolationException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
+                        Error::TooManyTagsException(inner)
+                    }
+                    crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::TagResourceErrorKind::IllegalArgumentException(inner) => {
-                    Error::IllegalArgumentException(inner)
-                }
-                crate::error::TagResourceErrorKind::NoSuchResourceException(inner) => {
-                    Error::NoSuchResourceException(inner)
-                }
-                crate::error::TagResourceErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::TagResourceErrorKind::TagPolicyViolationException(inner) => {
-                    Error::TagPolicyViolationException(inner)
-                }
-                crate::error::TagResourceErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
-                    Error::TooManyTagsException(inner)
-                }
-                crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -628,26 +643,28 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                match context.into_err().kind {
+                    crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => {
+                        Error::AccessDeniedException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::IllegalArgumentException(inner) => {
+                        Error::IllegalArgumentException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::NoSuchResourceException(inner) => {
+                        Error::NoSuchResourceException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::ServiceException(inner) => {
+                        Error::ServiceException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::TooManyRequestsException(inner) => {
+                        Error::TooManyRequestsException(inner)
+                    }
+                    crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+                    }
                 }
-                crate::error::UntagResourceErrorKind::IllegalArgumentException(inner) => {
-                    Error::IllegalArgumentException(inner)
-                }
-                crate::error::UntagResourceErrorKind::NoSuchResourceException(inner) => {
-                    Error::NoSuchResourceException(inner)
-                }
-                crate::error::UntagResourceErrorKind::ServiceException(inner) => {
-                    Error::ServiceException(inner)
-                }
-                crate::error::UntagResourceErrorKind::TooManyRequestsException(inner) => {
-                    Error::TooManyRequestsException(inner)
-                }
-                crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }

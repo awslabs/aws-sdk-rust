@@ -2,7 +2,7 @@
 pub fn serialize_structure_crate_input_create_data_set_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateDataSetInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.asset_type {
         object.key("AssetType").string(var_1.as_str());
     }
@@ -27,7 +27,7 @@ pub fn serialize_structure_crate_input_create_data_set_input(
 pub fn serialize_structure_crate_input_create_event_action_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateEventActionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_8) = &input.action {
         let mut object_9 = object.key("Action").start_object();
         crate::json_ser::serialize_structure_crate_model_action(&mut object_9, var_8)?;
@@ -44,7 +44,7 @@ pub fn serialize_structure_crate_input_create_event_action_input(
 pub fn serialize_structure_crate_input_create_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateJobInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_12) = &input.details {
         let mut object_13 = object.key("Details").start_object();
         crate::json_ser::serialize_structure_crate_model_request_details(&mut object_13, var_12)?;
@@ -59,7 +59,7 @@ pub fn serialize_structure_crate_input_create_job_input(
 pub fn serialize_structure_crate_input_create_revision_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateRevisionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.comment {
         object.key("Comment").string(var_15.as_str());
     }
@@ -78,7 +78,7 @@ pub fn serialize_structure_crate_input_create_revision_input(
 pub fn serialize_structure_crate_input_revoke_revision_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RevokeRevisionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_20) = &input.revocation_comment {
         object.key("RevocationComment").string(var_20.as_str());
     }
@@ -88,7 +88,7 @@ pub fn serialize_structure_crate_input_revoke_revision_input(
 pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_21) = &input.tags {
         let mut object_22 = object.key("tags").start_object();
         for (key_23, value_24) in var_21 {
@@ -104,7 +104,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
 pub fn serialize_structure_crate_input_update_asset_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateAssetInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_25) = &input.name {
         object.key("Name").string(var_25.as_str());
     }
@@ -114,7 +114,7 @@ pub fn serialize_structure_crate_input_update_asset_input(
 pub fn serialize_structure_crate_input_update_data_set_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateDataSetInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_26) = &input.description {
         object.key("Description").string(var_26.as_str());
     }
@@ -127,7 +127,7 @@ pub fn serialize_structure_crate_input_update_data_set_input(
 pub fn serialize_structure_crate_input_update_event_action_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateEventActionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.action {
         let mut object_29 = object.key("Action").start_object();
         crate::json_ser::serialize_structure_crate_model_action(&mut object_29, var_28)?;
@@ -139,7 +139,7 @@ pub fn serialize_structure_crate_input_update_event_action_input(
 pub fn serialize_structure_crate_input_update_revision_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateRevisionInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_30) = &input.comment {
         object.key("Comment").string(var_30.as_str());
     }
@@ -152,7 +152,7 @@ pub fn serialize_structure_crate_input_update_revision_input(
 pub fn serialize_structure_crate_model_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Action,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_31) = &input.export_revision_to_s3 {
         let mut object_32 = object.key("ExportRevisionToS3").start_object();
         crate::json_ser::serialize_structure_crate_model_auto_export_revision_to_s3_request_details(&mut object_32, var_31)?;
@@ -164,7 +164,7 @@ pub fn serialize_structure_crate_model_action(
 pub fn serialize_structure_crate_model_event(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Event,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.revision_published {
         let mut object_34 = object.key("RevisionPublished").start_object();
         crate::json_ser::serialize_structure_crate_model_revision_published(
@@ -179,7 +179,7 @@ pub fn serialize_structure_crate_model_event(
 pub fn serialize_structure_crate_model_request_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RequestDetails,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_35) = &input.export_asset_to_signed_url {
         let mut object_36 = object.key("ExportAssetToSignedUrl").start_object();
         crate::json_ser::serialize_structure_crate_model_export_asset_to_signed_url_request_details(&mut object_36, var_35)?;
@@ -232,7 +232,7 @@ pub fn serialize_structure_crate_model_request_details(
 pub fn serialize_structure_crate_model_auto_export_revision_to_s3_request_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AutoExportRevisionToS3RequestDetails,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_49) = &input.encryption {
         let mut object_50 = object.key("Encryption").start_object();
         crate::json_ser::serialize_structure_crate_model_export_server_side_encryption(
@@ -255,7 +255,7 @@ pub fn serialize_structure_crate_model_auto_export_revision_to_s3_request_detail
 pub fn serialize_structure_crate_model_revision_published(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RevisionPublished,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_53) = &input.data_set_id {
         object.key("DataSetId").string(var_53.as_str());
     }
@@ -265,7 +265,7 @@ pub fn serialize_structure_crate_model_revision_published(
 pub fn serialize_structure_crate_model_export_asset_to_signed_url_request_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ExportAssetToSignedUrlRequestDetails,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_54) = &input.asset_id {
         object.key("AssetId").string(var_54.as_str());
     }
@@ -281,7 +281,7 @@ pub fn serialize_structure_crate_model_export_asset_to_signed_url_request_detail
 pub fn serialize_structure_crate_model_export_assets_to_s3_request_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ExportAssetsToS3RequestDetails,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_57) = &input.asset_destinations {
         let mut array_58 = object.key("AssetDestinations").start_array();
         for item_59 in var_57 {
@@ -316,7 +316,7 @@ pub fn serialize_structure_crate_model_export_assets_to_s3_request_details(
 pub fn serialize_structure_crate_model_export_revisions_to_s3_request_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ExportRevisionsToS3RequestDetails,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_65) = &input.data_set_id {
         object.key("DataSetId").string(var_65.as_str());
     }
@@ -348,7 +348,7 @@ pub fn serialize_structure_crate_model_export_revisions_to_s3_request_details(
 pub fn serialize_structure_crate_model_import_asset_from_signed_url_request_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ImportAssetFromSignedUrlRequestDetails,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_72) = &input.asset_name {
         object.key("AssetName").string(var_72.as_str());
     }
@@ -367,7 +367,7 @@ pub fn serialize_structure_crate_model_import_asset_from_signed_url_request_deta
 pub fn serialize_structure_crate_model_import_assets_from_s3_request_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ImportAssetsFromS3RequestDetails,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_76) = &input.asset_sources {
         let mut array_77 = object.key("AssetSources").start_array();
         for item_78 in var_76 {
@@ -394,7 +394,7 @@ pub fn serialize_structure_crate_model_import_assets_from_s3_request_details(
 pub fn serialize_structure_crate_model_import_assets_from_redshift_data_shares_request_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_82) = &input.asset_sources {
         let mut array_83 = object.key("AssetSources").start_array();
         for item_84 in var_82 {
@@ -418,7 +418,7 @@ pub fn serialize_structure_crate_model_import_assets_from_redshift_data_shares_r
 pub fn serialize_structure_crate_model_import_asset_from_api_gateway_api_request_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ImportAssetFromApiGatewayApiRequestDetails,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_88) = &input.api_description {
         object.key("ApiDescription").string(var_88.as_str());
     }
@@ -454,7 +454,7 @@ pub fn serialize_structure_crate_model_import_asset_from_api_gateway_api_request
 pub fn serialize_structure_crate_model_export_server_side_encryption(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ExportServerSideEncryption,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_97) = &input.kms_key_arn {
         object.key("KmsKeyArn").string(var_97.as_str());
     }
@@ -467,7 +467,7 @@ pub fn serialize_structure_crate_model_export_server_side_encryption(
 pub fn serialize_structure_crate_model_auto_export_revision_destination_entry(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AutoExportRevisionDestinationEntry,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_99) = &input.bucket {
         object.key("Bucket").string(var_99.as_str());
     }
@@ -480,7 +480,7 @@ pub fn serialize_structure_crate_model_auto_export_revision_destination_entry(
 pub fn serialize_structure_crate_model_asset_destination_entry(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AssetDestinationEntry,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_101) = &input.asset_id {
         object.key("AssetId").string(var_101.as_str());
     }
@@ -496,7 +496,7 @@ pub fn serialize_structure_crate_model_asset_destination_entry(
 pub fn serialize_structure_crate_model_revision_destination_entry(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RevisionDestinationEntry,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_104) = &input.bucket {
         object.key("Bucket").string(var_104.as_str());
     }
@@ -512,7 +512,7 @@ pub fn serialize_structure_crate_model_revision_destination_entry(
 pub fn serialize_structure_crate_model_asset_source_entry(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AssetSourceEntry,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_107) = &input.bucket {
         object.key("Bucket").string(var_107.as_str());
     }
@@ -525,7 +525,7 @@ pub fn serialize_structure_crate_model_asset_source_entry(
 pub fn serialize_structure_crate_model_redshift_data_share_asset_source_entry(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RedshiftDataShareAssetSourceEntry,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_109) = &input.data_share_arn {
         object.key("DataShareArn").string(var_109.as_str());
     }

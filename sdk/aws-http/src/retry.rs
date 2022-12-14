@@ -141,10 +141,10 @@ mod test {
         err: E,
         raw: http::Response<&'static str>,
     ) -> Result<SdkSuccess<()>, SdkError<E>> {
-        Err(SdkError::ServiceError {
+        Err(SdkError::service_error(
             err,
-            raw: operation::Response::new(raw.map(SdkBody::from)),
-        })
+            operation::Response::new(raw.map(SdkBody::from)),
+        ))
     }
 
     #[test]
@@ -263,10 +263,10 @@ mod test {
         let policy = AwsResponseRetryClassifier::new();
         assert_eq!(
             policy.classify_retry(
-                Result::<SdkSuccess<()>, SdkError<UnmodeledError>>::Err(SdkError::ResponseError {
-                    err: Box::new(UnmodeledError),
-                    raw: operation::Response::new(http::Response::new("OK").map(SdkBody::from)),
-                })
+                Result::<SdkSuccess<()>, SdkError<UnmodeledError>>::Err(SdkError::response_error(
+                    UnmodeledError,
+                    operation::Response::new(http::Response::new("OK").map(SdkBody::from)),
+                ))
                 .as_ref()
             ),
             RetryKind::Error(ErrorKind::TransientError)
@@ -276,7 +276,7 @@ mod test {
     #[test]
     fn test_timeout_error() {
         let policy = AwsResponseRetryClassifier::new();
-        let err: Result<(), SdkError<UnmodeledError>> = Err(SdkError::TimeoutError("blah".into()));
+        let err: Result<(), SdkError<UnmodeledError>> = Err(SdkError::timeout_error("blah"));
         assert_eq!(
             policy.classify_retry(err.as_ref()),
             RetryKind::Error(ErrorKind::TransientError)

@@ -191,7 +191,7 @@ pub mod start_medical_stream_transcription_input {
             self,
         ) -> Result<
             crate::input::StartMedicalStreamTranscriptionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::StartMedicalStreamTranscriptionInput {
@@ -213,8 +213,8 @@ pub mod start_medical_stream_transcription_input {
                     session_id: self.session_id
                     ,
                     audio_stream: self.audio_stream
-                        .ok_or(
-                            aws_smithy_http::operation::BuildError::MissingField { field: "audio_stream", details: "audio_stream was not specified but it is required when building StartMedicalStreamTranscriptionInput" }
+                        .ok_or_else(||
+                            aws_smithy_http::operation::error::BuildError::missing_field("audio_stream", "audio_stream was not specified but it is required when building StartMedicalStreamTranscriptionInput")
                         )?
                     ,
                     enable_channel_identification: self.enable_channel_identification
@@ -242,13 +242,13 @@ impl StartMedicalStreamTranscriptionInput {
             crate::operation::StartMedicalStreamTranscription,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartMedicalStreamTranscriptionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/medical-stream-transcription").expect("formatting should succeed");
                 Ok(())
             }
@@ -256,8 +256,10 @@ impl StartMedicalStreamTranscriptionInput {
             fn update_http_builder(
                 input: &crate::input::StartMedicalStreamTranscriptionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::http_serde::add_headers_start_medical_stream_transcription(
@@ -710,7 +712,7 @@ pub mod start_stream_transcription_input {
             self,
         ) -> Result<
             crate::input::StartStreamTranscriptionInput,
-            aws_smithy_http::operation::BuildError,
+            aws_smithy_http::operation::error::BuildError,
         > {
             Ok(
                 crate::input::StartStreamTranscriptionInput {
@@ -725,8 +727,8 @@ pub mod start_stream_transcription_input {
                     session_id: self.session_id
                     ,
                     audio_stream: self.audio_stream
-                        .ok_or(
-                            aws_smithy_http::operation::BuildError::MissingField { field: "audio_stream", details: "audio_stream was not specified but it is required when building StartStreamTranscriptionInput" }
+                        .ok_or_else(||
+                            aws_smithy_http::operation::error::BuildError::missing_field("audio_stream", "audio_stream was not specified but it is required when building StartStreamTranscriptionInput")
                         )?
                     ,
                     vocabulary_filter_name: self.vocabulary_filter_name
@@ -783,13 +785,13 @@ impl StartStreamTranscriptionInput {
             crate::operation::StartStreamTranscription,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartStreamTranscriptionInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/stream-transcription").expect("formatting should succeed");
                 Ok(())
             }
@@ -797,8 +799,10 @@ impl StartStreamTranscriptionInput {
             fn update_http_builder(
                 input: &crate::input::StartStreamTranscriptionInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder =

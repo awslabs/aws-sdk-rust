@@ -125,8 +125,10 @@ pub mod get_personalized_ranking_input {
         /// Consumes the builder and constructs a [`GetPersonalizedRankingInput`](crate::input::GetPersonalizedRankingInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPersonalizedRankingInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetPersonalizedRankingInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetPersonalizedRankingInput {
                 campaign_arn: self.campaign_arn,
                 input_list: self.input_list,
@@ -151,13 +153,13 @@ impl GetPersonalizedRankingInput {
             crate::operation::GetPersonalizedRanking,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetPersonalizedRankingInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/personalize-ranking").expect("formatting should succeed");
                 Ok(())
             }
@@ -165,8 +167,10 @@ impl GetPersonalizedRankingInput {
             fn update_http_builder(
                 input: &crate::input::GetPersonalizedRankingInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
@@ -414,8 +418,10 @@ pub mod get_recommendations_input {
         /// Consumes the builder and constructs a [`GetRecommendationsInput`](crate::input::GetRecommendationsInput).
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRecommendationsInput, aws_smithy_http::operation::BuildError>
-        {
+        ) -> Result<
+            crate::input::GetRecommendationsInput,
+            aws_smithy_http::operation::error::BuildError,
+        > {
             Ok(crate::input::GetRecommendationsInput {
                 campaign_arn: self.campaign_arn,
                 item_id: self.item_id,
@@ -443,13 +449,13 @@ impl GetRecommendationsInput {
             crate::operation::GetRecommendations,
             aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::BuildError,
+        aws_smithy_http::operation::error::BuildError,
     > {
         let mut request = {
             fn uri_base(
                 _input: &crate::input::GetRecommendationsInput,
                 output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/recommendations").expect("formatting should succeed");
                 Ok(())
             }
@@ -457,8 +463,10 @@ impl GetRecommendationsInput {
             fn update_http_builder(
                 input: &crate::input::GetRecommendationsInput,
                 builder: http::request::Builder,
-            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-            {
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))

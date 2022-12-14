@@ -3,7 +3,7 @@
 pub fn serialize_structure_crate_model_logging_config(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::LoggingConfig,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("LogRoleArn");
     if let Some(var_2) = &input.log_role_arn {
@@ -21,7 +21,7 @@ pub fn serialize_structure_crate_model_logging_config(
 pub fn serialize_structure_crate_model_type_configuration_identifier(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TypeConfigurationIdentifier,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("TypeArn");
     if let Some(var_6) = &input.type_arn {
@@ -54,7 +54,7 @@ pub fn serialize_structure_crate_model_type_configuration_identifier(
 pub fn serialize_structure_crate_model_parameter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Parameter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("ParameterKey");
     if let Some(var_16) = &input.parameter_key {
@@ -82,7 +82,7 @@ pub fn serialize_structure_crate_model_parameter(
 pub fn serialize_structure_crate_model_rollback_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::RollbackConfiguration,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_23 = writer.prefix("RollbackTriggers");
     if let Some(var_24) = &input.rollback_triggers {
@@ -109,7 +109,7 @@ pub fn serialize_structure_crate_model_rollback_configuration(
 pub fn serialize_structure_crate_model_tag(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::Tag,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_30 = writer.prefix("Key");
     if let Some(var_31) = &input.key {
@@ -127,7 +127,7 @@ pub fn serialize_structure_crate_model_tag(
 pub fn serialize_structure_crate_model_resource_to_import(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ResourceToImport,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_34 = writer.prefix("ResourceType");
     if let Some(var_35) = &input.resource_type {
@@ -158,7 +158,7 @@ pub fn serialize_structure_crate_model_resource_to_import(
 pub fn serialize_structure_crate_model_deployment_targets(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::DeploymentTargets,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_44 = writer.prefix("Accounts");
     if let Some(var_45) = &input.accounts {
@@ -198,7 +198,7 @@ pub fn serialize_structure_crate_model_deployment_targets(
 pub fn serialize_structure_crate_model_stack_set_operation_preferences(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::StackSetOperationPreferences,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_58 = writer.prefix("RegionConcurrencyType");
     if let Some(var_59) = &input.region_concurrency_type {
@@ -254,7 +254,7 @@ pub fn serialize_structure_crate_model_stack_set_operation_preferences(
 pub fn serialize_structure_crate_model_auto_deployment(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::AutoDeployment,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_73 = writer.prefix("Enabled");
     if let Some(var_74) = &input.enabled {
@@ -272,7 +272,7 @@ pub fn serialize_structure_crate_model_auto_deployment(
 pub fn serialize_structure_crate_model_managed_execution(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::ManagedExecution,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_77 = writer.prefix("Active");
     if let Some(var_78) = &input.active {
@@ -285,7 +285,7 @@ pub fn serialize_structure_crate_model_managed_execution(
 pub fn serialize_structure_crate_model_stack_instance_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::StackInstanceFilter,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_79 = writer.prefix("Name");
     if let Some(var_80) = &input.name {
@@ -303,7 +303,7 @@ pub fn serialize_structure_crate_model_stack_instance_filter(
 pub fn serialize_structure_crate_model_type_filters(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::TypeFilters,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_83 = writer.prefix("Category");
     if let Some(var_84) = &input.category {
@@ -326,7 +326,7 @@ pub fn serialize_structure_crate_model_type_filters(
 pub fn serialize_structure_crate_model_rollback_trigger(
     mut writer: aws_smithy_query::QueryValueWriter,
     input: &crate::model::RollbackTrigger,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
+) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_89 = writer.prefix("Arn");
     if let Some(var_90) = &input.arn {
