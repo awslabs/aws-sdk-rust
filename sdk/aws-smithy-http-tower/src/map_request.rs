@@ -11,6 +11,7 @@ use std::future::Future;
 use std::pin::Pin;
 use std::task::{Context, Poll};
 use tower::{Layer, Service};
+use tracing::{debug_span, Instrument};
 
 #[derive(Debug)]
 pub struct AsyncMapRequestLayer<M> {
@@ -61,10 +62,13 @@ where
     }
 
     fn call(&mut self, req: operation::Request) -> Self::Future {
+        let mapper_name = self.mapper.name();
         let mut inner = self.inner.clone();
         let future = self.mapper.apply(req);
         Box::pin(async move {
+            let span = debug_span!("async_map_request", name = mapper_name);
             let mapped_request = future
+                .instrument(span)
                 .await
                 .map_err(|e| SendOperationError::RequestConstructionError(e.into()))?;
             inner.call(mapped_request).await
@@ -122,8 +126,8 @@ where
     }
 }
 
-#[derive(Clone)]
 /// Tower service for [`MapRequest`](aws_smithy_http::middleware::MapRequest)
+#[derive(Clone)]
 pub struct MapRequestService<S, M> {
     inner: S,
     mapper: M,
@@ -143,9 +147,10 @@ where
     }
 
     fn call(&mut self, req: operation::Request) -> Self::Future {
-        match self
-            .mapper
-            .apply(req)
+        let span = debug_span!("map_request", name = self.mapper.name());
+        let mapper = &self.mapper;
+        match span
+            .in_scope(|| mapper.apply(req))
             .map_err(|e| SendOperationError::RequestConstructionError(e.into()))
         {
             Err(e) => MapRequestFuture::Ready { inner: Some(e) },

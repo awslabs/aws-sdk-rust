@@ -155,6 +155,10 @@ fn signing_config(
 impl MapRequest for SigV4SigningStage {
     type Error = SigningStageError;
 
+    fn name(&self) -> &'static str {
+        "sigv4_sign_request"
+    }
+
     fn apply(&self, req: Request) -> Result<Request, Self::Error> {
         req.augment(|mut req, config| {
             let operation_config = config

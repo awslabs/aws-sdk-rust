@@ -27,6 +27,10 @@ impl SmithyEndpointStage {
 impl MapRequest for SmithyEndpointStage {
     type Error = ResolveEndpointError;
 
+    fn name(&self) -> &'static str {
+        "resolve_endpoint"
+    }
+
     fn apply(&self, request: Request) -> Result<Request, Self::Error> {
         request.augment(|mut http_req, props| {
             // we need to do a little dance so that this works with retries.

@@ -76,6 +76,11 @@ mod tests {
         struct AddHeader;
         impl MapRequest for AddHeader {
             type Error = Infallible;
+
+            fn name(&self) -> &'static str {
+                "add_header"
+            }
+
             fn apply(&self, request: Request) -> Result<Request, Self::Error> {
                 request.augment(|mut req, _| {
                     req.headers_mut()

@@ -101,6 +101,10 @@ impl AsyncMapRequest for CredentialsStage {
     type Error = CredentialsStageError;
     type Future = Pin<Box<dyn Future<Output = Result<Request, Self::Error>> + Send + 'static>>;
 
+    fn name(&self) -> &'static str {
+        "retrieve_credentials"
+    }
+
     fn apply(&self, request: Request) -> BoxFuture<Result<Request, Self::Error>> {
         Box::pin(Self::load_creds(request))
     }

@@ -160,6 +160,10 @@ impl AsyncMapRequest for TokenMiddleware {
     type Error = ImdsError;
     type Future = Pin<Box<dyn Future<Output = Result<Request, Self::Error>> + Send + 'static>>;
 
+    fn name(&self) -> &'static str {
+        "attach_imds_token"
+    }
+
     fn apply(&self, request: Request) -> Self::Future {
         let this = self.clone();
         Box::pin(async move { this.add_token(request).await })
