@@ -432,21 +432,21 @@ pub mod client;
 /// Configuration for the service.
 pub mod config;
 
-/// All error types that operations can return.
+/// All error types that operations can return. Documentation on these types is copied from the model.
 pub mod error;
 
 mod error_meta;
 
-/// Input structures for operations.
+/// Input structures for operations. Documentation on these types is copied from the model.
 pub mod input;
 
-/// Data structures used by operation inputs/outputs.
+/// Data structures used by operation inputs/outputs. Documentation on these types is copied from the model.
 pub mod model;
 
 /// All operations that this crate can perform.
 pub mod operation;
 
-/// Output structures for operations.
+/// Output structures for operations. Documentation on these types is copied from the model.
 pub mod output;
 
 /// Data primitives referenced by other data types.
