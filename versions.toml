@@ -1,4 +1,4 @@
-smithy_rs_revision = 'f0b7f55bf515f85bdb72975f355e297badc8a2f4'
+smithy_rs_revision = 'beb8a68786b72add351172ab3090f6cadcd38f1e'
 aws_doc_sdk_examples_revision = 'f88a0edba3961f9d978bf1727054c9414e4fca2b'
 
 [manual_interventions]
@@ -584,7 +584,7 @@ model_hash = 'c42a1b3d66433e2afca0eeca64dffb4b7e0b3cca3fbb096d0dd0f78af0d1e363'
 [crates.aws-sdk-dynamodb]
 category = 'AwsSdk'
 version = '0.22.0'
-source_hash = '6bb46cc66dc1a77df0061cfe000178808d4c0fda9bfd7c7e1e7f3f4179a66f29'
+source_hash = 'cab22201036c39f7931d85a432039f4028d0af66fcd1209a1f9db2e78044cabd'
 model_hash = '71ce08d747503ea46b601c1f51b4ccb09bb9caad547f4077c973287cc38f18a8'
 
 [crates.aws-sdk-dynamodbstreams]
