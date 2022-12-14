@@ -7,7 +7,7 @@ use std::borrow::Cow;
 use std::fmt;
 
 #[derive(Debug, PartialEq, Eq)]
-pub enum EscapeError {
+enum EscapeErrorKind {
     ExpectedSurrogatePair(String),
     InvalidEscapeCharacter(char),
     InvalidSurrogatePair(u16, u16),
@@ -16,12 +16,18 @@ pub enum EscapeError {
     UnexpectedEndOfString,
 }
 
+#[derive(Debug)]
+#[cfg_attr(test, derive(PartialEq, Eq))]
+pub struct EscapeError {
+    kind: EscapeErrorKind,
+}
+
 impl std::error::Error for EscapeError {}
 
 impl fmt::Display for EscapeError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        use EscapeError::*;
-        match self {
+        use EscapeErrorKind::*;
+        match &self.kind {
             ExpectedSurrogatePair(low) => {
                 write!(
                     f,
@@ -37,6 +43,12 @@ impl fmt::Display for EscapeError {
             InvalidUtf8 => write!(f, "invalid UTF-8 codepoint in JSON string"),
             UnexpectedEndOfString => write!(f, "unexpected end of string"),
         }
+    }
+}
+
+impl From<EscapeErrorKind> for EscapeError {
+    fn from(kind: EscapeErrorKind) -> Self {
+        Self { kind }
     }
 }
 
@@ -102,7 +114,7 @@ fn unescape_string_inner(start: &[u8], rest: &[u8]) -> Result<String, EscapeErro
             b'\\' => {
                 index += 1;
                 if index == rest.len() {
-                    return Err(EscapeError::UnexpectedEndOfString);
+                    return Err(EscapeErrorKind::UnexpectedEndOfString.into());
                 }
                 match rest[index] {
                     b'u' => {
@@ -119,7 +131,11 @@ fn unescape_string_inner(start: &[u8], rest: &[u8]) -> Result<String, EscapeErro
                             b'n' => unescaped.push(b'\n'),
                             b'r' => unescaped.push(b'\r'),
                             b't' => unescaped.push(b'\t'),
-                            _ => return Err(EscapeError::InvalidEscapeCharacter(byte.into())),
+                            _ => {
+                                return Err(
+                                    EscapeErrorKind::InvalidEscapeCharacter(byte.into()).into()
+                                )
+                            }
                         }
                         index += 1;
                     }
@@ -132,7 +148,7 @@ fn unescape_string_inner(start: &[u8], rest: &[u8]) -> Result<String, EscapeErro
         }
     }
 
-    String::from_utf8(unescaped).map_err(|_| EscapeError::InvalidUtf8)
+    String::from_utf8(unescaped).map_err(|_| EscapeErrorKind::InvalidUtf8.into())
 }
 
 fn is_utf16_low_surrogate(codepoint: u16) -> bool {
@@ -145,24 +161,26 @@ fn is_utf16_high_surrogate(codepoint: u16) -> bool {
 
 fn read_codepoint(rest: &[u8]) -> Result<u16, EscapeError> {
     if rest.len() < 6 {
-        return Err(EscapeError::UnexpectedEndOfString);
+        return Err(EscapeErrorKind::UnexpectedEndOfString.into());
     }
     if &rest[0..2] != b"\\u" {
         // The first codepoint is always prefixed with "\u" since unescape_string_inner does
         // that check, so this error will always be for the low word of a surrogate pair.
-        return Err(EscapeError::ExpectedSurrogatePair(
+        return Err(EscapeErrorKind::ExpectedSurrogatePair(
             String::from_utf8_lossy(&rest[0..6]).into(),
-        ));
+        )
+        .into());
     }
 
-    let codepoint_str = std::str::from_utf8(&rest[2..6]).map_err(|_| EscapeError::InvalidUtf8)?;
+    let codepoint_str =
+        std::str::from_utf8(&rest[2..6]).map_err(|_| EscapeErrorKind::InvalidUtf8)?;
 
     // Error on characters `u16::from_str_radix` would otherwise accept, such as `+`
     if codepoint_str
         .bytes()
         .any(|byte| !matches!(byte, b'0'..=b'9' | b'a'..=b'f' | b'A'..=b'F'))
     {
-        return Err(EscapeError::InvalidUnicodeEscape(codepoint_str.into()));
+        return Err(EscapeErrorKind::InvalidUnicodeEscape(codepoint_str.into()).into());
     }
     Ok(u16::from_str_radix(codepoint_str, 16).expect("hex string is valid 16-bit value"))
 }
@@ -174,16 +192,16 @@ fn read_unicode_escapes(bytes: &[u8], into: &mut Vec<u8>) -> Result<usize, Escap
     let (bytes_read, chr) = if is_utf16_high_surrogate(high) {
         let low = read_codepoint(&bytes[6..])?;
         if !is_utf16_low_surrogate(low) {
-            return Err(EscapeError::InvalidSurrogatePair(high, low));
+            return Err(EscapeErrorKind::InvalidSurrogatePair(high, low).into());
         }
 
         let codepoint =
             std::char::from_u32(0x10000 + (high - 0xD800) as u32 * 0x400 + (low - 0xDC00) as u32)
-                .ok_or(EscapeError::InvalidSurrogatePair(high, low))?;
+                .ok_or(EscapeErrorKind::InvalidSurrogatePair(high, low))?;
         (12, codepoint)
     } else {
         let codepoint = std::char::from_u32(high as u32).ok_or_else(|| {
-            EscapeError::InvalidUnicodeEscape(String::from_utf8_lossy(&bytes[0..6]).into())
+            EscapeErrorKind::InvalidUnicodeEscape(String::from_utf8_lossy(&bytes[0..6]).into())
         })?;
         (6, codepoint)
     };
@@ -198,7 +216,7 @@ fn read_unicode_escapes(bytes: &[u8], into: &mut Vec<u8>) -> Result<usize, Escap
 #[cfg(test)]
 mod test {
     use super::escape_string;
-    use crate::escape::{unescape_string, EscapeError};
+    use crate::escape::{unescape_string, EscapeErrorKind};
     use std::borrow::Cow;
 
     #[test]
@@ -240,37 +258,37 @@ mod test {
         assert_eq!("\u{10437}", unescape_string("\\uD801\\uDC37").unwrap());
 
         assert_eq!(
-            Err(EscapeError::UnexpectedEndOfString),
+            Err(EscapeErrorKind::UnexpectedEndOfString.into()),
             unescape_string("\\")
         );
         assert_eq!(
-            Err(EscapeError::UnexpectedEndOfString),
+            Err(EscapeErrorKind::UnexpectedEndOfString.into()),
             unescape_string("\\u")
         );
         assert_eq!(
-            Err(EscapeError::UnexpectedEndOfString),
+            Err(EscapeErrorKind::UnexpectedEndOfString.into()),
             unescape_string("\\u00")
         );
         assert_eq!(
-            Err(EscapeError::InvalidEscapeCharacter('z')),
+            Err(EscapeErrorKind::InvalidEscapeCharacter('z').into()),
             unescape_string("\\z")
         );
 
         assert_eq!(
-            Err(EscapeError::ExpectedSurrogatePair("\\nasdf".into())),
+            Err(EscapeErrorKind::ExpectedSurrogatePair("\\nasdf".into()).into()),
             unescape_string("\\uD801\\nasdf")
         );
         assert_eq!(
-            Err(EscapeError::UnexpectedEndOfString),
+            Err(EscapeErrorKind::UnexpectedEndOfString.into()),
             unescape_string("\\uD801\\u00")
         );
         assert_eq!(
-            Err(EscapeError::InvalidSurrogatePair(0xD801, 0xC501)),
+            Err(EscapeErrorKind::InvalidSurrogatePair(0xD801, 0xC501).into()),
             unescape_string("\\uD801\\uC501")
         );
 
         assert_eq!(
-            Err(EscapeError::InvalidUnicodeEscape("+04D".into())),
+            Err(EscapeErrorKind::InvalidUnicodeEscape("+04D".into()).into()),
             unescape_string("\\u+04D")
         );
     }

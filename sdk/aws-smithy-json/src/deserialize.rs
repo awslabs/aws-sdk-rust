@@ -3,15 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use crate::deserialize::error::{DeserializeError as Error, DeserializeErrorKind as ErrorKind};
 use aws_smithy_types::Number;
+use ErrorKind::*;
 
-mod error;
+pub mod error;
 pub mod token;
 
-pub use error::{Error, ErrorReason};
 pub use token::{EscapeError, EscapedStr, Offset, Token};
-
-use ErrorReason::*;
 
 /// JSON token parser as a Rust iterator
 ///
@@ -96,13 +95,13 @@ impl<'a> JsonTokenIterator<'a> {
     }
 
     /// Creates an error at the given `offset` in the stream.
-    fn error_at(&self, offset: usize, reason: ErrorReason) -> Error {
-        Error::new(reason, Some(offset))
+    fn error_at(&self, offset: usize, kind: ErrorKind) -> Error {
+        Error::new(kind, Some(offset))
     }
 
     /// Creates an error at the current offset in the stream.
-    fn error(&self, reason: ErrorReason) -> Error {
-        self.error_at(self.index, reason)
+    fn error(&self, kind: ErrorKind) -> Error {
+        self.error_at(self.index, kind)
     }
 
     /// Advances until it hits a non-whitespace character or the end of the slice.
@@ -504,59 +503,77 @@ fn must_not_be_finite(f: f64) -> Result<f64, ()> {
 
 #[cfg(test)]
 mod tests {
+    use crate::deserialize::error::{DeserializeError as Error, DeserializeErrorKind as ErrorKind};
     use crate::deserialize::token::test::{
         end_array, end_object, object_key, start_array, start_object, value_bool, value_null,
         value_number, value_string,
     };
-    use crate::deserialize::{json_token_iter, Error, ErrorReason, EscapedStr, Token};
+    use crate::deserialize::{json_token_iter, EscapedStr, Token};
     use aws_smithy_types::Number;
     use proptest::prelude::*;
 
+    #[track_caller]
+    fn expect_token(expected: Option<Result<Token, Error>>, actual: Option<Result<Token, Error>>) {
+        let (expected, actual) = (
+            expected.transpose().expect("err in expected"),
+            actual.transpose().expect("err in actual"),
+        );
+        assert_eq!(expected, actual);
+    }
+
+    macro_rules! expect_err {
+        ($kind:pat, $offset:expr, $value:expr) => {
+            let err: Error = $value.transpose().err().expect("expected error");
+            assert!(matches!(err.kind, $kind));
+            assert_eq!($offset, err.offset);
+        };
+    }
+
     #[test]
     fn test_empty() {
-        assert_eq!(None, json_token_iter(b"").next());
-        assert_eq!(None, json_token_iter(b" ").next());
-        assert_eq!(None, json_token_iter(b"\t").next());
+        assert!(json_token_iter(b"").next().is_none());
+        assert!(json_token_iter(b" ").next().is_none());
+        assert!(json_token_iter(b"\t").next().is_none());
     }
 
     #[test]
     fn test_empty_string() {
         let mut iter = json_token_iter(b"\"\"");
-        assert_eq!(value_string(0, ""), iter.next());
-        assert_eq!(None, iter.next());
+        expect_token(value_string(0, ""), iter.next());
+        expect_token(None, iter.next());
 
         let mut iter = json_token_iter(b" \r\n\t \"\"  ");
-        assert_eq!(value_string(5, ""), iter.next());
-        assert_eq!(None, iter.next());
+        expect_token(value_string(5, ""), iter.next());
+        expect_token(None, iter.next());
     }
 
     #[test]
     fn test_empty_array() {
         let mut iter = json_token_iter(b"[]");
-        assert_eq!(start_array(0), iter.next());
-        assert_eq!(end_array(1), iter.next());
-        assert_eq!(None, iter.next());
+        expect_token(start_array(0), iter.next());
+        expect_token(end_array(1), iter.next());
+        expect_token(None, iter.next());
     }
 
     #[test]
     fn test_empty_object() {
         let mut iter = json_token_iter(b"{}");
-        assert_eq!(start_object(0), iter.next());
-        assert_eq!(end_object(1), iter.next());
-        assert_eq!(None, iter.next());
+        expect_token(start_object(0), iter.next());
+        expect_token(end_object(1), iter.next());
+        expect_token(None, iter.next());
     }
 
     #[test]
     fn test_null() {
-        assert_eq!(value_null(1), json_token_iter(b" null ").next());
+        expect_token(value_null(1), json_token_iter(b" null ").next());
 
         let mut iter = json_token_iter(b"[null, null,null]");
-        assert_eq!(start_array(0), iter.next());
-        assert_eq!(value_null(1), iter.next());
-        assert_eq!(value_null(7), iter.next());
-        assert_eq!(value_null(12), iter.next());
-        assert_eq!(end_array(16), iter.next());
-        assert_eq!(None, iter.next());
+        expect_token(start_array(0), iter.next());
+        expect_token(value_null(1), iter.next());
+        expect_token(value_null(7), iter.next());
+        expect_token(value_null(12), iter.next());
+        expect_token(end_array(16), iter.next());
+        expect_token(None, iter.next());
 
         assert!(json_token_iter(b"n").next().unwrap().is_err());
         assert!(json_token_iter(b"nul").next().unwrap().is_err());
@@ -569,15 +586,15 @@ mod tests {
         assert!(json_token_iter(b"truee").next().unwrap().is_err());
         assert!(json_token_iter(b"f").next().unwrap().is_err());
         assert!(json_token_iter(b"falsee").next().unwrap().is_err());
-        assert_eq!(value_bool(1, true), json_token_iter(b" true ").next());
-        assert_eq!(value_bool(0, false), json_token_iter(b"false").next());
+        expect_token(value_bool(1, true), json_token_iter(b" true ").next());
+        expect_token(value_bool(0, false), json_token_iter(b"false").next());
 
         let mut iter = json_token_iter(b"[true,false]");
-        assert_eq!(start_array(0), iter.next());
-        assert_eq!(value_bool(1, true), iter.next());
-        assert_eq!(value_bool(6, false), iter.next());
-        assert_eq!(end_array(11), iter.next());
-        assert_eq!(None, iter.next());
+        expect_token(start_array(0), iter.next());
+        expect_token(value_bool(1, true), iter.next());
+        expect_token(value_bool(6, false), iter.next());
+        expect_token(end_array(11), iter.next());
+        expect_token(None, iter.next());
     }
 
     proptest! {
@@ -585,8 +602,8 @@ mod tests {
         fn string_prop_test(input in ".*") {
             let json: String = serde_json::to_string(&input).unwrap();
             let mut iter = json_token_iter(json.as_bytes());
-            assert_eq!(value_string(0, &json[1..(json.len() - 1)]), iter.next());
-            assert_eq!(None, iter.next());
+            expect_token(value_string(0, &json[1..(json.len() - 1)]), iter.next());
+            expect_token(None, iter.next());
         }
 
         #[test]
@@ -598,23 +615,23 @@ mod tests {
             } else {
                 Number::PosInt(input as u64)
             };
-            assert_eq!(value_number(0, expected), iter.next());
-            assert_eq!(None, iter.next());
+            expect_token(value_number(0, expected), iter.next());
+            expect_token(None, iter.next());
         }
 
         #[test]
         fn float_prop_test(input: f64) {
             let json = serde_json::to_string(&input).unwrap();
             let mut iter = json_token_iter(json.as_bytes());
-            assert_eq!(value_number(0, Number::Float(input)), iter.next());
-            assert_eq!(None, iter.next());
+            expect_token(value_number(0, Number::Float(input)), iter.next());
+            expect_token(None, iter.next());
         }
     }
 
     #[test]
     fn valid_numbers() {
         let expect = |number, input| {
-            assert_eq!(value_number(0, number), json_token_iter(input).next());
+            expect_token(value_number(0, number), json_token_iter(input).next());
         };
         expect(Number::Float(0.0), b"0.");
         expect(Number::Float(0.0), b"0e0");
@@ -635,7 +652,7 @@ mod tests {
     #[test]
     fn invalid_numbers_we_are_intentionally_accepting() {
         let expect = |number, input| {
-            assert_eq!(value_number(0, number), json_token_iter(input).next());
+            expect_token(value_number(0, number), json_token_iter(input).next());
         };
 
         expect(Number::NegInt(-1), b"-01");
@@ -651,39 +668,50 @@ mod tests {
 
     #[test]
     fn invalid_numbers() {
-        let unexpected_token = |input, token, offset, msg| {
-            let tokens: Vec<Result<Token, Error>> = json_token_iter(input).collect();
-            assert_eq!(
-                vec![Err(Error::new(
-                    ErrorReason::UnexpectedToken(token, msg),
-                    Some(offset)
-                ))],
-                tokens,
-                "input: \"{}\"",
-                std::str::from_utf8(input).unwrap(),
-            );
-        };
+        macro_rules! unexpected_token {
+            ($input:expr, $token:pat, $offset:expr, $msg:pat) => {
+                let tokens: Vec<Result<Token, Error>> = json_token_iter($input).collect();
+                assert_eq!(1, tokens.len());
+                expect_err!(
+                    ErrorKind::UnexpectedToken($token, $msg),
+                    Some($offset),
+                    tokens.into_iter().next()
+                );
+            };
+        }
 
         let invalid_number = |input, offset| {
             let tokens: Vec<Result<Token, Error>> = json_token_iter(input).collect();
-            assert_eq!(
-                vec![Err(Error::new(ErrorReason::InvalidNumber, Some(offset)))],
-                tokens,
-                "input: \"{}\"",
-                std::str::from_utf8(input).unwrap(),
+            assert_eq!(1, tokens.len());
+            expect_err!(
+                ErrorKind::InvalidNumber,
+                Some(offset),
+                tokens.into_iter().next()
             );
         };
 
-        let unexpected_trailer = "<whitespace>, '}', ']', ','";
-        let unexpected_start = "'{', '[', '\"', 'null', 'true', 'false', <number>";
-
-        unexpected_token(b".", '.', 0, unexpected_start);
-        unexpected_token(b".0", '.', 0, unexpected_start);
-        unexpected_token(b"0-05", '-', 1, unexpected_trailer);
-        unexpected_token(b"0x05", 'x', 1, unexpected_trailer);
-        unexpected_token(b"123.invalid", 'i', 4, unexpected_trailer);
-        unexpected_token(b"123invalid", 'i', 3, unexpected_trailer);
-        unexpected_token(b"asdf", 'a', 0, unexpected_start);
+        unexpected_token!(
+            b".",
+            '.',
+            0,
+            "'{', '[', '\"', 'null', 'true', 'false', <number>"
+        );
+        unexpected_token!(
+            b".0",
+            '.',
+            0,
+            "'{', '[', '\"', 'null', 'true', 'false', <number>"
+        );
+        unexpected_token!(b"0-05", '-', 1, "<whitespace>, '}', ']', ','");
+        unexpected_token!(b"0x05", 'x', 1, "<whitespace>, '}', ']', ','");
+        unexpected_token!(b"123.invalid", 'i', 4, "<whitespace>, '}', ']', ','");
+        unexpected_token!(b"123invalid", 'i', 3, "<whitespace>, '}', ']', ','");
+        unexpected_token!(
+            b"asdf",
+            'a',
+            0,
+            "'{', '[', '\"', 'null', 'true', 'false', <number>"
+        );
 
         invalid_number(b"-a", 0);
         invalid_number(b"1e", 0);
@@ -696,25 +724,22 @@ mod tests {
     #[test]
     fn test_unclosed_array() {
         let mut iter = json_token_iter(br#" [null "#);
-        assert_eq!(start_array(1), iter.next());
-        assert_eq!(value_null(2), iter.next());
-        assert_eq!(
-            Some(Err(Error::new(ErrorReason::UnexpectedEos, Some(7)))),
-            iter.next()
-        );
+        expect_token(start_array(1), iter.next());
+        expect_token(value_null(2), iter.next());
+        expect_err!(ErrorKind::UnexpectedEos, Some(7), iter.next());
     }
 
     #[test]
     fn test_array_with_items() {
         let mut iter = json_token_iter(b"[[], {}, \"test\"]");
-        assert_eq!(start_array(0), iter.next());
-        assert_eq!(start_array(1), iter.next());
-        assert_eq!(end_array(2), iter.next());
-        assert_eq!(start_object(5), iter.next());
-        assert_eq!(end_object(6), iter.next());
-        assert_eq!(value_string(9, "test"), iter.next());
-        assert_eq!(end_array(15), iter.next());
-        assert_eq!(None, iter.next());
+        expect_token(start_array(0), iter.next());
+        expect_token(start_array(1), iter.next());
+        expect_token(end_array(2), iter.next());
+        expect_token(start_object(5), iter.next());
+        expect_token(end_object(6), iter.next());
+        expect_token(value_string(9, "test"), iter.next());
+        expect_token(end_array(15), iter.next());
+        expect_token(None, iter.next());
     }
 
     #[test]
@@ -728,57 +753,52 @@ mod tests {
                   "some_struct": { "nested": "asdf" },
                   "some_array": ["one", "two"] }"#,
         );
-        assert_eq!(start_object(0), tokens.next());
-        assert_eq!(object_key(2, "some_int"), tokens.next());
-        assert_eq!(value_number(14, Number::PosInt(5)), tokens.next());
-        assert_eq!(object_key(35, "some_float"), tokens.next());
-        assert_eq!(value_number(49, Number::Float(5.2)), tokens.next());
-        assert_eq!(object_key(72, "some_negative"), tokens.next());
-        assert_eq!(value_number(89, Number::NegInt(-5)), tokens.next());
-        assert_eq!(object_key(111, "some_negative_float"), tokens.next());
-        assert_eq!(value_number(134, Number::Float(-2.4)), tokens.next());
-        assert_eq!(object_key(158, "some_string"), tokens.next());
-        assert_eq!(value_string(173, "test"), tokens.next());
-        assert_eq!(object_key(199, "some_struct"), tokens.next());
-        assert_eq!(start_object(214), tokens.next());
-        assert_eq!(object_key(216, "nested"), tokens.next());
-        assert_eq!(value_string(226, "asdf"), tokens.next());
-        assert_eq!(end_object(233), tokens.next());
-        assert_eq!(object_key(254, "some_array"), tokens.next());
-        assert_eq!(start_array(268), tokens.next());
-        assert_eq!(value_string(269, "one"), tokens.next());
-        assert_eq!(value_string(276, "two"), tokens.next());
-        assert_eq!(end_array(281), tokens.next());
-        assert_eq!(end_object(283), tokens.next());
-        assert_eq!(None, tokens.next());
+        expect_token(start_object(0), tokens.next());
+        expect_token(object_key(2, "some_int"), tokens.next());
+        expect_token(value_number(14, Number::PosInt(5)), tokens.next());
+        expect_token(object_key(35, "some_float"), tokens.next());
+        expect_token(value_number(49, Number::Float(5.2)), tokens.next());
+        expect_token(object_key(72, "some_negative"), tokens.next());
+        expect_token(value_number(89, Number::NegInt(-5)), tokens.next());
+        expect_token(object_key(111, "some_negative_float"), tokens.next());
+        expect_token(value_number(134, Number::Float(-2.4)), tokens.next());
+        expect_token(object_key(158, "some_string"), tokens.next());
+        expect_token(value_string(173, "test"), tokens.next());
+        expect_token(object_key(199, "some_struct"), tokens.next());
+        expect_token(start_object(214), tokens.next());
+        expect_token(object_key(216, "nested"), tokens.next());
+        expect_token(value_string(226, "asdf"), tokens.next());
+        expect_token(end_object(233), tokens.next());
+        expect_token(object_key(254, "some_array"), tokens.next());
+        expect_token(start_array(268), tokens.next());
+        expect_token(value_string(269, "one"), tokens.next());
+        expect_token(value_string(276, "two"), tokens.next());
+        expect_token(end_array(281), tokens.next());
+        expect_token(end_object(283), tokens.next());
+        expect_token(None, tokens.next());
     }
 
     #[test]
     fn test_object_trailing_comma() {
         let mut iter = json_token_iter(br#" { "test": "trailing", } "#);
-        assert_eq!(start_object(1), iter.next());
-        assert_eq!(object_key(3, "test"), iter.next());
-        assert_eq!(value_string(11, "trailing"), iter.next());
-        assert_eq!(
-            Some(Err(Error::new(
-                ErrorReason::UnexpectedToken('}', "'\"'"),
-                Some(23),
-            ))),
+        expect_token(start_object(1), iter.next());
+        expect_token(object_key(3, "test"), iter.next());
+        expect_token(value_string(11, "trailing"), iter.next());
+        expect_err!(
+            ErrorKind::UnexpectedToken('}', "'\"'"),
+            Some(23),
             iter.next()
         );
-        assert_eq!(None, iter.next());
+        assert!(iter.next().is_none());
     }
 
     #[test]
     fn test_object_no_colon() {
         let mut iter = json_token_iter(br#" {"test" "#);
-        assert_eq!(start_object(1), iter.next());
-        assert_eq!(object_key(2, "test"), iter.next());
-        assert_eq!(
-            Some(Err(Error::new(ErrorReason::UnexpectedEos, Some(9),))),
-            iter.next()
-        );
-        assert_eq!(None, iter.next());
+        expect_token(start_object(1), iter.next());
+        expect_token(object_key(2, "test"), iter.next());
+        expect_err!(ErrorKind::UnexpectedEos, Some(9), iter.next());
+        expect_token(None, iter.next());
     }
 
     #[test]
