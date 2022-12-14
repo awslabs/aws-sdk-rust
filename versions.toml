@@ -1,4 +1,4 @@
-smithy_rs_revision = '15c80de41dab4a6b798ce45d3e94fa91a40a3e58'
+smithy_rs_revision = '425d91b3b54c03ef2432204c7f2b6a11d30d2bbc'
 aws_doc_sdk_examples_revision = 'f88a0edba3961f9d978bf1727054c9414e4fca2b'
 
 [manual_interventions]
@@ -1556,7 +1556,7 @@ model_hash = '09aae71e2022e96f7ebc9a76e9a39747e232ac5768751569424587b070c55cde'
 [crates.aws-sdk-route53recoveryreadiness]
 category = 'AwsSdk'
 version = '0.22.0'
-source_hash = '415e9ffa0815b26a3b79242d9364ea755085473700762d761247a9390401235c'
+source_hash = '6b8e1920429da4fe174fd798b0e85e1da6d7b91d87085794828a1ea334c661eb'
 model_hash = 'b4c18ff7a56b8190403929f26fa1521afd036984d332e588556eee21d12b72f5'
 
 [crates.aws-sdk-route53resolver]

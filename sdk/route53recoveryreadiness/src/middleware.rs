@@ -81,4 +81,3 @@ impl<S> tower::Layer<S> for DefaultMiddleware {
         base().service(inner)
     }
 }
-
